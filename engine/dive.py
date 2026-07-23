@@ -293,13 +293,13 @@ def assemble(cfg, name, out_dir, frames_dir, total, exponent=None):
             Image.blend(tail, heads[i], (i + 1) / (K + 1)).save(frames_dir / f"{t:05d}.png")
         print(f"[dive] loop crossfade over last {K} frames", flush=True)
 
-    raw = f"{name}_raw.mp4"
+    raw = "build/raw.mp4"
     subprocess.run([FFMPEG, "-y", "-framerate", str(cfg["fps"]),
-                    "-i", "frames/%05d.png",
+                    "-i", "build/frames/%05d.png",
                     "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", raw],
                    cwd=out_dir, check=True, capture_output=True)
 
-    interp = f"{name}_interp.mp4"
+    interp = "build/interp.mp4"
     if cfg["final_fps"]:
         t0 = time.time()
         subprocess.run([FFMPEG, "-y", "-i", raw,
@@ -315,11 +315,11 @@ def assemble(cfg, name, out_dir, frames_dir, total, exponent=None):
     final = f"{name}_divein.mp4"
     if exponent:
         # counter is drawn AFTER interpolation so the text stays crisp
-        lbl = out_dir / "labeled"
+        lbl = out_dir / "build" / "labeled"
         lbl.mkdir(exist_ok=True)
         for f in lbl.glob("*.png"):
             f.unlink()
-        subprocess.run([FFMPEG, "-y", "-i", interp, "labeled/%05d.png"],
+        subprocess.run([FFMPEG, "-y", "-i", interp, "build/labeled/%05d.png"],
                        cwd=out_dir, check=True, capture_output=True)
         outs = sorted(lbl.glob("*.png"))
         n_out = len(outs)
@@ -330,7 +330,8 @@ def assemble(cfg, name, out_dir, frames_dir, total, exponent=None):
             age = next((j - p for p in reversed(pulse_at) if 0 <= j - p <= 5), None)
             draw_counter(Image.open(f).convert("RGB"), exps[j], age).save(f)
         fr = cfg["final_fps"] or cfg["fps"]
-        subprocess.run([FFMPEG, "-y", "-framerate", str(fr), "-i", "labeled/%05d.png",
+        subprocess.run([FFMPEG, "-y", "-framerate", str(fr),
+                        "-i", "build/labeled/%05d.png",
                         "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", final],
                        cwd=out_dir, check=True, capture_output=True)
         print(f"[dive] counter overlay on {n_out} frames "
@@ -380,7 +381,7 @@ def main():
     n = 1 + max([int(d.name[1:]) for d in base.glob("v[0-9]*")
                  if d.name[1:].isdigit()], default=0)
     out_dir = base / f"v{n}"
-    frames_dir = out_dir / "frames"
+    frames_dir = out_dir / "build" / "frames"
     frames_dir.mkdir(parents=True, exist_ok=True)
     print(f"[dive] run dir: {out_dir}", flush=True)
 
