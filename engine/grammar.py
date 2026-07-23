@@ -20,11 +20,11 @@ import math
 TEMPLATE_ARRIVAL = ("{target} now filling the entire view up close, its surface "
                     "spreading open into {interior}, {style}")
 TEMPLATE_TRAVEL = ("traveling through {interior}, vast {interior} in every direction, "
-                   "one single tiny glowing {target}, alone, very far away in the "
-                   "distance ahead, {style}")
-TEMPLATE_PLUNGE = ("plunging toward a single {target}, the only {target}, growing "
-                   "huge ahead, walls of {interior} rushing past the edges of the "
-                   "frame, {style}")
+                   "one single tiny {target}, barely visible, alone very far away in "
+                   "the distance ahead, {style}")
+TEMPLATE_PLUNGE = ("plunging toward {target}, the only one, growing huge ahead, "
+                   "walls of {interior} rushing past the edges of the frame, "
+                   "{style}")
 TEMPLATE_FINAL = ("deep inside {interior}, endless intricate glowing detail in every "
                   "direction, {style}")
 
@@ -43,17 +43,23 @@ def compile_journey(spec, fps, travel_denoise=0.40):
     F = max(12, round(sec * fps))
 
     phases, zoom, denoise, exponent, cameos = [], [], [], [], []
+    arrivals = set()
     for k, reg in enumerate(regs):
         nxt = regs[k + 1] if k + 1 < len(regs) else None
+        # per-register time override ("sec") lets a journey linger where it wants
+        F = max(12, round(reg.get("sec", sec) * fps))
         reg_start = len(zoom)
         # arrival beat: the target we just plunged toward, verbatim, becoming this
         # world — same object at two sizes is what sells the scale handoff
         fa = round(F * 0.25) if k > 0 else 0
         if fa:
+            arrivals.add(len(phases))
             phases.append({"prompt": _p(TEMPLATE_ARRIVAL.format(
                 target=regs[k - 1]["next_target"], interior=reg["interior"],
                 style=style), reg), "frames": fa})
-        if nxt:
+        if reg.get("next_target"):
+            # circular authoring: the LAST register's next_target names the FIRST
+            # register's world seen from afar, so the seam is written, not patched
             ft = round(F * (0.35 if fa else 0.55))
             phases.append({"prompt": _p(TEMPLATE_TRAVEL.format(
                 interior=reg["interior"], target=reg["next_target"], style=style),
@@ -88,4 +94,4 @@ def compile_journey(spec, fps, travel_denoise=0.40):
             t = (j + 1) / L
             denoise[total - L + j] = travel_denoise + (0.18 - travel_denoise) * t
         loop = {"frames": L, "s0": 0.10}
-    return phases, zoom, denoise, exponent, loop, cameos
+    return phases, zoom, denoise, exponent, loop, cameos, arrivals

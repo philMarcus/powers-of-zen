@@ -62,9 +62,23 @@ attention project, not a science project)
 | 21 | galaxy | Maxie |
 | 26 | cosmos | Amos |
 
-Rules: a journey should use most registers in its range and never skip more than
-one in a row. Creature scenes are fantastical, never gory. No human faces
-(enforced in the negative prompt). Mascot names are never shown on screen.
+Rules (revised 2026-07-23):
+- **Journeys are CIRCULAR.** The last register's `next_target` names the first
+  register's world seen from afar — the seam is authored, never patched. With
+  `exact_loop` the last frame IS the first frame. The seam pair can be ANY two
+  scales (continent→nucleus is fine) — write the blend deliberately.
+- The full ladder is one format among many. Slices are fine; fractional scales
+  are fine (`exp` may be a float; registers ⅓–½ a decade apart are allowed —
+  fish-eats-fish chains, dollhouse recursion). Weight time with per-card `sec`.
+  The human/city/creature zone is the variety-rich band — linger there.
+- Per-card keys: `exp`, `palette`, `interior`, `next_target`, optional `sec`,
+  optional `cameo` {sprite, pos, size}.
+- Don't name the same creature/object in two nearby registers — it will render
+  at both scales (the double-lantern/double-fly ghost).
+- Creature scenes fantastical, never gory. No human faces (negative prompt).
+  Mascot names never shown on screen.
+- `journeys/VARIATIONS.md` is the differentiation library — per-register
+  variant looks and seam pairings. Draw from it; add to it.
 
 ## Iron rules
 - NEVER overwrite a previous render or mascot round. Renders write to

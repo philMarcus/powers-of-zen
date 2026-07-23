@@ -71,7 +71,9 @@ DEFAULTS = {
     "noise": 0.05,
     # phase transitions: prompt blending + extra denoise so worlds dissolve, not switch
     "transition_frames": 6,
-    "transition_denoise_boost": 0.08,
+    "transition_denoise_boost": 0.06,   # beat changes within a register: gentle
+    "arrival_denoise_boost": 0.18,      # register boundaries: strong repaint so
+                                        # palettes can actually flip between worlds
     # palette anchoring strength (0 = off)
     "color_match": 0.5,
     # loop seam: crossfade this many tail frames into the head frames (0 = off)
@@ -365,9 +367,9 @@ def main():
     if args.model:
         cfg.update(MODEL_PRESETS[args.model])
     zoom_sched = den_sched = exponent = loop = None
-    cameos = []
+    cameos, arrivals = [], set()
     if "registers" in spec:
-        phases, zoom_sched, den_sched, exponent, loop, cameos = \
+        phases, zoom_sched, den_sched, exponent, loop, cameos, arrivals = \
             grammar.compile_journey(spec, cfg["fps"])
     else:
         phases = spec["phases"]
@@ -442,8 +444,11 @@ def main():
                 s = math.exp(math.log(loop["s0"]) * (1 - t_))
                 fed = loop_composite(fed, frame0, s)
             ref = upload_image(fed, f"zoomer_feed_{name}.png")
-            den = min(0.85, base_den
-                      + (cfg["transition_denoise_boost"] if in_transition else 0))
+            boost = 0
+            if in_transition:
+                boost = (cfg["arrival_denoise_boost"] if p_idx in arrivals
+                         else cfg["transition_denoise_boost"])
+            den = min(0.85, base_den + boost)
             if cam_pasted:
                 den = min(den, 0.32)   # keep the mascot's face recognizable
             wf = build_workflow(cfg, prompt, seed, init_image=ref, denoise=den,

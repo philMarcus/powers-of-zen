@@ -16,11 +16,11 @@
     {
       "name": "star", "exp": 11, "palette": "blazing orange and white",
       "interior": "the corona of a blazing star, arcs of fire and solar prominences with tiny planets in distant orbit",
-      "next_target": "a ringed opal planet glowing in its orbit"
+      "next_target": "a round opal planet glowing in its orbit, its curved limb catching the starlight"
     },
     {
       "name": "planet", "exp": 7, "palette": "ocean blue and pearl",
-      "interior": "swirling clouds and glowing continents of a fantastical planet seen from orbit",
+      "interior": "a huge spherical planet seen from space, its curved horizon and glowing limb against the black, swirling clouds and luminous continents wrapping around the sphere",
       "next_target": "a vast sunlit continent of striated canyons and mountain ranges"
     },
     {
@@ -66,7 +66,8 @@
     },
     {
       "name": "quark", "exp": -15, "palette": "deep violet and silver",
-      "interior": "glowing particle tracks curling in delicate spirals through endless luminous violet fog, flickering sparks and helical trails in every direction, soft quark lobes glowing deep in the haze weaving a web like the cosmic web"
+      "interior": "glowing particle tracks curling in delicate spirals through endless luminous violet fog, flickering sparks and helical trails in every direction, soft quark lobes glowing deep in the haze weaving a web like the cosmic web",
+      "next_target": "the vast glowing cosmic web, faint luminous filaments of galaxy clusters far in the distance"
     }
   ]
 }
