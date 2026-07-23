@@ -29,10 +29,12 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
 - striated canyon country (Grand-Canyon bands) · fjordlands · dune seas
 - terraced rice-paddy mountains · glacier fields with melt rivers
 - patchwork farmland quilts · volcanic calderas · river deltas branching
+- forests, jungles, tundra
 
 ## City / built world (10²–10⁴)
 - vertical tower city · canal city · rooftop-garden city · souk/market maze
 - clockwork city · paper city · coral-grown city · city inside a geode
+- mountainside cave cities, medieval castle cities
 
 ## Human scale (10⁻¹–10¹) — the richest zone, spend time here
 - cluttered desk (lantern, books, clockwork) · workshop · market stall
@@ -63,6 +65,10 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
 
 ## Seam pairings that should exist someday
 - quantum foam ↔ cosmic web (canonical)
-- nucleus ↔ continental landscape (Phil's example)
+- cell organelles ↔ nebulae
 - dollhouse ↔ real house (self-similar loop at human scale)
 - geode interior ↔ star field; eye iris ↔ spiral galaxy; coastline ↔ leaf edge
+- any small round object like theball on the end of an insect antennae could become a planet
+- clouds over a landmass becoming a fog can become almost anything: nebulae, quantum or cosmological "fogginess"
+- at astronommical levels, can deissolve into "black hole" (use appropriate lensing) and come out in humanish realm, e.g.
+

@@ -1,0 +1,28 @@
+{
+  "name": "lab_4reg",
+  "style_suffix": "hyperdetailed, cinematic volumetric light, rich vivid color, otherworldly",
+  "format": { "sec_per_scale": 2.4, "exact_loop": true, "build": "out" },
+  "registers": [
+    {
+      "name": "creature", "exp": -3, "palette": "iridescent teal and magenta",
+      "interior": "the wing of a fantastical moth, glowing scales layered like roof tiles along feathered veins",
+      "afar": "a tiny iridescent moth resting with folded wings"
+    },
+    {
+      "name": "human", "exp": 0, "palette": "warm brass and candlelight",
+      "interior": "a vast cluttered wooden desk, stacked books, ink bottles and scattered brass clockwork parts in warm candlelight",
+      "afar": "a small warm-lit wooden desk by a window"
+    },
+    {
+      "name": "city", "exp": 3, "palette": "amber and violet dusk",
+      "interior": "an impossible city of luminous towers, arched bridges and winding glowing streets seen from above",
+      "afar": "a glowing city of lights far below"
+    },
+    {
+      "name": "landmass", "exp": 5, "palette": "canyon red and sage green",
+      "interior": "a vast continent seen from high altitude, striated canyon lands, layered rock bands, mountain ranges and winding rivers",
+      "afar": "a sunlit striated continent",
+      "loop_hint": "the striated canyon bands resolving into the layered glowing scales of a vast moth wing"
+    }
+  ]
+}

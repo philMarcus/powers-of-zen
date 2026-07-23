@@ -1,22 +1,28 @@
 """Grammar compiler: world-card journeys -> phases + per-frame schedules.
 
-A register card (dive-in order, LARGE -> SMALL):
-    {"name": "city", "exp": 3,
-     "interior": "an impossible city of luminous towers seen from above",
-     "next_target": "a strange glowing creature resting in a plaza"}
+Two build modes:
 
-Each register becomes two beats compiled through fixed templates:
-    A (travel):  vast interior everywhere, next target tiny at the very center
-    B (plunge):  next target growing huge at center, interior rushing past
-The final register has no next_target; it hosts the exact-loop tail instead.
+BUILD-IN (classic): registers authored LARGE -> SMALL. Each frame crops the
+center and re-diffuses; the model invents interior detail. Beats per register:
+arrival / travel / plunge, targets named via `next_target`.
 
-Per-frame schedules:
-    zoom   — arrive->look->plunge curve; each register's product is exactly x10
-    denoise — travel value; ramps down over the loop tail so frame 0 survives
-    exponent — semantic 10^n m counter value, interpolated between register exps
+BUILD-OUT: registers authored SMALL -> LARGE. Each frame shrinks the whole
+image toward the center and the model paints only the newly exposed border —
+the environment. The current world is physically inherited (no double-object
+ghosts). Cards use `afar` (how this world looks when small in the distance)
+instead of `next_target`; the last card may carry `loop_hint` describing how
+its world morphs toward the first card's world (circular seam).
+
+Journeys are CIRCULAR either way: in build-in the last card's next_target names
+the first world; in build-out the last card's loop_hint does.
+
+Per-card keys (both modes): exp (may be float), interior, palette?, sec?,
+cameo? {sprite, pos, size}. Build-in adds next_target; build-out adds afar
+(and loop_hint on the last card).
 """
 import math
 
+# ---- build-in templates -----------------------------------------------------
 TEMPLATE_ARRIVAL = ("{target} now filling the entire view up close, its surface "
                     "spreading open into {interior}, {style}")
 TEMPLATE_TRAVEL = ("traveling through {interior}, vast {interior} in every direction, "
@@ -28,48 +34,71 @@ TEMPLATE_PLUNGE = ("plunging toward {target}, the only one, growing huge ahead, 
 TEMPLATE_FINAL = ("deep inside {interior}, endless intricate glowing detail in every "
                   "direction, {style}")
 
+# ---- build-out templates ----------------------------------------------------
+TEMPLATE_EMERGE = ("{afar} shrinking away into the distance below, its surroundings "
+                   "opening up into {interior}, {style}")
+TEMPLATE_RECEDE = ("{interior}, stretching endlessly in every direction, "
+                   "{style}")
+TEMPLATE_LOOPHINT = ("{interior} in every direction, the whole scene slowly "
+                     "becoming {loop_hint}, {style}")
+
 
 def _p(text, reg):
     pal = reg.get("palette")
     return f"{text}, {pal} colors" if pal else text
 
 
-def compile_journey(spec, fps, travel_denoise=0.40):
+def compile_journey(spec, fps, build="in"):
     fmt = spec.get("format", {})
     sec = fmt.get("sec_per_scale", fmt.get("sec_per_decade", 2.4))
-    travel_denoise = fmt.get("travel_denoise", travel_denoise)
+    travel_denoise = fmt.get("travel_denoise", 0.55 if build == "out" else 0.40)
     style = spec.get("style_suffix", "")
     regs = spec["registers"]
-    F = max(12, round(sec * fps))
 
     phases, zoom, denoise, exponent, cameos = [], [], [], [], []
     arrivals = set()
     for k, reg in enumerate(regs):
         nxt = regs[k + 1] if k + 1 < len(regs) else None
-        # per-register time override ("sec") lets a journey linger where it wants
         F = max(12, round(reg.get("sec", sec) * fps))
         reg_start = len(zoom)
-        # arrival beat: the target we just plunged toward, verbatim, becoming this
-        # world — same object at two sizes is what sells the scale handoff
-        fa = round(F * 0.25) if k > 0 else 0
-        if fa:
-            arrivals.add(len(phases))
-            phases.append({"prompt": _p(TEMPLATE_ARRIVAL.format(
-                target=regs[k - 1]["next_target"], interior=reg["interior"],
-                style=style), reg), "frames": fa})
-        if reg.get("next_target"):
-            # circular authoring: the LAST register's next_target names the FIRST
-            # register's world seen from afar, so the seam is written, not patched
-            ft = round(F * (0.35 if fa else 0.55))
-            phases.append({"prompt": _p(TEMPLATE_TRAVEL.format(
-                interior=reg["interior"], target=reg["next_target"], style=style),
-                reg), "frames": ft})
-            phases.append({"prompt": _p(TEMPLATE_PLUNGE.format(
-                interior=reg["interior"], target=reg["next_target"], style=style),
-                reg), "frames": F - fa - ft})
+
+        if build == "out":
+            fa = round(F * 0.30) if k > 0 else 0
+            if fa:
+                arrivals.add(len(phases))
+                phases.append({"prompt": _p(TEMPLATE_EMERGE.format(
+                    afar=regs[k - 1]["afar"], interior=reg["interior"],
+                    style=style), reg), "frames": fa})
+            if not nxt and reg.get("loop_hint"):
+                fr = round((F - fa) * 0.45)
+                phases.append({"prompt": _p(TEMPLATE_RECEDE.format(
+                    interior=reg["interior"], style=style), reg), "frames": fr})
+                phases.append({"prompt": _p(TEMPLATE_LOOPHINT.format(
+                    interior=reg["interior"], loop_hint=reg["loop_hint"],
+                    style=style), reg), "frames": F - fa - fr})
+            else:
+                phases.append({"prompt": _p(TEMPLATE_RECEDE.format(
+                    interior=reg["interior"], style=style), reg),
+                    "frames": F - fa})
         else:
-            phases.append({"prompt": _p(TEMPLATE_FINAL.format(
-                interior=reg["interior"], style=style), reg), "frames": F - fa})
+            fa = round(F * 0.25) if k > 0 else 0
+            if fa:
+                arrivals.add(len(phases))
+                phases.append({"prompt": _p(TEMPLATE_ARRIVAL.format(
+                    target=regs[k - 1]["next_target"], interior=reg["interior"],
+                    style=style), reg), "frames": fa})
+            if reg.get("next_target"):
+                ft = round(F * (0.35 if fa else 0.55))
+                phases.append({"prompt": _p(TEMPLATE_TRAVEL.format(
+                    interior=reg["interior"], target=reg["next_target"],
+                    style=style), reg), "frames": ft})
+                phases.append({"prompt": _p(TEMPLATE_PLUNGE.format(
+                    interior=reg["interior"], target=reg["next_target"],
+                    style=style), reg), "frames": F - fa - ft})
+            else:
+                phases.append({"prompt": _p(TEMPLATE_FINAL.format(
+                    interior=reg["interior"], style=style), reg),
+                    "frames": F - fa})
 
         # arrive -> look -> plunge zoom curve; per-register product is exactly x10
         w = [0.30 + 0.70 * math.sin(math.pi * (j + 0.5) / F) ** 2 for j in range(F)]
@@ -77,18 +106,18 @@ def compile_journey(spec, fps, travel_denoise=0.40):
         zoom += [math.exp(math.log(10) * wj / s) for wj in w]
         denoise += [travel_denoise] * F
 
-        end_exp = nxt["exp"] if nxt else reg["exp"] - 1
+        end_exp = nxt["exp"] if nxt else reg["exp"] + (1 if build == "out" else -1)
         exponent += [reg["exp"] + (end_exp - reg["exp"]) * (j + 0.5) / F
                      for j in range(F)]
 
         if reg.get("cameo"):
-            # hidden-mascot window: after this register's arrival beat to its end
             cameos.append({"start": reg_start + fa, "end": reg_start + F,
                            **reg["cameo"]})
 
     loop = None
-    if fmt.get("exact_loop"):
-        L = min(round(1.5 * fps), F - 2)
+    if fmt.get("exact_loop") and build != "out":
+        F_last = max(12, round(regs[-1].get("sec", sec) * fps))
+        L = min(round(2.0 * fps), F_last - 2)
         total = len(zoom)
         for j in range(L):
             t = (j + 1) / L

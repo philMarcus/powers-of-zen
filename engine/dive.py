@@ -78,12 +78,15 @@ DEFAULTS = {
     "color_match": 0.5,
     # loop seam: crossfade this many tail frames into the head frames (0 = off)
     "loop_fade_frames": 0,
-    "reverse": False,     # also emit the video played backwards (dive-in -> zoom-out)
+    "reverse": False,     # legacy, ignored (both cuts always emitted)
+    "build": "in",        # "in": crop center, invent interiors (LARGE->SMALL cards)
+                          # "out": shrink + outpaint borders (SMALL->LARGE cards);
+                          #        worlds physically inherited, no double-objects
 }
 
 
 def build_workflow(cfg, prompt, seed, init_image=None, denoise=None,
-                   prev_prompt=None, blend=1.0):
+                   prev_prompt=None, blend=1.0, mask_image=None):
     """ComfyUI API-format workflow. txt2img when init_image is None, else img2img.
     When prev_prompt is given, positive conditioning is a weighted average of the old
     and new prompts (blend = weight of the NEW prompt)."""
@@ -110,8 +113,19 @@ def build_workflow(cfg, prompt, seed, init_image=None, denoise=None,
         positive = ["posmix", 0]
     if init_image:
         wf["load"] = {"class_type": "LoadImage", "inputs": {"image": init_image}}
-        wf["latent"] = {"class_type": "VAEEncode",
-                        "inputs": {"pixels": ["load", 0], "vae": ["ckpt", 2]}}
+        if mask_image:
+            # masked denoise: repaint the border ring, protect the inherited center
+            wf["enc"] = {"class_type": "VAEEncode",
+                         "inputs": {"pixels": ["load", 0], "vae": ["ckpt", 2]}}
+            wf["loadmask"] = {"class_type": "LoadImage",
+                              "inputs": {"image": mask_image}}
+            wf["tomask"] = {"class_type": "ImageToMask",
+                            "inputs": {"image": ["loadmask", 0], "channel": "red"}}
+            wf["latent"] = {"class_type": "SetLatentNoiseMask",
+                            "inputs": {"samples": ["enc", 0], "mask": ["tomask", 0]}}
+        else:
+            wf["latent"] = {"class_type": "VAEEncode",
+                            "inputs": {"pixels": ["load", 0], "vae": ["ckpt", 2]}}
     else:
         wf["latent"] = {"class_type": "EmptyLatentImage",
                         "inputs": {"width": cfg["width"], "height": cfg["height"],
@@ -209,7 +223,29 @@ def color_match(img, ref, strength):
 FONT_DIR = "/usr/share/fonts/truetype/dejavu"
 
 
-def loop_composite(fed, frame0, s, blur_frac=0.06):
+def shrink_transform(img, zoom, cx=0.5, cy=0.5):
+    """Build-out step: shrink the whole frame toward (cx, cy). Returns the new
+    canvas (old frame as border seed, shrunk copy pasted over) and the paste box."""
+    w, h = img.size
+    sw, sh = max(2, round(w / zoom)), max(2, round(h / zoom))
+    px, py = round(cx * w - sw / 2), round(cy * h - sh / 2)
+    canvas = img.copy()
+    canvas.paste(img.resize((sw, sh), Image.LANCZOS), (px, py))
+    return canvas, (px, py, sw, sh)
+
+
+def ring_mask(w, h, box, center_val=30):
+    """White border ring (repaint), near-black center (protect), soft feather."""
+    px, py, sw, sh = box
+    m = Image.new("L", (w, h), 255)
+    inset = max(2, int(min(sw, sh) * 0.05))
+    ImageDraw.Draw(m).rectangle([px + inset, py + inset,
+                                 px + sw - inset, py + sh - inset],
+                                fill=center_val)
+    return m.filter(ImageFilter.GaussianBlur(max(2, int(w * 0.02)))).convert("RGB")
+
+
+def loop_composite(fed, frame0, s, blur_frac=0.14):
     """Paste frame0 scaled by s into the center of fed with a soft-edged mask."""
     w, h = fed.size
     sw, sh = max(2, int(w * s)), max(2, int(h * s))
@@ -285,6 +321,10 @@ def phase_info(phases, i):
 
 
 def assemble(cfg, name, out_dir, frames_dir, total, exponent=None):
+    # zoom-out is always the primary cut: build-out generates it forward,
+    # build-in generates dive-in footage that gets reversed into the primary
+    fwd = f"{name}.mp4" if cfg["build"] == "out" else f"{name}_divein.mp4"
+    rev = f"{name}_divein.mp4" if cfg["build"] == "out" else f"{name}.mp4"
     """Loop crossfade, raw encode, motion interpolation, counter overlay, reverse cut."""
     K = min(cfg["loop_fade_frames"], total // 2)
     if K:
@@ -314,7 +354,7 @@ def assemble(cfg, name, out_dir, frames_dir, total, exponent=None):
     else:
         interp = raw
 
-    final = f"{name}_divein.mp4"
+    final = fwd
     if exponent:
         # counter is drawn AFTER interpolation so the text stays crisp
         lbl = out_dir / "build" / "labeled"
@@ -341,13 +381,11 @@ def assemble(cfg, name, out_dir, frames_dir, total, exponent=None):
     else:
         (out_dir / final).write_bytes((out_dir / interp).read_bytes())
 
-    # primary cut is the ZOOM-OUT (small -> large, Phil's preferred direction);
-    # the forward dive-in render is kept as the alternate cut
-    subprocess.run([FFMPEG, "-y", "-i", final, "-vf", "reverse",
-                    "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18",
-                    f"{name}.mp4"],
+    subprocess.run([FFMPEG, "-y", "-i", fwd, "-vf", "reverse",
+                    "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", rev],
                    cwd=out_dir, check=True, capture_output=True)
-    for label, f in (("primary (zoom-out)", f"{name}.mp4"), ("alt (dive-in)", final)):
+    for label, f in (("primary (zoom-out)", f"{name}.mp4"),
+                     ("alt (dive-in)", f"{name}_divein.mp4")):
         mp4 = out_dir / f
         print(f"[dive] {label}: {mp4} ({mp4.stat().st_size // 1024} KB, "
               f"{total / cfg['fps']:.1f}s)", flush=True)
@@ -358,6 +396,8 @@ def main():
     ap.add_argument("journey", help="journey JSON file")
     ap.add_argument("--model", choices=sorted(MODEL_PRESETS),
                     help="model preset; overrides journey settings and suffixes the name")
+    ap.add_argument("--build", choices=("in", "out"),
+                    help="build direction; overrides journey format and suffixes the name")
     ap.add_argument("--frames", type=int, help="override total frame count (smoke tests)")
     ap.add_argument("--no-video", action="store_true", help="skip assembly")
     args = ap.parse_args()
@@ -366,17 +406,22 @@ def main():
     cfg = {**DEFAULTS, **spec.get("settings", {})}
     if args.model:
         cfg.update(MODEL_PRESETS[args.model])
+    cfg["build"] = args.build or spec.get("format", {}).get("build", cfg["build"])
     zoom_sched = den_sched = exponent = loop = None
     cameos, arrivals = [], set()
     if "registers" in spec:
         phases, zoom_sched, den_sched, exponent, loop, cameos, arrivals = \
-            grammar.compile_journey(spec, cfg["fps"])
+            grammar.compile_journey(spec, cfg["fps"], cfg["build"])
+        if cfg["build"] == "out" and spec.get("format", {}).get("exact_loop"):
+            cfg["loop_fade_frames"] = max(cfg["loop_fade_frames"], 8)
     else:
         phases = spec["phases"]
     total = args.frames or sum(p["frames"] for p in phases)
     name = spec.get("name") or Path(args.journey).stem
     if args.model:
         name = f"{name}_{args.model}"
+    if args.build:
+        name = f"{name}_{args.build}"
 
     # never overwrite a previous render: each run gets a fresh vN folder
     base = Path(__file__).resolve().parent.parent / "output" / name
@@ -415,49 +460,67 @@ def main():
             # wander, not an oscillation (sinusoidal wobble was jarring)
             cx = 0.5 + drift * math.sin(2 * math.pi * i / 263)
             cy = 0.5 + drift * math.sin(2 * math.pi * i / 419 + 1.7)
-            fed = zoom_transform(img, z, cfg["rotate_per_frame"], cx, cy)
-            fed = detail_boost(fed, cfg)
-            if cfg["color_match"] and not in_transition and p_idx in phase_refs:
-                fed = color_match(fed, phase_refs[p_idx], cfg["color_match"])
-            cam_pasted = False
-            for c in cameos:
-                if i == c["start"]:
-                    cam = {"px": c["pos"][0], "py": c["pos"][1],
-                           "size": c["size"], "end": c["end"],
-                           "art": load_sprite(root / c["sprite"])}
-            if cam:
-                if i >= cam["end"] or cam["size"] > 0.30:
-                    cam = None
-                else:
-                    # world-attached: she moves and grows with the zoom itself
-                    cam["px"] = 0.5 + (cam["px"] - cx) * z
-                    cam["py"] = 0.5 + (cam["py"] - cy) * z
-                    cam["size"] *= z
-                    if -0.1 < cam["px"] < 1.1 and -0.1 < cam["py"] < 1.1:
-                        fed = paste_sprite(fed, *cam["art"], cam["px"], cam["py"],
-                                           cam["size"])
-                        cam_pasted = True
-            if in_loop_tail(i):
-                # grow frame 0 in the center until the last frame IS the first
-                j = i - (total - loop["frames"])
-                t_ = (j + 1) / loop["frames"]
-                s = math.exp(math.log(loop["s0"]) * (1 - t_))
-                fed = loop_composite(fed, frame0, s)
-            ref = upload_image(fed, f"zoomer_feed_{name}.png")
             boost = 0
             if in_transition:
                 boost = (cfg["arrival_denoise_boost"] if p_idx in arrivals
                          else cfg["transition_denoise_boost"])
             den = min(0.85, base_den + boost)
-            if cam_pasted:
-                den = min(den, 0.32)   # keep the mascot's face recognizable
+            mask_ref = None
+            if cfg["build"] == "out":
+                fed, box = shrink_transform(img, z, cx, cy)
+                fed = detail_boost(fed, cfg)
+                if cfg["color_match"] and not in_transition and p_idx in phase_refs:
+                    fed = color_match(fed, phase_refs[p_idx], cfg["color_match"])
+                mask_ref = upload_image(
+                    ring_mask(fed.width, fed.height, box),
+                    f"zoomer_mask_{name}.png")
+            else:
+                fed = zoom_transform(img, z, cfg["rotate_per_frame"], cx, cy)
+                fed = detail_boost(fed, cfg)
+                if cfg["color_match"] and not in_transition and p_idx in phase_refs:
+                    fed = color_match(fed, phase_refs[p_idx], cfg["color_match"])
+                cam_pasted = False
+                for c in cameos:
+                    if i == c["start"]:
+                        cam = {"px": c["pos"][0], "py": c["pos"][1],
+                               "size": c["size"], "end": c["end"],
+                               "art": load_sprite(root / c["sprite"])}
+                if cam:
+                    if i >= cam["end"] or cam["size"] > 0.30:
+                        cam = None
+                    else:
+                        # world-attached: moves and grows with the zoom itself
+                        cam["px"] = 0.5 + (cam["px"] - cx) * z
+                        cam["py"] = 0.5 + (cam["py"] - cy) * z
+                        cam["size"] *= z
+                        if -0.1 < cam["px"] < 1.1 and -0.1 < cam["py"] < 1.1:
+                            fed = paste_sprite(fed, *cam["art"], cam["px"],
+                                               cam["py"], cam["size"])
+                            cam_pasted = True
+                if cam_pasted:
+                    den = min(den, 0.32)   # keep the mascot's face recognizable
+                if in_loop_tail(i):
+                    # grow frame 0 in the center until the last frame IS the first
+                    j = i - (total - loop["frames"])
+                    t_ = (j + 1) / loop["frames"]
+                    s = math.exp(math.log(loop["s0"]) * (1 - t_))
+                    fed = loop_composite(fed, frame0, s)
+            ref = upload_image(fed, f"zoomer_feed_{name}.png")
             wf = build_workflow(cfg, prompt, seed, init_image=ref, denoise=den,
                                 prev_prompt=prev_prompt if in_transition else None,
-                                blend=(k + 1) / (T + 1) if in_transition else 1.0)
+                                blend=(k + 1) / (T + 1) if in_transition else 1.0,
+                                mask_image=mask_ref)
         png = run_workflow(wf)
         img = Image.open(io.BytesIO(png)).convert("RGB")
         if img.size != (cfg["width"], cfg["height"]):
             img = img.resize((cfg["width"], cfg["height"]), Image.LANCZOS)
+        if cfg["build"] == "out":
+            for c in cameos:
+                if i == c["start"]:
+                    # build-out cameo: paste once — the protected center then
+                    # carries the sprite physically through every later frame
+                    img = paste_sprite(img, *load_sprite(root / c["sprite"]),
+                                       c["pos"][0], c["pos"][1], c["size"])
         if i == 0:
             frame0 = img.copy()
         if loop and i == total - 1:
