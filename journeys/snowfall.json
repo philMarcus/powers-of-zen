@@ -1,0 +1,28 @@
+{
+  "name": "snowfall",
+  "style_suffix": "soft winter light, quiet and crystalline, hyperdetailed, cinematic",
+  "format": { "sec_per_scale": 2.4, "exact_loop": true, "build": "out" },
+  "registers": [
+    {
+      "name": "ice_lattice", "exp": -8, "palette": "pale blue and white",
+      "interior": "the interior of an ice crystal lattice, glowing water molecules in hexagonal rings receding in every direction",
+      "afar": "a shimmering hexagonal glow"
+    },
+    {
+      "name": "snowflake", "exp": -2.5, "palette": "ice blue and silver",
+      "interior": "a single perfect snowflake drifting in soft light, six feathered crystal arms glittering",
+      "afar": "a glowing hexagonal lattice of light"
+    },
+    {
+      "name": "village", "exp": 2, "palette": "lamplight gold and snow blue",
+      "interior": "a snowed-in village at dusk seen from above, golden windows and smoking chimneys under thick white roofs, snow falling softly",
+      "afar": "one drifting snowflake sparkling in lamplight"
+    },
+    {
+      "name": "mountains", "exp": 4.5, "palette": "alpenglow rose and white",
+      "interior": "a vast winter mountain range at sunset seen from high above, rose-lit peaks and blue shadowed valleys",
+      "afar": "a tiny lamplit village in the snow",
+      "loop_hint": "the white peaks and ridgelines crystallizing into the six feathered arms of a single snowflake"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "iris_observatory",
+  "style_suffix": "brass and amber astronomical aesthetic, hyperdetailed, cinematic",
+  "format": { "sec_per_scale": 2.4, "exact_loop": true, "build": "out" },
+  "registers": [
+    {
+      "name": "retina", "exp": -4, "palette": "deep red and gold filament",
+      "interior": "the luminous landscape of a retina, branching golden vessels and shimmering photoreceptor fields",
+      "afar": "a faint golden branching glow"
+    },
+    {
+      "name": "iris", "exp": -1.7, "palette": "amber and hazel green",
+      "interior": "an immense amber iris seen impossibly close, radial fibers like canyon ridges circling a deep dark pupil",
+      "afar": "a glowing golden vessel field deep in the eye"
+    },
+    {
+      "name": "eyepiece", "exp": 0, "palette": "brass and midnight blue",
+      "interior": "a great brass telescope eyepiece and its wheels and dials, a watching eye reflected faintly in the glass",
+      "afar": "an amber iris ringed in shadow"
+    },
+    {
+      "name": "dome", "exp": 1.5, "palette": "copper dome and star blue",
+      "interior": "the interior of an observatory dome at night, the long telescope aimed through the open slit at a wheeling sky",
+      "afar": "a brass eyepiece gleaming in lamplight"
+    },
+    {
+      "name": "peak", "exp": 3.5, "palette": "moonlit slate and snow",
+      "interior": "a moonlit mountain peak crowned by a small copper observatory dome, ridges falling away into cloud",
+      "afar": "an observatory dome glowing on a dark summit"
+    },
+    {
+      "name": "starfield", "exp": 12, "palette": "midnight and diamond white",
+      "interior": "a deep field of blazing stars and drifting nebula veils in every direction",
+      "afar": "a moonlit peak beneath the wheeling sky"
+    },
+    {
+      "name": "galaxy", "exp": 21, "palette": "amber core and indigo arms",
+      "interior": "a tilted spiral galaxy with a glowing amber core, ragged indigo arms of stars sweeping past",
+      "afar": "one diamond star in the deep field",
+      "loop_hint": "the galaxy's amber core and circling arms becoming a vast watching iris around a dark pupil"
+    }
+  ]
+}

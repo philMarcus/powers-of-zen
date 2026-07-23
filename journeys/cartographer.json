@@ -1,0 +1,64 @@
+{
+  "name": "cartographer",
+  "style_suffix": "warm ink and brass, antique map aesthetic, hyperdetailed, cinematic",
+  "format": { "sec_per_scale": 2.4, "exact_loop": true, "build": "out" },
+  "registers": [
+    {
+      "name": "desk", "exp": 0, "palette": "warm brass and candlelight",
+      "interior": "a cartographer's cluttered desk, unrolled ink maps, brass compasses, sealing wax and candlelight",
+      "afar": "a tiny warm-lit desk"
+    },
+    {
+      "name": "study", "exp": 1.5, "palette": "oak brown and lamplight",
+      "interior": "a tall map-lined study with ladders, globes and shelves of rolled charts, seen from its high ceiling",
+      "afar": "a candlelit desk far below"
+    },
+    {
+      "name": "map_city", "exp": 3, "palette": "amber and violet dusk",
+      "cameo": { "sprite": "output/mascots/canon/kitty.png", "pos": [0.62, 0.5], "size": 0.11 },
+      "interior": "a city of luminous towers and winding streets seen from above at dusk, laid out like a living map",
+      "afar": "one lit study window in a tall tower"
+    },
+    {
+      "name": "coastline", "exp": 5, "palette": "parchment gold and sea teal",
+      "interior": "a sweeping coastline seen from high altitude, harbors, capes and river deltas drawn in gold light against a teal sea",
+      "afar": "a glowing city at the mouth of a river"
+    },
+    {
+      "name": "planet", "exp": 7, "palette": "ocean teal and parchment",
+      "interior": "a huge spherical planet seen from space, curved horizon and glowing limb, coastlines and cloud swirls wrapping the sphere like an antique globe",
+      "afar": "a golden coastline tracing a teal sea"
+    },
+    {
+      "name": "star", "exp": 11, "palette": "brass gold and white",
+      "interior": "a blazing star ringed by tiny wandering planets, like an orrery of light",
+      "afar": "a globe-like planet of teal seas"
+    },
+    {
+      "name": "galaxy", "exp": 21, "palette": "indigo and gold leaf",
+      "interior": "a tilted spiral galaxy like gold leaf scattered on dark velvet, luminous arms sweeping past",
+      "afar": "one bright star in the orrery of the sky"
+    },
+    {
+      "name": "cosmic_web", "exp": 26, "palette": "deep violet and silver",
+      "interior": "the vast cosmic web seen from an oblique angle, irregular silver filaments of galaxy clusters branching through darkness",
+      "afar": "a gold-leaf spiral galaxy on a filament"
+    },
+    {
+      "name": "ink_particles", "exp": -8, "palette": "india ink and gold",
+      "interior": "swirling particles of black ink and gold pigment suspended in fluid, curling into branching plumes",
+      "afar": "a silver web of filaments shrinking to an ink dot"
+    },
+    {
+      "name": "paper_fibers", "exp": -5, "palette": "parchment cream and gold",
+      "interior": "the woven fibers of handmade paper seen impossibly close, golden ink soaking along the threads like rivers",
+      "afar": "a swirling plume of ink and gold dust"
+    },
+    {
+      "name": "moth", "exp": -2, "palette": "ivory and brass",
+      "interior": "the patterned wing of a small ivory moth resting on parchment, scales like tiled roof shingles",
+      "afar": "a golden thread of ink in woven paper",
+      "loop_hint": "the moth's wing patterns settling into inked coastlines on a candlelit map"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "food_chain",
+  "style_suffix": "clear freshwater light, luminous, hyperdetailed, cinematic, fantastical",
+  "format": { "sec_per_scale": 2.4, "exact_loop": true, "build": "out" },
+  "registers": [
+    {
+      "name": "waterflea", "exp": -3.5, "palette": "glass green and amber",
+      "interior": "a translucent glowing water flea drifting among sparkling algae motes in a sunlit droplet world",
+      "afar": "a glinting translucent speck"
+    },
+    {
+      "name": "minnow", "exp": -2.3, "palette": "silver and reed green",
+      "interior": "a curious silver minnow gliding through reed shadows, tiny glowing waterfleas scattering before it",
+      "afar": "a darting translucent water flea"
+    },
+    {
+      "name": "trout", "exp": -1.3, "palette": "speckled bronze and jade",
+      "interior": "a speckled bronze trout weaving between sunken branches, minnows flashing away in silver bursts",
+      "afar": "a small silver minnow in the reeds"
+    },
+    {
+      "name": "pike", "exp": -0.6, "palette": "olive and pale gold",
+      "interior": "a long shadowy pike hanging still among waterweeds, watching trout pass in the green light",
+      "afar": "a bronze trout gliding by"
+    },
+    {
+      "name": "heron", "exp": 0.2, "palette": "slate blue and reed gold",
+      "interior": "a tall elegant heron standing in the shallows at golden hour, ripples circling its still legs",
+      "afar": "a shadowy pike among the weeds"
+    },
+    {
+      "name": "lake_valley", "exp": 2.5, "palette": "gold water and green hills",
+      "interior": "a winding lake in a green valley at sunset seen from high above, glinting like a ribbon of light",
+      "afar": "a heron standing in golden shallows",
+      "loop_hint": "the glinting lake surface becoming one sunlit droplet teeming with translucent drifting creatures"
+    }
+  ]
+}
