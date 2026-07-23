@@ -1,0 +1,14 @@
+{
+  "name": "molten_clockwork",
+  "settings": { "loop_fade_frames": 8 },
+  "phases": [
+    { "prompt": "seething quantum foam of microscopic golden gears and glowing springs, molten light between turning teeth, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "molecular lattice of interlocking brass gears, springs and escapements, copper and gold, molten glow in the joints, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "clockwork cells with ticking gear organelles and copper membranes, living brass machinery, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "swarm of fantastical brass beetles and clockwork dragonflies hunting tiny wind-up creatures, gleaming metal wings, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "vast workshop of impossible brass instruments, astrolabes, orreries and ticking machines, molten gold light, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "sprawling clockwork city of gear towers, bronze bridges and steam, thousands of glowing windows, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "spiral galaxy made of turning golden gears and rivers of molten starlight, cosmic clockwork, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "seething quantum foam of microscopic golden gears and glowing springs, molten light between turning teeth, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 }
+  ]
+}

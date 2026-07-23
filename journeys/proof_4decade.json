@@ -1,0 +1,27 @@
+{
+  "name": "proof_4decade",
+  "style_suffix": "hyperdetailed, cinematic volumetric light, rich vivid color, otherworldly",
+  "format": { "sec_per_decade": 3.0, "travel_denoise": 0.40, "exact_loop": true },
+  "settings": { "reverse": true },
+  "registers": [
+    {
+      "name": "landmass", "exp": 6, "palette": "deep teal, emerald and gold",
+      "interior": "a fantastical continent of glowing fjords, iridescent seas and jagged luminous mountain ranges seen from high above",
+      "next_target": "a shining impossible city nestled in a deep valley"
+    },
+    {
+      "name": "city", "exp": 3, "palette": "warm amber and violet dusk",
+      "interior": "an impossible city of luminous towers, arched bridges and glowing winding streets seen from above",
+      "next_target": "a strange glowing creature curled in a great plaza"
+    },
+    {
+      "name": "creature", "exp": -1, "palette": "iridescent magenta and deep blue",
+      "interior": "the iridescent hide of a vast fantastical creature, shimmering scales and rivers of glowing fur",
+      "next_target": "a radiant translucent cell shining beneath the skin"
+    },
+    {
+      "name": "cell", "exp": -5, "palette": "rose gold and soft coral",
+      "interior": "the luminous interior of a living cell, glowing organelles, drifting golden motes and translucent membranes"
+    }
+  ]
+}

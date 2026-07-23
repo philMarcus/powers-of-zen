@@ -1,0 +1,14 @@
+{
+  "name": "origami_bloom",
+  "settings": { "loop_fade_frames": 8 },
+  "phases": [
+    { "prompt": "microscopic tessellation of folding pastel paper, origami quantum foam creasing and unfolding, soft pink and mint, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "molecular lattice of folded paper polyhedra joined by creased paper bonds, pastel geometry, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "origami garden of blooming paper flowers, folded ferns and paper vines, soft pastel light, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "fantastical origami foxes stalking paper moths through a folded meadow, creased paper fur and wings, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "paper lantern market crowded with folded kites, pinwheel machines and origami clockwork toys, warm pastel glow, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "vast origami megacity of folded paper towers, creased bridges and tessellated rooftops, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "origami planets with folded paper rings orbiting a blazing folded-paper sun, pastel cosmos, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "microscopic tessellation of folding pastel paper, origami quantum foam creasing and unfolding, soft pink and mint, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 }
+  ]
+}

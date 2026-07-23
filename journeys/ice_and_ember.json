@@ -1,0 +1,14 @@
+{
+  "name": "ice_and_ember",
+  "settings": { "loop_fade_frames": 8 },
+  "phases": [
+    { "prompt": "microscopic frost crystals veined with glowing embers, cyan ice and orange fire light interlocking, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "hexagonal ice lattice of crystal molecules with molten glowing cores, cyan and ember orange, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "crystalline pine forest of ice with rivers of ember light running through frozen branches, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "fantastical ice dragons and ember serpents circling each other, frost wings and molten scales, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "frozen forge hall of ember-lit anvils, hanging chains, rimed bellows and ancient glowing relics, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "city of ice towers with magma canals and glowing bridges, frost spires lit by ember rivers, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "half-frozen half-volcanic planet seen from orbit, glowing fissures crossing ice sheets, ember storms, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "microscopic frost crystals veined with glowing embers, cyan ice and orange fire light interlocking, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "stained_glass_ocean",
+  "settings": { "loop_fade_frames": 8 },
+  "phases": [
+    { "prompt": "microscopic plankton of glowing stained glass drifting in dark violet water, jewel light, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "translucent stained-glass cells with jewel-toned organelles, sapphire and amethyst membranes lit from within, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "kelp cathedral forest of stained glass, towering translucent fronds, shafts of colored light through deep water, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "school of luminous glass fish being swallowed by a vast stained-glass leviathan, fantastical deep-sea drama in jewel tones, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "sunken library of stained-glass books, chandeliers and drowned astronomical instruments, blue-violet glow, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "drowned cathedral city of stained glass and coral, glowing rose windows and spires under deep water, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "ocean planet of stained glass seen from orbit, glowing reef continents and jewel seas under aurora light, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "microscopic plankton of glowing stained glass drifting in dark violet water, jewel light, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 }
+  ]
+}

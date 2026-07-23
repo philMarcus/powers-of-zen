@@ -1,0 +1,66 @@
+{
+  "name": "full_ladder",
+  "style_suffix": "hyperdetailed, cinematic volumetric light, rich vivid color, otherworldly",
+  "format": { "sec_per_scale": 2.4, "travel_denoise": 0.40, "exact_loop": true },
+  "registers": [
+    {
+      "name": "cosmos", "exp": 26, "palette": "deep violet and silver",
+      "interior": "the vast cosmic web seen from an oblique angle, irregular glowing filaments of galaxy clusters branching asymmetrically through deep darkness",
+      "next_target": "a luminous spiral galaxy caught in a shining filament"
+    },
+    {
+      "name": "galaxy", "exp": 21, "palette": "indigo and starlight gold",
+      "interior": "the inside of a spiral galaxy seen from a tilted oblique angle, irregular rivers of stars and ragged glowing nebula arms sweeping past",
+      "next_target": "a single brilliant golden star wrapped in flares of light"
+    },
+    {
+      "name": "star", "exp": 11, "palette": "blazing orange and white",
+      "interior": "the corona of a blazing star, arcs of fire and solar prominences with tiny planets in distant orbit",
+      "next_target": "a ringed opal planet glowing in its orbit"
+    },
+    {
+      "name": "planet", "exp": 7, "palette": "ocean blue and pearl",
+      "interior": "swirling clouds and glowing continents of a fantastical planet seen from orbit",
+      "next_target": "a sprawling city of lights along a night-side coast"
+    },
+    {
+      "name": "city", "exp": 3, "palette": "amber and violet dusk",
+      "interior": "an impossible city of luminous towers, arched bridges and winding glowing streets seen from above",
+      "next_target": "a great glowing garden park deep among the towers"
+    },
+    {
+      "name": "flora", "exp": 1, "palette": "emerald and blossom pink",
+      "interior": "a lush impossible garden forest, giant blossoms and glowing vines beneath towering tree canopies",
+      "next_target": "a warm glowing lantern hanging among the branches"
+    },
+    {
+      "name": "human", "exp": 0, "palette": "warm brass and candlelight",
+      "interior": "a warm cluttered wooden desk seen up close, one great brass lantern glowing among stacked books, ink bottles and scattered clockwork parts",
+      "next_target": "a tiny fantastical moth resting on the glass"
+    },
+    {
+      "name": "creature", "exp": -3, "palette": "iridescent teal and magenta",
+      "interior": "the wing of a fantastical moth, glowing scales layered like roof tiles along feathered veins",
+      "next_target": "a radiant translucent cell shining between the scales"
+    },
+    {
+      "name": "cell", "exp": -5, "palette": "rose gold and coral",
+      "interior": "the luminous interior of a living cell, glowing organelles and drifting golden motes",
+      "next_target": "a glowing twisted double helix strand deep inside the nucleus"
+    },
+    {
+      "name": "molecule", "exp": -8, "palette": "cyan and ultraviolet",
+      "interior": "enormous folded protein macromolecules, twisting glowing ribbon helices, coiled loops and soft translucent globular folds tangled together in every direction",
+      "next_target": "a single radiant atom pulsing deep between the folds"
+    },
+    {
+      "name": "atom", "exp": -10, "palette": "electric blue and white",
+      "interior": "the inside of an atom, soft hazy luminous electron probability clouds billowing like glowing fog around a distant bright nucleus",
+      "next_target": "the glowing nucleus, a tight cluster of blue and white spheres"
+    },
+    {
+      "name": "quark", "exp": -15, "palette": "deep violet and silver",
+      "interior": "the subatomic realm like a bubble chamber photograph come alive, glowing particle tracks curling in spirals through luminous fog, flickering sparks of pair production, soft quark lobes glowing deep in the haze weaving a web like the cosmic web"
+    }
+  ]
+}

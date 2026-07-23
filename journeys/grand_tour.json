@@ -1,0 +1,53 @@
+{
+  "name": "grand_tour",
+  "settings": {
+    "zoom_per_frame": 1.045,
+    "rotate_per_frame": 0.2,
+    "denoise": 0.58,
+    "cfg": 1.5,
+    "fps": 12,
+    "reverse": true
+  },
+  "phases": [
+    {
+      "prompt": "vast cosmic web of glowing filaments filling the entire frame, luminous strands of galaxies connecting in a universe-spanning network, deep violet and gold, maximal detail, no empty space",
+      "frames": 16
+    },
+    {
+      "prompt": "fantastical spiral galaxy filling the entire frame, impossible colors, dense swirling arms of living starlight, glowing core, maximal detail, no empty space",
+      "frames": 16
+    },
+    {
+      "prompt": "alien solar system filling the entire frame, fantastical ringed planets and glowing orbits around a strange star, dense asteroid glitter, maximal detail, no empty space",
+      "frames": 16
+    },
+    {
+      "prompt": "fantastical planet surface seen from orbit filling the entire frame, impossible landmasses and iridescent oceans, glowing continents, swirling alien clouds, maximal detail, no empty space",
+      "frames": 16
+    },
+    {
+      "prompt": "impossible sprawling city filling the entire frame, recursive alien architecture, thousands of glowing windows and bridges, dense and ornate, maximal detail, no empty space",
+      "frames": 16
+    },
+    {
+      "prompt": "dense bioluminescent alien forest filling the entire frame, glowing flora and strange creatures everywhere, teal and magenta light, maximal organic detail, no empty space",
+      "frames": 16
+    },
+    {
+      "prompt": "teeming microbial world filling the entire frame, translucent glowing cells and organelles everywhere, strange living machinery inside cells, maximal detail, no empty space",
+      "frames": 16
+    },
+    {
+      "prompt": "dense impossible molecular world filling the entire frame, alien crystal chemistry, glowing atomic bonds in every direction, jewel tones, maximal geometric detail, no empty space",
+      "frames": 16
+    },
+    {
+      "prompt": "seething quantum foam filling the entire frame, spacetime bubbling with virtual particles, glowing probability clouds and strange topology, maximal detail, no empty space",
+      "frames": 16
+    },
+    {
+      "prompt": "vast cosmic web of glowing filaments filling the entire frame, luminous strands of galaxies connecting in a universe-spanning network, deep violet and gold, maximal detail, no empty space",
+      "frames": 16
+    }
+  ]
+}

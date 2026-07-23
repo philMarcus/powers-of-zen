@@ -1,0 +1,31 @@
+{
+  "name": "first_dive_ds",
+  "settings": {
+    "checkpoint": "dreamshaperXL.safetensors",
+    "steps": 14,
+    "cfg": 2.0,
+    "sampler": "dpmpp_sde",
+    "zoom_per_frame": 1.04,
+    "rotate_per_frame": 0.2,
+    "denoise": 0.45,
+    "fps": 12
+  },
+  "phases": [
+    {
+      "prompt": "bioluminescent alien neural forest, glowing dendrites and synapses, teal and magenta volumetric light, hyperdetailed 3D render, depth of field, cinematic lighting, otherworldly",
+      "frames": 30
+    },
+    {
+      "prompt": "impossible crystalline chemistry, alien molecular lattice, prismatic light refracting through crystal bonds, jewel tones, hyperdetailed 3D render, volumetric glow, macro photography depth",
+      "frames": 30
+    },
+    {
+      "prompt": "infinite golden fractal city, recursive impossible architecture, Escher geometry, thousands of glowing windows, ornate metallic detail, volumetric god rays, cinematic scale",
+      "frames": 30
+    },
+    {
+      "prompt": "spiral galaxy made of glowing jellyfish, bioluminescent cosmic nebula, living light in deep space, swirling star clusters, volumetric nebula glow, epic cosmic scale, hyperdetailed",
+      "frames": 30
+    }
+  ]
+}

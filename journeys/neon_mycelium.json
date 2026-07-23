@@ -1,0 +1,14 @@
+{
+  "name": "neon_mycelium",
+  "settings": { "loop_fade_frames": 8 },
+  "phases": [
+    { "prompt": "microscopic glowing neon spores drifting in darkness, electric green and hot pink motes, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "fungal cells with neon organelles and glowing membranes, electric green and magenta on black, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "vast mycelium network forest, bioluminescent fungal threads and glowing mushroom canopies in darkness, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "bio-mechanical neon moths and glowing slugs feeding on electric fungi, fantastical bioluminescent creatures, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "cluttered cyberpunk arcade alley overgrown with fungus, neon signs, cables and glowing vending machines, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "fungal cyberpunk city of mushroom skyscrapers wired with neon veins, glowing spore rain, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "galaxy shaped like a glowing mycelium network, fungal filaments of stars branching through space, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 },
+    { "prompt": "microscopic glowing neon spores drifting in darkness, electric green and hot pink motes, filling the entire frame, maximal intricate detail, no empty space", "frames": 16 }
+  ]
+}

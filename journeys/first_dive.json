@@ -1,0 +1,27 @@
+{
+  "name": "first_dive",
+  "settings": {
+    "zoom_per_frame": 1.04,
+    "rotate_per_frame": 0.2,
+    "denoise": 0.45,
+    "fps": 12
+  },
+  "phases": [
+    {
+      "prompt": "bioluminescent alien neural forest, glowing dendrites and synapses, teal and magenta light, intricate organic detail, otherworldly, cinematic",
+      "frames": 30
+    },
+    {
+      "prompt": "impossible crystalline chemistry, alien molecular lattice, refracting prismatic light through crystal bonds, geometric intricacy, jewel tones",
+      "frames": 30
+    },
+    {
+      "prompt": "infinite golden fractal city, recursive impossible architecture, Escher geometry, glowing windows, ornate metallic detail",
+      "frames": 30
+    },
+    {
+      "prompt": "spiral galaxy made of glowing jellyfish, bioluminescent cosmic nebula, deep space filled with living light, swirling star clusters",
+      "frames": 30
+    }
+  ]
+}
