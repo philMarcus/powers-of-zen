@@ -1,63 +1,87 @@
 {
   "name": "night_bloom",
   "style_suffix": "deep darkness with bioluminescent glow, hyperdetailed, cinematic, otherworldly",
-  "format": { "sec_per_scale": 2.4, "exact_loop": true, "build": "out" },
+  "format": {
+    "sec_per_scale": 2.4,
+    "exact_loop": true
+  },
   "registers": [
     {
-      "name": "firefly", "exp": -2, "palette": "firefly green and dusk blue",
-      "interior": "a glowing firefly hovering among dark dewy grass blades, its lantern body casting green light",
-      "afar": "a single drifting green spark"
-    },
-    {
-      "name": "night_flower", "exp": -0.5, "palette": "moon white and violet",
-      "interior": "an enormous night-blooming flower opening in the dark, luminous white petals and a glowing pollen heart, fireflies drifting around it",
-      "afar": "a firefly's tiny green lantern"
-    },
-    {
-      "name": "lantern_garden", "exp": 1, "palette": "gold and deep green",
-      "interior": "a midnight garden strung with glowing paper lanterns, luminous flowers and winding stone paths in the dark",
-      "afar": "one pale flower glowing in the darkness"
-    },
-    {
-      "name": "village", "exp": 3, "palette": "amber and indigo",
-      "interior": "a terraced mountain village at night seen from above, warm windows and lantern-lit stairways cascading down the slopes",
-      "afar": "a garden of tiny lantern lights"
-    },
-    {
-      "name": "landmass", "exp": 5, "palette": "indigo and scattered gold",
-      "interior": "a dark continent seen from high altitude at night, rivers of village lights tracing the valleys between black mountain ranges",
-      "afar": "a cluster of warm lights on a dark mountainside"
-    },
-    {
-      "name": "planet_night", "exp": 7, "palette": "midnight blue and city gold",
-      "interior": "a huge spherical planet's night side seen from space, curved horizon and glowing limb, webs of golden city light wrapping the dark sphere",
-      "afar": "veins of golden light across dark land"
-    },
-    {
-      "name": "nebula", "exp": 13, "palette": "emerald and violet glow",
-      "interior": "a vast glowing star-nursery nebula, pillars of luminous emerald gas cradling newborn stars",
-      "afar": "a dark planet laced with golden light"
-    },
-    {
-      "name": "galaxy", "exp": 21, "palette": "indigo and starlight",
-      "interior": "a tilted spiral galaxy glowing softly in the dark, ragged luminous arms sweeping past",
-      "afar": "an emerald nebula cradling new stars"
-    },
-    {
-      "name": "quantum_sparks", "exp": -12, "palette": "firefly green and violet",
-      "interior": "a dark quantum realm alive with drifting green sparks and curling luminous particle trails, like fireflies in fog",
-      "afar": "a spiral of soft galactic light shrinking to a spark"
-    },
-    {
-      "name": "spores", "exp": -6, "palette": "jade glow and black",
-      "interior": "glowing jade spores drifting in darkness, each a tiny lantern trailing luminous dust",
-      "afar": "a flickering green quantum spark"
-    },
-    {
-      "name": "moss_cells", "exp": -4, "palette": "emerald and gold motes",
+      "name": "moss_cells",
+      "exp": -4,
+      "palette": "emerald and gold motes",
       "interior": "the glowing cells of a moss leaf packed like lanterns, emerald chloroplasts drifting inside translucent walls",
-      "afar": "a drifting glowing spore",
-      "loop_hint": "the glowing cells lifting away as drifting sparks, one becoming a hovering firefly among dark grass"
+      "next_target": "a flickering green quantum spark"
+    },
+    {
+      "name": "spores",
+      "exp": -6,
+      "palette": "jade glow and black",
+      "interior": "glowing jade spores drifting in darkness, each a tiny lantern trailing luminous dust",
+      "next_target": "a spiral of soft galactic light shrinking to a spark"
+    },
+    {
+      "name": "quantum_sparks",
+      "exp": -12,
+      "palette": "firefly green and violet",
+      "interior": "a dark quantum realm alive with drifting green sparks and curling luminous particle trails, like fireflies in fog",
+      "next_target": "an emerald nebula cradling new stars"
+    },
+    {
+      "name": "galaxy",
+      "exp": 21,
+      "palette": "indigo and starlight",
+      "interior": "a tilted spiral galaxy glowing softly in the dark, ragged luminous arms sweeping past",
+      "next_target": "a dark planet laced with golden light"
+    },
+    {
+      "name": "nebula",
+      "exp": 13,
+      "palette": "emerald and violet glow",
+      "interior": "a vast glowing star-nursery nebula, pillars of luminous emerald gas cradling newborn stars",
+      "next_target": "veins of golden light across dark land"
+    },
+    {
+      "name": "planet_night",
+      "exp": 7,
+      "palette": "midnight blue and city gold",
+      "interior": "a huge spherical planet's night side seen from space, curved horizon and glowing limb, webs of golden city light wrapping the dark sphere",
+      "next_target": "a cluster of warm lights on a dark mountainside"
+    },
+    {
+      "name": "landmass",
+      "exp": 5,
+      "palette": "indigo and scattered gold",
+      "interior": "a dark continent seen from high altitude at night, rivers of village lights tracing the valleys between black mountain ranges",
+      "next_target": "a garden of tiny lantern lights"
+    },
+    {
+      "name": "village",
+      "exp": 3,
+      "palette": "amber and indigo",
+      "interior": "a terraced mountain village at night seen from above, warm windows and lantern-lit stairways cascading down the slopes",
+      "next_target": "one pale flower glowing in the darkness"
+    },
+    {
+      "name": "lantern_garden",
+      "exp": 1,
+      "palette": "gold and deep green",
+      "interior": "a midnight garden strung with glowing paper lanterns, luminous flowers and winding stone paths in the dark",
+      "next_target": "a firefly's tiny green lantern"
+    },
+    {
+      "name": "night_flower",
+      "exp": -0.5,
+      "palette": "moon white and violet",
+      "interior": "an enormous night-blooming flower opening in the dark, luminous white petals and a glowing pollen heart, fireflies drifting around it",
+      "next_target": "a single drifting green spark"
+    },
+    {
+      "name": "firefly",
+      "exp": -2,
+      "palette": "firefly green and dusk blue",
+      "interior": "a glowing firefly hovering among dark dewy grass blades, its lantern body casting green light",
+      "next_target": "a drifting glowing spore"
     }
   ]
 }

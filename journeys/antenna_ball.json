@@ -1,28 +1,38 @@
 {
   "name": "antenna_ball",
   "style_suffix": "sunny macro photography, dewdrops and soft bokeh, hyperdetailed, cinematic",
-  "format": { "sec_per_scale": 2.4, "exact_loop": true, "build": "out" },
+  "format": {
+    "sec_per_scale": 2.4,
+    "exact_loop": true
+  },
   "registers": [
     {
-      "name": "antenna_tip", "exp": -2.5, "palette": "glossy scarlet and dew silver",
-      "interior": "the glossy round ball at the tip of a ladybug's antenna, dewdrops clinging to it like tiny moons",
-      "afar": "a tiny glossy red sphere"
-    },
-    {
-      "name": "ladybug", "exp": -1.8, "palette": "scarlet and leaf green",
-      "interior": "a bright ladybug on a green leaf, its polished shell reflecting the sky, antennae raised",
-      "afar": "a glossy antenna ball catching the sun"
-    },
-    {
-      "name": "meadow", "exp": 0, "palette": "wildflower gold and green",
-      "interior": "a sunlit wildflower meadow humming with life, petals and grass stems towering in soft light",
-      "afar": "a red ladybug shining on a leaf"
-    },
-    {
-      "name": "sky", "exp": 2.5, "palette": "summer blue and cloud white",
+      "name": "sky",
+      "exp": 2.5,
+      "palette": "summer blue and cloud white",
       "interior": "billowing white clouds drifting over the rolling green and gold countryside far below",
-      "afar": "a bright meadow patch among the fields",
-      "loop_hint": "the clouds parting around a huge glossy round sphere hanging in the blue — the antenna ball vast as a planet"
+      "next_target": "a red ladybug shining on a leaf"
+    },
+    {
+      "name": "meadow",
+      "exp": 0,
+      "palette": "wildflower gold and green",
+      "interior": "a sunlit wildflower meadow humming with life, petals and grass stems towering in soft light",
+      "next_target": "a glossy antenna ball catching the sun"
+    },
+    {
+      "name": "ladybug",
+      "exp": -1.8,
+      "palette": "scarlet and leaf green",
+      "interior": "a bright ladybug on a green leaf, its polished shell reflecting the sky, antennae raised",
+      "next_target": "a tiny glossy red sphere"
+    },
+    {
+      "name": "antenna_tip",
+      "exp": -2.5,
+      "palette": "glossy scarlet and dew silver",
+      "interior": "the glossy round ball at the tip of a ladybug's antenna, dewdrops clinging to it like tiny moons",
+      "next_target": "a bright meadow patch among the fields"
     }
   ]
 }

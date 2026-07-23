@@ -1,64 +1,95 @@
 {
   "name": "mineral_heart",
   "style_suffix": "prismatic crystalline light, hyperdetailed, cinematic, otherworldly",
-  "format": { "sec_per_scale": 2.4, "exact_loop": true, "build": "out" },
+  "format": {
+    "sec_per_scale": 2.4,
+    "exact_loop": true
+  },
   "registers": [
     {
-      "name": "geode_crystals", "exp": -2, "palette": "amethyst and rose quartz",
-      "interior": "a forest of amethyst crystal spires inside a geode, refracted violet light bouncing between facets",
-      "afar": "a cluster of glowing violet crystals"
-    },
-    {
-      "name": "geode", "exp": 0, "palette": "slate and violet glow",
-      "interior": "a great cracked-open geode boulder, its dark stone shell revealing a glowing crystal heart, resting among mossy rocks",
-      "afar": "a glowing crystal cavern shrinking to a spark"
-    },
-    {
-      "name": "mineral_veins", "exp": 2, "palette": "copper and malachite green",
-      "interior": "a canyon wall shot through with glowing veins of copper and malachite, layered rock faces glittering with embedded crystals",
-      "afar": "a cracked geode glinting among the rocks"
-    },
-    {
-      "name": "mountains", "exp": 4.5, "palette": "slate blue and snow white",
-      "cameo": { "sprite": "output/mascots/canon/lorraine.png", "pos": [0.38, 0.55], "size": 0.12 },
-      "interior": "a vast striated mountain range seen from high above, snow ridges and mineral-banded slopes carved by winding valleys",
-      "afar": "a glittering mineral canyon far below"
-    },
-    {
-      "name": "planet", "exp": 7, "palette": "obsidian and ember",
-      "interior": "a huge spherical volcanic planet seen from space, curved horizon and glowing limb, crystal mountain ranges and ember fissures wrapping the sphere",
-      "afar": "a snow-and-mineral mountain range on a curved horizon"
-    },
-    {
-      "name": "star_forge", "exp": 11, "palette": "white gold and blue",
-      "interior": "a blazing white star surrounded by rings of glittering crystalline asteroid shards catching its light",
-      "afar": "a dark planet veined with glowing embers"
-    },
-    {
-      "name": "galaxy", "exp": 21, "palette": "sapphire and diamond",
-      "interior": "a tilted spiral galaxy that glitters like crushed diamond, arms of blue-white stars sweeping past",
-      "afar": "one white star in a glittering ring"
-    },
-    {
-      "name": "cosmic_web", "exp": 26, "palette": "deep violet and silver",
-      "interior": "the vast cosmic web seen from an oblique angle, irregular crystalline filaments of galaxy clusters branching through darkness",
-      "afar": "a diamond spiral galaxy on a dark filament"
-    },
-    {
-      "name": "lattice", "exp": -10, "palette": "electric blue and white",
-      "interior": "the interior of a perfect atomic crystal lattice, rows of glowing atoms joined by luminous bonds receding in every direction",
-      "afar": "a glowing web of filaments collapsing to a bright point"
-    },
-    {
-      "name": "molecule", "exp": -8, "palette": "cyan and ultraviolet",
-      "interior": "glowing crystal molecules stacked in repeating prisms, light refracting through endless transparent geometry",
-      "afar": "a shining atomic lattice"
-    },
-    {
-      "name": "snowflake", "exp": -4, "palette": "ice blue and silver",
+      "name": "snowflake",
+      "exp": -4,
+      "palette": "ice blue and silver",
       "interior": "the six branching arms of an immense snowflake seen up close, feathered ice crystal fractals growing at their tips",
-      "afar": "a prism of stacked crystal molecules",
-      "loop_hint": "the feathered ice arms deepening into violet, growing into amethyst crystal spires"
+      "next_target": "a shining atomic lattice"
+    },
+    {
+      "name": "molecule",
+      "exp": -8,
+      "palette": "cyan and ultraviolet",
+      "interior": "glowing crystal molecules stacked in repeating prisms, light refracting through endless transparent geometry",
+      "next_target": "a glowing web of filaments collapsing to a bright point"
+    },
+    {
+      "name": "lattice",
+      "exp": -10,
+      "palette": "electric blue and white",
+      "interior": "the interior of a perfect atomic crystal lattice, rows of glowing atoms joined by luminous bonds receding in every direction",
+      "next_target": "a diamond spiral galaxy on a dark filament"
+    },
+    {
+      "name": "cosmic_web",
+      "exp": 26,
+      "palette": "deep violet and silver",
+      "interior": "the vast cosmic web seen from an oblique angle, irregular crystalline filaments of galaxy clusters branching through darkness",
+      "next_target": "one white star in a glittering ring"
+    },
+    {
+      "name": "galaxy",
+      "exp": 21,
+      "palette": "sapphire and diamond",
+      "interior": "a tilted spiral galaxy that glitters like crushed diamond, arms of blue-white stars sweeping past",
+      "next_target": "a dark planet veined with glowing embers"
+    },
+    {
+      "name": "star_forge",
+      "exp": 11,
+      "palette": "white gold and blue",
+      "interior": "a blazing white star surrounded by rings of glittering crystalline asteroid shards catching its light",
+      "next_target": "a snow-and-mineral mountain range on a curved horizon"
+    },
+    {
+      "name": "planet",
+      "exp": 7,
+      "palette": "obsidian and ember",
+      "interior": "a huge spherical volcanic planet seen from space, curved horizon and glowing limb, crystal mountain ranges and ember fissures wrapping the sphere",
+      "next_target": "a glittering mineral canyon far below"
+    },
+    {
+      "name": "mountains",
+      "exp": 4.5,
+      "palette": "slate blue and snow white",
+      "cameo": {
+        "sprite": "output/mascots/canon/lorraine.png",
+        "pos": [
+          0.38,
+          0.55
+        ],
+        "size": 0.12
+      },
+      "interior": "a vast striated mountain range seen from high above, snow ridges and mineral-banded slopes carved by winding valleys",
+      "next_target": "a cracked geode glinting among the rocks"
+    },
+    {
+      "name": "mineral_veins",
+      "exp": 2,
+      "palette": "copper and malachite green",
+      "interior": "a canyon wall shot through with glowing veins of copper and malachite, layered rock faces glittering with embedded crystals",
+      "next_target": "a glowing crystal cavern shrinking to a spark"
+    },
+    {
+      "name": "geode",
+      "exp": 0,
+      "palette": "slate and violet glow",
+      "interior": "a great cracked-open geode boulder, its dark stone shell revealing a glowing crystal heart, resting among mossy rocks",
+      "next_target": "a cluster of glowing violet crystals"
+    },
+    {
+      "name": "geode_crystals",
+      "exp": -2,
+      "palette": "amethyst and rose quartz",
+      "interior": "a forest of amethyst crystal spires inside a geode, refracted violet light bouncing between facets",
+      "next_target": "a prism of stacked crystal molecules"
     }
   ]
 }
