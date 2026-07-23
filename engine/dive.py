@@ -221,6 +221,30 @@ def loop_composite(fed, frame0, s, blur_frac=0.06):
     return out
 
 
+def load_sprite(path):
+    """Center-crop a mascot render and build a soft circular alpha for compositing."""
+    img = Image.open(path).convert("RGB")
+    w, h = img.size
+    side = int(min(w, h) * 0.62)
+    img = img.crop(((w - side) // 2, (h - side) // 2,
+                    (w + side) // 2, (h + side) // 2))
+    mask = Image.new("L", (side, side), 0)
+    ImageDraw.Draw(mask).ellipse([side * 0.02, side * 0.02,
+                                  side * 0.98, side * 0.98], fill=225)
+    return img, mask.filter(ImageFilter.GaussianBlur(side * 0.10))
+
+
+def paste_sprite(fed, sprite, mask, px, py, size):
+    """Paste sprite centered at fraction coords (px, py) at `size` fraction of width."""
+    w, h = fed.size
+    side = max(8, int(w * size))
+    sp = sprite.resize((side, side), Image.LANCZOS)
+    mk = mask.resize((side, side), Image.LANCZOS)
+    out = fed.copy()
+    out.paste(sp, (int(px * w - side / 2), int(py * h - side / 2)), mk)
+    return out
+
+
 def draw_counter(img, exp_value, pulse_age=None):
     """Odometer-style scale counter: 10^n m, bottom-left, pulse ring on crossings."""
     big = ImageFont.truetype(f"{FONT_DIR}/DejaVuSans-Bold.ttf", 44)
@@ -340,9 +364,10 @@ def main():
     if args.model:
         cfg.update(MODEL_PRESETS[args.model])
     zoom_sched = den_sched = exponent = loop = None
+    cameos = []
     if "registers" in spec:
-        phases, zoom_sched, den_sched, exponent, loop = grammar.compile_journey(
-            spec, cfg["fps"])
+        phases, zoom_sched, den_sched, exponent, loop, cameos = \
+            grammar.compile_journey(spec, cfg["fps"])
     else:
         phases = spec["phases"]
     total = args.frames or sum(p["frames"] for p in phases)
@@ -366,6 +391,8 @@ def main():
     t0 = time.time()
     img = None
     frame0 = None
+    cam = None
+    root = Path(__file__).resolve().parent.parent
     phase_refs = {}
     T = cfg["transition_frames"]
     in_loop_tail = lambda i: loop and i >= total - loop["frames"]
@@ -387,6 +414,22 @@ def main():
             fed = detail_boost(fed, cfg)
             if cfg["color_match"] and not in_transition and p_idx in phase_refs:
                 fed = color_match(fed, phase_refs[p_idx], cfg["color_match"])
+            for c in cameos:
+                if i == c["start"]:
+                    cam = {"px": c["pos"][0], "py": c["pos"][1],
+                           "size": c["size"], "end": c["end"],
+                           "art": load_sprite(root / c["sprite"])}
+            if cam:
+                if i >= cam["end"] or cam["size"] > 0.30:
+                    cam = None
+                else:
+                    # world-attached: she moves and grows with the zoom itself
+                    cam["px"] = 0.5 + (cam["px"] - cx) * z
+                    cam["py"] = 0.5 + (cam["py"] - cy) * z
+                    cam["size"] *= z
+                    if -0.1 < cam["px"] < 1.1 and -0.1 < cam["py"] < 1.1:
+                        fed = paste_sprite(fed, *cam["art"], cam["px"], cam["py"],
+                                           cam["size"])
             if in_loop_tail(i):
                 # grow frame 0 in the center until the last frame IS the first
                 j = i - (total - loop["frames"])

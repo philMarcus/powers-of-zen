@@ -42,9 +42,10 @@ def compile_journey(spec, fps, travel_denoise=0.40):
     regs = spec["registers"]
     F = max(12, round(sec * fps))
 
-    phases, zoom, denoise, exponent = [], [], [], []
+    phases, zoom, denoise, exponent, cameos = [], [], [], [], []
     for k, reg in enumerate(regs):
         nxt = regs[k + 1] if k + 1 < len(regs) else None
+        reg_start = len(zoom)
         # arrival beat: the target we just plunged toward, verbatim, becoming this
         # world — same object at two sizes is what sells the scale handoff
         fa = round(F * 0.25) if k > 0 else 0
@@ -74,6 +75,11 @@ def compile_journey(spec, fps, travel_denoise=0.40):
         exponent += [reg["exp"] + (end_exp - reg["exp"]) * (j + 0.5) / F
                      for j in range(F)]
 
+        if reg.get("cameo"):
+            # hidden-mascot window: after this register's arrival beat to its end
+            cameos.append({"start": reg_start + fa, "end": reg_start + F,
+                           **reg["cameo"]})
+
     loop = None
     if fmt.get("exact_loop"):
         L = min(round(1.5 * fps), F - 2)
@@ -82,4 +88,4 @@ def compile_journey(spec, fps, travel_denoise=0.40):
             t = (j + 1) / L
             denoise[total - L + j] = travel_denoise + (0.18 - travel_denoise) * t
         loop = {"frames": L, "s0": 0.10}
-    return phases, zoom, denoise, exponent, loop
+    return phases, zoom, denoise, exponent, loop, cameos

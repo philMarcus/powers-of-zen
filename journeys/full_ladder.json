@@ -45,6 +45,7 @@
     },
     {
       "name": "cell", "exp": -5, "palette": "rose gold and coral",
+      "cameo": { "sprite": "output/mascots/canon/belle.png", "pos": [0.46, 0.58], "size": 0.055 },
       "interior": "the luminous interior of a living cell, glowing organelles and drifting golden motes",
       "next_target": "a glowing twisted double helix strand deep inside the nucleus"
     },
