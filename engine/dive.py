@@ -53,7 +53,7 @@ DEFAULTS = {
     "height": 1024,
     "zoom_per_frame": 1.045,
     "rotate_per_frame": 0.15,
-    "drift": 0.06,        # wandering zoom-center amplitude (fraction of frame size)
+    "drift": 0.03,        # wandering zoom-center amplitude (fraction of frame size)
     "denoise": 0.58,
     "steps": 8,           # effective diffusion steps ≈ steps * denoise
     "cfg": 1.5,
@@ -247,11 +247,11 @@ def paste_sprite(fed, sprite, mask, px, py, size):
 
 def draw_counter(img, exp_value, pulse_age=None):
     """Odometer-style scale counter: 10^n m, bottom-left, pulse ring on crossings."""
-    big = ImageFont.truetype(f"{FONT_DIR}/DejaVuSans-Bold.ttf", 44)
-    sup = ImageFont.truetype(f"{FONT_DIR}/DejaVuSans-Bold.ttf", 26)
-    unit = ImageFont.truetype(f"{FONT_DIR}/DejaVuSans.ttf", 30)
+    big = ImageFont.truetype(f"{FONT_DIR}/DejaVuSans-Bold.ttf", 30)
+    sup = ImageFont.truetype(f"{FONT_DIR}/DejaVuSans-Bold.ttf", 18)
+    unit = ImageFont.truetype(f"{FONT_DIR}/DejaVuSans.ttf", 21)
     n = int(round(exp_value))
-    x, y = 36, img.height - 160
+    x, y = 22, img.height - 88
     layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
     d = ImageDraw.Draw(layer)
     shadow = (0, 0, 0, 160)
@@ -260,13 +260,13 @@ def draw_counter(img, exp_value, pulse_age=None):
     wexp = d.textlength(str(n), font=sup)
     for dx, dy, col in ((2, 2, shadow), (0, 0, white)):
         d.text((x + dx, y + dy), "10", font=big, fill=col)
-        d.text((x + w10 + 3 + dx, y - 12 + dy), str(n), font=sup, fill=col)
-        d.text((x + w10 + wexp + 12 + dx, y + 12 + dy), "m", font=unit, fill=col)
+        d.text((x + w10 + 2 + dx, y - 9 + dy), str(n), font=sup, fill=col)
+        d.text((x + w10 + wexp + 9 + dx, y + 8 + dy), "m", font=unit, fill=col)
     if pulse_age is not None:
-        cx, cy = x + (w10 + wexp + 40) / 2, y + 26
-        r = 34 + pulse_age * 9
-        a = max(0, 150 - pulse_age * 30)
-        d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(255, 255, 255, a), width=3)
+        cx, cy = x + (w10 + wexp + 30) / 2, y + 17
+        r = 24 + pulse_age * 7
+        a = max(0, 130 - pulse_age * 26)
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(255, 255, 255, a), width=2)
     return Image.alpha_composite(img.convert("RGBA"), layer).convert("RGB")
 
 
@@ -409,12 +409,15 @@ def main():
             drift = cfg["drift"]
             if in_loop_tail(i):   # re-center so the frame-0 composite lines up
                 drift *= 1 - (i - (total - loop["frames"]) + 1) / loop["frames"]
-            cx = 0.5 + drift * math.sin(2 * math.pi * i / 97)
-            cy = 0.5 + drift * math.sin(2 * math.pi * i / 61 + 1.7)
+            # periods far longer than any video: reads as one slow directional
+            # wander, not an oscillation (sinusoidal wobble was jarring)
+            cx = 0.5 + drift * math.sin(2 * math.pi * i / 263)
+            cy = 0.5 + drift * math.sin(2 * math.pi * i / 419 + 1.7)
             fed = zoom_transform(img, z, cfg["rotate_per_frame"], cx, cy)
             fed = detail_boost(fed, cfg)
             if cfg["color_match"] and not in_transition and p_idx in phase_refs:
                 fed = color_match(fed, phase_refs[p_idx], cfg["color_match"])
+            cam_pasted = False
             for c in cameos:
                 if i == c["start"]:
                     cam = {"px": c["pos"][0], "py": c["pos"][1],
@@ -431,6 +434,7 @@ def main():
                     if -0.1 < cam["px"] < 1.1 and -0.1 < cam["py"] < 1.1:
                         fed = paste_sprite(fed, *cam["art"], cam["px"], cam["py"],
                                            cam["size"])
+                        cam_pasted = True
             if in_loop_tail(i):
                 # grow frame 0 in the center until the last frame IS the first
                 j = i - (total - loop["frames"])
@@ -440,6 +444,8 @@ def main():
             ref = upload_image(fed, f"zoomer_feed_{name}.png")
             den = min(0.85, base_den
                       + (cfg["transition_denoise_boost"] if in_transition else 0))
+            if cam_pasted:
+                den = min(den, 0.32)   # keep the mascot's face recognizable
             wf = build_workflow(cfg, prompt, seed, init_image=ref, denoise=den,
                                 prev_prompt=prev_prompt if in_transition else None,
                                 blend=(k + 1) / (T + 1) if in_transition else 1.0)

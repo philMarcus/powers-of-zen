@@ -33,6 +33,7 @@ CAST = {
     "lee_flea": "a round orb creature covered in soft fine fuzzy hair with two tiny antennae, animal-like",
     "newman_human": "a warm glowing incandescent light bulb creature, bulb-shaped body with a rounded glass top narrowing to a small screw base at the bottom, a soft golden filament glowing inside, clearly a made object",
     "dora_flora": "a round flower-face orb creature ringed by soft glowing sunflower petals like a daisy, with two tiny leaf feet",
+    "lorraine_terrain": "a round orb creature that is a miniature continental landmass, striated canyon rock bands layered like the Grand Canyon around its body, tiny snowy mountain ridge across the top, winding river groove, clearly terrain and not a planet",
     "kitty_city": "a round orb creature whose surface is made of tiny glowing skyscraper windows and rooftops, with two small tower-shaped ears",
     "janet_planet": "a small satin-banded planet body with elegant tilted rings",
     "lamar_star": "a radiant round star orb with a warm corona glow and soft flare points",

@@ -56,6 +56,7 @@ attention project, not a science project)
 | 0 | human scale (objects only, no faces) | Newman (proposed) |
 | 1 | flora/tree | Dora |
 | 3 | city | Kitty |
+| 5 | landmass/terrain | Lorraine |
 | 7 | planet | Janet |
 | 11 | star/solar system | Lamar |
 | 21 | galaxy | Maxie |

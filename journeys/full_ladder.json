@@ -21,7 +21,12 @@
     {
       "name": "planet", "exp": 7, "palette": "ocean blue and pearl",
       "interior": "swirling clouds and glowing continents of a fantastical planet seen from orbit",
-      "next_target": "a sprawling city of lights along a night-side coast"
+      "next_target": "a vast sunlit continent of striated canyons and mountain ranges"
+    },
+    {
+      "name": "landmass", "exp": 5, "palette": "canyon red and sage green",
+      "interior": "a vast continent seen from high altitude, striated canyon lands, layered rock bands, mountain ranges, winding rivers and long coastlines",
+      "next_target": "a sprawling city of lights nestled in a wide river valley"
     },
     {
       "name": "city", "exp": 3, "palette": "amber and violet dusk",
@@ -35,8 +40,8 @@
     },
     {
       "name": "human", "exp": 0, "palette": "warm brass and candlelight",
-      "interior": "a warm cluttered wooden desk seen up close, one great brass lantern glowing among stacked books, ink bottles and scattered clockwork parts",
-      "next_target": "a tiny fantastical moth resting on the glass"
+      "interior": "a vast cluttered wooden desk seen up close, stacked books, ink bottles and scattered brass clockwork parts in warm candlelight",
+      "next_target": "a tiny fantastical moth resting on the warm wood"
     },
     {
       "name": "creature", "exp": -3, "palette": "iridescent teal and magenta",
@@ -45,7 +50,7 @@
     },
     {
       "name": "cell", "exp": -5, "palette": "rose gold and coral",
-      "cameo": { "sprite": "output/mascots/canon/belle.png", "pos": [0.46, 0.58], "size": 0.055 },
+      "cameo": { "sprite": "output/mascots/canon/belle.png", "pos": [0.46, 0.58], "size": 0.075 },
       "interior": "the luminous interior of a living cell, glowing organelles and drifting golden motes",
       "next_target": "a glowing twisted double helix strand deep inside the nucleus"
     },
@@ -61,7 +66,7 @@
     },
     {
       "name": "quark", "exp": -15, "palette": "deep violet and silver",
-      "interior": "the subatomic realm like a bubble chamber photograph come alive, glowing particle tracks curling in spirals through luminous fog, flickering sparks of pair production, soft quark lobes glowing deep in the haze weaving a web like the cosmic web"
+      "interior": "glowing particle tracks curling in delicate spirals through endless luminous violet fog, flickering sparks and helical trails in every direction, soft quark lobes glowing deep in the haze weaving a web like the cosmic web"
     }
   ]
 }
