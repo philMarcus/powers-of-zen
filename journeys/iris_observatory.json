@@ -1,59 +1,42 @@
 {
   "name": "iris_observatory",
   "style_suffix": "brass and amber astronomical aesthetic, hyperdetailed, cinematic",
-  "format": {
-    "sec_per_scale": 2.4,
-    "exact_loop": true
-  },
+  "format": { "sec_per_scale": 2.4, "exact_loop": true },
   "registers": [
     {
-      "name": "galaxy",
-      "exp": 21,
-      "palette": "amber core and indigo arms",
-      "interior": "a tilted spiral galaxy with a glowing amber core, ragged indigo arms of stars sweeping past",
-      "next_target": "a moonlit peak beneath the wheeling sky"
-    },
-    {
-      "name": "starfield",
-      "exp": 12,
-      "palette": "midnight and diamond white",
-      "interior": "a deep field of blazing stars and drifting nebula veils in every direction",
-      "next_target": "an observatory dome glowing on a dark summit"
-    },
-    {
-      "name": "peak",
-      "exp": 3.5,
-      "palette": "moonlit slate and snow",
+      "name": "peak", "exp": 3.5, "palette": "moonlit slate and snow",
       "interior": "a moonlit mountain peak crowned by a small copper observatory dome, ridges falling away into cloud",
-      "next_target": "a brass eyepiece gleaming in lamplight"
+      "next_target": "a copper dome glowing on the dark summit"
     },
     {
-      "name": "dome",
-      "exp": 1.5,
-      "palette": "copper dome and star blue",
+      "name": "dome", "exp": 1.5, "palette": "copper dome and star blue",
       "interior": "the interior of an observatory dome at night, the long telescope aimed through the open slit at a wheeling sky",
+      "next_target": "a great brass eyepiece gleaming in lamplight"
+    },
+    {
+      "name": "eyepiece", "exp": 0, "palette": "brass and midnight blue",
+      "interior": "a great brass telescope eyepiece and its wheels and dials, a watching eye reflected faintly in the glass",
       "next_target": "an amber iris ringed in shadow"
     },
     {
-      "name": "eyepiece",
-      "exp": 0,
-      "palette": "brass and midnight blue",
-      "interior": "a great brass telescope eyepiece and its wheels and dials, a watching eye reflected faintly in the glass",
-      "next_target": "a glowing golden vessel field deep in the eye"
-    },
-    {
-      "name": "iris",
-      "exp": -1.7,
-      "palette": "amber and hazel green",
+      "name": "iris", "exp": -1.7, "palette": "amber and hazel green",
       "interior": "an immense amber iris seen impossibly close, radial fibers like canyon ridges circling a deep dark pupil",
-      "next_target": "a faint golden branching glow"
+      "next_target": "a faint golden branching glow deep in the dark"
     },
     {
-      "name": "retina",
-      "exp": -4,
-      "palette": "deep red and gold filament",
+      "name": "retina", "exp": -4, "palette": "deep red and gold filament",
       "interior": "the luminous landscape of a retina, branching golden vessels and shimmering photoreceptor fields",
-      "next_target": "one diamond star in the deep field"
+      "next_target": "a faint spiral of amber starlight glowing far in the darkness"
+    },
+    {
+      "name": "galaxy", "exp": 21, "palette": "amber core and indigo arms",
+      "interior": "a tilted spiral galaxy with a glowing amber core, ragged indigo arms of stars sweeping past",
+      "next_target": "one blazing diamond star in a deep field"
+    },
+    {
+      "name": "starfield", "exp": 12, "palette": "midnight and diamond white",
+      "interior": "a deep field of blazing stars and drifting nebula veils in every direction",
+      "next_target": "a moonlit peak beneath the wheeling sky"
     }
   ]
 }

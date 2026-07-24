@@ -1,52 +1,37 @@
 {
   "name": "food_chain",
   "style_suffix": "clear freshwater light, luminous, hyperdetailed, cinematic, fantastical",
-  "format": {
-    "sec_per_scale": 2.4,
-    "exact_loop": true
-  },
+  "format": { "sec_per_scale": 2.4, "exact_loop": true },
   "registers": [
     {
-      "name": "lake_valley",
-      "exp": 2.5,
-      "palette": "gold water and green hills",
+      "name": "lake_valley", "exp": 2.5, "palette": "gold water and green hills",
       "interior": "a winding lake in a green valley at sunset seen from high above, glinting like a ribbon of light",
-      "next_target": "a shadowy pike among the weeds"
+      "next_target": "a still golden cove at the water's edge far below"
     },
     {
-      "name": "heron",
-      "exp": 0.2,
-      "palette": "slate blue and reed gold",
-      "interior": "a tall elegant heron standing in the shallows at golden hour, ripples circling its still legs",
-      "next_target": "a bronze trout gliding by"
+      "name": "shallows", "exp": 0.2, "palette": "slate blue and reed gold",
+      "interior": "golden shallows at the lake's edge, rings of ripples spreading beneath the long still legs of a wading heron",
+      "next_target": "a dark shadowed hollow deep among the waterweeds"
     },
     {
-      "name": "pike",
-      "exp": -0.6,
-      "palette": "olive and pale gold",
-      "interior": "a long shadowy pike hanging still among waterweeds, watching trout pass in the green light",
-      "next_target": "a small silver minnow in the reeds"
+      "name": "weed_forest", "exp": -0.6, "palette": "olive and pale gold",
+      "interior": "sun-shafted green water between towering waterweeds, one long motionless shadow hanging in the gloom",
+      "next_target": "a bright bronze glint weaving between sunken branches"
     },
     {
-      "name": "trout",
-      "exp": -1.3,
-      "palette": "speckled bronze and jade",
-      "interior": "a speckled bronze trout weaving between sunken branches, minnows flashing away in silver bursts",
-      "next_target": "a darting translucent water flea"
+      "name": "sunken_branches", "exp": -1.3, "palette": "speckled bronze and jade",
+      "interior": "amber water over sunken branches, rising silver bubbles, a speckled flank gliding past and away",
+      "next_target": "a tiny silver flicker deep in the reed shadows"
     },
     {
-      "name": "minnow",
-      "exp": -2.3,
-      "palette": "silver and reed green",
-      "interior": "a curious silver minnow gliding through reed shadows, tiny glowing waterfleas scattering before it",
-      "next_target": "a glinting translucent speck"
+      "name": "reed_shadows", "exp": -2.3, "palette": "silver and reed green",
+      "interior": "a dense forest of glowing green reed stems, one small silver fish slipping out of sight between them",
+      "next_target": "a glinting translucent speck drifting in a sunbeam"
     },
     {
-      "name": "waterflea",
-      "exp": -3.5,
-      "palette": "glass green and amber",
-      "interior": "a translucent glowing water flea drifting among sparkling algae motes in a sunlit droplet world",
-      "next_target": "a heron standing in golden shallows"
+      "name": "droplet", "exp": -3.5, "palette": "glass green and amber",
+      "interior": "a sunlit droplet world of sparkling algae motes, one translucent glowing water flea drifting through",
+      "next_target": "a winding golden lake in green hills seen from high above"
     }
   ]
 }

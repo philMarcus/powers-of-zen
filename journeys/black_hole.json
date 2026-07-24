@@ -1,52 +1,37 @@
 {
   "name": "black_hole",
   "style_suffix": "dramatic gravitational lensing, warped light, hyperdetailed, cinematic",
-  "format": {
-    "sec_per_scale": 2.4,
-    "exact_loop": true
-  },
+  "format": { "sec_per_scale": 2.4, "exact_loop": true },
   "registers": [
     {
-      "name": "black_hole",
-      "exp": 13,
-      "palette": "void black and lensed white gold",
-      "interior": "an immense black hole warping the sky, a brilliant lensed ring of bent starlight circling absolute darkness",
-      "next_target": "a dark planet edged in golden light"
-    },
-    {
-      "name": "binary_star",
-      "exp": 11,
-      "palette": "white gold and crimson",
-      "interior": "two blazing suns circling each other, ribbons of fire drawn between them",
-      "next_target": "a shore of golden lights on black water"
-    },
-    {
-      "name": "planet",
-      "exp": 7,
-      "palette": "midnight blue and gold",
+      "name": "planet", "exp": 7, "palette": "midnight blue and gold",
       "interior": "a huge spherical planet seen from space, curved horizon and glowing limb, coastlines of golden light wrapping the dark sphere",
-      "next_target": "a lantern-lit harbor city"
+      "next_target": "a shore of golden lights tracing black water"
     },
     {
-      "name": "coast",
-      "exp": 5,
-      "palette": "ink blue and shore gold",
+      "name": "coast", "exp": 5, "palette": "ink blue and shore gold",
       "interior": "a night coastline from high altitude, chains of harbor lights tracing black bays and headlands",
-      "next_target": "a glowing night market by the water"
+      "next_target": "a lantern-lit harbor city around dark water"
     },
     {
-      "name": "harbor_city",
-      "exp": 3,
-      "palette": "amber and harbor blue",
+      "name": "harbor_city", "exp": 3, "palette": "amber and harbor blue",
       "interior": "a harbor city at night seen from above, lantern-lit quays, moored ships and winding streets around dark water",
-      "next_target": "one warm lamp glowing among market stalls"
+      "next_target": "one glowing night market by the quay"
     },
     {
-      "name": "market",
-      "exp": 0.5,
-      "palette": "brass lamplight and spice red",
+      "name": "market", "exp": 0.5, "palette": "brass lamplight and spice red",
       "interior": "a warm night market stall crowded with brass lamps, hanging fabrics and bowls of glowing spices",
-      "next_target": "two circling suns joined by fire"
+      "next_target": "a ring of warped starlight circling perfect darkness, reflected deep in a lamp's glass"
+    },
+    {
+      "name": "black_hole", "exp": 13, "palette": "void black and lensed white gold",
+      "interior": "an immense black hole warping the sky, a brilliant lensed ring of bent starlight circling absolute darkness",
+      "next_target": "two circling suns joined by ribbons of fire"
+    },
+    {
+      "name": "binary_star", "exp": 11, "palette": "white gold and crimson",
+      "interior": "two blazing suns circling each other, ribbons of fire drawn between them",
+      "next_target": "a dark planet edged in golden light"
     }
   ]
 }

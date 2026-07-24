@@ -75,6 +75,15 @@ Rules (revised 2026-07-23):
   optional `cameo` {sprite, pos, size}.
 - Don't name the same creature/object in two nearby registers — it will render
   at both scales (the double-lantern/double-fly ghost).
+- **Creature chains don't nest — environments do.** For creature-to-creature
+  scales (food chains etc.), the `interior` is the shared ENVIRONMENT at that
+  scale (the water, the reeds) with the creature as a passing landmark; the next
+  creature is named exactly once, in `next_target`. Never "travel through" an
+  animal — travel through its world, past it, toward the next.
+- **Never open a video at the exotic seam.** The starting register is a free
+  rotation of the circular cycle: start on grounding scenery, put the weird
+  cross-scale wrap mid-video, and let the loop close back onto the grounded
+  opening. Opening on the wrap object spoils the gag and reads as mid-transition.
 - Creature scenes fantastical, never gory. No human faces (negative prompt).
   Mascot names never shown on screen.
 - `journeys/VARIATIONS.md` is the differentiation library — per-register
