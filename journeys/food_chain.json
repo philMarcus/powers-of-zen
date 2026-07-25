@@ -4,11 +4,6 @@
   "format": { "sec_per_scale": 2.4, "exact_loop": true },
   "registers": [
     {
-      "name": "lake_valley", "exp": 2.5, "palette": "gold water and green hills",
-      "interior": "a winding lake in a green valley at sunset seen from high above, glinting like a ribbon of light",
-      "next_target": "a still golden cove at the water's edge far below"
-    },
-    {
       "name": "shallows", "exp": 0.2, "palette": "slate blue and reed gold",
       "interior": "golden shallows at the lake's edge, rings of ripples spreading beneath the long still legs of a wading heron",
       "next_target": "a dark shadowed hollow deep among the waterweeds"
@@ -32,6 +27,11 @@
       "name": "droplet", "exp": -3.5, "palette": "glass green and amber",
       "interior": "a sunlit droplet world of sparkling algae motes, one translucent glowing water flea drifting through",
       "next_target": "a winding golden lake in green hills seen from high above"
+    },
+    {
+      "name": "lake_valley", "exp": 2.5, "palette": "gold water and green hills",
+      "interior": "a winding lake in a green valley at sunset seen from high above, glinting like a ribbon of light",
+      "next_target": "a still golden cove at the water's edge far below"
     }
   ]
 }

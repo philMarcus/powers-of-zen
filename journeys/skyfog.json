@@ -1,0 +1,37 @@
+{
+  "name": "skyfog",
+  "style_suffix": "soft atmospheric light, luminous mist, hyperdetailed, cinematic",
+  "format": { "sec_per_scale": 2.4, "exact_loop": true },
+  "registers": [
+    {
+      "name": "lighthouse_room", "exp": 0.5, "palette": "warm brass and rain grey",
+      "interior": "the warm lamplit room at the top of a lighthouse, a great brass lamp burning, rain and fog pressing at the round windows",
+      "next_target": "rolling banks of silver fog over a dark harbor far below"
+    },
+    {
+      "name": "harbor_fog", "exp": 2.5, "palette": "silver grey and lamp gold",
+      "interior": "banks of silver fog rolling over a dark lighthouse coast, sweeping beams of gold light cutting through the mist",
+      "next_target": "brilliant white cloud canyons glowing high above"
+    },
+    {
+      "name": "cloud_tops", "exp": 4, "palette": "white gold and sky blue",
+      "interior": "vast sunlit canyons of billowing cloud seen from above, towers of cumulus casting long blue shadows",
+      "next_target": "a huge spiral storm turning slowly over the sea far below"
+    },
+    {
+      "name": "cyclone", "exp": 6.5, "palette": "storm slate and pearl",
+      "interior": "an immense spiral cyclone seen from orbit, white arms of cloud wrapping a dark calm eye",
+      "next_target": "a glowing pillar of colored mist far out in the darkness"
+    },
+    {
+      "name": "nebula", "exp": 14, "palette": "rose and teal glow",
+      "interior": "towering pillars of glowing nebula mist cradling newborn stars, veils of rose and teal light drifting",
+      "next_target": "a soft curl of steam rising through warm lamplight"
+    },
+    {
+      "name": "steam", "exp": -1, "palette": "cream and caramel light",
+      "interior": "curling ribbons of steam rising through warm golden lamplight, soft mist folding over itself",
+      "next_target": "a warm lamplit round window glowing through the mist"
+    }
+  ]
+}

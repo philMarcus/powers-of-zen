@@ -1,109 +1,68 @@
 {
   "name": "tide_of_life",
   "style_suffix": "sunlit turquoise water light, hyperdetailed, cinematic, otherworldly",
-  "format": {
-    "sec_per_scale": 2.4,
-    "exact_loop": true
-  },
+  "format": { "sec_per_scale": 2.4, "exact_loop": true },
   "registers": [
     {
-      "name": "krill",
-      "exp": -3,
-      "palette": "silver and turquoise",
-      "interior": "a drifting swarm of translucent krill and plankton glittering in a sunbeam through clear water",
-      "next_target": "a tangle of glowing ribbon molecules"
+      "name": "reef", "exp": 3, "palette": "coral pink and lagoon green",
+      "interior": "an immense living coral reef atoll seen from above the shallows, branching coral towers and lagoon channels",
+      "next_target": "a vast gentle silhouette gliding through the deep blue beyond the reef wall"
     },
     {
-      "name": "cell",
-      "exp": -5,
-      "palette": "rose gold and coral",
-      "cameo": {
-        "sprite": "output/mascots/canon/belle.png",
-        "pos": [
-          0.6,
-          0.35
-        ],
-        "size": 0.12
-      },
+      "name": "open_blue", "exp": 1.5, "palette": "deep blue and gold",
+      "interior": "deep open blue water pierced by golden light columns, an immense gentle leviathan gliding past far below",
+      "next_target": "a shimmering cloud of silver fish wheeling in a sunbeam"
+    },
+    {
+      "name": "sunbeam_shoal", "exp": 0, "palette": "azure and bright silver",
+      "interior": "columns of sunlight through clear turquoise water, a wheeling shoal of silver fish flashing past and away",
+      "next_target": "a glittering drift of translucent krill hanging in the light"
+    },
+    {
+      "name": "krill_drift", "exp": -3, "palette": "glass green and pearl",
+      "interior": "a sunbeam thick with drifting translucent krill and sparkling plankton motes in pale green water",
+      "next_target": "a single glowing plankton cell"
+    },
+    {
+      "name": "cell", "exp": -5, "palette": "rose gold and coral",
+      "cameo": { "sprite": "output/mascots/canon/belle.png", "pos": [0.6, 0.35], "size": 0.12 },
       "interior": "the luminous interior of a drifting plankton cell, glowing organelles and golden motes in translucent jelly",
-      "next_target": "a flickering mote of quantum light"
+      "next_target": "a tangle of glowing ribbon molecules deep within"
     },
     {
-      "name": "protein",
-      "exp": -8,
-      "palette": "amber and jade",
+      "name": "protein", "exp": -8, "palette": "amber and jade",
       "interior": "enormous folded protein macromolecules, twisting glowing ribbon helices and translucent globular folds tangled in every direction",
-      "next_target": "a glowing web of filaments shrinking to a bright point"
+      "next_target": "a flickering violet mote of quantum light"
     },
     {
-      "name": "quantum",
-      "exp": -15,
-      "palette": "violet and silver",
+      "name": "quantum", "exp": -15, "palette": "violet and silver",
       "interior": "seething quantum foam, glowing particle tracks curling in spirals through luminous fog, flickering sparks weaving a web",
+      "next_target": "the vast cosmic web, faint glowing filaments far in the distance"
+    },
+    {
+      "name": "cosmic_web", "exp": 26, "palette": "deep violet and silver",
+      "interior": "the vast cosmic web seen from an oblique angle, irregular glowing filaments of galaxy clusters branching through darkness",
       "next_target": "a luminous spiral galaxy caught in a filament"
     },
     {
-      "name": "cosmic_web",
-      "exp": 26,
-      "palette": "deep violet and silver",
-      "interior": "the vast cosmic web seen from an oblique angle, irregular glowing filaments of galaxy clusters branching through darkness",
+      "name": "galaxy", "exp": 21, "palette": "indigo and starlight",
+      "interior": "a tilted spiral galaxy, ragged arms of stars and glowing nebulae sweeping past",
       "next_target": "one golden star among thousands"
     },
     {
-      "name": "galaxy",
-      "exp": 21,
-      "palette": "indigo and starlight",
-      "interior": "a tilted spiral galaxy, ragged arms of stars and glowing nebulae sweeping past",
-      "next_target": "a blue pearl of a planet"
-    },
-    {
-      "name": "star",
-      "exp": 11,
-      "palette": "warm gold and white",
+      "name": "star", "exp": 11, "palette": "warm gold and white",
       "interior": "a blazing golden star with arcing prominences, tiny water-worlds glinting in distant orbit",
-      "next_target": "a scattered chain of jade islands on a blue sea"
+      "next_target": "a blue pearl of an ocean planet"
     },
     {
-      "name": "planet",
-      "exp": 7,
-      "palette": "ocean blue and pearl",
+      "name": "planet", "exp": 7, "palette": "ocean blue and pearl",
       "interior": "a huge spherical ocean planet seen from space, curved horizon and glowing limb, swirling storms and island chains wrapping the sphere",
-      "next_target": "a ring-shaped coral atoll in a bright lagoon"
+      "next_target": "a scattered chain of jade islands on a bright sea"
     },
     {
-      "name": "islands",
-      "exp": 5,
-      "palette": "jade and sand gold",
+      "name": "islands", "exp": 5, "palette": "jade and sand gold",
       "interior": "a chain of jade islands ringed by white reefs and glowing lagoons, seen from high above",
-      "next_target": "a leviathan's silhouette moving in deep water"
-    },
-    {
-      "name": "reef",
-      "exp": 3,
-      "palette": "coral pink and lagoon green",
-      "interior": "an immense living coral reef atoll seen from above the shallows, branching coral towers and lagoon channels",
-      "next_target": "a great glowing fish gliding in blue depths"
-    },
-    {
-      "name": "whale",
-      "exp": 1.5,
-      "palette": "deep blue and gold",
-      "interior": "a vast gentle whale-like leviathan drifting through golden light columns, small fish streaming along its flanks",
-      "next_target": "a school of silver fish swirling like a living cloud"
-    },
-    {
-      "name": "big_fish",
-      "exp": 0,
-      "palette": "sapphire and pearl",
-      "interior": "great sapphire fish gliding among rising bubbles, scales catching shafts of light",
-      "next_target": "one small silver fish glinting in the light"
-    },
-    {
-      "name": "small_fish",
-      "exp": -1,
-      "palette": "silver and turquoise",
-      "interior": "a shimmering school of small silver fish darting through sunbeams in clear water",
-      "next_target": "a single glowing plankton cell"
+      "next_target": "a ring-shaped coral atoll in a glowing lagoon"
     }
   ]
 }

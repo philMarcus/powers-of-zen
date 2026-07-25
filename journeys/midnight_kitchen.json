@@ -1,0 +1,32 @@
+{
+  "name": "midnight_kitchen",
+  "style_suffix": "warm cozy light, delicious detail, hyperdetailed, cinematic",
+  "format": { "sec_per_scale": 2.4, "exact_loop": true },
+  "registers": [
+    {
+      "name": "kitchen", "exp": 0.5, "palette": "warm caramel and cream",
+      "interior": "a cozy bakery kitchen at midnight, flour-dusted counters, hanging copper pots and one warm glowing oven",
+      "next_target": "a golden pastry landscape resting on the counter"
+    },
+    {
+      "name": "pastry_land", "exp": -1, "palette": "honey gold and butter",
+      "interior": "a vast landscape of golden pastry, rolling brioche hills, glazed caramel valleys and drifting powdered-sugar snow",
+      "next_target": "a single sparkling sugar grain catching the light"
+    },
+    {
+      "name": "sugar_grain", "exp": -3, "palette": "crystal white and honey",
+      "interior": "an enormous glittering sugar crystal like a faceted glass boulder shining among golden crumbs",
+      "next_target": "a glowing geometric lattice deep inside the crystal"
+    },
+    {
+      "name": "lattice", "exp": -6, "palette": "ice white and pale gold",
+      "interior": "the glowing crystal lattice inside sugar, endless sparkling geometric rows receding in every direction",
+      "next_target": "a tiny moonlit town glittering white in the distance"
+    },
+    {
+      "name": "town", "exp": 2.5, "palette": "moonlight blue and window gold",
+      "interior": "a small moonlit town under fresh snow, glittering rooftops and warm glowing windows",
+      "next_target": "one warm lit bakery window on the corner"
+    }
+  ]
+}

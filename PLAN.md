@@ -126,6 +126,36 @@ cost. Community consensus: DreamShaper XL is the go-to for fantasy/concept art (
 genre); candidates to audition later: Juggernaut XL Ragnarok (all-around),
 ZavyChromaXL (fantasy-artistic).
 
+## Launch plan — POWERS OF ZEN (named 2026-07-24; @powersofzen verified free on YT, no
+search footprint on TikTok/IG)
+
+Platform reality (researched 2026-07-24): ALL three official APIs gate public posting
+behind audits — TikTok Content Posting API posts SELF_ONLY until audit (~1-2 wks);
+YouTube Data API uploads locked PRIVATE for unverified projects until audit; Instagram
+Graph API needs Business acct + FB Page + app review (2-4 wks). Therefore:
+
+- **Phase 1 posting = Claude-driven Chrome automation** (Phil pre-approved): Windows
+  Chrome with a dedicated "PowersOfZen" profile (logged into all 3), launched with
+  --remote-debugging-port; WSL drives it via CDP (playwright). Human-ish cadence,
+  1 post/day/platform to start. MUST tick each platform's AI-generated-content
+  disclosure. Manual phone fallback if bot-detection bites.
+- **In parallel**: submit TikTok + YouTube API audits (privacy policy page + demo
+  video needed) so posting graduates to clean APIs later.
+
+Account-day checklist (needs Phil present for phone/2FA):
+1. Create powersofzen@gmail.com — identity anchor for everything.
+2. YouTube channel "Powers of Zen", handle @powersofzen.
+3. TikTok @powersofzen; Instagram @powersofzen (set Creator/Business for analytics).
+4. Shared branding: avatar + banner (candidate: Amos orb or a "10ᶻ" mark), bio
+   (candidate: "the universe at every size — hit ▶ and breathe"), cross-links.
+5. Chrome profile setup + start_chrome_debug.sh (tmux pattern like ComfyUI).
+6. Build outbox/ + posting driver + per-platform caption/hashtag generator; first
+   post = full ladder (thesis-statement video).
+
+Pre-launch polish decision: masters are 576×1024; consider 2x upscale to 1152×2048
+at assembly (cheap ffmpeg lanczos, or Ultimate Upscale pass) since platforms prefer
+1080×1920. Mascot find-the-sprite contest: deferred (Phil), sprites stay subtle.
+
 ## Agent team (built incrementally, reusing autonomy_dev patterns)
 
 - **Creative Director** — owns intensity, pacing, hooks; picks each video's journey concept.

@@ -1,38 +1,8 @@
 {
   "name": "full_ladder",
   "style_suffix": "hyperdetailed, cinematic volumetric light, rich vivid color, otherworldly",
-  "format": { "sec_per_scale": 2.4, "travel_denoise": 0.40, "exact_loop": true },
+  "format": { "sec_per_scale": 2.4, "exact_loop": true },
   "registers": [
-    {
-      "name": "cosmos", "exp": 26, "palette": "deep violet and silver",
-      "interior": "the vast cosmic web seen from an oblique angle, irregular glowing filaments of galaxy clusters branching asymmetrically through deep darkness",
-      "next_target": "a luminous spiral galaxy caught in a shining filament"
-    },
-    {
-      "name": "galaxy", "exp": 21, "palette": "indigo and starlight gold",
-      "interior": "the inside of a spiral galaxy seen from a tilted oblique angle, irregular rivers of stars and ragged glowing nebula arms sweeping past",
-      "next_target": "a single brilliant golden star wrapped in flares of light"
-    },
-    {
-      "name": "star", "exp": 11, "palette": "blazing orange and white",
-      "interior": "the corona of a blazing star, arcs of fire and solar prominences with tiny planets in distant orbit",
-      "next_target": "a round opal planet glowing in its orbit, its curved limb catching the starlight"
-    },
-    {
-      "name": "planet", "exp": 7, "palette": "ocean blue and pearl",
-      "interior": "a huge spherical planet seen from space, its curved horizon and glowing limb against the black, swirling clouds and luminous continents wrapping around the sphere",
-      "next_target": "a vast sunlit continent of striated canyons and mountain ranges"
-    },
-    {
-      "name": "landmass", "exp": 5, "palette": "canyon red and sage green",
-      "interior": "a vast continent seen from high altitude, striated canyon lands, layered rock bands, mountain ranges, winding rivers and long coastlines",
-      "next_target": "a sprawling city of lights nestled in a wide river valley"
-    },
-    {
-      "name": "city", "exp": 3, "palette": "amber and violet dusk",
-      "interior": "an impossible city of luminous towers, arched bridges and winding glowing streets seen from above",
-      "next_target": "a great glowing garden park deep among the towers"
-    },
     {
       "name": "flora", "exp": 1, "palette": "emerald and blossom pink",
       "interior": "a lush impossible garden forest, giant blossoms and glowing vines beneath towering tree canopies",
@@ -68,6 +38,36 @@
       "name": "quark", "exp": -15, "palette": "deep violet and silver",
       "interior": "glowing particle tracks curling in delicate spirals through endless luminous violet fog, flickering sparks and helical trails in every direction, soft quark lobes glowing deep in the haze weaving a web like the cosmic web",
       "next_target": "the vast glowing cosmic web, faint luminous filaments of galaxy clusters far in the distance"
+    },
+    {
+      "name": "cosmos", "exp": 26, "palette": "deep violet and silver",
+      "interior": "the vast cosmic web seen from an oblique angle, irregular glowing filaments of galaxy clusters branching asymmetrically through deep darkness",
+      "next_target": "a luminous spiral galaxy caught in a shining filament"
+    },
+    {
+      "name": "galaxy", "exp": 21, "palette": "indigo and starlight gold",
+      "interior": "the inside of a spiral galaxy seen from a tilted oblique angle, irregular rivers of stars and ragged glowing nebula arms sweeping past",
+      "next_target": "a single brilliant golden star wrapped in flares of light"
+    },
+    {
+      "name": "star", "exp": 11, "palette": "blazing orange and white",
+      "interior": "the corona of a blazing star, arcs of fire and solar prominences with tiny planets in distant orbit",
+      "next_target": "a round opal planet glowing in its orbit, its curved limb catching the starlight"
+    },
+    {
+      "name": "planet", "exp": 7, "palette": "ocean blue and pearl",
+      "interior": "a huge spherical planet seen from space, its curved horizon and glowing limb against the black, swirling clouds and luminous continents wrapping around the sphere",
+      "next_target": "a vast sunlit continent of striated canyons and mountain ranges"
+    },
+    {
+      "name": "landmass", "exp": 5, "palette": "canyon red and sage green",
+      "interior": "a vast continent seen from high altitude, striated canyon lands, layered rock bands, mountain ranges and winding rivers and long coastlines",
+      "next_target": "a sprawling city of lights nestled in a wide river valley"
+    },
+    {
+      "name": "city", "exp": 3, "palette": "amber and violet dusk",
+      "interior": "an impossible city of luminous towers, arched bridges and winding glowing streets seen from above",
+      "next_target": "a great glowing garden park deep among the towers"
     }
   ]
 }
