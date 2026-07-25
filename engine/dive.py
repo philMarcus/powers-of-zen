@@ -78,9 +78,10 @@ DEFAULTS = {
     "color_match": 0.5,
     # loop seam: crossfade this many tail frames into the head frames (0 = off)
     "loop_fade_frames": 0,
-    "counter": "auto",    # 10^n overlay: True / False / "auto" (only when the
-                          # register exps are a clean monotonic ladder — wraps,
-                          # lingers and fractional stacks make the label nonsense)
+    "counter": True,      # 10^n overlay — the Powers of Zen signature, on by
+                          # default; the value is pinned to the current register
+                          # and spins at handoffs, so it's honest even in wraps.
+                          # False disables; "auto" = only on monotonic ladders.
     "reverse": False,     # legacy, ignored (both cuts always emitted)
     "build": "in",        # "in": crop center, invent interiors (LARGE->SMALL cards)
                           # "out": shrink + outpaint borders (SMALL->LARGE cards);

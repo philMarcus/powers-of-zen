@@ -57,6 +57,7 @@ def compile_journey(spec, fps, build="in"):
 
     phases, zoom, denoise, exponent, cameos = [], [], [], [], []
     arrivals = set()
+    prev_exp = regs[0]["exp"]
     for k, reg in enumerate(regs):
         nxt = regs[k + 1] if k + 1 < len(regs) else None
         F = max(12, round(reg.get("sec", sec) * fps))
@@ -103,12 +104,22 @@ def compile_journey(spec, fps, build="in"):
         # arrive -> look -> plunge zoom curve; per-register product is exactly x10
         w = [0.30 + 0.70 * math.sin(math.pi * (j + 0.5) / F) ** 2 for j in range(F)]
         s = sum(w)
-        zoom += [math.exp(math.log(10) * wj / s) for wj in w]
+        zs = [math.exp(math.log(10) * wj / s) for wj in w]
+        zoom += zs
         denoise += [travel_denoise] * F
 
-        end_exp = nxt["exp"] if nxt else reg["exp"] + (1 if build == "out" else -1)
-        exponent += [reg["exp"] + (end_exp - reg["exp"]) * (j + 0.5) / F
-                     for j in range(F)]
+        # counter stays PINNED to this register's declared exp, descending with
+        # the actual visual zoom; handoffs get a fast odometer spin during the
+        # arrival beat — honest about skipped scales, including wraps
+        cum = 0.0
+        for j in range(F):
+            if fa and j < fa:
+                t = (j + 0.5) / fa
+                exponent.append(prev_exp + (reg["exp"] - prev_exp) * t)
+            else:
+                cum += math.log10(zs[j])
+                exponent.append(reg["exp"] - cum)
+        prev_exp = exponent[-1]
 
         if reg.get("cameo"):
             cameos.append({"start": reg_start + fa, "end": reg_start + F,
