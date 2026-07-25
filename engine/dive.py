@@ -78,6 +78,9 @@ DEFAULTS = {
     "color_match": 0.5,
     # loop seam: crossfade this many tail frames into the head frames (0 = off)
     "loop_fade_frames": 0,
+    "counter": "auto",    # 10^n overlay: True / False / "auto" (only when the
+                          # register exps are a clean monotonic ladder — wraps,
+                          # lingers and fractional stacks make the label nonsense)
     "reverse": False,     # legacy, ignored (both cuts always emitted)
     "build": "in",        # "in": crop center, invent interiors (LARGE->SMALL cards)
                           # "out": shrink + outpaint borders (SMALL->LARGE cards);
@@ -534,8 +537,14 @@ def main():
                   f"~{rate * (total - i - 1):.0f}s left) :: {prompt[:60]}", flush=True)
 
     if not args.no_video:
+        show_counter = exponent is not None and not args.frames
+        if show_counter and cfg["counter"] == "auto":
+            exps = [r["exp"] for r in spec["registers"]]
+            show_counter = all(a > b for a, b in zip(exps, exps[1:]))
+        elif show_counter:
+            show_counter = bool(cfg["counter"])
         assemble(cfg, name, out_dir, frames_dir, total,
-                 exponent=exponent if not args.frames else None)
+                 exponent=exponent if show_counter else None)
     print(f"[dive] done in {time.time() - t0:.0f}s", flush=True)
 
 

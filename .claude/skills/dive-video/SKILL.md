@@ -80,10 +80,17 @@ Rules (revised 2026-07-23):
   scale (the water, the reeds) with the creature as a passing landmark; the next
   creature is named exactly once, in `next_target`. Never "travel through" an
   animal — travel through its world, past it, toward the next.
-- **Never open a video at the exotic seam.** The starting register is a free
-  rotation of the circular cycle: start on grounding scenery, put the weird
-  cross-scale wrap mid-video, and let the loop close back onto the grounded
-  opening. Opening on the wrap object spoils the gag and reads as mid-transition.
+- **The first and last cards are the loop pair AND the playback opening**
+  (zoom-out playback = reversed generation, and exact_loop pins frame 0). They
+  MUST be natural adjacent scales. Bury the exotic cross-scale wrap MID-LIST —
+  never at the ends. (Reasoning in generation order alone gets this wrong.)
+- **Adjacent registers must contrast** in silhouette family (radial / branching /
+  grid / blob / open space) AND palette temperature. A journey's theme lives in
+  its style_suffix and recurring motifs — never in giving every register the
+  same colors (that produced the samey amber iris/retina/galaxy stretch).
+- The 10ⁿ counter renders only for clean monotonic ladders (`counter: "auto"`
+  default); wraps, lingers and fractional stacks make the label nonsense — set
+  `"counter": false/true` in format to force.
 - Creature scenes fantastical, never gory. No human faces (negative prompt).
   Mascot names never shown on screen.
 - `journeys/VARIATIONS.md` is the differentiation library — per-register
