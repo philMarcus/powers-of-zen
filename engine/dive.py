@@ -504,11 +504,20 @@ def main():
                 if cam_pasted:
                     den = min(den, 0.32)   # keep the mascot's face recognizable
                 if in_loop_tail(i):
-                    # grow frame 0 in the center until the last frame IS the first
+                    # grow frame 0 in the center until the last frame IS the first;
+                    # masked denoise pixel-locks the composite and repaints ONLY the
+                    # shrinking ring around it, so surroundings morph into frame 0
+                    # instead of freezing (findable-seam fix, 2026-07-26)
                     j = i - (total - loop["frames"])
                     t_ = (j + 1) / loop["frames"]
                     s = math.exp(math.log(loop["s0"]) * (1 - t_))
                     fed = loop_composite(fed, frame0, s)
+                    w_, h_ = fed.size
+                    sw, sh = max(2, int(w_ * s)), max(2, int(h_ * s))
+                    box = ((w_ - sw) // 2, (h_ - sh) // 2, sw, sh)
+                    mask_ref = upload_image(ring_mask(w_, h_, box, center_val=10),
+                                            f"zoomer_mask_{name}.png")
+                    den = max(den, cfg["denoise"])   # ring stays lively; center is locked
             ref = upload_image(fed, f"zoomer_feed_{name}.png")
             wf = build_workflow(cfg, prompt, seed, init_image=ref, denoise=den,
                                 prev_prompt=prev_prompt if in_transition else None,
