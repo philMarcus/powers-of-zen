@@ -1,73 +1,109 @@
 {
   "name": "full_ladder",
   "style_suffix": "hyperdetailed, cinematic volumetric light, rich vivid color, otherworldly",
-  "format": { "sec_per_scale": 2.4, "exact_loop": true },
+  "format": {
+    "sec_per_scale": 2.4,
+    "exact_loop": true
+  },
   "registers": [
     {
-      "name": "flora", "exp": 1, "palette": "emerald and blossom pink",
-      "interior": "a lush impossible garden forest, giant blossoms and glowing vines beneath towering tree canopies",
-      "next_target": "a warm glowing lantern hanging among the branches"
-    },
-    {
-      "name": "human", "exp": 0, "palette": "warm brass and candlelight",
+      "name": "human",
+      "exp": 0,
+      "palette": "warm brass and candlelight",
       "interior": "a vast cluttered wooden desk seen up close, stacked books, ink bottles and scattered brass clockwork parts in warm candlelight",
       "next_target": "a tiny fantastical moth resting on the warm wood"
     },
     {
-      "name": "creature", "exp": -3, "palette": "iridescent teal and magenta",
+      "name": "creature",
+      "exp": -3,
+      "palette": "iridescent teal and magenta",
       "interior": "the wing of a fantastical moth, glowing scales layered like roof tiles along feathered veins",
       "next_target": "a radiant translucent cell shining between the scales"
     },
     {
-      "name": "cell", "exp": -5, "palette": "rose gold and coral",
-      "cameo": { "sprite": "output/mascots/canon/belle.png", "pos": [0.46, 0.58], "size": 0.075 },
+      "name": "cell",
+      "exp": -5,
+      "palette": "rose gold and coral",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.46,
+          0.58
+        ],
+        "size": 0.075
+      },
       "interior": "the luminous interior of a living cell, glowing organelles and drifting golden motes",
-      "next_target": "a glowing twisted double helix strand deep inside the nucleus"
+      "next_target": "a tangle of glowing folded protein ribbons deep in the cytoplasm"
     },
     {
-      "name": "molecule", "exp": -8, "palette": "cyan and ultraviolet",
+      "name": "molecule",
+      "exp": -8,
+      "palette": "cyan and ultraviolet",
       "interior": "enormous folded protein macromolecules, twisting glowing ribbon helices, coiled loops and soft translucent globular folds tangled together in every direction",
       "next_target": "a single radiant atom pulsing deep between the folds"
     },
     {
-      "name": "atom", "exp": -10, "palette": "electric blue and white",
+      "name": "atom",
+      "exp": -10,
+      "palette": "electric blue and white",
       "interior": "the inside of an atom, soft hazy luminous electron probability clouds billowing like glowing fog around a distant bright nucleus",
       "next_target": "the glowing nucleus, a tight cluster of blue and white spheres"
     },
     {
-      "name": "quark", "exp": -15, "palette": "deep violet and silver",
+      "name": "quark",
+      "exp": -15,
+      "palette": "deep violet and silver",
       "interior": "glowing particle tracks curling in delicate spirals through endless luminous violet fog, flickering sparks and helical trails in every direction, soft quark lobes glowing deep in the haze weaving a web like the cosmic web",
       "next_target": "the vast glowing cosmic web, faint luminous filaments of galaxy clusters far in the distance"
     },
     {
-      "name": "cosmos", "exp": 26, "palette": "deep violet and silver",
+      "name": "cosmos",
+      "exp": 26,
+      "palette": "deep violet and silver",
       "interior": "the vast cosmic web seen from an oblique angle, irregular glowing filaments of galaxy clusters branching asymmetrically through deep darkness",
       "next_target": "a luminous spiral galaxy caught in a shining filament"
     },
     {
-      "name": "galaxy", "exp": 21, "palette": "indigo and starlight gold",
+      "name": "galaxy",
+      "exp": 21,
+      "palette": "indigo and starlight gold",
       "interior": "the inside of a spiral galaxy seen from a tilted oblique angle, irregular rivers of stars and ragged glowing nebula arms sweeping past",
       "next_target": "a single brilliant golden star wrapped in flares of light"
     },
     {
-      "name": "star", "exp": 11, "palette": "blazing orange and white",
+      "name": "star",
+      "exp": 11,
+      "palette": "blazing orange and white",
       "interior": "the corona of a blazing star, arcs of fire and solar prominences with tiny planets in distant orbit",
       "next_target": "a round opal planet glowing in its orbit, its curved limb catching the starlight"
     },
     {
-      "name": "planet", "exp": 7, "palette": "ocean blue and pearl",
+      "name": "planet",
+      "exp": 7,
+      "palette": "ocean blue and pearl",
       "interior": "a huge spherical planet seen from space, its curved horizon and glowing limb against the black, swirling clouds and luminous continents wrapping around the sphere",
       "next_target": "a vast sunlit continent of striated canyons and mountain ranges"
     },
     {
-      "name": "landmass", "exp": 5, "palette": "canyon red and sage green",
+      "name": "landmass",
+      "exp": 5,
+      "palette": "canyon red and sage green",
       "interior": "a vast continent seen from high altitude, striated canyon lands, layered rock bands, mountain ranges and winding rivers and long coastlines",
       "next_target": "a sprawling city of lights nestled in a wide river valley"
     },
     {
-      "name": "city", "exp": 3, "palette": "amber and violet dusk",
+      "name": "city",
+      "exp": 3,
+      "palette": "amber and violet dusk",
       "interior": "an impossible city of luminous towers, arched bridges and winding glowing streets seen from above",
       "next_target": "a great glowing garden park deep among the towers"
+    },
+    {
+      "name": "flora",
+      "exp": 1,
+      "palette": "emerald and blossom pink",
+      "interior": "a lush impossible garden forest, giant blossoms and glowing vines beneath towering tree canopies",
+      "next_target": "a warm glowing lantern hanging among the branches"
     }
   ]
 }
