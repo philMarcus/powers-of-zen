@@ -63,7 +63,7 @@ DEFAULTS = {
     "final_fps": 24,      # motion-interpolated output rate (0 = skip interpolation)
     "seed": 1234,
     "negative": ("text, watermark, logo, blurry, frame, border, low quality, "
-                 "human face, person, portrait"),
+                 "human face, portrait, close-up person"),
     # anti-collapse re-texturing of each fed-back frame
     "sharpen": 1.35,
     "contrast": 1.04,

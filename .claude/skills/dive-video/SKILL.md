@@ -91,8 +91,15 @@ Rules (revised 2026-07-23):
 - The 10ⁿ counter renders only for clean monotonic ladders (`counter: "auto"`
   default); wraps, lingers and fractional stacks make the label nonsense — set
   `"counter": false/true` in format to force.
-- Creature scenes fantastical, never gory. No human faces (negative prompt).
+- Creature scenes fantastical, never gory. People policy: distant anonymous
+  crowds and tiny figures AT SCALE are welcome texture (streets, markets,
+  formations); what's banned is featured individuals and readable faces. The
+  global negative bans faces/portraits/close-up persons. Where a lone figure
+  tends to intrude (DreamShaper paints scholars into studies, women into
+  flowing steam), write that card's interior as "empty, no one present".
   Mascot names never shown on screen.
+- VARY the cameo mascot across videos (not Belle every time); one cameo per
+  video, mascot matched to the register's scale.
 - `journeys/VARIATIONS.md` is the differentiation library — per-register
   variant looks and seam pairings. Draw from it; add to it.
 

@@ -152,6 +152,29 @@ Account-day checklist (needs Phil present for phone/2FA):
 6. Build outbox/ + posting driver + per-platform caption/hashtag generator; first
    post = full ladder (thesis-statement video).
 
+PRODUCTION LIST (locked 2026-07-26): EXCELLENT — full_ladder TURBO, iris_observatory DS,
+night_bloom DS, alexandria DS, black_hole TURBO. VERY GOOD — midnight_kitchen DS,
+tide_of_life DS, food_chain DS, dollhouse DS, snowfall TURBO. Ten ready.
+
+RENDER QUEUE (fixes staged, render later — no rendering tonight per Phil):
+1. mineral_heart --model ds  (star_forge de-flaked: round molten sun — Phil prefers DS,
+   turbo "too generic"; blocked on this fix)
+2. cartographer --model ds   (study/desk declared empty — DS painted a scholar into the
+   final seconds; turbo not as good)
+3. skyfog (rewritten: point targets per register, kettle-spout steam, single lighthouse
+   mention) — both models
+4. antenna_ball (reworked: 6 registers, ball→planet gag now the mid-video wrap via
+   lacquer-bead planet) — both models
+Also noted: full_ladder DS flora reads as Christmas tree + odd seam (moot — turbo chosen);
+vary cameo mascots across videos (Belle is in everything so far).
+
+POSTING DOCTRINE (Phil, 2026-07-26): dive-in is the preferred viewing cut. Post
+pattern: dive-in, dive-in, zoom-out, repeat (every 3rd post = zoom-out; Phil may
+flag which videos suit zoom-out). Order: alternate EXCELLENT with VERY GOOD until
+excellents run out, then continue with very-goods. First batch = 10-12 posts,
+finalized only after Phil rules on the five re-renders (full_ladder, cartographer,
+mineral_heart, night_bloom, snowfall). Then: account setup (TikTok, YT Shorts, IG).
+
 Pre-launch polish decision: masters are 576×1024; consider 2x upscale to 1152×2048
 at assembly (cheap ffmpeg lanczos, or Ultimate Upscale pass) since platforms prefer
 1080×1920. Mascot find-the-sprite contest: deferred (Phil), sprites stay subtle.

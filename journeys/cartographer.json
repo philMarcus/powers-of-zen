@@ -81,14 +81,14 @@
       "name": "study",
       "exp": 1.5,
       "palette": "oak brown and lamplight",
-      "interior": "a tall map-lined study with ladders, globes and shelves of rolled charts, seen from its high ceiling",
+      "interior": "a tall map-lined study with ladders, globes and shelves of rolled charts, seen from its high ceiling, the room empty and still, no one present",
       "next_target": "a tiny warm-lit desk piled with maps"
     },
     {
       "name": "desk",
       "exp": 0,
       "palette": "warm brass and candlelight",
-      "interior": "a cartographer's cluttered desk, unrolled ink maps, brass compasses, sealing wax and candlelight",
+      "interior": "a cartographer's cluttered desk, unrolled ink maps, brass compasses, sealing wax and candlelight, the room empty and still, no one present",
       "next_target": "a small ivory moth resting on the parchment"
     }
   ]

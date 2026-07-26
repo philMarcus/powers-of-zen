@@ -1,3 +1,6 @@
 output/
 __pycache__/
 .claude/settings.local.json*
+chrome_zen/
+review/
+review_divein/
