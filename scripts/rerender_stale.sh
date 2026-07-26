@@ -18,11 +18,11 @@ render() {
     echo ">>> review/$j$suffix.mp4 updated"
   fi
 }
-render full_ladder
+render cosmic_scales
 render cartographer
 render mineral_heart
 render night_bloom
-render full_ladder --model ds
+render cosmic_scales --model ds
 render cartographer --model ds
 render mineral_heart --model ds
 render night_bloom --model ds

@@ -152,7 +152,7 @@ Account-day checklist (needs Phil present for phone/2FA):
 6. Build outbox/ + posting driver + per-platform caption/hashtag generator; first
    post = full ladder (thesis-statement video).
 
-PRODUCTION LIST (locked 2026-07-26): EXCELLENT — full_ladder TURBO, iris_observatory DS,
+PRODUCTION LIST (locked 2026-07-26): EXCELLENT — cosmic_scales TURBO, iris_observatory DS,
 night_bloom DS, alexandria DS, black_hole TURBO. VERY GOOD — midnight_kitchen DS,
 tide_of_life DS, food_chain DS, dollhouse DS, snowfall TURBO. Ten ready.
 
@@ -165,7 +165,7 @@ RENDER QUEUE (fixes staged, render later — no rendering tonight per Phil):
    mention) — both models
 4. antenna_ball (reworked: 6 registers, ball→planet gag now the mid-video wrap via
    lacquer-bead planet) — both models
-Also noted: full_ladder DS flora reads as Christmas tree + odd seam (moot — turbo chosen);
+Also noted: cosmic_scales DS flora reads as Christmas tree + odd seam (moot — turbo chosen);
 vary cameo mascots across videos (Belle is in everything so far).
 
 POSTING DOCTRINE (Phil, 2026-07-26): dive-in is the preferred viewing cut. Post

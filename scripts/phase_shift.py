@@ -26,7 +26,7 @@ FFMPEG = ("/mnt/c/Users/Phil/AppData/Local/Microsoft/WinGet/Packages/"
 FPS = 12
 
 START_REGISTER = {
-    "full_ladder": "city",
+    "cosmic_scales": "city",
     "tide_of_life": "open_blue",
     "mineral_heart": "mineral_veins",
     "night_bloom": "village",
