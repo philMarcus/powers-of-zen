@@ -11,56 +11,56 @@
       "exp": -2,
       "palette": "ivory and brass",
       "interior": "the patterned wing of a small ivory moth resting on parchment, scales like tiled roof shingles",
-      "next_target": "a swirling plume of ink and gold dust"
+      "next_target": "a pale tangle of woven golden paper fibers beneath the wing"
     },
     {
       "name": "paper_fibers",
       "exp": -5,
       "palette": "parchment cream and gold",
       "interior": "the woven fibers of handmade paper seen impossibly close, golden ink soaking along the threads like rivers",
-      "next_target": "a silver web of filaments shrinking to an ink dot"
+      "next_target": "a swirling plume of black ink and gold dust soaking between the threads"
     },
     {
       "name": "ink_particles",
       "exp": -8,
       "palette": "india ink and gold",
       "interior": "swirling particles of black ink and gold pigment suspended in fluid, curling into branching plumes",
-      "next_target": "a gold-leaf spiral galaxy on a filament"
+      "next_target": "a silver web of glowing filaments far in the swirling dark"
     },
     {
       "name": "cosmic_web",
       "exp": 26,
       "palette": "deep violet and silver",
       "interior": "the vast cosmic web seen from an oblique angle, irregular silver filaments of galaxy clusters branching through darkness",
-      "next_target": "one bright star in the orrery of the sky"
+      "next_target": "a gold-leaf spiral galaxy caught on a silver filament"
     },
     {
       "name": "galaxy",
       "exp": 21,
       "palette": "indigo and gold leaf",
       "interior": "a tilted spiral galaxy like gold leaf scattered on dark velvet, luminous arms sweeping past",
-      "next_target": "a globe-like planet of teal seas"
+      "next_target": "one blazing brass-gold star ringed by tiny wandering planets"
     },
     {
       "name": "star",
       "exp": 11,
       "palette": "brass gold and white",
       "interior": "a blazing star ringed by tiny wandering planets, like an orrery of light",
-      "next_target": "a golden coastline tracing a teal sea"
+      "next_target": "a globe-like planet of teal seas and parchment clouds"
     },
     {
       "name": "planet",
       "exp": 7,
       "palette": "ocean teal and parchment",
       "interior": "a huge spherical planet seen from space, curved horizon and glowing limb, coastlines and cloud swirls wrapping the sphere like an antique globe",
-      "next_target": "a glowing city at the mouth of a river"
+      "next_target": "a golden coastline tracing a teal sea"
     },
     {
       "name": "coastline",
       "exp": 5,
       "palette": "parchment gold and sea teal",
       "interior": "a sweeping coastline seen from high altitude, harbors, capes and river deltas drawn in gold light against a teal sea",
-      "next_target": "one lit study window in a tall tower"
+      "next_target": "a glowing city at the mouth of a river"
     },
     {
       "name": "map_city",
@@ -75,21 +75,21 @@
         "size": 0.11
       },
       "interior": "a city of luminous towers and winding streets seen from above at dusk, laid out like a living map",
-      "next_target": "a candlelit desk far below"
+      "next_target": "one lit study window in a tall tower"
     },
     {
       "name": "study",
       "exp": 1.5,
       "palette": "oak brown and lamplight",
       "interior": "a tall map-lined study with ladders, globes and shelves of rolled charts, seen from its high ceiling",
-      "next_target": "a tiny warm-lit desk"
+      "next_target": "a tiny warm-lit desk piled with maps"
     },
     {
       "name": "desk",
       "exp": 0,
       "palette": "warm brass and candlelight",
       "interior": "a cartographer's cluttered desk, unrolled ink maps, brass compasses, sealing wax and candlelight",
-      "next_target": "a golden thread of ink in woven paper"
+      "next_target": "a small ivory moth resting on the parchment"
     }
   ]
 }

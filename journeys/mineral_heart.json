@@ -11,49 +11,49 @@
       "exp": -4,
       "palette": "ice blue and silver",
       "interior": "the six branching arms of an immense snowflake seen up close, feathered ice crystal fractals growing at their tips",
-      "next_target": "a shining atomic lattice"
+      "next_target": "a glowing prism of stacked crystal molecules deep in the ice"
     },
     {
       "name": "molecule",
       "exp": -8,
       "palette": "cyan and ultraviolet",
       "interior": "glowing crystal molecules stacked in repeating prisms, light refracting through endless transparent geometry",
-      "next_target": "a glowing web of filaments collapsing to a bright point"
+      "next_target": "a perfect shining atomic lattice"
     },
     {
       "name": "lattice",
       "exp": -10,
       "palette": "electric blue and white",
       "interior": "the interior of a perfect atomic crystal lattice, rows of glowing atoms joined by luminous bonds receding in every direction",
-      "next_target": "a diamond spiral galaxy on a dark filament"
+      "next_target": "a vast crystalline web of glowing filaments far in the darkness"
     },
     {
       "name": "cosmic_web",
       "exp": 26,
       "palette": "deep violet and silver",
       "interior": "the vast cosmic web seen from an oblique angle, irregular crystalline filaments of galaxy clusters branching through darkness",
-      "next_target": "one white star in a glittering ring"
+      "next_target": "a diamond spiral galaxy on a dark filament"
     },
     {
       "name": "galaxy",
       "exp": 21,
       "palette": "sapphire and diamond",
       "interior": "a tilted spiral galaxy that glitters like crushed diamond, arms of blue-white stars sweeping past",
-      "next_target": "a dark planet veined with glowing embers"
+      "next_target": "one blazing white star in a glittering ring of crystal shards"
     },
     {
       "name": "star_forge",
       "exp": 11,
       "palette": "white gold and blue",
       "interior": "a blazing white star surrounded by rings of glittering crystalline asteroid shards catching its light",
-      "next_target": "a snow-and-mineral mountain range on a curved horizon"
+      "next_target": "a dark planet veined with glowing embers"
     },
     {
       "name": "planet",
       "exp": 7,
       "palette": "obsidian and ember",
       "interior": "a huge spherical volcanic planet seen from space, curved horizon and glowing limb, crystal mountain ranges and ember fissures wrapping the sphere",
-      "next_target": "a glittering mineral canyon far below"
+      "next_target": "a snow-and-mineral mountain range on the curved horizon"
     },
     {
       "name": "mountains",
@@ -68,28 +68,28 @@
         "size": 0.12
       },
       "interior": "a vast striated mountain range seen from high above, snow ridges and mineral-banded slopes carved by winding valleys",
-      "next_target": "a cracked geode glinting among the rocks"
+      "next_target": "a glittering mineral canyon wall far below"
     },
     {
       "name": "mineral_veins",
       "exp": 2,
       "palette": "copper and malachite green",
       "interior": "a canyon wall shot through with glowing veins of copper and malachite, layered rock faces glittering with embedded crystals",
-      "next_target": "a glowing crystal cavern shrinking to a spark"
+      "next_target": "a great cracked geode boulder glinting among mossy rocks"
     },
     {
       "name": "geode",
       "exp": 0,
       "palette": "slate and violet glow",
       "interior": "a great cracked-open geode boulder, its dark stone shell revealing a glowing crystal heart, resting among mossy rocks",
-      "next_target": "a cluster of glowing violet crystals"
+      "next_target": "a cluster of glowing violet crystals in its heart"
     },
     {
       "name": "geode_crystals",
       "exp": -2,
       "palette": "amethyst and rose quartz",
       "interior": "a forest of amethyst crystal spires inside a geode, refracted violet light bouncing between facets",
-      "next_target": "a prism of stacked crystal molecules"
+      "next_target": "a feathered six-armed snowflake of pale ice"
     }
   ]
 }

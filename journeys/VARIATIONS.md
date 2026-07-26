@@ -35,12 +35,16 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
 - vertical tower city · canal city · rooftop-garden city · souk/market maze
 - clockwork city · paper city · coral-grown city · city inside a geode
 - mountainside cave cities, medieval castle cities
+- factories and produdction; formations of people
 
 ## Human scale (10⁻¹–10¹) — the richest zone, spend time here
 - cluttered desk (lantern, books, clockwork) · workshop · market stall
 - dollhouse recursion: a room containing a dollhouse that IS the room
   (self-similar gag, natural fractional-scale steps)
 - greenhouse interior · library canyon of shelves · kitchen macro-world
+- arcade; theme park ride; pop concerts
+- living room scenes (tv is a good way to jump to anothrt scale)
+
 
 ## Creatures (10⁻⁴–10¹) — food-chain chains, fractional steps
 - big fish eats fish eats fish… (each ~1/3 decade apart, 3-5 links)
@@ -57,11 +61,13 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
 - folded-protein tangles (canonical molecule look)
 - crystal/mineral route: zoom into a geode or snowflake lattice instead of life
 - DNA helix canyon; virus geometry (icosahedral guests)
+- cubic crysyal lattices and other interesting formations
 
 ## Atomic / subatomic (10⁻¹⁵–10⁻¹⁰)
 - hazy electron probability clouds; nucleus cluster
 - bubble-chamber particle tracks (spirals in fog) — canonical quark look
 - cosmic-ray shower cascading; quantum foam boiling; string-loop hairballs
+- groups of quarks (visibly up-down-up e.g.) forming hadrons and mesons
 
 ## Seam pairings that should exist someday
 - quantum foam ↔ cosmic web (canonical)
@@ -71,4 +77,5 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
 - any small round object like theball on the end of an insect antennae could become a planet
 - clouds over a landmass becoming a fog can become almost anything: nebulae, quantum or cosmological "fogginess"
 - at astronommical levels, can deissolve into "black hole" (use appropriate lensing) and come out in humanish realm, e.g.
+- tv or phone screens can be a segue from human scale to any other
 
