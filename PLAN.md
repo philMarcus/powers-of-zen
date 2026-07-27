@@ -208,7 +208,7 @@ at assembly (cheap ffmpeg lanczos, or Ultimate Upscale pass) since platforms pre
 - WSL2, node v22.22.2, python 3.12 (requests ✓, PIL ✗ — not yet installed).
 - ffmpeg: Windows-side via winget, callable from WSL:
   `/mnt/c/Users/Phil/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-8.1.1-full_build/bin/ffmpeg.exe`
-- Ollama on Windows host, reachable from WSL at `http://192.168.68.1:11434` (~15 models incl. deepseek-r1, qwen3.6:27b).
+- Ollama on Windows host, reachable from WSL at localhost:11434 (was 192.168.68.1; WSL host IP drifts — poster.py auto-detects) (~15 models incl. deepseek-r1, qwen3.6:27b).
 - ComfyUI: Windows install at `/mnt/c/Users/Phil/ComfyUI`, started via
   `/mnt/c/Users/Phil/start_comfyui.sh` (tmux session `comfy`); **API reachable from WSL at
   `http://localhost:8188`** (v0.22.0, Windows box has 64GB RAM). Checkpoints available:

@@ -37,7 +37,27 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from zen_browser import Tab  # noqa: E402
 
-OLLAMA = "http://192.168.68.1:11434"
+def _find_ollama():
+    # WSL host IP drifts between reboots; try localhost then the default gateway
+    import subprocess
+    cands = ["http://localhost:11434"]
+    try:
+        gw = subprocess.check_output("ip route show default | awk '{print $3}'",
+                                     shell=True, text=True).strip()
+        if gw:
+            cands.append(f"http://{gw}:11434")
+    except Exception:
+        pass
+    for c in cands:
+        try:
+            requests.get(f"{c}/api/version", timeout=3)
+            return c
+        except Exception:
+            continue
+    return cands[0]
+
+
+OLLAMA = _find_ollama()
 VLM_MODEL = "qwen3-vl:4b"          # pull: ollama pull qwen3-vl:4b (fallback: moondream)
 QUEUE = ROOT / "outbox" / "queue.json"
 FLAGS = ROOT / "outbox" / "flags.jsonl"
