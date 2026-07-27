@@ -220,8 +220,13 @@ def post_tiktok(video_rel, caption, dry_run):
     if dry_run:
         print(f"  [dry-run] TikTok: uploaded+captioned, AI-label attempted (state~{ai_on}), checks OK. NOT posting.")
         return "dry-run"
-    posted = tab.eval("const b=[...document.querySelectorAll('button')].find(x=>x.textContent.trim()==='Post');if(b){b.click();'ok'}else null")
+    posted = tab.eval("(function(){const b=[...document.querySelectorAll('button')]"
+                      ".find(x=>x.textContent.trim()==='Post');if(b){b.click();return 'ok'}return null})()")
     expect(posted, "tiktok", "post_click", tab, "Post button not found")
+    # a 'Post now' confirmation modal may appear — click it if so
+    wait_for(tab, "[...document.querySelectorAll('button')].find(x=>x.textContent.trim()==='Post now')?true:null", 8)
+    tab.eval("(function(){const b=[...document.querySelectorAll('button')]"
+             ".find(x=>x.textContent.trim()==='Post now');if(b){b.click();return 'ok'}return null})()")
     ok = wait_for(tab, "document.body.innerText.toLowerCase().includes('under review')"
                        "||location.pathname.includes('/content')?true:null", 30)
     expect(ok, "tiktok", "post", tab, "post confirmation not seen")
@@ -268,8 +273,13 @@ def post_youtube(video_rel, title, desc, dry_run):
     tab.eval("[...document.querySelectorAll('tp-yt-paper-radio-button')].find(r=>r.textContent.trim().startsWith('Public'))?.click()")
     time.sleep(1)
     tab.eval("document.querySelector('#done-button')?.click()")
-    link = wait_for(tab, "document.body.innerText.includes('Video published')?"
-                         "(document.querySelector('a[href*=\"shorts\"]')?.href||'posted'):null", 30)
+    # confirmation is EITHER "Video published" OR the "Video processing … before your
+    # video is public" dialog (SD still transcoding) — both mean it published public
+    link = wait_for(tab, "(function(){const t=document.body.innerText;"
+                         "if(t.includes('Video published')||t.includes('finish processing')"
+                         "||t.includes('processing before your video is public')){"
+                         "return document.querySelector('a[href*=\"shorts\"]')?.href||'published'}"
+                         "return null})()", 30)
     expect(link, "youtube", "publish", tab, "publish confirmation not seen")
     return link
 
