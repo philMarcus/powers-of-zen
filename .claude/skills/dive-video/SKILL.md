@@ -63,6 +63,12 @@ attention project, not a science project)
 | 26 | cosmos | Amos |
 
 Rules (revised 2026-07-23):
+- **EVERY video gets a mascot cameo (STANDARD, 2026-07-27).** Add a `cameo`
+  {sprite: output/mascots/canon/<name>.png, pos:[x,y], size:0.12+} to ONE register,
+  scale-matched to that mascot (see table). Size ≥0.12 or it's invisible & pointless.
+  Rotate the full cast — don't reuse a mascot until all are used. Video with a visible
+  cameo → find-the-character caption; without → normal caption. Never regenerate an
+  already-released video just to add one. (May need size/pos/denoise tuning.)
 - **Journeys are CIRCULAR.** The last register's `next_target` names the first
   register's world seen from afar — the seam is authored, never patched. With
   `exact_loop` the last frame IS the first frame. The seam pair can be ANY two

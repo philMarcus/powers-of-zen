@@ -4,3 +4,5 @@ __pycache__/
 chrome_zen/
 review/
 review_divein/
+production/
+production_alternates/

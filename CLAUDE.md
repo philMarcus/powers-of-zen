@@ -40,8 +40,14 @@ Everything runs LOCAL and FREE on Phil's RTX 3080 (no paid APIs).
   start_chrome_zen.sh, overnight.sh (render batches), mascot_concepts.py.
 - `output/<journey>/vN/` — renders (NEVER overwritten; finals at root, build/ = intermediates).
 - `output/mascots/canon/` — the chosen mascot cast (hidden Waldo-style cameos, one per video).
-- `review/` + `review_divein/` — phase-shifted presentation cuts (zoom-out / dive-in).
+- `review/` + `review_divein/` — phase-shifted cuts still IN REVIEW (zoom-out / dive-in).
+- `production/` — chosen-model cuts of videos MARKED READY (queue.json points here).
+  `production_alternates/` — the other-model counterpart. Promote via
+  `scripts/promote.py <journey> <turbo|ds>` (the standard "approve" step).
 - `outbox/queue.json` — the posting queue: file + title-caption + yt fields + approval gate.
+- Every video gets a scale-matched mascot cameo (size ≥0.12, full-cast rotation) → the
+  find-the-character caption. Music is a QUALITY priority: phase-dynamic (intensify on
+  plunge, chill on hover), moving toward local MusiConGen — see PLAN.md.
 - `.claude/skills/dive-video/` — how to make a video. `.claude/skills/zen-post/` — how to
   post one (the playbook the future local harness will execute).
 
@@ -57,6 +63,8 @@ Everything runs LOCAL and FREE on Phil's RTX 3080 (no paid APIs).
 
 ## Current state (update this line as it changes)
 2026-07-27: LIVE on all 3 platforms; posts #1 (cosmic_scales) + #2 (midnight_kitchen)
-up. Auto-posting HALTED (cost + approval gate). 10-video production list locked; 8 queued
-& caption-fixed, awaiting Phil approval. Next build: LOCAL posting harness (Ollama VLM),
-then Streamlit dashboard + approval flow, then Journey Composer. Full detail in PLAN.md.
+up. Auto-posting HALTED (cost + approval gate). 10-video production list PROMOTED to
+production/ (+ alternates). Fix batch rendering with cameos (skyfog/antenna_ball/
+mineral_heart/cartographer). Next build: LOCAL posting harness (qwen3-vl:4b + moondream2),
+then Streamlit dashboard + approval flow, then Journey Composer, then phase-dynamic music.
+Full detail in PLAN.md.

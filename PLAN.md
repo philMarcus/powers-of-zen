@@ -302,22 +302,44 @@ so no reason to omit). Composer DRAFTS the caption at journey-compose time (know
 concept); Phil FINALIZES/approves it at video review (after seeing the render). Approval
 gate (`approved:false->true`) still required before any post.
 
-### AUDIO / MUSIC (Phil interested; NOT top priority; researched 2026-07-27)
-Silent videos underperform on TikTok; a sound is a real discovery lever. If we add music
-it MUST match the video's rhythm. We're unusually well-suited to beat-sync because our
-timing is fully parametric (sec_per_scale) and the engine already emits decade-PULSE
-events — we align the VIDEO to the music, not vice versa. Three depth tiers:
-1. **Trending sound at post time** (near-zero work): pick from the platform library when
-   the harness posts. Best discovery bang; loose rhythm match. START HERE.
-2. **Beat-locked library/generated track** (moderate): choose/generate a track at known
-   BPM, then set sec_per_scale so register transitions + counter-pulses land on beats
-   (librosa beat-detect → snap our pulse frames). Tight sync, our real edge.
-3. **Local generation** (deeper, on-brand $0): MusicGen runs on the 3080; **MusiConGen**
-   = MusicGen with BPM+chord conditioning (exactly "match the rhythm"); LoopGen/VampNet
-   do LOOPABLE audio (fits our looping videos). ACE-Step / Stable Audio Open are alts.
-   Google Lyria/MusicLM exist via API but local MusicGen fits the $0 ethos better.
-Recommendation: tier 1 as baseline once posting is automated; build toward tier 2/3 as a
-"signature sound" later. Not blocking launch.
+### AUDIO / MUSIC (priority RAISED 2026-07-27 — Phil: it's part of video QUALITY, not just discovery)
+Silent videos underperform; a sound is both a discovery lever AND core to how the video
+FEELS. Music must match the journey's rhythm — and not just BPM but INTENSITY OVER TIME
+matched to the arrive→look→plunge grammar: build/intensify through the PLUNGE, ease/chill
+during the HOVER (arrival + look beats). We're unusually well-suited because our timing is
+fully parametric (sec_per_scale) and the engine already emits per-phase beats + decade
+PULSE events — so we can hand the music generator our exact per-phase timeline and get
+dynamics that rise and fall WITH the dive. Tiers:
+1. **Trending sound at post time** (near-zero work): quick discovery win, loose match.
+   Fine as a stopgap the moment posting is automated.
+2. **Beat-locked track** (moderate): track at known BPM, snap register transitions +
+   counter-pulses to beats (librosa).
+3. **PHASE-DYNAMIC local generation** (the real target — Phil wants to move here fast):
+   generate a track conditioned on our per-phase intensity timeline. **MusiConGen**
+   (MusicGen + BPM/chord conditioning) is the local $0 fit; LoopGen/VampNet give LOOPABLE
+   audio (matches our looping videos); Google Lyria via API is the hosted alt. Feed the
+   generator the arrive/look/plunge segment map so intensity tracks the zoom.
+Recommendation: tier-1 stopgap when posting goes live, but move to tier 3 SOON — it's a
+quality feature, not a nice-to-have. Slots in after the posting harness + dashboard.
+
+### PRODUCTION FOLDER WORKFLOW (standard, 2026-07-27)
+When Phil marks a video ready for production, run `python3 scripts/promote.py <journey>
+<turbo|ds>`. It MOVES the chosen model's cuts (zoom-out + dive-in) from review/ into
+`production/`, and the OTHER model's counterpart cuts into `production_alternates/`.
+Result: review/ holds only in-progress/unreviewed videos; production/ is the postable
+set (queue.json `file` points here); production_alternates/ keeps the alt-model version
+in case we want to A/B or swap. Both folders gitignored. Newly rendered videos still land
+in review/ first (fix_batch.sh etc.), promoted only after Phil's OK. The 10-video launch
+set is already promoted.
+
+### CAMEO DOCTRINE — STANDARD GOING FORWARD (2026-07-27)
+EVERY new video gets a mascot cameo, scale-matched to a register, size ≥0.12 so it's
+actually visible (smaller = invisible = pointless). Full-cast rotation: don't reuse a
+mascot until the cast is exhausted. Video WITH a visible cameo → find-the-character
+caption ("find <Name>, comment the timestamp", future contest hook); video without →
+normal descriptive caption. Do NOT regenerate already-released videos just to add a cameo.
+May need tuning after this round (size/position/denoise so the face survives) — getting it
+consistent matters even if not perfect immediately.
 
 ### Build order
 (1) local posting harness — stops the bleeding, pure code (cheap to build even though
