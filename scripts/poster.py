@@ -274,12 +274,14 @@ def post_youtube(video_rel, title, desc, dry_run):
     return link
 
 
-def _ig_next(tab):
-    """Click Instagram's top-right Next/Share link (DOM, coord fallback)."""
-    if not tab.eval("const n=[...document.querySelectorAll('div[role=\"button\"],button,a,span')]"
-                    ".find(e=>['Next','Share'].includes(e.textContent.trim())&&e.offsetParent);"
-                    "if(n){n.click();'ok'}else null"):
-        click_css(tab, 956, 117)
+def _ig_click(tab, label):
+    """Click Instagram's modal-header button with EXACT text (Next/Share), constrained
+    to the top of the screen so we never hit feed elements behind the modal."""
+    return tab.eval("(function(){const el=[...document.querySelectorAll("
+                    "'div[role=\"button\"],button,a,span,div[tabindex]')].find(e=>"
+                    f"e.textContent.trim()==='{label}'&&e.offsetParent"
+                    "&&e.getBoundingClientRect().top<220);"
+                    "if(el){el.click();return 'ok'}return null})()")
 
 
 def post_instagram(video_rel, caption, dry_run):
@@ -299,12 +301,12 @@ def post_instagram(video_rel, caption, dry_run):
            "instagram", "crop_screen", tab, "crop screen never appeared (upload failed?)")
     time.sleep(1)
     # advance CROP -> EDIT: wait for the Edit screen marker ('Cover photo' / 'Trim')
-    _ig_next(tab)
+    expect(_ig_click(tab, "Next"), "instagram", "next1", tab, "first Next button not found")
     expect(wait_for(tab, "document.body.innerText.includes('Cover photo')"
                          "||document.body.innerText.includes('Trim')?true:null", 20),
            "instagram", "edit_screen", tab, "edit screen never appeared after 1st Next")
     # advance EDIT -> NEW REEL: wait for caption box / 'Share'
-    _ig_next(tab)
+    expect(_ig_click(tab, "Next"), "instagram", "next2", tab, "second Next button not found")
     csel = ("document.querySelector('div[contenteditable=\"true\"][aria-label*=\"caption\" i]')"
             "||document.querySelector('div[aria-label=\"Write a caption...\"]')"
             "||document.querySelector('div[contenteditable=\"true\"]')")
@@ -316,7 +318,7 @@ def post_instagram(video_rel, caption, dry_run):
         got = tab.eval(f"({csel})?.textContent?.slice(0,40)")
         print(f"  [dry-run] Instagram: reel ready, caption='{got}'. NOT sharing.")
         return "dry-run"
-    _ig_next(tab)   # Share
+    expect(_ig_click(tab, "Share"), "instagram", "share", tab, "Share button not found")
     ok = wait_for(tab, "document.body.innerText.includes('Your reel has been shared')"
                        "||document.body.innerText.includes('shared')?true:null", 40)
     return "posted" if ok else "shared(unconfirmed)"
