@@ -87,6 +87,29 @@ class Tab:
                 last_err = e
         raise last_err
 
+    def choosefile(self, button_js, winpath):
+        """Intercept the native file chooser: run button_js to open it, then
+        feed the file via the chooser's backing node."""
+        self.cmd("Page.enable")
+        self.cmd("Page.setInterceptFileChooserDialog", enabled=True)
+        try:
+            self.id += 1
+            self.ws.send(json.dumps({"id": self.id, "method": "Runtime.evaluate",
+                                     "params": {"expression": button_js,
+                                                "userGesture": True}}))
+            deadline = time.time() + 20
+            node = None
+            while time.time() < deadline:
+                msg = json.loads(self.ws.recv())
+                if msg.get("method") == "Page.fileChooserOpened":
+                    node = msg["params"].get("backendNodeId")
+                    break
+            if node is None:
+                raise RuntimeError("file chooser never opened")
+            self.cmd("DOM.setFileInputFiles", files=[winpath], backendNodeId=node)
+        finally:
+            self.cmd("Page.setInterceptFileChooserDialog", enabled=False)
+
 if __name__ == "__main__":
     cmd = sys.argv[1]
     if cmd == "tabs":
@@ -104,4 +127,5 @@ if __name__ == "__main__":
     elif cmd == "eval": print(tab.eval(args[0]))
     elif cmd == "type": tab.type_text(args[0]); print("typed")
     elif cmd == "setfile": tab.setfile(args[0], args[1]); print("file set")
+    elif cmd == "choosefile": tab.choosefile(args[0], args[1]); print("file chosen")
     elif cmd == "click": tab.click(int(args[0]), int(args[1])); print("clicked")
