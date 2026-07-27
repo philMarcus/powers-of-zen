@@ -347,6 +347,41 @@ using Claude to post isn't). (2) pipeline state store + Streamlit dashboard + ap
 flow. (3) Journey Composer (frontier) filling the pending-review queue. (4) local QC +
 view-count collection. Keep stages format-agnostic for future video styles.
 
+## OPERATING SYSTEM — dashboard + data model + scheduler (designed 2026-07-27)
+
+**Source of truth = two files (everything reads/writes these):**
+- `pipeline.json` — state of every video: {journey, model, cut(divein|zoomout), file,
+  title, caption(editable), yt_title, yt_desc, state, per-platform results+URLs, ts}.
+  state ∈ rendered → pending_review → approved/queued → live → failed. Evolves today's
+  outbox/queue.json. Dashboard writes it, scheduler picks from it, poster.py updates it.
+- `telemetry.jsonl` — append-only events {ts, event(post|post_fail|render|render_fail|flag),
+  journey, platform, detail}. Dashboard activity/failures feed. (flags.jsonl folds in here.)
+
+**Dashboard (Streamlit, local, free — like autonomy_dev's):** panels —
+- Queue: preview · cut · model · title · EDITABLE caption (writes to pipeline.json) · sched time
+- Review: rendered videos awaiting Phil's yes → approve moves to Queue
+- Live: posted + 3 platform links (view-count slot, filled later if safe)
+- Journeys pending: (once composer exists) drafts to skim/edit/approve pre-render
+- Telemetry: recent activity, failed posts, failed renders, flags
+
+**Scheduler — COST-CRITICAL: local cron/daemon runs poster.py DIRECTLY, NO Claude in loop.**
+poster.py is standalone (reads pipeline.json, posts next approved, writes telemetry), so the
+always-on machine costs only electricity. Claude appears ONLY for caption-writing + journey
+composition. Cadence 2/day (08:00/18:00). Phase-2 hook: if queue low → ping composer.
+
+**Folder rule (corrected):** production/ = ONLY the exact postable file (chosen cut of chosen
+model) for queued/live videos. production_alternates/ = other model (both cuts) + the OTHER
+cut of the chosen model. Fix promote.py to take cut direction (currently over-includes both
+cuts of chosen model).
+
+**View counts:** HOLD (scraping is fiddly + mild ban-risk on new accounts). Revisit at volume.
+
+**Harness polish:** click Done/Close after each post so Phil lands back on the videos list.
+
+**Build order:** (1) promote.py cut-fix + harness Done-click (small). (2) pipeline.json +
+telemetry.jsonl data model (fold in queue.json/flags.jsonl). (3) Streamlit dashboard w/
+editable captions. (4) local scheduler (cron → poster.py). (5) later: composer, view counts.
+
 ## Open questions (park until relevant)
 
 - Local VLM selection + accuracy validation (does it reliably read the post-flow UIs?).
