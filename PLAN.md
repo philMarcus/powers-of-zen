@@ -364,10 +364,13 @@ view-count collection. Keep stages format-agnostic for future video styles.
 - Journeys pending: (once composer exists) drafts to skim/edit/approve pre-render
 - Telemetry: recent activity, failed posts, failed renders, flags
 
-**Scheduler — COST-CRITICAL: local cron/daemon runs poster.py DIRECTLY, NO Claude in loop.**
-poster.py is standalone (reads pipeline.json, posts next approved, writes telemetry), so the
-always-on machine costs only electricity. Claude appears ONLY for caption-writing + journey
-composition. Cadence 2/day (08:00/18:00). Phase-2 hook: if queue low → ping composer.
+**Scheduler — WINDOWS-SIDE (Phil's choice 2026-07-27; his autonomy was a Windows script,
+more stable than WSL cron/daemon which idles out). Windows Task Scheduler runs a script at
+08:00/18:00 that (a) ensures Chrome-zen is up, (b) calls `wsl … python3 scripts/poster.py`.
+COST-CRITICAL: NO Claude in the loop — poster.py is standalone (reads pipeline.json, posts
+next approved, writes telemetry), always-on cost = electricity only. Claude appears ONLY for
+caption-writing + journey composition. Task Scheduler also wakes WSL (solves idle-shutdown)
+and survives reboots. Phase-2 hook: if queue low → ping composer.
 
 **Folder rule (corrected):** production/ = ONLY the exact postable file (chosen cut of chosen
 model) for queued/live videos. production_alternates/ = other model (both cuts) + the OTHER
