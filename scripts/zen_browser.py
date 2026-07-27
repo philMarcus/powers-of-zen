@@ -1,0 +1,107 @@
+#!/usr/bin/env python3
+"""Minimal CDP driver for the PowersOfZen Chrome profile (port 9222).
+
+Commands:
+  tabs                       list open tabs
+  goto <url>                 navigate first tab (or --tab N)
+  shot <out.png>             screenshot current tab
+  eval <js>                  evaluate JS, print result
+  type <text>                insert text at focus (Input.insertText)
+  setfile <selector> <winpath>  attach file to <input type=file>
+  click <x> <y>              synthesized mouse click at viewport coords
+"""
+import base64
+import json
+import sys
+import time
+import urllib.request
+
+import websocket
+
+PORT = 9222
+
+def tabs():
+    return [t for t in json.load(urllib.request.urlopen(f"http://localhost:{PORT}/json"))
+            if t["type"] == "page"]
+
+class Tab:
+    def __init__(self, idx=0, match=None):
+        ts = tabs()
+        if match:
+            t = next(t for t in ts if match in t["url"] or match in t.get("title",""))
+        else:
+            t = ts[idx]
+        # activate first: chrome throttles background tabs (screenshots hang)
+        urllib.request.urlopen(f"http://localhost:{PORT}/json/activate/{t['id']}")
+        time.sleep(0.5)
+        self.ws = websocket.create_connection(t["webSocketDebuggerUrl"], timeout=60)
+        self.id = 0
+
+    def cmd(self, method, **params):
+        self.id += 1
+        self.ws.send(json.dumps({"id": self.id, "method": method, "params": params}))
+        while True:
+            msg = json.loads(self.ws.recv())
+            if msg.get("id") == self.id:
+                if "error" in msg:
+                    raise RuntimeError(msg["error"])
+                return msg.get("result", {})
+
+    def eval(self, js):
+        r = self.cmd("Runtime.evaluate", expression=js, returnByValue=True,
+                     userGesture=True, awaitPromise=True)
+        return r.get("result", {}).get("value")
+
+    def goto(self, url):
+        self.cmd("Page.enable")
+        self.cmd("Page.navigate", url=url)
+
+    def shot(self, path):
+        r = self.cmd("Page.captureScreenshot", format="png")
+        with open(path, "wb") as f:
+            f.write(base64.b64decode(r["data"]))
+
+    def type_text(self, text):
+        self.cmd("Input.insertText", text=text)
+
+    def click(self, x, y):
+        for t in ("mousePressed", "mouseReleased"):
+            self.cmd("Input.dispatchMouseEvent", type=t, x=x, y=y,
+                     button="left", clickCount=1)
+
+    def setfile(self, selector, winpath):
+        # pierce iframes: getDocument(pierce) + performSearch finds inputs anywhere
+        self.cmd("DOM.getDocument", depth=-1, pierce=True)
+        search = self.cmd("DOM.performSearch", query=selector,
+                          includeUserAgentShadowDOM=True)
+        if not search["resultCount"]:
+            raise RuntimeError(f"no node matches {selector}")
+        nodes = self.cmd("DOM.getSearchResults", searchId=search["searchId"],
+                         fromIndex=0, toIndex=search["resultCount"])["nodeIds"]
+        last_err = None
+        for nid in nodes:
+            try:
+                self.cmd("DOM.setFileInputFiles", files=[winpath], nodeId=nid)
+                return
+            except RuntimeError as e:
+                last_err = e
+        raise last_err
+
+if __name__ == "__main__":
+    cmd = sys.argv[1]
+    if cmd == "tabs":
+        for i, t in enumerate(tabs()):
+            print(i, t["url"][:90])
+        sys.exit()
+    tabarg = None
+    args = sys.argv[2:]
+    if args and args[0].startswith("--tab="):
+        tabarg = args[0].split("=",1)[1]
+        args = args[1:]
+    tab = Tab(match=tabarg) if tabarg and not tabarg.isdigit() else Tab(idx=int(tabarg or 0))
+    if cmd == "goto": tab.goto(args[0]); time.sleep(3)
+    elif cmd == "shot": tab.shot(args[0]); print("saved", args[0])
+    elif cmd == "eval": print(tab.eval(args[0]))
+    elif cmd == "type": tab.type_text(args[0]); print("typed")
+    elif cmd == "setfile": tab.setfile(args[0], args[1]); print("file set")
+    elif cmd == "click": tab.click(int(args[0]), int(args[1])); print("clicked")
