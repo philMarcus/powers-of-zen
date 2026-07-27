@@ -1,6 +1,6 @@
 {
   "cadence": "2/day at 08:00 and 18:00 EDT; order locked by Phil 2026-07-26",
-  "note": "caption = TikTok+Instagram text. yt_title/yt_desc for YouTube. All posts: AI label ON, not-for-kids, visibility public. Files are the phase-shifted presentation cuts.",
+  "note": "caption = the title line (no separate caption prose). Keep hashtags minimal. yt_title/yt_desc for YouTube. AI label ON, not-for-kids, public. REQUIRES PHIL APPROVAL before each post (approved: false -> true).",
   "posts": [
     {
       "n": 1,
@@ -12,8 +12,8 @@
       "n": 2,
       "journey": "midnight_kitchen",
       "file": "review_divein/midnight_kitchen_ds_divein.mp4",
-      "caption": "a midnight bakery, one sugar grain, and the town glittering inside it \ud83c\udf5e\u2744\ufe0f every scale hides a world. #powersofzen #oddlysatisfying #aiart #zoom #cozy #miniature",
-      "yt_title": "the town hidden inside a grain of sugar \ud83c\udf5e\u2744\ufe0f 10\u1dbb",
+      "caption": "a midnight bakery, one sugar grain, and the town glittering inside it 🍞❄️ every scale hides a world. #powersofzen #oddlysatisfying #aiart #zoom #cozy #miniature",
+      "yt_title": "the town hidden inside a grain of sugar 🍞❄️ 10ᶻ",
       "yt_desc": "a midnight bakery, one sugar grain, and the town glittering inside it. every scale hides a world.\n\n#shorts #oddlysatisfying #aiart #zoom #cozy #miniature #powersofzen",
       "status": "POSTED all 3 (2026-07-27 ~08:15 EDT; YT: youtube.com/shorts/F5FkvTJmivw; TikTok under review as usual)"
     },
@@ -22,50 +22,56 @@
       "journey": "iris_observatory",
       "file": "review/iris_observatory_ds.mp4",
       "direction": "ZOOM-OUT",
-      "caption": "the telescope looks back: iris \u2192 retina \u2192 galaxy \u2192 the eye again \ud83d\udc41\ufe0f\ud83c\udf0c #powersofzen #space #eye #trippy #aiart #oddlysatisfying",
-      "yt_title": "the galaxy at the back of your eye \ud83d\udc41\ufe0f\ud83c\udf0c 10\u1dbb",
-      "yt_desc": "the telescope looks back: iris, retina, galaxy, and the eye again.\n\n#shorts #space #eye #trippy #aiart #oddlysatisfying #powersofzen"
+      "caption": "the galaxy at the back of your eye 👁️🌌 #powersofzen #space #trippy #oddlysatisfying",
+      "yt_title": "the galaxy at the back of your eye 👁️🌌 10ᶻ",
+      "yt_desc": "the galaxy at the back of your eye 👁️🌌\n\n#shorts #powersofzen #space #trippy #oddlysatisfying",
+      "approved": false
     },
     {
       "n": 4,
       "journey": "tide_of_life",
       "file": "review_divein/tide_of_life_ds_divein.mp4",
-      "caption": "reef \u2192 leviathan \u2192 krill \u2192 one glowing cell \u2192 the cosmic web \u2192 back to the reef \ud83c\udf0a someone lives at 10\u207b\u2075 m\u2026 did you spot her? #powersofzen #ocean #aiart #zoom #oddlysatisfying",
-      "yt_title": "an ocean, a cell, and the cosmic web \u2014 one dive \ud83c\udf0a 10\u1dbb",
-      "yt_desc": "reef to leviathan to krill to one glowing cell to the cosmic web and back. someone lives at 10\u207b\u2075 m \u2014 did you spot her?\n\n#shorts #ocean #aiart #zoom #oddlysatisfying #powersofzen"
+      "caption": "an ocean, a cell, and the cosmic web — one dive 🌊 #powersofzen #ocean #oddlysatisfying #zoom",
+      "yt_title": "an ocean, a cell, and the cosmic web — one dive 🌊 10ᶻ",
+      "yt_desc": "an ocean, a cell, and the cosmic web — one dive 🌊\n\n#shorts #powersofzen #ocean #oddlysatisfying #zoom",
+      "approved": false
     },
     {
       "n": 5,
       "journey": "night_bloom",
       "file": "review_divein/night_bloom_ds_divein.mp4",
-      "caption": "everything glows at night: moss cells, fireflies, lantern villages, nebulae \ud83c\udf19 #powersofzen #bioluminescence #night #aiart #oddlysatisfying #zoom",
-      "yt_title": "everything glows at night \ud83c\udf19 10\u1dbb",
-      "yt_desc": "moss cells, fireflies, lantern villages, nebulae \u2014 one continuous night dive.\n\n#shorts #bioluminescence #night #aiart #oddlysatisfying #powersofzen"
+      "caption": "everything glows at night 🌙 #powersofzen #bioluminescence #oddlysatisfying",
+      "yt_title": "everything glows at night 🌙 10ᶻ",
+      "yt_desc": "everything glows at night 🌙\n\n#shorts #powersofzen #bioluminescence #oddlysatisfying",
+      "approved": false
     },
     {
       "n": 6,
       "journey": "dollhouse",
       "file": "review/dollhouse_ds.mp4",
       "direction": "ZOOM-OUT",
-      "caption": "the dollhouse contains the town contains the dollhouse \ud83c\udfe0 look through the little window. #powersofzen #dollhouse #miniature #recursion #aiart #oddlysatisfying",
-      "yt_title": "the dollhouse contains the town contains the dollhouse \ud83c\udfe0 10\u1dbb",
-      "yt_desc": "look through the little window.\n\n#shorts #dollhouse #miniature #recursion #aiart #oddlysatisfying #powersofzen"
+      "caption": "the dollhouse contains the town contains the dollhouse 🏠 #powersofzen #miniature #oddlysatisfying",
+      "yt_title": "the dollhouse contains the town contains the dollhouse 🏠 10ᶻ",
+      "yt_desc": "the dollhouse contains the town contains the dollhouse 🏠\n\n#shorts #powersofzen #miniature #oddlysatisfying",
+      "approved": false
     },
     {
       "n": 7,
       "journey": "alexandria",
       "file": "review_divein/alexandria_ds_divein.mp4",
-      "caption": "in the great library: a scroll, its ink, one atom \u2014 and the atom is the planet the city stands on \ud83d\udcdc\ud83e\ude90 #powersofzen #ancient #library #aiart #mindbending #zoom",
-      "yt_title": "the atom in the ink is the planet under the city \ud83d\udcdc\ud83e\ude90 10\u1dbb",
-      "yt_desc": "in the great library: a scroll, its ink, one atom \u2014 and the atom is the planet the city stands on.\n\n#shorts #ancient #library #aiart #mindbending #powersofzen"
+      "caption": "the atom in the ink is the planet under the city 📜🪐 #powersofzen #mindbending #oddlysatisfying",
+      "yt_title": "the atom in the ink is the planet under the city 📜🪐 10ᶻ",
+      "yt_desc": "the atom in the ink is the planet under the city 📜🪐\n\n#shorts #powersofzen #mindbending #oddlysatisfying",
+      "approved": false
     },
     {
       "n": 8,
       "journey": "food_chain",
       "file": "review_divein/food_chain_ds_divein.mp4",
-      "caption": "heron \u2192 pike \u2192 trout \u2192 minnow \u2192 waterflea \u2192 the golden lake they all live in \ud83d\udc1f #powersofzen #nature #foodchain #aiart #oddlysatisfying #zoom",
-      "yt_title": "the whole food chain in one dive \ud83d\udc1f 10\u1dbb",
-      "yt_desc": "heron, pike, trout, minnow, waterflea \u2014 and the golden lake they all live in.\n\n#shorts #nature #foodchain #aiart #oddlysatisfying #powersofzen"
+      "caption": "the whole food chain in one dive 🐟 #powersofzen #nature #oddlysatisfying",
+      "yt_title": "the whole food chain in one dive 🐟 10ᶻ",
+      "yt_desc": "the whole food chain in one dive 🐟\n\n#shorts #powersofzen #nature #oddlysatisfying",
+      "approved": false
     },
     {
       "n": 9,
@@ -73,18 +79,20 @@
       "file": "review/black_hole.mp4",
       "direction": "ZOOM-OUT",
       "model": "TURBO",
-      "caption": "harbor lights \u2192 binary suns \u2192 the black hole \u2192 a brass lamp in the night market \ud83d\udd73\ufe0f\u2728 #powersofzen #blackhole #space #aiart #trippy #zoom",
-      "yt_title": "through the black hole into a market lamp \ud83d\udd73\ufe0f\u2728 10\u1dbb",
-      "yt_desc": "harbor lights, binary suns, the black hole \u2014 and a brass lamp in the night market.\n\n#shorts #blackhole #space #aiart #trippy #powersofzen"
+      "caption": "through the black hole into a market lamp 🕳️✨ #powersofzen #space #trippy #oddlysatisfying",
+      "yt_title": "through the black hole into a market lamp 🕳️✨ 10ᶻ",
+      "yt_desc": "through the black hole into a market lamp 🕳️✨\n\n#shorts #powersofzen #space #trippy #oddlysatisfying",
+      "approved": false
     },
     {
       "n": 10,
       "journey": "snowfall",
       "file": "review_divein/snowfall_divein.mp4",
       "model": "TURBO",
-      "caption": "a snowed-in village inside a snowflake inside the mountains \u2744\ufe0f #powersofzen #winter #snow #cozy #aiart #oddlysatisfying",
-      "yt_title": "the village inside the snowflake \u2744\ufe0f 10\u1dbb",
-      "yt_desc": "a snowed-in village inside a snowflake inside the mountains.\n\n#shorts #winter #snow #cozy #aiart #oddlysatisfying #powersofzen"
+      "caption": "the village inside the snowflake ❄️ #powersofzen #winter #cozy #oddlysatisfying",
+      "yt_title": "the village inside the snowflake ❄️ 10ᶻ",
+      "yt_desc": "the village inside the snowflake ❄️\n\n#shorts #powersofzen #winter #cozy #oddlysatisfying",
+      "approved": false
     }
   ]
 }
