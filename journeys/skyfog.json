@@ -1,35 +1,58 @@
 {
   "name": "skyfog",
   "style_suffix": "soft atmospheric light, luminous mist, hyperdetailed, cinematic",
-  "format": { "sec_per_scale": 2.4, "exact_loop": true },
+  "format": {
+    "sec_per_scale": 2.4,
+    "exact_loop": true
+  },
   "registers": [
     {
-      "name": "lighthouse_room", "exp": 0.5, "palette": "warm brass and rain grey",
+      "name": "lighthouse_room",
+      "exp": 0.5,
+      "palette": "warm brass and rain grey",
       "interior": "the warm lamplit room at the top of a lighthouse, a great brass lamp burning, rain and fog pressing at the round windows, the room empty and still",
       "next_target": "one small fishing boat's light adrift in the fog below"
     },
     {
-      "name": "harbor_fog", "exp": 2.5, "palette": "silver grey and lamp gold",
+      "name": "harbor_fog",
+      "exp": 2.5,
+      "palette": "silver grey and lamp gold",
       "interior": "banks of silver fog rolling over a dark rocky harbor, sweeping beams of gold light cutting through the mist",
       "next_target": "one towering thunderhead glowing above the cloud deck"
     },
     {
-      "name": "cloud_tops", "exp": 4, "palette": "white gold and sky blue",
+      "name": "cloud_tops",
+      "exp": 4,
+      "palette": "white gold and sky blue",
       "interior": "vast sunlit canyons of billowing cloud seen from above, towers of cumulus casting long blue shadows",
       "next_target": "the dark calm eye of a huge spiral storm far below"
     },
     {
-      "name": "cyclone", "exp": 6.5, "palette": "storm slate and pearl",
+      "name": "cyclone",
+      "exp": 6.5,
+      "palette": "storm slate and pearl",
       "interior": "an immense spiral cyclone seen from orbit, white arms of cloud wrapping a dark calm eye",
       "next_target": "one glowing rose-colored pillar of nebula mist far out in the darkness"
     },
     {
-      "name": "nebula", "exp": 14, "palette": "rose and teal glow",
+      "name": "nebula",
+      "exp": 14,
+      "palette": "rose and teal glow",
       "interior": "towering pillars of glowing nebula mist cradling newborn stars, veils of rose and teal light drifting",
-      "next_target": "a single curl of steam rising from a copper kettle's spout"
+      "next_target": "a single curl of steam rising from a copper kettle's spout",
+      "cameo": {
+        "sprite": "output/mascots/canon/lamar.png",
+        "pos": [
+          0.55,
+          0.44
+        ],
+        "size": 0.12
+      }
     },
     {
-      "name": "steam", "exp": -1, "palette": "cream and copper light",
+      "name": "steam",
+      "exp": -1,
+      "palette": "cream and copper light",
       "interior": "steam curling from the spout of a battered copper kettle on an iron stove, ribbons of mist catching warm lamplight",
       "next_target": "one round lamplit window glowing through the fog"
     }

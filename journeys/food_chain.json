@@ -1,35 +1,50 @@
 {
   "name": "food_chain",
   "style_suffix": "clear freshwater light, luminous, hyperdetailed, cinematic, fantastical",
-  "format": { "sec_per_scale": 2.4, "exact_loop": true },
+  "format": {
+    "sec_per_scale": 2.4,
+    "exact_loop": true
+  },
   "registers": [
     {
-      "name": "shallows", "exp": 0.2, "palette": "slate blue and reed gold",
+      "name": "shallows",
+      "exp": 0.2,
+      "palette": "slate blue and reed gold",
       "interior": "golden shallows at the lake's edge, rings of ripples spreading beneath the long still legs of a wading heron",
       "next_target": "a dark shadowed hollow deep among the waterweeds"
     },
     {
-      "name": "weed_forest", "exp": -0.6, "palette": "olive and pale gold",
+      "name": "weed_forest",
+      "exp": -0.6,
+      "palette": "olive and pale gold",
       "interior": "sun-shafted green water between towering waterweeds, one long motionless shadow hanging in the gloom",
       "next_target": "a bright bronze glint weaving between sunken branches"
     },
     {
-      "name": "sunken_branches", "exp": -1.3, "palette": "speckled bronze and jade",
+      "name": "sunken_branches",
+      "exp": -1.3,
+      "palette": "speckled bronze and jade",
       "interior": "amber water over sunken branches, rising silver bubbles, a speckled flank gliding past and away",
       "next_target": "a tiny silver flicker deep in the reed shadows"
     },
     {
-      "name": "reed_shadows", "exp": -2.3, "palette": "silver and reed green",
+      "name": "reed_shadows",
+      "exp": -2.3,
+      "palette": "silver and reed green",
       "interior": "a dense forest of glowing green reed stems, one small silver fish slipping out of sight between them",
       "next_target": "a glinting translucent speck drifting in a sunbeam"
     },
     {
-      "name": "droplet", "exp": -3.5, "palette": "glass green and amber",
+      "name": "droplet",
+      "exp": -3.5,
+      "palette": "glass green and amber",
       "interior": "a sunlit droplet world of sparkling algae motes, one translucent glowing water flea drifting through",
       "next_target": "a winding golden lake in green hills seen from high above"
     },
     {
-      "name": "lake_valley", "exp": 2.5, "palette": "gold water and green hills",
+      "name": "lake_valley",
+      "exp": 2.5,
+      "palette": "gold water and green hills",
       "interior": "a winding lake in a green valley at sunset seen from high above, glinting like a ribbon of light",
       "next_target": "a still golden cove at the water's edge far below"
     }

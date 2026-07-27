@@ -1,37 +1,60 @@
 {
   "name": "antenna_ball",
   "style_suffix": "sunny macro photography, dewdrops and soft bokeh, hyperdetailed, cinematic",
-  "format": { "sec_per_scale": 2.4, "exact_loop": true },
+  "format": {
+    "sec_per_scale": 2.4,
+    "exact_loop": true
+  },
   "registers": [
     {
-      "name": "meadow", "exp": 0, "palette": "wildflower gold and green",
+      "name": "meadow",
+      "exp": 0,
+      "palette": "wildflower gold and green",
       "interior": "a sunlit wildflower meadow, petals and grass stems towering in soft light",
       "next_target": "a tiny glossy scarlet dot resting on a green leaf"
     },
     {
-      "name": "ladybug", "exp": -1.8, "palette": "scarlet and leaf green",
+      "name": "ladybug",
+      "exp": -1.8,
+      "palette": "scarlet and leaf green",
       "interior": "a polished lacquered scarlet dome speckled with black, sky reflections sliding across its curve, delicate antennae rising ahead",
       "next_target": "the tiny glossy black sphere at an antenna's tip"
     },
     {
-      "name": "antenna_tip", "exp": -2.6, "palette": "glossy black and dew silver",
+      "name": "antenna_tip",
+      "exp": -2.6,
+      "palette": "glossy black and dew silver",
       "interior": "an immense glossy dark sphere at the antenna's tip, dewdrops clinging to it like tiny moons, the meadow reflected upside down in its curve",
       "next_target": "a vast glossy blue-green planet hanging in starry darkness, its curve polished like a bead"
     },
     {
-      "name": "planet", "exp": 7, "palette": "lacquer blue-green and star black",
+      "name": "planet",
+      "exp": 7,
+      "palette": "lacquer blue-green and star black",
       "interior": "a huge glossy planet seen from space, its curved limb gleaming like polished lacquer, swirling clouds sliding across the shine",
       "next_target": "billowing white clouds drifting over green and gold country far below"
     },
     {
-      "name": "sky_clouds", "exp": 4, "palette": "summer blue and cloud white",
+      "name": "sky_clouds",
+      "exp": 4,
+      "palette": "summer blue and cloud white",
       "interior": "billowing white clouds drifting over rolling green and gold countryside far below",
       "next_target": "a sunlit flowering treetop canopy swaying gently"
     },
     {
-      "name": "canopy", "exp": 1, "palette": "blossom white and deep green",
+      "name": "canopy",
+      "exp": 1,
+      "palette": "blossom white and deep green",
       "interior": "a sunlit flowering treetop canopy seen from above, blossoms and humming leaves swaying",
-      "next_target": "a bright wildflower meadow open in the clearing below"
+      "next_target": "a bright wildflower meadow open in the clearing below",
+      "cameo": {
+        "sprite": "output/mascots/canon/dora.png",
+        "pos": [
+          0.45,
+          0.5
+        ],
+        "size": 0.12
+      }
     }
   ]
 }

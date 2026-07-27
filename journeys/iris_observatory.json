@@ -1,40 +1,57 @@
 {
   "name": "iris_observatory",
   "style_suffix": "astronomical brass-and-glass aesthetic, hyperdetailed, cinematic",
-  "format": { "sec_per_scale": 2.4, "exact_loop": true },
+  "format": {
+    "sec_per_scale": 2.4,
+    "exact_loop": true
+  },
   "registers": [
     {
-      "name": "dome", "exp": 1.5, "palette": "cool slate and copper",
+      "name": "dome",
+      "exp": 1.5,
+      "palette": "cool slate and copper",
       "interior": "the interior of an observatory dome at night, the long telescope aimed through the open slit at a wheeling sky",
       "next_target": "a great brass eyepiece gleaming in lamplight"
     },
     {
-      "name": "eyepiece", "exp": 0, "palette": "midnight blue and cold brass",
+      "name": "eyepiece",
+      "exp": 0,
+      "palette": "midnight blue and cold brass",
       "interior": "a great brass telescope eyepiece and its wheels and dials in cold blue shadow, a watching eye reflected faintly in the glass",
       "next_target": "an amber iris ringed in shadow"
     },
     {
-      "name": "iris", "exp": -1.7, "palette": "warm amber and hazel",
+      "name": "iris",
+      "exp": -1.7,
+      "palette": "warm amber and hazel",
       "interior": "an immense amber iris seen impossibly close, radial fibers like canyon ridges circling a deep dark pupil",
       "next_target": "a faint crimson glow deep in the darkness of the pupil"
     },
     {
-      "name": "retina", "exp": -4, "palette": "deep crimson and scarlet",
+      "name": "retina",
+      "exp": -4,
+      "palette": "deep crimson and scarlet",
       "interior": "the deep crimson landscape of a retina, dark red fields crossed by branching scarlet vessels and drifting shadows",
       "next_target": "a faint spiral of cold silver starlight glowing far in the dark"
     },
     {
-      "name": "galaxy", "exp": 21, "palette": "cold indigo and silver",
+      "name": "galaxy",
+      "exp": 21,
+      "palette": "cold indigo and silver",
       "interior": "a tilted spiral galaxy of cold blue-white stars, dark dust lanes cutting its silver arms",
       "next_target": "one blazing white star in a deep field"
     },
     {
-      "name": "starfield", "exp": 12, "palette": "black and diamond white",
+      "name": "starfield",
+      "exp": 12,
+      "palette": "black and diamond white",
       "interior": "a deep black field of sharp white stars and faint frost-colored nebula veils",
       "next_target": "a moonlit mountain peak far below the wheeling sky"
     },
     {
-      "name": "peak", "exp": 3.5, "palette": "moonlit blue and snow white",
+      "name": "peak",
+      "exp": 3.5,
+      "palette": "moonlit blue and snow white",
       "interior": "a moonlit mountain peak crowned by a small copper observatory dome, ridges falling away into cloud",
       "next_target": "a copper dome glowing softly on the dark summit"
     }

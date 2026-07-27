@@ -1,50 +1,71 @@
 {
   "name": "alexandria",
   "style_suffix": "ancient warm light, painterly, hyperdetailed, cinematic",
-  "format": { "sec_per_scale": 2.4, "exact_loop": true },
+  "format": {
+    "sec_per_scale": 2.4,
+    "exact_loop": true
+  },
   "registers": [
     {
-      "name": "library_hall", "exp": 1.5, "palette": "papyrus amber and lamp gold",
+      "name": "library_hall",
+      "exp": 1.5,
+      "palette": "papyrus amber and lamp gold",
       "interior": "a great ancient library hall, towering shelves of scrolls, oil lamps and shafts of dusty golden light",
       "next_target": "one unrolled scroll glowing on a reading table"
     },
     {
-      "name": "scroll", "exp": -0.5, "palette": "cream parchment and lamp-black",
+      "name": "scroll",
+      "exp": -0.5,
+      "palette": "cream parchment and lamp-black",
       "interior": "an unrolled papyrus scroll seen from above, columns of ancient script flowing across the cream surface",
       "next_target": "a single bold dark glyph inked on the papyrus"
     },
     {
-      "name": "ink_stroke", "exp": -2, "palette": "lamp-black and bronze sheen",
+      "name": "ink_stroke",
+      "exp": -2,
+      "palette": "lamp-black and bronze sheen",
       "interior": "the glistening landscape of a dried ink stroke, cracked black ridges with a faint bronze sheen over pale papyrus valleys",
       "next_target": "a pale tangle of woven fibers beneath the ink's edge"
     },
     {
-      "name": "fibers", "exp": -4, "palette": "pale reed gold and cream",
+      "name": "fibers",
+      "exp": -4,
+      "palette": "pale reed gold and cream",
       "interior": "the woven fiber mesh of papyrus seen impossibly close, crossed golden reed strands like beams of a great raft",
       "next_target": "a faint glowing lattice of molecules deep inside a fiber"
     },
     {
-      "name": "molecule", "exp": -8, "palette": "cyan and pale green",
+      "name": "molecule",
+      "exp": -8,
+      "palette": "cyan and pale green",
       "interior": "glowing cellulose chains, long luminous molecular ropes twisting and linking in every direction",
       "next_target": "a single radiant atom pulsing at a junction of chains"
     },
     {
-      "name": "atom", "exp": -10, "palette": "electric blue and white",
+      "name": "atom",
+      "exp": -10,
+      "palette": "electric blue and white",
       "interior": "the inside of an atom, soft hazy luminous electron clouds billowing around one distant glowing sphere",
       "next_target": "a sun-baked ochre planet hanging in darkness, green veins of a river delta on its face"
     },
     {
-      "name": "planet", "exp": 7, "palette": "ochre and turquoise",
+      "name": "planet",
+      "exp": 7,
+      "palette": "ochre and turquoise",
       "interior": "a huge spherical desert planet seen from space, curved horizon and glowing limb, ochre lands veined with one great green river and turquoise sea",
       "next_target": "a branching green river delta spreading into the sea"
     },
     {
-      "name": "delta", "exp": 5, "palette": "emerald and warm sand",
+      "name": "delta",
+      "exp": 5,
+      "palette": "emerald and warm sand",
       "interior": "a vast branching river delta seen from high above, emerald channels through golden desert, groves of palms tracing the water",
       "next_target": "an ancient white-stone city glowing on the coast"
     },
     {
-      "name": "city", "exp": 3, "palette": "white stone and harbor gold",
+      "name": "city",
+      "exp": 3,
+      "palette": "white stone and harbor gold",
       "interior": "an ancient white-stone harbor city seen from above, colonnades, palm-lined avenues and a great lighthouse over the water",
       "next_target": "a grand domed library glowing with lamplight at the city's heart"
     }
