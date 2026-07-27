@@ -44,7 +44,15 @@ Everything runs LOCAL and FREE on Phil's RTX 3080 (no paid APIs).
 - `production/` — chosen-model cuts of videos MARKED READY (queue.json points here).
   `production_alternates/` — the other-model counterpart. Promote via
   `scripts/promote.py <journey> <turbo|ds>` (the standard "approve" step).
-- `outbox/queue.json` — the posting queue: file + title-caption + yt fields + approval gate.
+- `outbox/pipeline.json` — SINGLE SOURCE OF TRUTH (every video's model/cut/caption/state/
+  platforms). `outbox/telemetry.jsonl` — event log. `scripts/pipeline.py` — shared lib.
+  (outbox/queue.json is legacy, superseded by pipeline.json.)
+- `dashboard/app.py` — Streamlit ops dashboard (Queue/Review/Live/Failed/Telemetry,
+  editable captions). Run via Windows streamlit → localhost:8501 (scripts/start_dashboard.sh).
+- `scripts/poster.py` — the posting harness (CDP + local VLM checks). `scripts/scheduled_post.bat`
+  + `scripts/SCHEDULER.md` — Windows Task Scheduler auto-poster (08:00/18:00, no Claude).
+- DAILY LOOP: approve a video in the dashboard (review→queued) → Task Scheduler runs
+  poster.py → posts to all 3 → pipeline marks live + telemetry. Claude only writes captions.
 - Every video gets a scale-matched mascot cameo (size ≥0.12, full-cast rotation) → the
   find-the-character caption. Music is a QUALITY priority: phase-dynamic (intensify on
   plunge, chill on hover), moving toward local MusiConGen — see PLAN.md.
@@ -62,9 +70,10 @@ Everything runs LOCAL and FREE on Phil's RTX 3080 (no paid APIs).
 - Commit source (not output/, review*, chrome_zen/ — all gitignored).
 
 ## Current state (update this line as it changes)
-2026-07-27: LIVE on all 3 platforms; posts #1 (cosmic_scales) + #2 (midnight_kitchen)
-up. Auto-posting HALTED (cost + approval gate). 10-video production list PROMOTED to
-production/ (+ alternates). Fix batch rendering with cameos (skyfog/antenna_ball/
-mineral_heart/cartographer). Next build: LOCAL posting harness (qwen3-vl:4b + moondream2),
-then Streamlit dashboard + approval flow, then Journey Composer, then phase-dynamic music.
-Full detail in PLAN.md.
+2026-07-27: Full OPERATING SYSTEM built — data model (pipeline.json), poster harness
+(validated + first real post live: black_hole on all 3), dashboard (localhost:8501),
+Windows Task Scheduler auto-poster. Daily loop works end to end. 3 live, 8 in review.
+Rerender queue open (outbox/rerender_queue.md: antenna_ball ball→planet gag,
+skyfog counter/cameo, mineral_heart seam/cameo). NEXT: Phil registers Task Scheduler
+tasks; then Journey Composer (frontier, auto-fills queue), phase-dynamic music, view
+counts. Full detail in PLAN.md.
