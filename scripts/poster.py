@@ -143,14 +143,20 @@ def wait_for(tab, js, timeout=60, poll=1.0):
 
 
 def set_text(tab, selector_js, text):
-    """Focus the element returned by selector_js and replace its content with text,
-    selecting ONLY within that element (fixes the selectAll-grabs-whole-page bug)."""
-    ok = tab.eval(f"const el=({selector_js});if(!el)return null;"
-                  "el.scrollIntoView({block:'center'});el.focus();"
-                  "const r=document.createRange();r.selectNodeContents(el);"
-                  "const s=window.getSelection();s.removeAllRanges();s.addRange(r);'ok'")
-    if not ok:
+    """Focus the element (real click), clear only its OWN content if non-empty, then
+    insertText. Selecting within the element avoids the selectAll-grabs-page bug.
+    Returns True on success; on failure prints the actual JS error for diagnosis."""
+    r = tab.eval("(function(){try{"
+                 f"const el=({selector_js});if(!el)return 'NO_EL';"
+                 "el.scrollIntoView({block:'center'});el.click();el.focus();"
+                 "if((el.value||el.textContent||'').trim()){"
+                 "const rng=document.createRange();rng.selectNodeContents(el);"
+                 "const sel=window.getSelection();sel.removeAllRanges();sel.addRange(rng);}"
+                 "return 'ok';}catch(e){return 'ERR:'+e.message}})()")
+    if r != "ok":
+        print(f"    set_text failed: {r}")
         return False
+    time.sleep(0.2)
     tab.type_text(text)
     return True
 
@@ -178,19 +184,24 @@ def post_tiktok(video_rel, caption, dry_run):
     # accept the automatic-content-checks modal if present
     tab.eval("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Turn on')?.click()")
     time.sleep(2)
-    # caption — select only within the editor (not the whole page)
-    expect(set_text(tab, "document.querySelector('.public-DraftEditor-content')", caption),
-           "tiktok", "caption", tab, "caption editor not found")
+    # caption — robust selector + wait, then select only within the editor
+    capsel = ("document.querySelector('.public-DraftEditor-content')"
+              "||document.querySelector('.notranslate[contenteditable=\"true\"]')"
+              "||document.querySelector('div[contenteditable=\"true\"]')")
+    expect(wait_for(tab, f"({capsel})?true:null", 15), "tiktok", "caption_find", tab,
+           "caption editor never appeared")
+    expect(set_text(tab, capsel, caption), "tiktok", "caption", tab, "caption not settable")
     tab.eval("document.activeElement.blur()")
     time.sleep(1)
     # AI-generated-content label ON
     tab.eval("[...document.querySelectorAll('div,span,button')]"
              ".find(e=>e.textContent.trim()==='Show more'&&e.children.length<=1)?.click()")
     time.sleep(1)
-    coords = wait_for(tab, "const l=[...document.querySelectorAll('*')].find(e=>e.children.length===0"
-                           "&&e.textContent.trim()==='AI-generated content');"
+    coords = wait_for(tab, "(function(){const l=[...document.querySelectorAll('*')]"
+                           ".find(e=>e.children.length===0&&e.textContent.trim()==='AI-generated content');"
                            "if(!l)return null;l.scrollIntoView({block:'center'});"
-                           "const r=l.getBoundingClientRect();JSON.stringify([Math.round(r.right)+40,Math.round(r.top)+10])",
+                           "const r=l.getBoundingClientRect();"
+                           "return JSON.stringify([Math.round(r.right)+40,Math.round(r.top)+10])})()",
                       15)
     expect(coords, "tiktok", "ai_label_find", tab, "AI-generated-content row not found")
     x, y = json.loads(coords)
@@ -241,11 +252,11 @@ def post_youtube(video_rel, title, desc, dry_run):
     # AI use = Yes  (expand 'Show more', then find the AI-use Yes radio)
     tab.eval("[...document.querySelectorAll('ytcp-button,button,div')].find(b=>b.textContent.trim()==='Show more')?.click()")
     time.sleep(1)
-    aiok = wait_for(tab, "const h=[...document.querySelectorAll('*')].find(e=>e.children.length===0"
+    aiok = wait_for(tab, "(function(){const h=[...document.querySelectorAll('*')].find(e=>e.children.length===0"
                          "&&e.textContent.trim()==='AI use');if(!h)return null;h.scrollIntoView({block:'center'});let s=h;"
                          "for(let i=0;i<8&&s;i++){if(s.querySelectorAll('tp-yt-paper-radio-button').length>=2)break;s=s.parentElement}"
                          "if(!s)return null;const y=[...s.querySelectorAll('tp-yt-paper-radio-button')].find(r=>r.textContent.trim().startsWith('Yes'));"
-                         "if(y){y.click();'ok'}else null", 15)
+                         "if(y){y.click();return 'ok'}return null})()", 15)
     expect(aiok, "youtube", "ai_use", tab, "AI-use Yes radio not found")
     if dry_run:
         got = tab.eval(f"({tsel})?.textContent?.slice(0,40)")
