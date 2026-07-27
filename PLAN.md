@@ -245,12 +245,19 @@ subagent-delegated vision any time screenshots would otherwise pile up.
 - **No model at all — pure code:** render pipeline (already), scheduling, queue/state
   files, dashboard. Most of the system. Free + deterministic.
 
-### Local VLM candidates (Phil's RTX 3080 10GB; do NOT download until we build the harness)
-Checks are simple ("upload finished?", "which dialog?", "green check present?") — small
-fast VLM beats big. Suggest: Qwen2.5-VL-3B (fast, strong OCR/UI reading), Moondream2
-(~2B, tiny/fast, great for yes/no), MiniCPM-V 2.6 (8B, strongest screenshot reading,
-tighter 10GB fit). Gemma-4 vision works but is overkill+slow for these. Minimize VLM
-calls via DOM assertions first.
+### Local VLM candidates (researched 2026-07-27; RTX 3080 10GB; pull when building harness)
+Checks are simple ("upload finished?", "which dialog?", "green check present?") and — key —
+Qwen3-VL is GUI-AWARE (trained to recognize UI elements + button functions), so it fits
+posting checks perfectly. Current line is **Qwen3-VL** (NOT 2.5 — I was behind), Apache-2.0,
+Ollama-native, sizes 2B/4B/8B/30B/32B/235B, 256K context.
+- **PRIMARY: Qwen3-VL-4B** — best accuracy-per-VRAM; wins clearly on document/UI reading,
+  fits 10GB with room to spare, fast enough. `ollama pull qwen3-vl:4b`.
+- **FALLBACK for pure yes/no: Moondream2** (~2B) — tiny/fast for "is X present" glances.
+- **If we want max OCR muscle:** Qwen3-VL-8B or MiniCPM-V 4.5 (8B) — both fit quantized
+  on 10GB (Phil runs ~20B quantized fine), slower but strongest at dense text.
+- InternVL3.5 is the overall benchmark leader but bigger/heavier than we need here.
+Minimize calls: DOM/text assertions first (free), VLM only for genuine visual checks.
+Download+validate a couple (4B + Moondream) when we build; ~10–20 min of pulls.
 
 ### The pipeline (format-agnostic — only the renderer is zoom-specific)
 `compose → render → QC → review → post → measure`. Each stage reads/writes ONE state
@@ -282,10 +289,35 @@ Phil flips to true (or approves a range) before the harness posts.
 
 ### AUTO-POST STATUS
 Halted 2026-07-27 (was burning premium budget + would post unapproved). Resumes only
-once the LOCAL harness exists AND posts are Phil-approved. Distribution note: our videos
-are SILENT — adding a trending sound (esp. TikTok) is the biggest untapped discovery
-lever; silent videos underperform. Cold-start underperformance of first posts is normal,
-not a content verdict. Seeding to r/oddlysatisfying / r/interestingasfuck can prime reach.
+once the LOCAL harness exists AND posts are Phil-approved. Cold-start underperformance
+of first posts is normal, not a content verdict. Seeding to r/oddlysatisfying /
+r/interestingasfuck can prime reach.
+
+### CAPTION DOCTRINE (updated 2026-07-27 — ban RETRACTED)
+Captions are welcome (TikTok viewers expect them); Phil doesn't have to love them but they
+stay. Descriptive title-style line, not multi-sentence marketing prose. ALWAYS include
+**#fyp** (added to all queued; note: its algorithmic effect is largely myth — TikTok keys
+off relevant/specific tags, not #fyp — but it's harmless, free, and some users browse it,
+so no reason to omit). Composer DRAFTS the caption at journey-compose time (knows the
+concept); Phil FINALIZES/approves it at video review (after seeing the render). Approval
+gate (`approved:false->true`) still required before any post.
+
+### AUDIO / MUSIC (Phil interested; NOT top priority; researched 2026-07-27)
+Silent videos underperform on TikTok; a sound is a real discovery lever. If we add music
+it MUST match the video's rhythm. We're unusually well-suited to beat-sync because our
+timing is fully parametric (sec_per_scale) and the engine already emits decade-PULSE
+events — we align the VIDEO to the music, not vice versa. Three depth tiers:
+1. **Trending sound at post time** (near-zero work): pick from the platform library when
+   the harness posts. Best discovery bang; loose rhythm match. START HERE.
+2. **Beat-locked library/generated track** (moderate): choose/generate a track at known
+   BPM, then set sec_per_scale so register transitions + counter-pulses land on beats
+   (librosa beat-detect → snap our pulse frames). Tight sync, our real edge.
+3. **Local generation** (deeper, on-brand $0): MusicGen runs on the 3080; **MusiConGen**
+   = MusicGen with BPM+chord conditioning (exactly "match the rhythm"); LoopGen/VampNet
+   do LOOPABLE audio (fits our looping videos). ACE-Step / Stable Audio Open are alts.
+   Google Lyria/MusicLM exist via API but local MusicGen fits the $0 ethos better.
+Recommendation: tier 1 as baseline once posting is automated; build toward tier 2/3 as a
+"signature sound" later. Not blocking launch.
 
 ### Build order
 (1) local posting harness — stops the bleeding, pure code (cheap to build even though
