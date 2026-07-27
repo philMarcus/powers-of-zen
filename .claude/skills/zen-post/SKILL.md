@@ -3,6 +3,13 @@ name: zen-post
 description: Post the next queued Powers of Zen video to TikTok, YouTube Shorts, and Instagram via the CDP-driven PowersOfZen Chrome profile. Use when asked to post, publish, or run the posting queue. Reads outbox/queue.json for file + captions.
 ---
 
+# Posting a Powers of Zen video
+
+**scripts/poster.py is the harness** — DRY-RUN VALIDATED on all 3 platforms
+(2026-07-27). Run `python3 scripts/poster.py --dry-run --journey <name>` to test,
+then drop --dry-run to post for real. Reads outbox/queue.json (needs approved:true,
+or use --journey). This playbook below is the manual reference the harness encodes.
+
 # Posting a Powers of Zen video (browser driver playbook)
 
 Inputs come from `outbox/queue.json`: next unposted entry has `file` (repo-relative),
