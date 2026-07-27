@@ -143,21 +143,22 @@ def wait_for(tab, js, timeout=60, poll=1.0):
 
 
 def set_text(tab, selector_js, text):
-    """Focus the element (real click), clear only its OWN content if non-empty, then
-    insertText. Selecting within the element avoids the selectAll-grabs-page bug.
-    Returns True on success; on failure prints the actual JS error for diagnosis."""
+    """Focus a field, select-all WITHIN it (guarded so we never select the whole page),
+    and REPLACE its content via execCommand('insertText'). insertText clears any default
+    (TikTok filenames the caption) AND fires the input events React/Draft.js need to
+    register the value — plain DOM text or CDP insertText left React state empty (IG
+    posted blank captions). Returns True on success; prints the JS error on failure."""
+    js_text = json.dumps(text)
     r = tab.eval("(function(){try{"
                  f"const el=({selector_js});if(!el)return 'NO_EL';"
                  "el.scrollIntoView({block:'center'});el.click();el.focus();"
-                 "if((el.value||el.textContent||'').trim()){"
-                 "const rng=document.createRange();rng.selectNodeContents(el);"
-                 "const sel=window.getSelection();sel.removeAllRanges();sel.addRange(rng);}"
+                 "if(document.activeElement!==el&&!el.contains(document.activeElement))return 'NO_FOCUS';"
+                 "document.execCommand('selectAll',false,null);"
+                 f"document.execCommand('insertText',false,{js_text});"
                  "return 'ok';}catch(e){return 'ERR:'+e.message}})()")
     if r != "ok":
         print(f"    set_text failed: {r}")
         return False
-    time.sleep(0.2)
-    tab.type_text(text)
     return True
 
 
@@ -218,7 +219,8 @@ def post_tiktok(video_rel, caption, dry_run):
     expect("No issues found" in txt or "Checking" in txt, "tiktok", "checks", tab,
            "content checks not green")
     if dry_run:
-        print(f"  [dry-run] TikTok: uploaded+captioned, AI-label attempted (state~{ai_on}), checks OK. NOT posting.")
+        cap = tab.eval(f"({capsel})?.textContent?.slice(0,70)")
+        print(f"  [dry-run] TikTok: caption='{cap}', AI-label~{ai_on}, checks OK. NOT posting.")
         return "dry-run"
     posted = tab.eval("(function(){const b=[...document.querySelectorAll('button')]"
                       ".find(x=>x.textContent.trim()==='Post');if(b){b.click();return 'ok'}return null})()")
