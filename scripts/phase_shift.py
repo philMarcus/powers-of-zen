@@ -30,7 +30,7 @@ START_REGISTER = {
     "tide_of_life": "open_blue",
     "mineral_heart": "mineral_veins",
     "night_bloom": "village",
-    "cartographer": "map_city",
+    "cartographer": "paper_fibers",
     "dollhouse": "street",
     "food_chain": "weed_forest",
     "iris_observatory": "eyepiece",
