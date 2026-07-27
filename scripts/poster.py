@@ -36,6 +36,7 @@ import requests
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from zen_browser import Tab  # noqa: E402
+import pipeline as pl  # noqa: E402
 
 def _find_ollama():
     # WSL host IP drifts between reboots; try localhost then the default gateway
@@ -283,6 +284,9 @@ def post_youtube(video_rel, title, desc, dry_run):
                          "return document.querySelector('a[href*=\"shorts\"]')?.href||'published'}"
                          "return null})()", 30)
     expect(link, "youtube", "publish", tab, "publish confirmation not seen")
+    # close the dialog so Phil lands back on the videos list
+    time.sleep(1)
+    tab.eval("[...document.querySelectorAll('button,ytcp-button')].find(b=>b.textContent.trim()==='Close')?.click()")
     return link
 
 
@@ -333,6 +337,9 @@ def post_instagram(video_rel, caption, dry_run):
     expect(_ig_click(tab, "Share"), "instagram", "share", tab, "Share button not found")
     ok = wait_for(tab, "document.body.innerText.includes('Your reel has been shared')"
                        "||document.body.innerText.includes('shared')?true:null", 40)
+    # close the share-confirmation dialog so Phil lands back on the feed
+    time.sleep(1)
+    tab.eval("[...document.querySelectorAll('[aria-label=\"Close\"],svg[aria-label=\"Close\"]')].pop()?.closest('[role=button],button,div')?.click()")
     return "posted" if ok else "shared(unconfirmed)"
 
 
@@ -340,16 +347,6 @@ PLATFORMS = {"tiktok": post_tiktok, "youtube": post_youtube, "instagram": post_i
 
 
 # ---------------------------------------------------------------- runner
-def pick_entry(journey):
-    q = json.loads(QUEUE.read_text())
-    for p in q["posts"]:
-        if journey and p["journey"] == journey:
-            return q, p
-        if not journey and p.get("approved") and "POSTED all 3" not in str(p.get("status", "")):
-            return q, p
-    return q, None
-
-
 def run(only, dry_run, journey):
     # health check
     try:
@@ -357,14 +354,17 @@ def run(only, dry_run, journey):
     except Exception:
         print("Chrome CDP not reachable on :9222 — run scripts/start_chrome_zen.sh first.")
         sys.exit(1)
-    q, entry = pick_entry(journey)
+    data = pl.load()
+    entry = pl.get(data, journey) if journey else pl.next_to_post(data)
     if not entry:
-        print("No approved, unposted queue entry found (set approved:true in queue.json).")
+        print("No queued video to post (set a video's state to 'queued' in the dashboard,"
+              " or pass --journey).")
         return
-    print(f"Posting: {entry['journey']}  (file: {entry['file']}, model: {entry.get('model','?')})"
-          f"{'  [DRY RUN]' if dry_run else ''}")
+    print(f"Posting: {entry['journey']}  (file: {entry['file']}, {entry.get('model','?')}/"
+          f"{entry.get('cut','?')}){'  [DRY RUN]' if dry_run else ''}")
+    plats = only or pl.PLATFORMS
     results = {}
-    for name in (only or ["tiktok", "youtube", "instagram"]):
+    for name in plats:
         fn = PLATFORMS[name]
         try:
             if name == "youtube":
@@ -378,9 +378,18 @@ def run(only, dry_run, journey):
             flag(name, "unexpected", Tab(match=name), str(e))
             results[name] = f"ERROR: {e}"
     if not dry_run:
-        entry["status"] = f"posted {time.strftime('%Y-%m-%d %H:%M')} :: " + \
-            "; ".join(f"{k}={v}" for k, v in results.items())
-        QUEUE.write_text(json.dumps(q, indent=2, ensure_ascii=False) + "\n")
+        for name in plats:
+            r = results[name]
+            good = r not in (None,) and not str(r).startswith(("FLAGGED", "ERROR"))
+            entry.setdefault("platforms", pl.blank_platforms())[name] = {
+                "status": "live" if good else "failed",
+                "url": r if (good and isinstance(r, str) and r.startswith("http")) else "",
+                "ts": pl._now()}
+            pl.telem("post" if good else "post_fail", journey=entry["journey"],
+                     platform=name, detail=str(r))
+        allgood = all(entry["platforms"][n]["status"] == "live" for n in pl.PLATFORMS)
+        entry["state"] = "live" if allgood else "failed"
+        pl.save(data)
     print("\nSummary:", json.dumps(results, indent=2))
     if FLAGS.exists() and any(True for _ in open(FLAGS)):
         print(f"⚠ flags recorded in {FLAGS} — review before next run.")
