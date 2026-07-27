@@ -217,10 +217,86 @@ at assembly (cheap ffmpeg lanczos, or Ultimate Upscale pass) since platforms pre
   via API may not need them).
 - GPU: RTX 3080 10GB — SDXL-Turbo feedback zoom comfortably; Wan 2.2 5B FP8 / LTX-2 NVFP8 feasible.
 
+## END-TO-END ARCHITECTURE (designed 2026-07-27, post-launch) — the plan of record
+
+### The cost lesson (why the tiering below exists)
+Making a video is CHEAP: the expensive work (GPU rendering) happens OUTSIDE any model's
+context — Claude issues a few shell commands and sits idle. Posting via browser is
+EXPENSIVE: the expensive work (reading screenshots to decide clicks) happens INSIDE
+the model context, and screenshots (~1.5–2k tokens each) ACCUMULATE — every turn
+re-sends all prior screenshots, so cost compounds ~quadratically. One 3-platform
+hand-driven posting run ≈ burned Phil's whole Fable session (2026-07-27). Rule that
+falls out: **put work where it's cheap; keep images out of the accumulating context.**
+
+Corollary (Phil's catch): a Haiku SUBAGENT reading a screenshot returns only ~10 words
+of text to the main context — the image stays in the subagent's context and never
+accumulates. That alone would cut posting cost ~20x even before going local. Use
+subagent-delegated vision any time screenshots would otherwise pile up.
+
+### Three tiers — put work where it's cheap
+- **Frontier model (Opus/Fable) — rare, creative, judgment:** journey composition
+  (the novelty engine — worth the cost), title writing, reading analytics for strategy,
+  rescuing the harness when a site changes its flow. A few calls/week.
+- **Local model (Ollama VLM) — frequent, mechanical, verifiable:** the posting harness's
+  sanity checks, QC of rendered frames (collapse / face-intrusion / counter-present),
+  best-effort view-count reading. Runs constantly, costs only electricity. PREFER DOM/
+  text assertions (free, instant, no model) over vision — the VLM is a fallback sanity
+  layer called only a handful of times per post, so even ~10 tok/s is fine.
+- **No model at all — pure code:** render pipeline (already), scheduling, queue/state
+  files, dashboard. Most of the system. Free + deterministic.
+
+### Local VLM candidates (Phil's RTX 3080 10GB; do NOT download until we build the harness)
+Checks are simple ("upload finished?", "which dialog?", "green check present?") — small
+fast VLM beats big. Suggest: Qwen2.5-VL-3B (fast, strong OCR/UI reading), Moondream2
+(~2B, tiny/fast, great for yes/no), MiniCPM-V 2.6 (8B, strongest screenshot reading,
+tighter 10GB fit). Gemma-4 vision works but is overkill+slow for these. Minimize VLM
+calls via DOM assertions first.
+
+### The pipeline (format-agnostic — only the renderer is zoom-specific)
+`compose → render → QC → review → post → measure`. Each stage reads/writes ONE state
+store (pipeline.json or SQLite) so nothing hides in a script. When we branch to other
+video styles later, only the renderer changes; the spine is reused.
+
+1. **Journey Composer** (frontier, occasional) — generates candidate journeys from
+   VARIATIONS.md into "pending review".
+2. **Journey review** (Phil, optional via dashboard) — skim/edit/approve/reject, or
+   wave through. Phil may also hand-write journeys.
+3. **Renderer** (code + GPU) — approved journeys → turbo+ds, phase-shifted, both cuts.
+4. **QC** (local VLM) — frame checks; flags questionable videos for Phil.
+5. **Phil review** (dashboard) — approve videos into the post queue (approval gate).
+6. **Poster** (LOCAL harness) — posts approved videos on schedule via the zen-post
+   playbook. Fail-loud: after each step assert expected next state; on failure,
+   screenshot + halt THAT platform + raise a dashboard flag + continue others.
+7. **Analytics** (local/code) — YouTube via free Data API (clean); TikTok/IG via
+   periodic page-scrape (best-effort). Feeds dashboard.
+
+### Dashboard (Streamlit — like autonomy_dev's; local, free, reads the state store)
+Four panels: journeys pending review · videos pending Phil's review · post queue
+(approved+scheduled, with okayed caption) · posted (with 3-platform view counts).
+
+### CAPTION DOCTRINE (Phil, 2026-07-27)
+Caption = the TITLE line only (NO separate marketing prose — the old multi-sentence
+captions were rejected as "awful"). Minimal hashtags (Phil dislikes them, tolerates a
+few). NOTHING posts without Phil's approval — queue.json has `approved: false` per post;
+Phil flips to true (or approves a range) before the harness posts.
+
+### AUTO-POST STATUS
+Halted 2026-07-27 (was burning premium budget + would post unapproved). Resumes only
+once the LOCAL harness exists AND posts are Phil-approved. Distribution note: our videos
+are SILENT — adding a trending sound (esp. TikTok) is the biggest untapped discovery
+lever; silent videos underperform. Cold-start underperformance of first posts is normal,
+not a content verdict. Seeding to r/oddlysatisfying / r/interestingasfuck can prime reach.
+
+### Build order
+(1) local posting harness — stops the bleeding, pure code (cheap to build even though
+using Claude to post isn't). (2) pipeline state store + Streamlit dashboard + approval
+flow. (3) Journey Composer (frontier) filling the pending-review queue. (4) local QC +
+view-count collection. Keep stages format-agnostic for future video styles.
+
 ## Open questions (park until relevant)
 
-- Channel name/brand (needed at account creation, Phase 1).
-- Which zoom-engine node wins (FL_InfiniteZoom vs Deforum-for-ComfyUI vs hand-rolled
-  img2img feedback loop — the hand-rolled option gives most control over prompt schedules).
-- Best loop-seam trick for feedback zooms (end-world morphs back into start-world).
-- Whether TikTok Content Posting API approval is worth pursuing at volume.
+- Local VLM selection + accuracy validation (does it reliably read the post-flow UIs?).
+- Trending-audio workflow (added at post time; which platform, how chosen).
+- Whether TikTok/YouTube API audits are worth pursuing at volume (would replace the
+  browser harness with clean APIs for those two).
+- 2x upscale decision (576×1024 masters → 1152×2048; platforms prefer 1080×1920).
