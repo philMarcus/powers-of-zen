@@ -82,18 +82,23 @@ def shot(tab, tag):
 
 
 def flag(platform, step, tab, detail=""):
-    """Record a failure: screenshot + one line in flags.jsonl for the dashboard."""
-    img = ""
+    """Record a failure: screenshot + text context + one line in flags.jsonl.
+    The TEXT context lets us diagnose from stdout WITHOUT reading a screenshot."""
+    img, ctx = "", ""
     try:
         img = str(shot(tab, f"FLAG_{platform}_{step}"))
     except Exception:
         pass
+    try:
+        ctx = dump_context(tab)
+    except Exception:
+        pass
     FLAGS.parent.mkdir(parents=True, exist_ok=True)
     with open(FLAGS, "a") as f:
-        f.write(json.dumps({"platform": platform, "step": step,
-                            "detail": detail, "shot": img,
+        f.write(json.dumps({"platform": platform, "step": step, "detail": detail,
+                            "shot": img, "context": ctx,
                             "ts": time.strftime("%Y-%m-%d %H:%M:%S")}) + "\n")
-    print(f"  !! FLAG [{platform}/{step}] {detail}")
+    print(f"  !! FLAG [{platform}/{step}] {detail}\n     context: {ctx}")
 
 
 def expect(cond, platform, step, tab, detail=""):
@@ -122,52 +127,92 @@ def click_css(tab, x, y):
     tab.click(int(x * COORD_SCALE), int(y * COORD_SCALE))
 
 
+def wait_for(tab, js, timeout=60, poll=1.0):
+    """Poll a JS expression until truthy or timeout. Returns the value (or None).
+    Replaces fragile fixed sleeps — wait for the ACTUAL expected state."""
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        try:
+            v = tab.eval(js)
+        except Exception:
+            v = None
+        if v:
+            return v
+        time.sleep(poll)
+    return None
+
+
+def set_text(tab, selector_js, text):
+    """Focus the element returned by selector_js and replace its content with text,
+    selecting ONLY within that element (fixes the selectAll-grabs-whole-page bug)."""
+    ok = tab.eval(f"const el=({selector_js});if(!el)return null;"
+                  "el.scrollIntoView({block:'center'});el.focus();"
+                  "const r=document.createRange();r.selectNodeContents(el);"
+                  "const s=window.getSelection();s.removeAllRanges();s.addRange(r);'ok'")
+    if not ok:
+        return False
+    tab.type_text(text)
+    return True
+
+
+def dump_context(tab):
+    """Cheap TEXT snapshot for diagnosis without a screenshot: visible buttons + headings."""
+    return tab.eval(
+        "JSON.stringify({"
+        "buttons:[...document.querySelectorAll('button,[role=button],ytcp-button,a')]"
+        ".map(b=>b.textContent.trim()).filter(t=>t&&t.length<28).slice(0,30),"
+        "headings:[...document.querySelectorAll('h1,h2,h3,[role=heading]')]"
+        ".map(h=>h.textContent.trim()).filter(Boolean).slice(0,8)})")
+
+
 # ---------------------------------------------------------------- platforms
 def post_tiktok(video_rel, caption, dry_run):
     tab = Tab(match="tiktok")
     tab.goto("https://www.tiktok.com/tiktokstudio/upload")
-    time.sleep(7)
+    wait_for(tab, "document.querySelector('input[type=\"file\"]')?true:null", 30)
     tab.setfile('input[type="file"]', win_path(video_rel))
-    time.sleep(14)
+    # DOM wait: upload finished when the caption editor appears AND 'Uploaded' shows
+    up = wait_for(tab, "document.body.innerText.includes('Uploaded')"
+                       "&&document.querySelector('.public-DraftEditor-content')?true:null", 180, 2)
+    expect(up, "tiktok", "upload", tab, "upload did not finish (no 'Uploaded' + editor)")
     # accept the automatic-content-checks modal if present
     tab.eval("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Turn on')?.click()")
     time.sleep(2)
-    # caption
-    tab.eval("const e=document.querySelector('.public-DraftEditor-content');"
-             "if(e){e.focus();document.execCommand('selectAll');}")
-    tab.type_text(caption)
+    # caption — select only within the editor (not the whole page)
+    expect(set_text(tab, "document.querySelector('.public-DraftEditor-content')", caption),
+           "tiktok", "caption", tab, "caption editor not found")
     tab.eval("document.activeElement.blur()")
     time.sleep(1)
-    # upload finished? caption editor + no 'uploading' text; VLM sanity on the preview
-    s = shot(tab, "tiktok_precheck")
-    expect(vlm_yesno(s, "Is a vertical video upload shown with a visible preview thumbnail "
-                        "(not an error, not still uploading)?"),
-           "tiktok", "upload", tab, "upload/preview not confirmed")
-    # AI-generated-content label ON  (TUNE: toggle location is fiddly)
+    # AI-generated-content label ON
     tab.eval("[...document.querySelectorAll('div,span,button')]"
              ".find(e=>e.textContent.trim()==='Show more'&&e.children.length<=1)?.click()")
     time.sleep(1)
-    coords = tab.eval("const l=[...document.querySelectorAll('*')].find(e=>e.children.length===0"
-                      "&&e.textContent.trim()==='AI-generated content');"
-                      "if(!l)return null;l.scrollIntoView({block:'center'});"
-                      "const r=l.getBoundingClientRect();JSON.stringify([Math.round(r.right)+40,Math.round(r.top)+10])")
+    coords = wait_for(tab, "const l=[...document.querySelectorAll('*')].find(e=>e.children.length===0"
+                           "&&e.textContent.trim()==='AI-generated content');"
+                           "if(!l)return null;l.scrollIntoView({block:'center'});"
+                           "const r=l.getBoundingClientRect();JSON.stringify([Math.round(r.right)+40,Math.round(r.top)+10])",
+                      15)
     expect(coords, "tiktok", "ai_label_find", tab, "AI-generated-content row not found")
     x, y = json.loads(coords)
     click_css(tab, x, y)
-    time.sleep(2)
+    time.sleep(1)
     tab.eval("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Turn on')?.click()")
-    time.sleep(2)
-    # verify checks passed
+    time.sleep(1)
+    ai_on = tab.eval("const l=[...document.querySelectorAll('*')].find(e=>e.children.length===0"
+                     "&&e.textContent.trim()==='AI-generated content');l?"
+                     "(l.parentElement.parentElement.innerText.includes('labeled')||"
+                     "!!l.closest('*')&&/true/.test(''+[...document.querySelectorAll('[aria-checked]')].map(x=>x.getAttribute('aria-checked')))):null")
+    # verify checks passed (DOM text)
     txt = tab.eval("document.body.innerText")
     expect("No issues found" in txt or "Checking" in txt, "tiktok", "checks", tab,
            "content checks not green")
     if dry_run:
-        print("  [dry-run] TikTok: everything filled, NOT posting.")
+        print(f"  [dry-run] TikTok: uploaded+captioned, AI-label attempted (state~{ai_on}), checks OK. NOT posting.")
         return "dry-run"
-    click_css(tab, 570, 940)     # Post
-    time.sleep(6)
-    ok = "under review" in tab.eval("document.body.innerText").lower() or \
-         "/content" in tab.eval("location.pathname")
+    posted = tab.eval("const b=[...document.querySelectorAll('button')].find(x=>x.textContent.trim()==='Post');if(b){b.click();'ok'}else null")
+    expect(posted, "tiktok", "post_click", tab, "Post button not found")
+    ok = wait_for(tab, "document.body.innerText.toLowerCase().includes('under review')"
+                       "||location.pathname.includes('/content')?true:null", 30)
     expect(ok, "tiktok", "post", tab, "post confirmation not seen")
     return "posted"
 
@@ -175,33 +220,36 @@ def post_tiktok(video_rel, caption, dry_run):
 def post_youtube(video_rel, title, desc, dry_run):
     tab = Tab(match="studio.youtube")
     tab.goto("https://www.youtube.com/upload")
-    time.sleep(7)
+    wait_for(tab, "document.querySelector('input[type=\"file\"]')?true:null", 30)
     tab.setfile('input[type="file"]', win_path(video_rel))
-    time.sleep(12)
-    tab.eval("const t=document.querySelectorAll('#textbox')[0];t.focus();document.execCommand('selectAll')")
-    tab.type_text(title[:100])
-    ok = tab.eval("const d=document.querySelector('ytcp-video-description #textbox');"
-                  "if(d){d.focus();'ok'}else null")
-    expect(ok, "youtube", "desc_field", tab, "description field missing (still uploading?)")
-    tab.type_text(desc)
+    # wait for the details dialog's title field to exist (upload dialog open)
+    tsel = ("document.querySelector('#title-textarea #textbox')"
+            "||document.querySelector('ytcp-social-suggestions-textbox #textbox')"
+            "||document.querySelectorAll('#textbox')[0]")
+    expect(wait_for(tab, f"({tsel})?true:null", 90, 2), "youtube", "dialog", tab,
+           "upload details dialog/title field never appeared")
+    # title — select WITHIN the field only (fixes selectAll-grabs-page)
+    expect(set_text(tab, tsel, title[:100]), "youtube", "title", tab, "title field not settable")
+    # description
+    dsel = "document.querySelector('ytcp-video-description #textbox')"
+    expect(wait_for(tab, f"({dsel})?true:null", 20), "youtube", "desc_field", tab,
+           "description field missing")
+    expect(set_text(tab, dsel, desc), "youtube", "desc", tab, "description not settable")
     # not made for kids
     tab.eval("[...document.querySelectorAll('tp-yt-paper-radio-button')]"
              ".find(x=>/not made for kids/i.test(x.textContent))?.click()")
-    # AI use = Yes  (Show more -> AI use radio)
-    tab.eval("[...document.querySelectorAll('ytcp-button,button')].find(b=>/show more/i.test(b.textContent))?.click()")
-    time.sleep(2)
-    aiok = tab.eval("const h=[...document.querySelectorAll('*')].find(e=>e.children.length===0"
-                    "&&e.textContent.trim()==='AI use');if(!h)return null;let s=h;"
-                    "for(let i=0;i<8&&s;i++){if(s.querySelectorAll('tp-yt-paper-radio-button').length>=2)break;s=s.parentElement}"
-                    "const y=[...s.querySelectorAll('tp-yt-paper-radio-button')].find(r=>r.textContent.trim().startsWith('Yes'));"
-                    "if(y){y.click();'ok'}else null")
+    # AI use = Yes  (expand 'Show more', then find the AI-use Yes radio)
+    tab.eval("[...document.querySelectorAll('ytcp-button,button,div')].find(b=>b.textContent.trim()==='Show more')?.click()")
+    time.sleep(1)
+    aiok = wait_for(tab, "const h=[...document.querySelectorAll('*')].find(e=>e.children.length===0"
+                         "&&e.textContent.trim()==='AI use');if(!h)return null;h.scrollIntoView({block:'center'});let s=h;"
+                         "for(let i=0;i<8&&s;i++){if(s.querySelectorAll('tp-yt-paper-radio-button').length>=2)break;s=s.parentElement}"
+                         "if(!s)return null;const y=[...s.querySelectorAll('tp-yt-paper-radio-button')].find(r=>r.textContent.trim().startsWith('Yes'));"
+                         "if(y){y.click();'ok'}else null", 15)
     expect(aiok, "youtube", "ai_use", tab, "AI-use Yes radio not found")
-    s = shot(tab, "youtube_precheck")
-    expect(vlm_yesno(s, "Is a YouTube Short upload shown with a video preview and a filled title "
-                        "(not an error)?"),
-           "youtube", "upload", tab, "upload/preview not confirmed")
     if dry_run:
-        print("  [dry-run] YouTube: details filled, NOT publishing.")
+        got = tab.eval(f"({tsel})?.textContent?.slice(0,40)")
+        print(f"  [dry-run] YouTube: title='{got}', desc+audience+AI-use set. NOT publishing.")
         return "dry-run"
     for _ in range(3):
         tab.eval("document.querySelector('#next-button')?.click()")
@@ -209,54 +257,61 @@ def post_youtube(video_rel, title, desc, dry_run):
     tab.eval("[...document.querySelectorAll('tp-yt-paper-radio-button')].find(r=>r.textContent.trim().startsWith('Public'))?.click()")
     time.sleep(1)
     tab.eval("document.querySelector('#done-button')?.click()")
-    time.sleep(5)
-    link = tab.eval("const a=document.querySelector('a[href*=\"shorts\"]');a?a.href:''")
-    expect("Video published" in tab.eval("document.body.innerText") or link,
-           "youtube", "publish", tab, "publish confirmation not seen")
-    return link or "posted"
+    link = wait_for(tab, "document.body.innerText.includes('Video published')?"
+                         "(document.querySelector('a[href*=\"shorts\"]')?.href||'posted'):null", 30)
+    expect(link, "youtube", "publish", tab, "publish confirmation not seen")
+    return link
+
+
+def _ig_next(tab):
+    """Click Instagram's top-right Next/Share link (DOM, coord fallback)."""
+    if not tab.eval("const n=[...document.querySelectorAll('div[role=\"button\"],button,a,span')]"
+                    ".find(e=>['Next','Share'].includes(e.textContent.trim())&&e.offsetParent);"
+                    "if(n){n.click();'ok'}else null"):
+        click_css(tab, 956, 117)
 
 
 def post_instagram(video_rel, caption, dry_run):
     tab = Tab(match="instagram")
     tab.goto("https://www.instagram.com/")
-    time.sleep(6)
+    wait_for(tab, "[...document.querySelectorAll('a,div[role=\"button\"],span')]"
+                  ".find(e=>e.textContent.trim()==='Create')?true:null", 30)
     tab.eval("[...document.querySelectorAll('a,div[role=\"button\"],span')]"
              ".find(e=>e.textContent.trim()==='Create')?.click()")
-    time.sleep(3)
+    wait_for(tab, "[...document.querySelectorAll('button')].find(b=>/select from computer/i.test(b.textContent))?true:null", 20)
     tab.choosefile("[...document.querySelectorAll('button')]"
                    ".find(b=>/select from computer/i.test(b.textContent)).click()",
                    win_path(video_rel))
-    time.sleep(9)
-    # Crop -> Original aspect
+    # CROP screen: wait for it, set Original aspect
+    expect(wait_for(tab, "document.body.innerText.includes('Crop')||"
+                         "[...document.querySelectorAll('*')].some(e=>e.textContent.trim()==='Original')?true:null", 60, 2),
+           "instagram", "crop_screen", tab, "crop screen never appeared (upload failed?)")
     click_css(tab, 456, 556)
     time.sleep(1)
     tab.eval("[...document.querySelectorAll('span,div[role=\"button\"]')].find(e=>e.textContent.trim()==='Original')?.click()")
     time.sleep(1)
-    # Next (crop) -> Next (edit) -> reel screen  (TUNE: two Next clicks, coord fallback)
-    for _ in range(2):
-        clicked = tab.eval("const n=[...document.querySelectorAll('div[role=\"button\"],button,span')]"
-                           ".find(e=>e.textContent.trim()==='Next'&&e.offsetParent);if(n){n.click();'ok'}else null")
-        if not clicked:
-            click_css(tab, 956, 117)     # Next link top-right, coord fallback
-        time.sleep(3)
-    # caption
-    tab.eval("const c=document.querySelector('div[contenteditable=\"true\"][aria-label*=\"caption\" i]')"
-             "||document.querySelector('div[contenteditable=\"true\"]');if(c)c.focus()")
-    tab.type_text(caption)
+    # advance CROP -> EDIT: wait for the Edit screen marker ('Cover photo' / 'Trim')
+    _ig_next(tab)
+    expect(wait_for(tab, "document.body.innerText.includes('Cover photo')"
+                         "||document.body.innerText.includes('Trim')?true:null", 20),
+           "instagram", "edit_screen", tab, "edit screen never appeared after 1st Next")
+    # advance EDIT -> NEW REEL: wait for caption box / 'Share'
+    _ig_next(tab)
+    csel = ("document.querySelector('div[contenteditable=\"true\"][aria-label*=\"caption\" i]')"
+            "||document.querySelector('div[aria-label=\"Write a caption...\"]')"
+            "||document.querySelector('div[contenteditable=\"true\"]')")
+    expect(wait_for(tab, f"({csel})?true:null", 20), "instagram", "reel_screen", tab,
+           "reel/caption screen never appeared after 2nd Next")
+    expect(set_text(tab, csel, caption), "instagram", "caption", tab, "caption box not settable")
     time.sleep(1)
-    s = shot(tab, "instagram_precheck")
-    expect(vlm_yesno(s, "Is an Instagram 'New reel' share screen shown with a video preview and a "
-                        "caption filled in (not an error)?"),
-           "instagram", "upload", tab, "reel/preview not confirmed")
     if dry_run:
-        print("  [dry-run] Instagram: reel filled, NOT sharing.")
+        got = tab.eval(f"({csel})?.textContent?.slice(0,40)")
+        print(f"  [dry-run] Instagram: reel ready, caption='{got}'. NOT sharing.")
         return "dry-run"
-    shared = tab.eval("const sh=[...document.querySelectorAll('div[role=\"button\"],button,span')]"
-                      ".find(e=>e.textContent.trim()==='Share'&&e.offsetParent);if(sh){sh.click();'ok'}else null")
-    if not shared:
-        click_css(tab, 955, 117)
-    time.sleep(8)
-    return "posted"
+    _ig_next(tab)   # Share
+    ok = wait_for(tab, "document.body.innerText.includes('Your reel has been shared')"
+                       "||document.body.innerText.includes('shared')?true:null", 40)
+    return "posted" if ok else "shared(unconfirmed)"
 
 
 PLATFORMS = {"tiktok": post_tiktok, "youtube": post_youtube, "instagram": post_instagram}
