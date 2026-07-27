@@ -1,46 +1,76 @@
 #!/usr/bin/env python3
-"""Promote a video to production — the STANDARD step when Phil marks a video ready.
+"""Place a video's files by the folder rule (2026-07-27):
+  production/            = ONLY the postable file (chosen model + chosen cut)
+  production_alternates/ = the other 3 variants (other model both cuts + other cut
+                           of chosen model)
 
-Moves the CHOSEN model's cuts (zoom-out + dive-in) out of review/ into production/,
-and the OTHER model's counterpart cuts out of review/ into production_alternates/.
-Everything not chosen and not the alternate stays in review/. Missing files are skipped.
+The chosen model+cut come from pipeline.json (derived from each video's `file`).
+Files are gathered from wherever they currently are (review*, production*).
 
-Usage:  python3 scripts/promote.py <journey> <turbo|ds>
-Example: python3 scripts/promote.py iris_observatory ds
+Usage:
+  python3 scripts/promote.py <journey>   # reorg one video per pipeline.json
+  python3 scripts/promote.py --all       # reorg every video in pipeline.json
 """
 import shutil
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import pipeline as pl
+
+ROOT = pl.ROOT
+SEARCH = ["production", "production_alternates", "review", "review_divein"]
 
 
-def _suf(model):
-    return "" if model == "turbo" else "_ds"
+def _variants(journey):
+    """The 4 variant (basename, model, cut) for a journey."""
+    out = []
+    for model in ("turbo", "ds"):
+        for cut in ("zoomout", "divein"):
+            name = journey + ("_ds" if model == "ds" else "") + ("_divein" if cut == "divein" else "")
+            out.append((name + ".mp4", model, cut))
+    return out
 
 
-def _mv(rel_src, dstdir):
-    s = ROOT / rel_src
-    if s.exists():
-        (ROOT / dstdir).mkdir(exist_ok=True)
-        shutil.move(str(s), str(ROOT / dstdir / s.name))
-        print(f"  moved {rel_src} -> {dstdir}/")
+def _find(basename):
+    for d in SEARCH:
+        p = ROOT / d / basename
+        if p.exists():
+            return p
+    return None
+
+
+def reorg(journey, chosen_model, chosen_cut):
+    (ROOT / "production").mkdir(exist_ok=True)
+    (ROOT / "production_alternates").mkdir(exist_ok=True)
+    moved = []
+    for basename, model, cut in _variants(journey):
+        src = _find(basename)
+        if not src:
+            continue
+        dest_dir = "production" if (model == chosen_model and cut == chosen_cut) else "production_alternates"
+        dest = ROOT / dest_dir / basename
+        if src.resolve() != dest.resolve():
+            shutil.move(str(src), str(dest))
+            moved.append(f"{basename} -> {dest_dir}")
+    print(f"{journey} (chosen {chosen_model}/{chosen_cut}): " + (", ".join(moved) or "already placed"))
+    return moved
+
+
+def main():
+    data = pl.load()
+    if sys.argv[1:] == ["--all"]:
+        for v in data["videos"]:
+            reorg(v["journey"], v["model"], v["cut"])
+    elif len(sys.argv) == 2:
+        v = pl.get(data, sys.argv[1])
+        if not v:
+            print(f"no pipeline entry for {sys.argv[1]}"); sys.exit(1)
+        reorg(v["journey"], v["model"], v["cut"])
     else:
-        print(f"  (skip missing {rel_src})")
-
-
-def promote(journey, chosen):
-    alt = "ds" if chosen == "turbo" else "turbo"
-    cs, asf = _suf(chosen), _suf(alt)
-    print(f"promote {journey} (chosen={chosen}, alt={alt})")
-    _mv(f"review/{journey}{cs}.mp4", "production")
-    _mv(f"review_divein/{journey}{cs}_divein.mp4", "production")
-    _mv(f"review/{journey}{asf}.mp4", "production_alternates")
-    _mv(f"review_divein/{journey}{asf}_divein.mp4", "production_alternates")
+        print(__doc__); sys.exit(1)
+    pl.telem("promote", detail=sys.argv[1])
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3 or sys.argv[2] not in ("turbo", "ds"):
-        print(__doc__)
-        sys.exit(1)
-    promote(sys.argv[1], sys.argv[2])
+    main()

@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "cadence": "2/day 08:00,18:00 EDT",
+    "note": "source of truth; see scripts/pipeline.py",
+    "updated": "2026-07-27 18:51:28"
+  },
+  "videos": [
+    {
+      "journey": "cosmic_scales",
+      "model": "turbo",
+      "cut": "divein",
+      "file": "production/cosmic_scales_divein.mp4",
+      "title": "",
+      "caption": "",
+      "yt_title": "",
+      "yt_desc": "",
+      "cameo": null,
+      "state": "live",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "live",
+          "url": "",
+          "ts": "2026-07-27"
+        },
+        "youtube": {
+          "status": "live",
+          "url": "",
+          "ts": "2026-07-27"
+        },
+        "instagram": {
+          "status": "live",
+          "url": "",
+          "ts": "2026-07-27"
+        }
+      },
+      "created": "2026-07-27"
+    },
+    {
+      "journey": "midnight_kitchen",
+      "model": "ds",
+      "cut": "divein",
+      "file": "production/midnight_kitchen_ds_divein.mp4",
+      "title": "the town hidden inside a grain of sugar 🍞❄️",
+      "caption": "a midnight bakery, one sugar grain, and the town glittering inside it 🍞❄️ every scale hides a world. #powersofzen #oddlysatisfying #aiart #zoom #cozy #miniature #fyp",
+      "yt_title": "the town hidden inside a grain of sugar 🍞❄️ 10ᶻ",
+      "yt_desc": "a midnight bakery, one sugar grain, and the town glittering inside it. every scale hides a world.\n\n#shorts #oddlysatisfying #aiart #zoom #cozy #miniature #powersofzen #fyp",
+      "cameo": null,
+      "state": "live",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "live",
+          "url": "",
+          "ts": "2026-07-27"
+        },
+        "youtube": {
+          "status": "live",
+          "url": "",
+          "ts": "2026-07-27"
+        },
+        "instagram": {
+          "status": "live",
+          "url": "",
+          "ts": "2026-07-27"
+        }
+      },
+      "created": "2026-07-27"
+    },
+    {
+      "journey": "iris_observatory",
+      "model": "ds",
+      "cut": "zoomout",
+      "file": "production/iris_observatory_ds.mp4",
+      "title": "the galaxy at the back of your eye 👁️🌌",
+      "caption": "the galaxy at the back of your eye 👁️🌌 #powersofzen #space #trippy #oddlysatisfying #fyp",
+      "yt_title": "the galaxy at the back of your eye 👁️🌌 10ᶻ",
+      "yt_desc": "the galaxy at the back of your eye 👁️🌌\n\n#shorts #powersofzen #space #trippy #oddlysatisfying #fyp",
+      "cameo": null,
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-27"
+    },
+    {
+      "journey": "tide_of_life",
+      "model": "ds",
+      "cut": "divein",
+      "file": "production/tide_of_life_ds_divein.mp4",
+      "title": "an ocean, a cell, and the cosmic web — one dive 🌊",
+      "caption": "an ocean, a cell, and the cosmic web — one dive 🌊 #powersofzen #ocean #oddlysatisfying #zoom #fyp",
+      "yt_title": "an ocean, a cell, and the cosmic web — one dive 🌊 10ᶻ",
+      "yt_desc": "an ocean, a cell, and the cosmic web — one dive 🌊\n\n#shorts #powersofzen #ocean #oddlysatisfying #zoom #fyp",
+      "cameo": null,
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-27"
+    },
+    {
+      "journey": "night_bloom",
+      "model": "ds",
+      "cut": "divein",
+      "file": "production/night_bloom_ds_divein.mp4",
+      "title": "everything glows at night 🌙",
+      "caption": "everything glows at night 🌙 #powersofzen #bioluminescence #oddlysatisfying #fyp",
+      "yt_title": "everything glows at night 🌙 10ᶻ",
+      "yt_desc": "everything glows at night 🌙\n\n#shorts #powersofzen #bioluminescence #oddlysatisfying #fyp",
+      "cameo": null,
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-27"
+    },
+    {
+      "journey": "dollhouse",
+      "model": "ds",
+      "cut": "zoomout",
+      "file": "production/dollhouse_ds.mp4",
+      "title": "the dollhouse contains the town contains the dollhouse 🏠",
+      "caption": "the dollhouse contains the town contains the dollhouse 🏠 #powersofzen #miniature #oddlysatisfying #fyp",
+      "yt_title": "the dollhouse contains the town contains the dollhouse 🏠 10ᶻ",
+      "yt_desc": "the dollhouse contains the town contains the dollhouse 🏠\n\n#shorts #powersofzen #miniature #oddlysatisfying #fyp",
+      "cameo": null,
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-27"
+    },
+    {
+      "journey": "alexandria",
+      "model": "ds",
+      "cut": "divein",
+      "file": "production/alexandria_ds_divein.mp4",
+      "title": "the atom in the ink is the planet under the city 📜🪐",
+      "caption": "the atom in the ink is the planet under the city 📜🪐 #powersofzen #mindbending #oddlysatisfying #fyp",
+      "yt_title": "the atom in the ink is the planet under the city 📜🪐 10ᶻ",
+      "yt_desc": "the atom in the ink is the planet under the city 📜🪐\n\n#shorts #powersofzen #mindbending #oddlysatisfying #fyp",
+      "cameo": null,
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-27"
+    },
+    {
+      "journey": "food_chain",
+      "model": "ds",
+      "cut": "divein",
+      "file": "production/food_chain_ds_divein.mp4",
+      "title": "the whole food chain in one dive 🐟",
+      "caption": "the whole food chain in one dive 🐟 #powersofzen #nature #oddlysatisfying #fyp",
+      "yt_title": "the whole food chain in one dive 🐟 10ᶻ",
+      "yt_desc": "the whole food chain in one dive 🐟\n\n#shorts #powersofzen #nature #oddlysatisfying #fyp",
+      "cameo": null,
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-27"
+    },
+    {
+      "journey": "black_hole",
+      "model": "turbo",
+      "cut": "zoomout",
+      "file": "production/black_hole.mp4",
+      "title": "everything's a black hole if you zoom out enough 🕳️✨",
+      "caption": "everything's a black hole if you zoom out enough 🕳️✨ #powersofzen #space #trippy #oddlysatisfying #fyp",
+      "yt_title": "everything's a black hole if you zoom out enough 🕳️✨ 10ᶻ",
+      "yt_desc": "everything's a black hole if you zoom out enough.\n\n#shorts #powersofzen #space #trippy #oddlysatisfying #fyp",
+      "cameo": null,
+      "state": "live",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "live",
+          "url": "",
+          "ts": "2026-07-27"
+        },
+        "youtube": {
+          "status": "live",
+          "url": "youtube.com/shorts/gju1m1BS9wc",
+          "ts": "2026-07-27"
+        },
+        "instagram": {
+          "status": "live",
+          "url": "",
+          "ts": "2026-07-27"
+        }
+      },
+      "created": "2026-07-27"
+    },
+    {
+      "journey": "snowfall",
+      "model": "turbo",
+      "cut": "divein",
+      "file": "production/snowfall_divein.mp4",
+      "title": "the village inside the snowflake ❄️",
+      "caption": "the village inside the snowflake ❄️ #powersofzen #winter #cozy #oddlysatisfying #fyp",
+      "yt_title": "the village inside the snowflake ❄️ 10ᶻ",
+      "yt_desc": "the village inside the snowflake ❄️\n\n#shorts #powersofzen #winter #cozy #oddlysatisfying #fyp",
+      "cameo": null,
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-27"
+    },
+    {
+      "journey": "cartographer",
+      "model": "ds",
+      "cut": "zoomout",
+      "file": "production/cartographer_ds.mp4",
+      "title": "the whole world folds out of a mapmaker's desk 🗺️",
+      "caption": "the whole world folds out of a mapmaker's desk 🗺️✨ #powersofzen #maps #oddlysatisfying #fyp",
+      "yt_title": "the whole world folds out of a mapmaker's desk 🗺️ 10ᶻ",
+      "yt_desc": "an antique atlas world — desk to map to coastline to cosmos and back.\n\n#shorts #maps #oddlysatisfying #powersofzen",
+      "cameo": null,
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-27"
+    }
+  ]
+}
