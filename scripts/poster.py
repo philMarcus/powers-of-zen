@@ -282,13 +282,10 @@ def post_instagram(video_rel, caption, dry_run):
     tab.choosefile("[...document.querySelectorAll('button')]"
                    ".find(b=>/select from computer/i.test(b.textContent)).click()",
                    win_path(video_rel))
-    # CROP screen: wait for it, set Original aspect
-    expect(wait_for(tab, "document.body.innerText.includes('Crop')||"
-                         "[...document.querySelectorAll('*')].some(e=>e.textContent.trim()==='Original')?true:null", 60, 2),
+    # CROP screen: wait for it (the 9:16 video keeps its ratio by default — don't
+    # touch the aspect control; a mis-aimed click was dismissing the whole dialog)
+    expect(wait_for(tab, "document.body.innerText.includes('Crop')?true:null", 60, 2),
            "instagram", "crop_screen", tab, "crop screen never appeared (upload failed?)")
-    click_css(tab, 456, 556)
-    time.sleep(1)
-    tab.eval("[...document.querySelectorAll('span,div[role=\"button\"]')].find(e=>e.textContent.trim()==='Original')?.click()")
     time.sleep(1)
     # advance CROP -> EDIT: wait for the Edit screen marker ('Cover photo' / 'Trim')
     _ig_next(tab)

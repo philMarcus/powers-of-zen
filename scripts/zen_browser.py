@@ -34,15 +34,30 @@ class Tab:
         # activate first: chrome throttles background tabs (screenshots hang)
         urllib.request.urlopen(f"http://localhost:{PORT}/json/activate/{t['id']}")
         time.sleep(0.5)
-        self.ws = websocket.create_connection(t["webSocketDebuggerUrl"], timeout=60)
+        self.ws = websocket.create_connection(t["webSocketDebuggerUrl"], timeout=200)
         self.id = 0
+        # enable Page events so we can auto-accept "Leave site?" / beforeunload dialogs
+        # (upload forms register beforeunload; a native dialog otherwise FREEZES CDP)
+        try:
+            self.cmd("Page.enable")
+        except Exception:
+            pass
 
     def cmd(self, method, **params):
         self.id += 1
-        self.ws.send(json.dumps({"id": self.id, "method": method, "params": params}))
+        mid = self.id
+        self.ws.send(json.dumps({"id": mid, "method": method, "params": params}))
         while True:
             msg = json.loads(self.ws.recv())
-            if msg.get("id") == self.id:
+            # auto-accept any JS dialog (beforeunload "Leave site?", alerts) so a
+            # native modal never blocks the harness
+            if msg.get("method") == "Page.javascriptDialogOpening":
+                self.id += 1
+                self.ws.send(json.dumps({"id": self.id,
+                                         "method": "Page.handleJavaScriptDialog",
+                                         "params": {"accept": True}}))
+                continue
+            if msg.get("id") == mid:
                 if "error" in msg:
                     raise RuntimeError(msg["error"])
                 return msg.get("result", {})
