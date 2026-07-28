@@ -22,14 +22,28 @@ ROOT = pl.ROOT
 SEARCH = ["production", "production_alternates", "review", "review_divein"]
 
 
+def variant_basename(journey, model, cut):
+    return journey + ("_ds" if model == "ds" else "") + ("_divein" if cut == "divein" else "") + ".mp4"
+
+
 def _variants(journey):
     """The 4 variant (basename, model, cut) for a journey."""
-    out = []
-    for model in ("turbo", "ds"):
-        for cut in ("zoomout", "divein"):
-            name = journey + ("_ds" if model == "ds" else "") + ("_divein" if cut == "divein" else "")
-            out.append((name + ".mp4", model, cut))
-    return out
+    return [(variant_basename(journey, m, c), m, c)
+            for m in ("turbo", "ds") for c in ("zoomout", "divein")]
+
+
+def switch(journey, model, cut):
+    """Change a video's chosen model+cut: update pipeline (file/model/cut) and move the
+    newly-chosen variant into production/ (old one to alternates). Used by the dashboard."""
+    d = pl.load()
+    v = pl.get(d, journey)
+    if not v:
+        print(f"no pipeline entry for {journey}"); return
+    v["model"], v["cut"] = model, cut
+    v["file"] = "production/" + variant_basename(journey, model, cut)
+    pl.save(d)
+    reorg(journey, model, cut)
+    pl.telem("switch", journey=journey, detail=f"{model}/{cut}")
 
 
 def _find(basename):

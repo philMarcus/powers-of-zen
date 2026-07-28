@@ -65,11 +65,17 @@ def get(data, journey):
     return next((v for v in data["videos"] if v["journey"] == journey), None)
 
 
+def queued(data):
+    """Queued videos in Phil's chosen order (order field asc, then insertion)."""
+    q = [v for v in data["videos"] if v.get("state") == "queued"]
+    return sorted(q, key=lambda v: v.get("order", 999))
+
+
 def next_to_post(data):
-    """First video in state 'queued' (optionally past its scheduled time)."""
+    """Top of the ordered queue whose scheduled time (if any) has arrived."""
     now = _now()
-    for v in data["videos"]:
-        if v.get("state") == "queued" and (not v.get("scheduled") or v["scheduled"] <= now):
+    for v in queued(data):
+        if not v.get("scheduled") or v["scheduled"] <= now:
             return v
     return None
 

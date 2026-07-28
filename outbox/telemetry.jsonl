@@ -1,2 +1,7 @@
 {"ts": "2026-07-27 18:51:28", "event": "migrate", "detail": "11 videos from queue.json"}
 {"ts": "2026-07-27 18:52:24", "event": "promote", "detail": "--all"}
+{"ts": "2026-07-27 21:30:41", "event": "queued", "journey": "cartographer"}
+{"ts": "2026-07-27 21:31:23", "event": "review", "journey": "cartographer"}
+{"ts": "2026-07-27 21:31:58", "event": "queued", "journey": "night_bloom"}
+{"ts": "2026-07-27 21:32:25", "event": "queued", "journey": "tide_of_life"}
+{"ts": "2026-07-27 21:56:28", "event": "switch", "journey": "cartographer", "detail": "ds/divein"}
