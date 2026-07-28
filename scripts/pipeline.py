@@ -29,21 +29,23 @@ STATES = ["rendered", "review", "queued", "live", "failed"]
 
 
 def load():
+    # explicit utf-8: captions have emoji, and Windows Python defaults to cp1252
     if PIPELINE.exists():
-        return json.loads(PIPELINE.read_text())
+        return json.loads(PIPELINE.read_text(encoding="utf-8"))
     return {"meta": {"cadence": "2/day 08:00,18:00 EDT"}, "videos": []}
 
 
 def save(data):
     data.setdefault("meta", {})["updated"] = _now()
     PIPELINE.parent.mkdir(parents=True, exist_ok=True)
-    PIPELINE.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+    PIPELINE.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n",
+                        encoding="utf-8")
 
 
 def telem(event, **fields):
     """Append one event to telemetry.jsonl (the dashboard activity/failure feed)."""
     TELEMETRY.parent.mkdir(parents=True, exist_ok=True)
-    with open(TELEMETRY, "a") as f:
+    with open(TELEMETRY, "a", encoding="utf-8") as f:
         f.write(json.dumps({"ts": _now(), "event": event, **fields},
                            ensure_ascii=False) + "\n")
 
@@ -51,7 +53,7 @@ def telem(event, **fields):
 def read_telem(limit=200):
     if not TELEMETRY.exists():
         return []
-    lines = TELEMETRY.read_text().splitlines()[-limit:]
+    lines = TELEMETRY.read_text(encoding="utf-8").splitlines()[-limit:]
     return [json.loads(x) for x in lines if x.strip()]
 
 
