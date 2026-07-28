@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-27 21:56:28"
+    "updated": "2026-07-28 09:18:43"
   },
   "videos": [
     {
@@ -113,9 +113,9 @@
       "scheduled": null,
       "platforms": {
         "tiktok": {
-          "status": "pending",
+          "status": "live",
           "url": "",
-          "ts": ""
+          "ts": "2026-07-28 08:00"
         },
         "youtube": {
           "status": "pending",

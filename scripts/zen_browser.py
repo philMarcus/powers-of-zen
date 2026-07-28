@@ -24,6 +24,17 @@ def tabs():
     return [t for t in json.load(urllib.request.urlopen(f"http://localhost:{PORT}/json"))
             if t["type"] == "page"]
 
+
+def open_tab(url):
+    """Open a new browser tab at url (DevTools /json/new). The poster uses this to
+    self-heal when a platform tab isn't open (e.g. after a fresh scheduler launch)."""
+    try:
+        urllib.request.urlopen(urllib.request.Request(
+            f"http://localhost:{PORT}/json/new?{url}", method="PUT"), timeout=10)
+    except Exception:
+        urllib.request.urlopen(f"http://localhost:{PORT}/json/new?{url}", timeout=10)
+    time.sleep(2)
+
 class Tab:
     def __init__(self, idx=0, match=None):
         ts = tabs()

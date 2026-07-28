@@ -35,8 +35,24 @@ import requests
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
+import zen_browser  # noqa: E402
 from zen_browser import Tab  # noqa: E402
 import pipeline as pl  # noqa: E402
+
+PLATFORM_URL = {"tiktok": "https://www.tiktok.com/tiktokstudio/upload",
+                "youtube": "https://studio.youtube.com",
+                "instagram": "https://www.instagram.com/"}
+PLATFORM_MATCH = {"tiktok": "tiktok", "youtube": "studio.youtube", "instagram": "instagram"}
+
+
+def platform_tab(name):
+    """Return a Tab for the platform, CREATING the tab if it isn't open (self-heal;
+    the scheduler-launched Chrome may not have all platform tabs)."""
+    try:
+        return Tab(match=PLATFORM_MATCH[name])
+    except StopIteration:
+        zen_browser.open_tab(PLATFORM_URL[name])
+        return Tab(match=PLATFORM_MATCH[name])
 
 def _find_ollama():
     # WSL host IP drifts between reboots; try localhost then the default gateway
@@ -175,7 +191,7 @@ def dump_context(tab):
 
 # ---------------------------------------------------------------- platforms
 def post_tiktok(video_rel, caption, dry_run):
-    tab = Tab(match="tiktok")
+    tab = platform_tab("tiktok")
     tab.goto("https://www.tiktok.com/tiktokstudio/upload")
     wait_for(tab, "document.querySelector('input[type=\"file\"]')?true:null", 30)
     tab.setfile('input[type="file"]', win_path(video_rel))
@@ -237,7 +253,7 @@ def post_tiktok(video_rel, caption, dry_run):
 
 
 def post_youtube(video_rel, title, desc, dry_run):
-    tab = Tab(match="studio.youtube")
+    tab = platform_tab("youtube")
     tab.goto("https://www.youtube.com/upload")
     wait_for(tab, "document.querySelector('input[type=\"file\"]')?true:null", 30)
     tab.setfile('input[type="file"]', win_path(video_rel))
@@ -301,7 +317,7 @@ def _ig_click(tab, label):
 
 
 def post_instagram(video_rel, caption, dry_run):
-    tab = Tab(match="instagram")
+    tab = platform_tab("instagram")
     tab.goto("https://www.instagram.com/")
     wait_for(tab, "[...document.querySelectorAll('a,div[role=\"button\"],span')]"
                   ".find(e=>e.textContent.trim()==='Create')?true:null", 30)
@@ -365,6 +381,11 @@ def run(only, dry_run, journey):
     plats = only or pl.PLATFORMS
     results = {}
     for name in plats:
+        # resume-safe: NEVER re-post a platform already live for this video
+        if not dry_run and entry.get("platforms", {}).get(name, {}).get("status") == "live":
+            results[name] = "already live (skipped)"
+            print(f"  {name}: {results[name]}")
+            continue
         fn = PLATFORMS[name]
         try:
             if name == "youtube":
@@ -375,19 +396,26 @@ def run(only, dry_run, journey):
         except PlatformError as e:
             results[name] = f"FLAGGED: {e}"
         except Exception as e:
-            flag(name, "unexpected", Tab(match=name), str(e))
+            try:
+                t = platform_tab(name)
+            except Exception:
+                t = None
+            flag(name, "unexpected", t, str(e))
             results[name] = f"ERROR: {e}"
     if not dry_run:
         for name in plats:
             r = results[name]
-            good = r not in (None,) and not str(r).startswith(("FLAGGED", "ERROR"))
+            if r == "already live (skipped)":
+                continue  # leave the existing (live) platform record intact
+            good = r is not None and not str(r).startswith(("FLAGGED", "ERROR"))
             entry.setdefault("platforms", pl.blank_platforms())[name] = {
                 "status": "live" if good else "failed",
                 "url": r if (good and isinstance(r, str) and r.startswith("http")) else "",
                 "ts": pl._now()}
             pl.telem("post" if good else "post_fail", journey=entry["journey"],
                      platform=name, detail=str(r))
-        allgood = all(entry["platforms"][n]["status"] == "live" for n in pl.PLATFORMS)
+        allgood = all(entry.get("platforms", {}).get(n, {}).get("status") == "live"
+                      for n in pl.PLATFORMS)
         entry["state"] = "live" if allgood else "failed"
         pl.save(data)
     print("\nSummary:", json.dumps(results, indent=2))

@@ -1,0 +1,28 @@
+Posting: tide_of_life  (file: production/tide_of_life_ds_divein.mp4, ds/divein)
+  tiktok: posted
+Traceback (most recent call last):
+  File "/mnt/c/Users/Phil/zoomer/scripts/poster.py", line 371, in run
+    results[name] = fn(entry["file"], entry["yt_title"], entry["yt_desc"], dry_run)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Phil/zoomer/scripts/poster.py", line 240, in post_youtube
+    tab = Tab(match="studio.youtube")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Phil/zoomer/scripts/zen_browser.py", line 31, in __init__
+    t = next(t for t in ts if match in t["url"] or match in t.get("title",""))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/Phil/zoomer/scripts/poster.py", line 409, in <module>
+    main()
+  File "/mnt/c/Users/Phil/zoomer/scripts/poster.py", line 405, in main
+    run(only, args.dry_run, args.journey)
+  File "/mnt/c/Users/Phil/zoomer/scripts/poster.py", line 378, in run
+    flag(name, "unexpected", Tab(match=name), str(e))
+                             ^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Phil/zoomer/scripts/zen_browser.py", line 31, in __init__
+    t = next(t for t in ts if match in t["url"] or match in t.get("title",""))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
