@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-28 09:18:43"
+    "updated": "2026-07-28 09:36:38"
   },
   "videos": [
     {
@@ -105,11 +105,11 @@
       "cut": "divein",
       "file": "production/tide_of_life_ds_divein.mp4",
       "title": "an ocean, a cell, and the cosmic web — one dive 🌊",
-      "caption": "an ocean, a cell, and the cosmic web — one dive 🌊 #powersofzen #ocean #oddlysatisfying #zoom #fyp",
+      "caption": "can you spot Belle? 🔬 she's hiding in here somewhere 🌊 #powersofzen #findthecharacter #ocean #oddlysatisfying #fyp",
       "yt_title": "an ocean, a cell, and the cosmic web — one dive 🌊 10ᶻ",
-      "yt_desc": "an ocean, a cell, and the cosmic web — one dive 🌊\n\n#shorts #powersofzen #ocean #oddlysatisfying #zoom #fyp",
-      "cameo": null,
-      "state": "queued",
+      "yt_desc": "can you spot Belle hiding in this one? 🔬\n\nan ocean, a cell, and the cosmic web — one dive 🌊\n\n#shorts #powersofzen #ocean #oddlysatisfying #zoom #fyp",
+      "cameo": "Belle",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -118,14 +118,14 @@
           "ts": "2026-07-28 08:00"
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/qh-5TsjuPOA",
+          "ts": "2026-07-28 09:20:17"
         },
         "instagram": {
-          "status": "pending",
+          "status": "live",
           "url": "",
-          "ts": ""
+          "ts": "2026-07-28 09:20:17"
         }
       },
       "created": "2026-07-27",
