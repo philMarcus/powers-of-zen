@@ -7,3 +7,5 @@
 {"ts": "2026-07-27 21:56:28", "event": "switch", "journey": "cartographer", "detail": "ds/divein"}
 {"ts": "2026-07-28 09:20:17", "event": "post", "journey": "tide_of_life", "platform": "youtube", "detail": "https://youtube.com/shorts/qh-5TsjuPOA"}
 {"ts": "2026-07-28 09:20:17", "event": "post", "journey": "tide_of_life", "platform": "instagram", "detail": "posted"}
+{"ts": "2026-07-28 09:55:50", "event": "recaption", "journey": "tide_of_life", "platform": "youtube"}
+{"ts": "2026-07-28 09:56:06", "event": "recaption", "journey": "tide_of_life", "platform": "instagram"}

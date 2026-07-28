@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-28 09:36:38"
+    "updated": "2026-07-28 09:59:36"
   },
   "videos": [
     {
@@ -129,7 +129,12 @@
         }
       },
       "created": "2026-07-27",
-      "order": 0
+      "order": 0,
+      "recaption": {
+        "instagram": "done",
+        "youtube": "partial(title set, desc unconfirmed)",
+        "tiktok": "manual-needed"
+      }
     },
     {
       "journey": "night_bloom",
