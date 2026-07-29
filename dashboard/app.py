@@ -15,11 +15,18 @@ Stage flow (tabs left→right): Video Review → 🎵 Music → Production → L
 Editing here writes straight to pipeline.json — the scheduler/poster read the same file.
 """
 import json
+import os
 import sys
 from collections import Counter
 from pathlib import Path
 
 import streamlit as st
+
+# ffmpeg path — the dashboard runs on WINDOWS python (streamlit.exe), so it needs a Windows path;
+# the /mnt/c form only works under WSL. (score.py/phase_shift.py hardcode the WSL form.)
+_FF = ("Users/Phil/AppData/Local/Microsoft/WinGet/Packages/"
+       "Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-8.1.1-full_build/bin/ffmpeg.exe")
+FFMPEG = ("C:\\" + _FF.replace("/", "\\")) if os.name == "nt" else ("/mnt/c/" + _FF)
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import pipeline as pl  # noqa: E402
@@ -131,37 +138,58 @@ def set_state(journey, newstate):
 
 # ── start-frame / cover-frame marking (pause the looping video, read the time, mark it) ──────
 def extract_frame(video_rel, t):
-    """Grab the frame at t seconds → a png (for confirming what you're marking)."""
+    """Grab the frame at t seconds → a png (for confirming what you're marking). Never raises."""
     import subprocess
-    from phase_shift import FFMPEG   # NOT score (it imports audioop, gone in Python 3.13+)
-    (pl.ROOT / "outbox" / "shots").mkdir(parents=True, exist_ok=True)
-    out_rel = f"outbox/shots/mark_{Path(video_rel).stem}.png"
-    subprocess.run([FFMPEG, "-y", "-loglevel", "error", "-ss", f"{max(0.0,t):.2f}",
-                    "-i", video_rel, "-frames:v", "1", out_rel],
-                   cwd=str(pl.ROOT), capture_output=True)
-    p = pl.ROOT / out_rel
-    return str(p) if p.exists() else None
+    try:
+        (pl.ROOT / "outbox" / "shots").mkdir(parents=True, exist_ok=True)
+        out_rel = f"outbox/shots/mark_{Path(video_rel).stem}.png"
+        subprocess.run([FFMPEG, "-y", "-loglevel", "error", "-ss", f"{max(0.0, t):.2f}",
+                        "-i", video_rel, "-frames:v", "1", out_rel],
+                       cwd=str(pl.ROOT), capture_output=True, timeout=30)
+        p = pl.ROOT / out_rel
+        return str(p) if p.exists() else None
+    except Exception:
+        return None
+
+
+def phase_shift_video(src_rel, t):
+    """Rotate the loop to open at t seconds → a NEW file (never in place: the browser may hold
+    the played file open, which locks it). Returns the new relative path or None."""
+    import subprocess
+    src = pl.ROOT / src_rel
+    dst = src.with_name(src.stem + "_shift.mp4")
+    try:
+        subprocess.run(
+            [FFMPEG, "-y", "-loglevel", "error", "-i", src.name, "-filter_complex",
+             f"[0:v]trim=start={t:.3f},setpts=PTS-STARTPTS[a];"
+             f"[0:v]trim=duration={t:.3f},setpts=PTS-STARTPTS[b];[a][b]concat=n=2:v=1[v]",
+             "-map", "[v]", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", dst.name],
+            cwd=str(src.parent), capture_output=True, timeout=180)
+        return str(dst.relative_to(pl.ROOT)) if dst.exists() else None
+    except Exception:
+        return None
 
 
 def approve_to_music(journey):
-    """Approve a reviewed video into Music. If a start frame was marked, PHASE-SHIFT the video
-    so it opens there (before music is generated, so the track aligns to the new arrangement).
-    Re-derivable: keep an un-shifted *_preshift.mp4 and re-shift from it each time."""
-    import shutil
-    import phase_shift
+    """Approve a reviewed video into Music. If a start frame was marked, phase-shift the video to
+    open there (to a NEW file, always re-derived from the un-shifted cut so it's re-markable),
+    then generate music — but ONLY if the GPU is free; otherwise the Music tab shows a Generate
+    button (VLM/ACE-Step would fight an active render)."""
     dd = data(); v = pl.get(dd, journey)
     t = v.get("start_t")
+    base = v.get("orig_file") or v["file"]          # always shift from the un-shifted cut
     if t and t > 0.05:
-        src = pl.ROOT / v["file"]
-        backup = src.with_name(src.stem + "_preshift.mp4")
-        if not backup.exists():
-            shutil.copy(str(src), str(backup))        # first time: preserve the un-shifted cut
-        else:
-            shutil.copy(str(backup), str(src))         # re-approve: start from the un-shifted cut
-        phase_shift.shift(src, float(t))               # rotate the loop to open at t (in place)
-        pl.telem("phase_shift", journey=journey, detail=f"start @ {t:.2f}s")
+        newrel = phase_shift_video(base, float(t))
+        if newrel:
+            v["orig_file"] = base
+            v["file"] = newrel
+            pl.telem("phase_shift", journey=journey, detail=f"start @ {t:.2f}s")
+    elif v.get("orig_file"):                         # start cleared → revert to the un-shifted cut
+        v["file"] = v["orig_file"]
     v["state"] = "music"
     pl.save(dd); pl.telem("music", journey=journey)
+    if not pl.gpu_busy():
+        regenerate_music(journey)                   # async; skipped while a render/GPU job runs
 
 
 def render_marker(v, kind):
@@ -328,6 +356,10 @@ with tabs[1]:  # MUSIC — audition/generate a track, then send to Production
     mv = by_state(d, "music")
     if not mv:
         st.info("Nothing needs music. Approve a video in Video Review to send it here.")
+    gpu_busy = pl.gpu_busy() if mv else False
+    if gpu_busy and mv:
+        st.warning("⚠ GPU is busy (a render / music job is running) — auto-generation is paused. "
+                   "You can still press Generate to queue it, but it'll be slow while the GPU is in use.")
     for v in mv:
         m = v.get("music") or {}
         tag = f"✅ {m['chosen']}" if m.get("chosen") else "— choose one —"

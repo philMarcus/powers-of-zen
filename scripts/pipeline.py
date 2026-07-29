@@ -84,6 +84,23 @@ def blank_platforms():
     return {p: {"status": "pending", "url": "", "ts": ""} for p in PLATFORMS}
 
 
+def gpu_busy():
+    """True if a GPU job is running (a dive render / seam repair / music gen). Gate GPU-heavy
+    work (music generation, local-VLM captioning) on this so we don't fight an active render —
+    or the user's game. Works from Windows (dashboard) via wsl.exe and from WSL directly. The
+    [b]racket trick keeps the pgrep pattern from matching its own shell command line."""
+    import os
+    import subprocess
+    pat = "[e]ngine/dive.py|[r]epair_seam.py|[m]usic_gen.py|[m]usic.py"
+    cmd = f"pgrep -f '{pat}' >/dev/null 2>&1 && echo BUSY || echo FREE"
+    try:
+        argv = (["wsl.exe", "bash", "-lc", cmd] if os.name == "nt" else ["bash", "-lc", cmd])
+        r = subprocess.run(argv, capture_output=True, text=True, timeout=8)
+        return "BUSY" in (r.stdout or "")
+    except Exception:
+        return False
+
+
 def paused_platforms(data):
     """Platforms the scheduler should NOT auto-post to (e.g. TikTok while a new-account
     review/spam-flag settles). Set via meta.paused_platforms in pipeline.json."""
