@@ -491,27 +491,30 @@ def verify_instagram_posted(tab, caption, timeout=60):
     return None
 
 
-def _ig_preview_ratio(tab):
-    """width/height of the largest media element in the IG dialog (the crop preview).
-    ~0.56 = 9:16 portrait (phone), ~1.0 = square."""
+def _ig_crop_is_original(tab):
+    """True when the crop shows the WHOLE video (Original), not a clipped sub-region. IG always
+    renders the <video> at its source ratio, so ratio can't tell Original from square — what
+    differs is CONTAINMENT: on Original the video fits inside its crop frame; on square/other
+    the video overflows the frame and is clipped. Compare the video's rendered height to its
+    smallest-height ancestor (the crop frame). Returns True/False/None(no video)."""
     return tab.eval(r"""(function(){
-      const meds=[...document.querySelectorAll('[role=dialog] video,[role=dialog] img,[role=dialog] canvas')];
-      if(!meds.length)return null;
-      meds.sort((a,b)=>{const ra=a.getBoundingClientRect(),rb=b.getBoundingClientRect();
-        return rb.width*rb.height-ra.width*ra.height});
-      const r=meds[0].getBoundingClientRect();return r.height?+(r.width/r.height).toFixed(3):null;})()""")
+      const v=document.querySelector('[role=dialog] video'); if(!v)return null;
+      const vr=v.getBoundingClientRect(); if(!vr.height)return null;
+      let minH=vr.height; let e=v.parentElement;
+      for(let i=0;i<7&&e;i++){const r=e.getBoundingClientRect();
+        if(r.width>50&&r.height>50&&r.height<minH)minH=r.height; e=e.parentElement;}
+      return vr.height<=minH+4;})()""")
 
 
 def _ig_select_original_crop(tab, tries=3):
-    """On IG's crop screen, choose the 'Original' aspect so our 9:16 phone-shaped video isn't
-    cropped to SQUARE — IG defaults to 1:1, which silently squared the last three posts. Open
-    the 'Select crop' control, click 'Original', and VERIFY the preview became portrait.
-    Returns True only when the preview ratio is portrait (< 0.75)."""
+    """On IG's crop screen, choose 'Original' so our 9:16 phone video isn't cropped to SQUARE
+    (IG defaults to 1:1). Open 'Select crop', click 'Original', and VERIFY via containment
+    (_ig_crop_is_original) — NOT via video ratio, which is always the source ratio and silently
+    false-passed before. Returns True only when the whole video is shown."""
     for _ in range(tries):
-        r = _ig_preview_ratio(tab)
-        if r is not None and r < 0.75:
+        if _ig_crop_is_original(tab) is True:
             return True
-        # open the Select crop (aspect) popup — it's an svg[aria-label="Select crop"] control
+        # open the Select crop (aspect) popup — svg[aria-label="Select crop"]
         coords = tab.eval(r"""(function(){const s=document.querySelector('svg[aria-label="Select crop"]');
           if(!s)return null;const el=s.closest('div[role=button],button')||s.parentElement;const b=el.getBoundingClientRect();
           return JSON.stringify([Math.round(b.left+b.width/2),Math.round(b.top+b.height/2)]);})()""")
@@ -530,8 +533,7 @@ def _ig_select_original_crop(tab, tries=3):
             for typ in ("mousePressed", "mouseReleased"):
                 tab.cmd("Input.dispatchMouseEvent", type=typ, x=x, y=y, button="left", clickCount=1)
             time.sleep(1.2)
-    r = _ig_preview_ratio(tab)
-    return r is not None and r < 0.75
+    return _ig_crop_is_original(tab) is True
 
 
 def _ig_advance(tab, label, marker_js, tries=4, settle=2.5):
