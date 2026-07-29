@@ -603,3 +603,12 @@ the GPU frees up. (Don't edit a batch script while it's running.)
 (stable macro-realm, mid-travel, on a beat) instead of Phil marking it by hand; give it candidate
 frames and let it choose. (b) Possibly DROP turbo and render DS-only (caption/music are the same
 either way) — leaning that way; decide after seeing the DS batch.
+
+**CONFIRMED in a real render (stormglass DS, 2026-07-29):** star→gas-giant transition. No planet
+renders during the star's travel/plunge beats (frames 220–230 are just corona); at the register
+BOUNDARY (~frame 234) a planet flashes in, and frames 238–250 show MULTIPLE round bodies (ringed
+planet + blue giant) coexisting while the background morphs to orange atmosphere — never one gas
+giant swelling. So the object is not established during the approach; it pops in at the arrival
+beat, and the model invents extra bodies. Confirms fix direction: object-approach template
+(ONE centered body, swelling, "the only one, no other planets") + kill drift + lower denoise, so
+the crop-zoom grows the SAME planet from far→full instead of re-inventing it at the boundary.
