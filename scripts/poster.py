@@ -179,6 +179,21 @@ def set_text(tab, selector_js, text):
     return True
 
 
+def set_text_verified(tab, selector_js, text, tries=10, wait=1.2):
+    """set_text + READ BACK confirmation. set_text only proves execCommand ran, not that the
+    value landed — a field can exist-but-not-yet-be-editable (dialog still animating), where
+    focus doesn't stick and the text silently never applies (this is what failed YouTube's
+    title at 8am). Retry until the field's text actually contains what we set. Returns bool."""
+    needle = _norm(text)[:20]
+    for _ in range(tries):
+        set_text(tab, selector_js, text)
+        got = tab.eval(f"(function(){{const el=({selector_js});return el?(el.textContent||el.value||''):''}})()")
+        if needle and needle in _norm(got or ""):
+            return True
+        time.sleep(wait)
+    return False
+
+
 def dump_context(tab):
     """Cheap TEXT snapshot for diagnosis without a screenshot: visible buttons + headings."""
     return tab.eval(
@@ -190,6 +205,98 @@ def dump_context(tab):
 
 
 # ---------------------------------------------------------------- platforms
+def _norm(s):
+    """Lowercase, keep only alphanumerics — for matching a caption against a content-list row
+    regardless of emoji/whitespace/hashtag differences."""
+    return "".join(c for c in (s or "").lower() if c.isalnum())
+
+
+def verify_tiktok_posted(tab, caption, timeout=100):
+    """GROUND TRUTH: a TikTok post only counts if it actually shows up in the account's
+    content list. TikTok drops some posts (custom audio on a new account) AFTER flashing a
+    publish/under-review signal — so the in-flow 'success' string LIES. Navigate to the
+    content list and confirm a row whose caption matches this post. Returns True/False.
+
+    The needle is the caption's leading words (hashtags/emoji stripped); captions are unique
+    per journey, so a normalized-substring match is reliable."""
+    plain = caption.split("#")[0]                      # drop hashtags
+    needle = _norm(plain)[:18]
+    if len(needle) < 6:                                # caption too short to match safely
+        needle = _norm(caption)[:18]
+    tab.goto("https://www.tiktok.com/tiktokstudio/content")
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        rows = tab.eval("JSON.stringify([...document.querySelectorAll('a[href*=\"/video/\"]')]"
+                        ".map(a=>{const r=a.closest('tr')||a.closest('[class]');"
+                        "return (r?r.innerText:a.innerText)}))")
+        try:
+            for row in json.loads(rows or "[]"):
+                if needle and needle in _norm(row):
+                    return True
+        except Exception:
+            pass
+        time.sleep(4)
+    return False
+
+
+def tiktok_set_ai_label(tab, tries=5):
+    """Turn ON 'AI-generated content' and VERIFY it stuck. State lives in the switch's class
+    (Switch__content--checked-true). A SYNTHESIZED click on the switch element flips it — the
+    old code used click_css (which multiplies by COORD_SCALE) on raw getBoundingClientRect
+    coords, double-scaling them so it clicked off-target and silently missed. Returns True only
+    when the switch verifies ON; the caller must refuse to post otherwise."""
+    tab.eval("[...document.querySelectorAll('div,span,button')]"
+             ".find(e=>e.textContent.trim()==='Show more'&&e.children.length<=1)?.click()")
+    time.sleep(1)
+    ROW = ("(function(){const l=[...document.querySelectorAll('*')].find(e=>e.children.length===0"
+           "&&e.textContent.trim()==='AI-generated content');if(!l)return null;let row=l;"
+           "for(let i=0;i<6;i++){row=row.parentElement||row;if(row.querySelector('.Switch__root'))break;}"
+           "return row})()")
+
+    def state():
+        return tab.eval(f"(function(){{const row={ROW};if(!row)return 'NO_ROW';"
+                        "const c=row.querySelector('.Switch__content');"
+                        "return c?(c.className.includes('checked-true')?'ON':'OFF'):'NO_SWITCH'}})()")
+
+    for _ in range(tries):
+        st = state()
+        if st == "ON":
+            return True
+        if st in ("NO_ROW", "NO_SWITCH"):
+            time.sleep(1.5)
+            continue
+        coords = tab.eval(f"(function(){{const row={ROW};const s=row&&row.querySelector('.Switch__root');"
+                          "if(!s)return null;s.scrollIntoView({block:'center'});const b=s.getBoundingClientRect();"
+                          "return JSON.stringify([Math.round(b.left+b.width/2),Math.round(b.top+b.height/2)])}})()")
+        if coords:
+            x, y = json.loads(coords)
+            tab.click(x, y)                       # synthesized press+release, CSS px (no scaling)
+            time.sleep(1)
+            # some accounts show a 'Turn on' confirmation modal; click it if present
+            tab.eval("[...document.querySelectorAll('[role=dialog] button,.TUXModal button,button')]"
+                     ".find(b=>/^turn on$/i.test(b.textContent.trim()))?.click()")
+            time.sleep(1)
+    return state() == "ON"
+
+
+def wait_tiktok_checks(tab, timeout=720, poll=6):
+    """Wait for BOTH TikTok checks to finish before we click Post. The upload runs a 'Music
+    copyright check' (~30s) and a 'Content check lite' (est. up to ~10 min). Clicking Post
+    while either is still running pops the 'copyright check is incomplete' modal — and the
+    old code probed that by clicking Post/Cancel in a tight loop, which races the check and
+    can look spammy. Instead we passively poll the Checks panel until no 'Checking in
+    progress' remains. Returns the music-copyright status line (or None on timeout)."""
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        txt = tab.eval("document.body.innerText") or ""
+        if "Checking in progress" not in txt and "Music copyright check" in txt:
+            # both checks resolved — return the music-copyright verdict for a safety gate
+            after = txt.split("Music copyright check", 1)[1][:120]
+            return after.strip().split("\n")[0] if after.strip() else "resolved"
+        time.sleep(poll)
+    return None
+
+
 def post_tiktok(video_rel, caption, dry_run):
     tab = platform_tab("tiktok")
     tab.goto("https://www.tiktok.com/tiktokstudio/upload")
@@ -211,33 +318,17 @@ def post_tiktok(video_rel, caption, dry_run):
     expect(set_text(tab, capsel, caption), "tiktok", "caption", tab, "caption not settable")
     tab.eval("document.activeElement.blur()")
     time.sleep(1)
-    # AI-generated-content label ON
-    tab.eval("[...document.querySelectorAll('div,span,button')]"
-             ".find(e=>e.textContent.trim()==='Show more'&&e.children.length<=1)?.click()")
-    time.sleep(1)
-    coords = wait_for(tab, "(function(){const l=[...document.querySelectorAll('*')]"
-                           ".find(e=>e.children.length===0&&e.textContent.trim()==='AI-generated content');"
-                           "if(!l)return null;l.scrollIntoView({block:'center'});"
-                           "const r=l.getBoundingClientRect();"
-                           "return JSON.stringify([Math.round(r.right)+40,Math.round(r.top)+10])})()",
-                      15)
-    expect(coords, "tiktok", "ai_label_find", tab, "AI-generated-content row not found")
-    x, y = json.loads(coords)
-    click_css(tab, x, y)
-    time.sleep(1)
-    tab.eval("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Turn on')?.click()")
-    time.sleep(1)
-    ai_on = tab.eval("const l=[...document.querySelectorAll('*')].find(e=>e.children.length===0"
-                     "&&e.textContent.trim()==='AI-generated content');l?"
-                     "(l.parentElement.parentElement.innerText.includes('labeled')||"
-                     "!!l.closest('*')&&/true/.test(''+[...document.querySelectorAll('[aria-checked]')].map(x=>x.getAttribute('aria-checked')))):null")
-    # verify checks passed (DOM text)
-    txt = tab.eval("document.body.innerText")
-    expect("No issues found" in txt or "Checking" in txt, "tiktok", "checks", tab,
-           "content checks not green")
+    # AI-generated-content label ON — ALWAYS declare AI content, and REFUSE to post if we
+    # can't confirm it (posting unlabeled AI video risks account penalties).
+    expect(tiktok_set_ai_label(tab), "tiktok", "ai_label", tab,
+           "could NOT confirm 'AI-generated content' label is ON — refusing to post (compliance)")
+    # the Checks panel must at least exist (upload registered)
+    expect(wait_for(tab, "document.body.innerText.includes('Music copyright check')"
+                         "||document.body.innerText.includes('Checks')?true:null", 30),
+           "tiktok", "checks", tab, "checks panel never appeared")
     if dry_run:
         cap = tab.eval(f"({capsel})?.textContent?.slice(0,70)")
-        print(f"  [dry-run] TikTok: caption='{cap}', AI-label~{ai_on}, checks OK. NOT posting.")
+        print(f"  [dry-run] TikTok: caption='{cap}', AI-label ON (verified). NOT posting.")
         return "dry-run"
     # POST — but the music copyright check must FINISH first. Clicking Post while it's still
     # running pops "Continue to post? The copyright check is incomplete. Posting now will stop
@@ -245,28 +336,45 @@ def post_tiktok(video_rel, caption, dry_run):
     # lands (this is exactly what dropped night_bloom's 6pm post now that videos carry music).
     # So: click Post; if the incomplete-check modal appears, Cancel (keeping the check alive)
     # and wait, retrying for a few minutes. Only a clean Post (no incomplete modal) posts.
+    # WAIT for both checks to finish (music copyright + content check) BEFORE clicking Post.
+    # Clicking during a check pops the 'incomplete' modal; probing it with Post/Cancel races
+    # the check and risks flagging the account. Passive wait, then a single clean Post.
+    music_status = wait_tiktok_checks(tab)
+    expect(music_status is not None, "tiktok", "checks_wait", tab,
+           "checks never finished (still 'Checking in progress' after wait)")
+    print(f"    tiktok checks done — music copyright: {music_status!r}")
+    # safety gate: if the music copyright check flagged a match, DON'T post (it would drop)
+    if music_status and "no issues" not in music_status.lower() and "resolved" not in music_status.lower():
+        expect(False, "tiktok", "copyright", tab,
+               f"music copyright check did not pass: {music_status!r} — not posting")
     expect(tab.eval("[...document.querySelectorAll('button')].some(x=>x.textContent.trim()==='Post')"),
            "tiktok", "post_click", tab, "Post button not found")
+    # single Post click. If the incomplete-check modal STILL appears, Cancel (never 'Post now'
+    # — that stops the check and drops the post), re-wait once, and try one more time.
     posted_ok = False
-    for _ in range(20):                                  # ~20 * ~10s = up to ~3.5 min
+    for attempt in range(3):
         tab.eval("[...document.querySelectorAll('button')]"
                  ".find(x=>x.textContent.trim()==='Post')?.click()")
-        time.sleep(2.5)
+        time.sleep(3)
         dlg = (tab.eval("[...document.querySelectorAll('[role=dialog],.TUXModal')]"
                         ".map(d=>d.innerText).join(' ')") or "").lower()
         if "incomplete" in dlg or "still checking" in dlg:
+            print(f"    incomplete-check modal on attempt {attempt+1} — cancelling, re-waiting")
             tab.eval("[...document.querySelectorAll('[role=dialog] button,.TUXModal button')]"
-                     ".find(x=>/cancel/i.test(x.textContent))?.click()")   # keep the check running
-            time.sleep(8)
+                     ".find(x=>/cancel/i.test(x.textContent))?.click()")
+            wait_tiktok_checks(tab)
             continue
-        # check complete — confirm a normal 'Post now' if one appears, then look for success
-        tab.eval("[...document.querySelectorAll('[role=dialog] button,.TUXModal button')]"
-                 ".find(x=>/^post( now)?$/i.test(x.textContent.trim()))?.click()")
         if wait_for(tab, "document.body.innerText.toLowerCase().includes('under review')"
-                         "||location.pathname.includes('/content')?true:null", 20):
+                         "||location.pathname.includes('/content')?true:null", 25):
             posted_ok = True
             break
     expect(posted_ok, "tiktok", "post", tab, "post never completed (copyright check stuck?)")
+    # GROUND TRUTH: the in-flow signal only means TikTok ACCEPTED the upload — it can still
+    # drop the post (custom audio on a new account). Do not report success until the video
+    # actually appears in the content list. This is what stops the recurring false-positive.
+    expect(verify_tiktok_posted(tab, caption), "tiktok", "verify_live", tab,
+           "published signal seen but video is ABSENT from the content list — TikTok dropped "
+           "it (likely custom audio on a new account). Reported as FAILED, not live.")
     return "posted"
 
 
@@ -293,20 +401,15 @@ def post_youtube(video_rel, title, desc, dry_run):
     expect(wait_for(tab, f"({tsel})?true:null", 90, 2), "youtube", "dialog", tab,
            "upload details dialog/title field never appeared")
     # title — the field can EXIST before it is editable (details dialog still animating in),
-    # which is what silently failed the 6pm post. Retry set_text a few times with a settle.
-    def set_text_retry(sel, text, tries=6, wait=1.3):
-        for _ in range(tries):
-            if set_text(tab, sel, text):
-                return True
-            time.sleep(wait)
-        return False
-    # select WITHIN the field only (fixes selectAll-grabs-page)
-    expect(set_text_retry(tsel, title[:100]), "youtube", "title", tab, "title field not settable")
+    # which is what silently failed the 8am post. set_text_verified reads back the value and
+    # retries until the text actually lands (not just until execCommand runs).
+    expect(set_text_verified(tab, tsel, title[:100]), "youtube", "title", tab,
+           "title never confirmed set (field not editable in time?)")
     # description
     dsel = "document.querySelector('ytcp-video-description #textbox')"
     expect(wait_for(tab, f"({dsel})?true:null", 20), "youtube", "desc_field", tab,
            "description field missing")
-    expect(set_text_retry(dsel, desc), "youtube", "desc", tab, "description not settable")
+    expect(set_text_verified(tab, dsel, desc), "youtube", "desc", tab, "description not confirmed set")
     # not made for kids
     tab.eval("[...document.querySelectorAll('tp-yt-paper-radio-button')]"
              ".find(x=>/not made for kids/i.test(x.textContent))?.click()")
@@ -365,6 +468,43 @@ def _ig_click(tab, label, top_max=260):
     return "ok"
 
 
+def verify_instagram_posted(tab, caption, timeout=60):
+    """GROUND TRUTH for Instagram: after Share, confirm the newest reel on the profile actually
+    carries THIS caption. The in-flow 'shared' text is an unreliable signal (it matched once
+    when the post had NOT gone through). Read the reel's og:description (the real caption) and
+    match a normalized needle. Returns True/False."""
+    needle = _norm(caption.split("#")[0])[:18] or _norm(caption)[:18]
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        tab.goto("https://www.instagram.com/powers.of.zen/")
+        time.sleep(5)
+        href = tab.eval("document.querySelector('main a[href*=\"/reel/\"],main a[href*=\"/p/\"]')"
+                        "?.getAttribute('href')")
+        if href:
+            tab.goto("https://www.instagram.com" + href)
+            time.sleep(4)
+            og = tab.eval("document.querySelector('meta[property=\"og:description\"]')"
+                          "?.getAttribute('content')||''") or ""
+            if needle and needle in _norm(og):
+                return href
+        time.sleep(4)
+    return None
+
+
+def _ig_advance(tab, label, marker_js, tries=4, settle=2.5):
+    """Click an IG modal button (Next/Share) and CONFIRM the expected next screen actually
+    appeared, retrying the click if it didn't. IG's React occasionally drops the first
+    synthesized click, and a not-yet-rendered next screen makes a fire-and-wait step fail —
+    that intermittent miss is what stalled the 8am IG post at 'edit screen after 1st Next'.
+    Returns True once the marker shows, else False."""
+    for _ in range(tries):
+        _ig_click(tab, label)
+        if wait_for(tab, marker_js, timeout=8, poll=0.5):
+            return True
+        time.sleep(settle)
+    return False
+
+
 def post_instagram(video_rel, caption, dry_run):
     tab = platform_tab("instagram")
     tab.goto("https://www.instagram.com/")
@@ -376,23 +516,22 @@ def post_instagram(video_rel, caption, dry_run):
     tab.choosefile("[...document.querySelectorAll('button')]"
                    ".find(b=>/select from computer/i.test(b.textContent)).click()",
                    win_path(video_rel))
-    # CROP screen: wait for it (the 9:16 video keeps its ratio by default — don't
-    # touch the aspect control; a mis-aimed click was dismissing the whole dialog)
+    # CROP screen: wait for it. Our video is 9:16 and IG Reels preserve that ratio by default
+    # (the aspect popup is icon-only and mis-clicks dismissed the dialog, so we don't touch it).
     expect(wait_for(tab, "document.body.innerText.includes('Crop')?true:null", 60, 2),
            "instagram", "crop_screen", tab, "crop screen never appeared (upload failed?)")
     time.sleep(1)
-    # advance CROP -> EDIT: wait for the Edit screen marker ('Cover photo' / 'Trim')
-    expect(_ig_click(tab, "Next"), "instagram", "next1", tab, "first Next button not found")
-    expect(wait_for(tab, "document.body.innerText.includes('Cover photo')"
-                         "||document.body.innerText.includes('Trim')?true:null", 20),
-           "instagram", "edit_screen", tab, "edit screen never appeared after 1st Next")
-    # advance EDIT -> NEW REEL: wait for caption box / 'Share'
-    expect(_ig_click(tab, "Next"), "instagram", "next2", tab, "second Next button not found")
+    # advance CROP -> EDIT: click Next and CONFIRM the Edit screen ('Cover photo'/'Trim')
+    # appeared, retrying the click if it didn't (the 8am stall was a dropped first click).
+    expect(_ig_advance(tab, "Next", "document.body.innerText.includes('Cover photo')"
+                                    "||document.body.innerText.includes('Trim')?true:null"),
+           "instagram", "edit_screen", tab, "edit screen never appeared after Next (crop->edit)")
+    # advance EDIT -> NEW REEL: click Next and CONFIRM the caption box appeared
     csel = ("document.querySelector('div[contenteditable=\"true\"][aria-label*=\"caption\" i]')"
             "||document.querySelector('div[aria-label=\"Write a caption...\"]')"
             "||document.querySelector('div[contenteditable=\"true\"]')")
-    expect(wait_for(tab, f"({csel})?true:null", 20), "instagram", "reel_screen", tab,
-           "reel/caption screen never appeared after 2nd Next")
+    expect(_ig_advance(tab, "Next", f"({csel})?true:null"),
+           "instagram", "reel_screen", tab, "caption screen never appeared after Next (edit->reel)")
     expect(set_text(tab, csel, caption), "instagram", "caption", tab, "caption box not settable")
     time.sleep(1)
     if dry_run:
@@ -400,11 +539,15 @@ def post_instagram(video_rel, caption, dry_run):
         print(f"  [dry-run] Instagram: reel ready, caption='{got}'. NOT sharing.")
         return "dry-run"
     expect(_ig_click(tab, "Share"), "instagram", "share", tab, "Share button not found")
-    ok = wait_for(tab, "document.body.innerText.includes('Your reel has been shared')"
-                       "||document.body.innerText.includes('shared')?true:null", 40)
-    # close the share-confirmation dialog so Phil lands back on the feed
-    time.sleep(1)
-    tab.eval("[...document.querySelectorAll('[aria-label=\"Close\"],svg[aria-label=\"Close\"]')].pop()?.closest('[role=button],button,div')?.click()")
+    # wait for the in-flow confirmation (best-effort), THEN verify against the live profile —
+    # the 'shared' text alone has false-positived (claimed shared when the reel never posted).
+    wait_for(tab, "document.body.innerText.includes('Your reel has been shared')"
+                  "||document.body.innerText.includes('shared')?true:null", 40)
+    href = verify_instagram_posted(tab, caption)
+    expect(href, "instagram", "verify_live", tab,
+           "Share clicked but the newest reel does NOT carry this caption — post did not go "
+           "through. Reported as FAILED, not live.")
+    return f"https://www.instagram.com{href}"
     return "posted" if ok else "shared(unconfirmed)"
 
 
@@ -427,7 +570,20 @@ def run(only, dry_run, journey):
         return
     print(f"Posting: {entry['journey']}  (file: {entry['file']}, {entry.get('model','?')}/"
           f"{entry.get('cut','?')}){'  [DRY RUN]' if dry_run else ''}")
-    plats = only or pl.PLATFORMS
+    plats = list(only or pl.PLATFORMS)
+    # respect paused platforms on the SCHEDULED path (no --only). A manual --only run overrides
+    # the pause (explicit intent) but warns. Pausing TikTok stops the scheduler from hammering a
+    # new account that's under review/spam-flagged — see meta.paused_platforms.
+    paused = pl.paused_platforms(data)
+    if paused:
+        if only:
+            for p in [p for p in plats if p in paused]:
+                print(f"  ⚠ {p} is PAUSED (meta.paused_platforms) but --only forces it — proceeding.")
+        else:
+            skipped = [p for p in plats if p in paused]
+            plats = [p for p in plats if p not in paused]
+            if skipped:
+                print(f"  ⏸ skipping paused platform(s): {', '.join(skipped)}")
     results = {}
     for name in plats:
         # resume-safe: NEVER re-post a platform already live for this video

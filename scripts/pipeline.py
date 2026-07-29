@@ -84,6 +84,12 @@ def blank_platforms():
     return {p: {"status": "pending", "url": "", "ts": ""} for p in PLATFORMS}
 
 
+def paused_platforms(data):
+    """Platforms the scheduler should NOT auto-post to (e.g. TikTok while a new-account
+    review/spam-flag settles). Set via meta.paused_platforms in pipeline.json."""
+    return list(data.get("meta", {}).get("paused_platforms", []))
+
+
 def _now():
     return time.strftime("%Y-%m-%d %H:%M:%S")
 

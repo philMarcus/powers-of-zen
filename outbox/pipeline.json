@@ -2,7 +2,11 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-28 21:19:28"
+    "updated": "2026-07-29 09:23:34",
+    "paused_platforms": [
+      "tiktok"
+    ],
+    "paused_note": "TikTok paused 2026-07-29: new-account posts publish then vanish (silent+by-hand+AI-labeled all dropped). Likely under-review/spam-flag from repeated night_bloom attempts. Phil will try one by hand on the weekend, then re-enable."
   },
   "videos": [
     {
@@ -204,9 +208,10 @@
       "scheduled": null,
       "platforms": {
         "tiktok": {
-          "status": "live",
+          "status": "failed",
           "url": "",
-          "ts": "2026-07-28 21:03:19"
+          "ts": "2026-07-28 21:03:19",
+          "note": "publish notification lied; never appeared in TikTok content list (verified 2026-07-29). Known TikTok-drops-with-music issue."
         },
         "youtube": {
           "status": "live",
@@ -372,23 +377,24 @@
       "yt_title": "the atom in the ink is the planet under the city 📜🪐 10ᶻ",
       "yt_desc": "the atom in the ink is the planet under the city 📜🪐\n\n#shorts #powersofzen #mindbending #oddlysatisfying #fyp",
       "cameo": null,
-      "state": "queued",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
-          "status": "pending",
+          "status": "failed",
           "url": "",
-          "ts": ""
+          "ts": "2026-07-29 08:40:25"
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/c2qpbdcj6g8",
+          "ts": "2026-07-29 08:49:23"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DbYLPt8vykx/",
+          "ts": "2026-07-29 09:03:39",
+          "note": "verified live 2026-07-29 by reading reel caption"
         }
       },
       "created": "2026-07-27",
