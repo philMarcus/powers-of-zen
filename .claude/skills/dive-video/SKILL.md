@@ -59,7 +59,7 @@ attention project, not a science project)
 | 5 | landmass/terrain | Lorraine |
 | 7 | planet | Janet |
 | 11 | star/solar system | Lamar |
-| 21 | galaxy | Maxie |
+| 21 | galaxy | Aleksey |
 | 26 | cosmos | Amos |
 
 Rules (revised 2026-07-23):

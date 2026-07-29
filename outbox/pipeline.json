@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-29 15:22:23",
+    "updated": "2026-07-29 18:34:27",
     "paused_platforms": [
       "tiktok"
     ],
@@ -466,7 +466,7 @@
       "yt_title": "a whole tiny world in one pond 🐟 10ᶻ",
       "yt_desc": "a whole tiny world in one pond 🐟\n\n#shorts #powersofzen #pond #oddlysatisfying #fyp",
       "cameo": null,
-      "state": "queued",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -475,14 +475,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/n2fsFJuVVeQ",
+          "ts": "2026-07-29 18:01:32"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DbZI3tOMPqL/",
+          "ts": "2026-07-29 18:01:32"
         }
       },
       "created": "2026-07-27",
@@ -747,14 +747,140 @@
     },
     {
       "journey": "cosmic_scales_remix",
-      "model": "turbo",
-      "cut": "divein",
-      "file": "review_divein/cosmic_scales_remix_divein.mp4",
+      "model": "ds",
+      "cut": "zoomout",
+      "file": "production\\cosmic_scales_remix_ds_shift.mp4",
       "title": "",
       "caption": "",
       "yt_title": "",
       "yt_desc": "",
       "cameo": "lee",
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-29",
+      "start_t": 24.0,
+      "orig_file": "production/cosmic_scales_remix_ds.mp4"
+    },
+    {
+      "journey": "circuit_city",
+      "model": "ds",
+      "cut": "divein",
+      "file": "production/circuit_city_ds_divein.mp4",
+      "title": "",
+      "caption": "",
+      "yt_title": "",
+      "yt_desc": "",
+      "cameo": "adam",
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-29"
+    },
+    {
+      "journey": "stormglass",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/stormglass_ds_divein.mp4",
+      "title": "",
+      "caption": "",
+      "yt_title": "",
+      "yt_desc": "",
+      "cameo": "aleksey",
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-29"
+    },
+    {
+      "journey": "antenna_ball",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/antenna_ball_ds_divein.mp4",
+      "title": "",
+      "caption": "",
+      "yt_title": "",
+      "yt_desc": "",
+      "cameo": "dora",
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-29"
+    },
+    {
+      "journey": "skyfog",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/skyfog_ds_divein.mp4",
+      "title": "",
+      "caption": "",
+      "yt_title": "",
+      "yt_desc": "",
+      "cameo": "janet",
       "state": "review",
       "scheduled": null,
       "platforms": {

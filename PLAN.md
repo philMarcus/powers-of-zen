@@ -99,7 +99,7 @@ prompts with no target object, constant zoom speed. Fix = three-layer structure:
 
 **Mascots** (Phil's idea, merged with counter): fixed cast, rhyming names, one per
 register — draft: Quark Clark, Atom Adam, Cell Adele, Flea Lee, Market Margaret,
-City Kitty, Planet Janet, Star Lamar, Galaxy Maxie, Cosmos Amos. One hidden
+City Kitty, Planet Janet, Star Lamar, Galaxy Aleksey, Cosmos Amos. One hidden
 Waldo-style cameo per video (sprite composited into fed-back frame at low denoise —
 consistent identity, restyled per world). Find-the-mascot = comment/rewatch bait.
 

@@ -37,7 +37,7 @@ CAST = {
     "kitty_city": "a round orb creature whose surface is made of tiny glowing skyscraper windows and rooftops, with two small tower-shaped ears",
     "janet_planet": "a small satin-banded planet body with elegant tilted rings",
     "lamar_star": "a radiant round star orb with a warm corona glow and soft flare points",
-    "maxie_galaxy": "a round orb creature swirled with luminous spiral arms of tiny stars around a bright glowing core",
+    "aleksey_galaxy": "a round orb creature swirled with luminous spiral arms of tiny stars around a bright glowing core",
     "amos_cosmos": "a deep dark round orb containing a glowing web of cosmic filaments and tiny distant galaxies",
 }
 
