@@ -64,7 +64,9 @@ def main():
     ap.add_argument("--src-version", help="source vN dir name (default = newest complete)")
     ap.add_argument("--den-hi", type=float, default=0.52, help="exterior/boundary denoise at the start")
     ap.add_argument("--den-lo", type=float, default=0.45, help="exterior/boundary denoise at the end")
-    ap.add_argument("--band", type=float, default=0.12, help="blended boundary-annulus width (aperture units)")
+    ap.add_argument("--band", type=float, default=0.12, help="(unused in natural-dive mode)")
+    ap.add_argument("--aperture-pow", type=float, default=1.5,
+                    help="frame-0 aperture curve = t**pow; >1 opens SLOWER than the zoom")
     ap.add_argument("--cn-lo", type=float, default=0.30, help="depth-ControlNet strength at start")
     ap.add_argument("--cn-hi", type=float, default=0.90, help="depth-ControlNet strength at end")
     ap.add_argument("--no-video", action="store_true")
@@ -112,42 +114,39 @@ def main():
     frame0 = load(srcfr, 0)
     ctrl_name = dive.upload_image(frame0, f"repair_ctrl_{name}.png")
 
-    src_prompt = phases[-1]["prompt"]   # last world (incoming)
-    dst_prompt = phases[0]["prompt"]    # first world = frame 0 (target)
+    src_prompt = phases[-1]["prompt"]   # last register (keeps plunging toward the desk = frame 0)
     prev = load(srcfr, seam_start - 1)  # the real frame just before the seam
     W, H = cfg["width"], cfg["height"]
-    band = args.band                    # width of the blended boundary annulus (rfrac units)
     feather = ((W * W + H * H) ** 0.5) * 0.02   # soft aperture edge (px)
+    apow = args.aperture_pow
 
-    # IRIS reveal: frame 0 stays at NATIVE scale and opens from the center outward — never
-    # scaled up (no zoom-into-a-photo). Each frame we recomposite fresh frame 0 into a growing
-    # disc over the still-diving exterior, PROTECT the disc interior, and regenerate only the
-    # exterior+boundary so the edge matches. Frame 0 is never fed back through the zoom.
+    # NATURAL DIVE + SLOW APERTURE: the base layer is a real, moving dive — the last register
+    # keeps zooming toward the desk (it grows because the prompt says so), generated fresh each
+    # frame, so it's ALIVE, not a still. Over that we reveal the EXACT frame 0 through an aperture
+    # that opens SLOWER than the zoom (aperture = t**apow), so the moving dive dominates and
+    # frame 0 only takes over near the very end — where it must, for the exact loop. Frame 0 is
+    # never fed back through the zoom, so it never scales into a frozen photo.
     for j in range(L - 1):              # regenerate seam_start .. total-2
         i = seam_start + j
-        t = (j + 1) / L                 # aperture 0→1
+        t = (j + 1) / L
         z = zoom[i]
         drift = cfg["drift"] * (1 - (i - seam_start + 1) / L)   # settle center so the disc aligns
         cx = 0.5 + drift * math.sin(2 * math.pi * i / 263)
         cy = 0.5 + drift * math.sin(2 * math.pi * i / 419 + 1.7)
-        fed = dive.zoom_transform(prev, z, cfg["rotate_per_frame"], cx, cy)  # exterior keeps diving
+        fed = dive.zoom_transform(prev, z, cfg["rotate_per_frame"], cx, cy)  # keep diving
         fed = dive.detail_boost(fed, cfg)
-        disc = soft_disc(W, H, t, feather)                       # revealed region of frame 0
-        comp = Image.composite(frame0, fed, disc)                # frame 0 (native) inside, dive outside
-        protect = soft_disc(W, H, max(0.0, t - band), feather)   # hold the disc INTERIOR = frame 0
-        repaint = ImageChops.invert(protect)                     # regenerate exterior + boundary ring
-        init_name = dive.upload_image(comp, f"repair_init_{i:05d}.png")
-        mask_name = dive.upload_image(repaint.convert("RGB"), f"repair_mask_{i:05d}.png")
-        denoise = args.den_hi + (args.den_lo - args.den_hi) * t
-        # NO ControlNet here: it would drag the diving exterior toward frame 0's structure. The
-        # protected disc holds frame 0 exactly; the boundary blends via the last→first prompt mix.
-        wf = seam_lab.seam_workflow(cfg, init_name, dst_prompt, cfg["seed"] + i, denoise,
-                                    prev_prompt=src_prompt, blend=t, mask_name=mask_name)
-        out = Image.open(io.BytesIO(dive.run_workflow(wf))).convert("RGB")
-        if out.size != (W, H):
-            out = out.resize((W, H), Image.LANCZOS)
-        out.save(outfr / f"{i:05d}.png"); prev = out
-        print(f"  seam {i}  t={t:.2f} aperture={t:.2f} den={denoise:.2f}", flush=True)
+        # generate a plain dive step (last-register prompt, no frame 0) — the desk grows, moving
+        wf = seam_lab.seam_workflow(cfg, dive.upload_image(fed, f"repair_init_{i:05d}.png"),
+                                    src_prompt, cfg["seed"] + i, args.den_hi, prev_prompt=None, blend=1.0)
+        nat = Image.open(io.BytesIO(dive.run_workflow(wf))).convert("RGB")
+        if nat.size != (W, H):
+            nat = nat.resize((W, H), Image.LANCZOS)
+        prev = nat                                    # feed the moving dive forward (frame 0 stays out)
+        aperture = t ** apow                          # opens slower than the zoom
+        disc = soft_disc(W, H, aperture, feather)
+        display = Image.composite(frame0, nat, disc)  # exact frame 0 revealed over the moving dive
+        display.save(outfr / f"{i:05d}.png")
+        print(f"  seam {i}  t={t:.2f} aperture={aperture:.2f} den={args.den_hi}", flush=True)
 
     frame0.save(outfr / f"{total-1:05d}.png")   # exact loop: last frame IS frame 0
 
