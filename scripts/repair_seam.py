@@ -26,7 +26,7 @@ import shutil
 import sys
 from pathlib import Path
 
-from PIL import Image
+from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -49,13 +49,22 @@ def load(fr, i):
     return Image.open(fr / f"{i:05d}.png").convert("RGB")
 
 
+def soft_disc(w, h, rfrac, feather):
+    """White filled circle of radius rfrac·(half-diagonal), soft-edged. rfrac=1 covers corners."""
+    m = Image.new("L", (w, h), 0)
+    R = rfrac * ((w * w + h * h) ** 0.5) / 2 * 1.02
+    ImageDraw.Draw(m).ellipse([w / 2 - R, h / 2 - R, w / 2 + R, h / 2 + R], fill=255)
+    return m.filter(ImageFilter.GaussianBlur(feather))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("journey")
     ap.add_argument("--model", default="turbo")
     ap.add_argument("--src-version", help="source vN dir name (default = newest complete)")
-    ap.add_argument("--den-hi", type=float, default=0.55, help="ring denoise at the start (center is mask-protected)")
-    ap.add_argument("--den-lo", type=float, default=0.42, help="ring denoise at the end")
+    ap.add_argument("--den-hi", type=float, default=0.52, help="exterior/boundary denoise at the start")
+    ap.add_argument("--den-lo", type=float, default=0.45, help="exterior/boundary denoise at the end")
+    ap.add_argument("--band", type=float, default=0.12, help="blended boundary-annulus width (aperture units)")
     ap.add_argument("--cn-lo", type=float, default=0.30, help="depth-ControlNet strength at start")
     ap.add_argument("--cn-hi", type=float, default=0.90, help="depth-ControlNet strength at end")
     ap.add_argument("--no-video", action="store_true")
@@ -106,39 +115,39 @@ def main():
     src_prompt = phases[-1]["prompt"]   # last world (incoming)
     dst_prompt = phases[0]["prompt"]    # first world = frame 0 (target)
     prev = load(srcfr, seam_start - 1)  # the real frame just before the seam
-    s0 = loop["s0"]
+    W, H = cfg["width"], cfg["height"]
+    band = args.band                    # width of the blended boundary annulus (rfrac units)
+    feather = ((W * W + H * H) ** 0.5) * 0.02   # soft aperture edge (px)
 
+    # IRIS reveal: frame 0 stays at NATIVE scale and opens from the center outward — never
+    # scaled up (no zoom-into-a-photo). Each frame we recomposite fresh frame 0 into a growing
+    # disc over the still-diving exterior, PROTECT the disc interior, and regenerate only the
+    # exterior+boundary so the edge matches. Frame 0 is never fed back through the zoom.
     for j in range(L - 1):              # regenerate seam_start .. total-2
         i = seam_start + j
-        t = (j + 1) / L                 # morph progress 0→1
+        t = (j + 1) / L                 # aperture 0→1
         z = zoom[i]
-        drift = cfg["drift"] * (1 - (i - seam_start + 1) / L)   # settle the center so frame 0 aligns
+        drift = cfg["drift"] * (1 - (i - seam_start + 1) / L)   # settle center so the disc aligns
         cx = 0.5 + drift * math.sin(2 * math.pi * i / 263)
         cy = 0.5 + drift * math.sin(2 * math.pi * i / 419 + 1.7)
-        fed = dive.zoom_transform(prev, z, cfg["rotate_per_frame"], cx, cy)  # KEEP DIVING (velocity)
+        fed = dive.zoom_transform(prev, z, cfg["rotate_per_frame"], cx, cy)  # exterior keeps diving
         fed = dive.detail_boost(fed, cfg)
-        # grow frame 0 in the CENTER — the zoom-into-frame-0 that keeps the motion going (this is
-        # what the paste did right). We then only repaint the shrinking RING around it.
-        s = math.exp(math.log(s0) * (1 - t))
-        comp = dive.loop_composite(fed, frame0, s)
-        w, h = fed.size
-        sw, sh = max(2, int(w * s)), max(2, int(h * s))
-        box = ((w - sw) // 2, (h - sh) // 2, sw, sh)
-        mask_img = dive.ring_mask(w, h, box, center_val=10)   # white ring = repaint, dark center = hold frame 0
+        disc = soft_disc(W, H, t, feather)                       # revealed region of frame 0
+        comp = Image.composite(frame0, fed, disc)                # frame 0 (native) inside, dive outside
+        protect = soft_disc(W, H, max(0.0, t - band), feather)   # hold the disc INTERIOR = frame 0
+        repaint = ImageChops.invert(protect)                     # regenerate exterior + boundary ring
         init_name = dive.upload_image(comp, f"repair_init_{i:05d}.png")
-        mask_name = dive.upload_image(mask_img, f"repair_mask_{i:05d}.png")
+        mask_name = dive.upload_image(repaint.convert("RGB"), f"repair_mask_{i:05d}.png")
         denoise = args.den_hi + (args.den_lo - args.den_hi) * t
-        cn = args.cn_lo + (args.cn_hi - args.cn_lo) * t
-        # ring prompt blends last→first world (blend=t); depth CN from frame 0 makes the ring
-        # continue frame 0's content across the boundary instead of a hard paste edge.
+        # NO ControlNet here: it would drag the diving exterior toward frame 0's structure. The
+        # protected disc holds frame 0 exactly; the boundary blends via the last→first prompt mix.
         wf = seam_lab.seam_workflow(cfg, init_name, dst_prompt, cfg["seed"] + i, denoise,
-                                    prev_prompt=src_prompt, blend=t, ctrl_name=ctrl_name,
-                                    cn_strength=cn, depth_preproc=depth, mask_name=mask_name)
+                                    prev_prompt=src_prompt, blend=t, mask_name=mask_name)
         out = Image.open(io.BytesIO(dive.run_workflow(wf))).convert("RGB")
-        if out.size != (cfg["width"], cfg["height"]):
-            out = out.resize((cfg["width"], cfg["height"]), Image.LANCZOS)
+        if out.size != (W, H):
+            out = out.resize((W, H), Image.LANCZOS)
         out.save(outfr / f"{i:05d}.png"); prev = out
-        print(f"  seam {i}  t={t:.2f} s={s:.2f} den={denoise:.2f} cn={cn:.2f}", flush=True)
+        print(f"  seam {i}  t={t:.2f} aperture={t:.2f} den={denoise:.2f}", flush=True)
 
     frame0.save(outfr / f"{total-1:05d}.png")   # exact loop: last frame IS frame 0
 
