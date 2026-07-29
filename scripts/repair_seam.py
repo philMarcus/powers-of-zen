@@ -142,11 +142,11 @@ def main():
         ctl, cn_s = None, 0.0
         if j < morph_start:                      # NATURAL DIVE portion
             init, prompt, prev_p, blend = fed, src_prompt, None, 1.0
-        else:                                    # MORPH into ≈frame 0 (generated, not frozen)
+        else:                                    # MORPH toward ≈frame 0 — WHILE STILL ZOOMING
             m = (j - morph_start + 1) / morph_n  # 0→1 across the last morph_n frames
-            init = Image.blend(fed, frame0, 0.5 * m)   # light — CN does the converging, not a static blend
-            prompt, prev_p, blend = dst_prompt, src_prompt, 0.4 + 0.6 * m
-            ctl, cn_s = ctrl_name, 0.35 + 0.5 * m      # lock composition to frame 0
+            init = fed                           # keep the zoom: do NOT pull the init back to a static frame 0
+            prompt, prev_p, blend = dst_prompt, src_prompt, 0.3 + 0.5 * m
+            ctl, cn_s = ctrl_name, 0.2 + 0.3 * m       # GENTLE steer toward frame 0's structure (not a lock)
         wf = seam_lab.seam_workflow(cfg, dive.upload_image(init, f"repair_init_{i:05d}.png"),
                                     prompt, cfg["seed"] + i, args.den_hi, prev_prompt=prev_p, blend=blend,
                                     ctrl_name=ctl, cn_strength=cn_s, depth_preproc=depth)
@@ -187,17 +187,18 @@ def _clip(frames, out_path, fps=12, loops=3):
                    cwd=out_path.parent, check=True, capture_output=True)
 
 
-def seam_preview(fr, seam_start, total, out_path, pad=6):
-    """[a few frames before the wrap … last frame][first few frames] looped — the join is the
-    loop cut, so you SEE whether it reads as continuous."""
-    frames = [load(fr, i) for i in range(seam_start - pad, total)] + [load(fr, i) for i in range(pad)]
+def seam_preview(fr, seam_start, total, out_path, pad=6, head=18):
+    """[a few frames before the wrap … last frame][first `head` frames] looped — the join is the
+    loop cut. `head` is long so you can see the dive CONTINUE into frame 0 after the wrap."""
+    frames = [load(fr, i) for i in range(seam_start - pad, total)] \
+        + [load(fr, i) for i in range(min(head, seam_start))]
     _clip(frames, out_path)
 
 
-def orig_preview(origfr, srcfr, seam_start, total, out_path, pad=6):
+def orig_preview(origfr, srcfr, seam_start, total, out_path, pad=6, head=18):
     frames = [load(srcfr, i) for i in range(seam_start - pad, seam_start)] \
         + [load(origfr, i) for i in range(seam_start, total)] \
-        + [load(srcfr, i) for i in range(pad)]
+        + [load(srcfr, i) for i in range(min(head, seam_start))]
     _clip(frames, out_path)
 
 
