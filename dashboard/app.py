@@ -79,6 +79,17 @@ def regenerate_music(journey):
                      stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
+def assemble_caption(body, spot_line, tags, hook):
+    """body [+ spot question if hook] + hashtags — mirrors scripts/caption.py so the toggle can
+    re-assemble the caption options without re-calling the model."""
+    parts = [body.strip()]
+    if hook and (spot_line or "").strip():
+        parts.append(spot_line.strip())
+    if (tags or "").strip():
+        parts.append(tags.strip())
+    return " ".join(p for p in parts if p)
+
+
 def gen_captions(journey, model):
     """Fire the local-VLM captioner (non-blocking; writes 3 options into the pipeline). --force
     so the dashboard button always runs; it's GPU-light-ish but competes with a render if busy."""
@@ -264,6 +275,22 @@ def card(v, actions, show_switch=True, marker=None, captions=False):
         st.caption(f"**{v['journey']}** · {v['model']} · {v['cut']} · {v.get('cameo') or 'no cameo'}")
     with col2:
         if captions:
+            # "can you spot <mascot>?" hook toggle — drop it (and re-assemble) if the sprite
+            # didn't render well and you don't want to promise viewers a character to find.
+            if v.get("cameo") and v.get("spot_line"):
+                hook = st.toggle(f"🔎 include “can you spot {v['cameo'].capitalize()}?” hook",
+                                 value=v.get("spot_hook", True), key=f"hook_{v['journey']}")
+                if hook != v.get("spot_hook", True):
+                    dd = data(); vv = pl.get(dd, v["journey"])
+                    old = vv.get("caption_options", [])
+                    idx = old.index(vv.get("caption")) if vv.get("caption") in old else 0
+                    vv["spot_hook"] = hook
+                    new = [assemble_caption(b, vv.get("spot_line", ""), vv.get("caption_tags", ""), hook)
+                           for b in vv.get("caption_bodies", [])]
+                    vv["caption_options"] = new
+                    if new:
+                        vv["caption"] = new[min(idx, len(new) - 1)]
+                    pl.save(dd); st.rerun()
             opts = v.get("caption_options") or []
             gc = st.columns([3, 1])
             if opts:

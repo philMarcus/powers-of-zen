@@ -38,13 +38,23 @@ PROMPT = (
     'voice: dreamy, awe-striking, oddly satisfying; it makes people rewatch to find the loop.\n\n'
     'This video travels through these worlds, in order:\n{worlds}\nVisual style: {style}\n'
     'The attached images are moments from the dive.\n\n'
-    'Write THREE distinct caption options for TikTok / Instagram Reels. Each caption: ONE short, '
-    'evocative line that makes someone watch to the end and rewatch the loop; hint at the journey '
-    'without explaining it; at most 1–2 tasteful emoji; then 3–4 hashtags SPECIFIC to this video\'s '
-    'worlds / theme. Never use #fyp, #viral, or generic filler tags.\n'
-    'Also write ONE punchy YouTube Shorts title (under 80 chars, no hashtags).\n'
-    'Respond with ONLY JSON: {{"captions": ["...", "...", "..."], "yt_title": "..."}}'
+    'Write THREE distinct caption BODIES for TikTok / Instagram Reels — each ONE short, evocative '
+    'line that makes someone watch to the end and rewatch the loop; hint at the journey without '
+    'explaining it; at most 1–2 tasteful emoji; NO hashtags and NO questions in the body.\n'
+    '{mascot_line}'
+    'Also give: "hashtags" — 3–4 tags SPECIFIC to this video\'s worlds/theme (never #fyp, #viral, '
+    'or generic filler); "music_theme" — one vivid line describing the scene/mood to inspire an '
+    'instrumental soundtrack for this dive; and "yt_title" — a punchy YouTube Shorts title (<80 '
+    'chars, no hashtags).\n'
+    'Respond with ONLY JSON: {{"captions": ["...","...","..."], "spot_line": "...", '
+    '"hashtags": ["#..","#.."], "music_theme": "...", "yt_title": "..."}}'
 )
+MASCOT_INSTR = (
+    'A hidden character named {m} appears briefly somewhere in the video. Also write "spot_line" — '
+    'ONE short, fun, VARIED question inviting viewers to find {m} (e.g. ask if they can spot {m}, or '
+    'at what moment {m} pops up), with one playful emoji. Do NOT ask people to comment.\n'
+)
+NO_MASCOT_INSTR = 'There is no hidden character — leave "spot_line" empty.\n'
 
 
 def _ollama():
@@ -92,41 +102,74 @@ def _parse(raw):
         return json.loads(m.group(0)) if m else {}
 
 
-def _append_brand(cap):
-    have = {t.lower() for t in re.findall(r"#\w+", cap.lower())}
-    add = [t for t in BRAND_TAGS if t.lower() not in have]
-    return (cap.rstrip() + " " + " ".join(add)).strip() if add else cap.strip()
+def _dedupe_tags(tags):
+    out, seen = [], set()
+    for t in tags:
+        t = t.strip()
+        if t and t.startswith("#") and t.lower() not in seen:
+            seen.add(t.lower()); out.append(t)
+    return out
+
+
+def assemble_caption(body, spot_line, tags, hook):
+    """body [+ spot question if hook] + hashtags. Shared shape used by the dashboard toggle."""
+    parts = [body.strip()]
+    if hook and spot_line.strip():
+        parts.append(spot_line.strip())
+    if tags.strip():
+        parts.append(tags.strip())
+    return " ".join(p for p in parts if p)
+
+
+def set_music_theme_if_empty(journey, theme):
+    p = ROOT / "journeys" / f"{journey}.json"
+    if not (p.exists() and theme):
+        return
+    spec = json.loads(p.read_text())
+    if not spec.get("music_theme"):        # don't clobber a theme Phil already set
+        spec["music_theme"] = theme
+        p.write_text(json.dumps(spec, indent=2))
 
 
 def generate(journey, model="ds"):
+    d = pl.load(); v = pl.get(d, journey)
     frames = frames_for(journey, model) or frames_for(journey, "turbo") or frames_for(journey, "")
     if not frames:
         print(f"  no frames for {journey}"); return None
     style, worlds = journey_worlds(journey)
+    mascot = (v.get("cameo") or "").capitalize() if v else ""
+    mline = MASCOT_INSTR.format(m=mascot) if mascot else NO_MASCOT_INSTR
     url = _ollama()
     try:
         r = requests.post(f"{url}/api/generate", json={
-            "model": VLM_MODEL, "prompt": PROMPT.format(worlds="\n".join(worlds), style=style),
+            "model": VLM_MODEL,
+            "prompt": PROMPT.format(worlds="\n".join(worlds), style=style, mascot_line=mline),
             "images": [base64.b64encode(Path(f).read_bytes()).decode() for f in frames],
             "stream": False, "format": "json"}, timeout=240)
         data = _parse(r.json().get("response", ""))
     except Exception as e:
         print(f"  VLM error for {journey}: {e}"); return None
-    caps = [_append_brand(c) for c in data.get("captions", []) if c.strip()][:3]
-    yt = (data.get("yt_title") or "").strip()[:100]
-    if not caps:
+    bodies = [c.strip() for c in data.get("captions", []) if c.strip()][:3]
+    if not bodies:
         print(f"  no captions parsed for {journey}"); return None
-    d = pl.load(); v = pl.get(d, journey)
+    spot = (data.get("spot_line") or "").strip() if mascot else ""
+    tags = " ".join(_dedupe_tags(list(data.get("hashtags", [])) + BRAND_TAGS))
+    yt = (data.get("yt_title") or "").strip()[:100]
+    mtheme = (data.get("music_theme") or "").strip()
+    hook = bool(mascot and spot)
+    opts = [assemble_caption(b, spot, tags, hook) for b in bodies]
     if v:
-        v["caption_options"] = caps
-        v["caption"] = caps[0]
+        v.update({"caption_bodies": bodies, "spot_line": spot, "caption_tags": tags,
+                  "spot_hook": hook, "caption_options": opts, "caption": opts[0]})
         if yt:
             v["yt_title"] = yt
-        pl.save(d); pl.telem("caption", journey=journey, detail=f"{len(caps)} options")
-    print(f"  {journey}: {len(caps)} captions; yt='{yt[:50]}'")
-    for i, c in enumerate(caps):
+        pl.save(d)
+        set_music_theme_if_empty(journey, mtheme)
+        pl.telem("caption", journey=journey, detail=f"{len(opts)} options, spot={hook}")
+    print(f"  {journey}: {len(opts)} captions (spot={hook}); yt='{yt[:50]}'; theme='{mtheme[:40]}'")
+    for i, c in enumerate(opts):
         print(f"    [{i}] {c}")
-    return caps
+    return opts
 
 
 def main():
