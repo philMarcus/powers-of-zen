@@ -163,7 +163,7 @@ def card(v, actions, show_switch=True):
     with col1:
         vp = video_path(v)
         if vp:
-            st.video(vp)
+            st.video(vp, loop=True)
         else:
             st.warning(f"file missing: {v['file']}")
         st.caption(f"**{v['journey']}** · {v['model']} · {v['cut']} · {v.get('cameo') or 'no cameo'}")
@@ -209,7 +209,7 @@ def audition_candidates(v, choose_advances_to=None):
         with cols[i % len(cols)]:
             ap = pl.ROOT / c["aligned"]
             if ap.exists():
-                st.video(str(ap))
+                st.video(str(ap), loop=True)
             else:
                 st.warning(f"missing: {c['aligned']}")
             is_chosen = m.get("chosen") == c["id"]
