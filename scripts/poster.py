@@ -491,6 +491,49 @@ def verify_instagram_posted(tab, caption, timeout=60):
     return None
 
 
+def _ig_preview_ratio(tab):
+    """width/height of the largest media element in the IG dialog (the crop preview).
+    ~0.56 = 9:16 portrait (phone), ~1.0 = square."""
+    return tab.eval(r"""(function(){
+      const meds=[...document.querySelectorAll('[role=dialog] video,[role=dialog] img,[role=dialog] canvas')];
+      if(!meds.length)return null;
+      meds.sort((a,b)=>{const ra=a.getBoundingClientRect(),rb=b.getBoundingClientRect();
+        return rb.width*rb.height-ra.width*ra.height});
+      const r=meds[0].getBoundingClientRect();return r.height?+(r.width/r.height).toFixed(3):null;})()""")
+
+
+def _ig_select_original_crop(tab, tries=3):
+    """On IG's crop screen, choose the 'Original' aspect so our 9:16 phone-shaped video isn't
+    cropped to SQUARE — IG defaults to 1:1, which silently squared the last three posts. Open
+    the 'Select crop' control, click 'Original', and VERIFY the preview became portrait.
+    Returns True only when the preview ratio is portrait (< 0.75)."""
+    for _ in range(tries):
+        r = _ig_preview_ratio(tab)
+        if r is not None and r < 0.75:
+            return True
+        # open the Select crop (aspect) popup — it's an svg[aria-label="Select crop"] control
+        coords = tab.eval(r"""(function(){const s=document.querySelector('svg[aria-label="Select crop"]');
+          if(!s)return null;const el=s.closest('div[role=button],button')||s.parentElement;const b=el.getBoundingClientRect();
+          return JSON.stringify([Math.round(b.left+b.width/2),Math.round(b.top+b.height/2)]);})()""")
+        if coords:
+            x, y = json.loads(coords)
+            for typ in ("mousePressed", "mouseReleased"):
+                tab.cmd("Input.dispatchMouseEvent", type=typ, x=x, y=y, button="left", clickCount=1)
+            time.sleep(1.2)
+        # click the exact 'Original' option (synthesized — el.click is ignored by IG React)
+        oc = tab.eval(r"""(function(){const els=[...document.querySelectorAll('span,div[role=button],button')]
+          .filter(e=>e.textContent.trim()==='Original'&&e.offsetParent);if(!els.length)return null;
+          els.sort((a,b)=>a.getBoundingClientRect().top-b.getBoundingClientRect().top);
+          const b=els[0].getBoundingClientRect();return JSON.stringify([Math.round(b.left+b.width/2),Math.round(b.top+b.height/2)]);})()""")
+        if oc:
+            x, y = json.loads(oc)
+            for typ in ("mousePressed", "mouseReleased"):
+                tab.cmd("Input.dispatchMouseEvent", type=typ, x=x, y=y, button="left", clickCount=1)
+            time.sleep(1.2)
+    r = _ig_preview_ratio(tab)
+    return r is not None and r < 0.75
+
+
 def _ig_advance(tab, label, marker_js, tries=4, settle=2.5):
     """Click an IG modal button (Next/Share) and CONFIRM the expected next screen actually
     appeared, retrying the click if it didn't. IG's React occasionally drops the first
@@ -521,6 +564,10 @@ def post_instagram(video_rel, caption, dry_run):
     expect(wait_for(tab, "document.body.innerText.includes('Crop')?true:null", 60, 2),
            "instagram", "crop_screen", tab, "crop screen never appeared (upload failed?)")
     time.sleep(1)
+    # select the ORIGINAL (phone 9:16) crop — IG defaults to square and quietly cropped the
+    # last three posts. Fail loud rather than post a squared video.
+    expect(_ig_select_original_crop(tab), "instagram", "crop_original", tab,
+           "could not confirm Original (phone 9:16) crop — refusing to post a squared video")
     # advance CROP -> EDIT: click Next and CONFIRM the Edit screen ('Cover photo'/'Trim')
     # appeared, retrying the click if it didn't (the 8am stall was a dropped first click).
     expect(_ig_advance(tab, "Next", "document.body.innerText.includes('Cover photo')"
