@@ -83,11 +83,20 @@ def base_ckpt_nodes(checkpoint, prompt, negative, prev_prompt=None, blend=1.0):
 
 
 def seam_workflow(cfg, init_name, prompt, seed, denoise, prev_prompt, blend,
-                  ctrl_name=None, cn_strength=0.0, depth_preproc=None):
-    """img2img from init_name; optional depth-ControlNet steered from ctrl_name (= frame 0)."""
+                  ctrl_name=None, cn_strength=0.0, depth_preproc=None, mask_name=None):
+    """img2img from init_name; optional depth-ControlNet steered from ctrl_name (= frame 0).
+    If mask_name is given (white=repaint, black=protect), only the masked region is denoised
+    (SetLatentNoiseMask) — used to repaint the ring while the grown frame-0 center is held."""
     wf, positive = base_ckpt_nodes(cfg["checkpoint"], prompt, cfg["negative"], prev_prompt, blend)
     wf["load"] = {"class_type": "LoadImage", "inputs": {"image": init_name}}
-    wf["latent"] = {"class_type": "VAEEncode", "inputs": {"pixels": ["load", 0], "vae": ["ckpt", 2]}}
+    wf["enc"] = {"class_type": "VAEEncode", "inputs": {"pixels": ["load", 0], "vae": ["ckpt", 2]}}
+    latent_ref = ["enc", 0]
+    if mask_name:
+        wf["loadmask"] = {"class_type": "LoadImage", "inputs": {"image": mask_name}}
+        wf["tomask"] = {"class_type": "ImageToMask", "inputs": {"image": ["loadmask", 0], "channel": "red"}}
+        wf["latent"] = {"class_type": "SetLatentNoiseMask",
+                        "inputs": {"samples": ["enc", 0], "mask": ["tomask", 0]}}
+        latent_ref = ["latent", 0]
     negative = ["neg", 0]
     if ctrl_name and cn_strength > 0:
         wf["cnet"] = {"class_type": "ControlNetLoader", "inputs": {"control_net_name": CN_DEPTH}}
@@ -107,7 +116,7 @@ def seam_workflow(cfg, init_name, prompt, seed, denoise, prev_prompt, blend,
                     "inputs": {"seed": seed, "steps": cfg["steps"], "cfg": cfg["cfg"],
                                "sampler_name": cfg["sampler"], "scheduler": cfg["scheduler"],
                                "denoise": round(denoise, 3), "model": ["ckpt", 0],
-                               "positive": positive, "negative": negative, "latent_image": ["latent", 0]}}
+                               "positive": positive, "negative": negative, "latent_image": latent_ref}}
     return wf
 
 
