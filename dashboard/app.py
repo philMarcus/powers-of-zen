@@ -6,9 +6,15 @@ and reads the event log (outbox/telemetry.jsonl). Run:
 
     streamlit run dashboard/app.py
 
-Panels: Queue (edit caption, schedule) · Review (approve → queue) · Live · Telemetry.
-Editing here writes straight back to pipeline.json — the scheduler/poster read the same file.
+Stage flow (tabs left→right): Video Review → 🎵 Music → Production → Live / Failed.
+  • Video Review (state 'review'): pick cut/model, edit caption, Approve → Music.
+  • Music (state 'music'): audition/choose a track (or Generate 5 if none) → Production.
+  • Production (state 'queued'): ordered post queue; tweak cut/model, change the music
+    pick, reorder. Switching model invalidates the music (it was aligned to the old
+    render) → Generate musics → the video hops back to Music.
+Editing here writes straight to pipeline.json — the scheduler/poster read the same file.
 """
+import json
 import sys
 from collections import Counter
 from pathlib import Path
@@ -40,13 +46,11 @@ def _spec_path(journey):
 
 
 def get_music_theme(journey):
-    import json
     p = _spec_path(journey)
     return json.loads(p.read_text()).get("music_theme", "") if p.exists() else ""
 
 
 def set_music_theme(journey, theme):
-    import json
     p = _spec_path(journey)
     if not p.exists():
         return
@@ -68,53 +72,39 @@ def regenerate_music(journey):
                      stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
-def card(v, actions):
-    """Render one video with a preview + editable caption + the given action buttons."""
-    col1, col2 = st.columns([1, 2])
-    with col1:
-        vp = video_path(v)
-        if vp:
-            st.video(vp)
-        else:
-            st.warning(f"file missing: {v['file']}")
-        st.caption(f"**{v['journey']}** · {v['model']} · {v['cut']} · {v.get('cameo') or 'no cameo'}")
-    with col2:
-        cap = st.text_area("caption (TikTok/Instagram)", v.get("caption", ""),
-                           key=f"cap_{v['journey']}", height=90)
-        yt = st.text_input("YouTube title", v.get("yt_title", ""), key=f"yt_{v['journey']}")
-        sched = st.text_input("scheduled (YYYY-MM-DD HH:MM, blank = ASAP)",
-                              v.get("scheduled") or "", key=f"sch_{v['journey']}")
-        mtheme = st.text_area("🎵 music theme (the scene — drives track generation)",
-                              get_music_theme(v["journey"]), key=f"mt_{v['journey']}", height=68)
-        # switch the chosen variant (dive-in/zoom-out, DS/turbo) — swaps the file in
-        # production/ and updates pipeline. Works in Review AND Queue.
-        mc = st.columns([1, 1, 2])
-        nm = mc[0].selectbox("model", ["turbo", "ds"],
-                             index=["turbo", "ds"].index(v["model"]), key=f"m_{v['journey']}")
-        nc = mc[1].selectbox("cut", ["divein", "zoomout"],
-                             index=["divein", "zoomout"].index(v["cut"]), key=f"c_{v['journey']}")
-        if mc[2].button("↔ apply cut/model", key=f"sw_{v['journey']}"):
-            if (nm, nc) != (v["model"], v["cut"]):
-                promote.switch(v["journey"], nm, nc)
-            st.rerun()
-        c = st.columns(len(actions) + 1)
-        if c[0].button("💾 Save", key=f"save_{v['journey']}"):
-            d = data()
-            vv = pl.get(d, v["journey"])
-            vv["caption"], vv["yt_title"] = cap, yt
-            vv["scheduled"] = sched.strip() or None
-            pl.save(d)
-            set_music_theme(v["journey"], mtheme)
-            pl.telem("edit", journey=v["journey"])
-            st.success("saved"); st.rerun()
-        for i, (label, newstate) in enumerate(actions, start=1):
-            if c[i].button(label, key=f"act_{newstate}_{v['journey']}"):
-                d = data()
-                pl.get(d, v["journey"])["state"] = newstate
-                pl.save(d)
-                pl.telem(newstate, journey=v["journey"])
-                st.rerun()
-    st.divider()
+# ── music state helpers ──────────────────────────────────────────────────────────────────
+def music_fresh(v):
+    """True if this video has candidate tracks that were built for its CURRENT model+cut."""
+    m = v.get("music") or {}
+    return (bool(m.get("candidates"))
+            and m.get("for_model", v["model"]) == v["model"]
+            and m.get("for_cut", v["cut"]) == v["cut"])
+
+
+def music_stale(v):
+    """True if candidates exist but were aligned to a DIFFERENT model/cut (now invalid)."""
+    m = v.get("music") or {}
+    return (bool(m.get("candidates"))
+            and (m.get("for_model", v["model"]) != v["model"]
+                 or m.get("for_cut", v["cut"]) != v["cut"]))
+
+
+def apply_switch(journey, model, cut):
+    """Change a video's cut/model. If that invalidates its music (candidates were aligned to
+    the old render), clear the music and — if the video was in Production — send it back to
+    Music so new tracks can be generated for the new render."""
+    dd = data(); v = pl.get(dd, journey)
+    if not v or (model, cut) == (v["model"], v["cut"]):
+        return
+    promote.switch(journey, model, cut)
+    dd = data(); v = pl.get(dd, journey)
+    m = v.get("music") or {}
+    if m.get("candidates") and (m.get("for_model") != model or m.get("for_cut") != cut):
+        v["music"] = {"chosen": None, "candidates": [],
+                      "stale_from": f"{m.get('for_model')}/{m.get('for_cut')}"}
+        if v.get("state") == "queued":
+            v["state"] = "music"
+        pl.save(dd)
 
 
 def choose_track(journey, cand_id):
@@ -134,25 +124,149 @@ def choose_track(journey, cand_id):
     pl.save(dd); pl.telem("music_choose", journey=journey, detail=cand_id)
 
 
+def set_state(journey, newstate):
+    dd = data(); pl.get(dd, journey)["state"] = newstate
+    pl.save(dd); pl.telem(newstate, journey=journey)
+
+
+# ── shared card (preview + caption + cut/model switch) ───────────────────────────────────
+def card(v, actions, show_switch=True):
+    """Render one video: preview + editable caption + cut/model switch + action buttons.
+    `actions` is a list of (label, newstate)."""
+    col1, col2 = st.columns([1, 2])
+    with col1:
+        vp = video_path(v)
+        if vp:
+            st.video(vp)
+        else:
+            st.warning(f"file missing: {v['file']}")
+        st.caption(f"**{v['journey']}** · {v['model']} · {v['cut']} · {v.get('cameo') or 'no cameo'}")
+    with col2:
+        cap = st.text_area("caption (TikTok/Instagram)", v.get("caption", ""),
+                           key=f"cap_{v['journey']}", height=90)
+        yt = st.text_input("YouTube title", v.get("yt_title", ""), key=f"yt_{v['journey']}")
+        sched = st.text_input("scheduled (YYYY-MM-DD HH:MM, blank = ASAP)",
+                              v.get("scheduled") or "", key=f"sch_{v['journey']}")
+        mtheme = st.text_area("🎵 music theme (the scene — drives track generation)",
+                              get_music_theme(v["journey"]), key=f"mt_{v['journey']}", height=68)
+        if show_switch:
+            mc = st.columns([1, 1, 2])
+            nm = mc[0].selectbox("model", ["turbo", "ds"],
+                                 index=["turbo", "ds"].index(v["model"]), key=f"m_{v['journey']}")
+            nc = mc[1].selectbox("cut", ["divein", "zoomout"],
+                                 index=["divein", "zoomout"].index(v["cut"]), key=f"c_{v['journey']}")
+            if mc[2].button("↔ apply cut/model", key=f"sw_{v['journey']}"):
+                apply_switch(v["journey"], nm, nc)
+                st.rerun()
+        c = st.columns(len(actions) + 1)
+        if c[0].button("💾 Save", key=f"save_{v['journey']}"):
+            d = data(); vv = pl.get(d, v["journey"])
+            vv["caption"], vv["yt_title"] = cap, yt
+            vv["scheduled"] = sched.strip() or None
+            pl.save(d)
+            set_music_theme(v["journey"], mtheme)
+            pl.telem("edit", journey=v["journey"])
+            st.success("saved"); st.rerun()
+        for i, (label, newstate) in enumerate(actions, start=1):
+            if c[i].button(label, key=f"act_{newstate}_{v['journey']}"):
+                set_state(v["journey"], newstate); st.rerun()
+    st.divider()
+
+
+def audition_candidates(v, choose_advances_to=None):
+    """Show candidate tracks with Choose buttons. If choose_advances_to is a state, choosing
+    also moves the video there (Music → Production)."""
+    m = v["music"]
+    cands = m.get("candidates", [])
+    cols = st.columns(min(len(cands), 3) or 1)
+    for i, c in enumerate(cands):
+        with cols[i % len(cols)]:
+            ap = pl.ROOT / c["aligned"]
+            if ap.exists():
+                st.video(str(ap))
+            else:
+                st.warning(f"missing: {c['aligned']}")
+            is_chosen = m.get("chosen") == c["id"]
+            st.caption(f"**{c['id']}** · lock {c['lock']}×" + (" · ✅ chosen" if is_chosen else ""))
+            if st.button("✅ Chosen" if is_chosen else "Choose",
+                         key=f"ch_{v['journey']}_{c['id']}"):
+                choose_track(v["journey"], c["id"])
+                if choose_advances_to:
+                    set_state(v["journey"], choose_advances_to)
+                st.rerun()
+
+
+# ── header + tabs ────────────────────────────────────────────────────────────────────────
 d = data()
 counts = Counter(v.get("state") for v in d["videos"])
-music_review = [v for v in d["videos"] if v.get("music", {}).get("candidates")]
 st.title("🕳️ Powers of Zen — ops")
 cols = st.columns(6)
-for i, s in enumerate(["review", "queued", "live", "failed", "rendered"]):
-    cols[i].metric(s, counts.get(s, 0))
+for i, s in enumerate(["review", "music", "queued", "live", "failed"]):
+    label = {"review": "video review", "queued": "production"}.get(s, s)
+    cols[i].metric(label, counts.get(s, 0))
 nxt = pl.next_to_post(d)
 cols[5].metric("next post", nxt["journey"] if nxt else "—")
 
-tabs = st.tabs([f"Queue ({counts.get('queued',0)})", f"Review ({counts.get('review',0)})",
-                f"🎵 Music ({len(music_review)})",
-                f"Live ({counts.get('live',0)})", f"Failed ({counts.get('failed',0)})",
+tabs = st.tabs([f"🎬 Video Review ({counts.get('review',0)})",
+                f"🎵 Music ({counts.get('music',0)})",
+                f"🚀 Production ({counts.get('queued',0)})",
+                f"Live ({counts.get('live',0)})",
+                f"Failed ({counts.get('failed',0)})",
                 "Telemetry"])
 
-with tabs[0]:  # queued -> post next; reorderable
-    st.write("Approved & in post order (top posts next). ⬆⬇ to reorder; every ~3rd a "
-             "zoom-out is a nice rhythm but arrange however you like.")
+with tabs[0]:  # VIDEO REVIEW — pick cut/model, edit caption, send to Music
+    st.write("Look at the video, pick cut/model, edit the caption/theme, then **Approve → Music** "
+             "to choose a soundtrack.")
+    rv = by_state(d, "review")
+    if not rv:
+        st.info("Nothing awaiting video review.")
+    for v in rv:
+        card(v, [("✅ Approve → Music", "music")])
+
+with tabs[1]:  # MUSIC — audition/generate a track, then send to Production
+    st.write("Pick the soundtrack. Every candidate is auto-locked so its accent lands on each "
+             "morph. Choose one → it moves to **Production**. Switch a video's model and it lands "
+             "back here to get tracks for the new render.")
+    mv = by_state(d, "music")
+    if not mv:
+        st.info("Nothing needs music. Approve a video in Video Review to send it here.")
+    for v in mv:
+        m = v.get("music") or {}
+        tag = f"✅ {m['chosen']}" if m.get("chosen") else "— choose one —"
+        st.subheader(f"{v['journey']} · {v['model']}/{v['cut']}"
+                     + (f" · {m['bpm']}bpm {m.get('key','')}" if m.get("bpm") else "")
+                     + f" · {tag}")
+        tcol = st.columns([5, 1])
+        newtheme = tcol[0].text_input("🎵 music theme (scene)", get_music_theme(v["journey"]),
+                                      key=f"mtm_{v['journey']}")
+        if not music_fresh(v):
+            note = (f"music was generated for {m.get('stale_from')}, not {v['model']}/{v['cut']}"
+                    if m.get("stale_from") or music_stale(v) else "no tracks generated yet")
+            st.warning(f"{note} — generate 5 tracks for this render.")
+            if tcol[1].button("🎵 Generate 5", key=f"gen_{v['journey']}"):
+                set_music_theme(v["journey"], newtheme)
+                regenerate_music(v["journey"])
+                st.info(f"Generating 5 tracks for {v['journey']} ({v['model']}/{v['cut']}) — "
+                        "refresh in ~2–3 min.")
+        else:
+            if tcol[1].button("🔄 Regenerate", key=f"regen_{v['journey']}"):
+                set_music_theme(v["journey"], newtheme)
+                regenerate_music(v["journey"])
+                st.info(f"Regenerating {v['journey']} candidates — refresh in ~2–3 min.")
+            audition_candidates(v, choose_advances_to="queued")
+        cc = st.columns([1, 1, 4])
+        if cc[0].button("↩ Back to Review", key=f"back_{v['journey']}"):
+            set_state(v["journey"], "review"); st.rerun()
+        if cc[1].button("🔇 Skip music → Production", key=f"skip_{v['journey']}"):
+            set_state(v["journey"], "queued"); st.rerun()
+        st.divider()
+
+with tabs[2]:  # PRODUCTION — the ordered post queue; tweak cut/model + change the music pick
+    st.write("Approved & in post order (top posts next). ⬆⬇ to reorder. You can still switch "
+             "cut/model or change the music pick here.")
     qv = pl.queued(d)
+    if not qv:
+        st.info("Production queue is empty.")
     for i, v in enumerate(qv):
         top = st.columns([1, 1, 1, 9])
         if top[0].button("⬆", key=f"up_{v['journey']}", disabled=(i == 0)):
@@ -165,72 +279,46 @@ with tabs[0]:  # queued -> post next; reorderable
             pl.save(dd); st.rerun()
         top[2].subheader(f"#{i + 1}")
         with top[3]:
-            card(v, [("↩ Unqueue", "review")])
-
-with tabs[1]:  # review -> approve to queue (freshly rendered, cut/model not yet decided)
-    st.write("Awaiting your decision — switch cut/model, edit caption, then Approve → Queue.")
-    for v in by_state(d, "review"):
-        card(v, [("✅ Approve → Queue", "queued")])
-
-with tabs[2]:  # music review — audition candidate tracks and choose one
-    st.write("Audition candidate tracks (all auto-locked to the morphs — the accent lands "
-             "on every morph). Pick one → it's promoted into the posting slot. "
-             "To (re)generate 5: run `python3 scripts/music_gen.py <journey>` on the box.")
-    if not music_review:
-        st.info("No candidates yet. Approve a video's cut, then run "
-                "`scripts/music_gen.py <journey>` to generate 5 tracks to choose from.")
-    for v in music_review:
-        m = v["music"]
-        tag = f"✅ {m['chosen']}" if m.get("chosen") else "— choose one —"
-        st.subheader(f"{v['journey']} · {v['cut']} · {m['bpm']}bpm {m.get('key','')} · {tag}")
-        # editable theme → regenerate all candidates from the new scene description
-        tcol = st.columns([5, 1])
-        newtheme = tcol[0].text_input("🎵 music theme", get_music_theme(v["journey"]),
-                                      key=f"mtm_{v['journey']}")
-        if tcol[1].button("🔄 Regenerate", key=f"regen_{v['journey']}"):
-            set_music_theme(v["journey"], newtheme)
-            regenerate_music(v["journey"])
-            st.info(f"Regenerating {v['journey']} candidates with the new theme — "
-                    "refresh in ~2–3 min.")
-        cands = m.get("candidates", [])
-        cols = st.columns(min(len(cands), 3) or 1)
-        for i, c in enumerate(cands):
-            with cols[i % len(cols)]:
-                ap = pl.ROOT / c["aligned"]
-                if ap.exists():
-                    st.video(str(ap))
-                else:
-                    st.warning(f"missing: {c['aligned']}")
-                is_chosen = m.get("chosen") == c["id"]
-                st.caption(f"**{c['id']}** · lock {c['lock']}×" +
-                           (" · ✅ chosen" if is_chosen else ""))
-                if st.button("✅ Chosen" if is_chosen else "Choose",
-                             key=f"ch_{v['journey']}_{c['id']}", disabled=is_chosen):
-                    choose_track(v["journey"], c["id"]); st.rerun()
+            m = v.get("music") or {}
+            chosen = m.get("chosen")
+            st.caption("🎵 " + (f"music: **{chosen}**" if chosen else "no music selected"))
+            card(v, [("↩ Unqueue", "music" if not chosen else "review")])
+            if music_stale(v):
+                st.warning(f"music was built for {m.get('for_model')}/{m.get('for_cut')} — "
+                           "regenerate for the current render.")
+                if st.button("🎵 Generate musics → Music", key=f"pgen_{v['journey']}"):
+                    regenerate_music(v["journey"])
+                    set_state(v["journey"], "music")
+                    st.info("Generating tracks — the video moved to the Music tab.")
+                    st.rerun()
+            elif music_fresh(v):
+                with st.expander("🎵 change music pick"):
+                    audition_candidates(v)   # re-choose; stays in Production
         st.divider()
 
-with tabs[3]:  # live
+with tabs[3]:  # LIVE
     for v in by_state(d, "live"):
         pstat = " · ".join(f"{k}:{v['platforms'][k]['status']}" for k in pl.PLATFORMS)
         st.markdown(f"**{v['journey']}** ({v['model']}/{v['cut']}) — {pstat}")
-        links = [v["platforms"][k]["url"] for k in pl.PLATFORMS if v["platforms"][k].get("url")]
-        for ln in links:
-            st.markdown(f"- {ln}")
+        for k in pl.PLATFORMS:
+            if v["platforms"][k].get("url"):
+                st.markdown(f"- {v['platforms'][k]['url']}")
         st.caption(v.get("caption", ""))
         st.divider()
 
-with tabs[4]:  # failed
+with tabs[4]:  # FAILED
     for v in by_state(d, "failed"):
         st.error(f"**{v['journey']}** — " +
                  " · ".join(f"{k}:{v['platforms'][k]['status']}" for k in pl.PLATFORMS))
-        card(v, [("🔁 Retry → Queue", "queued")])
+        card(v, [("🔁 Retry → Production", "queued")])
 
-with tabs[5]:  # telemetry
+with tabs[5]:  # TELEMETRY
     ev = pl.read_telem(200)[::-1]
     if not ev:
         st.info("no events yet")
     for e in ev:
         icon = {"post": "✅", "post_fail": "❌", "flag": "⚠️", "render": "🎬",
-                "render_fail": "💥"}.get(e["event"], "•")
+                "render_fail": "💥", "music_gen": "🎵", "music_choose": "🎶",
+                "switch": "🔀"}.get(e["event"], "•")
         st.text(f"{icon} {e['ts']}  {e['event']}  {e.get('journey','')} "
                 f"{e.get('platform','')}  {e.get('detail','')}")

@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-29 09:23:34",
+    "updated": "2026-07-29 10:11:33",
     "paused_platforms": [
       "tiktok"
     ],
@@ -81,7 +81,7 @@
       "yt_title": "the galaxy at the back of your eye 👁️🌌 10ᶻ",
       "yt_desc": "the galaxy at the back of your eye 👁️🌌\n\n#shorts #powersofzen #space #trippy #oddlysatisfying #fyp",
       "cameo": null,
-      "state": "queued",
+      "state": "music",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -291,7 +291,7 @@
       "yt_title": "the dollhouse contains the town contains the dollhouse 🏠 10ᶻ",
       "yt_desc": "the dollhouse contains the town contains the dollhouse 🏠\n\n#shorts #powersofzen #miniature #oddlysatisfying #fyp",
       "cameo": null,
-      "state": "queued",
+      "state": "music",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -392,9 +392,8 @@
         },
         "instagram": {
           "status": "live",
-          "url": "https://www.instagram.com/powers.of.zen/reel/DbYLPt8vykx/",
-          "ts": "2026-07-29 09:03:39",
-          "note": "verified live 2026-07-29 by reading reel caption"
+          "url": "https://www.instagram.com/powers.of.zen/reel/DbYP5WcutsC/",
+          "ts": "2026-07-29 09:43:40"
         }
       },
       "created": "2026-07-27",
@@ -667,7 +666,7 @@
       "yt_title": "the whole world folds out of a mapmaker's desk 🗺️ 10ᶻ",
       "yt_desc": "an antique atlas world — desk to map to coastline to cosmos and back.\n\n#shorts #maps #oddlysatisfying #powersofzen",
       "cameo": null,
-      "state": "queued",
+      "state": "music",
       "scheduled": null,
       "platforms": {
         "tiktok": {
