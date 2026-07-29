@@ -76,6 +76,9 @@ def main():
     ap.add_argument("--morph-strength", type=float, default=-1.0,
                     help="pixel-morph pull toward frame 0 at the end (-1 = auto-scale to the gap; "
                          "0 = gentle CN-only like cosmic; up to ~0.82 to bridge a far world)")
+    ap.add_argument("--cut-tail", type=int, default=3,
+                    help="last N morph frames keep ZOOMING (moving cut to frame 0) instead of "
+                         "converging to a static frame 0 — avoids the 'frame 0 appears static' hold")
     ap.add_argument("--cn-lo", type=float, default=0.30, help="depth-ControlNet strength at start")
     ap.add_argument("--cn-hi", type=float, default=0.90, help="depth-ControlNet strength at end")
     ap.add_argument("--no-video", action="store_true")
@@ -149,21 +152,22 @@ def main():
         fed = dive.zoom_transform(prev, z, cfg["rotate_per_frame"], cx, cy)  # keep diving (full zoom)
         fed = dive.detail_boost(fed, cfg)
         ctl, cn_s = None, 0.0
+        conv_n = morph_n - args.cut_tail         # frames that converge; the last cut_tail keep zooming
         if j < morph_start:                      # NATURAL DIVE portion
             init, prompt, prev_p, blend = fed, src_prompt, None, 1.0
-        else:                                    # MORPH toward ≈frame 0, spread across all morph_n frames
+        elif j < morph_start + conv_n:           # CONVERGE toward ≈frame 0 (progressive, gap-scaled)
             if morph_strength is None:           # scale the morph to the ACTUAL gap (measured once)
                 gap = mad(fed, frame0)
                 morph_strength = (args.morph_strength if args.morph_strength >= 0
                                   else max(0.0, min(0.82, (gap - 15) / 55)))
                 print(f"  [morph] gap to frame0 = {gap:.0f} -> morph_strength = {morph_strength:.2f}", flush=True)
-            m = (j - morph_start + 1) / morph_n  # 0→1 across the last morph_n frames
-            # gradual pixel-morph toward frame 0 so it converges PROGRESSIVELY over all morph_n
-            # frames (not a late jump). Strength scales with the gap: tiny for a same-room return
-            # (cosmic), strong to bridge a far one (food_chain). fed still carries the zoom under it.
+            m = (j - morph_start + 1) / conv_n
             init = Image.blend(fed, frame0, morph_strength * m) if morph_strength > 0.01 else fed
             prompt, prev_p, blend = dst_prompt, src_prompt, 0.3 + 0.5 * m
             ctl, cn_s = ctrl_name, 0.2 + 0.35 * m
+        else:                                    # CUT-TAIL: keep ZOOMING into the ≈frame 0 we reached,
+            init = fed                           # so the last frames MOVE (no static hold). We then cut
+            prompt, prev_p, blend = dst_prompt, src_prompt, 0.85   # to frame 0 (which zooms via 0→1).
         wf = seam_lab.seam_workflow(cfg, dive.upload_image(init, f"repair_init_{i:05d}.png"),
                                     prompt, cfg["seed"] + i, args.den_hi, prev_prompt=prev_p, blend=blend,
                                     ctrl_name=ctl, cn_strength=cn_s, depth_preproc=depth)
