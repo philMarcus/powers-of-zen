@@ -62,11 +62,12 @@ def main():
     ap.add_argument("journey")
     ap.add_argument("--model", default="turbo")
     ap.add_argument("--src-version", help="source vN dir name (default = newest complete)")
-    ap.add_argument("--den-hi", type=float, default=0.52, help="exterior/boundary denoise at the start")
-    ap.add_argument("--den-lo", type=float, default=0.45, help="exterior/boundary denoise at the end")
-    ap.add_argument("--band", type=float, default=0.12, help="(unused in natural-dive mode)")
-    ap.add_argument("--aperture-pow", type=float, default=1.5,
-                    help="frame-0 aperture curve = t**pow; >1 opens SLOWER than the zoom")
+    ap.add_argument("--den-hi", type=float, default=0.5, help="dive/morph denoise")
+    ap.add_argument("--den-lo", type=float, default=0.45, help="(unused)")
+    ap.add_argument("--morph-frames", type=int, default=6,
+                    help="how many trailing frames morph into the exact frame 0 (brief; no frames added)")
+    ap.add_argument("--palette", type=float, default=0.8,
+                    help="strength of the palette pull toward frame 0 (ramps 0→this across the seam)")
     ap.add_argument("--cn-lo", type=float, default=0.30, help="depth-ControlNet strength at start")
     ap.add_argument("--cn-hi", type=float, default=0.90, help="depth-ControlNet strength at end")
     ap.add_argument("--no-video", action="store_true")
@@ -115,38 +116,42 @@ def main():
     ctrl_name = dive.upload_image(frame0, f"repair_ctrl_{name}.png")
 
     src_prompt = phases[-1]["prompt"]   # last register (keeps plunging toward the desk = frame 0)
+    dst_prompt = phases[0]["prompt"]    # first register = frame 0
     prev = load(srcfr, seam_start - 1)  # the real frame just before the seam
     W, H = cfg["width"], cfg["height"]
-    feather = ((W * W + H * H) ** 0.5) * 0.02   # soft aperture edge (px)
-    apow = args.aperture_pow
+    f0ref = dive.channel_stats(frame0)  # frame 0's palette anchor (mean/std per channel)
+    morph_n = args.morph_frames         # how many trailing frames do the brief morph into frame 0
+    morph_start = (L - 1) - morph_n
 
-    # NATURAL DIVE + SLOW APERTURE: the base layer is a real, moving dive — the last register
-    # keeps zooming toward the desk (it grows because the prompt says so), generated fresh each
-    # frame, so it's ALIVE, not a still. Over that we reveal the EXACT frame 0 through an aperture
-    # that opens SLOWER than the zoom (aperture = t**apow), so the moving dive dominates and
-    # frame 0 only takes over near the very end — where it must, for the exact loop. Frame 0 is
-    # never fed back through the zoom, so it never scales into a frozen photo.
+    # NATURAL DIVE → PALETTE MATCH → BRIEF MORPH (no added frames, so the music grid is untouched):
+    #  • most of the seam is a real moving dive (last-register prompt) — full zoom, alive.
+    #  • every frame's palette is pulled toward frame 0's (ramping) — the missing last→first blend.
+    #  • only the final `morph_n` frames morph into the EXACT frame 0, and since the dive already
+    #    ended on a same-room, palette-matched image, that morph is brief and clean.
     for j in range(L - 1):              # regenerate seam_start .. total-2
         i = seam_start + j
         t = (j + 1) / L
         z = zoom[i]
-        drift = cfg["drift"] * (1 - (i - seam_start + 1) / L)   # settle center so the disc aligns
+        drift = cfg["drift"] * (1 - (i - seam_start + 1) / L)
         cx = 0.5 + drift * math.sin(2 * math.pi * i / 263)
         cy = 0.5 + drift * math.sin(2 * math.pi * i / 419 + 1.7)
-        fed = dive.zoom_transform(prev, z, cfg["rotate_per_frame"], cx, cy)  # keep diving
+        fed = dive.zoom_transform(prev, z, cfg["rotate_per_frame"], cx, cy)  # keep diving (full zoom)
         fed = dive.detail_boost(fed, cfg)
-        # generate a plain dive step (last-register prompt, no frame 0) — the desk grows, moving
-        wf = seam_lab.seam_workflow(cfg, dive.upload_image(fed, f"repair_init_{i:05d}.png"),
-                                    src_prompt, cfg["seed"] + i, args.den_hi, prev_prompt=None, blend=1.0)
-        nat = Image.open(io.BytesIO(dive.run_workflow(wf))).convert("RGB")
-        if nat.size != (W, H):
-            nat = nat.resize((W, H), Image.LANCZOS)
-        prev = nat                                    # feed the moving dive forward (frame 0 stays out)
-        aperture = t ** apow                          # opens slower than the zoom
-        disc = soft_disc(W, H, aperture, feather)
-        display = Image.composite(frame0, nat, disc)  # exact frame 0 revealed over the moving dive
-        display.save(outfr / f"{i:05d}.png")
-        print(f"  seam {i}  t={t:.2f} aperture={aperture:.2f} den={args.den_hi}", flush=True)
+        if j < morph_start:                      # NATURAL DIVE portion
+            init, prompt, prev_p, blend = fed, src_prompt, None, 1.0
+        else:                                    # BRIEF MORPH into frame 0
+            m = (j - morph_start + 1) / morph_n  # 0→1 across the last morph_n frames
+            init = Image.blend(fed, frame0, min(1.0, m * 0.9))
+            prompt, prev_p, blend = dst_prompt, src_prompt, 0.4 + 0.6 * m
+        wf = seam_lab.seam_workflow(cfg, dive.upload_image(init, f"repair_init_{i:05d}.png"),
+                                    prompt, cfg["seed"] + i, args.den_hi, prev_prompt=prev_p, blend=blend)
+        out = Image.open(io.BytesIO(dive.run_workflow(wf))).convert("RGB")
+        if out.size != (W, H):
+            out = out.resize((W, H), Image.LANCZOS)
+        out = dive.color_match(out, f0ref, args.palette * t)   # warm the palette toward frame 0
+        out.save(outfr / f"{i:05d}.png"); prev = out
+        tag = "morph" if j >= morph_start else "dive "
+        print(f"  seam {i}  {tag} t={t:.2f} palette={args.palette*t:.2f} den={args.den_hi}", flush=True)
 
     frame0.save(outfr / f"{total-1:05d}.png")   # exact loop: last frame IS frame 0
 
