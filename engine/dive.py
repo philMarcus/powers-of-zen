@@ -27,7 +27,7 @@ import time
 from pathlib import Path
 
 import requests
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageStat
+from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageStat
 
 import grammar
 
@@ -209,6 +209,12 @@ def detail_boost(img, cfg):
 def channel_stats(img):
     s = ImageStat.Stat(img)
     return s.mean, s.stddev
+
+
+def frame_gap(a, b):
+    """Mean absolute per-channel difference between two frames (0–255) — the seam morph scales
+    its strength to this gap between the arriving dive and frame 0."""
+    return sum(ImageStat.Stat(ImageChops.difference(a, b)).mean) / 3
 
 
 def color_match(img, ref, strength):
@@ -504,20 +510,21 @@ def main():
                 if cam_pasted:
                     den = min(den, 0.32)   # keep the mascot's face recognizable
                 if in_loop_tail(i):
-                    # grow frame 0 in the center until the last frame IS the first;
-                    # masked denoise pixel-locks the composite and repaints ONLY the
-                    # shrinking ring around it, so surroundings morph into frame 0
-                    # instead of freezing (findable-seam fix, 2026-07-26)
+                    # SEAM (2026-07-29, see PLAN.md "THE SEAM"): keep DIVING (fed is already the
+                    # zoomed feedback) while morphing home. Over the last morph_frames, blend the
+                    # feedback toward frame 0 with a strength AUTO-SCALED to the gap (tiny for a
+                    # self-similar return, stronger to bridge a far world). NO loop_composite and
+                    # NO hard copy of frame 0 (a duplicate froze the loop) — the last frame is a
+                    # generated ≈frame 0. Palette is pulled toward frame 0 AFTER generation.
                     j = i - (total - loop["frames"])
-                    t_ = (j + 1) / loop["frames"]
-                    s = math.exp(math.log(loop["s0"]) * (1 - t_))
-                    fed = loop_composite(fed, frame0, s)
-                    w_, h_ = fed.size
-                    sw, sh = max(2, int(w_ * s)), max(2, int(h_ * s))
-                    box = ((w_ - sw) // 2, (h_ - sh) // 2, sw, sh)
-                    mask_ref = upload_image(ring_mask(w_, h_, box, center_val=10),
-                                            f"zoomer_mask_{name}.png")
-                    den = max(den, cfg["denoise"])   # ring stays lively; center is locked
+                    mstart = loop["frames"] - loop["morph_frames"]
+                    if j >= mstart:
+                        if loop.get("morph_strength") is None:
+                            gap = frame_gap(fed, frame0)
+                            loop["morph_strength"] = max(0.0, min(0.82, (gap - 15) / 55))
+                        m = (j - mstart + 1) / loop["morph_frames"]
+                        if loop["morph_strength"] > 0.01:
+                            fed = Image.blend(fed, frame0, loop["morph_strength"] * m)
             ref = upload_image(fed, f"zoomer_feed_{name}.png")
             wf = build_workflow(cfg, prompt, seed, init_image=ref, denoise=den,
                                 prev_prompt=prev_prompt if in_transition else None,
@@ -534,10 +541,13 @@ def main():
                     # carries the sprite physically through every later frame
                     img = paste_sprite(img, *load_sprite(root / c["sprite"]),
                                        c["pos"][0], c["pos"][1], c["size"])
+        if loop and frame0 is not None and in_loop_tail(i):
+            # warm the palette toward frame 0 across the tail (the missing last→first blend)
+            j = i - (total - loop["frames"])
+            img = color_match(img, channel_stats(frame0), min(0.85, 0.9 * (j + 1) / loop["frames"]))
         if i == 0:
             frame0 = img.copy()
-        if loop and i == total - 1:
-            img = frame0.copy()                       # exact loop: last frame = first
+        # (no hard copy of frame 0 — the tail morph lands on ≈frame 0; a duplicate froze the loop)
         img.save(frames_dir / f"{i:05d}.png")
         if k == T and p_idx not in phase_refs:
             phase_refs[p_idx] = channel_stats(img)   # this phase's palette anchor
