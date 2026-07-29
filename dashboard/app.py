@@ -90,11 +90,13 @@ def assemble_caption(body, spot_line, tags, hook):
     return " ".join(p for p in parts if p)
 
 
-def gen_captions(journey, model):
-    """Fire the local-VLM captioner (non-blocking; writes 3 options into the pipeline). --force
-    so the dashboard button always runs; it's GPU-light-ish but competes with a render if busy."""
+def gen_captions(journey, model, no_theme=False):
+    """Fire the local-VLM captioner (non-blocking; writes ~5 caption+title options). --force so the
+    dashboard button always runs. --no-theme in Production (music theme is already locked by then)."""
     import subprocess
-    args = f"cd /mnt/c/Users/Phil/zoomer && python3 scripts/caption.py {journey} --model {model} --force"
+    flag = " --no-theme" if no_theme else ""
+    args = (f"cd /mnt/c/Users/Phil/zoomer && python3 scripts/caption.py {journey} "
+            f"--model {model} --force{flag}")
     cmd = ["wsl", "bash", "-lc", args] if os.name == "nt" else ["bash", "-lc", args]
     subprocess.Popen(cmd, cwd=str(pl.ROOT), stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
@@ -275,35 +277,42 @@ def card(v, actions, show_switch=True, marker=None, captions=False):
         st.caption(f"**{v['journey']}** · {v['model']} · {v['cut']} · {v.get('cameo') or 'no cameo'}")
     with col2:
         if captions:
-            # "can you spot <mascot>?" hook toggle — drop it (and re-assemble) if the sprite
-            # didn't render well and you don't want to promise viewers a character to find.
-            if v.get("cameo") and v.get("spot_line"):
+            no_theme = v.get("state") == "queued"     # Production: don't redo the (locked) music theme
+            # "can you spot <mascot>?" hook toggle — shown for ANY cameo (even before captions run),
+            # so you can pre-decide; drop it if the sprite didn't render well.
+            if v.get("cameo"):
                 hook = st.toggle(f"🔎 include “can you spot {v['cameo'].capitalize()}?” hook",
                                  value=v.get("spot_hook", True), key=f"hook_{v['journey']}")
                 if hook != v.get("spot_hook", True):
                     dd = data(); vv = pl.get(dd, v["journey"])
-                    old = vv.get("caption_options", [])
-                    idx = old.index(vv.get("caption")) if vv.get("caption") in old else 0
                     vv["spot_hook"] = hook
-                    new = [assemble_caption(b, vv.get("spot_line", ""), vv.get("caption_tags", ""), hook)
-                           for b in vv.get("caption_bodies", [])]
-                    vv["caption_options"] = new
-                    if new:
+                    bodies = vv.get("caption_bodies", [])
+                    if bodies:      # re-assemble existing options without re-calling the model
+                        old = vv.get("caption_options", [])
+                        idx = old.index(vv.get("caption")) if vv.get("caption") in old else 0
+                        new = [assemble_caption(b, vv.get("spot_line", ""), vv.get("caption_tags", ""), hook)
+                               for b in bodies]
+                        vv["caption_options"] = new
                         vv["caption"] = new[min(idx, len(new) - 1)]
                     pl.save(dd); st.rerun()
             opts = v.get("caption_options") or []
             gc = st.columns([3, 1])
             if opts:
                 idx = opts.index(v["caption"]) if v.get("caption") in opts else 0
-                pick = gc[0].radio("✍ caption options (pick one, edit below if you like)",
+                pick = gc[0].radio("✍ caption options (picking one also sets the matching YouTube title)",
                                    opts, index=idx, key=f"capopt_{v['journey']}")
                 if pick != v.get("caption"):
-                    dd = data(); pl.get(dd, v["journey"])["caption"] = pick; pl.save(dd); st.rerun()
+                    dd = data(); vv = pl.get(dd, v["journey"]); pi = opts.index(pick)
+                    vv["caption"] = pick
+                    yts = vv.get("yt_title_options") or []
+                    if pi < len(yts) and yts[pi]:
+                        vv["yt_title"] = yts[pi]           # keep caption + YT title in sync
+                    pl.save(dd); st.rerun()
             else:
-                gc[0].caption("no auto-captions yet — click Generate (uses the local vision model).")
+                gc[0].caption("no auto-captions yet — Generate (~5 caption+title options, local VLM).")
             if gc[1].button("✍ Generate", key=f"gencap_{v['journey']}"):
-                gen_captions(v["journey"], v.get("model", "ds"))
-                st.info("Generating 3 captions…" + (" ⚠ GPU busy, may be slow" if pl.gpu_busy() else "")
+                gen_captions(v["journey"], v.get("model", "ds"), no_theme=no_theme)
+                st.info("Generating ~5 captions…" + (" ⚠ GPU busy, may be slow" if pl.gpu_busy() else "")
                         + " — refresh in ~30s.")
         cap = st.text_area("caption (TikTok/Instagram)", v.get("caption", ""),
                            key=f"cap_{v['journey']}", height=90)
@@ -463,7 +472,7 @@ with tabs[2]:  # PRODUCTION — the ordered post queue; tweak cut/model + change
             m = v.get("music") or {}
             chosen = m.get("chosen")
             st.caption("🎵 " + (f"music: **{chosen}**" if chosen else "no music selected"))
-            card(v, [("↩ Unqueue", "music" if not chosen else "review")], marker="cover")
+            card(v, [("↩ Unqueue", "music" if not chosen else "review")], marker="cover", captions=True)
             if music_stale(v):
                 st.warning(f"music was built for {m.get('for_model')}/{m.get('for_cut')} — "
                            "regenerate for the current render.")

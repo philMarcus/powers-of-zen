@@ -38,16 +38,18 @@ PROMPT = (
     'voice: dreamy, awe-striking, oddly satisfying; it makes people rewatch to find the loop.\n\n'
     'This video travels through these worlds, in order:\n{worlds}\nVisual style: {style}\n'
     'The attached images are moments from the dive.\n\n'
-    'Write THREE distinct caption BODIES for TikTok / Instagram Reels — each ONE short, evocative '
-    'line that makes someone watch to the end and rewatch the loop; hint at the journey without '
-    'explaining it; at most 1–2 tasteful emoji; NO hashtags and NO questions in the body.\n'
+    'Give FIVE distinct options. Each option is an object with:\n'
+    '  "caption": ONE short evocative TikTok/Instagram line that makes someone watch to the end '
+    'and rewatch the loop — hint at the journey, at most 1–2 tasteful emoji, NO hashtags and NO '
+    'questions.\n'
+    '  "yt_title": a DIFFERENT, punchy YouTube Shorts TITLE for that same option (a title, not a '
+    'caption) — under 80 chars, no hashtags, no emoji.\n'
     '{mascot_line}'
     'Also give: "hashtags" — 3–4 tags SPECIFIC to this video\'s worlds/theme (never #fyp, #viral, '
     'or generic filler); "music_theme" — one vivid line describing the scene/mood to inspire an '
-    'instrumental soundtrack for this dive; and "yt_title" — a punchy YouTube Shorts title (<80 '
-    'chars, no hashtags).\n'
-    'Respond with ONLY JSON: {{"captions": ["...","...","..."], "spot_line": "...", '
-    '"hashtags": ["#..","#.."], "music_theme": "...", "yt_title": "..."}}'
+    'instrumental soundtrack for this dive.\n'
+    'Respond with ONLY JSON: {{"options": [{{"caption": "...", "yt_title": "..."}}, ... 5 total], '
+    '"spot_line": "...", "hashtags": ["#..","#.."], "music_theme": "..."}}'
 )
 MASCOT_INSTR = (
     'A hidden character named {m} appears briefly somewhere in the video. Also write "spot_line" — '
@@ -131,7 +133,7 @@ def set_music_theme_if_empty(journey, theme):
         p.write_text(json.dumps(spec, indent=2))
 
 
-def generate(journey, model="ds"):
+def generate(journey, model="ds", no_theme=False):
     d = pl.load(); v = pl.get(d, journey)
     frames = frames_for(journey, model) or frames_for(journey, "turbo") or frames_for(journey, "")
     if not frames:
@@ -145,30 +147,39 @@ def generate(journey, model="ds"):
             "model": VLM_MODEL,
             "prompt": PROMPT.format(worlds="\n".join(worlds), style=style, mascot_line=mline),
             "images": [base64.b64encode(Path(f).read_bytes()).decode() for f in frames],
-            "stream": False, "format": "json"}, timeout=240)
+            "stream": False, "format": "json"}, timeout=300)
         data = _parse(r.json().get("response", ""))
     except Exception as e:
         print(f"  VLM error for {journey}: {e}"); return None
-    bodies = [c.strip() for c in data.get("captions", []) if c.strip()][:3]
+    # options: 5 paired {caption, yt_title}; tolerate the older flat shape too
+    raw_opts = data.get("options")
+    if not raw_opts and data.get("captions"):
+        raw_opts = [{"caption": c, "yt_title": data.get("yt_title", "")} for c in data["captions"]]
+    bodies, yts = [], []
+    for o in (raw_opts or [])[:5]:
+        b = (o.get("caption") or "").strip()
+        if b:
+            bodies.append(b); yts.append((o.get("yt_title") or "").strip()[:100])
     if not bodies:
         print(f"  no captions parsed for {journey}"); return None
     spot = (data.get("spot_line") or "").strip() if mascot else ""
     tags = " ".join(_dedupe_tags(list(data.get("hashtags", [])) + BRAND_TAGS))
-    yt = (data.get("yt_title") or "").strip()[:100]
     mtheme = (data.get("music_theme") or "").strip()
-    hook = bool(mascot and spot)
+    # respect a pre-set spot toggle; else default on when there's a mascot + a spot line
+    hook = bool(mascot and spot) and (v.get("spot_hook", True) if v else True)
     opts = [assemble_caption(b, spot, tags, hook) for b in bodies]
     if v:
-        v.update({"caption_bodies": bodies, "spot_line": spot, "caption_tags": tags,
-                  "spot_hook": hook, "caption_options": opts, "caption": opts[0]})
-        if yt:
-            v["yt_title"] = yt
+        v.update({"caption_bodies": bodies, "yt_title_options": yts, "spot_line": spot,
+                  "caption_tags": tags, "spot_hook": hook, "caption_options": opts,
+                  "caption": opts[0], "yt_title": yts[0] or v.get("yt_title", "")})
         pl.save(d)
-        set_music_theme_if_empty(journey, mtheme)
+        if not no_theme:
+            set_music_theme_if_empty(journey, mtheme)
         pl.telem("caption", journey=journey, detail=f"{len(opts)} options, spot={hook}")
-    print(f"  {journey}: {len(opts)} captions (spot={hook}); yt='{yt[:50]}'; theme='{mtheme[:40]}'")
+    print(f"  {journey}: {len(opts)} caption+title pairs (spot={hook}); theme='{mtheme[:40]}'"
+          + ("" if not no_theme else " [theme skipped]"))
     for i, c in enumerate(opts):
-        print(f"    [{i}] {c}")
+        print(f"    [{i}] {c}  ||  YT: {yts[i]}")
     return opts
 
 
@@ -177,6 +188,7 @@ def main():
     ap.add_argument("journey", nargs="?")
     ap.add_argument("--model", default="ds")
     ap.add_argument("--all", action="store_true", help="caption every review video missing captions")
+    ap.add_argument("--no-theme", action="store_true", help="don't touch music_theme (production regen)")
     ap.add_argument("--force", action="store_true", help="run even if the GPU is busy")
     args = ap.parse_args()
     if pl.gpu_busy() and not args.force:
@@ -188,9 +200,9 @@ def main():
                 and not v.get("caption_options")]
         print(f"captioning {len(todo)} video(s) missing captions…")
         for v in todo:
-            generate(v["journey"], v.get("model", args.model))
+            generate(v["journey"], v.get("model", args.model), no_theme=args.no_theme)
     elif args.journey:
-        generate(args.journey, args.model)
+        generate(args.journey, args.model, no_theme=args.no_theme)
     else:
         ap.error("give a <journey> or --all")
 
