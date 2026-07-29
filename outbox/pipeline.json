@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-29 10:24:38",
+    "updated": "2026-07-29 15:22:23",
     "paused_platforms": [
       "tiktok"
     ],
@@ -84,7 +84,7 @@
       "yt_title": "the galaxy at the back of your eye 👁️🌌 10ᶻ",
       "yt_desc": "the galaxy at the back of your eye 👁️🌌\n\n#shorts #powersofzen #space #trippy #oddlysatisfying #fyp",
       "cameo": null,
-      "state": "music",
+      "state": "queued",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -109,8 +109,8 @@
         "bpm": 100,
         "bar": 2.399,
         "key": "D minor",
-        "stage": "review",
-        "chosen": null,
+        "stage": "done",
+        "chosen": "choir",
         "candidates": [
           {
             "id": "warm",
@@ -294,7 +294,7 @@
       "yt_title": "the dollhouse contains the town contains the dollhouse 🏠 10ᶻ",
       "yt_desc": "the dollhouse contains the town contains the dollhouse 🏠\n\n#shorts #powersofzen #miniature #oddlysatisfying #fyp",
       "cameo": null,
-      "state": "music",
+      "state": "queued",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -319,8 +319,8 @@
         "bpm": 100,
         "bar": 2.396,
         "key": "D minor",
-        "stage": "review",
-        "chosen": null,
+        "stage": "done",
+        "chosen": "glassy",
         "candidates": [
           {
             "id": "warm",
@@ -669,7 +669,7 @@
       "yt_title": "the whole world folds out of a mapmaker's desk 🗺️ 10ᶻ",
       "yt_desc": "an antique atlas world — desk to map to coastline to cosmos and back.\n\n#shorts #maps #oddlysatisfying #powersofzen",
       "cameo": null,
-      "state": "music",
+      "state": "queued",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -694,8 +694,8 @@
         "bpm": 100,
         "bar": 2.405,
         "key": "D minor",
-        "stage": "review",
-        "chosen": null,
+        "stage": "done",
+        "chosen": "deep",
         "candidates": [
           {
             "id": "warm",
@@ -744,6 +744,37 @@
           }
         ]
       }
+    },
+    {
+      "journey": "cosmic_scales_remix",
+      "model": "turbo",
+      "cut": "divein",
+      "file": "review_divein/cosmic_scales_remix_divein.mp4",
+      "title": "",
+      "caption": "",
+      "yt_title": "",
+      "yt_desc": "",
+      "cameo": "lee",
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-29"
     }
   ]
 }
