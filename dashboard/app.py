@@ -133,7 +133,7 @@ def set_state(journey, newstate):
 def extract_frame(video_rel, t):
     """Grab the frame at t seconds → a png (for confirming what you're marking)."""
     import subprocess
-    from score import FFMPEG
+    from phase_shift import FFMPEG   # NOT score (it imports audioop, gone in Python 3.13+)
     (pl.ROOT / "outbox" / "shots").mkdir(parents=True, exist_ok=True)
     out_rel = f"outbox/shots/mark_{Path(video_rel).stem}.png"
     subprocess.run([FFMPEG, "-y", "-loglevel", "error", "-ss", f"{max(0.0,t):.2f}",
