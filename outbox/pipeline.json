@@ -2,11 +2,14 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-29 10:11:33",
+    "updated": "2026-07-29 10:24:38",
     "paused_platforms": [
       "tiktok"
     ],
-    "paused_note": "TikTok paused 2026-07-29: new-account posts publish then vanish (silent+by-hand+AI-labeled all dropped). Likely under-review/spam-flag from repeated night_bloom attempts. Phil will try one by hand on the weekend, then re-enable."
+    "paused_note": "TikTok paused 2026-07-29: new-account posts publish then vanish (silent+by-hand+AI-labeled all dropped). Likely under-review/spam-flag from repeated night_bloom attempts. Phil will try one by hand on the weekend, then re-enable.",
+    "paused_reasons": {
+      "tiktok": "paused morning of 7/29"
+    }
   },
   "videos": [
     {

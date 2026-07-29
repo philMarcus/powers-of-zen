@@ -143,10 +143,16 @@ def any_failed(v):
 
 
 def platform_line(v):
-    """Per-platform status with icons, e.g. '✅ tiktok · ✅ youtube · ❌ instagram'."""
+    """Per-platform status with icons, e.g. '✅ tiktok · ✅ youtube · ❌ instagram'.
+    Paused platforms show ⏸ regardless of stored status (they aren't really 'failed')."""
     icon = {"live": "✅", "failed": "❌", "pending": "—"}
-    return " · ".join(f"{icon.get(v.get('platforms',{}).get(k,{}).get('status','pending'),'•')} {k}"
-                      for k in pl.PLATFORMS)
+    paused = globals().get("PAUSED", [])
+    parts = []
+    for k in pl.PLATFORMS:
+        s = v.get("platforms", {}).get(k, {}).get("status", "pending")
+        mark = "⏸" if k in paused else icon.get(s, "•")
+        parts.append(f"{mark} {k}")
+    return " · ".join(parts)
 
 
 # ── shared card (preview + caption + cut/model switch) ───────────────────────────────────
@@ -223,6 +229,8 @@ counts = Counter(v.get("state") for v in d["videos"])
 # dropped on TikTok is BOTH live (somewhere) and failed (somewhere), so it shows in both.
 live_vids = [v for v in d["videos"] if any_live(v)]
 failed_vids = [v for v in d["videos"] if any_failed(v)]
+PAUSED = pl.paused_platforms(d)
+PREASONS = d.get("meta", {}).get("paused_reasons", {})
 st.title("🕳️ Powers of Zen — ops")
 cols = st.columns(6)
 cols[0].metric("video review", counts.get("review", 0))
@@ -341,10 +349,17 @@ with tabs[4]:  # FAILED — anything failed on at least one platform (noting whe
     if not failed_vids:
         st.info("No failures.")
     for v in failed_vids:
-        failed_on = ", ".join(platforms_by_status(v, "failed"))
         live_on = ", ".join(platforms_by_status(v, "live"))
         st.error(f"**{v['journey']}** — {platform_line(v)}")
-        st.caption(f"❌ failed on **{failed_on}**" + (f" · ✅ live on **{live_on}**" if live_on else ""))
+        # per-failed-platform reason: paused platforms show the pause reason, not "dropped"
+        for k in platforms_by_status(v, "failed"):
+            if k in PAUSED:
+                st.caption(f"⏸ **{k}**: {PREASONS.get(k, 'paused')}")
+            else:
+                note = v["platforms"][k].get("note", "")
+                st.caption(f"❌ **{k}**: {note or 'failed'}")
+        if live_on:
+            st.caption(f"✅ live on **{live_on}**")
         if st.button("🔁 Retry failed → Production", key=f"retry_{v['journey']}"):
             # re-queue; the poster is resume-safe (skips platforms already live, retries the
             # failed ones). Paused platforms stay skipped.
