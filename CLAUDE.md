@@ -70,25 +70,24 @@ Everything runs LOCAL and FREE on Phil's RTX 3080 (no paid APIs).
 - Commit source (not output/, review*, chrome_zen/ — all gitignored).
 
 ## Current state (update this line as it changes)
-2026-07-28: MUSIC SYSTEM built + shipping. Custom AI music via ComfyUI-native ACE-Step 1.5
-(engine/music.py) + phase-dynamic scorer/aligner (scripts/score.py, scripts/align.py) +
-music-review stage (scripts/music_gen.py + dashboard 🎵 Music panel). METHOD: the model
-writes the music; we tempo-lock generation to the morph grid (bar = morph interval) and
-align the track's OWN accents to the morphs; prompts are anacrusis-forward + scene-themed
-per journey (journeys/*.json `music_theme`, editable in the dashboard). night_bloom shipped
-with music. Chosen: night_bloom (304 overlay), alexandria/food_chain=deep, snowfall=choir.
-POSTER hardened tonight: YouTube opens via Create→"Upload videos" (/upload bounces to the
-content list), YouTube title-retry, TikTok WAITS for the music copyright check (never click
-"Post now" on the incomplete-check modal — it kills the post), Instagram Next/Share/Done use
-SYNTHESIZED mouse clicks (el.click is ignored by IG's React). ALWAYS verify a post against
-the live page — "posted" strings lie (repeated TikTok false-positives tonight).
-OPEN ISSUES: (1) TikTok DROPS with-music posts — publishes then vanishes, even posting by
-hand; likely custom audio on a new account. Test a silent post / use a TikTok-licensed sound.
-(2) THE SEAM IS UNSOLVED — the loop cut is still ugly. The "fix" so far (grammar loop-tail
-denoise 0.18→0.12 + authoring loop pairs to name the first world) does NOT fix it: the last
-frame is a hard COPY of frame 0 (dive.py), so mismatched worlds hard-cut. NEXT: build a real
-seam mechanism with ControlNet — prototype on ISOLATED seam generations (just the last→first
-transition frames, not whole videos, iterate fast), THEN wire into engine/dive.py's loop tail.
-Six journeys authored tonight (cosmic_scales_remix, circuit_city, stormglass + reworked
-antenna_ball/skyfog/mineral_heart); only cosmic_scales_remix & circuit_city turbo rendered
-(RAW, un-phase-shifted → seams at the ends). Full detail in PLAN.md.
+2026-07-29: THE SEAM IS SOLVED (see PLAN.md "THE SEAM"). Two parts: (A) grammar.py now
+auto-derives the last register's loop target from `regs[0]` (loop_target|interior), so the
+last frame plunges toward the first world in the SAME words frame 0 uses → first/last render
+alike → tiny loop gap (fixed food_chain's "golden cove" that didn't mention the heron). (B)
+scripts/repair_seam.py regenerates only the last ~L frames: natural dive (keep zooming) →
+palette-match toward frame 0 → gap-SCALED generated morph (light depth-CN, no static blend) →
+NO hard-copy of frame 0 (the old `img=frame0.copy()` made 3 identical frames = a loop FREEZE);
+optional --cut-tail. Non-destructive (fresh vN, keeps build/frames_orig_seam/), reuses saved
+frames (engine is a feedback chain: resume at the seam, no full re-render). Music-safe: morph
+grid unchanged → re-align reproduces the lock (food_chain deep = 11.54× before+after), no
+frames added. Approved on cosmic (v11) and food_chain. NEXT: fold repair_seam's mechanism into
+engine/dive.py's exact_loop tail so every render ends this way, then re-render the self-similar
+journeys. POSTER (2026-07-29): now VERIFIES every post against the live page before claiming
+success — TikTok checks the content list, IG reads the reel caption (kills the false-positive
+"live"); waits for both TikTok checks then a single Post; AI-label clicks the real switch +
+verifies; YouTube title read-back retry; IG selects Original (phone 9:16) crop by CONTAINMENT
+(default was square). TikTok PAUSED (meta.paused_platforms) — new-account posts publish then
+vanish even silent/by-hand (likely under-review/spam flag); scheduler posts YT+IG only. alexandria
+live on YT+IG. DASHBOARD refactored: Video Review → 🎵 Music → Production stage flow; Live/Failed
+are per-platform (a video can be in both); videos loop. Desktop shortcut: scripts/start_zen_ops.bat.
+OPEN: fold seam into dive.py + re-render journeys; TikTok waits (Phil retries by hand on weekend).

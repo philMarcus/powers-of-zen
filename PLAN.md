@@ -449,3 +449,69 @@ frame + frame 0 and generate just the ~L transition frames, iterate fast, DON'T 
 videos each attempt. Once the transition looks seamless, wire it into dive.py's exact_loop tail.
 Only then re-render journeys. (Six journeys are authored + waiting; cosmic_scales_remix &
 circuit_city turbo rendered raw with ugly seams — throwaway until the seam works.)
+
+---
+
+## THE SEAM — SOLVED (2026-07-29). Plan of record; don't lose this.
+
+The loop seam (last frame → frame 0 wrap) is now handled by a repeatable mechanism, plus a
+structural authoring fix so future videos barely need it. Two pieces:
+
+### A. Structural fix — self-similar loop target (engine/grammar.py)
+Root cause of ugly seams: the first world was described TWICE with different words — frame 0
+from `regs[0].interior`, the last frame from a hand-authored last-register `next_target` that
+DRIFTED (food_chain's last target was "a golden cove" — no heron; frame 0 was heron shallows).
+Two descriptions → two different images → a big gap at the loop.
+FIX: the last register now AUTO-derives its loop target from `regs[0]` (`loop_target` if set,
+else `interior`). So the last frame plunges toward the first world in the *same words* frame 0
+uses → first/last render alike → tiny seam gap. Authoring rule (also in the dive-video skill):
+make `regs[0].interior` a strong establishing description, pin a consistent viewpoint, and the
+last register must genuinely CONTAIN the first world (heron stands in the landscape we dive into).
+
+### B. End-of-video mechanism (scripts/repair_seam.py; to be folded into dive.py's loop tail)
+Over the last L (~24) frames, in order:
+  1. NATURAL DIVE — keep zooming with the last-register prompt (the world grows, alive; frame 0
+     is NEVER fed back through the zoom, so it can't scale into a frozen photo).
+  2. PALETTE-MATCH — ramp each frame's palette toward frame 0's channel stats (the missing
+     last→first color blend; fixed food_chain's green-garden vs warm-brass clash).
+  3. MORPH (last `morph_frames`, default 12) — gradual pixel-blend toward frame 0, **auto-scaled
+     to the measured gap** (tiny for a same-room return → gentle, zoom-preserving like cosmic;
+     strong to bridge a far world like food_chain). Morph frames are also GENERATED with a light
+     depth-ControlNet toward frame 0 so they stay alive/distinct, not a static blend.
+  4. NO HARD-COPY of frame 0 at the end. dive.py's old `img = frame0.copy()` created 3 near-
+     identical frames (morph≈F0, copy=F0, head=F0) = a FREEZE at the loop. The last frame is now
+     a generated ≈frame 0; the wrap is one normal dive step.
+  5. Optional `--cut-tail N` — last N morph frames keep zooming (moving cut to frame 0) instead
+     of converging to a static frame 0, for cases where the still-frame-0 "appears static" reads
+     badly. (Tradeoff: a small cut instead of a hold; for a big-gap render it can over-zoom.)
+
+### What we tried and REJECTED (so we don't repeat it)
+- PASTE / loop_composite (grow a shrunk frame 0 in the center): keeps zoom but "zoom into a
+  frozen photo" — Phil rejected.
+- Full-frame cross-fade to static frame 0: content converges but the ZOOM STOPS (frame becomes a
+  still) — the "velocity take-up" hitch.
+- IRIS (aperture-open frame 0 at native scale): opens on a frozen image; and it hid the zoom.
+- Natural dive + slow aperture: aperture revealed the EXACT frame 0 over a different-palette dive
+  → jarring, and no visible zoom.
+The winner is the natural-dive + palette + gap-scaled generated morph (no hard copy). Approved on
+cosmic (v11) and food_chain (v3/v4).
+
+### The fundamental limit (why "perfect" needs authoring, not just repair)
+A pure zoom-IN cannot smoothly arrive at a WIDER establishing frame 0 — the motion would have to
+reverse. Converging to a static frame 0 always leaves either a tiny static moment or a small cut.
+The real cure is CONTENT self-similarity (Droste: the deepest point IS frame 0's world at the next
+scale) — that's what section A pushes toward. Repair bridges the residual; authoring shrinks it.
+
+### Frames, music, tooling
+- KEEP the generation frames: `output/<name>/vN/build/frames/` (repair reuses them; the engine is
+  a feedback chain whose only heavy state is the previous frame — seed/zoom/denoise/drift are
+  deterministic functions of the frame index, so we can resume at the seam and regenerate only ~L
+  frames, no full re-render).
+- repair_seam is NON-DESTRUCTIVE: source vN untouched; repair lands in a fresh vN with the original
+  seam frames kept in `build/frames_orig_seam/`; emits before/after `seam_preview_*` loop clips.
+- MUSIC is safe: the repair only touches the last ~L frames; the morph GRID (register boundaries
+  the music locks to) is unchanged, so re-aligning the chosen track reproduces the same lock
+  (verified food_chain "deep" = 11.54× before and after, stretch 1.0000). NO frames are added, so
+  the music grid is never disturbed.
+- NEXT: fold mechanism B into engine/dive.py's exact_loop tail (replace the loop_composite/hard-
+  copy tail) so every new render ends this way; then re-render the self-similar journeys.

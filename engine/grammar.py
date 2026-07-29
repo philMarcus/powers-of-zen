@@ -89,12 +89,21 @@ def compile_journey(spec, fps, build="in"):
                     target=regs[k - 1]["next_target"], interior=reg["interior"],
                     style=style), reg), "frames": fa})
             if reg.get("next_target"):
+                # SELF-SIMILAR LOOP: the last register loops back to the FIRST world, so it must
+                # plunge toward that world described EXACTLY as frame 0 shows it (same subject, same
+                # framing) — otherwise first/last render as two different images and the loop seam
+                # has a big gap to bridge. Derive the loop target from regs[0] (its `loop_target`
+                # if given, else its `interior`) rather than a separately-authored next_target that
+                # drifts. Non-last registers use their own next_target as before.
+                target = reg["next_target"]
+                if k == len(regs) - 1:
+                    target = regs[0].get("loop_target") or regs[0]["interior"]
                 ft = round(F * (0.35 if fa else 0.55))
                 phases.append({"prompt": _p(TEMPLATE_TRAVEL.format(
-                    interior=reg["interior"], target=reg["next_target"],
+                    interior=reg["interior"], target=target,
                     style=style), reg), "frames": ft})
                 phases.append({"prompt": _p(TEMPLATE_PLUNGE.format(
-                    interior=reg["interior"], target=reg["next_target"],
+                    interior=reg["interior"], target=target,
                     style=style), reg), "frames": F - fa - ft})
             else:
                 phases.append({"prompt": _p(TEMPLATE_FINAL.format(

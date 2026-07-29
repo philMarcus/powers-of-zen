@@ -69,10 +69,25 @@ Rules (revised 2026-07-23):
   Rotate the full cast — don't reuse a mascot until all are used. Video with a visible
   cameo → find-the-character caption; without → normal caption. Never regenerate an
   already-released video just to add one. (May need size/pos/denoise tuning.)
-- **Journeys are CIRCULAR.** The last register's `next_target` names the first
-  register's world seen from afar — the seam is authored, never patched. With
-  `exact_loop` the last frame IS the first frame. The seam pair can be ANY two
-  scales (continent→nucleus is fine) — write the blend deliberately.
+- **Journeys are CIRCULAR + SELF-SIMILAR (this is what makes the loop seam work).**
+  The last register loops back to the FIRST world. As of 2026-07-29 the grammar
+  AUTO-DERIVES the last register's loop target from `regs[0]` (its `loop_target` if
+  present, else its `interior`) — so the last frame plunges toward the first world
+  described in the *exact same words* frame 0 uses. DO NOT rely on a hand-authored
+  last-register `next_target` for the loop (it drifts — e.g. a "golden cove" that no
+  longer mentions the heron — and the first/last frames then render as two different
+  images, leaving a big seam gap). Instead:
+  - Make `regs[0].interior` a strong establishing description of the first world, and
+    (optionally) add a concise `loop_target` on `regs[0]` if the interior is too long
+    to read well inside "plunging toward …".
+  - **Pin a consistent viewpoint** in the first world's words (e.g. "seen from above at
+    the water's edge") so the establishing frame and the arrival aren't a top-down vs
+    side-view mismatch. The closer first==last visually, the more invisible the loop.
+  The seam pair can still be ANY two scales, but the last register must genuinely
+  *contain* the first world (the heron stands in the landscape we dive into), so the
+  dive naturally arrives home. The engine end-of-video mechanism (natural dive →
+  palette-match → gentle gap-scaled morph, see PLAN.md "Seam") does the final bridging;
+  self-similar authoring keeps that gap tiny so no heavy seam repair is needed.
 - The full ladder is one format among many. Slices are fine; fractional scales
   are fine (`exp` may be a float; registers ⅓–½ a decade apart are allowed —
   fish-eats-fish chains, dollhouse recursion). Weight time with per-card `sec`.
