@@ -26,7 +26,7 @@ import shutil
 import sys
 from pathlib import Path
 
-from PIL import Image, ImageChops, ImageDraw, ImageFilter
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageStat
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -49,6 +49,11 @@ def load(fr, i):
     return Image.open(fr / f"{i:05d}.png").convert("RGB")
 
 
+def mad(a, b):
+    """Mean absolute per-channel difference between two RGB frames (0–255)."""
+    return sum(ImageStat.Stat(ImageChops.difference(a, b)).mean) / 3
+
+
 def soft_disc(w, h, rfrac, feather):
     """White filled circle of radius rfrac·(half-diagonal), soft-edged. rfrac=1 covers corners."""
     m = Image.new("L", (w, h), 0)
@@ -68,6 +73,9 @@ def main():
                     help="how many trailing frames morph into the exact frame 0 (brief; no frames added)")
     ap.add_argument("--palette", type=float, default=0.8,
                     help="strength of the palette pull toward frame 0 (ramps 0→this across the seam)")
+    ap.add_argument("--morph-strength", type=float, default=-1.0,
+                    help="pixel-morph pull toward frame 0 at the end (-1 = auto-scale to the gap; "
+                         "0 = gentle CN-only like cosmic; up to ~0.82 to bridge a far world)")
     ap.add_argument("--cn-lo", type=float, default=0.30, help="depth-ControlNet strength at start")
     ap.add_argument("--cn-hi", type=float, default=0.90, help="depth-ControlNet strength at end")
     ap.add_argument("--no-video", action="store_true")
@@ -122,6 +130,7 @@ def main():
     f0ref = dive.channel_stats(frame0)  # frame 0's palette anchor (mean/std per channel)
     morph_n = args.morph_frames         # how many trailing frames morph into ≈frame 0
     morph_start = L - morph_n
+    morph_strength = None               # set on the first morph frame (auto-scaled to the gap)
 
     # NATURAL DIVE → PALETTE MATCH → MORPH (no added frames, so the music grid is untouched):
     #  • most of the seam is a real moving dive (last-register prompt) — full zoom, alive.
@@ -142,11 +151,19 @@ def main():
         ctl, cn_s = None, 0.0
         if j < morph_start:                      # NATURAL DIVE portion
             init, prompt, prev_p, blend = fed, src_prompt, None, 1.0
-        else:                                    # MORPH toward ≈frame 0 — WHILE STILL ZOOMING
+        else:                                    # MORPH toward ≈frame 0, spread across all morph_n frames
+            if morph_strength is None:           # scale the morph to the ACTUAL gap (measured once)
+                gap = mad(fed, frame0)
+                morph_strength = (args.morph_strength if args.morph_strength >= 0
+                                  else max(0.0, min(0.82, (gap - 15) / 55)))
+                print(f"  [morph] gap to frame0 = {gap:.0f} -> morph_strength = {morph_strength:.2f}", flush=True)
             m = (j - morph_start + 1) / morph_n  # 0→1 across the last morph_n frames
-            init = fed                           # keep the zoom: do NOT pull the init back to a static frame 0
+            # gradual pixel-morph toward frame 0 so it converges PROGRESSIVELY over all morph_n
+            # frames (not a late jump). Strength scales with the gap: tiny for a same-room return
+            # (cosmic), strong to bridge a far one (food_chain). fed still carries the zoom under it.
+            init = Image.blend(fed, frame0, morph_strength * m) if morph_strength > 0.01 else fed
             prompt, prev_p, blend = dst_prompt, src_prompt, 0.3 + 0.5 * m
-            ctl, cn_s = ctrl_name, 0.2 + 0.3 * m       # GENTLE steer toward frame 0's structure (not a lock)
+            ctl, cn_s = ctrl_name, 0.2 + 0.35 * m
         wf = seam_lab.seam_workflow(cfg, dive.upload_image(init, f"repair_init_{i:05d}.png"),
                                     prompt, cfg["seed"] + i, args.den_hi, prev_prompt=prev_p, blend=blend,
                                     ctrl_name=ctl, cn_strength=cn_s, depth_preproc=depth)
