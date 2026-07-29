@@ -239,23 +239,52 @@ def post_tiktok(video_rel, caption, dry_run):
         cap = tab.eval(f"({capsel})?.textContent?.slice(0,70)")
         print(f"  [dry-run] TikTok: caption='{cap}', AI-label~{ai_on}, checks OK. NOT posting.")
         return "dry-run"
-    posted = tab.eval("(function(){const b=[...document.querySelectorAll('button')]"
-                      ".find(x=>x.textContent.trim()==='Post');if(b){b.click();return 'ok'}return null})()")
-    expect(posted, "tiktok", "post_click", tab, "Post button not found")
-    # a 'Post now' confirmation modal may appear — click it if so
-    wait_for(tab, "[...document.querySelectorAll('button')].find(x=>x.textContent.trim()==='Post now')?true:null", 8)
-    tab.eval("(function(){const b=[...document.querySelectorAll('button')]"
-             ".find(x=>x.textContent.trim()==='Post now');if(b){b.click();return 'ok'}return null})()")
-    ok = wait_for(tab, "document.body.innerText.toLowerCase().includes('under review')"
-                       "||location.pathname.includes('/content')?true:null", 30)
-    expect(ok, "tiktok", "post", tab, "post confirmation not seen")
+    # POST — but the music copyright check must FINISH first. Clicking Post while it's still
+    # running pops "Continue to post? The copyright check is incomplete. Posting now will stop
+    # the check." — and clicking "Post now" there stops the check and the post silently never
+    # lands (this is exactly what dropped night_bloom's 6pm post now that videos carry music).
+    # So: click Post; if the incomplete-check modal appears, Cancel (keeping the check alive)
+    # and wait, retrying for a few minutes. Only a clean Post (no incomplete modal) posts.
+    expect(tab.eval("[...document.querySelectorAll('button')].some(x=>x.textContent.trim()==='Post')"),
+           "tiktok", "post_click", tab, "Post button not found")
+    posted_ok = False
+    for _ in range(20):                                  # ~20 * ~10s = up to ~3.5 min
+        tab.eval("[...document.querySelectorAll('button')]"
+                 ".find(x=>x.textContent.trim()==='Post')?.click()")
+        time.sleep(2.5)
+        dlg = (tab.eval("[...document.querySelectorAll('[role=dialog],.TUXModal')]"
+                        ".map(d=>d.innerText).join(' ')") or "").lower()
+        if "incomplete" in dlg or "still checking" in dlg:
+            tab.eval("[...document.querySelectorAll('[role=dialog] button,.TUXModal button')]"
+                     ".find(x=>/cancel/i.test(x.textContent))?.click()")   # keep the check running
+            time.sleep(8)
+            continue
+        # check complete — confirm a normal 'Post now' if one appears, then look for success
+        tab.eval("[...document.querySelectorAll('[role=dialog] button,.TUXModal button')]"
+                 ".find(x=>/^post( now)?$/i.test(x.textContent.trim()))?.click()")
+        if wait_for(tab, "document.body.innerText.toLowerCase().includes('under review')"
+                         "||location.pathname.includes('/content')?true:null", 20):
+            posted_ok = True
+            break
+    expect(posted_ok, "tiktok", "post", tab, "post never completed (copyright check stuck?)")
     return "posted"
 
 
 def post_youtube(video_rel, title, desc, dry_run):
     tab = platform_tab("youtube")
-    tab.goto("https://www.youtube.com/upload")
-    wait_for(tab, "document.querySelector('input[type=\"file\"]')?true:null", 30)
+    # /upload bounces to the Studio content list for this channel (no details dialog opens),
+    # so open the upload dialog via Create -> Upload videos (verified working 2026-07-28).
+    tab.goto("https://studio.youtube.com/")
+    expect(wait_for(tab, "[...document.querySelectorAll('button,ytcp-button')]"
+                    ".some(e=>/^create$/i.test(e.textContent.trim()))?true:null", 30),
+           "youtube", "studio", tab, "Studio Create button never appeared")
+    tab.eval("[...document.querySelectorAll('button,ytcp-button')]"
+             ".find(e=>/^create$/i.test(e.textContent.trim())||/^Create$/.test(e.getAttribute('aria-label')||''))?.click()")
+    time.sleep(1.5)
+    tab.eval("[...document.querySelectorAll('tp-yt-paper-item,ytcp-text-menu-item,[role=menuitem]')]"
+             ".find(e=>/upload video/i.test(e.textContent))?.click()")
+    expect(wait_for(tab, "document.querySelector('input[type=\"file\"]')?true:null", 30),
+           "youtube", "file_input", tab, "upload dialog did not open (Create->Upload)")
     tab.setfile('input[type="file"]', win_path(video_rel))
     # wait for the details dialog's title field to exist (upload dialog open)
     tsel = ("document.querySelector('#title-textarea #textbox')"
@@ -263,13 +292,21 @@ def post_youtube(video_rel, title, desc, dry_run):
             "||document.querySelectorAll('#textbox')[0]")
     expect(wait_for(tab, f"({tsel})?true:null", 90, 2), "youtube", "dialog", tab,
            "upload details dialog/title field never appeared")
-    # title — select WITHIN the field only (fixes selectAll-grabs-page)
-    expect(set_text(tab, tsel, title[:100]), "youtube", "title", tab, "title field not settable")
+    # title — the field can EXIST before it is editable (details dialog still animating in),
+    # which is what silently failed the 6pm post. Retry set_text a few times with a settle.
+    def set_text_retry(sel, text, tries=6, wait=1.3):
+        for _ in range(tries):
+            if set_text(tab, sel, text):
+                return True
+            time.sleep(wait)
+        return False
+    # select WITHIN the field only (fixes selectAll-grabs-page)
+    expect(set_text_retry(tsel, title[:100]), "youtube", "title", tab, "title field not settable")
     # description
     dsel = "document.querySelector('ytcp-video-description #textbox')"
     expect(wait_for(tab, f"({dsel})?true:null", 20), "youtube", "desc_field", tab,
            "description field missing")
-    expect(set_text(tab, dsel, desc), "youtube", "desc", tab, "description not settable")
+    expect(set_text_retry(dsel, desc), "youtube", "desc", tab, "description not settable")
     # not made for kids
     tab.eval("[...document.querySelectorAll('tp-yt-paper-radio-button')]"
              ".find(x=>/not made for kids/i.test(x.textContent))?.click()")
@@ -306,14 +343,26 @@ def post_youtube(video_rel, title, desc, dry_run):
     return link
 
 
-def _ig_click(tab, label):
-    """Click Instagram's modal-header button with EXACT text (Next/Share), constrained
-    to the top of the screen so we never hit feed elements behind the modal."""
-    return tab.eval("(function(){const el=[...document.querySelectorAll("
-                    "'div[role=\"button\"],button,a,span,div[tabindex]')].find(e=>"
-                    f"e.textContent.trim()==='{label}'&&e.offsetParent"
-                    "&&e.getBoundingClientRect().top<220);"
-                    "if(el){el.click();return 'ok'}return null})()")
+def _ig_click(tab, label, top_max=260):
+    """Click an Instagram modal-header button with EXACT text (Next / Share / Done) via a
+    SYNTHESIZED mouse click. el.click() is silently ignored by Instagram's React handlers
+    for these buttons — that is what left night_bloom's caption unsaved. Locate the topmost
+    match near the top of the screen (so we never hit feed elements behind the modal), then
+    dispatch a real press/release at its center. Returns 'ok' or None."""
+    coords = tab.eval("(function(){const els=[...document.querySelectorAll("
+                      "'div[role=\"button\"],button,a,span,div[tabindex]')].filter(e=>"
+                      f"e.textContent.trim()==='{label}'&&e.offsetParent"
+                      f"&&e.getBoundingClientRect().top<{top_max});"
+                      "if(!els.length)return null;"
+                      "els.sort((a,b)=>a.getBoundingClientRect().top-b.getBoundingClientRect().top);"
+                      "const r=els[0].getBoundingClientRect();"
+                      "return JSON.stringify([Math.round(r.left+r.width/2),Math.round(r.top+r.height/2)])})()")
+    if not coords:
+        return None
+    x, y = json.loads(coords)
+    for typ in ("mousePressed", "mouseReleased"):
+        tab.cmd("Input.dispatchMouseEvent", type=typ, x=x, y=y, button="left", clickCount=1)
+    return "ok"
 
 
 def post_instagram(video_rel, caption, dry_run):

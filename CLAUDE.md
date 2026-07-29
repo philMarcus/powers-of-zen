@@ -70,10 +70,25 @@ Everything runs LOCAL and FREE on Phil's RTX 3080 (no paid APIs).
 - Commit source (not output/, review*, chrome_zen/ — all gitignored).
 
 ## Current state (update this line as it changes)
-2026-07-27: Full OPERATING SYSTEM built — data model (pipeline.json), poster harness
-(validated + first real post live: black_hole on all 3), dashboard (localhost:8501),
-Windows Task Scheduler auto-poster. Daily loop works end to end. 3 live, 8 in review.
-Rerender queue open (outbox/rerender_queue.md: antenna_ball ball→planet gag,
-skyfog counter/cameo, mineral_heart seam/cameo). NEXT: Phil registers Task Scheduler
-tasks; then Journey Composer (frontier, auto-fills queue), phase-dynamic music, view
-counts. Full detail in PLAN.md.
+2026-07-28: MUSIC SYSTEM built + shipping. Custom AI music via ComfyUI-native ACE-Step 1.5
+(engine/music.py) + phase-dynamic scorer/aligner (scripts/score.py, scripts/align.py) +
+music-review stage (scripts/music_gen.py + dashboard 🎵 Music panel). METHOD: the model
+writes the music; we tempo-lock generation to the morph grid (bar = morph interval) and
+align the track's OWN accents to the morphs; prompts are anacrusis-forward + scene-themed
+per journey (journeys/*.json `music_theme`, editable in the dashboard). night_bloom shipped
+with music. Chosen: night_bloom (304 overlay), alexandria/food_chain=deep, snowfall=choir.
+POSTER hardened tonight: YouTube opens via Create→"Upload videos" (/upload bounces to the
+content list), YouTube title-retry, TikTok WAITS for the music copyright check (never click
+"Post now" on the incomplete-check modal — it kills the post), Instagram Next/Share/Done use
+SYNTHESIZED mouse clicks (el.click is ignored by IG's React). ALWAYS verify a post against
+the live page — "posted" strings lie (repeated TikTok false-positives tonight).
+OPEN ISSUES: (1) TikTok DROPS with-music posts — publishes then vanishes, even posting by
+hand; likely custom audio on a new account. Test a silent post / use a TikTok-licensed sound.
+(2) THE SEAM IS UNSOLVED — the loop cut is still ugly. The "fix" so far (grammar loop-tail
+denoise 0.18→0.12 + authoring loop pairs to name the first world) does NOT fix it: the last
+frame is a hard COPY of frame 0 (dive.py), so mismatched worlds hard-cut. NEXT: build a real
+seam mechanism with ControlNet — prototype on ISOLATED seam generations (just the last→first
+transition frames, not whole videos, iterate fast), THEN wire into engine/dive.py's loop tail.
+Six journeys authored tonight (cosmic_scales_remix, circuit_city, stormglass + reworked
+antenna_ball/skyfog/mineral_heart); only cosmic_scales_remix & circuit_city turbo rendered
+(RAW, un-phase-shifted → seams at the ends). Full detail in PLAN.md.

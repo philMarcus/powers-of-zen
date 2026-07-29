@@ -6,3 +6,6 @@ review/
 review_divein/
 production/
 production_alternates/
+scripts/huggingface_token.txt
+.hf_token
+outbox/shots/

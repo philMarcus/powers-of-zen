@@ -9,3 +9,33 @@
 {"ts": "2026-07-28 09:20:17", "event": "post", "journey": "tide_of_life", "platform": "instagram", "detail": "posted"}
 {"ts": "2026-07-28 09:55:50", "event": "recaption", "journey": "tide_of_life", "platform": "youtube"}
 {"ts": "2026-07-28 09:56:06", "event": "recaption", "journey": "tide_of_life", "platform": "instagram"}
+{"ts": "2026-07-28 13:45:44", "event": "music_gen", "journey": "night_bloom", "detail": "5 candidates"}
+{"ts": "2026-07-28 13:49:05", "event": "music_gen", "journey": "alexandria", "detail": "5 candidates"}
+{"ts": "2026-07-28 13:52:26", "event": "music_choose", "journey": "alexandria", "detail": "glassy"}
+{"ts": "2026-07-28 14:17:54", "event": "music_gen", "journey": "food_chain", "detail": "5 candidates"}
+{"ts": "2026-07-28 14:18:50", "event": "music_gen", "journey": "iris_observatory", "detail": "5 candidates"}
+{"ts": "2026-07-28 14:19:40", "event": "music_gen", "journey": "snowfall", "detail": "5 candidates"}
+{"ts": "2026-07-28 14:20:36", "event": "music_gen", "journey": "cartographer", "detail": "5 candidates"}
+{"ts": "2026-07-28 14:21:28", "event": "music_gen", "journey": "dollhouse", "detail": "5 candidates"}
+{"ts": "2026-07-28 14:29:56", "event": "music_gen", "journey": "food_chain", "detail": "5 candidates"}
+{"ts": "2026-07-28 14:30:49", "event": "music_gen", "journey": "iris_observatory", "detail": "5 candidates"}
+{"ts": "2026-07-28 14:31:41", "event": "music_gen", "journey": "snowfall", "detail": "5 candidates"}
+{"ts": "2026-07-28 14:32:34", "event": "music_gen", "journey": "cartographer", "detail": "5 candidates"}
+{"ts": "2026-07-28 14:33:29", "event": "music_gen", "journey": "dollhouse", "detail": "5 candidates"}
+{"ts": "2026-07-28 14:51:40", "event": "music_choose", "journey": "food_chain", "detail": "deep"}
+{"ts": "2026-07-28 14:51:41", "event": "music_choose", "journey": "snowfall", "detail": "choir"}
+{"ts": "2026-07-28 14:55:03", "event": "music_gen", "journey": "alexandria", "detail": "5 candidates"}
+{"ts": "2026-07-28 15:06:41", "event": "music_choose", "journey": "alexandria", "detail": "deep"}
+{"ts": "2026-07-28 15:09:11", "event": "music_gen", "journey": "iris_observatory", "detail": "5 candidates"}
+{"ts": "2026-07-28 15:10:03", "event": "music_gen", "journey": "cartographer", "detail": "5 candidates"}
+{"ts": "2026-07-28 15:10:53", "event": "music_gen", "journey": "dollhouse", "detail": "5 candidates"}
+{"ts": "2026-07-28 18:01:33", "event": "post", "journey": "night_bloom", "platform": "tiktok", "detail": "posted"}
+{"ts": "2026-07-28 18:01:33", "event": "post_fail", "journey": "night_bloom", "platform": "youtube", "detail": "FLAGGED: youtube/title: title field not settable"}
+{"ts": "2026-07-28 18:01:33", "event": "post", "journey": "night_bloom", "platform": "instagram", "detail": "posted"}
+{"ts": "2026-07-28 19:58:21", "event": "post_fail", "journey": "night_bloom", "platform": "youtube", "detail": "FLAGGED: youtube/title: title field not settable"}
+{"ts": "2026-07-28 20:19:33", "event": "post_fail", "journey": "night_bloom", "platform": "youtube", "detail": "FLAGGED: youtube/title: title field not settable"}
+{"ts": "2026-07-28 20:44:25", "event": "correction", "journey": "night_bloom", "platform": "tiktok", "detail": "false-positive corrected: not actually posted"}
+{"ts": "2026-07-28 20:47:48", "event": "post", "journey": "night_bloom", "platform": "tiktok", "detail": "posted"}
+{"ts": "2026-07-28 21:03:19", "event": "post", "journey": "night_bloom", "platform": "tiktok", "detail": "posted"}
+{"ts": "2026-07-28 21:19:28", "event": "post", "journey": "night_bloom", "platform": "youtube", "detail": "https://youtube.com/shorts/dTaP4qzexVA"}
+{"ts": "2026-07-28 21:20:05", "event": "recaption", "journey": "night_bloom", "platform": "instagram"}

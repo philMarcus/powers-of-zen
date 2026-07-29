@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-28 09:59:36"
+    "updated": "2026-07-28 21:19:28"
   },
   "videos": [
     {
@@ -97,7 +97,61 @@
         }
       },
       "created": "2026-07-27",
-      "order": 5
+      "order": 5,
+      "music": {
+        "bpm": 100,
+        "bar": 2.399,
+        "key": "D minor",
+        "stage": "review",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/iris_observatory_warm.flac",
+            "aligned": "review/music/candidates/iris_observatory/warm.mp4",
+            "seed": 500,
+            "lock": 23.62,
+            "tags": "chill hypnotic ambient evoking a cosmic observatory peering through a great eye, celestial, vast, contemplative, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/iris_observatory_glassy.flac",
+            "aligned": "review/music/candidates/iris_observatory/glassy.mp4",
+            "seed": 501,
+            "lock": 34.02,
+            "tags": "chill hypnotic ambient evoking a cosmic observatory peering through a great eye, celestial, vast, contemplative, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/iris_observatory_deep.flac",
+            "aligned": "review/music/candidates/iris_observatory/deep.mp4",
+            "seed": 502,
+            "lock": 22.5,
+            "tags": "chill hypnotic ambient evoking a cosmic observatory peering through a great eye, celestial, vast, contemplative, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/iris_observatory_tender.flac",
+            "aligned": "review/music/candidates/iris_observatory/tender.mp4",
+            "seed": 503,
+            "lock": 24.03,
+            "tags": "chill hypnotic ambient evoking a cosmic observatory peering through a great eye, celestial, vast, contemplative, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/iris_observatory_choir.flac",
+            "aligned": "review/music/candidates/iris_observatory/choir.mp4",
+            "seed": 504,
+            "lock": 26.49,
+            "tags": "chill hypnotic ambient evoking a cosmic observatory peering through a great eye, celestial, vast, contemplative, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ]
+      }
     },
     {
       "journey": "tide_of_life",
@@ -146,27 +200,81 @@
       "yt_title": "everything glows at night 🌙 10ᶻ",
       "yt_desc": "everything glows at night 🌙\n\n#shorts #powersofzen #bioluminescence #oddlysatisfying #fyp",
       "cameo": null,
-      "state": "queued",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
-          "status": "pending",
+          "status": "live",
           "url": "",
-          "ts": ""
+          "ts": "2026-07-28 21:03:19"
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/dTaP4qzexVA",
+          "ts": "2026-07-28 21:19:28"
         },
         "instagram": {
-          "status": "pending",
+          "status": "live",
           "url": "",
-          "ts": ""
+          "ts": "2026-07-28 18:01:33"
         }
       },
       "created": "2026-07-27",
-      "order": 1
+      "order": 1,
+      "music": {
+        "bpm": 100,
+        "bar": 2.405,
+        "key": "D minor",
+        "stage": "review",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/night_bloom_warm.flac",
+            "aligned": "review/music/candidates/night_bloom/warm.mp4",
+            "seed": 500,
+            "lock": 7.19,
+            "tags": "chill hypnotic ambient, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, nocturnal, bioluminescent, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/night_bloom_glassy.flac",
+            "aligned": "review/music/candidates/night_bloom/glassy.mp4",
+            "seed": 501,
+            "lock": 8.09,
+            "tags": "chill hypnotic ambient, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, nocturnal, bioluminescent, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/night_bloom_deep.flac",
+            "aligned": "review/music/candidates/night_bloom/deep.mp4",
+            "seed": 502,
+            "lock": 6.82,
+            "tags": "chill hypnotic ambient, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, nocturnal, bioluminescent, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/night_bloom_tender.flac",
+            "aligned": "review/music/candidates/night_bloom/tender.mp4",
+            "seed": 503,
+            "lock": 8.27,
+            "tags": "chill hypnotic ambient, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, nocturnal, bioluminescent, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/night_bloom_choir.flac",
+            "aligned": "review/music/candidates/night_bloom/choir.mp4",
+            "seed": 504,
+            "lock": 6.49,
+            "tags": "chill hypnotic ambient, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, nocturnal, bioluminescent, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ]
+      }
     },
     {
       "journey": "dollhouse",
@@ -198,7 +306,61 @@
         }
       },
       "created": "2026-07-27",
-      "order": 7
+      "order": 7,
+      "music": {
+        "bpm": 100,
+        "bar": 2.396,
+        "key": "D minor",
+        "stage": "review",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/dollhouse_warm.flac",
+            "aligned": "review/music/candidates/dollhouse/warm.mp4",
+            "seed": 500,
+            "lock": 4.89,
+            "tags": "chill hypnotic ambient evoking a miniature dollhouse world, music-box, cozy and domestic, tiny and tender, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/dollhouse_glassy.flac",
+            "aligned": "review/music/candidates/dollhouse/glassy.mp4",
+            "seed": 501,
+            "lock": 17.15,
+            "tags": "chill hypnotic ambient evoking a miniature dollhouse world, music-box, cozy and domestic, tiny and tender, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/dollhouse_deep.flac",
+            "aligned": "review/music/candidates/dollhouse/deep.mp4",
+            "seed": 502,
+            "lock": 15.87,
+            "tags": "chill hypnotic ambient evoking a miniature dollhouse world, music-box, cozy and domestic, tiny and tender, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/dollhouse_tender.flac",
+            "aligned": "review/music/candidates/dollhouse/tender.mp4",
+            "seed": 503,
+            "lock": 14.07,
+            "tags": "chill hypnotic ambient evoking a miniature dollhouse world, music-box, cozy and domestic, tiny and tender, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/dollhouse_choir.flac",
+            "aligned": "review/music/candidates/dollhouse/choir.mp4",
+            "seed": 504,
+            "lock": 4.82,
+            "tags": "chill hypnotic ambient evoking a miniature dollhouse world, music-box, cozy and domestic, tiny and tender, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ]
+      }
     },
     {
       "journey": "alexandria",
@@ -230,17 +392,71 @@
         }
       },
       "created": "2026-07-27",
-      "order": 2
+      "order": 2,
+      "music": {
+        "bpm": 100,
+        "bar": 2.403,
+        "key": "D minor",
+        "stage": "done",
+        "chosen": "deep",
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/alexandria_warm.flac",
+            "aligned": "review/music/candidates/alexandria/warm.mp4",
+            "seed": 500,
+            "lock": 14.88,
+            "tags": "chill hypnotic ambient evoking an ancient library of scrolls, ink and knowledge, scholarly, timeless, mysterious, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/alexandria_glassy.flac",
+            "aligned": "review/music/candidates/alexandria/glassy.mp4",
+            "seed": 501,
+            "lock": 6.65,
+            "tags": "chill hypnotic ambient evoking an ancient library of scrolls, ink and knowledge, scholarly, timeless, mysterious, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/alexandria_deep.flac",
+            "aligned": "review/music/candidates/alexandria/deep.mp4",
+            "seed": 502,
+            "lock": 24.21,
+            "tags": "chill hypnotic ambient evoking an ancient library of scrolls, ink and knowledge, scholarly, timeless, mysterious, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/alexandria_tender.flac",
+            "aligned": "review/music/candidates/alexandria/tender.mp4",
+            "seed": 503,
+            "lock": 12.06,
+            "tags": "chill hypnotic ambient evoking an ancient library of scrolls, ink and knowledge, scholarly, timeless, mysterious, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/alexandria_choir.flac",
+            "aligned": "review/music/candidates/alexandria/choir.mp4",
+            "seed": 504,
+            "lock": 5.58,
+            "tags": "chill hypnotic ambient evoking an ancient library of scrolls, ink and knowledge, scholarly, timeless, mysterious, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ]
+      }
     },
     {
       "journey": "food_chain",
       "model": "ds",
       "cut": "divein",
       "file": "production/food_chain_ds_divein.mp4",
-      "title": "the whole food chain in one dive 🐟",
-      "caption": "the whole food chain in one dive 🐟 #powersofzen #nature #oddlysatisfying #fyp",
-      "yt_title": "the whole food chain in one dive 🐟 10ᶻ",
-      "yt_desc": "the whole food chain in one dive 🐟\n\n#shorts #powersofzen #nature #oddlysatisfying #fyp",
+      "title": "a whole tiny world in one pond 🐟",
+      "caption": "a whole tiny world in one pond 🐟 #powersofzen #pond #oddlysatisfying #fyp",
+      "yt_title": "a whole tiny world in one pond 🐟 10ᶻ",
+      "yt_desc": "a whole tiny world in one pond 🐟\n\n#shorts #powersofzen #pond #oddlysatisfying #fyp",
       "cameo": null,
       "state": "queued",
       "scheduled": null,
@@ -262,7 +478,61 @@
         }
       },
       "created": "2026-07-27",
-      "order": 3
+      "order": 3,
+      "music": {
+        "bpm": 100,
+        "bar": 2.396,
+        "key": "D minor",
+        "stage": "done",
+        "chosen": "deep",
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/food_chain_warm.flac",
+            "aligned": "review/music/candidates/food_chain/warm.mp4",
+            "seed": 500,
+            "lock": 8.94,
+            "tags": "chill hypnotic ambient evoking a teeming underwater pond ecosystem, aquatic, murky green, alive with tiny creatures, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/food_chain_glassy.flac",
+            "aligned": "review/music/candidates/food_chain/glassy.mp4",
+            "seed": 501,
+            "lock": 32.78,
+            "tags": "chill hypnotic ambient evoking a teeming underwater pond ecosystem, aquatic, murky green, alive with tiny creatures, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/food_chain_deep.flac",
+            "aligned": "review/music/candidates/food_chain/deep.mp4",
+            "seed": 502,
+            "lock": 11.54,
+            "tags": "chill hypnotic ambient evoking a teeming underwater pond ecosystem, aquatic, murky green, alive with tiny creatures, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/food_chain_tender.flac",
+            "aligned": "review/music/candidates/food_chain/tender.mp4",
+            "seed": 503,
+            "lock": 20.61,
+            "tags": "chill hypnotic ambient evoking a teeming underwater pond ecosystem, aquatic, murky green, alive with tiny creatures, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/food_chain_choir.flac",
+            "aligned": "review/music/candidates/food_chain/choir.mp4",
+            "seed": 504,
+            "lock": 4.62,
+            "tags": "chill hypnotic ambient evoking a teeming underwater pond ecosystem, aquatic, murky green, alive with tiny creatures, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ]
+      }
     },
     {
       "journey": "black_hole",
@@ -325,7 +595,61 @@
         }
       },
       "created": "2026-07-27",
-      "order": 4
+      "order": 4,
+      "music": {
+        "bpm": 101,
+        "bar": 2.385,
+        "key": "D minor",
+        "stage": "done",
+        "chosen": "choir",
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/snowfall_warm.flac",
+            "aligned": "review/music/candidates/snowfall/warm.mp4",
+            "seed": 500,
+            "lock": 6.76,
+            "tags": "chill hypnotic ambient evoking quiet snowfall over a sleeping village, frozen crystalline stillness, hushed and wintry, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/snowfall_glassy.flac",
+            "aligned": "review/music/candidates/snowfall/glassy.mp4",
+            "seed": 501,
+            "lock": 29.05,
+            "tags": "chill hypnotic ambient evoking quiet snowfall over a sleeping village, frozen crystalline stillness, hushed and wintry, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/snowfall_deep.flac",
+            "aligned": "review/music/candidates/snowfall/deep.mp4",
+            "seed": 502,
+            "lock": 10.53,
+            "tags": "chill hypnotic ambient evoking quiet snowfall over a sleeping village, frozen crystalline stillness, hushed and wintry, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/snowfall_tender.flac",
+            "aligned": "review/music/candidates/snowfall/tender.mp4",
+            "seed": 503,
+            "lock": 22.21,
+            "tags": "chill hypnotic ambient evoking quiet snowfall over a sleeping village, frozen crystalline stillness, hushed and wintry, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/snowfall_choir.flac",
+            "aligned": "review/music/candidates/snowfall/choir.mp4",
+            "seed": 504,
+            "lock": 15.5,
+            "tags": "chill hypnotic ambient evoking quiet snowfall over a sleeping village, frozen crystalline stillness, hushed and wintry, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ]
+      }
     },
     {
       "journey": "cartographer",
@@ -357,7 +681,61 @@
         }
       },
       "created": "2026-07-27",
-      "order": 6
+      "order": 6,
+      "music": {
+        "bpm": 100,
+        "bar": 2.405,
+        "key": "D minor",
+        "stage": "review",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/cartographer_warm.flac",
+            "aligned": "review/music/candidates/cartographer/warm.mp4",
+            "seed": 500,
+            "lock": 10.97,
+            "tags": "chill hypnotic ambient evoking old star charts and voyages, exploratory, starlit, adventurous, wondrous, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/cartographer_glassy.flac",
+            "aligned": "review/music/candidates/cartographer/glassy.mp4",
+            "seed": 501,
+            "lock": 14.03,
+            "tags": "chill hypnotic ambient evoking old star charts and voyages, exploratory, starlit, adventurous, wondrous, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/cartographer_deep.flac",
+            "aligned": "review/music/candidates/cartographer/deep.mp4",
+            "seed": 502,
+            "lock": 7.3,
+            "tags": "chill hypnotic ambient evoking old star charts and voyages, exploratory, starlit, adventurous, wondrous, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/cartographer_tender.flac",
+            "aligned": "review/music/candidates/cartographer/tender.mp4",
+            "seed": 503,
+            "lock": 5.13,
+            "tags": "chill hypnotic ambient evoking old star charts and voyages, exploratory, starlit, adventurous, wondrous, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/cartographer_choir.flac",
+            "aligned": "review/music/candidates/cartographer/choir.mp4",
+            "seed": 504,
+            "lock": 4.62,
+            "tags": "chill hypnotic ambient evoking old star charts and voyages, exploratory, starlit, adventurous, wondrous, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ]
+      }
     }
   ]
 }

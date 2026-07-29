@@ -1,0 +1,85 @@
+{
+  "name": "circuit_city",
+  "style_suffix": "hyperdetailed, cinematic volumetric light, glowing neon, cyberpunk, otherworldly",
+  "format": {
+    "sec_per_scale": 2.4,
+    "exact_loop": true
+  },
+  "registers": [
+    {
+      "name": "city",
+      "exp": 3,
+      "palette": "electric cyan and magenta neon",
+      "interior": "an endless neon megacity at night seen from high above, luminous skyscraper canyons, holographic signs and rivers of light traffic threading the grid",
+      "next_target": "a glowing green circuit board far below, its copper streets catching the light"
+    },
+    {
+      "name": "circuit",
+      "exp": 0,
+      "palette": "copper amber and emerald",
+      "interior": "a vast circuit board landscape up close, winding copper traces, glowing solder rivers and tiny glassy component towers rising like buildings",
+      "next_target": "a single dark microchip die glinting at the heart of the board"
+    },
+    {
+      "name": "microchip",
+      "exp": -4,
+      "palette": "steel blue and gold",
+      "interior": "the mirror-smooth surface of a silicon chip die, endless orderly rows of nanoscale transistors glowing like a buried city grid seen from orbit",
+      "next_target": "a shining cubic crystal lattice of silicon atoms beneath the surface"
+    },
+    {
+      "name": "silicon",
+      "exp": -8,
+      "palette": "icy silver and violet",
+      "interior": "an immense three-dimensional crystal lattice of silicon atoms, glassy spheres joined by glowing bonds marching away in perfect diagonal rows",
+      "next_target": "a single radiant atom swelling huge among the lattice"
+    },
+    {
+      "name": "atom",
+      "exp": -10,
+      "palette": "electric blue and white",
+      "cameo": {
+        "sprite": "output/mascots/canon/adam.png",
+        "pos": [0.36, 0.6],
+        "size": 0.13
+      },
+      "interior": "the inside of an atom, soft hazy luminous electron probability clouds billowing like glowing fog around a distant bright nucleus",
+      "next_target": "a boiling web of quantum foam and luminous filaments spreading into the dark"
+    },
+    {
+      "name": "cosmos",
+      "exp": 26,
+      "palette": "deep violet and silver",
+      "interior": "the vast cosmic web seen from an oblique angle, irregular glowing filaments of galaxy clusters branching asymmetrically through deep darkness",
+      "next_target": "a luminous spiral galaxy caught in a shining filament"
+    },
+    {
+      "name": "galaxy",
+      "exp": 21,
+      "palette": "indigo and starlight gold",
+      "interior": "the inside of a spiral galaxy seen from a tilted oblique angle, rivers of stars and ragged glowing nebula arms sweeping past",
+      "next_target": "a single brilliant blue-white star wrapped in flares of light"
+    },
+    {
+      "name": "star",
+      "exp": 11,
+      "palette": "blazing white and orange",
+      "interior": "the corona of a blazing blue-white star, arcs of fire and solar prominences with tiny planets in distant orbit",
+      "next_target": "a dark planet on its night side, freckled with glowing constellations of city light"
+    },
+    {
+      "name": "planet",
+      "exp": 7,
+      "palette": "deep night blue and amber",
+      "interior": "a huge planet seen from space on its night side, the curved limb dark against the stars, vast glowing webs of city light sprawling across its continents",
+      "next_target": "a wide continent blanketed edge to edge in luminous city grids"
+    },
+    {
+      "name": "gridland",
+      "exp": 5,
+      "palette": "amber and cyan nightglow",
+      "interior": "a whole continent at night from high altitude, an unbroken carpet of glowing city grids, ring roads and neon arteries stretching to the horizon",
+      "next_target": "one dazzling neon megacity of skyscraper canyons rising out of the grid"
+    }
+  ]
+}

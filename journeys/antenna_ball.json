@@ -11,27 +11,29 @@
       "exp": 0,
       "palette": "wildflower gold and green",
       "interior": "a sunlit wildflower meadow, petals and grass stems towering in soft light",
-      "next_target": "a tiny glossy scarlet dot resting on a green leaf"
+      "next_target": "a tiny glossy scarlet ladybug resting on a green leaf"
     },
     {
       "name": "ladybug",
       "exp": -1.8,
       "palette": "scarlet and leaf green",
-      "interior": "a polished lacquered scarlet dome speckled with black, sky reflections sliding across its curve, delicate antennae rising ahead",
-      "next_target": "the tiny glossy black sphere at an antenna's tip"
+      "interior": "a polished lacquered scarlet dome speckled with black, sky reflections sliding across its curve, a single delicate antenna rising dead ahead",
+      "next_target": "one perfect glossy black ball at the very tip of the antenna, centered ahead"
     },
     {
-      "name": "antenna_tip",
+      "name": "antenna_ball",
       "exp": -2.6,
+      "sec": 4.2,
       "palette": "glossy black and dew silver",
-      "interior": "an immense glossy dark sphere at the antenna's tip, dewdrops clinging to it like tiny moons, the meadow reflected upside down in its curve",
-      "next_target": "a vast glossy blue-green planet hanging in starry darkness, its curve polished like a bead"
+      "interior": "a single flawless glossy black sphere filling the center of the view, dewdrops clinging to it like tiny moons, the whole sunlit meadow curved and mirrored across its polished skin, the sphere swelling vaster and vaster as we fall straight toward its heart",
+      "next_target": "the sphere's mirrored curve opening into a vast glossy blue-green planet hanging in starry black"
     },
     {
       "name": "planet",
       "exp": 7,
+      "sec": 3.4,
       "palette": "lacquer blue-green and star black",
-      "interior": "a huge glossy planet seen from space, its curved limb gleaming like polished lacquer, swirling clouds sliding across the shine",
+      "interior": "a vast glossy planet filling all of space, the little antenna ball now grown into a whole world, its curved limb gleaming like polished lacquer, swirling clouds sliding across the shine",
       "next_target": "billowing white clouds drifting over green and gold country far below"
     },
     {
@@ -49,11 +51,8 @@
       "next_target": "a bright wildflower meadow open in the clearing below",
       "cameo": {
         "sprite": "output/mascots/canon/dora.png",
-        "pos": [
-          0.45,
-          0.5
-        ],
-        "size": 0.12
+        "pos": [0.63, 0.58],
+        "size": 0.13
       }
     }
   ]

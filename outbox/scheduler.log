@@ -26,3 +26,16 @@ Traceback (most recent call last):
     t = next(t for t in ts if match in t["url"] or match in t.get("title",""))
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 StopIteration
+Posting: night_bloom  (file: production/night_bloom_ds_divein.mp4, ds/divein)
+  tiktok: posted
+    set_text failed: NO_FOCUS
+  !! FLAG [youtube/title] title field not settable
+     context: {"buttons":["Close","Close","Skip navigation","Skip navigation","Create","Create","Dashboard","Content","Analytics","Community","Subtitles","Content detection","Earn","Customization","Audio library","Settings","Send feedback","Edit","Edit","Add to playlist","Add to playlist","More actions","More actions","Learn more","Learn more","Date","Views","Learn more","Learn more","Learn more"],"headings":["Channel content","Video","Notices","Visibility","Date","Views","Comments","Details"]}
+  instagram: posted
+
+Summary: {
+  "tiktok": "posted",
+  "youtube": "FLAGGED: youtube/title: title field not settable",
+  "instagram": "posted"
+}
+⚠ flags recorded in /mnt/c/Users/Phil/zoomer/outbox/flags.jsonl — review before next run.

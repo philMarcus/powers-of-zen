@@ -3,7 +3,8 @@
   "style_suffix": "soft atmospheric light, luminous mist, hyperdetailed, cinematic",
   "format": {
     "sec_per_scale": 2.4,
-    "exact_loop": true
+    "exact_loop": true,
+    "counter": false
   },
   "registers": [
     {
@@ -31,6 +32,11 @@
       "name": "cyclone",
       "exp": 6.5,
       "palette": "storm slate and pearl",
+      "cameo": {
+        "sprite": "output/mascots/canon/janet.png",
+        "pos": [0.72, 0.34],
+        "size": 0.12
+      },
       "interior": "an immense spiral cyclone seen from orbit, white arms of cloud wrapping a dark calm eye",
       "next_target": "one glowing rose-colored pillar of nebula mist far out in the darkness"
     },
@@ -39,15 +45,7 @@
       "exp": 14,
       "palette": "rose and teal glow",
       "interior": "towering pillars of glowing nebula mist cradling newborn stars, veils of rose and teal light drifting",
-      "next_target": "a single curl of steam rising from a copper kettle's spout",
-      "cameo": {
-        "sprite": "output/mascots/canon/lamar.png",
-        "pos": [
-          0.55,
-          0.44
-        ],
-        "size": 0.12
-      }
+      "next_target": "a single curl of steam rising from a copper kettle's spout"
     },
     {
       "name": "steam",

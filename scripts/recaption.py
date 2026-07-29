@@ -23,7 +23,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import pipeline as pl  # noqa: E402
 import zen_browser  # noqa: E402
 from poster import (platform_tab, set_text, wait_for, expect, flag,  # noqa: E402
-                    PlatformError, click_css)
+                    PlatformError, click_css, _ig_click)
 
 
 def edit_youtube(v, dry_run):
@@ -114,9 +114,8 @@ def edit_instagram(v, dry_run):
     if dry_run:
         print(f"  [dry-run] Instagram: caption set, NOT saving.")
         return "dry-run"
-    saved = tab.eval("(function(){const e=[...document.querySelectorAll('button,[role=\"button\"],div')]"
-                     ".find(x=>x.textContent.trim()==='Done'&&x.offsetParent);if(e){e.click();return 'ok'}return null})()")
-    expect(saved, "instagram", "save", tab, "Done button not found")
+    saved = _ig_click(tab, "Done")            # synthesized click — el.click() is ignored here
+    expect(saved, "instagram", "save", tab, "Done button not found/clickable")
     time.sleep(3)
     return "recaptioned"
 

@@ -1,0 +1,78 @@
+{
+  "name": "stormglass",
+  "style_suffix": "hyperdetailed, cinematic volumetric light, dramatic stormlight, moody, otherworldly",
+  "format": {
+    "sec_per_scale": 2.4,
+    "exact_loop": true
+  },
+  "registers": [
+    {
+      "name": "stormclouds",
+      "exp": 4,
+      "palette": "slate blue and electric white",
+      "interior": "towering thunderhead cloudscape from the air, vast billowing anvils lit from within by forks of lightning, a faint city glow far below",
+      "next_target": "a single silver raindrop falling away from the clouds"
+    },
+    {
+      "name": "raindrop",
+      "exp": -2,
+      "palette": "prismatic silver and rain grey",
+      "interior": "one enormous translucent raindrop falling in slow motion, its curved skin refracting the whole storm into ribbons of rainbow light",
+      "next_target": "the swirling water world suspended inside the drop"
+    },
+    {
+      "name": "waterworld",
+      "exp": -5,
+      "palette": "deep teal and aqua light",
+      "interior": "inside the raindrop, a vast underwater-like space of drifting microbubbles and glowing motes, shafts of refracted light crossing in every direction",
+      "next_target": "a cluster of glowing water molecules drifting in the light"
+    },
+    {
+      "name": "molecule",
+      "exp": -8,
+      "palette": "crimson and pearl white",
+      "interior": "enormous glowing water molecules, bright pearl and crimson spheres joined at soft angles, bonds shimmering, drifting and tumbling in every direction",
+      "next_target": "a single radiant atom swelling huge among the molecules"
+    },
+    {
+      "name": "atom",
+      "exp": -10,
+      "palette": "electric blue and white",
+      "interior": "the inside of an atom, soft hazy luminous electron probability clouds billowing like glowing fog around a distant bright nucleus",
+      "next_target": "a boiling web of quantum foam and luminous filaments spreading into the dark"
+    },
+    {
+      "name": "cosmos",
+      "exp": 26,
+      "palette": "deep violet and silver",
+      "interior": "the vast cosmic web seen from an oblique angle, irregular glowing filaments of galaxy clusters branching asymmetrically through deep darkness",
+      "next_target": "a luminous spiral galaxy caught in a shining filament"
+    },
+    {
+      "name": "galaxy",
+      "exp": 21,
+      "palette": "indigo and starlight gold",
+      "cameo": {
+        "sprite": "output/mascots/canon/maxie.png",
+        "pos": [0.66, 0.38],
+        "size": 0.12
+      },
+      "interior": "the inside of a spiral galaxy from a tilted angle, ragged rivers of stars and glowing nebula arms braiding past in long sweeping curves",
+      "next_target": "a single blazing golden star wrapped in flares of light"
+    },
+    {
+      "name": "star",
+      "exp": 11,
+      "palette": "blazing orange and white",
+      "interior": "the corona of a blazing star, arcs of fire and towering solar prominences with tiny planets in distant orbit",
+      "next_target": "a giant stormy gas planet glowing in its orbit, wrapped in banded clouds"
+    },
+    {
+      "name": "gasplanet",
+      "exp": 7,
+      "palette": "amber ochre and storm blue",
+      "interior": "a colossal gas giant filling the view, swirling banded storm clouds and a great glowing storm eye churning across its face",
+      "next_target": "towering thunderhead storm clouds lit from within by lightning, seen from the air"
+    }
+  ]
+}

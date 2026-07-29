@@ -392,3 +392,60 @@ editable captions. (4) local scheduler (cron → poster.py). (5) later: composer
 - Whether TikTok/YouTube API audits are worth pursuing at volume (would replace the
   browser harness with clean APIs for those two).
 - 2x upscale decision (576×1024 masters → 1152×2048; platforms prefer 1080×1920).
+
+---
+
+## 2026-07-28 session — music system, poster hardening, seam still unsolved
+
+### Music system (BUILT, shipping)
+Three-layer method, "the model writes the music, we only place it":
+- **Generate** (`engine/music.py`): ComfyUI-native **ACE-Step 1.5 turbo** (2B-class, fits the
+  10GB 3080; UNETLoader → ModelSamplingAuraFlow shift=3 → KSampler steps=8/cfg=1 euler/simple,
+  DualCLIPLoader type="ace" qwen_0.6b+1.7b, VAELoader ace_1.5_vae). ~10-20s/track. Stable Audio
+  Open also downloaded but ACE-Step is the pick.
+- **Tempo-lock + align** (`scripts/align.py`): generate at bpm so one bar = one morph interval,
+  then shift/micro-stretch the finished track so its OWN onset accents sit on the morphs. No
+  overlay. "lock" score = peak/mean (7x+ good). Morph grid from `score.schedule_morphs` (exact,
+  inverts the phase_shift rotation — no detection). Anacrusis-forward prompt (weak pickup →
+  strong downbeat on every bar, "never sparse"). `scripts/score.py` = the older overlay
+  (synthesized soft-pad anacrusis lead) — now the FALLBACK.
+- **Music-review stage** (`scripts/music_gen.py` + dashboard 🎵 Music panel): per journey,
+  derive bpm, generate 5 mood-varied candidates (warm/glassy/deep/tender/choir) with the
+  journey's `music_theme` (scene vibe — underwater/cosmic/library/wintry) baked in, align each,
+  record under pipeline `v["music"]`. Phil auditions → Choose promotes it into the posting slot.
+  `music_theme`/`music_key` live in each journey JSON, editable in Review + Music panels; Music
+  panel has a 🔄 Regenerate button. DOCTRINE (Phil): sync matters more than model; mandate the
+  anacrusis (it's a RULE, not per-video composition); Phil prefers STRONG beats (clearer match);
+  don't track lead pitch to the zoom scale.
+
+### Poster hardened (all real fixes tonight; validated live)
+- **YouTube**: `/upload` bounces to the Studio content list for this channel → open the upload
+  dialog via **Create → "Upload videos"**. Title field can exist before it's editable → retry
+  set_text. night_bloom now live on YT.
+- **TikTok**: videos with music trigger a **"Music copyright check"**; clicking Post while it
+  runs pops "check incomplete — Post now stops the check", and clicking Post now silently drops
+  the post. FIX: WAIT for the check (cancel the modal, retry) — never stop it.
+- **Instagram**: `el.click()` is ignored by IG's React for Next/Share/Done → `_ig_click` now
+  does a SYNTHESIZED press/release at the button center. (This is why captions weren't saving.)
+- **DISCIPLINE**: the poster's "posted" return is NOT proof — verify against the live page
+  (studio list / public profile). TikTok gave repeated false-positives tonight.
+
+### OPEN — TikTok drops with-music posts
+night_bloom publishes to TikTok (publish dialog shows) then **vanishes** — not in studio, not
+on the public profile, no removal notice. Reproduced posting BY HAND → it's TikTok-side, not
+the poster. Likely custom AI audio on a brand-new account (1 follower). Next: post one SILENT
+version as a clean test (sticks → it's the music → use a TikTok-licensed sound for TikTok,
+keep custom music for IG/YouTube — ties to the trending-sound idea in journeys/VARIATIONS.md).
+
+### THE SEAM IS UNSOLVED — next up: ControlNet (Phil's long-standing idea)
+The ugly loop cut is NOT fixed. Current state: dive.py sets the last frame = a hard COPY of
+frame 0; grammar ramps the loop-tail denoise down (0.18→0.12 as of tonight) and journeys are
+authored so the last register's `next_target` names the first world — but mismatched worlds
+still HARD-CUT. A denoise nudge + authoring is not a mechanism.
+**PLAN:** build a real seam mechanism with **ControlNet** so the closing frames genuinely morph
+INTO frame 0 (e.g. condition the last L frames toward the frame-0 image via ControlNet, or a
+true generated crossfade). **Prototype on ISOLATED seam generations first** — take a near-end
+frame + frame 0 and generate just the ~L transition frames, iterate fast, DON'T render whole
+videos each attempt. Once the transition looks seamless, wire it into dive.py's exact_loop tail.
+Only then re-render journeys. (Six journeys are authored + waiting; cosmic_scales_remix &
+circuit_city turbo rendered raw with ugly seams — throwaway until the seam works.)

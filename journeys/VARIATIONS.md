@@ -79,3 +79,10 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
 - at astronommical levels, can deissolve into "black hole" (use appropriate lensing) and come out in humanish realm, e.g.
 - tv or phone screens can be a segue from human scale to any other
 
+
+## Journey-idea: trending-sound-driven (Phil, 2026-07-28) — TikTok-exclusive
+Reverse the flow: pick a currently-trending TikTok sound (esp. one with lyrics/voice/a
+hook), then CRAFT a journey around that sound — sync the dive's beats/plunges to the
+track, maybe let a lyric cue a scene. These would be TikTok-only (commercial-sound rights
++ the trend is TikTok-native). Revisit when composing journeys; worth testing if we can
+make a sound→journey pairing land. (Everything else = our own custom-generated music.)

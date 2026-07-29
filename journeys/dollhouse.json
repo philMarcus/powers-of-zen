@@ -1,38 +1,61 @@
 {
   "name": "dollhouse",
   "style_suffix": "cozy miniature diorama, tilt-shift, warm toy-like detail, cinematic",
-  "format": { "sec_per_scale": 2.4, "exact_loop": true },
+  "format": {
+    "sec_per_scale": 2.4,
+    "exact_loop": true
+  },
   "registers": [
     {
-      "name": "childs_room", "exp": 0.3, "palette": "honey lamplight and dusk blue",
-      "cameo": { "sprite": "output/mascots/canon/newman.png", "pos": [0.35, 0.42], "size": 0.1 },
+      "name": "childs_room",
+      "exp": 0.3,
+      "palette": "honey lamplight and dusk blue",
+      "cameo": {
+        "sprite": "output/mascots/canon/newman.png",
+        "pos": [
+          0.35,
+          0.42
+        ],
+        "size": 0.1
+      },
       "interior": "a cozy child's bedroom at dusk, toy blocks and picture books scattered in warm lamplight around the dollhouse",
       "next_target": "a glowing dollhouse standing open"
     },
     {
-      "name": "dollhouse", "exp": -0.7, "palette": "candy pastel",
+      "name": "dollhouse",
+      "exp": -0.7,
+      "palette": "candy pastel",
       "interior": "an open-fronted wooden dollhouse with little furnished rooms glowing on every floor",
       "next_target": "a tiny lit parlor window"
     },
     {
-      "name": "doll_room", "exp": -1.5, "palette": "rose and butter yellow",
+      "name": "doll_room",
+      "exp": -1.5,
+      "palette": "rose and butter yellow",
       "interior": "a tiny dollhouse parlor with miniature armchairs, a thimble-sized tea set and a painted fireplace",
       "next_target": "a whole toy-like town glittering at dusk through the little window"
     },
     {
-      "name": "town", "exp": 3.5, "palette": "dusk violet and scattered gold",
+      "name": "town",
+      "exp": 3.5,
+      "palette": "dusk violet and scattered gold",
       "interior": "a whole toy-like town at dusk seen from high above, winding streets and squares glittering with lamps",
       "next_target": "a lamplit street curving between garden hedges"
     },
     {
-      "name": "street", "exp": 2, "palette": "lamplight amber and slate",
+      "name": "street",
+      "exp": 2,
+      "palette": "lamplight amber and slate",
       "interior": "a curving evening street of gabled houses, garden hedges and glowing street lamps seen from above",
       "next_target": "a tall gabled house with golden windows"
     },
     {
-      "name": "house", "exp": 1, "palette": "brick red and window gold",
+      "name": "house",
+      "exp": 1,
+      "palette": "brick red and window gold",
       "interior": "a tall gabled house with glowing windows, seen from above its chimney in the evening",
       "next_target": "one warm lamplit bedroom window"
     }
-  ]
+  ],
+  "music_theme": "a miniature dollhouse world, music-box, cozy and domestic, tiny and tender"
 }

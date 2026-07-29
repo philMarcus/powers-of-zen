@@ -130,8 +130,12 @@ def compile_journey(spec, fps, build="in"):
         F_last = max(12, round(regs[-1].get("sec", sec) * fps))
         L = min(round(2.0 * fps), F_last - 2)
         total = len(zoom)
+        # seam: over the last L frames ramp denoise DOWN so the tail stops repainting and
+        # settles onto frame 0's structure (which the last frame is hard-copied to). Lower
+        # target (0.12) = harder convergence = softer loop cut. Pairs with authoring the
+        # last register's next_target to name the FIRST world so the tail morphs into it.
         for j in range(L):
             t = (j + 1) / L
-            denoise[total - L + j] = travel_denoise + (0.18 - travel_denoise) * t
+            denoise[total - L + j] = travel_denoise + (0.12 - travel_denoise) * t
         loop = {"frames": L, "s0": 0.10}
     return phases, zoom, denoise, exponent, loop, cameos, arrivals

@@ -30,3 +30,11 @@ Target: findable if you look, never dominating. Consider size by scene-busyness.
 
 ## cartographer — DONE THIS PASS (not a rerender): start point moved to ~18-19s content,
 then promoted to production. Phil: "excellent."
+
+## 2026-07-28 — reworks RE-AUTHORED (per feedback above), awaiting seam fix before re-render
+- antenna_ball: ball→planet now the slow centered centerpiece (sec 4.2/3.4 on ball+planet).
+- skyfog: counter:false (was non-monotonic); cameo Lamar→Janet, off-center on the cyclone.
+- mineral_heart: geode_crystals→snowflake seam bridged (frost growth); Lorraine 0.16 + sec 3.2.
+- Also new: cosmic_scales_remix (fixed loop wording + Lee cameo 0.13), circuit_city, stormglass.
+- BLOCKER: do NOT re-render for real until the ControlNet SEAM MECHANISM works (seam still ugly;
+  see PLAN.md 2026-07-28). cosmic_scales_remix & circuit_city turbo exist as raw throwaways.
