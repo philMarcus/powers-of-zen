@@ -45,14 +45,14 @@
       "exp": 14,
       "palette": "rose and teal glow",
       "interior": "towering pillars of glowing nebula mist cradling newborn stars, veils of rose and teal light drifting",
-      "next_target": "a single curl of steam rising from a copper kettle's spout"
+      "next_target": "a low bank of luminous sea fog settling over dark water far below"
     },
     {
-      "name": "steam",
-      "exp": -1,
-      "palette": "cream and copper light",
-      "interior": "steam curling from the spout of a battered copper kettle on an iron stove, ribbons of mist catching warm lamplight",
-      "next_target": "one round lamplit window glowing through the fog"
+      "name": "fogbound_night",
+      "exp": 2,
+      "palette": "sea-fog grey and lamp gold",
+      "interior": "a fog-drowned night coast, the slow sweeping golden beam of a lighthouse raking through deep drifting banks of sea fog over black water, no one present",
+      "next_target": "the warm lamplit room at the very top of the lighthouse"
     }
   ]
 }

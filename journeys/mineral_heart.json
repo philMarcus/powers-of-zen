@@ -80,14 +80,14 @@
       "exp": 0,
       "palette": "slate and violet glow",
       "interior": "a great cracked-open geode boulder, its dark stone shell revealing a glowing crystal heart, resting among mossy rocks",
-      "next_target": "a cluster of glowing violet crystals in its heart"
+      "next_target": "a lacework of feathery frost-white crystals growing in its hollow heart"
     },
     {
       "name": "geode_crystals",
       "exp": -2,
-      "palette": "amethyst and rose quartz",
-      "interior": "a forest of amethyst crystal spires inside a geode, refracted violet light bouncing between facets",
-      "next_target": "the amethyst spires frosting pale at their tips, their branches growing feathery and white, resolving into a single six-armed ice snowflake"
+      "palette": "pale ice-violet and frost white",
+      "interior": "a dense thicket of slender frost-white crystal ferns, feathery dendritic branches splitting again and again into ever-finer six-fold arms, pale violet light refracting through the frozen lace",
+      "next_target": "the crystal ferns thinning to a single six-armed ice snowflake, feathered arms sharpening white against the dark"
     }
   ]
 }
