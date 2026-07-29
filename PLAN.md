@@ -570,3 +570,36 @@ re-shift (video is locked by then).
 TODO (poster, later): the poster currently lets YouTube/IG use the DEFAULT first frame as the
 cover/thumbnail. Update poster.py to select the frame at `cover_t` as the cover image on each
 platform (extract that frame, upload it as the custom thumbnail / cover) instead of the default.
+
+---
+
+## Captions, hashtags, GPU-gating, and pipeline polish (2026-07-29)
+
+**Captioning is now formalized** (was: Claude wrote captions by hand at pipeline-entry time).
+`scripts/caption.py` uses the LOCAL vision model (Ollama `qwen3-vl:4b`, :11434) to look at ~4
+frames of the render + the journey's worlds and write THREE caption options + a YouTube title,
+so a video already HAS a caption by the time it's in Video Review. Model-agnostic (same caption
+for DS/turbo; prefers DS frames). Dashboard Video Review shows the 3 options (pick one, edit) +
+a ✍ Generate button. `caption.py --all` captions every review video missing one.
+  - HASHTAGS: always-on brand tags (programmatic, appended): #powersofzen #oddlysatisfying
+    #zoomer. **#fyp is DROPPED.** The model adds 3–4 JOURNEY-SPECIFIC tags per video. Tune the
+    brand set in caption.py BRAND_TAGS.
+  - Caption is GPU-heavy (VLM) → gated on `pipeline.gpu_busy()`; runs after the render batch.
+
+**GPU gating** (`pipeline.gpu_busy()`): true while a dive render / seam repair / music-gen runs
+(detected via pgrep, works from Windows via wsl.exe). Music auto-gen on Approve→Music is skipped
+when busy (Music tab shows a "GPU busy" note + Generate button). Same gate guards captioning.
+TODO: also gate any future local-LLM journey-writing on it; the user's Steam game is the same
+concern (a render pins the GPU — that's the frame-rate-drop question).
+
+**Music on approve:** Approve→Music phase-shifts to the marked start frame (score/align/music_gen
+take shift_sec) then auto-generates music IF the GPU is free, else waits for the Generate button.
+
+**Render-batch integration TODO:** add a final `python3 scripts/caption.py --all` step to the
+render batch (render_0729.sh) so captions are written automatically once rendering finishes and
+the GPU frees up. (Don't edit a batch script while it's running.)
+
+**Maybe later:** (a) INTELLIGENT default start frame — have a model pick a good opening frame
+(stable macro-realm, mid-travel, on a beat) instead of Phil marking it by hand; give it candidate
+frames and let it choose. (b) Possibly DROP turbo and render DS-only (caption/music are the same
+either way) — leaning that way; decide after seeing the DS batch.

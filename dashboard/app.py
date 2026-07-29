@@ -79,6 +79,15 @@ def regenerate_music(journey):
                      stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
+def gen_captions(journey, model):
+    """Fire the local-VLM captioner (non-blocking; writes 3 options into the pipeline). --force
+    so the dashboard button always runs; it's GPU-light-ish but competes with a render if busy."""
+    import subprocess
+    args = f"cd /mnt/c/Users/Phil/zoomer && python3 scripts/caption.py {journey} --model {model} --force"
+    cmd = ["wsl", "bash", "-lc", args] if os.name == "nt" else ["bash", "-lc", args]
+    subprocess.Popen(cmd, cwd=str(pl.ROOT), stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+
 # ── music state helpers ──────────────────────────────────────────────────────────────────
 def music_fresh(v):
     """True if this video has candidate tracks that were built for its CURRENT model+cut."""
@@ -241,10 +250,10 @@ def platform_line(v):
 
 
 # ── shared card (preview + caption + cut/model switch) ───────────────────────────────────
-def card(v, actions, show_switch=True, marker=None):
+def card(v, actions, show_switch=True, marker=None, captions=False):
     """Render one video: preview + editable caption + cut/model switch + action buttons.
     `actions` is a list of (label, newstate). `marker` in {'start','cover',None} shows a
-    frame-marking control (start frame → phase-shift on approve; cover frame → thumbnail)."""
+    frame-marking control. `captions=True` shows the auto-caption options + a generate button."""
     col1, col2 = st.columns([1, 2])
     with col1:
         vp = video_path(v)
@@ -254,6 +263,21 @@ def card(v, actions, show_switch=True, marker=None):
             st.warning(f"file missing: {v['file']}")
         st.caption(f"**{v['journey']}** · {v['model']} · {v['cut']} · {v.get('cameo') or 'no cameo'}")
     with col2:
+        if captions:
+            opts = v.get("caption_options") or []
+            gc = st.columns([3, 1])
+            if opts:
+                idx = opts.index(v["caption"]) if v.get("caption") in opts else 0
+                pick = gc[0].radio("✍ caption options (pick one, edit below if you like)",
+                                   opts, index=idx, key=f"capopt_{v['journey']}")
+                if pick != v.get("caption"):
+                    dd = data(); pl.get(dd, v["journey"])["caption"] = pick; pl.save(dd); st.rerun()
+            else:
+                gc[0].caption("no auto-captions yet — click Generate (uses the local vision model).")
+            if gc[1].button("✍ Generate", key=f"gencap_{v['journey']}"):
+                gen_captions(v["journey"], v.get("model", "ds"))
+                st.info("Generating 3 captions…" + (" ⚠ GPU busy, may be slow" if pl.gpu_busy() else "")
+                        + " — refresh in ~30s.")
         cap = st.text_area("caption (TikTok/Instagram)", v.get("caption", ""),
                            key=f"cap_{v['journey']}", height=90)
         yt = st.text_input("YouTube title", v.get("yt_title", ""), key=f"yt_{v['journey']}")
@@ -347,7 +371,7 @@ with tabs[0]:  # VIDEO REVIEW — pick cut/model, edit caption, send to Music
     if not rv:
         st.info("Nothing awaiting video review.")
     for v in rv:
-        card(v, [("✅ Approve → Music", "music")], marker="start")
+        card(v, [("✅ Approve → Music", "music")], marker="start", captions=True)
 
 with tabs[1]:  # MUSIC — audition/generate a track, then send to Production
     st.write("Pick the soundtrack. Every candidate is auto-locked so its accent lands on each "
