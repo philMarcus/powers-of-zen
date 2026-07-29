@@ -64,13 +64,13 @@ def best_align(env, esr, morphs, stretches):
     return best[1], best[2], best[0] / mean, bar
 
 
-def align(video, track, out, journey=None, cut=None,
+def align(video, track, out, journey=None, cut=None, shift_sec=None,
           stretches=(0.985, 0.99, 0.995, 1.0, 1.005, 1.01, 1.015)):
     out = Path(out); out.parent.mkdir(parents=True, exist_ok=True)
     dur = video_duration(video)
     if journey is None or cut is None:
         journey, cut = parse_journey_cut(video)
-    morphs = schedule_morphs(journey, cut, dur)
+    morphs = schedule_morphs(journey, cut, dur, shift_sec=shift_sec)
 
     twav = TMP / "_align_track.wav"
     _run([FFMPEG, "-y", "-loglevel", "error", "-i", win(track), "-ar", str(SR),

@@ -67,9 +67,9 @@ BASE = ("chill hypnotic ambient evoking {theme}, {mood}, {anac}spacious moody re
 SEED0 = {"warm": 500, "glassy": 501, "deep": 502, "tender": 503, "choir": 504}
 
 
-def bpm_for(journey, cut):
+def bpm_for(journey, cut, shift_sec=None):
     dur = video_duration(str(ROOT / _video(journey)))
-    morphs = schedule_morphs(journey, cut, dur)
+    morphs = schedule_morphs(journey, cut, dur, shift_sec=shift_sec)
     bar = float(np.median(np.diff(morphs)))
     return int(round(240.0 / bar)), bar
 
@@ -91,7 +91,8 @@ def generate(journey, n=5):
     # fall back to the built-in map, then a generic cosmic default.
     theme = spec.get("music_theme") or THEMES.get(journey) or DEFAULT_THEME
     key = spec.get("music_key") or key
-    bpm, bar = bpm_for(journey, cut)
+    shift_sec = v.get("start_t")          # dashboard-marked start frame (phase-shift, seconds)
+    bpm, bar = bpm_for(journey, cut, shift_sec=shift_sec)
     video = _video(journey)
     outdir = ROOT / "review" / "music" / "candidates" / journey
     outdir.mkdir(parents=True, exist_ok=True)
@@ -104,7 +105,7 @@ def generate(journey, n=5):
         music.generate(journey=journey, tags=tags, bpm=bpm, key=key, duration=30,
                        seed=seed, out=str(track))
         aligned = outdir / f"{mood}.mp4"
-        info = al.align(video, str(track), str(aligned), journey=journey, cut=cut)
+        info = al.align(video, str(track), str(aligned), journey=journey, cut=cut, shift_sec=shift_sec)
         cands.append({"id": mood, "mood": desc, "track": str(track.relative_to(ROOT)),
                       "aligned": str(aligned.relative_to(ROOT)), "seed": seed,
                       "lock": round(info["lock"], 2), "tags": tags})

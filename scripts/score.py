@@ -69,12 +69,12 @@ def video_duration(path):
     raise RuntimeError(f"ffprobe gave no valid duration for {path!r} (last: {last!r})")
 
 
-def schedule_morphs(journey, cut, final_dur, fps=12):
+def schedule_morphs(journey, cut, final_dur, fps=12, shift_sec=None):
     """TRUE morph times (s) in the final video, derived from the zoom schedule — no
     detection. Registers each span F frames; the world changes at every register
-    boundary. phase_shift.py cyclically rotates the loop to open at START_REGISTER, so
-    we invert that rotation to place the boundaries in final-video time. This is the
-    'we authored it, so we know' path — exact, every time."""
+    boundary. The loop is cyclically rotated to open at a chosen start; we invert that
+    rotation to place the boundaries in final-video time. `shift_sec` (final-video seconds)
+    is the dashboard-marked start; if None we fall back to phase_shift.START_REGISTER."""
     import json as _json
     spec = _json.loads((ROOT / "journeys" / f"{journey}.json").read_text())
     fmt = spec.get("format", {}); sec = fmt.get("sec_per_scale", fmt.get("sec_per_decade", 2.4))
@@ -83,16 +83,18 @@ def schedule_morphs(journey, cut, final_dur, fps=12):
     for r in regs:
         starts.append(idx); idx += max(12, round(r.get("sec", sec) * fps))
     total = idx
-    # replicate phase_shift.cut_time for the rotation offset
-    from phase_shift import START_REGISTER
-    target = START_REGISTER.get(journey)
-    cut_frame = 0
-    for k, r in enumerate(regs):
-        F = max(12, round(r.get("sec", sec) * fps))
-        if r.get("name") == target:
-            fa = round(F * 0.25) if k > 0 else 0
-            raw = starts[k] + fa + round((F - fa) * 0.4)
-            cut_frame = raw if cut == "divein" else (total - raw)
+    if shift_sec is not None:                       # dashboard-marked start frame (seconds)
+        cut_frame = round((shift_sec / final_dur) * total) % total if final_dur else 0
+    else:                                           # legacy: phase_shift.START_REGISTER
+        from phase_shift import START_REGISTER
+        target = START_REGISTER.get(journey)
+        cut_frame = 0
+        for k, r in enumerate(regs):
+            F = max(12, round(r.get("sec", sec) * fps))
+            if r.get("name") == target:
+                fa = round(F * 0.25) if k > 0 else 0
+                raw = starts[k] + fa + round((F - fa) * 0.4)
+                cut_frame = raw if cut == "divein" else (total - raw)
     order = starts if cut == "divein" else [(total - s) % total for s in starts]
     times = sorted(((b - cut_frame) % total) / total * final_dur for b in order)
     return times

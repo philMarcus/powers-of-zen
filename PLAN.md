@@ -554,3 +554,19 @@ order of expected payoff (all cheap, iterate-and-see like the seam):
 Recommendation: 1+2 first (centered/persistent/low-denoise growth — likely the biggest win),
 then 3 for the perspective wall. Do NOT touch grammar.py/dive.py mid-batch (a live render
 re-imports per process; edits would make the batch inconsistent).
+
+---
+
+## Dashboard start-frame + cover-frame marking (2026-07-29)
+
+Video Review has a **start frame** marker (enter the seconds you paused the looping preview at,
+🔎 preview to confirm, ✅ set → stored as `start_t`). On **Approve → Music** the video is
+PHASE-SHIFTED to open at `start_t` (phase_shift.shift, in place, keeping a `*_preshift.mp4` so it
+is re-derivable) BEFORE music is generated — and music_gen/align/score.schedule_morphs now take a
+`shift_sec` so the track aligns to the shifted arrangement (the music may still micro-shift up to
+a bar within that). Production has a **cover frame** marker (`cover_t`) — same mechanism, no
+re-shift (video is locked by then).
+
+TODO (poster, later): the poster currently lets YouTube/IG use the DEFAULT first frame as the
+cover/thumbnail. Update poster.py to select the frame at `cover_t` as the cover image on each
+platform (extract that frame, upload it as the custom thumbnail / cover) instead of the default.

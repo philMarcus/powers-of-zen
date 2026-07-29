@@ -129,6 +129,63 @@ def set_state(journey, newstate):
     pl.save(dd); pl.telem(newstate, journey=journey)
 
 
+# ── start-frame / cover-frame marking (pause the looping video, read the time, mark it) ──────
+def extract_frame(video_rel, t):
+    """Grab the frame at t seconds → a png (for confirming what you're marking)."""
+    import subprocess
+    from score import FFMPEG
+    (pl.ROOT / "outbox" / "shots").mkdir(parents=True, exist_ok=True)
+    out_rel = f"outbox/shots/mark_{Path(video_rel).stem}.png"
+    subprocess.run([FFMPEG, "-y", "-loglevel", "error", "-ss", f"{max(0.0,t):.2f}",
+                    "-i", video_rel, "-frames:v", "1", out_rel],
+                   cwd=str(pl.ROOT), capture_output=True)
+    p = pl.ROOT / out_rel
+    return str(p) if p.exists() else None
+
+
+def approve_to_music(journey):
+    """Approve a reviewed video into Music. If a start frame was marked, PHASE-SHIFT the video
+    so it opens there (before music is generated, so the track aligns to the new arrangement).
+    Re-derivable: keep an un-shifted *_preshift.mp4 and re-shift from it each time."""
+    import shutil
+    import phase_shift
+    dd = data(); v = pl.get(dd, journey)
+    t = v.get("start_t")
+    if t and t > 0.05:
+        src = pl.ROOT / v["file"]
+        backup = src.with_name(src.stem + "_preshift.mp4")
+        if not backup.exists():
+            shutil.copy(str(src), str(backup))        # first time: preserve the un-shifted cut
+        else:
+            shutil.copy(str(backup), str(src))         # re-approve: start from the un-shifted cut
+        phase_shift.shift(src, float(t))               # rotate the loop to open at t (in place)
+        pl.telem("phase_shift", journey=journey, detail=f"start @ {t:.2f}s")
+    v["state"] = "music"
+    pl.save(dd); pl.telem("music", journey=journey)
+
+
+def render_marker(v, kind):
+    """kind='start' (Video Review → phase-shift on approve) or 'cover' (Production → thumbnail)."""
+    field = "start_t" if kind == "start" else "cover_t"
+    label = "📍 start frame — sec (watch the loop, enter the time)" if kind == "start" \
+        else "🖼 cover frame — sec"
+    cur = float(v.get(field) or 0.0)
+    cc = st.columns([2, 1, 1])
+    t = cc[0].number_input(label, min_value=0.0, value=cur, step=0.1,
+                           key=f"{field}_{v['journey']}")
+    if cc[1].button("🔎 preview", key=f"prev_{field}_{v['journey']}"):
+        st.session_state[f"pimg_{field}_{v['journey']}"] = extract_frame(v["file"], t)
+    if cc[2].button("✅ set", key=f"set_{field}_{v['journey']}"):
+        dd = data(); pl.get(dd, v["journey"])[field] = round(t, 2)
+        pl.save(dd); st.success(f"{kind} frame set @ {t:.1f}s"); st.rerun()
+    pimg = st.session_state.get(f"pimg_{field}_{v['journey']}")
+    if pimg:
+        st.image(pimg, caption=f"{kind} @ {t:.1f}s", width=200)
+    if v.get(field):
+        st.caption(f"current {kind}: **{v[field]:.1f}s**"
+                   + (" — video will phase-shift to open here on approve" if kind == "start" else ""))
+
+
 # ── posted-status helpers (a video can be LIVE on some platforms and FAILED on others) ────
 def platforms_by_status(v, status):
     return [k for k in pl.PLATFORMS if v.get("platforms", {}).get(k, {}).get("status") == status]
@@ -156,9 +213,10 @@ def platform_line(v):
 
 
 # ── shared card (preview + caption + cut/model switch) ───────────────────────────────────
-def card(v, actions, show_switch=True):
+def card(v, actions, show_switch=True, marker=None):
     """Render one video: preview + editable caption + cut/model switch + action buttons.
-    `actions` is a list of (label, newstate)."""
+    `actions` is a list of (label, newstate). `marker` in {'start','cover',None} shows a
+    frame-marking control (start frame → phase-shift on approve; cover frame → thumbnail)."""
     col1, col2 = st.columns([1, 2])
     with col1:
         vp = video_path(v)
@@ -184,6 +242,8 @@ def card(v, actions, show_switch=True):
             if mc[2].button("↔ apply cut/model", key=f"sw_{v['journey']}"):
                 apply_switch(v["journey"], nm, nc)
                 st.rerun()
+        if marker:
+            render_marker(v, marker)
         c = st.columns(len(actions) + 1)
         if c[0].button("💾 Save", key=f"save_{v['journey']}"):
             d = data(); vv = pl.get(d, v["journey"])
@@ -195,7 +255,11 @@ def card(v, actions, show_switch=True):
             st.success("saved"); st.rerun()
         for i, (label, newstate) in enumerate(actions, start=1):
             if c[i].button(label, key=f"act_{newstate}_{v['journey']}"):
-                set_state(v["journey"], newstate); st.rerun()
+                if newstate == "music":
+                    approve_to_music(v["journey"])   # phase-shift to the marked start, then → Music
+                else:
+                    set_state(v["journey"], newstate)
+                st.rerun()
     st.divider()
 
 
@@ -255,7 +319,7 @@ with tabs[0]:  # VIDEO REVIEW — pick cut/model, edit caption, send to Music
     if not rv:
         st.info("Nothing awaiting video review.")
     for v in rv:
-        card(v, [("✅ Approve → Music", "music")])
+        card(v, [("✅ Approve → Music", "music")], marker="start")
 
 with tabs[1]:  # MUSIC — audition/generate a track, then send to Production
     st.write("Pick the soundtrack. Every candidate is auto-locked so its accent lands on each "
@@ -316,7 +380,7 @@ with tabs[2]:  # PRODUCTION — the ordered post queue; tweak cut/model + change
             m = v.get("music") or {}
             chosen = m.get("chosen")
             st.caption("🎵 " + (f"music: **{chosen}**" if chosen else "no music selected"))
-            card(v, [("↩ Unqueue", "music" if not chosen else "review")])
+            card(v, [("↩ Unqueue", "music" if not chosen else "review")], marker="cover")
             if music_stale(v):
                 st.warning(f"music was built for {m.get('for_model')}/{m.get('for_cut')} — "
                            "regenerate for the current render.")
