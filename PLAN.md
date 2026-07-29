@@ -515,3 +515,42 @@ scale) — that's what section A pushes toward. Repair bridges the residual; aut
   the music grid is never disturbed.
 - NEXT: fold mechanism B into engine/dive.py's exact_loop tail (replace the loop_composite/hard-
   copy tail) so every new render ends this way; then re-render the self-similar journeys.
+
+---
+
+## KNOWN ISSUE — "object zoom" (space→planet transitions) (noted 2026-07-29)
+
+**Symptom (Phil):** going from space to a planetary surface, instead of zooming INTO one planet
+that swells until we see its landscapes and descend into one — planets FLASH BY, the swirly
+space background MORPHS into a landscape, and the planets shrink/dissolve. Most pronounced at
+space→planet; a softer version happens at any "zoom into a small discrete object" boundary.
+
+**Root cause:** the feedback engine zooms into whatever fills the frame CENTER and regenerates
+it — great for ENVIRONMENTS (interior fills the frame, cropping reveals more of it), broken for a
+DISCRETE OBJECT that is small and must grow. Two compounding failures:
+  1. The object doesn't persist/grow. TEMPLATE_TRAVEL ("one single tiny {target} ... very far
+     away ... vast {interior} in every direction") makes the model REPAINT a fresh tiny planet
+     every frame; the center-crop enlarges the prior frame but the model re-invents new tiny
+     planets (and drift can slide the crop off it) → many planets flashing by, none swelling.
+     High travel denoise worsens the re-invention.
+  2. Sphere→surface is a PERSPECTIVE change, not an optical zoom. Orbital sphere vs standing on
+     terrain can't be reached by cropping the center — it's a representational morph, so the last
+     step always reads as "space morphs into landscape."
+
+**Difficulty: moderate.** Not trivially solved (a truly filmic orbital descent is hard for a
+regenerating feedback chain), but levers should move it from "wrong" to "good." Try later, in
+order of expected payoff (all cheap, iterate-and-see like the seam):
+  1. GRAMMAR — for "zoom into a discrete celestial/object target," swap the travel wording:
+     ONE object DEAD CENTER, swelling to fill the view; drop "tiny / very far away / in every
+     direction"; add "the only one, no other planets, its curved edge growing past the frame."
+     (Possibly a per-register flag like "approach":"object" selecting an object-approach template.)
+  2. ENGINE — during object-approach beats, KILL drift (pin the crop center on the object) and
+     LOWER denoise (so the crop-zoom GROWS the existing planet instead of repainting new ones).
+  3. GRAMMAR — add a DESCENT beat for celestial→surface: sphere fills view → curved horizon
+     flattens → descend through atmosphere/clouds → surface rushes up. Gives a continuous path
+     through the perspective wall instead of one abrupt morph.
+  4. AUTHORING — where possible prefer true environment-zooms; when a planet is needed, arrive
+     already low over its terrain (surface as the filling "interior") rather than from orbit.
+Recommendation: 1+2 first (centered/persistent/low-denoise growth — likely the biggest win),
+then 3 for the perspective wall. Do NOT touch grammar.py/dive.py mid-batch (a live render
+re-imports per process; edits would make the batch inconsistent).
