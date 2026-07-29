@@ -129,6 +129,26 @@ def set_state(journey, newstate):
     pl.save(dd); pl.telem(newstate, journey=journey)
 
 
+# ── posted-status helpers (a video can be LIVE on some platforms and FAILED on others) ────
+def platforms_by_status(v, status):
+    return [k for k in pl.PLATFORMS if v.get("platforms", {}).get(k, {}).get("status") == status]
+
+
+def any_live(v):
+    return bool(platforms_by_status(v, "live"))
+
+
+def any_failed(v):
+    return bool(platforms_by_status(v, "failed"))
+
+
+def platform_line(v):
+    """Per-platform status with icons, e.g. '✅ tiktok · ✅ youtube · ❌ instagram'."""
+    icon = {"live": "✅", "failed": "❌", "pending": "—"}
+    return " · ".join(f"{icon.get(v.get('platforms',{}).get(k,{}).get('status','pending'),'•')} {k}"
+                      for k in pl.PLATFORMS)
+
+
 # ── shared card (preview + caption + cut/model switch) ───────────────────────────────────
 def card(v, actions, show_switch=True):
     """Render one video: preview + editable caption + cut/model switch + action buttons.
@@ -199,19 +219,25 @@ def audition_candidates(v, choose_advances_to=None):
 # ── header + tabs ────────────────────────────────────────────────────────────────────────
 d = data()
 counts = Counter(v.get("state") for v in d["videos"])
+# Live/Failed are by PLATFORM status, not the top-level state: a video live on IG+YT but
+# dropped on TikTok is BOTH live (somewhere) and failed (somewhere), so it shows in both.
+live_vids = [v for v in d["videos"] if any_live(v)]
+failed_vids = [v for v in d["videos"] if any_failed(v)]
 st.title("🕳️ Powers of Zen — ops")
 cols = st.columns(6)
-for i, s in enumerate(["review", "music", "queued", "live", "failed"]):
-    label = {"review": "video review", "queued": "production"}.get(s, s)
-    cols[i].metric(label, counts.get(s, 0))
+cols[0].metric("video review", counts.get("review", 0))
+cols[1].metric("music", counts.get("music", 0))
+cols[2].metric("production", counts.get("queued", 0))
+cols[3].metric("live (any)", len(live_vids))
+cols[4].metric("failed (any)", len(failed_vids))
 nxt = pl.next_to_post(d)
 cols[5].metric("next post", nxt["journey"] if nxt else "—")
 
 tabs = st.tabs([f"🎬 Video Review ({counts.get('review',0)})",
                 f"🎵 Music ({counts.get('music',0)})",
                 f"🚀 Production ({counts.get('queued',0)})",
-                f"Live ({counts.get('live',0)})",
-                f"Failed ({counts.get('failed',0)})",
+                f"Live ({len(live_vids)})",
+                f"Failed ({len(failed_vids)})",
                 "Telemetry"])
 
 with tabs[0]:  # VIDEO REVIEW — pick cut/model, edit caption, send to Music
@@ -296,21 +322,34 @@ with tabs[2]:  # PRODUCTION — the ordered post queue; tweak cut/model + change
                     audition_candidates(v)   # re-choose; stays in Production
         st.divider()
 
-with tabs[3]:  # LIVE
-    for v in by_state(d, "live"):
-        pstat = " · ".join(f"{k}:{v['platforms'][k]['status']}" for k in pl.PLATFORMS)
-        st.markdown(f"**{v['journey']}** ({v['model']}/{v['cut']}) — {pstat}")
+with tabs[3]:  # LIVE — anything live on at least one platform (noting where)
+    if not live_vids:
+        st.info("Nothing live yet.")
+    for v in live_vids:
+        live_on = ", ".join(platforms_by_status(v, "live"))
+        failed_on = ", ".join(platforms_by_status(v, "failed"))
+        st.markdown(f"**{v['journey']}** ({v['model']}/{v['cut']}) — {platform_line(v)}")
+        note = f"live on **{live_on}**" + (f" · ❌ not on **{failed_on}**" if failed_on else "")
+        st.caption(note)
         for k in pl.PLATFORMS:
-            if v["platforms"][k].get("url"):
-                st.markdown(f"- {v['platforms'][k]['url']}")
+            if v["platforms"].get(k, {}).get("url"):
+                st.markdown(f"- {k}: {v['platforms'][k]['url']}")
         st.caption(v.get("caption", ""))
         st.divider()
 
-with tabs[4]:  # FAILED
-    for v in by_state(d, "failed"):
-        st.error(f"**{v['journey']}** — " +
-                 " · ".join(f"{k}:{v['platforms'][k]['status']}" for k in pl.PLATFORMS))
-        card(v, [("🔁 Retry → Production", "queued")])
+with tabs[4]:  # FAILED — anything failed on at least one platform (noting where)
+    if not failed_vids:
+        st.info("No failures.")
+    for v in failed_vids:
+        failed_on = ", ".join(platforms_by_status(v, "failed"))
+        live_on = ", ".join(platforms_by_status(v, "live"))
+        st.error(f"**{v['journey']}** — {platform_line(v)}")
+        st.caption(f"❌ failed on **{failed_on}**" + (f" · ✅ live on **{live_on}**" if live_on else ""))
+        if st.button("🔁 Retry failed → Production", key=f"retry_{v['journey']}"):
+            # re-queue; the poster is resume-safe (skips platforms already live, retries the
+            # failed ones). Paused platforms stay skipped.
+            set_state(v["journey"], "queued"); st.rerun()
+        st.divider()
 
 with tabs[5]:  # TELEMETRY
     ev = pl.read_telem(200)[::-1]
