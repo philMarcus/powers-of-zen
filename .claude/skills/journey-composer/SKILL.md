@@ -95,7 +95,8 @@ moderately OFF-center) and grows the object there. So every `zoom` card's `scene
   "exp": 11,                        // 10^n metres; float ok. The exp JUMP to the next card
                                     //   decides zoom (small step) vs seam (big jump).
   "kind": "zoom",                   // "zoom" (default) | "seam"
-  "dur": 4,                         // duration in BEATS, power-of-two (0.5 | 1 | 2 | 4) — see pacing
+  "dur": 4,                         // BEATS (bar=4). Default 4=one bar; 8=linger 2 bars; subdivide a
+                                    //   bar only in groups summing to whole bars (2+2,1+3,4×1) — see pacing
   "palette": "blazing orange and white",
 
   "scene": "the corona of a blazing star, arcs of fire and towering prominences, embers streaming",
@@ -118,27 +119,38 @@ sentence) — keep `target_phrase` to the object + one visual trait.
 - **`target`** = the object we dive into, described STATICALLY (present, prominent — no motion/time
   words). Omit on `seam` cards and on the last card (the loop auto-derives its target from card 0).
 - **`kind`** = "zoom" default; "seam" on a semantic-morph transition.
-- **`dur`** = duration in BEATS, a power of two (0.5 | 1 | 2 | 4) — see pacing.
+- **`dur`** = duration in BEATS (a bar = 4). Default 4 (one bar); linger 8; faster only in groups
+  that sum to whole bars — see pacing.
 - Top-level: `name`, `theme` (seed idea), `style_suffix` (Layer-2 style), `format`
   { `beats_per_bar` default 4, `exact_loop` true }, optional `settings`.
 
-## Beat-aligned pacing (POWER-OF-TWO, so the strong beat always lands on the morph)
-The rule that keeps everything musical: every morph lands on the beat, and the **STRONG beat**
-(the "bum-bum" downbeat, led in by the **anacrusis** pickup we keep from engine 1) carries the
-MAIN morphs. The safe way to vary pacing without drifting off the beat is to scale ONLY by
-**powers of two** — doubling a card's time, or making two cards twice as fast, both keep the
-morph on the beat.
-- `dur` is in **BEATS**, and must be a **power of two: 0.5 | 1 | 2 | 4** (linger with 4).
-- **Whiz** several cards by at 1 beat each (four cards fill a 4-beat bar) — great for a fast
-  traverse. **Linger** with 2 or 4 beats on a rich scale. A half-beat (0.5) is the fastest whiz.
-- There's ONE main morph pulse carrying the whole video; power-of-two durations guarantee every
-  card's morph falls on that grid, with the big structural morphs on the strong beat.
-- A `seam` is an instant on-beat morph — it buys no zoom time; keep its `dur` at 1 beat.
-- The engine derives tempo so the total is whole bars and reuses the seamless-loop music aligner;
-  the arrival-beat morph stays as punchy as engine 1.
-- FUTURE (in PLAN.md, not now): compose the RHYTHM first, then build BOTH video and audio to it —
-  including **beat-synced flares/effects** on non-morph beats (drum hits → on-screen flares). The
-  music↔video mesh is a big feature; music-gen may need rhythm/effect control to support it.
+## Beat-aligned pacing — think in whole MEASURES (the composer composes a RHYTHM)
+The morphs ARE the rhythm. Each scale transition (the morph) lands on a STRONG beat — the downbeat
+(beat 1) or beat 3 of a measure — led in by the anacrusis pickup. The music is generated TO this
+grid UP FRONT (engine 1 could slide the music onto the morphs after rendering; engine 2 fixes the
+grid at compose time), so the pacing must be musical from the start. `dur` is in BEATS; a bar = 4.
+
+- **DEFAULT: one scale = ONE BAR (dur 4).** The morph lands on the next bar's downbeat. This is the
+  base case — reach for it first.
+- **LINGER on a rich scale = 2 BARS (dur 8).** Do NOT go beyond 2 bars on a single static scale —
+  4 bars drags (unless the beat is very fast; intra-scale motion may let us linger more later).
+- **FASTER than a bar per scale = SUBDIVIDE a bar among scales, but they MUST ADD UP TO WHOLE BARS**
+  so the strong beat always carries a morph: within one bar, 2+2 (morphs on beat 1 and beat 3), or
+  1+3, or 1+1+2, or 4×1 for a fast run. Never leave a fractional bar dangling.
+- **The whole video = a WHOLE NUMBER OF BARS.** Sum every `dur`; it MUST be divisible by 4. (A short
+  traverse ≈ 4–6 bars ≈ 12–18s; the full quark↔cosmos ladder ≈ 8 bars ≈ ~24s.)
+- **Allocate bars by the visual journey AND the rhythm.** A scale you open ALREADY CLOSE on doesn't
+  earn a whole bar; a big/dramatic descent or the seam deserves a clean strong-beat landing.
+- A **seam** is an instant on-beat morph — give it 1 beat within its bar group.
+- **The FIRST card is a WIDE establishing shot** — its `scene` reads as the whole world with the
+  target a SMALL feature ("a sunlit meadow, wildflowers and grass, a red ladybug on a distant
+  leaf"), NOT a close-up of the target, else we open half-zoomed-in and waste the opening bar.
+  (Every LATER card opens on the previous card's target already filling the view, so its next
+  target is naturally a small feature — only the first card needs this.)
+- The engine's planned zoom fills each object to frame EXACTLY at its run's end (the morph beat), so
+  the fill lands on the beat; the arrival-beat morph stays as punchy as engine 1.
+- FUTURE (PLAN.md): compose the RHYTHM first, then build video + audio from the SAME rhythm so they
+  dance together natively — plus beat-synced FX on non-morph beats (drum hits → on-screen flares).
 
 ## Loop + self-similar seam (still critical)
 Journeys are **circular and self-similar**: the last card dives back into the FIRST world.
@@ -192,8 +204,10 @@ myth, a trending sound, an emotion…):
 3. First and last cards natural adjacent scales; last genuinely contains the first world;
    card 0 viewpoint pinned.
 4. Adjacent cards contrast in shape AND palette temperature.
-5. Every `dur` a power-of-two beat value (0.5|1|2|4) so morphs stay on the beat; pacing lingers
-   where the scene is rich (whiz fast scales at 1 beat, linger rich ones at 2-4).
+5. MEASURES: do the `dur`s group into WHOLE BARS (default 4/scale, linger 8, any sub-bar scales
+   summing to a bar like 2+2 or 1+3) so every strong beat lands a morph, and is the TOTAL divisible
+   by 4 (a whole number of bars)? Does the FIRST card open WIDE (target a small feature, not a
+   close-up)?
 6. Any object named twice across cards (double-ghost)? Any animal "traveled through"? Any
    featured face? Any MOTION/TIME language ("growing", "rushing closer", "as we approach",
    "keeps swelling until it becomes") or receding "tiny/far away" in a scene/target? (Static only.)
