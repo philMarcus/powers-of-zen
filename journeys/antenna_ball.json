@@ -1,63 +1,85 @@
 {
   "name": "antenna_ball",
+  "theme": "a ladybug's antenna-tip sphere becomes a whole planet, then the descent lands back in the meadow it came from",
   "style_suffix": "sunny macro photography, dewdrops and soft bokeh, hyperdetailed, cinematic",
   "format": {
-    "sec_per_scale": 2.4,
-    "exact_loop": true
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": false
   },
   "registers": [
     {
       "name": "meadow",
       "exp": 0,
-      "palette": "wildflower gold and green",
-      "interior": "a sunlit wildflower meadow, petals and grass stems towering in soft light",
-      "next_target": "a tiny glossy scarlet ladybug resting on a green leaf"
+      "kind": "zoom",
+      "dur": 2,
+      "palette": "wildflower gold and warm green",
+      "scene": "seen low at eye level among wildflower stems in a sunlit meadow, petals and grass towering overhead, gold pollen drifting in slanted afternoon light, dew beaded on nearby leaves",
+      "target": "a round red ladybug perched on a broad green leaf, its lacquered shell catching the light, neat black spots dotting its domed back",
+      "target_phrase": "a red ladybug",
+      "loop_target": "the sunlit wildflower meadow, seen low at eye level among the stems"
     },
     {
       "name": "ladybug",
-      "exp": -1.8,
-      "palette": "scarlet and leaf green",
-      "interior": "a polished lacquered scarlet dome speckled with black, sky reflections sliding across its curve, a single delicate antenna rising dead ahead",
-      "next_target": "one perfect glossy black ball at the very tip of the antenna, centered ahead"
+      "exp": -1.5,
+      "kind": "zoom",
+      "dur": 1,
+      "palette": "scarlet lacquer and jet black",
+      "scene": "a red ladybug's domed shell fills the view, scarlet lacquer scattered with round black spots, faint reflections of sky and leaf caught on its polished curve",
+      "target": "the ladybug's head, a small glossy black dome with faceted eyes and two slender segmented antennae rising from it",
+      "target_phrase": "a ladybug's head"
     },
     {
-      "name": "antenna_ball",
-      "exp": -2.6,
-      "sec": 4.2,
-      "palette": "glossy black and dew silver",
-      "interior": "a single flawless glossy black sphere filling the center of the view, dewdrops clinging to it like tiny moons, the whole sunlit meadow curved and mirrored across its polished skin, the sphere swelling vaster and vaster as we fall straight toward its heart",
-      "next_target": "the sphere's mirrored curve opening into a vast glossy blue-green planet hanging in starry black"
+      "name": "ladybug_head",
+      "exp": -2.3,
+      "kind": "zoom",
+      "dur": 1,
+      "palette": "glossy black and pale silver",
+      "scene": "a ladybug's head fills the view, a glossy black dome with faceted eyes, two slender segmented antennae arcing upward, fine dark hairs along each segment, a thread of daylight sliding along the curves",
+      "target": "the tip of one antenna, a small flawless black sphere, a single bead of light caught on its polished skin",
+      "target_phrase": "a black sphere"
+    },
+    {
+      "name": "antenna_sphere",
+      "exp": -3.2,
+      "kind": "seam",
+      "dur": 1,
+      "palette": "glossy black and dew silver, blooming into deep blue-green",
+      "scene": "a flawless glossy black sphere fills the entire view, one bead of light glinting on its curved skin, the meadow and pale sky mirrored and curved across its polished surface"
     },
     {
       "name": "planet",
       "exp": 7,
-      "sec": 3.4,
+      "kind": "zoom",
+      "dur": 2,
       "palette": "lacquer blue-green and star black",
-      "interior": "a vast glossy planet filling all of space, the little antenna ball now grown into a whole world, its curved limb gleaming like polished lacquer, swirling clouds sliding across the shine",
-      "next_target": "billowing white clouds drifting over green and gold country far below"
+      "scene": "a vast glossy blue-green planet fills all of space, its curved limb gleaming like wet lacquer, swirling white bands of cloud crossing oceans and continents, the black of space beyond",
+      "target": "a gap in the banded clouds below, sunlit gold-green countryside visible through the opening",
+      "target_phrase": "a gap in clouds"
     },
     {
       "name": "sky_clouds",
       "exp": 4,
-      "palette": "summer blue and cloud white",
-      "interior": "billowing white clouds drifting over rolling green and gold countryside far below",
-      "next_target": "a sunlit flowering treetop canopy swaying gently"
+      "kind": "zoom",
+      "dur": 1,
+      "palette": "sunlit cloud white and warm gold",
+      "scene": "billowing white clouds tower on either side, warm gold light pouring through the gaps onto rolling green and gold countryside below",
+      "target": "a single flowering treetop canopy rising from the countryside, blossoms and leaves bright in the sun",
+      "target_phrase": "a flowering treetop"
     },
     {
       "name": "canopy",
       "exp": 1,
+      "kind": "zoom",
+      "dur": 2,
       "palette": "blossom white and deep green",
-      "interior": "a sunlit flowering treetop canopy seen from above, blossoms and humming leaves swaying",
-      "next_target": "a bright wildflower meadow open in the clearing below",
+      "scene": "a sunlit flowering treetop canopy seen from above, blossoms nodding and leaves humming with insects in the warm breeze, a bright clearing visible below through a gap in the branches",
       "cameo": {
         "sprite": "output/mascots/canon/dora.png",
-        "pos": [
-          0.63,
-          0.58
-        ],
+        "pos": [0.63, 0.58],
         "size": 0.13
       }
     }
   ],
-  "music_theme": "A serene, floating melody that swells with each new world, blending ethereal synths and soft orchestral strings."
+  "music_theme": "A serene, floating melody that swells with each new world, blending ethereal synths and soft orchestral strings, with a single warm bloom of sound landing on the antenna-to-planet seam."
 }
