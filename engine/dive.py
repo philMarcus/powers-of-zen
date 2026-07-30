@@ -705,12 +705,16 @@ def main():
                   f"~{rate * (total - i - 1):.0f}s left) :: {prompt[:60]}", flush=True)
 
     if not args.no_video:
+        # counter flag: journeys declare it in the `format` block (per the skill); fall back to
+        # settings/DEFAULTS. (Was read only from cfg, so a journey's format.counter was ignored —
+        # skyfog's counter:false silently rendered a nonsense 10^n overlay on a non-ladder path.)
+        counter_flag = spec.get("format", {}).get("counter", cfg["counter"])
         show_counter = exponent is not None and not args.frames
-        if show_counter and cfg["counter"] == "auto":
+        if show_counter and counter_flag == "auto":
             exps = [r["exp"] for r in spec["registers"]]
             show_counter = all(a > b for a, b in zip(exps, exps[1:]))
         elif show_counter:
-            show_counter = bool(cfg["counter"])
+            show_counter = bool(counter_flag)
         assemble(cfg, name, out_dir, frames_dir, total,
                  exponent=exponent if show_counter else None)
     print(f"[dive] done in {time.time() - t0:.0f}s", flush=True)
