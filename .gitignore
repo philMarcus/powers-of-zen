@@ -9,3 +9,5 @@ production_alternates/
 scripts/huggingface_token.txt
 .hf_token
 outbox/shots/
+_seam_backup/
+_seamwork/

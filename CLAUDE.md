@@ -90,4 +90,21 @@ verifies; YouTube title read-back retry; IG selects Original (phone 9:16) crop b
 vanish even silent/by-hand (likely under-review/spam flag); scheduler posts YT+IG only. alexandria
 live on YT+IG. DASHBOARD refactored: Video Review → 🎵 Music → Production stage flow; Live/Failed
 are per-platform (a video can be in both); videos loop. Desktop shortcut: scripts/start_zen_ops.bat.
+2026-07-29 (later): seam-repaired PRODUCTION videos via scripts/reseam_production.py — replaces
+ONLY the seam frames, keeps start point + music + cut + model. Ran on all 4 (iris/dollhouse/
+cartographer/snowfall); Phil KEPT iris + cartographer (clear improvement) and REVERTED dollhouse +
+snowfall (their original seams read better — dollhouse/snowfall have the far-world clamp gap 68/73
+→ morph 0.82, harder to bridge). Originals in _seam_backup/. KEY TRAP: those production files were phase-shifted to open on a macro frame, but
+phase_shift.py's START_REGISTER config has since DRIFTED, so recomputing cut_time() moves the
+opening. reseam_production.py MEASURES the actual frame-rotation of the current production vs its
+render (residual~0 confirms clean rotation), applies that EXACT integer-frame rotation (trim=
+start_frame, NOT seconds — seconds rounds off by a frame and desyncs the copied audio) to the
+repaired render, and re-muxes the production's OWN audio. Verified seam-localized (byte-identical
+outside the ~24-frame seam) + same opening frame. Backups in _seam_backup/ (gitignored).
+DASHBOARD fixes: picking a caption radio now auto-updates the caption+YT fields (session_state, no
+refresh); YouTube TITLE = the caption body (the descriptive line before the mascot question) — a
+truncation, not a separate write (caption.py drops yt_title generation); removed the dead
+"scheduled" timestamp field. GPU FLAG fix: pipeline.gpu_busy() now reads nvidia-smi utilization
+(>=30%) instead of matching process names — the old pgrep matched watcher/caption command lines
+that merely mentioned dive.py, so the flag never cleared after a render.
 OPEN: fold seam into dive.py + re-render journeys; TikTok waits (Phil retries by hand on weekend).

@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-29 18:34:27",
+    "updated": "2026-07-29 23:21:45",
     "paused_platforms": [
       "tiktok"
     ],
@@ -80,8 +80,8 @@
       "cut": "zoomout",
       "file": "production/iris_observatory_ds.mp4",
       "title": "the galaxy at the back of your eye 👁️🌌",
-      "caption": "the galaxy at the back of your eye 👁️🌌 #powersofzen #space #trippy #oddlysatisfying #fyp",
-      "yt_title": "the galaxy at the back of your eye 👁️🌌 10ᶻ",
+      "caption": "From brass telescopes to cosmic eyes, the universe gazes back 🌌 #cosmicjourney #infinitescale #telescopetravel #galaxydive #powersofzen #oddlysatisfying #zoomer",
+      "yt_title": "From brass telescopes to cosmic eyes, the universe gazes back 🌌",
       "yt_desc": "the galaxy at the back of your eye 👁️🌌\n\n#shorts #powersofzen #space #trippy #oddlysatisfying #fyp",
       "cameo": null,
       "state": "queued",
@@ -158,7 +158,31 @@
             "tags": "chill hypnotic ambient evoking a cosmic observatory peering through a great eye, celestial, vast, contemplative, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           }
         ]
-      }
+      },
+      "caption_bodies": [
+        "From brass telescopes to cosmic eyes, the universe gazes back 🌌",
+        "Dive through the lens of time and space, where galaxies breathe ⏳",
+        "A spiral of stars, a whisper of dust—endless depths unfold 🌠",
+        "From mountain peaks to stardust dreams, the loop never ends ✨",
+        "A journey through glass and shadow, where light bends into infinity 🔭"
+      ],
+      "yt_title_options": [
+        "From brass telescopes to cosmic eyes, the universe gazes back 🌌",
+        "Dive through the lens of time and space, where galaxies breathe ⏳",
+        "A spiral of stars, a whisper of dust—endless depths unfold 🌠",
+        "From mountain peaks to stardust dreams, the loop never ends ✨",
+        "A journey through glass and shadow, where light bends into infinity 🔭"
+      ],
+      "spot_line": "",
+      "caption_tags": "#cosmicjourney #infinitescale #telescopetravel #galaxydive #powersofzen #oddlysatisfying #zoomer",
+      "spot_hook": false,
+      "caption_options": [
+        "From brass telescopes to cosmic eyes, the universe gazes back 🌌 #cosmicjourney #infinitescale #telescopetravel #galaxydive #powersofzen #oddlysatisfying #zoomer",
+        "Dive through the lens of time and space, where galaxies breathe ⏳ #cosmicjourney #infinitescale #telescopetravel #galaxydive #powersofzen #oddlysatisfying #zoomer",
+        "A spiral of stars, a whisper of dust—endless depths unfold 🌠 #cosmicjourney #infinitescale #telescopetravel #galaxydive #powersofzen #oddlysatisfying #zoomer",
+        "From mountain peaks to stardust dreams, the loop never ends ✨ #cosmicjourney #infinitescale #telescopetravel #galaxydive #powersofzen #oddlysatisfying #zoomer",
+        "A journey through glass and shadow, where light bends into infinity 🔭 #cosmicjourney #infinitescale #telescopetravel #galaxydive #powersofzen #oddlysatisfying #zoomer"
+      ]
     },
     {
       "journey": "tide_of_life",
@@ -290,8 +314,8 @@
       "cut": "zoomout",
       "file": "production/dollhouse_ds.mp4",
       "title": "the dollhouse contains the town contains the dollhouse 🏠",
-      "caption": "the dollhouse contains the town contains the dollhouse 🏠 #powersofzen #miniature #oddlysatisfying #fyp",
-      "yt_title": "the dollhouse contains the town contains the dollhouse 🏠 10ᶻ",
+      "caption": "Dive into a dollhouse universe where every room holds a new world 🌌 #DollhouseUniverse #MiniatureWorlds #EndlessZoom #CozyCosmos #powersofzen #oddlysatisfying #zoomer",
+      "yt_title": "Dive into a dollhouse universe where every room holds a new world 🌌",
       "yt_desc": "the dollhouse contains the town contains the dollhouse 🏠\n\n#shorts #powersofzen #miniature #oddlysatisfying #fyp",
       "cameo": null,
       "state": "queued",
@@ -368,7 +392,31 @@
             "tags": "chill hypnotic ambient evoking a miniature dollhouse world, music-box, cozy and domestic, tiny and tender, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           }
         ]
-      }
+      },
+      "caption_bodies": [
+        "Dive into a dollhouse universe where every room holds a new world 🌌",
+        "A tiny town at dusk, glowing with endless wonder ✨",
+        "Zoom into a world where every street lamp tells a story 🏡",
+        "A cozy bedroom hides a universe of tiny wonders 🌠",
+        "Lost in a loop of glowing miniature streets and houses ❤️‍🔥"
+      ],
+      "yt_title_options": [
+        "Dive into a dollhouse universe where every room holds a new world 🌌",
+        "A tiny town at dusk, glowing with endless wonder ✨",
+        "Zoom into a world where every street lamp tells a story 🏡",
+        "A cozy bedroom hides a universe of tiny wonders 🌠",
+        "Lost in a loop of glowing miniature streets and houses ❤️‍🔥"
+      ],
+      "spot_line": "",
+      "caption_tags": "#DollhouseUniverse #MiniatureWorlds #EndlessZoom #CozyCosmos #powersofzen #oddlysatisfying #zoomer",
+      "spot_hook": false,
+      "caption_options": [
+        "Dive into a dollhouse universe where every room holds a new world 🌌 #DollhouseUniverse #MiniatureWorlds #EndlessZoom #CozyCosmos #powersofzen #oddlysatisfying #zoomer",
+        "A tiny town at dusk, glowing with endless wonder ✨ #DollhouseUniverse #MiniatureWorlds #EndlessZoom #CozyCosmos #powersofzen #oddlysatisfying #zoomer",
+        "Zoom into a world where every street lamp tells a story 🏡 #DollhouseUniverse #MiniatureWorlds #EndlessZoom #CozyCosmos #powersofzen #oddlysatisfying #zoomer",
+        "A cozy bedroom hides a universe of tiny wonders 🌠 #DollhouseUniverse #MiniatureWorlds #EndlessZoom #CozyCosmos #powersofzen #oddlysatisfying #zoomer",
+        "Lost in a loop of glowing miniature streets and houses ❤️‍🔥 #DollhouseUniverse #MiniatureWorlds #EndlessZoom #CozyCosmos #powersofzen #oddlysatisfying #zoomer"
+      ]
     },
     {
       "journey": "alexandria",
@@ -579,8 +627,8 @@
       "cut": "divein",
       "file": "production/snowfall_divein.mp4",
       "title": "the village inside the snowflake ❄️",
-      "caption": "the village inside the snowflake ❄️ #powersofzen #winter #cozy #oddlysatisfying #fyp",
-      "yt_title": "the village inside the snowflake ❄️ 10ᶻ",
+      "caption": "The quiet hum of falling snow #crystallineworlds #endlesswinterdive #frostedcosmos #powersofzen #oddlysatisfying #zoomer",
+      "yt_title": "The quiet hum of falling snow",
       "yt_desc": "the village inside the snowflake ❄️\n\n#shorts #powersofzen #winter #cozy #oddlysatisfying #fyp",
       "cameo": null,
       "state": "queued",
@@ -657,7 +705,31 @@
             "tags": "chill hypnotic ambient evoking quiet snowfall over a sleeping village, frozen crystalline stillness, hushed and wintry, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a warmer note lands on the downbeat of every bar, a steady gentle recurring pulse never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           }
         ]
-      }
+      },
+      "caption_bodies": [
+        "A snowflake’s endless winter ❄️",
+        "Lost in the lattice of light and ice",
+        "Drifting through crystal and cloud",
+        "Sunset over a world made of frost",
+        "The quiet hum of falling snow"
+      ],
+      "yt_title_options": [
+        "A snowflake’s endless winter ❄️",
+        "Lost in the lattice of light and ice",
+        "Drifting through crystal and cloud",
+        "Sunset over a world made of frost",
+        "The quiet hum of falling snow"
+      ],
+      "spot_line": "",
+      "caption_tags": "#crystallineworlds #endlesswinterdive #frostedcosmos #powersofzen #oddlysatisfying #zoomer",
+      "spot_hook": false,
+      "caption_options": [
+        "A snowflake’s endless winter ❄️ #crystallineworlds #endlesswinterdive #frostedcosmos #powersofzen #oddlysatisfying #zoomer",
+        "Lost in the lattice of light and ice #crystallineworlds #endlesswinterdive #frostedcosmos #powersofzen #oddlysatisfying #zoomer",
+        "Drifting through crystal and cloud #crystallineworlds #endlesswinterdive #frostedcosmos #powersofzen #oddlysatisfying #zoomer",
+        "Sunset over a world made of frost #crystallineworlds #endlesswinterdive #frostedcosmos #powersofzen #oddlysatisfying #zoomer",
+        "The quiet hum of falling snow #crystallineworlds #endlesswinterdive #frostedcosmos #powersofzen #oddlysatisfying #zoomer"
+      ]
     },
     {
       "journey": "cartographer",
@@ -665,8 +737,8 @@
       "cut": "divein",
       "file": "production/cartographer_ds_divein.mp4",
       "title": "the whole world folds out of a mapmaker's desk 🗺️",
-      "caption": "the whole world folds out of a mapmaker's desk 🗺️✨ #powersofzen #maps #oddlysatisfying #fyp",
-      "yt_title": "the whole world folds out of a mapmaker's desk 🗺️ 10ᶻ",
+      "caption": "From moth wings to cosmic webs, a journey through infinity 🌌 #AntiqueCosmos #InfiniteZoom #GoldenThreads #CartographicJourney #powersofzen #oddlysatisfying #zoomer",
+      "yt_title": "From moth wings to cosmic webs, a journey through infinity 🌌",
       "yt_desc": "an antique atlas world — desk to map to coastline to cosmos and back.\n\n#shorts #maps #oddlysatisfying #powersofzen",
       "cameo": null,
       "state": "queued",
@@ -743,7 +815,31 @@
             "tags": "chill hypnotic ambient evoking old star charts and voyages, exploratory, starlit, adventurous, wondrous, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           }
         ]
-      }
+      },
+      "caption_bodies": [
+        "From moth wings to cosmic webs, a journey through infinity 🌌",
+        "Dive into the golden threads of existence ✨",
+        "A never-ending spiral through time and space 🌀",
+        "Where ink rivers meet galaxy clusters ⚡",
+        "From parchment to the cosmos, a seamless dive 🌠"
+      ],
+      "yt_title_options": [
+        "From moth wings to cosmic webs, a journey through infinity 🌌",
+        "Dive into the golden threads of existence ✨",
+        "A never-ending spiral through time and space 🌀",
+        "Where ink rivers meet galaxy clusters ⚡",
+        "From parchment to the cosmos, a seamless dive 🌠"
+      ],
+      "spot_line": "",
+      "caption_tags": "#AntiqueCosmos #InfiniteZoom #GoldenThreads #CartographicJourney #powersofzen #oddlysatisfying #zoomer",
+      "spot_hook": false,
+      "caption_options": [
+        "From moth wings to cosmic webs, a journey through infinity 🌌 #AntiqueCosmos #InfiniteZoom #GoldenThreads #CartographicJourney #powersofzen #oddlysatisfying #zoomer",
+        "Dive into the golden threads of existence ✨ #AntiqueCosmos #InfiniteZoom #GoldenThreads #CartographicJourney #powersofzen #oddlysatisfying #zoomer",
+        "A never-ending spiral through time and space 🌀 #AntiqueCosmos #InfiniteZoom #GoldenThreads #CartographicJourney #powersofzen #oddlysatisfying #zoomer",
+        "Where ink rivers meet galaxy clusters ⚡ #AntiqueCosmos #InfiniteZoom #GoldenThreads #CartographicJourney #powersofzen #oddlysatisfying #zoomer",
+        "From parchment to the cosmos, a seamless dive 🌠 #AntiqueCosmos #InfiniteZoom #GoldenThreads #CartographicJourney #powersofzen #oddlysatisfying #zoomer"
+      ]
     },
     {
       "journey": "cosmic_scales_remix",
@@ -751,11 +847,11 @@
       "cut": "zoomout",
       "file": "production\\cosmic_scales_remix_ds_shift.mp4",
       "title": "",
-      "caption": "",
-      "yt_title": "",
+      "caption": "A hypnotic spiral through every scale of reality ⚡ Can you spot Lee hiding in this endless dive? 👀 #InfiniteZoom #FractalReality #CosmicDive #DreamWorld #powersofzen #oddlysatisfying #zoomer",
+      "yt_title": "A hypnotic spiral through every scale of reality ⚡",
       "yt_desc": "",
       "cameo": "lee",
-      "state": "review",
+      "state": "music",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -776,7 +872,87 @@
       },
       "created": "2026-07-29",
       "start_t": 24.0,
-      "orig_file": "production/cosmic_scales_remix_ds.mp4"
+      "orig_file": "production/cosmic_scales_remix_ds.mp4",
+      "caption_bodies": [
+        "A never-ending dive through the infinite scales of a dream world 🌌",
+        "From atoms to galaxies, a seamless journey into the unknown ✨",
+        "Dive deeper into the fractal heart of existence 🌀",
+        "A hypnotic spiral through every scale of reality ⚡",
+        "Endless zoom into the hidden beauty of the universe 🌠"
+      ],
+      "yt_title_options": [
+        "A never-ending dive through the infinite scales of a dream world 🌌",
+        "From atoms to galaxies, a seamless journey into the unknown ✨",
+        "Dive deeper into the fractal heart of existence 🌀",
+        "A hypnotic spiral through every scale of reality ⚡",
+        "Endless zoom into the hidden beauty of the universe 🌠"
+      ],
+      "spot_line": "Can you spot Lee hiding in this endless dive? 👀",
+      "caption_tags": "#InfiniteZoom #FractalReality #CosmicDive #DreamWorld #powersofzen #oddlysatisfying #zoomer",
+      "spot_hook": true,
+      "caption_options": [
+        "A never-ending dive through the infinite scales of a dream world 🌌 Can you spot Lee hiding in this endless dive? 👀 #InfiniteZoom #FractalReality #CosmicDive #DreamWorld #powersofzen #oddlysatisfying #zoomer",
+        "From atoms to galaxies, a seamless journey into the unknown ✨ Can you spot Lee hiding in this endless dive? 👀 #InfiniteZoom #FractalReality #CosmicDive #DreamWorld #powersofzen #oddlysatisfying #zoomer",
+        "Dive deeper into the fractal heart of existence 🌀 Can you spot Lee hiding in this endless dive? 👀 #InfiniteZoom #FractalReality #CosmicDive #DreamWorld #powersofzen #oddlysatisfying #zoomer",
+        "A hypnotic spiral through every scale of reality ⚡ Can you spot Lee hiding in this endless dive? 👀 #InfiniteZoom #FractalReality #CosmicDive #DreamWorld #powersofzen #oddlysatisfying #zoomer",
+        "Endless zoom into the hidden beauty of the universe 🌠 Can you spot Lee hiding in this endless dive? 👀 #InfiniteZoom #FractalReality #CosmicDive #DreamWorld #powersofzen #oddlysatisfying #zoomer"
+      ],
+      "music": {
+        "bpm": 100,
+        "bar": 2.407,
+        "key": "D minor",
+        "stage": "review",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/cosmic_scales_remix_warm.flac",
+            "aligned": "review/music/candidates/cosmic_scales_remix/warm.mp4",
+            "seed": 500,
+            "lock": 7.18,
+            "tags": "chill hypnotic ambient evoking space odyssey, chill, slow beats, celestial, bookish and ancient., warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/cosmic_scales_remix_glassy.flac",
+            "aligned": "review/music/candidates/cosmic_scales_remix/glassy.mp4",
+            "seed": 501,
+            "lock": 10.37,
+            "tags": "chill hypnotic ambient evoking space odyssey, chill, slow beats, celestial, bookish and ancient., crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/cosmic_scales_remix_deep.flac",
+            "aligned": "review/music/candidates/cosmic_scales_remix/deep.mp4",
+            "seed": 502,
+            "lock": 6.52,
+            "tags": "chill hypnotic ambient evoking space odyssey, chill, slow beats, celestial, bookish and ancient., deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/cosmic_scales_remix_tender.flac",
+            "aligned": "review/music/candidates/cosmic_scales_remix/tender.mp4",
+            "seed": 503,
+            "lock": 11.11,
+            "tags": "chill hypnotic ambient evoking space odyssey, chill, slow beats, celestial, bookish and ancient., tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/cosmic_scales_remix_choir.flac",
+            "aligned": "review/music/candidates/cosmic_scales_remix/choir.mp4",
+            "seed": 504,
+            "lock": 11.83,
+            "tags": "chill hypnotic ambient evoking space odyssey, chill, slow beats, celestial, bookish and ancient., soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "zoomout"
+      }
     },
     {
       "journey": "circuit_city",
@@ -784,8 +960,8 @@
       "cut": "divein",
       "file": "production/circuit_city_ds_divein.mp4",
       "title": "",
-      "caption": "",
-      "yt_title": "",
+      "caption": "From city lights to starlight, a loop of endless wonder ✨ Can you spot Adam hiding somewhere in the infinite zoom? 👀 #CyberpunkCosmos #InfiniteZoom #NeonGalaxies #HyperdetailedDive #powersofzen #oddlysatisfying #zoomer",
+      "yt_title": "From city lights to starlight, a loop of endless wonder ✨",
       "yt_desc": "",
       "cameo": "adam",
       "state": "review",
@@ -807,7 +983,31 @@
           "ts": ""
         }
       },
-      "created": "2026-07-29"
+      "created": "2026-07-29",
+      "caption_bodies": [
+        "Dive into the neon abyss and emerge among the stars 🌌",
+        "From city lights to starlight, a loop of endless wonder ✨",
+        "A seamless dive from skyscrapers to galaxies 🌆→🌊",
+        "Lost in the glow of infinite scales, where do you end? ⚡",
+        "Neon rivers to cosmic webs, a hypnotic descent 🌌➡️🔥"
+      ],
+      "yt_title_options": [
+        "Dive into the neon abyss and emerge among the stars 🌌",
+        "From city lights to starlight, a loop of endless wonder ✨",
+        "A seamless dive from skyscrapers to galaxies 🌆→🌊",
+        "Lost in the glow of infinite scales, where do you end? ⚡",
+        "Neon rivers to cosmic webs, a hypnotic descent 🌌➡️🔥"
+      ],
+      "spot_line": "Can you spot Adam hiding somewhere in the infinite zoom? 👀",
+      "caption_tags": "#CyberpunkCosmos #InfiniteZoom #NeonGalaxies #HyperdetailedDive #powersofzen #oddlysatisfying #zoomer",
+      "spot_hook": true,
+      "caption_options": [
+        "Dive into the neon abyss and emerge among the stars 🌌 Can you spot Adam hiding somewhere in the infinite zoom? 👀 #CyberpunkCosmos #InfiniteZoom #NeonGalaxies #HyperdetailedDive #powersofzen #oddlysatisfying #zoomer",
+        "From city lights to starlight, a loop of endless wonder ✨ Can you spot Adam hiding somewhere in the infinite zoom? 👀 #CyberpunkCosmos #InfiniteZoom #NeonGalaxies #HyperdetailedDive #powersofzen #oddlysatisfying #zoomer",
+        "A seamless dive from skyscrapers to galaxies 🌆→🌊 Can you spot Adam hiding somewhere in the infinite zoom? 👀 #CyberpunkCosmos #InfiniteZoom #NeonGalaxies #HyperdetailedDive #powersofzen #oddlysatisfying #zoomer",
+        "Lost in the glow of infinite scales, where do you end? ⚡ Can you spot Adam hiding somewhere in the infinite zoom? 👀 #CyberpunkCosmos #InfiniteZoom #NeonGalaxies #HyperdetailedDive #powersofzen #oddlysatisfying #zoomer",
+        "Neon rivers to cosmic webs, a hypnotic descent 🌌➡️🔥 Can you spot Adam hiding somewhere in the infinite zoom? 👀 #CyberpunkCosmos #InfiniteZoom #NeonGalaxies #HyperdetailedDive #powersofzen #oddlysatisfying #zoomer"
+      ]
     },
     {
       "journey": "stormglass",
@@ -815,8 +1015,8 @@
       "cut": "divein",
       "file": "review_divein/stormglass_ds_divein.mp4",
       "title": "",
-      "caption": "",
-      "yt_title": "",
+      "caption": "Dive through storms, stars, and the unseen... forever 🌩️ Can you spot Aleksey hiding in this endless dive? 👀 #CosmicZoom #InfiniteJourney #StormToStars #ScaleOfExistence #powersofzen #oddlysatisfying #zoomer",
+      "yt_title": "Dive through storms, stars, and the unseen... forever 🌩️",
       "yt_desc": "",
       "cameo": "aleksey",
       "state": "review",
@@ -838,7 +1038,31 @@
           "ts": ""
         }
       },
-      "created": "2026-07-29"
+      "created": "2026-07-29",
+      "caption_bodies": [
+        "Dive through storms, stars, and the unseen... forever 🌩️",
+        "From lightning to galaxies—endless depths await ✨",
+        "Raindrops, atoms, and cosmic webs—loop forever 🌀",
+        "Storm clouds to starlight—where does it end? ⚡",
+        "Dive deeper than infinity... and loop again 🌌"
+      ],
+      "yt_title_options": [
+        "Dive through storms, stars, and the unseen... forever 🌩️",
+        "From lightning to galaxies—endless depths await ✨",
+        "Raindrops, atoms, and cosmic webs—loop forever 🌀",
+        "Storm clouds to starlight—where does it end? ⚡",
+        "Dive deeper than infinity... and loop again 🌌"
+      ],
+      "spot_line": "Can you spot Aleksey hiding in this endless dive? 👀",
+      "caption_tags": "#CosmicZoom #InfiniteJourney #StormToStars #ScaleOfExistence #powersofzen #oddlysatisfying #zoomer",
+      "spot_hook": true,
+      "caption_options": [
+        "Dive through storms, stars, and the unseen... forever 🌩️ Can you spot Aleksey hiding in this endless dive? 👀 #CosmicZoom #InfiniteJourney #StormToStars #ScaleOfExistence #powersofzen #oddlysatisfying #zoomer",
+        "From lightning to galaxies—endless depths await ✨ Can you spot Aleksey hiding in this endless dive? 👀 #CosmicZoom #InfiniteJourney #StormToStars #ScaleOfExistence #powersofzen #oddlysatisfying #zoomer",
+        "Raindrops, atoms, and cosmic webs—loop forever 🌀 Can you spot Aleksey hiding in this endless dive? 👀 #CosmicZoom #InfiniteJourney #StormToStars #ScaleOfExistence #powersofzen #oddlysatisfying #zoomer",
+        "Storm clouds to starlight—where does it end? ⚡ Can you spot Aleksey hiding in this endless dive? 👀 #CosmicZoom #InfiniteJourney #StormToStars #ScaleOfExistence #powersofzen #oddlysatisfying #zoomer",
+        "Dive deeper than infinity... and loop again 🌌 Can you spot Aleksey hiding in this endless dive? 👀 #CosmicZoom #InfiniteJourney #StormToStars #ScaleOfExistence #powersofzen #oddlysatisfying #zoomer"
+      ]
     },
     {
       "journey": "antenna_ball",
@@ -846,8 +1070,8 @@
       "cut": "divein",
       "file": "review_divein/antenna_ball_ds_divein.mp4",
       "title": "",
-      "caption": "",
-      "yt_title": "",
+      "caption": "A meadow of giants, a dome of secrets, and the endless fall into infinity 🌸 Can you spot Dora hiding in the infinite loop? 👀 #InfiniteZoom #MeadowToPlanet #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer",
+      "yt_title": "A meadow of giants, a dome of secrets, and the endless fall into infinity 🌸",
       "yt_desc": "",
       "cameo": "dora",
       "state": "review",
@@ -869,7 +1093,31 @@
           "ts": ""
         }
       },
-      "created": "2026-07-29"
+      "created": "2026-07-29",
+      "caption_bodies": [
+        "A meadow of giants, a dome of secrets, and the endless fall into infinity 🌸",
+        "From petals to planets, the universe folds in on itself ✨",
+        "A single sphere holds a world within—dare to fall deeper? 🌍",
+        "Where meadows become planets and domes become skies ☀️",
+        "The endless zoom through worlds that mirror each other 🌿"
+      ],
+      "yt_title_options": [
+        "A meadow of giants, a dome of secrets, and the endless fall into infinity 🌸",
+        "From petals to planets, the universe folds in on itself ✨",
+        "A single sphere holds a world within—dare to fall deeper? 🌍",
+        "Where meadows become planets and domes become skies ☀️",
+        "The endless zoom through worlds that mirror each other 🌿"
+      ],
+      "spot_line": "Can you spot Dora hiding in the infinite loop? 👀",
+      "caption_tags": "#InfiniteZoom #MeadowToPlanet #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer",
+      "spot_hook": true,
+      "caption_options": [
+        "A meadow of giants, a dome of secrets, and the endless fall into infinity 🌸 Can you spot Dora hiding in the infinite loop? 👀 #InfiniteZoom #MeadowToPlanet #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer",
+        "From petals to planets, the universe folds in on itself ✨ Can you spot Dora hiding in the infinite loop? 👀 #InfiniteZoom #MeadowToPlanet #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer",
+        "A single sphere holds a world within—dare to fall deeper? 🌍 Can you spot Dora hiding in the infinite loop? 👀 #InfiniteZoom #MeadowToPlanet #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer",
+        "Where meadows become planets and domes become skies ☀️ Can you spot Dora hiding in the infinite loop? 👀 #InfiniteZoom #MeadowToPlanet #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer",
+        "The endless zoom through worlds that mirror each other 🌿 Can you spot Dora hiding in the infinite loop? 👀 #InfiniteZoom #MeadowToPlanet #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer"
+      ]
     },
     {
       "journey": "skyfog",
@@ -877,8 +1125,8 @@
       "cut": "divein",
       "file": "review_divein/skyfog_ds_divein.mp4",
       "title": "",
-      "caption": "",
-      "yt_title": "",
+      "caption": "A lighthouse’s golden breath carves through the endless fog 🌊 Can you spot Janet hiding in the mist? 👀 #EndlessMist #CosmicLullaby #StormSpiral #NebulaDreams #powersofzen #oddlysatisfying #zoomer",
+      "yt_title": "A lighthouse’s golden breath carves through the endless fog 🌊",
       "yt_desc": "",
       "cameo": "janet",
       "state": "review",
@@ -900,7 +1148,86 @@
           "ts": ""
         }
       },
-      "created": "2026-07-29"
+      "created": "2026-07-29",
+      "caption_bodies": [
+        "A lighthouse’s golden breath carves through the endless fog 🌊",
+        "Where mist and light dance in the hollows of the sky ✨",
+        "The storm’s slow spiral hums a lullaby to the stars 🌀",
+        "A nebula cradles newborn suns in veils of rose and teal 🌠",
+        "The fog remembers every beam that ever passed through it ⚡"
+      ],
+      "yt_title_options": [
+        "A lighthouse’s golden breath carves through the endless fog 🌊",
+        "Where mist and light dance in the hollows of the sky ✨",
+        "The storm’s slow spiral hums a lullaby to the stars 🌀",
+        "A nebula cradles newborn suns in veils of rose and teal 🌠",
+        "The fog remembers every beam that ever passed through it ⚡"
+      ],
+      "spot_line": "Can you spot Janet hiding in the mist? 👀",
+      "caption_tags": "#EndlessMist #CosmicLullaby #StormSpiral #NebulaDreams #powersofzen #oddlysatisfying #zoomer",
+      "spot_hook": true,
+      "caption_options": [
+        "A lighthouse’s golden breath carves through the endless fog 🌊 Can you spot Janet hiding in the mist? 👀 #EndlessMist #CosmicLullaby #StormSpiral #NebulaDreams #powersofzen #oddlysatisfying #zoomer",
+        "Where mist and light dance in the hollows of the sky ✨ Can you spot Janet hiding in the mist? 👀 #EndlessMist #CosmicLullaby #StormSpiral #NebulaDreams #powersofzen #oddlysatisfying #zoomer",
+        "The storm’s slow spiral hums a lullaby to the stars 🌀 Can you spot Janet hiding in the mist? 👀 #EndlessMist #CosmicLullaby #StormSpiral #NebulaDreams #powersofzen #oddlysatisfying #zoomer",
+        "A nebula cradles newborn suns in veils of rose and teal 🌠 Can you spot Janet hiding in the mist? 👀 #EndlessMist #CosmicLullaby #StormSpiral #NebulaDreams #powersofzen #oddlysatisfying #zoomer",
+        "The fog remembers every beam that ever passed through it ⚡ Can you spot Janet hiding in the mist? 👀 #EndlessMist #CosmicLullaby #StormSpiral #NebulaDreams #powersofzen #oddlysatisfying #zoomer"
+      ]
+    },
+    {
+      "journey": "mineral_heart",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/mineral_heart_ds_divein.mp4",
+      "title": "",
+      "caption": "A snowflake’s endless arms unfold into cosmic lace 🌌✨ Can you spot Lorraine hiding in the crystal maze? 👀 #CosmicCrystalDive #InfiniteFractals #LuminousLattice #OtherworldlyZoom #powersofzen #oddlysatisfying #zoomer",
+      "yt_title": "A snowflake’s endless arms unfold into cosmic lace 🌌✨",
+      "yt_desc": "",
+      "cameo": "lorraine",
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-29",
+      "caption_bodies": [
+        "A snowflake’s endless arms unfold into cosmic lace 🌌✨",
+        "Crystals hum in the dark, atoms whisper secrets ✨🔮",
+        "Galaxies weave a web of light and shadow 🌠⚡",
+        "A sun’s molten ribbons dance on the edge of forever ☀️🌀",
+        "Frost ferns shiver in violet dreams 🌿❄️"
+      ],
+      "yt_title_options": [
+        "A snowflake’s endless arms unfold into cosmic lace 🌌✨",
+        "Crystals hum in the dark, atoms whisper secrets ✨🔮",
+        "Galaxies weave a web of light and shadow 🌠⚡",
+        "A sun’s molten ribbons dance on the edge of forever ☀️🌀",
+        "Frost ferns shiver in violet dreams 🌿❄️"
+      ],
+      "spot_line": "Can you spot Lorraine hiding in the crystal maze? 👀",
+      "caption_tags": "#CosmicCrystalDive #InfiniteFractals #LuminousLattice #OtherworldlyZoom #powersofzen #oddlysatisfying #zoomer",
+      "spot_hook": true,
+      "caption_options": [
+        "A snowflake’s endless arms unfold into cosmic lace 🌌✨ Can you spot Lorraine hiding in the crystal maze? 👀 #CosmicCrystalDive #InfiniteFractals #LuminousLattice #OtherworldlyZoom #powersofzen #oddlysatisfying #zoomer",
+        "Crystals hum in the dark, atoms whisper secrets ✨🔮 Can you spot Lorraine hiding in the crystal maze? 👀 #CosmicCrystalDive #InfiniteFractals #LuminousLattice #OtherworldlyZoom #powersofzen #oddlysatisfying #zoomer",
+        "Galaxies weave a web of light and shadow 🌠⚡ Can you spot Lorraine hiding in the crystal maze? 👀 #CosmicCrystalDive #InfiniteFractals #LuminousLattice #OtherworldlyZoom #powersofzen #oddlysatisfying #zoomer",
+        "A sun’s molten ribbons dance on the edge of forever ☀️🌀 Can you spot Lorraine hiding in the crystal maze? 👀 #CosmicCrystalDive #InfiniteFractals #LuminousLattice #OtherworldlyZoom #powersofzen #oddlysatisfying #zoomer",
+        "Frost ferns shiver in violet dreams 🌿❄️ Can you spot Lorraine hiding in the crystal maze? 👀 #CosmicCrystalDive #InfiniteFractals #LuminousLattice #OtherworldlyZoom #powersofzen #oddlysatisfying #zoomer"
+      ]
     }
   ]
 }

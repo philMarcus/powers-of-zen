@@ -39,3 +39,79 @@
 {"ts": "2026-07-28 21:03:19", "event": "post", "journey": "night_bloom", "platform": "tiktok", "detail": "posted"}
 {"ts": "2026-07-28 21:19:28", "event": "post", "journey": "night_bloom", "platform": "youtube", "detail": "https://youtube.com/shorts/dTaP4qzexVA"}
 {"ts": "2026-07-28 21:20:05", "event": "recaption", "journey": "night_bloom", "platform": "instagram"}
+{"ts": "2026-07-29 08:02:02", "event": "post", "journey": "alexandria", "platform": "tiktok", "detail": "posted"}
+{"ts": "2026-07-29 08:02:02", "event": "post_fail", "journey": "alexandria", "platform": "youtube", "detail": "FLAGGED: youtube/title: title field not settable"}
+{"ts": "2026-07-29 08:02:02", "event": "post_fail", "journey": "alexandria", "platform": "instagram", "detail": "FLAGGED: instagram/edit_screen: edit screen never appeared after 1st Next"}
+{"ts": "2026-07-29 08:40:25", "event": "post_fail", "journey": "alexandria", "platform": "tiktok", "detail": "FLAGGED: tiktok/verify_live: published signal seen but video is ABSENT from the content list — TikTok dropped it (likely custom audio on a new account). Reported as FAILED, not live."}
+{"ts": "2026-07-29 08:49:23", "event": "post", "journey": "alexandria", "platform": "youtube", "detail": "https://youtube.com/shorts/c2qpbdcj6g8"}
+{"ts": "2026-07-29 08:52:38", "event": "post", "journey": "alexandria", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbWkGPOBLzg/"}
+{"ts": "2026-07-29 09:01:20", "event": "correction", "journey": "alexandria", "platform": "instagram", "detail": "false-positive corrected: not actually posted (newest reel is night_bloom)"}
+{"ts": "2026-07-29 09:02:54", "event": "post", "journey": "alexandria", "platform": "instagram", "detail": "posted"}
+{"ts": "2026-07-29 09:37:55", "event": "post", "journey": "alexandria", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbYPPVANRVM/"}
+{"ts": "2026-07-29 09:43:40", "event": "post", "journey": "alexandria", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbYP5WcutsC/"}
+{"ts": "2026-07-29 09:59:03", "event": "review", "journey": "iris_observatory"}
+{"ts": "2026-07-29 09:59:07", "event": "review", "journey": "cartographer"}
+{"ts": "2026-07-29 09:59:13", "event": "review", "journey": "dollhouse"}
+{"ts": "2026-07-29 10:11:33", "event": "music", "journey": "iris_observatory", "detail": "migrated review->music (had candidates, needed pick)"}
+{"ts": "2026-07-29 10:11:33", "event": "music", "journey": "dollhouse", "detail": "migrated review->music (had candidates, needed pick)"}
+{"ts": "2026-07-29 10:11:33", "event": "music", "journey": "cartographer", "detail": "migrated review->music (had candidates, needed pick)"}
+{"ts": "2026-07-29 11:24:17", "event": "music_choose", "journey": "iris_observatory", "detail": "choir"}
+{"ts": "2026-07-29 11:24:17", "event": "queued", "journey": "iris_observatory"}
+{"ts": "2026-07-29 11:26:39", "event": "music_choose", "journey": "dollhouse", "detail": "glassy"}
+{"ts": "2026-07-29 11:26:39", "event": "queued", "journey": "dollhouse"}
+{"ts": "2026-07-29 11:28:47", "event": "music_choose", "journey": "cartographer", "detail": "deep"}
+{"ts": "2026-07-29 11:28:47", "event": "queued", "journey": "cartographer"}
+{"ts": "2026-07-29 15:22:23", "event": "review", "journey": "cosmic_scales_remix", "detail": "turbo/divein (src v11)"}
+{"ts": "2026-07-29 15:28:36", "event": "review", "journey": "circuit_city", "detail": "turbo/divein (src v3)"}
+{"ts": "2026-07-29 16:22:09", "event": "review", "journey": "cosmic_scales_remix", "detail": "ds/divein (src v1)"}
+{"ts": "2026-07-29 16:27:29", "event": "edit", "journey": "cosmic_scales_remix"}
+{"ts": "2026-07-29 16:27:50", "event": "edit", "journey": "cosmic_scales_remix"}
+{"ts": "2026-07-29 16:28:13", "event": "switch", "journey": "cosmic_scales_remix", "detail": "ds/zoomout"}
+{"ts": "2026-07-29 16:29:18", "event": "switch", "journey": "cosmic_scales_remix", "detail": "ds/divein"}
+{"ts": "2026-07-29 16:36:17", "event": "switch", "journey": "cosmic_scales_remix", "detail": "ds/zoomout"}
+{"ts": "2026-07-29 16:47:05", "event": "edit", "journey": "cosmic_scales_remix"}
+{"ts": "2026-07-29 17:03:04", "event": "review", "journey": "circuit_city", "detail": "ds/divein (src v1)"}
+{"ts": "2026-07-29 17:28:25", "event": "edit", "journey": "cosmic_scales_remix"}
+{"ts": "2026-07-29 17:28:29", "event": "edit", "journey": "cosmic_scales_remix"}
+{"ts": "2026-07-29 17:28:39", "event": "phase_shift", "journey": "cosmic_scales_remix", "detail": "start @ 24.00s"}
+{"ts": "2026-07-29 17:28:39", "event": "music", "journey": "cosmic_scales_remix"}
+{"ts": "2026-07-29 17:29:32", "event": "review", "journey": "cosmic_scales_remix"}
+{"ts": "2026-07-29 17:30:03", "event": "phase_shift", "journey": "cosmic_scales_remix", "detail": "start @ 24.00s"}
+{"ts": "2026-07-29 17:30:03", "event": "music", "journey": "cosmic_scales_remix"}
+{"ts": "2026-07-29 17:30:08", "event": "review", "journey": "cosmic_scales_remix"}
+{"ts": "2026-07-29 17:33:41", "event": "switch", "journey": "circuit_city", "detail": "ds/divein"}
+{"ts": "2026-07-29 17:40:18", "event": "review", "journey": "stormglass", "detail": "ds/divein (src v1)"}
+{"ts": "2026-07-29 18:01:32", "event": "post", "journey": "food_chain", "platform": "youtube", "detail": "https://youtube.com/shorts/n2fsFJuVVeQ"}
+{"ts": "2026-07-29 18:01:32", "event": "post", "journey": "food_chain", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbZI3tOMPqL/"}
+{"ts": "2026-07-29 18:08:22", "event": "music_choose", "journey": "cartographer", "detail": "tender"}
+{"ts": "2026-07-29 18:09:37", "event": "review", "journey": "antenna_ball", "detail": "ds/divein (src v3)"}
+{"ts": "2026-07-29 18:09:51", "event": "music_choose", "journey": "cartographer", "detail": "deep"}
+{"ts": "2026-07-29 18:34:27", "event": "review", "journey": "skyfog", "detail": "ds/divein (src v3)"}
+{"ts": "2026-07-29 19:21:25", "event": "review", "journey": "mineral_heart", "detail": "ds/divein (src v5)"}
+{"ts": "2026-07-29 19:38:49", "event": "review", "journey": "stormglass", "detail": "turbo/divein (src v2)"}
+{"ts": "2026-07-29 19:52:30", "event": "review", "journey": "antenna_ball", "detail": "turbo/divein (src v1)"}
+{"ts": "2026-07-29 20:04:09", "event": "review", "journey": "skyfog", "detail": "turbo/divein (src v1)"}
+{"ts": "2026-07-29 20:26:27", "event": "review", "journey": "mineral_heart", "detail": "turbo/divein (src v1)"}
+{"ts": "2026-07-29 21:39:30", "event": "caption", "journey": "cosmic_scales_remix", "detail": "5 options, spot=True"}
+{"ts": "2026-07-29 21:41:06", "event": "caption", "journey": "iris_observatory", "detail": "5 options, spot=False"}
+{"ts": "2026-07-29 21:41:50", "event": "caption", "journey": "dollhouse", "detail": "5 options, spot=False"}
+{"ts": "2026-07-29 21:42:35", "event": "caption", "journey": "cartographer", "detail": "5 options, spot=False"}
+{"ts": "2026-07-29 21:43:24", "event": "caption", "journey": "circuit_city", "detail": "5 options, spot=True"}
+{"ts": "2026-07-29 21:44:12", "event": "caption", "journey": "stormglass", "detail": "5 options, spot=True"}
+{"ts": "2026-07-29 21:44:59", "event": "caption", "journey": "antenna_ball", "detail": "5 options, spot=True"}
+{"ts": "2026-07-29 21:45:45", "event": "caption", "journey": "skyfog", "detail": "5 options, spot=True"}
+{"ts": "2026-07-29 21:46:34", "event": "caption", "journey": "mineral_heart", "detail": "5 options, spot=True"}
+{"ts": "2026-07-29 21:49:01", "event": "caption", "journey": "snowfall", "detail": "5 options, spot=False"}
+{"ts": "2026-07-29 22:08:07", "event": "edit", "journey": "cosmic_scales_remix"}
+{"ts": "2026-07-29 22:08:21", "event": "edit", "journey": "cosmic_scales_remix"}
+{"ts": "2026-07-29 22:08:36", "event": "phase_shift", "journey": "cosmic_scales_remix", "detail": "start @ 24.00s"}
+{"ts": "2026-07-29 22:08:36", "event": "music", "journey": "cosmic_scales_remix"}
+{"ts": "2026-07-29 22:10:08", "event": "music_gen", "journey": "cosmic_scales_remix", "detail": "5 candidates"}
+{"ts": "2026-07-29 23:15:26", "event": "caption", "journey": "snowfall", "detail": "5 options, spot=False"}
+{"ts": "2026-07-29 23:15:30", "event": "reseam", "journey": "dollhouse", "detail": "R=84 resid=0.29 open=130(was 130)"}
+{"ts": "2026-07-29 23:16:11", "event": "reseam", "journey": "cartographer", "detail": "R=323 resid=0.36 open=162(was 162)"}
+{"ts": "2026-07-29 23:16:58", "event": "reseam", "journey": "snowfall", "detail": "R=24 resid=0.28 open=12(was 12)"}
+{"ts": "2026-07-29 23:22:34", "event": "reseam", "journey": "iris_observatory", "detail": "R=145 resid=0.46 open=129(was 129)"}
+{"ts": "2026-07-29 23:22:50", "event": "reseam", "journey": "dollhouse", "detail": "R=84 resid=0.29 open=130(was 130)"}
+{"ts": "2026-07-29 23:23:32", "event": "reseam", "journey": "cartographer", "detail": "R=323 resid=0.36 open=162(was 162)"}
+{"ts": "2026-07-29 23:23:44", "event": "reseam", "journey": "snowfall", "detail": "R=24 resid=0.28 open=12(was 12)"}

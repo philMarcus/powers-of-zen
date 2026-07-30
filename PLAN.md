@@ -577,19 +577,24 @@ platform (extract that frame, upload it as the custom thumbnail / cover) instead
 
 **Captioning is now formalized** (was: Claude wrote captions by hand at pipeline-entry time).
 `scripts/caption.py` uses a LOCAL model (Ollama `mistral-small3.2:24b`, :11434) on the journey's
-worlds to write FIVE caption options (paired with YouTube titles),
-[TEXT-ONLY: qwen3-vl:4b was a reasoning model that returned empty JSON; image-grounding via a
-working VLM (e.g. moondream) is a TODO]
+worlds to write FIVE caption options. The YouTube TITLE is NOT written separately — it's the
+caption BODY (the descriptive line before the mascot question), i.e. a truncation of the caption
+(that's how Phil has done it by hand). [TEXT-ONLY: qwen3-vl:4b was a reasoning model that returned
+empty JSON; image-grounding via a working VLM (e.g. moondream) is a TODO]
 so a video already HAS a caption by the time it's in Video Review. Model-agnostic (same caption
-for DS/turbo; prefers DS frames). Dashboard Video Review shows the 3 options (pick one, edit) +
-a ✍ Generate button. `caption.py --all` captions every review video missing one.
+for DS/turbo; prefers DS frames). Dashboard Video Review shows the 5 options (picking one auto-fills
+the caption + YT-title fields, no refresh) + a ✍ Generate button. `caption.py --all` captions
+every review video missing one.
   - HASHTAGS: always-on brand tags (programmatic, appended): #powersofzen #oddlysatisfying
     #zoomer. **#fyp is DROPPED.** The model adds 3–4 JOURNEY-SPECIFIC tags per video. Tune the
     brand set in caption.py BRAND_TAGS.
   - Caption is GPU-heavy (VLM) → gated on `pipeline.gpu_busy()`; runs after the render batch.
 
-**GPU gating** (`pipeline.gpu_busy()`): true while a dive render / seam repair / music-gen runs
-(detected via pgrep, works from Windows via wsl.exe). Music auto-gen on Approve→Music is skipped
+**GPU gating** (`pipeline.gpu_busy()`): true while the GPU is actually under load — reads
+nvidia-smi utilization (>=30%), works from Windows via wsl.exe. (Earlier it matched process
+command lines via pgrep, but that falsely tripped on watcher/caption scripts whose command lines
+merely mentioned dive.py, so the flag never cleared after a render; utilization is the true
+signal and also catches the user's Steam game.) Music auto-gen on Approve→Music is skipped
 when busy (Music tab shows a "GPU busy" note + Generate button). Same gate guards captioning.
 TODO: also gate any future local-LLM journey-writing on it; the user's Steam game is the same
 concern (a render pins the GPU — that's the frame-rate-drop question).

@@ -62,7 +62,10 @@
       "palette": "slate blue and snow white",
       "cameo": {
         "sprite": "output/mascots/canon/lorraine.png",
-        "pos": [0.29, 0.4],
+        "pos": [
+          0.29,
+          0.4
+        ],
         "size": 0.16
       },
       "interior": "a vast striated mountain range seen from high above, snow ridges and mineral-banded slopes carved by winding valleys",
@@ -89,5 +92,6 @@
       "interior": "a dense thicket of slender frost-white crystal ferns, feathery dendritic branches splitting again and again into ever-finer six-fold arms, pale violet light refracting through the frozen lace",
       "next_target": "the crystal ferns thinning to a single six-armed ice snowflake, feathered arms sharpening white against the dark"
     }
-  ]
+  ],
+  "music_theme": "A slow, pulsing drone of crystalline chimes and deep cosmic hums"
 }

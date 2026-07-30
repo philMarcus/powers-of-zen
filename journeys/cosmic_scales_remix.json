@@ -19,7 +19,10 @@
       "palette": "iridescent teal and magenta",
       "cameo": {
         "sprite": "output/mascots/canon/lee.png",
-        "pos": [0.62, 0.44],
+        "pos": [
+          0.62,
+          0.44
+        ],
         "size": 0.13
       },
       "interior": "the wing of a fantastical moth, glowing scales layered like roof tiles along feathered veins",
@@ -102,5 +105,6 @@
       "interior": "a lush impossible garden forest, giant blossoms and glowing vines beneath towering tree canopies",
       "next_target": "a small warm wooden writing desk glowing with candlelight, books and brass clockwork parts, nestled in a quiet clearing far below"
     }
-  ]
+  ],
+  "music_theme": "space odyssey, chill, slow beats, celestial, bookish and ancient."
 }

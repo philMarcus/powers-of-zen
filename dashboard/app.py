@@ -294,6 +294,7 @@ def card(v, actions, show_switch=True, marker=None, captions=False):
                                for b in bodies]
                         vv["caption_options"] = new
                         vv["caption"] = new[min(idx, len(new) - 1)]
+                        st.session_state[f"cap_{v['journey']}"] = vv["caption"]
                     pl.save(dd); st.rerun()
             opts = v.get("caption_options") or []
             gc = st.columns([3, 1])
@@ -307,6 +308,9 @@ def card(v, actions, show_switch=True, marker=None, captions=False):
                     yts = vv.get("yt_title_options") or []
                     if pi < len(yts) and yts[pi]:
                         vv["yt_title"] = yts[pi]           # keep caption + YT title in sync
+                    # push the picked values straight into the fields so no manual refresh is needed
+                    st.session_state[f"cap_{v['journey']}"] = vv["caption"]
+                    st.session_state[f"yt_{v['journey']}"] = vv.get("yt_title", "")
                     pl.save(dd); st.rerun()
             else:
                 gc[0].caption("no auto-captions yet — Generate (~5 caption+title options, local VLM).")
@@ -316,9 +320,8 @@ def card(v, actions, show_switch=True, marker=None, captions=False):
                         + " — refresh in ~30s.")
         cap = st.text_area("caption (TikTok/Instagram)", v.get("caption", ""),
                            key=f"cap_{v['journey']}", height=90)
-        yt = st.text_input("YouTube title", v.get("yt_title", ""), key=f"yt_{v['journey']}")
-        sched = st.text_input("scheduled (YYYY-MM-DD HH:MM, blank = ASAP)",
-                              v.get("scheduled") or "", key=f"sch_{v['journey']}")
+        yt = st.text_input("YouTube title (the caption line before the mascot question)",
+                           v.get("yt_title", ""), key=f"yt_{v['journey']}")
         mtheme = st.text_area("🎵 music theme (the scene — drives track generation)",
                               get_music_theme(v["journey"]), key=f"mt_{v['journey']}", height=68)
         if show_switch:
@@ -336,7 +339,6 @@ def card(v, actions, show_switch=True, marker=None, captions=False):
         if c[0].button("💾 Save", key=f"save_{v['journey']}"):
             d = data(); vv = pl.get(d, v["journey"])
             vv["caption"], vv["yt_title"] = cap, yt
-            vv["scheduled"] = sched.strip() or None
             pl.save(d)
             set_music_theme(v["journey"], mtheme)
             pl.telem("edit", journey=v["journey"])

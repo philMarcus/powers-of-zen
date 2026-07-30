@@ -40,7 +40,10 @@
       "palette": "electric blue and white",
       "cameo": {
         "sprite": "output/mascots/canon/adam.png",
-        "pos": [0.36, 0.6],
+        "pos": [
+          0.36,
+          0.6
+        ],
         "size": 0.13
       },
       "interior": "the inside of an atom, soft hazy luminous electron probability clouds billowing like glowing fog around a distant bright nucleus",
@@ -81,5 +84,6 @@
       "interior": "a whole continent at night from high altitude, an unbroken carpet of glowing city grids, ring roads and neon arteries stretching to the horizon",
       "next_target": "one dazzling neon megacity of skyscraper canyons rising out of the grid"
     }
-  ]
+  ],
+  "music_theme": "A pulsing, atmospheric synthwave score blending cyberpunk neon glow with cosmic ambient drones"
 }

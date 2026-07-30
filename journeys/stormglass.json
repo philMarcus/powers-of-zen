@@ -54,7 +54,10 @@
       "palette": "indigo and starlight gold",
       "cameo": {
         "sprite": "output/mascots/canon/aleksey.png",
-        "pos": [0.66, 0.38],
+        "pos": [
+          0.66,
+          0.38
+        ],
         "size": 0.12
       },
       "interior": "the inside of a spiral galaxy from a tilted angle, ragged rivers of stars and glowing nebula arms braiding past in long sweeping curves",
@@ -74,5 +77,6 @@
       "interior": "a colossal gas giant filling the view, swirling banded storm clouds and a great glowing storm eye churning across its face",
       "next_target": "towering thunderhead storm clouds lit from within by lightning, seen from the air"
     }
-  ]
+  ],
+  "music_theme": "A haunting, ethereal melody that swells and fades like the tides of space and time."
 }

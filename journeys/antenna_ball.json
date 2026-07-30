@@ -51,9 +51,13 @@
       "next_target": "a bright wildflower meadow open in the clearing below",
       "cameo": {
         "sprite": "output/mascots/canon/dora.png",
-        "pos": [0.63, 0.58],
+        "pos": [
+          0.63,
+          0.58
+        ],
         "size": 0.13
       }
     }
-  ]
+  ],
+  "music_theme": "A serene, floating melody that swells with each new world, blending ethereal synths and soft orchestral strings."
 }

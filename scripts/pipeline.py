@@ -84,19 +84,26 @@ def blank_platforms():
     return {p: {"status": "pending", "url": "", "ts": ""} for p in PLATFORMS}
 
 
+GPU_BUSY_PCT = 30  # utilization.gpu at/above this = something is really using the GPU
+
+
 def gpu_busy():
-    """True if a GPU job is running (a dive render / seam repair / music gen). Gate GPU-heavy
-    work (music generation, local-VLM captioning) on this so we don't fight an active render —
-    or the user's game. Works from Windows (dashboard) via wsl.exe and from WSL directly. The
-    [b]racket trick keeps the pgrep pattern from matching its own shell command line."""
+    """True if the GPU is ACTUALLY under load — a dive render, seam repair, music gen, OR a game.
+    Reads nvidia-smi utilization directly instead of matching process names: the old pgrep
+    approach falsely tripped on any process whose *command line* merely mentioned the render
+    scripts (e.g. a bash watcher with 'engine/dive.py' in its until-condition), so the flag never
+    cleared after a render. Gate GPU-heavy work (music gen, local-VLM captioning) on this. Works
+    from Windows (dashboard) via wsl.exe and from WSL directly; fails OPEN (returns False) so a
+    smi hiccup never blocks the user."""
     import os
     import subprocess
-    pat = "[e]ngine/dive.py|[r]epair_seam.py|[m]usic_gen.py|[m]usic.py"
-    cmd = f"pgrep -f '{pat}' >/dev/null 2>&1 && echo BUSY || echo FREE"
+    smi = "/mnt/c/Windows/System32/nvidia-smi.exe"  # WSL2 GPU passthrough exposes the Windows smi
+    inner = f"'{smi}' --query-gpu=utilization.gpu --format=csv,noheader,nounits 2>/dev/null | head -1"
     try:
-        argv = (["wsl.exe", "bash", "-lc", cmd] if os.name == "nt" else ["bash", "-lc", cmd])
+        argv = (["wsl.exe", "bash", "-lc", inner] if os.name == "nt" else ["bash", "-lc", inner])
         r = subprocess.run(argv, capture_output=True, text=True, timeout=8)
-        return "BUSY" in (r.stdout or "")
+        vals = [int(x) for x in (r.stdout or "").split() if x.strip().isdigit()]
+        return bool(vals) and vals[0] >= GPU_BUSY_PCT
     except Exception:
         return False
 

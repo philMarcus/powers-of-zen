@@ -34,7 +34,10 @@
       "palette": "storm slate and pearl",
       "cameo": {
         "sprite": "output/mascots/canon/janet.png",
-        "pos": [0.72, 0.34],
+        "pos": [
+          0.72,
+          0.34
+        ],
         "size": 0.12
       },
       "interior": "an immense spiral cyclone seen from orbit, white arms of cloud wrapping a dark calm eye",
@@ -54,5 +57,6 @@
       "interior": "a fog-drowned night coast, the slow sweeping golden beam of a lighthouse raking through deep drifting banks of sea fog over black water, no one present",
       "next_target": "the warm lamplit room at the very top of the lighthouse"
     }
-  ]
+  ],
+  "music_theme": "A slow, swelling ambient drone with distant chimes and a heartbeat-like pulse"
 }

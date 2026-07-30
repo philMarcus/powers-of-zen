@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Write short-video captions (+ a YouTube title) for a rendered journey with a LOCAL vision
-model (Ollama). Looks at a few frames of the render + the journey's worlds, returns THREE caption
-options (each ending in journey-specific hashtags); the always-on brand hashtags are appended
-programmatically. Stores them in the pipeline entry so a video already HAS a caption + YT title by
-the time it's in the review queue.
+"""Write short-video captions for a rendered journey with a LOCAL model (Ollama). Reads the
+journey's worlds and returns FIVE caption options (each ending in journey-specific hashtags); the
+always-on brand hashtags are appended programmatically. The YouTube title is NOT written separately
+— it's the caption BODY (the descriptive line before the mascot question), i.e. a truncation of the
+caption. Stores everything in the pipeline entry so a video already HAS a caption + YT title by the
+time it's in the review queue.
 
 GPU-heavy (the VLM runs on the GPU) — refuses to run while a render/GPU job is active unless
 --force. Model-agnostic caption; prefers DS frames if present (same caption for DS or turbo).
@@ -41,17 +42,15 @@ PROMPT = (
     'zoom short that dives continuously through every scale of a world and loops forever. Brand '
     'voice: dreamy, awe-striking, oddly satisfying; it makes people rewatch to find the loop.\n\n'
     'This video travels through these worlds, in order:\n{worlds}\nVisual style: {style}\n\n'
-    'Give FIVE distinct options. Each option is an object with:\n'
-    '  "caption": ONE short evocative TikTok/Instagram line that makes someone watch to the end '
-    'and rewatch the loop — hint at the journey, at most 1–2 tasteful emoji, NO hashtags and NO '
-    'questions.\n'
-    '  "yt_title": a DIFFERENT, punchy YouTube Shorts TITLE for that same option (a title, not a '
-    'caption) — under 80 chars, no hashtags, no emoji.\n'
+    'Give FIVE distinct "captions". Each caption is ONE short evocative TikTok/Instagram line that '
+    'makes someone watch to the end and rewatch the loop — hint at the journey, at most 1–2 tasteful '
+    'emoji, NO hashtags and NO questions. (The YouTube title is taken from this same line, so make it '
+    'work standing alone.)\n'
     '{mascot_line}'
     'Also give: "hashtags" — 3–4 tags SPECIFIC to this video\'s worlds/theme (never #fyp, #viral, '
     'or generic filler); "music_theme" — one vivid line describing the scene/mood to inspire an '
     'instrumental soundtrack for this dive.\n'
-    'Respond with ONLY JSON: {{"options": [{{"caption": "...", "yt_title": "..."}}, ... 5 total], '
+    'Respond with ONLY JSON: {{"captions": ["...", ... 5 total], '
     '"spot_line": "...", "hashtags": ["#..","#.."], "music_theme": "..."}}'
 )
 MASCOT_INSTR = (
@@ -155,17 +154,16 @@ def generate(journey, model="ds", no_theme=False):
         data = _parse(r.json().get("response", ""))
     except Exception as e:
         print(f"  VLM error for {journey}: {e}"); return None
-    # options: 5 paired {caption, yt_title}; tolerate the older flat shape too
-    raw_opts = data.get("options")
-    if not raw_opts and data.get("captions"):
-        raw_opts = [{"caption": c, "yt_title": data.get("yt_title", "")} for c in data["captions"]]
-    bodies, yts = [], []
-    for o in (raw_opts or [])[:5]:
-        b = (o.get("caption") or "").strip()
-        if b:
-            bodies.append(b); yts.append((o.get("yt_title") or "").strip()[:100])
+    # 5 caption bodies; tolerate the older paired {caption, yt_title} shape too
+    raw = data.get("captions")
+    if not raw and data.get("options"):
+        raw = [o.get("caption") for o in data["options"]]
+    bodies = [c.strip() for c in (raw or []) if c and c.strip()][:5]
     if not bodies:
         print(f"  no captions parsed for {journey}"); return None
+    # YouTube title = the descriptive caption body itself (the part before the mascot question +
+    # hashtags), truncated to YT's limit — not a separately-written title.
+    yts = [b[:100] for b in bodies]
     spot = (data.get("spot_line") or "").strip() if mascot else ""
     tags = " ".join(_dedupe_tags(list(data.get("hashtags", [])) + BRAND_TAGS))
     mtheme = (data.get("music_theme") or "").strip()

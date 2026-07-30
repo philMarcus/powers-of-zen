@@ -39,3 +39,32 @@ Summary: {
   "instagram": "posted"
 }
 ⚠ flags recorded in /mnt/c/Users/Phil/zoomer/outbox/flags.jsonl — review before next run.
+Posting: alexandria  (file: production/alexandria_ds_divein.mp4, ds/divein)
+  tiktok: posted
+    set_text failed: NO_FOCUS
+    set_text failed: NO_FOCUS
+    set_text failed: NO_FOCUS
+    set_text failed: NO_FOCUS
+    set_text failed: NO_FOCUS
+    set_text failed: NO_FOCUS
+  !! FLAG [youtube/title] title field not settable
+     context: {"buttons":["Close","Close","Skip navigation","Skip navigation","Create","Create","Dashboard","Content","Analytics","Community","Subtitles","Content detection","Earn","Customization","Audio library","Settings","Send feedback","Learn more","Learn more","Catch me up on this video","Catch me up on this video","Go to videos","Go to videos","Go to videos","116","78","27","Go to channel analytics","Go to channel analytics","Go to channel analytics"],"headings":["Channel dashboard","Latest Short performance","everything glows at night 🌙 10ᶻ","an ocean, a cell, and the cosmic web — one dive 🌊 10ᶻ","everything's a black hole if you zoom out enough 🕳️✨ 10ᶻ","the town hidden inside a grain of sugar 🍞❄️ 10ᶻ","one continuous dive through every scale of the universe 🌌 10ᶻ","Channel analytics"]}
+  !! FLAG [instagram/edit_screen] edit screen never appeared after 1st Next
+     context: {"buttons":["Instagram","HomeHome","ReelsReels","MessagesMessages","SearchSearch","NotificationsNotifications","New postCreate","Profile","SettingsMore","powers.of.zen","14h","Original audio","More options","Audio is muted","Audio is muted","Like","Comment","Repost","Share","Save","Save","powers.of.zen","#powersofzen","#bioluminescence","#oddlysatisfying","gucci_neddy","22h","Follow","More options","Like"],"headings":["Crop"]}
+
+Summary: {
+  "tiktok": "posted",
+  "youtube": "FLAGGED: youtube/title: title field not settable",
+  "instagram": "FLAGGED: instagram/edit_screen: edit screen never appeared after 1st Next"
+}
+⚠ flags recorded in /mnt/c/Users/Phil/zoomer/outbox/flags.jsonl — review before next run.
+Posting: food_chain  (file: production/food_chain_ds_divein.mp4, ds/divein)
+  ⏸ skipping paused platform(s): tiktok
+  youtube: https://youtube.com/shorts/n2fsFJuVVeQ
+  instagram: https://www.instagram.com/powers.of.zen/reel/DbZI3tOMPqL/
+
+Summary: {
+  "youtube": "https://youtube.com/shorts/n2fsFJuVVeQ",
+  "instagram": "https://www.instagram.com/powers.of.zen/reel/DbZI3tOMPqL/"
+}
+⚠ flags recorded in /mnt/c/Users/Phil/zoomer/outbox/flags.jsonl — review before next run.
