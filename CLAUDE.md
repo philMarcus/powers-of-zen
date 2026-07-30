@@ -107,4 +107,15 @@ truncation, not a separate write (caption.py drops yt_title generation); removed
 "scheduled" timestamp field. GPU FLAG fix: pipeline.gpu_busy() now reads nvidia-smi utilization
 (>=30%) instead of matching process names — the old pgrep matched watcher/caption command lines
 that merely mentioned dive.py, so the flag never cleared after a render.
+2026-07-30: POSTER COLD-BROWSER FIX. The 08:00 scheduled posts kept failing at YT title + IG crop
+while EVENING (18:00) posts worked — because every success was a WARM browser I'd been driving, and
+the 08:00 run hits a cold/idle session. Flag contexts proved it: YouTube showed the Studio DASHBOARD
+with onboarding nags ("Dismiss"/"Skip navigation"/"Catch me up"), Create->Upload no-oped behind them,
+and the old flow FALSE-PASSED on a stale '#textbox'[0] element (title then NO_FOCUSed). IG reached
+Crop but measured an unrendered <video>. Fix (scripts/poster.py): _yt_dismiss_nags (specific nag
+texts only, never the uploads dialog), _yt_open_upload (confirms the REAL uploads dialog opened +
+retries), dialog-scoped title selector (dropped the false-passing fallback); IG _ig_dismiss + wait
+for the crop <video> to load before the Original check. LESSON (feedback): validate automation in the
+conditions it actually runs in — a cold browser via killing+relaunching zen Chrome and a --dry-run —
+NOT a warm browser I've been using. Claiming "fixed" off a warm test is why it didn't take twice.
 OPEN: fold seam into dive.py + re-render journeys; TikTok waits (Phil retries by hand on weekend).
