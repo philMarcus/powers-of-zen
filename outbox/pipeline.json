@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-29 23:21:45",
+    "updated": "2026-07-29 23:50:13",
     "paused_platforms": [
       "tiktok"
     ],
@@ -80,8 +80,8 @@
       "cut": "zoomout",
       "file": "production/iris_observatory_ds.mp4",
       "title": "the galaxy at the back of your eye 👁️🌌",
-      "caption": "From brass telescopes to cosmic eyes, the universe gazes back 🌌 #cosmicjourney #infinitescale #telescopetravel #galaxydive #powersofzen #oddlysatisfying #zoomer",
-      "yt_title": "From brass telescopes to cosmic eyes, the universe gazes back 🌌",
+      "caption": "Dive through the lens of time and space, where galaxies breathe ⏳ #cosmicjourney #infinitescale #telescopetravel #galaxydive #powersofzen #oddlysatisfying #zoomer",
+      "yt_title": "Dive through the lens of time and space, where galaxies breathe ⏳",
       "yt_desc": "the galaxy at the back of your eye 👁️🌌\n\n#shorts #powersofzen #space #trippy #oddlysatisfying #fyp",
       "cameo": null,
       "state": "queued",

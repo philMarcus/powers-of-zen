@@ -79,12 +79,19 @@ def align(video, track, out, journey=None, cut=None, shift_sec=None,
     w0, f, lock, bar = best_align(env, esr, morphs, stretches)
     twav.unlink(missing_ok=True)
 
-    fo = max(0.0, dur - 0.5)
-    af = (f"atempo={f:.5f},atrim=start={w0:.3f}:duration={dur:.3f},asetpts=PTS-STARTPTS,"
-          f"loudnorm=I=-14:TP=-1.5:LRA=11,afade=t=in:st=0:d=0.12,afade=t=out:st={fo:.3f}:d=0.5")
+    # NEVER clip the video (that makes the loop jump): keep ALL frames, and pad the audio with
+    # silence to the exact video length if the track runs short. (Old bug: atrim capped the audio
+    # at the track's end, then -shortest cut the VIDEO down to it.) Fade out at the real audio end
+    # (or video end, whichever comes first) so a short track ends cleanly into any trailing silence.
+    tdur = video_duration(track)                 # track length (ffprobe works on audio too)
+    la = max(0.0, (tdur - w0) / f)               # aligned track content length after window+tempo
+    fo = max(0.0, min(la, dur) - 0.5)
+    af = (f"atempo={f:.5f},atrim=start={w0:.3f},asetpts=PTS-STARTPTS,"
+          f"loudnorm=I=-14:TP=-1.5:LRA=11,afade=t=in:st=0:d=0.12,afade=t=out:st={fo:.3f}:d=0.5,"
+          f"apad,atrim=end={dur:.3f},asetpts=PTS-STARTPTS")
     _run([FFMPEG, "-y", "-loglevel", "error", "-i", win(video), "-i", win(track),
           "-filter_complex", f"[1:a]{af}[a]", "-map", "0:v:0", "-map", "[a]",
-          "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", win(out)])
+          "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", win(out)])
     print(f"  aligned -> {out}\n    bar {bar:.3f}s | stretch {f:.4f} | window {w0:.3f}s | "
           f"lock {lock:.2f}x (higher = the track's accents sit on the morphs more sharply)")
     return {"w0": w0, "stretch": f, "lock": lock}

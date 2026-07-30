@@ -19,6 +19,7 @@ Usage:
 """
 import argparse
 import json
+import math
 import subprocess
 import sys
 from pathlib import Path
@@ -94,6 +95,11 @@ def generate(journey, n=5):
     shift_sec = v.get("start_t")          # dashboard-marked start frame (phase-shift, seconds)
     bpm, bar = bpm_for(journey, cut, shift_sec=shift_sec)
     video = _video(journey)
+    # Generate the track LONGER than the video so, after the aligner windows into it (start=w0)
+    # and stretches it, there's still >= a full video's worth of audio — otherwise the track runs
+    # short and the video would have to be padded with silence. Headroom = video + ~2 bars.
+    vdur = video_duration(str(ROOT / video) if not Path(video).is_absolute() else video)
+    track_dur = int(math.ceil(vdur + max(4.0, 2 * bar)))
     outdir = ROOT / "review" / "music" / "candidates" / journey
     outdir.mkdir(parents=True, exist_ok=True)
     print(f"{journey} ({cut}): bar {bar:.3f}s -> {bpm} bpm, key {key}; generating {n}")
@@ -102,7 +108,7 @@ def generate(journey, n=5):
         seed = SEED0[mood]
         tags = BASE.format(theme=theme, mood=desc, anac=ANACRUSIS)
         track = ROOT / "output" / "music" / f"{journey}_{mood}.flac"
-        music.generate(journey=journey, tags=tags, bpm=bpm, key=key, duration=30,
+        music.generate(journey=journey, tags=tags, bpm=bpm, key=key, duration=track_dur,
                        seed=seed, out=str(track))
         aligned = outdir / f"{mood}.mp4"
         info = al.align(video, str(track), str(aligned), journey=journey, cut=cut, shift_sec=shift_sec)
