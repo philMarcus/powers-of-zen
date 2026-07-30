@@ -557,6 +557,75 @@ re-imports per process; edits would make the batch inconsistent).
 
 ---
 
+## ENGINE 2.0 — object-zoom targeting (design locked with Phil 2026-07-30)
+
+The core goal: make it read as ONE CONTINUOUS ZOOM into a specific object, not a morph into
+whatever's center. Design agreed (still planning; prototype-first before any build):
+
+**Root mechanism to fix:** the engine always zooms toward a FIXED center (`cx,cy=0.5`+drift) and
+re-diffuses at constant denoise — so for a discrete object (planet, one animal, geode) it marches
+into the background and re-hallucinates it into the next world. Works for environments, fails for
+objects. The fix adds a *targeting brain* to hardware we ALREADY have: `zoom_transform` already
+takes `cx,cy` (zoom toward any point) and `build_workflow` already supports `SetLatentNoiseMask`.
+
+**The loop:** establish wide varied scene (many objects) → LOCATE the target object (box/mask) →
+pan-zoom toward ITS center over the plunge beats → hold its identity with a light ControlNet while
+still fully regenerating every frame → arrive at its surface → recurse (find the next sub-target).
+The mask does triple duty: direction, persistence, arrival-detection (mask fills frame = arrived).
+
+**Phil's two guardrails (critical):**
+- KEEP MORPH-ON-THE-BEAT. The cool thing is the morph landing on the beat, NOT the zoom (velocity
+  changes are too subtle with our soft beats). So: keep the INTENTIONAL morph at the arrival beat
+  (already the arrival_denoise_boost + prompt-blend at register boundaries, on the beat, music-
+  locked) and kill only the ACCIDENTAL morph (center-into-background between beats). Sensible zoom
+  while approaching → morph pops on the arrival beat. Do NOT go all the way to pure static zoom.
+- NEVER STATIC / PASTED. The seam-repair pasted frame-0 and froze — do NOT repeat that at every
+  scale. The engine already regenerates every frame (img2img); KEEP that. Persistence = a light
+  ControlNet (depth/soft-edge) from the previous frame as a STRUCTURAL WHISPER that holds the
+  object's identity/layout while pixels are fully re-diffused each frame (alive, not frozen). CN
+  strength is a knob to back off if it ever looks static. Prototype must prove BOTH: object grows
+  (not flies by) AND stays alive frame-to-frame.
+
+**Decisions:** DETECT the target (not compose) — fits "busy varied scene, zoom into one of many";
+detect a FEW times per register (not per frame; cheap). The "semantic seam" (the one weird warp
+every journey has — not always quark→cosmos; e.g. cellular→planetary) is NOT special-cased — it's
+just another register transition the journey-writer blends creatively, with its own on-beat morph.
+
+**Journeys: NO rewrite needed.** The existing `next_target` already names what we zoom into → the
+compiler derives the detector query from it. Only optional addition: a "which one" selector
+(e.g. `target_pick: "the largest"`) for ambiguous scenes. Old journeys keep working.
+
+**Prereq / open:** NO detector installed yet (ComfyUI has no GroundingDINO/SAM/Florence nodes; no
+local torch/cv2; Ollama gateway was down at check time). First real step = get a detector on the
+3080 — recommend **Florence-2** (one small model does open-vocab detection + phrase-grounding,
+great on a 3080, has a ComfyUI node) or GroundingDINO+SAM. Then the POC: box "the planet" on real
+stormglass frames + a short targeted-zoom-with-CN clip → eyeball grows-and-stays-alive.
+
+PARKED for later (Phil): moving/dynamic worlds (motion IN the environment); dynamic camera (turn
+corners, whip around a planet — the old big sinusoid was jarring; a tasteful version later).
+
+---
+
+## Journey generator — the last pipeline piece (Phil's notes 2026-07-30, build later/parallel)
+
+Two capabilities wanted:
+1. LOCALLY-GENERATED journeys (gemma/mistral etc.) — from scratch OR from a big DIVERSE THEME list
+   (academia → pop culture → food → geography → culture → …). Diversity of journeys is the key.
+2. Phil DESCRIBES a journey in natural language → translated into the JSON format (registers,
+   interiors, next_targets, exponents CALCULATED, beat-aligned durations — see below).
+
+**Beat-aligned durations (FORMAT CHANGE — ties engine+grammar+music together).** Today per-register
+`sec` is arbitrary DECIMAL seconds → morphs land OFF beat, so the music can't lock cleanly (the
+seamless-loop work relies on the video being an integer number of bars; it's currently integer
+only by luck because all registers share one `sec`). Fix: express register duration in BARS/beats,
+integer-quantized, so EVERY morph lands on a downbeat (beat 1 / beat 3 / …). This enables varied
+pacing WITHOUT going off-beat: a "linger" scale = more bars (2, 4); "pass through fast / don't
+pause" = fewer bars, or traverse several scales within a bar-aligned span. Always stay on beat —
+that's the rule. Change the format if needed. (This is the structural version of "video = exact
+integer bars" we discovered during the music-loop fix.)
+
+---
+
 ## Dashboard start-frame + cover-frame marking (2026-07-29)
 
 Video Review has a **start frame** marker (enter the seconds you paused the looping preview at,
