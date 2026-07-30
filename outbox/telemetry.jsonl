@@ -117,3 +117,20 @@
 {"ts": "2026-07-29 23:23:44", "event": "reseam", "journey": "snowfall", "detail": "R=24 resid=0.28 open=12(was 12)"}
 {"ts": "2026-07-29 23:53:57", "event": "music_gen", "journey": "cosmic_scales_remix", "detail": "5 candidates"}
 {"ts": "2026-07-30 00:03:59", "event": "music_gen", "journey": "cosmic_scales_remix", "detail": "5 candidates"}
+{"ts": "2026-07-30 00:13:48", "event": "music_choose", "journey": "cosmic_scales_remix", "detail": "deep"}
+{"ts": "2026-07-30 00:13:48", "event": "queued", "journey": "cosmic_scales_remix"}
+{"ts": "2026-07-30 00:17:42", "event": "review", "journey": "iris_observatory"}
+{"ts": "2026-07-30 00:19:30", "event": "phase_shift", "journey": "iris_observatory", "detail": "start @ 0.80s"}
+{"ts": "2026-07-30 00:19:30", "event": "music", "journey": "iris_observatory"}
+{"ts": "2026-07-30 00:20:27", "event": "music_gen", "journey": "iris_observatory", "detail": "5 candidates"}
+{"ts": "2026-07-30 00:22:25", "event": "music_choose", "journey": "iris_observatory", "detail": "tender"}
+{"ts": "2026-07-30 00:22:25", "event": "queued", "journey": "iris_observatory"}
+{"ts": "2026-07-30 00:39:02", "event": "phase_shift", "journey": "circuit_city", "detail": "start @ 3.00s"}
+{"ts": "2026-07-30 00:39:02", "event": "music", "journey": "circuit_city"}
+{"ts": "2026-07-30 00:40:13", "event": "music_gen", "journey": "circuit_city", "detail": "5 candidates"}
+{"ts": "2026-07-30 00:47:36", "event": "music_choose", "journey": "circuit_city", "detail": "warm"}
+{"ts": "2026-07-30 00:47:36", "event": "queued", "journey": "circuit_city"}
+{"ts": "2026-07-30 08:00:52", "event": "post_fail", "journey": "snowfall", "platform": "youtube", "detail": "FLAGGED: youtube/title: title never confirmed set (field not editable in time?)"}
+{"ts": "2026-07-30 08:00:52", "event": "post_fail", "journey": "snowfall", "platform": "instagram", "detail": "FLAGGED: instagram/crop_original: could not confirm Original (phone 9:16) crop — refusing to post a squared video"}
+{"ts": "2026-07-30 09:47:41", "event": "post", "journey": "snowfall", "platform": "youtube", "detail": "https://youtube.com/shorts/aSM8YK_wsRk"}
+{"ts": "2026-07-30 09:47:41", "event": "post", "journey": "snowfall", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/Dba1KIBhz3b/"}

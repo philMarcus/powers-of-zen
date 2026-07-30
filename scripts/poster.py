@@ -378,31 +378,76 @@ def post_tiktok(video_rel, caption, dry_run):
     return "posted"
 
 
+# YouTube Studio throws onboarding/promo nags on a COLD/idle session ("Dismiss", "Skip
+# navigation", "Got it", "Catch me up on this video") that overlay the page and block Create->Upload
+# and title focus — that is what failed the 8am posts (title NO_FOCUS, context showed the dashboard).
+# Dismiss ONLY these specific nag texts (never a generic Close/X, and never anything inside the
+# uploads dialog) so we can't accidentally cancel the upload.
+YT_NAG_JS = r"""(function(){
+  const kill=/^(dismiss|skip navigation|got it|no thanks|not now|maybe later|skip|no,?\s*thanks)$/i;
+  const up=document.querySelector('ytcp-uploads-dialog');
+  let n=0;
+  for(const b of document.querySelectorAll('button,ytcp-button,tp-yt-paper-button,a')){
+    const t=(b.textContent||'').trim();
+    if(!kill.test(t))continue;
+    if(up&&up.contains(b))continue;
+    try{b.click();n++;}catch(e){}
+  }
+  return n;})()"""
+
+
+def _yt_dismiss_nags(tab):
+    try:
+        tab.eval(YT_NAG_JS)
+    except Exception:
+        pass
+    time.sleep(0.4)
+
+
+def _yt_open_upload(tab, tries=4):
+    """Open the Upload dialog and CONFIRM it really opened. On a cold session the dashboard sits
+    behind onboarding nags and Create->Upload silently no-ops; the old flow then false-passed on
+    a stale dashboard element and doomed the title step. We verify the actual uploads dialog +
+    its file picker are present, dismissing nags and retrying the sequence if not."""
+    for _ in range(tries):
+        _yt_dismiss_nags(tab)
+        tab.eval("[...document.querySelectorAll('button,ytcp-button')]"
+                 ".find(e=>/^create$/i.test(e.textContent.trim())||/^Create$/.test(e.getAttribute('aria-label')||''))?.click()")
+        time.sleep(1.5)
+        tab.eval("[...document.querySelectorAll('tp-yt-paper-item,ytcp-text-menu-item,[role=menuitem]')]"
+                 ".find(e=>/upload video/i.test(e.textContent))?.click()")
+        if wait_for(tab, "(document.querySelector('ytcp-uploads-dialog')&&"
+                         "document.querySelector('ytcp-uploads-dialog input[type=\"file\"],"
+                         "ytcp-uploads-file-picker input[type=\"file\"]'))?true:null", 15):
+            return True
+    return False
+
+
 def post_youtube(video_rel, title, desc, dry_run):
     tab = platform_tab("youtube")
     # /upload bounces to the Studio content list for this channel (no details dialog opens),
     # so open the upload dialog via Create -> Upload videos (verified working 2026-07-28).
     tab.goto("https://studio.youtube.com/")
     expect(wait_for(tab, "[...document.querySelectorAll('button,ytcp-button')]"
-                    ".some(e=>/^create$/i.test(e.textContent.trim()))?true:null", 30),
+                    ".some(e=>/^create$/i.test(e.textContent.trim()))?true:null", 40),
            "youtube", "studio", tab, "Studio Create button never appeared")
-    tab.eval("[...document.querySelectorAll('button,ytcp-button')]"
-             ".find(e=>/^create$/i.test(e.textContent.trim())||/^Create$/.test(e.getAttribute('aria-label')||''))?.click()")
-    time.sleep(1.5)
-    tab.eval("[...document.querySelectorAll('tp-yt-paper-item,ytcp-text-menu-item,[role=menuitem]')]"
-             ".find(e=>/upload video/i.test(e.textContent))?.click()")
-    expect(wait_for(tab, "document.querySelector('input[type=\"file\"]')?true:null", 30),
-           "youtube", "file_input", tab, "upload dialog did not open (Create->Upload)")
+    _yt_dismiss_nags(tab)
+    expect(_yt_open_upload(tab), "youtube", "file_input", tab,
+           "upload dialog did not open (Create->Upload; cold-session onboarding nags?)")
     tab.setfile('input[type="file"]', win_path(video_rel))
-    # wait for the details dialog's title field to exist (upload dialog open)
+    # wait for the details dialog's title field to exist — use the DIALOG-SCOPED selectors only
+    # (the old generic '#textbox'[0] fallback matched a stale dashboard field on cold starts and
+    # false-passed straight into a doomed title-set).
     tsel = ("document.querySelector('#title-textarea #textbox')"
             "||document.querySelector('ytcp-social-suggestions-textbox #textbox')"
-            "||document.querySelectorAll('#textbox')[0]")
+            "||document.querySelector('ytcp-uploads-dialog #textbox')")
     expect(wait_for(tab, f"({tsel})?true:null", 90, 2), "youtube", "dialog", tab,
            "upload details dialog/title field never appeared")
-    # title — the field can EXIST before it is editable (details dialog still animating in),
-    # which is what silently failed the 8am post. set_text_verified reads back the value and
-    # retries until the text actually lands (not just until execCommand runs).
+    # dismiss any promo nag now covering the dialog, scroll the field into view, THEN set the title.
+    # The field can EXIST before it is editable (dialog animating) — set_text_verified reads back
+    # the value and retries until the text actually lands (this is what silently failed at 8am).
+    _yt_dismiss_nags(tab)
+    tab.eval(f"({tsel})?.scrollIntoView({{block:'center'}})")
     expect(set_text_verified(tab, tsel, title[:100]), "youtube", "title", tab,
            "title never confirmed set (field not editable in time?)")
     # description
@@ -550,9 +595,23 @@ def _ig_advance(tab, label, marker_js, tries=4, settle=2.5):
     return False
 
 
+def _ig_dismiss(tab):
+    """Close IG's cold-session nag dialogs (Save login info / Turn on notifications / etc.). ONLY
+    safe on the feed BEFORE the Create modal is open — inside the create flow 'Not Now'/'Cancel'
+    would abort the upload, so we never call this once the composer is up."""
+    try:
+        tab.eval(r"""(function(){const kill=/^(not now|dismiss|no thanks|maybe later|skip)$/i;let n=0;
+          for(const b of document.querySelectorAll('button,div[role=button]')){
+            const t=(b.textContent||'').trim();if(kill.test(t)){try{b.click();n++}catch(e){}}}return n;})()""")
+    except Exception:
+        pass
+    time.sleep(0.4)
+
+
 def post_instagram(video_rel, caption, dry_run):
     tab = platform_tab("instagram")
     tab.goto("https://www.instagram.com/")
+    _ig_dismiss(tab)   # clear Save-login/notification nags a cold session shows before Create
     wait_for(tab, "[...document.querySelectorAll('a,div[role=\"button\"],span')]"
                   ".find(e=>e.textContent.trim()==='Create')?true:null", 30)
     tab.eval("[...document.querySelectorAll('a,div[role=\"button\"],span')]"
@@ -565,10 +624,15 @@ def post_instagram(video_rel, caption, dry_run):
     # (the aspect popup is icon-only and mis-clicks dismissed the dialog, so we don't touch it).
     expect(wait_for(tab, "document.body.innerText.includes('Crop')?true:null", 60, 2),
            "instagram", "crop_screen", tab, "crop screen never appeared (upload failed?)")
-    time.sleep(1)
+    # WAIT for the crop <video> to actually load and lay out before measuring containment. On a
+    # cold session the video hadn't rendered yet, so the Original check measured an unsized element
+    # and mis-detected the crop (this morning's crop_original flag). Don't just sleep(1).
+    expect(wait_for(tab, "(function(){const v=document.querySelector('[role=dialog] video');"
+                         "return v&&v.readyState>=1&&v.getBoundingClientRect().height>60?true:null})()", 25, 0.5),
+           "instagram", "crop_video", tab, "crop preview video never finished loading")
     # select the ORIGINAL (phone 9:16) crop — IG defaults to square and quietly cropped the
     # last three posts. Fail loud rather than post a squared video.
-    expect(_ig_select_original_crop(tab), "instagram", "crop_original", tab,
+    expect(_ig_select_original_crop(tab, tries=5), "instagram", "crop_original", tab,
            "could not confirm Original (phone 9:16) crop — refusing to post a squared video")
     # advance CROP -> EDIT: click Next and CONFIRM the Edit screen ('Cover photo'/'Trim')
     # appeared, retrying the click if it didn't (the 8am stall was a dropped first click).

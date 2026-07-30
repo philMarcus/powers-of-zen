@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-30 00:26:51",
+    "updated": "2026-07-30 09:47:41",
     "paused_platforms": [
       "tiktok"
     ],
@@ -104,7 +104,7 @@
         }
       },
       "created": "2026-07-27",
-      "order": 0,
+      "order": 5,
       "music": {
         "bpm": 100,
         "bar": 2.393,
@@ -635,7 +635,7 @@
       "yt_title": "The quiet hum of falling snow",
       "yt_desc": "the village inside the snowflake ❄️\n\n#shorts #powersofzen #winter #cozy #oddlysatisfying #fyp",
       "cameo": null,
-      "state": "queued",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -644,18 +644,18 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/aSM8YK_wsRk",
+          "ts": "2026-07-30 09:47:41"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/Dba1KIBhz3b/",
+          "ts": "2026-07-30 09:47:41"
         }
       },
       "created": "2026-07-27",
-      "order": 1,
+      "order": 0,
       "music": {
         "bpm": 101,
         "bar": 2.385,
@@ -765,7 +765,7 @@
         }
       },
       "created": "2026-07-27",
-      "order": 3,
+      "order": 2,
       "music": {
         "bpm": 100,
         "bar": 2.405,
@@ -957,19 +957,19 @@
         "for_model": "ds",
         "for_cut": "zoomout"
       },
-      "order": 2
+      "order": 1
     },
     {
       "journey": "circuit_city",
       "model": "ds",
       "cut": "divein",
-      "file": "production/circuit_city_ds_divein.mp4",
+      "file": "production\\circuit_city_ds_divein_shift.mp4",
       "title": "",
-      "caption": "From city lights to starlight, a loop of endless wonder ✨ Can you spot Adam hiding somewhere in the infinite zoom? 👀 #CyberpunkCosmos #InfiniteZoom #NeonGalaxies #HyperdetailedDive #powersofzen #oddlysatisfying #zoomer",
-      "yt_title": "From city lights to starlight, a loop of endless wonder ✨",
+      "caption": "Dive into the neon abyss and emerge among the stars 🌌 Can you spot Adam hiding somewhere in the infinite zoom? 👀 #CyberpunkCosmos #InfiniteZoom #NeonGalaxies #HyperdetailedDive #powersofzen #oddlysatisfying #zoomer",
+      "yt_title": "Dive into the neon abyss and emerge among the stars 🌌",
       "yt_desc": "",
       "cameo": "adam",
-      "state": "review",
+      "state": "queued",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1012,7 +1012,66 @@
         "A seamless dive from skyscrapers to galaxies 🌆→🌊 Can you spot Adam hiding somewhere in the infinite zoom? 👀 #CyberpunkCosmos #InfiniteZoom #NeonGalaxies #HyperdetailedDive #powersofzen #oddlysatisfying #zoomer",
         "Lost in the glow of infinite scales, where do you end? ⚡ Can you spot Adam hiding somewhere in the infinite zoom? 👀 #CyberpunkCosmos #InfiniteZoom #NeonGalaxies #HyperdetailedDive #powersofzen #oddlysatisfying #zoomer",
         "Neon rivers to cosmic webs, a hypnotic descent 🌌➡️🔥 Can you spot Adam hiding somewhere in the infinite zoom? 👀 #CyberpunkCosmos #InfiniteZoom #NeonGalaxies #HyperdetailedDive #powersofzen #oddlysatisfying #zoomer"
-      ]
+      ],
+      "start_t": 3.0,
+      "orig_file": "production/circuit_city_ds_divein.mp4",
+      "music": {
+        "bpm": 100,
+        "bar": 2.404,
+        "key": "D minor",
+        "stage": "done",
+        "chosen": "warm",
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/circuit_city_warm.flac",
+            "aligned": "review/music/candidates/circuit_city/warm.mp4",
+            "seed": 500,
+            "lock": 7.25,
+            "tags": "chill hypnotic ambient evoking A pulsing, atmospheric synthwave score blending cyberpunk neon glow with cosmic ambient drones, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/circuit_city_glassy.flac",
+            "aligned": "review/music/candidates/circuit_city/glassy.mp4",
+            "seed": 501,
+            "lock": 2.88,
+            "tags": "chill hypnotic ambient evoking A pulsing, atmospheric synthwave score blending cyberpunk neon glow with cosmic ambient drones, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/circuit_city_deep.flac",
+            "aligned": "review/music/candidates/circuit_city/deep.mp4",
+            "seed": 502,
+            "lock": 9.2,
+            "tags": "chill hypnotic ambient evoking A pulsing, atmospheric synthwave score blending cyberpunk neon glow with cosmic ambient drones, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/circuit_city_tender.flac",
+            "aligned": "review/music/candidates/circuit_city/tender.mp4",
+            "seed": 503,
+            "lock": 3.67,
+            "tags": "chill hypnotic ambient evoking A pulsing, atmospheric synthwave score blending cyberpunk neon glow with cosmic ambient drones, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/circuit_city_choir.flac",
+            "aligned": "review/music/candidates/circuit_city/choir.mp4",
+            "seed": 504,
+            "lock": 3.98,
+            "tags": "chill hypnotic ambient evoking A pulsing, atmospheric synthwave score blending cyberpunk neon glow with cosmic ambient drones, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      },
+      "order": 3
     },
     {
       "journey": "stormglass",
