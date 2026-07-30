@@ -184,6 +184,8 @@ def set_text_verified(tab, selector_js, text, tries=10, wait=1.2):
     value landed — a field can exist-but-not-yet-be-editable (dialog still animating), where
     focus doesn't stick and the text silently never applies (this is what failed YouTube's
     title at 8am). Retry until the field's text actually contains what we set. Returns bool."""
+    if not (text or "").strip():
+        return True   # nothing to set (e.g. an empty description) — vacuously satisfied, not a failure
     needle = _norm(text)[:20]
     for _ in range(tries):
         set_text(tab, selector_js, text)
@@ -378,48 +380,70 @@ def post_tiktok(video_rel, caption, dry_run):
     return "posted"
 
 
-# YouTube Studio throws onboarding/promo nags on a COLD/idle session ("Dismiss", "Skip
-# navigation", "Got it", "Catch me up on this video") that overlay the page and block Create->Upload
-# and title focus — that is what failed the 8am posts (title NO_FOCUS, context showed the dashboard).
-# Dismiss ONLY these specific nag texts (never a generic Close/X, and never anything inside the
-# uploads dialog) so we can't accidentally cancel the upload.
-YT_NAG_JS = r"""(function(){
-  const kill=/^(dismiss|skip navigation|got it|no thanks|not now|maybe later|skip|no,?\s*thanks)$/i;
-  const up=document.querySelector('ytcp-uploads-dialog');
-  let n=0;
-  for(const b of document.querySelectorAll('button,ytcp-button,tp-yt-paper-button,a')){
-    const t=(b.textContent||'').trim();
-    if(!kill.test(t))continue;
-    if(up&&up.contains(b))continue;
-    try{b.click();n++;}catch(e){}
-  }
-  return n;})()"""
-
-
-def _yt_dismiss_nags(tab):
+# YouTube Studio shows onboarding/promo OVERLAYS on a cold/idle session ("Dismiss", "Skip
+# navigation", "Catch me up on this video", promo dialogs with a Close/X) that intercept
+# Create->Upload and steal focus from the title — the 8am failures. Worse, ytcp-uploads-dialog
+# lingers in the DOM on the dashboard, so a mere PRESENCE check false-passes and dooms the title
+# step (that intermittency: sometimes the dialog really opened, sometimes we typed into a hidden
+# one). So we (a) dismiss overlays aggressively — never the uploads dialog itself — and (b) gate
+# every step on real VISIBILITY (offsetParent + a laid-out box), retrying until it's truly on screen.
+def _yt_close_overlays(tab):
     try:
-        tab.eval(YT_NAG_JS)
+        tab.eval(r"""(function(){
+          const up=document.querySelector('ytcp-uploads-dialog');
+          const inUp=(e)=>up&&up.contains(e);
+          const kill=/^(dismiss|skip navigation|got it|no thanks|not now|maybe later|skip|no,?\s*thanks|close)$/i;
+          let n=0;
+          for(const b of document.querySelectorAll('button,ytcp-button,tp-yt-paper-button,a,[role=button]')){
+            const t=(b.textContent||'').trim();
+            if(kill.test(t)&&!inUp(b)&&b.offsetParent){try{b.click();n++}catch(e){}}
+          }
+          for(const d of document.querySelectorAll('tp-yt-paper-dialog,ytcp-dialog,[role=dialog]')){
+            if(up&&(d===up||d.contains(up)||up.contains(d)))continue;
+            if(!d.offsetParent)continue;
+            const x=d.querySelector('[aria-label="Close"],[aria-label="Dismiss"],#close-button');
+            if(x){try{x.click();n++}catch(e){}}
+          }
+          return n;})()""")
     except Exception:
         pass
-    time.sleep(0.4)
+    time.sleep(0.5)
 
 
-def _yt_open_upload(tab, tries=4):
-    """Open the Upload dialog and CONFIRM it really opened. On a cold session the dashboard sits
-    behind onboarding nags and Create->Upload silently no-ops; the old flow then false-passed on
-    a stale dashboard element and doomed the title step. We verify the actual uploads dialog +
-    its file picker are present, dismissing nags and retrying the sequence if not."""
+def _yt_upload_dialog_open():
+    # the "Upload videos" / "drag & drop" panel exists ONLY once the dialog is actually open — that
+    # text is never on the dashboard, so it can't false-pass like a bare ytcp-uploads-dialog
+    # presence check (which lingers in the DOM and doomed the title step at 8am).
+    return ("(function(){return [...document.querySelectorAll('ytcp-uploads-dialog,tp-yt-paper-dialog,[role=dialog]')]"
+            ".some(d=>d.offsetParent&&/drag and drop video files|Select files/i.test(d.textContent))?true:null})()")
+
+
+def _yt_open_upload(tab, tries=5):
+    """Open Create->Upload and confirm the upload dialog REALLY opened (the drag-drop panel is on
+    screen), dismissing overlays and retrying if the cold-session nags swallowed the click."""
     for _ in range(tries):
-        _yt_dismiss_nags(tab)
+        _yt_close_overlays(tab)
         tab.eval("[...document.querySelectorAll('button,ytcp-button')]"
                  ".find(e=>/^create$/i.test(e.textContent.trim())||/^Create$/.test(e.getAttribute('aria-label')||''))?.click()")
-        time.sleep(1.5)
+        time.sleep(1.3)
         tab.eval("[...document.querySelectorAll('tp-yt-paper-item,ytcp-text-menu-item,[role=menuitem]')]"
-                 ".find(e=>/upload video/i.test(e.textContent))?.click()")
-        if wait_for(tab, "(document.querySelector('ytcp-uploads-dialog')&&"
-                         "document.querySelector('ytcp-uploads-dialog input[type=\"file\"],"
-                         "ytcp-uploads-file-picker input[type=\"file\"]'))?true:null", 15):
+                 ".find(e=>/upload video/i.test(e.textContent)&&e.offsetParent)?.click()")
+        if wait_for(tab, _yt_upload_dialog_open(), 12):
             return True
+    return False
+
+
+def _yt_set_field(tab, sel, text, tries=12):
+    """Set a YouTube field, dismissing any overlay that steals focus BETWEEN retries (a promo nag
+    over the details dialog is what NO_FOCUSed the title). Empty text is a no-op success."""
+    if not (text or "").strip():
+        return True
+    for _ in range(tries):
+        _yt_close_overlays(tab)
+        tab.eval(f"({sel})?.scrollIntoView({{block:'center'}})")
+        if set_text_verified(tab, sel, text, tries=1, wait=0.4):
+            return True
+        time.sleep(1.0)
     return False
 
 
@@ -431,30 +455,26 @@ def post_youtube(video_rel, title, desc, dry_run):
     expect(wait_for(tab, "[...document.querySelectorAll('button,ytcp-button')]"
                     ".some(e=>/^create$/i.test(e.textContent.trim()))?true:null", 40),
            "youtube", "studio", tab, "Studio Create button never appeared")
-    _yt_dismiss_nags(tab)
+    _yt_close_overlays(tab)
     expect(_yt_open_upload(tab), "youtube", "file_input", tab,
-           "upload dialog did not open (Create->Upload; cold-session onboarding nags?)")
+           "upload dialog never became VISIBLE (Create->Upload; cold-session onboarding nags?)")
     tab.setfile('input[type="file"]', win_path(video_rel))
-    # wait for the details dialog's title field to exist — use the DIALOG-SCOPED selectors only
-    # (the old generic '#textbox'[0] fallback matched a stale dashboard field on cold starts and
-    # false-passed straight into a doomed title-set).
+    # after the file is chosen the details form appears — wait for the DIALOG-SCOPED title field
+    # (no generic '#textbox'[0] fallback, which matched a stale dashboard field on cold starts).
+    # We don't over-gate on visibility here — _yt_set_field reads the value back and retries while
+    # dismissing any overlay that steals focus, which is the real proof the title landed.
     tsel = ("document.querySelector('#title-textarea #textbox')"
             "||document.querySelector('ytcp-social-suggestions-textbox #textbox')"
             "||document.querySelector('ytcp-uploads-dialog #textbox')")
-    expect(wait_for(tab, f"({tsel})?true:null", 90, 2), "youtube", "dialog", tab,
+    expect(wait_for(tab, f"({tsel})?true:null", 120, 2), "youtube", "dialog", tab,
            "upload details dialog/title field never appeared")
-    # dismiss any promo nag now covering the dialog, scroll the field into view, THEN set the title.
-    # The field can EXIST before it is editable (dialog animating) — set_text_verified reads back
-    # the value and retries until the text actually lands (this is what silently failed at 8am).
-    _yt_dismiss_nags(tab)
-    tab.eval(f"({tsel})?.scrollIntoView({{block:'center'}})")
-    expect(set_text_verified(tab, tsel, title[:100]), "youtube", "title", tab,
-           "title never confirmed set (field not editable in time?)")
-    # description
+    expect(_yt_set_field(tab, tsel, title[:100]), "youtube", "title", tab,
+           "title never confirmed set (overlay stealing focus / field not editable?)")
+    # description (falls back to the caption upstream; empty is a no-op)
     dsel = "document.querySelector('ytcp-video-description #textbox')"
     expect(wait_for(tab, f"({dsel})?true:null", 20), "youtube", "desc_field", tab,
            "description field missing")
-    expect(set_text_verified(tab, dsel, desc), "youtube", "desc", tab, "description not confirmed set")
+    expect(_yt_set_field(tab, dsel, desc), "youtube", "desc", tab, "description not confirmed set")
     # not made for kids
     tab.eval("[...document.querySelectorAll('tp-yt-paper-radio-button')]"
              ".find(x=>/not made for kids/i.test(x.textContent))?.click()")
@@ -707,7 +727,10 @@ def run(only, dry_run, journey):
         fn = PLATFORMS[name]
         try:
             if name == "youtube":
-                results[name] = fn(entry["file"], entry["yt_title"], entry["yt_desc"], dry_run)
+                # YT description: use yt_desc, else fall back to the caption (newer videos have no
+                # separate yt_desc — the caption's hashtags help discovery and beat an empty box).
+                yt_desc = entry.get("yt_desc") or entry.get("caption") or ""
+                results[name] = fn(entry["file"], entry["yt_title"], yt_desc, dry_run)
             else:
                 results[name] = fn(entry["file"], entry["caption"], dry_run)
             print(f"  {name}: {results[name]}")
