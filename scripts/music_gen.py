@@ -95,11 +95,12 @@ def generate(journey, n=5):
     shift_sec = v.get("start_t")          # dashboard-marked start frame (phase-shift, seconds)
     bpm, bar = bpm_for(journey, cut, shift_sec=shift_sec)
     video = _video(journey)
-    # Generate the track LONGER than the video so, after the aligner windows into it (start=w0)
-    # and stretches it, there's still >= a full video's worth of audio — otherwise the track runs
-    # short and the video would have to be padded with silence. Headroom = video + ~2 bars.
+    # Track length isn't critical anymore: align.py strips the generator's silent tail and builds
+    # its OWN seamless full-length loop (tiling if the music is shorter than the video). We just ask
+    # for a bit more than the video so there's a full, settled take of music to loop from. (ACE-Step
+    # tends to cap its actual music at ~28s regardless — the aligner's tiling covers longer videos.)
     vdur = video_duration(str(ROOT / video) if not Path(video).is_absolute() else video)
-    track_dur = int(math.ceil(vdur + max(4.0, 2 * bar)))
+    track_dur = int(math.ceil(vdur)) + 3
     outdir = ROOT / "review" / "music" / "candidates" / journey
     outdir.mkdir(parents=True, exist_ok=True)
     print(f"{journey} ({cut}): bar {bar:.3f}s -> {bpm} bpm, key {key}; generating {n}")

@@ -17,6 +17,7 @@ Usage:
 """
 import argparse
 import sys
+import shutil
 import wave
 from pathlib import Path
 
@@ -72,28 +73,63 @@ def align(video, track, out, journey=None, cut=None, shift_sec=None,
         journey, cut = parse_journey_cut(video)
     morphs = schedule_morphs(journey, cut, dur, shift_sec=shift_sec)
 
-    twav = TMP / "_align_track.wav"
-    _run([FFMPEG, "-y", "-loglevel", "error", "-i", win(track), "-ar", str(SR),
-          "-ac", "1", win(twav)])
-    env, esr = onset_env(load_mono(twav))
-    w0, f, lock, bar = best_align(env, esr, morphs, stretches)
-    twav.unlink(missing_ok=True)
+    # 1) STRIP the generator's leading/trailing silence — ACE-Step ends the piece early (~28s) and
+    # pads the rest with silence, so the raw track is mostly-music + a silent tail. We want only the
+    # music, then we build our OWN full-length loop from it.
+    m = TMP / "_m.wav"
+    _run([FFMPEG, "-y", "-loglevel", "error", "-i", win(track),
+          "-af", ("silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05:"
+                  "stop_periods=-1:stop_threshold=-45dB:stop_silence=0.30:detection=peak,"
+                  "aformat=sample_rates=%d" % SR),
+          "-ac", "1", win(m)])
 
-    # NEVER clip the video (that makes the loop jump): keep ALL frames, and pad the audio with
-    # silence to the exact video length if the track runs short. (Old bug: atrim capped the audio
-    # at the track's end, then -shortest cut the VIDEO down to it.) Fade out at the real audio end
-    # (or video end, whichever comes first) so a short track ends cleanly into any trailing silence.
-    tdur = video_duration(track)                 # track length (ffprobe works on audio too)
-    la = max(0.0, (tdur - w0) / f)               # aligned track content length after window+tempo
-    fo = max(0.0, min(la, dur) - 0.5)
-    af = (f"atempo={f:.5f},atrim=start={w0:.3f},asetpts=PTS-STARTPTS,"
-          f"loudnorm=I=-14:TP=-1.5:LRA=11,afade=t=in:st=0:d=0.12,afade=t=out:st={fo:.3f}:d=0.5,"
-          f"apad,atrim=end={dur:.3f},asetpts=PTS-STARTPTS")
-    _run([FFMPEG, "-y", "-loglevel", "error", "-i", win(video), "-i", win(track),
-          "-filter_complex", f"[1:a]{af}[a]", "-map", "0:v:0", "-map", "[a]",
-          "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", win(out)])
-    print(f"  aligned -> {out}\n    bar {bar:.3f}s | stretch {f:.4f} | window {w0:.3f}s | "
-          f"lock {lock:.2f}x (higher = the track's accents sit on the morphs more sharply)")
+    # 2) tempo (micro-stretch) + phase from the track's own onsets vs the morph grid
+    env, esr = onset_env(load_mono(m))
+    w0, f, lock, bar = best_align(env, esr, morphs, stretches)
+    ms = TMP / "_ms.wav"
+    _run([FFMPEG, "-y", "-loglevel", "error", "-i", win(m), "-filter:a",
+          f"atempo={f:.5f}", win(ms)])
+
+    XF = min(0.5, 0.3 * bar)          # wrap/tile crossfade (on-beat, keeps the pulse through joins)
+
+    # 3) build a CONTINUOUS music bed at least dur+XF long. If the music is shorter than the video
+    # (cosmic: ~28s music vs 31.3s video) we tile it, crossfading each join so the pulse carries.
+    R = TMP / "_R.wav"; shutil.copy(ms, R)
+    guard = 0
+    while video_duration(R) < dur + XF + 0.05 and guard < 30:
+        nxt = TMP / "_R2.wav"
+        _run([FFMPEG, "-y", "-loglevel", "error", "-i", win(R), "-i", win(ms),
+              "-filter_complex", f"[0][1]acrossfade=d={XF:.3f}:c1=tri:c2=tri", win(nxt)])
+        nxt.replace(R); guard += 1
+
+    # 4) make a SEAMLESS loop of exactly `dur`: crossfade the body's tail into its own head, so the
+    # end meets the start (the video's loop point) without a cut or a fade-to-silence.
+    loop = TMP / "_loop.wav"
+    _run([FFMPEG, "-y", "-loglevel", "error", "-i", win(R), "-filter_complex",
+          f"[0:a]atrim=0:{dur:.3f},asetpts=PTS-STARTPTS[body];"
+          f"[0:a]atrim=0:{XF:.3f},asetpts=PTS-STARTPTS[head];"
+          f"[body][head]acrossfade=d={XF:.3f}:c1=tri:c2=tri[a]", "-map", "[a]", win(loop)])
+
+    # 5) phase-rotate the loop so its accents sit on the morphs (circular — a seamless loop can be
+    # rotated and stays seamless AND full-length; no trimming, so no silence and nothing is lost).
+    rot = TMP / "_rot.wav"
+    if 0.02 < w0 < dur - 0.02:
+        _run([FFMPEG, "-y", "-loglevel", "error", "-i", win(loop), "-filter_complex",
+              f"[0:a]atrim=start={w0:.3f},asetpts=PTS-STARTPTS[a1];"
+              f"[0:a]atrim=end={w0:.3f},asetpts=PTS-STARTPTS[a2];"
+              f"[a1][a2]concat=n=2:v=0:a=1[a]", "-map", "[a]", win(rot)])
+    else:
+        shutil.copy(loop, rot)
+
+    # 6) loudnorm + mux over the video (audio is exactly dur; keep ALL video frames, no -shortest)
+    _run([FFMPEG, "-y", "-loglevel", "error", "-i", win(video), "-i", win(rot),
+          "-filter_complex", f"[1:a]loudnorm=I=-14:TP=-1.5:LRA=11,"
+          f"atrim=end={dur:.3f},asetpts=PTS-STARTPTS[a]",
+          "-map", "0:v:0", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", win(out)])
+    for t in (m, ms, R, loop, rot):
+        t.unlink(missing_ok=True)
+    print(f"  aligned -> {out}\n    bar {bar:.3f}s | stretch {f:.4f} | phase {w0:.3f}s | "
+          f"lock {lock:.2f}x | seamless loop @ {dur:.2f}s (music tiled x{guard+1}, xf {XF:.2f}s)")
     return {"w0": w0, "stretch": f, "lock": lock}
 
 
