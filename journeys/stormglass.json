@@ -68,7 +68,8 @@
       "exp": 11,
       "palette": "blazing orange and white",
       "interior": "the corona of a blazing star, arcs of fire and towering solar prominences with tiny planets in distant orbit",
-      "next_target": "a giant stormy gas planet glowing in its orbit, wrapped in banded clouds"
+      "next_target": "a giant stormy gas planet glowing in its orbit, wrapped in banded clouds",
+      "target_phrase": "the round banded planet"
     },
     {
       "name": "gasplanet",

@@ -56,6 +56,7 @@ def compile_journey(spec, fps, build="in"):
     regs = spec["registers"]
 
     phases, zoom, denoise, exponent, cameos = [], [], [], [], []
+    approach = []          # per-frame: {phrase, pick} on object-approach beats, else None
     arrivals = set()
     prev_exp = regs[0]["exp"]
     for k, reg in enumerate(regs):
@@ -110,6 +111,16 @@ def compile_journey(spec, fps, build="in"):
                     interior=reg["interior"], style=style), reg),
                     "frames": F - fa})
 
+        # OBJECT-APPROACH (engine 2.0): if this register names a discrete target to zoom INTO
+        # (target_phrase = a short visual phrase Florence-2 can localize, e.g. "the round banded
+        # planet"), its travel+plunge beats become targeted — the engine detects that object and
+        # aims the zoom at it instead of the frame center. The arrival beat (first `fa` frames) is
+        # NOT targeted (it's the on-beat morph into THIS world). build-out has no object-approach.
+        tp = reg.get("target_phrase") if build != "out" else None
+        pick = reg.get("target_pick", "largest")
+        for j in range(F):
+            approach.append({"phrase": tp, "pick": pick} if (tp and j >= fa) else None)
+
         # arrive -> look -> plunge zoom curve; per-register product is exactly x10
         w = [0.30 + 0.70 * math.sin(math.pi * (j + 0.5) / F) ** 2 for j in range(F)]
         s = sum(w)
@@ -143,4 +154,4 @@ def compile_journey(spec, fps, build="in"):
         # (no hard copy). `morph_frames` = trailing frames that morph. The old denoise-ramp + s0
         # loop_composite tail is gone. See PLAN.md "THE SEAM".
         loop = {"frames": L, "morph_frames": min(12, L - 2)}
-    return phases, zoom, denoise, exponent, loop, cameos, arrivals
+    return phases, zoom, denoise, exponent, loop, cameos, arrivals, approach

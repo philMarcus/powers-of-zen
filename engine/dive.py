@@ -54,6 +54,7 @@ DEFAULTS = {
     "zoom_per_frame": 1.045,
     "rotate_per_frame": 0.15,
     "drift": 0.03,        # wandering zoom-center amplitude (fraction of frame size)
+    "approach_cn": 0.45,  # engine-2.0 object-approach: depth-ControlNet strength (structure whisper)
     "denoise": 0.58,
     "steps": 8,           # effective diffusion steps ≈ steps * denoise
     "cfg": 1.5,
@@ -89,11 +90,30 @@ DEFAULTS = {
 }
 
 
+CN_DEPTH = "controlnet-depth-sdxl.safetensors"   # object-approach structural guidance
+
+
+def pick_depth_preproc():
+    """Resolve a depth-map preprocessor node name from the running ComfyUI (aux node names vary)."""
+    try:
+        info = requests.get(f"{COMFY}/object_info", timeout=10).json()
+    except Exception:
+        return None
+    for cand in ("DepthAnythingV2Preprocessor", "DepthAnythingPreprocessor",
+                 "MiDaS-DepthMapPreprocessor", "Zoe-DepthMapPreprocessor"):
+        if cand in info:
+            return cand
+    return None
+
+
 def build_workflow(cfg, prompt, seed, init_image=None, denoise=None,
-                   prev_prompt=None, blend=1.0, mask_image=None):
+                   prev_prompt=None, blend=1.0, mask_image=None,
+                   ctrl_image=None, cn_strength=0.0, depth_preproc=None):
     """ComfyUI API-format workflow. txt2img when init_image is None, else img2img.
     When prev_prompt is given, positive conditioning is a weighted average of the old
-    and new prompts (blend = weight of the NEW prompt)."""
+    and new prompts (blend = weight of the NEW prompt). When ctrl_image + cn_strength are
+    given, a depth ControlNet steers structure onto it (object-approach: hold the target's
+    identity as it grows while the pixels are still fully regenerated — NOT a paste)."""
     wf = {
         "ckpt": {"class_type": "CheckpointLoaderSimple",
                  "inputs": {"ckpt_name": cfg["checkpoint"]}},
@@ -134,13 +154,28 @@ def build_workflow(cfg, prompt, seed, init_image=None, denoise=None,
         wf["latent"] = {"class_type": "EmptyLatentImage",
                         "inputs": {"width": cfg["width"], "height": cfg["height"],
                                    "batch_size": 1}}
+    negative = ["neg", 0]
+    if ctrl_image and cn_strength > 0:
+        wf["cnet"] = {"class_type": "ControlNetLoader", "inputs": {"control_net_name": CN_DEPTH}}
+        wf["cimg"] = {"class_type": "LoadImage", "inputs": {"image": ctrl_image}}
+        control_img = ["cimg", 0]
+        if depth_preproc:
+            wf["cprep"] = {"class_type": depth_preproc,
+                           "inputs": {"image": ["cimg", 0], "resolution": 1024}}
+            control_img = ["cprep", 0]
+        wf["cnapply"] = {"class_type": "ControlNetApplyAdvanced",
+                         "inputs": {"positive": positive, "negative": negative,
+                                    "control_net": ["cnet", 0], "image": control_img,
+                                    "strength": round(cn_strength, 3),
+                                    "start_percent": 0.0, "end_percent": 1.0}}
+        positive, negative = ["cnapply", 0], ["cnapply", 1]
     wf["sample"] = {"class_type": "KSampler",
                     "inputs": {"seed": seed, "steps": cfg["steps"], "cfg": cfg["cfg"],
                                "sampler_name": cfg["sampler"],
                                "scheduler": cfg["scheduler"],
                                "denoise": (denoise if denoise is not None else 1.0),
                                "model": ["ckpt", 0], "positive": positive,
-                               "negative": ["neg", 0], "latent_image": ["latent", 0]}}
+                               "negative": negative, "latent_image": ["latent", 0]}}
     return wf
 
 
@@ -418,9 +453,9 @@ def main():
         cfg.update(MODEL_PRESETS[args.model])
     cfg["build"] = args.build or spec.get("format", {}).get("build", cfg["build"])
     zoom_sched = den_sched = exponent = loop = None
-    cameos, arrivals = [], set()
+    cameos, arrivals, approach = [], set(), []
     if "registers" in spec:
-        phases, zoom_sched, den_sched, exponent, loop, cameos, arrivals = \
+        phases, zoom_sched, den_sched, exponent, loop, cameos, arrivals, approach = \
             grammar.compile_journey(spec, cfg["fps"], cfg["build"])
         if cfg["build"] == "out" and spec.get("format", {}).get("exact_loop"):
             cfg["loop_fade_frames"] = max(cfg["loop_fade_frames"], 8)
@@ -454,6 +489,14 @@ def main():
     phase_refs = {}
     T = cfg["transition_frames"]
     in_loop_tail = lambda i: loop and i >= total - loop["frames"]
+    # engine-2.0 object-approach: only load the detector + depth preproc if the journey uses it
+    _det = _depth = None
+    if any(approach):
+        import detect as _det  # noqa: E402  (lazy — detect imports dive, avoid circular at top)
+        _depth = pick_depth_preproc()
+        print(f"[dive] object-approach ON ({sum(a is not None for a in approach)} frames); "
+              f"depth preproc={_depth}", flush=True)
+    a_cx = a_cy = a_tgt = None   # smoothed aim + last target (fractional)
     for i in range(total):
         prompt, prev_prompt, k, p_idx = phase_info(phases, i)
         in_transition = prev_prompt is not None and k < T
@@ -470,6 +513,26 @@ def main():
             # wander, not an oscillation (sinusoidal wobble was jarring)
             cx = 0.5 + drift * math.sin(2 * math.pi * i / 263)
             cy = 0.5 + drift * math.sin(2 * math.pi * i / 419 + 1.7)
+            # OBJECT-APPROACH: on targeted beats, detect the object in the PREVIOUS frame and aim
+            # the zoom center at it (kill drift). Lost detection -> ease toward center (we've likely
+            # arrived / it's centered). Not on the loop tail (the seam morph owns those frames).
+            ap = approach[i] if i < len(approach) else None
+            approaching = bool(ap) and _det and not in_loop_tail(i) and cfg["build"] != "out"
+            if approaching:
+                b = _det.detect(img, ap["phrase"], pick=ap.get("pick", "largest"))
+                if b:
+                    a_tgt = (b["cx"], b["cy"])
+                elif a_tgt is not None:
+                    a_tgt = (a_tgt[0] + (0.5 - a_tgt[0]) * 0.5, a_tgt[1] + (0.5 - a_tgt[1]) * 0.5)
+                else:
+                    a_tgt = (0.5, 0.5)
+                if a_cx is None:
+                    a_cx, a_cy = a_tgt
+                a_cx += (a_tgt[0] - a_cx) * 0.6
+                a_cy += (a_tgt[1] - a_cy) * 0.6
+                cx, cy = min(0.85, max(0.15, a_cx)), min(0.85, max(0.15, a_cy))
+            else:
+                a_cx = a_cy = a_tgt = None
             boost = 0
             if in_transition:
                 boost = (cfg["arrival_denoise_boost"] if p_idx in arrivals
@@ -529,7 +592,12 @@ def main():
             wf = build_workflow(cfg, prompt, seed, init_image=ref, denoise=den,
                                 prev_prompt=prev_prompt if in_transition else None,
                                 blend=(k + 1) / (T + 1) if in_transition else 1.0,
-                                mask_image=mask_ref)
+                                mask_image=mask_ref,
+                                # object-approach: depth-CN from the (zoomed) feedback holds the
+                                # target's identity as it grows while pixels regenerate (not a paste)
+                                ctrl_image=ref if approaching else None,
+                                cn_strength=cfg["approach_cn"] if approaching else 0.0,
+                                depth_preproc=_depth)
         png = run_workflow(wf)
         img = Image.open(io.BytesIO(png)).convert("RGB")
         if img.size != (cfg["width"], cfg["height"]):
