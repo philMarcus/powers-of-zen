@@ -527,6 +527,7 @@ def main():
               f"depth preproc={_depth}", flush=True)
     a_cx = a_cy = a_tgt = None   # smoothed aim + committed target (fractional)
     a_locked = False             # True once Florence has locked the real object
+    a_arrived = False            # object fills the frame / lock lost -> coast to center, stop detecting
     a_det_at = -999              # last frame Florence ran
     a_prev_ap = None             # previous frame's approach entry (detect a new approach run)
     REDETECT = cfg.get("approach_redetect", 4)   # Florence cadence (frames) — periodic, not per-frame
@@ -561,19 +562,28 @@ def main():
                         a_tgt = (b["cx"], b["cy"]); a_locked = b["w"] * b["h"] >= 0.02
                     else:
                         a_tgt = _pts.pick_point(img, seed=i); a_locked = False
-                    a_cx, a_cy = a_tgt; a_det_at = i
-                elif i - a_det_at >= REDETECT:               # periodic Florence (speed)
+                    a_cx, a_cy = a_tgt; a_det_at = i; a_arrived = False
+                elif not a_arrived and i - a_det_at >= REDETECT:   # periodic Florence (speed)
                     a_det_at = i
                     b = _det.detect(img, ap["phrase"], pick=ap.get("pick", "salient"))
-                    if b and (b["w"] * b["h"] >= 0.02 or a_locked):
-                        a_tgt = (b["cx"], b["cy"]); a_locked = a_locked or b["w"] * b["h"] >= 0.02
-                    # not found -> keep the committed target (do NOT ease to center)
-                a_cx += (a_tgt[0] - a_cx) * 0.5
-                a_cy += (a_tgt[1] - a_cy) * 0.5
+                    if b:
+                        area = b["w"] * b["h"]
+                        near = abs(b["cx"] - a_tgt[0]) < 0.30 and abs(b["cy"] - a_tgt[1]) < 0.30
+                        if area >= 0.02 and (not a_locked or near):
+                            a_tgt = (b["cx"], b["cy"]); a_locked = True     # reject far jumps once locked
+                        if area >= 0.5:
+                            a_arrived = True                               # object fills the frame
+                    elif a_locked:
+                        a_arrived = True   # lost the (now frame-filling) locked object -> arrived
+                if a_arrived:
+                    a_tgt = (0.5, 0.5)     # COAST: glide to center, keep zooming smoothly into the
+                                           # object's surface; the next card's arrival morphs onward
+                a_cx += (a_tgt[0] - a_cx) * 0.4
+                a_cy += (a_tgt[1] - a_cy) * 0.4
                 cx, cy = min(0.85, max(0.15, a_cx)), min(0.85, max(0.15, a_cy))
                 a_prev_ap = ap
             else:
-                a_cx = a_cy = a_tgt = None; a_locked = False; a_prev_ap = None
+                a_cx = a_cy = a_tgt = None; a_locked = False; a_arrived = False; a_prev_ap = None
             boost = 0
             if in_transition:
                 boost = (cfg["arrival_denoise_boost"] if p_idx in arrivals
