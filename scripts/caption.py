@@ -138,9 +138,11 @@ def set_music_theme_if_empty(journey, theme):
 
 def generate(journey, model="ds", no_theme=False):
     d = pl.load(); v = pl.get(d, journey)
-    frames = frames_for(journey, model) or frames_for(journey, "turbo") or frames_for(journey, "")
-    if not frames:
-        print(f"  no frames for {journey}"); return None
+    jf = ROOT / "journeys" / f"{journey}.json"
+    if not jf.exists():
+        print(f"  no journey file for {journey}"); return None
+    # captioning is text-only off the worlds, so frames aren't required (they're for future
+    # image-grounding); a cleaned-up render still gets captioned.
     style, worlds = journey_worlds(journey)
     mascot = (v.get("cameo") or "").capitalize() if v else ""
     mline = MASCOT_INSTR.format(m=mascot) if mascot else NO_MASCOT_INSTR
