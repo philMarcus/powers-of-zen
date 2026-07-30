@@ -61,8 +61,8 @@ def _target(reg):
 def _frames(reg, fmt, fps):
     """Frame count for a card. New schema: `dur` in BEATS × frames_per_beat. Legacy: `sec`."""
     if reg.get("dur") is not None:
-        fpb = fmt.get("frames_per_beat", fps)   # 1 beat = 1s default
-        return max(6, round(reg["dur"] * fpb))
+        fpb = fmt.get("frames_per_beat", 16)   # ~1.3s/beat: enough frames for arrive->look->plunge
+        return max(8, round(reg["dur"] * fpb))
     sec = fmt.get("sec_per_scale", fmt.get("sec_per_decade", 2.4))
     return max(12, round(reg.get("sec", sec) * fps))
 

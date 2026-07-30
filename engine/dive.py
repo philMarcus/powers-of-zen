@@ -553,18 +553,21 @@ def main():
             approaching = bool(ap) and _det and not in_loop_tail(i) and cfg["build"] != "out"
             if approaching:
                 if a_prev_ap is None or a_tgt is None:
-                    # NEW approach run: pick ONE prominent point to grow the object from, and COMMIT
-                    a_tgt = _pts.pick_point(img, seed=i)
-                    a_cx, a_cy = a_tgt
-                    a_locked = False; a_det_at = -999
-                if i - a_det_at >= REDETECT:                 # periodic Florence (speed)
+                    # NEW approach run: FLORENCE-FIRST — commit to the actual NAMED object if it can
+                    # be found (a matte ladybug beats a bright dewdrop the contrast-picker would grab);
+                    # only fall back to the prominent-point picker for TRUE emergence (nothing yet).
+                    b = _det.detect(img, ap["phrase"], pick=ap.get("pick", "salient"))
+                    if b:
+                        a_tgt = (b["cx"], b["cy"]); a_locked = b["w"] * b["h"] >= 0.02
+                    else:
+                        a_tgt = _pts.pick_point(img, seed=i); a_locked = False
+                    a_cx, a_cy = a_tgt; a_det_at = i
+                elif i - a_det_at >= REDETECT:               # periodic Florence (speed)
                     a_det_at = i
                     b = _det.detect(img, ap["phrase"], pick=ap.get("pick", "salient"))
-                    if b and b["w"] * b["h"] >= 0.02:        # lock only on a real, sizable object
-                        a_tgt = (b["cx"], b["cy"]); a_locked = True
-                    elif a_locked and b:
-                        a_tgt = (b["cx"], b["cy"])            # keep tracking once locked
-                    # not found -> keep the committed emergence point (do NOT ease to center)
+                    if b and (b["w"] * b["h"] >= 0.02 or a_locked):
+                        a_tgt = (b["cx"], b["cy"]); a_locked = a_locked or b["w"] * b["h"] >= 0.02
+                    # not found -> keep the committed target (do NOT ease to center)
                 a_cx += (a_tgt[0] - a_cx) * 0.5
                 a_cy += (a_tgt[1] - a_cy) * 0.5
                 cx, cy = min(0.85, max(0.15, a_cx)), min(0.85, max(0.15, a_cy))
