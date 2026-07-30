@@ -27,7 +27,11 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 import pipeline as pl  # noqa: E402
 
-VLM_MODEL = "qwen3-vl:4b"
+# Captioning is TEXT-based off the journey's worlds (reliable clean JSON). The vision model
+# qwen3-vl:4b is a reasoning model that returns empty responses under format=json, and gemma4
+# nests its reasoning inside the JSON — mistral-small returns exactly the structure we ask for.
+# (TODO: light image-grounding via moondream to feed the actual rendered look.)
+VLM_MODEL = "mistral-small3.2:24b"
 # always-on brand hashtags (programmatic) — NO #fyp (dropped 2026-07-29). Journey-specific tags
 # come from the model per video.
 BRAND_TAGS = ["#powersofzen", "#oddlysatisfying", "#zoomer"]
@@ -36,8 +40,7 @@ PROMPT = (
     'You are writing captions for "Powers of Zen" — a hypnotic, seamless Powers-of-Ten-style '
     'zoom short that dives continuously through every scale of a world and loops forever. Brand '
     'voice: dreamy, awe-striking, oddly satisfying; it makes people rewatch to find the loop.\n\n'
-    'This video travels through these worlds, in order:\n{worlds}\nVisual style: {style}\n'
-    'The attached images are moments from the dive.\n\n'
+    'This video travels through these worlds, in order:\n{worlds}\nVisual style: {style}\n\n'
     'Give FIVE distinct options. Each option is an object with:\n'
     '  "caption": ONE short evocative TikTok/Instagram line that makes someone watch to the end '
     'and rewatch the loop — hint at the journey, at most 1–2 tasteful emoji, NO hashtags and NO '
@@ -146,8 +149,7 @@ def generate(journey, model="ds", no_theme=False):
         r = requests.post(f"{url}/api/generate", json={
             "model": VLM_MODEL,
             "prompt": PROMPT.format(worlds="\n".join(worlds), style=style, mascot_line=mline),
-            "images": [base64.b64encode(Path(f).read_bytes()).decode() for f in frames],
-            "stream": False, "format": "json"}, timeout=300)
+            "stream": False, "format": "json", "options": {"num_predict": 1200}}, timeout=300)
         data = _parse(r.json().get("response", ""))
     except Exception as e:
         print(f"  VLM error for {journey}: {e}"); return None
