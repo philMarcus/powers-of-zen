@@ -67,10 +67,20 @@ picks a **prominent point** (contrast: a bright mote on dark OR a dark speck on 
 moderately OFF-center) and grows the object there. So every `zoom` card's `scene` must contain
 **a distinct object that CAN be found** — present and prominent, not a distant speck.
 
-- **The target must be a FINDABLE object at this scale.** A whole ladybug is findable; the tip of
-  its antenna is NOT (too fine, and it doesn't exist as a distinct thing in the wide shot). If the
-  next thing is a fine sub-part, add an INTERMEDIATE scale (ladybug → its HEAD with antennae → the
-  antenna tip). Each hop must land on something the detector could point at.
+- **Two ways a target gets reached — BOTH are fine:**
+  1. **A distinct object present in the scene** (a ladybug, a planet, a treetop): the engine finds
+     it (Florence) and dives in. If the next thing is a specific fine SUB-PART of the *current
+     object at a similar scale* (a ladybug's antenna *tip*), it's awkward to navigate to directly —
+     add an INTERMEDIATE scale so the spot becomes a distinct feature (ladybug → its HEAD with
+     antennae → the antenna tip). This is about NAVIGATION to a spot, not about scale.
+  2. **A far-smaller thing that isn't in the scene yet** (molecules in a water drop, an atom, a
+     cell, a quark): it does NOT need to pre-exist or be findable — it EMERGES as a speck and grows
+     as we zoom fast to its scale. This is the NORM for micro-scale jumps and is exactly what the
+     engine's point-picker emergence handles. Just describe the target statically (a hexagonal
+     water molecule, a glowing atom); the engine picks a point and grows it there. **DO zoom into
+     atoms/molecules/quarks — they're core to the format; never avoid them for being "unfindable."**
+  So: NAVIGATE-to-a-spot (a same-scale sub-part → needs a distinct feature / intermediate scale)
+  vs EMERGE-a-speck (a far-smaller thing → grows from nothing; unfindable is fine, that's the point).
 - **Many candidates is fine — encouraged.** A field of atoms, a herd of zebras: the engine selects
   ONE (a contrasty candidate, or at random) and commits — it doesn't matter which zebra. Describe
   the field; name the target *type* in `target_phrase` ("a zebra", "a glowing atom"). *(Selecting
@@ -172,9 +182,11 @@ myth, a trending sound, an emotion…):
   fractional stacks make it nonsense → `counter:false`.
 
 ## Self-check before shipping a journey
-1. For EVERY `zoom` card: is the target a FINDABLE object at this scale (not too fine a sub-part —
-   add an intermediate scale if so), named in `target` + a short `target_phrase`, and described
-   STATICALLY (no motion/time words, and not receding/"far away")?
+1. For EVERY `zoom` card: is the target named in `target` + a short `target_phrase` and described
+   STATICALLY (no motion/time words, not receding/"far away")? Is it reachable — either a distinct
+   object present in the scene, OR a far-smaller thing that emerges from a speck (atoms/molecules
+   are fine)? Only if it's a same-scale fine SUB-PART (a ladybug's antenna tip) add an intermediate
+   scale.
 2. Are the seams at big exp jumps and buried mid-list (never at either end)? One for a
    realistic traverse; more only if the concept is deliberately fantastical.
 3. First and last cards natural adjacent scales; last genuinely contains the first world;
