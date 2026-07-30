@@ -70,7 +70,7 @@ the target must be written **EMERGING / GROWING**, never as a distant speck.
   "exp": 11,                        // 10^n metres; float ok. The exp JUMP to the next card
                                     //   decides zoom (small step) vs seam (big jump).
   "kind": "zoom",                   // "zoom" (default) | "seam"
-  "dur": 16,                        // duration in SIXTEENTH-note ticks (16 = 1 bar) — see pacing
+  "dur": 4,                         // duration in BEATS, power-of-two (0.5 | 1 | 2 | 4) — see pacing
   "palette": "blazing orange and white",
 
   "scene": "the corona of a blazing star, arcs of fire and towering prominences, embers streaming",
@@ -91,23 +91,27 @@ sentence) — keep `target_phrase` to the object + one visual trait.
 - **`target`** = that object, EMERGING. Omit on `seam` cards (use scene-morph language in
   `scene`) and on the last card (the loop auto-derives its target from card 0).
 - **`kind`** = "zoom" default; "seam" on a semantic-morph transition.
-- **`dur`** = integer sixteenth-note ticks (pacing).
+- **`dur`** = duration in BEATS, a power of two (0.5 | 1 | 2 | 4) — see pacing.
 - Top-level: `name`, `theme` (seed idea), `style_suffix` (Layer-2 style), `format`
-  { `ticks_per_bar` default 16, `exact_loop` true }, optional `settings`.
+  { `beats_per_bar` default 4, `exact_loop` true }, optional `settings`.
 
-## Beat-aligned pacing (note-ticks — on the grid, but not coarse)
-The video must be a whole number of bars so the soundtrack loops and morphs land on the
-beat — but whole bars are too coarse. So durations are authored in **integer sixteenth-note
-ticks** (`dur`): 16 ticks = 1 bar, 4 = 1 beat, 2 = an eighth, 1 = a sixteenth. Fine control,
-still quantized.
-- Linger on a rich scale → `dur` 24, 32… Pass fast → 8 or 4. A one-bar card = 16.
-- Prefer durations that are multiples of a beat (4) so morphs land on beats; go finer only
-  for deliberate effect. The engine derives tempo so the total is whole bars and reuses the
-  seamless-loop music aligner.
-- A `seam` is an instant on-beat morph — it buys no zoom time; keep its `dur` small (a beat
-  or two).
-- FUTURE (noted, not now): compose the RHYTHM first — decide the pattern of morph beats, then
-  fill scenes to it. The music↔video tie is a big lever for making these feel intentional.
+## Beat-aligned pacing (POWER-OF-TWO, so the strong beat always lands on the morph)
+The rule that keeps everything musical: every morph lands on the beat, and the **STRONG beat**
+(the "bum-bum" downbeat, led in by the **anacrusis** pickup we keep from engine 1) carries the
+MAIN morphs. The safe way to vary pacing without drifting off the beat is to scale ONLY by
+**powers of two** — doubling a card's time, or making two cards twice as fast, both keep the
+morph on the beat.
+- `dur` is in **BEATS**, and must be a **power of two: 0.5 | 1 | 2 | 4** (linger with 4).
+- **Whiz** several cards by at 1 beat each (four cards fill a 4-beat bar) — great for a fast
+  traverse. **Linger** with 2 or 4 beats on a rich scale. A half-beat (0.5) is the fastest whiz.
+- There's ONE main morph pulse carrying the whole video; power-of-two durations guarantee every
+  card's morph falls on that grid, with the big structural morphs on the strong beat.
+- A `seam` is an instant on-beat morph — it buys no zoom time; keep its `dur` at 1 beat.
+- The engine derives tempo so the total is whole bars and reuses the seamless-loop music aligner;
+  the arrival-beat morph stays as punchy as engine 1.
+- FUTURE (in PLAN.md, not now): compose the RHYTHM first, then build BOTH video and audio to it —
+  including **beat-synced flares/effects** on non-morph beats (drum hits → on-screen flares). The
+  music↔video mesh is a big feature; music-gen may need rhythm/effect control to support it.
 
 ## Loop + self-similar seam (still critical)
 Journeys are **circular and self-similar**: the last card dives back into the FIRST world.
@@ -158,7 +162,8 @@ myth, a trending sound, an emotion…):
 3. First and last cards natural adjacent scales; last genuinely contains the first world;
    card 0 viewpoint pinned.
 4. Adjacent cards contrast in shape AND palette temperature.
-5. All `dur` integers; pacing lingers where the scene is rich.
+5. Every `dur` a power-of-two beat value (0.5|1|2|4) so morphs stay on the beat; pacing lingers
+   where the scene is rich (whiz fast scales at 1 beat, linger rich ones at 2-4).
 6. Any object named twice across cards (double-ghost)? Any animal "traveled through"? Any
    featured face? Any target described as tiny/far/receding?
 7. Spine reskinned to the theme, not the generic atom→cosmos template.

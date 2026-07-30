@@ -646,8 +646,24 @@ description + a short `target_phrase` for detection; an explicit `kind` (zoom vs
 instant on-beat morphs; a richer description of what the interior BECOMES at the next scale.
 Journey GENERATOR (the two-mode one — theme-driven + describe-it-yourself) must ENFORCE the
 containment chain and mark seams. This + universal targeting is the full object-zoom fix; today's
-engine work is the mechanism, this is the intentionality. Update the dive-video SKILL with these
-authoring rules once results are good.
+engine work is the mechanism, this is the intentionality. The authoring doctrine is now written
+up as .claude/skills/journey-composer/SKILL.md (draft, iterated with Phil 2026-07-30) — the schema
+(rich `scene` + rich emerging `target` + tight `target_phrase`; `kind` zoom|seam; `dur` in BEATS
+power-of-two 0.5|1|2|4; optional `target_pick`), the containment law, prominent-point emergence
+(engine selects one-among-many + commits), and the diversity rules. NO backward-compat: we rewrite
+journeys to the new skill (old field names interior/next_target/sec retired; live videos stay as
+already rendered). VARIATIONS.md needs a BIG expansion (generator fuel).
+
+**PACING = power-of-two beats (Phil 2026-07-30).** `dur` in beats, power-of-two only (0.5|1|2|4) so
+every morph lands on the beat and the STRONG downbeat ("bum-bum", led by the anacrusis we keep from
+engine 1) carries the main morphs. Whiz fast scales at 1 beat each (4 fill a bar); linger at 2-4.
+Seam = instant on-beat morph, dur 1. This is the disciplined version of the beat-alignment note.
+
+**RHYTHM-DRIVEN COMPOSITION + beat-synced FX (Phil 2026-07-30, big future feature).** Because these
+are rhythmic, compose the RHYTHM FIRST, then build BOTH video and audio to it. On NON-morph beats,
+hit on-screen FLARES/EFFECTS synced to the drum/rhythm (drum hit → a flare or effect pops on a
+thing on screen). Meshing video FX to the beat is a major cool-factor lever. Likely needs music-gen
+changes to control rhythm + accents/effects. Keep the anacrusis + strong morph beats throughout.
 
 ---
 
