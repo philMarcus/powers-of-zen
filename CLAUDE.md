@@ -118,4 +118,19 @@ retries), dialog-scoped title selector (dropped the false-passing fallback); IG 
 for the crop <video> to load before the Original check. LESSON (feedback): validate automation in the
 conditions it actually runs in — a cold browser via killing+relaunching zen Chrome and a --dry-run —
 NOT a warm browser I've been using. Claiming "fixed" off a warm test is why it didn't take twice.
-OPEN: fold seam into dive.py + re-render journeys; TikTok waits (Phil retries by hand on weekend).
+2026-07-30 (afternoon): ENGINE 2.0 — object-zoom targeting (see PLAN.md "ENGINE 2.0" + "FORMAT
+2.0"). Problem: the feedback engine center-zooms into whatever fills the frame, so DISCRETE
+objects (planets, animals) fly by and the background morphs into the next world — not a real zoom.
+BUILT + validated today: (1) Florence-2 detector (ComfyUI-Florence2/Kijai) → engine/detect.py
+(referring_expression_segmentation + a SHORT visual phrase → object box, fractional). (2) POC
+(scripts/zoom_probe.py): detect→aim cx,cy→depth-CN makes the planet CENTER + GROW (3%→55%) while
+staying ALIVE (regenerated every frame, not pasted) — Phil's two guardrails. (3) Integrated:
+grammar emits a per-frame `approach` schedule from a register's `target_phrase`; dive.build_workflow
+gained depth-CN; the loop detects+aims+CN on approach beats (arrival-morph/counter/seam/music
+untouched). First full render = stormglass with targeting on the star register only (planet) —
+proves the mechanism; other levels still old-morph. NEXT (Phil's steer, NOT built): FORMAT 2.0 —
+targeting on EVERY object level + distinguish ZOOM-IN (contained object, takes time, targeted) from
+SEAM/MORPH-BIT (the semantic jump, e.g. atom→cosmos / antenna-tip→planet — instant morph ON THE
+BEAT, no zoom time; the large exp-jump already marks these). Require logical object-containment in
+journeys + the journey generator; richer scene/interior descriptions. Update dive-video SKILL when
+results are good. OPEN: fold seam into dive.py + re-render journeys; TikTok waits (weekend).

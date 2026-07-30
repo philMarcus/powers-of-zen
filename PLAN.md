@@ -604,6 +604,51 @@ stormglass frames + a short targeted-zoom-with-CN clip → eyeball grows-and-sta
 PARKED for later (Phil): moving/dynamic worlds (motion IN the environment); dynamic camera (turn
 corners, whip around a planet — the old big sinusoid was jarring; a tasteful version later).
 
+### Engine-2.0 BUILD STATUS (2026-07-30)
+DONE today: (1) Florence-2 detector installed (ComfyUI-Florence2, Kijai) — engine/detect.py
+localizes the target via referring_expression_segmentation + a SHORT visual phrase → clean object
+mask → connected-component boxes (fractional). Long/abstract phrases degenerate to full-frame;
+"the round banded planet" nails it. (2) POC validated (scripts/zoom_probe.py): on stormglass
+frame 233 the planet CENTERS (0.24,0.34→0.50,0.50) and GROWS (area 0.03→0.55) staying alive
+(fully regenerated) — both guardrails met. (3) Integrated into engine: grammar emits a per-frame
+`approach` schedule from a register's `target_phrase`; dive.build_workflow gained depth-CN
+(ctrl_image/cn_strength); the loop detects+aims cx,cy+depth-CN on approach frames. CN 0.45,
+detect every approach frame. First full render: stormglass with target_phrase ONLY on the star
+register (planet) — proves the mechanism in-engine; other levels still do old center-morph.
+
+### FORMAT 2.0 — zoom-vs-seam + logical containment (Phil, 2026-07-30) — NOT BUILT, design notes
+Reading all 20 journeys revealed the core structural gap (half the problem is journey/format, not
+the engine). Two things:
+
+1. **Every transition is one of TWO kinds, and the format doesn't distinguish them — that's the
+   timing bug.**
+   - **ZOOM-IN** (into a CONTAINED object): small exp step (~2-4/register, the ×10). e.g. scroll→
+     glyph, cell→protein, ladybug→antenna-tip. TAKES TIME — a targeted approach (gets target_phrase).
+   - **SEAM / MORPH-BIT** (the semantic jump where a thing BECOMES a far-scale world): a LARGE exp
+     jump. e.g. atom(-10)→planet(7) [+17], quark(-15)→cosmos(26) [+41], antenna-tip(-2.6)→planet(7)
+     [+9.6], ice-lattice(-8)→peaks(4.5). This should be INSTANT — a morph ON THE BEAT, NO zoom time
+     (you can't optically zoom an atom into the cosmos). Currently it gets a full register of slow
+     zoom → the "weird timing" + "background opens into the next level" morph.
+   KEY: the exp DISCONTINUITY already encodes which is which (big jump = seam). So we can derive it,
+   but better to make it EXPLICIT per transition (`kind: zoom|seam`). Ties to beat-alignment: seams
+   = the morph-on-beat (instant), zooms = the sustained approach (integer bars).
+
+2. **Logical containment must be REQUIRED, not hoped for.** Fable wrote most journeys as genuine
+   object-in-object chains (alexandria/cartographer/cosmic_scales/tide_of_life are good: library→
+   scroll→glyph→ink→fibers→molecule→atom→[SEAM]→planet→delta→city→library, ONE clean seam each).
+   But nothing enforced it, so: (a) targeting isn't applied → multiple objects at a level (the
+   antenna_ball "multiple ladybugs" — its concept is right: meadow→ladybug→antenna TIP→[SEAM: tip
+   BECOMES planet]→descend clouds→canopy→meadow); (b) some next_targets are vague on WHERE the
+   object is (need the short target_phrase); (c) seams unmarked → slow-zoomed.
+
+**Format 2.0 (to design):** per register — the ZOOM target (a contained object) with a rich SCENE
+description + a short `target_phrase` for detection; an explicit `kind` (zoom vs seam) so seams are
+instant on-beat morphs; a richer description of what the interior BECOMES at the next scale.
+Journey GENERATOR (the two-mode one — theme-driven + describe-it-yourself) must ENFORCE the
+containment chain and mark seams. This + universal targeting is the full object-zoom fix; today's
+engine work is the mechanism, this is the intentionality. Update the dive-video SKILL with these
+authoring rules once results are good.
+
 ---
 
 ## Journey generator — the last pipeline piece (Phil's notes 2026-07-30, build later/parallel)
