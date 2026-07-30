@@ -22,17 +22,19 @@ cameo? {sprite, pos, size}. Build-in adds next_target; build-out adds afar
 """
 import math
 
-# ---- build-in templates -----------------------------------------------------
-TEMPLATE_ARRIVAL = ("{target} now filling the entire view up close, its surface "
-                    "spreading open into {interior}, {style}")
-TEMPLATE_TRAVEL = ("traveling through {interior}, vast {interior} in every direction, "
-                   "one single tiny {target}, barely visible, alone very far away in "
-                   "the distance ahead, {style}")
-TEMPLATE_PLUNGE = ("plunging toward {target}, the only one, growing huge ahead, "
-                   "walls of {interior} rushing past the edges of the frame, "
-                   "{style}")
-TEMPLATE_FINAL = ("deep inside {interior}, endless intricate glowing detail in every "
-                  "direction, {style}")
+# ---- build-in (engine 2.0) templates ----------------------------------------
+# THE object is EMERGING and GROWING — never "tiny / barely visible / far away" (that told the
+# model to send it away; see journey-composer SKILL + PLAN "chicken-and-egg"). `target` text
+# already carries the growing language, so we just place it.
+T_ARRIVE = "{scene}, coming into full clear view up close, {style}"
+T_TRAVEL = "moving through {scene}, {target}, {style}"
+T_PLUNGE = ("diving straight into {target} as it swells to fill the entire view, the surrounding "
+            "{scene} rushing past the edges of the frame, {style}")
+T_FINAL = "deep inside {scene}, endless intricate detail in every direction, {style}"
+# arrival right AFTER a seam: the whole view transforms into the new world (the on-beat morph)
+T_MORPH = "the whole view transforming, resolving into {scene}, {style}"
+
+SEAM_EXP_JUMP = 8.0   # |Δexp| this big to the next card = a semantic SEAM (instant morph, no zoom)
 
 # ---- build-out templates ----------------------------------------------------
 TEMPLATE_EMERGE = ("{afar} shrinking away into the distance below, its surroundings "
@@ -48,10 +50,27 @@ def _p(text, reg):
     return f"{text}, {pal} colors" if pal else text
 
 
+def _scene(reg):
+    return reg.get("scene") or reg.get("interior") or ""
+
+
+def _target(reg):
+    return reg.get("target") or reg.get("next_target") or ""
+
+
+def _frames(reg, fmt, fps):
+    """Frame count for a card. New schema: `dur` in BEATS × frames_per_beat. Legacy: `sec`."""
+    if reg.get("dur") is not None:
+        fpb = fmt.get("frames_per_beat", fps)   # 1 beat = 1s default
+        return max(6, round(reg["dur"] * fpb))
+    sec = fmt.get("sec_per_scale", fmt.get("sec_per_decade", 2.4))
+    return max(12, round(reg.get("sec", sec) * fps))
+
+
 def compile_journey(spec, fps, build="in"):
     fmt = spec.get("format", {})
-    sec = fmt.get("sec_per_scale", fmt.get("sec_per_decade", 2.4))
     travel_denoise = fmt.get("travel_denoise", 0.55 if build == "out" else 0.40)
+    seam_denoise = fmt.get("seam_denoise", 0.72)
     style = spec.get("style_suffix", "")
     regs = spec["registers"]
 
@@ -59,78 +78,76 @@ def compile_journey(spec, fps, build="in"):
     approach = []          # per-frame: {phrase, pick} on object-approach beats, else None
     arrivals = set()
     prev_exp = regs[0]["exp"]
+    prev_kind = "zoom"
     for k, reg in enumerate(regs):
-        nxt = regs[k + 1] if k + 1 < len(regs) else None
-        F = max(12, round(reg.get("sec", sec) * fps))
+        nxt = regs[k + 1] if k + 1 < len(regs) else regs[0]   # loop back
+        last = (k == len(regs) - 1)
+        scene = _scene(reg)
+        F = _frames(reg, fmt, fps)
         reg_start = len(zoom)
+
+        # transition FROM this card: explicit `kind`, else auto-SEAM on a big exp jump to the next.
+        kind = reg.get("kind")
+        if kind is None:
+            kind = "seam" if (not last and abs(nxt["exp"] - reg["exp"]) >= SEAM_EXP_JUMP) else "zoom"
 
         if build == "out":
             fa = round(F * 0.30) if k > 0 else 0
             if fa:
                 arrivals.add(len(phases))
                 phases.append({"prompt": _p(TEMPLATE_EMERGE.format(
-                    afar=regs[k - 1]["afar"], interior=reg["interior"],
-                    style=style), reg), "frames": fa})
-            if not nxt and reg.get("loop_hint"):
+                    afar=regs[k - 1]["afar"], interior=scene, style=style), reg), "frames": fa})
+            if last and reg.get("loop_hint"):
                 fr = round((F - fa) * 0.45)
-                phases.append({"prompt": _p(TEMPLATE_RECEDE.format(
-                    interior=reg["interior"], style=style), reg), "frames": fr})
+                phases.append({"prompt": _p(TEMPLATE_RECEDE.format(interior=scene, style=style), reg), "frames": fr})
                 phases.append({"prompt": _p(TEMPLATE_LOOPHINT.format(
-                    interior=reg["interior"], loop_hint=reg["loop_hint"],
-                    style=style), reg), "frames": F - fa - fr})
+                    interior=scene, loop_hint=reg["loop_hint"], style=style), reg), "frames": F - fa - fr})
             else:
-                phases.append({"prompt": _p(TEMPLATE_RECEDE.format(
-                    interior=reg["interior"], style=style), reg),
-                    "frames": F - fa})
+                phases.append({"prompt": _p(TEMPLATE_RECEDE.format(interior=scene, style=style), reg), "frames": F - fa})
+            card_zoom, card_appr, kind = 10.0, [None] * F, "zoom"
         else:
-            fa = round(F * 0.25) if k > 0 else 0
+            # BUILD-IN (engine 2.0). The arrival beat is the on-beat MORPH into this scene, blending
+            # from the previous scene (that blend IS the morph — strongest right after a SEAM, where
+            # the previous scene's own text already says it's becoming this one). Skip only on card 0.
+            fa = 0 if k == 0 else max(2, round(F * 0.25))
             if fa:
                 arrivals.add(len(phases))
-                phases.append({"prompt": _p(TEMPLATE_ARRIVAL.format(
-                    target=regs[k - 1]["next_target"], interior=reg["interior"],
-                    style=style), reg), "frames": fa})
-            if reg.get("next_target"):
-                # SELF-SIMILAR LOOP: the last register loops back to the FIRST world, so it must
-                # plunge toward that world described EXACTLY as frame 0 shows it (same subject, same
-                # framing) — otherwise first/last render as two different images and the loop seam
-                # has a big gap to bridge. Derive the loop target from regs[0] (its `loop_target`
-                # if given, else its `interior`) rather than a separately-authored next_target that
-                # drifts. Non-last registers use their own next_target as before.
-                target = reg["next_target"]
-                if k == len(regs) - 1:
-                    target = regs[0].get("loop_target") or regs[0]["interior"]
-                ft = round(F * (0.35 if fa else 0.55))
-                phases.append({"prompt": _p(TEMPLATE_TRAVEL.format(
-                    interior=reg["interior"], target=target,
-                    style=style), reg), "frames": ft})
-                phases.append({"prompt": _p(TEMPLATE_PLUNGE.format(
-                    interior=reg["interior"], target=target,
-                    style=style), reg), "frames": F - fa - ft})
+                tmpl = T_MORPH if prev_kind == "seam" else T_ARRIVE
+                phases.append({"prompt": _p(tmpl.format(scene=scene, style=style), reg), "frames": fa})
+            body = F - fa
+            if last:
+                # loop home: plunge toward card-0's world (dive.py's loop tail morphs to frame 0). No
+                # targeting here — the loop mechanism owns the tail.
+                tgt = regs[0].get("loop_target") or _scene(regs[0])
+                ft = max(1, round(body * 0.45))
+                phases.append({"prompt": _p(T_TRAVEL.format(scene=scene, target=tgt, style=style), reg), "frames": ft})
+                phases.append({"prompt": _p(T_PLUNGE.format(target=tgt, scene=scene, style=style), reg), "frames": body - ft})
+                card_zoom, card_appr = 10.0, [None] * F
+            elif kind == "seam":
+                # SEAM: dwell in this scene; the MORPH is the next card's arrival beat (big prompt
+                # jump + denoise boost). Gentle zoom, no targeting — instant on-beat morph, not a dive.
+                phases.append({"prompt": _p(T_FINAL.format(scene=scene, style=style), reg), "frames": body})
+                card_zoom, card_appr = 1.4, [None] * F
             else:
-                phases.append({"prompt": _p(TEMPLATE_FINAL.format(
-                    interior=reg["interior"], style=style), reg),
-                    "frames": F - fa})
+                # ZOOM: emerging targeted approach INTO the contained object.
+                target = _target(reg)
+                tp, pick = reg.get("target_phrase"), reg.get("target_pick", "salient")
+                ft = max(1, round(body * 0.45))
+                phases.append({"prompt": _p(T_TRAVEL.format(scene=scene, target=target, style=style), reg), "frames": ft})
+                phases.append({"prompt": _p(T_PLUNGE.format(target=target, scene=scene, style=style), reg), "frames": body - ft})
+                card_zoom = 10.0
+                ap = {"phrase": tp, "pick": pick} if tp else None
+                card_appr = [None] * fa + [ap] * body
 
-        # OBJECT-APPROACH (engine 2.0): if this register names a discrete target to zoom INTO
-        # (target_phrase = a short visual phrase Florence-2 can localize, e.g. "the round banded
-        # planet"), its travel+plunge beats become targeted — the engine detects that object and
-        # aims the zoom at it instead of the frame center. The arrival beat (first `fa` frames) is
-        # NOT targeted (it's the on-beat morph into THIS world). build-out has no object-approach.
-        tp = reg.get("target_phrase") if build != "out" else None
-        pick = reg.get("target_pick", "largest")
-        for j in range(F):
-            approach.append({"phrase": tp, "pick": pick} if (tp and j >= fa) else None)
-
-        # arrive -> look -> plunge zoom curve; per-register product is exactly x10
+        # arrive->look->plunge zoom curve; per-card PRODUCT = card_zoom (x10 zoom, ~x1.4 seam)
         w = [0.30 + 0.70 * math.sin(math.pi * (j + 0.5) / F) ** 2 for j in range(F)]
-        s = sum(w)
-        zs = [math.exp(math.log(10) * wj / s) for wj in w]
+        s = sum(w) or 1.0
+        zs = [math.exp(math.log(card_zoom) * wj / s) for wj in w]
         zoom += zs
-        denoise += [travel_denoise] * F
+        denoise += [(seam_denoise if kind == "seam" and not last else travel_denoise)] * F
+        approach += card_appr
 
-        # counter stays PINNED to this register's declared exp, descending with
-        # the actual visual zoom; handoffs get a fast odometer spin during the
-        # arrival beat — honest about skipped scales, including wraps
+        # counter exponent — descend with the actual visual zoom; arrival spins toward this card's exp
         cum = 0.0
         for j in range(F):
             if fa and j < fa:
@@ -142,12 +159,12 @@ def compile_journey(spec, fps, build="in"):
         prev_exp = exponent[-1]
 
         if reg.get("cameo"):
-            cameos.append({"start": reg_start + fa, "end": reg_start + F,
-                           **reg["cameo"]})
+            cameos.append({"start": reg_start + fa, "end": reg_start + F, **reg["cameo"]})
+        prev_kind = "zoom" if last else kind
 
     loop = None
     if fmt.get("exact_loop") and build != "out":
-        F_last = max(12, round(regs[-1].get("sec", sec) * fps))
+        F_last = _frames(regs[-1], fmt, fps)
         L = min(round(2.0 * fps), F_last - 2)
         # SEAM (2026-07-29): the last L frames KEEP diving at travel denoise (alive, not settling)
         # while dive.py morphs home — natural dive → palette-match → gap-scaled morph toward frame 0
