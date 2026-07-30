@@ -749,3 +749,21 @@ giant swelling. So the object is not established during the approach; it pops in
 beat, and the model invents extra bodies. Confirms fix direction: object-approach template
 (ONE centered body, swelling, "the only one, no other planets") + kill drift + lower denoise, so
 the crop-zoom grows the SAME planet from far→full instead of re-inventing it at the boundary.
+
+## STYLE is Layer 2 — pull it OUT of the journey composer (Phil 2026-07-30)
+Engine-2.0 journeys (meadow/ladybug/lighthouse) drifted PHOTOREALISTIC because the composer
+invents `style_suffix` per journey and reskins toward realism. Phil wants the shiny, AI-polished
+DreamShaper eye-candy look the engine-1 cosmic videos had ("food for the masses"). Fix: the journey
+composer should write CONTENT only (scenes/targets/pacing) and leave the LOOK to a separate, curated
+STYLE step — a small deck of deliberate "shiny AI eye-candy" style presets (style_suffix + palette +
+checkpoint) applied on top of a style-agnostic journey. Keeps the brand look consistent + intentional
+(per the FORMAT/STYLE/JOURNEY three-layer model) instead of drifting to whatever a lighthouse "should"
+look like. TODO: build the style deck; have the composer NOT set style_suffix (or use a strong shiny
+default); apply style as its own pass.
+
+## Journey-authoring rule (Phil 2026-07-30): don't over-describe the object / its reflections
+Describing what's REFLECTED in or INSIDE a shiny/transparent object makes the model zoom into the
+reflection/contents instead of the object (raindrop "with the meadow mirrored on it" -> we get the
+meadow; sphere "reflecting the sky" -> the sky; over-detailed interior -> we chase that detail). And
+a colour word that names another object ("rose dust") gets painted as that object (a rose flower).
+Name the object plainly; the engine fills surface/reflection detail. Now in the journey-composer SKILL.

@@ -59,7 +59,15 @@ transformation.
   camera where the object is at all.
 - **DO** describe the object CLEARLY PRESENT and prominent, static: ✓ "a round banded gas planet,
   its cloud bands and a great storm eye", ✓ "a single flowering treetop canopy, blossoms and
-  leaves", ✓ "a glossy black sphere, the meadow and sky mirrored on its surface". Rich, still.
+  leaves". Rich, still — but of the OBJECT ITSELF.
+- **DON'T describe REFLECTIONS or CONTENTS of a shiny/transparent object** — the model latches onto
+  what's reflected/inside and makes IT the subject. ✗ "a raindrop with the whole meadow mirrored on
+  its skin" → we zoom into the meadow, not the drop. ✗ "a glossy sphere, the sky reflected across
+  it" → we get the sky. ✗ over-enumerated interior detail ("the lamp's gold light pooled at its
+  core, a spiral turning there") → we chase the spiral. Just name the object plainly ("a clear
+  raindrop", "a glossy black sphere"); the engine fills the surface/reflection detail itself. Also
+  avoid words that name a DIFFERENT object as a colour ("rose and teal dust" → it paints a rose
+  flower; say "pink and teal").
 
 ## The prominent-point principle (what the object must be)
 The engine finds the named object (Florence-2) and dives into it — or, before it's detectable,
