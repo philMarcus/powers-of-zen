@@ -758,8 +758,13 @@ composer should write CONTENT only (scenes/targets/pacing) and leave the LOOK to
 STYLE step — a small deck of deliberate "shiny AI eye-candy" style presets (style_suffix + palette +
 checkpoint) applied on top of a style-agnostic journey. Keeps the brand look consistent + intentional
 (per the FORMAT/STYLE/JOURNEY three-layer model) instead of drifting to whatever a lighthouse "should"
-look like. TODO: build the style deck; have the composer NOT set style_suffix (or use a strong shiny
-default); apply style as its own pass.
+look like. BUILT 2026-07-30: styles/deck.json (curated word-only looks: cosmic_gloss / crystalline /
+liquid_light / gilded_relic / stormlight / enchanted_wild — all shiny/rendered, NO realism words) +
+engine/style.py (resolves a journey's `style` NAME -> style_suffix + recommended checkpoint) +
+dive.py `--style` override (A/B look-tests). The composer now sets `style` = a deck NAME (bounded
+choice, no realism drift); it NEVER writes free-text style_suffix (legacy free-text still honored).
+FUTURE (Phil): if words alone aren't enough, tack on LoRA/IPAdapter style models at render time — a
+later lever, deck stays word-only for now.
 
 ## Journey-authoring rule (Phil 2026-07-30): don't over-describe the object / its reflections
 Describing what's REFLECTED in or INSIDE a shiny/transparent object makes the model zoom into the
