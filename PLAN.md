@@ -576,8 +576,10 @@ platform (extract that frame, upload it as the custom thumbnail / cover) instead
 ## Captions, hashtags, GPU-gating, and pipeline polish (2026-07-29)
 
 **Captioning is now formalized** (was: Claude wrote captions by hand at pipeline-entry time).
-`scripts/caption.py` uses the LOCAL vision model (Ollama `qwen3-vl:4b`, :11434) to look at ~4
-frames of the render + the journey's worlds and write THREE caption options + a YouTube title,
+`scripts/caption.py` uses a LOCAL model (Ollama `mistral-small3.2:24b`, :11434) on the journey's
+worlds to write FIVE caption options (paired with YouTube titles),
+[TEXT-ONLY: qwen3-vl:4b was a reasoning model that returned empty JSON; image-grounding via a
+working VLM (e.g. moondream) is a TODO]
 so a video already HAS a caption by the time it's in Video Review. Model-agnostic (same caption
 for DS/turbo; prefers DS frames). Dashboard Video Review shows the 3 options (pick one, edit) +
 a ✍ Generate button. `caption.py --all` captions every review video missing one.
