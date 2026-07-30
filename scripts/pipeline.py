@@ -71,6 +71,31 @@ def queued(data):
     return sorted(q, key=lambda v: v.get("order", 999))
 
 
+def set_order(data, journeys):
+    """Write CONTIGUOUS, distinct order (0..n-1) to `journeys` in the given sequence. Use this for
+    reordering instead of swapping two videos' order values — swapping breaks when orders are
+    missing or duplicated (they default to 999 / can collide), which silently no-ops a move."""
+    for i, jn in enumerate(journeys):
+        v = get(data, jn)
+        if v:
+            v["order"] = i
+
+
+def move(data, journey, delta):
+    """Move a queued video up (delta=-1) or down (delta=+1) in the post order; renormalizes all
+    queued orders so the result is always exactly the intended sequence. Returns True if it moved."""
+    seq = [v["journey"] for v in queued(data)]
+    if journey not in seq:
+        return False
+    j = seq.index(journey)
+    k = j + delta
+    if not (0 <= k < len(seq)):
+        return False
+    seq[j], seq[k] = seq[k], seq[j]
+    set_order(data, seq)
+    return True
+
+
 def next_to_post(data):
     """Top of the ordered queue whose scheduled time (if any) has arrived."""
     now = _now()

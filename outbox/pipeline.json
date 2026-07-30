@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-30 00:03:59",
+    "updated": "2026-07-30 00:26:51",
     "paused_platforms": [
       "tiktok"
     ],
@@ -78,7 +78,7 @@
       "journey": "iris_observatory",
       "model": "ds",
       "cut": "zoomout",
-      "file": "production/iris_observatory_ds.mp4",
+      "file": "production\\iris_observatory_ds_shift.mp4",
       "title": "the galaxy at the back of your eye 👁️🌌",
       "caption": "Dive through the lens of time and space, where galaxies breathe ⏳ #cosmicjourney #infinitescale #telescopetravel #galaxydive #powersofzen #oddlysatisfying #zoomer",
       "yt_title": "Dive through the lens of time and space, where galaxies breathe ⏳",
@@ -104,13 +104,13 @@
         }
       },
       "created": "2026-07-27",
-      "order": 5,
+      "order": 0,
       "music": {
         "bpm": 100,
-        "bar": 2.399,
+        "bar": 2.393,
         "key": "D minor",
         "stage": "done",
-        "chosen": "choir",
+        "chosen": "tender",
         "candidates": [
           {
             "id": "warm",
@@ -118,7 +118,7 @@
             "track": "output/music/iris_observatory_warm.flac",
             "aligned": "review/music/candidates/iris_observatory/warm.mp4",
             "seed": 500,
-            "lock": 23.62,
+            "lock": 14.97,
             "tags": "chill hypnotic ambient evoking a cosmic observatory peering through a great eye, celestial, vast, contemplative, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           },
           {
@@ -127,7 +127,7 @@
             "track": "output/music/iris_observatory_glassy.flac",
             "aligned": "review/music/candidates/iris_observatory/glassy.mp4",
             "seed": 501,
-            "lock": 34.02,
+            "lock": 3.56,
             "tags": "chill hypnotic ambient evoking a cosmic observatory peering through a great eye, celestial, vast, contemplative, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           },
           {
@@ -136,7 +136,7 @@
             "track": "output/music/iris_observatory_deep.flac",
             "aligned": "review/music/candidates/iris_observatory/deep.mp4",
             "seed": 502,
-            "lock": 22.5,
+            "lock": 12.45,
             "tags": "chill hypnotic ambient evoking a cosmic observatory peering through a great eye, celestial, vast, contemplative, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           },
           {
@@ -145,7 +145,7 @@
             "track": "output/music/iris_observatory_tender.flac",
             "aligned": "review/music/candidates/iris_observatory/tender.mp4",
             "seed": 503,
-            "lock": 24.03,
+            "lock": 13.97,
             "tags": "chill hypnotic ambient evoking a cosmic observatory peering through a great eye, celestial, vast, contemplative, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           },
           {
@@ -154,10 +154,12 @@
             "track": "output/music/iris_observatory_choir.flac",
             "aligned": "review/music/candidates/iris_observatory/choir.mp4",
             "seed": 504,
-            "lock": 26.49,
+            "lock": 3.82,
             "tags": "chill hypnotic ambient evoking a cosmic observatory peering through a great eye, celestial, vast, contemplative, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           }
-        ]
+        ],
+        "for_model": "ds",
+        "for_cut": "zoomout"
       },
       "caption_bodies": [
         "From brass telescopes to cosmic eyes, the universe gazes back 🌌",
@@ -182,7 +184,9 @@
         "A spiral of stars, a whisper of dust—endless depths unfold 🌠 #cosmicjourney #infinitescale #telescopetravel #galaxydive #powersofzen #oddlysatisfying #zoomer",
         "From mountain peaks to stardust dreams, the loop never ends ✨ #cosmicjourney #infinitescale #telescopetravel #galaxydive #powersofzen #oddlysatisfying #zoomer",
         "A journey through glass and shadow, where light bends into infinity 🔭 #cosmicjourney #infinitescale #telescopetravel #galaxydive #powersofzen #oddlysatisfying #zoomer"
-      ]
+      ],
+      "start_t": 0.8,
+      "orig_file": "production/iris_observatory_ds.mp4"
     },
     {
       "journey": "tide_of_life",
@@ -338,7 +342,7 @@
         }
       },
       "created": "2026-07-27",
-      "order": 7,
+      "order": 4,
       "music": {
         "bpm": 100,
         "bar": 2.396,
@@ -651,7 +655,7 @@
         }
       },
       "created": "2026-07-27",
-      "order": 4,
+      "order": 1,
       "music": {
         "bpm": 101,
         "bar": 2.385,
@@ -761,7 +765,7 @@
         }
       },
       "created": "2026-07-27",
-      "order": 6,
+      "order": 3,
       "music": {
         "bpm": 100,
         "bar": 2.405,
@@ -851,7 +855,7 @@
       "yt_title": "A hypnotic spiral through every scale of reality ⚡",
       "yt_desc": "",
       "cameo": "lee",
-      "state": "music",
+      "state": "queued",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -901,8 +905,8 @@
         "bpm": 100,
         "bar": 2.407,
         "key": "D minor",
-        "stage": "review",
-        "chosen": null,
+        "stage": "done",
+        "chosen": "deep",
         "candidates": [
           {
             "id": "warm",
@@ -952,7 +956,8 @@
         ],
         "for_model": "ds",
         "for_cut": "zoomout"
-      }
+      },
+      "order": 2
     },
     {
       "journey": "circuit_city",

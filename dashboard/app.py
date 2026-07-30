@@ -462,13 +462,9 @@ with tabs[2]:  # PRODUCTION — the ordered post queue; tweak cut/model + change
     for i, v in enumerate(qv):
         top = st.columns([1, 1, 1, 9])
         if top[0].button("⬆", key=f"up_{v['journey']}", disabled=(i == 0)):
-            dd = data(); a = pl.get(dd, v["journey"]); b = pl.get(dd, qv[i - 1]["journey"])
-            a["order"], b["order"] = b.get("order", i - 1), a.get("order", i)
-            pl.save(dd); st.rerun()
+            dd = data(); pl.move(dd, v["journey"], -1); pl.save(dd); st.rerun()
         if top[1].button("⬇", key=f"dn_{v['journey']}", disabled=(i == len(qv) - 1)):
-            dd = data(); a = pl.get(dd, v["journey"]); b = pl.get(dd, qv[i + 1]["journey"])
-            a["order"], b["order"] = b.get("order", i + 1), a.get("order", i)
-            pl.save(dd); st.rerun()
+            dd = data(); pl.move(dd, v["journey"], +1); pl.save(dd); st.rerun()
         top[2].subheader(f"#{i + 1}")
         with top[3]:
             m = v.get("music") or {}
