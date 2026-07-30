@@ -1,7 +1,7 @@
 {
   "name": "antenna_ball",
   "theme": "a ladybug's antenna-tip sphere becomes a whole planet, then the descent lands back in the meadow it came from",
-  "style_suffix": "sunny macro photography, dewdrops and soft bokeh, hyperdetailed, cinematic",
+  "style": "enchanted_wild",
   "format": {
     "beats_per_bar": 4,
     "exact_loop": true,
@@ -14,8 +14,8 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "wildflower gold and warm green",
-      "scene": "a wide sunlit meadow seen low at eye level among wildflower stems and grass blades towering into golden light, gold pollen drifting in the slanted afternoon light, dew beaded on nearby leaves, a small red ladybug perched on a distant leaf across the clearing",
-      "target": "a round red ladybug perched on a broad green leaf, its lacquered shell catching the light, neat black spots dotting its domed back",
+      "scene": "a wide sunlit meadow seen low at eye level among wildflower stems and grass blades towering into golden light, gold pollen adrift in the slanted afternoon light, dew beaded on nearby leaves, a small red ladybug perched on a distant leaf across the clearing",
+      "target": "a round red ladybug perched on a broad green leaf, its shell a deep lacquered scarlet, neat black spots dotting its domed back",
       "target_phrase": "a red ladybug",
       "loop_target": "the sunlit wildflower meadow, seen low at eye level among the towering stems and grass, gold pollen adrift in slanted light"
     },
@@ -25,8 +25,8 @@
       "kind": "zoom",
       "dur": 2,
       "palette": "scarlet lacquer and jet black",
-      "scene": "a red ladybug's domed shell fills the view, scarlet lacquer scattered with round black spots, faint reflections of sky and leaf caught on its polished curve",
-      "target": "the ladybug's head, a small glossy black dome with faceted eyes and two slender segmented antennae rising from it",
+      "scene": "a red ladybug's domed shell fills the view, scarlet lacquer scattered with round black spots, the shell smooth and gently curved",
+      "target": "the ladybug's head, a small glossy black dome with faceted eyes and two slender segmented antennae curving above it",
       "target_phrase": "a ladybug's head"
     },
     {
@@ -35,8 +35,8 @@
       "kind": "zoom",
       "dur": 2,
       "palette": "glossy black and pale silver",
-      "scene": "a ladybug's head fills the view, a glossy black dome with faceted eyes, two slender segmented antennae arcing upward, fine dark hairs along each segment, a thread of daylight caught along the curves",
-      "target": "the tip of one antenna, a small flawless black sphere, a single bead of light caught on its polished skin",
+      "scene": "a ladybug's head fills the view, a glossy black dome with faceted eyes, two slender segmented antennae arcing upward, fine dark hairs along each segment",
+      "target": "the tip of one antenna, a small smooth black sphere",
       "target_phrase": "a black sphere"
     },
     {
@@ -44,8 +44,8 @@
       "exp": -3.2,
       "kind": "seam",
       "dur": 1,
-      "palette": "glossy black and dew silver, blooming into deep blue-green",
-      "scene": "a flawless glossy black sphere fills the entire view, one bead of light glinting on its curved skin, the meadow and pale sky mirrored and curved across its polished surface"
+      "palette": "glossy black and pale silver, blooming into deep blue-green",
+      "scene": "a smooth glossy black sphere fills the entire view, its surface deep and matte-dark, curving away into shadow at the edges"
     },
     {
       "name": "planet",

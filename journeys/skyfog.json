@@ -1,7 +1,7 @@
 {
   "name": "skyfog",
   "theme": "A fog-wreathed lighthouse coast where a single raindrop on the lamp-room glass folds inward into the birth of stars, and a young planet's great storm carries the dive back down through drifting sea fog to the light.",
-  "style_suffix": "soft atmospheric light, luminous mist, hyperdetailed, cinematic",
+  "style": "stormlight",
   "format": {
     "beats_per_bar": 4,
     "exact_loop": true,
@@ -14,10 +14,10 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "warm brass gold and rain grey",
-      "scene": "the whole lamp-room at the top of the lighthouse, seen from just inside the rain-streaked glass with the dark fog-bound sea beyond, the great brass lamp bright at the center, its lens catching the light, coiled rope and wet floorboards in the shadows, the room empty and still, no one present",
-      "target": "one round windowpane filmed with condensation, a single bead of water bright with the lamp's gold light",
+      "scene": "the whole lamp-room at the top of the lighthouse, seen from just inside the rain-streaked glass with the dark fog-bound sea beyond, a tall brass lamp standing unlit and shadowed to one side, coiled rope and wet floorboards in the gloom, the room empty and still, no one present",
+      "target": "the near windowpane filmed with condensation, a fine scatter of water beads catching the light",
       "target_phrase": "condensation on glass",
-      "loop_target": "the lighthouse's lamp room glowing warm at the top of the tower, seen from just inside the rain-streaked glass with the dark fog-bound sea beyond"
+      "loop_target": "the lighthouse's lamp room at the top of the tower, seen from just inside the rain-streaked glass with the dark fog-bound sea beyond, a tall brass lamp standing unlit and shadowed to one side"
     },
     {
       "name": "window_mist",
@@ -25,8 +25,8 @@
       "kind": "zoom",
       "dur": 3,
       "palette": "pale silver and glass grey",
-      "scene": "a fine mist of condensation on the window pane, countless small beads catching the lamp's gold glow, pale rivulets etched down through the film",
-      "target": "one bead of water larger than the rest, full and rounded, the lamp's gold light bent and pooled inside its curve",
+      "scene": "a fine mist of condensation up close on the window pane, countless small beads catching the light, pale rivulets etched down through the film",
+      "target": "one bead of water larger than the rest, full and rounded, its skin catching the light",
       "target_phrase": "a large water bead"
     },
     {
@@ -35,16 +35,16 @@
       "kind": "seam",
       "dur": 1,
       "palette": "deep water blue kindling to starlit gold",
-      "scene": "inside the curved skin of a single swollen raindrop, the lamp's gold light gathered at its core into a tight luminous spiral, a night sky of scattered stars held within the water"
+      "scene": "a single clear swollen raindrop, its rounded skin catching the light, resting against the dark glass"
     },
     {
       "name": "nebula",
       "exp": 14,
       "kind": "zoom",
       "dur": 8,
-      "palette": "rose and teal glow",
-      "scene": "towering pillars of glowing nebula mist, veils of rose and teal dust banked in layers, newborn stars smoldering deep inside the folds",
-      "target": "one protostar bright at the pillar's heart, its light pushing the dust apart in a clear halo",
+      "palette": "pink and teal glow",
+      "scene": "towering pillars of glowing nebula mist, veils of pink and teal dust banked in layers, newborn stars smoldering deep inside the folds",
+      "target": "one protostar bright at the pillar's heart, a clear halo of parted dust around it",
       "target_phrase": "a glowing protostar"
     },
     {
@@ -70,7 +70,7 @@
       },
       "scene": "the banded planet close, marbled cloud lit low and gold, one immense white spiral cyclone coiled above a dark ocean",
       "target": "the calm dark eye at the storm's center, sheer walls of towering cloud on every side",
-      "target_phrase": "the eye of a storm"
+      "target_phrase": "the storm's eye"
     },
     {
       "name": "storm_eye",
@@ -88,7 +88,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "sea-fog grey and lamp gold",
-      "scene": "a fog-drowned night coast, black water and wet rock, deep banks of sea fog lit from within by the lighthouse's golden beam, no one present",
+      "scene": "a fog-drowned night coast, black water and wet rock, deep banks of sea fog lit from within by a distant golden beam, no one present",
       "target": "a lighthouse tower in the fog, stone walls pale in the mist, its lamp room glowing warm at the very top",
       "target_phrase": "a lighthouse in fog"
     },
