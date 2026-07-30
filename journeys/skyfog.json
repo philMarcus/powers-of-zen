@@ -1,62 +1,105 @@
 {
   "name": "skyfog",
+  "theme": "A fog-wreathed lighthouse coast where a single raindrop on the lamp-room glass folds inward into the birth of stars, and a young planet's great storm carries the dive back down through drifting sea fog to the light.",
   "style_suffix": "soft atmospheric light, luminous mist, hyperdetailed, cinematic",
   "format": {
-    "sec_per_scale": 2.4,
+    "beats_per_bar": 4,
     "exact_loop": true,
     "counter": false
   },
   "registers": [
     {
       "name": "lighthouse_room",
-      "exp": 0.5,
-      "palette": "warm brass and rain grey",
-      "interior": "the warm lamplit room at the top of a lighthouse, a great brass lamp burning, rain and fog pressing at the round windows, the room empty and still",
-      "next_target": "one small fishing boat's light adrift in the fog below"
+      "exp": 1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm brass gold and rain grey",
+      "scene": "the whole lamp-room at the top of the lighthouse, seen from just inside the rain-streaked glass with the dark fog-bound sea beyond, the great brass lamp bright at the center, its lens catching the light, coiled rope and wet floorboards in the shadows, the room empty and still, no one present",
+      "target": "one round windowpane filmed with condensation, a single bead of water bright with the lamp's gold light",
+      "target_phrase": "condensation on glass",
+      "loop_target": "the lighthouse's lamp room glowing warm at the top of the tower, seen from just inside the rain-streaked glass with the dark fog-bound sea beyond"
     },
     {
-      "name": "harbor_fog",
-      "exp": 2.5,
-      "palette": "silver grey and lamp gold",
-      "interior": "banks of silver fog rolling over a dark rocky harbor, sweeping beams of gold light cutting through the mist",
-      "next_target": "one towering thunderhead glowing above the cloud deck"
+      "name": "window_mist",
+      "exp": -0.5,
+      "kind": "zoom",
+      "dur": 3,
+      "palette": "pale silver and glass grey",
+      "scene": "a fine mist of condensation on the window pane, countless small beads catching the lamp's gold glow, pale rivulets etched down through the film",
+      "target": "one bead of water larger than the rest, full and rounded, the lamp's gold light bent and pooled inside its curve",
+      "target_phrase": "a large water bead"
     },
     {
-      "name": "cloud_tops",
-      "exp": 4,
-      "palette": "white gold and sky blue",
-      "interior": "vast sunlit canyons of billowing cloud seen from above, towers of cumulus casting long blue shadows",
-      "next_target": "the dark calm eye of a huge spiral storm far below"
-    },
-    {
-      "name": "cyclone",
-      "exp": 6.5,
-      "palette": "storm slate and pearl",
-      "cameo": {
-        "sprite": "output/mascots/canon/janet.png",
-        "pos": [
-          0.72,
-          0.34
-        ],
-        "size": 0.12
-      },
-      "interior": "an immense spiral cyclone seen from orbit, white arms of cloud wrapping a dark calm eye",
-      "next_target": "one glowing rose-colored pillar of nebula mist far out in the darkness"
+      "name": "raindrop",
+      "exp": -3.0,
+      "kind": "seam",
+      "dur": 1,
+      "palette": "deep water blue kindling to starlit gold",
+      "scene": "inside the curved skin of a single swollen raindrop, the lamp's gold light gathered at its core into a tight luminous spiral, a night sky of scattered stars held within the water"
     },
     {
       "name": "nebula",
       "exp": 14,
+      "kind": "zoom",
+      "dur": 8,
       "palette": "rose and teal glow",
-      "interior": "towering pillars of glowing nebula mist cradling newborn stars, veils of rose and teal light drifting",
-      "next_target": "a low bank of luminous sea fog settling over dark water far below"
+      "scene": "towering pillars of glowing nebula mist, veils of rose and teal dust banked in layers, newborn stars smoldering deep inside the folds",
+      "target": "one protostar bright at the pillar's heart, its light pushing the dust apart in a clear halo",
+      "target_phrase": "a glowing protostar"
     },
     {
-      "name": "fogbound_night",
-      "exp": 2,
+      "name": "protostar",
+      "exp": 9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blazing orange and white",
+      "scene": "the corona of a newborn star, arcs of fire and towering prominences, streams of ember and plasma trailing into the surrounding dark",
+      "target": "one banded world past the flare, an orbiting planet lit gold along one edge",
+      "target_phrase": "an orbiting banded planet"
+    },
+    {
+      "name": "planet_storm",
+      "exp": 6.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "storm slate and pearl",
+      "cameo": {
+        "sprite": "output/mascots/canon/janet.png",
+        "pos": [0.72, 0.34],
+        "size": 0.12
+      },
+      "scene": "the banded planet close, marbled cloud lit low and gold, one immense white spiral cyclone coiled above a dark ocean",
+      "target": "the calm dark eye at the storm's center, sheer walls of towering cloud on every side",
+      "target_phrase": "the eye of a storm"
+    },
+    {
+      "name": "storm_eye",
+      "exp": 4.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pearl grey and dim amber",
+      "scene": "the storm's towering eye-wall, sheer canyons of cloud lit amber by a low scattered sun, the dark sea glinting through a gap far below",
+      "target": "a bank of luminous sea fog over the dark water, faintly glowing in the eye's gap",
+      "target_phrase": "fog over dark water"
+    },
+    {
+      "name": "fogbound_coast",
+      "exp": 2.1,
+      "kind": "zoom",
+      "dur": 4,
       "palette": "sea-fog grey and lamp gold",
-      "interior": "a fog-drowned night coast, the slow sweeping golden beam of a lighthouse raking through deep drifting banks of sea fog over black water, no one present",
-      "next_target": "the warm lamplit room at the very top of the lighthouse"
+      "scene": "a fog-drowned night coast, black water and wet rock, deep banks of sea fog lit from within by the lighthouse's golden beam, no one present",
+      "target": "a lighthouse tower in the fog, stone walls pale in the mist, its lamp room glowing warm at the very top",
+      "target_phrase": "a lighthouse in fog"
+    },
+    {
+      "name": "lighthouse_approach",
+      "exp": 1.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "wet stone grey and lamp gold",
+      "scene": "beside the lighthouse's old stone tower in the fog, rain glistening on the rough-cut walls, the lamp room's warm brass glow spilling from the round windows high above"
     }
   ],
-  "music_theme": "A slow, swelling ambient drone with distant chimes and a heartbeat-like pulse"
+  "music_theme": "A slow, swelling ambient drone with distant chimes and a heartbeat-like pulse, brightening into shimmering strings at the birth of the nebula, settling back to the drone as the sea fog closes in"
 }

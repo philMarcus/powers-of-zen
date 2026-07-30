@@ -61,7 +61,9 @@ def _target(reg):
 def _frames(reg, fmt, fps):
     """Frame count for a card. New schema: `dur` in BEATS × frames_per_beat. Legacy: `sec`."""
     if reg.get("dur") is not None:
-        fpb = fmt.get("frames_per_beat", 16)   # ~1.3s/beat: enough frames for arrive->look->plunge
+        # dur is in BEATS (a bar = 4). ~7 frames/beat -> a 1-bar scale = 28 frames = ~2.3s at 12fps
+        # (matching the old ~2.4s/register), a 2-bar linger = 56. Keeps the video a sane length.
+        fpb = fmt.get("frames_per_beat", 7)
         return max(8, round(reg["dur"] * fpb))
     sec = fmt.get("sec_per_scale", fmt.get("sec_per_decade", 2.4))
     return max(12, round(reg.get("sec", sec) * fps))
