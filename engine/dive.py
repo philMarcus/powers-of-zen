@@ -528,9 +528,22 @@ def main():
     a_cx = a_cy = a_tgt = None   # smoothed aim + committed target (fractional)
     a_locked = False             # True once Florence has locked the real object
     a_arrived = False            # object fills the frame / lock lost -> coast to center, stop detecting
+    a_w = 0.0                    # last detected object WIDTH (fraction) — drives the planned zoom
     a_det_at = -999              # last frame Florence ran
     a_prev_ap = None             # previous frame's approach entry (detect a new approach run)
     REDETECT = cfg.get("approach_redetect", 4)   # Florence cadence (frames) — periodic, not per-frame
+    # PLANNED ZOOM: the object should fill the frame exactly at the END of its approach run (on the
+    # beat), so the morph lands on the beat — not whenever it happens to fill. run_end[i] = the last
+    # frame of the contiguous object-approach run containing i (the plunge end = the fill point).
+    run_end = [None] * len(approach)
+    _e = None
+    for _j in range(len(approach) - 1, -1, -1):
+        if approach[_j] is not None:
+            _e = _j if _e is None else _e
+            run_end[_j] = _e
+        else:
+            _e = None
+    FILL_W = cfg.get("approach_fill_width", 0.9)   # target object width at the run's end
     for i in range(start_i, total):
         prompt, prev_prompt, k, p_idx = phase_info(phases, i)
         in_transition = prev_prompt is not None and k < T
@@ -559,9 +572,9 @@ def main():
                     # only fall back to the prominent-point picker for TRUE emergence (nothing yet).
                     b = _det.detect(img, ap["phrase"], pick=ap.get("pick", "salient"))
                     if b:
-                        a_tgt = (b["cx"], b["cy"]); a_locked = b["w"] * b["h"] >= 0.02
+                        a_tgt = (b["cx"], b["cy"]); a_w = b["w"]; a_locked = b["w"] * b["h"] >= 0.02
                     else:
-                        a_tgt = _pts.pick_point(img, seed=i); a_locked = False
+                        a_tgt = _pts.pick_point(img, seed=i); a_w = 0.0; a_locked = False
                     a_cx, a_cy = a_tgt; a_det_at = i; a_arrived = False
                 elif not a_arrived and i - a_det_at >= REDETECT:   # periodic Florence (speed)
                     a_det_at = i
@@ -570,20 +583,26 @@ def main():
                         area = b["w"] * b["h"]
                         near = abs(b["cx"] - a_tgt[0]) < 0.30 and abs(b["cy"] - a_tgt[1]) < 0.30
                         if area >= 0.02 and (not a_locked or near):
-                            a_tgt = (b["cx"], b["cy"]); a_locked = True     # reject far jumps once locked
+                            a_tgt = (b["cx"], b["cy"]); a_w = b["w"]; a_locked = True   # reject far jumps
                         if area >= 0.5:
                             a_arrived = True                               # object fills the frame
                     elif a_locked:
                         a_arrived = True   # lost the (now frame-filling) locked object -> arrived
                 if a_arrived:
-                    a_tgt = (0.5, 0.5)     # COAST: glide to center, keep zooming smoothly into the
-                                           # object's surface; the next card's arrival morphs onward
+                    a_tgt = (0.5, 0.5)     # coast to center (safety if lock lost early)
                 a_cx += (a_tgt[0] - a_cx) * 0.4
                 a_cy += (a_tgt[1] - a_cy) * 0.4
                 cx, cy = min(0.85, max(0.15, a_cx)), min(0.85, max(0.15, a_cy))
+                # PLANNED ZOOM: grow the locked object from its current width to FILL_W exactly by the
+                # run's end (the beat) — so it fills ON the beat, not whenever ×10 happens to fill it.
+                if a_locked and not a_arrived and a_w > 0 and run_end[i] is not None:
+                    remaining = max(1, run_end[i] - i)
+                    z = max(1.0, min(1.6, (FILL_W / max(a_w, 0.05)) ** (1.0 / remaining)))
+                elif a_arrived:
+                    z = min(z, 1.03)       # object already fills — barely creep (don't over-zoom)
                 a_prev_ap = ap
             else:
-                a_cx = a_cy = a_tgt = None; a_locked = False; a_arrived = False; a_prev_ap = None
+                a_cx = a_cy = a_tgt = None; a_locked = False; a_arrived = False; a_prev_ap = None; a_w = 0.0
             boost = 0
             if in_transition:
                 boost = (cfg["arrival_denoise_boost"] if p_idx in arrivals
