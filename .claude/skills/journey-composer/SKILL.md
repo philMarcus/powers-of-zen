@@ -43,25 +43,40 @@ several times (deliberate multiple seams are welcome when the concept wants them
 the count, the **loop-pair ends** (first + last cards) must be natural ADJACENT scales —
 never put a seam at the ends.
 
-## The prominent-point principle (why journeys must be written a certain way)
-The engine grows the next object by picking a **prominent point already on screen** and
-zooming into it while the prompt paints the target forming there. It looks for **contrast**
-— a bright mote on a dark field OR a dark speck on a bright field — and prefers a point
-moderately **OFF-center**, so the dive has direction (never a dead-center zoom every time).
-So every `zoom` card's scene must contain **at least one candidate point** to fly into, and
-the target must be written **EMERGING / GROWING**, never as a distant speck.
+## DESCRIBE STATIC SCENES — the ENGINE renders the motion (critical)
+The journey supplies the STILL IMAGE at each scale. The ENGINE renders everything that happens
+in TIME — the zoom, the approach, the growth, the morph between scales. So `scene` and `target`
+must be **static, present-tense descriptions of a thing**, NOT a description of motion or
+transformation.
 
-- **Many candidates is fine — encouraged, even.** A field of atoms, a herd of zebras, a sky
-  of stars: the engine **selects ONE** instance (a contrasty candidate, or one at random)
-  and **commits** to it — it doesn't matter which zebra, only that we start diving into one.
-  You do NOT have to write "the only one in existence." Describe the field richly; name the
-  target *type* in `target_phrase` ("a zebra", "a glowing atom", "a banded planet"); the
-  engine picks one. *(Selecting one-among-many well is an open engine problem — see below.)*
-- **DO** describe the target EMERGING: "*one round gas planet ahead, growing as we approach,
-  its banded face turning toward us.*"
-- **DON'T** describe it RECEDING: ~~"a tiny planet, barely visible, alone very far away in
-  the distance"~~ — that tells the model to send it AWAY; it never grows or becomes
-  detectable. (This exact old `TEMPLATE_TRAVEL` wording is what broke stormglass.)
+- **DON'T write MOTION / TIME**: ✗ "growing sharper and closer as we descend toward it",
+  ✗ "swelling larger with every heartbeat", ✗ "rushing closer", ✗ "the sphere keeps swelling
+  until it IS a planet". The engine's own templates add "diving into … as it fills the view";
+  writing it in the journey too confuses the image model (it tries to paint the *change* and
+  drifts). Just describe the object, sitting there.
+- **DON'T write RECEDING** either: ✗ "a tiny planet, barely visible, alone very far away". That
+  sends the object away so it never becomes detectable (what broke stormglass). Don't tell the
+  camera where the object is at all.
+- **DO** describe the object CLEARLY PRESENT and prominent, static: ✓ "a round banded gas planet,
+  its cloud bands and a great storm eye", ✓ "a single flowering treetop canopy, blossoms and
+  leaves", ✓ "a glossy black sphere, the meadow and sky mirrored on its surface". Rich, still.
+
+## The prominent-point principle (what the object must be)
+The engine finds the named object (Florence-2) and dives into it — or, before it's detectable,
+picks a **prominent point** (contrast: a bright mote on dark OR a dark speck on a bright field,
+moderately OFF-center) and grows the object there. So every `zoom` card's `scene` must contain
+**a distinct object that CAN be found** — present and prominent, not a distant speck.
+
+- **The target must be a FINDABLE object at this scale.** A whole ladybug is findable; the tip of
+  its antenna is NOT (too fine, and it doesn't exist as a distinct thing in the wide shot). If the
+  next thing is a fine sub-part, add an INTERMEDIATE scale (ladybug → its HEAD with antennae → the
+  antenna tip). Each hop must land on something the detector could point at.
+- **Many candidates is fine — encouraged.** A field of atoms, a herd of zebras: the engine selects
+  ONE (a contrasty candidate, or at random) and commits — it doesn't matter which zebra. Describe
+  the field; name the target *type* in `target_phrase` ("a zebra", "a glowing atom"). *(Selecting
+  one-among-many is an engine problem — see below.)*
+- `target_phrase`: a short, plain, VISUAL noun phrase the detector can localize — 2-4 words, the
+  object + one trait: "a red ladybug", "the amber eye", "a banded planet". No motion words.
 
 ## Register (card) schema — rich SCENE + tight TARGET, kept separate
 ```jsonc
@@ -87,9 +102,11 @@ The rich/tight split is deliberate (per Phil): `scene` and `target` are lush pro
 image model; `target_phrase` is a short concrete noun phrase for the *detector*. Long or
 abstract detector phrases FAIL (Florence-2 degenerates on "the biggest planet" or a whole
 sentence) — keep `target_phrase` to the object + one visual trait.
-- **`scene`** contains the candidate point(s) that become the next object. Rich, varied.
-- **`target`** = that object, EMERGING. Omit on `seam` cards (use scene-morph language in
-  `scene`) and on the last card (the loop auto-derives its target from card 0).
+- **`scene`** = a STATIC, rich description of the world at this scale; it contains the findable
+  object we dive into. (On a `seam` card, `scene` is just the STATIC scene at the seam — e.g. "a
+  glossy black sphere, meadow mirrored on it" — NOT the transformation; the engine does the morph.)
+- **`target`** = the object we dive into, described STATICALLY (present, prominent — no motion/time
+  words). Omit on `seam` cards and on the last card (the loop auto-derives its target from card 0).
 - **`kind`** = "zoom" default; "seam" on a semantic-morph transition.
 - **`dur`** = duration in BEATS, a power of two (0.5 | 1 | 2 | 4) — see pacing.
 - Top-level: `name`, `theme` (seed idea), `style_suffix` (Layer-2 style), `format`
@@ -155,8 +172,9 @@ myth, a trending sound, an emotion…):
   fractional stacks make it nonsense → `counter:false`.
 
 ## Self-check before shipping a journey
-1. For EVERY `zoom` card: can I name the KIND of object in the scene we fly into, is it in
-   `target` + a short `target_phrase`, and is it described GROWING (not receding)?
+1. For EVERY `zoom` card: is the target a FINDABLE object at this scale (not too fine a sub-part —
+   add an intermediate scale if so), named in `target` + a short `target_phrase`, and described
+   STATICALLY (no motion/time words, and not receding/"far away")?
 2. Are the seams at big exp jumps and buried mid-list (never at either end)? One for a
    realistic traverse; more only if the concept is deliberately fantastical.
 3. First and last cards natural adjacent scales; last genuinely contains the first world;
@@ -165,7 +183,8 @@ myth, a trending sound, an emotion…):
 5. Every `dur` a power-of-two beat value (0.5|1|2|4) so morphs stay on the beat; pacing lingers
    where the scene is rich (whiz fast scales at 1 beat, linger rich ones at 2-4).
 6. Any object named twice across cards (double-ghost)? Any animal "traveled through"? Any
-   featured face? Any target described as tiny/far/receding?
+   featured face? Any MOTION/TIME language ("growing", "rushing closer", "as we approach",
+   "keeps swelling until it becomes") or receding "tiny/far away" in a scene/target? (Static only.)
 7. Spine reskinned to the theme, not the generic atom→cosmos template.
 
 ## Open engine problems this doctrine hands to the engine (not the author)
