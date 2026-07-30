@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-29 23:50:13",
+    "updated": "2026-07-30 00:03:59",
     "paused_platforms": [
       "tiktok"
     ],
@@ -910,7 +910,7 @@
             "track": "output/music/cosmic_scales_remix_warm.flac",
             "aligned": "review/music/candidates/cosmic_scales_remix/warm.mp4",
             "seed": 500,
-            "lock": 7.18,
+            "lock": 10.22,
             "tags": "chill hypnotic ambient evoking space odyssey, chill, slow beats, celestial, bookish and ancient., warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           },
           {
@@ -919,7 +919,7 @@
             "track": "output/music/cosmic_scales_remix_glassy.flac",
             "aligned": "review/music/candidates/cosmic_scales_remix/glassy.mp4",
             "seed": 501,
-            "lock": 10.37,
+            "lock": 10.09,
             "tags": "chill hypnotic ambient evoking space odyssey, chill, slow beats, celestial, bookish and ancient., crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           },
           {
@@ -928,7 +928,7 @@
             "track": "output/music/cosmic_scales_remix_deep.flac",
             "aligned": "review/music/candidates/cosmic_scales_remix/deep.mp4",
             "seed": 502,
-            "lock": 6.52,
+            "lock": 4.13,
             "tags": "chill hypnotic ambient evoking space odyssey, chill, slow beats, celestial, bookish and ancient., deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           },
           {
@@ -937,7 +937,7 @@
             "track": "output/music/cosmic_scales_remix_tender.flac",
             "aligned": "review/music/candidates/cosmic_scales_remix/tender.mp4",
             "seed": 503,
-            "lock": 11.11,
+            "lock": 9.11,
             "tags": "chill hypnotic ambient evoking space odyssey, chill, slow beats, celestial, bookish and ancient., tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           },
           {
@@ -946,7 +946,7 @@
             "track": "output/music/cosmic_scales_remix_choir.flac",
             "aligned": "review/music/candidates/cosmic_scales_remix/choir.mp4",
             "seed": 504,
-            "lock": 11.83,
+            "lock": 3.22,
             "tags": "chill hypnotic ambient evoking space odyssey, chill, slow beats, celestial, bookish and ancient., soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           }
         ],

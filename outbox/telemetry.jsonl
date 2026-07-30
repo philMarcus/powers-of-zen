@@ -115,3 +115,5 @@
 {"ts": "2026-07-29 23:22:50", "event": "reseam", "journey": "dollhouse", "detail": "R=84 resid=0.29 open=130(was 130)"}
 {"ts": "2026-07-29 23:23:32", "event": "reseam", "journey": "cartographer", "detail": "R=323 resid=0.36 open=162(was 162)"}
 {"ts": "2026-07-29 23:23:44", "event": "reseam", "journey": "snowfall", "detail": "R=24 resid=0.28 open=12(was 12)"}
+{"ts": "2026-07-29 23:53:57", "event": "music_gen", "journey": "cosmic_scales_remix", "detail": "5 candidates"}
+{"ts": "2026-07-30 00:03:59", "event": "music_gen", "journey": "cosmic_scales_remix", "detail": "5 candidates"}
