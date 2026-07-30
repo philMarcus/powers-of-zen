@@ -161,7 +161,8 @@ def build_workflow(cfg, prompt, seed, init_image=None, denoise=None,
         control_img = ["cimg", 0]
         if depth_preproc:
             wf["cprep"] = {"class_type": depth_preproc,
-                           "inputs": {"image": ["cimg", 0], "resolution": 1024}}
+                           "inputs": {"image": ["cimg", 0],
+                                      "resolution": cfg.get("cn_resolution", 512)}}
             control_img = ["cprep", 0]
         wf["cnapply"] = {"class_type": "ControlNetApplyAdvanced",
                          "inputs": {"positive": positive, "negative": negative,
@@ -180,13 +181,26 @@ def build_workflow(cfg, prompt, seed, init_image=None, denoise=None,
 
 
 def run_workflow(wf, timeout=300):
-    """Queue a workflow, wait for completion, return the output image bytes."""
-    r = requests.post(f"{COMFY}/prompt", json={"prompt": wf}, timeout=30)
-    r.raise_for_status()
-    pid = r.json()["prompt_id"]
+    """Queue a workflow, wait for completion, return the output image bytes. Resilient to transient
+    ComfyUI connection hiccups (a single /history timeout must NOT kill a 200-frame render)."""
+    pid = None
+    for attempt in range(5):
+        try:
+            r = requests.post(f"{COMFY}/prompt", json={"prompt": wf}, timeout=30)
+            r.raise_for_status()
+            pid = r.json()["prompt_id"]
+            break
+        except requests.exceptions.RequestException:
+            if attempt == 4:
+                raise
+            time.sleep(3)
     deadline = time.time() + timeout
     while time.time() < deadline:
-        h = requests.get(f"{COMFY}/history/{pid}", timeout=30).json()
+        try:
+            h = requests.get(f"{COMFY}/history/{pid}", timeout=30).json()
+        except requests.exceptions.RequestException:
+            time.sleep(1.0)      # transient hiccup — retry, don't crash the render
+            continue
         if pid in h:
             status = h[pid].get("status", {})
             if status.get("status_str") == "error":
@@ -445,6 +459,9 @@ def main():
                     help="build direction; overrides journey format and suffixes the name")
     ap.add_argument("--frames", type=int, help="override total frame count (smoke tests)")
     ap.add_argument("--no-video", action="store_true", help="skip assembly")
+    ap.add_argument("--resume", action="store_true",
+                    help="continue the newest vN from its last saved frame (feedback chain: only "
+                         "the last frame is needed) — same journey/settings, e.g. after a crash")
     args = ap.parse_args()
 
     spec = json.loads(Path(args.journey).read_text())
@@ -468,13 +485,25 @@ def main():
     if args.build:
         name = f"{name}_{args.build}"
 
-    # never overwrite a previous render: each run gets a fresh vN folder
     base = Path(__file__).resolve().parent.parent / "output" / name
-    n = 1 + max([int(d.name[1:]) for d in base.glob("v[0-9]*")
-                 if d.name[1:].isdigit()], default=0)
-    out_dir = base / f"v{n}"
-    frames_dir = out_dir / "build" / "frames"
-    frames_dir.mkdir(parents=True, exist_ok=True)
+    start_i = 0
+    img = frame0 = None
+    out_dir = frames_dir = None
+    if args.resume:   # continue the newest vN from its last saved frame (only the last frame is needed)
+        vs = sorted([d for d in base.glob("v[0-9]*") if d.name[1:].isdigit()], key=lambda d: int(d.name[1:]))
+        if vs and (vs[-1] / "build" / "frames").exists():
+            frames_dir = vs[-1] / "build" / "frames"
+            existing = sorted(frames_dir.glob("*.png"))
+            if existing:
+                out_dir = vs[-1]; start_i = len(existing)
+                img = Image.open(existing[-1]).convert("RGB")
+                frame0 = Image.open(frames_dir / "00000.png").convert("RGB")
+                print(f"[dive] RESUME {out_dir.name} from frame {start_i}/{total}", flush=True)
+    if start_i == 0:   # fresh vN (never overwrite a previous render)
+        n = 1 + max([int(d.name[1:]) for d in base.glob("v[0-9]*") if d.name[1:].isdigit()], default=0)
+        out_dir = base / f"v{n}"
+        frames_dir = out_dir / "build" / "frames"
+        frames_dir.mkdir(parents=True, exist_ok=True)
     print(f"[dive] run dir: {out_dir}", flush=True)
 
     print(f"[dive] {name}: {total} frames, {cfg['width']}x{cfg['height']}, "
@@ -482,22 +511,26 @@ def main():
           f"ckpt {cfg['checkpoint']}", flush=True)
 
     t0 = time.time()
-    img = None
-    frame0 = None
+    # img / frame0 already set above (None for a fresh run, loaded frames for --resume)
     cam = None
     root = Path(__file__).resolve().parent.parent
     phase_refs = {}
     T = cfg["transition_frames"]
     in_loop_tail = lambda i: loop and i >= total - loop["frames"]
     # engine-2.0 object-approach: only load the detector + depth preproc if the journey uses it
-    _det = _depth = None
+    _det = _depth = _pts = None
     if any(approach):
-        import detect as _det  # noqa: E402  (lazy — detect imports dive, avoid circular at top)
+        import detect as _det   # noqa: E402  (lazy — detect imports dive, avoid circular at top)
+        import points as _pts   # noqa: E402
         _depth = pick_depth_preproc()
         print(f"[dive] object-approach ON ({sum(a is not None for a in approach)} frames); "
               f"depth preproc={_depth}", flush=True)
-    a_cx = a_cy = a_tgt = None   # smoothed aim + last target (fractional)
-    for i in range(total):
+    a_cx = a_cy = a_tgt = None   # smoothed aim + committed target (fractional)
+    a_locked = False             # True once Florence has locked the real object
+    a_det_at = -999              # last frame Florence ran
+    a_prev_ap = None             # previous frame's approach entry (detect a new approach run)
+    REDETECT = cfg.get("approach_redetect", 4)   # Florence cadence (frames) — periodic, not per-frame
+    for i in range(start_i, total):
         prompt, prev_prompt, k, p_idx = phase_info(phases, i)
         in_transition = prev_prompt is not None and k < T
         base_den = den_sched[i] if den_sched else cfg["denoise"]
@@ -513,26 +546,31 @@ def main():
             # wander, not an oscillation (sinusoidal wobble was jarring)
             cx = 0.5 + drift * math.sin(2 * math.pi * i / 263)
             cy = 0.5 + drift * math.sin(2 * math.pi * i / 419 + 1.7)
-            # OBJECT-APPROACH: on targeted beats, detect the object in the PREVIOUS frame and aim
-            # the zoom center at it (kill drift). Lost detection -> ease toward center (we've likely
-            # arrived / it's centered). Not on the loop tail (the seam morph owns those frames).
+            # OBJECT-APPROACH: EMERGE from a picked prominent off-center point (so the object grows
+            # somewhere interesting, not dead-center), then LOCK onto the real object with Florence
+            # once it's big enough — periodically, not every frame. Not on the loop tail.
             ap = approach[i] if i < len(approach) else None
             approaching = bool(ap) and _det and not in_loop_tail(i) and cfg["build"] != "out"
             if approaching:
-                b = _det.detect(img, ap["phrase"], pick=ap.get("pick", "largest"))
-                if b:
-                    a_tgt = (b["cx"], b["cy"])
-                elif a_tgt is not None:
-                    a_tgt = (a_tgt[0] + (0.5 - a_tgt[0]) * 0.5, a_tgt[1] + (0.5 - a_tgt[1]) * 0.5)
-                else:
-                    a_tgt = (0.5, 0.5)
-                if a_cx is None:
+                if a_prev_ap is None or a_tgt is None:
+                    # NEW approach run: pick ONE prominent point to grow the object from, and COMMIT
+                    a_tgt = _pts.pick_point(img, seed=i)
                     a_cx, a_cy = a_tgt
-                a_cx += (a_tgt[0] - a_cx) * 0.6
-                a_cy += (a_tgt[1] - a_cy) * 0.6
+                    a_locked = False; a_det_at = -999
+                if i - a_det_at >= REDETECT:                 # periodic Florence (speed)
+                    a_det_at = i
+                    b = _det.detect(img, ap["phrase"], pick=ap.get("pick", "salient"))
+                    if b and b["w"] * b["h"] >= 0.02:        # lock only on a real, sizable object
+                        a_tgt = (b["cx"], b["cy"]); a_locked = True
+                    elif a_locked and b:
+                        a_tgt = (b["cx"], b["cy"])            # keep tracking once locked
+                    # not found -> keep the committed emergence point (do NOT ease to center)
+                a_cx += (a_tgt[0] - a_cx) * 0.5
+                a_cy += (a_tgt[1] - a_cy) * 0.5
                 cx, cy = min(0.85, max(0.15, a_cx)), min(0.85, max(0.15, a_cy))
+                a_prev_ap = ap
             else:
-                a_cx = a_cy = a_tgt = None
+                a_cx = a_cy = a_tgt = None; a_locked = False; a_prev_ap = None
             boost = 0
             if in_transition:
                 boost = (cfg["arrival_denoise_boost"] if p_idx in arrivals
