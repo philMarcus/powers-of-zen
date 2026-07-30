@@ -123,14 +123,33 @@ abstract detector phrases FAIL (Florence-2 degenerates on "the biggest planet" o
 sentence) — keep `target_phrase` to the object + one visual trait.
 - **`scene`** = a STATIC, rich description of the world at this scale; it contains the findable
   object we dive into. (On a `seam` card, `scene` is just the STATIC scene at the seam — e.g. "a
-  glossy black sphere, meadow mirrored on it" — NOT the transformation; the engine does the morph.)
+  smooth matte-black sphere on a green blade" — NOT the transformation, and NOT what's reflected in
+  it; the engine does the morph.)
 - **`target`** = the object we dive into, described STATICALLY (present, prominent — no motion/time
   words). Omit on `seam` cards and on the last card (the loop auto-derives its target from card 0).
 - **`kind`** = "zoom" default; "seam" on a semantic-morph transition.
 - **`dur`** = duration in BEATS (a bar = 4). Default 4 (one bar); linger 8; faster only in groups
   that sum to whole bars — see pacing.
-- Top-level: `name`, `theme` (seed idea), `style_suffix` (Layer-2 style), `format`
-  { `beats_per_bar` default 4, `exact_loop` true }, optional `settings`.
+- Top-level: `name`, `theme` (seed idea), `style` (a deck NAME — see STYLE below; do NOT write
+  free-text style words), `format` { `beats_per_bar` default 4, `exact_loop` true }, optional
+  `settings`.
+
+## STYLE — pick a deck NAME, never write the look yourself (Layer 2)
+The LOOK is NOT the composer's job. Free-text style words drift the whole video PHOTOREALISTIC
+("macro photography, soft bokeh" → realism; Phil wants the shiny, AI-polished, *rendered* eye-candy).
+So the journey sets ONE top-level field — `style` — to a **name from the curated deck**
+(`styles/deck.json`); the polished words live there and are tuned centrally. Choose the entry whose
+`mood` fits the theme:
+- **`cosmic_gloss`** — space / cosmic / astronomical (the shiny deep-space look).
+- **`crystalline`** — minerals / crystals / ice / glass / gems.
+- **`liquid_light`** — cells / microbes / underwater / bioluminescent / organic interiors.
+- **`gilded_relic`** — human-made objects / markets / instruments / maps / relics / interiors.
+- **`stormlight`** — storms / planets / dramatic weather / moody skies.
+- **`enchanted_wild`** — flora / forests / creatures / meadows / nature.
+Pick the one matching the journey's DOMINANT realm (a journey spans scales but has a home key). If a
+theme fits none, still pick the closest — do NOT invent a `style_suffix`. NEVER put realism words
+(photo, photograph, photography, macro, DSLR, realistic, film grain) anywhere in a journey.
+`palette` (per-card) is still yours — it's the LOCAL scene colour/mood, not the global render look.
 
 ## Beat-aligned pacing — think in whole MEASURES (the composer composes a RHYTHM)
 The morphs ARE the rhythm. Each scale transition (the morph) lands on a STRONG beat — the downbeat
@@ -219,7 +238,11 @@ myth, a trending sound, an emotion…):
 6. Any object named twice across cards (double-ghost)? Any animal "traveled through"? Any
    featured face? Any MOTION/TIME language ("growing", "rushing closer", "as we approach",
    "keeps swelling until it becomes") or receding "tiny/far away" in a scene/target? (Static only.)
+   Any REFLECTION or enumerated INTERIOR of a shiny/clear object (the reflection becomes the
+   subject), or a colour that names another object ("rose dust" → a rose)? (Name the object plainly.)
 7. Spine reskinned to the theme, not the generic atom→cosmos template.
+8. STYLE: is `style` a single deck NAME matching the journey's dominant realm — and is there NO
+   free-text `style_suffix` and NO realism word (photo/macro/DSLR/realistic) anywhere?
 
 ## Open engine problems this doctrine hands to the engine (not the author)
 - **Selecting one-among-many.** When a scene has many candidates (a herd, a field), the

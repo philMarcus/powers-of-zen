@@ -30,6 +30,7 @@ import requests
 from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageStat
 
 import grammar
+import style as _style
 
 COMFY = "http://localhost:8188"
 FFMPEG = ("/mnt/c/Users/Phil/AppData/Local/Microsoft/WinGet/Packages/"
@@ -455,6 +456,8 @@ def main():
     ap.add_argument("journey", help="journey JSON file")
     ap.add_argument("--model", choices=sorted(MODEL_PRESETS),
                     help="model preset; overrides journey settings and suffixes the name")
+    ap.add_argument("--style", help="style deck name (styles/deck.json); overrides the journey's "
+                    "chosen style — for A/B look-tests")
     ap.add_argument("--build", choices=("in", "out"),
                     help="build direction; overrides journey format and suffixes the name")
     ap.add_argument("--frames", type=int, help="override total frame count (smoke tests)")
@@ -466,8 +469,15 @@ def main():
 
     spec = json.loads(Path(args.journey).read_text())
     cfg = {**DEFAULTS, **spec.get("settings", {})}
-    if args.model:
-        cfg.update(MODEL_PRESETS[args.model])
+    # STYLE (Layer 2): resolve the look from the deck and inject it as the style_suffix the
+    # grammar reads. The deck may also RECOMMEND a checkpoint when --model isn't passed.
+    sfx, deck_model, style_name = _style.resolve(spec, args.style)
+    spec["style_suffix"] = sfx
+    eff_model = args.model or deck_model
+    if eff_model:
+        cfg.update(MODEL_PRESETS[eff_model])
+    if style_name:
+        print(f"[style] {style_name}  ->  {sfx}", flush=True)
     cfg["build"] = args.build or spec.get("format", {}).get("build", cfg["build"])
     zoom_sched = den_sched = exponent = loop = None
     cameos, arrivals, approach = [], set(), []
