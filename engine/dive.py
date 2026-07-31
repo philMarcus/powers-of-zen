@@ -94,6 +94,19 @@ DEFAULTS = {
 CN_DEPTH = "controlnet-depth-sdxl.safetensors"   # object-approach structural guidance
 
 
+def clean_box(b, min_side=0.06, max_span=0.9, max_aspect=6.0, min_area=0.01):
+    """Sanity-filter a detector box before it may SEED a point-track run — reject the garbage
+    Florence returns on our scenes (edge slivers, top-of-frame horizon strips, full-span masks,
+    dust-mote specks). Only a clean, plausibly-object-shaped box is trusted to seed the point."""
+    w, h = b["w"], b["h"]
+    if w < min_side or h < min_side:      return False   # sliver / speck
+    if w > max_span and h > max_span:     return False   # whole-frame degenerate mask
+    if w * h < min_area:                  return False   # too tiny to be the target
+    ar = w / h if h else 99.0
+    if ar > max_aspect or ar < 1 / max_aspect:  return False   # strip (rivulet / horizon line)
+    return True
+
+
 def pick_depth_preproc():
     """Resolve a depth-map preprocessor node name from the running ComfyUI (aux node names vary)."""
     try:
@@ -528,32 +541,24 @@ def main():
     T = cfg["transition_frames"]
     in_loop_tail = lambda i: loop and i >= total - loop["frames"]
     # engine-2.0 object-approach: only load the detector + depth preproc if the journey uses it
+    # POINT-TRACK (2026-07-30): commit to ONE point per approach run, then FOLLOW it through the
+    # known zoom geometry — no per-frame detection. Florence missed most frames on real rendered
+    # scenes (fog / storm-eye / emerging star = 0 hits) and its sporadic garbage hits were what
+    # made the aim LURCH; see PLAN "POINT-TRACK". zoom_transform re-centers on the aim, so a
+    # committed point eases to center jump-free. Florence is OPTIONAL (approach_detect, default
+    # off): one clean_box-filtered detection to SEED the point from a genuinely visible object.
     _det = _depth = _pts = None
+    use_detect = cfg.get("approach_detect", False)
     if any(approach):
-        import detect as _det   # noqa: E402  (lazy — detect imports dive, avoid circular at top)
         import points as _pts   # noqa: E402
         _depth = pick_depth_preproc()
-        print(f"[dive] object-approach ON ({sum(a is not None for a in approach)} frames); "
-              f"depth preproc={_depth}", flush=True)
-    a_cx = a_cy = a_tgt = None   # smoothed aim + committed target (fractional)
-    a_locked = False             # True once Florence has locked the real object
-    a_arrived = False            # object fills the frame / lock lost -> coast to center, stop detecting
-    a_w = 0.0                    # last detected object WIDTH (fraction) — drives the planned zoom
-    a_det_at = -999              # last frame Florence ran
+        if use_detect:
+            import detect as _det   # noqa: E402  (lazy — detect imports dive, avoid circular at top)
+        print(f"[dive] object-approach ON ({sum(a is not None for a in approach)} frames, "
+              f"point-track{'+Florence-seed' if _det else ''}); depth preproc={_depth}", flush=True)
+    a_tx = a_ty = None           # tracked target position (fractional, in the CURRENT frame)
     a_prev_ap = None             # previous frame's approach entry (detect a new approach run)
-    REDETECT = cfg.get("approach_redetect", 4)   # Florence cadence (frames) — periodic, not per-frame
-    # PLANNED ZOOM: the object should fill the frame exactly at the END of its approach run (on the
-    # beat), so the morph lands on the beat — not whenever it happens to fill. run_end[i] = the last
-    # frame of the contiguous object-approach run containing i (the plunge end = the fill point).
-    run_end = [None] * len(approach)
-    _e = None
-    for _j in range(len(approach) - 1, -1, -1):
-        if approach[_j] is not None:
-            _e = _j if _e is None else _e
-            run_end[_j] = _e
-        else:
-            _e = None
-    FILL_W = cfg.get("approach_fill_width", 0.9)   # target object width at the run's end
+    LOCK_EASE = cfg.get("approach_lock_ease", 0.3)   # fraction of the off-center offset removed/frame
     for i in range(start_i, total):
         prompt, prev_prompt, k, p_idx = phase_info(phases, i)
         in_transition = prev_prompt is not None and k < T
@@ -570,49 +575,36 @@ def main():
             # wander, not an oscillation (sinusoidal wobble was jarring)
             cx = 0.5 + drift * math.sin(2 * math.pi * i / 263)
             cy = 0.5 + drift * math.sin(2 * math.pi * i / 419 + 1.7)
-            # OBJECT-APPROACH: EMERGE from a picked prominent off-center point (so the object grows
-            # somewhere interesting, not dead-center), then LOCK onto the real object with Florence
-            # once it's big enough — periodically, not every frame. Not on the loop tail.
+            # OBJECT-APPROACH (point-track): dive toward ONE committed point, followed through the
+            # zoom geometry. Not on the loop tail. The scheduled ×10 arrive-look-plunge zoom
+            # (zoom_sched) grows it; we only steer WHERE. No detection in the hot loop.
             ap = approach[i] if i < len(approach) else None
-            approaching = bool(ap) and _det and not in_loop_tail(i) and cfg["build"] != "out"
+            approaching = bool(ap) and _pts and not in_loop_tail(i) and cfg["build"] != "out"
             if approaching:
-                if a_prev_ap is None or a_tgt is None:
-                    # NEW approach run: FLORENCE-FIRST — commit to the actual NAMED object if it can
-                    # be found (a matte ladybug beats a bright dewdrop the contrast-picker would grab);
-                    # only fall back to the prominent-point picker for TRUE emergence (nothing yet).
-                    b = _det.detect(img, ap["phrase"], pick=ap.get("pick", "salient"))
-                    if b:
-                        a_tgt = (b["cx"], b["cy"]); a_w = b["w"]; a_locked = b["w"] * b["h"] >= 0.02
-                    else:
-                        a_tgt = _pts.pick_point(img, seed=i); a_w = 0.0; a_locked = False
-                    a_cx, a_cy = a_tgt; a_det_at = i; a_arrived = False
-                elif not a_arrived and i - a_det_at >= REDETECT:   # periodic Florence (speed)
-                    a_det_at = i
-                    b = _det.detect(img, ap["phrase"], pick=ap.get("pick", "salient"))
-                    if b:
-                        area = b["w"] * b["h"]
-                        near = abs(b["cx"] - a_tgt[0]) < 0.30 and abs(b["cy"] - a_tgt[1]) < 0.30
-                        if area >= 0.02 and (not a_locked or near):
-                            a_tgt = (b["cx"], b["cy"]); a_w = b["w"]; a_locked = True   # reject far jumps
-                        if area >= 0.5:
-                            a_arrived = True                               # object fills the frame
-                    elif a_locked:
-                        a_arrived = True   # lost the (now frame-filling) locked object -> arrived
-                if a_arrived:
-                    a_tgt = (0.5, 0.5)     # coast to center (safety if lock lost early)
-                a_cx += (a_tgt[0] - a_cx) * 0.4
-                a_cy += (a_tgt[1] - a_cy) * 0.4
-                cx, cy = min(0.85, max(0.15, a_cx)), min(0.85, max(0.15, a_cy))
-                # PLANNED ZOOM: grow the locked object from its current width to FILL_W exactly by the
-                # run's end (the beat) — so it fills ON the beat, not whenever ×10 happens to fill it.
-                if a_locked and not a_arrived and a_w > 0 and run_end[i] is not None:
-                    remaining = max(1, run_end[i] - i)
-                    z = max(1.0, min(1.6, (FILL_W / max(a_w, 0.05)) ** (1.0 / remaining)))
-                elif a_arrived:
-                    z = min(z, 1.03)       # object already fills — barely creep (don't over-zoom)
+                if a_prev_ap is None or a_tx is None:
+                    # NEW run: COMMIT to one point. Optionally SEED from a visible object (one
+                    # filtered Florence call); otherwise the prominent-point picker. Committed for
+                    # the whole run — nothing reseats it, so the dive can't lurch.
+                    a_tx = a_ty = None
+                    if use_detect and _det:
+                        b = _det.detect(img, ap["phrase"], pick=ap.get("pick", "salient"))
+                        if b and clean_box(b):
+                            a_tx, a_ty = b["cx"], b["cy"]
+                    if a_tx is None:
+                        a_tx, a_ty = _pts.pick_point(img, seed=i)
+                # zoom_transform re-centers on the aim (a point at the aim -> frame center next
+                # frame). Choose the aim so the tracked point eases toward center by LOCK_EASE of
+                # its remaining offset THIS frame (through the known zoom z); then advance the
+                # tracked point to where the (clamped) re-centered zoom actually moves it. Smooth
+                # geometric convergence to center, no jumps.
+                cx = a_tx - (a_tx - 0.5) * (1 - LOCK_EASE) / z
+                cy = a_ty - (a_ty - 0.5) * (1 - LOCK_EASE) / z
+                cx, cy = min(0.85, max(0.15, cx)), min(0.85, max(0.15, cy))
+                a_tx = 0.5 + (a_tx - cx) * z
+                a_ty = 0.5 + (a_ty - cy) * z
                 a_prev_ap = ap
             else:
-                a_cx = a_cy = a_tgt = None; a_locked = False; a_arrived = False; a_prev_ap = None; a_w = 0.0
+                a_tx = a_ty = None; a_prev_ap = None
             boost = 0
             if in_transition:
                 boost = (cfg["arrival_denoise_boost"] if p_idx in arrivals
