@@ -31,6 +31,7 @@ from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFo
 
 import grammar
 import style as _style
+import track
 
 COMFY = "http://localhost:8188"
 FFMPEG = ("/mnt/c/Users/Phil/AppData/Local/Microsoft/WinGet/Packages/"
@@ -56,6 +57,8 @@ DEFAULTS = {
     "rotate_per_frame": 0.15,
     "drift": 0.03,        # wandering zoom-center amplitude (fraction of frame size)
     "approach_cn": 0.45,  # engine-2.0 object-approach: depth-ControlNet strength (structure whisper)
+    "track_cadence": 4,   # TRACKER v3: detect every Nth approach frame (locate ~2.4s/call)
+    "track_model": "microsoft/Florence-2-large-ft",
     "denoise": 0.58,
     "steps": 8,           # effective diffusion steps ≈ steps * denoise
     "cfg": 1.5,
@@ -245,13 +248,16 @@ def upload_image(img, name):
 
 def zoom_transform(img, zoom, rotate_deg, cx=0.5, cy=0.5):
     """Zoom toward (cx, cy) (crop + upscale), with optional slow rotation.
-    A drifting center breaks radial-symmetry lock (concentric-ring artifacts)."""
+    A drifting center breaks radial-symmetry lock (concentric-ring artifacts).
+    The crop window clamps to the frame via track.crop_center — the SAME helper the tracker
+    propagates points through, so the assumed and actual transforms can never diverge (the
+    v6 bug: it advanced its track with the unclamped aim and drifted off the object)."""
     w, h = img.size
     if rotate_deg:
         img = img.rotate(rotate_deg, resample=Image.BICUBIC, expand=False)
+    ecx, ecy = track.crop_center(zoom, cx, cy)
     cw, ch = w / zoom, h / zoom
-    left = min(max(cx * w - cw / 2, 0), w - cw)
-    top = min(max(cy * h - ch / 2, 0), h - ch)
+    left, top = ecx * w - cw / 2, ecy * h - ch / 2
     return img.crop((left, top, left + cw, top + ch)).resize((w, h), Image.LANCZOS)
 
 
@@ -474,6 +480,8 @@ def main():
     ap.add_argument("--build", choices=("in", "out"),
                     help="build direction; overrides journey format and suffixes the name")
     ap.add_argument("--frames", type=int, help="override total frame count (smoke tests)")
+    ap.add_argument("--plain", action="store_true",
+                    help="pure feedback zoom — no tracking, no depth-CN (A/B vs the engine-1 look)")
     ap.add_argument("--no-video", action="store_true", help="skip assembly")
     ap.add_argument("--resume", action="store_true",
                     help="continue the newest vN from its last saved frame (feedback chain: only "
@@ -507,6 +515,9 @@ def main():
         name = f"{name}_{args.model}"
     if args.build:
         name = f"{name}_{args.build}"
+    if args.plain:
+        approach = []
+        name = f"{name}_plain"
 
     base = Path(__file__).resolve().parent.parent / "output" / name
     start_i = 0
@@ -540,25 +551,22 @@ def main():
     phase_refs = {}
     T = cfg["transition_frames"]
     in_loop_tail = lambda i: loop and i >= total - loop["frames"]
-    # engine-2.0 object-approach: only load the detector + depth preproc if the journey uses it
-    # POINT-TRACK (2026-07-30): commit to ONE point per approach run, then FOLLOW it through the
-    # known zoom geometry — no per-frame detection. Florence missed most frames on real rendered
-    # scenes (fog / storm-eye / emerging star = 0 hits) and its sporadic garbage hits were what
-    # made the aim LURCH; see PLAN "POINT-TRACK". zoom_transform re-centers on the aim, so a
-    # committed point eases to center jump-free. Florence is OPTIONAL (approach_detect, default
-    # off): one clean_box-filtered detection to SEED the point from a genuinely visible object.
-    _det = _depth = _pts = None
-    use_detect = cfg.get("approach_detect", False)
+    # TRACKER v3 (2026-07-31, PLAN "TRACKER v3"): two-stage point→object tracking with EXACT
+    # geometry propagation (engine/track.py). Emergence point committed per run; detect.locate
+    # tries at a low cadence; the first confident lock hands off seamlessly (the aim was already
+    # heading somewhere — a lock just moves the destination); between detections the track rides
+    # the known zoom geometry, so missed/garbage detections can't yank the camera.
+    _depth = None
+    _trk = None
     if any(approach):
-        import points as _pts   # noqa: E402
         _depth = pick_depth_preproc()
-        if use_detect:
-            import detect as _det   # noqa: E402  (lazy — detect imports dive, avoid circular at top)
-        print(f"[dive] object-approach ON ({sum(a is not None for a in approach)} frames, "
-              f"point-track{'+Florence-seed' if _det else ''}); depth preproc={_depth}", flush=True)
-    a_tx = a_ty = None           # tracked target position (fractional, in the CURRENT frame)
-    a_prev_ap = None             # previous frame's approach entry (detect a new approach run)
-    LOCK_EASE = cfg.get("approach_lock_ease", 0.3)   # fraction of the off-center offset removed/frame
+        print(f"[dive] TRACKER v3 ON ({sum(a is not None for a in approach)} approach frames; "
+              f"detect every {cfg['track_cadence']}, {cfg['track_model'].split('/')[-1]}); "
+              f"depth preproc={_depth}", flush=True)
+    # per-frame aim/track debug log — the overlay + offline replay read this
+    # (scripts/track_lab.py overlay). Row "i" = the frame the state was OBSERVED in (i-1: the
+    # tracker sees the previous frame and aims the transform that generates frame i).
+    tlog = open(out_dir / "build" / "track.jsonl", "a" if start_i else "w")
     for i in range(start_i, total):
         prompt, prev_prompt, k, p_idx = phase_info(phases, i)
         in_transition = prev_prompt is not None and k < T
@@ -575,36 +583,33 @@ def main():
             # wander, not an oscillation (sinusoidal wobble was jarring)
             cx = 0.5 + drift * math.sin(2 * math.pi * i / 263)
             cy = 0.5 + drift * math.sin(2 * math.pi * i / 419 + 1.7)
-            # OBJECT-APPROACH (point-track): dive toward ONE committed point, followed through the
-            # zoom geometry. Not on the loop tail. The scheduled ×10 arrive-look-plunge zoom
-            # (zoom_sched) grows it; we only steer WHERE. No detection in the hot loop.
+            # TRACKER v3: the tracker owns the aim on approach frames (not the loop tail — the
+            # loop mechanism owns that). The scheduled ×10 arrive-look-plunge zoom (zoom_sched)
+            # grows the target; the tracker only steers WHERE.
             ap = approach[i] if i < len(approach) else None
-            approaching = bool(ap) and _pts and not in_loop_tail(i) and cfg["build"] != "out"
+            approaching = bool(ap) and not in_loop_tail(i) and cfg["build"] != "out"
+            ev = None
             if approaching:
-                if a_prev_ap is None or a_tx is None:
-                    # NEW run: COMMIT to one point. Optionally SEED from a visible object (one
-                    # filtered Florence call); otherwise the prominent-point picker. Committed for
-                    # the whole run — nothing reseats it, so the dive can't lurch.
-                    a_tx = a_ty = None
-                    if use_detect and _det:
-                        b = _det.detect(img, ap["phrase"], pick=ap.get("pick", "salient"))
-                        if b and clean_box(b):
-                            a_tx, a_ty = b["cx"], b["cy"]
-                    if a_tx is None:
-                        a_tx, a_ty = _pts.pick_point(img, seed=i)
-                # zoom_transform re-centers on the aim (a point at the aim -> frame center next
-                # frame). Choose the aim so the tracked point eases toward center by LOCK_EASE of
-                # its remaining offset THIS frame (through the known zoom z); then advance the
-                # tracked point to where the (clamped) re-centered zoom actually moves it. Smooth
-                # geometric convergence to center, no jumps.
-                cx = a_tx - (a_tx - 0.5) * (1 - LOCK_EASE) / z
-                cy = a_ty - (a_ty - 0.5) * (1 - LOCK_EASE) / z
-                cx, cy = min(0.85, max(0.15, cx)), min(0.85, max(0.15, cy))
-                a_tx = 0.5 + (a_tx - cx) * z
-                a_ty = 0.5 + (a_ty - cy) * z
-                a_prev_ap = ap
+                if _trk is None or _trk.ap is not ap:
+                    _trk = track.Tracker(ap, cfg["width"], cfg["height"],
+                                         rot=cfg["rotate_per_frame"],
+                                         cadence=cfg["track_cadence"],
+                                         ease=cfg.get("approach_lock_ease", 0.3),
+                                         model=cfg["track_model"])
+                if _trk.need_repick:
+                    _trk.begin(img, seed=i)
+                ev = _trk.maybe_observe(img)
+                row = {"i": i - 1, "mode": "track", "z": round(z, 4), **_trk.log_row()}
+                if ev:
+                    row["event"] = ev
+                cx, cy = _trk.step(z)
             else:
-                a_tx = a_ty = None; a_prev_ap = None
+                _trk = None
+                row = {"i": i - 1, "mode": "tail" if in_loop_tail(i) else "drift",
+                       "z": round(z, 4)}
+            row["aim"] = [round(cx, 4), round(cy, 4)]
+            tlog.write(json.dumps(row) + "\n")
+            tlog.flush()
             boost = 0
             if in_transition:
                 boost = (cfg["arrival_denoise_boost"] if p_idx in arrivals
@@ -634,9 +639,11 @@ def main():
                     if i >= cam["end"] or cam["size"] > 0.30:
                         cam = None
                     else:
-                        # world-attached: moves and grows with the zoom itself
-                        cam["px"] = 0.5 + (cam["px"] - cx) * z
-                        cam["py"] = 0.5 + (cam["py"] - cy) * z
+                        # world-attached: moves and grows with the zoom itself (exact
+                        # propagation — crop clamp + rotation, same math as the tracker)
+                        cam["px"], cam["py"] = track.propagate(
+                            cam["px"], cam["py"], z, cfg["rotate_per_frame"], cx, cy,
+                            cfg["width"], cfg["height"])
                         cam["size"] *= z
                         if -0.1 < cam["px"] < 1.1 and -0.1 < cam["py"] < 1.1:
                             fed = paste_sprite(fed, *cam["art"], cam["px"],

@@ -157,3 +157,16 @@ screen + YT confirm the Create dropdown opened before clicking Upload. NOT marke
 tonight + 8am tomorrow (system sleep is Never; task fires on time; it was Chrome throttling, not the
 machine). cartographer posted manually (warm). LESSON saved to memory: I ship my first plausible cause
 as the diagnosis — hold ≥2 hypotheses, get ground truth, reproduce before claiming.
+2026-07-31 (later): TRACKER v3 BUILT (see PLAN "TRACKER v3 — BUILT"). Root cause of v6's
+position-not-object tracking found: it propagated its track with the UNCLAMPED aim while
+zoom_transform's crop clamp (±2.2%/frame at z=1.045) bounded the real motion — pure divergence.
+engine/track.py = exact propagation (selftest ≤1px, incl. rotation + clamp) + two-stage Tracker
+(point emergence → detect.locate lock; near-heading hits correct gently, redirects need 2 agreeing
+observations, degenerate >0.8 boxes dropped, escape → re-pick). dive.py: tracker owns approach aim,
+always-on build/track.jsonl debug log, --plain A/B flag, cameo propagation fixed to the same exact
+math. scripts/track_lab.py: selftest/bench/sweep/overlay. Gates calibrated from sweeps on
+night_bloom v4 frames (misses normal; garbage rarely agrees twice; FP locks land on salient objects
+= benign in a generative loop). night_bloom.json rewritten to the new schema (8 bars, liquid_light,
+1 seam) as the test bed; ~20s/frame with cadence-4 large-ft + depth-CN. Full render night_bloom/v6
++ overlay for review vs engine-1 v4. NEXT: Phil reviews v6 (logical zoom? pretty?); --plain A/B for
+the depth-CN look; fold seam into dive.py; update dive-video SKILL when approved.

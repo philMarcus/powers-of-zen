@@ -844,3 +844,64 @@ scenes (f95). A `--plain` flag (render any journey as pure feedback zoom, no CN/
 boring diffuse scenes (yellow fog); engine-1 was steadier — revisit the curve / don't give diffuse
 scales a 2-bar linger. (c) STYLE: skyfog/antenna_ball drifted photoreal → fixed via the style deck; the
 back half went orange-mono under stormlight (revisit). Journey fixes go into the COMPOSER, not one-offs.
+
+### TRACKER v3 — BUILT (2026-07-31)
+
+**The v6 root cause, found by reading the math:** v6 advanced its tracked point with the aim it
+ASKED for, but `zoom_transform` silently clamps the crop window to the frame. At z=1.045 the crop
+can only recenter by ±(1−1/z)/2 ≈ **±2.2% of the frame per frame**, while the ease formula assumed
+up to ±35% — the `[0.15,0.85]` aim clamp never binds; the CROP clamp always does. So the internal
+track marched to center on paper while the real object stayed put (or escaped) — "tracks a
+position, not an object" was propagation divergence, compounding every frame. Rotation
+(0.15°/frame) was ignored too. The cameo world-attach used the same broken advance (now also fixed).
+
+**What was built:**
+- `engine/track.py` — `crop_center`/`rotate_pt`/`propagate` mirror the real transform EXACTLY
+  (selftest vs a rendered dot: worst 1.04px across zoom/rotation/clamped-aim cases —
+  `python3 scripts/track_lab.py selftest`). `dive.zoom_transform` now derives its crop from the
+  same `crop_center`, so assumed and actual transforms can never drift again.
+- `Tracker` (one per approach run): POINT phase = committed `points.pick_point` emergence aim;
+  `detect.locate` tries every `track_cadence`(=4) frames; OBJECT phase after the first confident
+  lock. GATING (the anti-lurch core): a detection near the current heading (≤ max(0.15, size/2))
+  confirms it — first hit snaps the lock, later hits correct GENTLY (gain 0.5); a detection FAR
+  from the heading redirects only after TWO consecutive observations agree (≤0.18, both
+  geometry-propagated); degenerate boxes (max side >0.8 — near-full-width centered strips that
+  would false-agree) are dropped; a pending candidate expires after 3 missed beats; size ≥0.55 →
+  stop detecting (object fills frame); track walks off-frame → re-pick emergence point.
+  Camera smoothness is STRUCTURAL: real recenter speed is bounded by crop authority no matter
+  what the gates decide — a redirect is just a few frames of max-authority steering.
+- `engine/dive.py` — tracker owns the aim on approach frames; writes `build/track.jsonl` EVERY
+  frame (mode drift/track/tail, z, aim, track state, detection events; row i = the frame the
+  tracker OBSERVED, i.e. the fed frame) — the always-on debug record the v5/v6 postmortems
+  lacked; `--plain` renders pure feedback zoom (no track, no depth-CN) for A/B; new DEFAULTS
+  `track_cadence` 4, `track_model` Florence-2-large-ft.
+- `scripts/track_lab.py` — `selftest` / `bench` / `sweep` (locate over saved frames → jsonl) /
+  `overlay` (draw track.jsonl over frames → mp4 with aim ring, track cross, locked box, raw
+  detection, pending X).
+
+**Calibration data (sweeps over night_bloom v4 frames, the engine-1 morph-mush hard case):**
+hit rates 0–80% by phrase — misses are the NORM, the tracker must (and does) ride geometry
+through them; consecutive-beat garbage rarely agrees (median jump 0.2–0.7) so the 2-observation
+gate stays closed through it; hallucinated boxes for ABSENT phrases occasionally DO agree
+(ladybug pair at 0.025 — grounded onto the big flower), i.e. FP redirects land on stable SALIENT
+objects — benign-to-good in a generative loop (we steer toward the most target-like thing and
+the prompt paints the target there; the lock is self-fulfilling). Degenerate wide boxes
+(1.00x0.62, centered) motivated the >0.8 cut. `locate()` ≈2.4s on empty scenes, ≈10s on
+object-rich frames (mostly beam-search token time).
+
+**Timing (measured, DS + depth-CN + cadence-4 large-ft):** ~20s/frame (engine-1 was ~6; the
+depth-CN chain is most of the delta, detection ≈2.5s amortized). 224-frame render ≈ 75 min. Fine
+per the "slow ok, not >1min/frame" bound; drop to base-ft or cadence 6 if it ever matters.
+
+**Test bed:** `journeys/night_bloom.json` REWRITTEN to the new schema (8 bars/32 beats/224
+frames, liquid_light deck, one seam quantum_sparks→galaxy mid-list, explicit `kind` everywhere —
+galaxy→nebula is Δ8 and must not auto-seam — card-0 `loop_target`, lamar cameo, counter false).
+Smoke (30f): point-commit → miss-riding → max-authority convergence verified against the log
+(hand-checked propagate vs logged track to 4 decimals). Full tracked render: output/night_bloom/v6.
+NOTE (journey, not engine): DreamShaper renders card 0 as an enchanted moss FOREST, not a moss-leaf
+cell interior — gorgeous but off-script; composer-side fix if it matters.
+
+**OPEN after this:** (a) review v6 vs the engine-1 v4 — did the zoom become LOGICAL while keeping
+the prettiness (the whole point); (b) --plain A/B for the depth-CN look suspicion; (c) fold the
+seam repair into dive.py's exact_loop tail (still open from 07-29); (d) update the dive-video
+SKILL once results are approved.
