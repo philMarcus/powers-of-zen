@@ -21,6 +21,13 @@ def load_deck():
     return json.loads(_DECK.read_text())
 
 
+def _tail(deck, sfx):
+    """Append the deck's shared brand tail (eye-candy sparkle + colour contrast) to any
+    resolved style. Central so the whole catalog retunes in one edit — Layer-2 doctrine."""
+    t = deck.get("brand_tail", "")
+    return f"{sfx}, {t}" if (sfx and t) else (sfx or t)
+
+
 def resolve(spec, cli_style=None):
     """-> (style_suffix, recommended_model | None, style_name | None)."""
     deck = load_deck()
@@ -30,12 +37,12 @@ def resolve(spec, cli_style=None):
         if name not in styles:
             raise SystemExit(f"style '{name}' not in deck; have: {', '.join(sorted(styles))}")
         e = styles[name]
-        return e["style_suffix"], e.get("model"), name
+        return _tail(deck, e["style_suffix"]), e.get("model"), name
     # legacy free-text suffix on the journey itself
     if spec.get("style_suffix"):
-        return spec["style_suffix"], None, None
+        return _tail(deck, spec["style_suffix"]), None, None
     # deck default
     dn = deck.get("default")
     if dn and dn in styles:
-        return styles[dn]["style_suffix"], styles[dn].get("model"), dn
+        return _tail(deck, styles[dn]["style_suffix"]), styles[dn].get("model"), dn
     return "", None, None

@@ -97,8 +97,18 @@ def frames_for(journey, model):
 
 
 def journey_worlds(journey):
+    """(style words, ['- world', ...]) for the prompt. Handles BOTH schemas: engine-2 journeys
+    use `scene` + a `style` deck NAME, engine-1 used `interior` + free-text `style_suffix`.
+    (This was a hard KeyError on every new journey — captioning was dead for the whole
+    engine-2 catalog, which is why the dashboard's Generate button did nothing.)"""
+    import sys as _sys
+    _sys.path.insert(0, str(ROOT / "engine"))
+    import style as _style
     spec = json.loads((ROOT / "journeys" / f"{journey}.json").read_text())
-    return spec.get("style_suffix", ""), [f"- {r['interior']}" for r in spec["registers"]]
+    sfx, _model, _name = _style.resolve(spec, None)
+    worlds = [f"- {r.get('scene') or r.get('interior') or r.get('name', '')}"
+              for r in spec["registers"]]
+    return sfx or spec.get("style_suffix", ""), worlds
 
 
 def _parse(raw):

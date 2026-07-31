@@ -32,5 +32,7 @@
       "style_suffix": "enchanted golden light, lush saturated color, painterly fantasy illustration, hyperdetailed, cinematic",
       "model": "ds"
     }
-  }
+  },
+  "brand_tail": "glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents",
+  "_brand_tail_note": "Appended to EVERY resolved style (Phil 2026-07-31: cave_of_numbers came out monochromatic orange/yellow — 'we want eye candy contrasting colours, sparkly gemstone shiny things'). Kept to LIGHT/SURFACE words, never object nouns: 'gemstone' as a noun would paint literal gems into meadows and kitchens (the 'rose dust' trap). Tune the whole catalog here."
 }

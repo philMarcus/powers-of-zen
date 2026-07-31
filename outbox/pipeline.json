@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-31 19:33:05",
+    "updated": "2026-07-31 19:45:34",
     "paused_platforms": [
       "tiktok"
     ],
@@ -1419,8 +1419,8 @@
       "cut": "divein",
       "file": "review_divein/cave_of_numbers_ds_divein.mp4",
       "title": "",
-      "caption": "",
-      "yt_title": "",
+      "caption": "Dive into the glowing heart of a cavern, where time dissolves in light 🌌 Can you spot Janet hiding in the glow? 👀 #bioluminescentdream #caverncosmos #glowwormgalaxy #limestonevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Dive into the glowing heart of a cavern, where time dissolves in light 🌌",
       "yt_desc": "",
       "cameo": "janet",
       "state": "review",
@@ -1442,7 +1442,88 @@
           "ts": ""
         }
       },
-      "created": "2026-07-31"
+      "created": "2026-07-31",
+      "caption_bodies": [
+        "Dive into the glowing heart of a cavern, where time dissolves in light 🌌",
+        "A world of amber and violet, where stone breathes with hidden fire ✨",
+        "Lost in the lattice of calcite, where infinity hums in silence 🌀",
+        "Thousands of glowworms weave a sky of living stars 💫",
+        "The cavern’s pulse—endless, luminous, calling you deeper 🌑"
+      ],
+      "yt_title_options": [
+        "Dive into the glowing heart of a cavern, where time dissolves in light 🌌",
+        "A world of amber and violet, where stone breathes with hidden fire ✨",
+        "Lost in the lattice of calcite, where infinity hums in silence 🌀",
+        "Thousands of glowworms weave a sky of living stars 💫",
+        "The cavern’s pulse—endless, luminous, calling you deeper 🌑"
+      ],
+      "spot_line": "Can you spot Janet hiding in the glow? 👀",
+      "caption_tags": "#bioluminescentdream #caverncosmos #glowwormgalaxy #limestonevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Dive into the glowing heart of a cavern, where time dissolves in light 🌌 Can you spot Janet hiding in the glow? 👀 #bioluminescentdream #caverncosmos #glowwormgalaxy #limestonevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A world of amber and violet, where stone breathes with hidden fire ✨ Can you spot Janet hiding in the glow? 👀 #bioluminescentdream #caverncosmos #glowwormgalaxy #limestonevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Lost in the lattice of calcite, where infinity hums in silence 🌀 Can you spot Janet hiding in the glow? 👀 #bioluminescentdream #caverncosmos #glowwormgalaxy #limestonevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Thousands of glowworms weave a sky of living stars 💫 Can you spot Janet hiding in the glow? 👀 #bioluminescentdream #caverncosmos #glowwormgalaxy #limestonevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The cavern’s pulse—endless, luminous, calling you deeper 🌑 Can you spot Janet hiding in the glow? 👀 #bioluminescentdream #caverncosmos #glowwormgalaxy #limestonevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ],
+      "start_t": 4.5,
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "E minor",
+        "stage": "review",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/cave_of_numbers_warm.flac",
+            "aligned": "review/music/candidates/cave_of_numbers/warm.mp4",
+            "seed": 500,
+            "lock": 21.65,
+            "tags": "chill hypnotic ambient evoking a hushed underground wonder — deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/cave_of_numbers_glassy.flac",
+            "aligned": "review/music/candidates/cave_of_numbers/glassy.mp4",
+            "seed": 501,
+            "lock": 7.75,
+            "tags": "chill hypnotic ambient evoking a hushed underground wonder — deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/cave_of_numbers_deep.flac",
+            "aligned": "review/music/candidates/cave_of_numbers/deep.mp4",
+            "seed": 502,
+            "lock": 7.73,
+            "tags": "chill hypnotic ambient evoking a hushed underground wonder — deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/cave_of_numbers_tender.flac",
+            "aligned": "review/music/candidates/cave_of_numbers/tender.mp4",
+            "seed": 503,
+            "lock": 18.32,
+            "tags": "chill hypnotic ambient evoking a hushed underground wonder — deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/cave_of_numbers_choir.flac",
+            "aligned": "review/music/candidates/cave_of_numbers/choir.mp4",
+            "seed": 504,
+            "lock": 17.55,
+            "tags": "chill hypnotic ambient evoking a hushed underground wonder — deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      }
     }
   ]
 }
