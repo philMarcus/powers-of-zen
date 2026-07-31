@@ -503,9 +503,13 @@ def main():
     # grammar reads. The deck may also RECOMMEND a checkpoint when --model isn't passed.
     sfx, deck_model, style_name = _style.resolve(spec, args.style)
     spec["style_suffix"] = sfx
-    eff_model = args.model or deck_model
-    if eff_model:
-        cfg.update(MODEL_PRESETS[eff_model])
+    # HOUSE DEFAULT = ds (DreamShaper). Phil 2026-07-31: "dreamshaper really has made better
+    # videos" — turbo only on an explicit --model turbo. Legacy journeys carry no `style`, so
+    # the deck recommends nothing and cfg would otherwise keep DEFAULTS' turbo checkpoint
+    # (silently, since old runs always passed --model explicitly). Routing the fallback through
+    # MODEL_PRESETS also brings ds's required sampler (dpmpp_sde/karras), not just its ckpt.
+    eff_model = args.model or deck_model or "ds"
+    cfg.update(MODEL_PRESETS[eff_model])
     if style_name:
         print(f"[style] {style_name}  ->  {sfx}", flush=True)
     cfg["build"] = args.build or spec.get("format", {}).get("build", cfg["build"])
@@ -551,7 +555,14 @@ def main():
 
     print(f"[dive] {name}: {total} frames, {cfg['width']}x{cfg['height']}, "
           f"zoom {cfg['zoom_per_frame']}/frame, denoise {cfg['denoise']}, "
-          f"ckpt {cfg['checkpoint']}", flush=True)
+          f"MODEL {eff_model} ({cfg['checkpoint']})", flush=True)
+    # provenance manifest — the run dir no longer carries a _ds/_turbo suffix (the style deck
+    # picks the model), so record what actually produced these frames.
+    (out_dir / "run.json").write_text(json.dumps({
+        "journey": args.journey, "name": name, "model": eff_model,
+        "checkpoint": cfg["checkpoint"], "style": style_name, "frames": total,
+        "fps": cfg["fps"], "seed": cfg["seed"],
+    }, indent=2))
 
     t0 = time.time()
     # img / frame0 already set above (None for a fresh run, loaded frames for --resume)
