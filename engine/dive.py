@@ -59,12 +59,13 @@ DEFAULTS = {
     "approach_cn": 0.45,  # engine-2.0 object-approach: depth-ControlNet strength (structure whisper)
     "track_cadence": 4,   # TRACKER v3: detect every Nth approach frame (locate ~2.4s/call)
     "track_model": "microsoft/Florence-2-large-ft",
-    # centering rate of the approach aim. The formula cx = tx-(tx-0.5)(1-ease)/z makes the
-    # tracked object the FIXED POINT of the zoom at ease=0 (it grows IN PLACE, the world flows
-    # outward around it — a natural dolly-in, always within crop authority). ease=0.3 snapped
-    # objects to center (Phil: unnatural viewpoint shift); 0.05 = fixed-point feel with a
-    # whisper of compositional drift.
-    "approach_lock_ease": 0.05,
+    # rate at which the tracked object settles onto its run's rule-of-thirds ANCHOR (never
+    # toward center — see track.step). The offset is multiplied every frame, so this compounds:
+    # 0.3 snapped to center, and even 0.05 removed 76% of the off-center composition over a
+    # 28-frame card (measured in v10 — every scale slid to a dead-center zoom). 0.03 toward a
+    # THIRDS anchor holds the object ~0.24 off-center for the whole bar; 0 would freeze the
+    # composition exactly.
+    "approach_lock_ease": 0.03,
     "denoise": 0.58,
     "steps": 8,           # effective diffusion steps ≈ steps * denoise
     "cfg": 1.5,
@@ -578,6 +579,7 @@ def main():
     # the known zoom geometry, so missed/garbage detections can't yank the camera.
     _depth = None
     _trk = None
+    _run_idx = -1        # rotates each approach run's preferred rule-of-thirds corner
     if any(approach):
         _depth = pick_depth_preproc()
         print(f"[dive] TRACKER v3 ON ({sum(a is not None for a in approach)} approach frames; "
@@ -621,13 +623,14 @@ def main():
             ev = None
             if approaching:
                 if _trk is None or _trk.ap is not ap:
+                    _run_idx += 1
                     _trk = track.Tracker(ap, cfg["width"], cfg["height"],
                                          rot=cfg["rotate_per_frame"],
                                          cadence=cfg["track_cadence"],
                                          ease=cfg["approach_lock_ease"],
                                          model=cfg["track_model"])
                 if _trk.need_repick:
-                    _trk.begin(img, seed=i)
+                    _trk.begin(img, seed=i, run_idx=_run_idx)
                 ev = _trk.maybe_observe(img)
                 row = {"i": i - 1, "mode": "track", "z": round(z, 4), **_trk.log_row()}
                 if ev:

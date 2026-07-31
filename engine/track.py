@@ -66,7 +66,7 @@ class Tracker:
     true geometry. Phases: 'point' (committed emergence point, detector still searching) ->
     'object' (locked; detections gently correct the propagated box)."""
 
-    def __init__(self, ap, w, h, rot=0.15, cadence=4, ease=0.3, gain=0.5,
+    def __init__(self, ap, w, h, rot=0.15, cadence=4, ease=0.03, gain=0.5,
                  confirm=0.15, agree=0.18, size_stop=0.55,
                  model="microsoft/Florence-2-large-ft"):
         self.ap = ap                      # the grammar's approach dict (identity marks the run)
@@ -80,15 +80,22 @@ class Tracker:
         self.tx = self.ty = 0.5           # tracked target position (fractional, current frame)
         self.size = 0.0                   # locked box max(w,h), propagated (grows by z/frame)
         self.pending = None               # unconfirmed redirect candidate {x,y,size,misses}
+        self.anchor = (0.5, 0.5)          # composition anchor, FROZEN per run (see begin/lock)
+        self.redirect_until = 10          # no heading swings after this frame of the run
         self.frame = 0                    # frames into this run
         self.need_repick = True           # begin() pending (fresh run, or track escaped)
         self.last_box = None              # last raw detection (for the debug log)
         self.last_obs_frame = -1          # run-frame of that detection (log only fresh ones)
 
     # -- emergence -------------------------------------------------------------
-    def begin(self, img, seed=0):
-        """Commit to a prominent emergence point (or re-commit after losing the object)."""
-        self.tx, self.ty = points.pick_point(img, seed=seed)
+    def begin(self, img, seed=0, run_idx=0):
+        """Commit to a prominent emergence point (or re-commit after losing the object), and
+        FREEZE this run's composition anchor to the nearest rule-of-thirds intersection.
+        `run_idx` rotates the preferred third so consecutive scales compose to different
+        corners — the heading shifts at each card boundary (on the beat), never mid-bar."""
+        self.tx, self.ty = points.pick_point(
+            img, seed=seed, prefer=points.THIRDS_ORDER[run_idx % len(points.THIRDS_ORDER)])
+        self.anchor = points.nearest_third(self.tx, self.ty)
         self.phase, self.size, self.pending = "point", 0.0, None
         self.need_repick = False
 
@@ -135,11 +142,18 @@ class Tracker:
             self.ty += g * (by - self.ty)
             self.size = bsize if self.phase == "point" else self.size + g * (bsize - self.size)
             ev = "lock" if self.phase == "point" else "correct"
+            if ev == "lock":                  # first lock re-anchors to the object's own third
+                self.anchor = points.nearest_third(self.tx, self.ty)
             self.phase, self.pending = "object", None
             return ev
-        # far from the heading — a REDIRECT needs two consecutive agreeing observations
-        if self.pending and math.hypot(bx - self.pending["x"], by - self.pending["y"]) <= self.agree:
+        # far from the heading — a REDIRECT needs two consecutive agreeing observations, AND
+        # must land in the first half of the run: a redirect swings the heading, and an abrupt
+        # direction change that doesn't fall on a beat breaks the rhythm (Phil 2026-07-31).
+        # Late in a run we keep the committed heading and let the arrival morph do the work.
+        if (self.pending and math.hypot(bx - self.pending["x"], by - self.pending["y"]) <= self.agree
+                and self.frame <= self.redirect_until):
             self.tx, self.ty, self.size = bx, by, bsize
+            self.anchor = points.nearest_third(bx, by)
             ev = "lock-redirect" if self.phase == "point" else "switch"
             self.phase, self.pending = "object", None
             return ev
@@ -148,14 +162,24 @@ class Tracker:
 
     # -- aim + geometry advance ------------------------------------------------
     def step(self, z):
-        """Aim for THIS frame (ease the tracked point toward center), then advance the track
-        (and any pending candidate) through the TRUE transform. Returns (cx, cy) for
-        zoom_transform. Big offsets automatically get max-authority steering: the ease may ask
-        for more recentering than the crop can give, the crop clamp caps it, and propagation
-        follows the CAP — so the track stays true and edge objects are steered back before
-        they escape (any point inside the frame converges under max authority)."""
-        cx = self.tx - (self.tx - 0.5) * (1 - self.ease) / z
-        cy = self.ty - (self.ty - 0.5) * (1 - self.ease) / z
+        """Aim for THIS frame, then advance the track (and any pending candidate) through the
+        TRUE transform. Returns (cx, cy) for zoom_transform.
+
+        COMPOSITION, not centering (Phil 2026-07-31). The old form eased the object toward
+        CENTER, and because the offset is multiplied by (1-ease) EVERY frame it compounds:
+        even ease=0.05 removed 76% of the off-center composition over a 28-frame card, so
+        every scale slid into a dead-center zoom. Now we ease toward this run's FROZEN
+        rule-of-thirds anchor at a slow rate — the object holds an intentional off-center
+        position, the heading stays constant for the whole bar, and the only direction change
+        lands at the card boundary (i.e. on the beat), which is what engine-1 felt like.
+        ease=0 would hold position exactly; the small default just settles the composition.
+
+        Solving t_new = t + ease*(anchor - t) against t_new = 0.5 + (t - c)*z gives c below.
+        Feasibility: at ease=0 the required |c-0.5| is |t-0.5|(1-1/z) <= (1-1/z)/2, i.e. always
+        within crop authority for any on-screen point, so the clamp never fights the hold."""
+        ax, ay = self.anchor
+        cx = self.tx - (self.tx + self.ease * (ax - self.tx) - 0.5) / z
+        cy = self.ty - (self.ty + self.ease * (ay - self.ty) - 0.5) / z
         cx, cy = min(0.85, max(0.15, cx)), min(0.85, max(0.15, cy))
         self.tx, self.ty = propagate(self.tx, self.ty, z, self.rot, cx, cy, self.w, self.h)
         self.size *= z
@@ -178,6 +202,7 @@ class Tracker:
         """State snapshot for build/track.jsonl (rounded; the overlay tool draws from this)."""
         row = {"run_frame": self.frame, "phase": self.phase,
                "track": [round(self.tx, 4), round(self.ty, 4)],
+               "anchor": [round(self.anchor[0], 3), round(self.anchor[1], 3)],
                "size": round(self.size, 4)}
         if self.last_box and self.last_obs_frame == self.frame:   # fresh this frame, not stale
             row["det"] = [round(self.last_box["cx"], 4), round(self.last_box["cy"], 4),
