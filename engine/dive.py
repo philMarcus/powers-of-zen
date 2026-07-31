@@ -85,6 +85,9 @@ DEFAULTS = {
     "transition_denoise_boost": 0.06,   # beat changes within a register: gentle
     "arrival_denoise_boost": 0.18,      # register boundaries: strong repaint so
                                         # palettes can actually flip between worlds
+    "seam_morph_frames": 12,            # a SEAM morph = the arrival boost held for MORE
+                                        # frames (not a harder per-frame change) — duration
+                                        # carries the bigger semantic jump (Phil 2026-07-31)
     # palette anchoring strength (0 = off)
     "color_match": 0.5,
     # loop seam: crossfade this many tail frames into the head frames (0 = off)
@@ -573,12 +576,15 @@ def main():
     # (scripts/track_lab.py overlay). Row "i" = the frame the state was OBSERVED in (i-1: the
     # tracker sees the previous frame and aims the transform that generates frame i).
     tlog = open(out_dir / "build" / "track.jsonl", "a" if start_i else "w")
-    # start frames of seam-arrival phases (for the pre-beat morph anacrusis below)
-    seam_starts = set()
+    # start frames of arrival phases (every register morph gets the anacrusis; seam arrivals
+    # additionally hold their boost for seam_morph_frames)
+    seam_starts, arrival_starts = set(), set()
     _acc = 0
     for _pi, _ph in enumerate(phases):
         if _pi in seam_arrivals:
             seam_starts.add(_acc)
+        if _pi in arrivals:
+            arrival_starts.add(_acc)
         _acc += _ph["frames"]
     for i in range(start_i, total):
         prompt, prev_prompt, k, p_idx = phase_info(phases, i)
@@ -623,29 +629,25 @@ def main():
             row["aim"] = [round(cx, 4), round(cy, 4)]
             tlog.write(json.dumps(row) + "\n")
             tlog.flush()
-            if in_transition and p_idx in seam_arrivals:
-                # SEAM MORPH (2026-07-31): the on-beat world-flip lives HERE, not in a sustained
-                # seam-card denoise (0.72 base + boost = 0.85 for 14 frames re-rolled the world
-                # every frame — hard cuts). Peak on the downbeat frame (k=0, where the music's
-                # strong beat lands), ramping out across the prompt crossfade so the flip reads
-                # as one coherent transformation. fmt.seam_denoise = the peak.
-                peak = spec.get("format", {}).get("seam_denoise", 0.70)
-                den = min(0.85, base_den + (peak - base_den) * (1 - k / T))
-            else:
-                boost = 0
-                if in_transition:
-                    boost = (cfg["arrival_denoise_boost"] if p_idx in arrivals
-                             else cfg["transition_denoise_boost"])
-                den = min(0.85, base_den + boost)
-                # SEAM ANACRUSIS (Phil 2026-07-31): like the music's pickup, the morph BEGINS a
-                # sixteenth (~2 frames at 7fpb) BEFORE the bar line and peaks ON it — the old
-                # world shimmers in anticipation (denoise rises, prompt unchanged), then the new
-                # world's prompt lands on the downbeat at the peak. Engine-1 register morphs
-                # stay as they were (boost after the boundary).
-                dist = next((s - i for s in seam_starts if 0 < s - i <= 2), None)
-                if dist is not None:
-                    peak = spec.get("format", {}).get("seam_denoise", 0.70)
-                    den = min(0.85, max(den, base_den + (peak - base_den) * (0.7 if dist == 1 else 0.4)))
+            # MORPHS (Phil 2026-07-31, final shape): every register morph keeps engine-1's
+            # per-frame intensity (travel + arrival boost = 0.58). A SEAM differs only by MORE
+            # FRAMES — the boost holds for seam_morph_frames (12) instead of the normal 6-frame
+            # crossfade — never by a harder per-frame change ("more frames rather than a bigger
+            # change within a frame ... looks better"). And EVERY morph gets the musical
+            # ANACRUSIS: the last ~sixteenth (2 frames at 7fpb) before the boundary rises
+            # toward the coming boost, so the old world shimmers in anticipation and the flip
+            # peaks ON the downbeat — exactly the track's pickup-into-strong-beat.
+            boost = 0
+            if in_transition:
+                boost = (cfg["arrival_denoise_boost"] if p_idx in arrivals
+                         else cfg["transition_denoise_boost"])
+            if any(0 <= i - b < cfg["seam_morph_frames"] for b in seam_starts):
+                boost = max(boost, cfg["arrival_denoise_boost"])
+            den = min(0.85, base_den + boost)
+            dist = next((s - i for s in arrival_starts if 0 < s - i <= 2), None)
+            if dist is not None:
+                den = min(0.85, max(den, base_den + cfg["arrival_denoise_boost"]
+                                    * (0.7 if dist == 1 else 0.4)))
             mask_ref = None
             if cfg["build"] == "out":
                 fed, box = shrink_transform(img, z, cx, cy)
