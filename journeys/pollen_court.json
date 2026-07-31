@@ -1,0 +1,67 @@
+{
+  "name": "pollen_court",
+  "theme": "a spring park's pollen becomes its own micro-world — a bench-slat dust bank, one studded grain, that grain's honeycomb crust — and the crust folds straight back out into the blossoming canopy overhead",
+  "style": "enchanted_wild",
+  "counter": false,
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": false
+  },
+  "registers": [
+    {
+      "name": "park",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blossom pink and fresh spring green",
+      "scene": "a blossoming spring park in low golden light, seen from the gravel path at standing height, flowering trees in full pink and white bloom arched over clipped lawn, an old green wooden bench on the grass beneath them, empty, no one present, pale gold pollen dust suspended in the still air",
+      "target": "an old green wooden bench, its painted slats weathered and flaking, a pale gold bank of pollen dust gathered along the seat",
+      "target_phrase": "the green wooden bench",
+      "loop_target": "a blossoming spring park in golden light, an old green bench beneath flowering trees, seen from the gravel path at standing height"
+    },
+    {
+      "name": "bench_slat",
+      "exp": -1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "weathered pale green and soft gold",
+      "scene": "a weathered green bench slat fills the view, flaking paint and open wood grain running its length, fine cracks in the paint, a pale gold bank of pollen dust heaped along the seam between the boards",
+      "target": "one spiky pollen grain in the gold dust, a small round golden burr studded with blunt spikes",
+      "target_phrase": "a spiky golden grain",
+      "cameo": {
+        "sprite": "output/mascots/canon/amos.png",
+        "pos": [0.72, 0.66],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "pollen_grain",
+      "exp": -4.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cream and bright gold",
+      "scene": "a single pollen grain fills the view, a round golden sphere studded with blunt spikes over its whole curve, its rough gold crust dusted with finer specks, more grains piled below it",
+      "target": "one deep round pore in the golden crust, a dark opening ringed by a raised ridge",
+      "target_phrase": "a dark round pore"
+    },
+    {
+      "name": "grain_mesh",
+      "exp": -6.5,
+      "kind": "seam",
+      "dur": 1,
+      "palette": "pale gold and cool violet shadow",
+      "scene": "a reticulated honeycomb mesh fills the entire view, raised golden ridges branching and joining around deep dark pores, the crust between them finely pitted"
+    },
+    {
+      "name": "canopy",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 3,
+      "palette": "pale sky blue and white blossom",
+      "scene": "a flowering tree canopy seen wide against a pale spring sky, dark branches forking and rejoining around bright openings of sky, clusters of pink and white blossom packed along every limb, the sunlit lawn and gravel path of the park below through a gap in the branches"
+    }
+  ],
+  "music_theme": "a bright spring garden at early light, airy and gentle, glassy bells over soft strings, a warm bloom of sound landing where the golden mesh opens into the canopy",
+  "music_key": "A major"
+}

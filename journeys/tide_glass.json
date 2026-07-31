@@ -1,0 +1,89 @@
+{
+  "name": "tide_glass",
+  "theme": "a morning shingle beach dives into one frosted green sea-glass pebble, through its pitted skin into the silica strands, folds into a foam realm of packed luminous bubble cells, and comes home over the standing wave-lattice to the surf line",
+  "style": "liquid_light",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": false
+  },
+  "registers": [
+    {
+      "name": "shingle_beach",
+      "exp": 2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "morning white-gold and wet stone grey",
+      "scene": "a wide shingle beach in low morning light seen from a low viewpoint at the water's edge, broad banks of wet grey pebbles, a long white surf line along the shore, a thin film of bright water over the near stones, pale gold light laid flat across the whole beach, one small green sea-glass pebble among the wet stones",
+      "target": "a frosted green sea-glass pebble set among the wet grey stones, its green body clouded and matte, its edges worn round and dull",
+      "target_phrase": "a green glass pebble",
+      "loop_target": "the wide shingle beach in low morning light, seen from a low viewpoint at the water's edge, wet grey pebbles and a long white surf line"
+    },
+    {
+      "name": "sea_glass",
+      "exp": -1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sea-glass green and pale frost white",
+      "scene": "a frosted green sea-glass pebble filling the view, its clouded matte-green body worn round, a fine white bloom of frosting across the whole skin, small chips and nicks along the dull edges, wet grey stone behind it",
+      "target": "a cluster of small round pits in the frosted skin, shallow hollows ringed with pale white, one broad smooth hollow among them",
+      "target_phrase": "a cluster of pits"
+    },
+    {
+      "name": "frosted_surface",
+      "exp": -3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "chalk white and pale green",
+      "scene": "the frosted surface of sea glass filling the view, a cratered pale green land of round pits and shallow smooth valleys, white rims around every hollow, fine scratches crossing the flats between them, bright morning light hard across the whole field",
+      "target": "glowing green strands under the frosted skin, pale luminous threads knotted at bright points of light",
+      "target_phrase": "glowing green strands",
+      "cameo": {
+        "sprite": "output/mascots/canon/aleksey.png",
+        "pos": [
+          0.66,
+          0.6
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "silica_network",
+      "exp": -9,
+      "kind": "seam",
+      "dur": 1,
+      "palette": "luminous pale green on deep green dark",
+      "scene": "the silica network inside the glass, pale green strands strung between bright glowing nodes in every direction, a deep green dark behind the lattice of threads"
+    },
+    {
+      "name": "spray_foam",
+      "exp": 12,
+      "kind": "zoom",
+      "dur": 3,
+      "palette": "white-cyan light on deep sea green",
+      "scene": "a realm of packed luminous bubble cells, curved walls of white light dividing every cell from its neighbours, bright junctions where three walls meet, deep sea-green dark behind the whole packing",
+      "target": "one broad bright cell in the packing, a clear round chamber ringed by a sharp white wall",
+      "target_phrase": "a bright round cell"
+    },
+    {
+      "name": "wave_lattice",
+      "exp": 5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sunlit gold and deep green water",
+      "scene": "sunlit water seen from straight above, two sets of straight wave-lines crossed into a standing lattice, bright gold crests and dark green troughs in a regular diamond grid, a white glint at every crossing",
+      "target": "a long pale strip of shore across the water, wet sand and dark stone banded along its length",
+      "target_phrase": "a pale shore strip"
+    },
+    {
+      "name": "surf_line",
+      "exp": 3,
+      "kind": "zoom",
+      "dur": 8,
+      "palette": "wet grey and white-gold morning",
+      "scene": "a stretch of shingle shore seen from low above, banks of wet grey pebbles, a long white surf line down the length of the shore, shallow bright rills of water between the stone banks, morning gold light across the wet ground"
+    }
+  ],
+  "music_theme": "a bright tidal morning — glassy bells and a light rolling swell over shimmering water, one clear crystalline bloom of sound landing on the glass-strand-to-foam seam",
+  "music_key": "G major"
+}

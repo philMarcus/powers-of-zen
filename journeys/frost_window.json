@@ -1,0 +1,66 @@
+{
+  "name": "frost_window",
+  "theme": "a winter windowpane at night that never leaves the glass — the whole frosted pane, one ice fern arm, its beaded side branches, the hexagonal crystal within, and the lattice read back out as the frost ferns ranked across the dark pane",
+  "style": "crystalline",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": false
+  },
+  "registers": [
+    {
+      "name": "frost_pane",
+      "exp": -0.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ice white and warm gold",
+      "scene": "a winter windowpane seen straight on from inside a dark cabin room, white frost ferns etched thick across the cold glass, fine ice crystals furred into the corners of the pane, warm light raking across the ice from one side of the room, the room empty, no one present",
+      "target": "one white frost fern on the glass, a broad frond of ice with a thick pale spine and ranks of fine side branches",
+      "target_phrase": "a frost fern",
+      "loop_target": "the winter windowpane seen straight on from inside the dark room, white frost ferns etched thick across the cold glass in warm raking light"
+    },
+    {
+      "name": "fern_arm",
+      "exp": -1.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver-blue and frost white",
+      "scene": "one arm of white frost ice fills the view, a thick pale spine with ranks of slender branches angled off it in sharp white ice, the dark bare glass between them",
+      "target": "a single branch off the spine, slender ice spurs strung with round clear beads of ice",
+      "target_phrase": "a beaded ice branch",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [0.68, 0.33],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "beaded_branch",
+      "exp": -2.6,
+      "kind": "zoom",
+      "dur": 2,
+      "palette": "glass blue and pale amber",
+      "scene": "a single ice branch fills the view, slender white spurs strung with round beads of clear ice, each bead a smooth plain drop of frozen glass, the dark pane flat behind",
+      "target": "a hexagonal ice crystal within the ice, six flat clear faces meeting at sharp bright edges",
+      "target_phrase": "a hexagonal ice crystal"
+    },
+    {
+      "name": "ice_lattice",
+      "exp": -9,
+      "kind": "seam",
+      "dur": 2,
+      "palette": "white and pale blue-violet",
+      "scene": "the inside of an ice crystal, hexagonal rings of clear ice repeating in every direction, six-sided cells of pale blue light ranked through a vast bright lattice"
+    },
+    {
+      "name": "dark_window",
+      "exp": 0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep blue-black and warm gold",
+      "scene": "a tall cabin window in the dark, the whole pane pale inside its plain wooden frame, white frost ferns crowded edge to edge in ranks across the black glass, a warm lamp at one end of the sill throwing gold light along the ice, the room empty, no one present"
+    }
+  ],
+  "music_theme": "hushed winter stillness at a lamplit window, glassy bell tones over slow warm strings, a single crystalline chime landing on the lattice morph",
+  "music_key": "A minor"
+}

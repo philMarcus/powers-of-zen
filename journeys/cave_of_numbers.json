@@ -1,0 +1,86 @@
+{
+  "name": "cave_of_numbers",
+  "theme": "a limestone cave whose glowworm ceiling plays the cosmos — down a banded stalactite into the calcite lattice, out into the glowworm sky, and home to the cavern floor",
+  "style": "liquid_light",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": false
+  },
+  "registers": [
+    {
+      "name": "cavern",
+      "exp": 2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "glowworm blue-green on black wet stone",
+      "scene": "a vast limestone cavern seen from the cavern floor at the edge of a still dark pool, the black ceiling overhead strewn with small blue glowworm lights, ranks of pale stalactites hanging from it, wet flowstone terraces banking the walls, one great banded stalactite hanging among the ranks",
+      "target": "a great banded stalactite, a long pale limestone cone ringed with bands of amber and cream, its wet tip a fine sharp point",
+      "target_phrase": "a banded stalactite",
+      "loop_target": "the vast limestone cavern seen from the floor at the edge of the still dark pool, blue glowworm lights strewn across the black ceiling and pale stalactites hanging overhead"
+    },
+    {
+      "name": "stalactite",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale cream stone and cold blue light",
+      "scene": "one great banded stalactite fills the view, a long limestone cone ringed with bands of cream and pale amber, its wet surface cold blue where the ceiling light falls on it, darker stone ranks behind",
+      "target": "a wide amber band wrapped around the stalactite's flank, its calcite surface rippled into stacked ridges",
+      "target_phrase": "a wide amber band",
+      "cameo": {
+        "sprite": "output/mascots/canon/janet.png",
+        "pos": [0.30, 0.66],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "calcite_bands",
+      "exp": -2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep amber and dark cream",
+      "scene": "rippled calcite bands fill the view, long curved ridges of deep amber and dark cream stacked one over another, the wet stone glassy along every rim",
+      "target": "a glowing rhombic crystal deep in the calcite, a slanted box of pale violet-white light",
+      "target_phrase": "a glowing rhombic crystal"
+    },
+    {
+      "name": "calcite_lattice",
+      "exp": -9,
+      "kind": "seam",
+      "dur": 1,
+      "palette": "violet-white glow on black",
+      "scene": "the calcite crystal lattice fills the view, slanted rhombic cells stacked in every direction, each edge a thin line of violet-white light, the spaces between them black"
+    },
+    {
+      "name": "glowworm_sky",
+      "exp": 12,
+      "kind": "zoom",
+      "dur": 7,
+      "palette": "glowworm blue-green on deep black",
+      "scene": "a black cave vault overhead crowded with glowworm light, thousands of blue-green points strewn across the dark, long fine silk threads hanging between them and catching the glow, the stone behind the lights lost in black",
+      "target": "a bright cluster of glowworm lamps among the hanging threads, a close-packed knot of blue-green light",
+      "target_phrase": "a cluster of lights"
+    },
+    {
+      "name": "glowworm_cluster",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade green lamps and pale silk",
+      "scene": "a close-packed cluster of glowworm lamps fills the view, each a bead of jade-green light set on black rock, pale silk threads strung down between them in long fine lines",
+      "target": "a wide pale stone arch below the lights, the cavern mouth standing open on a dark night valley",
+      "target_phrase": "a pale stone arch"
+    },
+    {
+      "name": "cave_mouth",
+      "exp": 3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale stone and deep night blue",
+      "scene": "the mouth of the cavern, a wide pale stone arch standing open on a dark valley of night hills, and beneath the lit ceiling the cavern floor of pale flowstone terraces and a still dark pool"
+    }
+  ],
+  "music_theme": "a hushed underground wonder — deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool",
+  "music_key": "E minor"
+}

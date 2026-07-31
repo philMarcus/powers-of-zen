@@ -1,0 +1,87 @@
+{
+  "name": "chalkboard_infinities",
+  "theme": "a chalk mathematics roam — an empty lecture hall down through one chalked spiral to calcite dust, folding into an infinite chalkboard realm that draws its own way back to the hall",
+  "style": "gilded_relic",
+  "counter": false,
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": false
+  },
+  "registers": [
+    {
+      "name": "lecture_hall",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm brass lamplight on green-black slate",
+      "scene": "a vast old lecture hall seen from the high back row, empty, no one present, tiered wooden benches stepping down to a broad floor, every wall a green-black slate chalkboard dense with white diagrams and equations, small brass lamps set along the aisles, one great chalked spiral marked across the front board",
+      "target": "a great chalked spiral on the slate board, wide white arcs wound out from a circled center, small chalked numbers along the arms",
+      "target_phrase": "a white chalk spiral",
+      "loop_target": "the vast old lecture hall, seen from the high back row, tiered benches stepping down to a broad floor and green-black chalkboard walls"
+    },
+    {
+      "name": "spiral_diagram",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cool blue-white chalk on green-black slate",
+      "scene": "a great chalk spiral fills the slate board, broad white arcs wound out from a circled center, chalked numerals and letters along every arm, faint pale eraser haze over the green-black slate",
+      "target": "one thick stroke of the spiral, a broad white line of packed chalk with a crumbled edge",
+      "target_phrase": "a thick chalk line"
+    },
+    {
+      "name": "chalk_stroke",
+      "exp": -2.5,
+      "kind": "zoom",
+      "dur": 3,
+      "palette": "warm ivory dust on grey-green slate",
+      "scene": "a single chalk stroke fills the view, a heaped ridge of packed white chalk dust on dark slate, its crest rough and its edges broken into loose grains, shallow scratches in the slate beneath",
+      "target": "one loose chalk grain at the ridge's edge, a blocky white crystal with flat angled faces",
+      "target_phrase": "a white chalk grain"
+    },
+    {
+      "name": "calcite_grains",
+      "exp": -5,
+      "kind": "seam",
+      "dur": 1,
+      "palette": "cold white calcite and pale grey shadow",
+      "scene": "tumbled white calcite blocks fill the whole view, each a rhombic crystal with stepped cleavage terraces, flat faces meeting at sharp angles, pale grey shadow banked in the steps"
+    },
+    {
+      "name": "chalk_realm",
+      "exp": 16,
+      "kind": "zoom",
+      "dur": 8,
+      "palette": "glowing ivory chalk on deep green-black",
+      "scene": "an endless chalk-white realm on deep green-black, a hyperbolic tiling of luminous white lines, concentric rings of tiled cells each ring finer toward a bright rim, a theorem chalked in every cell",
+      "target": "a bright chalk diagram set among the tiles, circled white nodes joined by straight ruled lines",
+      "target_phrase": "a bright chalk diagram",
+      "cameo": {
+        "sprite": "output/mascots/canon/adam.png",
+        "pos": [0.68, 0.33],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "chalk_constellation",
+      "exp": 9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold blue-white chalk on slate black",
+      "scene": "a chalk constellation diagram fills the dark, circled white nodes joined by straight ruled lines, thin arcs and small chalked numerals between them, deep slate black beyond",
+      "target": "one circled node holding a chalked plan of a tiered amphitheater, concentric rows of benches drawn in white",
+      "target_phrase": "a drawn amphitheater plan"
+    },
+    {
+      "name": "amphitheater_plan",
+      "exp": 2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "chalk white and warm brass on green-black",
+      "scene": "a chalked plan of a great tiered amphitheater fills the view, concentric rows of benches ringing a broad open floor, aisles ruled in white chalk, a lectern and a long board marked at the base, small brass lamp marks along the aisles, empty, no one present"
+    }
+  ],
+  "music_theme": "a hushed nocturnal lecture hall of chalk and slate — austere and curious, soft piano figures over bowed strings and a slow pulse, one bright bloom of sound landing on the chalk-grain seam",
+  "music_key": "A minor"
+}

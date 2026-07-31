@@ -1,0 +1,67 @@
+{
+  "name": "lather_atlas",
+  "theme": "a soap-foam micro-cosmos in a kitchen sink — an evening basin, a packed field of bubble domes, one film's colour bands, the round spheres inside it, folding back into the same foam and settling to the sink",
+  "style": "liquid_light",
+  "counter": false,
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": false
+  },
+  "registers": [
+    {
+      "name": "sink",
+      "exp": -0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm cream and evening amber",
+      "scene": "a warm evening kitchen seen from standing height at the sink's edge, looking down across a deep cream-white ceramic basin, a wide window above it full of low amber light, tiled counter and a stack of plates at the near edge, empty, no one present",
+      "target": "a rounded heap of white soap foam in the basin, its crust a packed skin of small round bubbles, faint colour in the thin walls",
+      "target_phrase": "white soap foam",
+      "loop_target": "a warm evening kitchen sink seen from the rim, a deep cream-white ceramic basin heaped with white soap foam, a wide window of low amber light above it"
+    },
+    {
+      "name": "foam_field",
+      "exp": -1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "soap teal and white",
+      "scene": "a packed field of soap bubble domes filling the view from above, every dome pressed flat against its neighbours into a lattice of curved polygon walls, the thin walls glowing teal and white where light passes through, small beads of lather caught in the seams",
+      "target": "one large bubble dome standing above the packed field, its curved wall banded with wide rings of magenta, gold and green colour",
+      "target_phrase": "a large bubble dome",
+      "cameo": {
+        "sprite": "output/mascots/canon/kitty.png",
+        "pos": [0.68, 0.62],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "film_wall",
+      "exp": -2.8,
+      "kind": "zoom",
+      "dur": 3,
+      "palette": "magenta, gold and violet",
+      "scene": "the curved wall of a single soap bubble filling the view, a thin film banded with wide sweeping stripes of magenta, gold, green and violet colour, the bands folded and marbled across the whole surface, a bright silver rim where the wall curves away into shadow",
+      "target": "a cluster of round spheres set within the film, small clear balls packed in tight bright rows",
+      "target_phrase": "small round spheres"
+    },
+    {
+      "name": "micelle_rows",
+      "exp": -7.8,
+      "kind": "seam",
+      "dur": 1,
+      "palette": "silver blue and frost white",
+      "scene": "row upon row of round spheres packed in a glowing lattice, each a smooth ball of soft light with a bright rim, the rows set away in every direction through pale blue-white glow"
+    },
+    {
+      "name": "foam_edge",
+      "exp": -1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "teal white and warm cream",
+      "scene": "the packed domes of the sink's soap foam seen from above at its edge, curved white walls and teal films crowded to the rim of a deep cream-white ceramic basin, warm window light across the pale ceramic beyond"
+    }
+  ],
+  "music_theme": "a warm evening kitchen at rest, gentle and iridescent — soft chiming keys over a low hum, opening bright as the foam gives up its glowing inner world, one shimmering bloom of sound on the turn back into the sink",
+  "music_key": "A major"
+}

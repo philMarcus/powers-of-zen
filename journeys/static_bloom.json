@@ -1,0 +1,86 @@
+{
+  "name": "static_bloom",
+  "theme": "a retro living room where the television is the portal — in through the phosphor grid to the static's magnetic domains, out through the broadcast picture onto a golden savanna, and home to the same room",
+  "style": "gilded_relic",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": false
+  },
+  "registers": [
+    {
+      "name": "living_room",
+      "exp": 0.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "lamp amber and walnut brown",
+      "scene": "a cozy 1970s living room at night seen from across the room at seated eye level, empty, no one present, patterned wallpaper and a deep shag carpet, a low couch and a side table under a warm amber lamp, a wood-cabinet television in the far corner, its curved glass face pale with silver static grain",
+      "target": "a wood-cabinet television, its curved glass face full of pale silver static grain, a heavy dark wooden frame around the glass and a row of round dials beneath it",
+      "target_phrase": "a glowing television",
+      "loop_target": "the cozy lamplit 1970s living room seen from across the room, patterned wallpaper, a low couch and a shag carpet, a wood-cabinet television glowing pale silver in the far corner"
+    },
+    {
+      "name": "screen",
+      "exp": -0.4,
+      "kind": "zoom",
+      "dur": 2,
+      "palette": "silver grain and charcoal",
+      "scene": "a curved television glass face fills the view, a dense mottled field of silver and charcoal grain across the whole pane, the dark wooden frame curving away at the edges",
+      "target": "a cluster of small round points of red, green and blue light set in the silver grain",
+      "target_phrase": "glowing colored dots"
+    },
+    {
+      "name": "phosphor",
+      "exp": -3.4,
+      "kind": "zoom",
+      "dur": 2,
+      "palette": "scarlet, green and blue points on jet black",
+      "scene": "ranks of glowing scarlet, green and blue phosphor dots in strict rows behind a fine black mask, each dot a rounded bead of colored light, the black lattice between them sharp and geometric",
+      "target": "a bright patch of pale silver light between the rows, its border jagged and torn",
+      "target_phrase": "a bright silver patch"
+    },
+    {
+      "name": "ising_domains",
+      "exp": -5.4,
+      "kind": "seam",
+      "dur": 2,
+      "palette": "pale silver and soot black",
+      "scene": "a dense mottled field of magnetic domains, ragged patches of white and charcoal locked into a percolation mosaic, thin pale borders threading between the patches, the whole field flat and crowded to the edges"
+    },
+    {
+      "name": "savanna",
+      "exp": 4.2,
+      "kind": "zoom",
+      "dur": 6,
+      "palette": "burnished gold and dusty orange",
+      "scene": "a vast golden savanna seen from high in the air in low evening light, flat-topped acacia trees scattered across the burnt-gold plain, a winding river threading between pale sandbars, long shadows laid across the grass",
+      "target": "a lone flat-topped acacia tree on the open plain, its wide crown of fine leaves spread over a dark trunk",
+      "target_phrase": "a lone acacia tree"
+    },
+    {
+      "name": "acacia",
+      "exp": 1.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep gold and violet shadow",
+      "scene": "a lone flat-topped acacia in tall golden grass, its wide crown of fine leaves over a dark twisted trunk, woven grass nests hung in the branches, the low sun a round amber disc behind the crown",
+      "target": "the setting sun, a large round amber disc, its glow broad and warm",
+      "target_phrase": "the setting sun",
+      "cameo": {
+        "sprite": "output/mascots/canon/clark.png",
+        "pos": [0.34, 0.66],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "den",
+      "exp": 1.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber lamplight and warm gold",
+      "scene": "a 1970s den seen low across a patterned carpet from the dark hallway doorway, empty, no one present, a wood-cabinet television in the corner with its curved glass face a warm field of gold and orange light, an amber lamp on a side table beside it, patterned wallpaper and a low couch in the dim room"
+    }
+  ],
+  "music_theme": "a warm nostalgic analog nocturne — soft electric piano and tape hum over a slow pulse, a silver shimmer of noise through the descent, opening into broad golden strings when the picture resolves onto the plain",
+  "music_key": "A minor"
+}
