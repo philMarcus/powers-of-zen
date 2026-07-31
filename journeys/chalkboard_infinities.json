@@ -34,7 +34,7 @@
       "name": "chalk_stroke",
       "exp": -2.5,
       "kind": "zoom",
-      "dur": 3,
+      "dur": 4,
       "palette": "warm ivory dust on grey-green slate",
       "scene": "a single chalk stroke fills the view, a heaped ridge of packed white chalk dust on dark slate, its crest rough and its edges broken into loose grains, shallow scratches in the slate beneath",
       "target": "a loose chalk grain, a blocky white crystal with flat angled faces",
@@ -44,7 +44,7 @@
       "name": "calcite_grains",
       "exp": -5,
       "kind": "seam",
-      "dur": 1,
+      "dur": 4,
       "palette": "cold white calcite and pale grey shadow",
       "scene": "tumbled white calcite blocks fill the whole view, each a rhombic crystal with stepped cleavage terraces, flat faces meeting at sharp angles, pale grey shadow banked in the steps"
     },
@@ -52,14 +52,17 @@
       "name": "chalk_realm",
       "exp": 16,
       "kind": "zoom",
-      "dur": 8,
+      "dur": 4,
       "palette": "glowing ivory chalk on deep green-black",
       "scene": "an endless chalk-white realm on deep green-black, a hyperbolic tiling of luminous white lines, concentric rings of tiled cells each ring finer toward a bright rim, a theorem chalked in every cell",
       "target": "a bright chalk diagram, circled white nodes joined by straight ruled lines",
       "target_phrase": "a bright chalk diagram",
       "cameo": {
         "sprite": "output/mascots/canon/adam.png",
-        "pos": [0.68, 0.33],
+        "pos": [
+          0.68,
+          0.33
+        ],
         "size": 0.13
       }
     },

@@ -51,7 +51,7 @@
       "name": "calcite_lattice",
       "exp": -9,
       "kind": "seam",
-      "dur": 1,
+      "dur": 4,
       "palette": "violet-white glow on black",
       "scene": "the calcite crystal lattice fills the view, slanted rhombic cells stacked in every direction, each edge a thin line of violet-white light, the spaces between them black"
     },
@@ -59,7 +59,7 @@
       "name": "glowworm_sky",
       "exp": 12,
       "kind": "zoom",
-      "dur": 7,
+      "dur": 4,
       "palette": "glowworm blue-green on deep black",
       "scene": "a black cave vault overhead crowded with glowworm light, thousands of blue-green points strewn across the dark, long fine silk threads hanging between them and catching the glow, the stone behind the lights lost in black",
       "target": "a bright cluster of glowworm lamps, a close-packed knot of blue-green light",

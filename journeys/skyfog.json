@@ -23,7 +23,7 @@
       "name": "window_mist",
       "exp": -0.5,
       "kind": "zoom",
-      "dur": 3,
+      "dur": 4,
       "palette": "pale silver and glass grey",
       "scene": "a fine mist of condensation up close on the window pane, countless small beads catching the light, pale rivulets etched down through the film",
       "target": "a large round bead of clear water",
@@ -33,7 +33,7 @@
       "name": "raindrop",
       "exp": -3.0,
       "kind": "seam",
-      "dur": 1,
+      "dur": 4,
       "palette": "deep water blue kindling to starlit gold",
       "scene": "a single clear swollen raindrop, its rounded skin catching the light, resting against the dark glass"
     },
@@ -41,7 +41,7 @@
       "name": "nebula",
       "exp": 14,
       "kind": "zoom",
-      "dur": 8,
+      "dur": 4,
       "palette": "pink and teal glow",
       "scene": "towering pillars of glowing nebula mist, veils of pink and teal dust banked in layers, newborn stars smoldering deep inside the folds",
       "target": "a bright protostar, a hot white point of light",
@@ -65,7 +65,10 @@
       "palette": "storm slate and pearl",
       "cameo": {
         "sprite": "output/mascots/canon/janet.png",
-        "pos": [0.72, 0.34],
+        "pos": [
+          0.72,
+          0.34
+        ],
         "size": 0.12
       },
       "scene": "the banded planet close, marbled cloud lit low and gold, one immense white spiral cyclone coiled above a dark ocean",

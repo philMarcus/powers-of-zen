@@ -33,7 +33,7 @@
       "name": "nacre_chamber",
       "exp": -2,
       "kind": "zoom",
-      "dur": 2,
+      "dur": 4,
       "palette": "ivory and pale pink iridescence",
       "scene": "the inside of one ammonite chamber, a curved pearl-white partition wall filling the view, its edge a dense lace of branching frilled lobes, fine ridges fanned across the ivory surface, a thin oil-slick film of colour over everything",
       "target": "a stepped ledge of aragonite crystal, flat pale tiers bright with green and pink colour",
@@ -43,7 +43,7 @@
       "name": "aragonite_terraces",
       "exp": -5,
       "kind": "seam",
-      "dur": 2,
+      "dur": 4,
       "palette": "green-violet and silver iridescence",
       "scene": "a field of stepped aragonite terraces filling the view, flat crystal tiers stacked in broad level shelves, straight sharp edges dividing the levels, green and violet iridescence washed across the flat faces"
     },
@@ -81,7 +81,7 @@
       "name": "coastline",
       "exp": 3.5,
       "kind": "zoom",
-      "dur": 8,
+      "dur": 4,
       "palette": "slate grey and sea green",
       "scene": "a rugged coastline seen from high above, dark slate headlands and long reefs edged with cream surf, pale tide flats and scattered pools between the rocks, deep green water in the bays",
       "cameo": {

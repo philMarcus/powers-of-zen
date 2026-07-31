@@ -51,7 +51,7 @@
       "name": "silica_network",
       "exp": -9,
       "kind": "seam",
-      "dur": 1,
+      "dur": 4,
       "palette": "luminous pale green on deep green dark",
       "scene": "the silica network inside the glass, pale green strands strung between bright glowing nodes in every direction, a deep green dark behind the lattice of threads"
     },
@@ -59,7 +59,7 @@
       "name": "spray_foam",
       "exp": 12,
       "kind": "zoom",
-      "dur": 3,
+      "dur": 4,
       "palette": "white-cyan light on deep sea green",
       "scene": "a realm of packed luminous bubble cells, curved walls of white light dividing every cell from its neighbours, bright junctions where three walls meet, deep sea-green dark behind the whole packing",
       "target": "a broad bright cell, a clear round chamber ringed by a sharp white wall",
@@ -79,7 +79,7 @@
       "name": "surf_line",
       "exp": 3,
       "kind": "zoom",
-      "dur": 8,
+      "dur": 4,
       "palette": "wet grey and white-gold morning",
       "scene": "a stretch of shingle shore seen from low above, banks of wet grey pebbles, a long white surf line down the length of the shore, shallow bright rills of water between the stone banks, morning gold light across the wet ground"
     }

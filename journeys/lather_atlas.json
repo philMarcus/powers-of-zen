@@ -41,7 +41,7 @@
       "name": "film_wall",
       "exp": -2.8,
       "kind": "zoom",
-      "dur": 3,
+      "dur": 4,
       "palette": "magenta, gold and violet",
       "scene": "the curved wall of a single soap bubble filling the view, a thin film banded with wide sweeping stripes of magenta, gold, green and violet colour, the bands folded and marbled across the whole surface, a bright silver rim where the wall curves away into shadow",
       "target": "a cluster of small clear round spheres, packed in tight bright rows",
@@ -51,7 +51,7 @@
       "name": "micelle_rows",
       "exp": -7.8,
       "kind": "seam",
-      "dur": 1,
+      "dur": 4,
       "palette": "silver blue and frost white",
       "scene": "row upon row of round spheres packed in a glowing lattice, each a smooth ball of soft light with a bright rim, the rows set away in every direction through pale blue-white glow"
     },

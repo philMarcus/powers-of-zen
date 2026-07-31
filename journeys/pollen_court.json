@@ -51,7 +51,7 @@
       "name": "grain_mesh",
       "exp": -6.5,
       "kind": "seam",
-      "dur": 1,
+      "dur": 4,
       "palette": "pale gold and cool violet shadow",
       "scene": "a reticulated honeycomb mesh fills the entire view, raised golden ridges branching and joining around deep dark pores, the crust between them finely pitted"
     },
@@ -59,7 +59,7 @@
       "name": "canopy",
       "exp": 1.5,
       "kind": "zoom",
-      "dur": 3,
+      "dur": 4,
       "palette": "pale sky blue and white blossom",
       "scene": "a flowering tree canopy seen wide against a pale spring sky, dark branches forking and rejoining around bright openings of sky, clusters of pink and white blossom packed along every limb, the sunlit lawn and gravel path of the park below through a gap in the branches"
     }

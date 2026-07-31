@@ -147,20 +147,14 @@ def compile_journey(spec, fps, build="in"):
                 card_appr = [None] * fa + [ap] * body
 
         # arrive->look->plunge zoom curve; per-card PRODUCT = card_zoom (x10 zoom, ~x1.4 seam).
-        # ZOOM FLOOR (2026-07-31, Phil's slowdown complaint): pure sin^2 weighting let long
-        # cards decelerate to ~1.02/frame at the edges — reads as STALLED. Guarantee a
-        # perceptible dive rate and shape only the budget ABOVE the floor; the product (and so
-        # the card-end fill landing on the morph beat) is unchanged. A card whose whole budget
-        # is below the floor (the seam dwell's x1.4) glides steadily instead.
-        ZF = fmt.get("zoom_floor", 1.028)
-        lf, lz = math.log(ZF), math.log(card_zoom)
-        extra = lz - F * lf
-        if extra <= 0:
-            zs = [math.exp(lz / F)] * F
-        else:
-            w = [0.30 + 0.70 * math.sin(math.pi * (j + 0.5) / F) ** 2 for j in range(F)]
-            s = sum(w) or 1.0
-            zs = [math.exp(lf + extra * wj / s) for wj in w]
+        # This is the EXACT engine-1 curve (Phil 2026-07-31: "engine one had the right idea —
+        # we had a great curve"). The v7 "uneven within each scale" feel came from MIXED card
+        # durations varying the curve's period/amplitude card-to-card, not from the curve —
+        # fixed by the uniform-bars-per-scale rule (every card same dur -> same curve every
+        # card, one consistent breathing period). The interim zoom-floor experiment is retired.
+        w = [0.30 + 0.70 * math.sin(math.pi * (j + 0.5) / F) ** 2 for j in range(F)]
+        s = sum(w) or 1.0
+        zs = [math.exp(math.log(card_zoom) * wj / s) for wj in w]
         zoom += zs
         # denoise: EVERY card travels at travel_denoise — seam cards too. The old schedule ran
         # the whole seam card at seam_denoise 0.72 (+0.18 arrival boost = 0.85 capped): ~15%

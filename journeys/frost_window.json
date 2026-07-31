@@ -41,7 +41,7 @@
       "name": "beaded_branch",
       "exp": -2.6,
       "kind": "zoom",
-      "dur": 2,
+      "dur": 4,
       "palette": "glass blue and pale amber",
       "scene": "a single ice branch fills the view, slender white spurs strung with round beads of clear ice, each bead a smooth plain drop of frozen glass, the dark pane flat behind",
       "target": "a hexagonal ice crystal, six flat clear faces meeting at sharp bright edges",
@@ -51,7 +51,7 @@
       "name": "ice_lattice",
       "exp": -9,
       "kind": "seam",
-      "dur": 2,
+      "dur": 4,
       "palette": "white and pale blue-violet",
       "scene": "the inside of an ice crystal, hexagonal rings of clear ice repeating in every direction, six-sided cells of pale blue light ranked through a vast bright lattice"
     },

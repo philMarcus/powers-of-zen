@@ -167,16 +167,18 @@ The morphs ARE the rhythm. Each scale transition (the morph) lands on a STRONG b
 grid UP FRONT (engine 1 could slide the music onto the morphs after rendering; engine 2 fixes the
 grid at compose time), so the pacing must be musical from the start. `dur` is in BEATS; a bar = 4.
 
-- **DEFAULT: one scale = ONE BAR (dur 4).** The morph lands on the next bar's downbeat. This is the
-  base case — reach for it first.
-- **LINGER on a rich scale = 2 BARS (dur 8).** Do NOT go beyond 2 bars on a single static scale —
-  4 bars drags (unless the beat is very fast; intra-scale motion may let us linger more later).
-  **Never linger on a DIFFUSE scale** (fog, mist, plasma, featureless clouds): two bars drifting
-  through structureless haze is dead air (the skyfog lesson). Linger only where detail is dense;
-  give diffuse scales dur 2 and move through.
-- **FASTER than a bar per scale = SUBDIVIDE a bar among scales, but they MUST ADD UP TO WHOLE BARS**
-  so the strong beat always carries a morph: within one bar, 2+2 (morphs on beat 1 and beat 3), or
-  1+3, or 1+1+2, or 4×1 for a fast run. Never leave a fractional bar dangling.
+- **UNIFORM BARS PER SCALE — THE RULE (Phil 2026-07-31, supersedes the mixed-dur system):
+  every card in a journey gets the SAME dur — 4 (one bar per scale, the default) or 8 (two
+  bars per scale, a slow journey), never mixed.** Mixed durations (2/4/8 in one journey) made
+  the arrive-look-plunge curve vary in period and amplitude card-to-card — arrhythmic, "uneven
+  within each scale" (the v7 lesson). Engine-1's charm was one consistent breathing period;
+  uniform bars restore it, and every morph lands on the same beat position automatically. The
+  seam card gets the same bar as everyone (its dwell earns the big morph breathing room).
+- **Length tiers now come from CARD COUNT, not card length**: short ≈ 4-5 cards (16-20 beats,
+  ~9-12s), medium ≈ 6-7 cards (24-28 beats, ~14-16s), long ≈ 10-13 cards (40-52 beats,
+  ~23-30s). Vary music bpm for further spread.
+- **Never linger on a DIFFUSE scale** (fog, mist, plasma, featureless clouds) — if the journey
+  is a dur-8 journey, diffuse scales argue for dur 4 overall instead (the skyfog lesson).
 - **The whole video = a WHOLE NUMBER OF BARS.** Sum every `dur`; it MUST be divisible by 4.
 - **LENGTH TIERS (Phil 2026-07-31): the catalog needs VARIED LENGTHS, not one size.** At 7
   frames/beat and 12fps raw, seconds = beats × 7/12 (music bpm then varies feel further):

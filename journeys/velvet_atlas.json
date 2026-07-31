@@ -33,7 +33,7 @@
       "name": "twill_weave",
       "exp": -3,
       "kind": "zoom",
-      "dur": 3,
+      "dur": 4,
       "palette": "indigo and cold silver",
       "scene": "the twill weave beneath the embroidery, thick indigo thread ridges crossing over and under in strict diagonal rows, narrow shadowed valleys between every ridge, stray blue floss laid across the ranks",
       "target": "a single blue fiber, a slender strand shingled with overlapping scale plates",
@@ -51,7 +51,7 @@
       "name": "dyed_fiber",
       "exp": -6,
       "kind": "seam",
-      "dur": 1,
+      "dur": 4,
       "palette": "hot violet and blue-black",
       "scene": "the surface of a single dyed fiber, shingled in overlapping scale plates, stepped platelets of dye crystal clinging along every edge in hot violet terraces"
     },

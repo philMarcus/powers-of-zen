@@ -41,7 +41,7 @@
       "name": "verdigris",
       "exp": -3,
       "kind": "zoom",
-      "dur": 3,
+      "dur": 4,
       "palette": "verdigris turquoise and rust orange",
       "scene": "a verdigris world filling the view, stepped terraces of turquoise crystal stacked in broad plates, powdery mineral bloom in every seam, rust-orange fingers between the terraces over dark bronze ground",
       "target": "a rust-orange dendrite, a forked spine with fine limbs",
@@ -51,7 +51,7 @@
       "name": "dendrite_lattice",
       "exp": -5,
       "kind": "seam",
-      "dur": 1,
+      "dur": 4,
       "palette": "rust orange on dark slate, warming toward lamplight gold",
       "scene": "a branched fractal lattice filling the whole view, rust-orange filaments forked again and again into ever finer limbs across dark ground, a bright node at every fork"
     },
