@@ -492,6 +492,10 @@ def main():
     ap.add_argument("--frames", type=int, help="override total frame count (smoke tests)")
     ap.add_argument("--plain", action="store_true",
                     help="pure feedback zoom — no tracking, no depth-CN (A/B vs the engine-1 look)")
+    ap.add_argument("--cn", type=float, metavar="STRENGTH",
+                    help="override depth-ControlNet strength; --cn 0 disables the CN but KEEPS "
+                         "tracking/composition (the clean A/B for 'is the CN hurting the look?'). "
+                         "Suffixes the run name so the two variants don't share a vN sequence.")
     ap.add_argument("--no-video", action="store_true", help="skip assembly")
     ap.add_argument("--resume", action="store_true",
                     help="continue the newest vN from its last saved frame (feedback chain: only "
@@ -532,6 +536,9 @@ def main():
     if args.plain:
         approach = []
         name = f"{name}_plain"
+    if args.cn is not None:
+        cfg["approach_cn"] = args.cn
+        name = f"{name}_cn{args.cn:g}".replace(".", "")
 
     base = Path(__file__).resolve().parent.parent / "output" / name
     start_i = 0
