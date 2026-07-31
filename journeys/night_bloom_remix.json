@@ -1,0 +1,129 @@
+{
+  "name": "night_bloom_remix",
+  "theme": "engine-2 remix: a bioluminescent night dive — moss cells to quantum sparks, a fold out to a galaxy, then down through a glowing night world back to the moss",
+  "style": "liquid_light",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "moss_cells",
+      "exp": -4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "emerald and gold motes",
+      "scene": "the glowing interior of a moss leaf seen flat-on from within, translucent emerald cell walls packed like stained-glass lanterns, golden chloroplast motes suspended in every chamber",
+      "target": "a luminous jade spore, a round glowing mote",
+      "target_phrase": "a glowing spore",
+      "loop_target": "the glowing emerald cells of a moss leaf, translucent walls packed like stained-glass lanterns"
+    },
+    {
+      "name": "spores",
+      "exp": -6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale silver-blue and black",
+      "scene": "a dark void filled with glowing jade spores adrift, each a round lantern wrapped in luminous dust",
+      "target": "a single green spark, a sharp pinpoint of emerald light",
+      "target_phrase": "a green spark"
+    },
+    {
+      "name": "quantum_sparks",
+      "exp": -12,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "firefly green and violet",
+      "scene": "a dark quantum realm alive with drifting green sparks and curling luminous particle trails in soft fog"
+    },
+    {
+      "name": "galaxy",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "indigo and starlight",
+      "scene": "a tilted spiral galaxy glowing in the black, ragged luminous arms of starlight sweeping around a bright core",
+      "target": "an emerald nebula, pillars of glowing green gas",
+      "target_phrase": "a green nebula"
+    },
+    {
+      "name": "nebula",
+      "exp": 13.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "emerald and violet glow",
+      "scene": "a vast glowing star-nursery nebula, towering pillars of luminous emerald gas, newborn stars burning in their folds",
+      "target": "a dark round planet laced with veins of golden light",
+      "target_phrase": "a dark planet"
+    },
+    {
+      "name": "planet_night",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "midnight blue and city gold",
+      "scene": "a huge dark planet seen from space, curved horizon and glowing limb, webs of golden city light wrapped across its night side",
+      "target": "a bright golden web of city light",
+      "target_phrase": "golden city lights"
+    },
+    {
+      "name": "landmass",
+      "exp": 5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "indigo and scattered gold",
+      "scene": "a dark continent seen from high altitude at night, rivers of golden village light tracing the valleys between black mountain ranges",
+      "target": "a terraced village of warm lights",
+      "target_phrase": "a cluster of lights"
+    },
+    {
+      "name": "village",
+      "exp": 3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber and indigo",
+      "scene": "a terraced mountain village at night seen from above, warm windows and lamplit stairways cascading down the slopes, empty streets, no one present",
+      "target": "a garden strung with glowing paper lanterns",
+      "target_phrase": "glowing paper lanterns"
+    },
+    {
+      "name": "lantern_garden",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "gold and deep green",
+      "scene": "a midnight garden strung with glowing paper lanterns, luminous flowers and winding stone paths in the dark, no one present",
+      "target": "a pale night-blooming flower, luminous white petals half open",
+      "target_phrase": "a white flower",
+      "cameo": {
+        "sprite": "output/mascots/canon/lamar.png",
+        "pos": [
+          0.38,
+          0.62
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "night_flower",
+      "exp": -0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moon white and violet",
+      "scene": "an enormous night-blooming flower filling the dark, luminous white petals around a glowing pollen heart, fireflies adrift around it",
+      "target": "a glowing firefly, its body shining green",
+      "target_phrase": "a glowing firefly"
+    },
+    {
+      "name": "firefly",
+      "exp": -2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "firefly green and dusk blue",
+      "scene": "a glowing firefly perched on a dark dewy grass blade, its green lantern body casting light over the moss bed below"
+    }
+  ],
+  "music_theme": "a glowing bioluminescent night garden, nocturnal, dreamy, alive with soft light",
+  "music_key": "D minor"
+}

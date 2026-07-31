@@ -134,3 +134,23 @@
 {"ts": "2026-07-30 08:00:52", "event": "post_fail", "journey": "snowfall", "platform": "instagram", "detail": "FLAGGED: instagram/crop_original: could not confirm Original (phone 9:16) crop — refusing to post a squared video"}
 {"ts": "2026-07-30 09:47:41", "event": "post", "journey": "snowfall", "platform": "youtube", "detail": "https://youtube.com/shorts/aSM8YK_wsRk"}
 {"ts": "2026-07-30 09:47:41", "event": "post", "journey": "snowfall", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/Dba1KIBhz3b/"}
+{"ts": "2026-07-30 18:01:29", "event": "post", "journey": "cosmic_scales_remix", "platform": "youtube", "detail": "https://youtube.com/shorts/pKiWyMYBqi4"}
+{"ts": "2026-07-30 18:01:29", "event": "post", "journey": "cosmic_scales_remix", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbbtqMVtunf/"}
+{"ts": "2026-07-31 08:01:47", "event": "post_fail", "journey": "cartographer", "platform": "youtube", "detail": "FLAGGED: youtube/file_input: upload dialog never became VISIBLE (Create->Upload; cold-session onboarding nags?)"}
+{"ts": "2026-07-31 08:01:47", "event": "post_fail", "journey": "cartographer", "platform": "instagram", "detail": "FLAGGED: instagram/crop_original: could not confirm Original (phone 9:16) crop — refusing to post a squared video"}
+{"ts": "2026-07-31 08:46:11", "event": "post", "journey": "cartographer", "platform": "youtube", "detail": "https://youtube.com/shorts/XxiQNC5qzkM"}
+{"ts": "2026-07-31 08:46:11", "event": "post", "journey": "cartographer", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbdS6MlhTBU/"}
+{"ts": "2026-07-31 11:00:29", "event": "edit", "journey": "mineral_heart"}
+{"ts": "2026-07-31 11:00:39", "event": "phase_shift", "journey": "mineral_heart", "detail": "start @ 3.50s"}
+{"ts": "2026-07-31 11:00:39", "event": "music", "journey": "mineral_heart"}
+{"ts": "2026-07-31 11:28:36", "event": "music_gen", "journey": "mineral_heart", "detail": "5 candidates"}
+{"ts": "2026-07-31 11:32:18", "event": "music_choose", "journey": "mineral_heart", "detail": "warm"}
+{"ts": "2026-07-31 11:32:18", "event": "queued", "journey": "mineral_heart"}
+{"ts": "2026-07-31 11:59:09", "event": "edit", "journey": "circuit_city"}
+{"ts": "2026-07-31 11:59:17", "event": "edit", "journey": "dollhouse"}
+{"ts": "2026-07-31 11:59:26", "event": "edit", "journey": "iris_observatory"}
+{"ts": "2026-07-31 11:59:33", "event": "edit", "journey": "mineral_heart"}
+{"ts": "2026-07-31 12:06:44", "event": "rejected", "journey": "antenna_ball", "reason": "Phil review 2026-07-31: engine iteration test renders, not production quality"}
+{"ts": "2026-07-31 12:06:44", "event": "rejected", "journey": "skyfog", "reason": "Phil review 2026-07-31: engine iteration test renders, not production quality"}
+{"ts": "2026-07-31 16:07:12", "event": "edit", "journey": "circuit_city"}
+{"ts": "2026-07-31 16:49:30", "event": "review", "journey": "night_bloom_remix", "detail": "ds/divein (src v10)"}

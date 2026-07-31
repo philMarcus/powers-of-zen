@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-30 09:47:41",
+    "updated": "2026-07-31 16:49:30",
     "paused_platforms": [
       "tiktok"
     ],
@@ -318,8 +318,8 @@
       "cut": "zoomout",
       "file": "production/dollhouse_ds.mp4",
       "title": "the dollhouse contains the town contains the dollhouse 🏠",
-      "caption": "Dive into a dollhouse universe where every room holds a new world 🌌 #DollhouseUniverse #MiniatureWorlds #EndlessZoom #CozyCosmos #powersofzen #oddlysatisfying #zoomer",
-      "yt_title": "Dive into a dollhouse universe where every room holds a new world 🌌",
+      "caption": "A cozy bedroom hides a universe of tiny wonders 🌠 #DollhouseUniverse #MiniatureWorlds #EndlessZoom #CozyCosmos #powersofzen #oddlysatisfying #zoomer",
+      "yt_title": "A cozy bedroom hides a universe of tiny wonders 🌠",
       "yt_desc": "the dollhouse contains the town contains the dollhouse 🏠\n\n#shorts #powersofzen #miniature #oddlysatisfying #fyp",
       "cameo": null,
       "state": "queued",
@@ -745,7 +745,7 @@
       "yt_title": "From moth wings to cosmic webs, a journey through infinity 🌌",
       "yt_desc": "an antique atlas world — desk to map to coastline to cosmos and back.\n\n#shorts #maps #oddlysatisfying #powersofzen",
       "cameo": null,
-      "state": "queued",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -754,14 +754,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/XxiQNC5qzkM",
+          "ts": "2026-07-31 08:46:11"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DbdS6MlhTBU/",
+          "ts": "2026-07-31 08:46:11"
         }
       },
       "created": "2026-07-27",
@@ -855,7 +855,7 @@
       "yt_title": "A hypnotic spiral through every scale of reality ⚡",
       "yt_desc": "",
       "cameo": "lee",
-      "state": "queued",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -864,14 +864,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/pKiWyMYBqi4",
+          "ts": "2026-07-30 18:01:29"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DbbtqMVtunf/",
+          "ts": "2026-07-30 18:01:29"
         }
       },
       "created": "2026-07-29",
@@ -1138,7 +1138,7 @@
       "yt_title": "A meadow of giants, a dome of secrets, and the endless fall into infinity 🌸",
       "yt_desc": "",
       "cameo": "dora",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1193,7 +1193,7 @@
       "yt_title": "A lighthouse’s golden breath carves through the endless fog 🌊",
       "yt_desc": "",
       "cameo": "janet",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1242,13 +1242,13 @@
       "journey": "mineral_heart",
       "model": "ds",
       "cut": "divein",
-      "file": "review_divein/mineral_heart_ds_divein.mp4",
+      "file": "review_divein\\mineral_heart_ds_divein_shift.mp4",
       "title": "",
-      "caption": "A snowflake’s endless arms unfold into cosmic lace 🌌✨ Can you spot Lorraine hiding in the crystal maze? 👀 #CosmicCrystalDive #InfiniteFractals #LuminousLattice #OtherworldlyZoom #powersofzen #oddlysatisfying #zoomer",
-      "yt_title": "A snowflake’s endless arms unfold into cosmic lace 🌌✨",
+      "caption": "Crystals hum in the dark, atoms whisper secrets ✨🔮 Can you spot Lorraine hiding in the crystal maze? 👀 #CosmicCrystalDive #InfiniteFractals #LuminousLattice #OtherworldlyZoom #powersofzen #oddlysatisfying #zoomer",
+      "yt_title": "Crystals hum in the dark, atoms whisper secrets ✨🔮",
       "yt_desc": "",
       "cameo": "lorraine",
-      "state": "review",
+      "state": "queued",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1291,7 +1291,96 @@
         "Galaxies weave a web of light and shadow 🌠⚡ Can you spot Lorraine hiding in the crystal maze? 👀 #CosmicCrystalDive #InfiniteFractals #LuminousLattice #OtherworldlyZoom #powersofzen #oddlysatisfying #zoomer",
         "A sun’s molten ribbons dance on the edge of forever ☀️🌀 Can you spot Lorraine hiding in the crystal maze? 👀 #CosmicCrystalDive #InfiniteFractals #LuminousLattice #OtherworldlyZoom #powersofzen #oddlysatisfying #zoomer",
         "Frost ferns shiver in violet dreams 🌿❄️ Can you spot Lorraine hiding in the crystal maze? 👀 #CosmicCrystalDive #InfiniteFractals #LuminousLattice #OtherworldlyZoom #powersofzen #oddlysatisfying #zoomer"
-      ]
+      ],
+      "start_t": 3.5,
+      "orig_file": "review_divein/mineral_heart_ds_divein.mp4",
+      "music": {
+        "bpm": 100,
+        "bar": 2.406,
+        "key": "D minor",
+        "stage": "done",
+        "chosen": "warm",
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/mineral_heart_warm.flac",
+            "aligned": "review/music/candidates/mineral_heart/warm.mp4",
+            "seed": 500,
+            "lock": 8.02,
+            "tags": "chill hypnotic ambient evoking A slow, pulsing drone of crystalline chimes and deep cosmic hums, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/mineral_heart_glassy.flac",
+            "aligned": "review/music/candidates/mineral_heart/glassy.mp4",
+            "seed": 501,
+            "lock": 3.53,
+            "tags": "chill hypnotic ambient evoking A slow, pulsing drone of crystalline chimes and deep cosmic hums, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/mineral_heart_deep.flac",
+            "aligned": "review/music/candidates/mineral_heart/deep.mp4",
+            "seed": 502,
+            "lock": 15.58,
+            "tags": "chill hypnotic ambient evoking A slow, pulsing drone of crystalline chimes and deep cosmic hums, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/mineral_heart_tender.flac",
+            "aligned": "review/music/candidates/mineral_heart/tender.mp4",
+            "seed": 503,
+            "lock": 9.6,
+            "tags": "chill hypnotic ambient evoking A slow, pulsing drone of crystalline chimes and deep cosmic hums, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/mineral_heart_choir.flac",
+            "aligned": "review/music/candidates/mineral_heart/choir.mp4",
+            "seed": 504,
+            "lock": 4.81,
+            "tags": "chill hypnotic ambient evoking A slow, pulsing drone of crystalline chimes and deep cosmic hums, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      }
+    },
+    {
+      "journey": "night_bloom_remix",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/night_bloom_remix_ds_divein.mp4",
+      "title": "",
+      "caption": "",
+      "yt_title": "",
+      "yt_desc": "",
+      "cameo": "lamar",
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-31"
     }
   ]
 }

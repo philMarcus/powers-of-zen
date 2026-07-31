@@ -20,15 +20,19 @@ import promote  # noqa: E402
 from engine import grammar  # noqa: E402
 
 
-def newest_complete(name, total):
-    base = ROOT / "output" / name
-    if not base.exists():
-        return None
+def newest_complete(name, total, bases=None):
+    """Newest vN with a complete frame set. `bases` = output subdirs to search, newest wins.
+    Since the style deck picks the model, renders now land in output/<journey>/ with NO
+    _<model> suffix (the suffix only appears when --model was passed), so callers pass both."""
     best = None
-    for d in sorted([p for p in base.glob("v[0-9]*") if p.name[1:].isdigit()],
-                    key=lambda p: int(p.name[1:])):
-        if len(list((d / "build" / "frames").glob("*.png"))) >= total:
-            best = d
+    for b in (bases or [name]):
+        base = ROOT / "output" / b
+        if not base.exists():
+            continue
+        for d in sorted([p for p in base.glob("v[0-9]*") if p.name[1:].isdigit()],
+                        key=lambda p: int(p.name[1:])):
+            if len(list((d / "build" / "frames").glob("*.png"))) >= total:
+                best = d
     return best
 
 
@@ -41,14 +45,23 @@ def cameo_of(spec):
 
 def main():
     journey, model = sys.argv[1], sys.argv[2]
+    # --src <run dir>: ingest a specific render (e.g. one rendered under a different journey
+    # name, or any vN that isn't the newest). Otherwise search both naming conventions.
+    src_arg = None
+    if "--src" in sys.argv:
+        src_arg = ROOT / sys.argv[sys.argv.index("--src") + 1]
     spec = json.loads((ROOT / "journeys" / f"{journey}.json").read_text())
     _, z, *_ = grammar.compile_journey(spec, 12)
     total = len(z)
     name = f"{journey}_{model}"
-    src = newest_complete(name, total)
-    if not src:
+    src = src_arg or newest_complete(name, total, bases=[name, journey])
+    if not src or not src.exists():
         print(f"no complete render for {name} (need {total} frames)")
         sys.exit(1)
+    # the render's mp4s are named after the render dir's journey, not necessarily `journey`
+    stem = next((p.stem for p in src.glob("*.mp4") if not p.stem.endswith("_divein")
+                 and not p.stem.endswith("_review")), name)
+    name = stem
     (ROOT / "review").mkdir(exist_ok=True)
     (ROOT / "review_divein").mkdir(exist_ok=True)
     pairs = [(src / f"{name}.mp4", ROOT / "review" / promote.variant_basename(journey, model, "zoomout")),
