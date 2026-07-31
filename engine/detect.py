@@ -152,6 +152,40 @@ def detect(pil, query, pick="largest", task=DEFAULT_TASK):
     return bs[0]
 
 
+GROUND = "caption_to_phrase_grounding"
+SEG = "referring_expression_segmentation"
+
+
+def _clean(b, min_side=0.03, min_area=0.006, max_aspect=6.0):
+    """Reject Florence's garbage boxes (edge slivers, full-frame degenerate masks, dust specks)."""
+    w, h = b["w"], b["h"]
+    if w < min_side or h < min_side:      return False
+    if w >= FULLSPAN and h >= FULLSPAN:   return False
+    if b["area"] < min_area:              return False
+    ar = w / h if h else 99.0
+    return 1 / max_aspect <= ar <= max_aspect
+
+
+def locate(pil, query, pick="largest", model="microsoft/Florence-2-large-ft"):
+    """Robust semantic localization: run BOTH Florence tasks (they catch DIFFERENT cases — grounding
+    found the lighthouse, segmentation the galaxy, both the dark planet) and return the best CLEAN
+    box, or None if the object isn't (yet) distinguishable. Semantic → finds a dark planet a
+    brightness heuristic can't. ~2 model calls/frame; real-time isn't needed (Phil 2026-07-31)."""
+    global MODEL
+    if model:
+        MODEL = model
+    cands = []
+    for task in (GROUND, SEG):
+        cands += [b for b in boxes(pil, query, task) if _clean(b)]
+    if not cands:
+        return None
+    if pick == "centermost":
+        cands.sort(key=lambda b: (b["cx"] - 0.5) ** 2 + (b["cy"] - 0.5) ** 2)
+    else:
+        cands.sort(key=lambda b: -b["area"])
+    return cands[0]
+
+
 if __name__ == "__main__":
     # CLI: python3 engine/detect.py <frames_dir> <query> <frame> [frame ...]  -> print boxes
     src = Path(sys.argv[1]); query = sys.argv[2]
