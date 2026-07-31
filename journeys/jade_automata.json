@@ -25,7 +25,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "deep green stone and vermilion inlay",
-      "scene": "a carved jade wall panel fills the view, deep celadon stone cut in relief with coiled cloud scrolls and a heavy ring border, vermilion inlay deep in the grooves, a band of small etched squares along its lower edge",
+      "scene": "a carved jade wall panel standing on the temple terrace, deep celadon stone cut in relief with coiled cloud scrolls and a heavy ring border, vermilion inlay deep in the grooves, broad flagstones at its base, a band of small etched squares along its lower edge",
       "target": "a small etched square, five gold cells inlaid in a stepped arrangement",
       "target_phrase": "a small gold square",
       "cameo": {
@@ -43,7 +43,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "bright gold on celadon",
-      "scene": "a close grid of etched glyph squares fills the view, each square holding five square gold cells set in a stepped arrangement, hairline chisel lines ruling the celadon stone between them",
+      "scene": "a grid of etched glyph squares ruled across a celadon stone wall, each square holding five square gold cells set in a stepped arrangement, hairline chisel lines between them, the grid running on to a carved border beyond",
       "target": "a smooth patch of bare jade, pale celadon stone with faint mottling",
       "target_phrase": "a pale jade patch"
     },
@@ -91,7 +91,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "vermilion fire and deep black",
-      "scene": "a red-orange star fills the black, a shell of fire with tall prominences standing off its limb, a thin vermilion dust ring wide around it",
+      "scene": "a red-orange star set against the black, a shell of fire with tall prominences standing off its limb, a thin vermilion dust ring wide around it",
       "target": "a small celadon-green planet, a pale green disc laced with dark red channels",
       "target_phrase": "a green planet"
     },
@@ -101,7 +101,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "celadon green and vermilion",
-      "scene": "a celadon-green planet fills the view, its curved limb bright against the black, pale cloud bands drawn over broad green continents, vermilion river deltas branching across the lowlands",
+      "scene": "a celadon-green planet hanging in the black, its curved limb bright against the dark, pale cloud bands drawn over broad green continents, vermilion river deltas branching across the lowlands",
       "target": "a range of green mountains, ridge after ridge",
       "target_phrase": "green mountains"
     },

@@ -25,7 +25,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "pale stone grey and pearl",
-      "scene": "a coiled ammonite fossil filling the view, ribbed whorls of pale stone wound tight to a small centre, a thin film of pearl iridescence over the ribs, dark slate matrix around the rim",
+      "scene": "a coiled ammonite fossil set in a flat slate slab, ribbed whorls of pale stone wound tight to a small centre, a thin film of pearl iridescence over the ribs, dark slate matrix around the rim",
       "target": "an open pearl-white chamber, its curved partition edged in branching frilled lace",
       "target_phrase": "an open chamber"
     },
@@ -35,7 +35,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "ivory and pale pink iridescence",
-      "scene": "the inside of one ammonite chamber, a curved pearl-white partition wall filling the view, its edge a dense lace of branching frilled lobes, fine ridges fanned across the ivory surface, a thin oil-slick film of colour over everything",
+      "scene": "the inside of one ammonite chamber, a curved pearl-white partition wall across it, its edge a dense lace of branching frilled lobes, fine ridges fanned across the ivory surface, more chambers open beyond the wall, a thin oil-slick film of colour over everything",
       "target": "a stepped ledge of aragonite crystal, flat pale tiers bright with green and pink colour",
       "target_phrase": "a stepped crystal ledge"
     },
@@ -45,7 +45,7 @@
       "kind": "seam",
       "dur": 4,
       "palette": "green-violet and silver iridescence",
-      "scene": "a field of stepped aragonite terraces filling the view, flat crystal tiers stacked in broad level shelves, straight sharp edges dividing the levels, green and violet iridescence washed across the flat faces"
+      "scene": "a wide field of stepped aragonite terraces, flat crystal tiers stacked in broad level shelves, straight sharp edges dividing the levels, further shelves stacked away behind them, green and violet iridescence washed across the flat faces"
     },
     {
       "name": "barred_galaxy",
@@ -73,7 +73,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "pearl white and warm gold",
-      "scene": "a huge pearl-white planet filling space, one enormous white cloud system coiled across its face, warm gold light along its curved limb, the black of space beyond",
+      "scene": "a huge pearl-white planet hanging in space, one enormous white cloud system coiled across its face, warm gold light along its curved limb, the black of space beyond",
       "target": "a clear round opening in the white cloud",
       "target_phrase": "a gap in clouds"
     },

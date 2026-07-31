@@ -25,7 +25,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "polished brass and midnight blue",
-      "scene": "a brass orrery fills the view, slender curved armatures out from a central hub, concentric graduated rings scored with fine degree marks, small polished planet beads set along the arms, the dark study beyond the metal, empty, no one present",
+      "scene": "a brass orrery standing on a cluttered desk, slender curved armatures out from a central hub, concentric graduated rings scored with fine degree marks, small polished planet beads set along the arms, the dark study beyond the metal, empty, no one present",
       "target": "a small deep-blue planet bead, a smooth round stone sphere with a thin brass collar",
       "target_phrase": "a small blue bead",
       "cameo": {
@@ -43,7 +43,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "deep blue stone and silver white",
-      "scene": "a deep-blue stone bead fills the view, its polished curve covered in fine machined tool-marks, hairline circular grooves ringing the surface, a thin brass collar across one edge, faint metal grain under the polish",
+      "scene": "a deep-blue stone bead set on a slender brass arm, its polished curve covered in fine machined tool-marks, hairline circular grooves ringing the surface, a thin brass collar across one edge, a graduated ring behind it, faint metal grain under the polish",
       "target": "a bright pale fleck of metal, a small angular crystal speck with sharp facets",
       "target_phrase": "a bright metal fleck"
     },
@@ -81,7 +81,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "brass gold and verdigris green",
-      "scene": "a polished brass hub fills the view, three curved arms out from it, concentric engraved rings behind the metal, fine degree marks scored along every band, green verdigris deep in the crevices, warm lamplight across the brass"
+      "scene": "a polished brass hub at the centre of the orrery, three curved arms out from it, concentric engraved rings behind the metal, fine degree marks scored along every band, green verdigris deep in the crevices, warm lamplight across the brass"
     }
   ],
   "music_theme": "a brass orrery alone in a night study, precise and hushed, plucked strings and a low clockwork pulse under a wide luminous swell that lands on the metal-grain morph",

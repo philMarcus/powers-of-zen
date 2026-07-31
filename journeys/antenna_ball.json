@@ -25,7 +25,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "scarlet lacquer and jet black",
-      "scene": "a red ladybug's domed shell fills the view, scarlet lacquer scattered with round black spots, the shell smooth and gently curved",
+      "scene": "the domed shell of a red ladybug, scarlet lacquer scattered with round black spots, the smooth curve running away to the leaf edge beyond",
       "target": "a glossy black insect head, faceted eyes and two slender segmented antennae",
       "target_phrase": "a ladybug's head"
     },
@@ -35,7 +35,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "glossy black and pale silver",
-      "scene": "a ladybug's head fills the view, a glossy black dome with faceted eyes, two slender segmented antennae arcing upward, fine dark hairs along each segment",
+      "scene": "the head of a ladybug at the front of its scarlet shell, a glossy black dome with faceted eyes, two slender segmented antennae arcing upward, fine dark hairs along each segment, green leaf under it",
       "target": "a small smooth black sphere",
       "target_phrase": "a black sphere"
     },
@@ -45,7 +45,7 @@
       "kind": "seam",
       "dur": 4,
       "palette": "glossy black and pale silver, blooming into deep blue-green",
-      "scene": "a smooth glossy black sphere fills the entire view, its surface deep and matte-dark, curving away into shadow at the edges"
+      "scene": "a smooth glossy black sphere at the tip of a dark antenna stalk, its surface deep and matte-dark, curving away into shadow at the edges"
     },
     {
       "name": "planet",
@@ -53,7 +53,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "lacquer blue-green and star black",
-      "scene": "a vast glossy blue-green planet fills all of space, its curved limb gleaming like wet lacquer, broad white cloud bands swirled over oceans and continents, the black of space beyond",
+      "scene": "a vast glossy blue-green planet hangs in space, its curved limb gleaming like wet lacquer, broad white cloud bands swirled over oceans and continents, the black of space beyond",
       "target": "a clear round gap in the cloud bands",
       "target_phrase": "a gap in clouds"
     },

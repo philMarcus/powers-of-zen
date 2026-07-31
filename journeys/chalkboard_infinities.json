@@ -26,7 +26,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "cool blue-white chalk on green-black slate",
-      "scene": "a great chalk spiral fills the slate board, broad white arcs wound out from a circled center, chalked numerals and letters along every arm, faint pale eraser haze over the green-black slate",
+      "scene": "a great chalk spiral chalked across the slate board, broad white arcs wound out from a circled center, chalked numerals and letters along every arm, faint pale eraser haze over the green-black slate",
       "target": "a thick chalk stroke, a broad white line of packed chalk with a crumbled edge",
       "target_phrase": "a thick chalk line"
     },
@@ -36,7 +36,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "warm ivory dust on grey-green slate",
-      "scene": "a single chalk stroke fills the view, a heaped ridge of packed white chalk dust on dark slate, its crest rough and its edges broken into loose grains, shallow scratches in the slate beneath",
+      "scene": "a single chalk stroke laid across a dark slate plain, a heaped ridge of packed white chalk dust, its crest rough and its edges broken into loose grains, shallow scratches in the slate around it",
       "target": "a loose chalk grain, a blocky white crystal with flat angled faces",
       "target_phrase": "a white chalk grain"
     },
@@ -46,7 +46,7 @@
       "kind": "seam",
       "dur": 4,
       "palette": "cold white calcite and pale grey shadow",
-      "scene": "tumbled white calcite blocks fill the whole view, each a rhombic crystal with stepped cleavage terraces, flat faces meeting at sharp angles, pale grey shadow banked in the steps"
+      "scene": "a tumbled scree of white calcite blocks, each a rhombic crystal with stepped cleavage terraces, flat faces meeting at sharp angles, more blocks heaped away behind them, pale grey shadow banked in the steps"
     },
     {
       "name": "chalk_realm",
@@ -72,7 +72,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "cold blue-white chalk on slate black",
-      "scene": "a chalk constellation diagram fills the dark, circled white nodes joined by straight ruled lines, thin arcs and small chalked numerals between them, deep slate black beyond",
+      "scene": "a chalk constellation diagram drawn out on deep slate black, circled white nodes joined by straight ruled lines, thin arcs and small chalked numerals between them, fainter diagrams chalked beyond",
       "target": "a chalked plan of a tiered amphitheater, concentric rows of benches drawn in white",
       "target_phrase": "a drawn amphitheater plan"
     },
@@ -82,7 +82,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "chalk white and warm brass on green-black",
-      "scene": "a chalked plan of a great tiered amphitheater fills the view, concentric rows of benches ringing a broad open floor, aisles ruled in white chalk, a lectern and a long board marked at the base, small brass lamp marks along the aisles, empty, no one present"
+      "scene": "a chalked plan of a great tiered amphitheater drawn across a green-black slate wall, concentric rows of benches ringing a broad open floor, aisles ruled in white chalk, a lectern and a long board marked at the base, small brass lamp marks along the aisles, empty, no one present"
     }
   ],
   "music_theme": "a hushed nocturnal lecture hall of chalk and slate — austere and curious, soft piano figures over bowed strings and a slow pulse, one bright bloom of sound landing on the chalk-grain seam",

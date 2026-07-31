@@ -25,7 +25,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "pale green and soft violet",
-      "scene": "a stand of milkweed filling the view at golden hour, thick green stems and broad ribbed leaves, round crowns of small pink flowers at the top, warm light through the leaf edges, monarch butterflies at rest on several of the blooms",
+      "scene": "a stand of milkweed on the open hillside at golden hour, thick green stems and broad ribbed leaves, round crowns of small pink flowers at the top, warm light through the leaf edges, tall grass and the valley slope beyond, monarch butterflies at rest on several of the blooms",
       "target": "a monarch butterfly, wings held open and flat, deep orange panes divided by heavy black veins",
       "target_phrase": "a monarch butterfly",
       "cameo": {
@@ -53,7 +53,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "violet-grey and pale amber",
-      "scene": "a wing surface filling the entire view, flat scale tiles overlapping in neat ranks, wide bands of orange tiles beside bands of black tiles, every tile ridged along its length, a faint violet sheen at the tile edges",
+      "scene": "the tiled country of a monarch wing surface, flat scale tiles overlapping in neat ranks, wide bands of orange tiles beside bands of black tiles, a heavy black vein ridge crossing them beyond, every tile ridged along its length, a faint violet sheen at the tile edges",
       "target": "an orange scale tile, a flat elongated plate with fine parallel ridges",
       "target_phrase": "an orange scale tile"
     },
@@ -63,7 +63,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "hot orange and deep black",
-      "scene": "a single wing scale filling the entire view, a flat elongated orange plate ribbed with fine parallel ridges from base to tip, slender cross-struts bridging the ridges, the outer edge notched into blunt teeth",
+      "scene": "a single wing scale among its overlapping neighbours, a flat elongated orange plate ribbed with fine parallel ridges from base to tip, slender cross-struts bridging the ridges, the outer edge notched into blunt teeth, more plates ranked behind it",
       "target": "a dark narrow slot, a violet-rimmed opening",
       "target_phrase": "a dark slot"
     },
@@ -91,7 +91,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "violet and pale cyan",
-      "scene": "an enormous planetary nebula filling the void, two vast symmetric lobes of glowing gas spread on either side of a brilliant white core, fine orange and violet filaments veining each lobe, a dark dust band across the waist between them",
+      "scene": "an enormous planetary nebula spread through the void, two vast symmetric lobes of glowing gas spread on either side of a brilliant white core, fine orange and violet filaments veining each lobe, a dark dust band across the waist between them",
       "target": "a deep violet planet, a dark dusk hemisphere and a thin bright limb",
       "target_phrase": "a violet planet"
     },

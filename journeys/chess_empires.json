@@ -25,7 +25,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "obsidian black and pale ivory",
-      "scene": "a giant carved obsidian knight fills the view, a stylized horse head above a fluted collar, the polished black stone cut in broad clean planes, pale flagstones at the foot of the plinth",
+      "scene": "a giant carved obsidian knight standing on its square, a stylized horse head above a fluted collar, the polished black stone cut in broad clean planes, pale flagstones and clipped green hedge at the foot of the plinth",
       "target": "a pale white mineral vein, a bright branching line of ivory",
       "target_phrase": "a pale white vein",
       "cameo": {
@@ -43,7 +43,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "ivory white and deep obsidian",
-      "scene": "the polished stone surface fills the whole view, a broad ivory vein branching through deep obsidian, fine crystalline grain glinting along every edge of the seam",
+      "scene": "a broad ivory vein branching through a plain of deep obsidian, the polished stone running dark and smooth on either side of the seam, fine crystalline grain glinting along every edge",
       "target": "a small dark angular crystal, flat facets in sharp kite and dart shapes",
       "target_phrase": "a dark angular crystal"
     },
@@ -81,7 +81,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "white starlight and black",
-      "scene": "an ivory ring galaxy fills the black, a smooth closed ring of white starlight around a dark open centre, pale dust lanes crossing the ring",
+      "scene": "an ivory ring galaxy set against the black, a smooth closed ring of white starlight around a dark open centre, pale dust lanes crossing the ring",
       "target": "a bright white star, thin dark orbit circles drawn around it",
       "target_phrase": "a bright white star"
     },
@@ -101,7 +101,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "ivory marble and one emerald continent",
-      "scene": "a monochrome marble planet fills the view, an ivory sphere marbled with grey and obsidian, one green forest continent set on its face, black space at the curved limb",
+      "scene": "a monochrome marble planet hanging in the black, an ivory sphere marbled with grey and obsidian, one green forest continent set on its face, black space at the curved limb",
       "target": "a green continent of dense forest",
       "target_phrase": "a green continent"
     },

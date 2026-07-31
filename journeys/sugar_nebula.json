@@ -25,7 +25,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "glossy magenta and cyan",
-      "scene": "a giant spiral lollipop fills the view, a flat disc of hard glossy candy coiled in wide bands of magenta, cyan and white, its surface bright and faintly ridged",
+      "scene": "a giant spiral lollipop standing on the stall counter, a flat disc of hard glossy candy coiled in wide bands of magenta, cyan and white, its surface bright and faintly ridged, neon tubing and racks of wrapped sweets behind it",
       "target": "a crust of coarse sugar crystals, faceted yellow and clear grains",
       "target_phrase": "yellow sugar crystals"
     },
@@ -45,7 +45,7 @@
       "kind": "seam",
       "dur": 4,
       "palette": "clear violet and cyan on black",
-      "scene": "a lattice of clear sugar-glass shards fills the entire view, thin angular plates fused edge to edge into an open honeycomb foam, violet and cyan light along every edge"
+      "scene": "a lattice of clear sugar-glass shards spread through the black, thin angular plates fused edge to edge into an open honeycomb foam, the foam repeating away in every direction, violet and cyan light along every edge"
     },
     {
       "name": "quasar_disk",
@@ -73,7 +73,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "glossy orange, pink and white",
-      "scene": "an enormous gumball planet fills the view, a hard candy shell banded in orange, pink, white and cyan around its curve, black space at its limb",
+      "scene": "an enormous gumball planet hanging in the black, a hard candy shell banded in orange, pink, white and cyan around its curve, black space at its limb",
       "target": "a clear gap in the striped cloud deck",
       "target_phrase": "a gap in clouds"
     },

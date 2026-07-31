@@ -25,7 +25,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "worn bronze and lamplight gold",
-      "scene": "a curled length of old bronze scrollwork filling the view, worn dark metal warm under the lamps, round rain beads strung along every curve, gold light glowing on the wet bronze, pale blue-green crust gathered in the hollows",
+      "scene": "a curled length of old bronze scrollwork along the corner railing, worn dark metal warm under the lamps, round rain beads strung along every curve, gold light glowing on the wet bronze, wet slate cobbles past the stone edge, pale blue-green crust gathered in the hollows",
       "target": "a bloom of blue-green crust, a crusted turquoise patch rimmed with rust orange",
       "target_phrase": "a turquoise patch",
       "cameo": {
@@ -43,7 +43,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "verdigris turquoise and rust orange",
-      "scene": "a verdigris world filling the view, stepped terraces of turquoise crystal stacked in broad plates, powdery mineral bloom in every seam, rust-orange fingers between the terraces over dark bronze ground",
+      "scene": "a verdigris world of stepped terraces, turquoise crystal stacked in broad plates, powdery mineral bloom in every seam, more plates stepped away behind them, rust-orange fingers between the terraces over dark bronze ground",
       "target": "a rust-orange dendrite, a forked spine with fine limbs",
       "target_phrase": "an orange dendrite"
     },
@@ -53,7 +53,7 @@
       "kind": "seam",
       "dur": 4,
       "palette": "rust orange on dark slate, warming toward lamplight gold",
-      "scene": "a branched fractal lattice filling the whole view, rust-orange filaments forked again and again into ever finer limbs across dark ground, a bright node at every fork"
+      "scene": "a branched fractal lattice spread over a dark plain, rust-orange filaments forked again and again into ever finer limbs, more branches running out past them, a bright node at every fork"
     },
     {
       "name": "lamplit_streets",

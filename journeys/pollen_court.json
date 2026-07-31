@@ -25,7 +25,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "weathered pale green and soft gold",
-      "scene": "a weathered green bench slat fills the view, flaking paint and open wood grain running its length, fine cracks in the paint, a pale gold bank of pollen dust heaped along the seam between the boards",
+      "scene": "a weathered green bench slat running away under the blossom trees, flaking paint and open wood grain along its length, fine cracks in the paint, clipped lawn past the slat's edge, a pale gold bank of pollen dust heaped along the seam between the boards",
       "target": "a spiky pollen grain, a small round golden burr studded with blunt spikes",
       "target_phrase": "a spiky golden grain",
       "cameo": {
@@ -43,7 +43,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "cream and bright gold",
-      "scene": "a single pollen grain fills the view, a round golden sphere studded with blunt spikes over its whole curve, its rough gold crust dusted with finer specks, more grains piled below it",
+      "scene": "a single pollen grain in a drift of its neighbours, a round golden sphere studded with blunt spikes over its whole curve, its rough gold crust dusted with finer specks, more grains piled below it",
       "target": "a deep round pore, a dark opening ringed by a raised ridge",
       "target_phrase": "a dark round pore"
     },
@@ -53,7 +53,7 @@
       "kind": "seam",
       "dur": 4,
       "palette": "pale gold and cool violet shadow",
-      "scene": "a reticulated honeycomb mesh fills the entire view, raised golden ridges branching and joining around deep dark pores, the crust between them finely pitted"
+      "scene": "a reticulated honeycomb mesh spread across a golden land, raised ridges branching and joining around deep dark pores, more ridges repeating away into violet shadow, the crust between them finely pitted"
     },
     {
       "name": "canopy",

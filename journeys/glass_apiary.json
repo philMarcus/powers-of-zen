@@ -25,7 +25,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "pale wax white and cool shadowed brown",
-      "scene": "an opened beehive fills the view, tiers of wooden frames drawn thick with wax comb, a haze of bees across the ribbed surfaces, pale wax and deep shadow in the gaps between the frames",
+      "scene": "the open top of a beehive box in the orchard grass, tiers of wooden frames drawn thick with wax comb, a haze of bees across the ribbed surfaces, blossoming branches past the hive's edge, pale wax and deep shadow in the gaps between the frames",
       "target": "a frame of golden honeycomb, a close-packed field of six-sided wax cells",
       "target_phrase": "a golden honeycomb",
       "cameo": {
@@ -43,7 +43,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "blazing amber and molten gold",
-      "scene": "a wall of honeycomb fills the view, a tight hexagonal grid of six-sided wax cells, amber walls lit from within the wax, some caps sealed pale and others open on dark gold",
+      "scene": "a wall of honeycomb running off in every direction, a tight hexagonal grid of six-sided wax cells, amber walls lit from within the wax, some caps sealed pale and others open on dark gold, the wooden frame edge beyond",
       "target": "an open wax cell full of dark gold honey, six straight walls",
       "target_phrase": "a honey-filled cell"
     },
@@ -63,7 +63,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "clear pale gold and cold white glint",
-      "scene": "a clear cubic sugar crystal fills the view, flat square faces and sharp straight edges, hard pale gold planes meeting at right angles",
+      "scene": "a clear cubic sugar crystal among its neighbours, flat square faces and sharp straight edges, hard pale gold planes meeting at right angles, more cubes stacked away behind it",
       "target": "a cubic lattice of bright nodes, small glowing points joined by straight struts",
       "target_phrase": "a glowing lattice"
     },
@@ -101,7 +101,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "honey gold and pale amber",
-      "scene": "an enormous honey-gold planet fills all of space, broad pale-gold and amber cloud bands wrapped around its curve, one dark storm eye in the south, black space beyond the bright limb",
+      "scene": "an enormous honey-gold planet hangs in space, broad pale-gold and amber cloud bands wrapped around its curve, one dark storm eye in the south, black space beyond the bright limb",
       "target": "a clear round gap in the cloud bands",
       "target_phrase": "a gap in clouds"
     },

@@ -25,7 +25,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "midnight indigo with one saffron thread line",
-      "scene": "the face of a half-woven tapestry filling the view, a night landscape worked in dyed thread, indigo hills and a saffron thread river across them, small gold knots scattered through the dark slopes, the ridged texture of the weave raised over every shape",
+      "scene": "the face of a half-woven tapestry stretched on the loom, a night landscape worked in dyed thread, indigo hills and a saffron thread river across them, small gold knots scattered through the dark slopes, bare pale warp threads at its top edge, the ridged texture of the weave raised over every shape",
       "target": "a bare patch of plain weave, saffron and indigo strands crossing over and under",
       "target_phrase": "crossed threads"
     },
@@ -35,7 +35,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "saffron and ivory",
-      "scene": "a strict over-under grid of woven threads filling the view, saffron and ivory strands crossing warp over weft, every crossing a raised square of packed fiber, deep shadow in the channels between",
+      "scene": "a strict over-under grid of woven threads running out in every direction, saffron and ivory strands crossing warp over weft, every crossing a raised square of packed fiber, deep shadow in the channels between",
       "target": "an indigo-dyed fiber, a dark twisted strand with short hairs standing off it",
       "target_phrase": "an indigo thread"
     },
@@ -45,7 +45,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "deep indigo and cold silver",
-      "scene": "a single indigo-dyed fiber filling the view, a thick twisted strand of deep blue, a fine gold strand plied around it, short hairs standing off along its length",
+      "scene": "a single indigo-dyed fiber crossing a field of packed strands, a thick twisted strand of deep blue, a fine gold strand plied around it, short hairs standing off along its length, more strands ranked behind it",
       "target": "braided pale gold fibrils, twisted together into ropes with tight knots",
       "target_phrase": "braided gold strands"
     },
@@ -55,7 +55,7 @@
       "kind": "seam",
       "dur": 4,
       "palette": "pale gold and black, blooming into ghost blue",
-      "scene": "braided filament strands filling the dark, pale gold fibrils twisted together into long ropes, tight knots where the ropes cross, black gaps between them"
+      "scene": "braided filament strands strung through a dark realm, pale gold fibrils twisted together into long ropes, tight knots where the ropes cross, black gaps between them"
     },
     {
       "name": "scaffold",
@@ -73,7 +73,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "saffron white and black",
-      "scene": "a tilted spiral galaxy filling the black, saffron and white arms wound around a blazing gold core, dark dust lanes threaded between the arms",
+      "scene": "a tilted spiral galaxy set against the black, saffron and white arms wound around a blazing gold core, dark dust lanes threaded between the arms",
       "target": "a bright golden star, ringed by sharp bands of dust",
       "target_phrase": "a bright golden star"
     },
@@ -93,7 +93,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "river gold and deep indigo",
-      "scene": "a huge indigo planet filling the view, its night side turned outward, veins of gold river-light over dark continents, a thin bright limb at its edge",
+      "scene": "a huge indigo planet hanging in the dark, its night side turned outward, veins of gold river-light over dark continents, a thin bright limb at its edge",
       "target": "a wide branching river of gold light",
       "target_phrase": "a golden river"
     },

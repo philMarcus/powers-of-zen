@@ -25,7 +25,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "soap teal and white",
-      "scene": "a packed field of soap bubble domes filling the view from above, every dome pressed flat against its neighbours into a lattice of curved polygon walls, the thin walls glowing teal and white where light passes through, small beads of lather caught in the seams",
+      "scene": "a packed field of soap bubble domes seen from above, every dome pressed flat against its neighbours into a lattice of curved polygon walls, the field crowded away to a pale ceramic rim beyond, the thin walls glowing teal and white where light passes through, small beads of lather caught in the seams",
       "target": "a large bubble dome, its curved wall banded with magenta, gold and green",
       "target_phrase": "a large bubble dome",
       "cameo": {
@@ -43,7 +43,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "magenta, gold and violet",
-      "scene": "the curved wall of a single soap bubble filling the view, a thin film banded with wide sweeping stripes of magenta, gold, green and violet colour, the bands folded and marbled across the whole surface, a bright silver rim where the wall curves away into shadow",
+      "scene": "the curved wall of a single soap bubble among its neighbours, a thin film banded with wide sweeping stripes of magenta, gold, green and violet colour, the bands folded and marbled across the whole surface, neighbouring domes pressed to it at the seams, a bright silver rim where the wall curves away into shadow",
       "target": "a cluster of small clear round spheres, packed in tight bright rows",
       "target_phrase": "small round spheres"
     },
