@@ -1,6 +1,6 @@
 {
   "name": "night_bloom_remix",
-  "theme": "engine-2 remix: a bioluminescent night dive — moss cells to quantum sparks, a fold out to a galaxy, then down through a glowing night world back to the moss",
+  "theme": "engine-2 remix: a bioluminescent night dive \u00e2\u20ac\u201d moss cells to quantum sparks, a fold out to a galaxy, then down through a glowing night world back to the moss",
   "style": "liquid_light",
   "format": {
     "beats_per_bar": 4,
@@ -124,6 +124,6 @@
       "scene": "a glowing firefly perched on a dark dewy grass blade, its green lantern body casting light over the moss bed below"
     }
   ],
-  "music_theme": "a glowing bioluminescent night garden, nocturnal, dreamy, alive with soft light",
+  "music_theme": "a glowing bioluminescent night garden, nocturnal, dreamy, alive with soft light, slow deep smooth beats, low fungal wails\n",
   "music_key": "D minor"
 }

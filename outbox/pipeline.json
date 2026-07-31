@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-31 18:19:42",
+    "updated": "2026-07-31 19:33:05",
     "paused_platforms": [
       "tiktok"
     ],
@@ -1392,6 +1392,37 @@
       "yt_title": "",
       "yt_desc": "",
       "cameo": "belle",
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-31"
+    },
+    {
+      "journey": "cave_of_numbers",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/cave_of_numbers_ds_divein.mp4",
+      "title": "",
+      "caption": "",
+      "yt_title": "",
+      "yt_desc": "",
+      "cameo": "janet",
       "state": "review",
       "scheduled": null,
       "platforms": {
