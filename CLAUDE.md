@@ -190,7 +190,26 @@ object the zoom's fixed point — grows in place, no viewpoint shift): v7 still 
 render shows the natural aim. CATALOG: 21 new-schema journeys now — batch 1 (10× 8-bar
 standards, distinct palette/math/space/seam identities) + batch 2 (5 shorts 16 beats ~9.3s
 realm-local micro loops; 5 mediums 24-28 beats ~14-16s with non-cosmic "space": chalk realm,
-glowworm ceiling, CRT-static Ising, sea-foam, bubble-chamber). Composer SKILL: length tiers +
+glowworm ceiling, CRT-static Ising, sea-foam, bubble-chamber). PACING+MORPH DOCTRINE SETTLED
+(Phil, evening): (a) UNIFORM BARS PER SCALE — every card in a journey has the SAME dur (4, or 8
+journey-wide), never mixed; mixed durs made engine-1's arrive-look-plunge curve vary in period
+card-to-card = the "uneven within each scale" feel. Curve itself is engine-1's, unchanged (the
+interim zoom_floor experiment is retired); length tiers now come from CARD COUNT (5 cards ~12s,
+7 ~16s, 11 ~26s). All 22 journeys retimed to dur 4 — bonus: the music grid is now perfectly
+regular (every morph interval 2.333s @103bpm) so alignment locks far cleaner. (b) MORPH =
+engine-1 INTENSITY EVERYWHERE (0.58); a SEAM differs only by MORE FRAMES (seam_morph_frames 12
+vs the normal 6-frame crossfade), never a harder per-frame change ("more frames rather than a
+bigger change within a frame looks better"). fmt.seam_denoise retired. (c) ANACRUSIS ON EVERY
+MORPH: the last ~sixteenth (2 frames @7fpb) before each boundary rises toward the boost so the
+old world shimmers on the pickup and the flip peaks ON the downbeat — mirrors the music's
+pickup-into-strong-beat. (d) TARGET = PLAIN OBJECT (see skill): never location/context, never
+another object's name — the plunge prompt repeats it every frame so named context steals the
+dive (night_bloom's "flower in the lantern light" chased lanterns). 126 targets rewritten.
+(e) COUNTER back ON (17 journeys): skyfog's nonsense counter was a flag-read BUG, not a wrap
+problem — the engine's odometer pins to the register and spins at handoffs, honest across
+seams; the fix had been over-generalized into "false unless monotonic" and darkened the whole
+catalog. false only where a realm is fictional (chalkboard/orrery/cave/static_bloom).
+Composer SKILL: length tiers +
 simile ban + diffuse-linger ban + cameo-window note; VARIATIONS.md: math-pattern/space-
 personality/palette-family/micro-realm/non-cosmic-seam libraries. Engine: cameo init-once
 window (card-0 cameos used to silently never paste — dollhouse's is missing), grammar._frames
