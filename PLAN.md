@@ -945,3 +945,17 @@ dwell ×1.4) becomes a steady glide (1.024 uniform).
    journeys keep the median path.
 
 night_bloom v6 (rendering during the fix) has the OLD seam — keep as the before; v7 = the after.
+
+**v6 FULL-RENDER TRACKER AUDIT (224 frames, 152 approach, 43 detection beats):** 34 honest
+misses / 8 refused candidates / 1 lock — and the one lock was BAD: on the white-flower run two
+consecutive corner-garbage detections (a 5:1 sliver at the frame corner) agreed within 0.18 and
+squeaked a lock-redirect through; the camera stayed bounded (crop authority) but aimed cornerward
+for ~7 frames. Gate tightened from the data: a box accepted as lock/redirect must be
+object-shaped (aspect ≤ 3.5) and steerable-to (center outside the outer 10% margin). ZERO true
+locks overall — night_bloom's worlds are mostly emergent (the target materializes AT the arrival
+morph, not during approach), so the point-phase + arrival-morph pipeline carried the whole video
+— and did it well (the dark-planet card arrived dead-center and filled the frame: the LOGICAL
+zoom, no detector needed). Locks are an opportunistic bonus on discrete-object cards, not the
+backbone; that matches Phil's morph-on-the-beat guardrail. The one structural miss: the
+lantern-garden card drifted to flat paper-cut style ("paper lanterns" content words) and Florence
+finds little on flat art — style-vs-detection interplay to watch.

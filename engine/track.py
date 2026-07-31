@@ -110,8 +110,15 @@ class Tracker:
         # degenerate-box filter: locate()'s _clean only rejects full-span in BOTH dims, but the
         # v4 sweep showed near-full-WIDTH boxes (1.00x0.62, centered) that would agree with each
         # other and confirm a false center lock. An emergence-phase target is never that big.
-        if b is not None and max(b["w"], b["h"]) > 0.8:
-            b = None
+        # Also (v6 lesson, the ONE bad lock of the render): a 5:1 sliver in the outer frame
+        # margin got two agreeing hits and redirected the camera cornerward. A box we'd DIVE
+        # INTO is roughly object-shaped (aspect <= 3.5) and steerable-to (center not jammed in
+        # the outer 10% band) — anything else is Florence grounding noise.
+        if b is not None:
+            ar = b["w"] / b["h"] if b["h"] else 99.0
+            edge = min(b["cx"], 1 - b["cx"], b["cy"], 1 - b["cy"])
+            if max(b["w"], b["h"]) > 0.8 or not (1 / 3.5 <= ar <= 3.5) or edge < 0.10:
+                b = None
         self.last_box, self.last_obs_frame = b, self.frame
         if b is None:
             if self.pending:
