@@ -179,3 +179,22 @@ Zoom floor 1.028 (fmt.zoom_floor) kills the long-card stall. Music side (checked
 schedule_morphs was still sec-based → phantom grid for dur journeys (now uses grammar._frames);
 bpm_for median-bar broke on mixed durs (now bar = format grid: 103bpm/2.33s). night_bloom v6 =
 old-seam "before"; v7 with fixes = "after". antenna_ball's review cut has the same seam defect.
+2026-07-31 (night): v7 VERDICT — SEAM FIXED (frames 41-44 one continuous world vs v6's three
+hard-cut rolls; the forest dissolves coherently into the galaxy over the morph window — gradual
++ gorgeous; if Phil wants it snappier, raise fmt.seam_denoise 0.70→~0.78). First GENUINE
+semantic lock in production (f207: the firefly, object-shaped box, gates refused all 8 garbage
+candidates, zero bad redirects — the v6 corner-sliver lock class is dead). Phil approved the
+v6 object-zoom logic ("looks really good... more logical"). CENTER-SNAP fix committed AFTER v7
+launched (approach_lock_ease 0.3→0.05 = near-fixed-point zoom; ease formula at 0 makes the
+object the zoom's fixed point — grows in place, no viewpoint shift): v7 still snaps; NEXT
+render shows the natural aim. CATALOG: 21 new-schema journeys now — batch 1 (10× 8-bar
+standards, distinct palette/math/space/seam identities) + batch 2 (5 shorts 16 beats ~9.3s
+realm-local micro loops; 5 mediums 24-28 beats ~14-16s with non-cosmic "space": chalk realm,
+glowworm ceiling, CRT-static Ising, sea-foam, bubble-chamber). Composer SKILL: length tiers +
+simile ban + diffuse-linger ban + cameo-window note; VARIATIONS.md: math-pattern/space-
+personality/palette-family/micro-realm/non-cosmic-seam libraries. Engine: cameo init-once
+window (card-0 cameos used to silently never paste — dollhouse's is missing), grammar._frames
+floors at one beat (dur-1 cards no longer break the grid). Review queue: antenna_ball+skyfog →
+new "rejected" state; stormglass alone in review. NEXT: Phil reviews v7 + the seam snappiness
+knob; render the new catalog (shorts are cheap: 112f ≈ 35min); dive-video SKILL update once
+engine-2 is approved; fold repair_seam into dive.py's tail (still open).
