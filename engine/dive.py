@@ -59,6 +59,12 @@ DEFAULTS = {
     "approach_cn": 0.45,  # engine-2.0 object-approach: depth-ControlNet strength (structure whisper)
     "track_cadence": 4,   # TRACKER v3: detect every Nth approach frame (locate ~2.4s/call)
     "track_model": "microsoft/Florence-2-large-ft",
+    # centering rate of the approach aim. The formula cx = tx-(tx-0.5)(1-ease)/z makes the
+    # tracked object the FIXED POINT of the zoom at ease=0 (it grows IN PLACE, the world flows
+    # outward around it — a natural dolly-in, always within crop authority). ease=0.3 snapped
+    # objects to center (Phil: unnatural viewpoint shift); 0.05 = fixed-point feel with a
+    # whisper of compositional drift.
+    "approach_lock_ease": 0.05,
     "denoise": 0.58,
     "steps": 8,           # effective diffusion steps ≈ steps * denoise
     "cfg": 1.5,
@@ -594,7 +600,7 @@ def main():
                     _trk = track.Tracker(ap, cfg["width"], cfg["height"],
                                          rot=cfg["rotate_per_frame"],
                                          cadence=cfg["track_cadence"],
-                                         ease=cfg.get("approach_lock_ease", 0.3),
+                                         ease=cfg["approach_lock_ease"],
                                          model=cfg["track_model"])
                 if _trk.need_repick:
                     _trk.begin(img, seed=i)

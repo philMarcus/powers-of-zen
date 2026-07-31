@@ -170,8 +170,15 @@ grid at compose time), so the pacing must be musical from the start. `dur` is in
 - **FASTER than a bar per scale = SUBDIVIDE a bar among scales, but they MUST ADD UP TO WHOLE BARS**
   so the strong beat always carries a morph: within one bar, 2+2 (morphs on beat 1 and beat 3), or
   1+3, or 1+1+2, or 4×1 for a fast run. Never leave a fractional bar dangling.
-- **The whole video = a WHOLE NUMBER OF BARS.** Sum every `dur`; it MUST be divisible by 4. (A short
-  traverse ≈ 4–6 bars ≈ 12–18s; the full quark↔cosmos ladder ≈ 8 bars ≈ ~24s.)
+- **The whole video = a WHOLE NUMBER OF BARS.** Sum every `dur`; it MUST be divisible by 4.
+- **LENGTH TIERS (Phil 2026-07-31): the catalog needs VARIED LENGTHS, not one size.** At 7
+  frames/beat and 12fps raw, seconds = beats × 7/12 (music bpm then varies feel further):
+  - **SHORT ≈ 9s = 16 beats (4 bars), ~4-5 cards** — a tight realm SLICE (a micro-world that
+    stays microscopic, one interior, one street). Great for realm-local loops.
+  - **MEDIUM ≈ 14-16s = 24 or 28 beats (6-7 bars), ~6-7 cards** — a roam (mathematical/quantum
+    scales, a themed traverse).
+  - **LONG ≈ 26-30s = 44-52 beats (11-13 bars), ~10-13 cards** — the full epic ladder.
+  Don't default everything to 8 bars; pick the tier that fits the concept's natural size.
 - **Allocate bars by the visual journey AND the rhythm.** A scale you open ALREADY CLOSE on doesn't
   earn a whole bar; a big/dramatic descent or the seam deserves a clean strong-beat landing.
 - A **seam** is an instant on-beat morph — give it 1 beat within its bar group.

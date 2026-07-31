@@ -120,7 +120,49 @@ video's overall color identity)
   vermilion stamp) · jade & vermilion (celadon/deep green + red-orange)
 - RULE: check the last few journeys' families and pick a DIFFERENT one.
 
-## Seam pairings that should exist someday
+## LENGTH VARIETY (Phil 2026-07-31 — the catalog must mix durations)
+Three tiers (see journey-composer SKILL for exact bar math): SHORT ≈9s / 4 bars — a tight
+realm slice; MEDIUM ≈14-16s / 6-7 bars — a themed roam; LONG ≈26-30s / 11-13 bars — the
+epic ladder. Short journeys are perfect for staying INSIDE one realm (all-microscopic,
+one interior, one city block); long ones earn the quark↔cosmos traverse. Vary music bpm
+on top for further spread. Don't make every journey 8 bars.
+
+## MICROSCOPIC REALMS BY SETTING — micro-worlds hiding in every scene (short-journey fuel)
+- **domestic interior**: frost ferns on a winter windowpane · soap-foam voronoi rafts in a
+  sink · sugar/salt crystal fields on a counter · steam-bead constellations on a lid ·
+  candle-soot dendrites · tea tannin swirls · mold-garden forests on old bread · dust-mote
+  galaxies in a sunbeam · carpet-fiber jungles with mites as fauna
+- **clothing / fabric**: twill ridge-and-valley weaves · a single dyed fiber's scale bark ·
+  velvet pile forests · button nacre · zipper-tooth ranges · dye platelet terraces
+- **paper / desk**: paper-fiber felt mats · graphite flake stacks · ballpoint ink braids ·
+  eraser crumb boulders · stamp perforation cliffs · pencil cedar grain
+- **city exterior**: rust dendrite blooms on railings · verdigris crystal terraces on bronze ·
+  asphalt aggregate rubble-fields · concrete air-bubble caves · paint-layer strata cliffs ·
+  brick pore canyons · lichen continents on stone · spider-silk cable bridges · pollen dust
+  on a bench · neon-tube plasma interiors
+- **landscape / nature**: leaf stomata breathing-pore fields · sand-grain jewel heaps (each
+  grain a different mineral) · pond-water plankton zoos · lichen/moss micro-forests · spider
+  web dew-bead strings · butterfly scale shingles · feather barbule zips · snow crystal fields
+- **body-adjacent (non-gory)**: fingerprint ridge canyons · hair-strand cuticle shingles ·
+  tear-salt crystal stars on glass
+Each of these can BE a whole short journey (establish the human-scale scene → dive to its
+micro-realm → seam back out) — the micro world is the destination, not a waypoint.
+
+## NON-COSMIC SEAMS + realm-local loops (escape the quark-fuzz→galaxy-fuzz cliché)
+A seam just needs the same VISUAL STRUCTURE read at two scales. Ways home that never touch space:
+- pattern → the same pattern writ large in the ORIGIN scene: ice lattice → the frost-fern
+  "forest" on the same windowpane · rust dendrite → the river delta on a map poster · foam
+  micelles → the soap-bubble raft in the sink you started at
+- texture → landscape: fabric weave → terraced fields · paper fibers → birch forest ·
+  concrete bubbles → cave country · crystal cleavage steps → canyon terraces
+- image-carrier jumps (human-made portals): a TV/phone screen's phosphor grid → the scene it
+  displays · a painting's brushstroke ridges → the painted landscape · a map's contour lines →
+  the coastline itself · a snow-globe interior → the real blizzard outside
+- creature-scale folds: pollen sphere → the tree canopy that shed it · a dew bead on silk →
+  the whole web at dawn · butterfly-scale shingles → a roofscape of clay tiles
+- glowing-things-as-sky: glowworm cave ceilings, city lights from above, lantern gardens,
+  plankton wakes — any of these can PLAY the "cosmos" role so the journey never leaves its
+  world. Genuinely different from yet another galaxy.
 - quantum foam ↔ cosmic web (canonical)
 - cell organelles ↔ nebulae
 - dollhouse ↔ real house (self-similar loop at human scale)
