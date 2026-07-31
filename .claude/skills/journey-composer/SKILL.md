@@ -191,15 +191,35 @@ grid at compose time), so the pacing must be musical from the start. `dur` is in
 - **Allocate bars by the visual journey AND the rhythm.** A scale you open ALREADY CLOSE on doesn't
   earn a whole bar; a big/dramatic descent or the seam deserves a clean strong-beat landing.
 - A **seam** is an instant on-beat morph — give it 1 beat within its bar group.
-- **The FIRST card is a WIDE establishing shot** — its `scene` reads as the whole world with the
-  target a SMALL feature ("a sunlit meadow, wildflowers and grass, a red ladybug on a distant
-  leaf"), NOT a close-up of the target, else we open half-zoomed-in and waste the opening bar.
-  (Every LATER card opens on the previous card's target already filling the view, so its next
-  target is naturally a small feature — only the first card needs this.)
+- **EVERY card that can be a render start must read WIDE — and NEVER "X fills the view."**
+  (Phil 2026-07-31, from frost_window: its frost-fern card said the fern "fills the view", and
+  rendered cold it produced *a white fern standing on a desk in a room* — the model had no world
+  to put it in, so it invented one.) A card's `scene` describes the WORLD at that scale with the
+  target as a FEATURE in it ("a frosted windowpane, ferns of ice spreading across the glass"),
+  never a close-up of one object. Banned in `scene`: "fills the view", "fills the entire view",
+  "seen up close", "filling the frame" — the ENGINE decides how full the frame is; the journey
+  only says what the world is. This matters most on card 0 and on whatever card `render_start`
+  names, but write every card this way — with uniform bars any card may become the start.
 - The engine's planned zoom fills each object to frame EXACTLY at its run's end (the morph beat), so
   the fill lands on the beat; the arrival-beat morph stays as punchy as engine 1.
 - FUTURE (PLAN.md): compose the RHYTHM first, then build video + audio from the SAME rhythm so they
   dance together natively — plus beat-synced FX on non-morph beats (drum hits → on-screen flares).
+
+## `render_start` — begin the RENDER in an abstract realm (Phil 2026-07-31)
+Frame 0 is the only txt2img frame in the whole video; every other frame inherits from it. A
+LITERAL scene is the hardest thing to establish cold (a fern, a desk, a specific room) — the
+model fills in whatever context it likes and the error propagates down the entire chain. An
+ABSTRACT / pattern realm (a lattice, a foam, a star or glowworm field, a fractal grain) is
+almost impossible to get wrong cold, and morphs into anything.
+
+Journeys are CIRCULAR, so the chain may begin at ANY card. Set optional top-level
+`render_start`: "<register name>" and the compiler rotates the list to start there.
+- Prefer an abstract/textural card — cosmic, subatomic, lattice, foam, field-of-lights.
+- This is INDEPENDENT of the playback opening; `scripts/phase_shift.py` still picks the frame
+  the finished video opens on. Render-start is about generation quality, not presentation.
+- **Never pick a start that lands the SEAM card first or last.** Last is worst: the loop-home
+  branch swallows it and the seam disappears entirely. `grammar` warns, but check.
+- Vary it across the catalog — it changes which world is rendered "cleanest".
 
 ## Loop + self-similar seam (still critical)
 Journeys are **circular and self-similar**: the last card dives back into the FIRST world.

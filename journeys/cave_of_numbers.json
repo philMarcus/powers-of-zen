@@ -25,7 +25,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "pale cream stone and cold blue light",
-      "scene": "one great banded stalactite fills the view, a long limestone cone ringed with bands of cream and pale amber, its wet surface cold blue where the ceiling light falls on it, darker stone ranks behind",
+      "scene": "a great banded stalactite hanging from the cave roof, a long limestone cone ringed with bands of amber and cream, pale flowstone walls beyond it",
       "target": "a wide amber calcite band, its surface rippled into stacked ridges",
       "target_phrase": "a wide amber band",
       "cameo": {
@@ -43,7 +43,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "deep amber and dark cream",
-      "scene": "rippled calcite bands fill the view, long curved ridges of deep amber and dark cream stacked one over another, the wet stone glassy along every rim",
+      "scene": "rippled calcite bands across the stone, long curved ridges of deep amber and dark cream, wet mineral shine along every ridge",
       "target": "a glowing rhombic crystal, a slanted box of pale violet-white light",
       "target_phrase": "a glowing rhombic crystal"
     },
@@ -53,7 +53,7 @@
       "kind": "seam",
       "dur": 4,
       "palette": "violet-white glow on black",
-      "scene": "the calcite crystal lattice fills the view, slanted rhombic cells stacked in every direction, each edge a thin line of violet-white light, the spaces between them black"
+      "scene": "the calcite crystal lattice, slanted rhombic cells of pale violet-white stacked away in every direction"
     },
     {
       "name": "glowworm_sky",
@@ -71,7 +71,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "jade green lamps and pale silk",
-      "scene": "a close-packed cluster of glowworm lamps fills the view, each a bead of jade-green light set on black rock, pale silk threads strung down between them in long fine lines",
+      "scene": "a dense field of glowworm lamps strung across the black cave vault, each a bead of jade-green light on a long silk thread, hundreds of them scattered deep into the dark",
       "target": "a wide pale stone arch, an open cavern mouth",
       "target_phrase": "a pale stone arch"
     },
@@ -85,5 +85,6 @@
     }
   ],
   "music_theme": "a hushed underground wonder — deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool",
-  "music_key": "E minor"
+  "music_key": "E minor",
+  "render_start": "glowworm_cluster"
 }

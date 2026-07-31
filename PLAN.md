@@ -901,6 +901,36 @@ Smoke (30f): point-commit → miss-riding → max-authority convergence verified
 NOTE (journey, not engine): DreamShaper renders card 0 as an enchanted moss FOREST, not a moss-leaf
 cell interior — gorgeous but off-script; composer-side fix if it matters.
 
+### ENGINE-2 SETTLED (2026-07-31 evening) — Phil's verdicts, all in the engine now
+- **DEPTH ControlNet STAYS at 0.45.** A/B rendered on frost_window (`--cn 0` vs default, same
+  journey/seed/model/composition — `output/frost_window_cn0/v1` vs `output/frost_window/v1`).
+  Claude read the CN as over-sculpting; PHIL'S CALL, and he's right: with the CN the dive
+  stays coherently on ONE piece of the fern; without it the zoom wanders. Do not re-litigate.
+  (`--cn STRENGTH` exists for future A/Bs; `--plain` also kills tracking, so it is NOT the
+  CN test.)
+- **COMPOSITION: never toward center.** v10 measured every run sliding 0.15 -> 0.05 off-center;
+  the aim eased toward CENTER and the offset is multiplied EVERY frame, so even ease=0.05 ate
+  76% of the composition per card. Now: ease toward the run's FROZEN rule-of-thirds ANCHOR
+  (`points.nearest_third`), rate 0.03, anchor rotating diagonally per scale
+  (`points.THIRDS_ORDER`), redirects gated to the first 10 frames so the heading never swings
+  mid-bar. MEASURED on frost_window: runs hold 0.206->0.226, 0.210->0.226, 0.226->0.223, mean
+  0.220 (v10: 0.100). Phil: "the center issue looks a lot better."
+- **`render_start` (new).** Frame 0 is the only txt2img frame and a LITERAL scene is hardest to
+  establish cold — frost_window opened as "a white fern on a desk in a room". Journeys are
+  circular, so `render_start: "<register>"` rotates the chain to begin at an ABSTRACT/pattern
+  realm (lattice, foam, field of lights). Independent of the playback opening (phase_shift).
+  grammar WARNS if the rotation lands the seam card first/last (last = the loop-home branch
+  swallows the seam entirely — it silently vanishes).
+- **"fills the view" is BANNED in `scene`.** It compiled to broken prose ("moving through X
+  fills the view") AND, as a render start, gave the model a close-up with no world so it
+  invented one (the fern-on-a-desk). 49 scenes across the catalog carried it — the skill's own
+  schema example taught it. Scenes now describe the WORLD with the subject as a feature in it;
+  the ENGINE decides frame fill.
+- **Captions:** BRAND_TAGS now also always append #animation #art #aiart #chillbeats.
+- night_bloom v10 (the reference render) is queued as `night_bloom_remix`; frost_window (CN)
+  queued too. queue_review.py fixed — it still expected `output/<journey>_<model>/`, which the
+  style-deck-picks-model change broke, so NO new render could be ingested.
+
 **OPEN after this:** (a) review v6 vs the engine-1 v4 — did the zoom become LOGICAL while keeping
 the prettiness (the whole point); (b) --plain A/B for the depth-CN look suspicion; (c) fold the
 seam repair into dive.py's exact_loop tail (still open from 07-29); (d) update the dive-video

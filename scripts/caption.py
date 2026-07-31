@@ -35,7 +35,10 @@ import pipeline as pl  # noqa: E402
 VLM_MODEL = "mistral-small3.2:24b"
 # always-on brand hashtags (programmatic) — NO #fyp (dropped 2026-07-29). Journey-specific tags
 # come from the model per video.
-BRAND_TAGS = ["#powersofzen", "#oddlysatisfying", "#zoomer"]
+BRAND_TAGS = ["#powersofzen", "#oddlysatisfying", "#zoomer",
+              # always-on reach set (Phil 2026-07-31): what the work IS (animation/art/AI art)
+              # + the listening mood the music sits in
+              "#animation", "#art", "#aiart", "#chillbeats"]
 
 PROMPT = (
     'You are writing captions for "Powers of Zen" — a hypnotic, seamless Powers-of-Ten-style '

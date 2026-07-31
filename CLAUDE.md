@@ -69,6 +69,16 @@ Everything runs LOCAL and FREE on Phil's RTX 3080 (no paid APIs).
 - ALWAYS run python from the project root (module imports assume it). Use absolute paths.
 - Commit source (not output/, review*, chrome_zen/ — all gitignored).
 
+## ENGINE-2 IS SETTLED (2026-07-31 evening) — read PLAN.md "ENGINE-2 SETTLED" before changing any of this
+Phil's verdicts, now implemented: depth ControlNet **stays 0.45** (his A/B call — it keeps the
+dive coherent on ONE object; don't re-litigate); composition eases to a **frozen rule-of-thirds
+anchor, never center** (measured holding ~0.22 off-center vs v10's 0.05 slide); **uniform bars
+per scale**; morph = engine-1 intensity with SEAMS GETTING MORE FRAMES not more force, plus a
+2-frame anacrusis into every downbeat; seam cards **keep zooming**; `render_start` rotates the
+circular chain so frame 0 lands in an ABSTRACT realm; **"fills the view" banned** in scenes;
+DreamShaper is the house default (we never left it — "Model SDXL" in the ComfyUI log is the
+architecture, and 17 legacy styleless journeys would silently have gone turbo, now fixed).
+
 ## Current state (update this line as it changes)
 2026-07-29: THE SEAM IS SOLVED (see PLAN.md "THE SEAM"). Two parts: (A) grammar.py now
 auto-derives the last register's loop target from `regs[0]` (loop_target|interior), so the

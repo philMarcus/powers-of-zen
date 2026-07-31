@@ -154,3 +154,6 @@
 {"ts": "2026-07-31 12:06:44", "event": "rejected", "journey": "skyfog", "reason": "Phil review 2026-07-31: engine iteration test renders, not production quality"}
 {"ts": "2026-07-31 16:07:12", "event": "edit", "journey": "circuit_city"}
 {"ts": "2026-07-31 16:49:30", "event": "review", "journey": "night_bloom_remix", "detail": "ds/divein (src v10)"}
+{"ts": "2026-07-31 18:01:31", "event": "post", "journey": "circuit_city", "platform": "youtube", "detail": "https://youtube.com/shorts/aiQRUEc9qOA"}
+{"ts": "2026-07-31 18:01:31", "event": "post", "journey": "circuit_city", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbeSdr0uWQe/"}
+{"ts": "2026-07-31 18:19:42", "event": "review", "journey": "frost_window", "detail": "ds/divein (src v1)"}

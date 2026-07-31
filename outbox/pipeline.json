@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-31 16:49:30",
+    "updated": "2026-07-31 18:19:42",
     "paused_platforms": [
       "tiktok"
     ],
@@ -969,7 +969,7 @@
       "yt_title": "Dive into the neon abyss and emerge among the stars 🌌",
       "yt_desc": "",
       "cameo": "adam",
-      "state": "queued",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -978,14 +978,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/aiQRUEc9qOA",
+          "ts": "2026-07-31 18:01:31"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DbeSdr0uWQe/",
+          "ts": "2026-07-31 18:01:31"
         }
       },
       "created": "2026-07-29",
@@ -1361,6 +1361,37 @@
       "yt_title": "",
       "yt_desc": "",
       "cameo": "lamar",
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-31"
+    },
+    {
+      "journey": "frost_window",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/frost_window_ds_divein.mp4",
+      "title": "",
+      "caption": "",
+      "yt_title": "",
+      "yt_desc": "",
+      "cameo": "belle",
       "state": "review",
       "scheduled": null,
       "platforms": {

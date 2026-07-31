@@ -77,6 +77,30 @@ def compile_journey(spec, fps, build="in"):
     # (fmt.seam_denoise is read by dive.py as the seam-morph PEAK — no longer a schedule base)
     style = spec.get("style_suffix", "")
     regs = spec["registers"]
+    # RENDER START (Phil 2026-07-31). Frame 0 is the only txt2img frame — everything else
+    # inherits from it — and a LITERAL scene is the hardest thing to establish cold (frost_window
+    # opened on "a white fern on a desk in a room" instead of a frosted window). Journeys are
+    # CIRCULAR, so the chain may begin at any card: `render_start` names the register to start
+    # from and the list is rotated there. Prefer an ABSTRACT/pattern realm (cosmic, subatomic,
+    # lattice, foam) — it establishes cleanly cold and morphs into anything. This is independent
+    # of the PLAYBACK opening, which phase_shift still chooses later. With uniform bars every
+    # card is the same length, so rotating does not disturb the morph/music grid.
+    rs = spec.get("render_start")
+    if rs:
+        names = [r.get("name") for r in regs]
+        if rs in names:
+            k = names.index(rs)
+            regs = regs[k:] + regs[:k]
+            # a rotation can silently move the SEAM card to an end. Last = the loop-home branch
+            # swallows it (the seam vanishes entirely); first = the semantic jump becomes the
+            # video's opening morph. Both violate "seams live mid-list".
+            if regs[-1].get("kind") == "seam":
+                print(f"[grammar] WARNING render_start {rs!r} puts the SEAM card last — the seam "
+                      f"is lost (loop-home branch). Pick a different start.", flush=True)
+            elif regs[0].get("kind") == "seam":
+                print(f"[grammar] WARNING render_start {rs!r} starts ON the seam card.", flush=True)
+        else:
+            print(f"[grammar] render_start {rs!r} not a register name; using authored order")
 
     phases, zoom, denoise, exponent, cameos = [], [], [], [], []
     approach = []          # per-frame: {phrase, pick} on object-approach beats, else None
