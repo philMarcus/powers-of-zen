@@ -134,3 +134,26 @@ SEAM/MORPH-BIT (the semantic jump, e.g. atom→cosmos / antenna-tip→planet —
 BEAT, no zoom time; the large exp-jump already marks these). Require logical object-containment in
 journeys + the journey generator; richer scene/interior descriptions. Update dive-video SKILL when
 results are good. OPEN: fold seam into dive.py + re-render journeys; TikTok waits (weekend).
+2026-07-31: BIG SESSION — full detail in PLAN.md ("TRACKER v3", "POINT-TRACK", "STYLE is Layer 2").
+(1) STYLE DECK built (Layer 2): styles/deck.json (curated word-only shiny looks, no realism words) +
+engine/style.py + dive.py --style; journeys now set `style`=a deck NAME, composer never writes the look.
+journey-composer SKILL fixed (no reflection/interior over-description; STYLE section). skyfog +
+antenna_ball rewritten (Sonnet) to the fixed skill. (2) COUNTER bug fixed: format.counter was read from
+cfg not the format block → skyfog's counter:false was ignored (nonsense 10^n overlay). (3) TRACKING is
+now THE priority (the point of engine-2 = fix engine-1's illogical zoom). v6 point-track = smooth but
+tracks a POSITION not an object (picks center every run; misses the lighthouse). SEMANTIC DETECTION
+VALIDATED + committed: engine/detect.locate() (both Florence tasks + large-ft) finds the dark planet /
+galaxy / lighthouse that brightness/NCC/point-picker cannot. NEXT SESSION (fable) builds TRACKER v3:
+unified two-stage (point-picker emergence → detect.locate object, handoff=first lock, PROPAGATE the lock
+through the zoom geometry so flickery boxes never lurch), detect ~every 4th frame NOT every frame
+(Florence ~tripled frame time; slow ok, not >1min/frame — the old bug was LOGIC not cadence), steer
+toward an edge-locked object before it escapes. TEST BED = night_bloom (rewrite to new schema first).
+Keep engine-vs-journey variables SEPARATE (skyfog is a bad journey — useless test bed). (4) POSTER: root
+cause of the 3-morning failures found = the DISPLAY sleeps (45min) and Chrome throttled the occluded tabs
+(frozen timers/renderer) so 08:00 clicks didn't register; 6pm (display on) worked. Fix = anti-throttle
+flags in start_chrome_zen.sh (--disable-backgrounding-occluded-windows / --disable-renderer-backgrounding
+/ --disable-background-timer-throttling); also IG dismiss the "Turn on Notifications" nag on the crop
+screen + YT confirm the Create dropdown opened before clicking Upload. NOT marked fixed — watching 6pm
+tonight + 8am tomorrow (system sleep is Never; task fires on time; it was Chrome throttling, not the
+machine). cartographer posted manually (warm). LESSON saved to memory: I ship my first plausible cause
+as the diagnosis — hold ≥2 hypotheses, get ground truth, reproduce before claiming.

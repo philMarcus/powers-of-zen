@@ -789,3 +789,58 @@ frames, no jumps), faster (no per-frame masks). Dropped the width-planned-zoom (
 scheduled x10 arrive-look-plunge does the filling. Also fixed: format.counter was ignored (read from cfg
 not format) so skyfog/antenna_ball's counter:false silently rendered a nonsense 10^n overlay. TODO: save
 a per-frame aim/point debug overlay so we can SEE tracking without re-deriving it; revisit fill-on-beat.
+
+## TRACKER v3 — the plan to BUILD next (2026-07-31, for the fresh session)
+The whole reason engine-2 exists: fix the ILLOGICAL zoom of the (pretty) engine-1 videos — zoom into
+the RIGHT object. Object tracking is THE priority ("the whole game" — Phil). Status of the attempts:
+- v5 (per-frame Florence base + referring_expression_segmentation, reseat aim to box center): lurched.
+  Florence missed most frames on muddy scenes; sporadic garbage hits yanked the aim.
+- v6 (point-track: pick ONE contrast point/run, ease to center, hold; NO Florence): smooth, no lurch —
+  BUT the picker picks near-CENTER every run (post-arrival the salient thing is already centered), so
+  it tracks a POSITION not an OBJECT. It misses the lighthouse, doesn't stay on a specific drop. Proved
+  by replaying the aim over v6 frames (scripts pattern: reconstruct aim offline, overlay on frames).
+- Brightness/NCC probes: fail — the intended object isn't reliably the brightest (a DARK planet on a
+  BRIGHT nebula → brightness tracks the background) and it GROWS as we zoom (template can't match).
+
+VALIDATED FOUNDATION (committed): `engine/detect.locate(pil, query)` — semantic detection WORKS when
+the object is present + big enough. Runs BOTH Florence tasks (caption_to_phrase_grounding got the
+lighthouse; referring_expression_segmentation got the galaxy; both got the dark planet) on
+Florence-2-large-ft, returns the best CLEAN box (clean_box filter). This is the OBJECT-phase detector.
+
+THE DESIGN TO BUILD — unified two-stage, one loop (keep Phil's two-stage, rethink the handoff):
+- Each detection beat, run detect.locate for the named target_phrase.
+- OBJECT phase: when it locks, aim at it and FOLLOW it by PROPAGATING the lock through the KNOWN zoom
+  geometry between detections (zoom_transform re-centers on the aim; a locked point maps to a known new
+  spot each frame) — so a flickery/missed box never reseats/yanks the camera (v5's bug). New detections
+  only GENTLY correct the aim.
+- POINT phase: before the first lock (object still a sub-detectable speck), aim at the emergence point
+  (points.pick_point / center) and keep zooming gently while locate() keeps trying.
+- HANDOFF = first confident lock; geometry makes it seamless (no hard mode switch).
+- EDGE CASE (Phil): if the object locks NEAR a screen edge, that's fine — but STEER toward it before it
+  escapes the frame (don't let it drift off before we recentre).
+
+TIMING (Phil's clarification, get this right):
+- "Real-time" only meant the TECH exists (real-time video object tracking is solved) — NOT that we must
+  detect every frame. We generate offline; we can be SLOW, just not VERY slow (>~1 min/frame = too slow).
+- Florence per-frame ~TRIPLED frame-gen time before → do NOT detect every frame. ~every 4th frame
+  (old REDETECT=4) is fine — we don't zoom fast enough to lose the object between beats. The thing that
+  HURT before was the tracking LOGIC (reseat lurch / wrong config / center-picking), NOT the cadence.
+- detect.locate = 2 tasks on large-ft = heavier than one base call; watch frame time and TUNE: cadence
+  (~every 4 frames), maybe base-ft or grounding-only for speed, geometry-propagate on the in-between
+  frames. Measure, don't guess.
+
+TEST BED: night_bloom (a known-cool engine-1 journey, live, distinct objects: spore/spark/galaxy/
+planet/lantern/flower/firefly). MUST be rewritten to the new schema first (scene/target/target_phrase/
+kind/dur + a style-deck name) — schema+grammar+pacing all changed 2026-07-30, so its old render can't be
+reproduced and it has no target_phrase. Develop the tracker against existing frames (frame-agnostic),
+then render night_bloom-new WITH tracking and compare to the engine-1 version (did we make the zoom
+LOGICAL while keeping the prettiness?). Keep engine-vs-journey variables SEPARATE (don't confound —
+skyfog is a bad journey AND bad engine test; that's why it was useless as a test bed).
+
+ALSO OPEN (separate from tracking, do NOT confound): (a) depth-ControlNet is a suspect for the ugly
+"land/mountain" look — engine-1 had NONE and looked better; it may carve mountainous relief into cosmic
+scenes (f95). A `--plain` flag (render any journey as pure feedback zoom, no CN/track) would A/B it.
+(b) Pacing: the arrive-look-plunge curve decelerates to near-zero mid-scale, so long dives SLOW into
+boring diffuse scenes (yellow fog); engine-1 was steadier — revisit the curve / don't give diffuse
+scales a 2-bar linger. (c) STYLE: skyfog/antenna_ball drifted photoreal → fixed via the style deck; the
+back half went orange-mono under stormlight (revisit). Journey fixes go into the COMPOSER, not one-offs.
