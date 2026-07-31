@@ -421,13 +421,19 @@ def _yt_upload_dialog_open():
 def _yt_open_upload(tab, tries=5):
     """Open Create->Upload and confirm the upload dialog REALLY opened (the drag-drop panel is on
     screen), dismissing overlays and retrying if the cold-session nags swallowed the click."""
+    item_sel = ("[...document.querySelectorAll('tp-yt-paper-item,ytcp-text-menu-item,[role=menuitem]')]"
+                ".find(e=>/upload video/i.test(e.textContent)&&e.offsetParent)")
     for _ in range(tries):
         _yt_close_overlays(tab)
         tab.eval("[...document.querySelectorAll('button,ytcp-button')]"
                  ".find(e=>/^create$/i.test(e.textContent.trim())||/^Create$/.test(e.getAttribute('aria-label')||''))?.click()")
-        time.sleep(1.3)
-        tab.eval("[...document.querySelectorAll('tp-yt-paper-item,ytcp-text-menu-item,[role=menuitem]')]"
-                 ".find(e=>/upload video/i.test(e.textContent)&&e.offsetParent)?.click()")
+        # CONFIRM the Create dropdown actually opened (the 'Upload video' item is on screen) before
+        # clicking it — on the cold dashboard the menu renders slowly, so the old blind item-click
+        # hit nothing and we waited 12s for a dialog that never came (2026-07-31 08:01 file_input
+        # flag). Retry the Create click until the menu shows, THEN click the item.
+        if not wait_for(tab, f"({item_sel})?true:null", 6, 0.5):
+            continue
+        tab.eval(f"({item_sel})?.click()")
         if wait_for(tab, _yt_upload_dialog_open(), 12):
             return True
     return False
@@ -577,6 +583,7 @@ def _ig_select_original_crop(tab, tries=3):
     (_ig_crop_is_original) — NOT via video ratio, which is always the source ratio and silently
     false-passed before. Returns True only when the whole video is shown."""
     for _ in range(tries):
+        _ig_dismiss(tab)   # a re-popped notifications nag can cover the crop icon between tries
         if _ig_crop_is_original(tab) is True:
             return True
         # open the Select crop (aspect) popup — svg[aria-label="Select crop"]
@@ -650,6 +657,12 @@ def post_instagram(video_rel, caption, dry_run):
     expect(wait_for(tab, "(function(){const v=document.querySelector('[role=dialog] video');"
                          "return v&&v.readyState>=1&&v.getBoundingClientRect().height>60?true:null})()", 25, 0.5),
            "instagram", "crop_video", tab, "crop preview video never finished loading")
+    # CLEAR the "Turn on Notifications" nag that a cold session pops up ON the crop screen — it
+    # covered the crop controls so the Select-crop→Original click never landed (2026-07-31 08:01
+    # flag: headings ["Suggested Posts","Turn on Notifications","Crop"]; Phil: "it never clicked to
+    # open the crop thing"). _ig_dismiss's regex only hits Not Now/Dismiss/Skip — it CANNOT touch
+    # the composer's Next/Share/Back, so it's safe here inside the flow.
+    _ig_dismiss(tab)
     # select the ORIGINAL (phone 9:16) crop — IG defaults to square and quietly cropped the
     # last three posts. Fail loud rather than post a squared video.
     expect(_ig_select_original_crop(tab, tries=5), "instagram", "crop_original", tab,
