@@ -573,6 +573,13 @@ def main():
     # (scripts/track_lab.py overlay). Row "i" = the frame the state was OBSERVED in (i-1: the
     # tracker sees the previous frame and aims the transform that generates frame i).
     tlog = open(out_dir / "build" / "track.jsonl", "a" if start_i else "w")
+    # start frames of seam-arrival phases (for the pre-beat morph anacrusis below)
+    seam_starts = set()
+    _acc = 0
+    for _pi, _ph in enumerate(phases):
+        if _pi in seam_arrivals:
+            seam_starts.add(_acc)
+        _acc += _ph["frames"]
     for i in range(start_i, total):
         prompt, prev_prompt, k, p_idx = phase_info(phases, i)
         in_transition = prev_prompt is not None and k < T
@@ -630,6 +637,15 @@ def main():
                     boost = (cfg["arrival_denoise_boost"] if p_idx in arrivals
                              else cfg["transition_denoise_boost"])
                 den = min(0.85, base_den + boost)
+                # SEAM ANACRUSIS (Phil 2026-07-31): like the music's pickup, the morph BEGINS a
+                # sixteenth (~2 frames at 7fpb) BEFORE the bar line and peaks ON it — the old
+                # world shimmers in anticipation (denoise rises, prompt unchanged), then the new
+                # world's prompt lands on the downbeat at the peak. Engine-1 register morphs
+                # stay as they were (boost after the boundary).
+                dist = next((s - i for s in seam_starts if 0 < s - i <= 2), None)
+                if dist is not None:
+                    peak = spec.get("format", {}).get("seam_denoise", 0.70)
+                    den = min(0.85, max(den, base_den + (peak - base_den) * (0.7 if dist == 1 else 0.4)))
             mask_ref = None
             if cfg["build"] == "out":
                 fed, box = shrink_transform(img, z, cx, cy)
