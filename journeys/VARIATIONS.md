@@ -69,6 +69,57 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
 - cosmic-ray shower cascading; quantum foam boiling; string-loop hairballs
 - groups of quarks (visibly up-down-up e.g.) forming hadrons and mesons
 
+## Mathematical / structural patterns for the SMALL scales (Phil 2026-07-31: the key
+## differentiator — every journey's micro-realm should look structurally DIFFERENT)
+- tilings: Penrose kites-and-darts · aperiodic hat-monotile fields · hyperbolic
+  {7,3} tiling shrinking to a rim · Islamic girih star-lattices
+- growth/aggregation: diffusion-limited aggregation (ink feathering in water,
+  frost fingers) · dendritic snowflake arms · lightning Lichtenberg branches
+- automata & fields: Game-of-Life glider fleets etched as glowing glyphs ·
+  reaction-diffusion Turing spots/stripes (animal-coat math) · Ising magnetic
+  domains flickering · percolation crack-lattices
+- waves & resonance: Chladni sand figures on a vibrating plate · standing-wave
+  interference lattices · moiré fringes between two drifting grids · caustic
+  light-webs (pool-bottom shimmer)
+- curves & attractors: Lorenz/strange-attractor ribbon nests · KAM orbit tori ·
+  Hilbert space-filling curve as glowing circuitry · knot-theory braids
+- fractals proper: Mandelbrot/Julia tendril coastlines · Apollonian gasket foam ·
+  Menger sponge canyons · Romanesco phyllotaxis spires
+- structure: gyroid & minimal-surface labyrinths (butterfly-wing photonics) ·
+  E8/quasicrystal starburst projections · Voronoi shatter · geodesic domes all
+  the way down · tesseract/4-D wireframe projections
+- USE: pick ONE family per journey and reskin it to the theme (jade-carved
+  automata, sugar-crystal Penrose, brass Chladni). Never repeat the previous
+  video's family.
+
+## SPACE treated differently every time (Phil 2026-07-31: the space stretch of each
+## video must have its own astronomical personality — never default nebula+spiral)
+- structures: globular cluster swarm (a million-bee hive of stars) · lenticular
+  dust-lane disk · colliding pair with tidal bridges · barred spiral · ring
+  galaxy · supernova-remnant lace veil · Herbig-Haro jets from a cradle star ·
+  butterfly planetary nebula · pillars-of-creation columns
+- exotic physics looks: gravitational-lens Einstein rings and arcs · magnetar
+  field-line cages · pulsar lighthouse beams sweeping · quasar accretion disk
+  with jet · dark-matter scaffold (ghost-blue web behind the visible) · black
+  hole with lensed photon ring (we have black_hole — vary the look if reused)
+- planetary-system variety: Saturn's real hexagonal pole storm · aurora curtains
+  over a gas giant · Oort comet halo · rogue dark planets with city-fire veins ·
+  tidally-shredded moon rings · binary sunset worlds
+- painterly modes: ink-wash sumi-e cosmos · stained-glass nebula · embroidery
+  stitched starfield · candy-colored accretion swirl — match the journey's theme.
+
+## PALETTE FAMILIES — assign each journey ONE home family so the catalog stays varied
+(adjacent cards still contrast in temperature WITHIN the family; the family is the
+video's overall color identity)
+- candy neon (magenta/cyan/lemon) · jewel tones (ruby/sapphire/emerald on black)
+- pastel dawn (peach/lavender/mint) · ember & ash (orange fire on charcoal)
+- arctic (ice blues/white/silver) · bioluminescent deep (teal/green glow on black)
+- gilded (gold/bronze/verdigris) · ultraviolet noir (violet/electric blue/black)
+- monochrome + ONE accent (ivory/obsidian + a single emerald or vermilion) ·
+- iridescent pearl (oil-slick rainbow on cream) · sumi-e ink (black/paper + one
+  vermilion stamp) · jade & vermilion (celadon/deep green + red-orange)
+- RULE: check the last few journeys' families and pick a DIFFERENT one.
+
 ## Seam pairings that should exist someday
 - quantum foam ↔ cosmic web (canonical)
 - cell organelles ↔ nebulae

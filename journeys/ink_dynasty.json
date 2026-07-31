@@ -1,0 +1,119 @@
+{
+  "name": "ink_dynasty",
+  "theme": "a sumi-e ink cosmos — an empty moonlit calligraphy studio down through one brushstroke's feathering ink to the carbon lattice inside the soot, which becomes the hexagonal pole storm of a colossal ringed planet, then a fall down ink-wash mountains back to the studio",
+  "style": "stormlight",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": false
+  },
+  "registers": [
+    {
+      "name": "studio",
+      "exp": 0.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink black, paper cream and cold moon silver",
+      "scene": "a moonlit calligraphy studio seen wide from the open doorway, empty, no one present, a long low lacquered table beneath a paper lattice window, bamboo-handled ink brushes racked in a row, a carved stone inkstone and a black ink stick beside them, a long silk scroll unrolled across the table with ink-wash ridges painted on its cream paper, one small square vermilion seal stamped bright at the scroll's edge, cold moonlight across the plank floor",
+      "target": "the long silk scroll unrolled on the table, cream paper spread flat, black ink-wash ridges painted across it, one small square vermilion seal at its edge",
+      "target_phrase": "an unrolled paper scroll",
+      "loop_target": "the moonlit calligraphy studio seen wide from the open doorway, brushes and a stone inkstone beside a long unrolled scroll on the low lacquered table"
+    },
+    {
+      "name": "scroll",
+      "exp": -0.5,
+      "kind": "zoom",
+      "dur": 2,
+      "palette": "paper cream and vermilion",
+      "scene": "an unrolled silk scroll spread flat across the whole view, cream paper grain everywhere, ink-wash ridges and pale mist bands brushed over it, a small square vermilion seal stamped at one corner",
+      "target": "one bold black brushstroke among the painted ridges, a broad band of dense ink with a blunt head and a split dry-brush tail",
+      "target_phrase": "a bold black brushstroke",
+      "cameo": {
+        "sprite": "output/mascots/canon/aleksey.png",
+        "pos": [
+          0.28,
+          0.68
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "brushstroke",
+      "exp": -1.6,
+      "kind": "zoom",
+      "dur": 2,
+      "palette": "jet black and pale cream",
+      "scene": "a single bold black brushstroke fills the view, dense wet ink at its core, dry-brush streaks combed along its length, bare cream paper showing through the split tail",
+      "target": "the stroke's feathered edge where ink meets bare paper, a fringe of fine black filaments along the paper fibers",
+      "target_phrase": "a feathered ink edge"
+    },
+    {
+      "name": "ink_feathering",
+      "exp": -3.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink black and pale fiber cream",
+      "scene": "wet paper fiber country, a branching black thicket of ink fingers through a pale mesh of cream fibers, every finger split into finer and finer twigs down to hairline threads, small beads of ink caught in the weave",
+      "target": "one round black soot grain lodged in the fibers, a matte dark bead with a faint silver rim",
+      "target_phrase": "a black soot grain"
+    },
+    {
+      "name": "soot",
+      "exp": -6.7,
+      "kind": "zoom",
+      "dur": 2,
+      "palette": "matte black and cold silver",
+      "scene": "a dark fluid realm packed with round carbon soot grains, matte black spheres in clumped chains, faint silver rim light on each, fine black dust between them",
+      "target": "a bright six-sided cell grid inside one grain, glowing carbon bonds drawn in white",
+      "target_phrase": "a glowing hexagon lattice"
+    },
+    {
+      "name": "carbon_lattice",
+      "exp": -9.5,
+      "kind": "seam",
+      "dur": 2,
+      "palette": "glowing white on black, warming toward pale cream",
+      "scene": "a flawless carbon lattice fills the whole view, a grid of six-sided cells drawn in glowing white bonds on deep black, one small bright atom at every node"
+    },
+    {
+      "name": "ringed_planet",
+      "exp": 8.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink black, cream rings and one vermilion star",
+      "scene": "a colossal ringed gas planet in a black ink-wash cosmos, broad rings of pale cream light past its curve, cloud bands brushed over it in sweeping washes of black and silver, pale star-mist washed across the void, one small vermilion star in the black",
+      "target": "a vast six-sided storm crowning the planet's pole, six straight walls of ink-dark cloud around a dark round eye",
+      "target_phrase": "a hexagonal storm"
+    },
+    {
+      "name": "pole_storm",
+      "exp": 7.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "storm black and silver white",
+      "scene": "an immense six-sided storm fills the view, six straight walls of banded ink-dark cloud, silver-white vapor combed along every edge, a dark round eye at the center",
+      "target": "the storm's dark round eye, an open well of still air, pale ink-wash mountain ridges through the opening",
+      "target_phrase": "a dark storm eye"
+    },
+    {
+      "name": "river_gorge",
+      "exp": 4.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver mist and ink black",
+      "scene": "a mountain river gorge in black ink wash seen from high above, layered peaks pale in silver mist, pine-crowned crags over a black river between the cliffs, a pale moon low behind the farthest ridge",
+      "target": "a small wooden pavilion on stilts at the river's edge, paper windows warm with lamplight, tiled roof curling at the eaves",
+      "target_phrase": "a small wooden pavilion"
+    },
+    {
+      "name": "water_pavilion",
+      "exp": 1.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm lamp gold and ink black",
+      "scene": "a small wooden pavilion on stilts over black water, empty, no one present, paper lattice windows warm with lamplight, tiled roof curling at the eaves, pine branches and mist banks at its rail, an open doorway on the water side"
+    }
+  ],
+  "music_theme": "a moonlit ink-painting cosmos — sparse plucked strings and a low bamboo flute over deep resonant drones, hushed and vast, one struck bell landing on the lattice-to-storm seam and taiko weight through the storm before the quiet fall home",
+  "music_key": "E minor"
+}

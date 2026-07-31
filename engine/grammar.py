@@ -63,8 +63,10 @@ def _frames(reg, fmt, fps):
     if reg.get("dur") is not None:
         # dur is in BEATS (a bar = 4). ~7 frames/beat -> a 1-bar scale = 28 frames = ~2.3s at 12fps
         # (matching the old ~2.4s/register), a 2-bar linger = 56. Keeps the video a sane length.
+        # Floor = ONE BEAT (not 8): the old max(8,...) bumped a dur-1 seam card to 8 frames,
+        # pushing every later morph 1 frame off the bar grid (found via sugar_nebula, 225≠224).
         fpb = fmt.get("frames_per_beat", 7)
-        return max(8, round(reg["dur"] * fpb))
+        return max(fpb, round(reg["dur"] * fpb))
     sec = fmt.get("sec_per_scale", fmt.get("sec_per_decade", 2.4))
     return max(12, round(reg.get("sec", sec) * fps))
 

@@ -1,0 +1,96 @@
+{
+  "name": "ammonite_spiral",
+  "theme": "an iridescent ammonite fossil on a dusk tide-pool shore opens into its own nacre chambers and aragonite terraces, folds out to a barred spiral galaxy, and comes home down the coastline",
+  "style": "crystalline",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": false
+  },
+  "registers": [
+    {
+      "name": "tidepool_shore",
+      "exp": 2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "dusk gold and wet slate",
+      "scene": "a wide rocky tide-pool shore at dusk seen from a low headland, dark slate ledges wet from the tide, shallow pools and ribbons of cream foam between them, kelp and barnacle crust in the cracks, one coiled fossil shell set in a flat slab at the water's edge",
+      "target": "a coiled fossil shell set in flat slate, ribbed spiral whorls of pale stone, a faint oil-slick sheen over its ridges",
+      "target_phrase": "a coiled fossil shell",
+      "loop_target": "the wide rocky tide-pool shore at dusk seen from a low headland, dark slate ledges, shallow pools and ribbons of cream foam"
+    },
+    {
+      "name": "ammonite",
+      "exp": -0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale stone grey and pearl",
+      "scene": "a coiled ammonite fossil filling the view, ribbed whorls of pale stone wound tight to a small centre, a thin film of pearl iridescence over the ribs, dark slate matrix around the rim",
+      "target": "an open chamber broken into the outer whorl, a curved pearl-white partition inside it, its edge a dense lace of branching frilled lobes",
+      "target_phrase": "an open chamber"
+    },
+    {
+      "name": "nacre_chamber",
+      "exp": -2,
+      "kind": "zoom",
+      "dur": 2,
+      "palette": "ivory and pale pink iridescence",
+      "scene": "the inside of one ammonite chamber, a curved pearl-white partition wall filling the view, its edge a dense lace of branching frilled lobes, fine ridges fanned across the ivory surface, a thin oil-slick film of colour over everything",
+      "target": "a stepped ledge of aragonite crystal on the wall, flat tiers of pale mineral stacked in broad shelves, their faces bright with green and pink colour",
+      "target_phrase": "a stepped crystal ledge"
+    },
+    {
+      "name": "aragonite_terraces",
+      "exp": -5,
+      "kind": "seam",
+      "dur": 2,
+      "palette": "green-violet and silver iridescence",
+      "scene": "a field of stepped aragonite terraces filling the view, flat crystal tiers stacked in broad level shelves, straight sharp edges dividing the levels, green and violet iridescence washed across the flat faces"
+    },
+    {
+      "name": "barred_galaxy",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber and cream starlight",
+      "scene": "a barred spiral galaxy in the black, a broad glowing bar of amber starlight across its core, two great arms curved out from the bar's ends, dark dust lanes threading between them",
+      "target": "a dense knot of stars in one outer arm, a tight cluster of cream points packed close together",
+      "target_phrase": "a star cluster"
+    },
+    {
+      "name": "star_lattice",
+      "exp": 14,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver-blue and violet",
+      "scene": "a dense field of stars set in interlocking curved rows, thousands of silver-blue points in a tight seed-pattern lattice, faint violet gas in the gaps between them",
+      "target": "a pearl-white planet among the stars, one broad white cloud band wound around its globe",
+      "target_phrase": "a white planet"
+    },
+    {
+      "name": "pearl_planet",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pearl white and warm gold",
+      "scene": "a huge pearl-white planet filling space, one enormous white cloud system coiled across its face, warm gold light along its curved limb, the black of space beyond",
+      "target": "a clear opening at the centre of the cloud coil, dark green sea and pale surf in the gap",
+      "target_phrase": "a gap in clouds"
+    },
+    {
+      "name": "coastline",
+      "exp": 3.5,
+      "kind": "zoom",
+      "dur": 8,
+      "palette": "slate grey and sea green",
+      "scene": "a rugged coastline seen from high above, dark slate headlands and long reefs edged with cream surf, pale tide flats and scattered pools between the rocks, deep green water in the bays",
+      "cameo": {
+        "sprite": "output/mascots/canon/tina.png",
+        "pos": [0.31, 0.66],
+        "size": 0.13
+      }
+    }
+  ],
+  "music_theme": "a tidal iridescent hush — slow shimmering bells over a deep ocean swell, one bright crystalline bloom landing on the crystal-terrace-to-galaxy seam",
+  "music_key": "E minor"
+}

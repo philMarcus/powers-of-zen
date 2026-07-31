@@ -25,7 +25,9 @@ ROOT = Path(__file__).resolve().parent.parent
 PIPELINE = ROOT / "outbox" / "pipeline.json"
 TELEMETRY = ROOT / "outbox" / "telemetry.jsonl"
 PLATFORMS = ["tiktok", "youtube", "instagram"]
-STATES = ["rendered", "review", "queued", "live", "failed"]
+STATES = ["rendered", "review", "queued", "live", "failed", "rejected"]
+# "rejected": reviewed and turned down (kept for the record; no dashboard tab shows it, the
+# scheduler never picks it). Re-promote by setting state back to "review".
 
 
 def load():

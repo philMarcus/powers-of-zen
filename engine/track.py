@@ -83,6 +83,7 @@ class Tracker:
         self.frame = 0                    # frames into this run
         self.need_repick = True           # begin() pending (fresh run, or track escaped)
         self.last_box = None              # last raw detection (for the debug log)
+        self.last_obs_frame = -1          # run-frame of that detection (log only fresh ones)
 
     # -- emergence -------------------------------------------------------------
     def begin(self, img, seed=0):
@@ -111,7 +112,7 @@ class Tracker:
         # other and confirm a false center lock. An emergence-phase target is never that big.
         if b is not None and max(b["w"], b["h"]) > 0.8:
             b = None
-        self.last_box = b
+        self.last_box, self.last_obs_frame = b, self.frame
         if b is None:
             if self.pending:
                 self.pending["misses"] += 1
@@ -171,7 +172,7 @@ class Tracker:
         row = {"run_frame": self.frame, "phase": self.phase,
                "track": [round(self.tx, 4), round(self.ty, 4)],
                "size": round(self.size, 4)}
-        if self.last_box:
+        if self.last_box and self.last_obs_frame == self.frame:   # fresh this frame, not stale
             row["det"] = [round(self.last_box["cx"], 4), round(self.last_box["cy"], 4),
                           round(self.last_box["w"], 4), round(self.last_box["h"], 4)]
         if self.pending:

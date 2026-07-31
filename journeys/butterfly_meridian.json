@@ -1,0 +1,116 @@
+{
+  "name": "butterfly_meridian",
+  "theme": "a monarch migration at golden hour — down a milkweed stand into one monarch's wing, through the structural-colour gyroid labyrinth inside a single wing scale, out along ribbons of stars to the Butterfly nebula, and home down a violet dusk planet's golden rivers to the same valley",
+  "style": "enchanted_wild",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": false
+  },
+  "registers": [
+    {
+      "name": "valley_meadow",
+      "exp": 2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm gold and meadow green",
+      "scene": "a wide hillside meadow at golden hour seen from the slope at eye level among tall grass and wildflowers, the whole valley open below and the low sun beyond, the warm air over the valley thick with countless small orange and black monarch butterflies, a stand of milkweed further down the slope",
+      "target": "a stand of milkweed on the meadow slope, thick green stems topped with round crowns of small pink flowers, broad leaves below them",
+      "target_phrase": "a pink flower cluster",
+      "loop_target": "the sunlit hillside meadow at golden hour, tall grass and wildflowers on the slope, the warm valley air over it full of small orange monarch wings"
+    },
+    {
+      "name": "milkweed_stand",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale green and soft violet",
+      "scene": "a stand of milkweed filling the view at golden hour, thick green stems and broad ribbed leaves, round crowns of small pink flowers at the top, warm light through the leaf edges, monarch butterflies at rest on several of the blooms",
+      "target": "one monarch butterfly at rest on a broad milkweed leaf, both wings held open and flat, deep orange panes divided by heavy black veins",
+      "target_phrase": "a monarch butterfly",
+      "cameo": {
+        "sprite": "output/mascots/canon/dora.png",
+        "pos": [0.72, 0.66],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "monarch",
+      "exp": -1,
+      "kind": "zoom",
+      "dur": 2,
+      "palette": "blazing orange and jet black",
+      "scene": "a monarch butterfly at rest on a broad green leaf, both wings held open and flat, deep orange panes divided by heavy black veins, a black border set with white dots around the outer edge",
+      "target": "one long triangular forewing, an orange pane framed in thick black veins with a row of white dots along its rim",
+      "target_phrase": "an orange wing"
+    },
+    {
+      "name": "wing_scales",
+      "exp": -3,
+      "kind": "zoom",
+      "dur": 2,
+      "palette": "violet-grey and pale amber",
+      "scene": "a wing surface filling the entire view, flat scale tiles overlapping in neat ranks, wide bands of orange tiles beside bands of black tiles, every tile ridged along its length, a faint violet sheen at the tile edges",
+      "target": "one orange scale tile among the ranks, a flat elongated plate with fine parallel ridges and a notched outer tip",
+      "target_phrase": "an orange scale tile"
+    },
+    {
+      "name": "scale_tile",
+      "exp": -4,
+      "kind": "zoom",
+      "dur": 2,
+      "palette": "hot orange and deep black",
+      "scene": "a single wing scale filling the entire view, a flat elongated orange plate ribbed with fine parallel ridges from base to tip, slender cross-struts bridging the ridges, the outer edge notched into blunt teeth",
+      "target": "one dark slot between two ridges of the plate, a narrow violet-rimmed opening in the ribbed orange surface",
+      "target_phrase": "a dark slot"
+    },
+    {
+      "name": "gyroid",
+      "exp": -6.5,
+      "kind": "seam",
+      "dur": 2,
+      "palette": "silver-violet and cold blue",
+      "scene": "a gyroid labyrinth deep inside the wing scale, smooth curved walls folding through three directions in an endless minimal-surface maze, wide open channels between them, three-way junctions repeating away in every direction, the walls shot with violet and orange iridescence"
+    },
+    {
+      "name": "star_ribbons",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber starlight and deep black",
+      "scene": "deep space threaded by long looping ribbons of stars, two great luminous coils crossing at the center of the void, fine dust lanes curving along each ribbon, warm amber starlight strewn through the black",
+      "target": "a bright two-lobed nebula set into one of the star ribbons, a brilliant white core between two glowing lobes",
+      "target_phrase": "a bright nebula"
+    },
+    {
+      "name": "butterfly_nebula",
+      "exp": 14,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet and pale cyan",
+      "scene": "an enormous planetary nebula filling the void, two vast symmetric lobes of glowing gas spread on either side of a brilliant white core, fine orange and violet filaments veining each lobe, a dark dust band across the waist between them",
+      "target": "a deep violet planet held in the nebula's glow, a great round world with a dark dusk hemisphere and a thin bright limb",
+      "target_phrase": "a violet planet"
+    },
+    {
+      "name": "dusk_planet",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep violet and molten gold",
+      "scene": "a great violet planet seen close from space, its curved limb bright against the black, deep purple land under a thin violet haze, networks of branching golden rivers spread across the dark surface",
+      "target": "one wide golden river on the surface below, a broad braided channel of gold between dark violet ridges, smaller channels branching from it",
+      "target_phrase": "a golden river"
+    },
+    {
+      "name": "valley_aerial",
+      "exp": 3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm gold and green",
+      "scene": "a broad river valley at golden hour seen from high above, a wide golden river winding between green hillsides, meadows and hedgerows and small stands of trees over the slopes, low warm light across the whole valley"
+    }
+  ],
+  "music_theme": "a monarch migration over a golden-hour valley, warm and soaring, wide strings and soft bells over a low drone, one bright shimmering bloom landing on the wing-scale-to-starfield seam",
+  "music_key": "E minor"
+}

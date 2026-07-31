@@ -67,7 +67,10 @@ transformation.
   core, a spiral turning there") → we chase the spiral. Just name the object plainly ("a clear
   raindrop", "a glossy black sphere"); the engine fills the surface/reflection detail itself. Also
   avoid words that name a DIFFERENT object as a colour ("rose and teal dust" → it paints a rose
-  flower; say "pink and teal").
+  flower; say "pink and teal"). **The same trap applies to SIMILES**: "like fireflies in fog",
+  "like a candle flame" — the model paints the named object LITERALLY (night_bloom rendered an
+  actual insect mid-seam from "like fireflies"). Never compare to a paintable object; describe
+  the thing directly.
 
 ## The prominent-point principle (what the object must be)
 The engine finds the named object (Florence-2) and dives into it — or, before it's detectable,
@@ -161,6 +164,9 @@ grid at compose time), so the pacing must be musical from the start. `dur` is in
   base case — reach for it first.
 - **LINGER on a rich scale = 2 BARS (dur 8).** Do NOT go beyond 2 bars on a single static scale —
   4 bars drags (unless the beat is very fast; intra-scale motion may let us linger more later).
+  **Never linger on a DIFFUSE scale** (fog, mist, plasma, featureless clouds): two bars drifting
+  through structureless haze is dead air (the skyfog lesson). Linger only where detail is dense;
+  give diffuse scales dur 2 and move through.
 - **FASTER than a bar per scale = SUBDIVIDE a bar among scales, but they MUST ADD UP TO WHOLE BARS**
   so the strong beat always carries a morph: within one bar, 2+2 (morphs on beat 1 and beat 3), or
   1+3, or 1+1+2, or 4×1 for a fast run. Never leave a fractional bar dangling.
@@ -216,7 +222,10 @@ myth, a trending sound, an emotion…):
   are fine texture; featured individuals and readable faces are banned (global negative).
 - **Fantastical, never gory.**
 - **One mascot cameo per video** on ONE card, scale-matched, size ≥0.12, full-cast rotation
-  (see dive-video SKILL for the cast). Optional at compose time.
+  (see dive-video SKILL for the cast). Optional at compose time. Any card works (the engine
+  pastes from the card's first feedback frame — a card-0 cameo appears at frame 1), but prefer
+  a NON-first card: card 0 is the loop-return frame, and the sprite reads better after an
+  arrival than over the establishing shot.
 - **Counter** renders only for clean monotonic ladders (`counter:"auto"`); wraps/lingers/
   fractional stacks make it nonsense → `counter:false`.
 

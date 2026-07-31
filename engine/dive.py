@@ -640,7 +640,12 @@ def main():
                     fed = color_match(fed, phase_refs[p_idx], cfg["color_match"])
                 cam_pasted = False
                 for c in cameos:
-                    if i == c["start"]:
+                    # init-once window (not `i == start`): frame 0 is txt2img and never reaches
+                    # this branch, so a card-0 cameo (start=0) silently NEVER pasted — dollhouse's
+                    # cameo is missing for this reason. Window semantics paste it from frame 1,
+                    # and also survive --resume landing mid-window.
+                    if not c.get("_done") and c["start"] <= i < c["end"]:
+                        c["_done"] = True
                         cam = {"px": c["pos"][0], "py": c["pos"][1],
                                "size": c["size"], "end": c["end"],
                                "art": load_sprite(root / c["sprite"])}

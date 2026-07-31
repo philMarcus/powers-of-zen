@@ -1,0 +1,119 @@
+{
+  "name": "jade_automata",
+  "theme": "an ancient jade temple whose carvings are mathematics — gold cell-glyphs in a stone panel become a foam universe, and the fall home lands back on the temple terrace",
+  "style": "gilded_relic",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": false
+  },
+  "registers": [
+    {
+      "name": "temple_terrace",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "celadon green and pale stone grey",
+      "scene": "a wide jade temple terrace on a misty mountainside seen from above at the head of the stone stairs, broad flagstones and a low carved balustrade, cloud lying below the parapet, dark pine crowns on the slope beyond, empty, no one present, a carved jade wall panel standing across the courtyard",
+      "target": "a tall carved jade wall panel, deep celadon stone cut in relief, its border grooves inlaid with vermilion",
+      "target_phrase": "a carved jade panel",
+      "loop_target": "the wide jade temple terrace on the misty mountainside, broad flagstones and a low carved balustrade, cloud lying below the parapet"
+    },
+    {
+      "name": "jade_panel",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep green stone and vermilion inlay",
+      "scene": "a carved jade wall panel fills the view, deep celadon stone cut in relief with coiled cloud scrolls and a heavy ring border, vermilion inlay deep in the grooves, a band of small etched squares along its lower edge",
+      "target": "one small etched square in the lower band, five square gold cells inlaid in a stepped arrangement within its chiselled border",
+      "target_phrase": "a small gold square",
+      "cameo": {
+        "sprite": "output/mascots/canon/janet.png",
+        "pos": [
+          0.27,
+          0.68
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "glyph_grid",
+      "exp": -1.5,
+      "kind": "zoom",
+      "dur": 3,
+      "palette": "bright gold on celadon",
+      "scene": "a close grid of etched glyph squares fills the view, each square holding five square gold cells set in a stepped arrangement, hairline chisel lines ruling the celadon stone between them",
+      "target": "a smooth patch of bare jade between the gold cells, pale celadon stone with faint mottling in its grain",
+      "target_phrase": "a pale jade patch"
+    },
+    {
+      "name": "jade_grain",
+      "exp": -4,
+      "kind": "seam",
+      "dur": 1,
+      "palette": "deep green and rust red in warm pale stone",
+      "scene": "the mineral grain of jade, deep green mottled spots and winding stripes threaded through warm pale celadon, rust-red flecks scattered through the pattern"
+    },
+    {
+      "name": "voronoi_foam",
+      "exp": 24,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale green light on black",
+      "scene": "a foam universe of glowing cell walls, thin luminous pale-green sheets bounding enormous black voids, the whole dark sky partitioned into bright-edged chambers",
+      "target": "a bright junction where several glowing walls meet, a dense white-green core of light",
+      "target_phrase": "a bright junction"
+    },
+    {
+      "name": "filament_web",
+      "exp": 22,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "vermilion sparks on green-black",
+      "scene": "a branching web of galaxy filaments across the dark, long strands of massed starlight with fine hair-thin offshoots, swollen bright nodes where the strands cross, vermilion sparks along the branches",
+      "target": "one glowing star cluster at a crossing of the strands, a packed ball of pale green stars",
+      "target_phrase": "a glowing star cluster"
+    },
+    {
+      "name": "star_swarm",
+      "exp": 19,
+      "kind": "zoom",
+      "dur": 2,
+      "palette": "pale green starlight and black",
+      "scene": "a globular swarm of pale green stars packed dense toward a blazing center, thousands of sharp points thinning to the dark at its rim",
+      "target": "one red-orange star near the swarm's rim, a hot vermilion point with a thin dust ring wide around it",
+      "target_phrase": "a red orange star"
+    },
+    {
+      "name": "ember_star",
+      "exp": 13,
+      "kind": "zoom",
+      "dur": 2,
+      "palette": "vermilion fire and deep black",
+      "scene": "a red-orange star fills the black, a shell of fire with tall prominences standing off its limb, a thin vermilion dust ring wide around it",
+      "target": "a small celadon-green planet in the star's light, a pale green disc laced with dark red channels",
+      "target_phrase": "a green planet"
+    },
+    {
+      "name": "green_planet",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "celadon green and vermilion",
+      "scene": "a celadon-green planet fills the view, its curved limb bright against the black, pale cloud bands drawn over broad green continents, vermilion river deltas branching across the lowlands",
+      "target": "a range of green mountains on the land below, ridge after ridge under long white cloud",
+      "target_phrase": "green mountains"
+    },
+    {
+      "name": "mist_mountains",
+      "exp": 3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "misty green and grey stone",
+      "scene": "green mountain ridges seen from high above, terraced slopes stepping down into narrow red-earth gorges, cloud caught in the valleys, dark pine crowns along the shoulders, a small stone terrace set on one high shoulder"
+    }
+  ],
+  "music_theme": "an ancient stone temple in mountain mist, meditative and vast, low bells and breathing strings over a slow pulse, one bright swell landing on the stone-to-cosmos morph",
+  "music_key": "E minor"
+}
