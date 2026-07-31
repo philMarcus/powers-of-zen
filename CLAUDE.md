@@ -209,7 +209,24 @@ dive (night_bloom's "flower in the lantern light" chased lanterns). 126 targets 
 problem — the engine's odometer pins to the register and spins at handoffs, honest across
 seams; the fix had been over-generalized into "false unless monotonic" and darkened the whole
 catalog. false only where a realm is fictional (chalkboard/orrery/cave/static_bloom).
-Composer SKILL: length tiers +
+(f) SEAM CARDS NEVER STOP ZOOMING — grammar gave them x1.4 total vs x10 (1.006-1.019/frame);
+the uniform-bar retime stretched that over 28 frames = a 2.3s STALL right before the biggest
+morph (Phil spotted it in v9 frames). "Don't target during a seam" was right; "don't zoom"
+never was. Now x10 like every card. (g) MODEL: we never switched off DreamShaper (all engine-2
+renders loaded dreamshaperXL; every deck entry recommends ds) — the confusion was the run dir
+losing its _ds suffix once the deck picks the model. But 17 LEGACY journeys have no `style`,
+so the deck recommended nothing and cfg kept DEFAULTS' TURBO ckpt: a silent turbo render for
+any legacy re-render without --model. Fallback is now "ds" routed through MODEL_PRESETS (gets
+dpmpp_sde/karras too); startup logs "MODEL ds (...)" and each run writes run.json.
+V10 = THE REFERENCE RENDER (2026-07-31, output/night_bloom/v10, 308f/11 bars/25.7s): seam now
+a genuine structural morph (forest's branching gold filaments PERSIST across the jump and
+resolve into the cosmic web + galaxies — the best morph the engine has made, and it only reads
+that way because the camera keeps diving into it); normal morphs land ON the beat with the
+pickup frame visibly leading; loop closure near-perfect (f307 ~= f0); counter on screen (613
+frames, 41 decade pulses); tracker 44 misses / 6 refused candidates / 2 lock-redirects / 1
+lock, zero lurches; fixed-point aim CONFIRMED (tracked point sits mean 0.100 / max 0.334 off
+center and STAYS there — aim-vs-track mean 0.086, i.e. the object grows in place instead of
+snapping to center). Composer SKILL: length tiers +
 simile ban + diffuse-linger ban + cameo-window note; VARIATIONS.md: math-pattern/space-
 personality/palette-family/micro-realm/non-cosmic-seam libraries. Engine: cameo init-once
 window (card-0 cameos used to silently never paste — dollhouse's is missing), grammar._frames
