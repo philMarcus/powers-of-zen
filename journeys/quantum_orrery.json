@@ -15,7 +15,7 @@
       "dur": 4,
       "palette": "warm amber lamplight and dark timber",
       "scene": "a cluttered astronomer's study at night seen from across the room at desk height, dark timber shelves crowded with books and rolled star charts, a brass lamp burning low, tall black windows behind the desk, empty, no one present, a gleaming brass orrery standing on the desk among the papers",
-      "target": "a gleaming brass orrery on the desk, slender curved armatures out from a central hub, concentric graduated rings scored with fine degree marks, small polished planet beads set along the arms",
+      "target": "a gleaming brass orrery, curved armatures and concentric graduated rings",
       "target_phrase": "a brass orrery",
       "loop_target": "the cluttered astronomer's study at night, dark timber shelves of books and star charts, a brass orrery on the desk under a low-burning lamp, empty, no one present"
     },
@@ -26,7 +26,7 @@
       "dur": 8,
       "palette": "polished brass and midnight blue",
       "scene": "a brass orrery fills the view, slender curved armatures out from a central hub, concentric graduated rings scored with fine degree marks, small polished planet beads set along the arms, the dark study beyond the metal, empty, no one present",
-      "target": "one small deep-blue planet bead on a slender brass arm, a smooth round stone sphere with a thin brass collar around it",
+      "target": "a small deep-blue planet bead, a smooth round stone sphere with a thin brass collar",
       "target_phrase": "a small blue bead",
       "cameo": {
         "sprite": "output/mascots/canon/lee.png",
@@ -44,7 +44,7 @@
       "dur": 4,
       "palette": "deep blue stone and silver white",
       "scene": "a deep-blue stone bead fills the view, its polished curve covered in fine machined tool-marks, hairline circular grooves ringing the surface, a thin brass collar across one edge, faint metal grain under the polish",
-      "target": "a bright pale fleck of metal grain in the polished surface, a small angular crystal speck with sharp flat facets",
+      "target": "a bright pale fleck of metal, a small angular crystal speck with sharp facets",
       "target_phrase": "a bright metal fleck"
     },
     {
@@ -62,7 +62,7 @@
       "dur": 3,
       "palette": "deep indigo and pale cyan light",
       "scene": "a vast bubble-chamber realm of deep indigo fog, long pale spiral tracks of light curled through the depths, thin luminous filaments crossing far into the dark",
-      "target": "one bright triple-lobed core of gold-white light held in a single luminous shell, three glowing points close together inside it",
+      "target": "a bright triple-lobed core of gold-white light, three glowing points close together",
       "target_phrase": "a bright golden core"
     },
     {
@@ -72,7 +72,7 @@
       "dur": 4,
       "palette": "hot gold white and deep crimson",
       "scene": "three glowing quark cores bound close inside one luminous shell, gold-white lobes with taut bright filaments strung between them, a crimson halo around the trio, indigo dark beyond",
-      "target": "a polished brass hub with three curved arms out from it, concentric engraved rings behind the metal",
+      "target": "a polished brass hub, three curved arms out from it",
       "target_phrase": "a brass hub"
     },
     {

@@ -15,7 +15,7 @@
       "dur": 4,
       "palette": "warm brass gold and rain grey",
       "scene": "the whole lamp-room at the top of the lighthouse, seen from just inside the rain-streaked glass with the dark fog-bound sea beyond, a tall brass lamp standing unlit and shadowed to one side, coiled rope and wet floorboards in the gloom, the room empty and still, no one present",
-      "target": "the near windowpane filmed with condensation, a fine scatter of water beads catching the light",
+      "target": "a windowpane filmed with condensation, a fine scatter of small water beads",
       "target_phrase": "condensation on glass",
       "loop_target": "the lighthouse's lamp room at the top of the tower, seen from just inside the rain-streaked glass with the dark fog-bound sea beyond, a tall brass lamp standing unlit and shadowed to one side"
     },
@@ -26,7 +26,7 @@
       "dur": 3,
       "palette": "pale silver and glass grey",
       "scene": "a fine mist of condensation up close on the window pane, countless small beads catching the light, pale rivulets etched down through the film",
-      "target": "one bead of water larger than the rest, full and rounded, its skin catching the light",
+      "target": "a large round bead of clear water",
       "target_phrase": "a large water bead"
     },
     {
@@ -44,7 +44,7 @@
       "dur": 8,
       "palette": "pink and teal glow",
       "scene": "towering pillars of glowing nebula mist, veils of pink and teal dust banked in layers, newborn stars smoldering deep inside the folds",
-      "target": "one protostar bright at the pillar's heart, a clear halo of parted dust around it",
+      "target": "a bright protostar, a hot white point of light",
       "target_phrase": "a glowing protostar"
     },
     {
@@ -54,7 +54,7 @@
       "dur": 4,
       "palette": "blazing orange and white",
       "scene": "the corona of a newborn star, arcs of fire and towering prominences, streams of ember and plasma trailing into the surrounding dark",
-      "target": "one banded world past the flare, an orbiting planet lit gold along one edge",
+      "target": "a banded planet, gold light along one edge",
       "target_phrase": "an orbiting banded planet"
     },
     {
@@ -69,7 +69,7 @@
         "size": 0.12
       },
       "scene": "the banded planet close, marbled cloud lit low and gold, one immense white spiral cyclone coiled above a dark ocean",
-      "target": "the calm dark eye at the storm's center, sheer walls of towering cloud on every side",
+      "target": "a dark round storm eye",
       "target_phrase": "the storm's eye"
     },
     {
@@ -79,7 +79,7 @@
       "dur": 4,
       "palette": "pearl grey and dim amber",
       "scene": "the storm's towering eye-wall, sheer canyons of cloud lit amber by a low scattered sun, the dark sea glinting through a gap far below",
-      "target": "a bank of luminous sea fog over the dark water, faintly glowing in the eye's gap",
+      "target": "a bank of luminous sea fog, glowing pale from within",
       "target_phrase": "fog over dark water"
     },
     {
@@ -89,7 +89,7 @@
       "dur": 4,
       "palette": "sea-fog grey and lamp gold",
       "scene": "a fog-drowned night coast, black water and wet rock, deep banks of sea fog lit from within by a distant golden beam, no one present",
-      "target": "a lighthouse tower in the fog, stone walls pale in the mist, its lamp room glowing warm at the very top",
+      "target": "a pale stone lighthouse tower, a warm glowing lamp room at its top",
       "target_phrase": "a lighthouse in fog"
     },
     {

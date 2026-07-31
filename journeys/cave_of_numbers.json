@@ -26,11 +26,14 @@
       "dur": 4,
       "palette": "pale cream stone and cold blue light",
       "scene": "one great banded stalactite fills the view, a long limestone cone ringed with bands of cream and pale amber, its wet surface cold blue where the ceiling light falls on it, darker stone ranks behind",
-      "target": "a wide amber band wrapped around the stalactite's flank, its calcite surface rippled into stacked ridges",
+      "target": "a wide amber calcite band, its surface rippled into stacked ridges",
       "target_phrase": "a wide amber band",
       "cameo": {
         "sprite": "output/mascots/canon/janet.png",
-        "pos": [0.30, 0.66],
+        "pos": [
+          0.3,
+          0.66
+        ],
         "size": 0.13
       }
     },
@@ -41,7 +44,7 @@
       "dur": 4,
       "palette": "deep amber and dark cream",
       "scene": "rippled calcite bands fill the view, long curved ridges of deep amber and dark cream stacked one over another, the wet stone glassy along every rim",
-      "target": "a glowing rhombic crystal deep in the calcite, a slanted box of pale violet-white light",
+      "target": "a glowing rhombic crystal, a slanted box of pale violet-white light",
       "target_phrase": "a glowing rhombic crystal"
     },
     {
@@ -59,7 +62,7 @@
       "dur": 7,
       "palette": "glowworm blue-green on deep black",
       "scene": "a black cave vault overhead crowded with glowworm light, thousands of blue-green points strewn across the dark, long fine silk threads hanging between them and catching the glow, the stone behind the lights lost in black",
-      "target": "a bright cluster of glowworm lamps among the hanging threads, a close-packed knot of blue-green light",
+      "target": "a bright cluster of glowworm lamps, a close-packed knot of blue-green light",
       "target_phrase": "a cluster of lights"
     },
     {
@@ -69,7 +72,7 @@
       "dur": 4,
       "palette": "jade green lamps and pale silk",
       "scene": "a close-packed cluster of glowworm lamps fills the view, each a bead of jade-green light set on black rock, pale silk threads strung down between them in long fine lines",
-      "target": "a wide pale stone arch below the lights, the cavern mouth standing open on a dark night valley",
+      "target": "a wide pale stone arch, an open cavern mouth",
       "target_phrase": "a pale stone arch"
     },
     {

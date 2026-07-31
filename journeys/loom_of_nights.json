@@ -5,7 +5,7 @@
   "format": {
     "beats_per_bar": 4,
     "exact_loop": true,
-    "counter": false
+    "counter": true
   },
   "registers": [
     {
@@ -15,7 +15,7 @@
       "dur": 4,
       "palette": "lamp gold and moonlit indigo",
       "scene": "a moonlit weaving workshop seen wide from the open doorway, heavy timber rafters overhead, the walls racked with cones of dyed yarn in indigo and saffron, a great upright loom at the far wall strung with pale warp threads, a brass lamp burning gold on the workbench, empty, no one present",
-      "target": "a half-woven tapestry stretched across the loom frame, a night landscape worked in indigo and saffron thread, its finished edge dense and ridged, bare pale warp threads above it",
+      "target": "a half-woven tapestry, a night landscape worked in indigo and saffron thread",
       "target_phrase": "a woven tapestry",
       "loop_target": "a moonlit weaving workshop, a great loom holding a half-woven tapestry, cones of dyed yarn and a brass lamp on the workbench, empty"
     },
@@ -26,7 +26,7 @@
       "dur": 4,
       "palette": "midnight indigo with one saffron thread line",
       "scene": "the face of a half-woven tapestry filling the view, a night landscape worked in dyed thread, indigo hills and a saffron thread river across them, small gold knots scattered through the dark slopes, the ridged texture of the weave raised over every shape",
-      "target": "a bare patch of the weave, warp and weft crossing over and under in a plain grid, saffron strands over indigo",
+      "target": "a bare patch of plain weave, saffron and indigo strands crossing over and under",
       "target_phrase": "crossed threads"
     },
     {
@@ -36,7 +36,7 @@
       "dur": 2,
       "palette": "saffron and ivory",
       "scene": "a strict over-under grid of woven threads filling the view, saffron and ivory strands crossing warp over weft, every crossing a raised square of packed fiber, deep shadow in the channels between",
-      "target": "one indigo-dyed fiber running through the grid, a single dark twisted strand, short hairs standing off its surface",
+      "target": "an indigo-dyed fiber, a dark twisted strand with short hairs standing off it",
       "target_phrase": "an indigo thread"
     },
     {
@@ -46,7 +46,7 @@
       "dur": 2,
       "palette": "deep indigo and cold silver",
       "scene": "a single indigo-dyed fiber filling the view, a thick twisted strand of deep blue, a fine gold strand plied around it, short hairs standing off along its length",
-      "target": "braided filament strands within the fiber, pale gold fibrils twisted together into ropes, tight knots where they cross",
+      "target": "braided pale gold fibrils, twisted together into ropes with tight knots",
       "target_phrase": "braided gold strands"
     },
     {
@@ -64,7 +64,7 @@
       "dur": 3,
       "palette": "ghost blue and violet black",
       "scene": "the dark-matter scaffold of the universe, ghost-blue luminous filaments braided across the black, dense knots of galaxy clusters where the strands cross, vast dark voids between them",
-      "target": "a bright spiral galaxy at one crossing of the filaments, its arms wound tight around a gold core",
+      "target": "a bright spiral galaxy, arms wound tight around a gold core",
       "target_phrase": "a spiral galaxy"
     },
     {
@@ -74,7 +74,7 @@
       "dur": 4,
       "palette": "saffron white and black",
       "scene": "a tilted spiral galaxy filling the black, saffron and white arms wound around a blazing gold core, dark dust lanes threaded between the arms",
-      "target": "one bright golden star in the outer arm, ringed by sharp bands of dust",
+      "target": "a bright golden star, ringed by sharp bands of dust",
       "target_phrase": "a bright golden star"
     },
     {
@@ -84,7 +84,7 @@
       "dur": 2,
       "palette": "silver blue and white",
       "scene": "a white star inside a spun disk of dust, sharp concentric silver-blue rings circling the core, clean dark gaps cut between the rings",
-      "target": "one deep indigo planet in a gap between the rings, thin gold lines threaded over its dark face",
+      "target": "a deep indigo planet, thin gold lines threaded over its dark face",
       "target_phrase": "a dark indigo planet"
     },
     {
@@ -94,7 +94,7 @@
       "dur": 2,
       "palette": "river gold and deep indigo",
       "scene": "a huge indigo planet filling the view, its night side turned outward, veins of gold river-light over dark continents, a thin bright limb at its edge",
-      "target": "a wide gold river on the dark surface below, branching between black mountain ridges",
+      "target": "a wide branching river of gold light",
       "target_phrase": "a golden river"
     },
     {
@@ -104,7 +104,7 @@
       "dur": 2,
       "palette": "midnight blue and pale silver",
       "scene": "dark mountain country at night seen from high above, a gold river along the valley floor between black ridges, pale snow on the high peaks",
-      "target": "a cluster of lamplit windows on the valley floor, small stone roofs gathered at the riverside",
+      "target": "a small stone village of lamplit windows",
       "target_phrase": "lamplit windows"
     },
     {
@@ -116,7 +116,10 @@
       "scene": "a lamplit weaving hamlet on the valley floor, stone cottages with steep slate roofs, tall drying frames hung with long dyed cloths in indigo and saffron along the lanes, warm gold windows in the dark, empty, no one present",
       "cameo": {
         "sprite": "output/mascots/canon/newman.png",
-        "pos": [0.68, 0.63],
+        "pos": [
+          0.68,
+          0.63
+        ],
         "size": 0.13
       }
     }

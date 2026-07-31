@@ -112,18 +112,25 @@ moderately OFF-center) and grows the object there. So every `zoom` card's `scene
 
   "scene": "the corona of a blazing star, arcs of fire and towering prominences, embers streaming",
                                     // RICH, evocative — the world we travel through. Drives the prompt.
-  "target": "one round banded gas planet ahead, growing as we approach, banded clouds turning toward us",
-                                    // RICH, EMERGING — the object we dive into. Drives the prompt. (zoom only)
+  "target": "a round banded gas planet",
+                                    // PLAIN — the bare object, nothing else. (zoom only; see below)
   "target_phrase": "the round banded planet",
                                     // TIGHT, 2-4 plain VISUAL words naming the object — for the detector.
   "target_pick": "salient",         // optional: how to choose among many — "salient"(default) | "random"
   "cameo": { "sprite": "output/mascots/canon/<name>.png", "pos": [0.6,0.4], "size": 0.14 }  // optional, ONE card
 }
 ```
-The rich/tight split is deliberate (per Phil): `scene` and `target` are lush prose for the
-image model; `target_phrase` is a short concrete noun phrase for the *detector*. Long or
-abstract detector phrases FAIL (Florence-2 degenerates on "the biggest planet" or a whole
-sentence) — keep `target_phrase` to the object + one visual trait.
+**The lush/plain split (Phil 2026-07-31, learned the hard way): `scene` is LUSH, `target` is
+PLAIN.** The target is the bare object — article + noun + AT MOST two of its OWN intrinsic
+traits (its color, its shape). NEVER any location/context ("in the lantern light", "beside
+the terrace", "on the dark surface below") and NEVER another object's name — the plunge
+prompt repeats the target every frame, so any named context object gets PAINTED and steals
+the dive (night_bloom's "flower in the lantern light" made the engine chase lanterns instead
+of the flower). All richness about the object's world belongs in the CURRENT card's `scene`;
+by the time we plunge, we already know where we are. When in doubt, make the target SHORTER:
+"a night flower" beats "one pale night-blooming flower in the lantern light".
+`target_phrase` is likewise short and concrete for the *detector* — object + one visual trait
+(Florence-2 degenerates on long/abstract phrases).
 - **`scene`** = a STATIC, rich description of the world at this scale; it contains the findable
   object we dive into. (On a `seam` card, `scene` is just the STATIC scene at the seam — e.g. "a
   smooth matte-black sphere on a green blade" — NOT the transformation, and NOT what's reflected in
@@ -233,8 +240,12 @@ myth, a trending sound, an emotion…):
   pastes from the card's first feedback frame — a card-0 cameo appears at frame 1), but prefer
   a NON-first card: card 0 is the loop-return frame, and the sprite reads better after an
   arrival than over the establishing shot.
-- **Counter** renders only for clean monotonic ladders (`counter:"auto"`); wraps/lingers/
-  fractional stacks make it nonsense → `counter:false`.
+- **Counter: ON by default (`counter: true`) — it is the Powers-of-Zen signature.** The engine
+  pins the value to the current register and SPINS it at handoffs, so it is honest even across
+  seam wraps (the odometer spin at the wrap is part of the charm — v1 behavior, Phil 2026-07-31).
+  Set `counter: false` ONLY when a journey's exps are fictional bookkeeping — an abstract realm
+  (a chalk cosmos, a TV-static realm) where "10ⁿ m" would be a lie about what's on screen.
+  (The 2026-07-31 batch wrongly authored false everywhere by over-generalizing one bad case.)
 
 ## Self-check before shipping a journey
 1. For EVERY `zoom` card: is the target named in `target` + a short `target_phrase` and described

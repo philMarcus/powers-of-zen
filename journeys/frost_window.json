@@ -5,7 +5,7 @@
   "format": {
     "beats_per_bar": 4,
     "exact_loop": true,
-    "counter": false
+    "counter": true
   },
   "registers": [
     {
@@ -15,7 +15,7 @@
       "dur": 4,
       "palette": "ice white and warm gold",
       "scene": "a winter windowpane seen straight on from inside a dark cabin room, white frost ferns etched thick across the cold glass, fine ice crystals furred into the corners of the pane, warm light raking across the ice from one side of the room, the room empty, no one present",
-      "target": "one white frost fern on the glass, a broad frond of ice with a thick pale spine and ranks of fine side branches",
+      "target": "a white frost fern, a broad ice frond with a thick pale spine",
       "target_phrase": "a frost fern",
       "loop_target": "the winter windowpane seen straight on from inside the dark room, white frost ferns etched thick across the cold glass in warm raking light"
     },
@@ -26,11 +26,14 @@
       "dur": 4,
       "palette": "silver-blue and frost white",
       "scene": "one arm of white frost ice fills the view, a thick pale spine with ranks of slender branches angled off it in sharp white ice, the dark bare glass between them",
-      "target": "a single branch off the spine, slender ice spurs strung with round clear beads of ice",
+      "target": "a single ice branch, slender spurs strung with round clear beads",
       "target_phrase": "a beaded ice branch",
       "cameo": {
         "sprite": "output/mascots/canon/belle.png",
-        "pos": [0.68, 0.33],
+        "pos": [
+          0.68,
+          0.33
+        ],
         "size": 0.13
       }
     },
@@ -41,7 +44,7 @@
       "dur": 2,
       "palette": "glass blue and pale amber",
       "scene": "a single ice branch fills the view, slender white spurs strung with round beads of clear ice, each bead a smooth plain drop of frozen glass, the dark pane flat behind",
-      "target": "a hexagonal ice crystal within the ice, six flat clear faces meeting at sharp bright edges",
+      "target": "a hexagonal ice crystal, six flat clear faces meeting at sharp bright edges",
       "target_phrase": "a hexagonal ice crystal"
     },
     {

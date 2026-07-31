@@ -5,7 +5,7 @@
   "format": {
     "beats_per_bar": 4,
     "exact_loop": true,
-    "counter": false
+    "counter": true
   },
   "registers": [
     {
@@ -15,7 +15,7 @@
       "dur": 8,
       "palette": "warm gold and deep teal",
       "scene": "a grand music-box concert hall seen from the empty floor at the back, tiers of gilded balconies curving around a wide stage, rows of brass instruments on their stands, a huge brass gramophone horn at the center of the stage, a great circular stained-glass rose window of teal and gold set high in the wall above, warm lamplight on gilt and dark wood, empty, no one present",
-      "target": "a huge brass gramophone horn on the stage, its wide flared bell chased with engraved scrollwork, mounted on a dark lacquered cabinet",
+      "target": "a huge brass gramophone horn, a wide flared bell chased with engraved scrollwork",
       "target_phrase": "a brass gramophone horn",
       "loop_target": "the grand music-box concert hall, gilded balconies and rows of brass instruments around a wide stage beneath a stained-glass rose window"
     },
@@ -26,7 +26,7 @@
       "dur": 4,
       "palette": "pale brass and inky black",
       "scene": "a wide flared brass bell, engraved scrollwork chased in spirals across the polished metal, its narrow throat seated in a dark lacquered cabinet whose mechanism stands open below",
-      "target": "a brass cylinder in the open cabinet, dense spiral rows of fine steel pins set across its surface",
+      "target": "a brass cylinder, dense spiral rows of fine steel pins across its surface",
       "target_phrase": "a brass cylinder",
       "cameo": {
         "sprite": "output/mascots/canon/lee.png",
@@ -44,7 +44,7 @@
       "dur": 2,
       "palette": "warm gold and steel silver",
       "scene": "a brass music-box cylinder, dense spiral rows of fine steel pins studding it in a bright grid, a steel comb of tuned teeth alongside, and beneath the comb a small square brass plate strewn with pale sand",
-      "target": "a square brass plate strewn with pale sand, the sand gathered into fine ridges that meet in a symmetric star figure",
+      "target": "a square brass plate strewn with pale sand, the sand gathered into a symmetric star figure",
       "target_phrase": "a square brass plate"
     },
     {
@@ -54,7 +54,7 @@
       "dur": 2,
       "palette": "deep teal and pale sand",
       "scene": "a square brass plate, its polished surface covered in fine pale sand gathered into a symmetric star figure of nodal ridges, sharp points where the ridges meet, bare brass in the open cells between them",
-      "target": "a grid of luminous cells at the center of the figure, bright wave-fronts crossing in a lattice of pale gold light",
+      "target": "a grid of luminous cells, bright wave-fronts crossing in pale gold light",
       "target_phrase": "a glowing lattice"
     },
     {
@@ -72,7 +72,7 @@
       "dur": 3,
       "palette": "deep teal and indigo",
       "scene": "a vast teal nebula of concentric wave-front shells, great arcs of luminous gas nested one inside the next, dark dust lanes between the shells, stars scattered across the black",
-      "target": "a bright white star at the center of the nested shells, a hard brilliant sphere wrapped in rings of gold light",
+      "target": "a bright white star, a hard brilliant sphere wrapped in rings of gold light",
       "target_phrase": "a bright white star"
     },
     {
@@ -92,7 +92,7 @@
       "dur": 2,
       "palette": "deep teal and black",
       "scene": "a dark teal planet seen from space, its curved limb aglow, pale cloud bands drawn in long arcs over an ocean night side, gold light scattered on the dark land",
-      "target": "a golden city on the night side, avenues and squares picked out in warm points of light",
+      "target": "a golden city, avenues and squares picked out in warm points of light",
       "target_phrase": "a golden city"
     },
     {
@@ -102,7 +102,7 @@
       "dur": 2,
       "palette": "amber gold and dark teal",
       "scene": "a night city seen from high above, gold-lit avenues in a grid between dark blocks, teal canals threading between them, a great domed concert hall at the center of a wide plaza",
-      "target": "a domed concert hall on the plaza, a circular stained-glass rose window of teal and gold lit on its front",
+      "target": "a domed concert hall, a circular stained-glass rose window of teal and gold",
       "target_phrase": "a domed concert hall"
     },
     {

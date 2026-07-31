@@ -15,7 +15,7 @@
       "dur": 4,
       "palette": "wildflower gold and warm green",
       "scene": "a wide sunlit meadow seen low at eye level among wildflower stems and grass blades towering into golden light, gold pollen adrift in the slanted afternoon light, dew beaded on nearby leaves, a small red ladybug perched on a distant leaf across the clearing",
-      "target": "a round red ladybug perched on a broad green leaf, its shell a deep lacquered scarlet, neat black spots dotting its domed back",
+      "target": "a round red ladybug, lacquered scarlet shell dotted with black spots",
       "target_phrase": "a red ladybug",
       "loop_target": "the sunlit wildflower meadow, seen low at eye level among the towering stems and grass, gold pollen adrift in slanted light"
     },
@@ -26,7 +26,7 @@
       "dur": 2,
       "palette": "scarlet lacquer and jet black",
       "scene": "a red ladybug's domed shell fills the view, scarlet lacquer scattered with round black spots, the shell smooth and gently curved",
-      "target": "the ladybug's head, a small glossy black dome with faceted eyes and two slender segmented antennae curving above it",
+      "target": "a glossy black insect head, faceted eyes and two slender segmented antennae",
       "target_phrase": "a ladybug's head"
     },
     {
@@ -36,7 +36,7 @@
       "dur": 2,
       "palette": "glossy black and pale silver",
       "scene": "a ladybug's head fills the view, a glossy black dome with faceted eyes, two slender segmented antennae arcing upward, fine dark hairs along each segment",
-      "target": "the tip of one antenna, a small smooth black sphere",
+      "target": "a small smooth black sphere",
       "target_phrase": "a black sphere"
     },
     {
@@ -54,7 +54,7 @@
       "dur": 3,
       "palette": "lacquer blue-green and star black",
       "scene": "a vast glossy blue-green planet fills all of space, its curved limb gleaming like wet lacquer, broad white cloud bands swirled over oceans and continents, the black of space beyond",
-      "target": "a gap in the banded clouds below, sunlit gold-green countryside visible through the opening",
+      "target": "a clear round gap in the cloud bands",
       "target_phrase": "a gap in clouds"
     },
     {
@@ -64,7 +64,7 @@
       "dur": 4,
       "palette": "sunlit cloud white and warm gold",
       "scene": "billowing white clouds tower on either side, warm gold light pouring through the gaps onto rolling green and gold countryside below",
-      "target": "a single flowering treetop canopy rising from the countryside, blossoms and leaves bright in the sun",
+      "target": "a single flowering treetop canopy, bright blossoms and green leaves",
       "target_phrase": "a flowering treetop"
     },
     {

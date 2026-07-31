@@ -5,7 +5,7 @@
   "format": {
     "beats_per_bar": 4,
     "exact_loop": true,
-    "counter": false
+    "counter": true
   },
   "registers": [
     {
@@ -15,7 +15,7 @@
       "dur": 8,
       "palette": "brass amber and violet dark",
       "scene": "a wide Victorian electrical laboratory at night seen from the doorway at floor level, long mahogany benches ranked down the room under a high ribbed-glass ceiling dome, brass coils and glass instruments crowded on the shelves, violet light across the dark wood and the black and white tiled floor, empty, no one present, a small glass globe alight with violet on a bench across the room",
-      "target": "a round glass globe on a fluted brass base among the brass instruments on the mahogany bench, its glass alight with violet",
+      "target": "a round glass globe alight with violet",
       "target_phrase": "a glowing glass globe",
       "loop_target": "the wide Victorian electrical laboratory at night, mahogany benches and brass coils under the ribbed-glass dome, violet light on dark wood"
     },
@@ -26,7 +26,7 @@
       "dur": 4,
       "palette": "electric blue and deep violet",
       "scene": "the inside of a glass plasma globe, a deep violet chamber walled in curved glass, a black electrode column at its center, ragged threads of electric blue rooted along the column",
-      "target": "one bright arc filament, a jagged rope of electric blue and white anchored on the black electrode",
+      "target": "a bright arc filament, a jagged rope of electric blue and white",
       "target_phrase": "a bright blue filament",
       "cameo": {
         "sprite": "output/mascots/canon/clark.png",
@@ -44,7 +44,7 @@
       "dur": 4,
       "palette": "white-hot core and violet haze",
       "scene": "a single arc filament fills the black, a jagged rope of white-hot light in a violet haze, fine hairs of discharge standing out along its length",
-      "target": "a fork where the filament divides into finer branches, a fan of white and violet threads",
+      "target": "a forked fan of fine white and violet threads",
       "target_phrase": "a forked branch"
     },
     {
@@ -62,7 +62,7 @@
       "dur": 3,
       "palette": "violet arcs and indigo black",
       "scene": "a magnetar held in a cage of its own magnetic field, huge violet field-line arcs looped pole to pole around a hard white star, an indigo starfield beyond",
-      "target": "the hard white star at the heart of the cage, a searing sphere with twin pale beams standing from its poles",
+      "target": "a hard white star, a searing sphere with twin pale beams at its poles",
       "target_phrase": "a white star"
     },
     {
@@ -72,7 +72,7 @@
       "dur": 4,
       "palette": "pale blue-white and copper dust",
       "scene": "twin pulsar beams stand from a white neutron star, two long cones of pale blue light across the dark, copper-toned dust aglow along their length",
-      "target": "a copper-toned metal planet in the beam light, a burnished disc banded with dark ore",
+      "target": "a copper-toned metal planet, burnished and banded with dark ore",
       "target_phrase": "a copper planet"
     },
     {
@@ -82,7 +82,7 @@
       "dur": 4,
       "palette": "burnished copper and violet",
       "scene": "a copper-toned metal planet fills the view, burnished plains and dark ore ridges wrapped across its curve, tall violet aurora curtains over its pole, black space at its limb",
-      "target": "a tall aurora curtain over the copper plains, a pleated wall of violet and green light",
+      "target": "a tall aurora curtain, a pleated wall of violet and green light",
       "target_phrase": "an aurora curtain"
     },
     {
@@ -92,7 +92,7 @@
       "dur": 2,
       "palette": "violet and green glow on black",
       "scene": "within a pleated aurora curtain high over a dark copper plain, walls of violet and green light standing on either side, the ore-dark ground below",
-      "target": "a ribbed glass dome on the copper plain, heavy brass ribs framing tall lit panes",
+      "target": "a ribbed glass dome, heavy brass ribs framing tall lit panes",
       "target_phrase": "a glass dome"
     },
     {

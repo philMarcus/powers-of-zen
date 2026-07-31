@@ -5,7 +5,7 @@
   "format": {
     "beats_per_bar": 4,
     "exact_loop": true,
-    "counter": false
+    "counter": true
   },
   "registers": [
     {
@@ -15,7 +15,7 @@
       "dur": 4,
       "palette": "warm gold and meadow green",
       "scene": "a wide hillside meadow at golden hour seen from the slope at eye level among tall grass and wildflowers, the whole valley open below and the low sun beyond, the warm air over the valley thick with countless small orange and black monarch butterflies, a stand of milkweed further down the slope",
-      "target": "a stand of milkweed on the meadow slope, thick green stems topped with round crowns of small pink flowers, broad leaves below them",
+      "target": "a stand of milkweed, thick green stems topped with round crowns of small pink flowers",
       "target_phrase": "a pink flower cluster",
       "loop_target": "the sunlit hillside meadow at golden hour, tall grass and wildflowers on the slope, the warm valley air over it full of small orange monarch wings"
     },
@@ -26,11 +26,14 @@
       "dur": 4,
       "palette": "pale green and soft violet",
       "scene": "a stand of milkweed filling the view at golden hour, thick green stems and broad ribbed leaves, round crowns of small pink flowers at the top, warm light through the leaf edges, monarch butterflies at rest on several of the blooms",
-      "target": "one monarch butterfly at rest on a broad milkweed leaf, both wings held open and flat, deep orange panes divided by heavy black veins",
+      "target": "a monarch butterfly, wings held open and flat, deep orange panes divided by heavy black veins",
       "target_phrase": "a monarch butterfly",
       "cameo": {
         "sprite": "output/mascots/canon/dora.png",
-        "pos": [0.72, 0.66],
+        "pos": [
+          0.72,
+          0.66
+        ],
         "size": 0.13
       }
     },
@@ -41,7 +44,7 @@
       "dur": 2,
       "palette": "blazing orange and jet black",
       "scene": "a monarch butterfly at rest on a broad green leaf, both wings held open and flat, deep orange panes divided by heavy black veins, a black border set with white dots around the outer edge",
-      "target": "one long triangular forewing, an orange pane framed in thick black veins with a row of white dots along its rim",
+      "target": "a long triangular forewing, an orange pane framed in thick black veins",
       "target_phrase": "an orange wing"
     },
     {
@@ -51,7 +54,7 @@
       "dur": 2,
       "palette": "violet-grey and pale amber",
       "scene": "a wing surface filling the entire view, flat scale tiles overlapping in neat ranks, wide bands of orange tiles beside bands of black tiles, every tile ridged along its length, a faint violet sheen at the tile edges",
-      "target": "one orange scale tile among the ranks, a flat elongated plate with fine parallel ridges and a notched outer tip",
+      "target": "an orange scale tile, a flat elongated plate with fine parallel ridges",
       "target_phrase": "an orange scale tile"
     },
     {
@@ -61,7 +64,7 @@
       "dur": 2,
       "palette": "hot orange and deep black",
       "scene": "a single wing scale filling the entire view, a flat elongated orange plate ribbed with fine parallel ridges from base to tip, slender cross-struts bridging the ridges, the outer edge notched into blunt teeth",
-      "target": "one dark slot between two ridges of the plate, a narrow violet-rimmed opening in the ribbed orange surface",
+      "target": "a dark narrow slot, a violet-rimmed opening",
       "target_phrase": "a dark slot"
     },
     {
@@ -79,7 +82,7 @@
       "dur": 4,
       "palette": "amber starlight and deep black",
       "scene": "deep space threaded by long looping ribbons of stars, two great luminous coils crossing at the center of the void, fine dust lanes curving along each ribbon, warm amber starlight strewn through the black",
-      "target": "a bright two-lobed nebula set into one of the star ribbons, a brilliant white core between two glowing lobes",
+      "target": "a bright two-lobed nebula, a brilliant white core between two glowing lobes",
       "target_phrase": "a bright nebula"
     },
     {
@@ -89,7 +92,7 @@
       "dur": 4,
       "palette": "violet and pale cyan",
       "scene": "an enormous planetary nebula filling the void, two vast symmetric lobes of glowing gas spread on either side of a brilliant white core, fine orange and violet filaments veining each lobe, a dark dust band across the waist between them",
-      "target": "a deep violet planet held in the nebula's glow, a great round world with a dark dusk hemisphere and a thin bright limb",
+      "target": "a deep violet planet, a dark dusk hemisphere and a thin bright limb",
       "target_phrase": "a violet planet"
     },
     {
@@ -99,7 +102,7 @@
       "dur": 4,
       "palette": "deep violet and molten gold",
       "scene": "a great violet planet seen close from space, its curved limb bright against the black, deep purple land under a thin violet haze, networks of branching golden rivers spread across the dark surface",
-      "target": "one wide golden river on the surface below, a broad braided channel of gold between dark violet ridges, smaller channels branching from it",
+      "target": "a wide golden river, a broad braided channel with smaller branches",
       "target_phrase": "a golden river"
     },
     {

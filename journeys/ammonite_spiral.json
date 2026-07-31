@@ -5,7 +5,7 @@
   "format": {
     "beats_per_bar": 4,
     "exact_loop": true,
-    "counter": false
+    "counter": true
   },
   "registers": [
     {
@@ -15,7 +15,7 @@
       "dur": 4,
       "palette": "dusk gold and wet slate",
       "scene": "a wide rocky tide-pool shore at dusk seen from a low headland, dark slate ledges wet from the tide, shallow pools and ribbons of cream foam between them, kelp and barnacle crust in the cracks, one coiled fossil shell set in a flat slab at the water's edge",
-      "target": "a coiled fossil shell set in flat slate, ribbed spiral whorls of pale stone, a faint oil-slick sheen over its ridges",
+      "target": "a coiled fossil shell, ribbed spiral whorls of pale stone, a faint oil-slick sheen",
       "target_phrase": "a coiled fossil shell",
       "loop_target": "the wide rocky tide-pool shore at dusk seen from a low headland, dark slate ledges, shallow pools and ribbons of cream foam"
     },
@@ -26,7 +26,7 @@
       "dur": 4,
       "palette": "pale stone grey and pearl",
       "scene": "a coiled ammonite fossil filling the view, ribbed whorls of pale stone wound tight to a small centre, a thin film of pearl iridescence over the ribs, dark slate matrix around the rim",
-      "target": "an open chamber broken into the outer whorl, a curved pearl-white partition inside it, its edge a dense lace of branching frilled lobes",
+      "target": "an open pearl-white chamber, its curved partition edged in branching frilled lace",
       "target_phrase": "an open chamber"
     },
     {
@@ -36,7 +36,7 @@
       "dur": 2,
       "palette": "ivory and pale pink iridescence",
       "scene": "the inside of one ammonite chamber, a curved pearl-white partition wall filling the view, its edge a dense lace of branching frilled lobes, fine ridges fanned across the ivory surface, a thin oil-slick film of colour over everything",
-      "target": "a stepped ledge of aragonite crystal on the wall, flat tiers of pale mineral stacked in broad shelves, their faces bright with green and pink colour",
+      "target": "a stepped ledge of aragonite crystal, flat pale tiers bright with green and pink colour",
       "target_phrase": "a stepped crystal ledge"
     },
     {
@@ -54,7 +54,7 @@
       "dur": 4,
       "palette": "amber and cream starlight",
       "scene": "a barred spiral galaxy in the black, a broad glowing bar of amber starlight across its core, two great arms curved out from the bar's ends, dark dust lanes threading between them",
-      "target": "a dense knot of stars in one outer arm, a tight cluster of cream points packed close together",
+      "target": "a dense knot of stars, a tight cluster of cream points",
       "target_phrase": "a star cluster"
     },
     {
@@ -64,7 +64,7 @@
       "dur": 4,
       "palette": "silver-blue and violet",
       "scene": "a dense field of stars set in interlocking curved rows, thousands of silver-blue points in a tight seed-pattern lattice, faint violet gas in the gaps between them",
-      "target": "a pearl-white planet among the stars, one broad white cloud band wound around its globe",
+      "target": "a pearl-white planet, one broad white cloud band wound around it",
       "target_phrase": "a white planet"
     },
     {
@@ -74,7 +74,7 @@
       "dur": 4,
       "palette": "pearl white and warm gold",
       "scene": "a huge pearl-white planet filling space, one enormous white cloud system coiled across its face, warm gold light along its curved limb, the black of space beyond",
-      "target": "a clear opening at the centre of the cloud coil, dark green sea and pale surf in the gap",
+      "target": "a clear round opening in the white cloud",
       "target_phrase": "a gap in clouds"
     },
     {
@@ -86,7 +86,10 @@
       "scene": "a rugged coastline seen from high above, dark slate headlands and long reefs edged with cream surf, pale tide flats and scattered pools between the rocks, deep green water in the bays",
       "cameo": {
         "sprite": "output/mascots/canon/tina.png",
-        "pos": [0.31, 0.66],
+        "pos": [
+          0.31,
+          0.66
+        ],
         "size": 0.13
       }
     }

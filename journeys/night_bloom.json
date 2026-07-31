@@ -5,7 +5,7 @@
   "format": {
     "beats_per_bar": 4,
     "exact_loop": true,
-    "counter": false
+    "counter": true
   },
   "registers": [
     {
@@ -15,7 +15,7 @@
       "dur": 4,
       "palette": "emerald and gold motes",
       "scene": "the glowing interior of a moss leaf seen flat-on from within, translucent emerald cell walls packed like stained-glass lanterns, golden chloroplast motes suspended in every chamber",
-      "target": "one luminous jade spore adrift between the cell walls, a round mote wrapped in faint golden dust",
+      "target": "a luminous jade spore, a round glowing mote",
       "target_phrase": "a glowing spore",
       "loop_target": "the glowing emerald cells of a moss leaf, translucent walls packed like stained-glass lanterns"
     },
@@ -26,7 +26,7 @@
       "dur": 2,
       "palette": "pale silver-blue and black",
       "scene": "a dark void filled with glowing jade spores adrift, each a round lantern wrapped in luminous dust",
-      "target": "a single green spark deep in the dark, a sharp pinpoint of emerald light",
+      "target": "a single green spark, a sharp pinpoint of emerald light",
       "target_phrase": "a green spark"
     },
     {
@@ -44,17 +44,17 @@
       "dur": 4,
       "palette": "indigo and starlight",
       "scene": "a tilted spiral galaxy glowing in the black, ragged luminous arms of starlight sweeping around a bright core",
-      "target": "an emerald nebula nested in the galaxy's outer arm, pillars of green gas around newborn stars",
+      "target": "an emerald nebula, pillars of glowing green gas",
       "target_phrase": "a green nebula"
     },
     {
       "name": "nebula",
-      "exp": 13,
+      "exp": 13.5,
       "kind": "zoom",
       "dur": 4,
       "palette": "emerald and violet glow",
       "scene": "a vast glowing star-nursery nebula, towering pillars of luminous emerald gas, newborn stars burning in their folds",
-      "target": "a dark round planet laced with veins of golden light, its night side turned outward",
+      "target": "a dark round planet laced with veins of golden light",
       "target_phrase": "a dark planet"
     },
     {
@@ -64,7 +64,7 @@
       "dur": 4,
       "palette": "midnight blue and city gold",
       "scene": "a huge dark planet seen from space, curved horizon and glowing limb, webs of golden city light wrapped across its night side",
-      "target": "a bright golden web of city light sprawled on the dark surface below",
+      "target": "a bright golden web of city light",
       "target_phrase": "golden city lights"
     },
     {
@@ -74,7 +74,7 @@
       "dur": 2,
       "palette": "indigo and scattered gold",
       "scene": "a dark continent seen from high altitude at night, rivers of golden village light tracing the valleys between black mountain ranges",
-      "target": "a cluster of warm lights on a dark mountainside, a terraced village aglow",
+      "target": "a terraced village of warm lights",
       "target_phrase": "a cluster of lights"
     },
     {
@@ -84,7 +84,7 @@
       "dur": 2,
       "palette": "amber and indigo",
       "scene": "a terraced mountain village at night seen from above, warm windows and lamplit stairways cascading down the slopes, empty streets, no one present",
-      "target": "a garden strung with glowing paper lanterns beside the lowest terrace",
+      "target": "a garden strung with glowing paper lanterns",
       "target_phrase": "glowing paper lanterns"
     },
     {
@@ -94,11 +94,14 @@
       "dur": 4,
       "palette": "gold and deep green",
       "scene": "a midnight garden strung with glowing paper lanterns, luminous flowers and winding stone paths in the dark, no one present",
-      "target": "one pale night-blooming flower in the lantern light, luminous white petals half open",
+      "target": "a pale night-blooming flower, luminous white petals half open",
       "target_phrase": "a white flower",
       "cameo": {
         "sprite": "output/mascots/canon/lamar.png",
-        "pos": [0.38, 0.62],
+        "pos": [
+          0.38,
+          0.62
+        ],
         "size": 0.13
       }
     },
@@ -109,7 +112,7 @@
       "dur": 2,
       "palette": "moon white and violet",
       "scene": "an enormous night-blooming flower filling the dark, luminous white petals around a glowing pollen heart, fireflies adrift around it",
-      "target": "a glowing firefly perched at a petal's edge, its lantern body shining green",
+      "target": "a glowing firefly, its body shining green",
       "target_phrase": "a glowing firefly"
     },
     {

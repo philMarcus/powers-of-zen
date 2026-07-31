@@ -5,7 +5,7 @@
   "format": {
     "beats_per_bar": 4,
     "exact_loop": true,
-    "counter": false
+    "counter": true
   },
   "registers": [
     {
@@ -15,7 +15,7 @@
       "dur": 4,
       "palette": "morning white-gold and wet stone grey",
       "scene": "a wide shingle beach in low morning light seen from a low viewpoint at the water's edge, broad banks of wet grey pebbles, a long white surf line along the shore, a thin film of bright water over the near stones, pale gold light laid flat across the whole beach, one small green sea-glass pebble among the wet stones",
-      "target": "a frosted green sea-glass pebble set among the wet grey stones, its green body clouded and matte, its edges worn round and dull",
+      "target": "a frosted green sea-glass pebble, its body clouded and matte, edges worn round",
       "target_phrase": "a green glass pebble",
       "loop_target": "the wide shingle beach in low morning light, seen from a low viewpoint at the water's edge, wet grey pebbles and a long white surf line"
     },
@@ -26,7 +26,7 @@
       "dur": 4,
       "palette": "sea-glass green and pale frost white",
       "scene": "a frosted green sea-glass pebble filling the view, its clouded matte-green body worn round, a fine white bloom of frosting across the whole skin, small chips and nicks along the dull edges, wet grey stone behind it",
-      "target": "a cluster of small round pits in the frosted skin, shallow hollows ringed with pale white, one broad smooth hollow among them",
+      "target": "a cluster of small round pits, shallow hollows ringed with pale white",
       "target_phrase": "a cluster of pits"
     },
     {
@@ -36,7 +36,7 @@
       "dur": 4,
       "palette": "chalk white and pale green",
       "scene": "the frosted surface of sea glass filling the view, a cratered pale green land of round pits and shallow smooth valleys, white rims around every hollow, fine scratches crossing the flats between them, bright morning light hard across the whole field",
-      "target": "glowing green strands under the frosted skin, pale luminous threads knotted at bright points of light",
+      "target": "glowing green strands, pale luminous threads knotted at bright points of light",
       "target_phrase": "glowing green strands",
       "cameo": {
         "sprite": "output/mascots/canon/aleksey.png",
@@ -62,7 +62,7 @@
       "dur": 3,
       "palette": "white-cyan light on deep sea green",
       "scene": "a realm of packed luminous bubble cells, curved walls of white light dividing every cell from its neighbours, bright junctions where three walls meet, deep sea-green dark behind the whole packing",
-      "target": "one broad bright cell in the packing, a clear round chamber ringed by a sharp white wall",
+      "target": "a broad bright cell, a clear round chamber ringed by a sharp white wall",
       "target_phrase": "a bright round cell"
     },
     {
@@ -72,7 +72,7 @@
       "dur": 4,
       "palette": "sunlit gold and deep green water",
       "scene": "sunlit water seen from straight above, two sets of straight wave-lines crossed into a standing lattice, bright gold crests and dark green troughs in a regular diamond grid, a white glint at every crossing",
-      "target": "a long pale strip of shore across the water, wet sand and dark stone banded along its length",
+      "target": "a long pale strip of shore, wet sand and dark stone banded along it",
       "target_phrase": "a pale shore strip"
     },
     {

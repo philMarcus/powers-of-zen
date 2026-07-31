@@ -5,7 +5,7 @@
   "format": {
     "beats_per_bar": 4,
     "exact_loop": true,
-    "counter": false
+    "counter": true
   },
   "registers": [
     {
@@ -15,7 +15,7 @@
       "dur": 4,
       "palette": "royal blue and lamplit gold",
       "scene": "a tailor's atelier at night seen from across the room at standing height, empty, no one present, a headless dress-form at the center wearing a royal-blue velvet evening coat, gold embroidery banding one sleeve at the wrist, brass lamps along the panelled walls, bolts of cloth stacked on a long cutting table, deep shadow in the corners",
-      "target": "the coat's cuff, a wide band of gold bullion embroidery coiled in tight scrolls over royal-blue velvet",
+      "target": "a gold-embroidered cuff, heavy bullion scrolls coiled tight",
       "target_phrase": "a gold embroidered cuff",
       "loop_target": "a tailor's atelier at night, a dress-form wearing a royal-blue velvet coat under brass lamps, seen from across the room"
     },
@@ -26,7 +26,7 @@
       "dur": 4,
       "palette": "burnished gold and bronze",
       "scene": "the coat's cuff at full width, heavy gold bullion embroidery coiled in tight scrolls and knots, raised metal thread bright under the lamps, panels of royal-blue velvet bare between the goldwork",
-      "target": "a bare panel of blue velvet between the gold scrolls, its surface ribbed with fine diagonal rows",
+      "target": "a bare panel of blue velvet, its surface ribbed with fine diagonal rows",
       "target_phrase": "a blue velvet patch"
     },
     {
@@ -36,11 +36,14 @@
       "dur": 3,
       "palette": "indigo and cold silver",
       "scene": "the twill weave beneath the embroidery, thick indigo thread ridges crossing over and under in strict diagonal rows, narrow shadowed valleys between every ridge, stray blue floss laid across the ranks",
-      "target": "a single blue fiber clear of one ridge, a slender strand shingled with overlapping scale plates",
+      "target": "a single blue fiber, a slender strand shingled with overlapping scale plates",
       "target_phrase": "a single blue fiber",
       "cameo": {
         "sprite": "output/mascots/canon/lorraine.png",
-        "pos": [0.33, 0.64],
+        "pos": [
+          0.33,
+          0.64
+        ],
         "size": 0.13
       }
     },

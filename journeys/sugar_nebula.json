@@ -5,7 +5,7 @@
   "format": {
     "beats_per_bar": 4,
     "exact_loop": true,
-    "counter": false
+    "counter": true
   },
   "registers": [
     {
@@ -15,7 +15,7 @@
       "dur": 4,
       "palette": "neon magenta and deep night blue",
       "scene": "a neon candy stall on a dark cobbled lane at night, seen from across the lane at street level, its striped awning and counter outlined in magenta and cyan tubing, shelves of candy jars and racks of wrapped sweets behind the counter, a hand-painted sign above, empty, no one present",
-      "target": "a large spiral lollipop upright on the counter, a flat disc of glossy candy coiled in magenta, cyan and white bands on a white paper stick",
+      "target": "a large spiral lollipop, a flat disc of glossy candy coiled in magenta, cyan and white bands",
       "target_phrase": "a spiral lollipop",
       "loop_target": "a neon candy stall on a dark cobbled lane at night, striped awning and counter outlined in magenta and cyan tubing"
     },
@@ -26,7 +26,7 @@
       "dur": 4,
       "palette": "glossy magenta and cyan",
       "scene": "a giant spiral lollipop fills the view, a flat disc of hard glossy candy coiled in wide bands of magenta, cyan and white, its surface bright and faintly ridged",
-      "target": "a crust of coarse sugar crystals on the candy, faceted yellow and clear grains packed in a rough cluster",
+      "target": "a crust of coarse sugar crystals, faceted yellow and clear grains",
       "target_phrase": "yellow sugar crystals"
     },
     {
@@ -36,7 +36,7 @@
       "dur": 8,
       "palette": "bright yellow, white and pale gold",
       "scene": "a forest of rock-candy spires, towering faceted sugar columns in bright yellow, white and pink, jagged crystal ground between them, magenta and cyan light in the facets",
-      "target": "a lattice of clear sugar-glass shards between the spires, thin angular plates fused edge to edge",
+      "target": "a lattice of clear sugar-glass shards, thin angular plates fused edge to edge",
       "target_phrase": "clear glass shards"
     },
     {
@@ -54,7 +54,7 @@
       "dur": 3,
       "palette": "hot magenta, white and black",
       "scene": "a colossal quasar accretion disk across all of space, glossy bands of magenta, cyan and white wound flat around a brilliant white core, a narrow straight jet of white light above the center, black space beyond the rim",
-      "target": "a bank of pink cotton-candy nebula at the disk's outer rim, a dense spun floss cloud threaded with cyan",
+      "target": "a bank of pink cotton-candy nebula, a dense spun floss cloud threaded with cyan",
       "target_phrase": "a pink cloud"
     },
     {
@@ -64,7 +64,7 @@
       "dur": 2,
       "palette": "pale candyfloss pink and cyan",
       "scene": "vast banks of cotton-candy nebula in the black, spun pink and white floss piled in soft towers, cyan light threading the folds",
-      "target": "a banded gumball planet in a clearing of the floss, a round sphere striped in glossy orange, pink and white",
+      "target": "a banded gumball planet, a round sphere striped in glossy orange, pink and white",
       "target_phrase": "a striped planet"
     },
     {
@@ -74,7 +74,7 @@
       "dur": 2,
       "palette": "glossy orange, pink and white",
       "scene": "an enormous gumball planet fills the view, a hard candy shell banded in orange, pink, white and cyan around its curve, black space at its limb",
-      "target": "a gap in the planet's striped cloud deck, ribbons of pink and white taffy cloud through the opening",
+      "target": "a clear gap in the striped cloud deck",
       "target_phrase": "a gap in clouds"
     },
     {
@@ -84,7 +84,7 @@
       "dur": 4,
       "palette": "pink and white on deep night blue",
       "scene": "a night sky of pulled-taffy clouds, thick glossy ribbons of pink, white and pale yellow banked on either side, deep blue-black air in the channel between them",
-      "target": "a lit carnival street below, a lane of striped stalls and strung bulbs between dark buildings",
+      "target": "a lit carnival street, striped stalls and strung bulbs",
       "target_phrase": "a lit street"
     },
     {
@@ -96,7 +96,10 @@
       "scene": "a night carnival street seen from just above the lane, rows of striped stalls under long strings of glowing bulbs, painted ride towers and a lit ticket booth along the wet cobbles, a neon candy stall glowing at the corner of the lane, empty, no one present",
       "cameo": {
         "sprite": "output/mascots/canon/kitty.png",
-        "pos": [0.72, 0.63],
+        "pos": [
+          0.72,
+          0.63
+        ],
         "size": 0.13
       }
     }

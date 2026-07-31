@@ -5,7 +5,7 @@
   "format": {
     "beats_per_bar": 4,
     "exact_loop": true,
-    "counter": false
+    "counter": true
   },
   "registers": [
     {
@@ -15,7 +15,7 @@
       "dur": 4,
       "palette": "ivory white, obsidian black and hedge green",
       "scene": "a topiary chess garden seen from a low stone terrace at the garden's edge, a wide board of ivory and obsidian flagstones set inside clipped green hedge walls, tall carved stone pieces standing on the squares, pale gravel paths and dark yew cones around the rim, empty, no one present",
-      "target": "a tall carved obsidian knight standing on a pale square, a stylized horse head above a fluted collar and a round plinth, cut from polished black stone",
+      "target": "a tall carved obsidian knight, a stylized horse head above a fluted collar",
       "target_phrase": "a black chess knight",
       "loop_target": "the topiary chess garden seen from the low stone terrace, its ivory and obsidian board set inside clipped green hedge walls, tall carved pieces on the squares"
     },
@@ -26,11 +26,14 @@
       "dur": 4,
       "palette": "obsidian black and pale ivory",
       "scene": "a giant carved obsidian knight fills the view, a stylized horse head above a fluted collar, the polished black stone cut in broad clean planes, pale flagstones at the foot of the plinth",
-      "target": "a pale white vein in the polished black stone, a bright branching line of ivory mineral across the dark surface",
+      "target": "a pale white mineral vein, a bright branching line of ivory",
       "target_phrase": "a pale white vein",
       "cameo": {
         "sprite": "output/mascots/canon/adam.png",
-        "pos": [0.68, 0.66],
+        "pos": [
+          0.68,
+          0.66
+        ],
         "size": 0.13
       }
     },
@@ -41,7 +44,7 @@
       "dur": 2,
       "palette": "ivory white and deep obsidian",
       "scene": "the polished stone surface fills the whole view, a broad ivory vein branching through deep obsidian, fine crystalline grain glinting along every edge of the seam",
-      "target": "a small dark angular crystal locked in the pale stone, flat facets meeting in sharp kite and dart shapes",
+      "target": "a small dark angular crystal, flat facets in sharp kite and dart shapes",
       "target_phrase": "a dark angular crystal"
     },
     {
@@ -51,7 +54,7 @@
       "dur": 2,
       "palette": "ivory, obsidian and one emerald accent",
       "scene": "an aperiodic tiling of ivory kites and obsidian darts locked edge to edge across the entire field, thin bright seams between the tiles, five-fold star rosettes scattered through the pattern",
-      "target": "one green tile among the ivory kites, a single glowing emerald facet in the pale pattern",
+      "target": "a glowing emerald tile, a single bright green facet",
       "target_phrase": "a green tile"
     },
     {
@@ -69,7 +72,7 @@
       "dur": 3,
       "palette": "white struts on black",
       "scene": "a crystalline lattice universe, galaxy clusters set at the nodes of a white geometric scaffold, straight luminous struts ruling the black in every direction, faint green light banked in the deep cells",
-      "target": "one ivory ring galaxy at a lattice node, a closed ring of white starlight around a dark open centre",
+      "target": "an ivory ring galaxy, a closed ring of white starlight around a dark centre",
       "target_phrase": "a white ring galaxy"
     },
     {
@@ -79,7 +82,7 @@
       "dur": 4,
       "palette": "white starlight and black",
       "scene": "an ivory ring galaxy fills the black, a smooth closed ring of white starlight around a dark open centre, pale dust lanes crossing the ring",
-      "target": "a bright white star on the ring, thin obsidian orbit circles drawn around it",
+      "target": "a bright white star, thin dark orbit circles drawn around it",
       "target_phrase": "a bright white star"
     },
     {
@@ -89,7 +92,7 @@
       "dur": 4,
       "palette": "white, grey and obsidian on black",
       "scene": "a white star burning at the centre of thin obsidian orbit circles, pale spherical worlds set along the circles at wide intervals, black space beyond",
-      "target": "one pale marble world on an outer circle, an ivory sphere marbled with grey and dark stone, a small green patch on its face",
+      "target": "a pale marble planet, an ivory sphere marbled with grey and dark stone",
       "target_phrase": "a pale marble planet"
     },
     {
@@ -99,7 +102,7 @@
       "dur": 4,
       "palette": "ivory marble and one emerald continent",
       "scene": "a monochrome marble planet fills the view, an ivory sphere marbled with grey and obsidian, one green forest continent set on its face, black space at the curved limb",
-      "target": "the green continent below, a land of dense forest and clipped hedge country",
+      "target": "a green continent of dense forest",
       "target_phrase": "a green continent"
     },
     {

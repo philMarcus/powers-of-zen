@@ -5,7 +5,7 @@
   "format": {
     "beats_per_bar": 4,
     "exact_loop": true,
-    "counter": false
+    "counter": true
   },
   "registers": [
     {
@@ -15,7 +15,7 @@
       "dur": 4,
       "palette": "sunset amber and warm honey gold",
       "scene": "a wide sunset apiary orchard seen from a low rise at the end of the rows, blossoming fruit trees in long ranks under a deep amber sky, dry grass and clover between the trunks, a line of pale wooden hive boxes standing at the edge of the nearest row",
-      "target": "a pale wooden beehive box, weathered square supers stacked one on another, a narrow landing board across its front and a dark entrance slot beneath",
+      "target": "a pale wooden beehive box, weathered square supers stacked one on another",
       "target_phrase": "a wooden beehive",
       "loop_target": "the sunset apiary orchard, blossoming trees in long ranks under an amber sky, pale wooden hive boxes at the edge of the rows"
     },
@@ -26,11 +26,14 @@
       "dur": 4,
       "palette": "pale wax white and cool shadowed brown",
       "scene": "an opened beehive fills the view, tiers of wooden frames drawn thick with wax comb, a haze of bees across the ribbed surfaces, pale wax and deep shadow in the gaps between the frames",
-      "target": "one frame of golden honeycomb, its face a close-packed field of six-sided wax cells, the rims sealed with pale wax caps",
+      "target": "a frame of golden honeycomb, a close-packed field of six-sided wax cells",
       "target_phrase": "a golden honeycomb",
       "cameo": {
         "sprite": "output/mascots/canon/amos.png",
-        "pos": [0.7, 0.34],
+        "pos": [
+          0.7,
+          0.34
+        ],
         "size": 0.13
       }
     },
@@ -41,7 +44,7 @@
       "dur": 4,
       "palette": "blazing amber and molten gold",
       "scene": "a wall of honeycomb fills the view, a tight hexagonal grid of six-sided wax cells, amber walls lit from within the wax, some caps sealed pale and others open on dark gold",
-      "target": "one open wax cell full of dark gold honey, six straight walls around a deep amber pool level with the rim",
+      "target": "an open wax cell full of dark gold honey, six straight walls",
       "target_phrase": "a honey-filled cell"
     },
     {
@@ -51,7 +54,7 @@
       "dur": 2,
       "palette": "deep bronze and dim umber",
       "scene": "the inside of a single wax cell, six walls of dull gold wax on every side, thick dark honey pooled across the floor in a heavy amber glow",
-      "target": "a small clear sugar crystal in the honey, a hard cube with flat square facets and sharp bright edges",
+      "target": "a small clear sugar crystal, a hard cube with flat square facets",
       "target_phrase": "a clear sugar crystal"
     },
     {
@@ -61,7 +64,7 @@
       "dur": 2,
       "palette": "clear pale gold and cold white glint",
       "scene": "a clear cubic sugar crystal fills the view, flat square faces and sharp straight edges, hard pale gold planes meeting at right angles",
-      "target": "a cubic lattice of bright nodes in ordered ranks, small glowing points joined by straight struts running in three directions",
+      "target": "a cubic lattice of bright nodes, small glowing points joined by straight struts",
       "target_phrase": "a glowing lattice"
     },
     {
@@ -79,7 +82,7 @@
       "dur": 3,
       "palette": "dense golden starlight and black",
       "scene": "a globular cluster of a million golden stars packed into one great round swarm, blazing amber at the crowded core and thinning to scattered points against the black",
-      "target": "an amber nebula at the swarm's edge, thick bronze dust lanes across a broad cloud of glowing gold gas",
+      "target": "an amber nebula, thick bronze dust lanes across glowing gold gas",
       "target_phrase": "an amber nebula"
     },
     {
@@ -89,7 +92,7 @@
       "dur": 4,
       "palette": "dusky bronze and indigo dust",
       "scene": "a great amber nebula, bronze dust lanes carved in dark channels through vast sheets of glowing gold gas, deep indigo dark beyond the folds",
-      "target": "a round banded planet of honey gold, broad pale-gold and amber cloud bands wrapped around its curve, one dark storm eye in the south",
+      "target": "a round banded planet of honey gold, pale-gold and amber cloud bands",
       "target_phrase": "a banded planet"
     },
     {
@@ -99,7 +102,7 @@
       "dur": 4,
       "palette": "honey gold and pale amber",
       "scene": "an enormous honey-gold planet fills all of space, broad pale-gold and amber cloud bands wrapped around its curve, one dark storm eye in the south, black space beyond the bright limb",
-      "target": "a gap in the cloud bands below, sunlit green and gold country in the opening",
+      "target": "a clear round gap in the cloud bands",
       "target_phrase": "a gap in clouds"
     },
     {
