@@ -132,9 +132,14 @@ def compile_journey(spec, fps, build="in"):
                 card_zoom, card_appr = 10.0, [None] * F
             elif kind == "seam":
                 # SEAM: dwell in this scene; the MORPH is the next card's arrival beat (big prompt
-                # jump + denoise boost). Gentle zoom, no targeting — instant on-beat morph, not a dive.
+                # jump + denoise boost). NO TARGETING (nothing to aim at) — but the DIVE NEVER
+                # STOPS. This card zooms at the SAME rate as every other card: the old x1.4 was
+                # a near-freeze (1.006-1.019/frame vs 1.039-1.135), and the uniform-bar retime
+                # made it twice as slow and twice as long — a 2.3s stall right before the most
+                # dramatic moment (Phil spotted it in the v9 frames). "Don't target" was correct;
+                # "don't zoom" never was.
                 phases.append({"prompt": _p(T_FINAL.format(scene=scene, style=style), reg), "frames": body})
-                card_zoom, card_appr = 1.4, [None] * F
+                card_zoom, card_appr = 10.0, [None] * F
             else:
                 # ZOOM: emerging targeted approach INTO the contained object.
                 target = _target(reg)
