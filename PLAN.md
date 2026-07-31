@@ -905,3 +905,43 @@ cell interior — gorgeous but off-script; composer-side fix if it matters.
 the prettiness (the whole point); (b) --plain A/B for the depth-CN look suspicion; (c) fold the
 seam repair into dive.py's exact_loop tail (still open from 07-29); (d) update the dive-video
 SKILL once results are approved.
+
+### SEAM-MORPH + PACING + MUSIC-GRID FIXES (2026-07-31, Phil's hard-cut complaint)
+
+**The hard cuts Phil flagged (ComfyUI 24805-7 = night_bloom v6 dive frames 41-43) — diagnosed
+with ground truth:** the FORMAT 2.0 seam implementation ran the ENTIRE seam card at
+`seam_denoise` 0.72, and dive stacked the +0.18 arrival boost → **0.85 effective for 4 frames,
+then 0.78/0.72 for 10 more**. At 0.85 only ~15% of the frame survives → consecutive frames are
+near-fresh txt2img rolls (citrus-cells → literal insect → jungle). Engine-1's ceiling was 0.58
+for 6 prompt-blended frames — that's the cool dissolve. The design was also INVERTED: the dwell
+got chaos while the actual on-beat seam morph got only 0.58. (antenna_ball's review cut has the
+same defect — recheck it.)
+
+**Fix (music-intent-aligned — the strong downbeat carries the morph, anacrusis leads in):**
+- grammar: every card's schedule is `travel_denoise`; seam cards no longer special. New
+  `seam_arrivals` return (9th) marks arrival phases that FOLLOW a seam card.
+- dive: on a seam arrival's transition frames, denoise = `fmt.seam_denoise`(default 0.70) PEAK
+  on the downbeat frame (k=0, where align.py sits the track's strong beat) ramping to travel
+  across the prompt crossfade: 0.70→0.65→0.60→0.55→0.50→0.45→0.40. One coherent on-beat
+  world-flip, engine-1 character at seam strength. Frame counts unchanged → morph grid unchanged.
+- journey text: "like fireflies in fog" simile in the quantum realm summoned a literal INSECT
+  mid-seam (the composer rule about similes naming objects — violated by my own card); de-simile'd.
+
+**ZOOM FLOOR (Phil's other timing complaint — long scales stall):** grammar's sin² curve let
+card-edge rates fall to ~1.02/frame (dur-8 cards worse). Now `zoom_floor`(fmt, default 1.028)
+guarantees a perceptible dive rate; only the budget ABOVE the floor is shaped by the sin² swell;
+per-card product (and the fill-lands-on-the-beat property) unchanged. A below-budget card (seam
+dwell ×1.4) becomes a steady glide (1.024 uniform).
+
+**MUSIC-GRID BUGS found while checking the musical intent (both silent, both new-schema-only):**
+1. `score.schedule_morphs` still derived frame counts from legacy `sec` — a dur-based journey
+   got a phantom 29f/card grid proportionally scaled onto the real video: EVERY morph time
+   wrong, alignment locking to nothing. Now imports `grammar._frames` (single source of truth,
+   same doctrine as zoom_transform/track sharing crop_center). Verified: night_bloom intervals
+   now 2.33s/1.17s = exact 4-beat and 2-beat cards.
+2. `music_gen.bpm_for` used MEDIAN morph interval as the bar — mixed dur journeys (2+2 half-bar
+   groups are BY DESIGN) → phantom 1.75s bar / 137bpm. For dur journeys the bar is now DEFINED
+   by the format grid (beats_per_bar × frames_per_beat / 12fps → 2.333s, 103bpm); legacy
+   journeys keep the median path.
+
+night_bloom v6 (rendering during the fix) has the OLD seam — keep as the before; v7 = the after.

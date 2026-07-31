@@ -170,3 +170,12 @@ night_bloom v4 frames (misses normal; garbage rarely agrees twice; FP locks land
 1 seam) as the test bed; ~20s/frame with cadence-4 large-ft + depth-CN. Full render night_bloom/v6
 + overlay for review vs engine-1 v4. NEXT: Phil reviews v6 (logical zoom? pretty?); --plain A/B for
 the depth-CN look; fold seam into dive.py; update dive-video SKILL when approved.
+2026-07-31 (evening): HARD-CUT + PACING + MUSIC fixes (PLAN "SEAM-MORPH + PACING + MUSIC-GRID
+FIXES"). Phil flagged 3 consecutive frames = 3 unrelated worlds: the seam card ran at 0.72 base
++ 0.18 arrival boost = 0.85 denoise for 14 frames (near-txt2img each frame). Fixed: seam cards
+travel at 0.40; the on-beat seam morph now lives at the NEXT card's arrival (grammar returns
+seam_arrivals; dive ramps denoise 0.70 peak ON the downbeat → 0.40 across the prompt crossfade).
+Zoom floor 1.028 (fmt.zoom_floor) kills the long-card stall. Music side (checked per Phil):
+schedule_morphs was still sec-based → phantom grid for dur journeys (now uses grammar._frames);
+bpm_for median-bar broke on mixed durs (now bar = format grid: 103bpm/2.33s). night_bloom v6 =
+old-seam "before"; v7 with fixes = "after". antenna_ball's review cut has the same seam defect.

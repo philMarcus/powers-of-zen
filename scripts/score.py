@@ -76,12 +76,19 @@ def schedule_morphs(journey, cut, final_dur, fps=12, shift_sec=None):
     rotation to place the boundaries in final-video time. `shift_sec` (final-video seconds)
     is the dashboard-marked start; if None we fall back to phase_shift.START_REGISTER."""
     import json as _json
+    import sys as _sys
+    _sys.path.insert(0, str(ROOT / "engine"))
+    from grammar import _frames as _reg_frames   # SINGLE SOURCE OF TRUTH for register frame
+    # counts — grammar renders with it, the music grid must agree. (Before 2026-07-31 this
+    # function re-derived counts from the legacy `sec` fields, so any new-schema journey with
+    # `dur` in beats got a phantom 29f/card grid scaled onto the real video: every morph time
+    # wrong, music silently aligned to nothing.)
     spec = _json.loads((ROOT / "journeys" / f"{journey}.json").read_text())
-    fmt = spec.get("format", {}); sec = fmt.get("sec_per_scale", fmt.get("sec_per_decade", 2.4))
+    fmt = spec.get("format", {})
     regs = spec["registers"]
     starts, idx = [], 0
     for r in regs:
-        starts.append(idx); idx += max(12, round(r.get("sec", sec) * fps))
+        starts.append(idx); idx += _reg_frames(r, fmt, fps)
     total = idx
     if shift_sec is not None:                       # dashboard-marked start frame (seconds)
         cut_frame = round((shift_sec / final_dur) * total) % total if final_dur else 0
@@ -90,9 +97,9 @@ def schedule_morphs(journey, cut, final_dur, fps=12, shift_sec=None):
         target = START_REGISTER.get(journey)
         cut_frame = 0
         for k, r in enumerate(regs):
-            F = max(12, round(r.get("sec", sec) * fps))
+            F = _reg_frames(r, fmt, fps)
             if r.get("name") == target:
-                fa = round(F * 0.25) if k > 0 else 0
+                fa = max(2, round(F * 0.25)) if k > 0 else 0
                 raw = starts[k] + fa + round((F - fa) * 0.4)
                 cut_frame = raw if cut == "divein" else (total - raw)
     order = starts if cut == "divein" else [(total - s) % total for s in starts]

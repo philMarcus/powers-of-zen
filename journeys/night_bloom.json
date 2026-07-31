@@ -26,7 +26,7 @@
       "dur": 2,
       "palette": "pale silver-blue and black",
       "scene": "a dark void filled with glowing jade spores adrift, each a round lantern wrapped in luminous dust",
-      "target": "a single green spark deep in the dark, a sharp pinpoint of firefly light",
+      "target": "a single green spark deep in the dark, a sharp pinpoint of emerald light",
       "target_phrase": "a green spark"
     },
     {
@@ -35,7 +35,7 @@
       "kind": "seam",
       "dur": 2,
       "palette": "firefly green and violet",
-      "scene": "a dark quantum realm alive with green sparks and curling luminous particle trails, like fireflies in fog"
+      "scene": "a dark quantum realm alive with drifting green sparks and curling luminous particle trails in soft fog"
     },
     {
       "name": "galaxy",

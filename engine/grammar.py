@@ -72,13 +72,14 @@ def _frames(reg, fmt, fps):
 def compile_journey(spec, fps, build="in"):
     fmt = spec.get("format", {})
     travel_denoise = fmt.get("travel_denoise", 0.55 if build == "out" else 0.40)
-    seam_denoise = fmt.get("seam_denoise", 0.72)
+    # (fmt.seam_denoise is read by dive.py as the seam-morph PEAK — no longer a schedule base)
     style = spec.get("style_suffix", "")
     regs = spec["registers"]
 
     phases, zoom, denoise, exponent, cameos = [], [], [], [], []
     approach = []          # per-frame: {phrase, pick} on object-approach beats, else None
     arrivals = set()
+    seam_arrivals = set()  # arrival phases that follow a SEAM card: dive renders the on-beat morph there
     prev_exp = regs[0]["exp"]
     prev_kind = "zoom"
     for k, reg in enumerate(regs):
@@ -114,6 +115,8 @@ def compile_journey(spec, fps, build="in"):
             fa = 0 if k == 0 else max(2, round(F * 0.25))
             if fa:
                 arrivals.add(len(phases))
+                if prev_kind == "seam":
+                    seam_arrivals.add(len(phases))
                 tmpl = T_MORPH if prev_kind == "seam" else T_ARRIVE
                 phases.append({"prompt": _p(tmpl.format(scene=scene, style=style), reg), "frames": fa})
             body = F - fa
@@ -141,12 +144,29 @@ def compile_journey(spec, fps, build="in"):
                 ap = {"phrase": tp, "pick": pick} if tp else None
                 card_appr = [None] * fa + [ap] * body
 
-        # arrive->look->plunge zoom curve; per-card PRODUCT = card_zoom (x10 zoom, ~x1.4 seam)
-        w = [0.30 + 0.70 * math.sin(math.pi * (j + 0.5) / F) ** 2 for j in range(F)]
-        s = sum(w) or 1.0
-        zs = [math.exp(math.log(card_zoom) * wj / s) for wj in w]
+        # arrive->look->plunge zoom curve; per-card PRODUCT = card_zoom (x10 zoom, ~x1.4 seam).
+        # ZOOM FLOOR (2026-07-31, Phil's slowdown complaint): pure sin^2 weighting let long
+        # cards decelerate to ~1.02/frame at the edges — reads as STALLED. Guarantee a
+        # perceptible dive rate and shape only the budget ABOVE the floor; the product (and so
+        # the card-end fill landing on the morph beat) is unchanged. A card whose whole budget
+        # is below the floor (the seam dwell's x1.4) glides steadily instead.
+        ZF = fmt.get("zoom_floor", 1.028)
+        lf, lz = math.log(ZF), math.log(card_zoom)
+        extra = lz - F * lf
+        if extra <= 0:
+            zs = [math.exp(lz / F)] * F
+        else:
+            w = [0.30 + 0.70 * math.sin(math.pi * (j + 0.5) / F) ** 2 for j in range(F)]
+            s = sum(w) or 1.0
+            zs = [math.exp(lf + extra * wj / s) for wj in w]
         zoom += zs
-        denoise += [(seam_denoise if kind == "seam" and not last else travel_denoise)] * F
+        # denoise: EVERY card travels at travel_denoise — seam cards too. The old schedule ran
+        # the whole seam card at seam_denoise 0.72 (+0.18 arrival boost = 0.85 capped): ~15%
+        # frame survival for 14 straight frames = unrelated worlds on consecutive frames (hard
+        # cuts, Phil 2026-07-31). The seam's world-flip is an ON-BEAT MORPH, rendered by dive.py
+        # at the NEXT card's arrival (seam_arrivals below): peak denoise on the downbeat frame,
+        # ramping out across the prompt crossfade — engine-1's dissolve character, seam-strength.
+        denoise += [travel_denoise] * F
         approach += card_appr
 
         # counter exponent — descend with the actual visual zoom; arrival spins toward this card's exp
@@ -173,4 +193,4 @@ def compile_journey(spec, fps, build="in"):
         # (no hard copy). `morph_frames` = trailing frames that morph. The old denoise-ramp + s0
         # loop_composite tail is gone. See PLAN.md "THE SEAM".
         loop = {"frames": L, "morph_frames": min(12, L - 2)}
-    return phases, zoom, denoise, exponent, loop, cameos, arrivals, approach
+    return phases, zoom, denoise, exponent, loop, cameos, arrivals, approach, seam_arrivals

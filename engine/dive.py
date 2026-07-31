@@ -501,10 +501,10 @@ def main():
         print(f"[style] {style_name}  ->  {sfx}", flush=True)
     cfg["build"] = args.build or spec.get("format", {}).get("build", cfg["build"])
     zoom_sched = den_sched = exponent = loop = None
-    cameos, arrivals, approach = [], set(), []
+    cameos, arrivals, approach, seam_arrivals = [], set(), [], set()
     if "registers" in spec:
-        phases, zoom_sched, den_sched, exponent, loop, cameos, arrivals, approach = \
-            grammar.compile_journey(spec, cfg["fps"], cfg["build"])
+        (phases, zoom_sched, den_sched, exponent, loop, cameos, arrivals, approach,
+         seam_arrivals) = grammar.compile_journey(spec, cfg["fps"], cfg["build"])
         if cfg["build"] == "out" and spec.get("format", {}).get("exact_loop"):
             cfg["loop_fade_frames"] = max(cfg["loop_fade_frames"], 8)
     else:
@@ -610,11 +610,20 @@ def main():
             row["aim"] = [round(cx, 4), round(cy, 4)]
             tlog.write(json.dumps(row) + "\n")
             tlog.flush()
-            boost = 0
-            if in_transition:
-                boost = (cfg["arrival_denoise_boost"] if p_idx in arrivals
-                         else cfg["transition_denoise_boost"])
-            den = min(0.85, base_den + boost)
+            if in_transition and p_idx in seam_arrivals:
+                # SEAM MORPH (2026-07-31): the on-beat world-flip lives HERE, not in a sustained
+                # seam-card denoise (0.72 base + boost = 0.85 for 14 frames re-rolled the world
+                # every frame — hard cuts). Peak on the downbeat frame (k=0, where the music's
+                # strong beat lands), ramping out across the prompt crossfade so the flip reads
+                # as one coherent transformation. fmt.seam_denoise = the peak.
+                peak = spec.get("format", {}).get("seam_denoise", 0.70)
+                den = min(0.85, base_den + (peak - base_den) * (1 - k / T))
+            else:
+                boost = 0
+                if in_transition:
+                    boost = (cfg["arrival_denoise_boost"] if p_idx in arrivals
+                             else cfg["transition_denoise_boost"])
+                den = min(0.85, base_den + boost)
             mask_ref = None
             if cfg["build"] == "out":
                 fed, box = shrink_transform(img, z, cx, cy)

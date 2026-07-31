@@ -94,7 +94,7 @@ def main():
     cfg = {**dive.DEFAULTS, **spec.get("settings", {})}
     cfg.update(dive.MODEL_PRESETS[args.model])
     cfg["build"] = "in"
-    phases, zoom, den_sched, exponent, loop, cameos, arr, _approach = grammar.compile_journey(spec, cfg["fps"], "in")
+    phases, zoom, den_sched, exponent, loop, cameos, arr, _approach, *_ = grammar.compile_journey(spec, cfg["fps"], "in")
     if not loop:
         print("journey has no exact_loop — nothing to repair"); sys.exit(1)
     total = len(zoom); L = loop["frames"]; seam_start = total - L

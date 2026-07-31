@@ -69,6 +69,16 @@ SEED0 = {"warm": 500, "glassy": 501, "deep": 502, "tender": 503, "choir": 504}
 
 
 def bpm_for(journey, cut, shift_sec=None):
+    import json as _json
+    spec = _json.loads((ROOT / "journeys" / f"{journey}.json").read_text())
+    fmt = spec.get("format", {})
+    if any(r.get("dur") is not None for r in spec["registers"]):
+        # dur-in-BEATS schema: the bar is DEFINED by the format grid (beats_per_bar ×
+        # frames_per_beat at the 12fps raw rate). Median morph spacing is wrong here —
+        # sub-bar cards (dur 2 = half a bar, morphs on beats 1 AND 3 by design) drag the
+        # median to a phantom 1.75s "bar" that matches nothing musical.
+        bar = fmt.get("beats_per_bar", 4) * fmt.get("frames_per_beat", 7) / 12.0
+        return int(round(240.0 / bar)), bar
     dur = video_duration(str(ROOT / _video(journey)))
     morphs = schedule_morphs(journey, cut, dur, shift_sec=shift_sec)
     bar = float(np.median(np.diff(morphs)))
