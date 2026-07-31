@@ -772,3 +772,20 @@ reflection/contents instead of the object (raindrop "with the meadow mirrored on
 meadow; sphere "reflecting the sky" -> the sky; over-detailed interior -> we chase that detail). And
 a colour word that names another object ("rose dust") gets painted as that object (a rose flower).
 Name the object plainly; the engine fills surface/reflection detail. Now in the journey-composer SKILL.
+
+## POINT-TRACK targeting (2026-07-30) — Florence out of the hot loop
+Engine-2.0 v5 (skyfog) tracking was bad. Re-ran Florence on the saved frames (scripts were ad-hoc;
+engine now should save a debug overlay — TODO): on real rendered scenes Florence MISSES most frames
+(storm-eye 0/21, fog 0/21, water-bead 1/6, planet/lighthouse mostly miss — diffuse/atmospheric things
+and region-phrases have no outline to segment) and the few hits are garbage (edge slivers, top-of-frame
+horizon strips, a 0.49 half-frame jump). The camera was really flown by the point-picker fallback, and
+the LURCHES were the sporadic bad Florence hits reseating the aim + "arrived->snap-to-center" firing
+whenever detection dropped. Phil's call: track a POINT, not an outline. dive.py now: commit ONE point
+per approach run (points.pick_point; Florence optional off-by-default seed via approach_detect, filtered
+by clean_box), then FOLLOW it through the KNOWN zoom geometry — zoom_transform re-centers on the aim, so
+each frame we pick the aim that eases the tracked point toward center by LOCK_EASE(=0.3) of its offset
+through z, and advance the tracked point analytically. Smooth geometric convergence (0.30->0.01 over ~9
+frames, no jumps), faster (no per-frame masks). Dropped the width-planned-zoom (needed detection);
+scheduled x10 arrive-look-plunge does the filling. Also fixed: format.counter was ignored (read from cfg
+not format) so skyfog/antenna_ball's counter:false silently rendered a nonsense 10^n overlay. TODO: save
+a per-frame aim/point debug overlay so we can SEE tracking without re-deriving it; revisit fill-on-beat.
