@@ -203,8 +203,15 @@ def generate(journey, model="ds", no_theme=False):
         if not no_theme:
             set_music_theme_if_empty(journey, mtheme)
         pl.telem("caption", journey=journey, detail=f"{len(opts)} options, spot={hook}")
+    else:
+        # There is nowhere to store these. This used to print the success line anyway, so a
+        # batch that captioned BEFORE queue_review.py (which is what CREATES the entry) looked
+        # like it worked and left butterfly_meridian + lather_atlas in Review with no caption.
+        print(f"  !! {journey} is NOT in pipeline.json — {len(opts)} captions GENERATED BUT "
+              f"DISCARDED. Run scripts/queue_review.py first, then re-run this.")
     print(f"  {journey}: {len(opts)} caption+title pairs (spot={hook}); theme='{mtheme[:40]}'"
-          + ("" if not no_theme else " [theme skipped]"))
+          + ("" if not no_theme else " [theme skipped]")
+          + ("" if v else "  [NOT SAVED]"))
     for i, c in enumerate(opts):
         print(f"    [{i}] {c}  ||  YT: {yts[i]}")
     return opts

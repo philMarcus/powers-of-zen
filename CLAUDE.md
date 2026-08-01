@@ -253,3 +253,53 @@ floors at one beat (dur-1 cards no longer break the grid). Review queue: antenna
 new "rejected" state; stormglass alone in review. NEXT: Phil reviews v7 + the seam snappiness
 knob; render the new catalog (shorts are cheap: 112f ≈ 35min); dive-video SKILL update once
 engine-2 is approved; fold repair_seam into dive.py's tail (still open).
+2026-07-31 (late night): BATCH RUN + FOUR REAL BUGS. Ran scripts/render_batch.sh. Only
+butterfly_meridian survived; the other two died on "workflow did not finish in 300s".
+(1) VRAM STARVATION (root cause of both deaths): the batch captions BETWEEN renders, and
+caption.py's Ollama call left mistral-small3.2:24b resident holding 7.59 GB on a 10 GB card.
+The next render's SDXL+ControlNet+CLIP+DepthAnything+Florence then didn't fit, ComfyUI switched
+to per-step CPU<->GPU weight swapping (1.5 s/it -> 33 s/it) and the job finished at 310s with
+nobody listening. Fix: caption.py passes keep_alive=0 (VRAM 9893 -> 1228 MiB); dive.run_workflow
+timeout 300 -> 900s, detect._wait 180 -> 300s. NOTE pl.gpu_busy() reads UTILIZATION, not memory,
+so an idle-but-resident model doesn't register — the batch happily started the next render.
+(2) LONE FIGURE (Phil: "I don't wanna have lone figures showing up in these"). quantum_orrery
+rendered a haloed goddess for the whole video. Frame 0 is the ONLY txt2img frame, so the
+checkpoint's prior owns it and the feedback chain then locks it in — one bad frame = one wasted
+hour. Its frame-0 prompt was "quark cores bound inside one luminous shell ... a crimson halo
+around the trio ... warm gilded light ... storybook grandeur ... jewel-bright accents": nothing
+is a person and every word is character-art bait. Fixes: engine/figure.py frame-0 gate (re-roll
+seed 4x, then ABORT with a prompt-level diagnosis; --allow-figures overrides; warns every 28th
+frame); widened the global negative (it was all CLOSE-UP terms, useless vs a full-body figure);
+dropped "storybook grandeur" from gilded_relic; rewrote the hadron card. DOCTRINE (Phil): do NOT
+require concrete objects on render_start — that drags brass/glass into cosmic realms. Instead,
+name-only physics (quark/hadron/boson/field) are WORDS WITH NO IMAGE: the composer must write
+the PICTURE at compose time. Also: figures intrude by VOCABULARY (halo/crown/robe/regalia +
+gilded/jewel/grandeur), not just by setting — "empty, no one present" was on every interior card
+and the goddess appeared on the abstract PARTICLE card.
+(3) THE FIRST FIGURE DETECTOR WAS WRONG — validate before trusting. detect.locate("person") +
+an area threshold flagged 3 of 5 KNOWN-CLEAN frame-0s (43-78% of frame) and the real goddess
+(84%) was indistinguishable by size; it would have aborted almost every render. Cause: grounding
+and referring-expression segmentation are "point at X" tasks — ask for something absent and
+Florence returns a near-full-width blob (FULLSPAN drops only >=0.9 in BOTH dims; these were 1.00
+x 0.72-0.89, mask area == bbox area = solid rectangles). Presence needs a "describe what's here"
+task: detect.caption() (more_detailed_caption, text out via PreviewAny since ComfyUI only
+surfaces OUTPUT nodes) separated the same 6 frames PERFECTLY — goddess "A woman with long red
+hair is standing ... a golden crown", vs "a glass vase", "an abstract image", "many shiny balls",
+"a forest", "lights hanging from the ceiling". 1 TP / 5 clean / 0 FP. Word list deliberately
+tight (no "knight" — chess PIECES; no bare "figure"; no "face"; word boundaries so "man" can't
+fire on "many"). Audit: scripts/check_figures.py.
+(4) CAPTION ORDER WAS BACKWARDS. queue_review.py CREATES the pipeline.json entry; caption.py
+silently discards everything when there's no entry (`if v:`) while still printing "5 caption+
+title pairs". So the batch's caption-then-queue order left butterfly_meridian and lather_atlas
+in Review with NO caption despite clean-looking logs. render_batch.sh + dive-video SKILL now
+queue FIRST; caption.py says "GENERATED BUT DISCARDED" instead of faking success.
+STYLE DECK: 7 new colourful/trendy entries (neon_drift, candy_gloss, ultraviolet, aurora_silk,
+infrared_bloom, lacquer_pop, reef_pop) = 13 total; catalog spread from 8/5/4/3/2/2 to max 3 each
+(a ONE-OFF spread at Phil's request, NOT a permanent cap). Colours named as COLOURS ("hot pink"
+not "coral") so they can't paint literal objects. DASHBOARD: fixed a UnicodeDecodeError that
+blanked the bottom of every tab — Windows streamlit read UTF-8 journey specs as cp1252, mojibaked
+the em-dashes, wrote them back, then choked on byte 0x9d; the crash on queued video #5 hid #6
+(frost_window) while the header metric still counted it. Also normalized 7 Windows-backslash
+paths in pipeline.json (poster.py runs under WSL).
+STATE: butterfly_meridian + lather_atlas in REVIEW (captioned). quantum_orrery NOT rendered —
+re-render it to exercise the figure gate. render_batch.sh is fixed but UNRUN since the fixes.

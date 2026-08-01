@@ -88,7 +88,9 @@ A cameo may sit on any card EXCEPT one whose frames fall inside the loop tail (t
 frames morph home and would smear it). Card 0 is fine — the engine pastes from frame 1.
 
 ## After a render
-`caption.py` then `queue_review.py` (that order — it lands in Review already captioned). Then in
+`queue_review.py` then `caption.py` — THAT order. `queue_review.py` creates the pipeline.json
+entry; `caption.py` silently throws its output away if there is no entry to write into (it still
+prints "5 caption+title pairs", so the log looks fine). Then in
 the dashboard: mark a start frame → **Approve → Music** (phase-shifts, then generates + aligns 5
 candidates at the format's bpm) → choose a track → Production → the scheduler posts.
 

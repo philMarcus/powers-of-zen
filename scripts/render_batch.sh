@@ -69,9 +69,12 @@ PY
   else
     step python3 engine/dive.py "journeys/$j.json"
   fi
-  # caption BEFORE queueing so the video lands in Review already captioned
-  step python3 scripts/caption.py "$j"
+  # QUEUE FIRST, then caption. queue_review.py is what CREATES the pipeline.json entry, and
+  # caption.py silently discards its work when there's no entry to write into — captioning
+  # first left butterfly_meridian and lather_atlas in Review with no caption at all, while
+  # both logs showed "5 caption+title pairs" as if it had worked.
   step python3 scripts/queue_review.py "$j" ds
+  step python3 scripts/caption.py "$j"
   say "$j done -> REVIEW"
 done
 
