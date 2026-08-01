@@ -404,3 +404,10 @@ ALREADY INSTALLED in ComfyUI; prototype in seam_lab on the dollhouse/snowfall ha
 ramp weight into the tail, then fold into dive.py) → then Level 2 (cut cards + stitch)
 becomes nearly trivial. The current review videos' bad FIRST frames need full re-renders
 (the reject verdicts handle that), not from-card.
+2026-08-01 (session close): BATCH TRIGGERED LIVE via `schtasks /Run PowersOfZen-render` at
+15:19 — the real scheduled chain (.bat → wsl → night_batch) picked LMS: glass_apiary +
+quantum_orrery(re-render, fresh seed, figure-gate exercise) + copper_rain, ~2.6h. Watch
+outbox/night_batch.log; results land captioned in Video Review. The 01:30 task tonight
+picks the NEXT template from the remaining ~10-deep queue; midnight refill will top it up
+(queue 13/20 → composes 5). NEXT SESSION: Level 3 = IP-Adapter seam in seam_lab (models
+installed; hard cases dollhouse/snowfall), then Level 2 splice — see PLANNED NEXT above.

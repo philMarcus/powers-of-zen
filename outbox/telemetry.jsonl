@@ -209,3 +209,34 @@
 {"ts": "2026-08-01 04:05:01", "event": "caption", "journey": "pollen_court", "detail": "5 options, spot=True"}
 {"ts": "2026-08-01 08:01:22", "event": "post", "journey": "dollhouse", "platform": "youtube", "detail": "https://youtube.com/shorts/rP1fA9iKjDU"}
 {"ts": "2026-08-01 08:01:22", "event": "post", "journey": "dollhouse", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbfylfKtqYd/"}
+{"ts": "2026-08-01 11:33:10", "event": "phase_shift", "journey": "butterfly_meridian", "detail": "start @ 19.00s"}
+{"ts": "2026-08-01 11:33:10", "event": "music", "journey": "butterfly_meridian"}
+{"ts": "2026-08-01 12:21:21", "event": "switch", "journey": "jade_automata", "detail": "ds/zoomout"}
+{"ts": "2026-08-01 12:22:51", "event": "music_gen", "journey": "butterfly_meridian", "detail": "5 candidates"}
+{"ts": "2026-08-01 12:23:18", "event": "switch", "journey": "jade_automata", "detail": "ds/zoomout"}
+{"ts": "2026-08-01 12:25:00", "event": "phase_shift", "journey": "jade_automata", "detail": "start @ 0.88s"}
+{"ts": "2026-08-01 12:25:00", "event": "music", "journey": "jade_automata"}
+{"ts": "2026-08-01 12:26:20", "event": "music_gen", "journey": "jade_automata", "detail": "5 candidates"}
+{"ts": "2026-08-01 12:32:12", "event": "music_choose", "journey": "butterfly_meridian", "detail": "warm"}
+{"ts": "2026-08-01 12:32:12", "event": "queued", "journey": "butterfly_meridian"}
+{"ts": "2026-08-01 13:46:09", "event": "rejected", "journey": "stormglass"}
+{"ts": "2026-08-01 13:46:28", "event": "jqueued", "journey": "glass_apiary"}
+{"ts": "2026-08-01 13:46:43", "event": "jqueued", "journey": "static_bloom"}
+{"ts": "2026-08-01 13:46:53", "event": "jqueued", "journey": "copper_rain"}
+{"ts": "2026-08-01 13:47:05", "event": "jqueued", "journey": "sugar_nebula"}
+{"ts": "2026-08-01 13:47:18", "event": "jqueued", "journey": "tesla_garden"}
+{"ts": "2026-08-01 13:47:28", "event": "jqueued", "journey": "chalkboard_infinities"}
+{"ts": "2026-08-01 13:47:39", "event": "jqueued", "journey": "ink_dynasty"}
+{"ts": "2026-08-01 13:47:54", "event": "jqueued", "journey": "ammonite_spiral"}
+{"ts": "2026-08-01 13:48:06", "event": "jqueued", "journey": "resonance_hall"}
+{"ts": "2026-08-01 13:48:16", "event": "jqueued", "journey": "velvet_atlas"}
+{"ts": "2026-08-01 13:48:31", "event": "jqueued", "journey": "chess_empires"}
+{"ts": "2026-08-01 13:48:40", "event": "jqueued", "journey": "tide_glass"}
+{"ts": "2026-08-01 13:49:38", "event": "switch", "journey": "lather_atlas", "detail": "ds/zoomout"}
+{"ts": "2026-08-01 13:51:03", "event": "music", "journey": "lather_atlas"}
+{"ts": "2026-08-01 13:51:31", "event": "rejected", "journey": "quantum_orrery"}
+{"ts": "2026-08-01 13:51:31", "event": "jqueued", "journey": "quantum_orrery", "detail": "reject -> re-queue front"}
+{"ts": "2026-08-01 13:51:58", "event": "music_gen", "journey": "lather_atlas", "detail": "5 candidates"}
+{"ts": "2026-08-01 13:54:10", "event": "music_choose", "journey": "lather_atlas", "detail": "warm"}
+{"ts": "2026-08-01 13:54:10", "event": "queued", "journey": "lather_atlas"}
+{"ts": "2026-08-01 13:59:40", "event": "correction", "journey": "quantum_orrery", "detail": "restore reject lost to music_gen stale-save race"}

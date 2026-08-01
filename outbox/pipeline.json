@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-08-01 13:59:40",
+    "updated": "2026-08-01 14:06:16",
     "paused_platforms": [
       "tiktok"
     ],
@@ -1578,7 +1578,7 @@
         "Lost in the fractal dance of frost and firelight 🔥 Can you spot Belle hiding in this icy maze? 👀 #FrostedRealms #InfiniteIceLattice #CrystalDive #WintersEndlessLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "A journey through the veins of frozen time Can you spot Belle hiding in this icy maze? 👀 #FrostedRealms #InfiniteIceLattice #CrystalDive #WintersEndlessLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
       ],
-      "order": 5
+      "order": 4
     },
     {
       "journey": "cave_of_numbers",
@@ -1692,7 +1692,7 @@
       },
       "start_t": 11.3,
       "orig_file": "production/cave_of_numbers_ds.mp4",
-      "order": 4
+      "order": 5
     },
     {
       "journey": "butterfly_meridian",
