@@ -23,12 +23,14 @@ import io
 import json
 import math
 import subprocess
+import sys
 import time
 from pathlib import Path
 
 import requests
 from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageStat
 
+import figure
 import grammar
 import style as _style
 import track
@@ -74,8 +76,22 @@ DEFAULTS = {
     "fps": 12,            # raw generation rate
     "final_fps": 24,      # motion-interpolated output rate (0 = skip interpolation)
     "seed": 1234,
+    # The old negative was "human face, portrait, close-up person" — all CLOSE-UP terms, which
+    # did nothing about quantum_orrery's full-body haloed goddess. DreamShaper is a fantasy-
+    # character fine-tune; it needs the whole-figure vocabulary pushed away, plus the regalia
+    # ("halo", "crown", "robe") that summons a figure to wear it. Distant tiny figures at scale
+    # are still fine — the negative is weak at cfg 2.0, and engine/figure.py gates on SIZE.
     "negative": ("text, watermark, logo, blurry, frame, border, low quality, "
-                 "human face, portrait, close-up person"),
+                 "person, people, human figure, standing figure, full body, woman, man, "
+                 "goddess, angel, fantasy character, portrait, face, hands, anatomy, "
+                 "halo, crown, robe, album cover"),
+    # frame-0 lone-figure guard (see engine/figure.py): frame 0 is the only txt2img frame, so
+    # the checkpoint's prior rules it and the feedback chain then locks it in for the whole
+    # render. Catch it in ~20s instead of discovering it an hour later.
+    "figure_guard": True,
+    "figure_retries": 4,      # seed re-rolls before giving up on frame 0
+    "figure_min_area": 0.05,  # fraction of frame; below this it's background texture, allowed
+    "figure_watch": 28,       # also check every Nth frame mid-render (0 = off); warns only
     # anti-collapse re-texturing of each fed-back frame
     "sharpen": 1.35,
     "contrast": 1.04,
@@ -496,6 +512,8 @@ def main():
                     help="override depth-ControlNet strength; --cn 0 disables the CN but KEEPS "
                          "tracking/composition (the clean A/B for 'is the CN hurting the look?'). "
                          "Suffixes the run name so the two variants don't share a vN sequence.")
+    ap.add_argument("--allow-figures", action="store_true",
+                    help="disable the frame-0 lone-figure gate (engine/figure.py). Only for\na journey that WANTS a person on screen.")
     ap.add_argument("--no-video", action="store_true", help="skip assembly")
     ap.add_argument("--resume", action="store_true",
                     help="continue the newest vN from its last saved frame (feedback chain: only "
@@ -539,6 +557,9 @@ def main():
     if args.cn is not None:
         cfg["approach_cn"] = args.cn
         name = f"{name}_cn{args.cn:g}".replace(".", "")
+    # build-out has no txt2img frame 0 to gate, and --resume starts mid-chain (frame 0 already
+    # judged), so the gate only applies to a fresh build-IN render.
+    img_guard = cfg["figure_guard"] and not args.allow_figures and cfg["build"] != "out"
 
     base = Path(__file__).resolve().parent.parent / "output" / name
     start_i = 0
@@ -740,6 +761,37 @@ def main():
         img = Image.open(io.BytesIO(png)).convert("RGB")
         if img.size != (cfg["width"], cfg["height"]):
             img = img.resize((cfg["width"], cfg["height"]), Image.LANCZOS)
+        # ── frame-0 lone-figure gate ──────────────────────────────────────────────────────
+        # Only frame 0 is txt2img, so this is the one frame the checkpoint's prior can hijack
+        # (quantum_orrery -> a haloed goddess), and the feedback chain then carries it through
+        # every later frame. Re-roll the seed here for ~20s rather than find out in an hour.
+        if i == 0 and img_guard:
+            for attempt in range(1, cfg["figure_retries"] + 1):
+                hit = figure.find(img, min_area=cfg["figure_min_area"],
+                                  model=cfg.get("track_model"))
+                if not hit:
+                    break
+                print(f"[dive] FIGURE on frame 0 ({figure.describe(hit)}) — "
+                      f"re-rolling seed, attempt {attempt}/{cfg['figure_retries']}", flush=True)
+                seed += 9973                       # a big coprime stride: a genuinely new draw
+                png = run_workflow(build_workflow(cfg, prompt, seed))
+                img = Image.open(io.BytesIO(png)).convert("RGB")
+                if img.size != (cfg["width"], cfg["height"]):
+                    img = img.resize((cfg["width"], cfg["height"]), Image.LANCZOS)
+            else:
+                if figure.find(img, min_area=cfg["figure_min_area"],
+                               model=cfg.get("track_model")):
+                    sys.exit(
+                        f"[dive] ABORT: frame 0 keeps rendering a lone figure after "
+                        f"{cfg['figure_retries']} seeds. This is a PROMPT problem, not luck — "
+                        f"fix the render_start card (drop halo/gilded/regalia words, name a "
+                        f"concrete object) or pick a different render_start. "
+                        f"Re-run with --allow-figures to override.")
+        # mid-render watch: cheap, and a figure can still emerge at a later card's arrival
+        elif img_guard and cfg["figure_watch"] and i and i % cfg["figure_watch"] == 0:
+            hit = figure.find(img, min_area=cfg["figure_min_area"], model=cfg.get("track_model"))
+            if hit:
+                print(f"[dive] ⚠ figure at frame {i}: {figure.describe(hit)}", flush=True)
         if cfg["build"] == "out":
             for c in cameos:
                 if i == c["start"]:

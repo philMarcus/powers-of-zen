@@ -62,8 +62,8 @@
       "dur": 4,
       "palette": "deep indigo and pale cyan light",
       "scene": "a vast bubble-chamber realm of deep indigo fog, long pale spiral tracks of light curled through the depths, thin luminous filaments crossing far into the dark",
-      "target": "a bright triple-lobed core of gold-white light, three glowing points close together",
-      "target_phrase": "a bright golden core"
+      "target": "three small white-hot points in a taut triangle, thin strands of light between them",
+      "target_phrase": "three bright points"
     },
     {
       "name": "hadron",
@@ -71,7 +71,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "hot gold white and deep crimson",
-      "scene": "three glowing quark cores bound close inside one luminous shell, gold-white lobes with taut bright filaments strung between them, a crimson halo around the trio, indigo dark beyond",
+      "scene": "three small white-hot points set in a taut triangle deep in indigo dark, thin taut strands of light stretched between them, each strand thinning toward its middle, a faint red glow washing the space just behind the three points, fine sparks scattered through the dark around them",
       "target": "a polished brass hub, three curved arms out from it",
       "target_phrase": "a brass hub"
     },

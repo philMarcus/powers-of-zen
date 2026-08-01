@@ -163,7 +163,13 @@ def generate(journey, model="ds", no_theme=False):
         r = requests.post(f"{url}/api/generate", json={
             "model": VLM_MODEL,
             "prompt": PROMPT.format(worlds="\n".join(worlds), style=style, mascot_line=mline),
-            "stream": False, "format": "json", "options": {"num_predict": 1200}}, timeout=300)
+            "stream": False, "format": "json", "options": {"num_predict": 1200},
+            # keep_alive=0 -> unload the 24B captioner the instant it answers. Ollama's default
+            # keeps it resident for 5 min holding ~7.6 GB, which on this 10 GB card starves the
+            # very next ComfyUI render: SDXL+ControlNet+CLIP+DepthAnything+Florence no longer fit,
+            # ComfyUI falls back to per-step CPU<->GPU weight swapping (1.5 s/it -> 33 s/it) and
+            # dive.py times out. This is a ONE-SHOT text call — there is nothing to keep warm.
+            "keep_alive": 0}, timeout=300)
         data = _parse(r.json().get("response", ""))
     except Exception as e:
         print(f"  VLM error for {journey}: {e}"); return None

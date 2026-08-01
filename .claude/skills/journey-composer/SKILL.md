@@ -220,6 +220,24 @@ Journeys are CIRCULAR, so the chain may begin at ANY card. Set optional top-leve
 - **Never pick a start that lands the SEAM card first or last.** Last is worst: the loop-home
   branch swallows it and the seam disappears entirely. `grammar` warns, but check.
 - Vary it across the catalog — it changes which world is rendered "cleanest".
+- **Abstract is necessary but NOT sufficient — abstraction is also a RISK on frame 0.** An
+  abstract card has no real-world referent, so the checkpoint has maximum freedom about what to
+  actually draw, and it will reach for the densest region of its training set. DreamShaper's is
+  fantasy character art. quantum_orrery obeyed every rule above (`render_start: hadron`, a
+  particle realm) and rendered **a haloed goddess** for the whole video, because its frame-0
+  prompt read: *"quark cores bound inside one luminous shell … a crimson halo around the trio …
+  warm gilded light … storybook grandeur … jewel-bright accents."* Nothing there is a person —
+  and every word of it is character-art bait.
+- **Name-only physics is the trap: WRITE THE PICTURE, not the term** (Phil 2026-07-31). Stay
+  cosmic/microscopic — do NOT reach for brass or glass to "anchor" an abstract realm; that
+  imports the wrong world. The fix is that words like *quark, hadron, boson, field, spacetime
+  foam, probability cloud, superposition* are **names with no image behind them**. The model has
+  never seen a quark, so the term contributes nothing and the surrounding adjectives decide the
+  picture alone. YOU decide what a quark looks like, at compose time, in purely visual terms —
+  shape, count, motion, texture, light, spacing, depth — so the frame is fully determined by
+  description rather than by the checkpoint's favourite subject. Write "three small white-hot
+  points in a taut triangle, thin strands of light stretched between them, each strand thinning
+  as the points drift apart, everything else unlit" — never "three quark cores bound in a shell."
 
 ## Loop + self-similar seam (still critical)
 Journeys are **circular and self-similar**: the last card dives back into the FIRST world.
@@ -256,6 +274,22 @@ myth, a trending sound, an emotion…):
 - **Empty human interiors.** Where a lone figure tends to intrude (studies, steam, kitchens),
   write that `scene` "empty, no one present." Distant anonymous crowds/tiny figures AT SCALE
   are fine texture; featured individuals and readable faces are banned (global negative).
+- **Figures intrude by VOCABULARY, not just by setting** (quantum_orrery, 2026-07-31). "empty,
+  no one present" was on every interior card of that journey and a goddess still appeared — on
+  an abstract PARTICLE card, which has no room to be empty of. Two word-families summon a figure
+  into any scene, most dangerously an abstract one:
+  - **Regalia/anatomy**: halo, aura, nimbus, crown, robe, veil, shroud, mantle, wings, embrace,
+    torso, limbs, lobes, "bound/cradled/held".  A halo is drawn *around something*, so the model
+    supplies the something.
+  - **Ornate-portrait register**: gilded + jewel-bright + "storybook grandeur" + regal/majestic
+    stacked together is the exact caption style of fantasy character art.
+  Say the same thing physically instead: not "a crimson halo around the trio" but "a thin ring
+  of red light offset behind them." Check the FULL frame-0 string (scene + target + style suffix
+  + brand tail), not just your scene text — the style deck adds words you didn't write.
+- The engine now gates this automatically (`engine/figure.py`): frame 0 is re-rolled up to 4
+  seeds and the render ABORTS if a figure ≥5% of frame persists. An abort means the prompt is
+  wrong — fix the words, don't just re-run. Audit anytime with
+  `python3 scripts/check_figures.py output/<journey>/vN`.
 - **Fantastical, never gory.**
 - **One mascot cameo per video** on ONE card, scale-matched, size ≥0.12, full-cast rotation
   (see dive-video SKILL for the cast). Optional at compose time. Any card works (the engine
