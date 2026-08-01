@@ -4,7 +4,7 @@
   "styles": {
     "cosmic_gloss": {
       "mood": "space / cosmic / astronomical — the shiny AI-polished deep-space eye-candy from the engine-1 cosmic videos",
-      "style_suffix": "luminous volumetric light, glossy hyperreal render, iridescent deep-space glow, ultra-detailed, cinematic, epic scale",
+      "style_suffix": "luminous volumetric light, glossy hyperreal render, deep-space glow, ultra-detailed, cinematic, epic scale",
       "model": "ds"
     },
     "crystalline": {
@@ -30,6 +30,41 @@
     "enchanted_wild": {
       "mood": "flora / forests / creatures / meadows / nature — saturated fairy-tale nature, NOT photography",
       "style_suffix": "enchanted golden light, lush saturated color, painterly fantasy illustration, hyperdetailed, cinematic",
+      "model": "ds"
+    },
+    "neon_drift": {
+      "mood": "electric / urban night / circuitry / plasma / screens — synthwave neon and wet chrome, the trendiest high-contrast look in the deck",
+      "style_suffix": "electric neon glow, magenta and cyan light bloom, wet chrome sheen, retro-futurist night haze, ultra-detailed, cinematic",
+      "model": "ds"
+    },
+    "candy_gloss": {
+      "mood": "sugar / sweets / honey / soft toys / anything that should read edible — Y2K pastel 3d-render candy",
+      "style_suffix": "glossy candy-coated surfaces, soft pastel gradient light, bubblegum pink and pale aqua, plush 3d render, ultra-detailed, playful",
+      "model": "ds"
+    },
+    "ultraviolet": {
+      "mood": "bioluminescence / caves / glowworms / fluorescence / anything glowing on black — blacklight poster energy",
+      "style_suffix": "ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic",
+      "model": "ds"
+    },
+    "aurora_silk": {
+      "mood": "textiles / weaves / atmospheres / soft cosmic fields — flowing ribboned light, the gentlest entry in the deck",
+      "style_suffix": "aurora ribbons of green and violet light, silken flowing light, soft luminous gradients, ultra-detailed, dreamlike",
+      "model": "ds"
+    },
+    "infrared_bloom": {
+      "mood": "foliage / pollen / organic fields you want SHOCKING rather than pretty — false-colour infrared turns every leaf hot magenta",
+      "style_suffix": "false-colour infrared palette, hot magenta and cyan, blooming light, high-saturation dreamscape, ultra-detailed",
+      "model": "ds"
+    },
+    "lacquer_pop": {
+      "mood": "enamel / carving / calligraphy / heraldry / graphic human-made worlds — flat bold colour blocking with a lacquer shine",
+      "style_suffix": "deep lacquer enamel sheen, vermilion red and deep green, bold flat colour blocking, lustrous graphic poster look, ultra-detailed",
+      "model": "ds"
+    },
+    "reef_pop": {
+      "mood": "shores / shallows / tropical water / foam — sunlit high-saturation aqua",
+      "style_suffix": "electric aquamarine and hot pink, sunlit turquoise depth, high-saturation tropical glow, ultra-detailed, cinematic",
       "model": "ds"
     }
   },

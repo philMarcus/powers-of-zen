@@ -156,8 +156,19 @@ So the journey sets ONE top-level field — `style` — to a **name from the cur
 - **`gilded_relic`** — human-made objects / markets / instruments / maps / relics / interiors.
 - **`stormlight`** — storms / planets / dramatic weather / moody skies.
 - **`enchanted_wild`** — flora / forests / creatures / meadows / nature.
+- **`neon_drift`** — electric / urban night / circuitry / plasma / screens (synthwave neon + chrome).
+- **`candy_gloss`** — sugar / sweets / honey / soft toys — Y2K pastel 3d-render candy.
+- **`ultraviolet`** — bioluminescence / caves / glowworms / anything glowing on black.
+- **`aurora_silk`** — textiles / weaves / atmospheres / soft cosmic fields (flowing ribboned light).
+- **`infrared_bloom`** — foliage / pollen / organic fields you want SHOCKING, not pretty.
+- **`lacquer_pop`** — enamel / carving / calligraphy / heraldry (flat bold colour + lacquer shine).
+- **`reef_pop`** — shores / shallows / tropical water / foam.
 Pick the one matching the journey's DOMINANT realm (a journey spans scales but has a home key). If a
-theme fits none, still pick the closest — do NOT invent a `style_suffix`. NEVER put realism words
+theme fits none, still pick the closest — do NOT invent a `style_suffix`.
+Fit comes first, but keep an eye on catalog variety — if one style is already carrying a lot of
+journeys, prefer the next-best fit, and if nothing fits, that's a sign the deck wants a new entry
+rather than another reuse. `grep -h '"style"' journeys/*.json | sort | uniq -c | sort -rn` shows
+where things stand. NEVER put realism words
 (photo, photograph, photography, macro, DSLR, realistic, film grain) anywhere in a journey.
 `palette` (per-card) is still yours — it's the LOCAL scene colour/mood, not the global render look.
 
