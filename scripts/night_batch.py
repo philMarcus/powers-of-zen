@@ -126,19 +126,23 @@ def has_complete_render(journey):
                                         bases=[f"{journey}_ds", journey]) is not None
 
 
-def render_one(journey, force=False, new_seed=True):
+def render_one(journey, force=False, new_seed=True, from_card=None):
     """dive -> queue_review -> caption. Returns (ok, note). A force re-render gets a fresh
     base seed by default (same journey + same seed = the same frames again); new_seed=False
-    keeps the journey's seed — for re-rendering through an ENGINE change."""
-    if has_complete_render(journey) and not force:
+    keeps the journey's seed — for re-rendering through an ENGINE change. from_card=K is a
+    PARTIAL re-render: keep cards 0..K-1's frames, regenerate from card K (dive --from-card)."""
+    if has_complete_render(journey) and not (force or from_card):
         log(f"{journey}: complete render already exists — ingesting only")
     else:
         t0 = time.time()
         argv = ["python3", "engine/dive.py", str(pl.journey_path(journey))]
-        if force and new_seed:
+        if from_card:
+            argv += ["--from-card", str(from_card)]
+        if (force or from_card) and new_seed:
             import random
             argv += ["--seed", str(random.randrange(1, 10**6))]
-            log(f"{journey}: force re-render with fresh seed {argv[-1]}")
+        if len(argv) > 3:
+            log(f"{journey}: {' '.join(argv[3:])}")
         rc, tail = run(argv)
         if rc != 0:
             return False, f"dive failed: {tail}"
@@ -224,7 +228,8 @@ def main():
         entry = pl.jload()["journeys"].get(j, {})
         try:
             ok, note = render_one(j, force=entry.get("force", False),
-                                  new_seed=entry.get("new_seed", True))
+                                  new_seed=entry.get("new_seed", True),
+                                  from_card=entry.get("from_card"))
         except Exception as e:
             ok, note = False, f"{type(e).__name__}: {e}"
         jj = pl.jload()

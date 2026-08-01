@@ -20,12 +20,79 @@
   "journeys": {
     "chess_empires": {
       "note": "monochrome — the style brand tail fights it (Phil 7/31)",
-      "ts": "2026-08-01 12:47:03"
+      "ts": "2026-08-01 13:48:31",
+      "state": "queued",
+      "order": 11
     },
     "ink_dynasty": {
       "note": "monochrome — the style brand tail fights it (Phil 7/31)",
-      "ts": "2026-08-01 12:47:03"
+      "ts": "2026-08-01 13:47:39",
+      "state": "queued",
+      "order": 7
+    },
+    "stormglass": {
+      "state": "rejected",
+      "ts": "2026-08-01 13:46:09",
+      "note": "rejected at video review"
+    },
+    "glass_apiary": {
+      "state": "queued",
+      "order": 1,
+      "ts": "2026-08-01 13:46:28"
+    },
+    "static_bloom": {
+      "state": "queued",
+      "order": 2,
+      "ts": "2026-08-01 13:46:43"
+    },
+    "copper_rain": {
+      "state": "queued",
+      "order": 3,
+      "ts": "2026-08-01 13:46:53"
+    },
+    "sugar_nebula": {
+      "state": "queued",
+      "order": 4,
+      "ts": "2026-08-01 13:47:05"
+    },
+    "tesla_garden": {
+      "state": "queued",
+      "order": 5,
+      "ts": "2026-08-01 13:47:18"
+    },
+    "chalkboard_infinities": {
+      "state": "queued",
+      "order": 6,
+      "ts": "2026-08-01 13:47:28"
+    },
+    "ammonite_spiral": {
+      "state": "queued",
+      "order": 8,
+      "ts": "2026-08-01 13:47:54"
+    },
+    "resonance_hall": {
+      "state": "queued",
+      "order": 9,
+      "ts": "2026-08-01 13:48:06"
+    },
+    "velvet_atlas": {
+      "state": "queued",
+      "order": 10,
+      "ts": "2026-08-01 13:48:16"
+    },
+    "tide_glass": {
+      "state": "queued",
+      "order": 12,
+      "ts": "2026-08-01 13:48:40"
+    },
+    "quantum_orrery": {
+      "state": "queued",
+      "force": true,
+      "new_seed": true,
+      "ts": "2026-08-01 13:51:31",
+      "note": "re-render: video rejected in review",
+      "order": 0
     }
   },
-  "updated": "2026-08-01 12:49:37"
+  "updated": "2026-08-01 13:51:31"
 }

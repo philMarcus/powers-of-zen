@@ -529,17 +529,26 @@ def reject_review(journey, requeue=None):
     jj = jdata()
     if requeue:
         # 🎲 checkbox on the card: new seed = explore a different draw (default);
-        # unchecked = same seed, for re-rendering through an ENGINE change
+        # unchecked = same seed, for re-rendering through an ENGINE change.
+        # ↻ from-card > 0 = PARTIAL re-render (keep cards 0..K-1's frames, dive --from-card).
         new_seed = bool(st.session_state.get(f"reseed_{journey}", True))
+        from_card = int(st.session_state.get(f"fromcard_{journey}", 0) or 0)
         jj["journeys"].setdefault(journey, {})
+        note = ("re-render: video rejected in review"
+                + (f" (from card {from_card})" if from_card else "")
+                + ("" if new_seed else " (same seed)"))
         jj["journeys"][journey].update({"state": "queued", "force": True,
-                                        "new_seed": new_seed, "ts": pl._now(),
-                                        "note": "re-render: video rejected in review"
-                                                + ("" if new_seed else " (same seed)")})
+                                        "new_seed": new_seed, "ts": pl._now(), "note": note})
+        if from_card:
+            jj["journeys"][journey]["from_card"] = from_card
+        else:
+            jj["journeys"][journey].pop("from_card", None)
         others = [q for q in pl.jqueue(jj) if q != journey]
         pl.set_jorder(jj, [journey] + others if requeue == "front" else others + [journey])
         pl.telem("jqueued", journey=journey,
-                 detail=f"reject -> re-queue {requeue}" + ("" if new_seed else ", same seed"))
+                 detail=f"reject -> re-queue {requeue}"
+                        + (f", from card {from_card}" if from_card else "")
+                        + ("" if new_seed else ", same seed"))
     else:
         jj["journeys"][journey] = {"state": "rejected", "ts": pl._now(),
                                    "note": "rejected at video review"}
@@ -581,16 +590,24 @@ with tabs[1]:  # VIDEO REVIEW — pick cut/model, edit caption, send to Music
     rv = by_state(d, "review")
     if not rv:
         st.info("Nothing awaiting video review.")
+    def review_extras(v):
+        ec = st.columns([3, 2])
+        ec[0].checkbox("🎲 new seed if re-queued (uncheck to keep the seed — e.g. re-render "
+                       "through an engine change)",
+                       value=True, key=f"reseed_{v['journey']}")
+        try:
+            maxc = len(_read_spec(pl.journey_path(v["journey"]))["registers"]) - 1
+        except Exception:
+            maxc = 12
+        ec[1].number_input("↻ from card (0 = full re-render; K keeps cards 0..K-1's frames)",
+                           0, maxc, 0, key=f"fromcard_{v['journey']}")
+
     for v in rv:
         safe_card(v, [("✅ Approve → Music", "music"),
                       ("🔁 Reject → front of queue", lambda j: reject_review(j, "front")),
                       ("🔁 Reject → back of queue", lambda j: reject_review(j, "back")),
                       ("🗑 Reject journey", lambda j: reject_review(j))],
-                  marker="start", captions=True,
-                  extras=lambda v: st.checkbox(
-                      "🎲 new seed if re-queued (uncheck to keep the seed — e.g. re-render "
-                      "through an engine change)",
-                      value=True, key=f"reseed_{v['journey']}"))
+                  marker="start", captions=True, extras=review_extras)
 
 with tabs[2]:  # MUSIC — audition/generate a track, then send to Production
     st.write("Pick the soundtrack. Every candidate is auto-locked so its accent lands on each "
@@ -725,7 +742,8 @@ with tabs[0]:  # JOURNEYS — the render queue the 01:30 batch draws from (journ
         row[2].markdown(f"**{n}** · {TIER_CHIP[tier]} · {cards} cards/{frames}f "
                         f"· ~{est // 60}min (cum {run_total // 60}) · {style}"
                         + (" · 🌙 tonight" if n in picks else "")
-                        + (" · 🔁 force re-render" if e.get("force") else ""))
+                        + (f" · ↻ from card {e['from_card']}" if e.get("from_card")
+                           else (" · 🔁 force re-render" if e.get("force") else "")))
         if e.get("note"):
             row[2].caption(e["note"])
         if row[3].button("↩", key=f"jq_unq_{n}", help="unqueue"):

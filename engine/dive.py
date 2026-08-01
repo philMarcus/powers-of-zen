@@ -22,6 +22,7 @@ import argparse
 import io
 import json
 import math
+import shutil
 import subprocess
 import sys
 import time
@@ -421,6 +422,19 @@ def draw_counter(img, exp_value, pulse_age=None):
     return Image.alpha_composite(img.convert("RGBA"), layer).convert("RGB")
 
 
+def register_frame_counts(spec, fps):
+    """Per-CARD (register) frame counts in render order (render_start-rotated) — the same
+    math grammar and the music grid use. Card boundaries = cumulative sums of these."""
+    regs = spec["registers"]
+    rs = spec.get("render_start")
+    names = [r.get("name") for r in regs]
+    if rs in names:
+        k = names.index(rs)
+        regs = regs[k:] + regs[:k]
+    fmt = spec.get("format", {})
+    return [grammar._frames(r, fmt, fps) for r in regs]
+
+
 def phase_info(phases, i):
     """Return (prompt, prev_prompt, frames_into_phase, phase_index) for frame i."""
     n = 0
@@ -530,6 +544,16 @@ def main():
                     help="override the base seed (per-frame seed = base + i). A re-render keeps "
                          "the same draw unless the base changes — pass a new one to explore, "
                          "omit to reproduce (e.g. same seed through an engine change)")
+    ap.add_argument("--from-card", type=int, metavar="K",
+                    help="partial re-render: copy the frames of cards 0..K-1 from an existing "
+                         "render into a FRESH vN (source untouched) and regenerate from card K's "
+                         "first frame on. Card boundaries only — the tracker, palette anchors and "
+                         "anchor rotation all re-derive cleanly there. Composes with --seed (new "
+                         "draw for the regenerated frames) and with an edited journey whose cards "
+                         "before K kept their durs.")
+    ap.add_argument("--src-version", metavar="vN",
+                    help="with --from-card: take the prefix frames from this version "
+                         "(default: newest vN with enough frames)")
     args = ap.parse_args()
 
     spec = json.loads(Path(args.journey).read_text())
@@ -577,9 +601,66 @@ def main():
 
     base = Path(__file__).resolve().parent.parent / "output" / name
     start_i = 0
+    start_run_idx = 0     # approach runs already consumed by a copied prefix (--from-card)
+    run_extra = {}
     img = frame0 = None
     out_dir = frames_dir = None
-    if args.resume:   # continue the newest vN from its last saved frame (only the last frame is needed)
+    if args.from_card is not None:
+        # PARTIAL RE-RENDER (Level 1, 2026-08-01): repair_seam's pattern generalized from "the
+        # seam" to "any card boundary". The feedback chain's only heavy state is the previous
+        # frame; every schedule is a pure function of (spec, frame index); and at a CARD
+        # boundary the mid-run state that is NOT pure (tracker lock, palette phase_refs)
+        # re-initializes naturally. Non-destructive: fresh vN, prefix frames hard-copied.
+        if args.resume:
+            sys.exit("[dive] --from-card and --resume are mutually exclusive")
+        if "registers" not in spec:
+            sys.exit("[dive] --from-card needs a register journey (phases-schema has no cards)")
+        # CARD = a journey register, NOT a compiled phase (grammar splits each register into
+        # arrival/look/plunge sub-phases).
+        _cf = register_frame_counts(spec, cfg["fps"])
+        if not (0 < args.from_card < len(_cf)):
+            sys.exit(f"[dive] --from-card must be 1..{len(_cf) - 1} (0 = just render fresh)")
+        N = sum(_cf[:args.from_card])
+        if loop and N >= total - loop["frames"]:
+            sys.exit("[dive] that boundary is inside the loop tail — use scripts/repair_seam.py")
+        for c in cameos:
+            if c["start"] < N < c["end"]:
+                sys.exit(f"[dive] frame {N} is inside the cameo window "
+                         f"{c['start']}..{c['end']} — the sprite's propagated position can't be "
+                         f"reconstructed mid-window; pick a card outside it")
+        vs = sorted([d for d in base.glob("v[0-9]*") if d.name[1:].isdigit()],
+                    key=lambda d: int(d.name[1:]))
+        if args.src_version:
+            vs = [d for d in vs if d.name == args.src_version]
+        src = next((d for d in reversed(vs)
+                    if len(list((d / "build" / "frames").glob("*.png"))) >= N), None)
+        if not src:
+            sys.exit(f"[dive] no version under {base} has the {N} prefix frames"
+                     + (f" (asked for {args.src_version})" if args.src_version else ""))
+        n = 1 + max([int(d.name[1:]) for d in base.glob("v[0-9]*") if d.name[1:].isdigit()],
+                    default=0)
+        out_dir = base / f"v{n}"
+        frames_dir = out_dir / "build" / "frames"
+        frames_dir.mkdir(parents=True, exist_ok=True)
+        for i in range(N):
+            shutil.copy(src / "build" / "frames" / f"{i:05d}.png", frames_dir / f"{i:05d}.png")
+        start_i = N
+        img = Image.open(frames_dir / f"{N - 1:05d}.png").convert("RGB")
+        frame0 = Image.open(frames_dir / "00000.png").convert("RGB")
+        for c in cameos:          # cameos fully inside the prefix are already in those frames
+            if c["end"] <= N:
+                c["_done"] = True
+        # the frozen rule-of-thirds anchor rotates per approach run — count the runs the
+        # prefix consumed so the regenerated cards continue the rotation, not restart it
+        _prev_ap = None
+        for _a in approach[:N]:
+            if _a is not None and _a is not _prev_ap:
+                start_run_idx += 1
+            _prev_ap = _a
+        run_extra = {"from_card": args.from_card, "from_frame": N, "prefix_src": src.name}
+        print(f"[dive] FROM CARD {args.from_card} (frame {N}/{total}) — prefix from {src.name}, "
+              f"regenerating {total - N} frames into {out_dir.name}", flush=True)
+    elif args.resume:   # continue the newest vN from its last saved frame (only the last frame is needed)
         vs = sorted([d for d in base.glob("v[0-9]*") if d.name[1:].isdigit()], key=lambda d: int(d.name[1:]))
         if vs and (vs[-1] / "build" / "frames").exists():
             frames_dir = vs[-1] / "build" / "frames"
@@ -605,6 +686,11 @@ def main():
         "journey": args.journey, "name": name, "model": eff_model,
         "checkpoint": cfg["checkpoint"], "style": style_name, "frames": total,
         "fps": cfg["fps"], "seed": cfg["seed"],
+        # per-CARD (register) frame counts: lets a future --from-card verify its prefix
+        # still aligns after a journey edit
+        "card_frames": (register_frame_counts(spec, cfg["fps"]) if "registers" in spec
+                        else [p["frames"] for p in phases]),
+        **run_extra,
     }, indent=2))
 
     t0 = time.time()
@@ -621,7 +707,9 @@ def main():
     # the known zoom geometry, so missed/garbage detections can't yank the camera.
     _depth = None
     _trk = None
-    _run_idx = -1        # rotates each approach run's preferred rule-of-thirds corner
+    # rotates each approach run's preferred rule-of-thirds corner; a --from-card prefix
+    # already consumed start_run_idx runs, so the continuation keeps the rotation phase
+    _run_idx = start_run_idx - 1
     if any(approach):
         _depth = pick_depth_preproc()
         print(f"[dive] TRACKER v3 ON ({sum(a is not None for a in approach)} approach frames; "
@@ -822,7 +910,10 @@ def main():
         if k == T and p_idx not in phase_refs:
             phase_refs[p_idx] = channel_stats(img)   # this phase's palette anchor
         if i % 10 == 0 or i == total - 1:
-            rate = (time.time() - t0) / (i + 1)
+            # rate over frames RENDERED this process (a --resume/--from-card run starts at
+            # start_i; dividing by i counted the copied prefix as free work and showed
+            # "0.1s/frame, ~2s left" on a 7-minute partial render)
+            rate = (time.time() - t0) / (i - start_i + 1)
             print(f"[dive] frame {i + 1}/{total} ({rate:.1f}s/frame, "
                   f"~{rate * (total - i - 1):.0f}s left) :: {prompt[:60]}", flush=True)
 

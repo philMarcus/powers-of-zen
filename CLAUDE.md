@@ -382,3 +382,25 @@ almost certainly a hot-reload race from live app.py edits, its entry was untouch
 FIRST NIGHT IS A WATCH NIGHT: queue is seeded EMPTY — Phil queues from the tab (or lets
 the 00:00 refill compose 5); check outbox/refill.log + night_batch log + Video Review
 in the morning per the validate-in-real-runtime-conditions lesson.
+2026-08-01 (later): REVIEW VERDICTS + LEVEL-1 PARTIAL RE-RENDER + A NASTY RACE KILLED.
+Dashboard: Journeys tab moved first; Video Review cards grew three reject verdicts (Reject →
+front/back of render queue = video rejected + journey re-queued force; Reject journey = both
+dead) with a 🎲 new-seed checkbox (default on; uncheck = same seed through an engine change)
+and an ↻ from-card box. dive.py --seed (base override) and --from-card K [--src-version]:
+repair_seam's pattern generalized — copy cards 0..K-1's frames into a FRESH vN, restart the
+feedback chain at the card boundary (anchor rotation counted from the approach schedule,
+prefix cameos marked done, loop-tail + mid-cameo-window boundaries refused), regenerate on.
+CARD = REGISTER, not a compiled phase (grammar splits registers ~3 phases — first cut indexed
+phases, wrong boundaries). run.json now records card_frames + from_card/prefix_src. VALIDATED
+on loom_of_nights v2: 280 prefix frames byte-identical to v1, 28 regenerated (seed 777),
+full assembly clean, 7 min total. night_batch honors entry.from_card/new_seed.
+THE RACE (Phil caught it live): music_gen/caption/poster all held a pipeline.json snapshot
+across minutes of slow work and saved it whole at the end — a video rejected during a music
+gen silently reverted to review. All three now RE-READ fresh before writing and merge only
+their own fields. LESSON: any writer that sleeps between load and save clobbers concurrent
+edits; pipeline.json has no locking — merge-into-fresh is the contract.
+PLANNED NEXT (Phil's order): Level 3 = IP-Adapter seam (ipadapter_plus + SDXL vit-h models
+ALREADY INSTALLED in ComfyUI; prototype in seam_lab on the dollhouse/snowfall hard cases,
+ramp weight into the tail, then fold into dive.py) → then Level 2 (cut cards + stitch)
+becomes nearly trivial. The current review videos' bad FIRST frames need full re-renders
+(the reject verdicts handle that), not from-card.

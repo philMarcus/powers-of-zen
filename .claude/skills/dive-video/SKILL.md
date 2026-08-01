@@ -24,6 +24,11 @@ model, checkpoint, style, seed).
 python3 engine/dive.py journeys/<j>.json                  # render (DreamShaper by default)
 python3 engine/dive.py journeys/<j>.json --frames 30 --no-video   # smoke test
 python3 engine/dive.py journeys/<j>.json --resume         # continue newest vN after a crash
+python3 engine/dive.py journeys/<j>.json --from-card K [--seed S] [--src-version vN]
+    # PARTIAL re-render: copy cards 0..K-1's frames from an existing render into a FRESH vN
+    # (source untouched) and regenerate from card K on — new seed and/or edited later cards.
+    # Card = journey register (boundaries only). Refuses the loop tail (use repair_seam) and
+    # cameo-window interiors. Dashboard path: review card → ↻ from-card box + Reject → re-queue.
 # active journeys live flat in journeys/; legacy schemas in journeys/engine1|engine0
 # (resolve names in python via pipeline.journey_path(), never a hand-built path)
 python3 scripts/caption.py <j>                            # 5 caption options (local VLM)
