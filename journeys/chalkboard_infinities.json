@@ -85,5 +85,6 @@
     }
   ],
   "music_theme": "a hushed nocturnal lecture hall of chalk and slate — austere and curious, soft piano figures over bowed strings and a slow pulse, one bright bloom of sound landing on the chalk-grain seam",
-  "music_key": "A minor"
+  "music_key": "A minor",
+  "render_start": "chalk_constellation"
 }

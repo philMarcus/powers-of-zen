@@ -115,5 +115,6 @@
     }
   ],
   "music_theme": "a moonlit ink-painting cosmos — sparse plucked strings and a low bamboo flute over deep resonant drones, hushed and vast, one struck bell landing on the lattice-to-storm seam and taiko weight through the storm before the quiet fall home",
-  "music_key": "E minor"
+  "music_key": "E minor",
+  "render_start": "ink_feathering"
 }

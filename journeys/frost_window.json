@@ -65,5 +65,6 @@
     }
   ],
   "music_theme": "hushed winter stillness at a lamplit window, glassy bell tones over slow warm strings, a single crystalline chime landing on the lattice morph",
-  "music_key": "A minor"
+  "music_key": "A minor",
+  "render_start": "beaded_branch"
 }

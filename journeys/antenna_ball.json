@@ -84,5 +84,6 @@
       }
     }
   ],
-  "music_theme": "A serene, floating melody that swells with each new world, blending ethereal synths and soft orchestral strings, with a single warm bloom of sound landing on the antenna-to-planet seam."
+  "music_theme": "A serene, floating melody that swells with each new world, blending ethereal synths and soft orchestral strings, with a single warm bloom of sound landing on the antenna-to-planet seam.",
+  "render_start": "sky_clouds"
 }

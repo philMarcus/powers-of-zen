@@ -105,5 +105,6 @@
     }
   ],
   "music_theme": "bright kitsch synth-pop shimmer, glassy bells and fat neon bass, playful and sugary, a huge magenta swell landing on the sugar-lattice-to-quasar morph and a soft floss-light drift through the nebula",
-  "music_key": "A major"
+  "music_key": "A major",
+  "render_start": "candyfloss_nebula"
 }

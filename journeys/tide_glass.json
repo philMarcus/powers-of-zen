@@ -85,5 +85,6 @@
     }
   ],
   "music_theme": "a bright tidal morning — glassy bells and a light rolling swell over shimmering water, one clear crystalline bloom of sound landing on the glass-strand-to-foam seam",
-  "music_key": "G major"
+  "music_key": "G major",
+  "render_start": "wave_lattice"
 }

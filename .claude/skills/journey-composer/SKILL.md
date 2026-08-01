@@ -231,6 +231,16 @@ Journeys are CIRCULAR, so the chain may begin at ANY card. Set optional top-leve
 - **Never pick a start that lands the SEAM card first or last.** Last is worst: the loop-home
   branch swallows it and the seam disappears entirely. `grammar` warns, but check.
 - Vary it across the catalog — it changes which world is rendered "cleanest".
+- **`render_start` is REQUIRED, not optional** (Phil 2026-08-01: "make sure all journeys have good
+  render starts set"). Omitting it silently starts at card 0, which is almost always the literal
+  establishing scene — 11 of 24 journeys were about to render frame 0 on a lecture hall, a street
+  corner, a tailor's atelier. Verify the whole catalog with `python3 scripts/audit_starts.py`
+  (flags a missing start, a seam at either end, and literal-place words in the card that would
+  actually render first) and a single journey with `python3 scripts/preflight.py <journey>`.
+- Picking one is mechanical: with the seam at index `s` of `n` cards, rotating to index `i` puts
+  the seam at `(s-i) mod n`, so **`i` must be neither `s` nor `s+1`** — otherwise the seam lands
+  first or last. Among the rest, take the most abstract/textural card (a tiling, a grain, a
+  filament web, a field of dots, a nebula).
 - **Abstract is necessary but NOT sufficient — abstraction is also a RISK on frame 0.** An
   abstract card has no real-world referent, so the checkpoint has maximum freedom about what to
   actually draw, and it will reach for the densest region of its training set. DreamShaper's is

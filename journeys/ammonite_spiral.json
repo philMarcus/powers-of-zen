@@ -95,5 +95,6 @@
     }
   ],
   "music_theme": "a tidal iridescent hush — slow shimmering bells over a deep ocean swell, one bright crystalline bloom landing on the crystal-terrace-to-galaxy seam",
-  "music_key": "E minor"
+  "music_key": "E minor",
+  "render_start": "star_lattice"
 }

@@ -65,5 +65,6 @@
     }
   ],
   "music_theme": "a rainy evening street corner turned inward, warm and nostalgic, soft patter under lamplit calm, one bright swell landing on the dendrite-to-streets seam",
-  "music_key": "E minor"
+  "music_key": "E minor",
+  "render_start": "verdigris"
 }

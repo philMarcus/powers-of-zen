@@ -125,5 +125,6 @@
     }
   ],
   "music_theme": "a glowing bioluminescent night garden, nocturnal, dreamy, alive with soft light",
-  "music_key": "D minor"
+  "music_key": "D minor",
+  "render_start": "moss_cells"
 }

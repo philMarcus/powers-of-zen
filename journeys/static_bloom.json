@@ -85,5 +85,6 @@
     }
   ],
   "music_theme": "a warm nostalgic analog nocturne — soft electric piano and tape hum over a slow pulse, a silver shimmer of noise through the descent, opening into broad golden strings when the picture resolves onto the plain",
-  "music_key": "A minor"
+  "music_key": "A minor",
+  "render_start": "phosphor"
 }

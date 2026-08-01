@@ -115,5 +115,6 @@
     }
   ],
   "music_theme": "a stately monochrome procession — spare piano and low strings over a slow measured pulse, tightening into cold crystalline geometry through the deep tilings, opening into wide austere chords at the lattice cosmos, settling back to the quiet of the garden",
-  "music_key": "C minor"
+  "music_key": "C minor",
+  "render_start": "penrose_tiling"
 }
