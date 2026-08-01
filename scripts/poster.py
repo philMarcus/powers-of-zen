@@ -757,6 +757,16 @@ def run(only, dry_run, journey):
             flag(name, "unexpected", t, str(e))
             results[name] = f"ERROR: {e}"
     if not dry_run:
+        # RE-READ before writing: posting holds this process for MINUTES while the dashboard
+        # may be editing pipeline.json — saving the pre-post snapshot would clobber every edit
+        # made meanwhile (same lost-update class as music_gen's, found 2026-08-01). Merge only
+        # the fields this run owns (this entry's platforms + state) into a fresh copy.
+        data = pl.load()
+        fresh = pl.get(data, entry["journey"])
+        if fresh is None:
+            print(f"  !! {entry['journey']} vanished from pipeline.json during the post — "
+                  "platform results NOT recorded"); return
+        entry = fresh
         for name in plats:
             r = results[name]
             if r == "already live (skipped)":

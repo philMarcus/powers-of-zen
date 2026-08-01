@@ -127,9 +127,18 @@ def generate(journey, n=5):
                       "aligned": str(aligned.relative_to(ROOT)), "seed": seed,
                       "lock": round(info["lock"], 2), "tags": tags})
         print(f"  [{mood}] lock {info['lock']:.2f}x -> {aligned.relative_to(ROOT)}")
+    # RE-READ before writing. This function runs for MINUTES (5 generations + aligns) while
+    # the dashboard keeps editing pipeline.json; saving the snapshot loaded before the work
+    # clobbers every edit made meanwhile (2026-08-01: a video rejected during lather_atlas's
+    # music gen silently came back to review). Long-running writers merge their OWN fields
+    # into a fresh copy — never save a stale whole-file snapshot.
+    model0 = v["model"]                    # what the tracks were BUILT for (staleness check)
+    d = pl.load(); v = pl.get(d, journey)
+    if not v:
+        print(f"{journey} vanished from pipeline.json during generation — not recorded"); return
     v["music"] = {"bpm": bpm, "bar": round(bar, 3), "key": key, "stage": "review",
                   "chosen": None, "candidates": cands,
-                  "for_model": v["model"], "for_cut": cut}  # so a model/cut switch flags stale music
+                  "for_model": model0, "for_cut": cut}  # so a model/cut switch flags stale music
     pl.save(d)
     pl.telem("music_gen", journey=journey, detail=f"{len(cands)} candidates")
     print(f"recorded {len(cands)} candidates; audition in the dashboard Music panel")

@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-08-01 08:01:22",
+    "updated": "2026-08-01 13:59:40",
     "paused_platforms": [
       "tiktok"
     ],
@@ -104,7 +104,7 @@
         }
       },
       "created": "2026-07-27",
-      "order": 3,
+      "order": 2,
       "music": {
         "bpm": 100,
         "bar": 2.393,
@@ -1083,7 +1083,7 @@
       "yt_title": "Dive through storms, stars, and the unseen... forever 🌩️",
       "yt_desc": "",
       "cameo": "aleksey",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1350,7 +1350,7 @@
         "for_model": "ds",
         "for_cut": "divein"
       },
-      "order": 2
+      "order": 3
     },
     {
       "journey": "night_bloom_remix",
@@ -1464,7 +1464,7 @@
         "for_model": "ds",
         "for_cut": "divein"
       },
-      "order": 1
+      "order": 0
     },
     {
       "journey": "frost_window",
@@ -1577,7 +1577,8 @@
         "Where ice and light weave a loop without end ❄️ Can you spot Belle hiding in this icy maze? 👀 #FrostedRealms #InfiniteIceLattice #CrystalDive #WintersEndlessLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "Lost in the fractal dance of frost and firelight 🔥 Can you spot Belle hiding in this icy maze? 👀 #FrostedRealms #InfiniteIceLattice #CrystalDive #WintersEndlessLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "A journey through the veins of frozen time Can you spot Belle hiding in this icy maze? 👀 #FrostedRealms #InfiniteIceLattice #CrystalDive #WintersEndlessLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
-      ]
+      ],
+      "order": 5
     },
     {
       "journey": "cave_of_numbers",
@@ -1697,13 +1698,13 @@
       "journey": "butterfly_meridian",
       "model": "ds",
       "cut": "divein",
-      "file": "production/butterfly_meridian_ds_divein.mp4",
+      "file": "production/butterfly_meridian_ds_divein_shift.mp4",
       "title": "",
-      "caption": "Golden hour unfolds in endless layers 🌿 Can you spot Dora hiding in the loop? 👀 #InfiniteGoldenHour #MonarchCosmos #GyroidDreamscape #VioletPlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-      "yt_title": "Golden hour unfolds in endless layers 🌿",
+      "caption": "A monarch’s wing reveals cosmic secrets ✨ Can you spot Dora hiding in the loop? 👀 #InfiniteGoldenHour #MonarchCosmos #GyroidDreamscape #VioletPlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A monarch’s wing reveals cosmic secrets ✨",
       "yt_desc": "",
       "cameo": "dora",
-      "state": "review",
+      "state": "queued",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1747,19 +1748,77 @@
         "Dive through the gyroid labyrinth of light Can you spot Dora hiding in the loop? 👀 #InfiniteGoldenHour #MonarchCosmos #GyroidDreamscape #VioletPlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "Where rivers glow and nebulae breathe Can you spot Dora hiding in the loop? 👀 #InfiniteGoldenHour #MonarchCosmos #GyroidDreamscape #VioletPlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "The universe folds into a single scale Can you spot Dora hiding in the loop? 👀 #InfiniteGoldenHour #MonarchCosmos #GyroidDreamscape #VioletPlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
-      ]
+      ],
+      "orig_file": "production/butterfly_meridian_ds_divein.mp4",
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "E minor",
+        "stage": "done",
+        "chosen": "warm",
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/butterfly_meridian_warm.flac",
+            "aligned": "review/music/candidates/butterfly_meridian/warm.mp4",
+            "seed": 500,
+            "lock": 5.01,
+            "tags": "chill hypnotic ambient evoking a monarch migration over a golden-hour valley, warm and soaring, wide strings and soft bells over a low drone, one bright shimmering bloom landing on the wing-scale-to-starfield seam, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/butterfly_meridian_glassy.flac",
+            "aligned": "review/music/candidates/butterfly_meridian/glassy.mp4",
+            "seed": 501,
+            "lock": 4.99,
+            "tags": "chill hypnotic ambient evoking a monarch migration over a golden-hour valley, warm and soaring, wide strings and soft bells over a low drone, one bright shimmering bloom landing on the wing-scale-to-starfield seam, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/butterfly_meridian_deep.flac",
+            "aligned": "review/music/candidates/butterfly_meridian/deep.mp4",
+            "seed": 502,
+            "lock": 7.09,
+            "tags": "chill hypnotic ambient evoking a monarch migration over a golden-hour valley, warm and soaring, wide strings and soft bells over a low drone, one bright shimmering bloom landing on the wing-scale-to-starfield seam, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/butterfly_meridian_tender.flac",
+            "aligned": "review/music/candidates/butterfly_meridian/tender.mp4",
+            "seed": 503,
+            "lock": 13.11,
+            "tags": "chill hypnotic ambient evoking a monarch migration over a golden-hour valley, warm and soaring, wide strings and soft bells over a low drone, one bright shimmering bloom landing on the wing-scale-to-starfield seam, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/butterfly_meridian_choir.flac",
+            "aligned": "review/music/candidates/butterfly_meridian/choir.mp4",
+            "seed": 504,
+            "lock": 22.99,
+            "tags": "chill hypnotic ambient evoking a monarch migration over a golden-hour valley, warm and soaring, wide strings and soft bells over a low drone, one bright shimmering bloom landing on the wing-scale-to-starfield seam, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      },
+      "order": 1
     },
     {
       "journey": "lather_atlas",
       "model": "ds",
-      "cut": "divein",
-      "file": "review_divein/lather_atlas_ds_divein.mp4",
+      "cut": "zoomout",
+      "file": "production/lather_atlas_ds.mp4",
       "title": "",
-      "caption": "Diving into the shimmering depths of a soap bubble universe 🌈 Can you spot Kitty hiding in this luminous loop? 🐱 #soapbubblecosmos #ceramicuniverse #iridescentdive #liquidlightloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-      "yt_title": "Diving into the shimmering depths of a soap bubble universe 🌈",
+      "caption": "A ceramic basin becomes a cosmos of glowing domes ✨ Can you spot Kitty hiding in this luminous loop? 🐱 #soapbubblecosmos #ceramicuniverse #iridescentdive #liquidlightloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A ceramic basin becomes a cosmos of glowing domes ✨",
       "yt_desc": "",
       "cameo": "kitty",
-      "state": "review",
+      "state": "queued",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1802,7 +1861,64 @@
         "Lost in the iridescent folds of a single bubble’s skin Can you spot Kitty hiding in this luminous loop? 🐱 #soapbubblecosmos #ceramicuniverse #iridescentdive #liquidlightloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "Endless rows of light spheres stretch into infinity 💫 Can you spot Kitty hiding in this luminous loop? 🐱 #soapbubblecosmos #ceramicuniverse #iridescentdive #liquidlightloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "The sink’s foam is a lattice of liquid starlight Can you spot Kitty hiding in this luminous loop? 🐱 #soapbubblecosmos #ceramicuniverse #iridescentdive #liquidlightloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
-      ]
+      ],
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "A major",
+        "stage": "done",
+        "chosen": "warm",
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/lather_atlas_warm.flac",
+            "aligned": "review/music/candidates/lather_atlas/warm.mp4",
+            "seed": 500,
+            "lock": 7.14,
+            "tags": "chill hypnotic ambient evoking a warm evening kitchen at rest, gentle and iridescent — soft chiming keys over a low hum, opening bright as the foam gives up its glowing inner world, one shimmering bloom of sound on the turn back into the sink, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/lather_atlas_glassy.flac",
+            "aligned": "review/music/candidates/lather_atlas/glassy.mp4",
+            "seed": 501,
+            "lock": 6.68,
+            "tags": "chill hypnotic ambient evoking a warm evening kitchen at rest, gentle and iridescent — soft chiming keys over a low hum, opening bright as the foam gives up its glowing inner world, one shimmering bloom of sound on the turn back into the sink, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/lather_atlas_deep.flac",
+            "aligned": "review/music/candidates/lather_atlas/deep.mp4",
+            "seed": 502,
+            "lock": 7.59,
+            "tags": "chill hypnotic ambient evoking a warm evening kitchen at rest, gentle and iridescent — soft chiming keys over a low hum, opening bright as the foam gives up its glowing inner world, one shimmering bloom of sound on the turn back into the sink, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/lather_atlas_tender.flac",
+            "aligned": "review/music/candidates/lather_atlas/tender.mp4",
+            "seed": 503,
+            "lock": 10.25,
+            "tags": "chill hypnotic ambient evoking a warm evening kitchen at rest, gentle and iridescent — soft chiming keys over a low hum, opening bright as the foam gives up its glowing inner world, one shimmering bloom of sound on the turn back into the sink, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/lather_atlas_choir.flac",
+            "aligned": "review/music/candidates/lather_atlas/choir.mp4",
+            "seed": 504,
+            "lock": 35.87,
+            "tags": "chill hypnotic ambient evoking a warm evening kitchen at rest, gentle and iridescent — soft chiming keys over a low hum, opening bright as the foam gives up its glowing inner world, one shimmering bloom of sound on the turn back into the sink, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "zoomout"
+      },
+      "order": 6
     },
     {
       "journey": "quantum_orrery",
@@ -1814,7 +1930,7 @@
       "yt_title": "A brass orrery hums with cosmic whispers 🌌",
       "yt_desc": "",
       "cameo": "lee",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1917,14 +2033,14 @@
     {
       "journey": "jade_automata",
       "model": "ds",
-      "cut": "divein",
-      "file": "review_divein/jade_automata_ds_divein.mp4",
+      "cut": "zoomout",
+      "file": "production/jade_automata_ds_shift.mp4",
       "title": "",
       "caption": "A jade temple dissolves into cosmic foam 🌌 Can you spot Janet hiding in the stars? 👀 #JadeCosmos #InfiniteZenLoop #CelestialTerrace #VermilionVoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "yt_title": "A jade temple dissolves into cosmic foam 🌌",
       "yt_desc": "",
       "cameo": "janet",
-      "state": "review",
+      "state": "music",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1967,7 +2083,65 @@
         "Starlight swarms collapse to a burning world 🔥 Can you spot Janet hiding in the stars? 👀 #JadeCosmos #InfiniteZenLoop #CelestialTerrace #VermilionVoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "Mountains rise from the embers of a star ⛰️ Can you spot Janet hiding in the stars? 👀 #JadeCosmos #InfiniteZenLoop #CelestialTerrace #VermilionVoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "The loop begins again in endless green Can you spot Janet hiding in the stars? 👀 #JadeCosmos #InfiniteZenLoop #CelestialTerrace #VermilionVoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
-      ]
+      ],
+      "start_t": 0.88,
+      "orig_file": "production/jade_automata_ds.mp4",
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "E minor",
+        "stage": "review",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/jade_automata_warm.flac",
+            "aligned": "review/music/candidates/jade_automata/warm.mp4",
+            "seed": 500,
+            "lock": 10.09,
+            "tags": "chill hypnotic ambient evoking an ancient stone temple in mountain mist, meditative and vast, low bells and breathing strings over a slow pulse, one bright swell landing on the stone-to-cosmos morph, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/jade_automata_glassy.flac",
+            "aligned": "review/music/candidates/jade_automata/glassy.mp4",
+            "seed": 501,
+            "lock": 6.27,
+            "tags": "chill hypnotic ambient evoking an ancient stone temple in mountain mist, meditative and vast, low bells and breathing strings over a slow pulse, one bright swell landing on the stone-to-cosmos morph, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/jade_automata_deep.flac",
+            "aligned": "review/music/candidates/jade_automata/deep.mp4",
+            "seed": 502,
+            "lock": 3.66,
+            "tags": "chill hypnotic ambient evoking an ancient stone temple in mountain mist, meditative and vast, low bells and breathing strings over a slow pulse, one bright swell landing on the stone-to-cosmos morph, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/jade_automata_tender.flac",
+            "aligned": "review/music/candidates/jade_automata/tender.mp4",
+            "seed": 503,
+            "lock": 16.17,
+            "tags": "chill hypnotic ambient evoking an ancient stone temple in mountain mist, meditative and vast, low bells and breathing strings over a slow pulse, one bright swell landing on the stone-to-cosmos morph, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/jade_automata_choir.flac",
+            "aligned": "review/music/candidates/jade_automata/choir.mp4",
+            "seed": 504,
+            "lock": 14.84,
+            "tags": "chill hypnotic ambient evoking an ancient stone temple in mountain mist, meditative and vast, low bells and breathing strings over a slow pulse, one bright swell landing on the stone-to-cosmos morph, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "zoomout"
+      }
     },
     {
       "journey": "pollen_court",

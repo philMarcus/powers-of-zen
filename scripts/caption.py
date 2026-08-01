@@ -186,6 +186,10 @@ def generate(journey, model="ds", no_theme=False):
     spot = (data.get("spot_line") or "").strip() if mascot else ""
     tags = " ".join(_dedupe_tags(list(data.get("hashtags", [])) + BRAND_TAGS))
     mtheme = (data.get("music_theme") or "").strip()
+    # RE-READ before writing: the Ollama call above holds this process for ~40s while the
+    # dashboard may be editing pipeline.json — merge into a fresh copy, own fields only
+    # (same lost-update class as music_gen's, found 2026-08-01).
+    d = pl.load(); v = pl.get(d, journey)
     # respect a pre-set spot toggle; else default on when there's a mascot + a spot line
     hook = bool(mascot and spot) and (v.get("spot_hook", True) if v else True)
     opts = [assemble_caption(b, spot, tags, hook) for b in bodies]
