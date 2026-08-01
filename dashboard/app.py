@@ -49,7 +49,8 @@ def video_path(v):
 
 
 def _spec_path(journey):
-    return pl.ROOT / "journeys" / f"{journey}.json"
+    # resolves across journeys/ + engine1/ + engine0/ (legacy specs still feed music/caption)
+    return pl.journey_path(journey)
 
 
 def _read_spec(p):
@@ -62,7 +63,7 @@ def _read_spec(p):
 
 def get_music_theme(journey):
     p = _spec_path(journey)
-    if not p.exists():
+    if not p:
         return ""
     try:
         return _read_spec(p).get("music_theme", "")
@@ -73,7 +74,7 @@ def get_music_theme(journey):
 
 def set_music_theme(journey, theme):
     p = _spec_path(journey)
-    if not p.exists():
+    if not p:
         return
     try:
         spec = _read_spec(p)
@@ -172,6 +173,10 @@ def apply_switch(journey, model, cut):
         return
     promote.switch(journey, model, cut)
     dd = data(); v = pl.get(dd, journey)
+    if (v["model"], v["cut"]) != (model, cut):
+        # switch refused (that variant has no file anywhere) — nothing changed
+        st.warning(f"no {model}/{cut} file exists for {journey} — kept {v['model']}/{v['cut']}")
+        return
     m = v.get("music") or {}
     if m.get("candidates") and (m.get("for_model") != model or m.get("for_cut") != cut):
         v["music"] = {"chosen": None, "candidates": [],
@@ -446,6 +451,68 @@ def audition_candidates(v, choose_advances_to=None):
                 st.rerun()
 
 
+# ── journeys tab helpers (registry = outbox/journeys.json via pipeline.py) ──────────────
+def jdata():
+    return pl.jload()
+
+
+def journey_meta(name):
+    """(cards, frames, tier, est_sec, style, theme) straight off the spec — no engine
+    imports (this runs on WINDOWS python; grammar/style live in the WSL env). Frame
+    count mirrors grammar._frames for the dur-in-beats schema; night_batch re-derives
+    it with the real compile before rendering."""
+    spec = _read_spec(pl.journey_path(name))
+    regs = spec["registers"]
+    fpb = spec.get("format", {}).get("frames_per_beat", 7)
+    frames = sum(max(fpb, round((r.get("dur") or 4) * fpb)) for r in regs)
+    tier = pl.tier_of(len(regs))
+    return (len(regs), frames, tier, pl.est_render_sec(frames),
+            spec.get("style") or (spec.get("style_suffix") or "")[:24],
+            spec.get("theme", ""))
+
+
+@st.cache_data(ttl=120)
+def audit_lines():
+    """{journey: 'ok ...'/'!! ...'} from scripts/audit_starts.py (WSL env — the audit
+    imports nothing heavy but lives repo-side; cached so reruns don't shell out)."""
+    import subprocess
+    args = "cd /mnt/c/Users/Phil/zoomer && python3 scripts/audit_starts.py"
+    cmd = ["wsl", "bash", "-lc", args] if os.name == "nt" else ["bash", "-lc", args]
+    try:
+        r = subprocess.run(cmd, cwd=str(pl.ROOT), capture_output=True, text=True, timeout=60)
+        out = {}
+        for line in (r.stdout or "").splitlines():
+            parts = line.split()
+            if len(parts) >= 2 and parts[0] in ("ok", "!!"):
+                out[parts[1]] = line.strip()
+        return out
+    except Exception:
+        return {}
+
+
+def jset(name, **fields):
+    """Merge fields into a journey's registry entry (fresh load→save)."""
+    jj = jdata()
+    jj["journeys"].setdefault(name, {})
+    jj["journeys"][name].update(fields, ts=pl._now())
+    pl.jsave(jj)
+
+
+def jpop(name):
+    jj = jdata()
+    jj["journeys"].pop(name, None)
+    pl.jsave(jj)
+
+
+def jqueue_append(name, **extra):
+    jj = jdata()
+    order = 1 + max([jj["journeys"][q].get("order", 0) for q in pl.jqueue(jj)] or [-1])
+    jj["journeys"].setdefault(name, {})
+    jj["journeys"][name].update({"state": "queued", "order": order,
+                                 "ts": pl._now(), **extra})
+    pl.jsave(jj)
+
+
 # ── header + tabs ────────────────────────────────────────────────────────────────────────
 d = data()
 counts = Counter(v.get("state") for v in d["videos"])
@@ -465,12 +532,15 @@ cols[4].metric("failed (any)", len(failed_vids))
 nxt = pl.next_to_post(d)
 cols[5].metric("next post", nxt["journey"] if nxt else "—")
 
+JD = pl.jload()
 tabs = st.tabs([f"🎬 Video Review ({counts.get('review',0)})",
                 f"🎵 Music ({counts.get('music',0)})",
                 f"🚀 Production ({counts.get('queued',0)})",
+                f"🗺 Journeys ({len(pl.jqueue(JD))})",
                 f"Live ({len(live_vids)})",
                 f"Failed ({len(failed_vids)})",
-                "Telemetry"])
+                "Telemetry",
+                "⚙ Settings"])
 
 with tabs[0]:  # VIDEO REVIEW — pick cut/model, edit caption, send to Music
     st.write("Look at the video, pick cut/model, edit the caption/theme, then **Approve → Music** "
@@ -555,7 +625,133 @@ with tabs[2]:  # PRODUCTION — the ordered post queue; tweak cut/model + change
                     audition_candidates(v)   # re-choose; stays in Production
         st.divider()
 
-with tabs[3]:  # LIVE — anything live on at least one platform (noting where)
+with tabs[3]:  # JOURNEYS — the render queue the 01:30 batch draws from
+    jd = JD
+    s = jd["settings"]
+    TIER_CHIP = {"short": "🟢 S", "medium": "🟡 M", "long": "🔴 L"}
+
+    # states: stored decision or derived (pipeline entry ⇒ rendered, else new)
+    meta, broken = {}, {}
+    for name in pl.journey_names():
+        try:
+            meta[name] = journey_meta(name)
+        except Exception as e:
+            broken[name] = f"{type(e).__name__}: {e}"
+    states = {n: pl.jstate(n, jd, d) for n in meta}
+    q_names = [n for n in pl.jqueue(jd) if n in meta]
+    avail = [n for n in meta if states[n] == "new" and n not in broken]
+    rendered = [n for n in meta if states[n] == "rendered"]
+    rfailed = [n for n in meta if states[n] == "render_failed"]
+    rejected = [n for n in meta if states[n] == "rejected"]
+    ests = {n: meta[n][3] for n in q_names}
+    tiers = {n: meta[n][2] for n in q_names}
+    picks, tpl, total = pl.pick_tonight(jd, ests, tiers)
+
+    from collections import Counter as _C
+    tc = _C(tiers.values())
+    hc = st.columns(4)
+    hc[0].metric("journey queue", f"{len(q_names)}/{s['journey_queue_target']}",
+                 f"{tc.get('long',0)}L {tc.get('medium',0)}M {tc.get('short',0)}S",
+                 delta_color="off")
+    nights = (sum(ests.values()) / (s["render_budget_min"] * 60)) if q_names else 0
+    hc[1].metric("est. runway", f"{nights:.1f} nights")
+    ready = counts.get("queued", 0)
+    hc[2].metric("ready to post", f"{ready}/{s['max_ready_videos']}")
+    hc[3].metric("tonight", tpl if picks else "—")
+    if s.get("render_paused"):
+        st.warning("⏸ nightly rendering is PAUSED (Settings tab)")
+    elif ready >= s["max_ready_videos"]:
+        st.warning(f"⛔ backpressure: {ready} videos ready to post — "
+                   "the 01:30 batch will skip until the production queue drains")
+    elif picks:
+        st.info("🌙 tonight [" + tpl + "]: " + " + ".join(
+            f"{n} ({tiers[n][0].upper()} ~{ests[n] // 60}min)" for n in picks)
+            + f" = {total / 3600:.1f}h of {s['render_budget_min'] // 60}h")
+    else:
+        st.info("queue is empty — the midnight refill will compose journeys, or Queue some below")
+
+    st.subheader(f"render queue ({len(q_names)})")
+    run_total = 0
+    for i, n in enumerate(q_names):
+        cards, frames, tier, est, style, theme = meta[n]
+        run_total += est
+        row = st.columns([1, 1, 6, 1, 1])
+        if row[0].button("⬆", key=f"jq_up_{n}", disabled=(i == 0)):
+            jj = jdata(); pl.jmove(jj, n, -1); pl.jsave(jj); st.rerun()
+        if row[1].button("⬇", key=f"jq_dn_{n}", disabled=(i == len(q_names) - 1)):
+            jj = jdata(); pl.jmove(jj, n, +1); pl.jsave(jj); st.rerun()
+        e = jd["journeys"].get(n, {})
+        row[2].markdown(f"**{n}** · {TIER_CHIP[tier]} · {cards} cards/{frames}f "
+                        f"· ~{est // 60}min (cum {run_total // 60}) · {style}"
+                        + (" · 🌙 tonight" if n in picks else "")
+                        + (" · 🔁 force re-render" if e.get("force") else ""))
+        if e.get("note"):
+            row[2].caption(e["note"])
+        if row[3].button("↩", key=f"jq_unq_{n}", help="unqueue"):
+            jpop(n); st.rerun()
+        if row[4].button("🗑", key=f"jq_rej_{n}", help="reject"):
+            jset(n, state="rejected"); pl.telem("rejected", journey=n); st.rerun()
+    if not q_names:
+        st.caption("nothing queued")
+
+    if rfailed:
+        st.subheader(f"⚠ render failed ({len(rfailed)})")
+        for n in rfailed:
+            e = jd["journeys"].get(n, {})
+            row = st.columns([8, 1, 1])
+            row[0].markdown(f"**{n}** — {e.get('note', 'failed')}")
+            if row[1].button("🔁", key=f"rf_rq_{n}", help="re-queue"):
+                jqueue_append(n); st.rerun()
+            if row[2].button("🗑", key=f"rf_rej_{n}", help="reject"):
+                jset(n, state="rejected"); st.rerun()
+
+    st.subheader(f"available ({len(avail)})")
+    audits = audit_lines()
+    for n in sorted(avail, key=lambda x: meta[x][2]):
+        cards, frames, tier, est, style, theme = meta[n]
+        a = audits.get(n, "")
+        badge = "✅" if a.startswith("ok") else ("❗" if a else "•")
+        row = st.columns([8, 1, 1])
+        row[0].markdown(f"{badge} **{n}** · {TIER_CHIP[tier]} · {cards} cards/{frames}f "
+                        f"· ~{est // 60}min · {style}")
+        note = (jd["journeys"].get(n, {}) or {}).get("note", "")
+        cap = " · ".join(x for x in [theme[:80], note, a if not a.startswith("ok") else ""] if x)
+        if cap:
+            row[0].caption(cap)
+        if row[1].button("➕", key=f"av_q_{n}", help="queue for render"):
+            jqueue_append(n); pl.telem("jqueued", journey=n); st.rerun()
+        if row[2].button("🗑", key=f"av_rej_{n}", help="reject"):
+            jset(n, state="rejected"); pl.telem("rejected", journey=n); st.rerun()
+    for n, err in broken.items():
+        st.error(f"**{n}**: spec unreadable — {err}")
+
+    st.subheader(f"rendered ({len(rendered)})")
+    for n in rendered:
+        cards, frames, tier, est, style, theme = meta[n]
+        v = pl.get(d, n) or {}
+        vstate = v.get("state", "?")
+        chip = {"review": "🎬 review", "music": "🎵 music", "queued": "🚀 production",
+                "live": "🟢 live", "failed": "🔴 failed", "rejected": "🗑 rejected"}
+        row = st.columns([9, 1])
+        row[0].markdown(f"**{n}** · {TIER_CHIP[tier]} · {chip.get(vstate, vstate)}"
+                        + (f" · {platform_line(v)}" if any_live(v) or any_failed(v) else ""))
+        if row[1].button("🔁", key=f"rd_rq_{n}", help="re-queue (renders a fresh vN)"):
+            jqueue_append(n, force=True); st.rerun()
+
+    if rejected:
+        with st.expander(f"rejected ({len(rejected)})"):
+            for n in rejected:
+                row = st.columns([9, 1])
+                row[0].markdown(f"**{n}**")
+                if row[1].button("♻", key=f"rj_re_{n}", help="restore to available"):
+                    jpop(n); st.rerun()
+
+    with st.expander("legacy journeys (not queueable — superseded schemas)"):
+        for sub in ("engine1", "engine0"):
+            names = sorted(p.stem for p in (pl.JOURNEYS_DIR / sub).glob("*.json"))
+            st.caption(f"**{sub}** ({len(names)}): " + ", ".join(names))
+
+with tabs[4]:  # LIVE — anything live on at least one platform (noting where)
     if not live_vids:
         st.info("Nothing live yet.")
     for v in live_vids:
@@ -570,7 +766,7 @@ with tabs[3]:  # LIVE — anything live on at least one platform (noting where)
         st.caption(v.get("caption", ""))
         st.divider()
 
-with tabs[4]:  # FAILED — anything failed on at least one platform (noting where)
+with tabs[5]:  # FAILED — anything failed on at least one platform (noting where)
     if not failed_vids:
         st.info("No failures.")
     for v in failed_vids:
@@ -591,13 +787,69 @@ with tabs[4]:  # FAILED — anything failed on at least one platform (noting whe
             set_state(v["journey"], "queued"); st.rerun()
         st.divider()
 
-with tabs[5]:  # TELEMETRY
+with tabs[6]:  # TELEMETRY
     ev = pl.read_telem(200)[::-1]
     if not ev:
         st.info("no events yet")
     for e in ev:
         icon = {"post": "✅", "post_fail": "❌", "flag": "⚠️", "render": "🎬",
                 "render_fail": "💥", "music_gen": "🎵", "music_choose": "🎶",
-                "switch": "🔀"}.get(e["event"], "•")
+                "switch": "🔀", "batch_skip": "⏭", "batch_done": "🌙",
+                "refill": "🧭", "refill_done": "🧭", "refill_fail": "💥",
+                "jqueued": "🗺"}.get(e["event"], "•")
         st.text(f"{icon} {e['ts']}  {e['event']}  {e.get('journey','')} "
-                f"{e.get('platform','')}  {e.get('detail','')}")
+                f"{e.get('platform','')}  {e.get('detail','')}"
+                + (f"  {e.get('reason','')}" if e.get('reason') else ""))
+
+with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platform pauses)
+    st.write("Pipeline knobs. Run **times** live in Windows Task Scheduler "
+             "(scripts/SCHEDULER.md): refill 00:00 · render 01:30 · posts 08:00/18:00.")
+    jd = pl.jload()
+    s = jd["settings"]
+    c = st.columns(4)
+    budget = c[0].number_input("render budget (min/night)", 30, 600,
+                               int(s["render_budget_min"]), step=30)
+    maxready = c[1].number_input("backpressure: max ready-to-post videos", 1, 100,
+                                 int(s["max_ready_videos"]))
+    qtarget = c[2].number_input("journey queue target", 1, 100,
+                                int(s["journey_queue_target"]))
+    maxnight = c[3].number_input("refill: max composed/night", 0, 10,
+                                 int(s["refill_max_per_night"]))
+    c2 = st.columns(4)
+    shares = {}
+    for i, t in enumerate(("long", "medium", "short")):
+        shares[t] = c2[i].number_input(f"tier share — {t}", 0.0, 1.0,
+                                       float(s["tier_share"].get(t, 0.3)), step=0.05,
+                                       help="relative weights for the refill's queue mix")
+    tpls = c2[3].text_input("nightly templates (priority order)",
+                            ",".join(s["nightly_templates"]),
+                            help="comma-separated tier mixes: L=long M=medium S=short; "
+                                 "first satisfiable within budget wins")
+    t1, t2, t3 = st.columns(3)
+    rpaused = t1.toggle("⏸ pause nightly rendering", value=bool(s["render_paused"]))
+    fpaused = t2.toggle("⏸ pause midnight refill", value=bool(s["refill_paused"]))
+    st.markdown("**platform pauses** (scheduler skips paused platforms when posting)")
+    pc = st.columns(len(pl.PLATFORMS))
+    plat_paused = {}
+    for i, k in enumerate(pl.PLATFORMS):
+        plat_paused[k] = pc[i].toggle(f"⏸ {k}", value=(k in PAUSED),
+                                      key=f"set_pause_{k}")
+    if st.button("💾 Save settings"):
+        tpl_list = [x.strip().upper() for x in tpls.split(",") if x.strip()]
+        bad = [x for x in tpl_list if not x or set(x) - set("LMS")]
+        if bad:
+            st.error(f"bad template(s): {', '.join(bad)} — use only L/M/S letters")
+        else:
+            jj = pl.jload()
+            jj["settings"].update({
+                "render_budget_min": int(budget), "max_ready_videos": int(maxready),
+                "journey_queue_target": int(qtarget), "refill_max_per_night": int(maxnight),
+                "tier_share": shares, "nightly_templates": tpl_list,
+                "render_paused": bool(rpaused), "refill_paused": bool(fpaused)})
+            pl.jsave(jj)
+            dd = data()
+            dd.setdefault("meta", {})["paused_platforms"] = \
+                [k for k, p in plat_paused.items() if p]
+            pl.save(dd)
+            pl.telem("settings", detail="edited in dashboard")
+            st.success("saved"); st.rerun()

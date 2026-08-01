@@ -17,7 +17,9 @@ import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "engine"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 import grammar  # noqa: E402
+import pipeline as pl  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 FFMPEG = ("/mnt/c/Users/Phil/AppData/Local/Microsoft/WinGet/Packages/"
@@ -45,7 +47,7 @@ START_REGISTER = {
 
 def cut_time(journey, cut):
     """Seconds into the given cut where the chosen register is mid-travel."""
-    spec = json.loads((ROOT / "journeys" / f"{journey}.json").read_text())
+    spec = json.loads(pl.journey_path(journey).read_text(encoding="utf-8"))
     regs = spec["registers"]
     target = START_REGISTER[journey]
     idx = 0

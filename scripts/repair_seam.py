@@ -31,7 +31,9 @@ from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageStat
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "engine"))
+sys.path.insert(0, str(ROOT / "scripts"))
 import dive  # noqa: E402
+import pipeline as pl  # noqa: E402
 import seam_lab  # noqa: E402
 from engine import grammar  # noqa: E402
 
@@ -90,7 +92,7 @@ def main():
     except Exception:
         print("ComfyUI not up at", dive.COMFY); sys.exit(1)
 
-    spec = json.loads((ROOT / "journeys" / f"{args.journey}.json").read_text())
+    spec = json.loads(pl.journey_path(args.journey).read_text(encoding="utf-8"))
     cfg = {**dive.DEFAULTS, **spec.get("settings", {})}
     cfg.update(dive.MODEL_PRESETS[args.model])
     cfg["build"] = "in"

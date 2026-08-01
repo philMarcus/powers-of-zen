@@ -13,7 +13,9 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "engine"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 import grammar  # noqa: E402
+import pipeline as pl  # noqa: E402
 import style as _style  # noqa: E402
 
 BAIT = re.compile(r"\b(halos?|auras?|nimbus|crowns?|robes?|veils?|shrouds?|mantles?|wings?|"
@@ -23,7 +25,9 @@ NAME_ONLY = re.compile(r"\b(quark|hadron|boson|gluon|fermion|superposition|proba
                        r"spacetime foam|wavefunction)\b", re.I)
 
 for name in sys.argv[1:]:
-    p = Path("journeys") / f"{name}.json"
+    p = pl.journey_path(name)
+    if not p:
+        print(f"{name}: NO journey file"); continue
     spec = json.loads(p.read_text(encoding="utf-8"))
     sfx, model, _ = _style.resolve(spec, None)
     spec["style_suffix"] = sfx

@@ -33,16 +33,23 @@ def _variants(journey):
 
 
 def switch(journey, model, cut):
-    """Change a video's chosen model+cut: update pipeline (file/model/cut) and move the
-    newly-chosen variant into production/ (old one to alternates). Used by the dashboard."""
+    """Change a video's chosen model+cut: move the newly-chosen variant into production/
+    (old one to alternates), THEN update pipeline (file/model/cut). Used by the dashboard.
+    Files move first so a failed move (e.g. Windows locking an mp4 the browser is still
+    streaming) leaves the entry pointing at the file it already had, not at a path the
+    move never populated."""
     d = pl.load()
     v = pl.get(d, journey)
     if not v:
         print(f"no pipeline entry for {journey}"); return
+    reorg(journey, model, cut)
+    dest = ROOT / "production" / variant_basename(journey, model, cut)
+    if not dest.exists():
+        print(f"{journey}: no {model}/{cut} file exists anywhere — keeping {v['file']}")
+        return
     v["model"], v["cut"] = model, cut
     v["file"] = "production/" + variant_basename(journey, model, cut)
     pl.save(d)
-    reorg(journey, model, cut)
     pl.telem("switch", journey=journey, detail=f"{model}/{cut}")
 
 

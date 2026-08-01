@@ -50,7 +50,7 @@ def main():
     src_arg = None
     if "--src" in sys.argv:
         src_arg = ROOT / sys.argv[sys.argv.index("--src") + 1]
-    spec = json.loads((ROOT / "journeys" / f"{journey}.json").read_text())
+    spec = json.loads(pl.journey_path(journey).read_text(encoding="utf-8"))
     _, z, *_ = grammar.compile_journey(spec, 12)
     total = len(z)
     name = f"{journey}_{model}"

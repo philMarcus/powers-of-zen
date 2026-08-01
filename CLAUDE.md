@@ -34,10 +34,17 @@ Everything runs LOCAL and FREE on Phil's RTX 3080 (no paid APIs).
 - `PLAN.md` — plan of record: all decisions, the end-to-end architecture, doctrines.
 - `engine/dive.py` — the renderer (ComfyUI API feedback-zoom, counter, loop, cameos).
 - `engine/grammar.py` — compiles world-card journeys → prompts + per-frame schedules.
-- `journeys/*.json` — the world-card journeys (Layer 3). `journeys/VARIATIONS.md` — the
-  differentiation library the Journey Composer draws from (Phil edits it directly).
-- `scripts/` — phase_shift.py (intentional openings), zen_browser.py (CDP driver),
-  start_chrome_zen.sh, overnight.sh (render batches), mascot_concepts.py.
+- `journeys/*.json` — the ACTIVE engine-2 catalog (Layer 3). Superseded schemas live in
+  `journeys/engine1/` (world-card interior/style_suffix) and `journeys/engine0/` (phases —
+  won't compile). Resolve names via `pipeline.journey_path()` — never build the path by
+  hand. `journeys/VARIATIONS.md` — the differentiation library the Journey Composer (and
+  the midnight refill's coordinator) draws from.
+- `outbox/journeys.json` — journey REGISTRY: the render queue + pipeline settings
+  (budget/backpressure/tier mix/pauses). Stores only DECISIONS (queued/rejected/
+  render_failed); everything else derives from pipeline.json + output/ so nothing drifts.
+- `scripts/` — night_batch.py (the nightly renderer), journey_refill.py (midnight
+  composer), phase_shift.py (intentional openings), zen_browser.py (CDP driver),
+  start_chrome_zen.sh, mascot_concepts.py.
 - `output/<journey>/vN/` — renders (NEVER overwritten; finals at root, build/ = intermediates).
 - `output/mascots/canon/` — the chosen mascot cast (hidden Waldo-style cameos, one per video).
 - `review/` + `review_divein/` — phase-shifted cuts still IN REVIEW (zoom-out / dive-in).
@@ -47,12 +54,19 @@ Everything runs LOCAL and FREE on Phil's RTX 3080 (no paid APIs).
 - `outbox/pipeline.json` — SINGLE SOURCE OF TRUTH (every video's model/cut/caption/state/
   platforms). `outbox/telemetry.jsonl` — event log. `scripts/pipeline.py` — shared lib.
   (outbox/queue.json is legacy, superseded by pipeline.json.)
-- `dashboard/app.py` — Streamlit ops dashboard (Queue/Review/Live/Failed/Telemetry,
-  editable captions). Run via Windows streamlit → localhost:8501 (scripts/start_dashboard.sh).
-- `scripts/poster.py` — the posting harness (CDP + local VLM checks). `scripts/scheduled_post.bat`
-  + `scripts/SCHEDULER.md` — Windows Task Scheduler auto-poster (08:00/18:00, no Claude).
-- DAILY LOOP: approve a video in the dashboard (review→queued) → Task Scheduler runs
-  poster.py → posts to all 3 → pipeline marks live + telemetry. Claude only writes captions.
+- `dashboard/app.py` — Streamlit ops dashboard (Video Review/Music/Production/Journeys/
+  Live/Failed/Telemetry/Settings). Run via Windows streamlit → localhost:8501
+  (scripts/start_dashboard.sh). NOTE it runs on WINDOWS python: no engine/ imports there,
+  utf-8 on every spec read.
+- `scripts/poster.py` — the posting harness (CDP + local VLM checks). `scripts/SCHEDULER.md`
+  — the four Task Scheduler jobs (refill 00:00 · render 01:30 · posts 08:00/18:00, no Claude
+  except inside journey_refill's one headless call).
+- DAILY LOOP (closed 2026-08-01): 00:00 refill tops the journey queue (headless Fable
+  coordinator → Opus composers → audit → auto-queue) → 01:30 night_batch renders a tier
+  template (L+M+S / 2L+M / 2L+S) worth ≤4h, captions, drops in Video Review → Phil approves
+  in the dashboard (review→music→queued) → posts at 08:00/18:00 → live. Backpressure: the
+  batch skips once max_ready_videos (20) are approved-and-waiting; then the queue stops
+  draining and the refill stops too.
 - Every video gets a scale-matched mascot cameo (size ≥0.12, full-cast rotation) → the
   find-the-character caption. Music is a QUALITY priority: phase-dynamic (intensify on
   plunge, chill on hover), moving toward local MusiConGen — see PLAN.md.
@@ -79,14 +93,22 @@ circular chain so frame 0 lands in an ABSTRACT realm; **"fills the view" banned*
 DreamShaper is the house default (we never left it — "Model SDXL" in the ComfyUI log is the
 architecture, and 17 legacy styleless journeys would silently have gone turbo, now fixed).
 
-## READY TO RUN: `bash scripts/render_batch.sh` (prepared 2026-07-31 for Phil to trigger later)
-One LONG + one MEDIUM + one SHORT through the settled engine, each: render → caption → REVIEW.
-butterfly_meridian (280f/23.3s, start=butterfly_nebula) · quantum_orrery (196f/16.3s,
-start=hadron) · lather_atlas (140f/11.7s, start=foam_field) — chosen for colour CONTRAST and
-sparkle to exercise the new style brand_tail (deliberately NOT the monochrome journeys
-chess_empires/ink_dynasty, which the tail fights). ~2h total, sequential. The script starts
-ComfyUI itself, WAITS for the GPU to be free (so it won't fight a game), skips any journey
-already fully rendered, and never dies on one failure. Watch: outbox/render_batch_*.log.
+## THE NIGHTLY PIPELINE (built 2026-08-01) — journeys flow themselves now
+`scripts/night_batch.py` (01:30 task; `render_batch.sh` is a thin wrapper for manual runs)
+auto-picks from the journey queue in `outbox/journeys.json`: first satisfiable tier template
+(LMS → LLM → LLS, editable) within render_budget_min, per journey dive → queue_review →
+caption with REAL exit-code checks (a dead render marks the journey render_failed and moves
+on; queue_review before caption because it CREATES the entry captions write into). Skips
+the night on backpressure (≥ max_ready_videos ready to post) or render_paused.
+`scripts/journey_refill.py` (00:00 task) tops the queue toward journey_queue_target
+(≤ refill_max_per_night/run): tiers are assigned BY THE SCRIPT from tier_share deficits
+(alternates 2L2M1S / 2L1M2S), then ONE headless claude call — coordinator on Fable reads
+VARIATIONS.md + the catalog (extends VARIATIONS.md if mined out), writes briefs to
+outbox/refill_briefs_<date>.md, spawns parallel Opus composers running the journey-composer
+skill — and the SCRIPT audits (audit_starts + real compile) and auto-queues only passers.
+Estimates: frames = 28×cards; render sec ≈ 17.9×frames − 606 (fit on 6 renders, ≤2.5% err).
+Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, tonight's
+picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
 2026-07-29: THE SEAM IS SOLVED (see PLAN.md "THE SEAM"). Two parts: (A) grammar.py now
@@ -338,3 +360,25 @@ them a cosmic card is journey authoring, not a start pick. night_bloom + remix k
 (approved/queued; `nebula` recorded in-journey as the better start on any re-render). None of
 these 24 starts has been RENDERED yet except the 4 above — the doctrine is untested at scale.
 Also still open from before: fold repair_seam into dive.py's tail; TikTok paused.
+2026-08-01 (afternoon): JOURNEYS ENTERED THE PIPELINE (see "THE NIGHTLY PIPELINE" above).
+Catalog split: 17 engine-1 → journeys/engine1/, 9 engine-0 → journeys/engine0/; active
+engine-2 stays flat; every resolver now goes through pipeline.journey_path() (caption,
+music_gen, score, phase_shift, repair_seam, queue_review, flip_journeys, preflight —
+preflight also ROOT-anchored — and dashboard _spec_path). outbox/journeys.json = journey
+registry (decisions only: queued/rejected/render_failed + settings; everything else
+derived). pipeline.py grew journey_path/journey_names, jload/jsave/jqueue/jmove/jstate,
+tier_of (S≤5 cards, M 6–8, L≥9), journey_frames (real compile), est_render_sec
+(17.9×f−606+42, ≤2.5% err vs the 6 measured renders), pick_tonight (tier templates),
+refill_tiers (deficit-vs-share; alternates 2L2M1S/2L1M2S exactly), + "music" added to
+STATES. night_batch.py + journey_refill.py + scheduled_render.bat/scheduled_refill.bat
+REGISTERED in Task Scheduler (00:00/01:30, verified Ready; wsl bash -lc env resolves
+claude + python3). Dashboard: 🗺 Journeys tab (queue/reorder/unqueue/reject/re-queue-
+with-force, render-failed + rejected + legacy sections, audit badges, tonight-preview
+using the same pick_tonight) and ⚙ Settings tab (all journeys.json knobs + platform
+pauses). Dashboard computes frames spec-side (matches real compile 24/24) — no engine
+imports on Windows python. promote.switch made crash-consistent (files move BEFORE the
+pipeline pointer updates; refuses a variant with no file — the jade_automata scare was
+almost certainly a hot-reload race from live app.py edits, its entry was untouched).
+FIRST NIGHT IS A WATCH NIGHT: queue is seeded EMPTY — Phil queues from the tab (or lets
+the 00:00 refill compose 5); check outbox/refill.log + night_batch log + Video Review
+in the morning per the validate-in-real-runtime-conditions lesson.

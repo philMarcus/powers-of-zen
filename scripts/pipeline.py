@@ -15,7 +15,11 @@ outbox/pipeline.json : state of every video. Each video:
 outbox/telemetry.jsonl : append-only event log {ts, event, ...} for the dashboard
   events: post, post_fail, render, render_fail, flag, promote, approve, schedule
 
-Everything (dashboard, scheduler, poster.py, promote.py) reads/writes via this module.
+outbox/journeys.json : journey registry (render queue + settings) — see the journey
+  registry section below. night_batch.py picks from it; the dashboard edits it.
+
+Everything (dashboard, scheduler, poster.py, promote.py, night_batch.py) reads/writes
+via this module.
 """
 import json
 import time
@@ -25,7 +29,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PIPELINE = ROOT / "outbox" / "pipeline.json"
 TELEMETRY = ROOT / "outbox" / "telemetry.jsonl"
 PLATFORMS = ["tiktok", "youtube", "instagram"]
-STATES = ["rendered", "review", "queued", "live", "failed", "rejected"]
+STATES = ["rendered", "review", "music", "queued", "live", "failed", "rejected"]
 # "rejected": reviewed and turned down (kept for the record; no dashboard tab shows it, the
 # scheduler never picks it). Re-promote by setting state back to "review".
 
@@ -139,6 +143,174 @@ def paused_platforms(data):
     """Platforms the scheduler should NOT auto-post to (e.g. TikTok while a new-account
     review/spam-flag settles). Set via meta.paused_platforms in pipeline.json."""
     return list(data.get("meta", {}).get("paused_platforms", []))
+
+
+# --- journey catalog (Layer 3) ------------------------------------------------
+# The ACTIVE engine-2 catalog lives flat in journeys/. Superseded schemas live in
+# journeys/engine1/ (world-card: interior/style_suffix) and journeys/engine0/ (phases —
+# cannot compile on the current engine). Old specs stay resolvable because engine-1
+# videos still flow through review/music/caption.
+JOURNEYS_DIR = ROOT / "journeys"
+
+
+def journey_path(name):
+    """Resolve a journey name to its JSON, active catalog first. None if unknown."""
+    for d in (JOURNEYS_DIR, JOURNEYS_DIR / "engine1", JOURNEYS_DIR / "engine0"):
+        p = d / f"{name}.json"
+        if p.exists():
+            return p
+    return None
+
+
+def journey_names():
+    """The active (engine-2) catalog — top-level journeys/*.json only."""
+    return sorted(p.stem for p in JOURNEYS_DIR.glob("*.json"))
+
+
+# --- journey registry: outbox/journeys.json -----------------------------------
+# The render-side companion to pipeline.json. Stores only DECISIONS about journeys
+# (queued to render / rejected / render_failed) plus the pipeline settings; everything
+# else is DERIVED (a journey with a pipeline.json entry is "rendered"; video lifecycle
+# is joined by name) so the two files can never drift apart.
+JOURNEYS_JSON = ROOT / "outbox" / "journeys.json"
+
+JSETTINGS_DEFAULTS = {
+    "render_budget_min": 240,      # nightly render window (the 01:30 batch fills this)
+    "max_ready_videos": 20,        # backpressure: skip the night at this many ready-to-post videos
+    "journey_queue_target": 20,    # midnight refill tops the journey queue up toward this
+    "refill_max_per_night": 5,     # never compose more than this in one midnight run
+    "tier_share": {"long": 0.4, "medium": 0.3, "short": 0.3},   # target queue mix
+    "nightly_templates": ["LMS", "LLM", "LLS"],   # preferred nightly render mixes, in order
+    "render_paused": False,
+    "refill_paused": False,
+}
+
+
+def jload():
+    d = (json.loads(JOURNEYS_JSON.read_text(encoding="utf-8"))
+         if JOURNEYS_JSON.exists() else {})
+    # fill missing settings from defaults so new knobs appear without a migration
+    d["settings"] = {**JSETTINGS_DEFAULTS, **d.get("settings", {})}
+    d.setdefault("journeys", {})
+    return d
+
+
+def jsave(d):
+    d["updated"] = _now()
+    JOURNEYS_JSON.parent.mkdir(parents=True, exist_ok=True)
+    JOURNEYS_JSON.write_text(json.dumps(d, indent=2, ensure_ascii=False) + "\n",
+                             encoding="utf-8")
+
+
+def jqueue(jd):
+    """Names of journeys queued to render, in Phil's chosen order."""
+    q = [(n, e) for n, e in jd["journeys"].items() if e.get("state") == "queued"]
+    return [n for n, _ in sorted(q, key=lambda t: t[1].get("order", 999))]
+
+
+def set_jorder(jd, names):
+    for i, n in enumerate(names):
+        if n in jd["journeys"]:
+            jd["journeys"][n]["order"] = i
+
+
+def jmove(jd, name, delta):
+    """Move a queued journey up/down in render order (same contract as move())."""
+    seq = jqueue(jd)
+    if name not in seq:
+        return False
+    j = seq.index(name)
+    k = j + delta
+    if not (0 <= k < len(seq)):
+        return False
+    seq[j], seq[k] = seq[k], seq[j]
+    set_jorder(jd, seq)
+    return True
+
+
+def jstate(name, jd, pdata):
+    """Stored decision (queued/rejected/render_failed) if any, else derived: 'rendered'
+    once a pipeline.json entry exists (queue_review creates it only after a complete
+    render), else 'new'."""
+    e = jd["journeys"].get(name)
+    if e and e.get("state"):
+        return e["state"]
+    return "rendered" if get(pdata, name) else "new"
+
+
+# --- length tiers + render-time estimate --------------------------------------
+TIER_LETTER = {"L": "long", "M": "medium", "S": "short"}
+
+
+def tier_of(cards):
+    """Length tier from card count: the catalog runs 4–5-card shorts, 6–8-card
+    standards, 9–11-card longs."""
+    return "short" if cards <= 5 else ("medium" if cards <= 8 else "long")
+
+
+def journey_frames(name):
+    """Total frame count from the SAME compile the renderer uses (engine-2: 28 x cards).
+    Raises on a spec the engine can't compile — callers treat that as a broken journey."""
+    import sys as _sys
+    _sys.path.insert(0, str(ROOT / "engine"))
+    import grammar
+    import style as _style
+    spec = json.loads(journey_path(name).read_text(encoding="utf-8"))
+    sfx, _model, _sname = _style.resolve(spec, None)
+    spec["style_suffix"] = sfx
+    return len(grammar.compile_journey(spec, 12, "in")[1])
+
+
+def est_render_sec(frames):
+    """Wall-clock estimate for one journey: least-squares fit over the six 2026-07/08
+    engine-2 renders (17.9 s/frame - 606, max error 2.5%) + ~42s queue_review+caption."""
+    return max(600, round(17.9 * frames - 606) + 42)
+
+
+def pick_tonight(jd, ests, tiers):
+    """Tonight's renders. `ests`/`tiers` map every eligible queued journey -> est seconds /
+    tier (callers compile once and pass both; a journey missing from ests is skipped).
+    Tries settings.nightly_templates in order — a template is satisfiable when each letter
+    finds an unused queued journey of that tier (queue order within tier) and the summed
+    estimate fits render_budget_min. Falls back to greedy queue-order under budget (always
+    at least one). Returns (names, template_or_'greedy', total_sec)."""
+    s = jd["settings"]
+    budget = s["render_budget_min"] * 60
+    q = [n for n in jqueue(jd) if n in ests]
+    for tpl in s["nightly_templates"]:
+        picks, used, ok = [], set(), True
+        for letter in tpl.upper():
+            want = TIER_LETTER.get(letter)
+            nxt = next((n for n in q if n not in used and tiers.get(n) == want), None)
+            if nxt is None:
+                ok = False
+                break
+            used.add(nxt)
+            picks.append(nxt)
+        if ok and sum(ests[n] for n in picks) <= budget:
+            return picks, tpl, sum(ests[n] for n in picks)
+    picks, total = [], 0
+    for n in q:                      # greedy: fill the budget in queue order
+        if not picks or total + ests[n] <= budget:
+            picks.append(n)
+            total += ests[n]
+    return picks, ("greedy" if picks else "none"), total
+
+
+def refill_tiers(jd, queued_tiers, n):
+    """Tiers for n new briefs: repeatedly add to the tier furthest below its tier_share
+    of the queue-so-far. On an empty queue this yields Phil's alternation (2L2M1S, then
+    2L1M2S, ...) exactly."""
+    from collections import Counter
+    share = jd["settings"]["tier_share"]
+    have = Counter(queued_tiers)
+    out = []
+    for _ in range(n):
+        total = sum(have.values()) + 1
+        t = max(share, key=lambda k: share[k] * total - have.get(k, 0))
+        have[t] += 1
+        out.append(t)
+    return out
 
 
 def _now():

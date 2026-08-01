@@ -1,0 +1,31 @@
+{
+  "settings": {
+    "render_budget_min": 240,
+    "max_ready_videos": 20,
+    "journey_queue_target": 20,
+    "refill_max_per_night": 5,
+    "tier_share": {
+      "long": 0.4,
+      "medium": 0.3,
+      "short": 0.3
+    },
+    "nightly_templates": [
+      "LMS",
+      "LLM",
+      "LLS"
+    ],
+    "render_paused": false,
+    "refill_paused": false
+  },
+  "journeys": {
+    "chess_empires": {
+      "note": "monochrome — the style brand tail fights it (Phil 7/31)",
+      "ts": "2026-08-01 12:47:03"
+    },
+    "ink_dynasty": {
+      "note": "monochrome — the style brand tail fights it (Phil 7/31)",
+      "ts": "2026-08-01 12:47:03"
+    }
+  },
+  "updated": "2026-08-01 12:49:37"
+}

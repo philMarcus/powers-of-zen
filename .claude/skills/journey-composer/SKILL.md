@@ -5,6 +5,12 @@ description: Compose a Powers-of-Zen world-card JOURNEY (the Layer-3 content of 
 
 # Composing a Powers of Zen journey
 
+> Automation note: the midnight refill (`scripts/journey_refill.py`, Task Scheduler 00:00)
+> runs this skill headlessly — a coordinator writes tier-assigned briefs, parallel composer
+> subagents each flesh one out. A composed journey is auto-queued for rendering ONLY if
+> `scripts/audit_starts.py` passes it and it compiles; write to journeys/<name>.json (flat —
+> engine1/engine0 subfolders are retired schemas, never write there).
+
 ## What a journey IS (and the one law it must obey)
 A journey is an ordered list of **world cards (registers)**, dive order LARGE→SMALL,
 compiled by `engine/grammar.py` into per-frame prompts + zoom schedules. It is the

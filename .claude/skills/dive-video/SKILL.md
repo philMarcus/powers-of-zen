@@ -24,9 +24,16 @@ model, checkpoint, style, seed).
 python3 engine/dive.py journeys/<j>.json                  # render (DreamShaper by default)
 python3 engine/dive.py journeys/<j>.json --frames 30 --no-video   # smoke test
 python3 engine/dive.py journeys/<j>.json --resume         # continue newest vN after a crash
+# active journeys live flat in journeys/; legacy schemas in journeys/engine1|engine0
+# (resolve names in python via pipeline.journey_path(), never a hand-built path)
 python3 scripts/caption.py <j>                            # 5 caption options (local VLM)
 python3 scripts/queue_review.py <j> ds [--src output/<j>/vN]     # -> Video Review
-bash scripts/render_batch.sh                              # long+medium+short, caption+queue each
+python3 scripts/night_batch.py [j ...]     # batch: auto-picks from the journey queue (no args)
+                                           # or renders exactly these; per journey render ->
+                                           # queue_review -> caption. render_batch.sh wraps it.
+                                           # A 01:30 Task Scheduler job runs it nightly — check
+                                           # the queue in the dashboard's Journeys tab before
+                                           # rendering by hand (SCHEDULER.md).
 python3 scripts/track_lab.py overlay output/<j>/vN        # SEE the tracking (aim/lock overlay)
 python3 scripts/track_lab.py selftest                     # propagation math vs zoom_transform
 ```

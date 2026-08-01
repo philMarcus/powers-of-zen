@@ -70,7 +70,7 @@ SEED0 = {"warm": 500, "glassy": 501, "deep": 502, "tender": 503, "choir": 504}
 
 def bpm_for(journey, cut, shift_sec=None):
     import json as _json
-    spec = _json.loads((ROOT / "journeys" / f"{journey}.json").read_text())
+    spec = _json.loads(pl.journey_path(journey).read_text(encoding="utf-8"))
     fmt = spec.get("format", {})
     if any(r.get("dur") is not None for r in spec["registers"]):
         # dur-in-BEATS schema: the bar is DEFINED by the format grid (beats_per_bar ×
@@ -97,7 +97,7 @@ def generate(journey, n=5):
     if not v:
         print(f"no pipeline entry for {journey}"); return
     cut = v["cut"]; key = KEYS.get(journey, "D minor")
-    spec = json.loads((ROOT / "journeys" / f"{journey}.json").read_text())
+    spec = json.loads(pl.journey_path(journey).read_text(encoding="utf-8"))
     # theme source of truth = the journey file's music_theme (editable in the dashboard);
     # fall back to the built-in map, then a generic cosmic default.
     theme = spec.get("music_theme") or THEMES.get(journey) or DEFAULT_THEME

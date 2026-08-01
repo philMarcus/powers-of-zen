@@ -104,7 +104,7 @@ def journey_worlds(journey):
     import sys as _sys
     _sys.path.insert(0, str(ROOT / "engine"))
     import style as _style
-    spec = json.loads((ROOT / "journeys" / f"{journey}.json").read_text())
+    spec = json.loads(pl.journey_path(journey).read_text(encoding="utf-8"))
     sfx, _model, _name = _style.resolve(spec, None)
     worlds = [f"- {r.get('scene') or r.get('interior') or r.get('name', '')}"
               for r in spec["registers"]]
@@ -139,10 +139,10 @@ def assemble_caption(body, spot_line, tags, hook):
 
 
 def set_music_theme_if_empty(journey, theme):
-    p = ROOT / "journeys" / f"{journey}.json"
-    if not (p.exists() and theme):
+    p = pl.journey_path(journey)
+    if not (p and theme):
         return
-    spec = json.loads(p.read_text())
+    spec = json.loads(p.read_text(encoding="utf-8"))
     if not spec.get("music_theme"):        # don't clobber a theme Phil already set
         spec["music_theme"] = theme
         p.write_text(json.dumps(spec, indent=2))
@@ -150,8 +150,8 @@ def set_music_theme_if_empty(journey, theme):
 
 def generate(journey, model="ds", no_theme=False):
     d = pl.load(); v = pl.get(d, journey)
-    jf = ROOT / "journeys" / f"{journey}.json"
-    if not jf.exists():
+    jf = pl.journey_path(journey)
+    if not jf:
         print(f"  no journey file for {journey}"); return None
     # captioning is text-only off the worlds, so frames aren't required (they're for future
     # image-grounding); a cleaned-up render still gets captioned.

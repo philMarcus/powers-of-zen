@@ -83,7 +83,9 @@ def schedule_morphs(journey, cut, final_dur, fps=12, shift_sec=None):
     # function re-derived counts from the legacy `sec` fields, so any new-schema journey with
     # `dur` in beats got a phantom 29f/card grid scaled onto the real video: every morph time
     # wrong, music silently aligned to nothing.)
-    spec = _json.loads((ROOT / "journeys" / f"{journey}.json").read_text())
+    _sys.path.insert(0, str(ROOT / "scripts"))
+    import pipeline as _pl
+    spec = _json.loads(_pl.journey_path(journey).read_text(encoding="utf-8"))
     fmt = spec.get("format", {})
     regs = spec["registers"]
     starts, idx = [], 0
