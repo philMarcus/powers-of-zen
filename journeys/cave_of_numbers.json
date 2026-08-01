@@ -1,6 +1,6 @@
 {
   "name": "cave_of_numbers",
-  "theme": "a limestone cave whose glowworm ceiling plays the cosmos â€” down a banded stalactite into the calcite lattice, out into the glowworm sky, and home to the cavern floor",
+  "theme": "a limestone cave whose glowworm ceiling plays the cosmos — down a banded stalactite into the calcite lattice, out into the glowworm sky, and home to the cavern floor",
   "style": "liquid_light",
   "format": {
     "beats_per_bar": 4,
@@ -84,7 +84,7 @@
       "scene": "the mouth of the cavern, a wide pale stone arch standing open on a dark valley of night hills, and beneath the lit ceiling the cavern floor of pale flowstone terraces and a still dark pool"
     }
   ],
-  "music_theme": "a hushed underground wonder â€” deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool",
+  "music_theme": "a hushed underground wonder — deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool",
   "music_key": "E minor",
   "render_start": "glowworm_cluster"
 }

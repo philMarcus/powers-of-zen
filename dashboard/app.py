@@ -52,17 +52,38 @@ def _spec_path(journey):
     return pl.ROOT / "journeys" / f"{journey}.json"
 
 
+def _read_spec(p):
+    """Journey specs are UTF-8 (em-dashes in every music_theme). This dashboard runs on WINDOWS
+    python, whose default text encoding is cp1252 — an unencoded read_text() either MOJIBAKES the
+    spec ("—" → "â€”") or, once that mojibake has been written back, raises UnicodeDecodeError on
+    byte 0x9d and takes the whole Streamlit script down. ALWAYS pass encoding here."""
+    return json.loads(p.read_text(encoding="utf-8"))
+
+
 def get_music_theme(journey):
     p = _spec_path(journey)
-    return json.loads(p.read_text()).get("music_theme", "") if p.exists() else ""
+    if not p.exists():
+        return ""
+    try:
+        return _read_spec(p).get("music_theme", "")
+    except Exception as e:      # never let one damaged spec blank a whole tab
+        st.warning(f"couldn't read journeys/{journey}.json: {e}")
+        return ""
 
 
 def set_music_theme(journey, theme):
     p = _spec_path(journey)
     if not p.exists():
         return
-    spec = json.loads(p.read_text()); spec["music_theme"] = theme
-    p.write_text(json.dumps(spec, indent=2))
+    try:
+        spec = _read_spec(p)
+    except Exception as e:
+        st.error(f"not saving music theme — journeys/{journey}.json is unreadable: {e}")
+        return
+    spec["music_theme"] = theme
+    # ensure_ascii=False keeps the em-dash a real character instead of a \uXXXX escape that a
+    # later cp1252 round-trip can corrupt; encoding=utf-8 so Windows doesn't write cp1252.
+    p.write_text(json.dumps(spec, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 def regenerate_music(journey):
@@ -211,7 +232,11 @@ def phase_shift_video(src_rel, t):
              f"[0:v]trim=duration={t:.3f},setpts=PTS-STARTPTS[b];[a][b]concat=n=2:v=1[v]",
              "-map", "[v]", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", dst.name],
             cwd=str(src.parent), capture_output=True, timeout=180)
-        return str(dst.relative_to(pl.ROOT)) if dst.exists() else None
+        # POSIX separators always: this path is stored in pipeline.json, which is also read
+        # under WSL (poster.py runs via wsl.exe). A Windows-side str() yields backslashes, and
+        # `ROOT / "review_divein\\x.mp4"` is one bogus filename under WSL. poster.win_path()
+        # converts "/"->"\" for Chrome, so forward slashes work on both sides.
+        return dst.relative_to(pl.ROOT).as_posix() if dst.exists() else None
     except Exception:
         return None
 
@@ -382,6 +407,22 @@ def card(v, actions, show_switch=True, marker=None, captions=False):
     st.divider()
 
 
+def safe_card(v, *a, **kw):
+    """card() for ONE video, isolated. Streamlit runs the whole script top-to-bottom, so an
+    exception while drawing video #5 aborts the run and every video BELOW it silently vanishes
+    from the tab — while the header metric (computed before the tabs) still counts it. That is
+    exactly how a single mojibaked journey spec hid frost_window from Production. Never let one
+    video take out the rest of the queue."""
+    try:
+        card(v, *a, **kw)
+    except Exception as e:
+        st.error(f"⚠ couldn't render **{v.get('journey')}**: {type(e).__name__}: {e}")
+        with st.expander("traceback"):
+            import traceback
+            st.code(traceback.format_exc())
+        st.divider()
+
+
 def audition_candidates(v, choose_advances_to=None):
     """Show candidate tracks with Choose buttons. If choose_advances_to is a state, choosing
     also moves the video there (Music → Production)."""
@@ -438,7 +479,7 @@ with tabs[0]:  # VIDEO REVIEW — pick cut/model, edit caption, send to Music
     if not rv:
         st.info("Nothing awaiting video review.")
     for v in rv:
-        card(v, [("✅ Approve → Music", "music")], marker="start", captions=True)
+        safe_card(v, [("✅ Approve → Music", "music")], marker="start", captions=True)
 
 with tabs[1]:  # MUSIC — audition/generate a track, then send to Production
     st.write("Pick the soundtrack. Every candidate is auto-locked so its accent lands on each "
@@ -499,7 +540,8 @@ with tabs[2]:  # PRODUCTION — the ordered post queue; tweak cut/model + change
             m = v.get("music") or {}
             chosen = m.get("chosen")
             st.caption("🎵 " + (f"music: **{chosen}**" if chosen else "no music selected"))
-            card(v, [("↩ Unqueue", "music" if not chosen else "review")], marker="cover", captions=True)
+            safe_card(v, [("↩ Unqueue", "music" if not chosen else "review")],
+                      marker="cover", captions=True)
             if music_stale(v):
                 st.warning(f"music was built for {m.get('for_model')}/{m.get('for_cut')} — "
                            "regenerate for the current render.")

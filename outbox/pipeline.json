@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-31 20:27:11",
+    "updated": "2026-07-31 22:13:44",
     "paused_platforms": [
       "tiktok"
     ],
@@ -78,7 +78,7 @@
       "journey": "iris_observatory",
       "model": "ds",
       "cut": "zoomout",
-      "file": "production\\iris_observatory_ds_shift.mp4",
+      "file": "production/iris_observatory_ds_shift.mp4",
       "title": "the galaxy at the back of your eye 👁️🌌",
       "caption": "Dive through the lens of time and space, where galaxies breathe ⏳ #cosmicjourney #infinitescale #telescopetravel #galaxydive #powersofzen #oddlysatisfying #zoomer",
       "yt_title": "Dive through the lens of time and space, where galaxies breathe ⏳",
@@ -849,7 +849,7 @@
       "journey": "cosmic_scales_remix",
       "model": "ds",
       "cut": "zoomout",
-      "file": "production\\cosmic_scales_remix_ds_shift.mp4",
+      "file": "production/cosmic_scales_remix_ds_shift.mp4",
       "title": "",
       "caption": "A hypnotic spiral through every scale of reality ⚡ Can you spot Lee hiding in this endless dive? 👀 #InfiniteZoom #FractalReality #CosmicDive #DreamWorld #powersofzen #oddlysatisfying #zoomer",
       "yt_title": "A hypnotic spiral through every scale of reality ⚡",
@@ -963,7 +963,7 @@
       "journey": "circuit_city",
       "model": "ds",
       "cut": "divein",
-      "file": "production\\circuit_city_ds_divein_shift.mp4",
+      "file": "production/circuit_city_ds_divein_shift.mp4",
       "title": "",
       "caption": "Dive into the neon abyss and emerge among the stars 🌌 Can you spot Adam hiding somewhere in the infinite zoom? 👀 #CyberpunkCosmos #InfiniteZoom #NeonGalaxies #HyperdetailedDive #powersofzen #oddlysatisfying #zoomer",
       "yt_title": "Dive into the neon abyss and emerge among the stars 🌌",
@@ -1242,7 +1242,7 @@
       "journey": "mineral_heart",
       "model": "ds",
       "cut": "divein",
-      "file": "review_divein\\mineral_heart_ds_divein_shift.mp4",
+      "file": "review_divein/mineral_heart_ds_divein_shift.mp4",
       "title": "",
       "caption": "Crystals hum in the dark, atoms whisper secrets ✨🔮 Can you spot Lorraine hiding in the crystal maze? 👀 #CosmicCrystalDive #InfiniteFractals #LuminousLattice #OtherworldlyZoom #powersofzen #oddlysatisfying #zoomer",
       "yt_title": "Crystals hum in the dark, atoms whisper secrets ✨🔮",
@@ -1356,7 +1356,7 @@
       "journey": "night_bloom_remix",
       "model": "ds",
       "cut": "divein",
-      "file": "review_divein\\night_bloom_remix_ds_divein_shift.mp4",
+      "file": "review_divein/night_bloom_remix_ds_divein_shift.mp4",
       "title": "",
       "caption": "Jade spores drift in the deep deep dark ⚡ Can you spot Lamar hiding in the glow? 👀 #BioluminescentDreams #InfiniteZoom #CosmicGarden #LuminousLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "yt_title": "Jade spores drift in the deep deep dark ⚡",
@@ -1470,13 +1470,13 @@
       "journey": "frost_window",
       "model": "ds",
       "cut": "divein",
-      "file": "review_divein\\frost_window_ds_divein_shift.mp4",
+      "file": "review_divein/frost_window_ds_divein_shift.mp4",
       "title": "",
       "caption": "",
       "yt_title": "",
       "yt_desc": "",
       "cameo": "belle",
-      "state": "music",
+      "state": "queued",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1502,8 +1502,8 @@
         "bpm": 103,
         "bar": 2.333,
         "key": "A minor",
-        "stage": "review",
-        "chosen": null,
+        "stage": "done",
+        "chosen": "warm",
         "candidates": [
           {
             "id": "warm",
@@ -1559,7 +1559,7 @@
       "journey": "cave_of_numbers",
       "model": "ds",
       "cut": "zoomout",
-      "file": "production\\cave_of_numbers_ds_shift.mp4",
+      "file": "production/cave_of_numbers_ds_shift.mp4",
       "title": "",
       "caption": "The cavern’s pulse—endless, luminous, calling you deeper 🌑 Can you spot Janet hiding in the glow? 👀 #bioluminescentdream #caverncosmos #glowwormgalaxy #limestonevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "yt_title": "The cavern’s pulse—endless, luminous, calling you deeper 🌑",
@@ -1623,7 +1623,7 @@
             "aligned": "review/music/candidates/cave_of_numbers/warm.mp4",
             "seed": 500,
             "lock": 2.34,
-            "tags": "chill hypnotic ambient evoking a hushed underground wonder â€” deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+            "tags": "chill hypnotic ambient evoking a hushed underground wonder — deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           },
           {
             "id": "glassy",
@@ -1632,7 +1632,7 @@
             "aligned": "review/music/candidates/cave_of_numbers/glassy.mp4",
             "seed": 501,
             "lock": 8.29,
-            "tags": "chill hypnotic ambient evoking a hushed underground wonder â€” deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+            "tags": "chill hypnotic ambient evoking a hushed underground wonder — deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           },
           {
             "id": "deep",
@@ -1641,7 +1641,7 @@
             "aligned": "review/music/candidates/cave_of_numbers/deep.mp4",
             "seed": 502,
             "lock": 14.58,
-            "tags": "chill hypnotic ambient evoking a hushed underground wonder â€” deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+            "tags": "chill hypnotic ambient evoking a hushed underground wonder — deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           },
           {
             "id": "tender",
@@ -1650,7 +1650,7 @@
             "aligned": "review/music/candidates/cave_of_numbers/tender.mp4",
             "seed": 503,
             "lock": 26.78,
-            "tags": "chill hypnotic ambient evoking a hushed underground wonder â€” deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+            "tags": "chill hypnotic ambient evoking a hushed underground wonder — deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           },
           {
             "id": "choir",
@@ -1659,7 +1659,7 @@
             "aligned": "review/music/candidates/cave_of_numbers/choir.mp4",
             "seed": 504,
             "lock": 13.13,
-            "tags": "chill hypnotic ambient evoking a hushed underground wonder â€” deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+            "tags": "chill hypnotic ambient evoking a hushed underground wonder — deep drones and glass bell tones under a slow luminous swell, one bright bloom of sound on the lattice-to-glowworm-sky morph, settling back to stillness at the pool, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
           }
         ],
         "for_model": "ds",
