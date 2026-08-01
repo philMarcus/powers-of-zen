@@ -262,12 +262,12 @@ myth, a trending sound, an emotion…):
   pastes from the card's first feedback frame — a card-0 cameo appears at frame 1), but prefer
   a NON-first card: card 0 is the loop-return frame, and the sprite reads better after an
   arrival than over the establishing shot.
-- **Counter: ON by default (`counter: true`) — it is the Powers-of-Zen signature.** The engine
-  pins the value to the current register and SPINS it at handoffs, so it is honest even across
-  seam wraps (the odometer spin at the wrap is part of the charm — v1 behavior, Phil 2026-07-31).
-  Set `counter: false` ONLY when a journey's exps are fictional bookkeeping — an abstract realm
-  (a chalk cosmos, a TV-static realm) where "10ⁿ m" would be a lie about what's on screen.
-  (The 2026-07-31 batch wrongly authored false everywhere by over-generalizing one bad case.)
+- **Counter: ALWAYS ON (`counter: true`). No exceptions** (Phil 2026-07-31: "even fiction realms
+  can have quantified sizes"). It is the Powers-of-Zen signature; the engine pins the value to
+  the current register and SPINS it at handoffs, so it stays honest across seam wraps — the
+  spin at the wrap is part of the charm. Fictional/stylized realms (a chalk cosmos, a
+  bubble-chamber, a glowworm sky) still get it: pick `exp` values that read sensibly for that
+  world and let the odometer run. Never author `counter: false`.
 
 ## Self-check before shipping a journey
 1. For EVERY `zoom` card: is the target named in `target` + a short `target_phrase` and described

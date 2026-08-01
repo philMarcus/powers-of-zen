@@ -2,11 +2,10 @@
   "name": "chalkboard_infinities",
   "theme": "a chalk mathematics roam — an empty lecture hall down through one chalked spiral to calcite dust, folding into an infinite chalkboard realm that draws its own way back to the hall",
   "style": "gilded_relic",
-  "counter": false,
   "format": {
     "beats_per_bar": 4,
     "exact_loop": true,
-    "counter": false
+    "counter": true
   },
   "registers": [
     {
