@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-07-31 22:13:44",
+    "updated": "2026-08-01 08:01:22",
     "paused_platforms": [
       "tiktok"
     ],
@@ -322,7 +322,7 @@
       "yt_title": "A cozy bedroom hides a universe of tiny wonders 🌠",
       "yt_desc": "the dollhouse contains the town contains the dollhouse 🏠\n\n#shorts #powersofzen #miniature #oddlysatisfying #fyp",
       "cameo": null,
-      "state": "queued",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -331,14 +331,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/rP1fA9iKjDU",
+          "ts": "2026-08-01 08:01:22"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DbfylfKtqYd/",
+          "ts": "2026-08-01 08:01:22"
         }
       },
       "created": "2026-07-27",
@@ -1472,8 +1472,8 @@
       "cut": "divein",
       "file": "review_divein/frost_window_ds_divein_shift.mp4",
       "title": "",
-      "caption": "",
-      "yt_title": "",
+      "caption": "A frozen world unfolds in endless crystalline layers 🌨️ Can you spot Belle hiding in this icy maze? 👀 #FrostedRealms #InfiniteIceLattice #CrystalDive #WintersEndlessLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A frozen world unfolds in endless crystalline layers 🌨️",
       "yt_desc": "",
       "cameo": "belle",
       "state": "queued",
@@ -1553,7 +1553,31 @@
         ],
         "for_model": "ds",
         "for_cut": "divein"
-      }
+      },
+      "caption_bodies": [
+        "A frozen world unfolds in endless crystalline layers 🌨️",
+        "Dive into the heart of winter’s glassy labyrinth ✨",
+        "Where ice and light weave a loop without end ❄️",
+        "Lost in the fractal dance of frost and firelight 🔥",
+        "A journey through the veins of frozen time"
+      ],
+      "yt_title_options": [
+        "A frozen world unfolds in endless crystalline layers 🌨️",
+        "Dive into the heart of winter’s glassy labyrinth ✨",
+        "Where ice and light weave a loop without end ❄️",
+        "Lost in the fractal dance of frost and firelight 🔥",
+        "A journey through the veins of frozen time"
+      ],
+      "spot_line": "Can you spot Belle hiding in this icy maze? 👀",
+      "caption_tags": "#FrostedRealms #InfiniteIceLattice #CrystalDive #WintersEndlessLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A frozen world unfolds in endless crystalline layers 🌨️ Can you spot Belle hiding in this icy maze? 👀 #FrostedRealms #InfiniteIceLattice #CrystalDive #WintersEndlessLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Dive into the heart of winter’s glassy labyrinth ✨ Can you spot Belle hiding in this icy maze? 👀 #FrostedRealms #InfiniteIceLattice #CrystalDive #WintersEndlessLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where ice and light weave a loop without end ❄️ Can you spot Belle hiding in this icy maze? 👀 #FrostedRealms #InfiniteIceLattice #CrystalDive #WintersEndlessLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Lost in the fractal dance of frost and firelight 🔥 Can you spot Belle hiding in this icy maze? 👀 #FrostedRealms #InfiniteIceLattice #CrystalDive #WintersEndlessLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A journey through the veins of frozen time Can you spot Belle hiding in this icy maze? 👀 #FrostedRealms #InfiniteIceLattice #CrystalDive #WintersEndlessLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
     },
     {
       "journey": "cave_of_numbers",
@@ -1668,6 +1692,337 @@
       "start_t": 11.3,
       "orig_file": "production/cave_of_numbers_ds.mp4",
       "order": 4
+    },
+    {
+      "journey": "butterfly_meridian",
+      "model": "ds",
+      "cut": "divein",
+      "file": "production/butterfly_meridian_ds_divein.mp4",
+      "title": "",
+      "caption": "Golden hour unfolds in endless layers 🌿 Can you spot Dora hiding in the loop? 👀 #InfiniteGoldenHour #MonarchCosmos #GyroidDreamscape #VioletPlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Golden hour unfolds in endless layers 🌿",
+      "yt_desc": "",
+      "cameo": "dora",
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-31",
+      "start_t": 19.0,
+      "caption_bodies": [
+        "Golden hour unfolds in endless layers 🌿",
+        "A monarch’s wing reveals cosmic secrets ✨",
+        "Dive through the gyroid labyrinth of light",
+        "Where rivers glow and nebulae breathe",
+        "The universe folds into a single scale"
+      ],
+      "yt_title_options": [
+        "Golden hour unfolds in endless layers 🌿",
+        "A monarch’s wing reveals cosmic secrets ✨",
+        "Dive through the gyroid labyrinth of light",
+        "Where rivers glow and nebulae breathe",
+        "The universe folds into a single scale"
+      ],
+      "spot_line": "Can you spot Dora hiding in the loop? 👀",
+      "caption_tags": "#InfiniteGoldenHour #MonarchCosmos #GyroidDreamscape #VioletPlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Golden hour unfolds in endless layers 🌿 Can you spot Dora hiding in the loop? 👀 #InfiniteGoldenHour #MonarchCosmos #GyroidDreamscape #VioletPlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A monarch’s wing reveals cosmic secrets ✨ Can you spot Dora hiding in the loop? 👀 #InfiniteGoldenHour #MonarchCosmos #GyroidDreamscape #VioletPlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Dive through the gyroid labyrinth of light Can you spot Dora hiding in the loop? 👀 #InfiniteGoldenHour #MonarchCosmos #GyroidDreamscape #VioletPlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where rivers glow and nebulae breathe Can you spot Dora hiding in the loop? 👀 #InfiniteGoldenHour #MonarchCosmos #GyroidDreamscape #VioletPlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The universe folds into a single scale Can you spot Dora hiding in the loop? 👀 #InfiniteGoldenHour #MonarchCosmos #GyroidDreamscape #VioletPlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "lather_atlas",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/lather_atlas_ds_divein.mp4",
+      "title": "",
+      "caption": "Diving into the shimmering depths of a soap bubble universe 🌈 Can you spot Kitty hiding in this luminous loop? 🐱 #soapbubblecosmos #ceramicuniverse #iridescentdive #liquidlightloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Diving into the shimmering depths of a soap bubble universe 🌈",
+      "yt_desc": "",
+      "cameo": "kitty",
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-07-31",
+      "caption_bodies": [
+        "Diving into the shimmering depths of a soap bubble universe 🌈",
+        "A ceramic basin becomes a cosmos of glowing domes ✨",
+        "Lost in the iridescent folds of a single bubble’s skin",
+        "Endless rows of light spheres stretch into infinity 💫",
+        "The sink’s foam is a lattice of liquid starlight"
+      ],
+      "yt_title_options": [
+        "Diving into the shimmering depths of a soap bubble universe 🌈",
+        "A ceramic basin becomes a cosmos of glowing domes ✨",
+        "Lost in the iridescent folds of a single bubble’s skin",
+        "Endless rows of light spheres stretch into infinity 💫",
+        "The sink’s foam is a lattice of liquid starlight"
+      ],
+      "spot_line": "Can you spot Kitty hiding in this luminous loop? 🐱",
+      "caption_tags": "#soapbubblecosmos #ceramicuniverse #iridescentdive #liquidlightloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Diving into the shimmering depths of a soap bubble universe 🌈 Can you spot Kitty hiding in this luminous loop? 🐱 #soapbubblecosmos #ceramicuniverse #iridescentdive #liquidlightloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A ceramic basin becomes a cosmos of glowing domes ✨ Can you spot Kitty hiding in this luminous loop? 🐱 #soapbubblecosmos #ceramicuniverse #iridescentdive #liquidlightloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Lost in the iridescent folds of a single bubble’s skin Can you spot Kitty hiding in this luminous loop? 🐱 #soapbubblecosmos #ceramicuniverse #iridescentdive #liquidlightloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Endless rows of light spheres stretch into infinity 💫 Can you spot Kitty hiding in this luminous loop? 🐱 #soapbubblecosmos #ceramicuniverse #iridescentdive #liquidlightloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The sink’s foam is a lattice of liquid starlight Can you spot Kitty hiding in this luminous loop? 🐱 #soapbubblecosmos #ceramicuniverse #iridescentdive #liquidlightloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "quantum_orrery",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/quantum_orrery_ds_divein.mp4",
+      "title": "",
+      "caption": "A brass orrery hums with cosmic whispers 🌌 Can you spot Lee hiding in the infinite? 👀 #cosmicjourney #infinitezoom #brassuniverse #hiddenrealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A brass orrery hums with cosmic whispers 🌌",
+      "yt_desc": "",
+      "cameo": "lee",
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-01",
+      "caption_bodies": [
+        "A brass orrery hums with cosmic whispers 🌌",
+        "Deep in the metal, galaxies unfold...",
+        "Where crystal seams split the endless dark ⚡",
+        "Three stars weave a thread through void and light",
+        "The universe spins on a desk at night"
+      ],
+      "yt_title_options": [
+        "A brass orrery hums with cosmic whispers 🌌",
+        "Deep in the metal, galaxies unfold...",
+        "Where crystal seams split the endless dark ⚡",
+        "Three stars weave a thread through void and light",
+        "The universe spins on a desk at night"
+      ],
+      "spot_line": "Can you spot Lee hiding in the infinite? 👀",
+      "caption_tags": "#cosmicjourney #infinitezoom #brassuniverse #hiddenrealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A brass orrery hums with cosmic whispers 🌌 Can you spot Lee hiding in the infinite? 👀 #cosmicjourney #infinitezoom #brassuniverse #hiddenrealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Deep in the metal, galaxies unfold... Can you spot Lee hiding in the infinite? 👀 #cosmicjourney #infinitezoom #brassuniverse #hiddenrealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where crystal seams split the endless dark ⚡ Can you spot Lee hiding in the infinite? 👀 #cosmicjourney #infinitezoom #brassuniverse #hiddenrealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Three stars weave a thread through void and light Can you spot Lee hiding in the infinite? 👀 #cosmicjourney #infinitezoom #brassuniverse #hiddenrealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The universe spins on a desk at night Can you spot Lee hiding in the infinite? 👀 #cosmicjourney #infinitezoom #brassuniverse #hiddenrealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "loom_of_nights",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/loom_of_nights_ds_divein.mp4",
+      "title": "",
+      "caption": "A loom’s quiet hum echoes through the cosmos 🌌 Can you spot Newman hiding in the stars? 👀 #cosmicweaving #infinitefabric #dreamingthevoid #loomoftheuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A loom’s quiet hum echoes through the cosmos 🌌",
+      "yt_desc": "",
+      "cameo": "newman",
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-01",
+      "caption_bodies": [
+        "A loom’s quiet hum echoes through the cosmos 🌌",
+        "Threads of time weave the universe itself ✨",
+        "From warp to wonder, the fabric unfolds 🪐",
+        "Golden rivers flow where galaxies bend 🌀",
+        "The night sky is a half-finished tapestry 🎨"
+      ],
+      "yt_title_options": [
+        "A loom’s quiet hum echoes through the cosmos 🌌",
+        "Threads of time weave the universe itself ✨",
+        "From warp to wonder, the fabric unfolds 🪐",
+        "Golden rivers flow where galaxies bend 🌀",
+        "The night sky is a half-finished tapestry 🎨"
+      ],
+      "spot_line": "Can you spot Newman hiding in the stars? 👀",
+      "caption_tags": "#cosmicweaving #infinitefabric #dreamingthevoid #loomoftheuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A loom’s quiet hum echoes through the cosmos 🌌 Can you spot Newman hiding in the stars? 👀 #cosmicweaving #infinitefabric #dreamingthevoid #loomoftheuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Threads of time weave the universe itself ✨ Can you spot Newman hiding in the stars? 👀 #cosmicweaving #infinitefabric #dreamingthevoid #loomoftheuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "From warp to wonder, the fabric unfolds 🪐 Can you spot Newman hiding in the stars? 👀 #cosmicweaving #infinitefabric #dreamingthevoid #loomoftheuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Golden rivers flow where galaxies bend 🌀 Can you spot Newman hiding in the stars? 👀 #cosmicweaving #infinitefabric #dreamingthevoid #loomoftheuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The night sky is a half-finished tapestry 🎨 Can you spot Newman hiding in the stars? 👀 #cosmicweaving #infinitefabric #dreamingthevoid #loomoftheuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "jade_automata",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/jade_automata_ds_divein.mp4",
+      "title": "",
+      "caption": "A jade temple dissolves into cosmic foam 🌌 Can you spot Janet hiding in the stars? 👀 #JadeCosmos #InfiniteZenLoop #CelestialTerrace #VermilionVoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A jade temple dissolves into cosmic foam 🌌",
+      "yt_desc": "",
+      "cameo": "janet",
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-01",
+      "caption_bodies": [
+        "A jade temple dissolves into cosmic foam 🌌",
+        "Cloud scrolls unravel into galaxy filaments ✨",
+        "Starlight swarms collapse to a burning world 🔥",
+        "Mountains rise from the embers of a star ⛰️",
+        "The loop begins again in endless green"
+      ],
+      "yt_title_options": [
+        "A jade temple dissolves into cosmic foam 🌌",
+        "Cloud scrolls unravel into galaxy filaments ✨",
+        "Starlight swarms collapse to a burning world 🔥",
+        "Mountains rise from the embers of a star ⛰️",
+        "The loop begins again in endless green"
+      ],
+      "spot_line": "Can you spot Janet hiding in the stars? 👀",
+      "caption_tags": "#JadeCosmos #InfiniteZenLoop #CelestialTerrace #VermilionVoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A jade temple dissolves into cosmic foam 🌌 Can you spot Janet hiding in the stars? 👀 #JadeCosmos #InfiniteZenLoop #CelestialTerrace #VermilionVoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Cloud scrolls unravel into galaxy filaments ✨ Can you spot Janet hiding in the stars? 👀 #JadeCosmos #InfiniteZenLoop #CelestialTerrace #VermilionVoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Starlight swarms collapse to a burning world 🔥 Can you spot Janet hiding in the stars? 👀 #JadeCosmos #InfiniteZenLoop #CelestialTerrace #VermilionVoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Mountains rise from the embers of a star ⛰️ Can you spot Janet hiding in the stars? 👀 #JadeCosmos #InfiniteZenLoop #CelestialTerrace #VermilionVoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The loop begins again in endless green Can you spot Janet hiding in the stars? 👀 #JadeCosmos #InfiniteZenLoop #CelestialTerrace #VermilionVoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "pollen_court",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/pollen_court_ds_divein.mp4",
+      "title": "",
+      "caption": "A pollen grain’s universe, infinite and iridescent 🌸 Can you spot Amos hiding in the pollen drift? 👀 #infraredzen #pollenuniverse #blossomcosmos #dreamloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A pollen grain’s universe, infinite and iridescent 🌸",
+      "yt_desc": "",
+      "cameo": "amos",
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-01",
+      "caption_bodies": [
+        "A pollen grain’s universe, infinite and iridescent 🌸",
+        "Diving through blossoms into golden honeycomb dreams ✨",
+        "The park’s pulse in petals, a loop of light and shadow",
+        "Where every bench hides a cosmos beneath its slats",
+        "Spring’s fractal heart beats in magenta and cyan"
+      ],
+      "yt_title_options": [
+        "A pollen grain’s universe, infinite and iridescent 🌸",
+        "Diving through blossoms into golden honeycomb dreams ✨",
+        "The park’s pulse in petals, a loop of light and shadow",
+        "Where every bench hides a cosmos beneath its slats",
+        "Spring’s fractal heart beats in magenta and cyan"
+      ],
+      "spot_line": "Can you spot Amos hiding in the pollen drift? 👀",
+      "caption_tags": "#infraredzen #pollenuniverse #blossomcosmos #dreamloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A pollen grain’s universe, infinite and iridescent 🌸 Can you spot Amos hiding in the pollen drift? 👀 #infraredzen #pollenuniverse #blossomcosmos #dreamloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Diving through blossoms into golden honeycomb dreams ✨ Can you spot Amos hiding in the pollen drift? 👀 #infraredzen #pollenuniverse #blossomcosmos #dreamloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The park’s pulse in petals, a loop of light and shadow Can you spot Amos hiding in the pollen drift? 👀 #infraredzen #pollenuniverse #blossomcosmos #dreamloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where every bench hides a cosmos beneath its slats Can you spot Amos hiding in the pollen drift? 👀 #infraredzen #pollenuniverse #blossomcosmos #dreamloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Spring’s fractal heart beats in magenta and cyan Can you spot Amos hiding in the pollen drift? 👀 #infraredzen #pollenuniverse #blossomcosmos #dreamloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
     }
   ]
 }

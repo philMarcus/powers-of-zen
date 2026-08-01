@@ -188,3 +188,24 @@
 {"ts": "2026-07-31 20:26:21", "event": "phase_shift", "journey": "frost_window", "detail": "start @ 4.40s"}
 {"ts": "2026-07-31 20:26:21", "event": "music", "journey": "frost_window"}
 {"ts": "2026-07-31 20:27:11", "event": "music_gen", "journey": "frost_window", "detail": "5 candidates"}
+{"ts": "2026-07-31 21:52:23", "event": "music_choose", "journey": "frost_window", "detail": "warm"}
+{"ts": "2026-07-31 21:52:23", "event": "queued", "journey": "frost_window"}
+{"ts": "2026-07-31 22:21:17", "event": "caption", "journey": "frost_window", "detail": "5 options, spot=True"}
+{"ts": "2026-07-31 22:22:18", "event": "edit", "journey": "frost_window"}
+{"ts": "2026-07-31 22:50:42", "event": "review", "journey": "butterfly_meridian", "detail": "ds/divein (src v1)"}
+{"ts": "2026-07-31 22:54:23", "event": "switch", "journey": "butterfly_meridian", "detail": "ds/zoomout"}
+{"ts": "2026-07-31 22:55:00", "event": "switch", "journey": "butterfly_meridian", "detail": "ds/divein"}
+{"ts": "2026-07-31 22:57:11", "event": "edit", "journey": "butterfly_meridian"}
+{"ts": "2026-07-31 23:55:21", "event": "review", "journey": "lather_atlas", "detail": "ds/divein (src v1)"}
+{"ts": "2026-07-31 23:57:02", "event": "caption", "journey": "butterfly_meridian", "detail": "5 options, spot=True"}
+{"ts": "2026-07-31 23:57:43", "event": "caption", "journey": "lather_atlas", "detail": "5 options, spot=True"}
+{"ts": "2026-08-01 00:54:10", "event": "review", "journey": "quantum_orrery", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-01 00:54:50", "event": "caption", "journey": "quantum_orrery", "detail": "5 options, spot=True"}
+{"ts": "2026-08-01 02:18:10", "event": "review", "journey": "loom_of_nights", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-01 02:18:52", "event": "caption", "journey": "loom_of_nights", "detail": "5 options, spot=True"}
+{"ts": "2026-08-01 03:32:11", "event": "review", "journey": "jade_automata", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-01 03:32:52", "event": "caption", "journey": "jade_automata", "detail": "5 options, spot=True"}
+{"ts": "2026-08-01 04:04:19", "event": "review", "journey": "pollen_court", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-01 04:05:01", "event": "caption", "journey": "pollen_court", "detail": "5 options, spot=True"}
+{"ts": "2026-08-01 08:01:22", "event": "post", "journey": "dollhouse", "platform": "youtube", "detail": "https://youtube.com/shorts/rP1fA9iKjDU"}
+{"ts": "2026-08-01 08:01:22", "event": "post", "journey": "dollhouse", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbfylfKtqYd/"}

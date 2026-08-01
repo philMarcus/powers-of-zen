@@ -303,3 +303,38 @@ the em-dashes, wrote them back, then choked on byte 0x9d; the crash on queued vi
 paths in pipeline.json (poster.py runs under WSL).
 STATE: butterfly_meridian + lather_atlas in REVIEW (captioned). quantum_orrery NOT rendered —
 re-render it to exercise the figure gate. render_batch.sh is fixed but UNRUN since the fixes.
+2026-08-01: RENDER_START DOCTRINE CORRECTED (twice) + batch 2 in review. Batch 2 rendered clean
+after the VRAM fix: quantum_orrery (196f), loom_of_nights (308f), jade_automata (280f),
+pollen_court (140f) — all 4 captioned and in Video Review alongside butterfly_meridian,
+lather_atlas, stormglass (7 total). The figure gate passed frame 0 first try on quantum_orrery
+(no goddess, no seed re-rolls) after the hadron rewrite + deck fix.
+PHIL'S REVIEW: the one real complaint was the STARTING FRAME. Starts that worked (butterfly's
+nebula, jade's filament starburst) were easy for the loop to return to; starts that failed
+(pollen's single grain, orrery's metal-object-on-a-table, loom's knot of cord) blend home badly
+at the end of the video. TWO WRONG RULES, both mine, both now dead: (a) "start in an ABSTRACT
+realm" — abstract and wide are INDEPENDENT axes; "a single pollen grain" is abstract AND an
+extreme macro. (b) "start on the largest exp" — Phil: "the size of objects doesn't correspond to
+wideness of shot... a close-up of a neutron star is a very large object, high exp, but it's a
+close-up, whereas a wide shot of a meadow is a much smaller scale object." Cards ALTERNATE
+between wide and target shots at every scale, so exp can never select framing. Never re-derive
+either rule.
+THE RULE (settled, in the composer SKILL): frame 0 must be EASY TO MORPH INTO, because it is both
+the only txt2img frame and the LOOP-HOME target. Qualifies: many things across a field of view,
+OR a single SOFT-EDGED diffuse form — astronomical subjects qualify ALONE (no hard silhouette, so
+the returning dive can land anywhere on one). Fails: a hard-edged recognizable object as the
+subject. Preference: outer space > subatomic (describe as diffuse light/depth, never by naming
+particles — a thinly-described subatomic card is what let DreamShaper substitute a metal object)
+> a recognizable everyday place. Seam must not rotate to first or last: with seam at index s of
+n, i must be neither s nor s+1. All 24 new-schema journeys now have a start; verify with
+`python3 scripts/audit_starts.py` (hard-fails a lone subject only OUTSIDE space) or
+`scripts/preflight.py <journey>` (one journey: frames, bars, counter, seam, frame-0 bait scan).
+SKILL-WRITING LESSON (Phil): do NOT put worked examples in the skills — "the more examples you
+have of what to do... they just get copied throughout, the samier our videos are gonna be." State
+rules as tests to apply, not models to imitate. The render_start and figure sections were rewritten
+this way; keep it that way.
+STILL OPEN: pollen_court/frost_window/velvet_atlas/copper_rain/static_bloom are closed terrestrial
+journeys with NO space or subatomic card — they start on their widest establishing shot; giving
+them a cosmic card is journey authoring, not a start pick. night_bloom + remix keep moss_cells
+(approved/queued; `nebula` recorded in-journey as the better start on any re-render). None of
+these 24 starts has been RENDERED yet except the 4 above — the doctrine is untested at scale.
+Also still open from before: fold repair_seam into dive.py's tail; TikTok paused.
