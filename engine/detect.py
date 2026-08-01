@@ -91,6 +91,44 @@ def florence_mask(pil, query, task="caption_to_phrase_grounding"):
     return None
 
 
+def caption(pil, task="more_detailed_caption"):
+    """Florence's own description of the frame, as text (or None).
+
+    A "describe what's here" task, unlike the grounding/segmentation tasks above which are
+    "point at X" and therefore ALWAYS point somewhere — asking them for an absent object
+    returns a full-width blob, which is why they cannot answer presence/absence questions
+    (measured 2026-07-31: 3 of 5 figure-free frames "found" a person at 43-78% of frame).
+    The caption text separated the same 6 frames perfectly.
+
+    Text comes back through PreviewAny, which puts Florence2Run's STRING output (index 2)
+    into the history entry — ComfyUI only surfaces OUTPUT nodes, so the string needs one.
+    """
+    import hashlib
+    rgb = pil.convert("RGB")
+    h = hashlib.md5(rgb.tobytes()).hexdigest()[:12]
+    name = dive.upload_image(rgb, f"cap_{h}.png")
+    wf = {
+        "load": {"class_type": "LoadImage", "inputs": {"image": name}},
+        "flm": {"class_type": "DownloadAndLoadFlorence2Model",
+                "inputs": {"model": MODEL, "precision": "fp16"}},
+        "run": {"class_type": "Florence2Run",
+                "inputs": {"image": ["load", 0], "florence2_model": ["flm", 0],
+                           "text_input": "", "task": task, "fill_mask": False,
+                           "keep_model_loaded": True, "max_new_tokens": 512, "num_beams": 3,
+                           "do_sample": False, "output_mask_select": "", "seed": 1}},
+        "prev": {"class_type": "PreviewAny", "inputs": {"source": ["run", 2]}},
+    }
+    hist = _wait(_submit(wf))
+    if not hist:
+        return None
+    for o in hist.get("outputs", {}).values():
+        for key in ("text", "string", "value"):
+            if o.get(key):
+                v = o[key]
+                return v[0] if isinstance(v, list) else v
+    return None
+
+
 def _components(mask, thresh=0.5, grid=160, min_area=0.004):
     """Connected components of a binary mask, downsampled to `grid` rows for speed. Returns boxes
     (fractional) sorted largest-first: [{area, cx, cy, w, h, box=(x0,y0,x1,y1)}]."""

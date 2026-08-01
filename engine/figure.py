@@ -16,47 +16,63 @@ quantum_orrery's frame-0 prompt was
 
 and DreamShaper XL — a FANTASY-CHARACTER-ART fine-tune — rendered a haloed goddess. It was
 not ignoring the prompt: "quark core" has no visual referent, and halo + gilded + jewel-bright
-+ storybook grandeur is a dense region of its training set. The global negative at the time
-("human face, portrait, close-up person") targeted CLOSE-UPS and did nothing about a
-full-body standing figure.
++ storybook grandeur is a dense region of its training set.
 
-Doctrine (journey-composer SKILL): distant anonymous crowds / tiny figures AT SCALE are fine
-texture; a featured individual is not. So this gates on SIZE, not mere presence.
+HOW IT DETECTS (the first attempt was wrong — measure before trusting a detector)
+--------------------------------------------------------------------------------
+First attempt asked detect.locate("person") and gated on box SIZE. That FAILED validation:
+of five figure-free frame-0s, three "found" a person at 43-78% of frame, and the real goddess
+(84%) was indistinguishable from them by size. Cause: locate() uses grounding/segmentation,
+which are "point at X" tasks — ask for something absent and Florence returns a near-full-width
+blob. detect.py's FULLSPAN filter only drops boxes >=0.9 in BOTH dims, and these were ~1.00
+wide by 0.72-0.89 tall.
+
+Presence/absence needs a "describe what's here" task. detect.caption() returns Florence's own
+description, and on the same six frames it separated them perfectly — the goddess captioned as
+"A woman with long red hair is standing ... a golden crown on her head", while the clean frames
+captioned as vases, stars, shiny balls, moss and lanterns.
+
+This also matches the doctrine better than an area threshold did: a caption names what the
+image is ABOUT, so a featured individual gets named while the distant anonymous figures that
+the journey-composer SKILL explicitly allows as texture do not.
 """
+import re
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-# Two phrasings, not one: Florence's two tasks catch different cases, and "person" alone
-# misses stylized/painted figures that "a woman" finds (most SDXL character drift is female).
-QUERIES = ("person", "a woman")
+# Deliberately tight. Every word here aborts a render, so a false trigger is expensive:
+#  - no "knight"/"statue"/"model": chess_empires has knight PIECES, jade_automata carved panels
+#  - no bare "figure": chess pieces and figurines get called figures
+#  - no "face": captions say "the face of the cliff"
+# Word boundaries matter: "man" must not fire on "many balls on the table" (lather_atlas).
+PERSON = re.compile(
+    r"\b(person|persons|people|man|men|woman|women|girl|girls|boy|boys|child|children|"
+    r"human|humans|lady|ladies|guy|guys|someone|somebody|goddess|angel|angels|"
+    r"warrior|priestess|monk|nun)\b", re.I)
 
-# Fraction of the frame a figure must occupy to count. Tiny background figures are ALLOWED
-# by doctrine; the quantum_orrery goddess covered most of the frame.
-MIN_AREA = 0.05
 
+def find(pil, model=None, **_ignored):
+    """The figure words in this frame's caption, or None.
 
-def find(pil, queries=QUERIES, min_area=MIN_AREA, model=None):
-    """Largest human figure in this frame as (query, box), or None.
-
-    `box` is detect.locate's fractional dict (cx, cy, w, h, area). Never raises — a detector
-    failure must not kill a render, so it reports "no figure" and lets the render continue.
+    Returns (matched_words, caption). Never raises — a detector failure must not kill a
+    render, so it reports "no figure" and lets the render continue.
     """
     import detect          # lazy: detect imports dive, which imports this module (same
                            # circular-import dance track.py does). By call time dive is loaded.
-    best = None
-    for q in queries:
-        try:
-            b = detect.locate(pil, q, model=model) if model else detect.locate(pil, q)
-        except Exception:
-            continue
-        if b and b["area"] >= min_area and (best is None or b["area"] > best[1]["area"]):
-            best = (q, b)
-    return best
+    try:
+        if model:
+            detect.MODEL = model
+        cap = detect.caption(pil)
+    except Exception:
+        return None
+    if not cap:
+        return None
+    hits = sorted({w.lower() for w in PERSON.findall(cap)})
+    return (hits, cap.strip()) if hits else None
 
 
 def describe(hit):
-    q, b = hit
-    return (f"{q} @ ({b['cx']:.2f},{b['cy']:.2f}) "
-            f"{b['w']:.2f}x{b['h']:.2f} = {b['area'] * 100:.0f}% of frame")
+    words, cap = hit
+    return f"{'/'.join(words)} — Florence: \"{cap[:150]}\""

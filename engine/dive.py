@@ -80,7 +80,8 @@ DEFAULTS = {
     # did nothing about quantum_orrery's full-body haloed goddess. DreamShaper is a fantasy-
     # character fine-tune; it needs the whole-figure vocabulary pushed away, plus the regalia
     # ("halo", "crown", "robe") that summons a figure to wear it. Distant tiny figures at scale
-    # are still fine — the negative is weak at cfg 2.0, and engine/figure.py gates on SIZE.
+    # are still fine — the negative is weak at cfg 2.0, and engine/figure.py judges from the
+    # frame's CAPTION, which names the subject and ignores background texture.
     "negative": ("text, watermark, logo, blurry, frame, border, low quality, "
                  "person, people, human figure, standing figure, full body, woman, man, "
                  "goddess, angel, fantasy character, portrait, face, hands, anatomy, "
@@ -90,7 +91,8 @@ DEFAULTS = {
     # render. Catch it in ~20s instead of discovering it an hour later.
     "figure_guard": True,
     "figure_retries": 4,      # seed re-rolls before giving up on frame 0
-    "figure_min_area": 0.05,  # fraction of frame; below this it's background texture, allowed
+    # (detection is caption-based, not area-based: a caption names what the image is ABOUT, so
+    #  a featured individual is named while distant texture figures are not — see figure.py)
     "figure_watch": 28,       # also check every Nth frame mid-render (0 = off); warns only
     # anti-collapse re-texturing of each fed-back frame
     "sharpen": 1.35,
@@ -773,8 +775,7 @@ def main():
         # every later frame. Re-roll the seed here for ~20s rather than find out in an hour.
         if i == 0 and img_guard:
             for attempt in range(1, cfg["figure_retries"] + 1):
-                hit = figure.find(img, min_area=cfg["figure_min_area"],
-                                  model=cfg.get("track_model"))
+                hit = figure.find(img, model=cfg.get("track_model"))
                 if not hit:
                     break
                 print(f"[dive] FIGURE on frame 0 ({figure.describe(hit)}) — "
@@ -785,8 +786,7 @@ def main():
                 if img.size != (cfg["width"], cfg["height"]):
                     img = img.resize((cfg["width"], cfg["height"]), Image.LANCZOS)
             else:
-                if figure.find(img, min_area=cfg["figure_min_area"],
-                               model=cfg.get("track_model")):
+                if figure.find(img, model=cfg.get("track_model")):
                     sys.exit(
                         f"[dive] ABORT: frame 0 keeps rendering a lone figure after "
                         f"{cfg['figure_retries']} seeds. This is a PROMPT problem, not luck — "
@@ -795,7 +795,7 @@ def main():
                         f"Re-run with --allow-figures to override.")
         # mid-render watch: cheap, and a figure can still emerge at a later card's arrival
         elif img_guard and cfg["figure_watch"] and i and i % cfg["figure_watch"] == 0:
-            hit = figure.find(img, min_area=cfg["figure_min_area"], model=cfg.get("track_model"))
+            hit = figure.find(img, model=cfg.get("track_model"))
             if hit:
                 print(f"[dive] ⚠ figure at frame {i}: {figure.describe(hit)}", flush=True)
         if cfg["build"] == "out":

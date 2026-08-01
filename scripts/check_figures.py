@@ -31,7 +31,6 @@ def main():
     ap.add_argument("runs", nargs="+", help="render dirs (output/<journey>/vN)")
     ap.add_argument("--frames", type=int, nargs="*", help="specific frame indices (default: sweep)")
     ap.add_argument("--every", type=int, default=28, help="sweep cadence when --frames absent")
-    ap.add_argument("--min-area", type=float, default=figure.MIN_AREA)
     args = ap.parse_args()
 
     bad = 0
@@ -44,7 +43,7 @@ def main():
                  else fs[::max(1, args.every)])
         hits = []
         for f in picks:
-            hit = figure.find(Image.open(f).convert("RGB"), min_area=args.min_area)
+            hit = figure.find(Image.open(f).convert("RGB"))
             if hit:
                 hits.append((f.stem, figure.describe(hit)))
         tag = "FIGURE" if hits else "clean "
