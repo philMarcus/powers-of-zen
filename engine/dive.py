@@ -526,6 +526,10 @@ def main():
     ap.add_argument("--resume", action="store_true",
                     help="continue the newest vN from its last saved frame (feedback chain: only "
                          "the last frame is needed) — same journey/settings, e.g. after a crash")
+    ap.add_argument("--seed", type=int,
+                    help="override the base seed (per-frame seed = base + i). A re-render keeps "
+                         "the same draw unless the base changes — pass a new one to explore, "
+                         "omit to reproduce (e.g. same seed through an engine change)")
     args = ap.parse_args()
 
     spec = json.loads(Path(args.journey).read_text())
@@ -544,6 +548,8 @@ def main():
     if style_name:
         print(f"[style] {style_name}  ->  {sfx}", flush=True)
     cfg["build"] = args.build or spec.get("format", {}).get("build", cfg["build"])
+    if args.seed is not None:
+        cfg["seed"] = args.seed
     zoom_sched = den_sched = exponent = loop = None
     cameos, arrivals, approach, seam_arrivals = [], set(), [], set()
     if "registers" in spec:

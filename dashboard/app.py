@@ -317,10 +317,11 @@ def platform_line(v):
 
 
 # ── shared card (preview + caption + cut/model switch) ───────────────────────────────────
-def card(v, actions, show_switch=True, marker=None, captions=False):
+def card(v, actions, show_switch=True, marker=None, captions=False, extras=None):
     """Render one video: preview + editable caption + cut/model switch + action buttons.
-    `actions` is a list of (label, newstate). `marker` in {'start','cover',None} shows a
-    frame-marking control. `captions=True` shows the auto-caption options + a generate button."""
+    `actions` is a list of (label, newstate-or-callable). `marker` in {'start','cover',None}
+    shows a frame-marking control. `captions=True` shows the auto-caption options + a generate
+    button. `extras(v)` renders extra controls just above the action row."""
     col1, col2 = st.columns([1, 2])
     with col1:
         vp = video_path(v)
@@ -390,6 +391,8 @@ def card(v, actions, show_switch=True, marker=None, captions=False):
                 st.rerun()
         if marker:
             render_marker(v, marker)
+        if extras:
+            extras(v)
         c = st.columns(len(actions) + 1)
         if c[0].button("💾 Save", key=f"save_{v['journey']}"):
             d = data(); vv = pl.get(d, v["journey"])
@@ -525,12 +528,18 @@ def reject_review(journey, requeue=None):
     set_state(journey, "rejected")
     jj = jdata()
     if requeue:
+        # 🎲 checkbox on the card: new seed = explore a different draw (default);
+        # unchecked = same seed, for re-rendering through an ENGINE change
+        new_seed = bool(st.session_state.get(f"reseed_{journey}", True))
         jj["journeys"].setdefault(journey, {})
-        jj["journeys"][journey].update({"state": "queued", "force": True, "ts": pl._now(),
-                                        "note": "re-render: video rejected in review"})
+        jj["journeys"][journey].update({"state": "queued", "force": True,
+                                        "new_seed": new_seed, "ts": pl._now(),
+                                        "note": "re-render: video rejected in review"
+                                                + ("" if new_seed else " (same seed)")})
         others = [q for q in pl.jqueue(jj) if q != journey]
         pl.set_jorder(jj, [journey] + others if requeue == "front" else others + [journey])
-        pl.telem("jqueued", journey=journey, detail=f"reject -> re-queue {requeue}")
+        pl.telem("jqueued", journey=journey,
+                 detail=f"reject -> re-queue {requeue}" + ("" if new_seed else ", same seed"))
     else:
         jj["journeys"][journey] = {"state": "rejected", "ts": pl._now(),
                                    "note": "rejected at video review"}
@@ -577,7 +586,11 @@ with tabs[1]:  # VIDEO REVIEW — pick cut/model, edit caption, send to Music
                       ("🔁 Reject → front of queue", lambda j: reject_review(j, "front")),
                       ("🔁 Reject → back of queue", lambda j: reject_review(j, "back")),
                       ("🗑 Reject journey", lambda j: reject_review(j))],
-                  marker="start", captions=True)
+                  marker="start", captions=True,
+                  extras=lambda v: st.checkbox(
+                      "🎲 new seed if re-queued (uncheck to keep the seed — e.g. re-render "
+                      "through an engine change)",
+                      value=True, key=f"reseed_{v['journey']}"))
 
 with tabs[2]:  # MUSIC — audition/generate a track, then send to Production
     st.write("Pick the soundtrack. Every candidate is auto-locked so its accent lands on each "

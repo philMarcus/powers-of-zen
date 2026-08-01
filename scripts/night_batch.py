@@ -126,13 +126,20 @@ def has_complete_render(journey):
                                         bases=[f"{journey}_ds", journey]) is not None
 
 
-def render_one(journey, force=False):
-    """dive -> queue_review -> caption. Returns (ok, note)."""
+def render_one(journey, force=False, new_seed=True):
+    """dive -> queue_review -> caption. Returns (ok, note). A force re-render gets a fresh
+    base seed by default (same journey + same seed = the same frames again); new_seed=False
+    keeps the journey's seed — for re-rendering through an ENGINE change."""
     if has_complete_render(journey) and not force:
         log(f"{journey}: complete render already exists — ingesting only")
     else:
         t0 = time.time()
-        rc, tail = run(["python3", "engine/dive.py", str(pl.journey_path(journey))])
+        argv = ["python3", "engine/dive.py", str(pl.journey_path(journey))]
+        if force and new_seed:
+            import random
+            argv += ["--seed", str(random.randrange(1, 10**6))]
+            log(f"{journey}: force re-render with fresh seed {argv[-1]}")
+        rc, tail = run(argv)
         if rc != 0:
             return False, f"dive failed: {tail}"
         log(f"{journey}: rendered in {time.time() - t0:.0f}s")
@@ -216,7 +223,8 @@ def main():
         log(f"--- {j} ---")
         entry = pl.jload()["journeys"].get(j, {})
         try:
-            ok, note = render_one(j, force=entry.get("force", False))
+            ok, note = render_one(j, force=entry.get("force", False),
+                                  new_seed=entry.get("new_seed", True))
         except Exception as e:
             ok, note = False, f"{type(e).__name__}: {e}"
         jj = pl.jload()
