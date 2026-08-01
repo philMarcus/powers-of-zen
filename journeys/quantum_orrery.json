@@ -85,5 +85,6 @@
     }
   ],
   "music_theme": "a brass orrery alone in a night study, precise and hushed, plucked strings and a low clockwork pulse under a wide luminous swell that lands on the metal-grain morph",
-  "music_key": "C minor"
+  "music_key": "C minor",
+  "render_start": "hadron"
 }

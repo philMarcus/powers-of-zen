@@ -160,3 +160,31 @@
 {"ts": "2026-07-31 18:46:48", "event": "edit", "journey": "night_bloom_remix"}
 {"ts": "2026-07-31 18:46:52", "event": "edit", "journey": "night_bloom_remix"}
 {"ts": "2026-07-31 19:33:05", "event": "review", "journey": "cave_of_numbers", "detail": "ds/divein (src v2)"}
+{"ts": "2026-07-31 19:41:54", "event": "caption", "journey": "cave_of_numbers", "detail": "5 options, spot=True"}
+{"ts": "2026-07-31 19:45:34", "event": "music_gen", "journey": "cave_of_numbers", "detail": "5 candidates"}
+{"ts": "2026-07-31 19:55:09", "event": "caption", "journey": "night_bloom_remix", "detail": "5 options, spot=True"}
+{"ts": "2026-07-31 19:55:42", "event": "caption", "journey": "night_bloom_remix", "detail": "5 options, spot=True"}
+{"ts": "2026-07-31 19:56:54", "event": "edit", "journey": "night_bloom_remix"}
+{"ts": "2026-07-31 19:57:51", "event": "edit", "journey": "night_bloom_remix"}
+{"ts": "2026-07-31 19:57:55", "event": "edit", "journey": "night_bloom_remix"}
+{"ts": "2026-07-31 19:58:05", "event": "phase_shift", "journey": "night_bloom_remix", "detail": "start @ 4.80s"}
+{"ts": "2026-07-31 19:58:05", "event": "music", "journey": "night_bloom_remix"}
+{"ts": "2026-07-31 19:59:25", "event": "switch", "journey": "cave_of_numbers", "detail": "ds/zoomout"}
+{"ts": "2026-07-31 20:00:32", "event": "music_gen", "journey": "night_bloom_remix", "detail": "5 candidates"}
+{"ts": "2026-07-31 20:00:45", "event": "edit", "journey": "cave_of_numbers"}
+{"ts": "2026-07-31 20:01:01", "event": "edit", "journey": "cave_of_numbers"}
+{"ts": "2026-07-31 20:01:08", "event": "switch", "journey": "cave_of_numbers", "detail": "ds/zoomout"}
+{"ts": "2026-07-31 20:01:17", "event": "edit", "journey": "cave_of_numbers"}
+{"ts": "2026-07-31 20:01:32", "event": "phase_shift", "journey": "cave_of_numbers", "detail": "start @ 11.30s"}
+{"ts": "2026-07-31 20:01:32", "event": "music", "journey": "cave_of_numbers"}
+{"ts": "2026-07-31 20:02:32", "event": "music_gen", "journey": "cave_of_numbers", "detail": "5 candidates"}
+{"ts": "2026-07-31 20:05:41", "event": "music_choose", "journey": "night_bloom_remix", "detail": "tender"}
+{"ts": "2026-07-31 20:05:41", "event": "queued", "journey": "night_bloom_remix"}
+{"ts": "2026-07-31 20:07:00", "event": "edit", "journey": "night_bloom_remix"}
+{"ts": "2026-07-31 20:10:24", "event": "music_choose", "journey": "cave_of_numbers", "detail": "deep"}
+{"ts": "2026-07-31 20:10:24", "event": "queued", "journey": "cave_of_numbers"}
+{"ts": "2026-07-31 20:16:37", "event": "edit", "journey": "night_bloom_remix"}
+{"ts": "2026-07-31 20:17:24", "event": "edit", "journey": "night_bloom_remix"}
+{"ts": "2026-07-31 20:26:21", "event": "phase_shift", "journey": "frost_window", "detail": "start @ 4.40s"}
+{"ts": "2026-07-31 20:26:21", "event": "music", "journey": "frost_window"}
+{"ts": "2026-07-31 20:27:11", "event": "music_gen", "journey": "frost_window", "detail": "5 candidates"}

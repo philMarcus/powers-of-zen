@@ -1,0 +1,37 @@
+[waiter] old render done; starting rewritten skyfog render Thu Jul 30 18:21:08 EDT 2026
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/skyfog_ds/v5
+[dive] skyfog_ds: 253 frames, 576x1024, zoom 1.045/frame, denoise 0.5, ckpt dreamshaperXL.safetensors
+[dive] object-approach ON (170 frames); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 1/253 (7.1s/frame, ~1780s left) :: moving through the whole lamp-room at the top of the lightho
+[dive] frame 11/253 (18.7s/frame, ~4519s left) :: moving through the whole lamp-room at the top of the lightho
+[dive] frame 21/253 (18.6s/frame, ~4325s left) :: diving straight into the near windowpane filmed with condens
+[dive] frame 31/253 (17.3s/frame, ~3838s left) :: a fine mist of condensation up close on the window pane, cou
+[dive] frame 41/253 (17.2s/frame, ~3649s left) :: diving straight into one bead of water larger than the rest,
+[dive] frame 51/253 (17.0s/frame, ~3428s left) :: a single clear swollen raindrop, its rounded skin catching t
+[dive] frame 61/253 (15.6s/frame, ~2988s left) :: the whole view transforming, resolving into towering pillars
+[dive] frame 71/253 (14.5s/frame, ~2636s left) :: the whole view transforming, resolving into towering pillars
+[dive] frame 81/253 (15.3s/frame, ~2630s left) :: moving through towering pillars of glowing nebula mist, veil
+[dive] frame 91/253 (15.7s/frame, ~2551s left) :: diving straight into one protostar bright at the pillar's he
+[dive] frame 101/253 (16.0s/frame, ~2434s left) :: diving straight into one protostar bright at the pillar's he
+[dive] frame 111/253 (16.1s/frame, ~2285s left) :: diving straight into one protostar bright at the pillar's he
+[dive] frame 121/253 (15.7s/frame, ~2076s left) :: moving through the corona of a newborn star, arcs of fire an
+[dive] frame 131/253 (16.0s/frame, ~1946s left) :: diving straight into one banded world past the flare, an orb
+[dive] frame 141/253 (16.3s/frame, ~1821s left) :: diving straight into one banded world past the flare, an orb
+[dive] frame 151/253 (16.0s/frame, ~1628s left) :: moving through the banded planet close, marbled cloud lit lo
+[dive] frame 161/253 (16.2s/frame, ~1489s left) :: diving straight into the calm dark eye at the storm's center
+[dive] frame 171/253 (16.2s/frame, ~1331s left) :: the storm's towering eye-wall, sheer canyons of cloud lit am
+[dive] frame 181/253 (16.1s/frame, ~1160s left) :: moving through the storm's towering eye-wall, sheer canyons 
+[dive] frame 191/253 (16.3s/frame, ~1008s left) :: diving straight into a bank of luminous sea fog over the dar
+[dive] frame 201/253 (16.2s/frame, ~842s left) :: a fog-drowned night coast, black water and wet rock, deep ba
+[dive] frame 211/253 (16.2s/frame, ~680s left) :: moving through a fog-drowned night coast, black water and we
+[dive] frame 221/253 (16.4s/frame, ~524s left) :: diving straight into a lighthouse tower in the fog, stone wa
+[dive] frame 231/253 (16.2s/frame, ~357s left) :: beside the lighthouse's old stone tower in the fog, rain gli
+[dive] frame 241/253 (15.9s/frame, ~190s left) :: moving through beside the lighthouse's old stone tower in th
+[dive] frame 251/253 (15.6s/frame, ~31s left) :: diving straight into the lighthouse's lamp room at the top o
+[dive] frame 253/253 (15.5s/frame, ~0s left) :: diving straight into the lighthouse's lamp room at the top o
+[dive] interpolated 12 -> 24fps in 29s
+[dive] counter overlay on 503 frames (32 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/skyfog_ds/v5/skyfog_ds.mp4 (26816 KB, 21.1s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/skyfog_ds/v5/skyfog_ds_divein.mp4 (27552 KB, 21.1s)
+[dive] done in 4040s

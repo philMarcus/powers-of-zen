@@ -1,0 +1,10 @@
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/antenna_ball_ds/v8
+[dive] antenna_ball_ds: 160 frames, 576x1024, zoom 1.045/frame, denoise 0.5, ckpt dreamshaperXL.safetensors
+[dive] object-approach ON (92 frames); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 1/160 (9.2s/frame, ~1458s left) :: moving through seen low at eye level among wildflower stems 
+[dive] frame 11/160 (20.3s/frame, ~3032s left) :: moving through seen low at eye level among wildflower stems 
+[dive] frame 21/160 (19.7s/frame, ~2739s left) :: diving straight into a round red ladybug perched on a broad 
+[dive] frame 31/160 (20.3s/frame, ~2613s left) :: diving straight into a round red ladybug perched on a broad 
+[dive] frame 41/160 (19.4s/frame, ~2310s left) :: moving through a red ladybug's domed shell fills the view, s
+[dive] frame 51/160 (18.7s/frame, ~2040s left) :: a ladybug's head fills the view, a glossy black dome with fa
+[dive] frame 61/160 (19.0s/frame, ~1877s left) :: diving straight into the tip of one antenna, a small flawles

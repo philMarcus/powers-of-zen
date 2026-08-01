@@ -3,141 +3,98 @@ name: dive-video
 description: Produce a Zoomer dive video (Powers-of-Ten-style AI zoom short) from a world-card journey file, using the local ComfyUI + feedback-zoom engine. Use when asked to make, render, or iterate on a dive/zoom video, or to add a journey.
 ---
 
-# Producing a Zoomer dive video
+# Producing a Zoomer dive video (ENGINE 2)
 
 ## What this produces
-A 9:16 looping short (~12s at defaults) that dives through scale registers
-(×10 per register, arrive→look→plunge pacing), with an odometer scale counter
-(10ⁿ m) and an exact loop (last frame = first frame). Output lands in
-`output/<name>/`: `<name>.mp4` (final), `<name>_zoomout.mp4` (reversed cut —
-the small-to-large direction), `<name>_raw.mp4`, and `frames/`.
+A 9:16 looping short that dives continuously through scale registers (×10 per card), with the
+10ⁿ odometer counter and an exact loop. Length comes from CARD COUNT (every card is one bar):
+5 cards ≈ 11.7s · 7 ≈ 16.3s · 10 ≈ 23.3s · 11 ≈ 25.7s. Output: `output/<journey>/vN/`
+(never overwritten) with `<journey>.mp4` (primary, zoom-out), `<journey>_divein.mp4`,
+`build/frames/`, `build/track.jsonl` (per-frame aim/track debug) and `run.json` (provenance:
+model, checkpoint, style, seed).
 
 ## Prerequisites
-- ComfyUI must be running on the Windows side: `/mnt/c/Users/Phil/start_comfyui.sh`
-  (tmux session `comfy`). API health check: `curl -s localhost:8188/system_stats`.
-- Run everything from the project root `/mnt/c/Users/Phil/zoomer`.
+- ComfyUI running: `bash /mnt/c/Users/Phil/start_comfyui.sh` (tmux `comfy`);
+  health `curl -s localhost:8188/system_stats`. It does NOT survive a reboot.
+- Ollama up for captions (localhost:11434, `mistral-small3.2:24b`).
+- Run everything from `/mnt/c/Users/Phil/zoomer`. ONE GPU job at a time.
 
 ## Commands
 ```bash
-python3 engine/dive.py journeys/<journey>.json            # render (turbo default)
-python3 engine/dive.py journeys/<j>.json --model ds       # DreamShaperXL flavor
-python3 engine/dive.py journeys/<j>.json --frames 10 --no-video   # smoke test
-python3 scripts/mascot_concepts.py [character_key ...]    # mascot concept art
+python3 engine/dive.py journeys/<j>.json                  # render (DreamShaper by default)
+python3 engine/dive.py journeys/<j>.json --frames 30 --no-video   # smoke test
+python3 engine/dive.py journeys/<j>.json --resume         # continue newest vN after a crash
+python3 scripts/caption.py <j>                            # 5 caption options (local VLM)
+python3 scripts/queue_review.py <j> ds [--src output/<j>/vN]     # -> Video Review
+bash scripts/render_batch.sh                              # long+medium+short, caption+queue each
+python3 scripts/track_lab.py overlay output/<j>/vN        # SEE the tracking (aim/lock overlay)
+python3 scripts/track_lab.py selftest                     # propagation math vs zoom_transform
 ```
-A 144-frame turbo render takes ~8 min; ds ~3× slower. Run full renders in the
-background. Never run two GPU jobs concurrently — ComfyUI interleaves them and
-both slow down.
+~17–20s/frame with tracking + depth-CN (196-frame medium ≈ 60 min). Renders are cheap in
+CONTEXT (GPU work happens outside the model) — run them in the background and read the log.
 
-## Journey files (world cards — the ONLY thing that varies per video)
-Registers are listed in dive order, LARGE → SMALL. Each card:
-```json
-{ "name": "city", "exp": 3,
-  "interior": "what it looks like while traveling through this world",
-  "next_target": "the next (smaller) world as first seen from afar" }
-```
-The last register omits `next_target`. Prompts are compiled from these cards
-through fixed grammar templates in `engine/grammar.py` — never write raw prompts
-in journeys, and never edit the templates for a single video (they are the
-format's signature; tuning them changes ALL future videos).
+## Flags for A/B only, not normal use
+- `--cn 0` — drop the depth ControlNet, KEEP tracking. **The CN stays at 0.45** (Phil's call
+  2026-07-31: with it the dive holds coherently on ONE object; without it the zoom wanders).
+- `--plain` — no tracking AND no CN (engine-1-style pure feedback zoom). NOT the CN test.
+- `--style <deck name>` look A/B · `--model turbo|ds` (ds is the house default).
 
-Top-level keys: `name`, `style_suffix` (Layer-2 style tokens),
-`format` (`sec_per_decade` default 3.0, `travel_denoise` default 0.40,
-`exact_loop` true/false), `settings` (engine overrides, e.g. `"reverse": true`).
+## What the engine does (settled 2026-07-31 — don't re-derive or re-litigate)
+1. **Uniform bars.** Every card in a journey shares one `dur` (4 = a bar). Mixed durations made
+   the zoom curve vary in period card-to-card and read arrhythmic.
+2. **Engine-1 zoom curve** on every card (arrive→look→plunge, sin²). Seam cards zoom at the
+   SAME rate — the dive never stops.
+3. **Morphs land on the beat.** Each boundary gets engine-1 intensity (0.40 travel + 0.18) with
+   a 2-frame anacrusis pickup peaking ON the downbeat. A SEAM is that same intensity held for
+   MORE FRAMES (12 vs 6) — never a harder per-frame change (that produced hard cuts).
+4. **Composition, never centering.** `track.py` eases the object toward the run's FROZEN
+   rule-of-thirds anchor (corner rotates per scale): objects hold ~0.22 off-center instead of
+   sliding to the middle. Heading changes only at card boundaries (= on a beat).
+5. **TRACKER v3.** Emergence point → `detect.locate` every 4th frame → gentle corrections;
+   redirects need two agreeing observations and are gated to the first 10 frames. Misses are
+   NORMAL — the known zoom geometry carries the dive between detections.
+6. **Depth ControlNet 0.45** on approach frames holds the target's identity while pixels fully
+   regenerate (not a paste).
 
-## Scale ladder + mascot cast (canonical; loose science is fine, it's an
-attention project, not a science project)
-| exp (10ⁿ m) | register | mascot |
-|---|---|---|
-| -15 | quark | Clark |
-| -10 | atom | Adam |
-| -8 | molecule/DNA | Tina |
-| -5 | cell | Belle |
-| -3 | small creature | Lee |
-| 0 | human scale (objects only, no faces) | Newman (proposed) |
-| 1 | flora/tree | Dora |
-| 3 | city | Kitty |
-| 5 | landmass/terrain | Lorraine |
-| 7 | planet | Janet |
-| 11 | star/solar system | Lamar |
-| 21 | galaxy | Aleksey |
-| 26 | cosmos | Amos |
+## Journey files
+The **journey-composer** skill is the authoring law. Schema in brief: per card `name`, `exp`,
+`kind` (zoom|seam), `dur` (uniform), `palette`, rich static `scene`, PLAIN `target` (bare
+object — no location, no other object's name), short `target_phrase`; top-level `style` (a deck
+NAME), `format` {beats_per_bar, exact_loop, counter}, optional `render_start`.
+Engine-critical rules:
+- **`scene` never describes the frame** ("fills the view" is banned) — it describes the WORLD;
+  the engine decides frame fill. A close-up scene rendered cold invents its own context (this
+  is what made frost_window open as a fern on a desk).
+- **`render_start`** rotates the circular card list so frame 0 — the only txt2img frame — lands
+  in an ABSTRACT realm. Never let it put the seam card first or LAST (last silently destroys
+  the seam via the loop-home branch; grammar warns).
+- **counter ON by default** — the odometer pins to the current register and spins at handoffs,
+  honest even across seams. `false` only where a realm is fictional and 10ⁿ m would be a lie.
+- Journeys are CIRCULAR: the last card dives back into card 0's world, and the grammar
+  auto-derives that loop target from `regs[0]` (`loop_target` if present, else its scene) — so
+  never hand-author a last-card target for the loop.
 
-Rules (revised 2026-07-23):
-- **EVERY video gets a mascot cameo (STANDARD, 2026-07-27).** Add a `cameo`
-  {sprite: output/mascots/canon/<name>.png, pos:[x,y], size:0.12+} to ONE register,
-  scale-matched to that mascot (see table). Size ≥0.12 or it's invisible & pointless.
-  Rotate the full cast — don't reuse a mascot until all are used. Video with a visible
-  cameo → find-the-character caption; without → normal caption. Never regenerate an
-  already-released video just to add one. (May need size/pos/denoise tuning.)
-- **Journeys are CIRCULAR + SELF-SIMILAR (this is what makes the loop seam work).**
-  The last register loops back to the FIRST world. As of 2026-07-29 the grammar
-  AUTO-DERIVES the last register's loop target from `regs[0]` (its `loop_target` if
-  present, else its `interior`) — so the last frame plunges toward the first world
-  described in the *exact same words* frame 0 uses. DO NOT rely on a hand-authored
-  last-register `next_target` for the loop (it drifts — e.g. a "golden cove" that no
-  longer mentions the heron — and the first/last frames then render as two different
-  images, leaving a big seam gap). Instead:
-  - Make `regs[0].interior` a strong establishing description of the first world, and
-    (optionally) add a concise `loop_target` on `regs[0]` if the interior is too long
-    to read well inside "plunging toward …".
-  - **Pin a consistent viewpoint** in the first world's words (e.g. "seen from above at
-    the water's edge") so the establishing frame and the arrival aren't a top-down vs
-    side-view mismatch. The closer first==last visually, the more invisible the loop.
-  The seam pair can still be ANY two scales, but the last register must genuinely
-  *contain* the first world (the heron stands in the landscape we dive into), so the
-  dive naturally arrives home. The engine end-of-video mechanism (natural dive →
-  palette-match → gentle gap-scaled morph, see PLAN.md "Seam") does the final bridging;
-  self-similar authoring keeps that gap tiny so no heavy seam repair is needed.
-- The full ladder is one format among many. Slices are fine; fractional scales
-  are fine (`exp` may be a float; registers ⅓–½ a decade apart are allowed —
-  fish-eats-fish chains, dollhouse recursion). Weight time with per-card `sec`.
-  The human/city/creature zone is the variety-rich band — linger there.
-- Per-card keys: `exp`, `palette`, `interior`, `next_target`, optional `sec`,
-  optional `cameo` {sprite, pos, size}.
-- Don't name the same creature/object in two nearby registers — it will render
-  at both scales (the double-lantern/double-fly ghost).
-- **Creature chains don't nest — environments do.** For creature-to-creature
-  scales (food chains etc.), the `interior` is the shared ENVIRONMENT at that
-  scale (the water, the reeds) with the creature as a passing landmark; the next
-  creature is named exactly once, in `next_target`. Never "travel through" an
-  animal — travel through its world, past it, toward the next.
-- **The first and last cards are the loop pair AND the playback opening**
-  (zoom-out playback = reversed generation, and exact_loop pins frame 0). They
-  MUST be natural adjacent scales. Bury the exotic cross-scale wrap MID-LIST —
-  never at the ends. (Reasoning in generation order alone gets this wrong.)
-- **Adjacent registers must contrast** in silhouette family (radial / branching /
-  grid / blob / open space) AND palette temperature. A journey's theme lives in
-  its style_suffix and recurring motifs — never in giving every register the
-  same colors (that produced the samey amber iris/retina/galaxy stretch).
-- The 10ⁿ counter renders only for clean monotonic ladders (`counter: "auto"`
-  default); wraps, lingers and fractional stacks make the label nonsense — set
-  `"counter": false/true` in format to force.
-- Creature scenes fantastical, never gory. People policy: distant anonymous
-  crowds and tiny figures AT SCALE are welcome texture (streets, markets,
-  formations); what's banned is featured individuals and readable faces. The
-  global negative bans faces/portraits/close-up persons. Where a lone figure
-  tends to intrude (DreamShaper paints scholars into studies, women into
-  flowing steam), write that card's interior as "empty, no one present".
-  Mascot names never shown on screen.
-- VARY the cameo mascot across videos (not Belle every time); one cameo per
-  video, mascot matched to the register's scale.
-- `journeys/VARIATIONS.md` is the differentiation library — per-register
-  variant looks and seam pairings. Draw from it; add to it.
+## Mascot cast (ONE cameo per video, scale-matched, size ≥0.12, rotate the cast)
+| exp | register | mascot |   | exp | register | mascot |
+|---|---|---|---|---|---|---|
+| -15 | quark | Clark |  | 1 | flora/tree | Dora |
+| -10 | atom | Adam |    | 3 | city | Kitty |
+| -8 | molecule/DNA | Tina | | 5 | landmass | Lorraine |
+| -5 | cell | Belle |    | 7 | planet | Janet |
+| -3 | small creature | Lee | | 11 | star | Lamar |
+| 0 | human scale | Newman | | 21 | galaxy | Aleksey |
+|  |  |  | | 26 | cosmos | Amos |
+A cameo may sit on any card EXCEPT one whose frames fall inside the loop tail (the last ~24
+frames morph home and would smear it). Card 0 is fine — the engine pastes from frame 1.
 
-## Iron rules
-- NEVER overwrite a previous render or mascot round. Renders write to
-  `output/<name>/vN/`; mascot rounds to `output/mascots/rN/`. If a tool would
-  overwrite, version instead.
+## After a render
+`caption.py` then `queue_review.py` (that order — it lands in Review already captioned). Then in
+the dashboard: mark a start frame → **Approve → Music** (phase-shifts, then generates + aligns 5
+candidates at the format's bpm) → choose a track → Production → the scheduler posts.
 
-## Quality gate before showing Phil
-Spot-check frames (e.g. 40%, 70%, 95% of the way through) for: feedback collapse
-(image emptying out), palette drift (one color colonizing everything), and loop
-integrity (last raw frame should equal frame 0 when `exact_loop`). If a video
-must be sent as a file, files >30MiB fail to send — re-encode a preview:
-`ffmpeg -i in.mp4 -crf 26 preview.mp4` (masters stay crf 18 for posting).
-
-## Where things live
-`PLAN.md` = plan of record (three-layer format doctrine, marketing doctrine,
-phases). `engine/dive.py` = renderer; `engine/grammar.py` = compiler (Layer 1).
-`journeys/` = world cards (Layer 3). `output/mascots/` = cast art.
-`scripts/run_batch.sh` = multi-journey batches.
+## Debugging
+- `build/track.jsonl` + `track_lab.py overlay` show exactly what the camera aimed at and why.
+- `run.json` records which checkpoint really produced a render. The run dir has NO `_ds` suffix
+  when the style deck picks the model — that is not a turbo render.
+- ComfyUI's `Model SDXL` log line is the ARCHITECTURE, not the checkpoint (DreamShaper XL is an
+  SDXL fine-tune). To prove what ran, read `run.json` or ComfyUI `/history`.

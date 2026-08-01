@@ -65,5 +65,6 @@
     }
   ],
   "music_theme": "a warm evening kitchen at rest, gentle and iridescent — soft chiming keys over a low hum, opening bright as the foam gives up its glowing inner world, one shimmering bloom of sound on the turn back into the sink",
-  "music_key": "A major"
+  "music_key": "A major",
+  "render_start": "foam_field"
 }

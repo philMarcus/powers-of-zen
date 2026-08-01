@@ -1,0 +1,99 @@
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/stormglass_ds/v2
+[dive] stormglass_ds: 261 frames, 576x1024, zoom 1.045/frame, denoise 0.5, ckpt dreamshaperXL.safetensors
+[dive] object-approach ON (22 frames); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 1/261 (10.2s/frame, ~2649s left) :: traveling through towering thunderhead cloudscape from the a
+[dive] frame 11/261 (8.0s/frame, ~2011s left) :: traveling through towering thunderhead cloudscape from the a
+[dive] frame 21/261 (8.0s/frame, ~1921s left) :: plunging toward a single silver raindrop falling away from t
+[dive] frame 31/261 (8.1s/frame, ~1854s left) :: a single silver raindrop falling away from the clouds now fi
+[dive] frame 41/261 (8.0s/frame, ~1763s left) :: traveling through one enormous translucent raindrop falling 
+[dive] frame 51/261 (8.0s/frame, ~1680s left) :: plunging toward the swirling water world suspended inside th
+[dive] frame 61/261 (8.0s/frame, ~1605s left) :: the swirling water world suspended inside the drop now filli
+[dive] frame 71/261 (8.0s/frame, ~1522s left) :: traveling through inside the raindrop, a vast underwater-lik
+[dive] frame 81/261 (8.0s/frame, ~1440s left) :: plunging toward a cluster of glowing water molecules driftin
+[dive] frame 91/261 (8.0s/frame, ~1358s left) :: a cluster of glowing water molecules drifting in the light n
+[dive] frame 101/261 (8.0s/frame, ~1280s left) :: traveling through enormous glowing water molecules, bright p
+[dive] frame 111/261 (8.0s/frame, ~1198s left) :: plunging toward a single radiant atom swelling huge among th
+[dive] frame 121/261 (8.0s/frame, ~1119s left) :: a single radiant atom swelling huge among the molecules now 
+[dive] frame 131/261 (8.0s/frame, ~1042s left) :: traveling through the inside of an atom, soft hazy luminous 
+[dive] frame 141/261 (8.0s/frame, ~962s left) :: plunging toward a boiling web of quantum foam and luminous f
+[dive] frame 151/261 (8.0s/frame, ~881s left) :: a boiling web of quantum foam and luminous filaments spreadi
+[dive] frame 161/261 (8.0s/frame, ~803s left) :: traveling through the vast cosmic web seen from an oblique a
+[dive] frame 171/261 (8.0s/frame, ~723s left) :: plunging toward a luminous spiral galaxy caught in a shining
+[dive] frame 181/261 (8.0s/frame, ~642s left) :: a luminous spiral galaxy caught in a shining filament now fi
+[dive] frame 191/261 (8.0s/frame, ~561s left) :: traveling through the inside of a spiral galaxy from a tilte
+[dive] frame 201/261 (8.0s/frame, ~481s left) :: plunging toward a single blazing golden star wrapped in flar
+[dive] frame 211/261 (8.1s/frame, ~405s left) :: traveling through the corona of a blazing star, arcs of fire
+[dive] frame 221/261 (9.0s/frame, ~359s left) :: plunging toward a giant stormy gas planet glowing in its orb
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 791, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 497, in _make_request
+    conn.request(
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 395, in request
+    self.endheaders()
+  File "/usr/lib/python3.12/http/client.py", line 1360, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1120, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.12/http/client.py", line 1064, in send
+    self.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 243, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 212, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x7badcf3a2240>, 'Connection to localhost timed out. (connect timeout=30)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 845, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 517, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8188): Max retries exceeded with url: /history/ebe0caef-25a1-4264-8de6-ef0782b22348 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7badcf3a2240>, 'Connection to localhost timed out. (connect timeout=30)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/Phil/zoomer/engine/dive.py", line 640, in <module>
+    main()
+  File "/mnt/c/Users/Phil/zoomer/engine/dive.py", line 601, in main
+    png = run_workflow(wf)
+          ^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Phil/zoomer/engine/dive.py", line 189, in run_workflow
+    h = requests.get(f"{COMFY}/history/{pid}", timeout=30).json()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 507, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='localhost', port=8188): Max retries exceeded with url: /history/ebe0caef-25a1-4264-8de6-ef0782b22348 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7badcf3a2240>, 'Connection to localhost timed out. (connect timeout=30)'))

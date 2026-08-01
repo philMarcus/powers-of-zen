@@ -68,3 +68,57 @@ Summary: {
   "instagram": "https://www.instagram.com/powers.of.zen/reel/DbZI3tOMPqL/"
 }
 ⚠ flags recorded in /mnt/c/Users/Phil/zoomer/outbox/flags.jsonl — review before next run.
+Posting: snowfall  (file: production/snowfall_divein.mp4, turbo/divein)
+  ⏸ skipping paused platform(s): tiktok
+    set_text failed: NO_FOCUS
+    set_text failed: NO_FOCUS
+    set_text failed: NO_FOCUS
+    set_text failed: NO_FOCUS
+    set_text failed: NO_FOCUS
+    set_text failed: NO_FOCUS
+    set_text failed: NO_FOCUS
+    set_text failed: NO_FOCUS
+    set_text failed: NO_FOCUS
+    set_text failed: NO_FOCUS
+  !! FLAG [youtube/title] title never confirmed set (field not editable in time?)
+     context: {"buttons":["Close","Close","Get started","Get started","Dismiss","Dismiss","Skip navigation","Skip navigation","Create","Create","Dashboard","Content","Analytics","Community","Subtitles","Content detection","Earn","Customization","Audio library","Settings","Send feedback","Learn more","Learn more","Catch me up on this video","Catch me up on this video","Go to videos","Go to videos","Go to videos","993","126"],"headings":["Channel dashboard","Latest Short performance","a whole tiny world in one pond 🐟 10ᶻ","the atom in the ink is the planet under the city 📜🪐 10ᶻ","everything glows at night 🌙 10ᶻ","an ocean, a cell, and the cosmic web — one dive 🌊 10ᶻ","everything's a black hole if you zoom out enough 🕳️✨ 10ᶻ","Channel analytics"]}
+  !! FLAG [instagram/crop_original] could not confirm Original (phone 9:16) crop — refusing to post a squared video
+     context: {"buttons":["Instagram","HomeHome","ReelsReels","MessagesMessages","SearchSearch","NotificationsNotifications","New postCreate","Profile","SettingsMore","powers.of.zen","13h","Original audio","More options","Audio is muted","Audio is muted","Like","1","Comment","Repost","Share","Save","Save","1 like","powers.of.zen","#powersofzen","#pond","#oddlysatisfying","#fyp","powers.of.zen","Switch"],"headings":["Suggested Posts","Crop"]}
+
+Summary: {
+  "youtube": "FLAGGED: youtube/title: title never confirmed set (field not editable in time?)",
+  "instagram": "FLAGGED: instagram/crop_original: could not confirm Original (phone 9:16) crop \u2014 refusing to post a squared video"
+}
+⚠ flags recorded in /mnt/c/Users/Phil/zoomer/outbox/flags.jsonl — review before next run.
+Posting: cosmic_scales_remix  (file: production\cosmic_scales_remix_ds_shift.mp4, ds/zoomout)
+  ⏸ skipping paused platform(s): tiktok
+  youtube: https://youtube.com/shorts/pKiWyMYBqi4
+  instagram: https://www.instagram.com/powers.of.zen/reel/DbbtqMVtunf/
+
+Summary: {
+  "youtube": "https://youtube.com/shorts/pKiWyMYBqi4",
+  "instagram": "https://www.instagram.com/powers.of.zen/reel/DbbtqMVtunf/"
+}
+⚠ flags recorded in /mnt/c/Users/Phil/zoomer/outbox/flags.jsonl — review before next run.
+Posting: cartographer  (file: production/cartographer_ds_divein.mp4, ds/divein)
+  ⏸ skipping paused platform(s): tiktok
+  !! FLAG [youtube/file_input] upload dialog never became VISIBLE (Create->Upload; cold-session onboarding nags?)
+     context: {"buttons":["Close","Close","Skip navigation","Skip navigation","Create","Create","Dashboard","Content","Analytics","Community","Subtitles","Content detection","Earn","Customization","Audio library","Settings","Send feedback","Learn more","Learn more","Catch me up on this video","Catch me up on this video","Go to videos","Go to videos","Go to videos","Create post","Create post","Create post","1.1K","861","406"],"headings":["Channel dashboard","Latest Short performance","A hypnotic spiral through every scale of reality ⚡","The quiet hum of falling snow","a whole tiny world in one pond 🐟 10ᶻ","the atom in the ink is the planet under the city 📜🪐 10ᶻ","everything glows at night 🌙 10ᶻ","Channel analytics"]}
+  !! FLAG [instagram/crop_original] could not confirm Original (phone 9:16) crop — refusing to post a squared video
+     context: {"buttons":["Instagram","HomeHome","ReelsReels","MessagesMessages","SearchSearch","NotificationsNotifications","New postCreate","Profile","SettingsMore","powers.of.zen","22h","Original audio","More options","Audio is muted","Audio is muted","Like","2","Comment","Repost","Share","Save","Save","apeshit82","1 other","powers.of.zen","#crystallineworlds","#endlesswinterdive","#frostedcosmos","#powersofzen","#oddlysatisfying"],"headings":["Suggested Posts","Turn on Notifications","Crop"]}
+
+Summary: {
+  "youtube": "FLAGGED: youtube/file_input: upload dialog never became VISIBLE (Create->Upload; cold-session onboarding nags?)",
+  "instagram": "FLAGGED: instagram/crop_original: could not confirm Original (phone 9:16) crop \u2014 refusing to post a squared video"
+}
+⚠ flags recorded in /mnt/c/Users/Phil/zoomer/outbox/flags.jsonl — review before next run.
+Posting: circuit_city  (file: production\circuit_city_ds_divein_shift.mp4, ds/divein)
+  ⏸ skipping paused platform(s): tiktok
+  youtube: https://youtube.com/shorts/aiQRUEc9qOA
+  instagram: https://www.instagram.com/powers.of.zen/reel/DbeSdr0uWQe/
+
+Summary: {
+  "youtube": "https://youtube.com/shorts/aiQRUEc9qOA",
+  "instagram": "https://www.instagram.com/powers.of.zen/reel/DbeSdr0uWQe/"
+}
+⚠ flags recorded in /mnt/c/Users/Phil/zoomer/outbox/flags.jsonl — review before next run.

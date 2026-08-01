@@ -931,6 +931,41 @@ cell interior — gorgeous but off-script; composer-side fix if it matters.
   queued too. queue_review.py fixed — it still expected `output/<journey>_<model>/`, which the
   style-deck-picks-model change broke, so NO new render could be ingested.
 
+### SESSION CLOSE 2026-07-31 — state of play
+**Fixed late in the session (all committed):**
+- CAPTIONS WERE DEAD for the whole engine-2 catalog: `journey_worlds()` read `r['interior']`
+  but new journeys use `scene` → KeyError → the dashboard's Generate button silently did
+  nothing. Now reads scene|interior and takes style words from the deck. Verified end-to-end.
+- DASHBOARD CAPTION EDITS didn't stick. Root cause: a KEYED `st.radio` IGNORES `index` on
+  rerun and restores its own stored selection, so the sync-on-read block wrote the stale option
+  over every hand edit — Save was undone by its own `st.rerun()`. Fix: apply picks ONLY in an
+  `on_change` callback (fires just on a real click); Save clears the radio when the text isn't
+  an option. Regenerating no longer overwrites an existing caption.
+- MUSIC verified end-to-end on the new engine WITH a moved start frame: 103bpm from the format
+  grid, key from the journey, 5 aligned candidates (lock 7.7–18.3×), seamless loop. The
+  `render_start` rotation does NOT disturb the morph grid — but only because bars are uniform.
+- STYLE: deck gained `brand_tail` (glittering specular highlights, iridescent sparkle, vivid
+  complementary colour contrast, jewel-bright accents), appended to every style — Phil found
+  cave_of_numbers monochromatic orange/yellow. Light/surface words only; "gemstone" as a NOUN
+  would paint literal gems into meadows. NOTE: this fights deliberately-monochrome journeys
+  (chess_empires "monochrome + one emerald", ink_dynasty sumi-e) — add a per-style opt-out if
+  those look wrong.
+- dive-video SKILL rewritten for engine 2 (was still documenting engine-1 schema + turbo).
+
+**QUEUED FOR PHIL:** `bash scripts/render_batch.sh` — butterfly_meridian (long) /
+quantum_orrery (medium) / lather_atlas (short), each render → caption → REVIEW. Waits for
+ComfyUI + a free GPU, resumable, failure-tolerant.
+
+**Review queue right now:** stormglass (engine-1 holdover), night_bloom_remix (the v10
+reference render), frost_window, cave_of_numbers.
+
+**OPEN / next session:** (a) the 4 fictional-realm counters (chalkboard_infinities,
+quantum_orrery, cave_of_numbers, static_bloom) are still `counter:false` — Phil may want the
+odometer everywhere for the charm; (b) cave_of_numbers' middle palettes are three stone cards
+in a row (journey-side monochrome, separate from the style tail); (c) fold repair_seam into
+dive.py's exact_loop tail (open since 07-29); (d) TikTok still paused (meta.paused_platforms);
+(e) VARIATIONS.md could use the trending-sound journey idea.
+
 **OPEN after this:** (a) review v6 vs the engine-1 v4 — did the zoom become LOGICAL while keeping
 the prettiness (the whole point); (b) --plain A/B for the depth-CN look suspicion; (c) fold the
 seam repair into dive.py's exact_loop tail (still open from 07-29); (d) update the dive-video

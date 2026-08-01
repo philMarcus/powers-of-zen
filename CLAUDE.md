@@ -79,6 +79,15 @@ circular chain so frame 0 lands in an ABSTRACT realm; **"fills the view" banned*
 DreamShaper is the house default (we never left it — "Model SDXL" in the ComfyUI log is the
 architecture, and 17 legacy styleless journeys would silently have gone turbo, now fixed).
 
+## READY TO RUN: `bash scripts/render_batch.sh` (prepared 2026-07-31 for Phil to trigger later)
+One LONG + one MEDIUM + one SHORT through the settled engine, each: render → caption → REVIEW.
+butterfly_meridian (280f/23.3s, start=butterfly_nebula) · quantum_orrery (196f/16.3s,
+start=hadron) · lather_atlas (140f/11.7s, start=foam_field) — chosen for colour CONTRAST and
+sparkle to exercise the new style brand_tail (deliberately NOT the monochrome journeys
+chess_empires/ink_dynasty, which the tail fights). ~2h total, sequential. The script starts
+ComfyUI itself, WAITS for the GPU to be free (so it won't fight a game), skips any journey
+already fully rendered, and never dies on one failure. Watch: outbox/render_batch_*.log.
+
 ## Current state (update this line as it changes)
 2026-07-29: THE SEAM IS SOLVED (see PLAN.md "THE SEAM"). Two parts: (A) grammar.py now
 auto-derives the last register's loop target from `regs[0]` (loop_target|interior), so the

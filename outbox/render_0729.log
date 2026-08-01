@@ -1,0 +1,434 @@
+open terminal failed: not a terminal
+=== 15:24:10 python3 scripts/repair_seam.py circuit_city --model turbo ===
+repair circuit_city_turbo: source=v2, total=290, seam 266..289 (L=24)
+[repair] out dir: /mnt/c/Users/Phil/zoomer/output/circuit_city_turbo/v3
+[repair] depth preprocessor: DepthAnythingV2Preprocessor
+  seam 266  dive  t=0.04 palette=0.03 cn=0.00
+  seam 267  dive  t=0.08 palette=0.07 cn=0.00
+  seam 268  dive  t=0.12 palette=0.10 cn=0.00
+  seam 269  dive  t=0.17 palette=0.13 cn=0.00
+  seam 270  dive  t=0.21 palette=0.17 cn=0.00
+  seam 271  dive  t=0.25 palette=0.20 cn=0.00
+  seam 272  dive  t=0.29 palette=0.23 cn=0.00
+  seam 273  dive  t=0.33 palette=0.27 cn=0.00
+  seam 274  dive  t=0.38 palette=0.30 cn=0.00
+  seam 275  dive  t=0.42 palette=0.33 cn=0.00
+  seam 276  dive  t=0.46 palette=0.37 cn=0.00
+  seam 277  dive  t=0.50 palette=0.40 cn=0.00
+  [morph] gap to frame0 = 58 -> morph_strength = 0.78
+  seam 278  morph t=0.54 palette=0.43 cn=0.24
+  seam 279  morph t=0.58 palette=0.47 cn=0.28
+  seam 280  morph t=0.62 palette=0.50 cn=0.32
+  seam 281  morph t=0.67 palette=0.53 cn=0.36
+  seam 282  morph t=0.71 palette=0.57 cn=0.39
+  seam 283  morph t=0.75 palette=0.60 cn=0.43
+  seam 284  morph t=0.79 palette=0.63 cn=0.47
+  seam 285  morph t=0.83 palette=0.67 cn=0.51
+  seam 286  morph t=0.88 palette=0.70 cn=0.55
+  seam 287  morph t=0.92 palette=0.73 cn=0.00
+  seam 288  morph t=0.96 palette=0.77 cn=0.00
+  seam 289  morph t=1.00 palette=0.80 cn=0.00
+[dive] interpolated 12 -> 24fps in 34s
+[dive] counter overlay on 577 frames (42 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/circuit_city_turbo/v3/circuit_city_turbo.mp4 (42413 KB, 24.2s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/circuit_city_turbo/v3/circuit_city_turbo_divein.mp4 (43405 KB, 24.2s)
+[repair] assembled full video in /mnt/c/Users/Phil/zoomer/output/circuit_city_turbo/v3
+DONE. Compare seam_preview (new) vs seam_preview_*_ORIG (old).
+=== 15:28:35 python3 scripts/queue_review.py circuit_city turbo ===
+  copied circuit_city_turbo.mp4 -> review/circuit_city.mp4
+  copied circuit_city_turbo_divein.mp4 -> review_divein/circuit_city_divein.mp4
+circuit_city: queued to REVIEW (turbo/divein) from v3
+=== 15:28:36 python3 engine/dive.py journeys/cosmic_scales_remix.json --model ds ===
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/cosmic_scales_remix_ds/v1
+[dive] cosmic_scales_remix_ds: 377 frames, 576x1024, zoom 1.045/frame, denoise 0.5, ckpt dreamshaperXL.safetensors
+[dive] frame 1/377 (18.3s/frame, ~6863s left) :: traveling through a vast cluttered wooden desk seen up close
+[dive] frame 11/377 (9.1s/frame, ~3315s left) :: traveling through a vast cluttered wooden desk seen up close
+[dive] frame 21/377 (8.5s/frame, ~3041s left) :: plunging toward a tiny fantastical moth resting on the warm 
+[dive] frame 31/377 (8.3s/frame, ~2887s left) :: a tiny fantastical moth resting on the warm wood now filling
+[dive] frame 41/377 (8.3s/frame, ~2773s left) :: traveling through the wing of a fantastical moth, glowing sc
+[dive] frame 51/377 (8.1s/frame, ~2654s left) :: plunging toward a radiant translucent cell shining between t
+[dive] frame 61/377 (8.1s/frame, ~2551s left) :: a radiant translucent cell shining between the scales now fi
+[dive] frame 71/377 (8.1s/frame, ~2469s left) :: traveling through the luminous interior of a living cell, gl
+[dive] frame 81/377 (8.0s/frame, ~2376s left) :: plunging toward a tangle of glowing folded protein ribbons d
+[dive] frame 91/377 (8.0s/frame, ~2296s left) :: a tangle of glowing folded protein ribbons deep in the cytop
+[dive] frame 101/377 (8.0s/frame, ~2213s left) :: traveling through enormous folded protein macromolecules, tw
+[dive] frame 111/377 (8.0s/frame, ~2129s left) :: plunging toward a single radiant atom pulsing deep between t
+[dive] frame 121/377 (8.0s/frame, ~2049s left) :: a single radiant atom pulsing deep between the folds now fil
+[dive] frame 131/377 (8.0s/frame, ~1972s left) :: traveling through the inside of an atom, soft hazy luminous 
+[dive] frame 141/377 (8.0s/frame, ~1890s left) :: plunging toward the glowing nucleus, a tight cluster of blue
+[dive] frame 151/377 (8.0s/frame, ~1808s left) :: the glowing nucleus, a tight cluster of blue and white spher
+[dive] frame 161/377 (8.0s/frame, ~1730s left) :: traveling through glowing particle tracks curling in delicat
+[dive] frame 171/377 (8.0s/frame, ~1648s left) :: plunging toward the vast glowing cosmic web, faint luminous 
+[dive] frame 181/377 (8.0s/frame, ~1567s left) :: the vast glowing cosmic web, faint luminous filaments of gal
+[dive] frame 191/377 (8.0s/frame, ~1487s left) :: traveling through the vast cosmic web seen from an oblique a
+[dive] frame 201/377 (8.0s/frame, ~1405s left) :: plunging toward a luminous spiral galaxy caught in a shining
+[dive] frame 211/377 (8.0s/frame, ~1325s left) :: traveling through the inside of a spiral galaxy seen from a 
+[dive] frame 221/377 (8.0s/frame, ~1246s left) :: plunging toward a single brilliant golden star wrapped in fl
+[dive] frame 231/377 (8.0s/frame, ~1165s left) :: plunging toward a single brilliant golden star wrapped in fl
+[dive] frame 241/377 (8.0s/frame, ~1085s left) :: traveling through the corona of a blazing star, arcs of fire
+[dive] frame 251/377 (8.0s/frame, ~1006s left) :: plunging toward a round opal planet glowing in its orbit, it
+[dive] frame 261/377 (8.0s/frame, ~926s left) :: plunging toward a round opal planet glowing in its orbit, it
+[dive] frame 271/377 (8.0s/frame, ~846s left) :: traveling through a huge spherical planet seen from space, i
+[dive] frame 281/377 (8.0s/frame, ~766s left) :: plunging toward a vast sunlit continent of striated canyons 
+[dive] frame 291/377 (8.0s/frame, ~686s left) :: a vast sunlit continent of striated canyons and mountain ran
+[dive] frame 301/377 (8.0s/frame, ~606s left) :: traveling through a vast continent seen from high altitude, 
+[dive] frame 311/377 (8.0s/frame, ~527s left) :: plunging toward a sprawling city of lights nestled in a wide
+[dive] frame 321/377 (8.0s/frame, ~447s left) :: a sprawling city of lights nestled in a wide river valley no
+[dive] frame 331/377 (8.0s/frame, ~367s left) :: traveling through an impossible city of luminous towers, arc
+[dive] frame 341/377 (8.0s/frame, ~287s left) :: plunging toward a great glowing garden park deep among the t
+[dive] frame 351/377 (8.0s/frame, ~207s left) :: a great glowing garden park deep among the towers now fillin
+[dive] frame 361/377 (8.0s/frame, ~128s left) :: traveling through a lush impossible garden forest, giant blo
+[dive] frame 371/377 (8.0s/frame, ~48s left) :: plunging toward a vast cluttered wooden desk seen up close, 
+[dive] frame 377/377 (8.0s/frame, ~0s left) :: plunging toward a vast cluttered wooden desk seen up close, 
+[dive] interpolated 12 -> 24fps in 59s
+[dive] counter overlay on 751 frames (48 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/cosmic_scales_remix_ds/v1/cosmic_scales_remix_ds.mp4 (46192 KB, 31.4s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/cosmic_scales_remix_ds/v1/cosmic_scales_remix_ds_divein.mp4 (47089 KB, 31.4s)
+[dive] done in 3212s
+=== 16:22:08 python3 scripts/queue_review.py cosmic_scales_remix ds ===
+  copied cosmic_scales_remix_ds.mp4 -> review/cosmic_scales_remix_ds.mp4
+  copied cosmic_scales_remix_ds_divein.mp4 -> review_divein/cosmic_scales_remix_ds_divein.mp4
+cosmic_scales_remix: queued to REVIEW (ds/divein) from v1
+=== 16:22:09 python3 engine/dive.py journeys/circuit_city.json --model ds ===
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/circuit_city_ds/v1
+[dive] circuit_city_ds: 290 frames, 576x1024, zoom 1.045/frame, denoise 0.5, ckpt dreamshaperXL.safetensors
+[dive] frame 1/290 (9.0s/frame, ~2598s left) :: traveling through an endless neon megacity at night seen fro
+[dive] frame 11/290 (7.9s/frame, ~2202s left) :: traveling through an endless neon megacity at night seen fro
+[dive] frame 21/290 (7.9s/frame, ~2127s left) :: plunging toward a glowing green circuit board far below, its
+[dive] frame 31/290 (8.0s/frame, ~2060s left) :: a glowing green circuit board far below, its copper streets 
+[dive] frame 41/290 (8.0s/frame, ~1981s left) :: traveling through a vast circuit board landscape up close, w
+[dive] frame 51/290 (8.0s/frame, ~1901s left) :: plunging toward a single dark microchip die glinting at the 
+[dive] frame 61/290 (8.0s/frame, ~1830s left) :: a single dark microchip die glinting at the heart of the boa
+[dive] frame 71/290 (8.0s/frame, ~1749s left) :: traveling through the mirror-smooth surface of a silicon chi
+[dive] frame 81/290 (8.0s/frame, ~1668s left) :: plunging toward a shining cubic crystal lattice of silicon a
+[dive] frame 91/290 (8.0s/frame, ~1593s left) :: a shining cubic crystal lattice of silicon atoms beneath the
+[dive] frame 101/290 (8.0s/frame, ~1511s left) :: traveling through an immense three-dimensional crystal latti
+[dive] frame 111/290 (8.0s/frame, ~1430s left) :: plunging toward a single radiant atom swelling huge among th
+[dive] frame 121/290 (8.0s/frame, ~1353s left) :: a single radiant atom swelling huge among the lattice now fi
+[dive] frame 131/290 (8.0s/frame, ~1270s left) :: traveling through the inside of an atom, soft hazy luminous 
+[dive] frame 141/290 (8.0s/frame, ~1190s left) :: plunging toward a boiling web of quantum foam and luminous f
+[dive] frame 151/290 (8.0s/frame, ~1113s left) :: a boiling web of quantum foam and luminous filaments spreadi
+[dive] frame 161/290 (8.0s/frame, ~1031s left) :: traveling through the vast cosmic web seen from an oblique a
+[dive] frame 171/290 (8.0s/frame, ~951s left) :: plunging toward a luminous spiral galaxy caught in a shining
+[dive] frame 181/290 (8.0s/frame, ~872s left) :: a luminous spiral galaxy caught in a shining filament now fi
+[dive] frame 191/290 (8.0s/frame, ~792s left) :: traveling through the inside of a spiral galaxy seen from a 
+[dive] frame 201/290 (8.0s/frame, ~711s left) :: plunging toward a single brilliant blue-white star wrapped i
+[dive] frame 211/290 (8.0s/frame, ~631s left) :: traveling through the corona of a blazing blue-white star, a
+[dive] frame 221/290 (8.0s/frame, ~551s left) :: plunging toward a dark planet on its night side, freckled wi
+[dive] frame 231/290 (8.0s/frame, ~470s left) :: plunging toward a dark planet on its night side, freckled wi
+[dive] frame 241/290 (8.0s/frame, ~391s left) :: traveling through a huge planet seen from space on its night
+[dive] frame 251/290 (8.0s/frame, ~311s left) :: plunging toward a wide continent blanketed edge to edge in l
+[dive] frame 261/290 (8.0s/frame, ~231s left) :: plunging toward a wide continent blanketed edge to edge in l
+[dive] frame 271/290 (8.0s/frame, ~151s left) :: traveling through a whole continent at night from high altit
+[dive] frame 281/290 (8.0s/frame, ~72s left) :: plunging toward an endless neon megacity at night seen from 
+[dive] frame 290/290 (8.0s/frame, ~0s left) :: plunging toward an endless neon megacity at night seen from 
+[dive] interpolated 12 -> 24fps in 39s
+[dive] counter overlay on 577 frames (42 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/circuit_city_ds/v1/circuit_city_ds.mp4 (36211 KB, 24.2s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/circuit_city_ds/v1/circuit_city_ds_divein.mp4 (36734 KB, 24.2s)
+[dive] done in 2454s
+=== 17:03:03 python3 scripts/queue_review.py circuit_city ds ===
+  copied circuit_city_ds.mp4 -> review/circuit_city_ds.mp4
+  copied circuit_city_ds_divein.mp4 -> review_divein/circuit_city_ds_divein.mp4
+circuit_city: queued to REVIEW (ds/divein) from v1
+=== 17:03:04 python3 engine/dive.py journeys/stormglass.json --model ds ===
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/stormglass_ds/v1
+[dive] stormglass_ds: 261 frames, 576x1024, zoom 1.045/frame, denoise 0.5, ckpt dreamshaperXL.safetensors
+[dive] frame 1/261 (6.5s/frame, ~1699s left) :: traveling through towering thunderhead cloudscape from the a
+[dive] frame 11/261 (7.9s/frame, ~1973s left) :: traveling through towering thunderhead cloudscape from the a
+[dive] frame 21/261 (7.9s/frame, ~1902s left) :: plunging toward a single silver raindrop falling away from t
+[dive] frame 31/261 (7.9s/frame, ~1826s left) :: a single silver raindrop falling away from the clouds now fi
+[dive] frame 41/261 (8.0s/frame, ~1755s left) :: traveling through one enormous translucent raindrop falling 
+[dive] frame 51/261 (7.9s/frame, ~1668s left) :: plunging toward the swirling water world suspended inside th
+[dive] frame 61/261 (7.9s/frame, ~1586s left) :: the swirling water world suspended inside the drop now filli
+[dive] frame 71/261 (8.0s/frame, ~1511s left) :: traveling through inside the raindrop, a vast underwater-lik
+[dive] frame 81/261 (7.9s/frame, ~1430s left) :: plunging toward a cluster of glowing water molecules driftin
+[dive] frame 91/261 (7.9s/frame, ~1347s left) :: a cluster of glowing water molecules drifting in the light n
+[dive] frame 101/261 (7.9s/frame, ~1270s left) :: traveling through enormous glowing water molecules, bright p
+[dive] frame 111/261 (7.9s/frame, ~1189s left) :: plunging toward a single radiant atom swelling huge among th
+[dive] frame 121/261 (7.9s/frame, ~1108s left) :: a single radiant atom swelling huge among the molecules now 
+[dive] frame 131/261 (7.9s/frame, ~1030s left) :: traveling through the inside of an atom, soft hazy luminous 
+[dive] frame 141/261 (7.9s/frame, ~950s left) :: plunging toward a boiling web of quantum foam and luminous f
+[dive] frame 151/261 (7.9s/frame, ~870s left) :: a boiling web of quantum foam and luminous filaments spreadi
+[dive] frame 161/261 (7.9s/frame, ~792s left) :: traveling through the vast cosmic web seen from an oblique a
+[dive] frame 171/261 (7.9s/frame, ~712s left) :: plunging toward a luminous spiral galaxy caught in a shining
+[dive] frame 181/261 (7.9s/frame, ~633s left) :: a luminous spiral galaxy caught in a shining filament now fi
+[dive] frame 191/261 (7.9s/frame, ~554s left) :: traveling through the inside of a spiral galaxy from a tilte
+[dive] frame 201/261 (8.0s/frame, ~477s left) :: plunging toward a single blazing golden star wrapped in flar
+[dive] frame 211/261 (8.0s/frame, ~400s left) :: traveling through the corona of a blazing star, arcs of fire
+[dive] frame 221/261 (8.0s/frame, ~319s left) :: plunging toward a giant stormy gas planet glowing in its orb
+[dive] frame 231/261 (8.0s/frame, ~240s left) :: plunging toward a giant stormy gas planet glowing in its orb
+[dive] frame 241/261 (8.0s/frame, ~160s left) :: traveling through a colossal gas giant filling the view, swi
+[dive] frame 251/261 (8.0s/frame, ~80s left) :: plunging toward towering thunderhead cloudscape from the air
+[dive] frame 261/261 (8.0s/frame, ~0s left) :: plunging toward towering thunderhead cloudscape from the air
+[dive] interpolated 12 -> 24fps in 49s
+[dive] counter overlay on 519 frames (41 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/stormglass_ds/v1/stormglass_ds.mp4 (31584 KB, 21.8s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/stormglass_ds/v1/stormglass_ds_divein.mp4 (31972 KB, 21.8s)
+[dive] done in 2233s
+=== 17:40:17 python3 scripts/queue_review.py stormglass ds ===
+  copied stormglass_ds.mp4 -> review/stormglass_ds.mp4
+  copied stormglass_ds_divein.mp4 -> review_divein/stormglass_ds_divein.mp4
+stormglass: queued to REVIEW (ds/divein) from v1
+=== 17:40:18 python3 engine/dive.py journeys/antenna_ball.json --model ds ===
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/antenna_ball_ds/v3
+[dive] antenna_ball_ds: 207 frames, 576x1024, zoom 1.045/frame, denoise 0.5, ckpt dreamshaperXL.safetensors
+[dive] frame 1/207 (6.4s/frame, ~1325s left) :: traveling through a sunlit wildflower meadow, petals and gra
+[dive] frame 11/207 (8.0s/frame, ~1565s left) :: traveling through a sunlit wildflower meadow, petals and gra
+[dive] frame 21/207 (8.0s/frame, ~1481s left) :: plunging toward a tiny glossy scarlet ladybug resting on a g
+[dive] frame 31/207 (8.0s/frame, ~1405s left) :: a tiny glossy scarlet ladybug resting on a green leaf now fi
+[dive] frame 41/207 (8.1s/frame, ~1339s left) :: traveling through a polished lacquered scarlet dome speckled
+[dive] frame 51/207 (8.0s/frame, ~1252s left) :: plunging toward one perfect glossy black ball at the very ti
+[dive] frame 61/207 (8.0s/frame, ~1169s left) :: one perfect glossy black ball at the very tip of the antenna
+[dive] frame 71/207 (8.0s/frame, ~1094s left) :: traveling through a single flawless glossy black sphere fill
+[dive] frame 81/207 (8.0s/frame, ~1010s left) :: traveling through a single flawless glossy black sphere fill
+[dive] frame 91/207 (8.0s/frame, ~927s left) :: plunging toward the sphere's mirrored curve opening into a v
+[dive] frame 101/207 (8.0s/frame, ~847s left) :: plunging toward the sphere's mirrored curve opening into a v
+[dive] frame 111/207 (8.0s/frame, ~766s left) :: the sphere's mirrored curve opening into a vast glossy blue-
+[dive] frame 121/207 (8.0s/frame, ~685s left) :: traveling through a vast glossy planet filling all of space,
+[dive] frame 131/207 (8.0s/frame, ~605s left) :: traveling through a vast glossy planet filling all of space,
+[dive] frame 141/207 (7.9s/frame, ~525s left) :: plunging toward billowing white clouds drifting over green a
+[dive] frame 151/207 (7.9s/frame, ~444s left) :: billowing white clouds drifting over green and gold country 
+[dive] frame 161/207 (7.9s/frame, ~365s left) :: traveling through billowing white clouds drifting over rolli
+[dive] frame 171/207 (7.9s/frame, ~286s left) :: plunging toward a sunlit flowering treetop canopy swaying ge
+[dive] frame 181/207 (7.9s/frame, ~206s left) :: a sunlit flowering treetop canopy swaying gently now filling
+[dive] frame 191/207 (7.9s/frame, ~127s left) :: traveling through a sunlit flowering treetop canopy seen fro
+[dive] frame 201/207 (7.9s/frame, ~48s left) :: plunging toward a sunlit wildflower meadow, petals and grass
+[dive] frame 207/207 (7.9s/frame, ~0s left) :: plunging toward a sunlit wildflower meadow, petals and grass
+[dive] interpolated 12 -> 24fps in 40s
+[dive] counter overlay on 411 frames (20 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/antenna_ball_ds/v3/antenna_ball_ds.mp4 (21735 KB, 17.2s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/antenna_ball_ds/v3/antenna_ball_ds_divein.mp4 (22111 KB, 17.2s)
+[dive] done in 1758s
+=== 18:09:36 python3 scripts/queue_review.py antenna_ball ds ===
+  copied antenna_ball_ds.mp4 -> review/antenna_ball_ds.mp4
+  copied antenna_ball_ds_divein.mp4 -> review_divein/antenna_ball_ds_divein.mp4
+antenna_ball: queued to REVIEW (ds/divein) from v3
+=== 18:09:37 python3 engine/dive.py journeys/skyfog.json --model ds ===
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/skyfog_ds/v3
+[dive] skyfog_ds: 174 frames, 576x1024, zoom 1.045/frame, denoise 0.5, ckpt dreamshaperXL.safetensors
+[dive] frame 1/174 (6.5s/frame, ~1124s left) :: traveling through the warm lamplit room at the top of a ligh
+[dive] frame 11/174 (8.0s/frame, ~1312s left) :: traveling through the warm lamplit room at the top of a ligh
+[dive] frame 21/174 (8.0s/frame, ~1219s left) :: plunging toward one small fishing boat's light adrift in the
+[dive] frame 31/174 (7.9s/frame, ~1136s left) :: one small fishing boat's light adrift in the fog below now f
+[dive] frame 41/174 (8.0s/frame, ~1070s left) :: traveling through banks of silver fog rolling over a dark ro
+[dive] frame 51/174 (8.0s/frame, ~988s left) :: plunging toward one towering thunderhead glowing above the c
+[dive] frame 61/174 (8.0s/frame, ~906s left) :: one towering thunderhead glowing above the cloud deck now fi
+[dive] frame 71/174 (8.0s/frame, ~825s left) :: traveling through vast sunlit canyons of billowing cloud see
+[dive] frame 81/174 (8.0s/frame, ~747s left) :: plunging toward the dark calm eye of a huge spiral storm far
+[dive] frame 91/174 (8.0s/frame, ~666s left) :: the dark calm eye of a huge spiral storm far below now filli
+[dive] frame 101/174 (8.0s/frame, ~585s left) :: traveling through an immense spiral cyclone seen from orbit,
+[dive] frame 111/174 (8.0s/frame, ~505s left) :: plunging toward one glowing rose-colored pillar of nebula mi
+[dive] frame 121/174 (8.0s/frame, ~424s left) :: one glowing rose-colored pillar of nebula mist far out in th
+[dive] frame 131/174 (8.0s/frame, ~344s left) :: traveling through towering pillars of glowing nebula mist cr
+[dive] frame 141/174 (8.0s/frame, ~265s left) :: plunging toward a low bank of luminous sea fog settling over
+[dive] frame 151/174 (8.0s/frame, ~184s left) :: a low bank of luminous sea fog settling over dark water far 
+[dive] frame 161/174 (8.0s/frame, ~104s left) :: traveling through a fog-drowned night coast, the slow sweepi
+[dive] frame 171/174 (8.0s/frame, ~24s left) :: plunging toward the warm lamplit room at the top of a lighth
+[dive] frame 174/174 (8.0s/frame, ~0s left) :: plunging toward the warm lamplit room at the top of a lighth
+[dive] interpolated 12 -> 24fps in 33s
+[dive] counter overlay on 345 frames (27 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/skyfog_ds/v3/skyfog_ds.mp4 (18293 KB, 14.5s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/skyfog_ds/v3/skyfog_ds_divein.mp4 (18723 KB, 14.5s)
+[dive] done in 1492s
+=== 18:34:29 python3 scripts/queue_review.py skyfog ds ===
+  copied skyfog_ds.mp4 -> review/skyfog_ds.mp4
+  copied skyfog_ds_divein.mp4 -> review_divein/skyfog_ds_divein.mp4
+skyfog: queued to REVIEW (ds/divein) from v3
+=== 18:34:27 python3 engine/dive.py journeys/mineral_heart.json --model ds ===
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/mineral_heart_ds/v5
+[dive] mineral_heart_ds: 328 frames, 576x1024, zoom 1.045/frame, denoise 0.5, ckpt dreamshaperXL.safetensors
+[dive] frame 1/328 (9.3s/frame, ~3039s left) :: traveling through the six branching arms of an immense snowf
+[dive] frame 11/328 (8.2s/frame, ~2600s left) :: traveling through the six branching arms of an immense snowf
+[dive] frame 21/328 (8.1s/frame, ~2479s left) :: plunging toward a glowing prism of stacked crystal molecules
+[dive] frame 31/328 (8.0s/frame, ~2387s left) :: a glowing prism of stacked crystal molecules deep in the ice
+[dive] frame 41/328 (8.0s/frame, ~2302s left) :: traveling through glowing crystal molecules stacked in repea
+[dive] frame 51/328 (8.0s/frame, ~2217s left) :: plunging toward a perfect shining atomic lattice, the only o
+[dive] frame 61/328 (8.0s/frame, ~2145s left) :: a perfect shining atomic lattice now filling the entire view
+[dive] frame 71/328 (8.0s/frame, ~2064s left) :: traveling through the interior of a perfect atomic crystal l
+[dive] frame 81/328 (8.0s/frame, ~1983s left) :: plunging toward a vast crystalline web of glowing filaments 
+[dive] frame 91/328 (8.0s/frame, ~1902s left) :: a vast crystalline web of glowing filaments far in the darkn
+[dive] frame 101/328 (8.0s/frame, ~1824s left) :: traveling through the vast cosmic web seen from an oblique a
+[dive] frame 111/328 (8.0s/frame, ~1741s left) :: plunging toward a diamond spiral galaxy on a dark filament, 
+[dive] frame 121/328 (8.0s/frame, ~1657s left) :: a diamond spiral galaxy on a dark filament now filling the e
+[dive] frame 131/328 (8.0s/frame, ~1578s left) :: traveling through a tilted spiral galaxy that glitters like 
+[dive] frame 141/328 (8.0s/frame, ~1497s left) :: plunging toward one round blazing white-gold sun far in the 
+[dive] frame 151/328 (8.0s/frame, ~1416s left) :: one round blazing white-gold sun far in the distance now fil
+[dive] frame 161/328 (8.0s/frame, ~1337s left) :: traveling through a huge round blazing white-gold sun with a
+[dive] frame 171/328 (8.0s/frame, ~1256s left) :: plunging toward a dark planet veined with glowing embers, th
+[dive] frame 181/328 (8.0s/frame, ~1175s left) :: a dark planet veined with glowing embers now filling the ent
+[dive] frame 191/328 (8.0s/frame, ~1096s left) :: traveling through a huge spherical volcanic planet seen from
+[dive] frame 201/328 (8.0s/frame, ~1017s left) :: plunging toward a snow-and-mineral mountain range on the cur
+[dive] frame 211/328 (8.0s/frame, ~936s left) :: a snow-and-mineral mountain range on the curved horizon now 
+[dive] frame 221/328 (8.0s/frame, ~856s left) :: traveling through a vast striated mountain range seen from h
+[dive] frame 231/328 (8.0s/frame, ~775s left) :: plunging toward a glittering mineral canyon wall far below, 
+[dive] frame 241/328 (8.0s/frame, ~695s left) :: plunging toward a glittering mineral canyon wall far below, 
+[dive] frame 251/328 (8.0s/frame, ~615s left) :: traveling through a canyon wall shot through with glowing ve
+[dive] frame 261/328 (8.0s/frame, ~535s left) :: plunging toward a great cracked geode boulder glinting among
+[dive] frame 271/328 (8.0s/frame, ~455s left) :: a great cracked geode boulder glinting among mossy rocks now
+[dive] frame 281/328 (8.0s/frame, ~376s left) :: traveling through a great cracked-open geode boulder, its da
+[dive] frame 291/328 (8.0s/frame, ~296s left) :: plunging toward a lacework of feathery frost-white crystals 
+[dive] frame 301/328 (8.0s/frame, ~216s left) :: a lacework of feathery frost-white crystals growing in its h
+[dive] frame 311/328 (8.0s/frame, ~136s left) :: traveling through a dense thicket of slender frost-white cry
+[dive] frame 321/328 (8.0s/frame, ~56s left) :: plunging toward the six branching arms of an immense snowfla
+[dive] frame 328/328 (8.0s/frame, ~0s left) :: plunging toward the six branching arms of an immense snowfla
+[dive] interpolated 12 -> 24fps in 63s
+[dive] counter overlay on 653 frames (42 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/mineral_heart_ds/v5/mineral_heart_ds.mp4 (42562 KB, 27.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/mineral_heart_ds/v5/mineral_heart_ds_divein.mp4 (43256 KB, 27.3s)
+[dive] done in 2816s
+=== 19:21:24 python3 scripts/queue_review.py mineral_heart ds ===
+  copied mineral_heart_ds.mp4 -> review/mineral_heart_ds.mp4
+  copied mineral_heart_ds_divein.mp4 -> review_divein/mineral_heart_ds_divein.mp4
+mineral_heart: queued to REVIEW (ds/divein) from v5
+=== 19:21:25 python3 engine/dive.py journeys/stormglass.json --model turbo ===
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/stormglass_turbo/v2
+[dive] stormglass_turbo: 261 frames, 576x1024, zoom 1.045/frame, denoise 0.58, ckpt SDXL-TURBO\sd_xl_turbo_1.0_fp16.safetensors
+[dive] frame 1/261 (7.9s/frame, ~2053s left) :: traveling through towering thunderhead cloudscape from the a
+[dive] frame 11/261 (3.9s/frame, ~969s left) :: traveling through towering thunderhead cloudscape from the a
+[dive] frame 21/261 (3.7s/frame, ~893s left) :: plunging toward a single silver raindrop falling away from t
+[dive] frame 31/261 (3.7s/frame, ~844s left) :: a single silver raindrop falling away from the clouds now fi
+[dive] frame 41/261 (3.6s/frame, ~797s left) :: traveling through one enormous translucent raindrop falling 
+[dive] frame 51/261 (3.6s/frame, ~749s left) :: plunging toward the swirling water world suspended inside th
+[dive] frame 61/261 (3.6s/frame, ~715s left) :: the swirling water world suspended inside the drop now filli
+[dive] frame 71/261 (3.6s/frame, ~678s left) :: traveling through inside the raindrop, a vast underwater-lik
+[dive] frame 81/261 (3.6s/frame, ~640s left) :: plunging toward a cluster of glowing water molecules driftin
+[dive] frame 91/261 (3.6s/frame, ~604s left) :: a cluster of glowing water molecules drifting in the light n
+[dive] frame 101/261 (3.5s/frame, ~568s left) :: traveling through enormous glowing water molecules, bright p
+[dive] frame 111/261 (3.5s/frame, ~532s left) :: plunging toward a single radiant atom swelling huge among th
+[dive] frame 121/261 (3.5s/frame, ~496s left) :: a single radiant atom swelling huge among the molecules now 
+[dive] frame 131/261 (3.5s/frame, ~458s left) :: traveling through the inside of an atom, soft hazy luminous 
+[dive] frame 141/261 (3.5s/frame, ~423s left) :: plunging toward a boiling web of quantum foam and luminous f
+[dive] frame 151/261 (3.5s/frame, ~388s left) :: a boiling web of quantum foam and luminous filaments spreadi
+[dive] frame 161/261 (3.5s/frame, ~352s left) :: traveling through the vast cosmic web seen from an oblique a
+[dive] frame 171/261 (3.5s/frame, ~317s left) :: plunging toward a luminous spiral galaxy caught in a shining
+[dive] frame 181/261 (3.5s/frame, ~282s left) :: a luminous spiral galaxy caught in a shining filament now fi
+[dive] frame 191/261 (3.5s/frame, ~246s left) :: traveling through the inside of a spiral galaxy from a tilte
+[dive] frame 201/261 (3.5s/frame, ~211s left) :: plunging toward a single blazing golden star wrapped in flar
+[dive] frame 211/261 (3.5s/frame, ~176s left) :: traveling through the corona of a blazing star, arcs of fire
+[dive] frame 221/261 (3.5s/frame, ~141s left) :: plunging toward a giant stormy gas planet glowing in its orb
+[dive] frame 231/261 (3.5s/frame, ~105s left) :: plunging toward a giant stormy gas planet glowing in its orb
+[dive] frame 241/261 (3.5s/frame, ~70s left) :: traveling through a colossal gas giant filling the view, swi
+[dive] frame 251/261 (3.5s/frame, ~35s left) :: plunging toward towering thunderhead cloudscape from the air
+[dive] frame 261/261 (3.5s/frame, ~0s left) :: plunging toward towering thunderhead cloudscape from the air
+[dive] interpolated 12 -> 24fps in 51s
+[dive] counter overlay on 519 frames (41 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/stormglass_turbo/v2/stormglass_turbo.mp4 (32410 KB, 21.8s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/stormglass_turbo/v2/stormglass_turbo_divein.mp4 (33317 KB, 21.8s)
+[dive] done in 1044s
+=== 19:38:49 python3 scripts/queue_review.py stormglass turbo ===
+  copied stormglass_turbo.mp4 -> review/stormglass.mp4
+  copied stormglass_turbo_divein.mp4 -> review_divein/stormglass_divein.mp4
+stormglass: queued to REVIEW (turbo/divein) from v2
+=== 19:38:49 python3 engine/dive.py journeys/antenna_ball.json --model turbo ===
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/antenna_ball_turbo/v1
+[dive] antenna_ball_turbo: 207 frames, 576x1024, zoom 1.045/frame, denoise 0.58, ckpt SDXL-TURBO\sd_xl_turbo_1.0_fp16.safetensors
+[dive] frame 1/207 (3.9s/frame, ~810s left) :: traveling through a sunlit wildflower meadow, petals and gra
+[dive] frame 11/207 (3.6s/frame, ~701s left) :: traveling through a sunlit wildflower meadow, petals and gra
+[dive] frame 21/207 (3.4s/frame, ~640s left) :: plunging toward a tiny glossy scarlet ladybug resting on a g
+[dive] frame 31/207 (3.5s/frame, ~612s left) :: a tiny glossy scarlet ladybug resting on a green leaf now fi
+[dive] frame 41/207 (3.5s/frame, ~580s left) :: traveling through a polished lacquered scarlet dome speckled
+[dive] frame 51/207 (3.5s/frame, ~549s left) :: plunging toward one perfect glossy black ball at the very ti
+[dive] frame 61/207 (3.5s/frame, ~516s left) :: one perfect glossy black ball at the very tip of the antenna
+[dive] frame 71/207 (3.5s/frame, ~481s left) :: traveling through a single flawless glossy black sphere fill
+[dive] frame 81/207 (3.5s/frame, ~442s left) :: traveling through a single flawless glossy black sphere fill
+[dive] frame 91/207 (3.5s/frame, ~407s left) :: plunging toward the sphere's mirrored curve opening into a v
+[dive] frame 101/207 (3.5s/frame, ~373s left) :: plunging toward the sphere's mirrored curve opening into a v
+[dive] frame 111/207 (3.5s/frame, ~339s left) :: the sphere's mirrored curve opening into a vast glossy blue-
+[dive] frame 121/207 (3.5s/frame, ~304s left) :: traveling through a vast glossy planet filling all of space,
+[dive] frame 131/207 (3.5s/frame, ~268s left) :: traveling through a vast glossy planet filling all of space,
+[dive] frame 141/207 (3.5s/frame, ~233s left) :: plunging toward billowing white clouds drifting over green a
+[dive] frame 151/207 (3.5s/frame, ~198s left) :: billowing white clouds drifting over green and gold country 
+[dive] frame 161/207 (3.5s/frame, ~163s left) :: traveling through billowing white clouds drifting over rolli
+[dive] frame 171/207 (3.5s/frame, ~128s left) :: plunging toward a sunlit flowering treetop canopy swaying ge
+[dive] frame 181/207 (3.5s/frame, ~92s left) :: a sunlit flowering treetop canopy swaying gently now filling
+[dive] frame 191/207 (3.5s/frame, ~57s left) :: traveling through a sunlit flowering treetop canopy seen fro
+[dive] frame 201/207 (3.5s/frame, ~21s left) :: plunging toward a sunlit wildflower meadow, petals and grass
+[dive] frame 207/207 (3.5s/frame, ~0s left) :: plunging toward a sunlit wildflower meadow, petals and grass
+[dive] interpolated 12 -> 24fps in 38s
+[dive] counter overlay on 411 frames (20 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/antenna_ball_turbo/v1/antenna_ball_turbo.mp4 (14631 KB, 17.2s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/antenna_ball_turbo/v1/antenna_ball_turbo_divein.mp4 (15310 KB, 17.2s)
+[dive] done in 820s
+=== 19:52:29 python3 scripts/queue_review.py antenna_ball turbo ===
+  copied antenna_ball_turbo.mp4 -> review/antenna_ball.mp4
+  copied antenna_ball_turbo_divein.mp4 -> review_divein/antenna_ball_divein.mp4
+antenna_ball: queued to REVIEW (turbo/divein) from v1
+=== 19:52:30 python3 engine/dive.py journeys/skyfog.json --model turbo ===
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/skyfog_turbo/v1
+[dive] skyfog_turbo: 174 frames, 576x1024, zoom 1.045/frame, denoise 0.58, ckpt SDXL-TURBO\sd_xl_turbo_1.0_fp16.safetensors
+[dive] frame 1/174 (3.9s/frame, ~683s left) :: traveling through the warm lamplit room at the top of a ligh
+[dive] frame 11/174 (3.6s/frame, ~589s left) :: traveling through the warm lamplit room at the top of a ligh
+[dive] frame 21/174 (3.6s/frame, ~558s left) :: plunging toward one small fishing boat's light adrift in the
+[dive] frame 31/174 (3.6s/frame, ~520s left) :: one small fishing boat's light adrift in the fog below now f
+[dive] frame 41/174 (3.6s/frame, ~476s left) :: traveling through banks of silver fog rolling over a dark ro
+[dive] frame 51/174 (3.6s/frame, ~440s left) :: plunging toward one towering thunderhead glowing above the c
+[dive] frame 61/174 (3.6s/frame, ~404s left) :: one towering thunderhead glowing above the cloud deck now fi
+[dive] frame 71/174 (3.6s/frame, ~367s left) :: traveling through vast sunlit canyons of billowing cloud see
+[dive] frame 81/174 (3.6s/frame, ~332s left) :: plunging toward the dark calm eye of a huge spiral storm far
+[dive] frame 91/174 (3.6s/frame, ~295s left) :: the dark calm eye of a huge spiral storm far below now filli
+[dive] frame 101/174 (3.5s/frame, ~258s left) :: traveling through an immense spiral cyclone seen from orbit,
+[dive] frame 111/174 (3.5s/frame, ~223s left) :: plunging toward one glowing rose-colored pillar of nebula mi
+[dive] frame 121/174 (3.5s/frame, ~188s left) :: one glowing rose-colored pillar of nebula mist far out in th
+[dive] frame 131/174 (3.5s/frame, ~153s left) :: traveling through towering pillars of glowing nebula mist cr
+[dive] frame 141/174 (3.5s/frame, ~117s left) :: plunging toward a low bank of luminous sea fog settling over
+[dive] frame 151/174 (3.5s/frame, ~81s left) :: a low bank of luminous sea fog settling over dark water far 
+[dive] frame 161/174 (3.5s/frame, ~46s left) :: traveling through a fog-drowned night coast, the slow sweepi
+[dive] frame 171/174 (3.5s/frame, ~11s left) :: plunging toward the warm lamplit room at the top of a lighth
+[dive] frame 174/174 (3.5s/frame, ~0s left) :: plunging toward the warm lamplit room at the top of a lighth
+[dive] interpolated 12 -> 24fps in 32s
+[dive] counter overlay on 345 frames (27 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/skyfog_turbo/v1/skyfog_turbo.mp4 (17136 KB, 14.5s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/skyfog_turbo/v1/skyfog_turbo_divein.mp4 (17402 KB, 14.5s)
+[dive] done in 699s
+=== 20:04:09 python3 scripts/queue_review.py skyfog turbo ===
+  copied skyfog_turbo.mp4 -> review/skyfog.mp4
+  copied skyfog_turbo_divein.mp4 -> review_divein/skyfog_divein.mp4
+skyfog: queued to REVIEW (turbo/divein) from v1
+=== 20:04:09 python3 engine/dive.py journeys/mineral_heart.json --model turbo ===
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/mineral_heart_turbo/v1
+[dive] mineral_heart_turbo: 328 frames, 576x1024, zoom 1.045/frame, denoise 0.58, ckpt SDXL-TURBO\sd_xl_turbo_1.0_fp16.safetensors
+[dive] frame 1/328 (4.0s/frame, ~1309s left) :: traveling through the six branching arms of an immense snowf
+[dive] frame 11/328 (3.6s/frame, ~1129s left) :: traveling through the six branching arms of an immense snowf
+[dive] frame 21/328 (3.4s/frame, ~1057s left) :: plunging toward a glowing prism of stacked crystal molecules
+[dive] frame 31/328 (3.5s/frame, ~1036s left) :: a glowing prism of stacked crystal molecules deep in the ice
+[dive] frame 41/328 (3.5s/frame, ~1007s left) :: traveling through glowing crystal molecules stacked in repea
+[dive] frame 51/328 (3.5s/frame, ~973s left) :: plunging toward a perfect shining atomic lattice, the only o
+[dive] frame 61/328 (3.5s/frame, ~939s left) :: a perfect shining atomic lattice now filling the entire view
+[dive] frame 71/328 (3.5s/frame, ~907s left) :: traveling through the interior of a perfect atomic crystal l
+[dive] frame 81/328 (3.5s/frame, ~866s left) :: plunging toward a vast crystalline web of glowing filaments 
+[dive] frame 91/328 (3.5s/frame, ~833s left) :: a vast crystalline web of glowing filaments far in the darkn
+[dive] frame 101/328 (3.5s/frame, ~799s left) :: traveling through the vast cosmic web seen from an oblique a
+[dive] frame 111/328 (3.5s/frame, ~765s left) :: plunging toward a diamond spiral galaxy on a dark filament, 
+[dive] frame 121/328 (3.5s/frame, ~730s left) :: a diamond spiral galaxy on a dark filament now filling the e
+[dive] frame 131/328 (3.5s/frame, ~692s left) :: traveling through a tilted spiral galaxy that glitters like 
+[dive] frame 141/328 (3.5s/frame, ~657s left) :: plunging toward one round blazing white-gold sun far in the 
+[dive] frame 151/328 (3.5s/frame, ~622s left) :: one round blazing white-gold sun far in the distance now fil
+[dive] frame 161/328 (3.5s/frame, ~587s left) :: traveling through a huge round blazing white-gold sun with a
+[dive] frame 171/328 (3.5s/frame, ~553s left) :: plunging toward a dark planet veined with glowing embers, th
+[dive] frame 181/328 (3.5s/frame, ~518s left) :: a dark planet veined with glowing embers now filling the ent
+[dive] frame 191/328 (3.5s/frame, ~482s left) :: traveling through a huge spherical volcanic planet seen from
+[dive] frame 201/328 (3.5s/frame, ~448s left) :: plunging toward a snow-and-mineral mountain range on the cur
+[dive] frame 211/328 (3.5s/frame, ~413s left) :: a snow-and-mineral mountain range on the curved horizon now 
+[dive] frame 221/328 (3.5s/frame, ~378s left) :: traveling through a vast striated mountain range seen from h
+[dive] frame 231/328 (3.5s/frame, ~342s left) :: plunging toward a glittering mineral canyon wall far below, 
+[dive] frame 241/328 (3.5s/frame, ~306s left) :: plunging toward a glittering mineral canyon wall far below, 
+[dive] frame 251/328 (3.5s/frame, ~271s left) :: traveling through a canyon wall shot through with glowing ve
+[dive] frame 261/328 (3.5s/frame, ~236s left) :: plunging toward a great cracked geode boulder glinting among
+[dive] frame 271/328 (3.5s/frame, ~201s left) :: a great cracked geode boulder glinting among mossy rocks now
+[dive] frame 281/328 (3.5s/frame, ~166s left) :: traveling through a great cracked-open geode boulder, its da
+[dive] frame 291/328 (3.5s/frame, ~130s left) :: plunging toward a lacework of feathery frost-white crystals 
+[dive] frame 301/328 (3.5s/frame, ~95s left) :: a lacework of feathery frost-white crystals growing in its h
+[dive] frame 311/328 (3.5s/frame, ~60s left) :: traveling through a dense thicket of slender frost-white cry
+[dive] frame 321/328 (3.5s/frame, ~25s left) :: plunging toward the six branching arms of an immense snowfla
+[dive] frame 328/328 (3.5s/frame, ~0s left) :: plunging toward the six branching arms of an immense snowfla
+[dive] interpolated 12 -> 24fps in 63s
+[dive] counter overlay on 653 frames (42 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/mineral_heart_turbo/v1/mineral_heart_turbo.mp4 (55771 KB, 27.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/mineral_heart_turbo/v1/mineral_heart_turbo_divein.mp4 (57054 KB, 27.3s)
+[dive] done in 1336s
+=== 20:26:26 python3 scripts/queue_review.py mineral_heart turbo ===
+  copied mineral_heart_turbo.mp4 -> review/mineral_heart.mp4
+  copied mineral_heart_turbo_divein.mp4 -> review_divein/mineral_heart_divein.mp4
+mineral_heart: queued to REVIEW (turbo/divein) from v1
+=== render batch COMPLETE Wed Jul 29 20:26:27 EDT 2026 ===

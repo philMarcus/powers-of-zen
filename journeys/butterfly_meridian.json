@@ -115,5 +115,6 @@
     }
   ],
   "music_theme": "a monarch migration over a golden-hour valley, warm and soaring, wide strings and soft bells over a low drone, one bright shimmering bloom landing on the wing-scale-to-starfield seam",
-  "music_key": "E minor"
+  "music_key": "E minor",
+  "render_start": "butterfly_nebula"
 }
