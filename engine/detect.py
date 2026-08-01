@@ -36,7 +36,10 @@ def _submit(wf):
     return json.loads(urllib.request.urlopen(req, timeout=30).read())["prompt_id"]
 
 
-def _wait(pid, timeout=180):
+def _wait(pid, timeout=300):
+    # 300s for the same reason dive.run_workflow got 900: under VRAM pressure a ~2.4s Florence
+    # call can stretch enormously. Timing out here is graceful (returns None -> a tracker MISS,
+    # which is normal), but a miss caused by load is a miss we didn't need to take.
     end = time.time() + timeout
     while time.time() < end:
         try:

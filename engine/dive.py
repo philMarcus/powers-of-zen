@@ -223,9 +223,15 @@ def build_workflow(cfg, prompt, seed, init_image=None, denoise=None,
     return wf
 
 
-def run_workflow(wf, timeout=300):
+def run_workflow(wf, timeout=900):
     """Queue a workflow, wait for completion, return the output image bytes. Resilient to transient
-    ComfyUI connection hiccups (a single /history timeout must NOT kill a 200-frame render)."""
+    ComfyUI connection hiccups (a single /history timeout must NOT kill a 200-frame render).
+
+    900s, not 300s: a normal frame is ~15s, but when VRAM is tight ComfyUI silently switches to
+    per-step CPU<->GPU weight swapping and the SAME frame takes 310s. At 300s that killed two
+    renders outright (2026-07-31) — and the work wasn't even lost, the job completed at 310s with
+    nobody listening. A slow frame must never cost an hour's render; a genuinely hung ComfyUI is
+    rare and 15 minutes is an acceptable price for noticing it."""
     pid = None
     for attempt in range(5):
         try:
