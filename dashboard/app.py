@@ -289,20 +289,28 @@ def card(v, actions, show_switch=True, marker=None, captions=False):
                     bodies = vv.get("caption_bodies", [])
                     if bodies:      # re-assemble existing options without re-calling the model
                         old = vv.get("caption_options", [])
-                        idx = old.index(vv.get("caption")) if vv.get("caption") in old else 0
+                        cur = vv.get("caption")
+                        idx = old.index(cur) if cur in old else None
                         new = [assemble_caption(b, vv.get("spot_line", ""), vv.get("caption_tags", ""), hook)
                                for b in bodies]
                         vv["caption_options"] = new
-                        vv["caption"] = new[min(idx, len(new) - 1)]
-                        st.session_state[f"cap_{v['journey']}"] = vv["caption"]
+                        if idx is not None:      # only re-point the caption if it WAS an option;
+                            vv["caption"] = new[min(idx, len(new) - 1)]   # a hand-edit is left alone
+                            st.session_state[f"cap_{v['journey']}"] = vv["caption"]
                     pl.save(dd); st.rerun()
             opts = v.get("caption_options") or []
             gc = st.columns([3, 1])
             if opts:
-                idx = opts.index(v["caption"]) if v.get("caption") in opts else 0
-                pick = gc[0].radio("✍ caption options (picking one also sets the matching YouTube title)",
+                # index=None when the live caption is NOT one of the options — i.e. it was
+                # hand-edited. Previously this fell back to index 0, so the radio "selected"
+                # option 0 on every rerun and the block below wrote it over the edit: a saved
+                # hand-written caption was silently reverted on the very next redraw (and again
+                # after Approve → Music). A hand-edited caption now leaves every radio unchecked.
+                idx = opts.index(v["caption"]) if v.get("caption") in opts else None
+                pick = gc[0].radio("✍ caption options (picking one also sets the matching YouTube "
+                                   "title) — unchecked means your hand-edited caption is in use",
                                    opts, index=idx, key=f"capopt_{v['journey']}")
-                if pick != v.get("caption"):
+                if pick is not None and pick != v.get("caption"):
                     dd = data(); vv = pl.get(dd, v["journey"]); pi = opts.index(pick)
                     vv["caption"] = pick
                     yts = vv.get("yt_title_options") or []

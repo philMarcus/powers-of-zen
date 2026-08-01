@@ -184,9 +184,15 @@ def generate(journey, model="ds", no_theme=False):
     hook = bool(mascot and spot) and (v.get("spot_hook", True) if v else True)
     opts = [assemble_caption(b, spot, tags, hook) for b in bodies]
     if v:
+        # NEVER clobber a caption the user wrote or picked. Regenerating offers NEW options; it
+        # only fills the live caption when there isn't one yet (Phil 2026-07-31: "if there's
+        # something in the caption and I generate new captions, don't change the box").
+        had = (v.get("caption") or "").strip()
         v.update({"caption_bodies": bodies, "yt_title_options": yts, "spot_line": spot,
-                  "caption_tags": tags, "spot_hook": hook, "caption_options": opts,
-                  "caption": opts[0], "yt_title": yts[0] or v.get("yt_title", "")})
+                  "caption_tags": tags, "spot_hook": hook, "caption_options": opts})
+        if not had:
+            v["caption"] = opts[0]
+            v["yt_title"] = yts[0] or v.get("yt_title", "")
         pl.save(d)
         if not no_theme:
             set_music_theme_if_empty(journey, mtheme)
