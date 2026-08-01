@@ -14,7 +14,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "ice white and warm gold",
-      "scene": "a winter windowpane seen straight on from inside a dark cabin room, white frost ferns etched thick across the cold glass, fine ice crystals furred into the corners of the pane, warm light raking across the ice from one side of the room, the room empty, no one present",
+      "scene": "a tall winter windowpane of cold glass, dozens of white frost ferns etched thick across it in every direction, feathered spines and ranks of fine branches interlocking edge to edge, pale blue winter light coming through from behind",
       "target": "a white frost fern, a broad ice frond with a thick pale spine",
       "target_phrase": "a frost fern",
       "loop_target": "the winter windowpane seen straight on from inside the dark room, white frost ferns etched thick across the cold glass in warm raking light"
@@ -66,5 +66,5 @@
   ],
   "music_theme": "hushed winter stillness at a lamplit window, glassy bell tones over slow warm strings, a single crystalline chime landing on the lattice morph",
   "music_key": "A minor",
-  "render_start": "beaded_branch"
+  "render_start": "frost_pane"
 }

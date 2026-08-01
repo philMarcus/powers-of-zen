@@ -216,49 +216,38 @@ grid at compose time), so the pacing must be musical from the start. `dur` is in
 - FUTURE (PLAN.md): compose the RHYTHM first, then build video + audio from the SAME rhythm so they
   dance together natively — plus beat-synced FX on non-morph beats (drum hits → on-screen flares).
 
-## `render_start` — begin the RENDER in an abstract realm (Phil 2026-07-31)
-Frame 0 is the only txt2img frame in the whole video; every other frame inherits from it. A
-LITERAL scene is the hardest thing to establish cold (a fern, a desk, a specific room) — the
-model fills in whatever context it likes and the error propagates down the entire chain. An
-ABSTRACT / pattern realm (a lattice, a foam, a star or glowworm field, a fractal grain) is
-almost impossible to get wrong cold, and morphs into anything.
+## `render_start` — where frame 0 begins
+Journeys are CIRCULAR, so the chain may begin at ANY card. Set top-level
+`render_start`: "<register name>" and the compiler rotates the list to start there. It is
+REQUIRED — omitted, the render silently begins at card 0, which is usually the wrong card.
 
-Journeys are CIRCULAR, so the chain may begin at ANY card. Set optional top-level
-`render_start`: "<register name>" and the compiler rotates the list to start there.
-- Prefer an abstract/textural card — cosmic, subatomic, lattice, foam, field-of-lights.
-- This is INDEPENDENT of the playback opening; `scripts/phase_shift.py` still picks the frame
-  the finished video opens on. Render-start is about generation quality, not presentation.
-- **Never pick a start that lands the SEAM card first or last.** Last is worst: the loop-home
-  branch swallows it and the seam disappears entirely. `grammar` warns, but check.
-- Vary it across the catalog — it changes which world is rendered "cleanest".
-- **`render_start` is REQUIRED, not optional** (Phil 2026-08-01: "make sure all journeys have good
-  render starts set"). Omitting it silently starts at card 0, which is almost always the literal
-  establishing scene — 11 of 24 journeys were about to render frame 0 on a lecture hall, a street
-  corner, a tailor's atelier. Verify the whole catalog with `python3 scripts/audit_starts.py`
-  (flags a missing start, a seam at either end, and literal-place words in the card that would
-  actually render first) and a single journey with `python3 scripts/preflight.py <journey>`.
-- Picking one is mechanical: with the seam at index `s` of `n` cards, rotating to index `i` puts
-  the seam at `(s-i) mod n`, so **`i` must be neither `s` nor `s+1`** — otherwise the seam lands
-  first or last. Among the rest, take the most abstract/textural card (a tiling, a grain, a
-  filament web, a field of dots, a nebula).
-- **Abstract is necessary but NOT sufficient — abstraction is also a RISK on frame 0.** An
-  abstract card has no real-world referent, so the checkpoint has maximum freedom about what to
-  actually draw, and it will reach for the densest region of its training set. DreamShaper's is
-  fantasy character art. quantum_orrery obeyed every rule above (`render_start: hadron`, a
-  particle realm) and rendered **a haloed goddess** for the whole video, because its frame-0
-  prompt read: *"quark cores bound inside one luminous shell … a crimson halo around the trio …
-  warm gilded light … storybook grandeur … jewel-bright accents."* Nothing there is a person —
-  and every word of it is character-art bait.
-- **Name-only physics is the trap: WRITE THE PICTURE, not the term** (Phil 2026-07-31). Stay
-  cosmic/microscopic — do NOT reach for brass or glass to "anchor" an abstract realm; that
-  imports the wrong world. The fix is that words like *quark, hadron, boson, field, spacetime
-  foam, probability cloud, superposition* are **names with no image behind them**. The model has
-  never seen a quark, so the term contributes nothing and the surrounding adjectives decide the
-  picture alone. YOU decide what a quark looks like, at compose time, in purely visual terms —
-  shape, count, motion, texture, light, spacing, depth — so the frame is fully determined by
-  description rather than by the checkpoint's favourite subject. Write "three small white-hot
-  points in a taut triangle, thin strands of light stretched between them, each strand thinning
-  as the points drift apart, everything else unlit" — never "three quark cores bound in a shell."
+Frame 0 carries two jobs at once: it is the only txt2img frame, so every later frame inherits
+from it, and it is the LOOP-HOME target, since the last card dives back into it. Both jobs want
+the same two properties, and both are required.
+
+1. **A FIELD OF VIEW, not a target.** The card must show many things spread across the frame
+   rather than one subject the camera is aimed at. The question to ask is whether the frame is a
+   PLACE or a portrait of a single thing; it must be a place. Rendered cold, a close-up has no
+   surroundings so the model invents them; and on the return, a dive can match a broad field from
+   almost any position, while it can match one object only at a single exact position and
+   magnification — which is what makes a loop close as a visible cut.
+   This is independent of scale. `exp` is the size of the object, not the width of the shot, and
+   every scale has both kinds of card — the journey alternates between them by design. Never
+   choose a start by `exp`.
+2. **Prefer the cosmic or the subatomic end of the journey.** Those realms establish cleanly from
+   nothing and blend most forgivingly on the return. A recognizable everyday place carries
+   implied context the model will fill in however it likes, and is less forgiving to land back on.
+   Fall back to one only when no cosmic or subatomic card in the journey satisfies (1).
+
+Constraint: never let the rotation put the SEAM card first or last (last is worst — the loop-home
+branch swallows it). With the seam at index `s` of `n`, rotating to `i` puts it at `(s-i) mod n`,
+so `i` must be neither `s` nor `s+1`.
+
+If no card satisfies both requirements, that is a JOURNEY bug — write a card that does, rather
+than settling for the least-bad one. `render_start` is independent of the playback opening;
+`scripts/phase_shift.py` still chooses the frame the finished video opens on.
+Verify with `python3 scripts/audit_starts.py` (whole catalog) or
+`python3 scripts/preflight.py <journey>` (one).
 
 ## Loop + self-similar seam (still critical)
 Journeys are **circular and self-similar**: the last card dives back into the FIRST world.
@@ -295,22 +284,22 @@ myth, a trending sound, an emotion…):
 - **Empty human interiors.** Where a lone figure tends to intrude (studies, steam, kitchens),
   write that `scene` "empty, no one present." Distant anonymous crowds/tiny figures AT SCALE
   are fine texture; featured individuals and readable faces are banned (global negative).
-- **Figures intrude by VOCABULARY, not just by setting** (quantum_orrery, 2026-07-31). "empty,
-  no one present" was on every interior card of that journey and a goddess still appeared — on
-  an abstract PARTICLE card, which has no room to be empty of. Two word-families summon a figure
-  into any scene, most dangerously an abstract one:
-  - **Regalia/anatomy**: halo, aura, nimbus, crown, robe, veil, shroud, mantle, wings, embrace,
-    torso, limbs, lobes, "bound/cradled/held".  A halo is drawn *around something*, so the model
-    supplies the something.
-  - **Ornate-portrait register**: gilded + jewel-bright + "storybook grandeur" + regal/majestic
-    stacked together is the exact caption style of fantasy character art.
-  Say the same thing physically instead: not "a crimson halo around the trio" but "a thin ring
-  of red light offset behind them." Check the FULL frame-0 string (scene + target + style suffix
-  + brand tail), not just your scene text — the style deck adds words you didn't write.
-- The engine now gates this automatically (`engine/figure.py`): frame 0 is re-rolled up to 4
-  seeds and the render ABORTS if a figure ≥5% of frame persists. An abort means the prompt is
-  wrong — fix the words, don't just re-run. Audit anytime with
-  `python3 scripts/check_figures.py output/<journey>/vN`.
+- **Figures intrude by VOCABULARY, not only by setting.** Declaring a scene empty does not help
+  if the words still describe a figure's trappings. Two word-families summon one into any scene,
+  and they are most dangerous in an abstract realm where the model has nothing else to anchor on:
+  regalia and anatomy (halo, aura, nimbus, crown, robe, veil, shroud, mantle, wings, torso, limbs,
+  lobes, and "bound/cradled/held"), and the ornate-portrait register (gilded, jewel-bright, regal,
+  majestic, storybook grandeur stacked together — the caption style of fantasy character art).
+  A halo is drawn *around* something, so the model supplies the something. State the physical fact
+  instead of the trapping. Judge the FULL frame-0 string — scene + target + style suffix + brand
+  tail — not just your own text; the style deck adds words you did not write.
+- **Write the PICTURE, never the name, for anything unrenderable.** Terms from physics and
+  mathematics that name something no one has photographed contribute nothing to the image, so the
+  surrounding adjectives decide the frame alone. Decide at compose time what the thing looks like
+  and describe only that — shape, count, spacing, motion, texture, light, depth.
+- The engine gates this automatically (`engine/figure.py`): frame 0 is re-rolled up to 4 seeds and
+  the render ABORTS if a figure persists. An abort means the PROMPT is wrong — fix the words
+  rather than re-running. Audit any render with `python3 scripts/check_figures.py output/<j>/vN`.
 - **Fantastical, never gory.**
 - **One mascot cameo per video** on ONE card, scale-matched, size ≥0.12, full-cast rotation
   (see dive-video SKILL for the cast). Optional at compose time. Any card works (the engine

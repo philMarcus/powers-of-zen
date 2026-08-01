@@ -1,53 +1,82 @@
 #!/usr/bin/env python3
 """Audit render_start across every journey.
 
-A journey is OK when its rendered card 0 is an ABSTRACT/textural realm and the SEAM card
-lands neither first nor last. Reports what each journey would actually render first.
+Frame 0 must be an ESTABLISHING SHOT: many things across a field of view, not one subject the
+camera is aimed at (it is both the only txt2img frame and the loop-home target). This is
+independent of scale — `exp` is the size of the object, not the width of the shot — so nothing
+here reads exp. Also flags a missing start and a seam rotated to either end, and notes when the
+start is not a cosmic/subatomic realm (those establish and re-blend most forgivingly).
+
+    python3 scripts/audit_starts.py
 """
 import json
 import re
 import sys
 from pathlib import Path
 
-# Words that mark a card as a LITERAL, human-scale, context-bearing place — the kind that
-# frame 0 (the only txt2img frame) fills in with invented surroundings.
-LITERAL = re.compile(
-    r"\b(room|hall|studio|workshop|atelier|kitchen|shop|stall|street|corner|sidewalk|"
-    r"terrace|desk|table|bench|park|garden|orchard|apiary|laboratory|lab|cellar|attic|"
-    r"library|market|temple|house|cottage|hamlet|village|town|city|stairs|doorway|"
-    r"window|shelf|floor|wall of the|living room|lecture)\b", re.I)
+# A scene built around ONE subject. These phrasings are decisive: even when the sentence goes on
+# to mention neighbours, the frame is still a portrait of the named thing.
+SINGLE = re.compile(
+    r"(\ba single\b|\ba lone\b|\bone arm\b|\bthe inside of\b|\bthe surface of\b|"
+    r"\bthe face of\b|\bthe head of\b|\bthe tip of\b|\bthe corona of\b|\bthe curved wall of\b|"
+    r"\ba curled length of\b|\bup close\b|\bat full width\b)", re.I)
 
-rows = []
-for p in sorted(Path("journeys").glob("*.json")):
-    spec = json.loads(p.read_text(encoding="utf-8"))
-    regs = spec.get("registers") or []
-    if not regs or "scene" not in regs[0]:
-        rows.append((p.stem, "LEGACY", "-", "-", "-", ""))
-        continue
-    names = [r["name"] for r in regs]
-    start = spec.get("render_start")
-    i = names.index(start) if start in names else 0
-    rot = names[i:] + names[:i]
-    seams = [r["name"] for r in regs if r.get("kind") == "seam"]
-    first_scene = regs[names.index(rot[0])]["scene"]
-    lit = sorted(set(w.lower() for w in LITERAL.findall(first_scene)))
-    problems = []
-    if not start:
-        problems.append("NO render_start")
-    if set(seams) & {rot[0]}:
-        problems.append("SEAM FIRST")
-    if set(seams) & {rot[-1]}:
-        problems.append("SEAM LAST")
-    if lit:
-        problems.append("literal:" + ",".join(lit[:3]))
-    rows.append((p.stem, spec.get("style") or "-", start or "-", rot[0],
-                 " ".join(seams), "; ".join(problems)))
+# Evidence the frame holds a spread of things / a place rather than a subject.
+FIELD = re.compile(
+    r"(\bfield of\b|\branks of\b|\brows of\b|\bbanks of\b|\bwebs? of\b|\bgrid of\b|\btiling of\b|"
+    r"\bswarm of\b|\bcluster of\b|\bthousands\b|\bcountless\b|\bmany\b|\bdozens\b|\bpacked\b|"
+    r"\bstrewn\b|\bscattered\b|\bin every direction\b|\bacross the\b|\bfrom high above\b|"
+    r"\bseen wide\b|\bseen from across\b|\bat standing height\b|\bat eye level\b|\bfrom above\b|"
+    r"\bspread through\b|\bthrough the void\b|\bcountry\b|\bsheets of\b|\bsets of\b|"
+    r"\beither side\b|\bplains?\b|\bterraces\b|\bnodes\b|\bfrom straight above\b)", re.I)
 
-bad = [r for r in rows if r[5] and r[1] != "LEGACY"]
-for n, st, start, first, seams, prob in rows:
-    if st == "LEGACY":
-        continue
-    tag = "!!" if prob else "ok"
-    print(f"{tag} {n:24} start={start:16} renders first: {first:16} {prob}")
-print(f"\nnew-schema journeys: {sum(1 for r in rows if r[1] != 'LEGACY')} | "
-      f"needing attention: {len(bad)} | legacy skipped: {sum(1 for r in rows if r[1] == 'LEGACY')}")
+# Realms that establish cleanly from nothing and blend forgivingly on the return.
+FAR = re.compile(r"(\bnebula\b|\bgalax|\bcosmos\b|\bcosmic\b|\bstars?\b|\bstarlight\b|\bvoid\b|"
+                 r"\bquantum\b|\batoms?\b|\bmolecul|\blattice\b|\bparticle\b|\bplasma\b|"
+                 r"\bsubatomic\b|\bindigo dark\b|\bdeep space\b)", re.I)
+
+
+def main():
+    flagged = total = 0
+    for p in sorted((Path(__file__).resolve().parent.parent / "journeys").glob("*.json")):
+        spec = json.loads(p.read_text(encoding="utf-8"))
+        regs = spec.get("registers") or []
+        if not regs or "scene" not in regs[0]:
+            continue                                   # legacy engine-1 schema
+        total += 1
+        names = [r["name"] for r in regs]
+        start = spec.get("render_start")
+        i = names.index(start) if start in names else 0
+        rot = names[i:] + names[:i]
+        seams = [r["name"] for r in regs if r.get("kind") == "seam"]
+        scene = regs[i]["scene"]
+
+        problems = []
+        if not start:
+            problems.append("NO render_start")
+        if rot[0] in seams:
+            problems.append("SEAM FIRST")
+        if rot[-1] in seams:
+            problems.append("SEAM LAST")
+        hits = sorted(set(w.lower() for w in SINGLE.findall(scene)))
+        if hits:
+            problems.append("single subject: " + ", ".join(hits[:2]))
+
+        # Notes, not failures: these two are judgement calls a regex can only hint at. Requiring
+        # field-of-view WORDS produced false alarms on scenes that are plainly wide but phrased
+        # differently, and cosmic/subatomic is a preference the journey may legitimately lack.
+        notes = []
+        if not hits and not FIELD.search(scene):
+            notes.append("width unconfirmed — read it")
+        if not FAR.search(scene):
+            notes.append("not cosmic/subatomic")
+
+        flagged += bool(problems)
+        tail = "; ".join(problems) or ("· " + " · ".join(notes) if notes else "")
+        print(f"{'!!' if problems else 'ok'} {p.stem:24} start={str(start):20}{tail}")
+    print(f"\n{total} journeys · {flagged} need attention")
+    return 1 if flagged else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

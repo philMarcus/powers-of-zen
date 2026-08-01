@@ -126,5 +126,6 @@
   ],
   "music_theme": "a glowing bioluminescent night garden, nocturnal, dreamy, alive with soft light, slow deep smooth beats, low fungal wails\n",
   "music_key": "D minor",
-  "render_start": "moss_cells"
+  "render_start": "moss_cells",
+  "render_start_note": "moss_cells renders as a wide forest and this cut is approved/in production; `nebula` is the better start by the field-of-view + cosmic rules and should be used if this journey is ever re-rendered."
 }
