@@ -79,6 +79,30 @@ def regenerate_music(journey):
                      stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
+def apply_caption_pick(journey, radio_key):
+    """on_change for the caption-options radio. Fires ONLY on a real user click, so it can never
+    re-assert a stale selection over a hand-edited caption on a rerun (that bug reverted every
+    manual edit). Writes the picked caption + its matching YouTube title into the pipeline and
+    into the live text fields."""
+    pick = st.session_state.get(radio_key)
+    if not pick:
+        return
+    dd = data()
+    vv = pl.get(dd, journey)
+    if not vv or pick == vv.get("caption"):
+        return
+    opts = vv.get("caption_options") or []
+    vv["caption"] = pick
+    yts = vv.get("yt_title_options") or []
+    if pick in opts:
+        pi = opts.index(pick)
+        if pi < len(yts) and yts[pi]:
+            vv["yt_title"] = yts[pi]
+    st.session_state[f"cap_{journey}"] = vv["caption"]
+    st.session_state[f"yt_{journey}"] = vv.get("yt_title", "")
+    pl.save(dd)
+
+
 def assemble_caption(body, spot_line, tags, hook):
     """body [+ spot question if hook] + hashtags — mirrors scripts/caption.py so the toggle can
     re-assemble the caption options without re-calling the model."""
@@ -301,25 +325,18 @@ def card(v, actions, show_switch=True, marker=None, captions=False):
             opts = v.get("caption_options") or []
             gc = st.columns([3, 1])
             if opts:
-                # index=None when the live caption is NOT one of the options — i.e. it was
-                # hand-edited. Previously this fell back to index 0, so the radio "selected"
-                # option 0 on every rerun and the block below wrote it over the edit: a saved
-                # hand-written caption was silently reverted on the very next redraw (and again
-                # after Approve → Music). A hand-edited caption now leaves every radio unchecked.
-                idx = opts.index(v["caption"]) if v.get("caption") in opts else None
-                pick = gc[0].radio("✍ caption options (picking one also sets the matching YouTube "
-                                   "title) — unchecked means your hand-edited caption is in use",
-                                   opts, index=idx, key=f"capopt_{v['journey']}")
-                if pick is not None and pick != v.get("caption"):
-                    dd = data(); vv = pl.get(dd, v["journey"]); pi = opts.index(pick)
-                    vv["caption"] = pick
-                    yts = vv.get("yt_title_options") or []
-                    if pi < len(yts) and yts[pi]:
-                        vv["yt_title"] = yts[pi]           # keep caption + YT title in sync
-                    # push the picked values straight into the fields so no manual refresh is needed
-                    st.session_state[f"cap_{v['journey']}"] = vv["caption"]
-                    st.session_state[f"yt_{v['journey']}"] = vv.get("yt_title", "")
-                    pl.save(dd); st.rerun()
+                # A KEYED st.radio IGNORES `index` on every rerun and restores its OWN stored
+                # selection. So reading its return value each run and syncing from it wrote the
+                # stale selection over a hand-edited caption — Save was undone by its own
+                # st.rerun(). Never derive the caption from the radio's restored value: act ONLY
+                # in on_change, which fires just once, when the user actually clicks an option.
+                rk = f"capopt_{v['journey']}"
+                if rk not in st.session_state:      # first render only; afterwards state rules
+                    st.session_state[rk] = (v["caption"] if v.get("caption") in opts else None)
+                gc[0].radio("✍ caption options (picking one also sets the matching YouTube "
+                            "title) — nothing selected means your hand-edited caption is in use",
+                            opts, key=rk, on_change=apply_caption_pick,
+                            args=(v["journey"], rk))
             else:
                 gc[0].caption("no auto-captions yet — Generate (~5 caption+title options, local VLM).")
             if gc[1].button("✍ Generate", key=f"gencap_{v['journey']}"):
@@ -347,6 +364,10 @@ def card(v, actions, show_switch=True, marker=None, captions=False):
         if c[0].button("💾 Save", key=f"save_{v['journey']}"):
             d = data(); vv = pl.get(d, v["journey"])
             vv["caption"], vv["yt_title"] = cap, yt
+            # a hand-written caption is no longer one of the options -> clear the radio so it
+            # shows nothing selected (and can't re-assert itself on the next redraw)
+            if cap not in (vv.get("caption_options") or []):
+                st.session_state[f"capopt_{v['journey']}"] = None
             pl.save(d)
             set_music_theme(v["journey"], mtheme)
             pl.telem("edit", journey=v["journey"])
