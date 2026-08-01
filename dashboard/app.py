@@ -403,8 +403,11 @@ def card(v, actions, show_switch=True, marker=None, captions=False):
             pl.telem("edit", journey=v["journey"])
             st.success("saved"); st.rerun()
         for i, (label, newstate) in enumerate(actions, start=1):
-            if c[i].button(label, key=f"act_{newstate}_{v['journey']}"):
-                if newstate == "music":
+            kk = newstate if isinstance(newstate, str) else f"fn{i}"
+            if c[i].button(label, key=f"act_{kk}_{v['journey']}"):
+                if callable(newstate):               # custom action (e.g. the reject variants)
+                    newstate(v["journey"])
+                elif newstate == "music":
                     approve_to_music(v["journey"])   # phase-shift to the marked start, then → Music
                 else:
                     set_state(v["journey"], newstate)
@@ -513,6 +516,27 @@ def jqueue_append(name, **extra):
     pl.jsave(jj)
 
 
+def reject_review(journey, requeue=None):
+    """Reject a video at Video Review. requeue=None: the JOURNEY was the problem — mark it
+    rejected too (never re-render). 'front'/'back': the RENDER was the problem, not the idea
+    — send the journey back to the render queue at that end, force=True so the batch renders
+    a fresh vN even though a complete render exists (queue_review will flip this entry back
+    to review when the new render lands)."""
+    set_state(journey, "rejected")
+    jj = jdata()
+    if requeue:
+        jj["journeys"].setdefault(journey, {})
+        jj["journeys"][journey].update({"state": "queued", "force": True, "ts": pl._now(),
+                                        "note": "re-render: video rejected in review"})
+        others = [q for q in pl.jqueue(jj) if q != journey]
+        pl.set_jorder(jj, [journey] + others if requeue == "front" else others + [journey])
+        pl.telem("jqueued", journey=journey, detail=f"reject -> re-queue {requeue}")
+    else:
+        jj["journeys"][journey] = {"state": "rejected", "ts": pl._now(),
+                                   "note": "rejected at video review"}
+    pl.jsave(jj)
+
+
 # ── header + tabs ────────────────────────────────────────────────────────────────────────
 d = data()
 counts = Counter(v.get("state") for v in d["videos"])
@@ -533,25 +557,29 @@ nxt = pl.next_to_post(d)
 cols[5].metric("next post", nxt["journey"] if nxt else "—")
 
 JD = pl.jload()
-tabs = st.tabs([f"🎬 Video Review ({counts.get('review',0)})",
+tabs = st.tabs([f"🗺 Journeys ({len(pl.jqueue(JD))})",
+                f"🎬 Video Review ({counts.get('review',0)})",
                 f"🎵 Music ({counts.get('music',0)})",
                 f"🚀 Production ({counts.get('queued',0)})",
-                f"🗺 Journeys ({len(pl.jqueue(JD))})",
                 f"Live ({len(live_vids)})",
                 f"Failed ({len(failed_vids)})",
                 "Telemetry",
                 "⚙ Settings"])
 
-with tabs[0]:  # VIDEO REVIEW — pick cut/model, edit caption, send to Music
+with tabs[1]:  # VIDEO REVIEW — pick cut/model, edit caption, send to Music
     st.write("Look at the video, pick cut/model, edit the caption/theme, then **Approve → Music** "
              "to choose a soundtrack.")
     rv = by_state(d, "review")
     if not rv:
         st.info("Nothing awaiting video review.")
     for v in rv:
-        safe_card(v, [("✅ Approve → Music", "music")], marker="start", captions=True)
+        safe_card(v, [("✅ Approve → Music", "music"),
+                      ("🔁 Reject → front of queue", lambda j: reject_review(j, "front")),
+                      ("🔁 Reject → back of queue", lambda j: reject_review(j, "back")),
+                      ("🗑 Reject journey", lambda j: reject_review(j))],
+                  marker="start", captions=True)
 
-with tabs[1]:  # MUSIC — audition/generate a track, then send to Production
+with tabs[2]:  # MUSIC — audition/generate a track, then send to Production
     st.write("Pick the soundtrack. Every candidate is auto-locked so its accent lands on each "
              "morph. Choose one → it moves to **Production**. Switch a video's model and it lands "
              "back here to get tracks for the new render.")
@@ -593,7 +621,7 @@ with tabs[1]:  # MUSIC — audition/generate a track, then send to Production
             set_state(v["journey"], "queued"); st.rerun()
         st.divider()
 
-with tabs[2]:  # PRODUCTION — the ordered post queue; tweak cut/model + change the music pick
+with tabs[3]:  # PRODUCTION — the ordered post queue; tweak cut/model + change the music pick
     st.write("Approved & in post order (top posts next). ⬆⬇ to reorder. You can still switch "
              "cut/model or change the music pick here.")
     qv = pl.queued(d)
@@ -625,7 +653,7 @@ with tabs[2]:  # PRODUCTION — the ordered post queue; tweak cut/model + change
                     audition_candidates(v)   # re-choose; stays in Production
         st.divider()
 
-with tabs[3]:  # JOURNEYS — the render queue the 01:30 batch draws from
+with tabs[0]:  # JOURNEYS — the render queue the 01:30 batch draws from (journeys come first)
     jd = JD
     s = jd["settings"]
     TIER_CHIP = {"short": "🟢 S", "medium": "🟡 M", "long": "🔴 L"}
