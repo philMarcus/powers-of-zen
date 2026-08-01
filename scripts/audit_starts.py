@@ -58,16 +58,18 @@ def main():
             problems.append("SEAM FIRST")
         if rot[-1] in seams:
             problems.append("SEAM LAST")
+        # A lone subject only fails OUTSIDE space. Astronomical forms have no hard silhouette, so
+        # a single nebula or galaxy morphs home as easily as a field does.
         hits = sorted(set(w.lower() for w in SINGLE.findall(scene)))
-        if hits:
-            problems.append("single subject: " + ", ".join(hits[:2]))
+        if hits and not FAR.search(scene):
+            problems.append("single hard-edged subject: " + ", ".join(hits[:2]))
 
         # Notes, not failures: these two are judgement calls a regex can only hint at. Requiring
         # field-of-view WORDS produced false alarms on scenes that are plainly wide but phrased
         # differently, and cosmic/subatomic is a preference the journey may legitimately lack.
         notes = []
-        if not hits and not FIELD.search(scene):
-            notes.append("width unconfirmed — read it")
+        if not FAR.search(scene) and not FIELD.search(scene):
+            notes.append("width unconfirmed — read it")   # space needs no width check
         if not FAR.search(scene):
             notes.append("not cosmic/subatomic")
 

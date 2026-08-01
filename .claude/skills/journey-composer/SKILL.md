@@ -225,19 +225,19 @@ Frame 0 carries two jobs at once: it is the only txt2img frame, so every later f
 from it, and it is the LOOP-HOME target, since the last card dives back into it. Both jobs want
 the same two properties, and both are required.
 
-1. **A FIELD OF VIEW, not a target.** The card must show many things spread across the frame
-   rather than one subject the camera is aimed at. The question to ask is whether the frame is a
-   PLACE or a portrait of a single thing; it must be a place. Rendered cold, a close-up has no
-   surroundings so the model invents them; and on the return, a dive can match a broad field from
-   almost any position, while it can match one object only at a single exact position and
-   magnification — which is what makes a loop close as a visible cut.
+1. **The frame must be EASY TO MORPH INTO.** Two kinds qualify: many things spread across a field
+   of view, or a single SOFT-EDGED, diffuse form. Astronomical subjects qualify even alone,
+   because they have no hard silhouette — the returning dive can land anywhere on one and still
+   match. What fails is a hard-edged, recognizable object as the subject: the return then has to
+   reproduce one exact outline at one exact size, and the loop closes as a visible cut.
    This is independent of scale. `exp` is the size of the object, not the width of the shot, and
    every scale has both kinds of card — the journey alternates between them by design. Never
    choose a start by `exp`.
-2. **Prefer the cosmic or the subatomic end of the journey.** Those realms establish cleanly from
-   nothing and blend most forgivingly on the return. A recognizable everyday place carries
-   implied context the model will fill in however it likes, and is less forgiving to land back on.
-   Fall back to one only when no cosmic or subatomic card in the journey satisfies (1).
+2. **Prefer outer space; subatomic next; a recognizable everyday place last.** Space establishes
+   cleanly from nothing and morphs forgivingly whether the frame holds one object or many. The
+   subatomic realm is as good in principle but needs more care: it has no photographic referent,
+   so a thinly described one invites the model to substitute a familiar hard object. Describe
+   those realms as diffuse light, depth and drift rather than naming particles.
 
 Constraint: never let the rotation put the SEAM card first or last (last is worst — the loop-home
 branch swallows it). With the seam at index `s` of `n`, rotating to `i` puts it at `(s-i) mod n`,
