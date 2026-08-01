@@ -65,5 +65,6 @@
     }
   ],
   "music_theme": "a bright spring garden at early light, airy and gentle, glassy bells over soft strings, a warm bloom of sound landing where the golden mesh opens into the canopy",
-  "music_key": "A major"
+  "music_key": "A major",
+  "render_start": "pollen_grain"
 }

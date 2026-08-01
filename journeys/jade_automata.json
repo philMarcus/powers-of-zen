@@ -115,5 +115,6 @@
     }
   ],
   "music_theme": "an ancient stone temple in mountain mist, meditative and vast, low bells and breathing strings over a slow pulse, one bright swell landing on the stone-to-cosmos morph",
-  "music_key": "E minor"
+  "music_key": "E minor",
+  "render_start": "filament_web"
 }

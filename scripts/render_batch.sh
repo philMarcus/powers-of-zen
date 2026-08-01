@@ -20,10 +20,13 @@ LOG="outbox/render_batch_$(date +%m%d_%H%M).log"
 say(){ echo "=== $(date +%H:%M:%S) $* ===" | tee -a "$LOG"; }
 step(){ say "$*"; "$@" >> "$LOG" 2>&1 || echo "!!! FAILED: $*" | tee -a "$LOG"; }
 
-# journey : tier (frames)  — render_start lives in each journey JSON
-JOURNEYS=(butterfly_meridian quantum_orrery lather_atlas)
+# Journeys come from the command line; the default is the original long/medium/short trio.
+# render_start lives in each journey JSON. PRE-FLIGHT a journey before adding it here — the
+# frame-0 prompt decides the whole video (see engine/figure.py).
+JOURNEYS=("$@")
+[ ${#JOURNEYS[@]} -eq 0 ] && JOURNEYS=(butterfly_meridian quantum_orrery lather_atlas)
 
-say "batch start — long butterfly_meridian (280f/23.3s), medium quantum_orrery (196f/16.3s), short lather_atlas (140f/11.7s)"
+say "batch start — ${#JOURNEYS[@]} journeys: ${JOURNEYS[*]}"
 
 # --- ComfyUI up (it does NOT survive a reboot) --------------------------------
 if ! curl -s --max-time 3 http://localhost:8188/system_stats >/dev/null 2>&1; then
