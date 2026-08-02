@@ -33,6 +33,13 @@ T_PLUNGE = ("diving straight into {target} as it swells to fill the entire view,
 T_FINAL = "deep inside {scene}, endless intricate detail in every direction, {style}"
 # arrival right AFTER a seam: the whole view transforms into the new world (the on-beat morph)
 T_MORPH = "the whole view transforming, resolving into {scene}, {style}"
+# FRAME 0 ONLY (2026-08-02): the establishing txt2img prompt. Frame 0 is the only frame with no
+# feedback context, and the schedule's T_TRAVEL prompt names the card's TARGET — in txt2img SDXL
+# composes a product-shot close-up around that concrete noun (all 5 of the 08-01/02 renders
+# opened close; removing the target flipped quantum_orrery to a wide vista, seed held). So frame
+# 0 renders THIS instead: the scene wide, no target. From frame 1 the normal schedule resumes —
+# the same scene words carry, and the travel denoise inherits the wide framing.
+T_ESTABLISH = "a vast wide panoramic view of {scene}, seen from far away, {style}"
 
 SEAM_EXP_JUMP = 8.0   # |Δexp| this big to the next card = a semantic SEAM (instant morph, no zoom)
 
@@ -48,6 +55,20 @@ TEMPLATE_LOOPHINT = ("{interior} in every direction, the whole scene slowly "
 def _p(text, reg):
     pal = reg.get("palette")
     return f"{text}, {pal} colors" if pal else text
+
+
+def establish_prompt(spec):
+    """The frame-0 txt2img override (see T_ESTABLISH). Resolves the same render_start rotation
+    compile_journey uses and returns the wide establishing prompt for the card frame 0 renders.
+    Standalone (not part of the compiled schedule) so callers' tuple unpacking is untouched."""
+    regs = spec["registers"]
+    rs = spec.get("render_start")
+    names = [r.get("name") for r in regs]
+    if rs in names:
+        k = names.index(rs)
+        regs = regs[k:] + regs[:k]
+    reg = regs[0]
+    return _p(T_ESTABLISH.format(scene=_scene(reg), style=spec.get("style_suffix", "")), reg)
 
 
 def _scene(reg):

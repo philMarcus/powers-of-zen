@@ -125,6 +125,19 @@ DEFAULTS = {
 
 CN_DEPTH = "controlnet-depth-sdxl.safetensors"   # object-approach structural guidance
 
+# frame-0-only negatives (2026-08-02): the txt2img frame fights three close-up pressures at once
+# (the 9:16 portrait prior, the deck's gloss vocabulary, concrete nouns). These push back on the
+# framing WITHOUT touching the look. Never applied to feedback frames — mid-dive frames are
+# SUPPOSED to be close-ups.
+FRAME0_NEG_EXTRA = ("close-up, macro, product shot, tabletop, still life, "
+                    "shallow depth of field, bokeh")
+
+# IP-Adapter loop homing (2026-08-02, validated in seam_tail_ab on dollhouse/snowfall/copper_rain):
+# frame 0's IMAGE conditions the tail's generation, so the WORLD converges on home while every
+# pixel is freshly rendered — replaces the gap-scaled 0.82 pixel morph (a fading photograph on
+# far-world gaps, the mechanism Phil reverted in July).
+IPA_PRESET = "PLUS (high strength)"              # ip-adapter-plus_sdxl_vit-h + CLIP-ViT-H
+
 
 def clean_box(b, min_side=0.06, max_span=0.9, max_aspect=6.0, min_area=0.01):
     """Sanity-filter a detector box before it may SEED a point-track run — reject the garbage
@@ -154,19 +167,24 @@ def pick_depth_preproc():
 
 def build_workflow(cfg, prompt, seed, init_image=None, denoise=None,
                    prev_prompt=None, blend=1.0, mask_image=None,
-                   ctrl_image=None, cn_strength=0.0, depth_preproc=None):
+                   ctrl_image=None, cn_strength=0.0, depth_preproc=None,
+                   ipa_image=None, ipa_weight=0.0, neg_extra=None):
     """ComfyUI API-format workflow. txt2img when init_image is None, else img2img.
     When prev_prompt is given, positive conditioning is a weighted average of the old
     and new prompts (blend = weight of the NEW prompt). When ctrl_image + cn_strength are
     given, a depth ControlNet steers structure onto it (object-approach: hold the target's
-    identity as it grows while the pixels are still fully regenerated — NOT a paste)."""
+    identity as it grows while the pixels are still fully regenerated — NOT a paste).
+    When ipa_image + ipa_weight are given, that image conditions the MODEL via IP-Adapter
+    (loop homing: pull the generation toward frame 0's world, not its pixels).
+    neg_extra appends to the negative for THIS call only (frame-0 anti-close-up terms)."""
     wf = {
         "ckpt": {"class_type": "CheckpointLoaderSimple",
                  "inputs": {"ckpt_name": cfg["checkpoint"]}},
         "pos": {"class_type": "CLIPTextEncode",
                 "inputs": {"text": prompt, "clip": ["ckpt", 1]}},
         "neg": {"class_type": "CLIPTextEncode",
-                "inputs": {"text": cfg["negative"], "clip": ["ckpt", 1]}},
+                "inputs": {"text": cfg["negative"] + (", " + neg_extra if neg_extra else ""),
+                           "clip": ["ckpt", 1]}},
         "decode": {"class_type": "VAEDecode",
                    "inputs": {"samples": ["sample", 0], "vae": ["ckpt", 2]}},
         "save": {"class_type": "SaveImage",
@@ -216,12 +234,23 @@ def build_workflow(cfg, prompt, seed, init_image=None, denoise=None,
                                     "strength": round(cn_strength, 3),
                                     "start_percent": 0.0, "end_percent": 1.0}}
         positive, negative = ["cnapply", 0], ["cnapply", 1]
+    model_ref = ["ckpt", 0]
+    if ipa_image and ipa_weight > 0.01:
+        wf["ipa_loader"] = {"class_type": "IPAdapterUnifiedLoader",
+                            "inputs": {"model": ["ckpt", 0], "preset": IPA_PRESET}}
+        wf["ipa_img"] = {"class_type": "LoadImage", "inputs": {"image": ipa_image}}
+        wf["ipa"] = {"class_type": "IPAdapterAdvanced",
+                     "inputs": {"model": ["ipa_loader", 0], "ipadapter": ["ipa_loader", 1],
+                                "image": ["ipa_img", 0], "weight": round(float(ipa_weight), 3),
+                                "weight_type": "ease in-out", "combine_embeds": "concat",
+                                "start_at": 0.0, "end_at": 1.0, "embeds_scaling": "V only"}}
+        model_ref = ["ipa", 0]
     wf["sample"] = {"class_type": "KSampler",
                     "inputs": {"seed": seed, "steps": cfg["steps"], "cfg": cfg["cfg"],
                                "sampler_name": cfg["sampler"],
                                "scheduler": cfg["scheduler"],
                                "denoise": (denoise if denoise is not None else 1.0),
-                               "model": ["ckpt", 0], "positive": positive,
+                               "model": model_ref, "positive": positive,
                                "negative": negative, "latent_image": ["latent", 0]}}
     return wf
 
@@ -530,6 +559,8 @@ def main():
     ap.add_argument("--frames", type=int, help="override total frame count (smoke tests)")
     ap.add_argument("--plain", action="store_true",
                     help="pure feedback zoom — no tracking, no depth-CN (A/B vs the engine-1 look)")
+    ap.add_argument("--classic-tail", action="store_true",
+                    help="loop tail uses the pre-IPA gap-scaled pixel morph (A/B vs IPA homing)")
     ap.add_argument("--cn", type=float, metavar="STRENGTH",
                     help="override depth-ControlNet strength; --cn 0 disables the CN but KEEPS "
                          "tracking/composition (the clean A/B for 'is the CN hurting the look?'). "
@@ -736,7 +767,15 @@ def main():
         z = zoom_sched[i] if zoom_sched else cfg["zoom_per_frame"]
         seed = cfg["seed"] + i
         if img is None:
-            wf = build_workflow(cfg, prompt, seed)                  # txt2img init
+            # frame-0 ESTABLISH override (2026-08-02): the schedule's travel prompt names the
+            # card's TARGET, and in txt2img SDXL composes a product-shot close-up around it
+            # (all 5 renders of 08-01/02 opened close; seed-held ablations confirmed). Frame 0
+            # renders the scene WIDE with no target + anti-close-up negatives instead; the
+            # feedback chain inherits the wide framing from frame 1 on.
+            f0_prompt = grammar.establish_prompt(spec) if cfg["build"] != "out" else prompt
+            if f0_prompt != prompt:
+                print(f"[dive] frame-0 establish: {f0_prompt[:110]}", flush=True)
+            wf = build_workflow(cfg, f0_prompt, seed, neg_extra=FRAME0_NEG_EXTRA)  # txt2img init
         else:
             drift = cfg["drift"]
             if in_loop_tail(i):   # re-center so the frame-0 composite lines up
@@ -833,15 +872,16 @@ def main():
                             cam_pasted = True
                 if cam_pasted:
                     den = min(den, 0.32)   # keep the mascot's face recognizable
-                if in_loop_tail(i):
-                    # SEAM (2026-07-29, see PLAN.md "THE SEAM"): keep DIVING (fed is already the
-                    # zoomed feedback) while morphing home. Over the last morph_frames, blend the
-                    # feedback toward frame 0 with a strength AUTO-SCALED to the gap (tiny for a
-                    # self-similar return, stronger to bridge a far world). NO loop_composite and
-                    # NO hard copy of frame 0 (a duplicate froze the loop) — the last frame is a
-                    # generated ≈frame 0. Palette is pulled toward frame 0 AFTER generation.
-                    j = i - (total - loop["frames"])
-                    mstart = loop["frames"] - loop["morph_frames"]
+            tail_ipa_w, tail_ctl, tail_cn = 0.0, None, 0.0
+            if in_loop_tail(i):
+                j = i - (total - loop["frames"])
+                L_tail = loop["frames"]
+                if args.classic_tail:
+                    # CLASSIC SEAM (2026-07-29, A/B only): blend the feedback toward frame 0
+                    # with a strength AUTO-SCALED to the gap. On far-world gaps this hits 0.82
+                    # = a fading-photograph cross-dissolve (Phil reverted it on dollhouse and
+                    # snowfall) — kept behind --classic-tail for comparison.
+                    mstart = L_tail - loop["morph_frames"]
                     if j >= mstart:
                         if loop.get("morph_strength") is None:
                             gap = frame_gap(fed, frame0)
@@ -849,16 +889,38 @@ def main():
                         m = (j - mstart + 1) / loop["morph_frames"]
                         if loop["morph_strength"] > 0.01:
                             fed = Image.blend(fed, frame0, loop["morph_strength"] * m)
+                else:
+                    # IPA HOMING (2026-08-02, "ipacn" — won the seam_tail_ab A/B on all three
+                    # cases incl. both blendcn-reverted hard ones): frame 0's IMAGE conditions
+                    # the generation with weight ramping in, so the WORLD converges while every
+                    # frame is freshly rendered and still zooming. Depth-CN from frame 0 aligns
+                    # the landing composition over the morph window; a small FIXED pixel blend
+                    # (never gap-scaled, max 0.35) seals the final frames. Palette pull after
+                    # generation is unchanged below.
+                    t_home = (j + 1) / L_tail
+                    if loop.get("_home_ref") is None:
+                        loop["_home_ref"] = upload_image(frame0, f"zoomer_loop_home_{name}.png")
+                    tail_ipa_w = 0.95 * t_home ** 1.5
+                    mstart = L_tail - loop["morph_frames"]
+                    if j >= mstart:
+                        m = (j - mstart + 1) / loop["morph_frames"]
+                        tail_ctl, tail_cn = loop["_home_ref"], 0.2 + 0.6 * m
+                    if j >= L_tail - 6:
+                        fed = Image.blend(fed, frame0, 0.35 * (j - (L_tail - 6) + 1) / 6)
             ref = upload_image(fed, f"zoomer_feed_{name}.png")
             wf = build_workflow(cfg, prompt, seed, init_image=ref, denoise=den,
                                 prev_prompt=prev_prompt if in_transition else None,
                                 blend=(k + 1) / (T + 1) if in_transition else 1.0,
                                 mask_image=mask_ref,
                                 # object-approach: depth-CN from the (zoomed) feedback holds the
-                                # target's identity as it grows while pixels regenerate (not a paste)
-                                ctrl_image=ref if approaching else None,
-                                cn_strength=cfg["approach_cn"] if approaching else 0.0,
-                                depth_preproc=_depth)
+                                # target's identity as it grows while pixels regenerate (not a
+                                # paste). In the loop tail the SAME channel instead carries
+                                # frame 0's depth (landing alignment) — never both at once.
+                                ctrl_image=ref if approaching else tail_ctl,
+                                cn_strength=cfg["approach_cn"] if approaching else tail_cn,
+                                depth_preproc=_depth,
+                                ipa_image=loop.get("_home_ref") if tail_ipa_w > 0.01 else None,
+                                ipa_weight=tail_ipa_w)
         png = run_workflow(wf)
         img = Image.open(io.BytesIO(png)).convert("RGB")
         if img.size != (cfg["width"], cfg["height"]):
@@ -875,7 +937,8 @@ def main():
                 print(f"[dive] FIGURE on frame 0 ({figure.describe(hit)}) — "
                       f"re-rolling seed, attempt {attempt}/{cfg['figure_retries']}", flush=True)
                 seed += 9973                       # a big coprime stride: a genuinely new draw
-                png = run_workflow(build_workflow(cfg, prompt, seed))
+                png = run_workflow(build_workflow(cfg, f0_prompt, seed,
+                                                  neg_extra=FRAME0_NEG_EXTRA))
                 img = Image.open(io.BytesIO(png)).convert("RGB")
                 if img.size != (cfg["width"], cfg["height"]):
                     img = img.resize((cfg["width"], cfg["height"]), Image.LANCZOS)

@@ -448,3 +448,31 @@ judging the seam_AB clips in MOTION. NEXT (pending Phil): fold ipacn into dive.p
 tail (--classic-tail for A/B); Level 2 splice = the same bridge primitive aimed at ANY target
 frame — whole-CARD cuts keep the music grid (28f = 1 bar), and a bad opening card could be cut
 with the tail homing onto card 1 instead.
+2026-08-02 (afternoon): PHIL'S VERDICTS IMPLEMENTED. Opening fixes a+b+d are IN: (a) frame 0 now
+renders grammar.T_ESTABLISH ("a vast wide panoramic view of {scene}, seen from far away" — scene
+only, NO target; grammar.establish_prompt() standalone so no tuple churn) — the schedule's travel
+prompt with its target is used from frame 1 on; (b) FRAME0_NEG_EXTRA anti-close-up negatives
+(close-up/macro/product shot/tabletop/still life/shallow DoF/bokeh) on the txt2img call + the
+figure-gate re-rolls only; (d) composer SKILL gained the WEARABLE-summons-a-wearer rule (mask/
+veil/cloak/hood/gown/coat/crown... rename by physical function or make emptiness structural);
+static_bloom's "fine black mask" -> "set in a fine black grille", preflight-pass, left
+render_failed for Phil to re-queue from the Journeys tab. IPA TAIL FOLDED INTO dive.py (Phil:
+"head and shoulders above the rest... every video should have it"): build_workflow grew
+ipa_image/ipa_weight/neg_extra (IPAdapterUnifiedLoader PLUS preset -> IPAdapterAdvanced patches
+the sampler model); the exact-loop tail now runs the ipacn schedule (IPA 0.95*t^1.5 ease-in-out,
+depth-CN from frame 0 ramping 0.2->0.8 over morph_frames, fixed <=0.35 blend last 6, palette pull
+unchanged; frame-0 upload cached in loop["_home_ref"]); the old gap-scaled 0.82 morph lives
+behind --classic-tail. VALIDATED: copper_rain --from-card 4 -> v3 (throwaway, 541s) landed on
+frame 0's staircase; NOTE v3 is now copper_rain's newest complete vN (queue_review without --src
+would pick it; review deliberately points at v2). COPPER_RAIN v2 = the EXACT lab ipacn tail
+spliced onto v1's body (no GPU), assembled with counter, re-queued to Video Review with captions
+kept — Phil judges the full-video seam there; run.json records the splice. REPLACE_OPENING built,
+NOT run (Phil's hold): scripts/replace_opening.py regenerates the old-tail + old-card-0 slots as
+ONE continuous L+C0 (~52-frame) homing arc — resume feedback at the last kept frame, keep the
+scheduled zoom, prompt-crossfade last-card T_FINAL -> card-1 T_MORPH, IPA/CN/blend home onto the
+FIRST KEPT FRAME (card 1's start = the new loop point), counter re-derived only on the arc (spin
+from last kept exp to first kept exp), every kept frame byte-identical, bar grid untouched;
+refuses cameos sitting in the regenerated slots; --dry-run/--queue-review. Dry-runs verified on
+pollen_court (drop 'park', home onto bench_slat), loom_of_nights (drop 'galaxy'), quantum_orrery
+(drop 'hadron'). Tonight's batch renders with establish-frame-0 + IPA tail automatically — the
+first doctrine-complete renders land in Video Review tomorrow morning.

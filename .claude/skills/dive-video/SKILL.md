@@ -67,6 +67,15 @@ CONTEXT (GPU work happens outside the model) — run them in the background and 
    NORMAL — the known zoom geometry carries the dive between detections.
 6. **Depth ControlNet 0.45** on approach frames holds the target's identity while pixels fully
    regenerate (not a paste).
+7. **Frame 0 renders WIDE** (2026-08-02): the only txt2img frame uses grammar's T_ESTABLISH
+   (scene panoramic, NO target) + anti-close-up negatives — the schedule's travel prompt names
+   the card target, which in txt2img composes a product-shot close-up (seed-held ablations).
+8. **IPA loop homing** (2026-08-02): the exact-loop tail conditions generation on frame 0's
+   IMAGE (IP-Adapter ramp) + depth-CN landing alignment + a small FIXED blend — the world
+   converges on home while every frame stays freshly rendered and diving. `--classic-tail`
+   restores the old gap-scaled pixel morph for A/B. `scripts/replace_opening.py <j>` reuses the
+   same homing to regenerate a BAD OPENING CARD in place (no frames lost, new loop point =
+   card 1's first frame).
 
 ## Journey files
 The **journey-composer** skill is the authoring law. Schema in brief: per card `name`, `exp`,

@@ -299,6 +299,13 @@ myth, a trending sound, an emotion…):
   A halo is drawn *around* something, so the model supplies the something. State the physical fact
   instead of the trapping. Judge the FULL frame-0 string — scene + target + style suffix + brand
   tail — not just your own text; the style deck adds words you did not write.
+- **A WEARABLE summons a wearer.** Any garment or worn object named as a thing in the scene —
+  mask, veil, cloak, hood, gown, dress, coat, crown, helmet, armor, glove, jewelry — tends to be
+  rendered ON a person, straight through "empty, no one present" and the engine's negative
+  (static_bloom's "fine black mask" drew a masked woman on four straight seeds; a coat on a
+  dress-form drew its wearer the moment nothing else anchored the frame). Test each noun: could
+  a person wear it? Then either rename it by its physical function (grille, lattice, screen,
+  drape) or make its emptiness structural (the object shaped by what it covers, nothing inside).
 - **Write the PICTURE, never the name, for anything unrenderable.** Terms from physics and
   mathematics that name something no one has photographed contribute nothing to the image, so the
   surrounding adjectives decide the frame alone. Decide at compose time what the thing looks like
