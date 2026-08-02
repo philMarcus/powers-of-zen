@@ -50,8 +50,18 @@ def mad(a, b):
     return sum(ImageStat.Stat(ImageChops.difference(a, b)).mean) / 3
 
 
-def regen_tail(method, cfg, srcfr, phases, zoom, loop, out_dir, depth):
-    """Regenerate the L tail frames under one mechanism; returns the new frames."""
+def regen_tail(method, cfg, srcfr, compiled, out_dir, depth):
+    """Regenerate the L tail frames under one mechanism; returns the new frames.
+
+    `compiled` is grammar.compile_journey's full tuple. For ipa/ipacn the slots are rendered
+    SCHEDULE-FAITHFUL (Phil 2026-08-02: "match the cadence exactly"): the per-slot prompts and
+    crossfades come from dive.phase_info and the denoise runs dive.py's own choreography
+    (arrival/transition boosts, seam windows, 2-frame anacrusis) — so a spliced tail is
+    indistinguishable from what a native render produces for those slots. The old flat
+    src->dst crossfade at den 0.5 briefly mis-cadenced the last card's arrival overlap
+    (tail slots 0-2 sit inside it). blendcn keeps its historical recipe — it is the A/B
+    control for the July repair mechanism, not a production path."""
+    (phases, zoom, den_sched, _exp, loop, _cameos, arrivals, _approach, seam_arrivals) = compiled
     total = len(zoom)
     L = loop["frames"]
     seam_start = total - L
@@ -66,6 +76,16 @@ def regen_tail(method, cfg, srcfr, phases, zoom, loop, out_dir, depth):
     morph_n, cut_tail = loop.get("morph_frames", 12), 3
     morph_start = L - morph_n
     morph_strength = None
+    # dive.main's boost bookkeeping, reproduced exactly
+    seam_starts, arrival_starts = set(), set()
+    acc = 0
+    for pi, ph in enumerate(phases):
+        if pi in seam_arrivals:
+            seam_starts.add(acc)
+        if pi in arrivals:
+            arrival_starts.add(acc)
+        acc += ph["frames"]
+    T = cfg["transition_frames"]
     outfr = out_dir / method
     outfr.mkdir(parents=True, exist_ok=True)
     frames = []
@@ -77,8 +97,9 @@ def regen_tail(method, cfg, srcfr, phases, zoom, loop, out_dir, depth):
         cy = 0.5 + drift * math.sin(2 * math.pi * i / 419 + 1.7)
         fed = dive.zoom_transform(prev, zoom[i], cfg["rotate_per_frame"], cx, cy)
         fed = dive.detail_boost(fed, cfg)
-        den, ctl, cn_s, ipa_w = 0.5, None, 0.0, 0.0
+        ctl, cn_s, ipa_w, pal = None, 0.0, 0.0, 0.8 * t
         if method == "blendcn":
+            den = 0.5
             conv_n = morph_n - cut_tail
             if j < morph_start:                      # natural dive
                 init, prompt, prev_p, blend = fed, src_prompt, None, 1.0
@@ -94,16 +115,32 @@ def regen_tail(method, cfg, srcfr, phases, zoom, loop, out_dir, depth):
             else:                                    # cut-tail keeps zooming
                 init, prompt, prev_p, blend = fed, dst_prompt, src_prompt, 0.85
         elif method in ("ipa", "ipacn"):
+            # SCHEDULE-FAITHFUL slot: the compiled prompt/crossfade + dive's denoise cadence
+            prompt, prev_p, k, p_idx = dive.phase_info(phases, i)
+            in_trans = prev_p is not None and k < T
+            blend = (k + 1) / (T + 1) if in_trans else 1.0
+            if not in_trans:
+                prev_p = None
+            base_den = den_sched[i] if den_sched else cfg["denoise"]
+            boost = 0
+            if in_trans:
+                boost = (cfg["arrival_denoise_boost"] if p_idx in arrivals
+                         else cfg["transition_denoise_boost"])
+            if any(0 <= i - b < cfg["seam_morph_frames"] for b in seam_starts):
+                boost = max(boost, cfg["arrival_denoise_boost"])
+            den = min(0.85, base_den + boost)
+            dist = next((s - i for s in arrival_starts if 0 < s - i <= 2), None)
+            if dist is not None:
+                den = min(0.85, max(den, base_den + cfg["arrival_denoise_boost"]
+                                    * (0.7 if dist == 1 else 0.4)))
             init = fed                               # NO pixel morph — IPA does the homing
-            prompt, prev_p = dst_prompt, src_prompt
-            blend = min(1.0, 0.15 + 0.85 * t)
             ipa_w = 0.95 * t ** 1.5                  # gentle early, strong at the wrap
+            pal = min(0.85, 0.9 * t)                 # dive.py's own palette ramp
             if method == "ipacn" and j >= morph_start:
                 m = (j - morph_start + 1) / morph_n
                 ctl, cn_s = ctrl_name, 0.2 + 0.6 * m
                 if j >= L - 6:                       # small FIXED landing blend (never 0.82)
-                    k = (j - (L - 6) + 1) / 6
-                    init = Image.blend(fed, frame0, 0.35 * k)
+                    init = Image.blend(fed, frame0, 0.35 * (j - (L - 6) + 1) / 6)
         else:
             raise SystemExit(f"unknown method {method}")
         wf = seam_lab.seam_workflow(cfg, dive.upload_image(init, f"ab_init_{method}_{i:05d}.png"),
@@ -114,11 +151,12 @@ def regen_tail(method, cfg, srcfr, phases, zoom, loop, out_dir, depth):
         out = Image.open(io.BytesIO(dive.run_workflow(wf))).convert("RGB")
         if out.size != (W, H):
             out = out.resize((W, H), Image.LANCZOS)
-        out = dive.color_match(out, f0ref, 0.8 * t)
+        out = dive.color_match(out, f0ref, pal)
         out.save(outfr / f"{i:05d}.png")
         frames.append(out)
         prev = out
-        print(f"  [{method}] frame {i} t={t:.2f} ipa={ipa_w:.2f} cn={cn_s:.2f}", flush=True)
+        print(f"  [{method}] frame {i} t={t:.2f} den={den:.2f} ipa={ipa_w:.2f} cn={cn_s:.2f}",
+              flush=True)
     return frames
 
 
@@ -171,8 +209,8 @@ def main():
     model = args.model or deck_model or "ds"
     cfg = {**dive.DEFAULTS, **spec.get("settings", {})}
     cfg.update(dive.MODEL_PRESETS[model])
-    out = grammar.compile_journey(spec, cfg["fps"], "in")
-    phases, zoom, _den, _exp, loop = out[0], out[1], out[2], out[3], out[4]
+    compiled = grammar.compile_journey(spec, cfg["fps"], "in")
+    zoom, loop = compiled[1], compiled[4]
     if not loop:
         raise SystemExit("journey has no exact_loop — no tail to test")
     total, L = len(zoom), loop["frames"]
@@ -207,7 +245,7 @@ def main():
         else:
             import time
             t0 = time.time()
-            tail = regen_tail(m, cfg, srcfr, phases, zoom, loop, out_dir, depth)
+            tail = regen_tail(m, cfg, srcfr, compiled, out_dir, depth)
             print(f"[ab] {m}: {L} frames in {time.time()-t0:.0f}s", flush=True)
         pv = preview_frames(srcfr, tail, seam_start, total)
         previews[m] = pv
