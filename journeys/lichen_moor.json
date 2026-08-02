@@ -1,0 +1,92 @@
+{
+  "name": "lichen_moor",
+  "theme": "a dusk moor of standing stones where one weathered stone reads as a world from orbit, its lichen crusts standing in for continents; the dive drops through the lichen's stalk forest into the fracture network inside the rock, and that same branching network opens back out as the dry-stone walls dividing the moor",
+  "style": "enchanted_wild",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "moor_ridge",
+      "exp": 3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep heather purple and dusk vermilion",
+      "scene": "a wide dusk moor seen from high above, dark heather flats and black peat pools reaching to the horizon, dry-stone walls running in a rough branching network over the slopes and dividing the ground into uneven fields, a rutted track threading between them, low mist lying in the hollows, a ring of rough stones set on the high ground, empty, no one present",
+      "target": "a tall leaning standing stone, rough grey granite",
+      "target_phrase": "a standing stone"
+    },
+    {
+      "name": "stone_ring",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cool grey stone and violet mist",
+      "scene": "a ring of standing stones on the moor top at eye level, seven rough granite pillars ranged around a floor of cropped turf, each one leaning at its own angle, violet mist lying low between them, crusted patches of orange and sage on their weathered sides, the last dusk light bright in the gaps, empty, no one present",
+      "target": "a broad rounded stone, grey and weathered",
+      "target_phrase": "a rounded grey stone"
+    },
+    {
+      "name": "stone_world",
+      "exp": 0.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust orange and sage green on grey, deep indigo behind",
+      "scene": "a great rounded weathered stone set against the deep indigo dusk, its curved edge lit along one side, broad rust-orange and pale sage crusts spread over the grey rock, their margins broken into ragged fingers and notches, dark bare channels winding between them, a dust of pale flecks scattered through the whole",
+      "target": "a rust-orange crust, ragged-edged",
+      "target_phrase": "an orange lichen patch"
+    },
+    {
+      "name": "lichen_crust",
+      "exp": -1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust orange and pale grey",
+      "scene": "a rust-orange lichen crust spread across pale grey stone seen from straight above, ragged overlapping plates meeting along their edges, small dark discs scattered over them, hairline grey channels dividing the crust into irregular islands, pale sage-green tufts standing at the rims",
+      "target": "a pale sage-green tuft, branched and spongy",
+      "target_phrase": "a sage green tuft",
+      "loop_target": "a rust-orange lichen crust on pale grey stone, ragged plates and scattered dark discs"
+    },
+    {
+      "name": "thallus_forest",
+      "exp": -3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sage green and cool grey",
+      "scene": "a forest of lichen stalks standing up from the crust, pale sage-green trunks rising in dense ranks, each one flattened and forked at its top, deep shaded gaps running between them, fine grey dust caught along the stems, the pale rock floor showing far below",
+      "target": "a bright emerald bead, round and glossy",
+      "target_phrase": "a bright green bead"
+    },
+    {
+      "name": "algal_weave",
+      "exp": -4.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm amber and emerald",
+      "scene": "the packed weave inside a lichen stalk, pale amber threads braided in every direction, clusters of round emerald beads set among them, warm light coming through the spongy tangle, and under it all a floor of bare pale rock crossed by dark hairline cracks",
+      "target": "a dark hairline crack",
+      "target_phrase": "a dark hairline crack",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.63,
+          0.37
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "crack_lattice",
+      "exp": -5.3,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "pale grey stone and rust stain",
+      "scene": "a branching network of hairline cracks running through pale grey stone, the fractures dividing the rock into irregular flat islands of every size, some paths crossing clear from one side to the other and others closing in blind loops, rust-orange stain seeping along the wider cracks, tiny mineral grains glinting in the flats"
+    }
+  ],
+  "music_theme": "a windswept dusk moor of old stones, low drone and a slow skin-drum pulse under airy strings, one bright swell landing where the cracked rock opens out into the walled moor",
+  "music_key": "D minor",
+  "render_start": "lichen_crust"
+}

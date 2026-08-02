@@ -1,0 +1,72 @@
+{
+  "name": "heron_delta",
+  "theme": "a silver tidal estuary read as a feather and back — ranks of grey plumage on the birds standing in the shallows, one feather's barb ridges, the interlocking barbule combs whose crossed lattice folds straight back out into the braided channels of the delta",
+  "style": "crystalline",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "plumage",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold grey and chalk white",
+      "scene": "ranks of overlapping grey feathers laid over one another in long rows, seen from straight above, each one edged in chalk white, fine pale down showing in the gaps between the rows, cold blue dawn light raking along the ranks",
+      "target": "a long grey feather, chalk white along its edge",
+      "target_phrase": "a long grey feather",
+      "loop_target": "ranks of overlapping grey feathers edged in chalk white, seen from straight above"
+    },
+    {
+      "name": "feather_vane",
+      "exp": -2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale silver and cool white",
+      "scene": "a grey vane spread out in every direction, hundreds of fine parallel barbs running in ranks from a pale central shaft, each barb a glossy raised ridge with a narrow trough beside it, cold white light lying along the ridges, a chalk-white margin at the far edge",
+      "target": "a glossy grey barb ridge",
+      "target_phrase": "a glossy grey ridge",
+      "cameo": {
+        "sprite": "output/mascots/canon/lee.png",
+        "pos": [
+          0.66,
+          0.35
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "barbule_moire",
+      "exp": -5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "white and pale blue-grey",
+      "scene": "two crossed combs of glassy barbules interlocked across a cold white plain, rows of tiny hooks caught over rows of grooves, broad pale interference fringes standing across the crossed ranks, clear blue-grey light coming through the translucent combs"
+    },
+    {
+      "name": "tidal_delta",
+      "exp": 4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver and ice blue",
+      "scene": "a braided tidal estuary at dawn seen from high above, dozens of silver channels splitting and rejoining across dark flats, pale sandbanks between them, thin mist lying in the low ground, the open sea a bright band along the far edge, cold ice-blue light over everything",
+      "target": "a pale curved sandbank",
+      "target_phrase": "a pale sandbank"
+    },
+    {
+      "name": "reed_shallows",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "wet silver and cold grey-green",
+      "scene": "the shallow edge of a tidal channel at eye level, cold silver water over ribbed grey mud, pale wet sand rising to stands of winter reeds along the bank, grey herons standing still in the shallow water among the reeds, thin dawn mist over the channel",
+      "target": "a grey heron",
+      "target_phrase": "a grey heron"
+    }
+  ],
+  "music_theme": "a cold tidal dawn, wide and hushed — glassy bell tones and slow low strings over a soft tide pulse, a bright shivering swell landing where the barbule lattice opens into the delta",
+  "music_key": "E minor",
+  "render_start": "plumage"
+}

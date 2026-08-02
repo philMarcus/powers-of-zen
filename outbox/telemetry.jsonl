@@ -240,3 +240,36 @@
 {"ts": "2026-08-01 13:54:10", "event": "music_choose", "journey": "lather_atlas", "detail": "warm"}
 {"ts": "2026-08-01 13:54:10", "event": "queued", "journey": "lather_atlas"}
 {"ts": "2026-08-01 13:59:40", "event": "correction", "journey": "quantum_orrery", "detail": "restore reject lost to music_gen stale-save race"}
+{"ts": "2026-08-01 15:45:55", "event": "rejected", "journey": "pollen_court"}
+{"ts": "2026-08-01 15:45:55", "event": "jqueued", "journey": "pollen_court", "detail": "reject -> re-queue back, same seed"}
+{"ts": "2026-08-01 15:46:09", "event": "rejected", "journey": "loom_of_nights"}
+{"ts": "2026-08-01 15:46:09", "event": "jqueued", "journey": "loom_of_nights", "detail": "reject -> re-queue back, same seed"}
+{"ts": "2026-08-01 16:36:22", "event": "review", "journey": "glass_apiary", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-01 16:37:14", "event": "caption", "journey": "glass_apiary", "detail": "5 options, spot=True"}
+{"ts": "2026-08-01 16:37:14", "event": "render", "journey": "glass_apiary", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-01 17:26:25", "event": "review", "journey": "quantum_orrery", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-01 17:27:13", "event": "caption", "journey": "quantum_orrery", "detail": "5 options, spot=True"}
+{"ts": "2026-08-01 17:27:13", "event": "render", "journey": "quantum_orrery", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-01 17:59:56", "event": "review", "journey": "copper_rain", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-01 18:00:37", "event": "caption", "journey": "copper_rain", "detail": "5 options, spot=True"}
+{"ts": "2026-08-01 18:00:37", "event": "render", "journey": "copper_rain", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-01 18:00:37", "event": "batch_done", "detail": "batch done in 2.7h — 3 to Review"}
+{"ts": "2026-08-01 18:01:27", "event": "post", "journey": "night_bloom_remix", "platform": "youtube", "detail": "https://youtube.com/shorts/T3lj-rfcyyM"}
+{"ts": "2026-08-01 18:01:27", "event": "post", "journey": "night_bloom_remix", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/Dbg3QOnxpQi/"}
+{"ts": "2026-08-02 00:12:17", "event": "refill", "journey": "cinder_veil", "detail": "auto-queued (ok cinder_veil              start=cinder_ring)"}
+{"ts": "2026-08-02 00:12:17", "event": "refill", "journey": "gossamer_dawn", "detail": "auto-queued (ok gossamer_dawn            start=hedgerow            · not cosmic/subatomic)"}
+{"ts": "2026-08-02 00:12:17", "event": "refill", "journey": "heron_delta", "detail": "auto-queued (ok heron_delta              start=plumage             · not cosmic/subatomic)"}
+{"ts": "2026-08-02 00:12:17", "event": "refill", "journey": "lichen_moor", "detail": "auto-queued (ok lichen_moor              start=lichen_crust        · not cosmic/subatomic)"}
+{"ts": "2026-08-02 00:12:17", "event": "refill", "journey": "night_lido", "detail": "auto-queued (ok night_lido               start=caustic_floor       · not cosmic/subatomic)"}
+{"ts": "2026-08-02 00:12:17", "event": "refill_done", "detail": "refill done: 5 composed, 5 queued (briefs: short, short, medium, short, long)"}
+{"ts": "2026-08-02 02:35:13", "event": "review", "journey": "sugar_nebula", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-02 02:36:09", "event": "caption", "journey": "sugar_nebula", "detail": "5 options, spot=True"}
+{"ts": "2026-08-02 02:36:09", "event": "render", "journey": "sugar_nebula", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-02 02:37:57", "event": "render_fail", "journey": "static_bloom", "detail": "dive failed: ue \") — re-rolling seed, attempt 4/4 | [dive] ABORT: frame 0 keeps rendering a lone figure after 4 seeds. This is a PROMPT problem, not luck — fix the render_start card (drop halo/gilded/regalia words, name a concrete object) or pick a different render_start. Re-run with --allow-figures to override."}
+{"ts": "2026-08-02 03:14:37", "event": "review", "journey": "velvet_atlas", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-02 03:15:30", "event": "caption", "journey": "velvet_atlas", "detail": "5 options, spot=True"}
+{"ts": "2026-08-02 03:15:30", "event": "render", "journey": "velvet_atlas", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-02 03:15:30", "event": "batch_done", "detail": "batch done in 1.8h — 2 to Review, 1 failed (static_bloom)"}
+{"ts": "2026-08-02 08:01:29", "event": "post", "journey": "butterfly_meridian", "platform": "youtube", "detail": "https://youtube.com/shorts/YV5ZGIYKpb0"}
+{"ts": "2026-08-02 08:01:29", "event": "post", "journey": "butterfly_meridian", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbiXYvTxGr9/"}
+{"ts": "2026-08-02 12:37:43", "event": "review", "journey": "copper_rain", "detail": "ds/divein (src v2)"}

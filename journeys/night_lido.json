@@ -1,0 +1,70 @@
+{
+  "name": "night_lido",
+  "theme": "an empty open-air swimming pool at night with the lamps set below the waterline — the whole journey stays inside the pool: the web of light thrown across the tiled floor, one bright knot in it, a single thread of that light, the fine grid inside the light, and the grid read back out as the moonlit glints strewn over the black surface",
+  "style": "ultraviolet",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "caustic_floor",
+      "exp": 0.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep blue and green-white",
+      "scene": "the tiled floor of a night swimming pool seen down through still clear water from the edge above, a whole net of green-white light thrown across the pale squares, bright filaments crossing and re-crossing in every direction, dark blue water between, lamp glow coming in low along the wall",
+      "target": "a bright green knot of light",
+      "target_phrase": "a bright knot of light",
+      "loop_target": "the tiled floor of the night pool seen down through the water from the edge above, a net of green-white light thrown across pale squares"
+    },
+    {
+      "name": "light_knot",
+      "exp": -0.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "hot white and dark teal",
+      "scene": "a knot of green-white light burning on the glazed tile of a pool floor, a hard bright core with lines of light running out of it over the squares, further lines crossing away across the dark teal glaze, deep water overhead",
+      "target": "a thin bright thread of light",
+      "target_phrase": "a thin bright thread",
+      "cameo": {
+        "sprite": "output/mascots/canon/newman.png",
+        "pos": [
+          0.71,
+          0.36
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "light_thread",
+      "exp": -1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "acid green and blue-black",
+      "scene": "a thread of white-green light lying along wet glazed tile, a hard blazing edge with finer forks splitting off it along its length, blue-black glaze and dark grout to either side, more threads crossing on beyond",
+      "target": "a bright round grain of light",
+      "target_phrase": "a bright point of light"
+    },
+    {
+      "name": "light_lattice",
+      "exp": -6.4,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "pale green and violet-black",
+      "scene": "ranks of fine green-white threads crossing in every direction inside the light itself, bright lines laid over deeper dark bands, a hard small point at every crossing, the grid going on into violet-black depth"
+    },
+    {
+      "name": "night_surface",
+      "exp": 1.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver-white and deep blue-black",
+      "scene": "the whole open-air pool at night seen from the tiled deck, black water spread wide from wall to wall, hundreds of small moonlit glints strewn over the ripples, two lamps burning under the waterline low along the far wall, plain wet tiles and a low rail at the rim, empty, no one present"
+    }
+  ],
+  "music_theme": "late-night water stillness, low warm pads under soft glassy plucks, a single deep swell landing on the lattice morph",
+  "music_key": "D minor",
+  "render_start": "caustic_floor"
+}

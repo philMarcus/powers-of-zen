@@ -1,0 +1,70 @@
+{
+  "name": "gossamer_dawn",
+  "theme": "a dawn hedgerow hung with dew-beaded orb webs — down one silk radial to the web's coiled center, into a water bead on the cable, and the bent light inside the bead opens back out onto the meadow the hedge stands in",
+  "style": "aurora_silk",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "hedgerow",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale pink-orange light and cool grey-green",
+      "scene": "a tall hedgerow at first light seen from the meadow at standing height, dozens of round silk orb webs strung between the branches and the grass stems, every thread beaded with water, low pink-orange light through drifting mist, pale green leaves and seed heads scattered across the whole hedge",
+      "target": "a round silk orb web beaded with water",
+      "target_phrase": "a round silk web",
+      "loop_target": "a tall hedgerow at first light seen from the meadow at standing height, dozens of dew-beaded orb webs strung between the branches, low pink-orange mist"
+    },
+    {
+      "name": "orb_web",
+      "exp": -0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver and pale violet on soft grey",
+      "scene": "an orb web spun across a gap in the hedge, straight silk spokes running out from a pale center to the anchor lines, a spiral of silk wound between the spokes with its turns spaced wider toward the rim, water beads strung in even rows along every thread, soft grey-green twigs and pale dawn sky beyond the web's frame",
+      "target": "a dense pale knot of silk",
+      "target_phrase": "the pale web center"
+    },
+    {
+      "name": "silk_hub",
+      "exp": -2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm pink-orange and cream",
+      "scene": "a knot of thick ropy silk cables at the middle of the web, cables running out from it in every direction, the innermost coils of the spiral looped tight across them, clear round water beads strung along each cable in ranks, warm pink-orange light along the silk and cool shadow between the strands",
+      "target": "a clear round water bead",
+      "target_phrase": "a clear water bead",
+      "cameo": {
+        "sprite": "output/mascots/canon/lee.png",
+        "pos": [
+          0.29,
+          0.63
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "bead_lens",
+      "exp": -3.3,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "cool pale green and pale blue",
+      "scene": "inside a clear water bead, a curved wall of water bending the dawn light into broad pale bands, fine motes suspended through the water, a bright band of light drawn along the curve, cool green and blue depth away from it"
+    },
+    {
+      "name": "meadow",
+      "exp": 2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale gold and fresh green",
+      "scene": "a wide dawn meadow seen from above the grass, long lines of hedgerow running across it between pale gold fields, mist lying low in the hollows, first pink-orange light spread across the whole valley, small stands of trees scattered along the hedge lines"
+    }
+  ],
+  "music_theme": "a hedgerow at first light, hushed and gentle, soft plucked strings over a low pad, a bright airy swell where the water bead opens onto the meadow",
+  "music_key": "D major",
+  "render_start": "hedgerow"
+}

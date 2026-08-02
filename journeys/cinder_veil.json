@@ -1,0 +1,132 @@
+{
+  "name": "cinder_veil",
+  "theme": "a volcanic caldera country at night — down a cooling lava river to basalt terraces, into a lava tube and a single pumice stone, through its nested gas pockets into an Apollonian bubble foam, out across a supernova remnant's burning lace, back past a fire-veined rogue planet into the ash clouds over the caldera",
+  "style": "stormlight",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "caldera_country",
+      "exp": 5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "molten orange and charcoal black",
+      "scene": "volcanic caldera country at night seen from high above, a black shield of cooled rock spread from ridge to ridge, glowing orange vent fissures branching across it in every direction, grey ash plains between the ridges, a molten river winding along the caldera floor",
+      "target": "a molten lava river, a bright orange channel",
+      "target_phrase": "a glowing lava river"
+    },
+    {
+      "name": "lava_river",
+      "exp": 3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "white-hot orange and cooling black",
+      "scene": "a molten lava river running down a black rock channel, its bright orange flow broken into dark cooling crust plates, bright sparks above the surface, stepped terraces of black basalt standing on either side, grey ash banks below them",
+      "target": "a stepped basalt terrace, black hexagonal columns",
+      "target_phrase": "black basalt columns"
+    },
+    {
+      "name": "basalt_terraces",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "charcoal black with ember seams",
+      "scene": "wide terraces of black basalt stepping down in tiers, a pavement of packed hexagonal column tops on every step, drifts of grey ash strewn across them, ember light in the deep cracks between the columns, a dark opening low in the terrace wall",
+      "target": "a dark cave mouth, a black arched opening",
+      "target_phrase": "a dark cave mouth"
+    },
+    {
+      "name": "lava_tube",
+      "exp": 0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "orange floor-light on glassy black",
+      "scene": "a lava tube running back into the dark, ribbed walls of glassy black rock, a thin stream of molten orange along the floor, pale rubble stones strewn over the ledges on either side, ember light washing the low ceiling, empty, no one present",
+      "target": "a pale grey pumice stone, rough and pitted",
+      "target_phrase": "a pale pumice stone",
+      "cameo": {
+        "sprite": "output/mascots/canon/newman.png",
+        "pos": [
+          0.63,
+          0.58
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "pumice_stone",
+      "exp": -1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ash grey and ember orange",
+      "scene": "a pale grey pumice stone resting in cinder rubble, its rough skin drilled through with round gas pockets of every size, more stones scattered around it on black sand, ember light from below catching their rims",
+      "target": "a round gas pocket, a smooth-walled hollow",
+      "target_phrase": "a round hollow"
+    },
+    {
+      "name": "vesicles",
+      "exp": -3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm orange through pale grey glass",
+      "scene": "a cavern world of round gas pockets inside pale volcanic glass, wide smooth hollows opening into smaller hollows in every direction, thin glass walls between them lit warm orange from within, fine ash dust settled in the deepest pits",
+      "target": "a knot of tiny nested bubbles, circles inside circles",
+      "target_phrase": "tiny nested bubbles"
+    },
+    {
+      "name": "gasket_foam",
+      "exp": -5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "burning orange rims on black",
+      "scene": "a foam of glass-thin circles nested inside circles, every gap between three touching rings filled by a smaller ring and that gap by one smaller again, pale glass rims burning orange, black depth behind the lace"
+    },
+    {
+      "name": "remnant_lace",
+      "exp": 17,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "burning orange and white on black",
+      "scene": "a supernova remnant strewn across the black, tangled lace filaments of burning gas layered in torn sheets one over another, thin bright rims where the sheets fold, dark voids between the strands, cold stars scattered behind them",
+      "target": "a dull red star, dark cinder patches crusted over it",
+      "target_phrase": "a dim red star"
+    },
+    {
+      "name": "cinder_ring",
+      "exp": 12,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "dull red and ember orange on black",
+      "scene": "a dying ember star ringed by a broad disk of burning cinder debris seen at a shallow tilt, banded rings of glowing dust circling it with dark gaps cut between them, embers scattered through the dust in every direction, the star's dull red light bleeding out through a hazy corona with no clear rim, black space beyond",
+      "target": "a black planet veined with molten orange",
+      "target_phrase": "a dark planet",
+      "loop_target": "a dying ember star ringed by a broad disk of burning cinder debris, embers scattered through banded rings of glowing dust"
+    },
+    {
+      "name": "rogue_planet",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "black and molten orange",
+      "scene": "a black rogue planet in deep space, long veins of molten orange branching across its night side, grey ash storms spread over its dark continents, a thin fiery limb along its edge, faint stars behind it",
+      "target": "a grey ash cloud, a wide torn sheet",
+      "target_phrase": "a grey ash cloud"
+    },
+    {
+      "name": "ash_sky",
+      "exp": 6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ash grey with orange underlight",
+      "scene": "an ash cloud deck seen from high above, torn grey sheets spread over black land, orange light from the fissures below staining their undersides, tall columns of ash standing up through the layers",
+      "target": "a branching orange fissure, a bright crack in black rock",
+      "target_phrase": "a glowing orange fissure"
+    }
+  ],
+  "music_theme": "a volcanic night — a deep subterranean drone under slow struck-metal pulses, an ember shimmer rising into the bubble-foam break, settling back to low ash-soft strings",
+  "music_key": "F minor",
+  "render_start": "cinder_ring"
+}
