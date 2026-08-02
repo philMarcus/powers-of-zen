@@ -1,20 +1,24 @@
 #!/usr/bin/env python3
-"""replace_opening — regenerate a render's BAD OPENING CARD without losing a single frame.
+"""replace_opening — regenerate a render's BAD OPENING without losing a frame OR a scene.
 
 The problem (Phil, 2026-08-02): some otherwise-great renders open on a close-up frame 0 the
 loop can't gracefully come home to. Cutting the card would drop 28 frames and shift the music
-grid; a full re-render costs an hour. This keeps EVERY frame slot:
+grid; a full re-render costs an hour. And the card-0 SCENE itself is wanted content — it only
+failed as a COLD txt2img opening; rendered mid-dive it's fine (Phil: "we can assume the journey
+card contains something we want in the video"). So this keeps every frame slot AND every scene:
 
-    old render order:   [card0: BAD][card1 .. cardN-1][loop tail -> homes to bad frame 0]
-    new render order:   [--- one continuous homing arc ---][card1 .. cardN-1  (KEPT, untouched)]
+    old render order:   [card0: BAD txt2img start][card1 .. cardN-1][tail -> homes to frame 0]
+    new render order:   [--- card0's world, arrived at mid-dive ---][card1 .. cardN-1 (KEPT)]
 
-The old loop-tail slots AND the old card-0 slots are regenerated as ONE continuous arc
-(L + C0 frames, typically 24+28=52): the feedback chain resumes at the last kept frame, keeps
-diving at the scheduled zoom, and IPA/depth-CN homes it onto CARD 1's FIRST FRAME — the new
-loop point. The bad world is generated over, organically, "getting to the opening from what
-used to be the last shot". Frame count, bar grid, and every kept frame stay byte-identical;
-the counter overlay is re-derived only on the regenerated slots (a seam-style spin into card
-1's register). Non-destructive: lands in a fresh vN.
+The old tail slots AND the old card-0 slots are regenerated as ONE continuous arc (L + C0
+frames, typically 24+28=52) that renders the ORIGINAL compiled schedule for those slots: the
+feedback chain resumes at the last kept frame; the tail slots run their own loop-home prompts
+(which already plunge INTO card 0's world); slot 0 gets a seam-class on-beat morph into card
+0's world (it IS a bar line); card 0's slots run card 0's own travel/plunge prompts — the
+scene is passed THROUGH, not skipped; and the last ~12 slots IPA/depth-CN home onto the FIRST
+KEPT FRAME (card 1's arrival, which itself still morphs out of card 0's world — the junction
+is what the original schedule always expected there). The counter needs no re-derivation: the
+original exponent schedule is already correct for every slot. Non-destructive: fresh vN.
 
 Usage (repo root, ComfyUI up):
   python3 scripts/replace_opening.py pollen_court --dry-run
@@ -75,7 +79,7 @@ def main():
     cfg.update(dive.MODEL_PRESETS[model])
     cfg["build"] = "in"
     out = grammar.compile_journey(spec, cfg["fps"], "in")
-    phases, zoom, _den, exponent, loop = out[0], out[1], out[2], out[3], out[4]
+    phases, zoom, den_sched, exponent, loop = out[0], out[1], out[2], out[3], out[4]
     if not loop:
         sys.exit("journey has no exact_loop — nothing to re-home")
     total, L = len(zoom), loop["frames"]
@@ -83,7 +87,7 @@ def main():
     C0 = cf[0]
     regs = rotated_regs(spec)
     if len(regs) < 3:
-        sys.exit("need at least 3 cards to drop the opening world")
+        sys.exit("need at least 3 cards to regenerate the opening")
     arc = L + C0                      # regenerated slots: [total-L .. total-1] + [0 .. C0-1]
     resume_at = total - L - 1         # last KEPT frame — the chain resumes from its image
 
@@ -107,18 +111,14 @@ def main():
         sys.exit(f"no complete source frames under {base} (need {total})")
     srcfr = src / "build" / "frames"
 
-    last_reg, first_kept_reg = regs[-1], regs[1]
-    style = spec.get("style_suffix", "")
-    src_prompt = grammar._p(grammar.T_FINAL.format(
-        scene=grammar._scene(last_reg), style=style), last_reg)
-    dst_prompt = grammar._p(grammar.T_MORPH.format(
-        scene=grammar._scene(first_kept_reg), style=style), first_kept_reg)
-
-    print(f"[open] {args.journey}: src={base.name}/{src.name} total={total} "
-          f"drop card0={regs[0]['name']!r} ({C0}f) — regenerate {arc} slots "
-          f"[{total-L}..{total-1}]+[0..{C0-1}], home onto frame {C0} "
-          f"(card {first_kept_reg['name']!r})", flush=True)
-    print(f"[open] bridge: {src_prompt[:70]}…  ->  {dst_prompt[:70]}…", flush=True)
+    print(f"[open] {args.journey}: src={base.name}/{src.name} total={total} — regenerate "
+          f"{arc} slots [{total-L}..{total-1}]+[0..{C0-1}]: dive back INTO card0 "
+          f"{regs[0]['name']!r} (scene kept, no txt2img), then home onto kept frame {C0} "
+          f"(card {regs[1]['name']!r} arrival)", flush=True)
+    p0 = dive.phase_info(phases, total - L)[0]
+    p1 = dive.phase_info(phases, 0)[0]
+    print(f"[open] tail slots: {p0[:70]}…", flush=True)
+    print(f"[open] card0 slots: {p1[:70]}…", flush=True)
     if args.dry_run:
         return
 
@@ -136,61 +136,82 @@ def main():
     for i in range(C0, total - L):                     # the KEPT body, byte-identical
         shutil.copy(srcfr / f"{i:05d}.png", fr / f"{i:05d}.png")
 
-    home = load(srcfr, C0)                             # card 1's first frame = new loop point
+    home = load(srcfr, C0)                             # card 1's arrival = the landing frame
     home_ref = dive.upload_image(home, f"open_home_{args.journey}.png")
     home_pal = dive.channel_stats(home)
     depth = seam_lab.pick_depth_preproc(seam_lab.object_info())
     W, H = cfg["width"], cfg["height"]
     morph_n = loop.get("morph_frames", 12)
-
-    # counter: regenerated slots spin from the last kept exponent to the first kept one —
-    # continuous at both junctions, honest seam-spin across the arc
-    new_exp = list(exponent) if exponent else None
-    e0, e1 = (exponent[resume_at], exponent[C0]) if exponent else (0, 0)
+    T = cfg["transition_frames"]
+    boost = cfg["arrival_denoise_boost"]
 
     prev = load(srcfr, resume_at)
     for a in range(arc):
         i = (total - L + a) % total                    # slot index: tail slots, then 0..C0-1
-        t = (a + 1) / arc
-        if new_exp:
-            new_exp[i] = e0 + (e1 - e0) * t
-        drift = cfg["drift"] * (1 - t)
+        # ORIGINAL schedule for this slot — card 0's scene is passed through, never skipped.
+        # Slot 0's phase has no previous in the flat list; in the circular arc its previous
+        # is the tail's last phase (the wrap-around crossfade the schedule always implied).
+        prompt, prev_p, k, p_idx = dive.phase_info(phases, i)
+        if p_idx == 0 and prev_p is None and k < T:
+            prev_p = phases[-1]["prompt"]
+        in_trans = prev_p is not None and k < T
+        # denoise: scheduled travel, plus a SEAM-CLASS on-beat morph into card 0's world at
+        # slot 0 (a bar line) with the standard 2-frame anacrusis on the last tail slots —
+        # the world-flip the original schedule never had because card 0 was txt2img there.
+        den = den_sched[i] if den_sched else cfg["denoise"]
+        if 0 <= i < cfg["seam_morph_frames"]:
+            den = min(0.85, den + boost)
+        elif i >= total - 2:                           # anacrusis: shimmer into the flip
+            den = min(0.85, den + boost * (0.7 if i == total - 1 else 0.4))
+        drift = cfg["drift"] * (1 - (a + 1) / arc)
         cx = 0.5 + drift * math.sin(2 * math.pi * i / 263)
         cy = 0.5 + drift * math.sin(2 * math.pi * i / 419 + 1.7)
         fed = dive.zoom_transform(prev, zoom[i], cfg["rotate_per_frame"], cx, cy)
         fed = dive.detail_boost(fed, cfg)
-        ipa_w = 0.95 * t ** 1.5
-        ctl, cn_s = (home_ref, 0.2 + 0.6 * (a - (arc - morph_n) + 1) / morph_n) \
-            if a >= arc - morph_n else (None, 0.0)
+        # HOMING (ipacn, landing window only — earlier slots are a normal dive through card
+        # 0's world; the gap is small because kept frame C0 still half-shows that world):
+        ipa_w, ctl, cn_s = 0.0, None, 0.0
+        if a >= arc - morph_n:
+            m = (a - (arc - morph_n) + 1) / morph_n
+            ipa_w = 0.95 * m ** 1.5
+            ctl, cn_s = home_ref, 0.2 + 0.6 * m
+            den = max(den, 0.5)                        # the validated lab landing denoise
         if a >= arc - 6:
             fed = Image.blend(fed, home, 0.35 * (a - (arc - 6) + 1) / 6)
         wf = seam_lab.seam_workflow(cfg, dive.upload_image(fed, f"open_init_{i:05d}.png"),
-                                    dst_prompt, cfg["seed"] + i + SEED_STRIDE, 0.5,
-                                    prev_prompt=src_prompt, blend=min(1.0, 0.15 + 0.85 * t),
+                                    prompt, cfg["seed"] + i + SEED_STRIDE, den,
+                                    prev_prompt=prev_p if in_trans else None,
+                                    blend=(k + 1) / (T + 1) if in_trans else 1.0,
                                     ctrl_name=ctl, cn_strength=cn_s, depth_preproc=depth)
         if ipa_w > 0.01:
             seam_lab.add_ipadapter(wf, home_ref, ipa_w)
         img = Image.open(io.BytesIO(dive.run_workflow(wf))).convert("RGB")
         if img.size != (W, H):
             img = img.resize((W, H), Image.LANCZOS)
-        img = dive.color_match(img, home_pal, 0.8 * t)
+        if a >= arc - morph_n:
+            m = (a - (arc - morph_n) + 1) / morph_n
+            img = dive.color_match(img, home_pal, 0.8 * m)
         img.save(fr / f"{i:05d}.png")
         prev = img
-        print(f"[open] arc {a+1}/{arc} (slot {i}) ipa={ipa_w:.2f} cn={cn_s:.2f}", flush=True)
+        print(f"[open] arc {a+1}/{arc} (slot {i}) den={den:.2f} ipa={ipa_w:.2f} "
+              f"cn={cn_s:.2f} :: {prompt[:46]}", flush=True)
 
     (out_dir / "run.json").write_text(json.dumps({
         "journey": args.journey, "model": model, "checkpoint": cfg["checkpoint"],
         "style": sname, "frames": total, "seed": cfg["seed"],
-        "replace_opening": {"src": src.name, "dropped_card": regs[0]["name"],
+        "replace_opening": {"src": src.name, "card0": regs[0]["name"],
                             "arc_slots": [total - L, C0 - 1], "home_frame": C0,
-                            "mechanism": "ipacn", "seed_stride": SEED_STRIDE}}, indent=2))
+                            "mechanism": "schedule-prompts + ipacn landing",
+                            "seed_stride": SEED_STRIDE}}, indent=2))
 
     counter_flag = spec.get("format", {}).get("counter", cfg["counter"])
     show = bool(counter_flag) if counter_flag != "auto" else all(
         a > b for a, b in zip([r["exp"] for r in spec["registers"]],
                               [r["exp"] for r in spec["registers"]][1:]))
+    # the ORIGINAL exponent schedule is already correct for every slot: the tail spins toward
+    # card 0's register (we still dive into card 0's world) and card 0's slots descend it
     dive.assemble(cfg, args.journey, out_dir, fr, total,
-                  exponent=new_exp if show else None)
+                  exponent=exponent if show else None)
     print(f"[open] assembled {out_dir}", flush=True)
 
     if args.queue_review:

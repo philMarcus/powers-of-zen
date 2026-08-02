@@ -476,3 +476,17 @@ refuses cameos sitting in the regenerated slots; --dry-run/--queue-review. Dry-r
 pollen_court (drop 'park', home onto bench_slat), loom_of_nights (drop 'galaxy'), quantum_orrery
 (drop 'hadron'). Tonight's batch renders with establish-frame-0 + IPA tail automatically — the
 first doctrine-complete renders land in Video Review tomorrow morning.
+2026-08-02 (evening): REPLACE_OPENING REDESIGNED per Phil's clarification — NO SCENE SKIPPED.
+Phil approved copper_rain v2's IPA seam in the full video, and corrected the opening tool's
+design: card 0's scene is WANTED content (it failed only as a cold txt2img opening; "we can
+assume the journey card contains something we want in the video"). The arc no longer bridges
+last-world -> card 1 directly; it renders the ORIGINAL compiled schedule for the regenerated
+slots via dive.phase_info (tail slots = their own loop-home prompts, which already plunge INTO
+card 0's world; card-0 slots = card 0's own travel/plunge — the scene passes through mid-dive,
+where the engine is strong), with: a wrap-around crossfade at slot 0 (phase 0's prev = the last
+phase), a seam-class denoise morph at slot 0 (it IS a bar line) + 2-frame anacrusis on the last
+tail slots, and ipacn homing confined to the last morph_frames (12) onto kept frame C0 — which
+still half-shows card 0's world (card 1's arrival morphs OUT of it), so the landing gap is
+small by construction. Original exponent schedule already correct for every slot (no counter
+re-derivation). Dry-runs verified on pollen_court/loom_of_nights/quantum_orrery. AWAITING
+Phil's go to run them (~52 frames ≈ 15 min GPU each, --queue-review lands them in Video Review).
