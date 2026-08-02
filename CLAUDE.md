@@ -411,3 +411,40 @@ outbox/night_batch.log; results land captioned in Video Review. The 01:30 task t
 picks the NEXT template from the remaining ~10-deep queue; midnight refill will top it up
 (queue 13/20 → composes 5). NEXT SESSION: Level 3 = IP-Adapter seam in seam_lab (models
 installed; hard cases dollhouse/snowfall), then Level 2 splice — see PLANNED NEXT above.
+2026-08-02: OPENING-SHOT DIAGNOSIS (no fixes applied — Phil wants discussion first) + IPA SEAM
+VALIDATED. All 5 new renders (glass_apiary, quantum_orrery re-render, copper_rain, sugar_nebula,
+velvet_atlas) opened on CLOSE-UPS despite the render_start doctrine. Root causes, CONFIRMED by
+seed-held frame-0 ablation probes (scratchpad probe/, strips sent to Phil):
+(1) ENGINE: card 0 skips its arrival phase, so frame 0 — the only txt2img frame — renders the
+T_TRAVEL prompt "moving through {scene}, {TARGET}, {style}": the card's plain-object target is
+IN the txt2img prompt, and SDXL composes a product shot around the most concrete noun (removing
+just the target flipped quantum_orrery from crystal-on-a-table to a wide starfield vista).
+(2) STYLE: the deck's gloss vocabulary + brand tail (specular highlights/jewel-bright/candy
+gloss) is macro-product-shot prior; sugar_nebula stayed macro even without the target, went
+wide-ish with explicit wide language, fully wide only without the gloss words. The "twins"
+(glass_apiary/sugar_nebula colorful-balls openings) = both candy_gloss + both SPHERE targets +
+both nebula scenes — same checkpoint attractor, journeys not actually similar.
+(3) Nothing anywhere says WIDE: scene bans frame language, so the 9:16 portrait canvas prior
+(product shots/portraits) wins by default. Also: 3 of the 5 (copper_rain, velvet_atlas, and
+aborted static_bloom) were on the KNOWN closed-terrestrial no-qualifying-start list — the
+doctrine never covered them. static_bloom's figure abort: "behind a fine black MASK" — a
+WEARABLE summons a wearer (all 4 seeds: "a woman wearing a green and black mask"); ablation
+confirmed the same class on velvet_atlas (target removed → a woman IN the coat, despite "empty,
+no one present" + full negative). Candidate fixes FOR DISCUSSION: engine-side frame-0 ESTABLISH
+template (wide language, no target — probe C validated), frame-0-only close-up negatives,
+wearables added to the composer bait list, authored wide cards for the closed-terrestrial five.
+IPA SEAM (Level 3) VALIDATED in the lab: seam_lab.add_ipadapter (ipadapter_plus, PLUS preset,
+plus_sdxl_vit-h + CLIP-ViT-H) + NEW scripts/seam_tail_ab.py — regenerates a render's REAL loop
+tail per method (orig/blendcn/ipa/ipacn), non-destructive, output/seam_lab/<name>/ with labeled
+side-by-side seam_AB.mp4. Ran dollhouse_ds + snowfall_turbo (the blendcn-reverted hard cases,
+gaps 64/73) + copper_rain (live engine-2). VERDICT from stills: ipacn (IPA weight 0.95·t^1.5 +
+depth-CN 0.2→0.8 over the last 12 + FIXED small blend ≤0.35 last 6, palette ramp, full zoom
+throughout) lands compositionally ON frame 0 in all three (dollhouse: same purple corner house/
+street curve; snowfall: spire in place; copper_rain: the exact staircase) with every frame alive
+— while blendcn hit the 0.82 fading-photo morph on all three (the regime Phil reverted in July).
+ipa alone = right world, wrong framing (one zoom-level off) — IPA carries the world home, CN
+aligns the landing. ~14-17s/frame, IPA adds ~nothing after the first-frame CLIP encode. Phil is
+judging the seam_AB clips in MOTION. NEXT (pending Phil): fold ipacn into dive.py's exact_loop
+tail (--classic-tail for A/B); Level 2 splice = the same bridge primitive aimed at ANY target
+frame — whole-CARD cuts keep the music grid (28f = 1 bar), and a bad opening card could be cut
+with the tail homing onto card 1 instead.

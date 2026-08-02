@@ -125,6 +125,28 @@ def gen(wf):
     return Image.open(io.BytesIO(png)).convert("RGB")
 
 
+# ── IP-Adapter (loop-closure Level 3) ────────────────────────────────────────────────────
+IPA_PRESET = "PLUS (high strength)"   # ip-adapter-plus_sdxl_vit-h + CLIP-ViT-H (installed)
+
+
+def add_ipadapter(wf, image_name, weight, weight_type="ease in-out"):
+    """Patch a seam_workflow graph so the sampler's MODEL is conditioned on a reference IMAGE
+    (frame 0) via IP-Adapter. Unlike a pixel blend, this pulls the GENERATION toward frame 0's
+    content/palette/forms while every pixel is still freshly rendered — homing guidance that can
+    be strong without the fading-photograph look of Image.blend, and without depth-CN's rigid
+    composition lock."""
+    wf["ipa_loader"] = {"class_type": "IPAdapterUnifiedLoader",
+                        "inputs": {"model": ["ckpt", 0], "preset": IPA_PRESET}}
+    wf["ipa_img"] = {"class_type": "LoadImage", "inputs": {"image": image_name}}
+    wf["ipa"] = {"class_type": "IPAdapterAdvanced",
+                 "inputs": {"model": ["ipa_loader", 0], "ipadapter": ["ipa_loader", 1],
+                            "image": ["ipa_img", 0], "weight": round(float(weight), 3),
+                            "weight_type": weight_type, "combine_embeds": "concat",
+                            "start_at": 0.0, "end_at": 1.0, "embeds_scaling": "V only"}}
+    wf["sample"]["inputs"]["model"] = ["ipa", 0]
+    return wf
+
+
 # ── the three mechanisms ─────────────────────────────────────────────────────────────────
 def method_paste(A, B, L, cfg):
     """Baseline: current engine loop tail — grow a shrunk copy of B in A's center, last=copy."""
