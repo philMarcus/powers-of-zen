@@ -507,3 +507,10 @@ contract). dive-video SKILL cross-references. IN FLIGHT: frost_window tail candi
 mineral_heart replace_opening (from ds/v5, engine-1, 60-slot arc) candidate — both for Phil's
 review, production untouched. Earlier today Phil approved: copper_rain v2 seam, the four
 v2-tool openings in review, sugar_nebula (moved to Music).
+2026-08-02 (close): Phil APPROVED + INSTALLED both production repairs via make_candidate
+--install: mineral_heart (full card-0 replacement, ds/v6) and frost_window (tail-only ipacn,
+v2) — production files swapped in place (same start frame, same music; originals in
+_seam_backup/), chosen "warm" music candidate copies updated, poster paths unchanged. Earlier
+approvals today: copper_rain v2 seam, sugar_nebula tail (moved to Music), four v2-tool
+openings in review. STILL OPEN: loom_of_nights card-cut list (first Level-2 splice);
+static_bloom re-queue is Phil's call in the Journeys tab.
