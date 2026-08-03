@@ -44,7 +44,11 @@ Everything runs LOCAL and FREE on Phil's RTX 3080 (no paid APIs).
   render_failed); everything else derives from pipeline.json + output/ so nothing drifts.
 - `scripts/` — night_batch.py (the nightly renderer), journey_refill.py (midnight
   composer), phase_shift.py (intentional openings), zen_browser.py (CDP driver),
-  start_chrome_zen.sh, mascot_concepts.py.
+  start_chrome_zen.sh, mascot_concepts.py. REPAIR family (2026-08-02, see the
+  **video-repair** skill for the decision tree): replace_opening.py (bad opening card),
+  replace_tail.py (bad loop seam), make_candidate.py (preview/--install a repair for a
+  video already in production — measured rotation + its own audio), seam_tail_ab.py
+  (mechanism A/B lab).
 - `output/<journey>/vN/` — renders (NEVER overwritten; finals at root, build/ = intermediates).
 - `output/mascots/canon/` — the chosen mascot cast (hidden Waldo-style cameos, one per video).
 - `review/` + `review_divein/` — phase-shifted cuts still IN REVIEW (zoom-out / dive-in).
@@ -490,3 +494,16 @@ still half-shows card 0's world (card 1's arrival morphs OUT of it), so the land
 small by construction. Original exponent schedule already correct for every slot (no counter
 re-derivation). Dry-runs verified on pollen_court/loom_of_nights/quantum_orrery. AWAITING
 Phil's go to run them (~52 frames ≈ 15 min GPU each, --queue-review lands them in Video Review).
+2026-08-02 (late): REPAIR FAMILY MADE DURABLE + DOCUMENTED. New **video-repair SKILL** = the
+user's guide (decision tree: full re-render vs replace_opening vs replace_tail vs
+make_candidate; rhythm doctrine as tests — flip ON the bar, never freeze a plunge, no kept
+frame after a regenerated one across a morph boundary, splices schedule-faithful; gotchas:
+pin --src-version, engine-1 compile==saved-frames check, cameo windows, never queue_review a
+production-stage video). Scratchpad drivers promoted: scripts/replace_tail.py (tail-only ipacn
+splice, schedule-faithful, --queue-review for review-stage) + scripts/make_candidate.py
+(production candidates: measured rotation + production's own audio -> output/candidates/;
+--install = backup + swap production + chosen music aligned copy, reseam_production's
+contract). dive-video SKILL cross-references. IN FLIGHT: frost_window tail candidate +
+mineral_heart replace_opening (from ds/v5, engine-1, 60-slot arc) candidate — both for Phil's
+review, production untouched. Earlier today Phil approved: copper_rain v2 seam, the four
+v2-tool openings in review, sugar_nebula (moved to Music).

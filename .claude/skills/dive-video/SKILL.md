@@ -73,9 +73,12 @@ CONTEXT (GPU work happens outside the model) — run them in the background and 
 8. **IPA loop homing** (2026-08-02): the exact-loop tail conditions generation on frame 0's
    IMAGE (IP-Adapter ramp) + depth-CN landing alignment + a small FIXED blend — the world
    converges on home while every frame stays freshly rendered and diving. `--classic-tail`
-   restores the old gap-scaled pixel morph for A/B. `scripts/replace_opening.py <j>` reuses the
-   same homing to regenerate a BAD OPENING CARD in place (no frames lost, new loop point =
-   card 1's first frame).
+   restores the old gap-scaled pixel morph for A/B.
+
+## Repairing an existing render (don't full re-render for a fixable defect)
+See the **video-repair** skill: `replace_opening.py` (bad opening card — scene kept, arc
+through card 1's arrival), `replace_tail.py` (bad loop seam only), `make_candidate.py`
+(preview/install a repair for a video already in production, same start + same music).
 
 ## Journey files
 The **journey-composer** skill is the authoring law. Schema in brief: per card `name`, `exp`,
