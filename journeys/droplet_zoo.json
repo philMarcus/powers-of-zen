@@ -1,0 +1,70 @@
+{
+  "name": "droplet_zoo",
+  "theme": "a moonlit pond never leaves its own water — down through one bead standing on a glass plate into a crowded plankton world, a diatom's panelled glass dome and the strut lattice inside its wall, whose ringed openings are reread as the reed-divided pond from the high bank, landing back at the water's edge",
+  "style": "liquid_light",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "pond_edge",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep green-black water and cold white moonlight",
+      "scene": "a moonlit pond seen from a flat wet stone at the water's edge, still black water spreading away to dark reed beds, broken white moonlight scattered over the ripples, a raft of small round floating leaves gathered near the stone, a thin rectangle of pale glass lying on the wet stone with one round bead of water standing on it, the bank empty, no one present",
+      "target": "a round bead of water, a clear low dome",
+      "target_phrase": "a clear water droplet",
+      "loop_target": "the moonlit pond seen from a flat wet stone at the water's edge, still black water and dark reed beds, broken white moonlight over the ripples"
+    },
+    {
+      "name": "drop_swarm",
+      "exp": -2.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm green and pale gold",
+      "scene": "a lit water world inside one droplet, warm green water crowded with plankton, bristled wheel-shaped grazers and coiled green threads and tumbling round cells suspended through the depth, pale motes hanging in the water between them, the droplet's bright curved wall standing far off around it all, a plane of pale glass below",
+      "target": "a small glass shell, a pale ribbed disc",
+      "target_phrase": "a pale glass disc",
+      "cameo": {
+        "sprite": "output/mascots/canon/lee.png",
+        "pos": [
+          0.29,
+          0.63
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "diatom_dome",
+      "exp": -4.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm cream white with an iridescent rainbow sheen",
+      "scene": "a domed glass shell spread across a green water field, cream-white silica panelled into triangles and hexagons, rows of round wells punched through every panel, an iridescent rainbow sheen banding the curve, more shells suspended in the water past it",
+      "target": "a smooth white glass strut, a rounded rib",
+      "target_phrase": "a white glass strut"
+    },
+    {
+      "name": "strut_lattice",
+      "exp": -7,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "cold white on deep violet, cooling toward silver",
+      "scene": "a lattice of smooth glass struts spanning a dark violet field, cold white ribs meeting three and five at a time into rings and open triangles, a thin pale film of light caught across every opening, more rings of struts stacked away into depth"
+    },
+    {
+      "name": "pond_basin",
+      "exp": 2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver white and deep green-black",
+      "scene": "a dark pond seen wide from the high bank at night, still black water divided by pale reed beds into open panes, broken white moonlight scattered over every pane, mats of small round floating leaves along the near shore, one pale flat stone set into the bank edge below"
+    }
+  ],
+  "music_theme": "a still night pond turned inward, hushed and glassy, soft bell tones over a low warm drone, one clear swell landing where the glass lattice opens back out over the water",
+  "music_key": "B minor",
+  "render_start": "pond_edge"
+}

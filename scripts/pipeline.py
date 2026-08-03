@@ -33,6 +33,31 @@ STATES = ["rendered", "review", "music", "queued", "live", "failed", "rejected"]
 # "rejected": reviewed and turned down (kept for the record; no dashboard tab shows it, the
 # scheduler never picks it). Re-promote by setting state back to "review".
 
+# Mascot cast canonical scales (the dive-video SKILL table). A cameo must sit on a card whose
+# exp is within CAMEO_EXP_TOL of its mascot's realm — the sprite matches the register (Phil
+# 2026-08-03: realm-match BEATS cast rotation; rotation applies only among matching mascots).
+MASCOT_EXP = {"clark": -15, "adam": -10, "tina": -8, "belle": -5, "lee": -3, "newman": 0,
+              "dora": 1, "kitty": 3, "lorraine": 5, "janet": 7, "lamar": 11,
+              "aleksey": 21, "amos": 26}
+CAMEO_EXP_TOL = 3.0
+
+
+def cameo_realm_check(spec):
+    """-> list of problem strings (empty = ok): every cameo's mascot vs its card's exp."""
+    probs = []
+    for r in spec.get("registers", []):
+        c = r.get("cameo")
+        if not c:
+            continue
+        stem = Path(c.get("sprite", "")).stem.lower()
+        me = MASCOT_EXP.get(stem)
+        if me is None:
+            probs.append(f"cameo on {r.get('name')}: unknown mascot {stem!r}")
+        elif abs(float(r.get("exp", 0)) - me) > CAMEO_EXP_TOL:
+            probs.append(f"cameo {stem} (realm 10^{me}) on card {r.get('name')} "
+                         f"exp {r.get('exp')} — OFF-REALM")
+    return probs
+
 
 def load():
     # explicit utf-8: captions have emoji, and Windows Python defaults to cp1252

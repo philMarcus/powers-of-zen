@@ -1,0 +1,92 @@
+{
+  "name": "turing_springs",
+  "theme": "a geothermal terrace country read as one pattern at every scale — aurora light falling into steam over rainbow hot-spring shelves, down through a pool's orange rim into the mat's stripes and spots, into the thread ranks inside one stripe, whose banding is reread as a gas giant's latitude lanes",
+  "style": "liquid_light",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "terrace_field",
+      "exp": 3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "fire orange and rust on charcoal, deep teal water",
+      "scene": "a wide spread of stepped hot-spring terraces seen from high in the air, dozens of round mineral pools set into pale shelves, every pool ringed in bands of fire orange and rust over charcoal basalt, deep teal water at the middle of each one, thin white steam lying across the shelves, dark lava ground between the terrace groups, empty, no one present",
+      "target": "a round teal pool ringed in orange",
+      "target_phrase": "a round teal pool"
+    },
+    {
+      "name": "pool_eye",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep teal water inside orange and rust rims",
+      "scene": "one hot-spring pool seen from its stone rim, clear teal water at the middle over a pale sinter floor, broad bands of orange and rust crust wrapped around the shallow edge, wet mineral ledges stepping down into the water, dark basalt gravel past the rim, empty, no one present",
+      "target": "a broad band of orange crust",
+      "target_phrase": "an orange crust band",
+      "cameo": {
+        "sprite": "output/mascots/canon/dora.png",
+        "pos": [
+          0.33,
+          0.67
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "mat_rim",
+      "exp": -1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ember orange and rust with pale channels",
+      "scene": "the crusted surface of an orange microbial mat along a pool's edge, broken into winding stripes and round spots, ember and rust bands separated by narrow pale channels, shallow teal water caught in the low channels between the ridges, wet glistening crust across the whole spread",
+      "target": "a single ember-orange stripe",
+      "target_phrase": "an orange stripe"
+    },
+    {
+      "name": "thread_ranks",
+      "exp": -4,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "pale gold threads on dark teal",
+      "scene": "a forest of fine glassy threads standing inside one stripe of the mat, pale gold strands in long parallel ranks, dark teal water lanes running between the ranks, round gas beads caught among the strands, the whole spread banded light and dark"
+    },
+    {
+      "name": "gas_giant",
+      "exp": 8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ember orange and ash grey with a teal-green pole glow",
+      "scene": "a banded gas giant hanging in deep space, broad latitude bands of ember orange and ash grey wrapped in long parallel lanes around the sphere, fine curled ripples along every band boundary, a teal-green glow gathered at the pole, a scatter of stars behind it",
+      "target": "a standing sheet of teal-green light",
+      "target_phrase": "a green light sheet"
+    },
+    {
+      "name": "aurora_curtains",
+      "exp": 6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "teal-green light over ash grey and ember cloud bands",
+      "scene": "towering aurora curtains standing over a dark banded cloud deck, seen from high above the planet's night side, long ranks of green and teal light with rippled lower edges, pale glowing fog gathered where the light meets the cloud tops, the deck below banded in ember orange and ash grey, a wide field of stars overhead",
+      "target": "a pale glowing fog bank",
+      "target_phrase": "a pale fog bank",
+      "loop_target": "towering aurora curtains of green and teal light over a dark banded cloud deck, seen from high above the planet's night side"
+    },
+    {
+      "name": "steam_clouds",
+      "exp": 4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "white steam on charcoal and rust",
+      "scene": "a bank of white steam clouds low over dark volcanic country, ragged columns standing up from the ground beneath a flat pale layer, wide breaks in the cover where orange-rimmed ground shows through, ash-grey slopes running out to a far horizon",
+      "target": "a patch of orange-rimmed ground",
+      "target_phrase": "an orange patch of ground"
+    }
+  ],
+  "music_theme": "patient geothermal calm, warm low drone under a bright mineral shimmer, one long swell landing on the thread-ranks to gas-giant seam and a soft fall back through the steam",
+  "music_key": "F# minor",
+  "render_start": "aurora_curtains"
+}

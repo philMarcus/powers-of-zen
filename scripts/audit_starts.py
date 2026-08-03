@@ -14,6 +14,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import pipeline as pl  # noqa: E402  (cameo_realm_check)
+
 # A scene built around ONE subject. These phrasings are decisive: even when the sentence goes on
 # to mention neighbours, the frame is still a portrait of the named thing.
 SINGLE = re.compile(
@@ -63,6 +66,8 @@ def main():
         hits = sorted(set(w.lower() for w in SINGLE.findall(scene)))
         if hits and not FAR.search(scene):
             problems.append("single hard-edged subject: " + ", ".join(hits[:2]))
+        # the sprite must live in its realm — Amos does not visit beehives
+        problems += pl.cameo_realm_check(spec)
 
         # Notes, not failures: these two are judgement calls a regex can only hint at. Requiring
         # field-of-view WORDS produced false alarms on scenes that are plainly wide but phrased

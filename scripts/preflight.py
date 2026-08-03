@@ -56,4 +56,6 @@ for name in sys.argv[1:]:
     nameonly = sorted(set(w.lower() for w in NAME_ONLY.findall(p0)))
     print(f"  frame-0 bait   : {bait or 'none'}")
     print(f"  frame-0 name-only physics: {nameonly or 'none'}")
+    cam = pl.cameo_realm_check(spec)
+    print(f"  cameo realm    : {'!! ' + ' | '.join(cam) if cam else 'ok'}")
     print(f"  frame-0 prompt : {p0[:150]}")

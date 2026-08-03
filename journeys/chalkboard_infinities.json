@@ -55,15 +55,7 @@
       "palette": "glowing ivory chalk on deep green-black",
       "scene": "an endless chalk-white realm on deep green-black, a hyperbolic tiling of luminous white lines, concentric rings of tiled cells each ring finer toward a bright rim, a theorem chalked in every cell",
       "target": "a bright chalk diagram, circled white nodes joined by straight ruled lines",
-      "target_phrase": "a bright chalk diagram",
-      "cameo": {
-        "sprite": "output/mascots/canon/adam.png",
-        "pos": [
-          0.68,
-          0.33
-        ],
-        "size": 0.13
-      }
+      "target_phrase": "a bright chalk diagram"
     },
     {
       "name": "chalk_constellation",
@@ -81,7 +73,15 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "chalk white and warm brass on green-black",
-      "scene": "a chalked plan of a great tiered amphitheater drawn across a green-black slate wall, concentric rows of benches ringing a broad open floor, aisles ruled in white chalk, a lectern and a long board marked at the base, small brass lamp marks along the aisles, empty, no one present"
+      "scene": "a chalked plan of a great tiered amphitheater drawn across a green-black slate wall, concentric rows of benches ringing a broad open floor, aisles ruled in white chalk, a lectern and a long board marked at the base, small brass lamp marks along the aisles, empty, no one present",
+      "cameo": {
+        "sprite": "output/mascots/canon/kitty.png",
+        "pos": [
+          0.68,
+          0.33
+        ],
+        "size": 0.13
+      }
     }
   ],
   "music_theme": "a hushed nocturnal lecture hall of chalk and slate — austere and curious, soft piano figures over bowed strings and a slow pulse, one bright bloom of sound landing on the chalk-grain seam",

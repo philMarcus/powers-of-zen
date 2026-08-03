@@ -1,0 +1,90 @@
+{
+  "name": "salt_mirror",
+  "theme": "a dusk saltworks folds into its own geometry — coloured evaporation pans read from the air, down onto the white crust shore, into stepped halite terraces and their square staircase recesses, to the bare cubic lattice whose glowing grid opens straight back out into the ruled grid of pans",
+  "style": "reef_pop",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "pond_field",
+      "exp": 3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pink and burnt orange under cooling blue",
+      "scene": "salt evaporation ponds at dusk seen from the air on a long slant, a broad patchwork of shallow rectangular pans reaching to a far horizon, one pan pink, the next burnt orange, the next pale green, straight low banks of white crust ruled between them, the flat brine standing perfectly still and bright, two low suns close to the horizon and their doubles laid flat in the water, one bright white shelf of crust standing clear of the water out among the coloured pans",
+      "target": "a white crust island, ridged and bright",
+      "target_phrase": "a white salt island",
+      "loop_target": "salt evaporation ponds at dusk seen from the air on a long slant, a patchwork of pink, orange and pale green pans ruled apart by straight white crust banks, two low suns at the horizon"
+    },
+    {
+      "name": "crust_shore",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "chalk white and cool grey-blue",
+      "scene": "a wide plain of thick white salt crust seen from just above the ground, the crust broken into broad flat plates with raised seams between them, shallow pink brine standing along the cracks, a wet crusted rim where the plain runs down to the still water, the far banks and a straight causeway ruled across the pans beyond, cool grey-blue dusk light across the whole flat",
+      "target": "a cracked crust plate, flat and white-rimmed",
+      "target_phrase": "a white crust plate"
+    },
+    {
+      "name": "crust_plates",
+      "exp": -1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm pink brine on chalk white",
+      "scene": "a country of thick salt plates at ground level, chalk-white slabs meeting along raised ridges, warm pink brine held in the shallow grooves between them, clusters of clear square-sided crystal standing along every ridge, bright wet glare skating across the flats, more plates running away past them",
+      "target": "a stepped white crystal, square-sided and terraced",
+      "target_phrase": "a white stepped crystal"
+    },
+    {
+      "name": "hopper_terraces",
+      "exp": -3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale green-white and cold blue shadow",
+      "scene": "a terrain of right-angled salt terraces, broad square ledges stepping down flight below flight, every edge cut straight and every corner square, pale green-white walls standing between the flights, thin bright brine films along the treads, cold blue shadow pooled in the deep square hollows, terrace ranks receding in every direction",
+      "target": "a deep square hollow, its sides cut in steps",
+      "target_phrase": "a dark square hollow"
+    },
+    {
+      "name": "growth_steps",
+      "exp": -6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm cream and pale orange",
+      "scene": "a smooth salt plain of growth steps, straight low ledges a single layer high running in long parallel ranks, each ledge turning at a sharp right angle where it meets the next, wide glassy terraces between the ranks, warm cream light lying flat over the whole plain, a soft pale haze of depth beyond the far steps",
+      "target": "a glowing cube of light, its edges bright lines",
+      "target_phrase": "a glowing cube"
+    },
+    {
+      "name": "cubic_lattice",
+      "exp": -9,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "pale green light on deep blue-black",
+      "scene": "a cubic lattice of light, straight pale green lines running away in three directions at strict right angles, a bright node at every crossing, rank upon rank of open cubes stacked evenly into deep blue-black distance, wide dark space between the lines",
+      "cameo": {
+        "sprite": "output/mascots/canon/adam.png",
+        "pos": [
+          0.34,
+          0.62
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "saltworks_grid",
+      "exp": 4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "hot pink, orange and pale green on dark ground",
+      "scene": "a whole coastal saltworks seen from very high, a rectangular grid of shallow pans ruled across a dark shore, blocks of hot pink, orange and pale green set side by side in straight ranks, white banks drawn between every block, a bright square node where four banks cross, the open sea a dark band along one edge, low sunset light lying flat over the entire grid"
+    }
+  ],
+  "music_theme": "a still dusk over mirrored water — warm airy pads and slow glassy pulses over a soft low swell, one wide bright bloom landing where the cubic lattice opens back into the grid of pans",
+  "music_key": "D major",
+  "render_start": "pond_field"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "attic_drift",
+  "theme": "a dark attic never lets go of its one amber sunbeam — into the shaft, into the swarm of lit dust hanging at every depth, down to one jagged glass grain and the frosted crust on its face, whose scattered surrounding lights read back as the sunbeam's own dust and land in the attic again",
+  "style": "cosmic_gloss",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "attic",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep umber shadow and warm amber",
+      "scene": "a dark attic under bare rafters seen from the floorboards, empty, no one present, rough beams and roof boards receding into deep umber shadow on either side, stacked wooden crates and a dented tin trunk along the low wall, one broad amber shaft of daylight crossing the whole dark space from a small gable window, countless bright specks suspended all through it",
+      "target": "a broad amber shaft of daylight",
+      "target_phrase": "the amber sunbeam"
+    },
+    {
+      "name": "shaft",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "smoky grey-brown dark and pale amber",
+      "scene": "a broad amber column of daylight standing in the attic dark, warm haze layered through its width, countless bright specks strewn at every depth inside it, rough dark rafters and raw board edges past its rim on either side, deep umber shadow beyond",
+      "target": "a dense bright cluster of specks",
+      "target_phrase": "a bright cluster"
+    },
+    {
+      "name": "mote_swarm",
+      "exp": -2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "near-black umber and clear amber",
+      "scene": "countless amber specks strewn at every depth through deep umber dark, packed dense toward one bright core and thinning away in every direction, faint warm haze between them, near specks broad and bright and far ones fine and faint, the dark open and bare past them",
+      "target": "a pale glassy grain, jagged and clear",
+      "target_phrase": "a pale glassy grain",
+      "loop_target": "countless amber specks strewn at every depth through deep umber dark, packed dense toward one bright core"
+    },
+    {
+      "name": "dust_grain",
+      "exp": -4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "clear pale amber on near-black",
+      "scene": "a jagged clear grain of dust suspended in bright amber light, chipped facets bright along every edge, its pale body clouded and rough, a dull white crust over one broad face, more grains suspended at every depth in the dark behind it",
+      "target": "a dull white crust patch, rough and pitted",
+      "target_phrase": "a rough white patch",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.31,
+          0.64
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "crust_plain",
+      "exp": -6,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "chalk grey and umber shadow under raking amber",
+      "scene": "a frosted crust spread across a glassy plain, low white ridges and shallow pits repeating away in every direction, deep umber hollows between them, amber light raking low over the rough white ground, countless fine amber points scattered through the black past the plain's bright edge"
+    }
+  ],
+  "music_theme": "a hushed dark attic afternoon, weightless and nostalgic, sparse warm keys over a low drone, one bright swell landing where the frosted plain opens back into the attic light",
+  "music_key": "D minor",
+  "render_start": "mote_swarm"
+}

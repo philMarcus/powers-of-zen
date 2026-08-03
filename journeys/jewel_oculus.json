@@ -1,0 +1,133 @@
+{
+  "name": "jewel_oculus",
+  "theme": "a vast empty palace of coloured glass at dusk — down through the ten-pointed star lattice of its vault into one red glass tile and the tenfold packing inside it, out across a cosmic web of leaded light past bent arcs and a ringed red sun, and home over the dawn plain the palace stands on",
+  "style": "crystalline",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "jewel_hall",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep red and blue glass light on pale stone",
+      "scene": "a vast empty hall of coloured glass at dusk, seen wide from the middle of the stone floor, tall arcades of leaded panes down both long walls, a ribbed vault overhead worked into ten-pointed glass stars, broad pools of red and blue light lying across the pale flagstones, a round opening at the top of the vault open to the dusk sky, empty, no one present",
+      "target": "a ribbed glass vault of ten-pointed stars",
+      "target_phrase": "a stained glass dome",
+      "loop_target": "the vast empty hall of coloured glass at dusk, tall arcades of leaded panes and a ribbed vault of ten-pointed stars over the pale flagstones",
+      "cameo": {
+        "sprite": "output/mascots/canon/kitty.png",
+        "pos": [
+          0.34,
+          0.67
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "star_vault",
+      "exp": 0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep red, blue and green glass on black leading",
+      "scene": "the glass vault of the hall seen from straight below, ten-pointed stars of coloured glass repeating across the whole curve, flat black ribbons edged in gold interlacing over and under between them, kite and lozenge panes filling every cell, dusk light burning red, blue and green through the glass, pale stone ribs dividing the vault into wide panels",
+      "target": "a ten-pointed star of deep red glass",
+      "target_phrase": "a red ten-pointed star"
+    },
+    {
+      "name": "star_tile",
+      "exp": -0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep red glass with black and gold ribbon",
+      "scene": "a ten-pointed star of deep red glass set in the vault, a band of flat black ribbon edged in gold interlacing around its ten points, kite and lozenge panes of green and blue set against it on every side, thin solder lines crossing the red face, pale cloudy streaks and strings of fine bubbles standing in the glass",
+      "target": "a string of round bubbles in the red glass",
+      "target_phrase": "a string of bubbles"
+    },
+    {
+      "name": "glass_depth",
+      "exp": -3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "dark red and hot gold",
+      "scene": "the deep red body of the glass, a dark red field crossed by pale cloudy streaks and long strings of round bubbles, minute gold specks strewn everywhere through the red, fine dark grains gathered along the streaks, red light carried through the whole depth",
+      "target": "a field of bright points packed in tenfold rings",
+      "target_phrase": "packed bright points"
+    },
+    {
+      "name": "tenfold_burst",
+      "exp": -9.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "white gold and deep blue on black",
+      "scene": "a tenfold starburst of packed bright points, long straight struts of light radiating from a blazing core, bright nodes strung along every strut, star-shaped and lozenge gaps opening between them, the same pattern spread out across the black at every size"
+    },
+    {
+      "name": "glass_web",
+      "exp": 24,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep red, blue and green light on black",
+      "scene": "a cosmic web spread through the void, long filaments of light strung between bright nodes, each filament banded red, blue and green and bounded by dark lines, huge black cells opening between the strands, faint sheets of light stretched across the widest gaps",
+      "target": "a bright knot of galaxies, a dense gold core",
+      "target_phrase": "a bright galaxy cluster"
+    },
+    {
+      "name": "lens_arcs",
+      "exp": 21.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "gold with deep red and blue on black",
+      "scene": "a dense cluster of galaxies burning gold in the black, long thin arcs of red and blue light bent in smooth curves around it, a bright broken ring of light circling the crowded core, hundreds of small galaxies scattered across the dark on every side",
+      "target": "a nebula of green and blue light",
+      "target_phrase": "a green blue nebula",
+      "loop_target": "a dense cluster of galaxies burning gold in the black, long thin arcs of bent red and blue light curving around it"
+    },
+    {
+      "name": "panel_nebula",
+      "exp": 17.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "green and blue light with hot pink threads",
+      "scene": "a nebula of coloured light standing in the black, broad sheets of green and blue gas divided into bright panels by dark dust lanes, hot pink threads running along the divisions, new stars burning white in the open panels, banks of dark dust piled below",
+      "target": "a deep red star wrapped in a thin bright circle",
+      "target_phrase": "a deep red star"
+    },
+    {
+      "name": "ringed_sun",
+      "exp": 12,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep red and white on black",
+      "scene": "a deep red sun low in the black, its face mottled into dark cells with bright lanes between them, a thin perfect circle of white light drawn around it well clear of its edge, two short arcs of the same white light standing off to one side, small stars scattered beyond",
+      "target": "a dark blue planet, a smooth banded sphere",
+      "target_phrase": "a dark blue planet"
+    },
+    {
+      "name": "blue_planet",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep blue and pale gold",
+      "scene": "a dark blue planet against the black, a bright line of dawn along one edge of its disc, pale gold cloud bands drawn in long curves over deep blue seas, dry gold land spread along the daylight edge",
+      "target": "a wide pale plain, ridged and dry",
+      "target_phrase": "a pale desert plain"
+    },
+    {
+      "name": "dawn_plain",
+      "exp": 3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale gold first light and long blue shadows",
+      "scene": "a wide pale desert plain at first light seen from high above, long dry ridges running out to the horizon, blue shadows lying in every hollow, a walled palace of coloured glass standing alone on the flat, a round opening bright at the top of its ribbed vault",
+      "target": "a walled palace of coloured glass under a ribbed glass vault",
+      "target_phrase": "a glass palace"
+    }
+  ],
+  "music_theme": "a vast empty hall of coloured glass at dusk, hushed and radiant — slow bell-like plucks over a deep drone, opening into cold shimmering strings on the starburst-to-cosmic-web morph, settling back to warm low light at the close",
+  "music_key": "F-sharp minor",
+  "render_start": "lens_arcs"
+}

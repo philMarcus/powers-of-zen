@@ -514,3 +514,22 @@ _seam_backup/), chosen "warm" music candidate copies updated, poster paths uncha
 approvals today: copper_rain v2 seam, sugar_nebula tail (moved to Music), four v2-tool
 openings in review. STILL OPEN: loom_of_nights card-cut list (first Level-2 splice);
 static_bloom re-queue is Phil's call in the Journeys tab.
+2026-08-03: CAMEO REALM-MATCH DOCTRINE (Phil: the sprite must match the register's exponent —
+realm-match BEATS cast rotation). pipeline.py: MASCOT_EXP table + CAMEO_EXP_TOL=3 +
+cameo_realm_check(); audit_starts hard-fails off-realm cameos (blocks refill auto-queue);
+preflight prints a cameo-realm line; composer SKILL: pick the cameo CARD first, mascot NEAREST
+its exp, rotation only among passers — extreme mascots travel rarely, that's correct. Root
+cause of the drift: full-cast rotation pressure on a catalog whose cards cluster at exp -5..+3
+put Amos(26)/Aleksey(21)/Clark(-15)/Adam(-10) on mid-scale cards (Amos in a beehive). ALL 34
+active journeys fixed to 0 audit flags: 10 unrendered reassigned (nearest realm, variety ties),
+11 rendered fixed FORWARD (existing videos/captions untouched; future re-renders get the right
+mascot), chalkboard's cameo MOVED off the 10^16 chalk_realm (no mascot lives there) to
+amphitheater_plan(2)/kitty. SPRITE->OBJECT INVESTIGATION (no action, Phil's call): mechanism
+confirmed on tesla_garden v1 f164-176 — when the paste window ends (size>0.30), full denoise
+regenerates the sprite pixels and the checkpoint absorbs them as scene vocabulary (Clark ->
+neon filament wheel); the tracker then locked ON the ex-sprite (f166, it IS the salient round
+object matching the target_phrase) and dove into it. Not new engine behavior — tracker-era
+composition keeps objects near the thirds anchor IN FRAME (engine-1's drift slid sprites off
+fast), so takeovers now happen on camera. Frequency knobs IF ever wanted: end the window
+smaller than 0.30, fade the last 2-3 paste frames, or veto locks inside the cameo's propagated
+box just after a window. Phil: fine as long as it's occasional.

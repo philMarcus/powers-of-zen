@@ -314,11 +314,16 @@ myth, a trending sound, an emotion…):
   the render ABORTS if a figure persists. An abort means the PROMPT is wrong — fix the words
   rather than re-running. Audit any render with `python3 scripts/check_figures.py output/<j>/vN`.
 - **Fantastical, never gory.**
-- **One mascot cameo per video** on ONE card, scale-matched, size ≥0.12, full-cast rotation
-  (see dive-video SKILL for the cast). Optional at compose time. Any card works (the engine
-  pastes from the card's first feedback frame — a card-0 cameo appears at frame 1), but prefer
-  a NON-first card: card 0 is the loop-return frame, and the sprite reads better after an
-  arrival than over the establishing shot.
+- **One mascot cameo per video** on ONE card, size ≥0.12 (see dive-video SKILL for the cast).
+  Optional at compose time. Any card works (the engine pastes from the card's first feedback
+  frame — a card-0 cameo appears at frame 1), but prefer a NON-first card: card 0 is the
+  loop-return frame, and the sprite reads better after an arrival than over the establishing shot.
+- **REALM-MATCH BEATS ROTATION** (Phil 2026-08-03). The sprite must live at the card's scale:
+  test `|card.exp − mascot.exp| ≤ 3` against the cast table — Amos (10²⁶) does not visit
+  beehives. Pick the cameo CARD first, then the mascot NEAREST its exp; use cast rotation only
+  to break ties among mascots that pass the test. It is fine for the extreme mascots (Clark,
+  Adam, Amos, Aleksey, Lamar) to appear rarely — they only travel when a journey visits their
+  realm. `scripts/audit_starts.py` hard-fails an off-realm cameo (blocks the refill auto-queue).
 - **Counter: ALWAYS ON (`counter: true`). No exceptions** (Phil 2026-07-31: "even fiction realms
   can have quantified sizes"). It is the Powers-of-Zen signature; the engine pins the value to
   the current register and SPINS it at handoffs, so it stays honest across seam wraps — the
