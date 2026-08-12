@@ -16,6 +16,7 @@ Usage:
 """
 import argparse
 import json
+import re
 import sys
 import time
 from pathlib import Path
@@ -24,6 +25,48 @@ import requests
 
 COMFY = "http://localhost:8188"
 ROOT = Path(__file__).resolve().parent.parent
+
+# ComfyUI's TextEncodeAceStepAudio1.5 keyscale is a FIXED 34-entry enum — "Eb major",
+# "F# minor", never "E-flat"/"F-sharp"/modes. Composers write music_key in prose, and one
+# unlisted spelling 400s the whole workflow (resonance_hall's "E-flat major" sat in Music
+# for days with zero candidates, 2026-08-09). Normalize instead of trusting the spec.
+KEYSCALES = {f"{n} {m}" for m in ("major", "minor") for n in
+             ("C", "C#", "Db", "D", "D#", "Eb", "E", "F", "F#", "Gb", "G", "G#",
+              "Ab", "A", "A#", "Bb", "B")}
+MODE_FALLBACK = {"ionian": "major", "lydian": "major", "mixolydian": "major",
+                 "dorian": "minor", "phrygian": "minor", "aeolian": "minor",
+                 "locrian": "minor"}
+
+
+def normalize_key(key):
+    """Coerce a prose key ('E-flat major', 'F-sharp minor', 'D dorian') onto the enum."""
+    if not key:
+        return "A minor"
+    k = re.sub(r"[ -]sharp\b", "#", re.sub(r"[ -]flat\b", "b", str(key).strip(), flags=re.I),
+               flags=re.I)
+    parts = k.split()
+    if len(parts) >= 2:
+        note = parts[0][:1].upper() + parts[0][1:]
+        mode = parts[-1].lower()
+        mode = mode if mode in ("major", "minor") else MODE_FALLBACK.get(mode, "minor")
+        k = f"{note} {mode}"
+    if k not in KEYSCALES:
+        k = "A minor"
+    if k != key:
+        print(f"  (music_key {key!r} -> {k!r} for the ACE-Step keyscale enum)")
+    return k
+
+
+def free_vram():
+    """Ask ComfyUI to unload models + free VRAM. ACE-Step leaves ~9 GB resident after a
+    music run and SDXL similar after a render — without this the card looks full until
+    ComfyUI is killed. The next job just reloads (~15s), so this is always safe."""
+    try:
+        requests.post(f"{COMFY}/free", json={"unload_models": True, "free_memory": True},
+                      timeout=10)
+        print("  (ComfyUI models unloaded — VRAM freed)")
+    except Exception:
+        pass
 
 # Per-journey music direction. tags = genre/instrumentation/mood (ACE-Step reads these);
 # lyrics "[inst]" keeps it instrumental. bpm/key shape the groove. Keep them atmospheric
@@ -87,7 +130,11 @@ def build_workflow(tags, bpm, key, duration, seed, steps=8, lyrics="[inst]",
 def run_workflow(wf, timeout=600):
     """Queue an audio workflow, wait, return (audio_bytes, filename)."""
     r = requests.post(f"{COMFY}/prompt", json={"prompt": wf}, timeout=30)
-    r.raise_for_status()
+    if r.status_code >= 400:
+        # raise_for_status hides the body, and the body IS the diagnosis (node_errors —
+        # e.g. a keyscale spelling the enum rejects). Surface it.
+        raise RuntimeError(f"ComfyUI rejected the music workflow ({r.status_code}): "
+                           f"{r.text[:2000]}")
     pid = r.json()["prompt_id"]
     deadline = time.time() + timeout
     while time.time() < deadline:
@@ -113,7 +160,7 @@ def generate(journey=None, tags=None, bpm=None, key=None, duration=27.0, seed=31
     spec = PRESETS.get(journey or "", PRESETS["_default"])
     tags = tags or spec["tags"]
     bpm = bpm or spec["bpm"]
-    key = key or spec["key"]
+    key = normalize_key(key or spec["key"])
     prefix = f"zen_music/{journey or 'track'}"
     wf = build_workflow(tags, bpm, key, duration, seed, steps=steps, prefix=prefix)
     print(f"♪ generating {duration:.1f}s | {bpm}bpm {key} | seed {seed} steps {steps}\n"

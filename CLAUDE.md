@@ -533,3 +533,38 @@ composition keeps objects near the thirds anchor IN FRAME (engine-1's drift slid
 fast), so takeovers now happen on camera. Frequency knobs IF ever wanted: end the window
 smaller than 0.30, fade the last 2-3 paste frames, or veto locks inside the cameo's propagated
 box just after a window. Phil: fine as long as it's occasional.
+2026-08-12: MUSIC-GEN OUTAGE + BATCH WEDGE + POSTER GAP — all diagnosed from logs, all fixed.
+While Phil was away the pipeline ran itself fine (renders 08-03..08-08, posts through 08-10);
+three independent failures then stacked up: (1) MUSIC KEYSCALE 400s: ComfyUI's ACE-Step
+TextEncodeAceStepAudio1.5 keyscale is a FIXED 34-entry enum ("Eb major", "F# minor" — never
+"E-flat"/"F-sharp"/modes); refill composers write music_key in prose, so resonance_hall
+("E-flat major") died INSTANTLY at /prompt validation — and the dashboard's Popen sent
+stdout/stderr to DEVNULL, so the video just sat in Music with no candidates. Fixed:
+engine/music.normalize_key() (prose→enum, mode fallback dorian→minor etc., unknown→A minor,
+prints remaps), run_workflow surfaces the 400 BODY (it contains node_errors), and the
+dashboard logs every spawned gen to outbox/music_gen_<j>.log / caption_<j>.log — never
+DEVNULL a Popen whose failure you'll need to see. jewel_oculus ("F-sharp minor") and
+ochre_door ("D dorian") would have hit the same wall. (2) AUTO-GEN SKIPPED ON APPROVE:
+approve_to_music gated on gpu_busy() = nvidia-smi utilization ≥30%, which false-positives on
+the dashboard's OWN looping <video> previews (Chrome decodes on the GPU) — so approvals
+silently skipped generation ("come back and click Generate"). Fixed: pl.comfy_busy() asks
+ComfyUI's /queue for actual running/pending work (stdlib urllib — Windows dashboard has it);
+approve + Music-tab warning use it; a skip now writes telem music_skip. gpu_busy() stays for
+night_batch's game check. (3) VRAM NOT CLEARING: ACE-Step leaves ~9 GB resident after a gen
+(SDXL ~7 GB after a render) — Phil was killing ComfyUI to play games, which left it DOWN at
+01:30. music.free_vram() POSTs ComfyUI /free (unload_models+free_memory) at the end of every
+music_gen run and night_batch end-of-batch; next job reloads in ~15s. (4) THE BATCH WEDGE:
+night_batch.comfy_up() ran start_comfyui.sh, whose last line is `exec tmux attach` — in a
+scheduled run that BLOCKS FOREVER; the 08-08 batch hung there holding the /tmp lock (ComfyUI
+itself came up fine underneath — send-keys had fired), so 08-09+ nights exited "already
+running" and the render queue froze at 20/20 while refill correctly no-opped. Fixed: comfy_up
+now recreates the tmux session detached (kill-session; new-session -d; send-keys) and never
+attaches. (5) THE AWRY POSTING NIGHT: 08-08 08:00 failed with "Chrome CDP not reachable" —
+nobody relaunched zen Chrome after the reboot; zero flags, the poster refused cleanly. Fixed:
+poster self-heals — CDP down → run start_chrome_zen.sh (idempotent, non-blocking), wait ≤60s
+for :9222 + 15s for tabs, telem poster_chrome_selfheal, then proceed. CLEARED THE BACKLOG:
+resonance_hall + tide_glass (the two stuck in Music since 08-09) each have 5 fresh aligned
+candidates (locks up to 11.1x/9.8x) awaiting audition; VRAM confirmed freed after both runs.
+8 videos sit in Video Review; posting queue is EMPTY until Phil approves. TONIGHT IS A WATCH
+NIGHT for the batch fix (queue head: jewel_oculus + turing_springs + droplet_zoo); tomorrow
+08:00 validates the poster self-heal only if Chrome is down again.

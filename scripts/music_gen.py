@@ -141,6 +141,7 @@ def generate(journey, n=5):
                   "for_model": model0, "for_cut": cut}  # so a model/cut switch flags stale music
     pl.save(d)
     pl.telem("music_gen", journey=journey, detail=f"{len(cands)} candidates")
+    music.free_vram()      # ACE-Step holds ~9 GB after a run; release it for whatever's next
     print(f"recorded {len(cands)} candidates; audition in the dashboard Music panel")
 
 

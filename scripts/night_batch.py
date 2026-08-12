@@ -66,7 +66,16 @@ def comfy_up():
     except Exception:
         pass
     log("starting ComfyUI")
-    run(["bash", COMFY_START])
+    # NEVER run start_comfyui.sh here: it ends in `exec tmux attach`, which blocks forever
+    # in a scheduled run — the 2026-08-08 batch hung on that line holding the lock, and every
+    # night after exited with "already running" until the reboot. Recreate the session
+    # detached (same command the script uses); kill-session first so a dead pane from a
+    # crashed ComfyUI can't swallow the start.
+    run(["bash", "-lc",
+         "tmux kill-session -t comfy 2>/dev/null; "
+         "tmux new-session -d -s comfy -c /mnt/c/Users/Phil/ComfyUI && "
+         "tmux send-keys -t comfy './python_embeded/python.exe -s ComfyUI/main.py "
+         "--windows-standalone-build --listen 0.0.0.0' Enter"])
     for _ in range(60):
         try:
             requests.get(f"{COMFY}/system_stats", timeout=3)
@@ -255,6 +264,13 @@ def main():
                + (f" · {'; '.join(notes)}" if notes else ""))
     log(summary)
     pl.telem("batch_done", detail=summary)
+    try:      # release the ~7 GB SDXL stack so the morning GPU isn't full of last night
+        import requests
+        requests.post(f"{COMFY}/free", json={"unload_models": True, "free_memory": True},
+                      timeout=10)
+        log("ComfyUI models unloaded — VRAM freed")
+    except Exception:
+        pass
     log(f"log: {logpath.relative_to(ROOT)}")
 
 

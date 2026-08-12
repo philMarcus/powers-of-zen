@@ -164,6 +164,24 @@ def gpu_busy():
         return False
 
 
+def comfy_busy():
+    """True while ComfyUI is actually executing or queueing work (a dive render, seam repair,
+    or music job). THIS — not raw GPU utilization — is the right gate for "would a music gen
+    fight a render": gpu_busy() false-positives on the dashboard's own looping <video>
+    previews (Chrome decodes them on the GPU), which silently skipped auto music gen on
+    approve (2026-08-09). stdlib urllib because the dashboard runs on Windows python.
+    Fails open (False) — a down ComfyUI must never block the user; the gen itself will
+    surface that failure visibly."""
+    import json as _json
+    from urllib.request import urlopen
+    try:
+        with urlopen("http://localhost:8188/queue", timeout=3) as r:
+            q = _json.loads(r.read().decode())
+        return bool(q.get("queue_running") or q.get("queue_pending"))
+    except Exception:
+        return False
+
+
 def paused_platforms(data):
     """Platforms the scheduler should NOT auto-post to (e.g. TikTok while a new-account
     review/spam-flag settles). Set via meta.paused_platforms in pipeline.json."""

@@ -702,12 +702,28 @@ PLATFORMS = {"tiktok": post_tiktok, "youtube": post_youtube, "instagram": post_i
 
 # ---------------------------------------------------------------- runner
 def run(only, dry_run, journey):
-    # health check
-    try:
-        requests.get("http://localhost:9222/json/version", timeout=5)
-    except Exception:
-        print("Chrome CDP not reachable on :9222 — run scripts/start_chrome_zen.sh first.")
-        sys.exit(1)
+    # health check — self-heal a down Chrome (the 2026-08-08 morning run failed only because
+    # nobody relaunched zen Chrome after a reboot; start_chrome_zen.sh is idempotent + non-
+    # blocking, and it brings the anti-throttle flags every scheduled run depends on).
+    def cdp_up():
+        try:
+            requests.get("http://localhost:9222/json/version", timeout=5)
+            return True
+        except Exception:
+            return False
+    if not cdp_up():
+        import subprocess
+        print("Chrome CDP down — launching via scripts/start_chrome_zen.sh")
+        subprocess.run(["bash", str(pl.ROOT / "scripts" / "start_chrome_zen.sh")], timeout=30)
+        for _ in range(12):                      # profile + 3 platform tabs need a moment
+            time.sleep(5)
+            if cdp_up():
+                break
+        else:
+            print("Chrome CDP still not reachable on :9222 after launch — giving up.")
+            sys.exit(1)
+        time.sleep(15)                           # let the platform tabs actually load
+        pl.telem("poster_chrome_selfheal")
     data = pl.load()
     entry = pl.get(data, journey) if journey else pl.next_to_post(data)
     if not entry:

@@ -97,8 +97,10 @@ def regenerate_music(journey):
                f"cd /mnt/c/Users/Phil/zoomer && python3 scripts/music_gen.py {journey}"]
     else:
         cmd = ["python3", "scripts/music_gen.py", journey]
-    subprocess.Popen(cmd, cwd=str(pl.ROOT),
-                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    # log, don't DEVNULL: a crashed gen used to vanish without a trace (resonance_hall's
+    # bad keyscale died silently and the video just sat in Music with no candidates)
+    logf = open(pl.ROOT / "outbox" / f"music_gen_{journey}.log", "w")
+    subprocess.Popen(cmd, cwd=str(pl.ROOT), stdout=logf, stderr=subprocess.STDOUT)
 
 
 def apply_caption_pick(journey, radio_key):
@@ -144,7 +146,8 @@ def gen_captions(journey, model, no_theme=False):
     args = (f"cd /mnt/c/Users/Phil/zoomer && python3 scripts/caption.py {journey} "
             f"--model {model} --force{flag}")
     cmd = ["wsl", "bash", "-lc", args] if os.name == "nt" else ["bash", "-lc", args]
-    subprocess.Popen(cmd, cwd=str(pl.ROOT), stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    logf = open(pl.ROOT / "outbox" / f"caption_{journey}.log", "w")
+    subprocess.Popen(cmd, cwd=str(pl.ROOT), stdout=logf, stderr=subprocess.STDOUT)
 
 
 # ── music state helpers ──────────────────────────────────────────────────────────────────
@@ -264,8 +267,12 @@ def approve_to_music(journey):
         v["file"] = v["orig_file"]
     v["state"] = "music"
     pl.save(dd); pl.telem("music", journey=journey)
-    if not pl.gpu_busy():
-        regenerate_music(journey)                   # async; skipped while a render/GPU job runs
+    # gate on ComfyUI's ACTUAL queue, not GPU utilization — the dashboard's own looping
+    # video previews kept utilization high and silently skipped this (2026-08-09)
+    if not pl.comfy_busy():
+        regenerate_music(journey)                   # async; skipped only while a render runs
+    else:
+        pl.telem("music_skip", journey=journey, detail="ComfyUI busy — use Generate in Music tab")
 
 
 def render_marker(v, kind):
@@ -616,10 +623,10 @@ with tabs[2]:  # MUSIC — audition/generate a track, then send to Production
     mv = by_state(d, "music")
     if not mv:
         st.info("Nothing needs music. Approve a video in Video Review to send it here.")
-    gpu_busy = pl.gpu_busy() if mv else False
+    gpu_busy = pl.comfy_busy() if mv else False
     if gpu_busy and mv:
-        st.warning("⚠ GPU is busy (a render / music job is running) — auto-generation is paused. "
-                   "You can still press Generate to queue it, but it'll be slow while the GPU is in use.")
+        st.warning("⚠ ComfyUI is mid-job (a render or music gen) — auto-generation on approve is "
+                   "paused. You can still press Generate; it will queue behind the running job.")
     for v in mv:
         m = v.get("music") or {}
         tag = f"✅ {m['chosen']}" if m.get("chosen") else "— choose one —"
