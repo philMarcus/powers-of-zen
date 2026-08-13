@@ -181,6 +181,27 @@ where things stand. NEVER put realism words
 (photo, photograph, photography, macro, DSLR, realistic, film grain) anywhere in a journey.
 `palette` (per-card) is still yours — it's the LOCAL scene colour/mood, not the global render look.
 
+## REALMS — the scale-band formalism (journeys/REALMS.md is the library)
+Before writing cards, read `journeys/REALMS.md` for the bands your journey crosses. Tests:
+- **Continuation rule**: every card's interior is what its parent is MADE OF. A living parent
+  goes visibly CELLULAR somewhere in −4..−6 and MOLECULAR (proteins/DNA/membranes — real
+  machinery, not generic lattice) in −6..−8.5. A mineral parent names its REAL mineral and
+  uses that mineral's actual structure. A made object uses its material's microstructure.
+- **Ask by name**: DreamShaper renders mesophyll cells, mitochondria cristae, diatoms,
+  tide pools, and every mineral on the REALMS list spectacularly WHEN NAMED (probed
+  2026-08-13) — the catalog's realm gap came from never asking. Precise molecular machines
+  (ribosome, protein folds) render wrong by name — flag those cards for reference steering.
+- **Populated scenes**: at least one human-scale card in every journey names ≥3 distinct
+  inhabitant kinds sharing the frame (audit: 0/106 catalog cards did — single-material
+  fields are the catalog's biggest sameness).
+- **POV attitude**: each REALMS archetype carries a natural attitude ([air]/[obl]/[eye]/
+  [up]/[amb]). Adjacent cards keep a compatible attitude or change it ACROSS a card via
+  scene wording ("seen from directly above" → "low over" → "among") — never jump [air]→[eye]
+  between consecutive cards without that ramp. Deep-interior bands are [amb] and absorb any
+  approach — good seam and loop-home material.
+- **Word variety**: the audit's overused list (dark/pale/fine/bright/light...) appears in
+  >55% of journeys — a new journey leans on fresher vocabulary.
+
 **PALETTE PERFORMANCE (measured on IG, 2026-08-13 — apply as a test, not a vibe).** Audience
 like-rate correlates with dark, saturated frames: corr(like%, luminance) −0.33, saturation +0.24,
 deep-shadow fraction +0.28 (n=27 posted videos). Every top performer sits near luminance

@@ -55,12 +55,21 @@ def coordinator_prompt(briefs, date):
         f"  brief {i + 1}: {t.upper()} ({CARD_RANGE[t]} cards)"
         for i, t in enumerate(briefs))
     n = len(briefs)
+    try:
+        audit = subprocess.run([sys.executable, str(ROOT / "scripts" / "novelty_audit.py"),
+                                "--brief"], capture_output=True, text=True, timeout=120).stdout
+    except Exception:
+        audit = "(novelty audit unavailable)"
     return f"""You are the overnight JOURNEY COORDINATOR for Powers of Zen. Your job tonight: get {n} new dive-video journeys composed. You coordinate; composer subagents write the journey files.
 
+Tonight's MEASURED catalog-repetitiveness report (this is data, not vibes — brief against it):
+{audit}
+
 Step 1 — study what exists so the new journeys are maximally DIFFERENT from it:
-- Read journeys/VARIATIONS.md (the differentiation library).
+- Read journeys/VARIATIONS.md (the differentiation library — its PERFORMANCE NOTES are measured audience findings) and journeys/REALMS.md (the scale-band formalism: real archetypes per power of ten, the material-continuation rule, POV attitudes).
 - Survey the active catalog: read every journeys/*.json top-level (name, theme, style, seam cards) — Glob journeys/*.json (ignore journeys/engine1/ and journeys/engine0/, they are retired schemas).
-- If the variation library feels mined out (most entries already used by the catalog), ADD fresh entries to VARIATIONS.md first, in its existing format, and draw on those.
+- If the variation library feels mined out (most entries already used by the catalog), ADD fresh entries to VARIATIONS.md first, in its existing format, and draw on those. Same for a REALMS.md band the report shows mined out.
+- Aim briefs at what the report says is MISSING: under-built bands (molecular machinery especially), populated ecosystems, unbroken material continuation — while avoiding the overused-word monoculture.
 
 Step 2 — write {n} bare-bones briefs to outbox/refill_briefs_{date}.md. Each brief: a working name (snake_case, must not collide with ANY existing journey in journeys/, journeys/engine1/, journeys/engine0/, or any output/ directory), a 1-2 sentence concept, a palette family, a math/space personality, a seam idea, and its assigned length tier. The tiers are FIXED, one brief each:
 {tier_lines}
