@@ -149,6 +149,10 @@ by the time we plunge, we already know where we are. When in doubt, make the tar
 - Top-level: `name`, `theme` (seed idea), `style` (a deck NAME — see STYLE below; do NOT write
   free-text style words), `format` { `beats_per_bar` default 4, `exact_loop` true }, optional
   `settings`.
+- **`music_lane`** — a lane NAME from `styles/music_deck.json` (the sound analog of `style`:
+  instrumentation lives in the deck, never free-text). Test: read each lane's `mood` line and
+  pick the one a viewer of THIS journey would call right; among equally-right lanes prefer one
+  the recent catalog uses least. `music_theme`/`music_key` stay as before.
 
 ## STYLE — pick a deck NAME, never write the look yourself (Layer 2)
 The LOOK is NOT the composer's job. Free-text style words drift the whole video PHOTOREALISTIC

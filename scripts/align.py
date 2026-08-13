@@ -181,7 +181,7 @@ def align(video, track, out, journey=None, cut=None, shift_sec=None):
     print(f"  aligned -> {out}\n    bar {bar:.3f}s | music bar {m_bar:.3f}s (conf {conf:.2f}) -> "
           f"stretch {f:.4f} | phase {w0:.3f}s | lock {lock:.2f}x | "
           f"seamless loop @ {dur:.2f}s (music tiled x{guard+1}, xf {XF:.2f}s)")
-    return {"w0": w0, "stretch": f, "lock": lock}
+    return {"w0": w0, "stretch": f, "lock": lock, "m_bar": m_bar, "bar_conf": conf}
 
 
 def main():

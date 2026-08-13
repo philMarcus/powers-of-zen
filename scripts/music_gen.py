@@ -22,6 +22,7 @@ import json
 import math
 import subprocess
 import sys
+import zlib
 from pathlib import Path
 
 import numpy as np
@@ -50,22 +51,64 @@ THEMES = {
 }
 DEFAULT_THEME = "a hypnotic journey across every scale of the universe, cosmic and wondrous"
 
-# the anacrusis + anti-sparse instruction, in musical language (the model obeys this).
-# Phil (2026-07-28) prefers STRONG beats — they read as a clearer match to the video — so
-# the downbeat is emphatic (still no drums; a firm bass/mallet note, not a soft swell).
-ANACRUSIS = ("a quiet pickup note leads in and then a strong clear note lands firmly on the "
-             "downbeat of every bar, a steady prominent recurring pulse, never sparse, ")
-# distinct moods so the 5 candidates are genuinely different tracks
-MOODS = [
-    ("warm", "warm analog pads with a soft round mallet on the beat"),
-    ("glassy", "crystalline glassy bell tones and airy shimmer pads"),
-    ("deep", "deep warm sub bass and dark oceanic pads"),
-    ("tender", "tender nostalgic marimba and soft dreamy pads"),
-    ("choir", "soft choir-like pad and gentle glass harmonica"),
-]
-BASE = ("chill hypnotic ambient evoking {theme}, {mood}, {anac}spacious moody reverb, slow, "
-        "oddly satisfying, no drums, no snare, no hihat, instrumental")
-SEED0 = {"warm": 500, "glassy": 501, "deep": 502, "tender": 503, "choir": 504}
+# MUSIC DECK (2026-08-13, Phil-approved design): curated instrumentation LANES + rhythm
+# feels + a fixed brand tail live in styles/music_deck.json — the sound analog of the visual
+# style deck. A journey names its lane (`music_lane`, composer-assigned); journeys without
+# one get a stable hash pick so the whole catalog spreads across the deck. Candidates:
+# N_GEN variants (own lane, rhythm alternates, wildcard lanes, seed jitter — occasionally a
+# 3/4 waltz reframing, sparingly per Phil) auto-ranked down to N_KEEP by lock x bar-clarity.
+DECK = json.loads((ROOT / "styles" / "music_deck.json").read_text(encoding="utf-8"))
+N_GEN, N_KEEP = 8, 5
+TAGS = ("chill hypnotic ambient evoking {theme}, {instr}, {rhythm}, spacious moody reverb, "
+        "oddly satisfying, cinematic, instrumental, no vocals, {neg}")
+
+
+def _lane_names():
+    return sorted(DECK["lanes"])
+
+
+def lane_for(journey, spec):
+    lane = spec.get("music_lane")
+    if lane in DECK["lanes"]:
+        return lane
+    names = _lane_names()
+    return names[zlib.crc32(journey.encode()) % len(names)]
+
+
+def build_tags(theme, lane_name, rhythm_key=None):
+    lane = DECK["lanes"][lane_name]
+    rhythm = DECK["rhythms"][rhythm_key or lane["rhythm"]]
+    return TAGS.format(theme=theme, instr=lane["instr"], rhythm=rhythm,
+                       neg=DECK["negatives"])
+
+
+def candidate_plan(journey, spec, bar):
+    """(id, lane, rhythm_key, bpm_override, seed) x N_GEN. Deterministic per journey (its
+    own seeds — the old fixed 500..504 made every journey's 'warm' the same take)."""
+    h = zlib.crc32(journey.encode())
+    s0 = 500 + h % 40000
+    own = lane_for(journey, spec)
+    names = [n for n in _lane_names() if n != own]
+    wild = [names[(h // 7 + i * 3) % len(names)] for i in range(3)]
+    own_r = DECK["lanes"][own]["rhythm"]
+    alt_r = {"downbeat": "third_answer", "third_answer": "downbeat",
+             "halftime": "heartbeat", "heartbeat": "halftime"}[own_r]
+    plan = [
+        (own, own, None, None),
+        (f"{own}-b", own, None, None),                      # seed jitter, same recipe
+        (f"{own}-{alt_r}", own, alt_r, None),
+        (f"{wild[0]}-wild", wild[0], None, None),
+        (f"{wild[1]}-wild", wild[1], None, None),
+        (f"{own}-halftime", own, "halftime", None),
+        (f"{wild[2]}-wild", wild[2], None, None),
+    ]
+    if h % 4 == 0:      # the occasional 3/4 spice (sparingly — Phil 2026-08-13)
+        plan.append((f"waltz-{own}", own, "downbeat", int(round(3 * 60.0 / bar))))
+    else:               # filler: a rhythm the plan doesn't already cover for this lane
+        fill = next(r for r in ("heartbeat", "third_answer", "downbeat")
+                    if r not in (own_r, alt_r, "halftime"))
+        plan.append((f"{own}-{fill}", own, fill, None))
+    return [(cid, ln, rk, bpm, s0 + 37 * i) for i, (cid, ln, rk, bpm) in enumerate(plan)]
 
 
 def bpm_for(journey, cut, shift_sec=None):
@@ -92,7 +135,7 @@ def _video(journey):
     return str(silent) if (ROOT / silent).exists() else v["file"]
 
 
-def generate(journey, n=5):
+def generate(journey, n=N_KEEP):
     d = pl.load(); v = pl.get(d, journey)
     if not v:
         print(f"no pipeline entry for {journey}"); return
@@ -113,20 +156,50 @@ def generate(journey, n=5):
     track_dur = int(math.ceil(vdur)) + 3
     outdir = ROOT / "review" / "music" / "candidates" / journey
     outdir.mkdir(parents=True, exist_ok=True)
-    print(f"{journey} ({cut}): bar {bar:.3f}s -> {bpm} bpm, key {key}; generating {n}")
+    plan = candidate_plan(journey, spec, bar)
+    print(f"{journey} ({cut}): bar {bar:.3f}s -> {bpm} bpm, key {key}; lane "
+          f"{lane_for(journey, spec)}; generating {len(plan)}, keeping {n}")
     cands = []
-    for mood, desc in MOODS[:n]:
-        seed = SEED0[mood]
-        tags = BASE.format(theme=theme, mood=desc, anac=ANACRUSIS)
-        track = ROOT / "output" / "music" / f"{journey}_{mood}.flac"
-        music.generate(journey=journey, tags=tags, bpm=bpm, key=key, duration=track_dur,
+    for cid, lane_name, rk, bpm_o, seed in plan:
+        tags = build_tags(theme, lane_name, rk)
+        if cid.startswith("waltz"):
+            tags = "a gently lilting waltz in 3/4 time, " + tags
+        use_bpm = bpm_o or bpm
+        track = ROOT / "output" / "music" / f"{journey}_{cid}.flac"
+        music.generate(journey=journey, tags=tags, bpm=use_bpm, key=key, duration=track_dur,
                        seed=seed, out=str(track))
-        aligned = outdir / f"{mood}.mp4"
+        aligned = outdir / f"{cid}.mp4"
         info = al.align(video, str(track), str(aligned), journey=journey, cut=cut, shift_sec=shift_sec)
-        cands.append({"id": mood, "mood": desc, "track": str(track.relative_to(ROOT)),
+        # rank = how sharply it locks x how clearly it carries the bar (a decisive downbeat
+        # is exactly what Phil asked candidates to always have)
+        score = info["lock"] * (0.5 + max(0.0, info.get("bar_conf", 0.0)))
+        lane = DECK["lanes"][lane_name]
+        cands.append({"id": cid, "lane": lane_name,
+                      "mood": f"{lane['mood']} · {rk or lane['rhythm']}"
+                              + (f" · {use_bpm}bpm 3/4" if bpm_o else ""),
+                      "track": str(track.relative_to(ROOT)),
                       "aligned": str(aligned.relative_to(ROOT)), "seed": seed,
-                      "lock": round(info["lock"], 2), "tags": tags})
-        print(f"  [{mood}] lock {info['lock']:.2f}x -> {aligned.relative_to(ROOT)}")
+                      "lock": round(info["lock"], 2),
+                      "bar_conf": round(info.get("bar_conf", 0.0), 2),
+                      "score": round(score, 2), "tags": tags})
+        print(f"  [{cid}] lock {info['lock']:.2f}x conf {info.get('bar_conf', 0):.2f} "
+              f"score {score:.2f} -> {aligned.relative_to(ROOT)}")
+
+    # keep the top n with SPREAD (max 2 per lane so the audition is never five near-twins)
+    keep = []
+    for c in sorted(cands, key=lambda c: -c["score"]):
+        if len(keep) < n and sum(1 for k in keep if k["lane"] == c["lane"]) < 2:
+            keep.append(c)
+    for c in sorted(cands, key=lambda c: -c["score"]):
+        if len(keep) >= n:
+            break
+        if c not in keep:
+            keep.append(c)
+    for c in cands:                       # de-clutter the audition dir
+        if c not in keep:
+            (ROOT / c["aligned"]).unlink(missing_ok=True)
+    cands = keep
+    print(f"kept: {', '.join(c['id'] for c in cands)}")
     # RE-READ before writing. This function runs for MINUTES (5 generations + aligns) while
     # the dashboard keeps editing pipeline.json; saving the snapshot loaded before the work
     # clobbers every edit made meanwhile (2026-08-01: a video rejected during lather_atlas's

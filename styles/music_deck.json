@@ -1,0 +1,63 @@
+{
+  "_note": "MUSIC DECK (Layer 2 for sound, 2026-08-13) — mirrors styles/deck.json. A LANE is a curated instrumentation recipe + a rhythm feel; the composer assigns one per journey (journey field `music_lane`), matched to the journey's mood the way a visual style is. The BRAND TAIL below is fixed and appended to every candidate — it carries the Powers-of-Zen sound (chill/hypnotic/spacious) and the deep-downbeat doctrine (a soft deep kick ON the morph downbeat; never snare/hi-hat/cymbals/woodblock — Phil 2026-08-12). Add lanes as the pool mines out; keep instrumentation words TIMBRAL (never genre/era words that drag in drum kits).",
+  "brand_tail": "chill hypnotic ambient, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+  "negatives": "no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot",
+  "rhythms": {
+    "downbeat": "a single deep soft kick drum lands exactly on the downbeat of every bar, felt more than heard",
+    "heartbeat": "a deep sub-bass heartbeat pulse, two soft beats then space, the first landing on the downbeat of every bar",
+    "third_answer": "a deep soft kick on the downbeat of every bar and a quieter answering thump on beat three",
+    "halftime": "a single deep 808 kick lands exactly on the downbeat, spacious half-time groove with long empty space between hits"
+  },
+  "lanes": {
+    "glass_chapel": {
+      "instr": "crystalline glass bells and a soft distant choir pad, airy shimmer",
+      "rhythm": "downbeat",
+      "mood": "sacred, luminous, weightless"
+    },
+    "wooden_orbit": {
+      "instr": "warm marimba and kalimba over a round woody bass, gentle plucked figures",
+      "rhythm": "third_answer",
+      "mood": "playful, organic, orbiting"
+    },
+    "deep_archive": {
+      "instr": "dark oceanic pads and a deep warm sub bass drone, slow blooming swells",
+      "rhythm": "halftime",
+      "mood": "vast, ancient, submerged"
+    },
+    "night_market": {
+      "instr": "soft hang drum and plucked koto over a velvet pad, intimate and close",
+      "rhythm": "downbeat",
+      "mood": "nocturnal, lantern-lit, wandering"
+    },
+    "analog_dawn": {
+      "instr": "warm analog synth pads with gentle tape warble and a soft round mallet",
+      "rhythm": "downbeat",
+      "mood": "nostalgic, golden, waking"
+    },
+    "choir_of_dust": {
+      "instr": "a soft choir-like pad, glass harmonica and fine granular shimmer",
+      "rhythm": "heartbeat",
+      "mood": "hushed, suspended, dissolving"
+    },
+    "music_box": {
+      "instr": "a tiny music box and celesta over a low warm drone, delicate struck tines",
+      "rhythm": "downbeat",
+      "mood": "miniature, tender, clockwork"
+    },
+    "tide_organ": {
+      "instr": "a breathy reed organ and soft water textures over a deep sub pulse",
+      "rhythm": "heartbeat",
+      "mood": "tidal, breathing, mineral"
+    },
+    "aurora_strings": {
+      "instr": "bowed string pad swells and sparse harp plucks, silvery and cold",
+      "rhythm": "downbeat",
+      "mood": "polar, shimmering, slow dawn"
+    },
+    "ember_pulse": {
+      "instr": "a deep 808 heartbeat under smoky low pads and distant soft chimes",
+      "rhythm": "halftime",
+      "mood": "smoldering, dark, gravitational"
+    }
+  }
+}
