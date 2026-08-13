@@ -1,0 +1,132 @@
+{
+  "name": "coral_synapse",
+  "theme": "a moonlit reef read as one nervous system at every scale — down a great brain coral into its crowded polyp valley, through the living tissue to the coral's own nerve net of threads and glowing junction beads, into the vesicle machinery of one junction and the aragonite rows of the skeleton it builds, until the shimmer inside a single atom knots into the same mesh of strands and bright junctions and hands off to the cosmic web; the fold home rhymes a second time, a galaxy's spiral becoming the plankton spiral turning on a black ocean, and the reef banks under it",
+  "style": "liquid_light",
+  "music_lane": "deep_archive",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "reef_shelf",
+      "exp": 2.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink-blue water, cold silver shafts, ember-orange accents",
+      "scene": "a moonlit coral reef slope seen from a little above the sand, thin silver shafts coming down through deep blue-black water onto mounded coral heads scattered across the slope, ember-orange sea fans and dark sponge chimneys standing between them, sand channels winding away between the mounds, drifting motes lit inside each shaft, open black water beyond the drop-off, empty, no one present",
+      "target": "a round ridged brain coral",
+      "target_phrase": "a ridged brain coral"
+    },
+    {
+      "name": "brain_dome",
+      "exp": 0.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ember-orange and gold ridges on blue-black",
+      "scene": "a great brain coral standing clear of the sand, winding ridges of ember-orange and gold crossing one another over the whole mound, shadowed grooves running deep between every ridge, the winding pattern doubling back on itself in every direction, blue-black water pressing close on all sides, flecks of drift caught along the ridge tops",
+      "target": "a deep shadowed groove",
+      "target_phrase": "a dark coral groove"
+    },
+    {
+      "name": "polyp_valley",
+      "exp": -1.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "teal and violet shadow, hot coral cups",
+      "scene": "the crowded trough between two coral ridges, ranks of round polyp cups packed along both walls with their rings of hair-fine tentacles open and feeding, banded cleaner shrimp picking their way along the ridge tops, small dark blennies darting among the empty cups, a red brittle star curled over the far wall, drifting specks caught in the tentacles, deep teal shadow filling the trough",
+      "target": "a translucent coral polyp",
+      "target_phrase": "a translucent polyp"
+    },
+    {
+      "name": "coral_tissue",
+      "exp": -3.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "glassy blue-green sheets, amber cell lamps, indigo dark",
+      "scene": "living coral tissue in layers, sheets of glassy blue-green cells stacked one behind another with dark lanes running between them, round amber algae packed and glowing inside every cell, taut threads strung between the layers, a deep indigo dark behind the furthest sheets",
+      "target": "a glowing thread",
+      "target_phrase": "a thin glowing thread"
+    },
+    {
+      "name": "nerve_mesh",
+      "exp": -5.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold electric blue threads, white-gold beads, black",
+      "scene": "the coral's nerve net, long threads of cold electric blue strung in every direction through black depth, a swollen white-gold bead sitting at every junction where two threads meet, shorter threads crossing between them at odd angles, a faint coral-orange glimmer along the deepest strands, ranks of threads receding into the dark",
+      "target": "a glowing junction bead",
+      "target_phrase": "a bright glowing bead"
+    },
+    {
+      "name": "junction_gap",
+      "exp": -7.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber spheres and copper collars on deep indigo",
+      "scene": "the narrow gap inside one nerve junction, round vesicles crowded against a curved membrane wall, each vesicle a smooth amber sphere set into a knobbed protein collar in the wall, more spheres packed in ranks behind them, coiled ribbon chains looping through the space between, small chalk-white grains strewn among the spheres, deep indigo dark filling the gap",
+      "target": "a chalk-white mineral grain",
+      "target_phrase": "a white mineral grain"
+    },
+    {
+      "name": "aragonite_rows",
+      "exp": -9.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blue-white spheres, thin coral-orange seams, black",
+      "scene": "the aragonite lattice of the coral skeleton, ranked rows of blue-white spheres set in interlocking ridged rows running away in every direction, thin coral-orange seams of light where the rows interlock, wide dark gaps opening between the ranks, a faint shimmer over the furthest rows, black depth behind everything",
+      "target": "a glowing atom",
+      "target_phrase": "a glowing atom",
+      "loop_target": "ranked rows of blue-white spheres in a dark interlocking lattice"
+    },
+    {
+      "name": "atom_core",
+      "exp": -14,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "white-hot droplet, taut light strands, coral flecks on black",
+      "scene": "deep inside one atom, a tight droplet of packed white-hot spheres hanging in black emptiness, taut strands of light drawn between them and knotting at every meeting point, a coral-orange scatter of smaller points strewn through the surrounding dark, the same mesh of taut strands and bright knots repeating away into the depth in every direction"
+    },
+    {
+      "name": "cosmic_filaments",
+      "exp": 24,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-blue filaments, amber knots, black voids",
+      "scene": "the cosmic web strung across black space, long filaments of cold violet-blue light drawn between amber knots of clustered galaxies where the strands meet, enormous voids opening between them, faint sheets of dimmer light walling each void, small bright beads of galaxies scattered along every filament",
+      "target": "a bright spiral galaxy",
+      "target_phrase": "a bright spiral galaxy",
+      "cameo": {
+        "sprite": "output/mascots/canon/amos.png",
+        "pos": [
+          0.63,
+          0.41
+        ],
+        "size": 0.15
+      }
+    },
+    {
+      "name": "spiral_galaxy",
+      "exp": 21,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "cold blue arms, gold core, coral-pink knots on black",
+      "scene": "a spiral galaxy set in black space, two great arms of cold blue starlight wound out from a dense gold core, dust lanes cut dark along the inside of each arm, coral-pink knots of new stars strung through the arms, a wide scatter of far stars behind it all"
+    },
+    {
+      "name": "night_ocean",
+      "exp": 5.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "black water, green-gold bloom, silver cloud",
+      "scene": "a black night ocean seen from high and oblique, a slow spiral of green-gold plankton light lying across the open water, reef banks and dark island shadows strung along the edge of the spiral, thin cloud ribbons drawn over the deep water, the dark curve of the horizon high across the top",
+      "target": "a shallow reef bank",
+      "target_phrase": "a shallow reef bank"
+    }
+  ],
+  "music_theme": "a submerged nerve-net dive — deep oceanic sub-bass swells under slow blooming pads, the low pulse tightening as each scale closes in, a wide deep hit landing on the atom-to-cosmic-web fold and a second on the galaxy-to-plankton-spiral fold, settling back into vast quiet water between the morphs",
+  "music_key": "B minor",
+  "render_start": "aragonite_rows"
+}

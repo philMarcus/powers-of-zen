@@ -1,0 +1,72 @@
+{
+  "name": "squid_lantern",
+  "theme": "one deep-sea lantern taken apart and put back together — from a company of light-signalling squid working the black midwater, onto one animal's freckled skin, into a single light organ's packed glowing cells and the sparks firing along the molecular wall inside them, which opens out as the whole dark water column strewn with far-off light and closes back onto the squid",
+  "style": "ultraviolet",
+  "music_lane": "glass_chapel",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "midwater",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "electric cyan and violet on abyssal black",
+      "scene": "black midwater far under the waves at eye level, dozens of small squid drifting together in loose ranks, electric cyan dots set in running lines along each one, lanternfish lower down with rows of green belly lights, a long siphonophore colony strung out to one side in linked glowing bells, sparks of tiny krill scattered through the water in every direction, no surface above and no floor below",
+      "target": "a glowing violet-blue squid",
+      "target_phrase": "a glowing blue squid",
+      "loop_target": "dozens of small cyan-lit squid drifting together in loose ranks in black midwater, lanternfish lower down"
+    },
+    {
+      "name": "squid_skin",
+      "exp": -0.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "dark copper freckling and blue-white points",
+      "scene": "the taut freckled skin of a squid, a broad rolling expanse of dark copper and deep violet speckles over a black ground, rows of small blue-white beads of light set into it in even lines, fine muscle ridges running between the rows, black water opening beyond the far edge",
+      "target": "a round blue-white bead of light",
+      "target_phrase": "a glowing blue bead"
+    },
+    {
+      "name": "light_organ",
+      "exp": -4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "acid green cell glow and silver plate on black",
+      "scene": "a packed chamber of light-making cells, round glowing cell walls stacked shoulder to shoulder away in every direction, bright grains of blue-white light set through each one, ranks of stacked silver mirror plates banked behind them, a thick clear lens wall standing across the front, black gaps opening between the cells",
+      "target": "a bright blue-white grain of light",
+      "target_phrase": "a bright white grain",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.63,
+          0.37
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "spark_membrane",
+      "exp": -8,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "electric violet sparks on black",
+      "scene": "a dark membrane wall built of two packed layers of round-headed lipid molecules standing tail to tail, long folded enzyme ribbons set through it at intervals, small hard sparks of blue-white light at the ribbon mouths, loose molecules strewn through the black space in front of the wall"
+    },
+    {
+      "name": "water_column",
+      "exp": 2.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "indigo depth and faint blue-green light",
+      "scene": "the open water column of the deep ocean, wide sheets of faint blue light hanging at several depths, pale marine snow strewn through the water in every direction, far-off flickers of green and violet in the dark on either side, deep indigo fading to black in the gaps, no surface above and no floor below"
+    }
+  ],
+  "music_theme": "glass bells and a distant choir pad over a deep soft kick on every downbeat, weightless and pulsing like the signalling lights, one bright struck bell on the membrane-to-water-column seam, opening into wide airy space for the return to the school",
+  "music_key": "C# minor",
+  "render_start": "midwater"
+}

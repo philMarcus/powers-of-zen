@@ -115,6 +115,33 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-13 (FINAL, evening — READ THIS FIRST TOMORROW): THE REALMS RETHINK IS EXECUTED.
+Phil's decision after seeing the library evidence: IPA REALM STEERING IS DEFERRED — the
+engine is UNTOUCHED (loop-homing IPA stays; his worry: "the worst images in the video are
+the ones that aren't generated from a previous image" — external conditioning risks the
+feedback-chain coherence, and no library image yet beats our best in-video frames). Ship
+the PROMPT-SIDE revolution first and watch. Library development continues OFFLINE (sea
+doctrine in REALMS.md; depth-scaffold generation proven in output/realm_refs/sea_test —
+"maybe the library just needs to be depth control"; two-dimensionality critique on file:
+steeper near/far contrast + implied motion next iteration). Accordingly: ALL 26 queued
+old-doctrine journeys retired to GRIST (registry notes; themes minable, specs dead) and
+12 NEW-DOCTRINE journeys composed tonight by parallel opus composers (briefs in
+outbox/rewrite_briefs_20260813.md, all 12 pass preflight+audit 0 flags): L = abyssal_chandelier,
+ivory_gambit, whale_fall_republic, moth_orchard_night, geode_cosmos, lantern_mangrove,
+coral_synapse · M = bee_cathedral, observatory_dusk · S = ember_meadow, squid_lantern,
+magnetite_choir. Tempos spread fpb 6-9 (composers all defaulted to 8 — wave 2 got fpb
+ASSIGNED in briefs; remember that for the refill: assign tempo in the brief or they
+cluster). TONIGHT (Phil's ask: more videos): template LLLLSSM, budget 500min — 01:30
+renders abyssal+ivory+whale_fall+moth_orchard+squid+ember+bee (~7.5h, done ~09:00);
+render_paused=False; backpressure clear (2/20). RESTORE render_budget_min to 240 and
+nightly_templates to ["LLS","LMS","LLM"] after tonight (or keep if Phil likes the volume).
+POSTER now auto-runs ig_stats.py after every posting run (the tracker feeds itself,
+starting 08:00 tomorrow). MUSIC is DONE per Phil ("good place"): kick-weighted phase,
+kick-ranked candidates + pulse top-ups, positive-exclusivity tags; tempo tests deleted;
+120bpm routine ceiling / 80 floor / 144+72 rare tails. TOMORROW'S LIKELY AGENDA: review
+the 7 new-doctrine videos in the morning (the whole rethink's first real output), curate
+output/realm_refs/ if continuing the library, restore batch settings, consider the
+remix-slot experiment (jade_automata or butterfly_meridian re-render+post — reach test).
 2026-07-29: THE SEAM IS SOLVED (see PLAN.md "THE SEAM"). Two parts: (A) grammar.py now
 auto-derives the last register's loop target from `regs[0]` (loop_target|interior), so the
 last frame plunges toward the first world in the SAME words frame 0 uses → first/last render

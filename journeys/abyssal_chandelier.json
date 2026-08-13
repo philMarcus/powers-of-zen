@@ -1,0 +1,132 @@
+{
+ "name": "abyssal_chandelier",
+ "theme": "a hydrothermal vent field read as a chandelier of fire hung in black water — from the cosmic web down through a tilted spiral galaxy, an ember gas nursery and a young star's rubble disk to a night ocean world, onto an abyssal vent plain crowded with tube worms, shrimp swarms and ghost crabs, in against one smoking chimney's crusted flank and into a shrimp's compound eye, through its retinal cells to the rotary turbines set in a mitochondrial membrane, into the iron-and-sulfur cube at one enzyme's core — which opens as the brass sulfide lattice and folds straight back out into the cosmic web",
+ "style": "liquid_light",
+ "music_lane": "ember_pulse",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 7,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "spiral_galaxy",
+   "exp": 21,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "blue-white arms and hot pink knots on black",
+   "scene": "a tilted spiral galaxy hanging in open black space, blue-white star clouds strung along its arms, hot pink knots of glowing gas set among them, sooty dust lanes cutting along every arm, a dense gold core, smaller companion galaxies and thousands of faint stars scattered through the black around it",
+   "target": "a hot pink gas knot",
+   "target_phrase": "a pink gas cloud",
+   "loop_target": "a tilted spiral galaxy among smaller companion galaxies, blue-white arms and hot pink gas knots on black"
+  },
+  {
+   "name": "ember_nursery",
+   "exp": 16,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ember red and orange columns on black",
+   "scene": "a nursery of glowing gas towers standing across black space, tall ember-red columns of dust with burning rims where the light breaks through them, banked orange sheets of gas behind them, ranks of newborn blue-white stars set deep in the gaps between the towers, sooty lanes of dust dividing them",
+   "target": "a newborn blue-white star",
+   "target_phrase": "a bright blue star"
+  },
+  {
+   "name": "young_star",
+   "exp": 10.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "blue-white core, teal-green rubble disk, black",
+   "scene": "a young blue-white star burning in a clearing among the gas towers, sharp spikes of light thrown off it, a flat teal-green disk of dust and rubble set around it, dark rings scored through the disk, the ember towers standing far off on every side, cold stars scattered across the black",
+   "target": "a dark blue ocean world",
+   "target_phrase": "a dark blue planet"
+  },
+  {
+   "name": "night_ocean",
+   "exp": 6.8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "midnight blue and black ocean, silver storms, one amber day edge",
+   "scene": "a night ocean world seen from orbit, black water covering it from edge to edge, silver storm spirals standing over the sea, a long dark rift line drawn across the ocean floor far under the surface, a thin amber band of light along the day edge, black space beyond the curve of the world",
+   "target": "a long dark rift line",
+   "target_phrase": "a dark rift line"
+  },
+  {
+   "name": "vent_plain",
+   "exp": 2.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "abyss black water, ember glows, scarlet plumes, chalk-white shells",
+   "scene": "an abyssal vent plain on the floor of a black ocean, seen from a little way above the basalt, several sulfide chimneys standing at different distances and smoking sooty water into the dark, ember light in the cracks of every one, thickets of tube worms with scarlet plumes crowded at their bases, dense swarms of chalk-white shrimp over the rock, ghost-white crabs among beds of pale clams on the basalt, mineral snow hanging lit in the water",
+   "target": "a smoking black chimney",
+   "target_phrase": "a dark smoking chimney",
+   "cameo": {
+    "sprite": "output/mascots/canon/kitty.png",
+    "pos": [
+     0.72,
+     0.64
+    ],
+    "size": 0.13
+   }
+  },
+  {
+   "name": "chimney_flank",
+   "exp": 0.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "sooty black crust, brass plating, ember cracks, chalk-white shells",
+   "scene": "the flank of one sulfide chimney standing in black water, its crust knobbed and brass-plated where the hot fluid has laid mineral down, ember-orange cracks glowing through the crust, chalk-white shrimp packed shell to shell across the whole face of it, white worm tubes standing out between them, a shimmer of hot fluid over the crust, black water beyond",
+   "target": "a dark round eye",
+   "target_phrase": "a dark round eye"
+  },
+  {
+   "name": "compound_eye",
+   "exp": -3,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "bottle-green facets, cold silver glints, black seams",
+   "scene": "a shrimp's compound eye, a dome of hexagonal lenses packed edge to edge in an even honeycomb, every lens a bottle-green bead with a cold silver point of light standing in it, black seams sunk between the facets, the ridged chalk-white shell of the eye stalk running away at the rim, black water past it",
+   "target": "a bottle-green lens",
+   "target_phrase": "a dark green lens"
+  },
+  {
+   "name": "retinal_cells",
+   "exp": -5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "amber cell columns, scarlet pigment beads, black gaps",
+   "scene": "the living tissue under one lens, tall clear retinal cells standing side by side in close ranks, every column wrapped in pigment cells packed with beads of scarlet screening pigment, a round nucleus set low in each cell, narrow amber channels of fluid between the columns, a web of nerve fibre threaded under their bases",
+   "target": "a dark ridged mitochondrion",
+   "target_phrase": "a dark mitochondrion"
+  },
+  {
+   "name": "enzyme_turbines",
+   "exp": -8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "indigo-black membrane, hot amber turbines, copper glints",
+   "scene": "the inner membrane inside the mitochondrion, folded into rank after rank of deep parallel folds running back into the dark, a double sheet of packed lipid beads over every surface, rotary enzyme turbines set through the sheet in crowds, each a squat barrel of coiled protein ribbon with an amber stalk on its top, blockier electron-carrier machines studding the sheet between them, small iron-and-sulfur cubes glinting in their cores, loose chains of ribbon looped across the membrane",
+   "target": "a small iron-and-sulfur cube",
+   "target_phrase": "a small metal cube"
+  },
+  {
+   "name": "sulfide_lattice",
+   "exp": -9.5,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "brass-gold nodes, cold blue bonds, ink black",
+   "scene": "an iron-sulfide crystal lattice, ranks of brass-gold iron atoms standing at the corners of stacked cubes, paired sulfur atoms held at the centre of every cube face, straight cold blue bond lines strung between them in three directions, the rows repeating away into black in every direction, amber light caught along the rows"
+  },
+  {
+   "name": "cosmic_web",
+   "exp": 25,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "amber-gold filaments and knots on deep black",
+   "scene": "the cosmic web at its largest scale, long amber-gold filaments of galaxies strung between bright knots, whole dark voids walled off between the strands, faint sheets of light spanning the gaps, thousands of small galaxies scattered along every filament, the deep black of empty space beyond"
+  }
+ ],
+ "music_theme": "a slow submerged dive lit by fire — deep sub swells and smoky low pads under distant struck chimes, the pulse heaviest as the vent plain arrives, thinning to one low drone through the cellular scales, a single deep hit where the mineral lattice opens out into the cosmic web",
+ "music_key": "D minor",
+ "render_start": "spiral_galaxy"
+}

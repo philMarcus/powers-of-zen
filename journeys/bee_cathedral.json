@@ -1,0 +1,94 @@
+{
+ "name": "bee_cathedral",
+ "theme": "a night hive read all the way down its own wax — the crowded comb with its workers, drones, larvae and queen, the hexagon halls behind them, a drift of pollen hanging in the amber gloom, one grain's spiked shell and its oil-packed interior, the wax ester chains inside a droplet and the hard amber packing they lock into, which folds straight back out to the hanging combs",
+ "style": "enchanted_wild",
+ "music_lane": "choir_of_dust",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 8,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "night_hive",
+   "exp": -0.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "smoky amber and soot black with honey-gold glow",
+   "scene": "the inside of a hive at night, ranks of wax comb hung one behind another in warm amber gloom, worker bees crowded shoulder to shoulder across the sealed caps, ivory larvae curled in the open cells beneath them, broad-bodied drones shouldering among the workers, one long queen bee ringed by attendants on the middle comb, dusty gold glow leaking in at one side and heavy black shadow in the gaps between the combs, no one present among them",
+   "target": "a bright open wax cell",
+   "target_phrase": "an open wax cell"
+  },
+  {
+   "name": "wax_halls",
+   "exp": -1.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "honey gold and burnt umber over black cell mouths",
+   "scene": "a wall of wax comb met at its own mouths, six-sided cells opening in ordered ranks and running away on every side, thick amber wax walls glowing through from behind, ochre caps sealed over some of the mouths, black depth standing in every open cell, threads of gold pollen dust hanging in the still air between the ranks",
+   "target": "a gold pollen mote",
+   "target_phrase": "a gold dust mote"
+  },
+  {
+   "name": "pollen_fog",
+   "exp": -3.0,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "brassy ochre motes in black air",
+   "scene": "a drift of pollen crowding the dark air of the hive, seen from inside the drift, hundreds of round ochre-gold grains scattered through it at every depth, the nearest ones broad and soft-edged, whole ranks of smaller ones banked away behind them into warm amber murk, black between every grain",
+   "target": "a round spiked pollen grain",
+   "target_phrase": "a spiked pollen grain",
+   "loop_target": "a drift of pollen crowding the dark air, hundreds of round ochre-gold grains scattered at every depth through warm amber murk"
+  },
+  {
+   "name": "pollen_grain",
+   "exp": -4.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "burnt orange and oxblood on black",
+   "scene": "one pollen grain standing among its neighbours, a round shell of thick sculptured wall studded with blunt spikes in even ranks, sunken openings set into the wall between the spike fields, a sticky ochre film pooled along the ridges, more grains banked back into the blackness behind it",
+   "target": "a dark round opening",
+   "target_phrase": "a dark round opening"
+  },
+  {
+   "name": "grain_interior",
+   "exp": -5.2,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "dark amber and olive gold, black under the shell",
+   "scene": "the inside of one pollen grain, the sculptured wall standing all around as a ribbed shell seen from within, round golden oil droplets packed through the crowded interior, olive-green starch granules wedged among them, a smaller nested cell set deeper in behind its own smooth wall, thick amber fluid in every space between and black shadow under the shell",
+   "target": "a round golden oil droplet",
+   "target_phrase": "a golden oil droplet"
+  },
+  {
+   "name": "wax_esters",
+   "exp": -8.2,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "honey gold and bronze chains on black",
+   "scene": "the wax ester molecules inside one oil droplet, long zigzag carbon chains laid side by side, each chain joined at its middle by a small ester knuckle of two oxygens, the chains combed into broad tilted sheets stacked one behind another with the knuckles lined up in straight planes, honey-gold and bronze glow running the length of every chain, blackness in the gaps between the sheets",
+   "target": "a round amber node",
+   "target_phrase": "a round amber node",
+   "cameo": {
+    "sprite": "output/mascots/canon/tina.png",
+    "pos": [
+     0.35,
+     0.62
+    ],
+    "size": 0.13
+   }
+  },
+  {
+   "name": "amber_lattice",
+   "exp": -9.6,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "black-brown with hard amber glints",
+   "scene": "the crystal packing of beeswax met end-on, round chain ends set in even diamond rows, rank behind rank of the rows tilted away into blackness, a hard amber glint standing on each end, black gaps ruled between the ranks, one straight line running through where two blocks of rows meet at an angle"
+  }
+ ],
+ "music_theme": "a hushed nocturnal hive — suspended and dissolving, a low warm hum under the crowded comb, thinning to something weightless and granular through the pollen drift and the molecular chains, one deep swell landing where the amber packing folds back out into the hanging combs",
+ "music_key": "G minor",
+ "render_start": "pollen_fog"
+}

@@ -1,0 +1,74 @@
+{
+ "name": "ember_meadow",
+ "theme": "one night meadow read all the way down and folded back on itself — from the grass jungle at insect eye level with its fireflies, beetles, toad and snail, up one blade to the dew beads strung along it, inside a bead to the bent gold light and suspended pollen, down through the water to the leaf's green cell tiling and its dark pores, into one chloroplast's stacked green discs, and home when those glowing discs open back out into the firefly meadow",
+ "style": "ultraviolet",
+ "music_lane": "wooden_orbit",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 7,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "meadow_night",
+   "exp": 0,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ember gold and warm amber on black",
+   "scene": "a night meadow at eye level among the grass, tall green stems standing on every side and crossing overhead, many fireflies scattered through the dark air between the stems with warm gold light in their bodies, hard-shelled ground beetles on the bare soil below, a toad squat and still among the stem bases, a snail's coiled shell on a low leaf, black night in every gap and a faint gold haze deep among the far stems",
+   "target": "a tall green grass stem",
+   "target_phrase": "a tall grass stem",
+   "cameo": {
+    "sprite": "output/mascots/canon/dora.png",
+    "pos": [
+     0.34,
+     0.58
+    ],
+    "size": 0.14
+   }
+  },
+  {
+   "name": "dew_stem",
+   "exp": -1,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "cold silver-green and wet green on black",
+   "scene": "one long grass blade running away lengthwise through the dark, ribbed green with a pale keel down its middle and fine parallel veins along it, round beads of dew standing clear on both edges and caught between the ribs, other blades crossing behind it in the black, cold green light on every wet rim",
+   "target": "a clear round dew bead",
+   "target_phrase": "a clear dew drop"
+  },
+  {
+   "name": "dew_lens",
+   "exp": -2.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "honey gold and clear water on black",
+   "scene": "within one bead of dew, curved water standing on every side with bright rings of gold light bent through it, fine pollen grains and small round air bubbles suspended in the water, a dark green floor below where the water rests on the leaf, black beyond the bead's rim",
+   "target": "a dark oval pore",
+   "target_phrase": "a dark oval pore"
+  },
+  {
+   "name": "cuticle_tiles",
+   "exp": -4.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "acid green tiles and amber wax gleam on black",
+   "scene": "a leaf's outer layer of cells running away in every direction, green jigsaw-edged tiles locked edge to edge under a glassy wax varnish, dark oval stomatal pores set through the tiling at intervals with a pair of curved cells arching around each one, low wax ridges between the tiles, acid-green light in every cell wall and black in the open pores",
+   "target": "a small green chloroplast",
+   "target_phrase": "a green chloroplast",
+   "loop_target": "a green tiling of jigsaw-edged leaf cells with dark oval pores set through it"
+  },
+  {
+   "name": "chloroplast_stacks",
+   "exp": -6.5,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "cold viridian and blue-green on near-black",
+   "scene": "the interior of one chloroplast, stacks of flat round green discs set upright through the dark, each stack a short pile of even plates, broad membrane sheets running between the stacks and joining them, cold viridian light inside every disc, thick dark fluid and black gaps all around"
+  }
+ ],
+ "music_theme": "an insect-scale night garden turning inward — warm marimba and kalimba over a round woody bass, a deep kick on every scale change, the plucked figures thinning to single struck tines inside the dew bead, and a bright accent where the stacked green discs open back out into the firefly meadow",
+ "music_key": "E minor",
+ "render_start": "cuticle_tiles"
+}

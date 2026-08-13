@@ -38,15 +38,7 @@
       "palette": "gold chains and violet glow on black",
       "scene": "the atomic lattice of quartz, silicon and oxygen linked into spiral chains that turn three steps to a full twist, chain beside chain in ranks receding into black depth, every tetrahedron joined at its corners to the next, violet light standing in the open channels down the middle of the spirals, gold glints at the joins",
       "target": "a glowing gold line",
-      "target_phrase": "a glowing gold line",
-      "cameo": {
-        "sprite": "output/mascots/canon/adam.png",
-        "pos": [
-          0.36,
-          0.62
-        ],
-        "size": 0.14
-      }
+      "target_phrase": "a glowing gold line"
     },
     {
       "name": "defect_line",

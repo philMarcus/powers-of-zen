@@ -1,0 +1,75 @@
+{
+  "name": "magnetite_choir",
+  "theme": "a lodestone plain under the aurora — down through one stone's standing iron dust into the patchwork of alignment inside the metal, through magnetite's own octahedral structure, to a glowing flaw in the ranks that opens straight back onto the boulders",
+  "style": "ultraviolet",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true,
+    "frames_per_beat": 8
+  },
+  "registers": [
+    {
+      "name": "boulder_field",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "aurora green on iron black",
+      "scene": "a plain of lodestone boulders strewn over frozen ground at night, a green aurora hanging low over the ridge behind them and washing the tops of the stones, grey-green lichen crusts spreading up their sides, cushions of sooty moss packed into the gaps, wiry dwarf-willow scrub standing between the rocks, black iron grit drifted around every base",
+      "target": "a squat lodestone boulder",
+      "target_phrase": "a black boulder"
+    },
+    {
+      "name": "lodestone_face",
+      "exp": -1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "gold and sooty black",
+      "scene": "an iron-black lodestone rock, its stepped and pitted face running off in every direction, iron dust standing on end all over it in stiff sooty spines, the spines leaning into long arcs from one hollow to the next, gold light glancing off the worn ridges, grit collected in the low steps",
+      "target": "a glinting black grain",
+      "target_phrase": "a shiny black grain"
+    },
+    {
+      "name": "domain_patchwork",
+      "exp": -5.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold green and iron black",
+      "scene": "ragged patches of aligned iron packed edge to edge in every direction inside the metal, each patch lit a slightly different green, thin glowing seams marking where two patches meet, the seams wandering and forking across the whole spread, deep shadow in the iron between the lit patches",
+      "target": "a bright green patch",
+      "target_phrase": "a green glowing patch",
+      "target_pick": "random",
+      "loop_target": "ragged green-lit patches of iron packed edge to edge, thin glowing seams between them"
+    },
+    {
+      "name": "magnetite_lattice",
+      "exp": -9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber gold on blue-black",
+      "scene": "the iron-oxide lattice standing open in the black, octahedra of atoms repeating in straight ranks in every direction, an amber sphere at every vertex and cooler spheres packed into the hollows between them, gold bonds drawn taut along three directions, the ranks receding into depth",
+      "target": "a glowing white sphere",
+      "target_phrase": "a glowing sphere",
+      "cameo": {
+        "sprite": "output/mascots/canon/adam.png",
+        "pos": [
+          0.62,
+          0.41
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "lattice_flaw",
+      "exp": -9.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "white-green on black",
+      "scene": "ranks of octahedra broken open around a core of white-green light, whole rows bent out of true and stopping short, loose amber spheres scattered through the opening, the glow running out along the bent rows and dying into the black"
+    }
+  ],
+  "music_lane": "aurora_strings",
+  "music_theme": "cold iron under a polar sky — slow bowed swells over a heavy dark drone, sparse silver plucks, a patient magnetic pull",
+  "music_key": "C# minor",
+  "render_start": "domain_patchwork"
+}

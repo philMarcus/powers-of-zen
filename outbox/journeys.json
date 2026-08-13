@@ -1,6 +1,6 @@
 {
   "settings": {
-    "render_budget_min": 240,
+    "render_budget_min": 500,
     "max_ready_videos": 20,
     "journey_queue_target": 20,
     "refill_max_per_night": 5,
@@ -10,11 +10,12 @@
       "short": 0.3
     },
     "nightly_templates": [
+      "LLLLSSM",
+      "LLLS",
       "LLS",
-      "LMS",
-      "LLM"
+      "LMS"
     ],
-    "render_paused": true,
+    "render_paused": false,
     "refill_paused": false
   },
   "journeys": {
@@ -157,7 +158,79 @@
       "state": "rejected",
       "ts": "2026-08-13 13:23:02",
       "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
+    },
+    "abyssal_chandelier": {
+      "state": "queued",
+      "order": 0,
+      "ts": "2026-08-13 13:36:46",
+      "note": "REALMS rethink wave 1 (2026-08-13)"
+    },
+    "ivory_gambit": {
+      "state": "queued",
+      "order": 1,
+      "ts": "2026-08-13 13:36:46",
+      "note": "REALMS rethink wave 1 (2026-08-13)"
+    },
+    "whale_fall_republic": {
+      "state": "queued",
+      "order": 2,
+      "ts": "2026-08-13 13:36:46",
+      "note": "REALMS rethink wave 1 (2026-08-13)"
+    },
+    "moth_orchard_night": {
+      "state": "queued",
+      "order": 3,
+      "ts": "2026-08-13 13:36:46",
+      "note": "REALMS rethink wave 1 (2026-08-13)"
+    },
+    "geode_cosmos": {
+      "state": "queued",
+      "order": 4,
+      "ts": "2026-08-13 13:36:46",
+      "note": "REALMS rethink wave 1 (2026-08-13)"
+    },
+    "lantern_mangrove": {
+      "state": "queued",
+      "order": 5,
+      "ts": "2026-08-13 13:36:46",
+      "note": "REALMS rethink wave 1 (2026-08-13)"
+    },
+    "squid_lantern": {
+      "state": "queued",
+      "order": 6,
+      "ts": "2026-08-13 13:57:36",
+      "note": "REALMS rethink wave 2 (2026-08-13)"
+    },
+    "ember_meadow": {
+      "state": "queued",
+      "order": 7,
+      "ts": "2026-08-13 13:57:36",
+      "note": "REALMS rethink wave 2 (2026-08-13)"
+    },
+    "bee_cathedral": {
+      "state": "queued",
+      "order": 8,
+      "ts": "2026-08-13 13:57:36",
+      "note": "REALMS rethink wave 2 (2026-08-13)"
+    },
+    "coral_synapse": {
+      "state": "queued",
+      "order": 9,
+      "ts": "2026-08-13 13:57:36",
+      "note": "REALMS rethink wave 2 (2026-08-13)"
+    },
+    "observatory_dusk": {
+      "state": "queued",
+      "order": 10,
+      "ts": "2026-08-13 13:57:36",
+      "note": "REALMS rethink wave 2 (2026-08-13)"
+    },
+    "magnetite_choir": {
+      "state": "queued",
+      "order": 11,
+      "ts": "2026-08-13 13:57:36",
+      "note": "REALMS rethink wave 2 (2026-08-13)"
     }
   },
-  "updated": "2026-08-13 13:23:02"
+  "updated": "2026-08-13 13:57:58"
 }

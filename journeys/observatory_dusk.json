@@ -1,0 +1,92 @@
+{
+  "name": "observatory_dusk",
+  "theme": "a brass mountain observatory at violet dusk — the dive goes down the great telescope's front lens, into the ink-violet body of the glass where seed bubbles hang, on into the disordered silica network that IS that glass, and folds out to what the instrument watches: a packed star cluster, the dust columns of a star nursery, the nested rings of a dying star; those rings fold back down to the ridge and the lit dome, and the dome hands us the lens again",
+  "style": "cosmic_gloss",
+  "music_lane": "glass_chapel",
+  "music_theme": "an observatory at violet dusk and the deep sky it watches — glass bell tones over a slow weightless pad, one struck hit where the glass network opens into the star cluster, settling back into hush at the nested rings",
+  "music_key": "D minor",
+  "render_start": "nursery_pillars",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true,
+    "frames_per_beat": 9
+  },
+  "registers": [
+    {
+      "name": "dome_dusk",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "brass gold and deep violet-indigo",
+      "scene": "the floor of a mountain observatory beneath its opened shutter, a long brass tube on a heavy iron pier angled up at the tall slit, violet dusk sky and black ridge outlines showing through the opening, toothed gears and graduated setting circles bolted along the mount, rolled star charts racked around the curved inner wall, a low amber lamp burning on a work bench, indigo shadow filling the rest of the drum, empty, no one present",
+      "target": "a great round glass lens",
+      "target_phrase": "a round glass lens"
+    },
+    {
+      "name": "lens_face",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold indigo glass and warm brass",
+      "scene": "the head of a wide black tube, a great round lens seated in a brass cell, knurled screws and a collar of dark bolts ringing its rim, ink-violet depth inside the glass body, faint polish circles drawn across the face, a scatter of dust specks over it, brass glinting all along the collar, the tube's black throat behind",
+      "target": "a tiny round seed bubble",
+      "target_phrase": "a small round bubble"
+    },
+    {
+      "name": "glass_deep",
+      "exp": -4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink-violet glass and gold sparks",
+      "scene": "the inside of the lens glass, round seed bubbles suspended at every distance through ink-violet depth, long curved striae ribbons drawn through the glass around them, gold sparks caught along the ribbons, plum-dark gulfs opening between, the depth receding away on every side",
+      "target": "a glowing blue-white web",
+      "target_phrase": "a fine glowing web",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.62,
+          0.38
+        ],
+        "size": 0.15
+      }
+    },
+    {
+      "name": "silica_net",
+      "exp": -9.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "electric cobalt and hot gold on ink black",
+      "scene": "the atomic structure of glass, silicon and oxygen bound into four-cornered units joined corner to corner in every direction, loops of five six and seven units closing at odd sizes throughout the tangle, no loop matching another and no spacing repeating, hot gold nodes wherever the joins meet, cobalt struts strung between them, ink-black gaps opening away into the tangle"
+    },
+    {
+      "name": "cluster_field",
+      "exp": 18,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "old gold stars on deep violet-indigo",
+      "scene": "a globular cluster of stars packed thousands deep, gold and blue-white points crowded toward a blazing core and thinning outward into the dark, long streams of fainter stars pulled away to one side, violet-indigo glow banked between them, ropes of black dust cutting across the whole field",
+      "target": "a dark gold-rimmed dust column",
+      "target_phrase": "a dark dust pillar"
+    },
+    {
+      "name": "nursery_pillars",
+      "exp": 17,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ember gold and deep indigo",
+      "scene": "a star nursery, columns of black dust standing in ranks through a lit nebula, their rims ember gold under hot young stars, sheets of magenta and indigo gas banked behind them, blue-white stars strewn across the gulf between the columns, black dust lanes threading the glow, deep violet dark beyond it all",
+      "target": "a round violet ring of gas",
+      "target_phrase": "a glowing violet ring",
+      "loop_target": "columns of black dust standing in a lit nebula, their rims ember gold, magenta and indigo gas banked behind them"
+    },
+    {
+      "name": "shell_nebula",
+      "exp": 15.7,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "brass gold rim and violet-indigo gas",
+      "scene": "the nebula of a dying star, rings of gas nested one inside the next, the inner ring brass gold, the outer ring violet-indigo, beaded knots strung along every rim, one small white point at the middle of them all, ink-black space between the rings"
+    }
+  ]
+}
