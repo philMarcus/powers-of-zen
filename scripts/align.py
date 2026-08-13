@@ -35,12 +35,17 @@ def load_mono(path):
     return a.reshape(-1, ch).mean(axis=1) if ch > 1 else a
 
 
-def onset_env(x, hop=512, nfft=1024):
-    """Spectral-flux onset envelope (rising spectral energy = a note/beat attack)."""
+def onset_env(x, hop=512, nfft=1024, lo=None, hi=None):
+    """Spectral-flux onset envelope (rising spectral energy = a note/beat attack).
+    lo/hi select an FFT bin range — lo=1, hi=6 (~47-280Hz) isolates DEEP percussion:
+    a soft kick carries far less broadband flux than a bright bell, so full-band flux
+    mis-ranks the accents the listener feels as the beat."""
     n = 1 + (len(x) - nfft) // hop
     wdw = np.hanning(nfft).astype(np.float32)
     frames = np.stack([x[i * hop:i * hop + nfft] * wdw for i in range(n)])
     mag = np.abs(np.fft.rfft(frames, axis=1))
+    if lo is not None or hi is not None:
+        mag = mag[:, (lo or 0):hi]
     flux = np.maximum(0.0, np.diff(mag, axis=0)).sum(axis=1)
     env = np.concatenate([[0.0], flux])
     return env / (env.max() + 1e-9), SR / hop
@@ -108,10 +113,23 @@ def align(video, track, out, journey=None, cut=None, shift_sec=None):
     # 2) tempo: MEASURE the track's own bar and derive the exact stretch that maps it onto the
     # video bar (f = m_bar / bar; atempo=f makes the stretched bar == video bar). Phase is then
     # the only searched dimension.
-    env, esr = onset_env(load_mono(m))
+    xm = load_mono(m)
+    env, esr = onset_env(xm)
+    env_low, _ = onset_env(xm, lo=1, hi=6)     # deep-percussion band (~47-280Hz)
     m_bar, conf = measure_bar(env, esr, bar)
     f = (m_bar / bar) if conf >= 0.10 else 1.0
     f = min(max(f, 0.97), 1.03)
+    # PHASE is kick-weighted (2026-08-13): full-band flux locked bright bells to the morph
+    # and parked the felt beat half a bar off (salt_mirror). The deep band leads; full band
+    # breaks ties for tracks with no low percussion at all.
+    env_phase = 0.65 * env_low + 0.35 * env
+    # deep-pulse PRESENCE: does the low band recur at the track's own bar? (music_gen ranks
+    # candidates by this so kickless takes can't reach the audition top-5)
+    e = env_low - env_low.mean()
+    ac = np.correlate(e, e, mode="full")[len(e) - 1:]
+    ac = ac / (ac[0] + 1e-9)
+    kick_lag = int(round(m_bar * esr))
+    kick = float(ac[kick_lag]) if 0 < kick_lag < len(ac) else 0.0
     ms = TMP / "_ms.wav"
     _run([FFMPEG, "-y", "-loglevel", "error", "-i", win(m), "-filter:a",
           f"atempo={f:.5f}", win(ms)])
@@ -129,7 +147,7 @@ def align(video, track, out, journey=None, cut=None, shift_sec=None):
     k = int((video_duration(ms) - XF) // bar) if need_tiles else 0
     # phase search AFTER the tiling geometry is known: morphs past one tile fold onto the tile
     # period (same content, same grid phase), so every morph in the video scores.
-    w0, lock, _ = best_phase(env, esr, morphs, f,
+    w0, lock, _ = best_phase(env_phase, esr, morphs, f,
                              period_m=(k * bar * f) if (need_tiles and k >= 1) else None)
     if need_tiles and k >= 1:
         msb = TMP / "_msb.wav"
@@ -179,9 +197,10 @@ def align(video, track, out, journey=None, cut=None, shift_sec=None):
     for t in (m, ms, R, loop, rot):
         t.unlink(missing_ok=True)
     print(f"  aligned -> {out}\n    bar {bar:.3f}s | music bar {m_bar:.3f}s (conf {conf:.2f}) -> "
-          f"stretch {f:.4f} | phase {w0:.3f}s | lock {lock:.2f}x | "
+          f"stretch {f:.4f} | phase {w0:.3f}s | lock {lock:.2f}x | kick {kick:.2f} | "
           f"seamless loop @ {dur:.2f}s (music tiled x{guard+1}, xf {XF:.2f}s)")
-    return {"w0": w0, "stretch": f, "lock": lock, "m_bar": m_bar, "bar_conf": conf}
+    return {"w0": w0, "stretch": f, "lock": lock, "m_bar": m_bar, "bar_conf": conf,
+            "kick": round(kick, 3)}
 
 
 def main():

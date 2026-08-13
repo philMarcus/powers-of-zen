@@ -59,8 +59,12 @@ DEFAULT_THEME = "a hypnotic journey across every scale of the universe, cosmic a
 # 3/4 waltz reframing, sparingly per Phil) auto-ranked down to N_KEEP by lock x bar-clarity.
 DECK = json.loads((ROOT / "styles" / "music_deck.json").read_text(encoding="utf-8"))
 N_GEN, N_KEEP = 8, 5
-TAGS = ("chill hypnotic ambient evoking {theme}, {instr}, {rhythm}, spacious moody reverb, "
-        "oddly satisfying, cinematic, instrumental, no vocals, {neg}")
+# rhythm FIRST (tag order carries weight) and percussion by POSITIVE EXCLUSIVITY — the old
+# "no snare, no hi-hat" tail summoned the very instruments it named (2026-08-13, Phil heard
+# snares/woodblocks across the tempo-test candidates), and ACE's negative conditioning is a
+# ConditioningZeroOut at cfg 1.0 so prose bans carried zero guidance.
+TAGS = ("{rhythm}, chill hypnotic ambient evoking {theme}, {instr}, spacious moody reverb, "
+        "oddly satisfying, cinematic, instrumental, no vocals")
 
 
 def _lane_names():
@@ -78,8 +82,7 @@ def lane_for(journey, spec):
 def build_tags(theme, lane_name, rhythm_key=None):
     lane = DECK["lanes"][lane_name]
     rhythm = DECK["rhythms"][rhythm_key or lane["rhythm"]]
-    return TAGS.format(theme=theme, instr=lane["instr"], rhythm=rhythm,
-                       neg=DECK["negatives"])
+    return TAGS.format(theme=theme, instr=lane["instr"], rhythm=rhythm)
 
 
 def candidate_plan(journey, spec, bar):
@@ -170,9 +173,11 @@ def generate(journey, n=N_KEEP):
                        seed=seed, out=str(track))
         aligned = outdir / f"{cid}.mp4"
         info = al.align(video, str(track), str(aligned), journey=journey, cut=cut, shift_sec=shift_sec)
-        # rank = how sharply it locks x how clearly it carries the bar (a decisive downbeat
-        # is exactly what Phil asked candidates to always have)
-        score = info["lock"] * (0.5 + max(0.0, info.get("bar_conf", 0.0)))
+        # rank = lock x bar-clarity x DEEP-PULSE presence (Phil 2026-08-13: the felt deep
+        # beat must be near-ever-present; a kickless take gets crushed by the x0.25 floor
+        # and can't reach the audition top-5)
+        score = (info["lock"] * (0.5 + max(0.0, info.get("bar_conf", 0.0)))
+                 * (0.25 + max(0.0, info.get("kick", 0.0))))
         lane = DECK["lanes"][lane_name]
         cands.append({"id": cid, "lane": lane_name,
                       "mood": f"{lane['mood']} · {rk or lane['rhythm']}"
@@ -181,9 +186,40 @@ def generate(journey, n=N_KEEP):
                       "aligned": str(aligned.relative_to(ROOT)), "seed": seed,
                       "lock": round(info["lock"], 2),
                       "bar_conf": round(info.get("bar_conf", 0.0), 2),
+                      "kick": round(info.get("kick", 0.0), 2),
                       "score": round(score, 2), "tags": tags})
         print(f"  [{cid}] lock {info['lock']:.2f}x conf {info.get('bar_conf', 0):.2f} "
-              f"score {score:.2f} -> {aligned.relative_to(ROOT)}")
+              f"kick {info.get('kick', 0):.2f} score {score:.2f} -> {aligned.relative_to(ROOT)}")
+
+    # DEEP-PULSE TOP-UP (2026-08-13): ACE obeys the percussion spec stochastically (~1 in 3
+    # takes has no kick regardless of phrasing — measured). If the plan didn't yield enough
+    # pulsed candidates, roll extra downbeat takes so the audition set always carries the
+    # felt beat Phil asked for.
+    extra_seed = max(c["seed"] for c in cands) + 101
+    tries = 0
+    while sum(1 for c in cands if c.get("kick", 0) >= 0.25) < n and tries < 3:
+        cid = f"pulse{tries + 1}-{lane_for(journey, spec)}"
+        tags = build_tags(theme, lane_for(journey, spec), "downbeat")
+        track = ROOT / "output" / "music" / f"{journey}_{cid}.flac"
+        music.generate(journey=journey, tags=tags, bpm=bpm, key=key, duration=track_dur,
+                       seed=extra_seed, out=str(track))
+        aligned = outdir / f"{cid}.mp4"
+        info = al.align(video, str(track), str(aligned), journey=journey, cut=cut,
+                        shift_sec=shift_sec)
+        score = (info["lock"] * (0.5 + max(0.0, info.get("bar_conf", 0.0)))
+                 * (0.25 + max(0.0, info.get("kick", 0.0))))
+        lane = DECK["lanes"][lane_for(journey, spec)]
+        cands.append({"id": cid, "lane": lane_for(journey, spec),
+                      "mood": f"{lane['mood']} · downbeat (pulse top-up)",
+                      "track": str(track.relative_to(ROOT)),
+                      "aligned": str(aligned.relative_to(ROOT)), "seed": extra_seed,
+                      "lock": round(info["lock"], 2),
+                      "bar_conf": round(info.get("bar_conf", 0.0), 2),
+                      "kick": round(info.get("kick", 0.0), 2),
+                      "score": round(score, 2), "tags": tags})
+        print(f"  [{cid}] kick {info.get('kick', 0):.2f} (top-up {tries + 1})")
+        extra_seed += 101
+        tries += 1
 
     # keep the top n with SPREAD (max 2 per lane so the audition is never five near-twins)
     keep = []
