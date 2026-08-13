@@ -606,8 +606,27 @@ installed) → img2img brand pass (hemoglobin+gyroid great, DNA donor needs thic
 geometry). NOTHING wired into the engine per Phil — libraries first. POV: near-term =
 attitude ramps in scene wording across a card (codified); medium-term = depth-warp tilt
 (DepthAnything maps exist; crop-and-reimagine generalizes to camera rotation) — lab
-prototype proposed, not built. OPEN: Phil's tempo-clip verdicts; remix-slot pick;
-library buildout (curate 15-20 refs/realm); loom_of_nights card-cut list (old). Phil's
+prototype proposed, not built. OPEN: remix-slot pick; loom_of_nights card-cut list (old).
+2026-08-13 (close): PHIL'S VERDICTS + QUEUE RESET. Tempo: ALL three A/B clips approved
+(fpb5/144 "not choppy — great"); FLOOR = 80bpm (fpb 9), 72 rare tail only; composer skill
+tempo rule live (fpb by journey energy, total ≤~30s test). Tempo-test videos are in the
+MUSIC TAB as copper_rain_fpb{5,6,10} (TEST-marked captions, registry-guarded so the batch
+can never render them; each got 5 deck candidates on its own seeds — fpb5 drew
+aurora_strings lanes at 146bpm-generated music, fpb10 drew music_box at 72) — Phil wants to
+hear tempo+music together; delete specs+entries after the audition. QUEUE RESET (Phil: "not
+in love with anything in the queue"): 8 review videos (gossamer_dawn heron_delta
+chess_empires night_lido attic_drift jewel_oculus turing_springs droplet_zoo) → rejected,
+their journeys re-queued force=True with note "REWRITE to REALMS/new standards before
+re-render"; RENDER_PAUSED=TRUE until the rewrite lands. ammonite_spiral restored to Music
+(Phil will publish with new-deck track). cinder_veil + salt_mirror in Music (Phil's picks).
+THE AGREED ROADMAP: (1) build + curate the IPA reference library (realm_candidates.py
+generated 24 archetypes × 3 seeds overnight → output/realm_refs/candidates/, Phil curates;
+refs are ENV-phrased fields, not lone objects — Phil's seam-into concern; obj_ refs tagged
+separately for target moments), (2) implement IP-Adapter realm steering in the engine +
+test on ONE full-scale journey, (3) THEN mass-rewrite all queued journeys to REALMS
+standards (composer subagents), (4) unpause renders. Mechanical tilt/rotation = "engine 3",
+deliberately deferred until the realm era ships. Posting continues from Music/queued stock
+meanwhile. Phil's
 priorities: perfect music loop, tempo variety (investigate), strong deep beats + more usable
 candidates. FOUR ALIGNER DEFECTS found, fixed, and VERIFIED (position-coded synthetic +
 end-to-end mapping measurement — final audio at video time t is music-bed content at exactly
