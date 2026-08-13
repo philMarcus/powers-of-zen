@@ -65,7 +65,13 @@ outbox/video_features.json) and correlates each with like%.
 Dark+saturated beats pale high-key and STRENGTHENS under qscore (sat +0.34 / lum −0.33 /
 dark-frac +0.29); tier by qscore: L 1.36x > M 0.98x > S 0.92x (longs EARN pushes; shorts'
 decent like% never converts to reach); candy_gloss retired (0.22x sugar_nebula = catalog
-worst); full-scale span shows NO effect (don't mandate it); cut (divein/zoomout) no effect;
-engine-2 ≈ engine-1 on like% so far; cave_of_numbers reads ~1.0x once comments + earned reach
-count (the old like%-only read undersold it). Re-test all of these as snapshots accumulate —
-they are baselines, not laws.
+worst); cut (divein/zoomout) no effect; engine-2 ≈ engine-1 on mean qscore (1.18x vs 1.12x)
+but e2 owns both tails — the palette variables dominate the engine variable; cave_of_numbers
+reads ~1.0x once comments + earned reach count. TWO-AXIS LAW (2026-08-13, Phil's discarded-
+measure catch): LIKES reward dark/saturated/nameable; REACH (pushes >300 views) rewards SCALE
+SPAN — full-scale 44% pushed vs 10% narrow, cosmic 33% vs 7% — so full-scale is reinstated
+for L-tier composition even though its like% shows no effect. REMIX natural experiment: the
+two reach outliers are refined re-posts of earlier journeys whose originals got ~180 views
+(same content, 10x reach on the second roll) — re-posting proven winners re-rolls the reach
+dice; a deliberate remix-slot test is the standing proposal. Re-test all of these as
+snapshots accumulate — they are baselines, not laws.

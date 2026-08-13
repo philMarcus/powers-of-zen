@@ -11,6 +11,12 @@
 - **Length: long > short > medium.** Hypothesis on file: longs win on range/variability, shorts
   on tight coherence, mediums are neither. tier_share now favors long (0.55/0.15/0.30) — keep
   composing SOME mediums so the hypothesis stays testable.
+- **Scale range earns REACH (separate axis from likes).** Full-scale journeys got pushed
+  (>300 views) 44% of the time vs 10% for narrow spans; cosmic-reaching 33% vs 7% — likely a
+  retention mechanism (a full-range dive keeps promising the next scale). LIKES reward the
+  palette/subject; PUSHES reward the span. So: L-tier journeys should reach cosmic scale
+  (exp ≥ 11), full span (also ≤ −8) preferred — while keeping every card dark, saturated,
+  nameable. Narrow-span micro loops stay legal for S-tier spice only.
 
 Raw material for composing journeys. Any register can be swapped for a variant;
 scales can be fractional (a third to half an order of magnitude apart is fine —
