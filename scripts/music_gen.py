@@ -169,10 +169,15 @@ def generate(journey, n=N_KEEP):
             tags = "a gently lilting waltz in 3/4 time, " + tags
         use_bpm = bpm_o or bpm
         track = ROOT / "output" / "music" / f"{journey}_{cid}.flac"
-        music.generate(journey=journey, tags=tags, bpm=use_bpm, key=key, duration=track_dur,
-                       seed=seed, out=str(track))
-        aligned = outdir / f"{cid}.mp4"
-        info = al.align(video, str(track), str(aligned), journey=journey, cut=cut, shift_sec=shift_sec)
+        try:
+            music.generate(journey=journey, tags=tags, bpm=use_bpm, key=key,
+                           duration=track_dur, seed=seed, out=str(track))
+            aligned = outdir / f"{cid}.mp4"
+            info = al.align(video, str(track), str(aligned), journey=journey, cut=cut,
+                            shift_sec=shift_sec)
+        except Exception as e:
+            print(f"  [{cid}] SKIPPED — {e}")
+            continue
         # rank = lock x bar-clarity x DEEP-PULSE presence (Phil 2026-08-13: the felt deep
         # beat must be near-ever-present; a kickless take gets crushed by the x0.25 floor
         # and can't reach the audition top-5)
@@ -201,11 +206,17 @@ def generate(journey, n=N_KEEP):
         cid = f"pulse{tries + 1}-{lane_for(journey, spec)}"
         tags = build_tags(theme, lane_for(journey, spec), "downbeat")
         track = ROOT / "output" / "music" / f"{journey}_{cid}.flac"
-        music.generate(journey=journey, tags=tags, bpm=bpm, key=key, duration=track_dur,
-                       seed=extra_seed, out=str(track))
-        aligned = outdir / f"{cid}.mp4"
-        info = al.align(video, str(track), str(aligned), journey=journey, cut=cut,
-                        shift_sec=shift_sec)
+        try:
+            music.generate(journey=journey, tags=tags, bpm=bpm, key=key, duration=track_dur,
+                           seed=extra_seed, out=str(track))
+            aligned = outdir / f"{cid}.mp4"
+            info = al.align(video, str(track), str(aligned), journey=journey, cut=cut,
+                            shift_sec=shift_sec)
+        except Exception as e:
+            print(f"  [{cid}] SKIPPED — {e}")
+            extra_seed += 101
+            tries += 1
+            continue
         score = (info["lock"] * (0.5 + max(0.0, info.get("bar_conf", 0.0)))
                  * (0.25 + max(0.0, info.get("kick", 0.0))))
         lane = DECK["lanes"][lane_for(journey, spec)]

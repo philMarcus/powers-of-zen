@@ -16,12 +16,35 @@ from pathlib import Path
 import requests
 
 COMFY = "http://localhost:8188"
+CFG = 2.0
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "output" / "realm_refs" / "candidates"
 TAIL = ("glittering specular highlights, iridescent sparkle, vivid complementary colour "
-        "contrast, jewel-bright accents, dark background, ultra-detailed")
+        "contrast, jewel-bright accents, ultra-detailed")
+# v2 (Phil's library review 2026-08-13): the composition SCAFFOLD leads every env prompt —
+# camera inside, many instances at stochastic depths, big soft occluder crossing the frame
+# edge, far ranks into depth fog. No borrowed horizons for interior realms.
+SCAFFOLD = ("the view from deep inside, surrounded on all sides, countless {things} "
+            "scattered at random depths and sizes, one enormous {thing} passing close by "
+            "the camera softly out of focus and cut off by the frame edge, the rest "
+            "receding into darkness and depth fog")
 NEG = ("text, watermark, logo, blurry, low quality, person, people, human figure, "
-       "photo, photograph, realistic, centered product shot")
+       "photo, photograph, realistic, centered product shot, single object, table, "
+       "display stand, pedestal, museum, sky, horizon, ground plane, landscape, "
+       "specimen photography")
+
+# v2 iteration set — reviewed archetypes rebuilt on the scaffold (kept v1 keepers: cristae,
+# mesophyll, diatom_plaza non-table takes, deadwood_city, tidepool_city)
+V2 = [
+    ("cellular", "wide_capillary2", "deep inside a dark vessel, countless glossy red discs drifting suspended at random depths, one enormous red disc drifting close past the camera softly blurred and cut by the frame edge, dim teal glow far below, cells tumbling in slow current, no ground, no walls visible nearby"),
+    ("cellular", "wide_neuron_web", "suspended inside a vast dark web of glowing neurons, dozens of branching dendrite trees connected by thin luminous threads in every direction, one huge blurred dendrite branch crossing the near foreground, tiny synapse sparks flickering at random junctions, the network receding into violet depth fog"),
+    ("cellular", "wide_diatom_drift", "adrift among hundreds of ornate glass diatom shells of many different shapes floating at random depths in dark water, one huge pillbox diatom drifting close past the camera softly out of focus, the swarm thinning into deep teal darkness below"),
+    ("mineral", "wide_selenite_within", "deep inside a crystal cavern, giant water-clear selenite blades crossing at every angle overhead and below, one massive blurred blade edge cutting across the near foreground, blades receding rank after rank into cold blue darkness, no floor visible"),
+    ("mineral", "wide_opal_within", "deep inside precious opal, an endless three-dimensional field of packed glassy micro-spheres glowing with spectral fire between them, spheres drifting past close to the camera softly blurred, the packed field receding into warm darkness"),
+    ("atomic", "wide_lattice2", "suspended inside an endless natural crystal lattice, glowing atom nodes in slightly imperfect ranks joined by faint light, a huge blurred node passing close by the camera, rows receding into deep indigo fog in every direction, one row bent around a glowing defect"),
+    ("human_eco", "wide_vent_far", "a deep-sea plain with several hydrothermal vent chimneys at different distances venting mineral smoke, swarms of shrimp and ghost fish drifting between them, tube worm colonies crowding each chimney, one blurred shrimp swarm passing close to the camera, abyssal darkness beyond"),
+    ("mm", "wide_moss_drift", "inside a towering moss jungle seen from between the stalks, dozens of translucent moss towers hung with glass water droplets at every depth, a huge blurred droplet lens passing close by the camera, a tardigrade lumbering far below, green-gold light failing into darkness"),
+]
 
 # (band, slug, prompt) — env-phrased unless slug has 'obj_' prefix
 ARCHETYPES = [
@@ -62,7 +85,7 @@ def wf(prompt, seed, prefix):
         "lat": {"class_type": "EmptyLatentImage",
                 "inputs": {"width": 832, "height": 1152, "batch_size": 1}},
         "smp": {"class_type": "KSampler",
-                "inputs": {"seed": seed, "steps": 12, "cfg": 2.0, "sampler_name": "dpmpp_sde",
+                "inputs": {"seed": seed, "steps": 12, "cfg": CFG, "sampler_name": "dpmpp_sde",
                            "scheduler": "karras", "denoise": 1.0, "model": ["ck", 0],
                            "positive": ["pos", 0], "negative": ["neg", 0],
                            "latent_image": ["lat", 0]}},
@@ -99,10 +122,15 @@ def run_one(band, slug, prompt, seed):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--per", type=int, default=2, help="seeds per archetype")
+    ap.add_argument("--v2", action="store_true", help="run the v2 scaffold iteration set")
+    ap.add_argument("--cfg", type=float, default=3.0, help="cfg for v2 (negatives need >2)")
     a = ap.parse_args()
     t0 = time.time()
     n = 0
-    for band, slug, prompt in ARCHETYPES:
+    todo = V2 if a.v2 else ARCHETYPES
+    global CFG
+    CFG = a.cfg if a.v2 else 2.0
+    for band, slug, prompt in todo:
         for i in range(a.per):
             ok = run_one(band, slug, prompt, 4000 + 97 * i + hash(slug) % 900)
             n += bool(ok)

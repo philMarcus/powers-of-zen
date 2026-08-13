@@ -7,6 +7,34 @@ so a journey can be scientifically *framed* and fantastically *rendered*. The do
 things falling apart.** Composers pick archetypes from here the way they pick a style lane;
 the midnight coordinator extends a band when novelty_audit shows it mined out.
 
+## REFERENCE-LIBRARY IMAGE REQUIREMENTS (Phil's review, 2026-08-13 — every ref must pass)
+The library exists to SOLVE the close-up/track/zoom-through difficulty, not reinforce it.
+Tests for any candidate reference image:
+1. **Camera INSIDE the realm** — surrounded, not spectating. A specimen in front of the
+   camera is a product shot; v1 failures: opal-on-a-table, selenite-on-black-backdrop,
+   diatoms-on-a-table, bismuth-as-outdoor-mountains-with-sky (a scale betrayal).
+2. **Many instances, stochastic placement** — scattered at random depths and sizes with
+   clumps and gaps (natural point process), never one centered subject, never set-dressed
+   regularity. A "neuron forest" that is one funky tree fails twice.
+3. **Depth to dive through** — instances passing close by the camera (large, soft-focus,
+   cut by the frame edge), a mid population, and far ranks receding into depth-fog or
+   darkness. "Things should be going past you."
+4. **No borrowed horizons** — interior realms (cellular/molecular/atomic/mineral-interior)
+   have NO sky, NO ground plane, NO table; depth-fog and receding repetition carry the
+   space instead.
+5. **EVERY ref is a sea — no single-object refs AT ALL** (Phil 2026-08-13 refinement:
+   IP-Adapter transfers the reference's COMPOSITION; a specimen-on-black ref teaches the
+   generator to make specimens-on-black. Even an accurate lone galaxy in a void is the
+   anti-pattern). A target emerges as a point in a wide frame and the ZOOM makes the
+   approach shot — the library never does. The composition engine of choice: procedural
+   DEPTH SCAFFOLDS (scripts/realm_donors.py sea_depth_*) driving the depth ControlNet —
+   composition guaranteed structurally, identity from the prompt or a PDB/math donor,
+   look from the house style. Proven on cell/ribosome/diatom seas, output/realm_refs/sea_test/.
+6. **Subject fidelity** — the thing must read as ITSELF (a neuron web, not a tree; a spiral
+   galaxy with arms and a bulge, not a starburst). Structure-critical bands (molecular,
+   atomic, galactic) go DONOR-FIRST: procedural/PDB renders carry the structure, img2img
+   carries the look.
+
 ## THE CONTINUATION RULE (non-negotiable)
 The interior of a thing is chosen by what the thing IS MADE OF, not by what looks cool:
 - **living matter** → tissue → CELLS (always visibly cellular somewhere in −4..−6) →

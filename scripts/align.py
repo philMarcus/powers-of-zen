@@ -41,6 +41,8 @@ def onset_env(x, hop=512, nfft=1024, lo=None, hi=None):
     a soft kick carries far less broadband flux than a bright bell, so full-band flux
     mis-ranks the accents the listener feels as the beat."""
     n = 1 + (len(x) - nfft) // hop
+    if n < 2:                      # near-silent take: edge-strip ate everything
+        return np.zeros(2, np.float32), SR / hop
     wdw = np.hanning(nfft).astype(np.float32)
     frames = np.stack([x[i * hop:i * hop + nfft] * wdw for i in range(n)])
     mag = np.abs(np.fft.rfft(frames, axis=1))
@@ -114,6 +116,8 @@ def align(video, track, out, journey=None, cut=None, shift_sec=None):
     # video bar (f = m_bar / bar; atempo=f makes the stretched bar == video bar). Phase is then
     # the only searched dimension.
     xm = load_mono(m)
+    if len(xm) < SR * 1.5:
+        raise RuntimeError(f"track unusable: {len(xm)/SR:.2f}s of audio after silence strip")
     env, esr = onset_env(xm)
     env_low, _ = onset_env(xm, lo=1, hi=6)     # deep-percussion band (~47-280Hz)
     m_bar, conf = measure_bar(env, esr, bar)
