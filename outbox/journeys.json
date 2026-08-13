@@ -14,7 +14,7 @@
       "LMS",
       "LLM"
     ],
-    "render_paused": false,
+    "render_paused": true,
     "refill_paused": false
   },
   "journeys": {
@@ -129,7 +129,78 @@
       "order": 41,
       "ts": "2026-08-08 00:16:57",
       "note": "composed by midnight refill"
+    },
+    "copper_rain_fpb5": {
+      "state": "rejected",
+      "note": "TEMPO TEST spec — music audition only, never render/queue",
+      "ts": "2026-08-13 11:49:51"
+    },
+    "copper_rain_fpb6": {
+      "state": "rejected",
+      "note": "TEMPO TEST spec — music audition only, never render/queue",
+      "ts": "2026-08-13 11:49:51"
+    },
+    "copper_rain_fpb10": {
+      "state": "rejected",
+      "note": "TEMPO TEST spec — music audition only, never render/queue",
+      "ts": "2026-08-13 11:49:51"
+    },
+    "gossamer_dawn": {
+      "state": "queued",
+      "order": 42,
+      "force": true,
+      "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
+      "ts": "2026-08-13 11:50:05"
+    },
+    "heron_delta": {
+      "state": "queued",
+      "order": 43,
+      "force": true,
+      "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
+      "ts": "2026-08-13 11:50:05"
+    },
+    "chess_empires": {
+      "state": "queued",
+      "order": 44,
+      "force": true,
+      "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
+      "ts": "2026-08-13 11:50:05"
+    },
+    "night_lido": {
+      "state": "queued",
+      "order": 45,
+      "force": true,
+      "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
+      "ts": "2026-08-13 11:50:05"
+    },
+    "attic_drift": {
+      "state": "queued",
+      "order": 46,
+      "force": true,
+      "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
+      "ts": "2026-08-13 11:50:05"
+    },
+    "jewel_oculus": {
+      "state": "queued",
+      "order": 47,
+      "force": true,
+      "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
+      "ts": "2026-08-13 11:50:05"
+    },
+    "turing_springs": {
+      "state": "queued",
+      "order": 48,
+      "force": true,
+      "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
+      "ts": "2026-08-13 11:50:05"
+    },
+    "droplet_zoo": {
+      "state": "queued",
+      "order": 49,
+      "force": true,
+      "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
+      "ts": "2026-08-13 11:50:05"
     }
   },
-  "updated": "2026-08-13 10:02:34"
+  "updated": "2026-08-13 11:50:20"
 }

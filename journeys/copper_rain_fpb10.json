@@ -1,0 +1,72 @@
+{
+ "name": "copper_rain_fpb10",
+ "theme": "a rainy street corner never leaves its bronze railing — down through the rain beads into the verdigris bloom's crystal terraces and rust dendrites, whose branching lattice is reread as the lamplit street network overhead, landing back at the corner",
+ "style": "neon_drift",
+ "format": {
+  "beats_per_bar": 4,
+  "exact_loop": true,
+  "counter": true,
+  "frames_per_beat": 10
+ },
+ "registers": [
+  {
+   "name": "street_corner",
+   "exp": 1,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "wet slate blue and lamplight gold",
+   "scene": "a rainy evening street corner seen from the sidewalk at railing height, wet slate cobbles glowing under tall streetlamps in gold halos, an ornate old bronze railing along the corner's stone edge with its scrollwork curled in a low run, dark shopfront windows warm with lamplight, small distant figures under umbrellas at the far end of the block",
+   "target": "a scrolled section of bronze railing, curled metal strung with round rain beads",
+   "target_phrase": "the bronze railing",
+   "loop_target": "the rainy evening street corner seen from the sidewalk at railing height, wet slate cobbles glowing under gold streetlamps, the ornate bronze railing along the stone edge"
+  },
+  {
+   "name": "scrollwork",
+   "exp": -1,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "worn bronze and lamplight gold",
+   "scene": "a curled length of old bronze scrollwork along the corner railing, worn dark metal warm under the lamps, round rain beads strung along every curve, gold light glowing on the wet bronze, wet slate cobbles past the stone edge, pale blue-green crust gathered in the hollows",
+   "target": "a bloom of blue-green crust, a crusted turquoise patch rimmed with rust orange",
+   "target_phrase": "a turquoise patch",
+   "cameo": {
+    "sprite": "output/mascots/canon/newman.png",
+    "pos": [
+     0.68,
+     0.62
+    ],
+    "size": 0.13
+   }
+  },
+  {
+   "name": "verdigris",
+   "exp": -3,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "verdigris turquoise and rust orange",
+   "scene": "a verdigris world of stepped terraces, turquoise crystal stacked in broad plates, powdery mineral bloom in every seam, more plates stepped away behind them, rust-orange fingers between the terraces over dark bronze ground",
+   "target": "a rust-orange dendrite, a forked spine with fine limbs",
+   "target_phrase": "an orange dendrite"
+  },
+  {
+   "name": "dendrite_lattice",
+   "exp": -5,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "rust orange on dark slate, warming toward lamplight gold",
+   "scene": "a branched fractal lattice spread over a dark plain, rust-orange filaments forked again and again into ever finer limbs, more branches running out past them, a bright node at every fork"
+  },
+  {
+   "name": "lamplit_streets",
+   "exp": 3,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "lamplight gold on cool wet slate",
+   "scene": "a rainy city at night seen from high above, a branched network of narrow streets glowing gold with lamplight across dark wet rooftops, gold pooled along every lane, one bright corner where three lanes meet below"
+  }
+ ],
+ "music_theme": "a rainy evening street corner turned inward, warm and nostalgic, soft patter under lamplit calm, one bright swell landing on the dendrite-to-streets seam",
+ "music_key": "E minor",
+ "render_start": "verdigris",
+ "_tempo_test": true
+}

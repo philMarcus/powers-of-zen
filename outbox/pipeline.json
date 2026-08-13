@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-08-02 12:37:43",
+    "updated": "2026-08-13 11:51:43",
     "paused_platforms": [
       "tiktok"
     ],
@@ -80,11 +80,11 @@
       "cut": "zoomout",
       "file": "production/iris_observatory_ds_shift.mp4",
       "title": "the galaxy at the back of your eye 👁️🌌",
-      "caption": "Dive through the lens of time and space, where galaxies breathe ⏳ #cosmicjourney #infinitescale #telescopetravel #galaxydive #powersofzen #oddlysatisfying #zoomer",
-      "yt_title": "Dive through the lens of time and space, where galaxies breathe ⏳",
+      "caption": "From brass telescopes to cosmic eyes, the universe gazes back 🌌 #cosmicjourney #infinitescale #telescopetravel #galaxydive #powersofzen #oddlysatisfying #zoomer",
+      "yt_title": "From brass telescopes to cosmic eyes, the universe gazes back 🌌",
       "yt_desc": "the galaxy at the back of your eye 👁️🌌\n\n#shorts #powersofzen #space #trippy #oddlysatisfying #fyp",
       "cameo": null,
-      "state": "queued",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -104,7 +104,7 @@
         }
       },
       "created": "2026-07-27",
-      "order": 2,
+      "order": 1,
       "music": {
         "bpm": 100,
         "bar": 2.393,
@@ -1248,7 +1248,7 @@
       "yt_title": "Crystals hum in the dark, atoms whisper secrets ✨🔮",
       "yt_desc": "",
       "cameo": "lorraine",
-      "state": "queued",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1257,14 +1257,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/DsIOztlEOUU",
+          "ts": "2026-08-03 08:01:34"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/Dbk8L2hpUfz/",
+          "ts": "2026-08-03 08:01:34"
         }
       },
       "created": "2026-07-29",
@@ -1350,7 +1350,7 @@
         "for_model": "ds",
         "for_cut": "divein"
       },
-      "order": 3
+      "order": 0
     },
     {
       "journey": "night_bloom_remix",
@@ -1476,7 +1476,7 @@
       "yt_title": "A frozen world unfolds in endless crystalline layers 🌨️",
       "yt_desc": "",
       "cameo": "belle",
-      "state": "queued",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1485,14 +1485,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/vdJSfp8GGvA",
+          "ts": "2026-08-04 18:01:28"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DbolpFYs3Tq/",
+          "ts": "2026-08-04 18:01:28"
         }
       },
       "created": "2026-07-31",
@@ -1578,7 +1578,7 @@
         "Lost in the fractal dance of frost and firelight 🔥 Can you spot Belle hiding in this icy maze? 👀 #FrostedRealms #InfiniteIceLattice #CrystalDive #WintersEndlessLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "A journey through the veins of frozen time Can you spot Belle hiding in this icy maze? 👀 #FrostedRealms #InfiniteIceLattice #CrystalDive #WintersEndlessLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
       ],
-      "order": 4
+      "order": 2
     },
     {
       "journey": "cave_of_numbers",
@@ -1590,7 +1590,7 @@
       "yt_title": "The cavern’s pulse—endless, luminous, calling you deeper 🌑",
       "yt_desc": "",
       "cameo": "janet",
-      "state": "queued",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1599,14 +1599,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/YWs2SHWgQfs",
+          "ts": "2026-08-03 18:01:29"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DbmA2MBQ0Ft/",
+          "ts": "2026-08-03 18:01:29"
         }
       },
       "created": "2026-07-31",
@@ -1692,7 +1692,7 @@
       },
       "start_t": 11.3,
       "orig_file": "production/cave_of_numbers_ds.mp4",
-      "order": 5
+      "order": 0
     },
     {
       "journey": "butterfly_meridian",
@@ -1818,7 +1818,7 @@
       "yt_title": "A ceramic basin becomes a cosmos of glowing domes ✨",
       "yt_desc": "",
       "cameo": "kitty",
-      "state": "queued",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1827,14 +1827,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/AzpocVt3RVk",
+          "ts": "2026-08-04 08:01:30"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/Dbng-e1hZRb/",
+          "ts": "2026-08-04 08:01:30"
         }
       },
       "created": "2026-07-31",
@@ -1918,19 +1918,19 @@
         "for_model": "ds",
         "for_cut": "zoomout"
       },
-      "order": 6
+      "order": 1
     },
     {
       "journey": "quantum_orrery",
       "model": "ds",
-      "cut": "divein",
-      "file": "review_divein/quantum_orrery_ds_divein.mp4",
+      "cut": "zoomout",
+      "file": "production/quantum_orrery_ds_shift.mp4",
       "title": "",
       "caption": "A brass orrery hums with cosmic whispers 🌌 Can you spot Lee hiding in the infinite? 👀 #cosmicjourney #infinitezoom #brassuniverse #hiddenrealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "yt_title": "A brass orrery hums with cosmic whispers 🌌",
       "yt_desc": "",
       "cameo": "lee",
-      "state": "review",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1939,14 +1939,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/WnFjoxcB0ZQ",
+          "ts": "2026-08-05 08:01:26"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DbqFxM6R-lR/",
+          "ts": "2026-08-05 08:01:26"
         }
       },
       "created": "2026-08-01",
@@ -1973,7 +1973,66 @@
         "Where crystal domains dance in violet shadows 🔮 Can you spot Lee hiding in the infinite loop? 👀 #cosmicorrery #fractalvoid #stardustbead #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "Three stars weave light across the void ⚡ Can you spot Lee hiding in the infinite loop? 👀 #cosmicorrery #fractalvoid #stardustbead #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "The universe unfolds in an astronomer’s lamp glow 💫 Can you spot Lee hiding in the infinite loop? 👀 #cosmicorrery #fractalvoid #stardustbead #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
-      ]
+      ],
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "C minor",
+        "stage": "done",
+        "chosen": "warm",
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/quantum_orrery_warm.flac",
+            "aligned": "review/music/candidates/quantum_orrery/warm.mp4",
+            "seed": 500,
+            "lock": 9.91,
+            "tags": "chill hypnotic ambient evoking a brass orrery alone in a night study, precise and hushed, plucked strings and a low clockwork pulse under a wide luminous swell that lands on the metal-grain morph, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/quantum_orrery_glassy.flac",
+            "aligned": "review/music/candidates/quantum_orrery/glassy.mp4",
+            "seed": 501,
+            "lock": 24.87,
+            "tags": "chill hypnotic ambient evoking a brass orrery alone in a night study, precise and hushed, plucked strings and a low clockwork pulse under a wide luminous swell that lands on the metal-grain morph, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/quantum_orrery_deep.flac",
+            "aligned": "review/music/candidates/quantum_orrery/deep.mp4",
+            "seed": 502,
+            "lock": 11.11,
+            "tags": "chill hypnotic ambient evoking a brass orrery alone in a night study, precise and hushed, plucked strings and a low clockwork pulse under a wide luminous swell that lands on the metal-grain morph, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/quantum_orrery_tender.flac",
+            "aligned": "review/music/candidates/quantum_orrery/tender.mp4",
+            "seed": 503,
+            "lock": 16.99,
+            "tags": "chill hypnotic ambient evoking a brass orrery alone in a night study, precise and hushed, plucked strings and a low clockwork pulse under a wide luminous swell that lands on the metal-grain morph, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/quantum_orrery_choir.flac",
+            "aligned": "review/music/candidates/quantum_orrery/choir.mp4",
+            "seed": 504,
+            "lock": 13.17,
+            "tags": "chill hypnotic ambient evoking a brass orrery alone in a night study, precise and hushed, plucked strings and a low clockwork pulse under a wide luminous swell that lands on the metal-grain morph, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "zoomout"
+      },
+      "start_t": 5.8,
+      "orig_file": "production/quantum_orrery_ds.mp4",
+      "order": 3
     },
     {
       "journey": "loom_of_nights",
@@ -2040,7 +2099,7 @@
       "yt_title": "A jade temple dissolves into cosmic foam 🌌",
       "yt_desc": "",
       "cameo": "janet",
-      "state": "music",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -2049,14 +2108,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/FlYXhecGvLA",
+          "ts": "2026-08-02 18:01:32"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DbjcDhyO_9n/",
+          "ts": "2026-08-02 18:01:32"
         }
       },
       "created": "2026-08-01",
@@ -2090,8 +2149,8 @@
         "bpm": 103,
         "bar": 2.333,
         "key": "E minor",
-        "stage": "review",
-        "chosen": null,
+        "stage": "done",
+        "chosen": "warm",
         "candidates": [
           {
             "id": "warm",
@@ -2141,19 +2200,20 @@
         ],
         "for_model": "ds",
         "for_cut": "zoomout"
-      }
+      },
+      "order": 0
     },
     {
       "journey": "pollen_court",
       "model": "ds",
       "cut": "divein",
-      "file": "review_divein/pollen_court_ds_divein.mp4",
+      "file": "review_divein/pollen_court_ds_divein_shift.mp4",
       "title": "",
-      "caption": "A pollen grain’s universe, infinite and iridescent 🌸 Can you spot Amos hiding in the pollen drift? 👀 #infraredzen #pollenuniverse #blossomcosmos #dreamloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-      "yt_title": "A pollen grain’s universe, infinite and iridescent 🌸",
+      "caption": "A pollen grain’s universe, blooming in golden light 🌸 Can you spot Amos hiding in this infinite spring? 👀 #InfiniteBloom #PollenCosmos #ZenZoom #DreamDive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A pollen grain’s universe, blooming in golden light 🌸",
       "yt_desc": "",
       "cameo": "amos",
-      "state": "rejected",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -2162,53 +2222,112 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/tvTfgasrV60",
+          "ts": "2026-08-06 18:01:26"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DbtvOrQMd-j/",
+          "ts": "2026-08-06 18:01:26"
         }
       },
       "created": "2026-08-01",
       "caption_bodies": [
-        "A pollen grain’s universe, infinite and iridescent 🌸",
-        "Diving through blossoms into golden honeycomb dreams ✨",
-        "The park’s pulse in petals, a loop of light and shadow",
-        "Where every bench hides a cosmos beneath its slats",
-        "Spring’s fractal heart beats in magenta and cyan"
+        "A pollen grain’s universe, blooming in golden light 🌸",
+        "Lost in the fractal forests of spring’s last breath ✨",
+        "Where every bench is a world, and every world a bench 🌿",
+        "Diving through petals, past the sky, into the heart of bloom ⚡",
+        "A park, a grain, a galaxy—all one endless loop 🌀"
       ],
       "yt_title_options": [
-        "A pollen grain’s universe, infinite and iridescent 🌸",
-        "Diving through blossoms into golden honeycomb dreams ✨",
-        "The park’s pulse in petals, a loop of light and shadow",
-        "Where every bench hides a cosmos beneath its slats",
-        "Spring’s fractal heart beats in magenta and cyan"
+        "A pollen grain’s universe, blooming in golden light 🌸",
+        "Lost in the fractal forests of spring’s last breath ✨",
+        "Where every bench is a world, and every world a bench 🌿",
+        "Diving through petals, past the sky, into the heart of bloom ⚡",
+        "A park, a grain, a galaxy—all one endless loop 🌀"
       ],
-      "spot_line": "Can you spot Amos hiding in the pollen drift? 👀",
-      "caption_tags": "#infraredzen #pollenuniverse #blossomcosmos #dreamloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_line": "Can you spot Amos hiding in this infinite spring? 👀",
+      "caption_tags": "#InfiniteBloom #PollenCosmos #ZenZoom #DreamDive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "spot_hook": true,
       "caption_options": [
-        "A pollen grain’s universe, infinite and iridescent 🌸 Can you spot Amos hiding in the pollen drift? 👀 #infraredzen #pollenuniverse #blossomcosmos #dreamloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Diving through blossoms into golden honeycomb dreams ✨ Can you spot Amos hiding in the pollen drift? 👀 #infraredzen #pollenuniverse #blossomcosmos #dreamloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "The park’s pulse in petals, a loop of light and shadow Can you spot Amos hiding in the pollen drift? 👀 #infraredzen #pollenuniverse #blossomcosmos #dreamloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Where every bench hides a cosmos beneath its slats Can you spot Amos hiding in the pollen drift? 👀 #infraredzen #pollenuniverse #blossomcosmos #dreamloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Spring’s fractal heart beats in magenta and cyan Can you spot Amos hiding in the pollen drift? 👀 #infraredzen #pollenuniverse #blossomcosmos #dreamloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
-      ]
+        "A pollen grain’s universe, blooming in golden light 🌸 Can you spot Amos hiding in this infinite spring? 👀 #InfiniteBloom #PollenCosmos #ZenZoom #DreamDive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Lost in the fractal forests of spring’s last breath ✨ Can you spot Amos hiding in this infinite spring? 👀 #InfiniteBloom #PollenCosmos #ZenZoom #DreamDive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where every bench is a world, and every world a bench 🌿 Can you spot Amos hiding in this infinite spring? 👀 #InfiniteBloom #PollenCosmos #ZenZoom #DreamDive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Diving through petals, past the sky, into the heart of bloom ⚡ Can you spot Amos hiding in this infinite spring? 👀 #InfiniteBloom #PollenCosmos #ZenZoom #DreamDive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A park, a grain, a galaxy—all one endless loop 🌀 Can you spot Amos hiding in this infinite spring? 👀 #InfiniteBloom #PollenCosmos #ZenZoom #DreamDive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ],
+      "start_t": 7.4,
+      "orig_file": "review_divein/pollen_court_ds_divein.mp4",
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "A major",
+        "stage": "done",
+        "chosen": "choir",
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/pollen_court_warm.flac",
+            "aligned": "review/music/candidates/pollen_court/warm.mp4",
+            "seed": 500,
+            "lock": 11.17,
+            "tags": "chill hypnotic ambient evoking a bright spring garden at early light, airy and gentle, glassy bells over soft strings, a warm bloom of sound landing where the golden mesh opens into the canopy, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/pollen_court_glassy.flac",
+            "aligned": "review/music/candidates/pollen_court/glassy.mp4",
+            "seed": 501,
+            "lock": 8.76,
+            "tags": "chill hypnotic ambient evoking a bright spring garden at early light, airy and gentle, glassy bells over soft strings, a warm bloom of sound landing where the golden mesh opens into the canopy, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/pollen_court_deep.flac",
+            "aligned": "review/music/candidates/pollen_court/deep.mp4",
+            "seed": 502,
+            "lock": 7.74,
+            "tags": "chill hypnotic ambient evoking a bright spring garden at early light, airy and gentle, glassy bells over soft strings, a warm bloom of sound landing where the golden mesh opens into the canopy, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/pollen_court_tender.flac",
+            "aligned": "review/music/candidates/pollen_court/tender.mp4",
+            "seed": 503,
+            "lock": 5.49,
+            "tags": "chill hypnotic ambient evoking a bright spring garden at early light, airy and gentle, glassy bells over soft strings, a warm bloom of sound landing where the golden mesh opens into the canopy, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/pollen_court_choir.flac",
+            "aligned": "review/music/candidates/pollen_court/choir.mp4",
+            "seed": 504,
+            "lock": 10.42,
+            "tags": "chill hypnotic ambient evoking a bright spring garden at early light, airy and gentle, glassy bells over soft strings, a warm bloom of sound landing where the golden mesh opens into the canopy, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      },
+      "order": 6
     },
     {
       "journey": "glass_apiary",
       "model": "ds",
       "cut": "divein",
-      "file": "review_divein/glass_apiary_ds_divein.mp4",
+      "file": "review_divein/glass_apiary_ds_divein_shift.mp4",
       "title": "",
-      "caption": "Dive into the golden honeycomb cosmos 🌌 Can you spot Amos hiding in the honeycomb universe? 👀 #HoneycombCosmos #InfiniteOrchard #GoldenNebulaDive #FractalZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-      "yt_title": "Dive into the golden honeycomb cosmos 🌌",
+      "caption": "Where bees hum and nebulae glow in perfect harmony Can you spot Amos hiding in the honeycomb universe? 👀 #HoneycombCosmos #InfiniteOrchard #GoldenNebulaDive #FractalZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Where bees hum and nebulae glow in perfect harmony",
       "yt_desc": "",
       "cameo": "amos",
-      "state": "review",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -2217,14 +2336,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/BRFDbG9o2lU",
+          "ts": "2026-08-05 18:01:25"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DbrKbv5BzMr/",
+          "ts": "2026-08-05 18:01:26"
         }
       },
       "created": "2026-08-01",
@@ -2251,19 +2370,78 @@
         "From orchards to galaxies, a loop of endless wonder Can you spot Amos hiding in the honeycomb universe? 👀 #HoneycombCosmos #InfiniteOrchard #GoldenNebulaDive #FractalZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "Where bees hum and nebulae glow in perfect harmony Can you spot Amos hiding in the honeycomb universe? 👀 #HoneycombCosmos #InfiniteOrchard #GoldenNebulaDive #FractalZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "Lost in the fractal dance of light and wax Can you spot Amos hiding in the honeycomb universe? 👀 #HoneycombCosmos #InfiniteOrchard #GoldenNebulaDive #FractalZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
-      ]
+      ],
+      "start_t": 8.8,
+      "orig_file": "review_divein/glass_apiary_ds_divein.mp4",
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "F major",
+        "stage": "done",
+        "chosen": "glassy",
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/glass_apiary_warm.flac",
+            "aligned": "review/music/candidates/glass_apiary/warm.mp4",
+            "seed": 500,
+            "lock": 17.78,
+            "tags": "chill hypnotic ambient evoking a golden apiary at sunset, warm and humming, hymn-like strings over a low drone, one bright bloom of sound landing on the crystal-lattice fold into the star swarm, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/glass_apiary_glassy.flac",
+            "aligned": "review/music/candidates/glass_apiary/glassy.mp4",
+            "seed": 501,
+            "lock": 9.22,
+            "tags": "chill hypnotic ambient evoking a golden apiary at sunset, warm and humming, hymn-like strings over a low drone, one bright bloom of sound landing on the crystal-lattice fold into the star swarm, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/glass_apiary_deep.flac",
+            "aligned": "review/music/candidates/glass_apiary/deep.mp4",
+            "seed": 502,
+            "lock": 5.2,
+            "tags": "chill hypnotic ambient evoking a golden apiary at sunset, warm and humming, hymn-like strings over a low drone, one bright bloom of sound landing on the crystal-lattice fold into the star swarm, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/glass_apiary_tender.flac",
+            "aligned": "review/music/candidates/glass_apiary/tender.mp4",
+            "seed": 503,
+            "lock": 4.86,
+            "tags": "chill hypnotic ambient evoking a golden apiary at sunset, warm and humming, hymn-like strings over a low drone, one bright bloom of sound landing on the crystal-lattice fold into the star swarm, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/glass_apiary_choir.flac",
+            "aligned": "review/music/candidates/glass_apiary/choir.mp4",
+            "seed": 504,
+            "lock": 4.38,
+            "tags": "chill hypnotic ambient evoking a golden apiary at sunset, warm and humming, hymn-like strings over a low drone, one bright bloom of sound landing on the crystal-lattice fold into the star swarm, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      },
+      "order": 4
     },
     {
       "journey": "copper_rain",
       "model": "ds",
       "cut": "divein",
-      "file": "review_divein/copper_rain_ds_divein.mp4",
+      "file": "production/copper_rain_ds_divein_shift.mp4",
       "title": "",
-      "caption": "A raindrop’s journey through neon infinity 🌧️ Can you spot Lamar hiding in the glow? 👀 #neonzen #fractalcities #infinitezoom #verdigrisdreams #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-      "yt_title": "A raindrop’s journey through neon infinity 🌧️",
+      "caption": "The loop begins again at the corner of forever Can you spot Lamar hiding in the glow? 👀 #neonzen #fractalcities #infinitezoom #verdigrisdreams #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "The loop begins again at the corner of forever",
       "yt_desc": "",
       "cameo": "lamar",
-      "state": "review",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -2272,14 +2450,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/Nv1d6jkDykU",
+          "ts": "2026-08-06 08:01:23"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DbsqkAqu7OB/",
+          "ts": "2026-08-06 08:01:23"
         }
       },
       "created": "2026-08-01",
@@ -2306,7 +2484,66 @@
         "Turquoise terraces rise in a fractal dream Can you spot Lamar hiding in the glow? 👀 #neonzen #fractalcities #infinitezoom #verdigrisdreams #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "Golden veins pulse beneath the endless night Can you spot Lamar hiding in the glow? 👀 #neonzen #fractalcities #infinitezoom #verdigrisdreams #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "The loop begins again at the corner of forever Can you spot Lamar hiding in the glow? 👀 #neonzen #fractalcities #infinitezoom #verdigrisdreams #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
-      ]
+      ],
+      "start_t": 5.0,
+      "orig_file": "production/copper_rain_ds_divein.mp4",
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "E minor",
+        "stage": "done",
+        "chosen": "warm",
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/copper_rain_warm.flac",
+            "aligned": "review/music/candidates/copper_rain/warm.mp4",
+            "seed": 500,
+            "lock": 13.85,
+            "tags": "chill hypnotic ambient evoking a rainy evening street corner turned inward, warm and nostalgic, soft patter under lamplit calm, one bright swell landing on the dendrite-to-streets seam, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/copper_rain_glassy.flac",
+            "aligned": "review/music/candidates/copper_rain/glassy.mp4",
+            "seed": 501,
+            "lock": 21.85,
+            "tags": "chill hypnotic ambient evoking a rainy evening street corner turned inward, warm and nostalgic, soft patter under lamplit calm, one bright swell landing on the dendrite-to-streets seam, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/copper_rain_deep.flac",
+            "aligned": "review/music/candidates/copper_rain/deep.mp4",
+            "seed": 502,
+            "lock": 6.44,
+            "tags": "chill hypnotic ambient evoking a rainy evening street corner turned inward, warm and nostalgic, soft patter under lamplit calm, one bright swell landing on the dendrite-to-streets seam, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/copper_rain_tender.flac",
+            "aligned": "review/music/candidates/copper_rain/tender.mp4",
+            "seed": 503,
+            "lock": 17.29,
+            "tags": "chill hypnotic ambient evoking a rainy evening street corner turned inward, warm and nostalgic, soft patter under lamplit calm, one bright swell landing on the dendrite-to-streets seam, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/copper_rain_choir.flac",
+            "aligned": "review/music/candidates/copper_rain/choir.mp4",
+            "seed": 504,
+            "lock": 13.81,
+            "tags": "chill hypnotic ambient evoking a rainy evening street corner turned inward, warm and nostalgic, soft patter under lamplit calm, one bright swell landing on the dendrite-to-streets seam, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      },
+      "order": 5
     },
     {
       "journey": "sugar_nebula",
@@ -2314,11 +2551,11 @@
       "cut": "divein",
       "file": "review_divein/sugar_nebula_ds_divein.mp4",
       "title": "",
-      "caption": "Dive into a neon candy cosmos 🍭✨ Can you spot Kitty in the candy cosmos? 🐱 #CandyCosmos #SugarGalaxy #NeonSweetDreams #InfiniteLollipop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-      "yt_title": "Dive into a neon candy cosmos 🍭✨",
+      "caption": "A spiral of sugar, endless and sweet 🌌💖 Can you spot Kitty in the candy cosmos? 🐱 #CandyCosmos #SugarGalaxy #NeonSweetDreams #InfiniteLollipop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A spiral of sugar, endless and sweet 🌌💖",
       "yt_desc": "",
       "cameo": "kitty",
-      "state": "review",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -2327,14 +2564,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/Gzl8SvMrr9M",
+          "ts": "2026-08-09 08:01:28"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/Db0Y8-qO1-Q/",
+          "ts": "2026-08-09 08:01:28"
         }
       },
       "created": "2026-08-02",
@@ -2361,7 +2598,64 @@
         "Lost in the crystal forests of a lollipop world ✨🌿 Can you spot Kitty in the candy cosmos? 🐱 #CandyCosmos #SugarGalaxy #NeonSweetDreams #InfiniteLollipop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "Where galaxies taste like cotton candy ❄️🌠 Can you spot Kitty in the candy cosmos? 🐱 #CandyCosmos #SugarGalaxy #NeonSweetDreams #InfiniteLollipop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "The universe is just one giant gumball machine 🍬🚀 Can you spot Kitty in the candy cosmos? 🐱 #CandyCosmos #SugarGalaxy #NeonSweetDreams #InfiniteLollipop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
-      ]
+      ],
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "A major",
+        "stage": "done",
+        "chosen": "warm",
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/sugar_nebula_warm.flac",
+            "aligned": "review/music/candidates/sugar_nebula/warm.mp4",
+            "seed": 500,
+            "lock": 16.62,
+            "tags": "chill hypnotic ambient evoking bright kitsch synth-pop shimmer, glassy bells and fat neon bass, playful and sugary, a huge magenta swell landing on the sugar-lattice-to-quasar morph and a soft floss-light drift through the nebula, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/sugar_nebula_glassy.flac",
+            "aligned": "review/music/candidates/sugar_nebula/glassy.mp4",
+            "seed": 501,
+            "lock": 13.17,
+            "tags": "chill hypnotic ambient evoking bright kitsch synth-pop shimmer, glassy bells and fat neon bass, playful and sugary, a huge magenta swell landing on the sugar-lattice-to-quasar morph and a soft floss-light drift through the nebula, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/sugar_nebula_deep.flac",
+            "aligned": "review/music/candidates/sugar_nebula/deep.mp4",
+            "seed": 502,
+            "lock": 16.62,
+            "tags": "chill hypnotic ambient evoking bright kitsch synth-pop shimmer, glassy bells and fat neon bass, playful and sugary, a huge magenta swell landing on the sugar-lattice-to-quasar morph and a soft floss-light drift through the nebula, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/sugar_nebula_tender.flac",
+            "aligned": "review/music/candidates/sugar_nebula/tender.mp4",
+            "seed": 503,
+            "lock": 17.04,
+            "tags": "chill hypnotic ambient evoking bright kitsch synth-pop shimmer, glassy bells and fat neon bass, playful and sugary, a huge magenta swell landing on the sugar-lattice-to-quasar morph and a soft floss-light drift through the nebula, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/sugar_nebula_choir.flac",
+            "aligned": "review/music/candidates/sugar_nebula/choir.mp4",
+            "seed": 504,
+            "lock": 13.76,
+            "tags": "chill hypnotic ambient evoking bright kitsch synth-pop shimmer, glassy bells and fat neon bass, playful and sugary, a huge magenta swell landing on the sugar-lattice-to-quasar morph and a soft floss-light drift through the nebula, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      },
+      "order": 10
     },
     {
       "journey": "velvet_atlas",
@@ -2369,11 +2663,11 @@
       "cut": "divein",
       "file": "review_divein/velvet_atlas_ds_divein.mp4",
       "title": "",
-      "caption": "A dress-form’s cuff unravels into a golden labyrinth 🌌 Can you spot Lorraine hiding in the embroidery? 👀 #goldenvelvetdream #microworlds #endlesszoom #texturedesign #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-      "yt_title": "A dress-form’s cuff unravels into a golden labyrinth 🌌",
+      "caption": "Every thread holds a universe—zoom in forever Can you spot Lorraine hiding in the embroidery? 👀 #goldenvelvetdream #microworlds #endlesszoom #texturedesign #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Every thread holds a universe—zoom in forever",
       "yt_desc": "",
       "cameo": "lorraine",
-      "state": "review",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -2382,14 +2676,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/nUi126I6dg4",
+          "ts": "2026-08-07 18:01:27"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DbwUB8zQlsm/",
+          "ts": "2026-08-07 18:01:27"
         }
       },
       "created": "2026-08-02",
@@ -2416,7 +2710,1728 @@
         "Dyed threads shimmer like violet mountain ranges 🏔️ Can you spot Lorraine hiding in the embroidery? 👀 #goldenvelvetdream #microworlds #endlesszoom #texturedesign #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "Stitches weave the sky into a quilt of midnight and gold ✨ Can you spot Lorraine hiding in the embroidery? 👀 #goldenvelvetdream #microworlds #endlesszoom #texturedesign #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "Every thread holds a universe—zoom in forever Can you spot Lorraine hiding in the embroidery? 👀 #goldenvelvetdream #microworlds #endlesszoom #texturedesign #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ],
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "G minor",
+        "stage": "done",
+        "chosen": "deep",
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/velvet_atlas_warm.flac",
+            "aligned": "review/music/candidates/velvet_atlas/warm.mp4",
+            "seed": 500,
+            "lock": 21.34,
+            "tags": "chill hypnotic ambient evoking hushed velvet chamber music, plucked harp and low bowed strings under a soft gold shimmer, one deep bloom of sound landing on the dye-crystal seam, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/velvet_atlas_glassy.flac",
+            "aligned": "review/music/candidates/velvet_atlas/glassy.mp4",
+            "seed": 501,
+            "lock": 18.87,
+            "tags": "chill hypnotic ambient evoking hushed velvet chamber music, plucked harp and low bowed strings under a soft gold shimmer, one deep bloom of sound landing on the dye-crystal seam, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/velvet_atlas_deep.flac",
+            "aligned": "review/music/candidates/velvet_atlas/deep.mp4",
+            "seed": 502,
+            "lock": 15.11,
+            "tags": "chill hypnotic ambient evoking hushed velvet chamber music, plucked harp and low bowed strings under a soft gold shimmer, one deep bloom of sound landing on the dye-crystal seam, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/velvet_atlas_tender.flac",
+            "aligned": "review/music/candidates/velvet_atlas/tender.mp4",
+            "seed": 503,
+            "lock": 14.46,
+            "tags": "chill hypnotic ambient evoking hushed velvet chamber music, plucked harp and low bowed strings under a soft gold shimmer, one deep bloom of sound landing on the dye-crystal seam, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/velvet_atlas_choir.flac",
+            "aligned": "review/music/candidates/velvet_atlas/choir.mp4",
+            "seed": 504,
+            "lock": 15.07,
+            "tags": "chill hypnotic ambient evoking hushed velvet chamber music, plucked harp and low bowed strings under a soft gold shimmer, one deep bloom of sound landing on the dye-crystal seam, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      },
+      "order": 8
+    },
+    {
+      "journey": "tesla_garden",
+      "model": "ds",
+      "cut": "zoomout",
+      "file": "production/tesla_garden_ds_shift.mp4",
+      "title": "",
+      "caption": "Auroras ripple over copper plains, whispering secrets to the glass dome below 🌠 Can you spot Clark hiding in this electric dream? 👀 #NeonCosmos #FractalPlasma #RetroStellarDive #AuroraLabyrinth #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Auroras ripple over copper plains, whispering secrets to the glass dome below 🌠",
+      "yt_desc": "",
+      "cameo": "clark",
+      "state": "failed",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "live",
+          "url": "https://youtube.com/shorts/fO9XElDOsJc",
+          "ts": "2026-08-07 08:01:29"
+        },
+        "instagram": {
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DbvPXOBPRP8/",
+          "ts": "2026-08-07 08:01:29"
+        }
+      },
+      "created": "2026-08-03",
+      "caption_bodies": [
+        "A violet glow hums through the empty lab, pulling you into the plasma heart 🌌",
+        "Electric branches bloom in silent fractal storms, endless and alive ✨",
+        "Neutron stars pulse like twin lighthouses in the cosmic dark 🔮",
+        "Auroras ripple over copper plains, whispering secrets to the glass dome below 🌠",
+        "The lab door opens again—where does the loop begin? ⚡"
+      ],
+      "yt_title_options": [
+        "A violet glow hums through the empty lab, pulling you into the plasma heart 🌌",
+        "Electric branches bloom in silent fractal storms, endless and alive ✨",
+        "Neutron stars pulse like twin lighthouses in the cosmic dark 🔮",
+        "Auroras ripple over copper plains, whispering secrets to the glass dome below 🌠",
+        "The lab door opens again—where does the loop begin? ⚡"
+      ],
+      "spot_line": "Can you spot Clark hiding in this electric dream? 👀",
+      "caption_tags": "#NeonCosmos #FractalPlasma #RetroStellarDive #AuroraLabyrinth #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A violet glow hums through the empty lab, pulling you into the plasma heart 🌌 Can you spot Clark hiding in this electric dream? 👀 #NeonCosmos #FractalPlasma #RetroStellarDive #AuroraLabyrinth #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Electric branches bloom in silent fractal storms, endless and alive ✨ Can you spot Clark hiding in this electric dream? 👀 #NeonCosmos #FractalPlasma #RetroStellarDive #AuroraLabyrinth #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Neutron stars pulse like twin lighthouses in the cosmic dark 🔮 Can you spot Clark hiding in this electric dream? 👀 #NeonCosmos #FractalPlasma #RetroStellarDive #AuroraLabyrinth #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Auroras ripple over copper plains, whispering secrets to the glass dome below 🌠 Can you spot Clark hiding in this electric dream? 👀 #NeonCosmos #FractalPlasma #RetroStellarDive #AuroraLabyrinth #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The lab door opens again—where does the loop begin? ⚡ Can you spot Clark hiding in this electric dream? 👀 #NeonCosmos #FractalPlasma #RetroStellarDive #AuroraLabyrinth #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ],
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "C# minor",
+        "stage": "done",
+        "chosen": "glassy",
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/tesla_garden_warm.flac",
+            "aligned": "review/music/candidates/tesla_garden/warm.mp4",
+            "seed": 500,
+            "lock": 4.86,
+            "tags": "chill hypnotic ambient evoking a hushed Victorian electrical laboratory charged into a cosmic storm — dark synth drone, glassy bell tones and static-crackle texture, a hard electric hit landing on the discharge-to-magnetar seam, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/tesla_garden_glassy.flac",
+            "aligned": "review/music/candidates/tesla_garden/glassy.mp4",
+            "seed": 501,
+            "lock": 38.28,
+            "tags": "chill hypnotic ambient evoking a hushed Victorian electrical laboratory charged into a cosmic storm — dark synth drone, glassy bell tones and static-crackle texture, a hard electric hit landing on the discharge-to-magnetar seam, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/tesla_garden_deep.flac",
+            "aligned": "review/music/candidates/tesla_garden/deep.mp4",
+            "seed": 502,
+            "lock": 5.75,
+            "tags": "chill hypnotic ambient evoking a hushed Victorian electrical laboratory charged into a cosmic storm — dark synth drone, glassy bell tones and static-crackle texture, a hard electric hit landing on the discharge-to-magnetar seam, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/tesla_garden_tender.flac",
+            "aligned": "review/music/candidates/tesla_garden/tender.mp4",
+            "seed": 503,
+            "lock": 5.18,
+            "tags": "chill hypnotic ambient evoking a hushed Victorian electrical laboratory charged into a cosmic storm — dark synth drone, glassy bell tones and static-crackle texture, a hard electric hit landing on the discharge-to-magnetar seam, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/tesla_garden_choir.flac",
+            "aligned": "review/music/candidates/tesla_garden/choir.mp4",
+            "seed": 504,
+            "lock": 25.9,
+            "tags": "chill hypnotic ambient evoking a hushed Victorian electrical laboratory charged into a cosmic storm — dark synth drone, glassy bell tones and static-crackle texture, a hard electric hit landing on the discharge-to-magnetar seam, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "zoomout"
+      },
+      "start_t": 17.0,
+      "orig_file": "production/tesla_garden_ds.mp4",
+      "order": 7
+    },
+    {
+      "journey": "chalkboard_infinities",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/chalkboard_infinities_ds_divein.mp4",
+      "title": "",
+      "caption": "The hyperbola hums in the hollow dark Can you spot Adam hiding in the infinite chalkboard? #chalkboardcosmos #infinitelecturehall #geometryofdreams #adaminthevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "The hyperbola hums in the hollow dark",
+      "yt_desc": "",
+      "cameo": "adam",
+      "state": "failed",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "live",
+          "url": "https://youtube.com/shorts/TdNXaK1lf0w",
+          "ts": "2026-08-08 18:01:27"
+        },
+        "instagram": {
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/Dby40v0t29S/",
+          "ts": "2026-08-08 18:01:27"
+        }
+      },
+      "created": "2026-08-03",
+      "caption_bodies": [
+        "Dive into the infinite chalkboard spiral 🌀",
+        "A lecture hall of lost equations, waiting for you",
+        "Where every stroke reveals a universe untold ✨",
+        "The hyperbola hums in the hollow dark",
+        "Adam’s ghost lingers in the geometry"
+      ],
+      "yt_title_options": [
+        "Dive into the infinite chalkboard spiral 🌀",
+        "A lecture hall of lost equations, waiting for you",
+        "Where every stroke reveals a universe untold ✨",
+        "The hyperbola hums in the hollow dark",
+        "Adam’s ghost lingers in the geometry"
+      ],
+      "spot_line": "Can you spot Adam hiding in the infinite chalkboard?",
+      "caption_tags": "#chalkboardcosmos #infinitelecturehall #geometryofdreams #adaminthevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Dive into the infinite chalkboard spiral 🌀 Can you spot Adam hiding in the infinite chalkboard? #chalkboardcosmos #infinitelecturehall #geometryofdreams #adaminthevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A lecture hall of lost equations, waiting for you Can you spot Adam hiding in the infinite chalkboard? #chalkboardcosmos #infinitelecturehall #geometryofdreams #adaminthevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where every stroke reveals a universe untold ✨ Can you spot Adam hiding in the infinite chalkboard? #chalkboardcosmos #infinitelecturehall #geometryofdreams #adaminthevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The hyperbola hums in the hollow dark Can you spot Adam hiding in the infinite chalkboard? #chalkboardcosmos #infinitelecturehall #geometryofdreams #adaminthevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Adam’s ghost lingers in the geometry Can you spot Adam hiding in the infinite chalkboard? #chalkboardcosmos #infinitelecturehall #geometryofdreams #adaminthevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ],
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "A minor",
+        "stage": "done",
+        "chosen": "deep",
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/chalkboard_infinities_warm.flac",
+            "aligned": "review/music/candidates/chalkboard_infinities/warm.mp4",
+            "seed": 500,
+            "lock": 2.81,
+            "tags": "chill hypnotic ambient evoking a hushed nocturnal lecture hall of chalk and slate — austere and curious, soft piano figures over bowed strings and a slow pulse, one bright bloom of sound landing on the chalk-grain seam, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/chalkboard_infinities_glassy.flac",
+            "aligned": "review/music/candidates/chalkboard_infinities/glassy.mp4",
+            "seed": 501,
+            "lock": 10.78,
+            "tags": "chill hypnotic ambient evoking a hushed nocturnal lecture hall of chalk and slate — austere and curious, soft piano figures over bowed strings and a slow pulse, one bright bloom of sound landing on the chalk-grain seam, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/chalkboard_infinities_deep.flac",
+            "aligned": "review/music/candidates/chalkboard_infinities/deep.mp4",
+            "seed": 502,
+            "lock": 6.81,
+            "tags": "chill hypnotic ambient evoking a hushed nocturnal lecture hall of chalk and slate — austere and curious, soft piano figures over bowed strings and a slow pulse, one bright bloom of sound landing on the chalk-grain seam, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/chalkboard_infinities_tender.flac",
+            "aligned": "review/music/candidates/chalkboard_infinities/tender.mp4",
+            "seed": 503,
+            "lock": 15.93,
+            "tags": "chill hypnotic ambient evoking a hushed nocturnal lecture hall of chalk and slate — austere and curious, soft piano figures over bowed strings and a slow pulse, one bright bloom of sound landing on the chalk-grain seam, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/chalkboard_infinities_choir.flac",
+            "aligned": "review/music/candidates/chalkboard_infinities/choir.mp4",
+            "seed": 504,
+            "lock": 6.74,
+            "tags": "chill hypnotic ambient evoking a hushed nocturnal lecture hall of chalk and slate — austere and curious, soft piano figures over bowed strings and a slow pulse, one bright bloom of sound landing on the chalk-grain seam, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      },
+      "order": 9
+    },
+    {
+      "journey": "ink_dynasty",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/ink_dynasty_ds_divein_shift.mp4",
+      "title": "",
+      "caption": "A moonlit studio dissolves into ink, then stars 🌙✨ Can you spot Newman hiding in this endless loop? 👀 #InkUniverse #PaperCosmos #StormOfZen #CarbonDreaming #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A moonlit studio dissolves into ink, then stars 🌙✨",
+      "yt_desc": "",
+      "cameo": "newman",
+      "state": "failed",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "live",
+          "url": "https://youtube.com/shorts/cjO9gocJLwo",
+          "ts": "2026-08-09 18:01:28"
+        },
+        "instagram": {
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/Db1dnXug0Om/",
+          "ts": "2026-08-09 18:01:28"
+        }
+      },
+      "created": "2026-08-04",
+      "caption_bodies": [
+        "A moonlit studio dissolves into ink, then stars 🌙✨",
+        "Brushstrokes unravel into galaxies of paper and soot",
+        "Where storms swirl in black and silver mist 🌪️💫",
+        "Lost in the lattice of a carbon cosmos",
+        "A pavilion floats above rivers of midnight"
+      ],
+      "yt_title_options": [
+        "A moonlit studio dissolves into ink, then stars 🌙✨",
+        "Brushstrokes unravel into galaxies of paper and soot",
+        "Where storms swirl in black and silver mist 🌪️💫",
+        "Lost in the lattice of a carbon cosmos",
+        "A pavilion floats above rivers of midnight"
+      ],
+      "spot_line": "Can you spot Newman hiding in this endless loop? 👀",
+      "caption_tags": "#InkUniverse #PaperCosmos #StormOfZen #CarbonDreaming #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A moonlit studio dissolves into ink, then stars 🌙✨ Can you spot Newman hiding in this endless loop? 👀 #InkUniverse #PaperCosmos #StormOfZen #CarbonDreaming #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Brushstrokes unravel into galaxies of paper and soot Can you spot Newman hiding in this endless loop? 👀 #InkUniverse #PaperCosmos #StormOfZen #CarbonDreaming #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where storms swirl in black and silver mist 🌪️💫 Can you spot Newman hiding in this endless loop? 👀 #InkUniverse #PaperCosmos #StormOfZen #CarbonDreaming #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Lost in the lattice of a carbon cosmos Can you spot Newman hiding in this endless loop? 👀 #InkUniverse #PaperCosmos #StormOfZen #CarbonDreaming #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A pavilion floats above rivers of midnight Can you spot Newman hiding in this endless loop? 👀 #InkUniverse #PaperCosmos #StormOfZen #CarbonDreaming #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ],
+      "start_t": 5.0,
+      "orig_file": "review_divein/ink_dynasty_ds_divein.mp4",
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "E minor",
+        "stage": "done",
+        "chosen": "warm",
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/ink_dynasty_warm.flac",
+            "aligned": "review/music/candidates/ink_dynasty/warm.mp4",
+            "seed": 500,
+            "lock": 3.3,
+            "tags": "chill hypnotic ambient evoking a moonlit ink-painting cosmos — sparse plucked strings and a low bamboo flute over deep resonant drones, hushed and vast, one struck bell landing on the lattice-to-storm seam and taiko weight through the storm before the quiet fall home, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/ink_dynasty_glassy.flac",
+            "aligned": "review/music/candidates/ink_dynasty/glassy.mp4",
+            "seed": 501,
+            "lock": 4.48,
+            "tags": "chill hypnotic ambient evoking a moonlit ink-painting cosmos — sparse plucked strings and a low bamboo flute over deep resonant drones, hushed and vast, one struck bell landing on the lattice-to-storm seam and taiko weight through the storm before the quiet fall home, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/ink_dynasty_deep.flac",
+            "aligned": "review/music/candidates/ink_dynasty/deep.mp4",
+            "seed": 502,
+            "lock": 2.95,
+            "tags": "chill hypnotic ambient evoking a moonlit ink-painting cosmos — sparse plucked strings and a low bamboo flute over deep resonant drones, hushed and vast, one struck bell landing on the lattice-to-storm seam and taiko weight through the storm before the quiet fall home, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/ink_dynasty_tender.flac",
+            "aligned": "review/music/candidates/ink_dynasty/tender.mp4",
+            "seed": 503,
+            "lock": 7.09,
+            "tags": "chill hypnotic ambient evoking a moonlit ink-painting cosmos — sparse plucked strings and a low bamboo flute over deep resonant drones, hushed and vast, one struck bell landing on the lattice-to-storm seam and taiko weight through the storm before the quiet fall home, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/ink_dynasty_choir.flac",
+            "aligned": "review/music/candidates/ink_dynasty/choir.mp4",
+            "seed": 504,
+            "lock": 1.99,
+            "tags": "chill hypnotic ambient evoking a moonlit ink-painting cosmos — sparse plucked strings and a low bamboo flute over deep resonant drones, hushed and vast, one struck bell landing on the lattice-to-storm seam and taiko weight through the storm before the quiet fall home, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      }
+    },
+    {
+      "journey": "ammonite_spiral",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/ammonite_spiral_ds_divein_shift.mp4",
+      "title": "",
+      "caption": "A fossil’s whisper spirals into cosmic light 🌀💎 Can you spot Lorraine hiding in the infinite zoom? 👀 #FossilGalaxies #InfiniteTidepool #CosmicCrystals #PearlUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A fossil’s whisper spirals into cosmic light 🌀💎",
+      "yt_desc": "",
+      "cameo": "lorraine",
+      "state": "music",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-04",
+      "caption_bodies": [
+        "Dive into the infinite fractals of a tidepool’s soul 🌊✨",
+        "A fossil’s whisper spirals into cosmic light 🌀💎",
+        "Pearl chambers hum with the rhythm of galaxies 🌌🐚",
+        "Crystalline terraces echo the birth of stars ✨🔮",
+        "One loop, a thousand worlds—where does it end? 🌀🌍"
+      ],
+      "yt_title_options": [
+        "Dive into the infinite fractals of a tidepool’s soul 🌊✨",
+        "A fossil’s whisper spirals into cosmic light 🌀💎",
+        "Pearl chambers hum with the rhythm of galaxies 🌌🐚",
+        "Crystalline terraces echo the birth of stars ✨🔮",
+        "One loop, a thousand worlds—where does it end? 🌀🌍"
+      ],
+      "spot_line": "Can you spot Lorraine hiding in the infinite zoom? 👀",
+      "caption_tags": "#FossilGalaxies #InfiniteTidepool #CosmicCrystals #PearlUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Dive into the infinite fractals of a tidepool’s soul 🌊✨ Can you spot Lorraine hiding in the infinite zoom? 👀 #FossilGalaxies #InfiniteTidepool #CosmicCrystals #PearlUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A fossil’s whisper spirals into cosmic light 🌀💎 Can you spot Lorraine hiding in the infinite zoom? 👀 #FossilGalaxies #InfiniteTidepool #CosmicCrystals #PearlUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Pearl chambers hum with the rhythm of galaxies 🌌🐚 Can you spot Lorraine hiding in the infinite zoom? 👀 #FossilGalaxies #InfiniteTidepool #CosmicCrystals #PearlUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Crystalline terraces echo the birth of stars ✨🔮 Can you spot Lorraine hiding in the infinite zoom? 👀 #FossilGalaxies #InfiniteTidepool #CosmicCrystals #PearlUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "One loop, a thousand worlds—where does it end? 🌀🌍 Can you spot Lorraine hiding in the infinite zoom? 👀 #FossilGalaxies #InfiniteTidepool #CosmicCrystals #PearlUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ],
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "E minor",
+        "stage": "done",
+        "chosen": "night_market",
+        "candidates": [
+          {
+            "id": "night_market-b",
+            "lane": "night_market",
+            "mood": "nocturnal, lantern-lit, wandering · downbeat",
+            "track": "output/music/ammonite_spiral_night_market-b.flac",
+            "aligned": "review/music/candidates/ammonite_spiral/night_market-b.mp4",
+            "seed": 10994,
+            "lock": 13.3,
+            "bar_conf": 0.48,
+            "score": 13.08,
+            "tags": "chill hypnotic ambient evoking a tidal iridescent hush — slow shimmering bells over a deep ocean swell, one bright crystalline bloom landing on the crystal-terrace-to-galaxy seam, soft hang drum and plucked koto over a velvet pad, intimate and close, a single deep soft kick drum lands exactly on the downbeat of every bar, felt more than heard, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          },
+          {
+            "id": "tide_organ-wild",
+            "lane": "tide_organ",
+            "mood": "tidal, breathing, mineral · heartbeat",
+            "track": "output/music/ammonite_spiral_tide_organ-wild.flac",
+            "aligned": "review/music/candidates/ammonite_spiral/tide_organ-wild.mp4",
+            "seed": 11105,
+            "lock": 11.47,
+            "bar_conf": 0.31,
+            "score": 9.33,
+            "tags": "chill hypnotic ambient evoking a tidal iridescent hush — slow shimmering bells over a deep ocean swell, one bright crystalline bloom landing on the crystal-terrace-to-galaxy seam, a breathy reed organ and soft water textures over a deep sub pulse, a deep sub-bass heartbeat pulse, two soft beats then space, the first landing on the downbeat of every bar, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          },
+          {
+            "id": "night_market",
+            "lane": "night_market",
+            "mood": "nocturnal, lantern-lit, wandering · downbeat",
+            "track": "output/music/ammonite_spiral_night_market.flac",
+            "aligned": "review/music/candidates/ammonite_spiral/night_market.mp4",
+            "seed": 10957,
+            "lock": 8.74,
+            "bar_conf": 0.56,
+            "score": 9.22,
+            "tags": "chill hypnotic ambient evoking a tidal iridescent hush — slow shimmering bells over a deep ocean swell, one bright crystalline bloom landing on the crystal-terrace-to-galaxy seam, soft hang drum and plucked koto over a velvet pad, intimate and close, a single deep soft kick drum lands exactly on the downbeat of every bar, felt more than heard, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          },
+          {
+            "id": "ember_pulse-wild",
+            "lane": "ember_pulse",
+            "mood": "smoldering, dark, gravitational · halftime",
+            "track": "output/music/ammonite_spiral_ember_pulse-wild.flac",
+            "aligned": "review/music/candidates/ammonite_spiral/ember_pulse-wild.mp4",
+            "seed": 11068,
+            "lock": 8.39,
+            "bar_conf": 0.5,
+            "score": 8.4,
+            "tags": "chill hypnotic ambient evoking a tidal iridescent hush — slow shimmering bells over a deep ocean swell, one bright crystalline bloom landing on the crystal-terrace-to-galaxy seam, a deep 808 heartbeat under smoky low pads and distant soft chimes, a single deep 808 kick lands exactly on the downbeat, spacious half-time groove with long empty space between hits, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          },
+          {
+            "id": "aurora_strings-wild",
+            "lane": "aurora_strings",
+            "mood": "polar, shimmering, slow dawn · downbeat",
+            "track": "output/music/ammonite_spiral_aurora_strings-wild.flac",
+            "aligned": "review/music/candidates/ammonite_spiral/aurora_strings-wild.mp4",
+            "seed": 11179,
+            "lock": 5.71,
+            "bar_conf": 0.2,
+            "score": 4.02,
+            "tags": "chill hypnotic ambient evoking a tidal iridescent hush — slow shimmering bells over a deep ocean swell, one bright crystalline bloom landing on the crystal-terrace-to-galaxy seam, bowed string pad swells and sparse harp plucks, silvery and cold, a single deep soft kick drum lands exactly on the downbeat of every bar, felt more than heard, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      },
+      "start_t": 2.4,
+      "orig_file": "review_divein/ammonite_spiral_ds_divein.mp4"
+    },
+    {
+      "journey": "gossamer_dawn",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/gossamer_dawn_ds_divein.mp4",
+      "title": "",
+      "caption": "Dew-kissed silk spirals in the dawn’s first glow 🌅 Can you spot Lee hiding in this endless loop? 👀 #SilkenCosmos #DawnsWebWeaver #InfiniteMeadow #DewdropUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Dew-kissed silk spirals in the dawn’s first glow 🌅",
+      "yt_desc": "",
+      "cameo": "lee",
+      "state": "rejected",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-04",
+      "caption_bodies": [
+        "Dew-kissed silk spirals in the dawn’s first glow 🌅",
+        "A universe of water and light, suspended in time ✨",
+        "Lost in the labyrinth of a spider’s morning masterpiece",
+        "Where every drop holds a galaxy of its own 💧",
+        "The meadow breathes as the sun climbs higher"
+      ],
+      "yt_title_options": [
+        "Dew-kissed silk spirals in the dawn’s first glow 🌅",
+        "A universe of water and light, suspended in time ✨",
+        "Lost in the labyrinth of a spider’s morning masterpiece",
+        "Where every drop holds a galaxy of its own 💧",
+        "The meadow breathes as the sun climbs higher"
+      ],
+      "spot_line": "Can you spot Lee hiding in this endless loop? 👀",
+      "caption_tags": "#SilkenCosmos #DawnsWebWeaver #InfiniteMeadow #DewdropUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Dew-kissed silk spirals in the dawn’s first glow 🌅 Can you spot Lee hiding in this endless loop? 👀 #SilkenCosmos #DawnsWebWeaver #InfiniteMeadow #DewdropUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A universe of water and light, suspended in time ✨ Can you spot Lee hiding in this endless loop? 👀 #SilkenCosmos #DawnsWebWeaver #InfiniteMeadow #DewdropUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Lost in the labyrinth of a spider’s morning masterpiece Can you spot Lee hiding in this endless loop? 👀 #SilkenCosmos #DawnsWebWeaver #InfiniteMeadow #DewdropUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where every drop holds a galaxy of its own 💧 Can you spot Lee hiding in this endless loop? 👀 #SilkenCosmos #DawnsWebWeaver #InfiniteMeadow #DewdropUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The meadow breathes as the sun climbs higher Can you spot Lee hiding in this endless loop? 👀 #SilkenCosmos #DawnsWebWeaver #InfiniteMeadow #DewdropUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
       ]
+    },
+    {
+      "journey": "resonance_hall",
+      "model": "ds",
+      "cut": "zoomout",
+      "file": "production/resonance_hall_ds_shift.mp4",
+      "title": "",
+      "caption": "A music-box universe, spiraling into infinity 🌌 Can you spot Newman hiding in this endless loop? 👀 #MusicBoxCosmos #InfiniteZoom #GoldenNebula #BrassAndStarlight #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A music-box universe, spiraling into infinity 🌌",
+      "yt_desc": "",
+      "cameo": "newman",
+      "state": "failed",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "live",
+          "url": "https://youtube.com/shorts/pQKdcHhyV0s",
+          "ts": "2026-08-12 18:01:25"
+        },
+        "instagram": {
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/Db9L_ofszjn/",
+          "ts": "2026-08-12 18:01:25"
+        }
+      },
+      "created": "2026-08-05",
+      "caption_bodies": [
+        "A music-box universe, spiraling into infinity 🌌",
+        "Brass and starlight, woven in endless loops ✨",
+        "Where every grain of sand holds a galaxy 🪐",
+        "The city hums with the rhythm of the cosmos 🎶",
+        "Lost in the echo of an empty concert hall 🎻"
+      ],
+      "yt_title_options": [
+        "A music-box universe, spiraling into infinity 🌌",
+        "Brass and starlight, woven in endless loops ✨",
+        "Where every grain of sand holds a galaxy 🪐",
+        "The city hums with the rhythm of the cosmos 🎶",
+        "Lost in the echo of an empty concert hall 🎻"
+      ],
+      "spot_line": "Can you spot Newman hiding in this endless loop? 👀",
+      "caption_tags": "#MusicBoxCosmos #InfiniteZoom #GoldenNebula #BrassAndStarlight #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A music-box universe, spiraling into infinity 🌌 Can you spot Newman hiding in this endless loop? 👀 #MusicBoxCosmos #InfiniteZoom #GoldenNebula #BrassAndStarlight #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Brass and starlight, woven in endless loops ✨ Can you spot Newman hiding in this endless loop? 👀 #MusicBoxCosmos #InfiniteZoom #GoldenNebula #BrassAndStarlight #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where every grain of sand holds a galaxy 🪐 Can you spot Newman hiding in this endless loop? 👀 #MusicBoxCosmos #InfiniteZoom #GoldenNebula #BrassAndStarlight #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The city hums with the rhythm of the cosmos 🎶 Can you spot Newman hiding in this endless loop? 👀 #MusicBoxCosmos #InfiniteZoom #GoldenNebula #BrassAndStarlight #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Lost in the echo of an empty concert hall 🎻 Can you spot Newman hiding in this endless loop? 👀 #MusicBoxCosmos #InfiniteZoom #GoldenNebula #BrassAndStarlight #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ],
+      "start_t": 1.0,
+      "orig_file": "production/resonance_hall_ds.mp4",
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "E-flat major",
+        "stage": "review",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/resonance_hall_warm.flac",
+            "aligned": "review/music/candidates/resonance_hall/warm.mp4",
+            "seed": 500,
+            "lock": 2.95,
+            "tags": "chill hypnotic ambient evoking a vast empty concert hall of brass and stained glass, hymnlike and resonant, warm swelling strings over deep bell tones, luminous and reverberant, one bright bloom of sound at the fold out to the stars, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/resonance_hall_glassy.flac",
+            "aligned": "review/music/candidates/resonance_hall/glassy.mp4",
+            "seed": 501,
+            "lock": 8.74,
+            "tags": "chill hypnotic ambient evoking a vast empty concert hall of brass and stained glass, hymnlike and resonant, warm swelling strings over deep bell tones, luminous and reverberant, one bright bloom of sound at the fold out to the stars, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/resonance_hall_deep.flac",
+            "aligned": "review/music/candidates/resonance_hall/deep.mp4",
+            "seed": 502,
+            "lock": 4.2,
+            "tags": "chill hypnotic ambient evoking a vast empty concert hall of brass and stained glass, hymnlike and resonant, warm swelling strings over deep bell tones, luminous and reverberant, one bright bloom of sound at the fold out to the stars, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/resonance_hall_tender.flac",
+            "aligned": "review/music/candidates/resonance_hall/tender.mp4",
+            "seed": 503,
+            "lock": 11.72,
+            "tags": "chill hypnotic ambient evoking a vast empty concert hall of brass and stained glass, hymnlike and resonant, warm swelling strings over deep bell tones, luminous and reverberant, one bright bloom of sound at the fold out to the stars, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/resonance_hall_choir.flac",
+            "aligned": "review/music/candidates/resonance_hall/choir.mp4",
+            "seed": 504,
+            "lock": 3.9,
+            "tags": "chill hypnotic ambient evoking a vast empty concert hall of brass and stained glass, hymnlike and resonant, warm swelling strings over deep bell tones, luminous and reverberant, one bright bloom of sound at the fold out to the stars, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "zoomout"
+      }
+    },
+    {
+      "journey": "tide_glass",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/tide_glass_ds_divein_shift.mp4",
+      "title": "",
+      "caption": "One pebble holds the ocean—and it’s singing Can you spot Belle hiding in the endless loop? 👀 #InfiniteShores #GlassGalaxy #StandingWaveDreams #PebbleCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "One pebble holds the ocean—and it’s singing",
+      "yt_desc": "",
+      "cameo": "belle",
+      "state": "failed",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "live",
+          "url": "https://youtube.com/shorts/mrPiwkaKClc",
+          "ts": "2026-08-13 08:01:25"
+        },
+        "instagram": {
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/Db-sIZ8JNWA/",
+          "ts": "2026-08-13 08:01:25"
+        }
+      },
+      "created": "2026-08-05",
+      "caption_bodies": [
+        "Dive into the endless shimmer of a pebble’s universe 🌊",
+        "Where sea glass becomes a galaxy of light and shadow",
+        "A standing wave of time, frozen in diamond grids ☀️",
+        "The shore is infinite when you zoom through its soul",
+        "One pebble holds the ocean—and it’s singing"
+      ],
+      "yt_title_options": [
+        "Dive into the endless shimmer of a pebble’s universe 🌊",
+        "Where sea glass becomes a galaxy of light and shadow",
+        "A standing wave of time, frozen in diamond grids ☀️",
+        "The shore is infinite when you zoom through its soul",
+        "One pebble holds the ocean—and it’s singing"
+      ],
+      "spot_line": "Can you spot Belle hiding in the endless loop? 👀",
+      "caption_tags": "#InfiniteShores #GlassGalaxy #StandingWaveDreams #PebbleCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Dive into the endless shimmer of a pebble’s universe 🌊 Can you spot Belle hiding in the endless loop? 👀 #InfiniteShores #GlassGalaxy #StandingWaveDreams #PebbleCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where sea glass becomes a galaxy of light and shadow Can you spot Belle hiding in the endless loop? 👀 #InfiniteShores #GlassGalaxy #StandingWaveDreams #PebbleCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A standing wave of time, frozen in diamond grids ☀️ Can you spot Belle hiding in the endless loop? 👀 #InfiniteShores #GlassGalaxy #StandingWaveDreams #PebbleCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The shore is infinite when you zoom through its soul Can you spot Belle hiding in the endless loop? 👀 #InfiniteShores #GlassGalaxy #StandingWaveDreams #PebbleCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "One pebble holds the ocean—and it’s singing Can you spot Belle hiding in the endless loop? 👀 #InfiniteShores #GlassGalaxy #StandingWaveDreams #PebbleCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ],
+      "start_t": 6.0,
+      "orig_file": "review_divein/tide_glass_ds_divein.mp4",
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "G major",
+        "stage": "review",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/tide_glass_warm.flac",
+            "aligned": "review/music/candidates/tide_glass/warm.mp4",
+            "seed": 500,
+            "lock": 5.85,
+            "tags": "chill hypnotic ambient evoking a bright tidal morning — glassy bells and a light rolling swell over shimmering water, one clear crystalline bloom of sound landing on the glass-strand-to-foam seam, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/tide_glass_glassy.flac",
+            "aligned": "review/music/candidates/tide_glass/glassy.mp4",
+            "seed": 501,
+            "lock": 18.6,
+            "tags": "chill hypnotic ambient evoking a bright tidal morning — glassy bells and a light rolling swell over shimmering water, one clear crystalline bloom of sound landing on the glass-strand-to-foam seam, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/tide_glass_deep.flac",
+            "aligned": "review/music/candidates/tide_glass/deep.mp4",
+            "seed": 502,
+            "lock": 16.72,
+            "tags": "chill hypnotic ambient evoking a bright tidal morning — glassy bells and a light rolling swell over shimmering water, one clear crystalline bloom of sound landing on the glass-strand-to-foam seam, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/tide_glass_tender.flac",
+            "aligned": "review/music/candidates/tide_glass/tender.mp4",
+            "seed": 503,
+            "lock": 8.94,
+            "tags": "chill hypnotic ambient evoking a bright tidal morning — glassy bells and a light rolling swell over shimmering water, one clear crystalline bloom of sound landing on the glass-strand-to-foam seam, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/tide_glass_choir.flac",
+            "aligned": "review/music/candidates/tide_glass/choir.mp4",
+            "seed": 504,
+            "lock": 10.14,
+            "tags": "chill hypnotic ambient evoking a bright tidal morning — glassy bells and a light rolling swell over shimmering water, one clear crystalline bloom of sound landing on the glass-strand-to-foam seam, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      }
+    },
+    {
+      "journey": "heron_delta",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/heron_delta_ds_divein.mp4",
+      "title": "",
+      "caption": "Diving through dawn’s fractal feathers 🌄 Can you spot Lee hiding in the loop? 👀 #FractalDawn #GlassWorlds #TidalLoop #PrismaticZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Diving through dawn’s fractal feathers 🌄",
+      "yt_desc": "",
+      "cameo": "lee",
+      "state": "rejected",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-05",
+      "caption_bodies": [
+        "Diving through dawn’s fractal feathers 🌄",
+        "Glass combs interlock in the cold light",
+        "Silver tides braid where the herons stand still",
+        "A world of ridges, troughs, and endless loops",
+        "Dawn’s prismatic plunge into the unknown"
+      ],
+      "yt_title_options": [
+        "Diving through dawn’s fractal feathers 🌄",
+        "Glass combs interlock in the cold light",
+        "Silver tides braid where the herons stand still",
+        "A world of ridges, troughs, and endless loops",
+        "Dawn’s prismatic plunge into the unknown"
+      ],
+      "spot_line": "Can you spot Lee hiding in the loop? 👀",
+      "caption_tags": "#FractalDawn #GlassWorlds #TidalLoop #PrismaticZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Diving through dawn’s fractal feathers 🌄 Can you spot Lee hiding in the loop? 👀 #FractalDawn #GlassWorlds #TidalLoop #PrismaticZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Glass combs interlock in the cold light Can you spot Lee hiding in the loop? 👀 #FractalDawn #GlassWorlds #TidalLoop #PrismaticZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Silver tides braid where the herons stand still Can you spot Lee hiding in the loop? 👀 #FractalDawn #GlassWorlds #TidalLoop #PrismaticZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A world of ridges, troughs, and endless loops Can you spot Lee hiding in the loop? 👀 #FractalDawn #GlassWorlds #TidalLoop #PrismaticZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Dawn’s prismatic plunge into the unknown Can you spot Lee hiding in the loop? 👀 #FractalDawn #GlassWorlds #TidalLoop #PrismaticZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "chess_empires",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/chess_empires_ds_divein.mp4",
+      "title": "",
+      "caption": "A knight’s shadow stretches across the cosmos 🌌 Can you spot Newman hiding in the endless zoom? 👀 #InfiniteGardenCosmos #CrystalUniverseDive #LoopingStarlight #HypnoticZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A knight’s shadow stretches across the cosmos 🌌",
+      "yt_desc": "",
+      "cameo": "newman",
+      "state": "rejected",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-06",
+      "caption_bodies": [
+        "A knight’s shadow stretches across the cosmos 🌌",
+        "Where hedges weave galaxies and stars breathe stone ✨",
+        "Lost in the infinite garden of light and dark",
+        "The universe tilts—can you feel the loop?",
+        "From chessboard to cosmos, a seamless spiral"
+      ],
+      "yt_title_options": [
+        "A knight’s shadow stretches across the cosmos 🌌",
+        "Where hedges weave galaxies and stars breathe stone ✨",
+        "Lost in the infinite garden of light and dark",
+        "The universe tilts—can you feel the loop?",
+        "From chessboard to cosmos, a seamless spiral"
+      ],
+      "spot_line": "Can you spot Newman hiding in the endless zoom? 👀",
+      "caption_tags": "#InfiniteGardenCosmos #CrystalUniverseDive #LoopingStarlight #HypnoticZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A knight’s shadow stretches across the cosmos 🌌 Can you spot Newman hiding in the endless zoom? 👀 #InfiniteGardenCosmos #CrystalUniverseDive #LoopingStarlight #HypnoticZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where hedges weave galaxies and stars breathe stone ✨ Can you spot Newman hiding in the endless zoom? 👀 #InfiniteGardenCosmos #CrystalUniverseDive #LoopingStarlight #HypnoticZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Lost in the infinite garden of light and dark Can you spot Newman hiding in the endless zoom? 👀 #InfiniteGardenCosmos #CrystalUniverseDive #LoopingStarlight #HypnoticZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The universe tilts—can you feel the loop? Can you spot Newman hiding in the endless zoom? 👀 #InfiniteGardenCosmos #CrystalUniverseDive #LoopingStarlight #HypnoticZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "From chessboard to cosmos, a seamless spiral Can you spot Newman hiding in the endless zoom? 👀 #InfiniteGardenCosmos #CrystalUniverseDive #LoopingStarlight #HypnoticZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "lichen_moor",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/lichen_moor_ds_divein.mp4",
+      "title": "",
+      "caption": "Lichen dreams in amber and emerald light Can you spot Belle hiding in the loop? 👀 #enchantedmoor #lichenrealm #stonewhispers #endlessdive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Lichen dreams in amber and emerald light",
+      "yt_desc": "",
+      "cameo": "belle",
+      "state": "failed",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "live",
+          "url": "https://youtube.com/shorts/vFCqWaQ-9cs",
+          "ts": "2026-08-10 08:01:29"
+        },
+        "instagram": {
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/Db29vr7gb7Y/",
+          "ts": "2026-08-10 08:01:29"
+        }
+      },
+      "created": "2026-08-06",
+      "caption_bodies": [
+        "A moor’s breath, a stone’s whisper 🌙",
+        "Where the earth hums in forgotten tongues",
+        "Lichen dreams in amber and emerald light",
+        "Cracks that tell secrets to the wind",
+        "The world unspools in silent spirals"
+      ],
+      "yt_title_options": [
+        "A moor’s breath, a stone’s whisper 🌙",
+        "Where the earth hums in forgotten tongues",
+        "Lichen dreams in amber and emerald light",
+        "Cracks that tell secrets to the wind",
+        "The world unspools in silent spirals"
+      ],
+      "spot_line": "Can you spot Belle hiding in the loop? 👀",
+      "caption_tags": "#enchantedmoor #lichenrealm #stonewhispers #endlessdive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A moor’s breath, a stone’s whisper 🌙 Can you spot Belle hiding in the loop? 👀 #enchantedmoor #lichenrealm #stonewhispers #endlessdive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where the earth hums in forgotten tongues Can you spot Belle hiding in the loop? 👀 #enchantedmoor #lichenrealm #stonewhispers #endlessdive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Lichen dreams in amber and emerald light Can you spot Belle hiding in the loop? 👀 #enchantedmoor #lichenrealm #stonewhispers #endlessdive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Cracks that tell secrets to the wind Can you spot Belle hiding in the loop? 👀 #enchantedmoor #lichenrealm #stonewhispers #endlessdive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The world unspools in silent spirals Can you spot Belle hiding in the loop? 👀 #enchantedmoor #lichenrealm #stonewhispers #endlessdive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ],
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "D minor",
+        "stage": "done",
+        "chosen": "tender",
+        "candidates": [
+          {
+            "id": "warm",
+            "mood": "warm analog pads with a soft round mallet on the beat",
+            "track": "output/music/lichen_moor_warm.flac",
+            "aligned": "review/music/candidates/lichen_moor/warm.mp4",
+            "seed": 500,
+            "lock": 6.61,
+            "tags": "chill hypnotic ambient evoking a windswept dusk moor of old stones, low drone and a slow skin-drum pulse under airy strings, one bright swell landing where the cracked rock opens out into the walled moor, warm analog pads with a soft round mallet on the beat, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "glassy",
+            "mood": "crystalline glassy bell tones and airy shimmer pads",
+            "track": "output/music/lichen_moor_glassy.flac",
+            "aligned": "review/music/candidates/lichen_moor/glassy.mp4",
+            "seed": 501,
+            "lock": 3.99,
+            "tags": "chill hypnotic ambient evoking a windswept dusk moor of old stones, low drone and a slow skin-drum pulse under airy strings, one bright swell landing where the cracked rock opens out into the walled moor, crystalline glassy bell tones and airy shimmer pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "deep",
+            "mood": "deep warm sub bass and dark oceanic pads",
+            "track": "output/music/lichen_moor_deep.flac",
+            "aligned": "review/music/candidates/lichen_moor/deep.mp4",
+            "seed": 502,
+            "lock": 8.19,
+            "tags": "chill hypnotic ambient evoking a windswept dusk moor of old stones, low drone and a slow skin-drum pulse under airy strings, one bright swell landing where the cracked rock opens out into the walled moor, deep warm sub bass and dark oceanic pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "tender",
+            "mood": "tender nostalgic marimba and soft dreamy pads",
+            "track": "output/music/lichen_moor_tender.flac",
+            "aligned": "review/music/candidates/lichen_moor/tender.mp4",
+            "seed": 503,
+            "lock": 11.8,
+            "tags": "chill hypnotic ambient evoking a windswept dusk moor of old stones, low drone and a slow skin-drum pulse under airy strings, one bright swell landing where the cracked rock opens out into the walled moor, tender nostalgic marimba and soft dreamy pads, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          },
+          {
+            "id": "choir",
+            "mood": "soft choir-like pad and gentle glass harmonica",
+            "track": "output/music/lichen_moor_choir.flac",
+            "aligned": "review/music/candidates/lichen_moor/choir.mp4",
+            "seed": 504,
+            "lock": 2.9,
+            "tags": "chill hypnotic ambient evoking a windswept dusk moor of old stones, low drone and a slow skin-drum pulse under airy strings, one bright swell landing where the cracked rock opens out into the walled moor, soft choir-like pad and gentle glass harmonica, a quiet pickup note leads in and then a strong clear note lands firmly on the downbeat of every bar, a steady prominent recurring pulse, never sparse, spacious moody reverb, slow, oddly satisfying, no drums, no snare, no hihat, instrumental"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      }
+    },
+    {
+      "journey": "night_lido",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/night_lido_ds_divein.mp4",
+      "title": "",
+      "caption": "Dive into the neon abyss of a midnight pool 🌊✨ Can you spot Newman hiding in the neon? 👀 #neonabyss #fluorescentdream #endlessgrid #midnightpool #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Dive into the neon abyss of a midnight pool 🌊✨",
+      "yt_desc": "",
+      "cameo": "newman",
+      "state": "rejected",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-06",
+      "caption_bodies": [
+        "Dive into the neon abyss of a midnight pool 🌊✨",
+        "Where light and water weave an endless grid ✶",
+        "A fluorescent dream beneath the surface 💧🔮",
+        "Lost in the electric dance of rippling glow 🌀",
+        "The pool’s secret universe, glowing in the deep 🌌"
+      ],
+      "yt_title_options": [
+        "Dive into the neon abyss of a midnight pool 🌊✨",
+        "Where light and water weave an endless grid ✶",
+        "A fluorescent dream beneath the surface 💧🔮",
+        "Lost in the electric dance of rippling glow 🌀",
+        "The pool’s secret universe, glowing in the deep 🌌"
+      ],
+      "spot_line": "Can you spot Newman hiding in the neon? 👀",
+      "caption_tags": "#neonabyss #fluorescentdream #endlessgrid #midnightpool #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Dive into the neon abyss of a midnight pool 🌊✨ Can you spot Newman hiding in the neon? 👀 #neonabyss #fluorescentdream #endlessgrid #midnightpool #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where light and water weave an endless grid ✶ Can you spot Newman hiding in the neon? 👀 #neonabyss #fluorescentdream #endlessgrid #midnightpool #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A fluorescent dream beneath the surface 💧🔮 Can you spot Newman hiding in the neon? 👀 #neonabyss #fluorescentdream #endlessgrid #midnightpool #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Lost in the electric dance of rippling glow 🌀 Can you spot Newman hiding in the neon? 👀 #neonabyss #fluorescentdream #endlessgrid #midnightpool #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The pool’s secret universe, glowing in the deep 🌌 Can you spot Newman hiding in the neon? 👀 #neonabyss #fluorescentdream #endlessgrid #midnightpool #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "cinder_veil",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/cinder_veil_ds_divein_shift.mp4",
+      "title": "",
+      "caption": "A rogue planet drifts, veins of fire pulsing beneath its skin Can you spot Newman hiding in the lava tube? 👀 #VolcanicDreamscape #CosmicLaceFilaments #RoguePlanetVeil #EmberLightRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A rogue planet drifts, veins of fire pulsing beneath its skin",
+      "yt_desc": "",
+      "cameo": "newman",
+      "state": "music",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-07",
+      "caption_bodies": [
+        "A river of fire carves its path through the bones of the earth 🌋",
+        "Hexagonal steps descend into a world of molten whispers",
+        "Glass bubbles float in an ocean of ember light ✨",
+        "The universe unfolds in tangled sheets of burning lace",
+        "A rogue planet drifts, veins of fire pulsing beneath its skin"
+      ],
+      "yt_title_options": [
+        "A river of fire carves its path through the bones of the earth 🌋",
+        "Hexagonal steps descend into a world of molten whispers",
+        "Glass bubbles float in an ocean of ember light ✨",
+        "The universe unfolds in tangled sheets of burning lace",
+        "A rogue planet drifts, veins of fire pulsing beneath its skin"
+      ],
+      "spot_line": "Can you spot Newman hiding in the lava tube? 👀",
+      "caption_tags": "#VolcanicDreamscape #CosmicLaceFilaments #RoguePlanetVeil #EmberLightRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A river of fire carves its path through the bones of the earth 🌋 Can you spot Newman hiding in the lava tube? 👀 #VolcanicDreamscape #CosmicLaceFilaments #RoguePlanetVeil #EmberLightRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Hexagonal steps descend into a world of molten whispers Can you spot Newman hiding in the lava tube? 👀 #VolcanicDreamscape #CosmicLaceFilaments #RoguePlanetVeil #EmberLightRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Glass bubbles float in an ocean of ember light ✨ Can you spot Newman hiding in the lava tube? 👀 #VolcanicDreamscape #CosmicLaceFilaments #RoguePlanetVeil #EmberLightRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The universe unfolds in tangled sheets of burning lace Can you spot Newman hiding in the lava tube? 👀 #VolcanicDreamscape #CosmicLaceFilaments #RoguePlanetVeil #EmberLightRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A rogue planet drifts, veins of fire pulsing beneath its skin Can you spot Newman hiding in the lava tube? 👀 #VolcanicDreamscape #CosmicLaceFilaments #RoguePlanetVeil #EmberLightRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ],
+      "start_t": 7.6,
+      "orig_file": "review_divein/cinder_veil_ds_divein.mp4",
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "F minor",
+        "stage": "review",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "ember_pulse-heartbeat",
+            "lane": "ember_pulse",
+            "mood": "smoldering, dark, gravitational · heartbeat",
+            "track": "output/music/cinder_veil_ember_pulse-heartbeat.flac",
+            "aligned": "review/music/candidates/cinder_veil/ember_pulse-heartbeat.mp4",
+            "seed": 858,
+            "lock": 22.52,
+            "bar_conf": 0.58,
+            "score": 24.25,
+            "tags": "chill hypnotic ambient evoking a volcanic night — a deep subterranean drone under slow struck-metal pulses, an ember shimmer rising into the bubble-foam break, settling back to low ash-soft strings, a deep 808 heartbeat under smoky low pads and distant soft chimes, a deep sub-bass heartbeat pulse, two soft beats then space, the first landing on the downbeat of every bar, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          },
+          {
+            "id": "ember_pulse",
+            "lane": "ember_pulse",
+            "mood": "smoldering, dark, gravitational · halftime",
+            "track": "output/music/cinder_veil_ember_pulse.flac",
+            "aligned": "review/music/candidates/cinder_veil/ember_pulse.mp4",
+            "seed": 784,
+            "lock": 18.15,
+            "bar_conf": 0.76,
+            "score": 22.95,
+            "tags": "chill hypnotic ambient evoking a volcanic night — a deep subterranean drone under slow struck-metal pulses, an ember shimmer rising into the bubble-foam break, settling back to low ash-soft strings, a deep 808 heartbeat under smoky low pads and distant soft chimes, a single deep 808 kick lands exactly on the downbeat, spacious half-time groove with long empty space between hits, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          },
+          {
+            "id": "tide_organ-wild",
+            "lane": "tide_organ",
+            "mood": "tidal, breathing, mineral · heartbeat",
+            "track": "output/music/cinder_veil_tide_organ-wild.flac",
+            "aligned": "review/music/candidates/cinder_veil/tide_organ-wild.mp4",
+            "seed": 1006,
+            "lock": 7.2,
+            "bar_conf": 0.07,
+            "score": 4.1,
+            "tags": "chill hypnotic ambient evoking a volcanic night — a deep subterranean drone under slow struck-metal pulses, an ember shimmer rising into the bubble-foam break, settling back to low ash-soft strings, a breathy reed organ and soft water textures over a deep sub pulse, a deep sub-bass heartbeat pulse, two soft beats then space, the first landing on the downbeat of every bar, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          },
+          {
+            "id": "glass_chapel-wild",
+            "lane": "glass_chapel",
+            "mood": "sacred, luminous, weightless · downbeat",
+            "track": "output/music/cinder_veil_glass_chapel-wild.flac",
+            "aligned": "review/music/candidates/cinder_veil/glass_chapel-wild.mp4",
+            "seed": 932,
+            "lock": 3.37,
+            "bar_conf": -0.0,
+            "score": 1.69,
+            "tags": "chill hypnotic ambient evoking a volcanic night — a deep subterranean drone under slow struck-metal pulses, an ember shimmer rising into the bubble-foam break, settling back to low ash-soft strings, crystalline glass bells and a soft distant choir pad, airy shimmer, a single deep soft kick drum lands exactly on the downbeat of every bar, felt more than heard, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          },
+          {
+            "id": "aurora_strings-wild",
+            "lane": "aurora_strings",
+            "mood": "polar, shimmering, slow dawn · downbeat",
+            "track": "output/music/cinder_veil_aurora_strings-wild.flac",
+            "aligned": "review/music/candidates/cinder_veil/aurora_strings-wild.mp4",
+            "seed": 895,
+            "lock": 2.76,
+            "bar_conf": 0.04,
+            "score": 1.5,
+            "tags": "chill hypnotic ambient evoking a volcanic night — a deep subterranean drone under slow struck-metal pulses, an ember shimmer rising into the bubble-foam break, settling back to low ash-soft strings, bowed string pad swells and sparse harp plucks, silvery and cold, a single deep soft kick drum lands exactly on the downbeat of every bar, felt more than heard, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      }
+    },
+    {
+      "journey": "salt_mirror",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/salt_mirror_ds_divein_shift.mp4",
+      "title": "",
+      "caption": "Lost in the geometry of a vanishing world... Can you spot Adam hiding in this endless dive? 👀 #SaltWorlds #InfiniteZoom #CrystalDreamscape #DuskGeometry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Lost in the geometry of a vanishing world...",
+      "yt_desc": "",
+      "cameo": "adam",
+      "state": "music",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-07",
+      "caption_bodies": [
+        "Diving through salt dreams, where dusk never ends 🌅",
+        "A crystal labyrinth stretching into infinity ✨",
+        "Lost in the geometry of a vanishing world...",
+        "Where light and brine weave endless patterns 🔵",
+        "Falling forever through the fractal heart of salt"
+      ],
+      "yt_title_options": [
+        "Diving through salt dreams, where dusk never ends 🌅",
+        "A crystal labyrinth stretching into infinity ✨",
+        "Lost in the geometry of a vanishing world...",
+        "Where light and brine weave endless patterns 🔵",
+        "Falling forever through the fractal heart of salt"
+      ],
+      "spot_line": "Can you spot Adam hiding in this endless dive? 👀",
+      "caption_tags": "#SaltWorlds #InfiniteZoom #CrystalDreamscape #DuskGeometry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Diving through salt dreams, where dusk never ends 🌅 Can you spot Adam hiding in this endless dive? 👀 #SaltWorlds #InfiniteZoom #CrystalDreamscape #DuskGeometry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A crystal labyrinth stretching into infinity ✨ Can you spot Adam hiding in this endless dive? 👀 #SaltWorlds #InfiniteZoom #CrystalDreamscape #DuskGeometry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Lost in the geometry of a vanishing world... Can you spot Adam hiding in this endless dive? 👀 #SaltWorlds #InfiniteZoom #CrystalDreamscape #DuskGeometry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where light and brine weave endless patterns 🔵 Can you spot Adam hiding in this endless dive? 👀 #SaltWorlds #InfiniteZoom #CrystalDreamscape #DuskGeometry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Falling forever through the fractal heart of salt Can you spot Adam hiding in this endless dive? 👀 #SaltWorlds #InfiniteZoom #CrystalDreamscape #DuskGeometry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ],
+      "start_t": 5.2,
+      "orig_file": "review_divein/salt_mirror_ds_divein.mp4",
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "D major",
+        "stage": "review",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "aurora_strings-halftime",
+            "lane": "aurora_strings",
+            "mood": "polar, shimmering, slow dawn · halftime",
+            "track": "output/music/salt_mirror_aurora_strings-halftime.flac",
+            "aligned": "review/music/candidates/salt_mirror/aurora_strings-halftime.mp4",
+            "seed": 37546,
+            "lock": 52.83,
+            "bar_conf": 0.74,
+            "score": 65.55,
+            "tags": "chill hypnotic ambient evoking a still dusk over mirrored water — warm airy pads and slow glassy pulses over a soft low swell, one wide bright bloom landing where the cubic lattice opens back into the grid of pans, bowed string pad swells and sparse harp plucks, silvery and cold, a single deep 808 kick lands exactly on the downbeat, spacious half-time groove with long empty space between hits, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          },
+          {
+            "id": "ember_pulse-wild",
+            "lane": "ember_pulse",
+            "mood": "smoldering, dark, gravitational · halftime",
+            "track": "output/music/salt_mirror_ember_pulse-wild.flac",
+            "aligned": "review/music/candidates/salt_mirror/ember_pulse-wild.mp4",
+            "seed": 37472,
+            "lock": 15.23,
+            "bar_conf": 0.52,
+            "score": 15.59,
+            "tags": "chill hypnotic ambient evoking a still dusk over mirrored water — warm airy pads and slow glassy pulses over a soft low swell, one wide bright bloom landing where the cubic lattice opens back into the grid of pans, a deep 808 heartbeat under smoky low pads and distant soft chimes, a single deep 808 kick lands exactly on the downbeat, spacious half-time groove with long empty space between hits, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          },
+          {
+            "id": "analog_dawn-wild",
+            "lane": "analog_dawn",
+            "mood": "nostalgic, golden, waking · downbeat",
+            "track": "output/music/salt_mirror_analog_dawn-wild.flac",
+            "aligned": "review/music/candidates/salt_mirror/analog_dawn-wild.mp4",
+            "seed": 37583,
+            "lock": 11.77,
+            "bar_conf": 0.68,
+            "score": 13.9,
+            "tags": "chill hypnotic ambient evoking a still dusk over mirrored water — warm airy pads and slow glassy pulses over a soft low swell, one wide bright bloom landing where the cubic lattice opens back into the grid of pans, warm analog synth pads with gentle tape warble and a soft round mallet, a single deep soft kick drum lands exactly on the downbeat of every bar, felt more than heard, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          },
+          {
+            "id": "aurora_strings-heartbeat",
+            "lane": "aurora_strings",
+            "mood": "polar, shimmering, slow dawn · heartbeat",
+            "track": "output/music/salt_mirror_aurora_strings-heartbeat.flac",
+            "aligned": "review/music/candidates/salt_mirror/aurora_strings-heartbeat.mp4",
+            "seed": 37620,
+            "lock": 16.47,
+            "bar_conf": 0.32,
+            "score": 13.57,
+            "tags": "chill hypnotic ambient evoking a still dusk over mirrored water — warm airy pads and slow glassy pulses over a soft low swell, one wide bright bloom landing where the cubic lattice opens back into the grid of pans, bowed string pad swells and sparse harp plucks, silvery and cold, a deep sub-bass heartbeat pulse, two soft beats then space, the first landing on the downbeat of every bar, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          },
+          {
+            "id": "night_market-wild",
+            "lane": "night_market",
+            "mood": "nocturnal, lantern-lit, wandering · downbeat",
+            "track": "output/music/salt_mirror_night_market-wild.flac",
+            "aligned": "review/music/candidates/salt_mirror/night_market-wild.mp4",
+            "seed": 37509,
+            "lock": 11.98,
+            "bar_conf": 0.58,
+            "score": 12.94,
+            "tags": "chill hypnotic ambient evoking a still dusk over mirrored water — warm airy pads and slow glassy pulses over a soft low swell, one wide bright bloom landing where the cubic lattice opens back into the grid of pans, soft hang drum and plucked koto over a velvet pad, intimate and close, a single deep soft kick drum lands exactly on the downbeat of every bar, felt more than heard, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      }
+    },
+    {
+      "journey": "attic_drift",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/attic_drift_ds_divein.mp4",
+      "title": "",
+      "caption": "Dust motes drift through amber light, endless and bright 🌟 Can you spot Belle hiding in this endless dive? 👀 #InfiniteAttic #DustUniverse #GoldenVoid #FrostedCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Dust motes drift through amber light, endless and bright 🌟",
+      "yt_desc": "",
+      "cameo": "belle",
+      "state": "rejected",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-07",
+      "caption_bodies": [
+        "Dust motes drift through amber light, endless and bright 🌟",
+        "A jagged crystal floats in the void of an attic’s glow",
+        "Countless specks swirl in the dark, thinning to infinity",
+        "Frosted ridges stretch across a glassy plain under golden haze",
+        "The universe hides in a beam of light—watch it loop forever"
+      ],
+      "yt_title_options": [
+        "Dust motes drift through amber light, endless and bright 🌟",
+        "A jagged crystal floats in the void of an attic’s glow",
+        "Countless specks swirl in the dark, thinning to infinity",
+        "Frosted ridges stretch across a glassy plain under golden haze",
+        "The universe hides in a beam of light—watch it loop forever"
+      ],
+      "spot_line": "Can you spot Belle hiding in this endless dive? 👀",
+      "caption_tags": "#InfiniteAttic #DustUniverse #GoldenVoid #FrostedCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Dust motes drift through amber light, endless and bright 🌟 Can you spot Belle hiding in this endless dive? 👀 #InfiniteAttic #DustUniverse #GoldenVoid #FrostedCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A jagged crystal floats in the void of an attic’s glow Can you spot Belle hiding in this endless dive? 👀 #InfiniteAttic #DustUniverse #GoldenVoid #FrostedCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Countless specks swirl in the dark, thinning to infinity Can you spot Belle hiding in this endless dive? 👀 #InfiniteAttic #DustUniverse #GoldenVoid #FrostedCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Frosted ridges stretch across a glassy plain under golden haze Can you spot Belle hiding in this endless dive? 👀 #InfiniteAttic #DustUniverse #GoldenVoid #FrostedCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The universe hides in a beam of light—watch it loop forever Can you spot Belle hiding in this endless dive? 👀 #InfiniteAttic #DustUniverse #GoldenVoid #FrostedCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "jewel_oculus",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/jewel_oculus_ds_divein.mp4",
+      "title": "",
+      "caption": "A glass cathedral dissolving into stardust 🌌 Can you spot Kitty hiding in this endless loop? 🐱 #GlassCosmos #InfiniteFractals #StardustCathedral #EndlessLoopJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A glass cathedral dissolving into stardust 🌌",
+      "yt_desc": "",
+      "cameo": "kitty",
+      "state": "rejected",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-13",
+      "caption_bodies": [
+        "A glass cathedral dissolving into stardust 🌌",
+        "Where the sky becomes a kaleidoscope of light",
+        "Lost in the infinite fractals of a gemstone world ✨",
+        "From cosmic webs to desert dawns, time loops forever",
+        "A journey through glass and galaxies, endlessly unfolding"
+      ],
+      "yt_title_options": [
+        "A glass cathedral dissolving into stardust 🌌",
+        "Where the sky becomes a kaleidoscope of light",
+        "Lost in the infinite fractals of a gemstone world ✨",
+        "From cosmic webs to desert dawns, time loops forever",
+        "A journey through glass and galaxies, endlessly unfolding"
+      ],
+      "spot_line": "Can you spot Kitty hiding in this endless loop? 🐱",
+      "caption_tags": "#GlassCosmos #InfiniteFractals #StardustCathedral #EndlessLoopJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A glass cathedral dissolving into stardust 🌌 Can you spot Kitty hiding in this endless loop? 🐱 #GlassCosmos #InfiniteFractals #StardustCathedral #EndlessLoopJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where the sky becomes a kaleidoscope of light Can you spot Kitty hiding in this endless loop? 🐱 #GlassCosmos #InfiniteFractals #StardustCathedral #EndlessLoopJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Lost in the infinite fractals of a gemstone world ✨ Can you spot Kitty hiding in this endless loop? 🐱 #GlassCosmos #InfiniteFractals #StardustCathedral #EndlessLoopJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "From cosmic webs to desert dawns, time loops forever Can you spot Kitty hiding in this endless loop? 🐱 #GlassCosmos #InfiniteFractals #StardustCathedral #EndlessLoopJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A journey through glass and galaxies, endlessly unfolding Can you spot Kitty hiding in this endless loop? 🐱 #GlassCosmos #InfiniteFractals #StardustCathedral #EndlessLoopJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "turing_springs",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/turing_springs_ds_divein.mp4",
+      "title": "",
+      "caption": "Diving through the infinite glow of mineral dreams 🌋 Can you spot Dora hiding in the glow? 👀 #MineralCosmos #InfiniteZoom #VolcanicBioluminescence #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Diving through the infinite glow of mineral dreams 🌋",
+      "yt_desc": "",
+      "cameo": "dora",
+      "state": "rejected",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-13",
+      "caption_bodies": [
+        "Diving through the infinite glow of mineral dreams 🌋",
+        "Where hot springs whisper secrets to the stars ✨",
+        "A journey from steam to starlight, looped forever",
+        "Lost in the fractal glow of a living planet",
+        "From volcanic mist to cosmic auroras, endlessly"
+      ],
+      "yt_title_options": [
+        "Diving through the infinite glow of mineral dreams 🌋",
+        "Where hot springs whisper secrets to the stars ✨",
+        "A journey from steam to starlight, looped forever",
+        "Lost in the fractal glow of a living planet",
+        "From volcanic mist to cosmic auroras, endlessly"
+      ],
+      "spot_line": "Can you spot Dora hiding in the glow? 👀",
+      "caption_tags": "#MineralCosmos #InfiniteZoom #VolcanicBioluminescence #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Diving through the infinite glow of mineral dreams 🌋 Can you spot Dora hiding in the glow? 👀 #MineralCosmos #InfiniteZoom #VolcanicBioluminescence #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where hot springs whisper secrets to the stars ✨ Can you spot Dora hiding in the glow? 👀 #MineralCosmos #InfiniteZoom #VolcanicBioluminescence #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A journey from steam to starlight, looped forever Can you spot Dora hiding in the glow? 👀 #MineralCosmos #InfiniteZoom #VolcanicBioluminescence #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Lost in the fractal glow of a living planet Can you spot Dora hiding in the glow? 👀 #MineralCosmos #InfiniteZoom #VolcanicBioluminescence #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "From volcanic mist to cosmic auroras, endlessly Can you spot Dora hiding in the glow? 👀 #MineralCosmos #InfiniteZoom #VolcanicBioluminescence #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "droplet_zoo",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/droplet_zoo_ds_divein.mp4",
+      "title": "",
+      "caption": "A droplet’s universe, glowing green and endless 🌊 Can you spot Lee hiding in the glow? 👀 #bioluminescentdream #glassuniverse #moonlitmicrocosm #endlessdepths #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A droplet’s universe, glowing green and endless 🌊",
+      "yt_desc": "",
+      "cameo": "lee",
+      "state": "rejected",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-13",
+      "caption_bodies": [
+        "A droplet’s universe, glowing green and endless 🌊",
+        "Glass shells humming in the deep violet dark ✨",
+        "Moonlight fractures into a thousand black ponds",
+        "Where the water ends, the glass lattice begins...",
+        "One stone holds the whole world"
+      ],
+      "yt_title_options": [
+        "A droplet’s universe, glowing green and endless 🌊",
+        "Glass shells humming in the deep violet dark ✨",
+        "Moonlight fractures into a thousand black ponds",
+        "Where the water ends, the glass lattice begins...",
+        "One stone holds the whole world"
+      ],
+      "spot_line": "Can you spot Lee hiding in the glow? 👀",
+      "caption_tags": "#bioluminescentdream #glassuniverse #moonlitmicrocosm #endlessdepths #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A droplet’s universe, glowing green and endless 🌊 Can you spot Lee hiding in the glow? 👀 #bioluminescentdream #glassuniverse #moonlitmicrocosm #endlessdepths #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Glass shells humming in the deep violet dark ✨ Can you spot Lee hiding in the glow? 👀 #bioluminescentdream #glassuniverse #moonlitmicrocosm #endlessdepths #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Moonlight fractures into a thousand black ponds Can you spot Lee hiding in the glow? 👀 #bioluminescentdream #glassuniverse #moonlitmicrocosm #endlessdepths #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where the water ends, the glass lattice begins... Can you spot Lee hiding in the glow? 👀 #bioluminescentdream #glassuniverse #moonlitmicrocosm #endlessdepths #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "One stone holds the whole world Can you spot Lee hiding in the glow? 👀 #bioluminescentdream #glassuniverse #moonlitmicrocosm #endlessdepths #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "copper_rain_fpb5",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/copper_rain_fpb5_ds_divein.mp4",
+      "title": "",
+      "caption": "🧪 TEMPO TEST — music audition only, not for posting",
+      "yt_title": "",
+      "yt_desc": "",
+      "cameo": "newman",
+      "state": "music",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-13",
+      "music": {
+        "bpm": 144,
+        "bar": 1.667,
+        "key": "E minor",
+        "stage": "review",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "aurora_strings-halftime",
+            "lane": "aurora_strings",
+            "mood": "polar, shimmering, slow dawn · halftime",
+            "track": "output/music/copper_rain_fpb5_aurora_strings-halftime.flac",
+            "aligned": "review/music/candidates/copper_rain_fpb5/aurora_strings-halftime.mp4",
+            "seed": 25526,
+            "lock": 14.99,
+            "bar_conf": -0.03,
+            "score": 7.5,
+            "tags": "chill hypnotic ambient evoking a rainy evening street corner turned inward, warm and nostalgic, soft patter under lamplit calm, one bright swell landing on the dendrite-to-streets seam, bowed string pad swells and sparse harp plucks, silvery and cold, a single deep 808 kick lands exactly on the downbeat, spacious half-time groove with long empty space between hits, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          },
+          {
+            "id": "aurora_strings-third_answer",
+            "lane": "aurora_strings",
+            "mood": "polar, shimmering, slow dawn · third_answer",
+            "track": "output/music/copper_rain_fpb5_aurora_strings-third_answer.flac",
+            "aligned": "review/music/candidates/copper_rain_fpb5/aurora_strings-third_answer.mp4",
+            "seed": 25415,
+            "lock": 10.09,
+            "bar_conf": 0.15,
+            "score": 6.55,
+            "tags": "chill hypnotic ambient evoking a rainy evening street corner turned inward, warm and nostalgic, soft patter under lamplit calm, one bright swell landing on the dendrite-to-streets seam, bowed string pad swells and sparse harp plucks, silvery and cold, a deep soft kick on the downbeat of every bar and a quieter answering thump on beat three, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          },
+          {
+            "id": "choir_of_dust-wild",
+            "lane": "choir_of_dust",
+            "mood": "hushed, suspended, dissolving · heartbeat",
+            "track": "output/music/copper_rain_fpb5_choir_of_dust-wild.flac",
+            "aligned": "review/music/candidates/copper_rain_fpb5/choir_of_dust-wild.mp4",
+            "seed": 25452,
+            "lock": 5.36,
+            "bar_conf": 0.08,
+            "score": 3.12,
+            "tags": "chill hypnotic ambient evoking a rainy evening street corner turned inward, warm and nostalgic, soft patter under lamplit calm, one bright swell landing on the dendrite-to-streets seam, a soft choir-like pad, glass harmonica and fine granular shimmer, a deep sub-bass heartbeat pulse, two soft beats then space, the first landing on the downbeat of every bar, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          },
+          {
+            "id": "tide_organ-wild",
+            "lane": "tide_organ",
+            "mood": "tidal, breathing, mineral · heartbeat",
+            "track": "output/music/copper_rain_fpb5_tide_organ-wild.flac",
+            "aligned": "review/music/candidates/copper_rain_fpb5/tide_organ-wild.mp4",
+            "seed": 25563,
+            "lock": 5.73,
+            "bar_conf": 0.03,
+            "score": 3.04,
+            "tags": "chill hypnotic ambient evoking a rainy evening street corner turned inward, warm and nostalgic, soft patter under lamplit calm, one bright swell landing on the dendrite-to-streets seam, a breathy reed organ and soft water textures over a deep sub pulse, a deep sub-bass heartbeat pulse, two soft beats then space, the first landing on the downbeat of every bar, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          },
+          {
+            "id": "glass_chapel-wild",
+            "lane": "glass_chapel",
+            "mood": "sacred, luminous, weightless · downbeat",
+            "track": "output/music/copper_rain_fpb5_glass_chapel-wild.flac",
+            "aligned": "review/music/candidates/copper_rain_fpb5/glass_chapel-wild.mp4",
+            "seed": 25489,
+            "lock": 3.78,
+            "bar_conf": -0.11,
+            "score": 1.89,
+            "tags": "chill hypnotic ambient evoking a rainy evening street corner turned inward, warm and nostalgic, soft patter under lamplit calm, one bright swell landing on the dendrite-to-streets seam, crystalline glass bells and a soft distant choir pad, airy shimmer, a single deep soft kick drum lands exactly on the downbeat of every bar, felt more than heard, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      }
+    },
+    {
+      "journey": "copper_rain_fpb6",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/copper_rain_fpb6_ds_divein.mp4",
+      "title": "",
+      "caption": "🧪 TEMPO TEST — music audition only, not for posting",
+      "yt_title": "",
+      "yt_desc": "",
+      "cameo": "newman",
+      "state": "music",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-13"
+    },
+    {
+      "journey": "copper_rain_fpb10",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/copper_rain_fpb10_ds_divein.mp4",
+      "title": "",
+      "caption": "🧪 TEMPO TEST — music audition only, not for posting",
+      "yt_title": "",
+      "yt_desc": "",
+      "cameo": "newman",
+      "state": "music",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-13"
     }
   ]
 }

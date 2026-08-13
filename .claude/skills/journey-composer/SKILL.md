@@ -202,6 +202,18 @@ Before writing cards, read `journeys/REALMS.md` for the bands your journey cross
 - **Word variety**: the audit's overused list (dark/pale/fine/bright/light...) appears in
   >55% of journeys — a new journey leans on fresher vocabulary.
 
+## TEMPO — set `format.frames_per_beat` by the journey's energy (Phil-approved 2026-08-13)
+The video's musical tempo is bpm = 720/fpb at the 12fps raw rate; the engine scales all
+morph/anacrusis/tail geometry automatically. Choose per journey — this is a real variety
+axis, not a default to copy:
+- **5** = 144bpm (kinetic, urgent — A/B approved, "not choppy") · **6** = 120 (driving) ·
+  **7** = 103 (the classic flow) · **8** = 90 (stately) · **9** = 80 (dreamy — the FLOOR) ·
+  **10** = 72 only as a RARE vast-and-slow tail, never routine.
+- Test: does the tempo match how the journey's worlds FEEL to fall through? (electric/
+  storm/urban → fast; oceanic/cosmic/ancient → slow.)
+- Length interacts: seconds = cards × fpb/3. Keep total ≤ ~30s — an 11-card journey at
+  fpb 9 is 33s (trim a card); at fpb 5 a 7-card journey is only ~12s (add cards).
+
 **PALETTE PERFORMANCE (measured on IG, 2026-08-13 — apply as a test, not a vibe).** Audience
 like-rate correlates with dark, saturated frames: corr(like%, luminance) −0.33, saturation +0.24,
 deep-shadow fraction +0.28 (n=27 posted videos). Every top performer sits near luminance
