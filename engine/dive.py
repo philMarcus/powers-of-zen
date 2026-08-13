@@ -101,7 +101,10 @@ DEFAULTS = {
     "saturation": 1.03,
     "noise": 0.05,
     # phase transitions: prompt blending + extra denoise so worlds dissolve, not switch
+    # (transition/seam/anacrusis frame counts are MUSICAL geometry tuned at 7 frames-per-beat;
+    #  cfg-time scaling below re-derives them for a journey's own format.frames_per_beat)
     "transition_frames": 6,
+    "anacrusis_frames": 2,              # pickup window before each downbeat (~a sixteenth)
     "transition_denoise_boost": 0.06,   # beat changes within a register: gentle
     "arrival_denoise_boost": 0.18,      # register boundaries: strong repaint so
                                         # palettes can actually flip between worlds
@@ -589,6 +592,24 @@ def main():
 
     spec = json.loads(Path(args.journey).read_text())
     cfg = {**DEFAULTS, **spec.get("settings", {})}
+    # TEMPO (2026-08-13): the beat grid is format.frames_per_beat (7 = 103bpm; bpm = 720/fpb
+    # at 12fps raw). The morph geometry above is MUSICAL, tuned at fpb 7 — scale it with the
+    # journey's own beat so a 120bpm journey keeps the same fraction-of-a-bar everywhere.
+    # A journey's explicit settings override wins unscaled (a conscious per-journey choice).
+    _fpb = spec.get("format", {}).get("frames_per_beat", 7)
+    if _fpb != 7 and any(r.get("dur") is not None for r in spec.get("registers", [])):
+        _s = _fpb / 7.0
+        _ov = spec.get("settings", {})
+        if "transition_frames" not in _ov:
+            cfg["transition_frames"] = max(2, round(DEFAULTS["transition_frames"] * _s))
+        if "seam_morph_frames" not in _ov:
+            cfg["seam_morph_frames"] = max(cfg["transition_frames"] + 1,
+                                           round(DEFAULTS["seam_morph_frames"] * _s))
+        if "anacrusis_frames" not in _ov:
+            cfg["anacrusis_frames"] = max(1, round(DEFAULTS["anacrusis_frames"] * _s))
+        print(f"[dive] tempo: fpb {_fpb} ({720 / _fpb:.0f}bpm) -> transition "
+              f"{cfg['transition_frames']}f, seam {cfg['seam_morph_frames']}f, "
+              f"anacrusis {cfg['anacrusis_frames']}f", flush=True)
     # STYLE (Layer 2): resolve the look from the deck and inject it as the style_suffix the
     # grammar reads. The deck may also RECOMMEND a checkpoint when --model isn't passed.
     sfx, deck_model, style_name = _style.resolve(spec, args.style)
@@ -827,10 +848,14 @@ def main():
             if any(0 <= i - b < cfg["seam_morph_frames"] for b in seam_starts):
                 boost = max(boost, cfg["arrival_denoise_boost"])
             den = min(0.85, base_den + boost)
-            dist = next((s - i for s in arrival_starts if 0 < s - i <= 2), None)
+            anac = cfg["anacrusis_frames"]
+            dist = next((s - i for s in arrival_starts if 0 < s - i <= anac), None)
             if dist is not None:
-                den = min(0.85, max(den, base_den + cfg["arrival_denoise_boost"]
-                                    * (0.7 if dist == 1 else 0.4)))
+                # fpb 7 keeps the hand-tuned 0.7/0.4 curve exactly; other beats get the
+                # same linear rise generalized to their own pickup length
+                fac = ((0.7 if dist == 1 else 0.4) if anac == 2
+                       else (anac + 1 - dist) / (anac + 1))
+                den = min(0.85, max(den, base_den + cfg["arrival_denoise_boost"] * fac))
             mask_ref = None
             if cfg["build"] == "out":
                 fed, box = shrink_transform(img, z, cx, cy)

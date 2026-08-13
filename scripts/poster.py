@@ -801,6 +801,17 @@ def run(only, dry_run, journey):
     print("\nSummary:", json.dumps(results, indent=2))
     if FLAGS.exists() and any(True for _ in open(FLAGS)):
         print(f"⚠ flags recorded in {FLAGS} — review before next run.")
+    # AUTO-SNAPSHOT (Phil 2026-08-13): every posting run ends by logging followers +
+    # per-reel views/likes to outbox/ig_stats.jsonl — the tracker feeds itself. Uses the
+    # same Chrome the poster just drove; best-effort (a scrape hiccup must never mark a
+    # successful post as failed).
+    if not dry_run and results:
+        try:
+            import subprocess
+            subprocess.run([sys.executable, str(pl.ROOT / "scripts" / "ig_stats.py")],
+                           timeout=600)
+        except Exception as e:
+            print(f"(ig_stats snapshot skipped: {e})")
 
 
 def main():

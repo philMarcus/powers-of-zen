@@ -1,0 +1,124 @@
+{
+  "name": "lantern_mangrove",
+  "theme": "a night mangrove nursery lit by fireflies — down past the stilt roots to the waterline, through a plankton bloom into the glass shells of diatoms, into one shell's living cell and the ring-shaped pigment machinery inside it, into the fused-glass network of the shell wall, out through a star-forming nebula and home along the glowing coasts of a dark ocean world",
+  "style": "liquid_light",
+  "music_lane": "tide_organ",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "root_nursery",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "firefly gold and green-black water",
+      "scene": "a mangrove nursery at night seen at eye level just above the water, stilt roots arching down into the shallows in crowded ranks, ranks of small silver juvenile fish between the roots, gold fireflies hanging in the unlit air over the water, a night heron standing motionless in the shallows to one side, mangrove crabs gripping the wet bark of the roots, muddy green-black water lying flat and unbroken between them",
+      "target": "a flat patch of black water",
+      "target_phrase": "flat black water"
+    },
+    {
+      "name": "waterline",
+      "exp": -0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "black mirror skin and green murk",
+      "scene": "the waterline of the mangrove shallows seen edge-on, the flat skin of the water splitting the view across the middle, unlit air and small gold glimmers above the skin, green murk shot through with gold shafts below it, seed husks and duckweed specks caught along the skin, a cloudy green bloom lying in the water underneath, hanging motes at every depth below",
+      "target": "a cloudy green bloom",
+      "target_phrase": "a green bloom"
+    },
+    {
+      "name": "plankton_drift",
+      "exp": -3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "emerald water and gold motes",
+      "scene": "inside the green water among a crowd of plankton adrift at every depth, bristled copepods trailing long antennae, glassy barrel-shaped larvae, coiled spiral shells, loose chains of algae beads, the nearest ones large and soft at their edges, ranks of smaller ones receding into green-black depth, gold shafts of light crossing the whole crowd",
+      "target": "a ribbed glass disc",
+      "target_phrase": "a glass disc"
+    },
+    {
+      "name": "glass_shells",
+      "exp": -4.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "gold-lit glass and green-black depth",
+      "scene": "ornate glass shells adrift at every depth, pillbox discs stamped with ringed grids of pores, long needle shells crossing the space, three-cornered plates ribbed outward from their middles, gold light caught in every pore, a green body sealed inside each shell, near shells large and soft at their rims, far ranks fading into green-black depth",
+      "target": "a dark green cell",
+      "target_phrase": "a green cell"
+    },
+    {
+      "name": "cell_interior",
+      "exp": -5.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "golden-brown plastids and green-black",
+      "scene": "inside one diatom, golden-brown chloroplast slabs stacked flat against the inner wall, a clear open space at the middle, small oil droplets gathered along the wall, thin strands strung across the space, the ribbed glass wall standing all around, green-black depth past the glass",
+      "target": "a golden-brown chloroplast",
+      "target_phrase": "a golden-brown chloroplast"
+    },
+    {
+      "name": "antenna_array",
+      "exp": -8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "acid green rings and gathered gold",
+      "scene": "row upon row of ring-shaped pigment complexes set into folded membrane sheets, every ring a closed circle of green pigment plates with a gold point gathered at its middle, the sheets stacked in close layers with narrow gaps between them, rows receding into green-black depth, the clear glass of the shell wall standing behind the last rows",
+      "target": "a pale glass strand",
+      "target_phrase": "a glass strand",
+      "cameo": {
+        "sprite": "output/mascots/canon/tina.png",
+        "pos": [
+          0.62,
+          0.38
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "silica_network",
+      "exp": -9.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "violet-white glass and black",
+      "scene": "the random network of fused silica, three-armed joins of glass linked out in every direction with no repeating order, every join lit violet-white, open black cells of empty space held between the strands, the network repeating away into black depth"
+    },
+    {
+      "name": "green_nebula",
+      "exp": 14,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "gold-rimmed dust and blue-white stars",
+      "scene": "a star-forming nebula, green-black dust columns standing in ranks against glowing gas, gold rims burning where new stars break through them, blue-white stars scattered through the open black, faint filaments strung between the columns, a round unlit world sitting in the gas beside one column",
+      "target": "a dark blue world",
+      "target_phrase": "a dark blue planet"
+    },
+    {
+      "name": "ocean_world",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "black seas and green-gold coasts",
+      "scene": "the night side of a dark ocean world seen from low orbit, the curve of the world lying across the black, black seas under thin drawn bands of cloud, green-gold light strung in long braided lines along every coast, cold stars scattered beyond the world's edge",
+      "target": "a glowing green coast",
+      "target_phrase": "a glowing green coast",
+      "loop_target": "a dark ocean world at night seen from low orbit, black seas under thin cloud bands with green-gold light strung along every coast"
+    },
+    {
+      "name": "tidal_coast",
+      "exp": 3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "black channels and gold-green canopy",
+      "scene": "a mangrove coast seen from low above at night, black tidal channels braided between islands of crowded canopy, mud banks curving along every channel, green-gold glow lying in the water where the channels meet, ranks of trees standing out to the waterline, open black sea along one edge",
+      "target": "a black tidal channel",
+      "target_phrase": "a dark channel"
+    }
+  ],
+  "music_theme": "a still night tide under mangroves, a breathing reed organ over a deep sub pulse, one long swell rising into the glass-web morph out to the nebula",
+  "music_key": "E minor",
+  "render_start": "ocean_world"
+}

@@ -1,0 +1,132 @@
+{
+  "name": "lantern_canals",
+  "theme": "an empty ring-canal city at night — canal after canal drawn in circles one inside the next around a harbor lighthouse, bridges braided across the water between the rings, the whole city map read as an orbit diagram — dives down the harbor pier into the lighthouse's ringed lens, through the nested rings of light inside the glass, out to a hoop of starfire, and home past a dark ocean world to the lamplit rings on the water",
+  "style": "gilded_relic",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "ring_city",
+      "exp": 4.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt night and brass gold",
+      "scene": "a whole city built in rings seen from high above at night, canal after canal drawn in circles one inside the next, lime-white housefronts lining every ring, small bridges braided in chains across the dark water between the rings, brass lamplight strung the length of all of them, a round black harbor at the middle of the pattern, empty streets, no one present",
+      "target": "a round black harbor",
+      "target_phrase": "a round dark harbor"
+    },
+    {
+      "name": "harbor_basin",
+      "exp": 3.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blue-black and lime white",
+      "scene": "the round harbor at the middle of the ring city, flat black water from side to side, a lamplit quay curving the whole way around the rim, lime-white housefronts standing behind it, a long pale stone pier reaching out into the water from one side, small moored boats ranked along the stone, empty, no one present",
+      "target": "a long pale stone pier",
+      "target_phrase": "a stone pier"
+    },
+    {
+      "name": "harbor_quay",
+      "exp": 2.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm brass and bone white",
+      "scene": "the lamplit quay running out along the harbor pier, worn pale flagstones underfoot, iron mooring rings set into the stone, a row of brass lamp posts down the water's edge, black water lying flat on either side with long streaks of lamplight across it, a slim whitewashed lighthouse standing at the far end of the stone, empty, no one present",
+      "target": "a slim whitewashed lighthouse",
+      "target_phrase": "a white lighthouse",
+      "cameo": {
+        "sprite": "output/mascots/canon/kitty.png",
+        "pos": [
+          0.31,
+          0.63
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "lighthouse",
+      "exp": 1.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "lime white and cobalt blue",
+      "scene": "a whitewashed lighthouse standing on the harbor stones, a smooth round tower banded with a broad lime-white stripe, a brass rail running around a narrow walkway near the top, a glazed room of tall panes above the rail with warm light burning in it, cobalt night behind the tower, black water below",
+      "target": "a glazed room of tall panes",
+      "target_phrase": "a glass room"
+    },
+    {
+      "name": "lantern_room",
+      "exp": 0.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "brass gold and blue-black",
+      "scene": "the glazed room at the top of the lighthouse, a tall ringed glass lens standing at the middle of the floor on a brass carriage, ring upon ring of thick glass stepped around it, tall panes and slender glazing bars all around the walls, bare floorboards, cobalt night and black sea beyond the glass, empty, no one present",
+      "target": "a tall ringed glass lens",
+      "target_phrase": "a ringed glass lens"
+    },
+    {
+      "name": "lens_face",
+      "exp": -0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "clear glass and pale blue-white",
+      "scene": "the ringed glass front of the lighthouse lens, ring after ring of thick bevelled glass stepping outward around a smooth round center, a bright crest along every ring, slender brass ribs crossing them from the center to the rim, cobalt dark lying in the grooves between",
+      "target": "a thick bevelled ring of glass",
+      "target_phrase": "a bevelled glass ring"
+    },
+    {
+      "name": "glass_ridge",
+      "exp": -1.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale gold and green-white",
+      "scene": "a curved bevelled ring of glass on the lens, a smooth polished step with a hard bright crest running the length of it, fine grinding lines drawn across the polish, neighboring rings of glass ranked beyond it on both sides, warm light caught along every crest, blue-black shadow in the grooves",
+      "target": "a small bright ring of light",
+      "target_phrase": "a small ring of light"
+    },
+    {
+      "name": "circle_lattice",
+      "exp": -7.0,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "cold white and violet-blue",
+      "scene": "ordered rings of pale light nested one inside the next deep inside the glass, braided rows of small bright knots strung along the dark gaps between the rings, every ring drawn in fine bright grain, the nested pattern repeating away into violet-blue depth"
+    },
+    {
+      "name": "ring_galaxy",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blue-white starfire and gold",
+      "scene": "a ring galaxy set in deep space, a closed hoop of blue-white starfire drawn the whole way around, a warm golden core burning at the middle with open dark between it and the hoop, knots of bright young stars strung along the hoop, faint dust drawn across the dark",
+      "target": "a hot golden star",
+      "target_phrase": "a bright golden star"
+    },
+    {
+      "name": "star_ring",
+      "exp": 14,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale gold and cobalt black",
+      "scene": "a hot golden star out in open space with a wide flat ring of dust and rubble spread the whole way around it, the ring divided into many bright bands with dark gaps swept between them, thin braided strands of rubble strung across the gaps, a dark blue planet sitting in one of the wide gaps, cold blue stars scattered through the black beyond",
+      "target": "a dark blue planet",
+      "target_phrase": "a dark blue planet",
+      "loop_target": "a hot golden star with a wide flat ring of dust and rubble around it, bright bands and dark swept gaps drawn through the ring"
+    },
+    {
+      "name": "ocean_planet",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep cobalt and white",
+      "scene": "a dark blue ocean world seen close from space, its curved edge lit white against the black, black seas under thin white cloud bands, small rings of golden light strung along the coasts of the night side",
+      "target": "a small ring of golden lights",
+      "target_phrase": "a ring of golden lights"
+    }
+  ],
+  "music_theme": "an empty lamplit canal city at night, low strings under soft brass bell tones, a single wide swell landing on the glass-lattice morph out to the star hoop",
+  "music_key": "B minor",
+  "render_start": "star_ring"
+}

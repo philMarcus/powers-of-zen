@@ -1,0 +1,92 @@
+{
+  "name": "gill_cathedral",
+  "theme": "a moonlit forest clearing ringed by vermilion-capped mushrooms — the dive drops under one cap into the bone-ivory gill halls, down a cleft between two gill walls to the ranked spore-bearing buds and the ornamented spores drifting free, settles onto the concentric spore-print banks laid on the dark ground, and folds out through them because those banks ARE the fairy ring read small; home to the clearing",
+  "style": "lacquer_pop",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "ring_clearing",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moon silver, deep vermilion and black turf",
+      "scene": "a moonlit forest clearing seen from the low bank at its edge, a broad circle of vermilion mushrooms standing around the open dark turf, their glossy red caps scattered in a curve across the grass, black spruce trunks closing the clearing on every side, low silver mist lying in the hollows, pale moss cushions and dark leaf litter across the ground, cold moonlight from above, empty, no one present",
+      "target": "a domed vermilion mushroom cap",
+      "target_phrase": "a red mushroom cap",
+      "cameo": {
+        "sprite": "output/mascots/canon/dora.png",
+        "pos": [
+          0.3,
+          0.66
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "cap_dome",
+      "exp": -0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "glossy vermilion and soot black",
+      "scene": "one vermilion mushroom standing clear of the moss, its domed red cap tiered with nested rings of small round knobs wound in a spiral out from the centre, the lacquered skin bright along the curve, a stout pale stem beneath it, the cap rim lifted clear with a rank of bone-ivory gills showing under it, dark moss cushions and black leaf litter all around, cold moonlight from above",
+      "target": "a fan of bone-ivory gills",
+      "target_phrase": "pale mushroom gills"
+    },
+    {
+      "name": "gill_halls",
+      "exp": -1.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bone ivory and soot black",
+      "scene": "the ranked underside of a mushroom cap, bone-ivory walls standing in a radiating fan out from a pale central column, deep black clefts running between them in every direction, fine pale dust hanging in the still air, a thin vermilion glow coming in along the outer rim, the dark ground far beneath",
+      "target": "a deep black cleft",
+      "target_phrase": "a dark narrow cleft"
+    },
+    {
+      "name": "cleft_aisle",
+      "exp": -2.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm ivory walls and blue-black depth",
+      "scene": "the narrow black gap between two mushroom gill walls, sheer bone-ivory faces rising on either side, their surfaces velvety and crowded with small pale swollen buds, cold light seeping down from the rim above, blue-black depth below, fine pale grains caught in the air between the walls",
+      "target": "a pale swollen bud",
+      "target_phrase": "a pale rounded bud"
+    },
+    {
+      "name": "bud_rank",
+      "exp": -3.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold pearl white and blue-black",
+      "scene": "ranks of pale swollen buds crowded over a bone-ivory floor, each one topped with four fine stalks, a small ridged ivory bead at every stalk tip, black gaps opening between the buds, cold raking light across the whole field of them, the pale wall face standing behind them",
+      "target": "a ridged ivory bead",
+      "target_phrase": "a small ivory bead"
+    },
+    {
+      "name": "spore_drift",
+      "exp": -4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm ivory dust on soot black",
+      "scene": "an open black space between tall bone-ivory walls, slow ranked sheets of pale ivory spore dust hanging across the gap, each mote a small ridged bead, the walls standing far off on either side and closing overhead, low pale dunes of settled dust banked over the dark floor beneath, a thin cold rim of light along one edge",
+      "target": "a low pale ivory dune",
+      "target_phrase": "a pale ivory dune",
+      "loop_target": "slow ranked sheets of pale ivory spore dust hanging in a black space between tall bone-ivory walls"
+    },
+    {
+      "name": "spore_print",
+      "exp": -5.8,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "bone ivory and vermilion stain on soot black",
+      "scene": "a floor of packed ivory spore grains laid in long curving concentric banks, every grain a small ridged bead, the banks ranked one inside the next with dark channels between them, faint vermilion stain seeping along the deepest channels, soot-black ground showing in the gaps, a fine spiral packing running through the whole"
+    }
+  ],
+  "music_theme": "a moonlit clearing and the bone-white halls under a mushroom cap — hushed low strings and a slow woodblock pulse under glassy bell tones, one bright struck hit where the packed spore banks open out into the circle of red caps, settling back into soft brushed percussion",
+  "music_key": "B minor",
+  "render_start": "spore_drift"
+}

@@ -1,0 +1,70 @@
+{
+  "name": "amber_steep",
+  "theme": "a midnight tea house with one glass pot steeping on a black lacquer tray — the whole journey stays inside the tea: the amber depth where tannin ribbons coil in nested never-closing orbits, one curling filament of that infusion, the pale gold haze at the bottom of it, and the haze read back out as the steam beads strewn over the dark lid glass, falling home to the pot on its tray",
+  "style": "stormlight",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "amber_liquor",
+      "exp": -1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "dark oolong amber and pale gold",
+      "scene": "a wide field of dark oolong amber, tannin ribbons coiling through it in nested never-closing loops, more loops crossing away in every direction, pale gold lamplight raking across the whole depth in long bands, soot-black shadow pooled between the coils, seen from straight above",
+      "target": "a curling amber filament",
+      "target_phrase": "an amber filament",
+      "loop_target": "the wide dark amber depth of steeping tea, tannin ribbons coiling in nested loops, pale gold light raking across it from straight above"
+    },
+    {
+      "name": "infusion_filament",
+      "exp": -4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "burnt caramel and deep russet",
+      "scene": "burnt-caramel depth packed with twisted infusion strands, braided coils crossing over one another and knotting together, deep russet shadow banked between them, countless fine dark grains caught along the strands, dim gold light coming through from far behind",
+      "target": "a small dark amber grain",
+      "target_phrase": "a dark amber grain"
+    },
+    {
+      "name": "tannin_haze",
+      "exp": -10,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "pale gold and soot black",
+      "scene": "soot-black depth hung with pale gold haze, countless fine bright motes strung along nested looping paths, layered bands of dim amber glow going back into the dark, hard small points of light scattered through every layer",
+      "cameo": {
+        "sprite": "output/mascots/canon/adam.png",
+        "pos": [
+          0.63,
+          0.58
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "lid_beads",
+      "exp": -2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold silver-gold and black glass",
+      "scene": "black lid glass spread wide, hundreds of small round steam beads strewn across it in a scattered constellation, each bead a hard bright silver-gold point, dim amber glow low behind the glass, fine grey mist banked along the far rim",
+      "target": "a round steam bead",
+      "target_phrase": "a round steam bead"
+    },
+    {
+      "name": "tea_table",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "soot black lacquer and warm lamp gold",
+      "scene": "a low black lacquer tray on a dark tea-house table, a round glass teapot full of dark amber set at its centre, small glass cups set out in a row beside it, one low lamp burning warm and gold behind them, plain dark wood spread away on either side, empty, no one present"
+    }
+  ],
+  "music_theme": "midnight tea-house stillness, low warm room tone under soft glass-struck plucks, one deep swell landing on the haze morph",
+  "music_key": "A minor",
+  "render_start": "amber_liquor"
+}

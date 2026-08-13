@@ -1,0 +1,92 @@
+{
+  "name": "palm_house",
+  "theme": "a Victorian palm house at white dawn, bright and empty under its arched glass roof — the dive drops beneath one giant fan palm leaf, into the waxy panels of skin walled by its vein net, down onto the paved plain of leaf-skin cells with their ranked breathing pores, through one pore into the spongy green cavern labyrinth of the leaf's interior, into the wall struts where hollows nest inside hollows, and folds out because that packed lattice IS the glasshouse's own arched glazing read small; home to the palms",
+  "style": "crystalline",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "palm_house",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "porcelain white, pale glass green, cool blue shadow",
+      "scene": "the floor of a Victorian palm house at white dawn, seen from the tiled walkway down its centre, a high arched roof of white-painted iron and frosted glass panes curving overhead in ranked bays, flat bright dawn light coming down through the misted glass, giant fan palms standing in planting beds on either side, their broad pleated leaves spread wide across the whole space, wet white gravel and pale green moss between the beds, thin prismatic edges of colour where the light crosses the panes, empty, no one present",
+      "target": "a broad pleated palm leaf",
+      "target_phrase": "a green palm leaf"
+    },
+    {
+      "name": "leaf_deck",
+      "exp": 0.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "backlit leaf green and warm ivory light",
+      "scene": "the shaded space beneath one giant fan palm leaf, the pale green blade spread wide overhead, deep pleats radiating out from a broad midrib in a stiff fan, white dawn light glowing through the thin blade so the vein net stands dark inside it, waxy panels of pale skin walled in between the veins, cool green shade below, white gravel far beneath, empty, no one present",
+      "target": "a waxy green panel",
+      "target_phrase": "a waxy green panel"
+    },
+    {
+      "name": "vein_island",
+      "exp": -1.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm ivory skin and glassy green veins",
+      "scene": "a low plain of waxy ivory leaf skin walled in by raised translucent veins, the vein net standing up around it in a branching lattice, white light coming through the blade from behind so the whole plain glows from underneath, a mosaic of interlocking wavy-edged cells paving the surface in every direction, small dark slits set in ranks between them, faint prismatic colour running along the wet ridges",
+      "target": "a pale interlocking cell",
+      "target_phrase": "a pale rounded cell"
+    },
+    {
+      "name": "stomata_ranks",
+      "exp": -3.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold porcelain white and pale green shadow",
+      "scene": "a paved plain of leaf-skin cells seen from straight above, stretching away in every direction, each cell a smooth porcelain-white tile with wavy interlocking edges, ranks of dark oval pores set among them, every pore held open between two curved pale-green cells that bow apart around it, packed rows of tiles and pores scattered across the whole plain, bright white light flooding down over the surface, thin prismatic fringes along the wet tile edges, shallow green shadow in the joints",
+      "target": "an open oval pore",
+      "target_phrase": "a dark oval pore",
+      "loop_target": "a paved plain of porcelain-white leaf-skin cells with ranks of dark oval pores set among them"
+    },
+    {
+      "name": "pore_gate",
+      "exp": -4.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm ivory rims and deep green shade",
+      "scene": "an open oval gateway set in the outer wall of a leaf, two great curved pale-green banks bowing apart on either side of the gap, their glassy skins ridged with fine strands, white light pouring down past them from above, a cool green chamber standing open below with rounded pale walls, beads of moisture caught along the wet rims, prismatic colour breaking along the ivory edges",
+      "target": "a round green hollow",
+      "target_phrase": "a dark green hollow"
+    },
+    {
+      "name": "mesophyll_labyrinth",
+      "exp": -5.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cool white light and wet green walls",
+      "scene": "a cavern labyrinth inside a leaf, rounded pale-green walls packed loosely on every side with wide air hollows opening between them, thick struts of wall bridging from one bank to the next in a spongy tangle, milky white light filtering down from a gap far overhead, smaller hollows opening inside the larger hollows in every direction, wet glassy sheen across the whole tangle, faint prismatic colour in the deepest gaps",
+      "target": "a thick pale-green strut",
+      "target_phrase": "a pale green strut",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.63,
+          0.58
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "cavity_lattice",
+      "exp": -6.7,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "porcelain white with prism-edge violet and pale green",
+      "scene": "a packed lattice of square hollows inside a pale wall, porcelain-white struts running between them in a regular grid, every hollow holding ranks of smaller hollows and those holding smaller ones again, the grid arching overhead in curved bays, white light standing bright in the openings so the whole lattice glows, thin prismatic fringes along every strut edge, pale green shadow deep in the smallest cells"
+    }
+  ],
+  "music_theme": "a bright empty glasshouse at white dawn and the green caverns inside a leaf — high glassy bell tones and airy sustained strings over a soft brushed pulse, one clear struck chime where the packed lattice of hollows opens out into the arched glass roof, settling back into slow breathing pads",
+  "music_key": "D major",
+  "render_start": "stomata_ranks"
+}

@@ -1,0 +1,133 @@
+{
+  "name": "comet_firn",
+  "theme": "glacier ice and comet ice are the same substance at two scales — a fjord under the midnight sun, down through the glacier front and a crevasse's blue chasm to the ancient air bubbles strung along the ice's flow bands, which fold out into the far comet swarm; the fall home rides one active comet down its dust cloud to an ice-cliff core that reads as the glacier front again",
+  "style": "cosmic_gloss",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "fjord",
+      "exp": 4.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "midnight gold and dark teal",
+      "scene": "a long fjord under a low midnight sun, seen from high above the water, dark teal water lying still between black rock walls, snowfields on the ridges above, long violet shadows across the slopes, pale gold haze along the whole inlet, a broad wall of pale teal ice standing where the water ends",
+      "target": "a broad wall of pale teal ice",
+      "target_phrase": "a teal ice wall",
+      "loop_target": "a long fjord under a low midnight sun, dark teal water between black rock walls, a broad wall of pale teal ice at the end of it"
+    },
+    {
+      "name": "glacier_front",
+      "exp": 3.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold white and pale teal",
+      "scene": "the front of a great glacier standing over the water, a long rampart of teal and white ice, tall fractured blocks ranked along its top edge, deep blue clefts cut down through the face, broken ice strewn on the dark water below, low gold light along the upper rim",
+      "target": "a cracked white ice plain",
+      "target_phrase": "cracked white ice"
+    },
+    {
+      "name": "crevasse_field",
+      "exp": 2.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "gold-lit white and violet shadow",
+      "scene": "the cracked upper ice of a glacier seen from straight above, long crevasses combed in smooth parallel curves around a dark rock knob, blue shadow standing in every slot, drifted snow packed between them, low gold light raking across the whole surface",
+      "target": "a deep blue crevasse",
+      "target_phrase": "a blue crevasse"
+    },
+    {
+      "name": "chasm",
+      "exp": 0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep blue and violet",
+      "scene": "inside a crevasse in the glacier, blue ice walls on either side, a bright slot of gold sky far overhead, ledges of drifted snow along the walls, deep violet shadow in the depths, meltwater sheen over the blue",
+      "target": "a pale banded ice wall",
+      "target_phrase": "a banded ice wall"
+    },
+    {
+      "name": "flow_bands",
+      "exp": -0.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "milk white and warm gold",
+      "scene": "a wall face of ancient glacier ice, long bands of teal and milk white folded in smooth parallel streamlines, the bands combed around dark rounded lenses set into them, fine cracks crossing the surface, wet sheen over everything",
+      "target": "a clear glassy ice lens",
+      "target_phrase": "a clear ice lens"
+    },
+    {
+      "name": "clear_ice",
+      "exp": -1.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "clear teal and pale silver",
+      "scene": "inside a lens of clear glacier ice, faint teal streamlines running away through the blue, threads of pale round bubbles strung along them, milk-white grain boundaries crossing at the edges, gold light carried deep into the ice",
+      "target": "a string of pale round bubbles",
+      "target_phrase": "pale round bubbles"
+    },
+    {
+      "name": "bubbles",
+      "exp": -3.4,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "pale gold-white on deep blue-black",
+      "scene": "ancient air bubbles trapped in deep blue ice, pale round bodies hanging at every depth in the dark blue, drawn out in long curving strings along the flow lines, faint teal streamlines behind them, cold gold light far off through the ice"
+    },
+    {
+      "name": "swarm",
+      "exp": 16,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "dim silver-blue and black",
+      "scene": "the far outer swarm of an old comet cloud, pale round bodies of dirty ice scattered at every depth through the black, drawn out along long curving orbital streams, faint frost glinting on each one, cold starlight far behind them",
+      "target": "a bright pale comet",
+      "target_phrase": "a bright comet"
+    },
+    {
+      "name": "comet",
+      "exp": 10,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber gold and blue-white on black",
+      "scene": "an active comet in deep space, seen from across the dark, a bright pale gold cloud of dust and ice around a small bright core, a long dust tail drawn out behind it in fine parallel streaks, a straighter blue-white tail beside it, cold stars scattered far back in the black",
+      "target": "a bright pale gold cloud of ice dust",
+      "target_phrase": "a glowing gold cloud",
+      "loop_target": "an active comet in the dark, a bright gold cloud of dust around its core and a long tail drawn out behind it"
+    },
+    {
+      "name": "inner_coma",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale green-gold and cold white",
+      "scene": "inside the bright dust cloud of an active comet, a slow field of pale gold-green light, ice grains adrift at every depth, straight jets of pale dust standing off a small bright body below, long fine streamlines combed back through the glow",
+      "target": "a small pale ice body",
+      "target_phrase": "a pale ice body",
+      "cameo": {
+        "sprite": "output/mascots/canon/janet.png",
+        "pos": [
+          0.62,
+          0.57
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "nucleus",
+      "exp": 5.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "low gold light, teal ice and soot black",
+      "scene": "the ice country of a comet's core, wide banded scarps and ridges of pale teal ice standing over dark dust plains, low gold light raking along the scarp faces, long violet shadows in the hollows, thin bright jets standing off the fractures",
+      "target": "a long dark inlet of still water",
+      "target_phrase": "a dark inlet"
+    }
+  ],
+  "music_theme": "cold and wide, patient — a low sub-bass drift under long bowed strings, glass-bell harmonics ticking on the ice scales, a warm gold piano figure over the fjord, the whole thing breaking open on the bubble-to-comet-swarm fold and settling back into the drift",
+  "music_key": "C# minor",
+  "render_start": "comet"
+}

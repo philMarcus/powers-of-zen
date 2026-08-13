@@ -233,10 +233,14 @@ def compile_journey(spec, fps, build="in"):
     loop = None
     if fmt.get("exact_loop") and build != "out":
         F_last = _frames(regs[-1], fmt, fps)
-        L = min(round(2.0 * fps), F_last - 2)
+        # Tail length is MUSICAL: 24 frames at fpb 7 = 6/7 of a bar (and morph_frames 12 =
+        # ~1.7 beats), so scale both with the journey's beat. Legacy sec-schema keeps 2.0s.
+        fpb = fmt.get("frames_per_beat", 7)
+        new_schema = any(r.get("dur") is not None for r in regs)
+        L = min(round(24 * fpb / 7) if new_schema else round(2.0 * fps), F_last - 2)
         # SEAM (2026-07-29): the last L frames KEEP diving at travel denoise (alive, not settling)
         # while dive.py morphs home — natural dive → palette-match → gap-scaled morph toward frame 0
         # (no hard copy). `morph_frames` = trailing frames that morph. The old denoise-ramp + s0
         # loop_composite tail is gone. See PLAN.md "THE SEAM".
-        loop = {"frames": L, "morph_frames": min(12, L - 2)}
+        loop = {"frames": L, "morph_frames": min(max(4, round(12 * fpb / 7)), L - 2)}
     return phases, zoom, denoise, exponent, loop, cameos, arrivals, approach, seam_arrivals

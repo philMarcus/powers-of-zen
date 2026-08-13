@@ -1,0 +1,132 @@
+{
+  "name": "moon_jelly",
+  "theme": "a midnight lagoon of moon jellyfish read as a braid and back — down one translucent dome into its hanging streamers, into the woven strand-canyons where the cords cross over and under, out to a young star's twin jets in the dark dust, and down the dust and the dark ocean world to the lagoon's own bells",
+  "style": "liquid_light",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "lagoon",
+      "exp": 2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "milk white on navy black",
+      "scene": "a still black lagoon at midnight seen from the low rocks at the water's edge, dozens of pale domed jellyfish spread through the shallow water, each one lit from within to a soft milk white, fine streamers hanging below them, the flat black surface unbroken across to a low dark headland at the far side",
+      "target": "a pale milk-white jellyfish dome",
+      "target_phrase": "a pale jellyfish",
+      "cameo": {
+        "sprite": "output/mascots/canon/kitty.png",
+        "pos": [
+          0.66,
+          0.58
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "jelly_water",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ice blue and milk white",
+      "scene": "the open black water at the depth of one moon jellyfish, its ribbed translucent dome overhead, four pale horseshoe marks set in the dome, a short fine fringe all round its rim, long pale streamers hanging beneath it into the dark, faint blue points of light scattered through the water on either side",
+      "target": "a long frilled pale streamer",
+      "target_phrase": "a pale frilled streamer"
+    },
+    {
+      "name": "streamer_stand",
+      "exp": -1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale pink and deep navy",
+      "scene": "a standing rank of jellyfish streamers in black water, long frilled strands of pale pink running down side by side, hair-fine threads strung between them, cold blue light coming down from far above, deep navy water in the gaps",
+      "target": "a braided pale cord",
+      "target_phrase": "a pale braided cord"
+    },
+    {
+      "name": "braid_cord",
+      "exp": -2.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "milk white and cold blue",
+      "scene": "a realm of woven filament ropes in dark water, milk-white strands wound over and under one another in a regular braid, small bright beads of light where the strands cross, black gaps opening between the ropes in every direction",
+      "target": "a bright woven knot",
+      "target_phrase": "a bright woven knot"
+    },
+    {
+      "name": "knot_canyon",
+      "exp": -4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ice blue walls and black clefts",
+      "scene": "a canyon country of woven strands, huge pale cables crossing overhead one over the other, sheer braided walls of glowing fiber on either side, deep black clefts running between them, ice-blue light caught along every crossing",
+      "target": "two fine crossed glowing filaments",
+      "target_phrase": "crossed glowing filaments"
+    },
+    {
+      "name": "filament_cross",
+      "exp": -6,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "white and electric blue on black",
+      "scene": "two fine luminous filaments crossed on black, one passing over the other and out into the dark, a hard white bead of light where they meet, a faint blue haze along their length"
+    },
+    {
+      "name": "star_jets",
+      "exp": 16,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "white-blue beams on dust black",
+      "scene": "the twin jets of a young star standing out through dark dust, two long straight beams of white-blue light reaching away to either side from a small hidden source, glowing knots strung along each beam, a bright bow of shocked light at both far ends, cold stars scattered across the black beyond the dust",
+      "target": "a dark rounded dust cocoon",
+      "target_phrase": "a dark dust cocoon"
+    },
+    {
+      "name": "dust_cocoon",
+      "exp": 13,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "grey-violet dust and white",
+      "scene": "a dark dust cocoon around a young star, banked walls of grey-violet dust standing on every side of a hollow, a small brilliant white point at its center, two pale jet roots leaving it through the dust, cold stars scattered in the thin gaps of the cloud",
+      "target": "a small brilliant white star",
+      "target_phrase": "a bright white star"
+    },
+    {
+      "name": "young_star",
+      "exp": 10,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "white-hot and cold blue",
+      "scene": "a young white star burning in a clear hollow of the dust, a flat ring of glowing debris wound around it, dark grains and pale ice chunks banked along the ring, one dark round world sitting in the ring further out, the dust walls standing far off on every side",
+      "target": "a dark blue ocean world streaked with white cloud",
+      "target_phrase": "a dark blue planet",
+      "loop_target": "a young white star in a clear hollow of dust, a flat ring of glowing debris wound around it, the dust walls far off on every side"
+    },
+    {
+      "name": "ocean_world",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "navy sea and ice white",
+      "scene": "a dark ocean world in the black, its night side turned toward us, wide navy seas under thin streaks of white cloud, pale rings of island reef scattered across the water, a cold blue rim of light along its edge",
+      "target": "a pale ring-shaped reef island",
+      "target_phrase": "a ring-shaped reef island"
+    },
+    {
+      "name": "atoll_night",
+      "exp": 4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "black water and pale surf",
+      "scene": "a ring-shaped island seen from high above at night, a low dark rim of rock enclosing a flat black lagoon, pale surf lines along the outer shore, faint milk-white points of light in the enclosed water, open black ocean all around",
+      "target": "a pale glowing patch of water",
+      "target_phrase": "a glowing patch of water"
+    }
+  ],
+  "music_theme": "a cold still lagoon opening into deep space — slow sub-bass swells under glassy bell tones and a wide airy pad, a bright struck hit landing on the crossed-filament to star-jet seam, settling back into soft water-lapping percussion",
+  "music_key": "F# minor",
+  "render_start": "young_star"
+}

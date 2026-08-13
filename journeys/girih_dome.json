@@ -1,0 +1,131 @@
+{
+  "name": "girih_dome",
+  "theme": "an abandoned hilltop observatory whose girih-tiled vault rhymes with the lattice of the sky — down from a beam-crossed star field over dry ridges to the dome, through the strapwork into the glaze and its crackle, to a ten-rayed starburst at the atomic end that blooms back out into the sky's own star-lattice",
+  "style": "crystalline",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "beam_sky",
+      "exp": 14,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "turquoise white and deep indigo",
+      "scene": "a deep field of stars scattered through the black, two long pale spokes of light laid straight across it, cold turquoise-white, thin threads of dust lit where the light crosses them, a rust-red world among the stars",
+      "target": "a rust-red banded world",
+      "target_phrase": "a rust-red planet",
+      "loop_target": "a deep field of stars crossed by two long pale spokes of light"
+    },
+    {
+      "name": "rust_world",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust red and bone white",
+      "scene": "a rust-red world seen from orbit, dry basins and wrinkled ridge country across its lit face, a thin bright line of air along the curved limb, stars in the black beyond it",
+      "target": "a long pale ridge",
+      "target_phrase": "a mountain ridge"
+    },
+    {
+      "name": "ridge_country",
+      "exp": 4.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold blue night and brown stone",
+      "scene": "dry ridge country seen from high above at night, brown-pink ridges and black valleys, dry riverbeds branching between them, broken walls of old ruins strewn along the crests, a small bone-white dome on one summit",
+      "target": "a small bone-white dome",
+      "target_phrase": "a white dome",
+      "cameo": {
+        "sprite": "output/mascots/canon/lorraine.png",
+        "pos": [
+          0.63,
+          0.37
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "hill_dome",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "dusty pink sandstone and cold starlight",
+      "scene": "an abandoned hilltop observatory at night, a squat drum of dusty pink sandstone under a bone-white plaster dome, a long shutter slit standing open across the dome's curve, worn steps and dry grass around the walls, empty, no one present",
+      "target": "a long open shutter slit",
+      "target_phrase": "a dark opening"
+    },
+    {
+      "name": "tiled_vault",
+      "exp": 0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "dusty pink, turquoise and bone white",
+      "scene": "the domed vault overhead, girih strapwork covering the whole curve in dusty pink sandstone and turquoise glaze, ten-pointed rosettes repeating to the rim, bone-white plaster mouldings between the panels, a long slit letting cold light onto the dusty stone floor, empty, no one present",
+      "target": "a ten-pointed strapwork rosette",
+      "target_phrase": "a ten-pointed star",
+      "target_pick": "random"
+    },
+    {
+      "name": "strap_star",
+      "exp": -0.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "dusty pink bands on turquoise",
+      "scene": "girih strapwork across the vault's tiling, flat ribbons of dusty pink sandstone interlacing into ten-pointed rosettes and long hexagons, turquoise glazed fields set inside every shape, bone-white plaster in the seams",
+      "target": "a turquoise glazed tile",
+      "target_phrase": "a turquoise tile"
+    },
+    {
+      "name": "glazed_tile",
+      "exp": -1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep turquoise and bone white",
+      "scene": "a bed of turquoise glazed tiles set in bone-white plaster, the glaze pooled thick and glassy toward every edge, a net of hairline cracks drawn over the whole surface, fine dust settled in the joints",
+      "target": "a dark hairline crack",
+      "target_phrase": "a dark crack"
+    },
+    {
+      "name": "crack_canyon",
+      "exp": -3.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "near-black grooves and pale glass",
+      "scene": "a canyon split through turquoise glass, its walls stepped in curved shells of fracture, pale crystal grains studding the walls on either side, dust drifted along the floor of the groove",
+      "target": "a pale crystal grain",
+      "target_phrase": "a pale crystal"
+    },
+    {
+      "name": "crystal_bed",
+      "exp": -5.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale gold and clear turquoise",
+      "scene": "blunt pale-gold crystal blocks grown thick through clear turquoise glass, faceted faces packed against each other in every direction, faint bands of colour in the glass between them, small frozen bubbles caught in the melt",
+      "target": "a bright ten-rayed starburst",
+      "target_phrase": "a bright starburst"
+    },
+    {
+      "name": "quasicrystal",
+      "exp": -9.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "pale gold and turquoise on black",
+      "scene": "a dark depth strung with ten-rayed starbursts of light, sharp points set in rings around each centre, straight lines of pale gold and turquoise light threading between the rosettes, the spacings between them never even"
+    },
+    {
+      "name": "star_lattice",
+      "exp": 17,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold blue white on deep indigo",
+      "scene": "ranks of stars strung through the black in long straight lanes and radiating spokes, cold blue-white points at every crossing, faint threads of dust drawn between them"
+    }
+  ],
+  "music_theme": "an abandoned desert observatory under a metronomic sweeping beam — patient and geometric, hollow stone reverb, warm sandstone under a cold sky, a slow steady pulse",
+  "music_key": "F# minor",
+  "render_start": "beam_sky"
+}

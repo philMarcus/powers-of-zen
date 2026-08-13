@@ -1,0 +1,70 @@
+{
+  "name": "sodium_stairwell",
+  "theme": "a 3am brutalist parking-garage stairwell dives into its own wall — a hairline crack web, a percolation crack-lattice realm at the connectivity threshold, the air-bubble caverns of the pour — and the stacked bubble rims fold back out into the stairwell's own nested rectangular void seen from the bottom",
+  "style": "stormlight",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "stairwell",
+      "exp": 0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale chartreuse and warm grey",
+      "scene": "a brutalist parking-garage stairwell at three in the morning, seen from the middle of a landing, raw board-marked concrete walls with the horizontal grain of the formwork still on them, a bare flight of steps rising past a plain steel handrail, one long sodium tube overhead washing the whole landing in pale chartreuse, a slot in the wall open to the cold black rain outside, a fine dark crack forking down the wall under the light, grit and a shallow puddle on the floor, empty, no one present",
+      "target": "a dark branching crack",
+      "target_phrase": "a dark branching crack"
+    },
+    {
+      "name": "crack_web",
+      "exp": -1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cool pewter grey and pale grit",
+      "scene": "a raw concrete wall face, the horizontal grain of board-marked formwork running across it, a web of hairline cracks spreading over the whole surface and forking around blunt grey aggregate stones, pale chartreuse light raking low over the roughness, grey dust banked in the shallow channels"
+    },
+    {
+      "name": "crack_lattice",
+      "exp": -3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pewter grey and pale chartreuse",
+      "scene": "a wide grey field of cracked concrete seen straight on, a branching lattice of fissures splitting into finer fissures at every joint, one long connected chain of them lit from within by trapped pale chartreuse light while the stranded islands between them stay dark, fine grey dust banked along every channel, depth opening in the widest breaks",
+      "target": "a round dark air bubble",
+      "target_phrase": "a round dark bubble",
+      "loop_target": "a wide grey field of cracked concrete seen straight on, a branching lattice of fissures with one connected chain of them lit pale chartreuse"
+    },
+    {
+      "name": "vesicle_caves",
+      "exp": -6,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "dim chartreuse and warm grey",
+      "scene": "a country of smooth round caverns hollowed through pale grey stone, hollow opening into hollow through rounded mouths, their rims stacked ring behind ring into the depth, dim chartreuse light caught far down in the deepest of them, the stone between the caverns fine and powdery"
+    },
+    {
+      "name": "void_well",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "wet blue-grey and chartreuse",
+      "scene": "the open shaft of a concrete parking-garage stairwell seen from the bottom looking straight up, the nested rectangular rims of landing after landing stacked one inside the next toward a small pale opening high above, every rim edged in pale chartreuse light, wet blue-grey concrete and the diagonal undersides of the flights, empty, no one present",
+      "target": "a chartreuse-lit concrete rim",
+      "target_phrase": "a glowing concrete rim",
+      "cameo": {
+        "sprite": "output/mascots/canon/kitty.png",
+        "pos": [
+          0.3,
+          0.61
+        ],
+        "size": 0.14
+      }
+    }
+  ],
+  "music_theme": "three in the morning under a concrete ceiling, a low sustained drone under the buzz of an old lamp, sparse water drips on the beat, a cold swell landing where the round hollows open into the shaft",
+  "music_key": "E minor",
+  "render_start": "crack_lattice"
+}

@@ -1,0 +1,102 @@
+{
+  "name": "blueprint_harbor",
+  "theme": "a naval architect's night loft: the dive drops into the pinned cyanotype master chart, down its folded ink streets and depth numerals into the paper's fiber felt and the Prussian-blue pigment grains, and the drawn contour line the grains bank along becomes the real moonlit surf line it traces — back over the harbor town to the loft's lit window above the quay",
+  "style": "gilded_relic",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "drafting_loft",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "dim indigo with one warm lamp pool",
+      "scene": "a naval architect's night loft, empty, no one present, long drafting boards ranged in rows under sloped rafters, ranks of blue blueprint sheets pinned edge to edge across every wall, brass dividers and steel rules and rolled tubes laid out along the boards, one small shaded lamp throwing a warm pool over the nearest board, tall dark glazed panes at the far end, the plank floor dim in every direction",
+      "target": "a pinned blue blueprint sheet",
+      "target_phrase": "a blue blueprint sheet"
+    },
+    {
+      "name": "master_chart",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "Prussian blue and paper white",
+      "scene": "a harbor town drawn in fine white ink across flat Prussian-blue blueprint paper, seen from straight above, quays and channels and streets running as one continuous folded line that never crosses itself, ranks of small white depth numerals strewn over the drawn water, pale contour rings stepping round the basin and the headlands, bare blue paper open between the marks and running out past every edge",
+      "loop_target": "a harbor town drawn in fine white ink across flat Prussian-blue blueprint paper, seen from straight above, pale contour rings and ranks of small white depth numerals",
+      "target": "a pale ringed contour line",
+      "target_phrase": "a pale contour ring"
+    },
+    {
+      "name": "drawn_district",
+      "exp": -1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "chalk white line on washed cyan",
+      "scene": "a stretch of the drawn town spread flat, white ink streets folding back on themselves in tight square meanders that never cross, quay teeth combing the drawn waterline, banks of pale contour bands stepping down into the basin, small white depth numerals scattered between them, washed cyan paper open in all the gaps, hatched shoal marks stippled across the shallows",
+      "target": "a bold white ink stroke",
+      "target_phrase": "a white ink stroke"
+    },
+    {
+      "name": "ink_stroke",
+      "exp": -2.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep Prussian blue and chalk white",
+      "scene": "a broad white ink stroke lying across deep blue paper, its chalky body raised and faintly grainy, ragged bleed feathering out along either side of it into the blue, hairline cracks running through the dried wash on the flats beyond, pale dust flecks caught in the pigment, the blue field open and even away from the stroke",
+      "target": "a pale twisted paper fiber",
+      "target_phrase": "a pale fiber"
+    },
+    {
+      "name": "paper_felt",
+      "exp": -4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ivory white with blue pooled between",
+      "scene": "a felted mat of countless paper fibers, flattened threads crossing over and under one another in every direction, ivory strands lit along their tops, deep blue wash pooled in the hollows between them, short broken fiber ends packed into the weave, fine blue dust settled through the whole tangle",
+      "target": "a dark blue pigment grain",
+      "target_phrase": "a blue pigment grain",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.63,
+          0.41
+        ],
+        "size": 0.15
+      }
+    },
+    {
+      "name": "pigment_grains",
+      "exp": -5.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "near-black indigo with cold white glints",
+      "scene": "a packed field of Prussian-blue pigment grains, thousands of hard faceted crumbs crowded edge to edge, sharp facets catching cold white glints, finer dust filling every gap between them, the whole crowd banked up along one long pale margin that runs away across the field"
+    },
+    {
+      "name": "moonlit_coast",
+      "exp": 4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver white surf on ink-black water",
+      "scene": "a moonlit coastline seen from high above, a pale surf line tracing every headland and inlet in one long unbroken curve, ink-black water open on one side, dark hills banded with pale ridges on the other, sandbars and shallow channels drawn in silver across the estuary mouth, scattered clusters of small warm lights strung along the shore",
+      "target": "a bright cluster of warm lights",
+      "target_phrase": "a cluster of lights"
+    },
+    {
+      "name": "quay_town",
+      "exp": 2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "slate blue roofs with warm amber sparks",
+      "scene": "a harbor town at night seen from above, ranks of steep slate roofs packed along narrow lanes, a stone quay curving round the black water with moored hulls and bare masts ranged along it, warm amber squares of lit windows scattered through the dark blocks, a tall gabled building over the quay with a wide lit workroom window high under its roofline, lamplight laid in long bars across the wet cobbles",
+      "target": "a wide warm-lit window",
+      "target_phrase": "a lit window"
+    }
+  ],
+  "music_theme": "a night drafting room in Prussian blue — soft pencil-scratch percussion over a slow harbor swell, one bright bell struck on the fold where the drawn contour becomes the real surf",
+  "music_key": "D minor",
+  "render_start": "master_chart"
+}

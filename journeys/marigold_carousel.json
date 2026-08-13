@@ -1,0 +1,132 @@
+{
+  "name": "marigold_carousel",
+  "theme": "a shuttered night fairground strung with marigold bulbs under indigo dusk — the empty carousel of mirror panels and brass poles turns alone at the middle of the ground; the dive drops from the midway into the carousel's gearwork, into the guilloche rosettes engraved on its crank hub and down to the looping curve-lattices in the brass grain, then folds out on the rotation rhyme — the glowing lattice IS a lenticular galaxy, a lens-shaped disk of old gold stars combed with dark lanes — and the return rides the disk down past a night-lit planet to the bulb-strung midway and its carousel again",
+  "style": "gilded_relic",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "midway",
+      "exp": 2.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "saffron gold and deep indigo",
+      "scene": "a shuttered night fairground seen from high above, long lanes of closed booths running between dark grass, strings of small marigold bulbs slung in swags from pole to pole over every lane, painted signboards standing dark above the shutters, a round bulb-rimmed pavilion set at the middle of the ground, deep indigo dusk overhead, empty lanes, no one present",
+      "target": "a round bulb-rimmed pavilion",
+      "target_phrase": "a round lit pavilion"
+    },
+    {
+      "name": "pavilion",
+      "exp": 1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "oxblood lacquer and mirror silver",
+      "scene": "a round fairground pavilion standing on the dark ground, a ring of straight brass poles carrying a scalloped canopy above a low wooden platform, a rim of small marigold bulbs running the whole way around the canopy edge, oxblood lacquer panelling below the platform boards, a round mirrored drum set at the middle of the ring of poles, indigo dusk behind it all, empty, no one present",
+      "target": "a round mirrored drum",
+      "target_phrase": "a mirrored drum"
+    },
+    {
+      "name": "mirror_drum",
+      "exp": 0.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "indigo mirror and saffron gold",
+      "scene": "the round drum at the middle of the fairground pavilion, tall narrow mirror panels set side by side the whole way around it in oxblood lacquer frames, a line of small saffron lamps ranked above them, one hinged panel standing open on a dark recess of brass gearwork inside, bare platform boards underfoot, empty, no one present",
+      "target": "a nest of brass gearwork",
+      "target_phrase": "brass gears"
+    },
+    {
+      "name": "gearwork",
+      "exp": -0.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "burnished brass and soot black",
+      "scene": "the machinery standing inside the pavilion drum, a nest of brass gears meshed one against the next, a heavy toothed ring wheel on edge behind them, oiled shafts crossing the dark space between, an engraved brass hub at the center of the ring wheel, saffron lamplight coming through the open panel and lying along the teeth, soot-black shadow beyond, empty, no one present",
+      "target": "an engraved brass hub",
+      "target_phrase": "a brass hub"
+    },
+    {
+      "name": "crank_hub",
+      "exp": -1.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold brass and indigo shadow",
+      "scene": "the round hub at the center of the brass ring wheel, its whole face cut with guilloche engraving, rosettes of looping curve turned one beside the next across the metal, a squared socket at the middle, a ring of small rivets set around the rim, the wheel's teeth ranked beyond the rim, raking saffron light along every cut",
+      "target": "an engraved rosette",
+      "target_phrase": "an engraved rosette"
+    },
+    {
+      "name": "rosette_field",
+      "exp": -2.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bright saffron and oxblood",
+      "scene": "a field of engraved rosettes cut into the brass hub face, dozens of fine looping curves crossing one another in every flower of rings, each loop turned about the same center, bright saffron crests standing along the cut edges, indigo shadow lying in the cuts, the rosettes ranked away in rows across the metal",
+      "target": "a fine engraved groove",
+      "target_phrase": "an engraved groove"
+    },
+    {
+      "name": "groove",
+      "exp": -3.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale gold and blue-black",
+      "scene": "a burnished groove cut across the brass, a smooth furrow with a bright crest along each lip, fine chatter lines drawn in ranks across the floor of the cut, blue-black shadow standing in the depth, the polished metal rising away in a broad pale plain on either side, small bright grains speckled through the polish",
+      "target": "a bright metal grain",
+      "target_phrase": "a bright metal grain"
+    },
+    {
+      "name": "grain_lattice",
+      "exp": -6.6,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "cold gold-white and deep indigo",
+      "scene": "the fine grain deep inside the brass, bright loops of light turned about many centers and overlapping into a wide rosette lattice, long dark lanes combed between the bright bands, the lattice lying in a broad round field of glow, the pattern repeating away into indigo depth"
+    },
+    {
+      "name": "lens_galaxy",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "old gold and deep indigo",
+      "scene": "a lenticular galaxy in deep space, a smooth lens-shaped disk of old gold stars seen at a slight tilt, long dark dust lanes combed in arcs across the bright face of the disk, a swollen glowing core at the middle, the disk thinning to a clean gold rim, cold field stars strewn through the indigo dark beyond",
+      "target": "a hot gold star",
+      "target_phrase": "a bright gold star"
+    },
+    {
+      "name": "gold_star",
+      "exp": 13.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "saffron white and indigo black",
+      "scene": "a swollen gold star burning in deep space, seen wide from out in the dark with the whole field of its system spread around it, long sheets of saffron dust combed in arcs through the black, several small dark planets strewn across the dust at different removes, cold blue field stars scattered through the indigo dark beyond",
+      "target": "a dark banded planet",
+      "target_phrase": "a dark round planet",
+      "loop_target": "a swollen gold star with long sheets of saffron dust combed in arcs through the black around it and cold field stars scattered beyond"
+    },
+    {
+      "name": "night_planet",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep indigo and marigold gold",
+      "scene": "a dark banded planet seen close from space, its night side turned toward us, thin indigo cloud bands drawn across the globe, a fine saffron line of dawn along the curved edge, clusters of small gold lights strung along the dark coasts below, black seas lying between them",
+      "target": "a cluster of gold lights",
+      "target_phrase": "a cluster of lights",
+      "cameo": {
+        "sprite": "output/mascots/canon/janet.png",
+        "pos": [
+          0.63,
+          0.57
+        ],
+        "size": 0.14
+      }
+    }
+  ],
+  "music_theme": "a shuttered fairground after closing, a slow waltzing organ pulse under low strings and soft bell tones, one long swell landing on the brass-lattice morph out to the gold disk",
+  "music_key": "G minor",
+  "render_start": "gold_star"
+}

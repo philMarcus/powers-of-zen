@@ -1,0 +1,134 @@
+{
+  "name": "whale_fall_republic",
+  "theme": "a whale fall as a republic of the dead — moonlit open sea, down onto a whale's skeleton being worked by hagfish, bone worms, crabs and brittle stars, in through the bone's growth rings to the marrow at work, to the collagen ropes and apatite lattice the bone is built from, through the fog inside one atom out to a galaxy, then home down a dead star's ruins to an ocean world's moonlit water",
+  "style": "liquid_light",
+  "music_lane": "deep_archive",
+  "music_theme": "a sunken republic working in the dark — deep sub swells under slow oceanic pads, the pulse tightening inward through bone and marrow, opening vast and cold at the atom, settling back to moonlit water",
+  "music_key": "D minor",
+  "render_start": "nursery",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "sea_surface",
+      "exp": 4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "black water, cold silver, acid-green glow",
+      "scene": "the open ocean at night seen from high above, long swells ruled across the water in dark ranks, a broken silver path of moonlight lying over them, wide patches of green plankton glow scattered between the swells, black water spreading to every edge of the view",
+      "target": "a dark still pool of water",
+      "target_phrase": "a dark still pool"
+    },
+    {
+      "name": "whale_fall",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "black water, bone ivory, vermilion and teal accents",
+      "scene": "the abyssal floor in black water, a whale's stripped skeleton laid open across grey silt, ranked ribs arching up out of the spine, hagfish knotted among the vertebrae, vermilion bone worms crowding the ribs in plush ranks, blunt white crabs picking along the ridges, brittle stars fanned wide over the silt around the bones, a dull teal bacterial mat glowing in the hollows between them",
+      "target": "a tall arch of ivory bone",
+      "target_phrase": "a pale bone arch"
+    },
+    {
+      "name": "bone_arch",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ivory and rust orange on near-black",
+      "scene": "low among the rib arches, tall ivory bones curving up on either side into black water, their surfaces grooved and pitted along the whole length, rust-orange bacterial threads strung between them, small black bore holes drilled in ranks across the bone, marine snow hanging still in the gaps",
+      "target": "a black bore hole",
+      "target_phrase": "a black bore hole"
+    },
+    {
+      "name": "osteon",
+      "exp": -3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ivory rings, indigo shadow, black cores",
+      "scene": "inside the bone, ivory growth rings wound ring within ring around black central canals, dozens of these ring systems packed against one another in every direction, small dark almond cavities strung between the rings, indigo shadow pooled deep in every canal mouth",
+      "target": "a wide dark hollow",
+      "target_phrase": "a dark hollow"
+    },
+    {
+      "name": "marrow",
+      "exp": -5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "wine red and hot amber in black",
+      "scene": "a marrow chamber walled by bone, round cells packed shoulder to shoulder in wine-red ranks, disc-shaped red cells threaded single file through a narrow vessel, blocky bone-building cells ranked along the wall behind them, amber fat globules bulging between the ranks, every surface wet and lit from within",
+      "target": "a pale twisted fiber",
+      "target_phrase": "a pale twisted fiber"
+    },
+    {
+      "name": "collagen",
+      "exp": -7.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold blue-white on deep violet",
+      "scene": "the molecular scaffolding of bone, three-strand ropes twisted from long chains and stacked in staggered ranks, cross-links pinning rope to rope at even intervals, thin blue-white mineral plates seated in the gaps between rope ends, rank behind rank of the same ropes receding into deep violet dark",
+      "target": "a blue-white mineral plate",
+      "target_phrase": "a blue-white plate"
+    },
+    {
+      "name": "apatite",
+      "exp": -9.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold green-white beads on black",
+      "scene": "the apatite lattice that hardens bone, hexagonal cells repeating in every direction, calcium and phosphate beads glowing at every corner, straight taut bonds strung between them, one column of rows fallen out of step and lit acid green along its whole length, further ranks of the grid fading into black",
+      "target": "a glowing white bead",
+      "target_phrase": "a glowing white bead",
+      "cameo": {
+        "sprite": "output/mascots/canon/adam.png",
+        "pos": [
+          0.63,
+          0.58
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "atom_fog",
+      "exp": -13,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "indigo and violet spark on black",
+      "scene": "a fog of dim light-grains with no surface anywhere, faint paired sparks strewn through indigo depth, fine strands of colder light knotted loosely between them, denser ranks of grains receding away into black"
+    },
+    {
+      "name": "galaxy",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blue-white arms, hot gold core, black field",
+      "scene": "a spiral galaxy turned three-quarters against the black, blue-white arms wound out of a hot gold core, dark dust lanes cutting between the arms, ranks of star clouds strung along their length, faint violet light spread thin around the whole disk",
+      "target": "a torn shell of glowing gas",
+      "target_phrase": "a bright gas shell"
+    },
+    {
+      "name": "nursery",
+      "exp": 14,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cyan and violet gas, blue-white stars, black",
+      "scene": "the ruins of a dead star hanging in torn lacework shells of cyan and violet gas, young blue-white stars lit deep inside them and scattered through the shells in every direction, one of them ringed by a dark dust disk, cold threads of gas strung between the shells, black gulfs between the ranks",
+      "loop_target": "torn lacework shells of cyan and violet gas with young blue-white stars lit inside them",
+      "target": "a blue ocean planet",
+      "target_phrase": "a blue planet"
+    },
+    {
+      "name": "ocean_world",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "night blue and silver, green polar light",
+      "scene": "an ocean world turned night side outward against the black, one unbroken dark sea wrapped around the whole globe, a cold silver path of moonlight lying across the water, green polar light curled over the top of it, storm spirals ranked along the day edge, no land anywhere on it",
+      "target": "a bright patch of silver moonlight",
+      "target_phrase": "a bright silver patch"
+    }
+  ]
+}

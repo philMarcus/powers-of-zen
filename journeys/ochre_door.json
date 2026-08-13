@@ -1,0 +1,70 @@
+{
+  "name": "ochre_door",
+  "theme": "a sun-bleached olive door in an ochre adobe wall at hard noon — the dive stays in the paint: the chip archipelago on the wall with every chip edge worked into looping tendril coastlines, a curled flake's torn edge opening into cliffs of decades of repaint, down to the stacked pigment platelets, whose banded tiers read straight back out as painted-desert mesa country, and home down the town to the door in its wall",
+  "style": "gilded_relic",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "paint_shore",
+      "exp": -2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sun-bleached olive on ochre dust",
+      "scene": "a wide stretch of sun-bleached olive paint peeling away across an ochre adobe wall, countless chips and islands of olive paint left standing on the bare clay, every chip edge worked into fine looping tendrils and bays folded inside bays, the same filigree repeating along the rim of each bay, hard white noon light coming straight down across the whole wall, thin burnt-umber shadow banked under every lifted edge, seen straight on",
+      "loop_target": "a wide ochre adobe wall spread with countless chips of peeling olive paint, every chip edge worked into looping tendrils and bays inside bays, hard white noon light straight down, seen straight on",
+      "target": "a curled olive paint flake",
+      "target_phrase": "a curled paint flake"
+    },
+    {
+      "name": "repaint_strata",
+      "exp": -4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "terracotta and sage bands under chalk white",
+      "scene": "cliffs of stacked repaint standing along a torn edge, dozens of thin colour bands running level through the face — olive-green over pale sage-grey over chalk lime-white over old terracotta — narrow benches stepping out where a band has crumbled, chalky rubble banked along the lower ledges, hard noon light raking the whole banded face, deep umber shadow packed into the undercuts",
+      "target": "a pale ochre grain",
+      "target_phrase": "a pale ochre grain",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.68,
+          0.6
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "platelet_tiers",
+      "exp": -6,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "chalk white and cold grey-green with hot ochre edges",
+      "scene": "broad tiers of flat pigment plates packed edge over edge, hundreds of plates lying overlapped at every angle across each step, chalk white and cold grey-green through the packing with hot ochre flashing along the plate rims, drifts of finer plate rubble spread over the lower steps, burnt-umber depth in the gaps between"
+    },
+    {
+      "name": "mesa_country",
+      "exp": 2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "burnt terracotta and olive scrub under white glare",
+      "scene": "a banded mesa wall standing over dry painted-desert country, broad level bands of terracotta, ochre and pale sand-white running the length of the cliff, tiered benches stepping down to a flat plain of olive-green scrub, dry washes braided across the flat, a town of low square clay roofs out on the plain, empty white noon glare in the sky above",
+      "target": "a square ochre house",
+      "target_phrase": "an ochre house"
+    },
+    {
+      "name": "door_wall",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ochre adobe and dulled olive green",
+      "scene": "an ochre adobe wall in hard noon sun, a sun-bleached olive-green door set into it, the door paint dulled and lifting in flakes, a plain clay step at its foot, a narrow band of burnt-umber shadow along the lintel, rough plaster and small dark window openings spread away on either side, the door shut, no one present"
+    }
+  ],
+  "music_theme": "hard-noon stillness on a dusty street — dry plucked strings over a low warm drone, one bright open swell landing on the platelet-to-mesa fold",
+  "music_key": "D dorian",
+  "render_start": "paint_shore"
+}

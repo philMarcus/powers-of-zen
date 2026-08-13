@@ -1,0 +1,92 @@
+{
+  "name": "hyperbolic_reef",
+  "theme": "a night coral reef read as a ruffle of ruffles and back — down onto one frilled coral head whose every plate margin carries seven smaller frills, into the black pleat between two of them where the walls ruffle again over rows of polyp cups, out to the beaded tentacle fans, which open out into the torn filament sheets of a supernova remnant, and the return falls down one filament through a white star and its dark ocean world to the moonlit reef",
+  "style": "ultraviolet",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "reef_night",
+      "exp": 2.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink-black water, silver-white light shafts, pink glints",
+      "scene": "a night coral reef seen from the open sand a little way off, thin shafts of moonlight coming down through the black water onto low mounded coral heads spread across the reef floor, ruffled coral plates standing among them in pink and acid green, pale sand channels running between the mounds, fine motes hanging lit in each shaft, black water overhead, empty, no one present",
+      "target": "a ruffled pink coral head",
+      "target_phrase": "a pink coral head"
+    },
+    {
+      "name": "coral_head",
+      "exp": -0.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pink with acid-green rims on black",
+      "scene": "one ruffled coral head standing clear of the sand, stacked plates of pink coral folded over one another, every plate margin carrying seven smaller frills of its own and each of those crowded with smaller frills again, a thin acid-green line of light along every rim, deep black pleats folding down between the plates, dark water on all sides",
+      "target": "a deep black pleat",
+      "target_phrase": "a dark narrow pleat"
+    },
+    {
+      "name": "pleat_walls",
+      "exp": -2.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale green-ivory walls and ink-black depth",
+      "scene": "the black cleft between two ruffled coral margins, the pale walls on either side themselves ruffled into smaller frills that crowd toward a glowing green edge above, rows of round polyp cups set into every ruffle face, fine ivory ridges running between the cups, beaded tentacle fans standing open over the cups, cold green light seeping down from the rim, ink-black depth below",
+      "target": "a beaded tentacle fan",
+      "target_phrase": "a fine tentacle fan"
+    },
+    {
+      "name": "bead_fans",
+      "exp": -3.6,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "hot-pink filaments and green beads on black",
+      "scene": "ranked fans of fine coral tentacles standing in black water, every strand a slender hot-pink filament strung with small round beads of green light, the fans layered in torn ranked sheets one behind another, black gaps running through them in every direction, a faint pink glow along every filament"
+    },
+    {
+      "name": "remnant_lace",
+      "exp": 16,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pink and acid green on black sky",
+      "scene": "torn sheets of glowing filament hung across a black sky, long ranked strands of pink and acid-green light folded over one another, ragged bright edges where the sheets curl over, black sky showing through every gap, cold stars scattered far behind them",
+      "target": "a bright white star",
+      "target_phrase": "a bright white star"
+    },
+    {
+      "name": "white_star",
+      "exp": 10,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "white-hot core, pink and green far off, black",
+      "scene": "a white star burning in an open clearing of the torn filament sheets, its light thrown out in fine spikes, ranked curtains of pink and acid-green filament standing far off on either side, a flat disk of glowing debris set around the star, one dark blue world sitting out along the disk, cold stars scattered across the black",
+      "target": "a dark blue world",
+      "target_phrase": "a dark blue planet",
+      "loop_target": "a white star burning in an open clearing of ranked pink and acid-green filament curtains"
+    },
+    {
+      "name": "night_sea",
+      "exp": 5.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver-white moonlight on ink-black water",
+      "scene": "a black night sea seen from far above, a broken silver-white path of moonlight lying across the water, pale reef rings and shallow lagoons strewn through the dark ocean, thin ribbons of cloud lying over them, a faint green shimmer in the shallowest water, the dark curve of the horizon along the top",
+      "target": "a pale ring-shaped reef",
+      "target_phrase": "a ring-shaped reef",
+      "cameo": {
+        "sprite": "output/mascots/canon/lorraine.png",
+        "pos": [
+          0.62,
+          0.44
+        ],
+        "size": 0.14
+      }
+    }
+  ],
+  "music_theme": "a moonlit night reef opening into a supernova's torn lace — slow sub-bass swells under glassy bell tones and a wide airy pad, a bright struck hit where the beaded coral fans open out into the filament sheets, settling back into soft water-lapping percussion",
+  "music_key": "E minor",
+  "render_start": "white_star"
+}

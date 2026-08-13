@@ -206,5 +206,21 @@
   "sat": 0.7725,
   "contrast": 0.1776,
   "dark_frac": 0.2332
+ },
+ "night_bloom_remix": {
+  "key": "night_bloom_remix:1785542741970936600",
+  "frames": 24,
+  "lum": 0.3305,
+  "sat": 0.71,
+  "contrast": 0.1835,
+  "dark_frac": 0.3894
+ },
+ "cosmic_scales_remix": {
+  "key": "cosmic_scales_remix:1785384828643147600",
+  "frames": 24,
+  "lum": 0.353,
+  "sat": 0.8139,
+  "contrast": 0.1807,
+  "dark_frac": 0.3039
  }
 }

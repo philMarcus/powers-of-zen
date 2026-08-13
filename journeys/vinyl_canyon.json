@@ -1,0 +1,72 @@
+{
+  "name": "vinyl_canyon",
+  "theme": "a spinning record under one amber lamp: the dive drops past the tonearm into a groove canyon whose walls are the engraved sound-wave itself, down to the pressed-vinyl grain, and the grain field folds straight back out into the whole disc's spiral of arcs — never leaves the turntable",
+  "style": "neon_drift",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "disc_face",
+      "exp": -0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "charcoal black and warm amber",
+      "scene": "a black record disc set on a dark platter, seen from straight above, hundreds of fine concentric arcs ringed across its face in petrol green and violet sheen, one warm amber lamp glint drawn across the rings, a plain dark label circle at the centre, a slim tonearm reaching in from the rim with a needle resting in the outer rings",
+      "target": "a band of fine concentric groove arcs, petrol sheen along them",
+      "target_phrase": "the record grooves"
+    },
+    {
+      "name": "groove_field",
+      "exp": -2.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "petrol green-violet on charcoal",
+      "scene": "a black record surface seen from straight above, dozens of fine parallel groove arcs sweeping across it in long shallow curves, oil-slick green and violet sheen rippling along their crests, warm amber light glinting off the ridge tops, faint dust specks caught between the arcs",
+      "loop_target": "a black record surface seen from straight above, dozens of fine parallel groove arcs in long shallow curves, oil-slick green and violet sheen along them",
+      "target": "a dark open groove, black and glass-smooth",
+      "target_phrase": "a dark groove"
+    },
+    {
+      "name": "groove_canyon",
+      "exp": -4.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "black glass and petrol shimmer",
+      "scene": "a narrow canyon of polished black vinyl, its two walls cut into long trains of engraved wave ridges, crests and troughs stacked in rhythmic rows down both faces, a flat pebbled floor running between them into the distance, green and violet sheen sliding along the ridge edges, a warm amber gleam high on one rim",
+      "target": "a tall lacquered wave ridge, black with a bright edge",
+      "target_phrase": "a black ridge crest"
+    },
+    {
+      "name": "ridge_crest",
+      "exp": -6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber-lit black and violet",
+      "scene": "a long engraved wave ridge standing along the groove wall, rounded scallops repeating down its lacquered black crest, finer ripple trains cut across its flank, a pebbled slope spread below it, oil-slick violet and green banding washed over the lacquer, warm amber light running the length of the edge",
+      "target": "a rounded vinyl pebble, matte black and domed",
+      "target_phrase": "a rounded black pebble",
+      "cameo": {
+        "sprite": "output/mascots/canon/tina.png",
+        "pos": [
+          0.62,
+          0.38
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "vinyl_grain",
+      "exp": -7.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "petrol sheen on soot black",
+      "scene": "a broad field of pressed vinyl grain, thousands of soft rounded domes packed edge to edge, shallow dimples between them, faint concentric ripple lines running through the packing, an oil-slick film of green and violet washed over the domes, one warm amber sheen low across the field"
+    }
+  ],
+  "music_theme": "a petrol-dark turntable groove — soft vinyl crackle over a warm amber bass pulse, one bright shimmer landing on the grain-to-disc fold",
+  "music_key": "A minor",
+  "render_start": "groove_field"
+}

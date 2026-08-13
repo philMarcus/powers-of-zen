@@ -1,0 +1,70 @@
+{
+  "name": "latent_whorl",
+  "theme": "a detective's office at midnight, a brass banker's lamp over a dusted whisky tumbler — the dive drops onto the glass into the latent print's never-crossing ridge maze, down the ridge canyons to the salt crystals standing on the crests, and folds out where that field of lit salt becomes the city lights jeweled across a rain-beaded pane, falling home through one lit window to the desk",
+  "style": "gilded_relic",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "desk_lamplight",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "aged brass and candle amber on deep plum dark",
+      "scene": "a broad wooden desk top at midnight under a brass banker's lamp, its curved green glass throwing a warm amber pool over the desk, typed papers strewn across the pool and a buff card folder open among them, a heavy cut-glass tumbler standing in the light with grey fingerprint dust worked over its side, a black dial telephone and a small brass tray at the edge of the light, deep plum darkness in the room beyond the pool, empty, no one present, seen from just above the desk"
+    },
+    {
+      "name": "print_field",
+      "exp": -2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale grey dust and brass sheen on plum-black glass",
+      "scene": "a wide field of fine pale ridge lines laid across dark glass, hundreds of dust-grey curves running in long parallel sweeps and never once crossing, the same arc shape repeating over and over across the whole field, the curves wound tight around one small spiral core and splitting apart at wedge-shaped forks where three families of ridges meet, thin plum-black troughs between every ridge, low brass lamplight raking across the field from one side, seen from straight above",
+      "loop_target": "a wide field of pale grey ridge lines across dark glass, long never-crossing parallel curves wound around one small spiral core, low brass lamplight raking from one side, seen from straight above",
+      "target": "a tight ridge spiral",
+      "target_phrase": "a spiral of ridges"
+    },
+    {
+      "name": "ridge_canyons",
+      "exp": -4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "hot brass crest light over plum-black canyon depth",
+      "scene": "deep canyons winding between tall rounded ridge walls, the walls banked in fine flaking scales and pitted with rows of round dark pores along every crest, drifts of pale grey dust packed into the canyon floors, small white salt grains standing in clusters all along the crest tops, hot brass light on the upper walls and plum-black depth down in the troughs",
+      "target": "a white salt crystal",
+      "target_phrase": "a white salt crystal",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.63,
+          0.58
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "salt_stars",
+      "exp": -6,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "cold white sparks scattered on deep plum dark",
+      "scene": "hundreds of hard white salt cubes scattered across a dark crest, every cube and stepped cluster of cubes holding one hot amber spark of lamplight on its corner, wide plum-black gaps between them, a faint brass haze lying low over the whole field"
+    },
+    {
+      "name": "rain_pane",
+      "exp": 3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber streetlight and cold plum night",
+      "scene": "a night city spread out below beyond a rain-beaded pane, hundreds of amber street lamps and lit windows scattered across dark blocks and slick wet streets, long amber streaks laid down the roadways, water beads standing over the whole pane with a point of amber light in each, deep plum cloud banked low over the skyline",
+      "target": "a lit amber window",
+      "target_phrase": "a lit window"
+    }
+  ],
+  "music_theme": "midnight noir — brushed drums and a walking upright bass under a muted trumpet line, one cold shimmering swell landing on the salt-to-city fold",
+  "music_key": "C minor",
+  "render_start": "print_field"
+}

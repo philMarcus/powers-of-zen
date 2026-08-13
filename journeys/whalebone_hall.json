@@ -1,0 +1,132 @@
+{
+  "name": "whalebone_hall",
+  "theme": "a natural-history hall after closing — moonlight through the glass roof, the hung whale skeleton, down one vast rib into the bone's gyroid labyrinth until the struts go ghost-blue, out onto the dark-matter scaffold that holds the galaxies as beads, then all the way back down through the museum's glass roof to the hall",
+  "style": "cosmic_gloss",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "hall",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep viridian green and moonlit bone ivory",
+      "scene": "a great natural-history hall after closing, seen wide from the gallery floor, deep green-lacquered walls between tall iron columns, bare parquet spread across the whole floor, moonlight falling through the high glass roof, a whale skeleton hung on thin wires above the open floor, its long jaw and ranked ribs dry bare bone, empty, no one present",
+      "target": "a long pale rib of bone",
+      "target_phrase": "a curved pale rib"
+    },
+    {
+      "name": "rib",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moonlit ivory and deep green shadow",
+      "scene": "the moonlit flank of a whale rib crossing the dark air of the hall, dry ivory bone with a ridged grain running its length, shallow pits and hairline cracks scattered across it, more ribs ranked behind it in green shadow, thin support wires overhead",
+      "target": "a dark round pore",
+      "target_phrase": "a dark round pore"
+    },
+    {
+      "name": "cortex",
+      "exp": -2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bone white and cold green",
+      "scene": "a field of dry bone surface, pale ivory grain running in long parallel ridges, round dark pore mouths scattered in rows across it, fine cracks branching between them, cold green light caught in the shallow hollows",
+      "target": "a smooth curved white strut",
+      "target_phrase": "a curved white strut"
+    },
+    {
+      "name": "gyroid",
+      "exp": -3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale mineral white and deep viridian",
+      "scene": "a labyrinth of curved mineral surface inside the bone, smooth pale struts arching into one another with no straight line anywhere, braided voids opening through the whole depth in every direction, deep viridian shadow pooled in the hollows, thinner paler struts ranked further in",
+      "target": "a thin translucent strut, ghost blue",
+      "target_phrase": "a translucent blue strut"
+    },
+    {
+      "name": "ghost_lattice",
+      "exp": -5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "ghost blue and black",
+      "scene": "a lattice of ghost-blue struts strung through a dark realm, thin translucent mineral strands braided into knots where they cross, wide black voids between them, a faint pale glow held inside the strands"
+    },
+    {
+      "name": "scaffold",
+      "exp": 24,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "dim ghost blue and gold-white",
+      "scene": "the dark-matter scaffold of the universe, dim ghost-blue strands braided across the black in a vast web, the strands themselves unlit, bright beads of galaxies strung along them and gathered thick at the crossings, immense empty voids between the strands",
+      "target": "a bright spiral galaxy",
+      "target_phrase": "a bright spiral galaxy"
+    },
+    {
+      "name": "galaxy",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "green-white and ivory on black",
+      "scene": "a spiral galaxy tilted three-quarters against the black, pale ivory arms wound around a green-white core, dark dust lanes threaded between the arms, star clouds strewn across the field around it, dim strands of the ghost web running away behind",
+      "loop_target": "a tilted spiral galaxy, pale ivory arms around a green-white core, dust lanes between the arms, star clouds scattered across the black",
+      "target": "a blue-white star",
+      "target_phrase": "a bright blue-white star"
+    },
+    {
+      "name": "star_disk",
+      "exp": 14,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ice blue and pale green",
+      "scene": "a blue-white star inside a sheer disk of dust, sharp concentric rings of ice blue and pale green circling the core, clean dark gaps cut between the rings, cold light spilling flat across the disk",
+      "target": "a dark green planet",
+      "target_phrase": "a dark green planet",
+      "cameo": {
+        "sprite": "output/mascots/canon/lamar.png",
+        "pos": [
+          0.66,
+          0.38
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "planet",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep green and cold white",
+      "scene": "a huge dark-green planet hanging in the black, its night side turned outward, ice-white coastlines curving across the dark, thin veins of green city light strung along them, a bright cold rim of atmosphere at its edge",
+      "target": "a bright cluster of city lights",
+      "target_phrase": "a cluster of city lights"
+    },
+    {
+      "name": "night_city",
+      "exp": 4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold gold-green light and blue-black",
+      "scene": "a coastal city at night seen from high above, lit streets ruled in a grid across the dark, a black river curving through the middle of it, packed rooftops on either side, a wide dark park near the water with one long pale glass building set in it, cold blue haze over the whole basin",
+      "target": "a long pale glass roof",
+      "target_phrase": "a glass roof"
+    },
+    {
+      "name": "glass_roof",
+      "exp": 2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moon silver and dark viridian",
+      "scene": "the vaulted glass roof of the museum seen from straight above at night, a great lattice of iron glazing bars over pale panes, moonlight lying flat across the glass, the green-lit hall showing dimly through it from below, dark garden trees crowding the edges of the building",
+      "target": "a pale hanging whale skeleton",
+      "target_phrase": "a whale skeleton"
+    }
+  ],
+  "music_theme": "a museum hall after closing, hushed and vast — low bowed strings under a slow glass-bell ostinato, the pulse tightening through the bone lattice, opening wide and cold on the scaffold seam, settling back to moonlit stillness",
+  "music_key": "E minor",
+  "render_start": "galaxy"
+}

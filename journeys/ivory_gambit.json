@@ -1,0 +1,132 @@
+{
+  "name": "ivory_gambit",
+  "theme": "a living chess empire at full scale — down from a jade-cored galaxy onto a night world whose kingdom is ruled into a battle board of piece-creatures, into one colossal ivory knight and the grain of its carving, through the tubule cells and collagen ropes that make ivory a living material, into the apatite lattice and the shivering nucleus inside it, and out across the cosmic web that comes back down onto the galaxy",
+  "style": "lacquer_pop",
+  "music_lane": "ember_pulse",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "galaxy",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "obsidian black, ivory starlight and a jade-green core",
+      "scene": "a spiral galaxy tilted three-quarters against the black, ivory star-arms wound out from a jade-green core, smoked dust lanes cut between the arms, star clouds strewn across the whole field, the void behind it unbroken",
+      "loop_target": "a spiral galaxy tilted three-quarters against the black, ivory star-arms wound out from a jade-green core, smoked dust lanes between the arms, star clouds strewn across the field",
+      "target": "a white burning star",
+      "target_phrase": "a bright white star"
+    },
+    {
+      "name": "star_ranks",
+      "exp": 14,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "vermilion dust rings and white star-fire on black",
+      "scene": "a white star burning inside ranked circles of vermilion dust, the circles drawn one within another with clean black gaps cut between them, dark worlds set along the circles at wide intervals, deep space banked behind the outermost ring",
+      "target": "a dark planet with a thin bright rim",
+      "target_phrase": "a dark round planet"
+    },
+    {
+      "name": "night_planet",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "obsidian ocean, jade aurora and vermilion lamplight",
+      "scene": "the night face of a planet turned outward against the black, obsidian oceans below, ice shelves cracked ivory across the polar water, jade aurora banded over the pole, chains of vermilion lamplight strung along the coasts, a cold rim of atmosphere ruled along the curve",
+      "target": "a checkered plain of black and ivory squares",
+      "target_phrase": "a checkered plain"
+    },
+    {
+      "name": "board_kingdom",
+      "exp": 3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "black basalt, moonlit ivory and burning vermilion",
+      "scene": "a whole kingdom ruled into a battle board, seen from a high oblique vantage over one corner, immense squares of black basalt and moonlit ivory laid away toward the far hills, ranks of living pieces standing on them, horse-headed knights on four carved legs, round-headed pawns crowded in dense rows, tower-shelled rooks squatting at the corners, braziers burning vermilion along the board's stone rim, no one present among them",
+      "target": "a horse-headed ivory knight",
+      "target_phrase": "a white chess knight"
+    },
+    {
+      "name": "knight",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moonlit ivory and deep green shadow on black",
+      "scene": "a colossal horse-headed knight of moonlit ivory standing mid-battle on its basalt square, carved neck and cropped mane cut in broad clean planes, a fluted stone base beneath it, obsidian pieces ranked close around it in deep green shadow, chips and old scars scattered over the ivory, brazier light raking vermilion across one flank",
+      "target": "a dark hairline crack",
+      "target_phrase": "a dark crack line"
+    },
+    {
+      "name": "ivory_grain",
+      "exp": -2.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "smoked ivory ridges, black grooves and banked vermilion",
+      "scene": "carved ivory grain running in long parallel ridges across the whole width, one black groove cut deep through them, vermilion light banked in the hollows, crosshatched scars scattered over the ridges, darker channels opening where the grain parts, the ivory going smoked and dim toward the edges",
+      "target": "a dark round channel mouth",
+      "target_phrase": "a dark round hole"
+    },
+    {
+      "name": "dentin_cells",
+      "exp": -5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "inky teal depth, chalk mineral walls and vermilion cell bodies",
+      "scene": "inside the ivory, ranks of round channel mouths opening through mineral walls, living cells packed along every opening with a dark round nucleus showing in each, threadlike processes reaching from the cells down into the channels, inky teal depth behind the nearest walls, more openings ranked away into blackness",
+      "target": "a braided amber rope",
+      "target_phrase": "a braided amber cord"
+    },
+    {
+      "name": "collagen",
+      "exp": -7.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber and vermilion strands on black",
+      "scene": "three-stranded collagen ropes wound tight and stacked into looping walls in every direction, amber and vermilion strands braided over one another, regular banding repeating along every rope, small round clusters studding the strands, black depth held between the stacks, further stacks receding into it",
+      "target": "a flat teal crystal plate",
+      "target_phrase": "a teal crystal plate"
+    },
+    {
+      "name": "apatite_lattice",
+      "exp": -9.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade and teal spheres on black",
+      "scene": "the apatite lattice built through the black, hexagonal cells ruled away in every direction, jade and teal spheres set at every corner and strung on straight glowing bonds, a column of paler spheres running down the axis of each hexagon, rank on rank of the same cells shrinking into the dark",
+      "target": "a small violet-white sphere",
+      "target_phrase": "a glowing white sphere",
+      "cameo": {
+        "sprite": "output/mascots/canon/adam.png",
+        "pos": [
+          0.63,
+          0.6
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "nucleus_shiver",
+      "exp": -14,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "vermilion-white shimmer on black",
+      "scene": "a shivering droplet of crowded glowing beads, taut threads of light strung between them, a vermilion-white shimmer flooding the black around the cluster, faint sparks scattered through the dark at every distance"
+    },
+    {
+      "name": "cosmic_web",
+      "exp": 24,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep green filaments and ivory knots on black",
+      "scene": "the cosmic web strung through the black, deep green filaments braided across immense voids, ivory knots of galaxies gathered thick where the filaments cross, faint sheets of light walling the empty cells, the strands receding rank on rank into the dark"
+    }
+  ],
+  "music_theme": "a slow monumental procession through a dark empire — a deep 808 pulse under smoky low pads, distant chimes marking each scale, the weight lifting into cold open air at the nucleus and settling back to the galaxy",
+  "music_key": "D minor",
+  "render_start": "galaxy"
+}

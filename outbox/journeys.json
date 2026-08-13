@@ -24,10 +24,9 @@
       "note": "rejected at video review"
     },
     "static_bloom": {
-      "state": "queued",
-      "order": 0,
-      "ts": "2026-08-03 14:06:37",
-      "note": "dive failed: ue \") — re-rolling seed, attempt 4/4 | [dive] ABORT: frame 0 keeps rendering a lone figure after 4 seeds. This is a PROMPT problem, not luck — fix the render_start card (drop halo/gilded/regalia words, name a concrete object) or pick a different render_start. Re-run with --allow-figures to override."
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "iris_observatory": {
       "state": "rejected",
@@ -35,165 +34,130 @@
       "note": "rejected at video review"
     },
     "lantern_canals": {
-      "state": "queued",
-      "order": 1,
-      "ts": "2026-08-04 00:17:27",
-      "note": "composed by midnight refill"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "moon_jelly": {
-      "state": "queued",
-      "order": 2,
-      "ts": "2026-08-04 00:17:28",
-      "note": "composed by midnight refill"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "singing_dunes": {
-      "state": "queued",
-      "order": 3,
-      "ts": "2026-08-04 00:17:28",
-      "note": "composed by midnight refill"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "vinyl_canyon": {
-      "state": "queued",
-      "order": 4,
-      "ts": "2026-08-04 00:17:28",
-      "note": "composed by midnight refill"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "amber_steep": {
-      "state": "queued",
-      "order": 5,
-      "ts": "2026-08-05 00:16:26",
-      "note": "composed by midnight refill"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "blueprint_harbor": {
-      "state": "queued",
-      "order": 6,
-      "ts": "2026-08-05 00:16:26",
-      "note": "composed by midnight refill"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "girih_dome": {
-      "state": "queued",
-      "order": 7,
-      "ts": "2026-08-05 00:16:26",
-      "note": "composed by midnight refill"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "comet_firn": {
-      "state": "queued",
-      "order": 8,
-      "ts": "2026-08-06 00:22:35",
-      "note": "composed by midnight refill"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "gill_cathedral": {
-      "state": "queued",
-      "order": 9,
-      "ts": "2026-08-06 00:22:34",
-      "note": "composed by midnight refill"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "ochre_door": {
-      "state": "queued",
-      "order": 10,
-      "ts": "2026-08-06 00:22:34",
-      "note": "composed by midnight refill"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "latent_whorl": {
-      "state": "queued",
-      "order": 11,
-      "ts": "2026-08-07 00:16:54",
-      "note": "composed by midnight refill"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "marigold_carousel": {
-      "state": "queued",
-      "order": 12,
-      "ts": "2026-08-07 00:16:54",
-      "note": "composed by midnight refill"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "palm_house": {
-      "state": "queued",
-      "order": 13,
-      "ts": "2026-08-07 00:16:54",
-      "note": "composed by midnight refill"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "hyperbolic_reef": {
-      "state": "queued",
-      "order": 14,
-      "ts": "2026-08-08 00:16:56",
-      "note": "composed by midnight refill"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "sodium_stairwell": {
-      "state": "queued",
-      "order": 15,
-      "ts": "2026-08-08 00:16:57",
-      "note": "composed by midnight refill"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "whalebone_hall": {
-      "state": "queued",
-      "order": 16,
-      "ts": "2026-08-08 00:16:57",
-      "note": "composed by midnight refill"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "gossamer_dawn": {
-      "state": "queued",
-      "order": 17,
-      "force": true,
-      "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
-      "ts": "2026-08-13 11:50:05"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "heron_delta": {
-      "state": "queued",
-      "order": 18,
-      "force": true,
-      "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
-      "ts": "2026-08-13 11:50:05"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "chess_empires": {
-      "state": "queued",
-      "order": 19,
-      "force": true,
-      "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
-      "ts": "2026-08-13 11:50:05"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "night_lido": {
-      "state": "queued",
-      "order": 20,
-      "force": true,
-      "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
-      "ts": "2026-08-13 11:50:05"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "attic_drift": {
-      "state": "queued",
-      "order": 21,
-      "force": true,
-      "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
-      "ts": "2026-08-13 11:50:05"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "jewel_oculus": {
-      "state": "queued",
-      "order": 22,
-      "force": true,
-      "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
-      "ts": "2026-08-13 11:50:05"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "turing_springs": {
-      "state": "queued",
-      "order": 23,
-      "force": true,
-      "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
-      "ts": "2026-08-13 11:50:05"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "droplet_zoo": {
-      "state": "queued",
-      "order": 24,
-      "force": true,
-      "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
-      "ts": "2026-08-13 11:50:05"
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
     "ammonite_spiral": {
-      "state": "queued",
-      "force": true,
-      "new_seed": true,
-      "ts": "2026-08-13 12:52:56",
-      "note": "re-render: video rejected in review",
-      "order": 25
+      "state": "rejected",
+      "ts": "2026-08-13 13:23:02",
+      "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     }
   },
-  "updated": "2026-08-13 13:11:58"
+  "updated": "2026-08-13 13:23:02"
 }

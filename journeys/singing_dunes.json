@@ -1,0 +1,132 @@
+{
+  "name": "singing_dunes",
+  "theme": "a dune sea at deep dusk under the shredded rings of a broken moon — two wave trains cross at every scale, from ranked crescent dunes down a slip face to a heap of grains where every grain is a different mineral, into one clear grain's growth terraces and its crossed plane fringes, which open straight back out into the ranked grooves of the ring plane and fall home onto the dune world",
+  "style": "stormlight",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "dune_sea",
+      "exp": 5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold violet shadow and pale sienna",
+      "scene": "a dune sea at deep dusk from high above, rank on rank of crescent dunes standing in two sets that cross at a shallow angle across the whole plain, pale flats between the ranks, every slip face ruled with fine ripple lines, long violet shadows drawn out from each crest, a bright arc of moon rubble low across the far sky",
+      "target": "a tall crescent dune, its ridge bright",
+      "target_phrase": "a tall crescent dune"
+    },
+    {
+      "name": "dune_country",
+      "exp": 3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "hot rose-gold and deep plum shade",
+      "scene": "a country of great crescent dunes from low in the air, one broad slip face standing over a pale flat, two sets of ripple ranks crossing at a shallow angle down its whole flank, diamond cells standing bright where the sets overlap, a thin haze of lifted sand along the ridges, more dunes ranked away into violet distance",
+      "target": "a sharp bright sand crest",
+      "target_phrase": "a sharp sand crest"
+    },
+    {
+      "name": "crest_line",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cool violet-grey with a bright sienna edge",
+      "scene": "a long sand ridge at standing height, its bright crest line running away into the dusk, two ripple trains crossing over the flank at a shallow angle, diamond cells standing where they meet, pale fans of loose sand down the steep side, cold violet shadow pooled along the base, further ridges ranked beyond",
+      "target": "a dark ripple trough",
+      "target_phrase": "a dark ripple trough"
+    },
+    {
+      "name": "ripple_field",
+      "exp": -1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm sienna and amber glints",
+      "scene": "a corrugated plain of sand ripples at ground level, low parallel ridges in two sets crossing at a shallow angle, bright sienna ridge tops and violet troughs between them, broad light and dark bands standing where the two sets beat against each other, coarse grains banked in bright drifts along every ridge",
+      "target": "a heap of bright grains",
+      "target_phrase": "a heap of bright grains"
+    },
+    {
+      "name": "grain_heap",
+      "exp": -3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "garnet red, amber, green and water-clear on violet shadow",
+      "scene": "a bank of rounded sand grains packed together, every grain a different mineral, deep red garnet beside amber zircon beside green olivine beside water-clear quartz beside black magnetite, each one frosted and pitted, violet shadow held in the hollows between them, more grains banked away in every direction",
+      "target": "a clear pale grain",
+      "target_phrase": "a clear pale grain"
+    },
+    {
+      "name": "grain_body",
+      "exp": -4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale frost white and cold lilac",
+      "scene": "a world of clear quartz seen from just above its frosted ground, shallow scalloped cups over the whole terrain, bright rims where the cups meet, two sets of hair-thin fractures crossing the frost in long straight runs, dark violet gaps out to the neighbouring grains beyond",
+      "target": "a deep scalloped pit",
+      "target_phrase": "a dark scalloped pit"
+    },
+    {
+      "name": "grain_interior",
+      "exp": -5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-gold and honey banding on soft violet",
+      "scene": "a world of clear stone, wide banded growth zones stacked one on the next in rose-gold and honey, fine straight inclusions running through the pale layers in two crossing sets, bright edges where a layer steps out over the one below, depth on depth of further layers beyond",
+      "target": "a bright stepped ledge",
+      "target_phrase": "a bright stepped ledge"
+    },
+    {
+      "name": "growth_terraces",
+      "exp": -7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale green-white and cold blue shadow",
+      "scene": "a plain of growth terraces inside the crystal, straight ledges one layer high running in long parallel ranks, a second set of ranks crossing them at a shallow angle, wide glassy treads between, pale green-white light lying flat over the whole plain, broad soft bands standing where the two sets overlap",
+      "target": "a bright lattice node, sharp and glowing",
+      "target_phrase": "a bright glowing node",
+      "cameo": {
+        "sprite": "output/mascots/canon/tina.png",
+        "pos": [
+          0.62,
+          0.36
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "crystal_planes",
+      "exp": -9,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "pale rose-gold lines on deep violet black",
+      "scene": "ranks of glowing lattice planes standing in the dark, two sets of straight bright lines crossing at a shallow angle, broad pale fringe bands blooming where the sets overlap, a bright point at every crossing, rank behind rank into deep violet dark"
+    },
+    {
+      "name": "ring_system",
+      "exp": 8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bone-white bands on violet black with an ochre centre",
+      "scene": "the shredded ring plane of a broken moon from high above it, thousands of narrow bright bands ranked one inside the next, two spiral wave trains crossing them and standing in broad light and dark grooves, a wide black gap cut clean through the ranks, an ochre planet small at the centre, faint stars in the deep violet beyond",
+      "target": "a banded ochre planet",
+      "target_phrase": "the ochre planet"
+    },
+    {
+      "name": "planet",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "burnt sienna and rose-gold on deep violet",
+      "scene": "an ochre desert world at dusk seen from orbit, its whole day side ruled with fine parallel dune grain, ranked bright bands of moon rubble crossing the view in one wide flat plane, the shadow of those bands laid in dark stripes across the dune grain, a thin rose-gold air line along the curve, faint stars in the deep violet beyond",
+      "target": "a dark ochre dune field",
+      "target_phrase": "a dark ochre band",
+      "loop_target": "an ochre desert world at dusk seen from orbit, its day side ruled with fine dune grain, ranked bright bands of moon rubble crossing in one flat plane, faint stars beyond"
+    }
+  ],
+  "music_theme": "dry warm air over a cooling desert — low sustained drone and slow sand-shaker pulses under airy pads, the pulse doubling as the dive tightens onto the grains, one wide bright bloom where the crossed crystal planes open into the ring plane, settling back to the drone on the fall home",
+  "music_key": "E minor",
+  "render_start": "planet"
+}
