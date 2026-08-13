@@ -455,7 +455,9 @@ def audition_candidates(v, choose_advances_to=None):
             else:
                 st.warning(f"missing: {c['aligned']}")
             is_chosen = m.get("chosen") == c["id"]
-            st.caption(f"**{c['id']}** · lock {c['lock']}×" + (" · ✅ chosen" if is_chosen else ""))
+            st.caption(f"**{c['id']}** · lock {c['lock']}×"
+                       + (f" · {c['mood']}" if c.get("mood") else "")
+                       + (" · ✅ chosen" if is_chosen else ""))
             if st.button("✅ Chosen" if is_chosen else "Choose",
                          key=f"ch_{v['journey']}_{c['id']}"):
                 choose_track(v["journey"], c["id"])
