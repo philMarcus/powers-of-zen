@@ -568,7 +568,46 @@ candidates (locks up to 11.1x/9.8x) awaiting audition; VRAM confirmed freed afte
 8 videos sit in Video Review; posting queue is EMPTY until Phil approves. TONIGHT IS A WATCH
 NIGHT for the batch fix (queue head: jewel_oculus + turing_springs + droplet_zoo); tomorrow
 08:00 validates the poster self-heal only if Chrome is down again.
-2026-08-12 (later): MUSIC DEEP-DIVE — THE ALIGNER IS NOW EXACT (committed 415e43e). Phil's
+2026-08-13: TEMPO + MUSIC DECK + ANALYTICS + REALM FORMALISM (huge session; commits d990c5a..d344db7+).
+(1) TEMPO IS A JOURNEY KNOB: bpm = 720/frames_per_beat at 12fps (fpb 5→144, 6→120, 7→103
+default, 8→90, 10→72); musical geometry (transition/seam/anacrusis frames, loop tail) now
+SCALES with fpb (dive.py cfg-time, grammar loop block — fpb 7 byte-identical); a fine retime
+at the minterpolate stage gives the continuum between steps (designed, NOT built). A/B
+renders in output/tempo_lab/ (copper_rain at fpb 5/6/10) sent to Phil — verdict pending,
+composer-skill fpb rule deliberately HELD until Phil approves the look. Phil: 51bpm music
+too slow, waltz = rare spice only. (2) MUSIC DECK LIVE: styles/music_deck.json (10 lanes ×
+4 rhythm feels + brand tail + negatives; deep-downbeat doctrine); music_gen generates 8
+(own lane + alternates + 3 wildcards + seed jitter + occasional 3/4), auto-ranks by lock ×
+bar-clarity, keeps 5 with lane spread; per-journey seeds (old fixed 500-504 made every
+journey's 'warm' identical). Validated on ammonite_spiral. Composer assigns music_lane.
+(3) AUDIENCE ANALYTICS (audience-stats SKILL + scripts/ig_stats.py + ig_analyze.py):
+ig_stats scrapes followers + per-reel views/likes/comments via TRUSTED CDP hover on the
+reels grid (Phil's method; CSS :hover ignores synthetic JS events); ig_analyze fits the
+catalog's own scaling law (engagement ≈ 0.14·views^0.68 — like-rate DECAYS with reach) and
+ranks by QSCORE = engagement/expected (Phil's insight: views are EARNED; like%-only punishes
+pushed videos). TWO-AXIS LAW: likes reward dark+saturated+nameable (sat +0.34, lum −0.33
+measured on real frames — video_features.json); REACH rewards scale span (full-scale 44%
+pushed vs 10%). Applied: candy_gloss RETIRED (glass_apiary→crystalline, sugar_nebula→
+cosmic_gloss), pale-wash deprioritized, tier_share 0.55L/0.15M/0.30S + LLS-first templates,
+full-scale reinstated for L-tier. REMIX finding: the two reach outliers are re-posts of
+journeys whose originals got ~180 views (10×, confounded by account age — deliberate
+remix-slot test proposed, Phil interested). (4) REALM FORMALISM: journeys/REALMS.md (per-band
+archetypes + CONTINUATION RULE: living→cellular→molecular machinery, mineral→its real
+lattice, made→its material; POV attitude tags [air]/[obl]/[eye]/[up]/[amb]; mineral list;
+ecosystem menagerie); scripts/novelty_audit.py measures band coverage / broken continuation
+(16 journeys) / motif monoculture / populated scenes (0/106!) and its --brief report is
+EMBEDDED in the refill coordinator prompt — novelty is now data-driven. Composer skill:
+realm tests. (5) LIBRARY PROBES (output/realm_refs/): DreamShaper BY NAME renders mesophyll/
+mitochondria/tide-pool/every-mineral SPECTACULARLY (the catalog gap was never asking!) but
+fakes molecular machines (ribosome→toy molecule, protein→jewelry) → IP-Adapter reference
+steering needed ONLY for that corner. Donor pipeline proven: numpy raymarched gyroid +
+Gray-Scott + Voronoi + REAL PDB renders (1BNA DNA, 4HHB hemoglobin via matplotlib, newly
+installed) → img2img brand pass (hemoglobin+gyroid great, DNA donor needs thicker/brighter
+geometry). NOTHING wired into the engine per Phil — libraries first. POV: near-term =
+attitude ramps in scene wording across a card (codified); medium-term = depth-warp tilt
+(DepthAnything maps exist; crop-and-reimagine generalizes to camera rotation) — lab
+prototype proposed, not built. OPEN: Phil's tempo-clip verdicts; remix-slot pick;
+library buildout (curate 15-20 refs/realm); loom_of_nights card-cut list (old). Phil's
 priorities: perfect music loop, tempo variety (investigate), strong deep beats + more usable
 candidates. FOUR ALIGNER DEFECTS found, fixed, and VERIFIED (position-coded synthetic +
 end-to-end mapping measurement — final audio at video time t is music-bed content at exactly
