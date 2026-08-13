@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
 """Analyze the IG snapshots in outbox/ig_stats.jsonl — which variables move likes/view.
 
-Method (codified 2026-08-13, see the audience-stats skill):
-  * newest snapshot row per reel; likes/view is THE metric (age-independent, unlike views)
-  * reels with views > --outlier (default 1000) are EXCLUDED from group contrasts and shown
-    separately: like-rate falls with reach (colder audiences), so one pushed reel dominates
-    and distorts any bucket it lands in
-  * groups are compared by POOLED rate (sum likes / sum views) with a 95% binomial CI, with
-    the unweighted per-video mean alongside; call a contrast real only when CIs separate
+Method (codified 2026-08-13, revised same day — see the audience-stats skill):
+  * newest snapshot row per reel
+  * PRIMARY metric = qscore: actual engagement (likes + cw*comments) divided by the
+    catalog's own fitted scaling law a*views^b. IG distributes in stages (warm audience
+    first, colder pushed batches after), so like-rate mechanically DECAYS with reach —
+    raw likes/view punishes exactly the videos that earned a push (Phil 2026-08-13).
+    qscore=1 is catalog-typical at that reach; the exponent b is re-fitted every run
+    (--alpha overrides it; 0 = pure like-rate, 1 = raw likes).
+  * pooled like-rate + 95% binomial CI still shown per group — use it for significance
+    calls; use qscore for ranking and group means (it needs no outlier exclusion).
   * --features adds MEASURED video features (luminance, saturation, contrast, dark fraction
     — sampled frames via ffmpeg, cached in outbox/video_features.json) and correlates each
-    with like%%.
+    with like%% and qscore.
 
 Usage:
   python3 scripts/ig_analyze.py               # group contrasts
@@ -98,6 +101,25 @@ def video_features(j, entry):
     return feat
 
 
+def fit_scaling(rows, cw):
+    """The catalog's own likes-vs-views scaling law (Phil 2026-08-13): IG distributes in
+    stages — early views are warm audience, pushed views are colder — so expected engagement
+    grows like views^b with b<1 (fitted 0.76 on the first 31 reels). qscore = actual
+    engagement / expected-at-that-reach: it credits EARNED reach instead of excluding pushed
+    reels as outliers, and a video holding its like-rate deep into cold traffic scores high.
+    Engagement E = likes + cw*comments (comments are rarer, costlier signals)."""
+    for r in rows:
+        r["E"] = r["likes"] + cw * (r.get("comments") or 0)
+    xs = np.log([r["views"] for r in rows])
+    ys = np.log([r["E"] + 0.5 for r in rows])
+    b, c = np.polyfit(xs, ys, 1)
+    return float(b), math.exp(float(c))
+
+
+def qscore(r, a, b):
+    return (r["E"] + 0.5) / (a * r["views"] ** b)
+
+
 def pooled(rs):
     L = sum(r["likes"] for r in rs)
     V = sum(r["views"] for r in rs)
@@ -112,15 +134,18 @@ def show_group(title, rows, keyfn):
     g = defaultdict(list)
     for r in rows:
         g[keyfn(r)].append(r)
-    for k in sorted(g, key=lambda k: -pooled(g[k])[0]):
+    for k in sorted(g, key=lambda k: -statistics.mean(x["q"] for x in g[k])):
         p, ci, um, n = pooled(g[k])
-        print(f"  {str(k):16} pooled {p:5.2f}% ±{ci:.2f} | mean {um:4.2f}% (n={n})")
+        mq = statistics.mean(x["q"] for x in g[k])
+        print(f"  {str(k):16} qscore {mq:4.2f}x | pooled like {p:5.2f}% ±{ci:.2f} (n={n})")
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--features", action="store_true")
-    ap.add_argument("--outlier", type=int, default=1000)
+    ap.add_argument("--alpha", type=float, default=None,
+                    help="override the fitted reach exponent b (0=pure like-rate, 1=raw likes)")
+    ap.add_argument("--cw", type=float, default=3.0, help="comment weight in engagement")
     a = ap.parse_args()
 
     rows = load_rows()
@@ -135,17 +160,23 @@ def main():
         r["cut"] = v.get("cut", "?")
         r["mood"] = (v.get("music") or {}).get("chosen")
 
-    out = [r for r in rows if r["views"] > a.outlier]
-    core = [r for r in rows if r["views"] <= a.outlier]
+    b, coef = fit_scaling(rows, a.cw)
+    if a.alpha is not None:
+        b = a.alpha
+    for r in rows:
+        r["q"] = qscore(r, coef, b)
     p, ci, um, n = pooled(rows)
-    print(f"ALL {n} reels: pooled {p:.2f}% ±{ci:.2f} | followers "
+    print(f"ALL {n} reels: pooled like {p:.2f}% ±{ci:.2f} | followers "
           f"{rows[-1].get('followers', '?')}")
-    if out:
-        print("reach outliers (excluded from contrasts): "
-              + ", ".join(f"{r.get('journey')}({r['views']}v {100*r['likes']/r['views']:.1f}%)"
-                          for r in out))
+    print(f"scaling law: expected engagement = {coef:.3f} x views^{b:.2f} "
+          f"(comment weight {a.cw:g}) — qscore = actual / expected at that reach")
 
-    known = [r for r in core if r.get("journey")]
+    print(f"\n{'journey':24} {'views':>6} {'likes':>5} {'cmt':>3} {'like%':>6} {'qscore':>7}")
+    for r in sorted(rows, key=lambda r: -r["q"]):
+        print(f"{(r.get('journey') or '?'):24} {r['views']:>6} {r['likes']:>5} "
+              f"{r.get('comments') or 0:>3} {100*r['likes']/r['views']:5.1f}% {r['q']:6.2f}x")
+
+    known = [r for r in rows if r.get("journey")]
     show_group("tier", known, lambda r: r.get("tier") or "?")
     show_group("style", known, lambda r: r.get("style") or "(legacy)")
     show_group("full scale", known, lambda r: r.get("full"))
@@ -163,8 +194,10 @@ def main():
         for name in ("lum", "sat", "contrast", "dark_frac"):
             xs = np.array([ft[name] for _, ft in feats])
             ys = np.array([100.0 * r["likes"] / r["views"] for r, _ in feats])
+            qs = np.array([r["q"] for r, _ in feats])
             c = float(np.corrcoef(xs, ys)[0, 1]) if len(xs) > 2 else float("nan")
-            print(f"  corr(like%, {name:9}) = {c:+.2f}   (n={len(xs)})")
+            cq = float(np.corrcoef(xs, qs)[0, 1]) if len(xs) > 2 else float("nan")
+            print(f"  {name:9}: corr(like%) = {c:+.2f}   corr(qscore) = {cq:+.2f}   (n={len(xs)})")
         print(f"\n  {'journey':24} {'like%':>6} {'lum':>6} {'sat':>6} {'contr':>6} {'dark%':>6}")
         for r, ft in sorted(feats, key=lambda t: -(t[0]["likes"] / t[0]["views"])):
             print(f"  {r['journey']:24} {100*r['likes']/r['views']:5.1f}% "
