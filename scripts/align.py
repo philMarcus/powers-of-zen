@@ -46,54 +46,96 @@ def onset_env(x, hop=512, nfft=1024):
     return env / (env.max() + 1e-9), SR / hop
 
 
-def best_align(env, esr, morphs, stretches):
-    """Search (stretch f, window-start w0) maximizing the track's onset energy summed at
-    the morph times. Returns (w0, f, lock) where lock = peak/mean (how sharply it locks)."""
+def measure_bar(env, esr, bar):
+    """The track's OWN bar length, from the onset envelope's autocorrelation near the video
+    bar. The music was generated tempo-locked to ~bar, so the true period is within a few %;
+    measuring it beats searching a stretch grid — a 2-D (stretch, phase) search overfits a
+    sparse envelope (it can catch a handful of loud onsets on a wrong tempo and beat the
+    honest fit), and a wrong stretch accumulates ~0.1s of drift by the far end of the video.
+    Returns (m_bar, confidence 0..1); confidence low -> caller falls back to f=1."""
+    e = env - env.mean()
+    ac = np.correlate(e, e, mode="full")[len(e) - 1:]
+    ac /= (ac[0] + 1e-9)
+    lo, hi = int(bar * 0.90 * esr), int(bar * 1.10 * esr) + 1
+    if hi >= len(ac):
+        return bar, 0.0
+    k = lo + int(np.argmax(ac[lo:hi]))
+    return k / esr, float(ac[k])
+
+
+def best_phase(env, esr, morphs, f, period_m=None):
+    """Search the phase w0 only (stretch is derived, not fitted): maximize onset energy at
+    the morph times mapped into the track (mod the tile period, so morphs beyond one tile
+    still count — they play tiled content at the same grid phase)."""
     bar = float(np.median(np.diff(morphs)))
     m = np.asarray(morphs)
-    scores = []
-    best = None
-    for f in stretches:
-        for w0 in np.arange(0.0, bar, 0.01):
-            idx = ((m + w0) * f * esr).astype(int)
-            idx = idx[(idx >= 0) & (idx < len(env))]
-            sc = float(env[idx].sum())
-            scores.append(sc)
-            if best is None or sc > best[0]:
-                best = (sc, w0, f)
+    scores, best = [], None
+    for w0 in np.arange(0.0, bar, 0.01):
+        t = (m + w0) * f
+        if period_m:
+            t = np.mod(t, period_m)
+        idx = (t * esr).astype(int)
+        idx = idx[(idx >= 0) & (idx < len(env))]
+        sc = float(env[idx].sum())
+        scores.append(sc)
+        if best is None or sc > best[0]:
+            best = (sc, w0)
     mean = (sum(scores) / len(scores)) or 1e-9
-    return best[1], best[2], best[0] / mean, bar
+    return best[1], best[0] / mean, bar
 
 
-def align(video, track, out, journey=None, cut=None, shift_sec=None,
-          stretches=(0.985, 0.99, 0.995, 1.0, 1.005, 1.01, 1.015)):
+def align(video, track, out, journey=None, cut=None, shift_sec=None):
     out = Path(out); out.parent.mkdir(parents=True, exist_ok=True)
     dur = video_duration(video)
     if journey is None or cut is None:
         journey, cut = parse_journey_cut(video)
     morphs = schedule_morphs(journey, cut, dur, shift_sec=shift_sec)
+    bar = float(np.median(np.diff(morphs)))
 
-    # 1) STRIP the generator's leading/trailing silence — ACE-Step ends the piece early (~28s) and
-    # pads the rest with silence, so the raw track is mostly-music + a silent tail. We want only the
-    # music, then we build our OWN full-length loop from it.
+    # 1) STRIP the generator's leading/trailing silence — EDGES ONLY. ACE-Step ends the piece
+    # early and pads the rest with silence; we drop that. stop_periods=-1 (the old form) also
+    # excised INTERIOR silences >=0.3s, chopping seconds out of quiet tracks (tide_glass's
+    # choir lost 3.26s) — after which no single (stretch, phase) can lock the broken grid.
     m = TMP / "_m.wav"
     _run([FFMPEG, "-y", "-loglevel", "error", "-i", win(track),
           "-af", ("silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05:"
-                  "stop_periods=-1:stop_threshold=-45dB:stop_silence=0.30:detection=peak,"
+                  "detection=peak,areverse,"
+                  "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05:"
+                  "detection=peak,areverse,"
                   "aformat=sample_rates=%d" % SR),
           "-ac", "1", win(m)])
 
-    # 2) tempo (micro-stretch) + phase from the track's own onsets vs the morph grid
+    # 2) tempo: MEASURE the track's own bar and derive the exact stretch that maps it onto the
+    # video bar (f = m_bar / bar; atempo=f makes the stretched bar == video bar). Phase is then
+    # the only searched dimension.
     env, esr = onset_env(load_mono(m))
-    w0, f, lock, bar = best_align(env, esr, morphs, stretches)
+    m_bar, conf = measure_bar(env, esr, bar)
+    f = (m_bar / bar) if conf >= 0.10 else 1.0
+    f = min(max(f, 0.97), 1.03)
     ms = TMP / "_ms.wav"
     _run([FFMPEG, "-y", "-loglevel", "error", "-i", win(m), "-filter:a",
           f"atempo={f:.5f}", win(ms)])
 
-    XF = min(0.5, 0.3 * bar)          # wrap/tile crossfade (on-beat, keeps the pulse through joins)
+    XF = min(0.5, 0.3 * bar)          # wrap/tile crossfade (keeps the pulse through joins)
 
     # 3) build a CONTINUOUS music bed at least dur+XF long. If the music is shorter than the video
     # (cosmic: ~28s music vs 31.3s video) we tile it, crossfading each join so the pulse carries.
+    # Each tile is trimmed to an INTEGER number of bars (+XF join overlap): with acrossfade the
+    # next tile's time-origin sits at prevLen-XF, so a tile period of exactly k*bar keeps every
+    # tile at the SAME beat-grid phase. An arbitrary-length tile shifted the grid at every join —
+    # everything past the first tile played off-beat, and the lock score (computed on one tile's
+    # envelope) never saw it.
+    need_tiles = video_duration(ms) < dur + XF + 0.05
+    k = int((video_duration(ms) - XF) // bar) if need_tiles else 0
+    # phase search AFTER the tiling geometry is known: morphs past one tile fold onto the tile
+    # period (same content, same grid phase), so every morph in the video scores.
+    w0, lock, _ = best_phase(env, esr, morphs, f,
+                             period_m=(k * bar * f) if (need_tiles and k >= 1) else None)
+    if need_tiles and k >= 1:
+        msb = TMP / "_msb.wav"
+        _run([FFMPEG, "-y", "-loglevel", "error", "-i", win(ms), "-af",
+              f"atrim=0:{k * bar + XF:.3f}", win(msb)])
+        msb.replace(ms)
     R = TMP / "_R.wav"; shutil.copy(ms, R)
     guard = 0
     while video_duration(R) < dur + XF + 0.05 and guard < 30:
@@ -102,21 +144,29 @@ def align(video, track, out, journey=None, cut=None, shift_sec=None,
               "-filter_complex", f"[0][1]acrossfade=d={XF:.3f}:c1=tri:c2=tri", win(nxt)])
         nxt.replace(R); guard += 1
 
-    # 4) make a SEAMLESS loop of exactly `dur`: crossfade the body's tail into its own head, so the
-    # end meets the start (the video's loop point) without a cut or a fade-to-silence.
+    # 4) make a SEAMLESS loop of exactly `dur`. Body = R[XF : XF+dur]; its tail crossfades into
+    # R[0:XF] — the material that LEADS INTO the body's start — so the last sample flows straight
+    # into the first (end ~ R[XF-e] -> start = R[XF]): the wrap is sample-continuous. Since dur is
+    # an integer number of bars, the crossfade pairs R[dur+t] with R[t] — one whole loop apart,
+    # IDENTICAL grid phase. (The old body=R[0:dur] form ended on R[XF] while starting at R[0]:
+    # every loop replayed the head — a half-second stutter that rotation then parked ~w0 before
+    # the video's end. Verified on a position-coded synthetic before fixing.)
     loop = TMP / "_loop.wav"
     _run([FFMPEG, "-y", "-loglevel", "error", "-i", win(R), "-filter_complex",
-          f"[0:a]atrim=0:{dur:.3f},asetpts=PTS-STARTPTS[body];"
+          f"[0:a]atrim={XF:.3f}:{dur + XF:.3f},asetpts=PTS-STARTPTS[body];"
           f"[0:a]atrim=0:{XF:.3f},asetpts=PTS-STARTPTS[head];"
           f"[body][head]acrossfade=d={XF:.3f}:c1=tri:c2=tri[a]", "-map", "[a]", win(loop)])
 
     # 5) phase-rotate the loop so its accents sit on the morphs (circular — a seamless loop can be
-    # rotated and stays seamless AND full-length; no trimming, so no silence and nothing is lost).
+    # rotated and stays seamless AND full-length). The loop's content starts at R[XF], i.e. it is
+    # already XF ahead of the envelope best_align searched, so rotate by w0-XF (mod dur) to land
+    # the same phase w0 promised.
+    w0_eff = (w0 - XF) % dur
     rot = TMP / "_rot.wav"
-    if 0.02 < w0 < dur - 0.02:
+    if 0.02 < w0_eff < dur - 0.02:
         _run([FFMPEG, "-y", "-loglevel", "error", "-i", win(loop), "-filter_complex",
-              f"[0:a]atrim=start={w0:.3f},asetpts=PTS-STARTPTS[a1];"
-              f"[0:a]atrim=end={w0:.3f},asetpts=PTS-STARTPTS[a2];"
+              f"[0:a]atrim=start={w0_eff:.3f},asetpts=PTS-STARTPTS[a1];"
+              f"[0:a]atrim=end={w0_eff:.3f},asetpts=PTS-STARTPTS[a2];"
               f"[a1][a2]concat=n=2:v=0:a=1[a]", "-map", "[a]", win(rot)])
     else:
         shutil.copy(loop, rot)
@@ -128,8 +178,9 @@ def align(video, track, out, journey=None, cut=None, shift_sec=None,
           "-map", "0:v:0", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", win(out)])
     for t in (m, ms, R, loop, rot):
         t.unlink(missing_ok=True)
-    print(f"  aligned -> {out}\n    bar {bar:.3f}s | stretch {f:.4f} | phase {w0:.3f}s | "
-          f"lock {lock:.2f}x | seamless loop @ {dur:.2f}s (music tiled x{guard+1}, xf {XF:.2f}s)")
+    print(f"  aligned -> {out}\n    bar {bar:.3f}s | music bar {m_bar:.3f}s (conf {conf:.2f}) -> "
+          f"stretch {f:.4f} | phase {w0:.3f}s | lock {lock:.2f}x | "
+          f"seamless loop @ {dur:.2f}s (music tiled x{guard+1}, xf {XF:.2f}s)")
     return {"w0": w0, "stretch": f, "lock": lock}
 
 
