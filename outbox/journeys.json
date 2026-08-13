@@ -5,113 +5,131 @@
     "journey_queue_target": 20,
     "refill_max_per_night": 5,
     "tier_share": {
-      "long": 0.4,
-      "medium": 0.3,
+      "long": 0.55,
+      "medium": 0.15,
       "short": 0.3
     },
     "nightly_templates": [
+      "LLS",
       "LMS",
-      "LLM",
-      "LLS"
+      "LLM"
     ],
     "render_paused": false,
     "refill_paused": false
   },
   "journeys": {
-    "chess_empires": {
-      "note": "monochrome — the style brand tail fights it (Phil 7/31)",
-      "ts": "2026-08-01 13:48:31",
-      "state": "queued",
-      "order": 11
-    },
-    "ink_dynasty": {
-      "note": "monochrome — the style brand tail fights it (Phil 7/31)",
-      "ts": "2026-08-01 13:47:39",
-      "state": "queued",
-      "order": 7
-    },
     "stormglass": {
       "state": "rejected",
       "ts": "2026-08-01 13:46:09",
       "note": "rejected at video review"
     },
     "static_bloom": {
-      "state": "render_failed",
-      "order": 2,
-      "ts": "2026-08-02 02:37:57",
+      "state": "queued",
+      "order": 25,
+      "ts": "2026-08-03 14:06:37",
       "note": "dive failed: ue \") — re-rolling seed, attempt 4/4 | [dive] ABORT: frame 0 keeps rendering a lone figure after 4 seeds. This is a PROMPT problem, not luck — fix the render_start card (drop halo/gilded/regalia words, name a concrete object) or pick a different render_start. Re-run with --allow-figures to override."
     },
-    "tesla_garden": {
-      "state": "queued",
-      "order": 5,
-      "ts": "2026-08-01 13:47:18"
+    "iris_observatory": {
+      "state": "rejected",
+      "ts": "2026-08-02 22:31:33",
+      "note": "rejected at video review"
     },
-    "chalkboard_infinities": {
+    "lantern_canals": {
       "state": "queued",
-      "order": 6,
-      "ts": "2026-08-01 13:47:28"
-    },
-    "ammonite_spiral": {
-      "state": "queued",
-      "order": 8,
-      "ts": "2026-08-01 13:47:54"
-    },
-    "resonance_hall": {
-      "state": "queued",
-      "order": 9,
-      "ts": "2026-08-01 13:48:06"
-    },
-    "tide_glass": {
-      "state": "queued",
-      "order": 12,
-      "ts": "2026-08-01 13:48:40"
-    },
-    "pollen_court": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-01 15:45:55",
-      "note": "re-render: video rejected in review (same seed)",
-      "order": 13
-    },
-    "loom_of_nights": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-01 15:46:09",
-      "note": "re-render: video rejected in review (same seed)",
-      "order": 14
-    },
-    "cinder_veil": {
-      "state": "queued",
-      "order": 15,
-      "ts": "2026-08-02 00:12:17",
+      "order": 26,
+      "ts": "2026-08-04 00:17:27",
       "note": "composed by midnight refill"
     },
-    "gossamer_dawn": {
+    "moon_jelly": {
       "state": "queued",
-      "order": 16,
-      "ts": "2026-08-02 00:12:17",
+      "order": 27,
+      "ts": "2026-08-04 00:17:28",
       "note": "composed by midnight refill"
     },
-    "heron_delta": {
+    "singing_dunes": {
       "state": "queued",
-      "order": 17,
-      "ts": "2026-08-02 00:12:17",
+      "order": 28,
+      "ts": "2026-08-04 00:17:28",
       "note": "composed by midnight refill"
     },
-    "lichen_moor": {
+    "vinyl_canyon": {
       "state": "queued",
-      "order": 18,
-      "ts": "2026-08-02 00:12:17",
+      "order": 29,
+      "ts": "2026-08-04 00:17:28",
       "note": "composed by midnight refill"
     },
-    "night_lido": {
+    "amber_steep": {
       "state": "queued",
-      "order": 19,
-      "ts": "2026-08-02 00:12:17",
+      "order": 30,
+      "ts": "2026-08-05 00:16:26",
+      "note": "composed by midnight refill"
+    },
+    "blueprint_harbor": {
+      "state": "queued",
+      "order": 31,
+      "ts": "2026-08-05 00:16:26",
+      "note": "composed by midnight refill"
+    },
+    "girih_dome": {
+      "state": "queued",
+      "order": 32,
+      "ts": "2026-08-05 00:16:26",
+      "note": "composed by midnight refill"
+    },
+    "comet_firn": {
+      "state": "queued",
+      "order": 33,
+      "ts": "2026-08-06 00:22:35",
+      "note": "composed by midnight refill"
+    },
+    "gill_cathedral": {
+      "state": "queued",
+      "order": 34,
+      "ts": "2026-08-06 00:22:34",
+      "note": "composed by midnight refill"
+    },
+    "ochre_door": {
+      "state": "queued",
+      "order": 35,
+      "ts": "2026-08-06 00:22:34",
+      "note": "composed by midnight refill"
+    },
+    "latent_whorl": {
+      "state": "queued",
+      "order": 36,
+      "ts": "2026-08-07 00:16:54",
+      "note": "composed by midnight refill"
+    },
+    "marigold_carousel": {
+      "state": "queued",
+      "order": 37,
+      "ts": "2026-08-07 00:16:54",
+      "note": "composed by midnight refill"
+    },
+    "palm_house": {
+      "state": "queued",
+      "order": 38,
+      "ts": "2026-08-07 00:16:54",
+      "note": "composed by midnight refill"
+    },
+    "hyperbolic_reef": {
+      "state": "queued",
+      "order": 39,
+      "ts": "2026-08-08 00:16:56",
+      "note": "composed by midnight refill"
+    },
+    "sodium_stairwell": {
+      "state": "queued",
+      "order": 40,
+      "ts": "2026-08-08 00:16:57",
+      "note": "composed by midnight refill"
+    },
+    "whalebone_hall": {
+      "state": "queued",
+      "order": 41,
+      "ts": "2026-08-08 00:16:57",
       "note": "composed by midnight refill"
     }
   },
-  "updated": "2026-08-02 03:15:30"
+  "updated": "2026-08-13 10:02:34"
 }

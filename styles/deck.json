@@ -1,73 +1,74 @@
 {
-  "_note": "STYLE = Layer 2 (the LOOK). Curated word-only deck. A journey picks a style by NAME (its `style` field); the composer NEVER writes free-text style_suffix. `--style <name>` overrides at render time for A/B look-tests. Keep every entry SHINY / RENDERED / eye-candy — the DreamShaper-polished look Phil wants. NEVER use realism words here (photo, photograph, photography, macro, realistic, DSLR, film grain) — they drift the whole video photoreal. `model` is the RECOMMENDED checkpoint when the render doesn't pass --model.",
-  "default": "cosmic_gloss",
-  "styles": {
-    "cosmic_gloss": {
-      "mood": "space / cosmic / astronomical — the shiny AI-polished deep-space eye-candy from the engine-1 cosmic videos",
-      "style_suffix": "luminous volumetric light, glossy hyperreal render, deep-space glow, ultra-detailed, cinematic, epic scale",
-      "model": "ds"
-    },
-    "crystalline": {
-      "mood": "minerals / crystals / ice / glass / gems — refractive prismatic jewel-box",
-      "style_suffix": "prismatic crystalline light, refractive glass and gemstone facets, jewel tones, ultra-detailed, cinematic, otherworldly",
-      "model": "ds"
-    },
-    "liquid_light": {
-      "mood": "cells / microbes / underwater / bioluminescent / organic interiors — wet luminous dreamscape",
-      "style_suffix": "bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike",
-      "model": "ds"
-    },
-    "gilded_relic": {
-      "mood": "human-made objects / markets / instruments / maps / relics / interiors — warm painterly grandeur (alexandria / cartographer feel)",
-      "style_suffix": "warm gilded light, painterly, hyperdetailed, cinematic",
-      "model": "ds"
-    },
-    "stormlight": {
-      "mood": "storms / planets / dramatic weather / moody skies — high-contrast volumetric drama (stormglass feel)",
-      "style_suffix": "dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly",
-      "model": "ds"
-    },
-    "enchanted_wild": {
-      "mood": "flora / forests / creatures / meadows / nature — saturated fairy-tale nature, NOT photography",
-      "style_suffix": "enchanted golden light, lush saturated color, painterly fantasy illustration, hyperdetailed, cinematic",
-      "model": "ds"
-    },
-    "neon_drift": {
-      "mood": "electric / urban night / circuitry / plasma / screens — synthwave neon and wet chrome, the trendiest high-contrast look in the deck",
-      "style_suffix": "electric neon glow, magenta and cyan light bloom, wet chrome sheen, retro-futurist night haze, ultra-detailed, cinematic",
-      "model": "ds"
-    },
-    "candy_gloss": {
-      "mood": "sugar / sweets / honey / soft toys / anything that should read edible — Y2K pastel 3d-render candy",
-      "style_suffix": "glossy candy-coated surfaces, soft pastel gradient light, bubblegum pink and pale aqua, plush 3d render, ultra-detailed, playful",
-      "model": "ds"
-    },
-    "ultraviolet": {
-      "mood": "bioluminescence / caves / glowworms / fluorescence / anything glowing on black — blacklight poster energy",
-      "style_suffix": "ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic",
-      "model": "ds"
-    },
-    "aurora_silk": {
-      "mood": "textiles / weaves / atmospheres / soft cosmic fields — flowing ribboned light, the gentlest entry in the deck",
-      "style_suffix": "aurora ribbons of green and violet light, silken flowing light, soft luminous gradients, ultra-detailed, dreamlike",
-      "model": "ds"
-    },
-    "infrared_bloom": {
-      "mood": "foliage / pollen / organic fields you want SHOCKING rather than pretty — false-colour infrared turns every leaf hot magenta",
-      "style_suffix": "false-colour infrared palette, hot magenta and cyan, blooming light, high-saturation dreamscape, ultra-detailed",
-      "model": "ds"
-    },
-    "lacquer_pop": {
-      "mood": "enamel / carving / calligraphy / heraldry / graphic human-made worlds — flat bold colour blocking with a lacquer shine",
-      "style_suffix": "deep lacquer enamel sheen, vermilion red and deep green, bold flat colour blocking, lustrous graphic poster look, ultra-detailed",
-      "model": "ds"
-    },
-    "reef_pop": {
-      "mood": "shores / shallows / tropical water / foam — sunlit high-saturation aqua",
-      "style_suffix": "electric aquamarine and hot pink, sunlit turquoise depth, high-saturation tropical glow, ultra-detailed, cinematic",
-      "model": "ds"
-    }
+ "_note": "STYLE = Layer 2 (the LOOK). Curated word-only deck. A journey picks a style by NAME (its `style` field); the composer NEVER writes free-text style_suffix. `--style <name>` overrides at render time for A/B look-tests. Keep every entry SHINY / RENDERED / eye-candy — the DreamShaper-polished look Phil wants. NEVER use realism words here (photo, photograph, photography, macro, realistic, DSLR, film grain) — they drift the whole video photoreal. `model` is the RECOMMENDED checkpoint when the render doesn't pass --model.",
+ "default": "cosmic_gloss",
+ "styles": {
+  "cosmic_gloss": {
+   "mood": "space / cosmic / astronomical — the shiny AI-polished deep-space eye-candy from the engine-1 cosmic videos",
+   "style_suffix": "luminous volumetric light, glossy hyperreal render, deep-space glow, ultra-detailed, cinematic, epic scale",
+   "model": "ds"
   },
-  "brand_tail": "glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents",
-  "_brand_tail_note": "Appended to EVERY resolved style (Phil 2026-07-31: cave_of_numbers came out monochromatic orange/yellow — 'we want eye candy contrasting colours, sparkly gemstone shiny things'). Kept to LIGHT/SURFACE words, never object nouns: 'gemstone' as a noun would paint literal gems into meadows and kitchens (the 'rose dust' trap). Tune the whole catalog here."
+  "crystalline": {
+   "mood": "minerals / crystals / ice / glass / gems — refractive prismatic jewel-box",
+   "style_suffix": "prismatic crystalline light, refractive glass and gemstone facets, jewel tones, ultra-detailed, cinematic, otherworldly",
+   "model": "ds"
+  },
+  "liquid_light": {
+   "mood": "cells / microbes / underwater / bioluminescent / organic interiors — wet luminous dreamscape",
+   "style_suffix": "bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike",
+   "model": "ds"
+  },
+  "gilded_relic": {
+   "mood": "human-made objects / markets / instruments / maps / relics / interiors — warm painterly grandeur (alexandria / cartographer feel)",
+   "style_suffix": "warm gilded light, painterly, hyperdetailed, cinematic",
+   "model": "ds"
+  },
+  "stormlight": {
+   "mood": "storms / planets / dramatic weather / moody skies — high-contrast volumetric drama (stormglass feel)",
+   "style_suffix": "dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly",
+   "model": "ds"
+  },
+  "enchanted_wild": {
+   "mood": "flora / forests / creatures / meadows / nature — saturated fairy-tale nature, NOT photography",
+   "style_suffix": "enchanted golden light, lush saturated color, painterly fantasy illustration, hyperdetailed, cinematic",
+   "model": "ds"
+  },
+  "neon_drift": {
+   "mood": "electric / urban night / circuitry / plasma / screens — synthwave neon and wet chrome, the trendiest high-contrast look in the deck",
+   "style_suffix": "electric neon glow, magenta and cyan light bloom, wet chrome sheen, retro-futurist night haze, ultra-detailed, cinematic",
+   "model": "ds"
+  },
+  "candy_gloss": {
+   "mood": "sugar / sweets / honey / soft toys / anything that should read edible — Y2K pastel 3d-render candy",
+   "style_suffix": "glossy candy-coated surfaces, soft pastel gradient light, bubblegum pink and pale aqua, plush 3d render, ultra-detailed, playful",
+   "model": "ds",
+   "retired": "2026-08-13: measured 0.93% pooled like-rate on IG (worst lane; sugar_nebula 0.4% = worst video). Pastel high-key is the losing corner of the measured luminance/saturation correlation. Do not assign; kept for legacy renders."
+  },
+  "ultraviolet": {
+   "mood": "bioluminescence / caves / glowworms / fluorescence / anything glowing on black — blacklight poster energy",
+   "style_suffix": "ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic",
+   "model": "ds"
+  },
+  "aurora_silk": {
+   "mood": "textiles / weaves / atmospheres / soft cosmic fields — flowing ribboned light, the gentlest entry in the deck",
+   "style_suffix": "aurora ribbons of green and violet light, silken flowing light, soft luminous gradients, ultra-detailed, dreamlike",
+   "model": "ds"
+  },
+  "infrared_bloom": {
+   "mood": "foliage / pollen / organic fields you want SHOCKING rather than pretty — false-colour infrared turns every leaf hot magenta",
+   "style_suffix": "false-colour infrared palette, hot magenta and cyan, blooming light, high-saturation dreamscape, ultra-detailed",
+   "model": "ds"
+  },
+  "lacquer_pop": {
+   "mood": "enamel / carving / calligraphy / heraldry / graphic human-made worlds — flat bold colour blocking with a lacquer shine",
+   "style_suffix": "deep lacquer enamel sheen, vermilion red and deep green, bold flat colour blocking, lustrous graphic poster look, ultra-detailed",
+   "model": "ds"
+  },
+  "reef_pop": {
+   "mood": "shores / shallows / tropical water / foam — sunlit high-saturation aqua",
+   "style_suffix": "electric aquamarine and hot pink, sunlit turquoise depth, high-saturation tropical glow, ultra-detailed, cinematic",
+   "model": "ds"
+  }
+ },
+ "brand_tail": "glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents",
+ "_brand_tail_note": "Appended to EVERY resolved style (Phil 2026-07-31: cave_of_numbers came out monochromatic orange/yellow — 'we want eye candy contrasting colours, sparkly gemstone shiny things'). Kept to LIGHT/SURFACE words, never object nouns: 'gemstone' as a noun would paint literal gems into meadows and kitchens (the 'rose dust' trap). Tune the whole catalog here."
 }

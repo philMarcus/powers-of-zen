@@ -1,0 +1,210 @@
+{
+ "tide_glass": {
+  "key": "tide_glass:1786565400616164700",
+  "frames": 16,
+  "lum": 0.4139,
+  "sat": 0.7138,
+  "contrast": 0.1903,
+  "dark_frac": 0.2088
+ },
+ "resonance_hall": {
+  "key": "resonance_hall:1786565320336166600",
+  "frames": 23,
+  "lum": 0.3709,
+  "sat": 0.8319,
+  "contrast": 0.1669,
+  "dark_frac": 0.2468
+ },
+ "lichen_moor": {
+  "key": "lichen_moor:1786318945782643900",
+  "frames": 16,
+  "lum": 0.43,
+  "sat": 0.7398,
+  "contrast": 0.1584,
+  "dark_frac": 0.1415
+ },
+ "ink_dynasty": {
+  "key": "ink_dynasty:1786298907183045800",
+  "frames": 23,
+  "lum": 0.3537,
+  "sat": 0.6719,
+  "contrast": 0.1832,
+  "dark_frac": 0.3186
+ },
+ "sugar_nebula": {
+  "key": "sugar_nebula:1785779542673043300",
+  "frames": 21,
+  "lum": 0.4475,
+  "sat": 0.5491,
+  "contrast": 0.1865,
+  "dark_frac": 0.1722
+ },
+ "chalkboard_infinities": {
+  "key": "chalkboard_infinities:1785781829716087200",
+  "frames": 16,
+  "lum": 0.3591,
+  "sat": 0.7334,
+  "contrast": 0.1614,
+  "dark_frac": 0.2722
+ },
+ "velvet_atlas": {
+  "key": "velvet_atlas:1785779216219864100",
+  "frames": 12,
+  "lum": 0.3591,
+  "sat": 0.8149,
+  "contrast": 0.1527,
+  "dark_frac": 0.2477
+ },
+ "tesla_garden": {
+  "key": "tesla_garden:1785780671648689500",
+  "frames": 21,
+  "lum": 0.3096,
+  "sat": 0.7154,
+  "contrast": 0.1723,
+  "dark_frac": 0.4004
+ },
+ "pollen_court": {
+  "key": "pollen_court:1785778136685240600",
+  "frames": 12,
+  "lum": 0.4089,
+  "sat": 0.633,
+  "contrast": 0.1989,
+  "dark_frac": 0.2267
+ },
+ "copper_rain": {
+  "key": "copper_rain:1785780384273443200",
+  "frames": 12,
+  "lum": 0.3302,
+  "sat": 0.671,
+  "contrast": 0.1673,
+  "dark_frac": 0.3345
+ },
+ "glass_apiary": {
+  "key": "glass_apiary:1785779371989112100",
+  "frames": 23,
+  "lum": 0.436,
+  "sat": 0.8002,
+  "contrast": 0.1675,
+  "dark_frac": 0.1568
+ },
+ "quantum_orrery": {
+  "key": "quantum_orrery:1785778637466046900",
+  "frames": 16,
+  "lum": 0.342,
+  "sat": 0.8058,
+  "contrast": 0.1771,
+  "dark_frac": 0.3554
+ },
+ "frost_window": {
+  "key": "frost_window:1785723167937769400",
+  "frames": 12,
+  "lum": 0.3558,
+  "sat": 0.5041,
+  "contrast": 0.209,
+  "dark_frac": 0.3534
+ },
+ "lather_atlas": {
+  "key": "lather_atlas:1785606850599139600",
+  "frames": 12,
+  "lum": 0.3844,
+  "sat": 0.6077,
+  "contrast": 0.18,
+  "dark_frac": 0.2573
+ },
+ "cave_of_numbers": {
+  "key": "cave_of_numbers:1785543024090360800",
+  "frames": 16,
+  "lum": 0.3072,
+  "sat": 0.7809,
+  "contrast": 0.1736,
+  "dark_frac": 0.4159
+ },
+ "mineral_heart": {
+  "key": "mineral_heart:1785723098944927600",
+  "frames": 24,
+  "lum": 0.3755,
+  "sat": 0.8182,
+  "contrast": 0.171,
+  "dark_frac": 0.2552
+ },
+ "jade_automata": {
+  "key": "jade_automata:1785693738237644000",
+  "frames": 23,
+  "lum": 0.3665,
+  "sat": 0.7901,
+  "contrast": 0.1812,
+  "dark_frac": 0.2998
+ },
+ "butterfly_meridian": {
+  "key": "butterfly_meridian:1785601932841256800",
+  "frames": 23,
+  "lum": 0.3815,
+  "sat": 0.7118,
+  "contrast": 0.1935,
+  "dark_frac": 0.287
+ },
+ "dollhouse": {
+  "key": "dollhouse:1785382407660890000",
+  "frames": 14,
+  "lum": 0.3902,
+  "sat": 0.8054,
+  "contrast": 0.1598,
+  "dark_frac": 0.2112
+ },
+ "circuit_city": {
+  "key": "circuit_city:1785386856351792300",
+  "frames": 24,
+  "lum": 0.2819,
+  "sat": 0.6101,
+  "contrast": 0.1668,
+  "dark_frac": 0.5031
+ },
+ "cartographer": {
+  "key": "cartographer:1785381813099818100",
+  "frames": 24,
+  "lum": 0.4322,
+  "sat": 0.6761,
+  "contrast": 0.1706,
+  "dark_frac": 0.1695
+ },
+ "snowfall": {
+  "key": "snowfall:1785382407382938600",
+  "frames": 10,
+  "lum": 0.4657,
+  "sat": 0.457,
+  "contrast": 0.1179,
+  "dark_frac": 0.042
+ },
+ "food_chain": {
+  "key": "food_chain:1785349147004626500",
+  "frames": 14,
+  "lum": 0.4194,
+  "sat": 0.7933,
+  "contrast": 0.1743,
+  "dark_frac": 0.1844
+ },
+ "alexandria": {
+  "key": "alexandria:1785265601804763900",
+  "frames": 22,
+  "lum": 0.4148,
+  "sat": 0.7897,
+  "contrast": 0.1727,
+  "dark_frac": 0.1902
+ },
+ "tide_of_life": {
+  "key": "tide_of_life:1785090656172818600",
+  "frames": 24,
+  "lum": 0.4132,
+  "sat": 0.7872,
+  "contrast": 0.1588,
+  "dark_frac": 0.1622
+ },
+ "midnight_kitchen": {
+  "key": "midnight_kitchen:1785090601019192800",
+  "frames": 12,
+  "lum": 0.3866,
+  "sat": 0.7725,
+  "contrast": 0.1776,
+  "dark_frac": 0.2332
+ }
+}

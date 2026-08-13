@@ -167,7 +167,6 @@ So the journey sets ONE top-level field — `style` — to a **name from the cur
 - **`stormlight`** — storms / planets / dramatic weather / moody skies.
 - **`enchanted_wild`** — flora / forests / creatures / meadows / nature.
 - **`neon_drift`** — electric / urban night / circuitry / plasma / screens (synthwave neon + chrome).
-- **`candy_gloss`** — sugar / sweets / honey / soft toys — Y2K pastel 3d-render candy.
 - **`ultraviolet`** — bioluminescence / caves / glowworms / anything glowing on black.
 - **`aurora_silk`** — textiles / weaves / atmospheres / soft cosmic fields (flowing ribboned light).
 - **`infrared_bloom`** — foliage / pollen / organic fields you want SHOCKING, not pretty.
@@ -181,6 +180,16 @@ rather than another reuse. `grep -h '"style"' journeys/*.json | sort | uniq -c |
 where things stand. NEVER put realism words
 (photo, photograph, photography, macro, DSLR, realistic, film grain) anywhere in a journey.
 `palette` (per-card) is still yours — it's the LOCAL scene colour/mood, not the global render look.
+
+**PALETTE PERFORMANCE (measured on IG, 2026-08-13 — apply as a test, not a vibe).** Audience
+like-rate correlates with dark, saturated frames: corr(like%, luminance) −0.33, saturation +0.24,
+deep-shadow fraction +0.28 (n=27 posted videos). Every top performer sits near luminance
+0.31–0.38 with saturation ≥0.67; every pale high-key wash (sugar pastel, frost white, foam,
+salt, pale moss) sits in the bottom quartile. Tests before finishing a journey: (a) would most
+cards render against a DARK ground with saturated accents? (b) is any card's palette built on
+whites/creams/pastels as the DOMINANT field? — if so, re-ground it (night version, backlit
+version, deep-water version) or justify it as a deliberate rare contrast. Dark alone is not
+sufficient — the subject must stay nameable (esoteric dark journeys underperform too).
 
 ## Beat-aligned pacing — think in whole MEASURES (the composer composes a RHYTHM)
 The morphs ARE the rhythm. Each scale transition (the morph) lands on a STRONG beat — the downbeat

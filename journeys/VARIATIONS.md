@@ -1,5 +1,17 @@
 # Register variations — the differentiation library
 
+## PERFORMANCE NOTES (from measured IG data, 2026-08-13 — the refill reads this first)
+- **Dark + saturated wins.** like% correlates: luminance −0.33, saturation +0.24, deep-shadow
+  +0.28. Compose worlds on dark grounds with saturated accents; pale high-key washes (pastel
+  sugar, frost white, foam, salt flats, pale moss) are the measured bottom quartile. candy_gloss
+  is RETIRED.
+- **Nameable beats esoteric.** The top performers are instantly-nameable worlds; abstract-math
+  realms without a recognizable anchor underperform. Every card should be a realm a stranger
+  could name in two words.
+- **Length: long > short > medium.** Hypothesis on file: longs win on range/variability, shorts
+  on tight coherence, mediums are neither. tier_share now favors long (0.55/0.15/0.30) — keep
+  composing SOME mediums so the hypothesis stays testable.
+
 Raw material for composing journeys. Any register can be swapped for a variant;
 scales can be fractional (a third to half an order of magnitude apart is fine —
 set `exp` to floats and use per-card `sec` to linger). Journeys are CIRCULAR:
@@ -51,6 +63,8 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
 - flea on a dog on a rug in a room (parasite ladder)
 - moth → songbird → hawk → roc (predator ladder into fantasy sizes)
 - whale-sized sky-creature grazing cloud plankton
+- medusae: moon-jelly bell fleets pulsing in a night lagoon · siphonophore
+  chain-cities · comb-jelly rainbow paddle-rows
 
 ## Flora (10⁻²–10²)
 - single blossom → garden → forest canopy; mushroom gill cathedrals
@@ -88,6 +102,15 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
 - structure: gyroid & minimal-surface labyrinths (butterfly-wing photonics) ·
   E8/quasicrystal starburst projections · Voronoi shatter · geodesic domes all
   the way down · tesseract/4-D wireframe projections
+- flows: laminar streamline foliation (flow-lines combed around obstacles —
+  banded glacier ice, comet-tail streams, taffy-pull sheets) · Truchet-tile pipe
+  mazes · cycloid/epicycloid rosettes (spirograph gear-flowers) · loxodrome
+  spiral shells · Cantor-dust strata (bands whose gaps repeat inside every band)
+- folds & forces: Miura-ori crease tessellations (accordion mountain-valley
+  fields that fold flat) · catenary chain-net vaults (hanging-chain webs,
+  inverted-arch forests) · Lissajous/harmonograph curve nests (pendulum-drawn
+  rosettes that never quite close) · force-chain networks in packed grains
+  (glowing stress skeletons branching through a granular pile)
 - USE: pick ONE family per journey and reskin it to the theme (jade-carved
   automata, sugar-crystal Penrose, brass Chladni). Never repeat the previous
   video's family.
@@ -107,6 +130,10 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
   tidally-shredded moon rings · binary sunset worlds
 - painterly modes: ink-wash sumi-e cosmos · stained-glass nebula · embroidery
   stitched starfield · candy-colored accretion swirl — match the journey's theme.
+- deep-sky one-offs: light-echo shells around a flared star (nested luminous
+  rings lighting up ancient dust, V838-style) · a protoplanetary disk with
+  carved gap-rings and a glowing hub · a herd of cometary globules all
+  streaming one way like tadpoles fleeing a bright rim
 
 ## PALETTE FAMILIES — assign each journey ONE home family so the catalog stays varied
 (adjacent cards still contrast in temperature WITHIN the family; the family is the
@@ -118,6 +145,31 @@ video's overall color identity)
 - monochrome + ONE accent (ivory/obsidian + a single emerald or vermilion) ·
 - iridescent pearl (oil-slick rainbow on cream) · sumi-e ink (black/paper + one
   vermilion stamp) · jade & vermilion (celadon/deep green + red-orange)
+- mirage (burnt sienna/rose-gold/deep violet dusk) · petrol sheen (oil-slick
+  green-violet shimmer on charcoal black)
+- abyssal opal (translucent pearl/pale rose/ice blue glowing on navy-black) ·
+  cobalt & whitewash (cobalt night/lime-white walls/brass lamplight) ·
+  cyanotype (Prussian blue/paper white)
+- smoked amber (dark oolong amber/burnt caramel/pale gold lamplight on soot black) ·
+  desert rose & turquoise (dusty rose sandstone/turquoise glaze/bone-white plaster)
+- olive & terracotta (sun-bleached olive paint/ochre dust/terracotta clay on
+  burnt-umber shadow — noon earth-greens, not dusk) · vermilion lacquer & bone
+  (glossy vermilion-forward/bone ivory/soot black — red as the SUBJECT, unlike
+  sumi-e's single stamp)
+- midnight sun (low honey-gold light/teal glacier ice/long violet shadows) ·
+  porcelain prism (high-key porcelain whites + prismatic refraction edges — a
+  rare BRIGHT family in a night-heavy catalog) · plum & brass (deep plum dusk/
+  aged brass/candle amber)
+- marigold & indigo (saffron-gold festival bulbs/deep indigo dusk/oxblood
+  lacquer — a saturated complementary pair, unlike smoked amber's monochrome
+  glow) · absinthe & pewter (pale chartreuse glow/pewter grey/cool smoke — the
+  catalog's first green-grey family)
+- watermelon tourmaline (rose-quartz pink core/rind-green glow on black — the
+  catalog's first pink+green complementary pair) · viridian & bone (deep
+  green-lacquered walls/moonlit bone ivory/ghost-blue glass light — dark
+  museum green, not absinthe's chartreuse or jade's celadon) · raku
+  copper-flash (molten copper-flash red/mottled turquoise crackle/smoke
+  black — a ceramic-glaze pair, hotter than petrol sheen)
 - RULE: check the last few journeys' families and pick a DIFFERENT one.
 
 ## LENGTH VARIETY (Phil 2026-07-31 — the catalog must mix durations)
@@ -145,6 +197,8 @@ on top for further spread. Don't make every journey 8 bars.
   web dew-bead strings · butterfly scale shingles · feather barbule zips · snow crystal fields
 - **body-adjacent (non-gory)**: fingerprint ridge canyons · hair-strand cuticle shingles ·
   tear-salt crystal stars on glass
+- **music objects**: vinyl groove canyons with engraved waveform walls · the stylus diamond
+  prow riding the spiral · speaker-cone paper craters · wound guitar-string coil ridges
 Each of these can BE a whole short journey (establish the human-scale scene → dive to its
 micro-realm → seam back out) — the micro world is the destination, not a waypoint.
 
