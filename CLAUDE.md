@@ -568,3 +568,42 @@ candidates (locks up to 11.1x/9.8x) awaiting audition; VRAM confirmed freed afte
 8 videos sit in Video Review; posting queue is EMPTY until Phil approves. TONIGHT IS A WATCH
 NIGHT for the batch fix (queue head: jewel_oculus + turing_springs + droplet_zoo); tomorrow
 08:00 validates the poster self-heal only if Chrome is down again.
+2026-08-12 (later): MUSIC DEEP-DIVE — THE ALIGNER IS NOW EXACT (committed 415e43e). Phil's
+priorities: perfect music loop, tempo variety (investigate), strong deep beats + more usable
+candidates. FOUR ALIGNER DEFECTS found, fixed, and VERIFIED (position-coded synthetic +
+end-to-end mapping measurement — final audio at video time t is music-bed content at exactly
+t+w0, corr ~1.0): (1) LOOP STUTTER: step 4 built the loop as body=R[0:dur] crossfaded into a
+COPY of the head, so the file ended on R[XF] while starting at R[0] — every loop replayed
+0.5s, and the phase rotation parked that stutter w0 (~0.5-2s) BEFORE the video's end. Phil's
+"not always a nice perfect loop" = exactly this. Fix: body=R[XF:XF+dur] — the tail now fades
+through the material leading INTO the start (wrap sample-continuous), and since dur = integer
+bars the crossfade pairs content one whole loop apart = identical grid phase. (2) TILING:
+joins at arbitrary track length shifted the beat grid at every join — all content past tile 1
+played off-grid, invisibly (the lock score dropped morphs beyond one tile). Fix: tiles trimmed
+to k*bar+XF so every tile restarts at grid phase 0; phase search folds all morphs onto the
+tile period. (3) SILENCE STRIP excised INTERIOR silences >=0.3s (tide_glass choir lost 3.26s
+mid-track) — a chopped grid can't be locked by any single (stretch, phase). Fix: edge-only
+strip (areverse trick). (4) STRETCH SEARCH overfitted sparse envelopes (picked 0.99 where the
+track implied 1.004; ~0.14s drift by video end). Fix: MEASURE the track's own bar
+(autocorr near the video bar), derive stretch = m_bar/video_bar exactly, search phase only.
+resonance_hall + tide_glass candidates regenerated on the fixed aligner (their pre-fix
+versions were never auditioned). All LIVE videos carry the old stutter; nothing in production
+queue does (it was empty). TEMPO FACTS (probed, output/music/probes/): we have shipped ONE
+tempo ever — 103bpm on every dur-schema video (bpm = 240/bar, bar fixed at 2.333s by the
+format). ACE-Step OBEYS the bpm tag 51-154 (measured onset periods = integer multiples of the
+requested beat) but PHRASES IN 4-BEAT BARS, so usable framings are only those aligning music
+bars with the morph interval: 103 (morph=1 bar), 77 (waltz — probe locked 3/4 exactly), 51
+(half-time — downbeat every OTHER morph, which Phil pre-blessed); 129/154 clash with 4-beat
+phrasing (bar-accent lands off the morph grid). RHYTHM VOCAB (probed): "a single deep 808
+kick lands exactly on the downbeat of every bar" beat everything for bar-level pulse
+(ac@bar 0.50, bar-period dominant); dense "four-on-the-floor sub kick" underperformed (0.17);
+the current no-drums prose already phrases at half-bar/bar. Remaining lock imperfection is
+MUSICAL, not mechanical: arpeggio-type textures have onsets on every 8th so no decisive
+downbeat phase exists — fix upstream (deep-downbeat tags) + selection. PROPOSED (awaiting
+Phil): candidate matrix varying rhythm x timbre x tempo{51,77,103} with per-journey seeds
+(today every journey's 'warm' = seed 500 = same noise, a sameness generator); overgenerate
+8-10, auto-rank by bar-clarity/lock/pulse-at-bar, present top 5; blanket 'no drums' replaced
+by 'no snare/hi-hat/cymbals/woodblock' + explicit deep-kick language; MusiConGen stays the
+phase-2 option if ACE rhythm obedience proves insufficient. FUTURE (Phil's list, not started):
+IG likes-tracking + A/B framework; style diversity (kill candy/ceramic-tile looks, prefer
+coherent full-scale space->subatomic journeys — those outperform).
