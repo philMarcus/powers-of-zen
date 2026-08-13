@@ -102,6 +102,11 @@ yeast colony budding towers · paramecium harbor traffic
 
 ## 10⁻⁸·⁵–10⁻⁶ · molecular `[amb]` — EMPTY TODAY (0 cards with molecular machinery)
 The most under-used spectacular band in the catalog.
+⚠ METAPHOR TRAP (probed 2026-08-13): a landscape word beats a substance word — "a canyon of
+protein ribbons" renders a LITERAL canyon; "a sea of lipids" renders a sea. In scenes AND
+ref prompts, lead with the molecular substance and keep scale cues abstract ("folded ribbon
+chains stacked into looping walls", never "canyon/gorge/valley/sea of ..."). This band's
+reference images come donor-first (PDB renders), not from text.
 protein ribbon canyon (folded chains as looping alpine ridges) · DNA double-helix
 suspension bridge with base-pair rungs · ribosome factory floor assembling a chain ·
 lipid-bilayer sea (two-layer ball-pit surface) with embedded protein turbines · antibody
