@@ -25,7 +25,7 @@
     },
     "static_bloom": {
       "state": "queued",
-      "order": 25,
+      "order": 0,
       "ts": "2026-08-03 14:06:37",
       "note": "dive failed: ue \") — re-rolling seed, attempt 4/4 | [dive] ABORT: frame 0 keeps rendering a lone figure after 4 seeds. This is a PROMPT problem, not luck — fix the render_start card (drop halo/gilded/regalia words, name a concrete object) or pick a different render_start. Re-run with --allow-figures to override."
     },
@@ -36,171 +36,164 @@
     },
     "lantern_canals": {
       "state": "queued",
-      "order": 26,
+      "order": 1,
       "ts": "2026-08-04 00:17:27",
       "note": "composed by midnight refill"
     },
     "moon_jelly": {
       "state": "queued",
-      "order": 27,
+      "order": 2,
       "ts": "2026-08-04 00:17:28",
       "note": "composed by midnight refill"
     },
     "singing_dunes": {
       "state": "queued",
-      "order": 28,
+      "order": 3,
       "ts": "2026-08-04 00:17:28",
       "note": "composed by midnight refill"
     },
     "vinyl_canyon": {
       "state": "queued",
-      "order": 29,
+      "order": 4,
       "ts": "2026-08-04 00:17:28",
       "note": "composed by midnight refill"
     },
     "amber_steep": {
       "state": "queued",
-      "order": 30,
+      "order": 5,
       "ts": "2026-08-05 00:16:26",
       "note": "composed by midnight refill"
     },
     "blueprint_harbor": {
       "state": "queued",
-      "order": 31,
+      "order": 6,
       "ts": "2026-08-05 00:16:26",
       "note": "composed by midnight refill"
     },
     "girih_dome": {
       "state": "queued",
-      "order": 32,
+      "order": 7,
       "ts": "2026-08-05 00:16:26",
       "note": "composed by midnight refill"
     },
     "comet_firn": {
       "state": "queued",
-      "order": 33,
+      "order": 8,
       "ts": "2026-08-06 00:22:35",
       "note": "composed by midnight refill"
     },
     "gill_cathedral": {
       "state": "queued",
-      "order": 34,
+      "order": 9,
       "ts": "2026-08-06 00:22:34",
       "note": "composed by midnight refill"
     },
     "ochre_door": {
       "state": "queued",
-      "order": 35,
+      "order": 10,
       "ts": "2026-08-06 00:22:34",
       "note": "composed by midnight refill"
     },
     "latent_whorl": {
       "state": "queued",
-      "order": 36,
+      "order": 11,
       "ts": "2026-08-07 00:16:54",
       "note": "composed by midnight refill"
     },
     "marigold_carousel": {
       "state": "queued",
-      "order": 37,
+      "order": 12,
       "ts": "2026-08-07 00:16:54",
       "note": "composed by midnight refill"
     },
     "palm_house": {
       "state": "queued",
-      "order": 38,
+      "order": 13,
       "ts": "2026-08-07 00:16:54",
       "note": "composed by midnight refill"
     },
     "hyperbolic_reef": {
       "state": "queued",
-      "order": 39,
+      "order": 14,
       "ts": "2026-08-08 00:16:56",
       "note": "composed by midnight refill"
     },
     "sodium_stairwell": {
       "state": "queued",
-      "order": 40,
+      "order": 15,
       "ts": "2026-08-08 00:16:57",
       "note": "composed by midnight refill"
     },
     "whalebone_hall": {
       "state": "queued",
-      "order": 41,
+      "order": 16,
       "ts": "2026-08-08 00:16:57",
       "note": "composed by midnight refill"
     },
-    "copper_rain_fpb5": {
-      "state": "rejected",
-      "note": "TEMPO TEST spec — music audition only, never render/queue",
-      "ts": "2026-08-13 11:49:51"
-    },
-    "copper_rain_fpb6": {
-      "state": "rejected",
-      "note": "TEMPO TEST spec — music audition only, never render/queue",
-      "ts": "2026-08-13 11:49:51"
-    },
-    "copper_rain_fpb10": {
-      "state": "rejected",
-      "note": "TEMPO TEST spec — music audition only, never render/queue",
-      "ts": "2026-08-13 11:49:51"
-    },
     "gossamer_dawn": {
       "state": "queued",
-      "order": 42,
+      "order": 17,
       "force": true,
       "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
       "ts": "2026-08-13 11:50:05"
     },
     "heron_delta": {
       "state": "queued",
-      "order": 43,
+      "order": 18,
       "force": true,
       "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
       "ts": "2026-08-13 11:50:05"
     },
     "chess_empires": {
       "state": "queued",
-      "order": 44,
+      "order": 19,
       "force": true,
       "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
       "ts": "2026-08-13 11:50:05"
     },
     "night_lido": {
       "state": "queued",
-      "order": 45,
+      "order": 20,
       "force": true,
       "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
       "ts": "2026-08-13 11:50:05"
     },
     "attic_drift": {
       "state": "queued",
-      "order": 46,
+      "order": 21,
       "force": true,
       "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
       "ts": "2026-08-13 11:50:05"
     },
     "jewel_oculus": {
       "state": "queued",
-      "order": 47,
+      "order": 22,
       "force": true,
       "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
       "ts": "2026-08-13 11:50:05"
     },
     "turing_springs": {
       "state": "queued",
-      "order": 48,
+      "order": 23,
       "force": true,
       "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
       "ts": "2026-08-13 11:50:05"
     },
     "droplet_zoo": {
       "state": "queued",
-      "order": 49,
+      "order": 24,
       "force": true,
       "note": "rejected 2026-08-13 — REWRITE to REALMS/new standards before re-render",
       "ts": "2026-08-13 11:50:05"
+    },
+    "ammonite_spiral": {
+      "state": "queued",
+      "force": true,
+      "new_seed": true,
+      "ts": "2026-08-13 12:52:56",
+      "note": "re-render: video rejected in review",
+      "order": 25
     }
   },
-  "updated": "2026-08-13 11:50:20"
+  "updated": "2026-08-13 13:11:58"
 }

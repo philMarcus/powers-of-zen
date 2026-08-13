@@ -206,9 +206,10 @@ Before writing cards, read `journeys/REALMS.md` for the bands your journey cross
 The video's musical tempo is bpm = 720/fpb at the 12fps raw rate; the engine scales all
 morph/anacrusis/tail geometry automatically. Choose per journey — this is a real variety
 axis, not a default to copy:
-- **5** = 144bpm (kinetic, urgent — A/B approved, "not choppy") · **6** = 120 (driving) ·
-  **7** = 103 (the classic flow) · **8** = 90 (stately) · **9** = 80 (dreamy — the FLOOR) ·
-  **10** = 72 only as a RARE vast-and-slow tail, never routine.
+- Standard band: **6** = 120bpm (driving — the CEILING for routine use) · **7** = 103 (the
+  classic flow) · **8** = 90 (stately) · **9** = 80 (dreamy — the floor).
+- Rare tails, deliberate spice only: **5** = 144 (reads fast and disorienting, not chill —
+  Phil 2026-08-13: "not very often if at all above 120") · **10** = 72 (vast-and-slow).
 - Test: does the tempo match how the journey's worlds FEEL to fall through? (electric/
   storm/urban → fast; oceanic/cosmic/ancient → slow.)
 - Length interacts: seconds = cards × fpb/3. Keep total ≤ ~30s — an 11-card journey at

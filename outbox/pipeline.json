@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-08-13 11:51:43",
+    "updated": "2026-08-13 13:11:58",
     "paused_platforms": [
       "tiktok"
     ],
@@ -3118,7 +3118,7 @@
       "yt_title": "A fossil’s whisper spirals into cosmic light 🌀💎",
       "yt_desc": "",
       "cameo": "lorraine",
-      "state": "music",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -3799,11 +3799,11 @@
       "cut": "divein",
       "file": "review_divein/cinder_veil_ds_divein_shift.mp4",
       "title": "",
-      "caption": "A rogue planet drifts, veins of fire pulsing beneath its skin Can you spot Newman hiding in the lava tube? 👀 #VolcanicDreamscape #CosmicLaceFilaments #RoguePlanetVeil #EmberLightRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-      "yt_title": "A rogue planet drifts, veins of fire pulsing beneath its skin",
+      "caption": "A river of fire carves its path through the bones of the earth 🌋 Can you spot Newman hiding in the lava tube? 👀 #VolcanicDreamscape #CosmicLaceFilaments #RoguePlanetVeil #EmberLightRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A river of fire carves its path through the bones of the earth 🌋",
       "yt_desc": "",
       "cameo": "newman",
-      "state": "music",
+      "state": "queued",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -3853,8 +3853,8 @@
         "bpm": 103,
         "bar": 2.333,
         "key": "F minor",
-        "stage": "review",
-        "chosen": null,
+        "stage": "done",
+        "chosen": "tide_organ-wild",
         "candidates": [
           {
             "id": "ember_pulse-heartbeat",
@@ -3931,7 +3931,7 @@
       "yt_title": "Lost in the geometry of a vanishing world...",
       "yt_desc": "",
       "cameo": "adam",
-      "state": "music",
+      "state": "queued",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -3981,8 +3981,8 @@
         "bpm": 103,
         "bar": 2.333,
         "key": "D major",
-        "stage": "review",
-        "chosen": null,
+        "stage": "done",
+        "chosen": "analog_dawn-wild",
         "candidates": [
           {
             "id": "aurora_strings-halftime",
@@ -4268,170 +4268,6 @@
         "Where the water ends, the glass lattice begins... Can you spot Lee hiding in the glow? 👀 #bioluminescentdream #glassuniverse #moonlitmicrocosm #endlessdepths #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "One stone holds the whole world Can you spot Lee hiding in the glow? 👀 #bioluminescentdream #glassuniverse #moonlitmicrocosm #endlessdepths #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
       ]
-    },
-    {
-      "journey": "copper_rain_fpb5",
-      "model": "ds",
-      "cut": "divein",
-      "file": "review_divein/copper_rain_fpb5_ds_divein.mp4",
-      "title": "",
-      "caption": "🧪 TEMPO TEST — music audition only, not for posting",
-      "yt_title": "",
-      "yt_desc": "",
-      "cameo": "newman",
-      "state": "music",
-      "scheduled": null,
-      "platforms": {
-        "tiktok": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
-        },
-        "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
-        },
-        "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
-        }
-      },
-      "created": "2026-08-13",
-      "music": {
-        "bpm": 144,
-        "bar": 1.667,
-        "key": "E minor",
-        "stage": "review",
-        "chosen": null,
-        "candidates": [
-          {
-            "id": "aurora_strings-halftime",
-            "lane": "aurora_strings",
-            "mood": "polar, shimmering, slow dawn · halftime",
-            "track": "output/music/copper_rain_fpb5_aurora_strings-halftime.flac",
-            "aligned": "review/music/candidates/copper_rain_fpb5/aurora_strings-halftime.mp4",
-            "seed": 25526,
-            "lock": 14.99,
-            "bar_conf": -0.03,
-            "score": 7.5,
-            "tags": "chill hypnotic ambient evoking a rainy evening street corner turned inward, warm and nostalgic, soft patter under lamplit calm, one bright swell landing on the dendrite-to-streets seam, bowed string pad swells and sparse harp plucks, silvery and cold, a single deep 808 kick lands exactly on the downbeat, spacious half-time groove with long empty space between hits, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
-          },
-          {
-            "id": "aurora_strings-third_answer",
-            "lane": "aurora_strings",
-            "mood": "polar, shimmering, slow dawn · third_answer",
-            "track": "output/music/copper_rain_fpb5_aurora_strings-third_answer.flac",
-            "aligned": "review/music/candidates/copper_rain_fpb5/aurora_strings-third_answer.mp4",
-            "seed": 25415,
-            "lock": 10.09,
-            "bar_conf": 0.15,
-            "score": 6.55,
-            "tags": "chill hypnotic ambient evoking a rainy evening street corner turned inward, warm and nostalgic, soft patter under lamplit calm, one bright swell landing on the dendrite-to-streets seam, bowed string pad swells and sparse harp plucks, silvery and cold, a deep soft kick on the downbeat of every bar and a quieter answering thump on beat three, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
-          },
-          {
-            "id": "choir_of_dust-wild",
-            "lane": "choir_of_dust",
-            "mood": "hushed, suspended, dissolving · heartbeat",
-            "track": "output/music/copper_rain_fpb5_choir_of_dust-wild.flac",
-            "aligned": "review/music/candidates/copper_rain_fpb5/choir_of_dust-wild.mp4",
-            "seed": 25452,
-            "lock": 5.36,
-            "bar_conf": 0.08,
-            "score": 3.12,
-            "tags": "chill hypnotic ambient evoking a rainy evening street corner turned inward, warm and nostalgic, soft patter under lamplit calm, one bright swell landing on the dendrite-to-streets seam, a soft choir-like pad, glass harmonica and fine granular shimmer, a deep sub-bass heartbeat pulse, two soft beats then space, the first landing on the downbeat of every bar, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
-          },
-          {
-            "id": "tide_organ-wild",
-            "lane": "tide_organ",
-            "mood": "tidal, breathing, mineral · heartbeat",
-            "track": "output/music/copper_rain_fpb5_tide_organ-wild.flac",
-            "aligned": "review/music/candidates/copper_rain_fpb5/tide_organ-wild.mp4",
-            "seed": 25563,
-            "lock": 5.73,
-            "bar_conf": 0.03,
-            "score": 3.04,
-            "tags": "chill hypnotic ambient evoking a rainy evening street corner turned inward, warm and nostalgic, soft patter under lamplit calm, one bright swell landing on the dendrite-to-streets seam, a breathy reed organ and soft water textures over a deep sub pulse, a deep sub-bass heartbeat pulse, two soft beats then space, the first landing on the downbeat of every bar, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
-          },
-          {
-            "id": "glass_chapel-wild",
-            "lane": "glass_chapel",
-            "mood": "sacred, luminous, weightless · downbeat",
-            "track": "output/music/copper_rain_fpb5_glass_chapel-wild.flac",
-            "aligned": "review/music/candidates/copper_rain_fpb5/glass_chapel-wild.mp4",
-            "seed": 25489,
-            "lock": 3.78,
-            "bar_conf": -0.11,
-            "score": 1.89,
-            "tags": "chill hypnotic ambient evoking a rainy evening street corner turned inward, warm and nostalgic, soft patter under lamplit calm, one bright swell landing on the dendrite-to-streets seam, crystalline glass bells and a soft distant choir pad, airy shimmer, a single deep soft kick drum lands exactly on the downbeat of every bar, felt more than heard, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals, no snare, no hi-hat, no cymbals, no woodblock, no claps, no rimshot"
-          }
-        ],
-        "for_model": "ds",
-        "for_cut": "divein"
-      }
-    },
-    {
-      "journey": "copper_rain_fpb6",
-      "model": "ds",
-      "cut": "divein",
-      "file": "review_divein/copper_rain_fpb6_ds_divein.mp4",
-      "title": "",
-      "caption": "🧪 TEMPO TEST — music audition only, not for posting",
-      "yt_title": "",
-      "yt_desc": "",
-      "cameo": "newman",
-      "state": "music",
-      "scheduled": null,
-      "platforms": {
-        "tiktok": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
-        },
-        "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
-        },
-        "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
-        }
-      },
-      "created": "2026-08-13"
-    },
-    {
-      "journey": "copper_rain_fpb10",
-      "model": "ds",
-      "cut": "divein",
-      "file": "review_divein/copper_rain_fpb10_ds_divein.mp4",
-      "title": "",
-      "caption": "🧪 TEMPO TEST — music audition only, not for posting",
-      "yt_title": "",
-      "yt_desc": "",
-      "cameo": "newman",
-      "state": "music",
-      "scheduled": null,
-      "platforms": {
-        "tiktok": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
-        },
-        "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
-        },
-        "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
-        }
-      },
-      "created": "2026-08-13"
     }
   ]
 }
