@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-08-13 13:11:58",
+    "updated": "2026-08-14 16:19:26",
     "paused_platforms": [
       "tiktok"
     ],
@@ -3803,7 +3803,7 @@
       "yt_title": "A river of fire carves its path through the bones of the earth 🌋",
       "yt_desc": "",
       "cameo": "newman",
-      "state": "queued",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -3812,14 +3812,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/78IjjpANpf4",
+          "ts": "2026-08-13 18:01:32"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/Db_wy6SMj1f/",
+          "ts": "2026-08-13 18:01:32"
         }
       },
       "created": "2026-08-07",
@@ -3931,7 +3931,7 @@
       "yt_title": "Lost in the geometry of a vanishing world...",
       "yt_desc": "",
       "cameo": "adam",
-      "state": "queued",
+      "state": "failed",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -3940,14 +3940,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/Pj4q0aK23-M",
+          "ts": "2026-08-14 08:01:28"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DcBQ7cpxIRg/",
+          "ts": "2026-08-14 08:01:28"
         }
       },
       "created": "2026-08-07",
@@ -4267,6 +4267,281 @@
         "Moonlight fractures into a thousand black ponds Can you spot Lee hiding in the glow? 👀 #bioluminescentdream #glassuniverse #moonlitmicrocosm #endlessdepths #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "Where the water ends, the glass lattice begins... Can you spot Lee hiding in the glow? 👀 #bioluminescentdream #glassuniverse #moonlitmicrocosm #endlessdepths #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
         "One stone holds the whole world Can you spot Lee hiding in the glow? 👀 #bioluminescentdream #glassuniverse #moonlitmicrocosm #endlessdepths #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "abyssal_chandelier",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/abyssal_chandelier_ds_divein.mp4",
+      "title": "",
+      "caption": "Dive into the endless spiral of existence 🌌 Can you spot Kitty hiding in the depths? 👀 #CosmicDive #InfiniteZoom #BioluminescentWonders #GalacticJewelry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Dive into the endless spiral of existence 🌌",
+      "yt_desc": "",
+      "cameo": "kitty",
+      "state": "review",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-14",
+      "caption_bodies": [
+        "Dive into the endless spiral of existence 🌀",
+        "From cosmic cradles to abyssal depths, we zoom forever",
+        "A jewel-box universe folds in on itself",
+        "Where galaxies bloom and shrimp eyes gleam",
+        "The infinite loop of life’s luminous dance"
+      ],
+      "yt_title_options": [
+        "Dive into the endless spiral of existence 🌀",
+        "From cosmic cradles to abyssal depths, we zoom forever",
+        "A jewel-box universe folds in on itself",
+        "Where galaxies bloom and shrimp eyes gleam",
+        "The infinite loop of life’s luminous dance"
+      ],
+      "spot_line": "Can you spot Kitty hiding in the void? 🐱",
+      "caption_tags": "#CosmicZoom #BioluminescentDive #InfiniteLoopUniverse #AbyssalGlow #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Dive into the endless spiral of existence 🌀 Can you spot Kitty hiding in the void? 🐱 #CosmicZoom #BioluminescentDive #InfiniteLoopUniverse #AbyssalGlow #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "From cosmic cradles to abyssal depths, we zoom forever Can you spot Kitty hiding in the void? 🐱 #CosmicZoom #BioluminescentDive #InfiniteLoopUniverse #AbyssalGlow #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A jewel-box universe folds in on itself Can you spot Kitty hiding in the void? 🐱 #CosmicZoom #BioluminescentDive #InfiniteLoopUniverse #AbyssalGlow #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where galaxies bloom and shrimp eyes gleam Can you spot Kitty hiding in the void? 🐱 #CosmicZoom #BioluminescentDive #InfiniteLoopUniverse #AbyssalGlow #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The infinite loop of life’s luminous dance Can you spot Kitty hiding in the void? 🐱 #CosmicZoom #BioluminescentDive #InfiniteLoopUniverse #AbyssalGlow #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "ivory_gambit",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/ivory_gambit_ds_divein.mp4",
+      "title": "",
+      "caption": "A galaxy unwinds into a kingdom, where ivory knights stand in silent battle 🌌 Can you spot Adam hiding in the endless loop? 👀 #CosmicBattlefield #InfiniteZoom #LacquerUniverse #AweInEveryScale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A galaxy unwinds into a kingdom, where ivory knights stand in silent battle 🌌",
+      "yt_desc": "",
+      "cameo": "adam",
+      "state": "rejected",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-14",
+      "caption_bodies": [
+        "A galaxy unwinds into a kingdom, where ivory knights stand in silent battle 🌌",
+        "From cosmic dust to cellular depths, the universe folds in on itself ⚔️",
+        "Dive through time and space—where every zoom reveals another world",
+        "A never-ending spiral of light and shadow, carved from the void",
+        "The fabric of existence, stitched together in loops of infinity"
+      ],
+      "yt_title_options": [
+        "A galaxy unwinds into a kingdom, where ivory knights stand in silent battle 🌌",
+        "From cosmic dust to cellular depths, the universe folds in on itself ⚔️",
+        "Dive through time and space—where every zoom reveals another world",
+        "A never-ending spiral of light and shadow, carved from the void",
+        "The fabric of existence, stitched together in loops of infinity"
+      ],
+      "spot_line": "Can you spot Adam hiding in the endless loop? 👀",
+      "caption_tags": "#CosmicBattlefield #InfiniteZoom #LacquerUniverse #AweInEveryScale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A galaxy unwinds into a kingdom, where ivory knights stand in silent battle 🌌 Can you spot Adam hiding in the endless loop? 👀 #CosmicBattlefield #InfiniteZoom #LacquerUniverse #AweInEveryScale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "From cosmic dust to cellular depths, the universe folds in on itself ⚔️ Can you spot Adam hiding in the endless loop? 👀 #CosmicBattlefield #InfiniteZoom #LacquerUniverse #AweInEveryScale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Dive through time and space—where every zoom reveals another world Can you spot Adam hiding in the endless loop? 👀 #CosmicBattlefield #InfiniteZoom #LacquerUniverse #AweInEveryScale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A never-ending spiral of light and shadow, carved from the void Can you spot Adam hiding in the endless loop? 👀 #CosmicBattlefield #InfiniteZoom #LacquerUniverse #AweInEveryScale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The fabric of existence, stitched together in loops of infinity Can you spot Adam hiding in the endless loop? 👀 #CosmicBattlefield #InfiniteZoom #LacquerUniverse #AweInEveryScale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "whale_fall_republic",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/whale_fall_republic_ds_divein.mp4",
+      "title": "",
+      "caption": "A silver path of moonlight leads into the abyss 🌊 Can you spot Adam hiding in the endless dive? 👀 #bioluminescentdepths #cosmicbonejourney #endlessabyssloop #galacticwhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A silver path of moonlight leads into the abyss 🌊",
+      "yt_desc": "",
+      "cameo": "adam",
+      "state": "rejected",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-14",
+      "caption_bodies": [
+        "A silver path of moonlight leads into the abyss 🌊",
+        "Whale bones whisper secrets to the deep sea’s glow",
+        "Bone rings hum with the echoes of ancient tides",
+        "Marrow cells pulse in the quiet dark of the ocean floor",
+        "The galaxy folds into a dead star’s fractured light"
+      ],
+      "yt_title_options": [
+        "A silver path of moonlight leads into the abyss 🌊",
+        "Whale bones whisper secrets to the deep sea’s glow",
+        "Bone rings hum with the echoes of ancient tides",
+        "Marrow cells pulse in the quiet dark of the ocean floor",
+        "The galaxy folds into a dead star’s fractured light"
+      ],
+      "spot_line": "Can you spot Adam hiding in the endless dive? 👀",
+      "caption_tags": "#bioluminescentdepths #cosmicbonejourney #endlessabyssloop #galacticwhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A silver path of moonlight leads into the abyss 🌊 Can you spot Adam hiding in the endless dive? 👀 #bioluminescentdepths #cosmicbonejourney #endlessabyssloop #galacticwhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Whale bones whisper secrets to the deep sea’s glow Can you spot Adam hiding in the endless dive? 👀 #bioluminescentdepths #cosmicbonejourney #endlessabyssloop #galacticwhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Bone rings hum with the echoes of ancient tides Can you spot Adam hiding in the endless dive? 👀 #bioluminescentdepths #cosmicbonejourney #endlessabyssloop #galacticwhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Marrow cells pulse in the quiet dark of the ocean floor Can you spot Adam hiding in the endless dive? 👀 #bioluminescentdepths #cosmicbonejourney #endlessabyssloop #galacticwhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The galaxy folds into a dead star’s fractured light Can you spot Adam hiding in the endless dive? 👀 #bioluminescentdepths #cosmicbonejourney #endlessabyssloop #galacticwhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "moth_orchard_night",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/moth_orchard_night_ds_divein.mp4",
+      "title": "",
+      "caption": "A moth’s wing unfolds into galaxies 🌌 Can you spot Tina before the loop resets? 👀 #cosmicorchard #mothgalaxies #infinitezoomdive #enchantedchitin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A moth’s wing unfolds into galaxies 🌌",
+      "yt_desc": "",
+      "cameo": "tina",
+      "state": "rejected",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-14",
+      "caption_bodies": [
+        "A moth’s wing unfolds into galaxies 🌌",
+        "Dust and starlight weave the night’s secret threads ✨",
+        "Chitin hums with cosmic echoes in amber light",
+        "Tina hides where scales meet the stars...",
+        "The orchard’s glow loops through infinity"
+      ],
+      "yt_title_options": [
+        "A moth’s wing unfolds into galaxies 🌌",
+        "Dust and starlight weave the night’s secret threads ✨",
+        "Chitin hums with cosmic echoes in amber light",
+        "Tina hides where scales meet the stars...",
+        "The orchard’s glow loops through infinity"
+      ],
+      "spot_line": "Can you spot Tina before the loop resets? 👀",
+      "caption_tags": "#cosmicorchard #mothgalaxies #infinitezoomdive #enchantedchitin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A moth’s wing unfolds into galaxies 🌌 Can you spot Tina before the loop resets? 👀 #cosmicorchard #mothgalaxies #infinitezoomdive #enchantedchitin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Dust and starlight weave the night’s secret threads ✨ Can you spot Tina before the loop resets? 👀 #cosmicorchard #mothgalaxies #infinitezoomdive #enchantedchitin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Chitin hums with cosmic echoes in amber light Can you spot Tina before the loop resets? 👀 #cosmicorchard #mothgalaxies #infinitezoomdive #enchantedchitin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Tina hides where scales meet the stars... Can you spot Tina before the loop resets? 👀 #cosmicorchard #mothgalaxies #infinitezoomdive #enchantedchitin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The orchard’s glow loops through infinity Can you spot Tina before the loop resets? 👀 #cosmicorchard #mothgalaxies #infinitezoomdive #enchantedchitin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "squid_lantern",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/squid_lantern_ds_divein.mp4",
+      "title": "",
+      "caption": "Drifting through the abyss, where light dances in endless night 🌊✨ Can you spot Belle hiding in the depths? 👀 #DeepSeaWonders #BioluminescentDive #CosmicOcean #InfiniteZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Drifting through the abyss, where light dances in endless night 🌊✨",
+      "yt_desc": "",
+      "cameo": "belle",
+      "state": "rejected",
+      "scheduled": null,
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-14",
+      "caption_bodies": [
+        "Drifting through the abyss, where light dances in endless night 🌊✨",
+        "A squid’s skin hums with electric constellations 🐙💫",
+        "Chambers of glowing cells pulse like a cosmic hive 🔥🌀",
+        "Membranes shimmer, where enzymes weave light from the dark ⚡️🌑",
+        "The deep ocean’s glow fades into infinite black 🌌❄️"
+      ],
+      "yt_title_options": [
+        "Drifting through the abyss, where light dances in endless night 🌊✨",
+        "A squid’s skin hums with electric constellations 🐙💫",
+        "Chambers of glowing cells pulse like a cosmic hive 🔥🌀",
+        "Membranes shimmer, where enzymes weave light from the dark ⚡️🌑",
+        "The deep ocean’s glow fades into infinite black 🌌❄️"
+      ],
+      "spot_line": "Can you spot Belle hiding in the depths? 👀",
+      "caption_tags": "#DeepSeaWonders #BioluminescentDive #CosmicOcean #InfiniteZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Drifting through the abyss, where light dances in endless night 🌊✨ Can you spot Belle hiding in the depths? 👀 #DeepSeaWonders #BioluminescentDive #CosmicOcean #InfiniteZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A squid’s skin hums with electric constellations 🐙💫 Can you spot Belle hiding in the depths? 👀 #DeepSeaWonders #BioluminescentDive #CosmicOcean #InfiniteZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Chambers of glowing cells pulse like a cosmic hive 🔥🌀 Can you spot Belle hiding in the depths? 👀 #DeepSeaWonders #BioluminescentDive #CosmicOcean #InfiniteZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Membranes shimmer, where enzymes weave light from the dark ⚡️🌑 Can you spot Belle hiding in the depths? 👀 #DeepSeaWonders #BioluminescentDive #CosmicOcean #InfiniteZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The deep ocean’s glow fades into infinite black 🌌❄️ Can you spot Belle hiding in the depths? 👀 #DeepSeaWonders #BioluminescentDive #CosmicOcean #InfiniteZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
       ]
     }
   ]

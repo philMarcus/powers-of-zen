@@ -479,7 +479,7 @@ def phase_info(phases, i):
     return phases[last]["prompt"], None, i - n, last
 
 
-def assemble(cfg, name, out_dir, frames_dir, total, exponent=None):
+def assemble(cfg, name, out_dir, frames_dir, total, exponent=None, loop_pad=False):
     # zoom-out is always the primary cut: build-out generates it forward,
     # build-in generates dive-in footage that gets reversed into the primary
     fwd = f"{name}.mp4" if cfg["build"] == "out" else f"{name}_divein.mp4"
@@ -494,6 +494,17 @@ def assemble(cfg, name, out_dir, frames_dir, total, exponent=None):
             Image.blend(tail, heads[i], (i + 1) / (K + 1)).save(frames_dir / f"{t:05d}.png")
         print(f"[dive] loop crossfade over last {K} frames", flush=True)
 
+    # LOOP-AWARE INTERPOLATION (2026-08-14): minterpolate cannot in-between past its last
+    # input frame, so every assembled video silently LOST the final ~1.5 raw frames (613 of
+    # 616 expected — in every prior render) and the loop wrapped with a ~2.5-frame pop.
+    # Padding the sequence with the first two frames lets the interpolator bridge
+    # f_last -> f0 like any other pair; the output is trimmed to the exact frame count and
+    # the pads removed (repair tools count frames/ to judge completeness).
+    pad = 0
+    if loop_pad:
+        for k_ in (0, 1):
+            shutil.copy(frames_dir / f"{k_:05d}.png", frames_dir / f"{total + k_:05d}.png")
+        pad = 2
     raw = "build/raw.mp4"
     subprocess.run([FFMPEG, "-y", "-framerate", str(cfg["fps"]),
                     "-i", "build/frames/%05d.png",
@@ -501,17 +512,26 @@ def assemble(cfg, name, out_dir, frames_dir, total, exponent=None):
                    cwd=out_dir, check=True, capture_output=True)
 
     interp = "build/interp.mp4"
+    n_target = total * (cfg["final_fps"] or cfg["fps"]) // cfg["fps"]
     if cfg["final_fps"]:
         t0 = time.time()
         subprocess.run([FFMPEG, "-y", "-i", raw,
                         "-vf", (f"minterpolate=fps={cfg['final_fps']}:mi_mode=mci:"
                                 "mc_mode=aobmc:me_mode=bidir:vsbmc=1"),
+                        "-frames:v", str(n_target),
                         "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", interp],
                        cwd=out_dir, check=True, capture_output=True)
         print(f"[dive] interpolated {cfg['fps']} -> {cfg['final_fps']}fps "
+              f"({n_target} frames{', loop-bridged' if pad else ''}) "
               f"in {time.time() - t0:.0f}s", flush=True)
+    elif pad:
+        subprocess.run([FFMPEG, "-y", "-i", raw, "-frames:v", str(n_target),
+                        "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", interp],
+                       cwd=out_dir, check=True, capture_output=True)
     else:
         interp = raw
+    for k_ in range(pad):
+        (frames_dir / f"{total + k_:05d}.png").unlink(missing_ok=True)
 
     final = fwd
     if exponent:
@@ -564,10 +584,12 @@ def main():
                     help="pure feedback zoom — no tracking, no depth-CN (A/B vs the engine-1 look)")
     ap.add_argument("--classic-tail", action="store_true",
                     help="loop tail uses the pre-IPA gap-scaled pixel morph (A/B vs IPA homing)")
-    ap.add_argument("--resolve", action="store_true",
-                    help="RESOLVE-ON-APPROACH: field-card arrivals get animated procedural "
-                         "depth scaffolds (engine/scaffold.py) so the new realm resolves out "
-                         "of the old texture as countless growing instances")
+    ap.add_argument("--resolve", dest="resolve", action="store_true", default=True,
+                    help="RESOLVE-ON-APPROACH (DEFAULT ON, Phil 2026-08-14): field-card "
+                         "arrivals get animated procedural depth scaffolds so the new realm "
+                         "resolves out of the old texture as countless growing instances")
+    ap.add_argument("--no-resolve", dest="resolve", action="store_false",
+                    help="disable resolve-on-approach (A/B / legacy behavior)")
     ap.add_argument("--cn", type=float, metavar="STRENGTH",
                     help="override depth-ControlNet strength; --cn 0 disables the CN but KEEPS "
                          "tracking/composition (the clean A/B for 'is the CN hurting the look?'). "
@@ -1091,7 +1113,8 @@ def main():
         elif show_counter:
             show_counter = bool(counter_flag)
         assemble(cfg, name, out_dir, frames_dir, total,
-                 exponent=exponent if show_counter else None)
+                 exponent=exponent if show_counter else None,
+                 loop_pad=bool(loop) and cfg["build"] != "out")
     print(f"[dive] done in {time.time() - t0:.0f}s", flush=True)
 
 

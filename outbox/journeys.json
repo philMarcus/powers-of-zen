@@ -1,6 +1,6 @@
 {
   "settings": {
-    "render_budget_min": 500,
+    "render_budget_min": 340,
     "max_ready_videos": 20,
     "journey_queue_target": 20,
     "refill_max_per_night": 5,
@@ -10,10 +10,10 @@
       "short": 0.3
     },
     "nightly_templates": [
-      "LLLLSSM",
       "LLLS",
       "LLS",
-      "LMS"
+      "LMS",
+      "MS"
     ],
     "render_paused": false,
     "refill_paused": false
@@ -159,30 +159,6 @@
       "ts": "2026-08-13 13:23:02",
       "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
-    "abyssal_chandelier": {
-      "state": "queued",
-      "order": 0,
-      "ts": "2026-08-13 13:36:46",
-      "note": "REALMS rethink wave 1 (2026-08-13)"
-    },
-    "ivory_gambit": {
-      "state": "queued",
-      "order": 1,
-      "ts": "2026-08-13 13:36:46",
-      "note": "REALMS rethink wave 1 (2026-08-13)"
-    },
-    "whale_fall_republic": {
-      "state": "queued",
-      "order": 2,
-      "ts": "2026-08-13 13:36:46",
-      "note": "REALMS rethink wave 1 (2026-08-13)"
-    },
-    "moth_orchard_night": {
-      "state": "queued",
-      "order": 3,
-      "ts": "2026-08-13 13:36:46",
-      "note": "REALMS rethink wave 1 (2026-08-13)"
-    },
     "geode_cosmos": {
       "state": "queued",
       "order": 4,
@@ -195,21 +171,15 @@
       "ts": "2026-08-13 13:36:46",
       "note": "REALMS rethink wave 1 (2026-08-13)"
     },
-    "squid_lantern": {
-      "state": "queued",
-      "order": 6,
-      "ts": "2026-08-13 13:57:36",
-      "note": "REALMS rethink wave 2 (2026-08-13)"
-    },
     "ember_meadow": {
       "state": "queued",
-      "order": 7,
+      "order": -2,
       "ts": "2026-08-13 13:57:36",
       "note": "REALMS rethink wave 2 (2026-08-13)"
     },
     "bee_cathedral": {
       "state": "queued",
-      "order": 8,
+      "order": -1,
       "ts": "2026-08-13 13:57:36",
       "note": "REALMS rethink wave 2 (2026-08-13)"
     },
@@ -230,7 +200,65 @@
       "order": 11,
       "ts": "2026-08-13 13:57:36",
       "note": "REALMS rethink wave 2 (2026-08-13)"
+    },
+    "bamboo_sea": {
+      "state": "queued",
+      "order": 12,
+      "ts": "2026-08-14 00:14:10",
+      "note": "composed by midnight refill"
+    },
+    "brinicle_grove": {
+      "state": "queued",
+      "order": 13,
+      "ts": "2026-08-14 00:14:10",
+      "note": "composed by midnight refill"
+    },
+    "desert_rosette": {
+      "state": "queued",
+      "order": 14,
+      "ts": "2026-08-14 00:14:10",
+      "note": "composed by midnight refill"
+    },
+    "termite_citadel": {
+      "state": "queued",
+      "order": 15,
+      "ts": "2026-08-14 00:14:10",
+      "note": "composed by midnight refill"
+    },
+    "wild_yeast": {
+      "state": "queued",
+      "order": 16,
+      "ts": "2026-08-14 00:14:11",
+      "note": "composed by midnight refill"
+    },
+    "ivory_gambit": {
+      "state": "queued",
+      "order": -10,
+      "force": true,
+      "ts": "2026-08-14 16:07:32",
+      "note": "regen with resolve-on-approach (default now)"
+    },
+    "whale_fall_republic": {
+      "state": "queued",
+      "order": -9,
+      "force": true,
+      "ts": "2026-08-14 16:07:32",
+      "note": "regen with resolve-on-approach (default now)"
+    },
+    "moth_orchard_night": {
+      "state": "queued",
+      "order": -8,
+      "force": true,
+      "ts": "2026-08-14 16:07:32",
+      "note": "regen with resolve-on-approach (default now)"
+    },
+    "squid_lantern": {
+      "state": "queued",
+      "order": -7,
+      "force": true,
+      "ts": "2026-08-14 16:07:32",
+      "note": "regen with resolve-on-approach (default now)"
     }
   },
-  "updated": "2026-08-13 13:57:58"
+  "updated": "2026-08-14 16:07:32"
 }
