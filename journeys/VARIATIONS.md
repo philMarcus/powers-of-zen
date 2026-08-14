@@ -18,6 +18,19 @@
   (exp ≥ 11), full span (also ≤ −8) preferred — while keeping every card dark, saturated,
   nameable. Narrow-span micro loops stay legal for S-tier spice only.
 
+## DEPTH-SCAFFOLD LIBRARY (resolve-on-approach, 2026-08-14 — engine/scaffold.py)
+Realm arrivals into many-instance fields get an animated depth scaffold (journey card field
+`resolve: {mode, variant, density, size}` overrides the band default; `resolve: false` opts out):
+- **sea** — clumped 3-D scatter (cells, plankton, stars, molecules, diatom drifts)
+- **lattice** — perspective ranks; variants: `cubic` · `hex` (close-packed) · `diamond`
+  (two interpenetrating sublattices) · `layered` (sheets with gaps, graphite-style).
+  Pick the variant from the REAL mineral (halite/galena=cubic, ice/quartz=hex,
+  diamond/silicon=diamond, graphite/mica=layered) — extend as new structures are needed.
+- **surface** — crowns/blocks/chimneys on an oblique ground (forests, cities, vent plains)
+- **web** — connected nearest-neighbour network with junction beads (cosmic web, neurons,
+  mycelium); variants welcome (sheet-webs, radial orb-webs, foam edges).
+Single-object approaches use the tracker, not a scaffold; seams keep their own treatment.
+
 Raw material for composing journeys. Any register can be swapped for a variant;
 scales can be fractional (a third to half an order of magnitude apart is fine —
 set `exp` to floats and use per-card `sec` to linger). Journeys are CIRCULAR:

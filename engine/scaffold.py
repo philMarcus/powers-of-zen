@@ -50,15 +50,16 @@ class Resolver:
     density/size/near_frac tune the field; seed pins it per (journey, card).
     """
 
-    def __init__(self, mode, zooms, aims, seed=0, density=1.0, size=1.0):
+    def __init__(self, mode, zooms, aims, seed=0, density=1.0, size=1.0, variant=None):
         self.mode = mode
+        self.variant = variant
         self.zooms = list(zooms)
         self.aims = list(aims)
         self.rng = np.random.default_rng(seed)
         self.density = density
         self.size = size
         self.Z = np.cumprod([1.0] + self.zooms)      # Z[f] = zoom at frame f vs start
-        n_base = {"sea": 150, "lattice": 0, "surface": 90, "web": 26}[mode]
+        n_base = {"sea": 450, "lattice": 0, "surface": 90, "web": 42}[mode]
         self.items = self._build(int(n_base * density))
 
     def _build(self, n):
@@ -73,17 +74,33 @@ class Resolver:
             d = 0.55 + 3.2 * rng.random(n) ** 1.5
             return [("blob", (x, y), d_) for (x, y), d_ in zip(base, d)]
         if self.mode == "lattice":
-            # one-point perspective: deeper layers contract toward the vanishing point
+            # LATTICE LIBRARY (Phil 2026-08-14: beyond cubic; variant selectable per card
+            # via journey resolve.variant, listed in VARIATIONS.md): one-point perspective,
+            # deeper layers contract toward the vanishing point.
+            kind = self.variant or "cubic"
             items = []
             vp = (0.5, 0.48)
-            for iz in (0.7, 1.1, 1.7, 2.6, 3.8):
+            layers = (0.7, 1.1, 1.7, 2.6, 3.8)
+            for li, iz in enumerate(layers):
                 step = 0.15
                 for ix in np.arange(-0.6, 1.7, step):
+                    row = 0
                     for iy in np.arange(-0.6, 1.9, step):
-                        j = rng.normal(0, 0.006, 2)
-                        x = vp[0] + (ix - vp[0]) / iz + j[0]
-                        y = vp[1] + (iy - vp[1]) / iz + j[1]
-                        items.append(("blob", (x, y), iz))
+                        ox, oy, keep = 0.0, 0.0, True
+                        if kind == "hex":              # close-packed: offset alternate rows
+                            ox = (row % 2) * step / 2
+                        elif kind == "diamond":        # two interpenetrating sublattices
+                            ox = oy = (li % 2) * step / 2
+                            keep = (round(ix / step) + round(iy / step)) % 2 == 0
+                        elif kind == "layered":        # graphite sheets: tight rows, wide gaps
+                            oy = 0.0
+                            keep = (row % 3) != 2
+                        if keep:
+                            j = rng.normal(0, 0.006, 2)
+                            x = vp[0] + (ix + ox - vp[0]) / iz + j[0]
+                            y = vp[1] + (iy + oy - vp[1]) / iz + j[1]
+                            items.append(("blob", (x, y), iz))
+                        row += 1
             return items
         if self.mode == "surface":
             # oblique ground: rows lower in frame are nearer; crowns sit on the ground
@@ -94,18 +111,31 @@ class Resolver:
                 items.append(("bigblob", (x, y), d))
             return items
         if self.mode == "web":
-            items = []
+            # CONNECTED network (Phil 2026-08-14: loose strings are not a web): nodes in
+            # depth layers, each joined to its nearest neighbours -> closed cells + junctions
+            nodes = []
             for _ in range(n):
-                p = np.array([rng.random() * 1.4 - 0.2, rng.random() * 1.4 - 0.2])
-                ang = rng.random() * 2 * np.pi
-                steps = []
-                for _ in range(rng.integers(5, 10)):
-                    ang += rng.normal(0, 0.55)
-                    q = p + np.array([np.cos(ang), np.sin(ang)]) * 0.08
-                    steps.append((tuple(p), tuple(q)))
-                    p = q
-                d = 0.8 + 2.4 * rng.random()
-                items.append(("strand", steps, d))
+                nodes.append((rng.random() * 1.5 - 0.25, rng.random() * 1.5 - 0.25,
+                              0.7 + 2.6 * rng.random() ** 1.3))
+            P = np.array(nodes)
+            items = []
+            # weight depth so links prefer same-layer neighbours (webs live in sheets)
+            D2 = ((P[:, None, 0] - P[None, :, 0]) ** 2
+                  + (P[:, None, 1] - P[None, :, 1]) ** 2
+                  + 2.2 * (P[:, None, 2] - P[None, :, 2]) ** 2)
+            np.fill_diagonal(D2, np.inf)
+            seen = set()
+            for i in range(len(P)):
+                for jn in np.argsort(D2[i])[:3]:
+                    key = (min(i, int(jn)), max(i, int(jn)))
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    d = float((P[i, 2] + P[jn, 2]) / 2)
+                    items.append(("strand",
+                                  [((P[i, 0], P[i, 1]), (P[jn, 0], P[jn, 1]))], d))
+            for x, y, d in nodes:
+                items.append(("node", (x, y), d))
             return items
         raise ValueError(self.mode)
 
@@ -127,6 +157,10 @@ class Resolver:
                 base_r = 24.0 if kind == "bigblob" else 10.0
                 r = (base_r * self.size / d) * Z
                 _gauss_blob(depth, px, py, r, near)
+            elif kind == "node":
+                px, py = _project((geom[0] * W, geom[1] * H), (aim[0] * W, aim[1] * H), Z)
+                _gauss_blob(depth, px, py, max(1.2, (7.0 * self.size / d) * Z),
+                            min(1.0, near * 1.2))
             elif kind == "strand":
                 r = max(0.8, (2.6 * self.size / d) * Z)
                 for (a, b) in geom:
