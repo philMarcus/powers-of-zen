@@ -173,7 +173,7 @@
     },
     "ember_meadow": {
       "state": "queued",
-      "order": -2,
+      "order": -7,
       "ts": "2026-08-13 13:57:36",
       "note": "REALMS rethink wave 2 (2026-08-13)"
     },
@@ -231,13 +231,6 @@
       "ts": "2026-08-14 00:14:11",
       "note": "composed by midnight refill"
     },
-    "ivory_gambit": {
-      "state": "queued",
-      "order": -10,
-      "force": true,
-      "ts": "2026-08-14 16:07:32",
-      "note": "regen with resolve-on-approach (default now)"
-    },
     "whale_fall_republic": {
       "state": "queued",
       "order": -9,
@@ -254,11 +247,11 @@
     },
     "squid_lantern": {
       "state": "queued",
-      "order": -7,
+      "order": -2,
       "force": true,
       "ts": "2026-08-14 16:07:32",
       "note": "regen with resolve-on-approach (default now)"
     }
   },
-  "updated": "2026-08-14 16:07:32"
+  "updated": "2026-08-14 19:10:43"
 }
