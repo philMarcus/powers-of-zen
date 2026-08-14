@@ -51,8 +51,15 @@ def queued_tiers(jd):
 
 
 def coordinator_prompt(briefs, date):
+    # tempo is ASSIGNED per brief like the tier (2026-08-14 lesson: six composers left to
+    # choose all picked the same fpb — variety must be deterministic, not the model's whim);
+    # cycle favors the 7/8 heartland with 6 and 9 as accents (5 and 10 are rare tails Phil
+    # reserves for deliberate spice, never the nightly default)
+    _FPB_CYCLE = [7, 8, 6, 8, 9]
     tier_lines = "\n".join(
-        f"  brief {i + 1}: {t.upper()} ({CARD_RANGE[t]} cards)"
+        f"  brief {i + 1}: {t.upper()} ({CARD_RANGE[t]} cards) · "
+        f"format.frames_per_beat = {_FPB_CYCLE[i % len(_FPB_CYCLE)]} (assigned — composer "
+        f"must use it)"
         for i, t in enumerate(briefs))
     n = len(briefs)
     try:
