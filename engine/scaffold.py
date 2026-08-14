@@ -50,9 +50,14 @@ class Resolver:
     density/size/near_frac tune the field; seed pins it per (journey, card).
     """
 
-    def __init__(self, mode, zooms, aims, seed=0, density=1.0, size=1.0, variant=None):
+    def __init__(self, mode, zooms, aims, seed=0, density=1.0, size=1.0, variant=None,
+                 parallax=0.006):
+        """parallax: per-frame lateral drift of the NEAREST layer (fraction of frame width);
+        deeper layers drift proportionally less (1/d) — near things slide past faster, which
+        is what makes the field read 3-D instead of a flat pattern (Phil 2026-08-14)."""
         self.mode = mode
         self.variant = variant
+        self.parallax = parallax
         self.zooms = list(zooms)
         self.aims = list(aims)
         self.rng = np.random.default_rng(seed)
@@ -153,19 +158,24 @@ class Resolver:
                 continue
             near = np.clip(1.35 / d, 0.12, 1.0)
             if kind in ("blob", "bigblob"):
-                px, py = _project((geom[0] * W, geom[1] * H), (aim[0] * W, aim[1] * H), Z)
+                shift = self.parallax * W * f / max(0.35, d)
+                px, py = _project((geom[0] * W + shift, geom[1] * H),
+                                  (aim[0] * W, aim[1] * H), Z)
                 base_r = 24.0 if kind == "bigblob" else 10.0
                 r = (base_r * self.size / d) * Z
                 _gauss_blob(depth, px, py, r, near)
             elif kind == "node":
-                px, py = _project((geom[0] * W, geom[1] * H), (aim[0] * W, aim[1] * H), Z)
+                shift = self.parallax * W * f / max(0.35, d)
+                px, py = _project((geom[0] * W + shift, geom[1] * H),
+                                  (aim[0] * W, aim[1] * H), Z)
                 _gauss_blob(depth, px, py, max(1.2, (7.0 * self.size / d) * Z),
                             min(1.0, near * 1.2))
             elif kind == "strand":
                 r = max(0.8, (2.6 * self.size / d) * Z)
+                shift = self.parallax * W * f / max(0.35, d)
                 for (a, b) in geom:
-                    pa = _project((a[0] * W, a[1] * H), (aim[0] * W, aim[1] * H), Z)
-                    pb = _project((b[0] * W, b[1] * H), (aim[0] * W, aim[1] * H), Z)
+                    pa = _project((a[0] * W + shift, a[1] * H), (aim[0] * W, aim[1] * H), Z)
+                    pb = _project((b[0] * W + shift, b[1] * H), (aim[0] * W, aim[1] * H), Z)
                     steps = int(max(abs(pb[0] - pa[0]), abs(pb[1] - pa[1]), 1) / (r * 0.9) ) + 1
                     for t in np.linspace(0, 1, steps + 1):
                         _gauss_blob(depth, pa[0] + (pb[0] - pa[0]) * t,
@@ -175,6 +185,24 @@ class Resolver:
                               (aim[0] * W, aim[1] * H), Z)
                 _gauss_blob(depth, pa[0], pa[1], r * 2.1, min(1.0, near * 1.25))
         return np.clip(depth, 0.0, 1.0)
+
+    def frame_image(self, f):
+        """PIL RGB version of frame(f) — what dive uploads as the control image."""
+        from PIL import Image
+        return Image.fromarray((self.frame(f) * 255).astype(np.uint8)).convert("RGB")
+
+
+_BANDS = [(-16, -12, "subnuclear"), (-12, -8.5, "atomic"), (-8.5, -6, "molecular"),
+          (-6, -3.5, "cellular"), (-3.5, -1.5, "mm-creature"), (-1.5, 1.5, "human"),
+          (1.5, 4.5, "landscape"), (4.5, 9, "planetary"), (9, 14, "stellar"),
+          (14, 22, "galactic"), (22, 27, "cosmic-web")]
+
+
+def band_of(exp):
+    for lo, hi, name in _BANDS:
+        if lo <= exp < hi:
+            return name
+    return "cosmic-web" if exp >= 27 else "subnuclear"
 
 
 def mode_for_band(band):

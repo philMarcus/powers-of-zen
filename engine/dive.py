@@ -564,6 +564,10 @@ def main():
                     help="pure feedback zoom — no tracking, no depth-CN (A/B vs the engine-1 look)")
     ap.add_argument("--classic-tail", action="store_true",
                     help="loop tail uses the pre-IPA gap-scaled pixel morph (A/B vs IPA homing)")
+    ap.add_argument("--resolve", action="store_true",
+                    help="RESOLVE-ON-APPROACH: field-card arrivals get animated procedural "
+                         "depth scaffolds (engine/scaffold.py) so the new realm resolves out "
+                         "of the old texture as countless growing instances")
     ap.add_argument("--cn", type=float, metavar="STRENGTH",
                     help="override depth-ControlNet strength; --cn 0 disables the CN but KEEPS "
                          "tracking/composition (the clean A/B for 'is the CN hurting the look?'). "
@@ -752,6 +756,58 @@ def main():
     phase_refs = {}
     T = cfg["transition_frames"]
     in_loop_tail = lambda i: loop and i >= total - loop["frames"]
+    # RESOLVE-ON-APPROACH (2026-08-14, Phil's microscope grammar): a realm shift is the old
+    # texture RESOLVING into countless tiny instances of the new realm. During tagged arrival
+    # windows the depth-CN is driven by an animated procedural scaffold (instances placed in
+    # world space, projected through this render's own zoom + drift, with depth-parallax) —
+    # composition imposed, pixels still owned by the feedback chain + prompt. Single-object
+    # approaches keep the tracker; seam arrivals keep the seam treatment; cameo cards resolve
+    # only through their arrival (the paste window must stay clean).
+    resolve_windows = []
+    if getattr(args, "resolve", False) and "registers" in spec and cfg["build"] != "out":
+        import zlib as _zlib
+        import scaffold as _scaffold
+        _regs = spec["registers"]
+        _names = [r["name"] for r in _regs]
+        _rs = spec.get("render_start")
+        _rot = _names.index(_rs) if _rs in _names else 0
+        _order = _regs[_rot:] + _regs[:_rot]
+        _cfr = register_frame_counts(spec, cfg["fps"])
+        _acc = 0
+        for _k, _reg in enumerate(_order):
+            _F = _cfr[_k]
+            _S = _acc
+            _acc += _F
+            _rv = _reg.get("resolve")
+            if _k == 0 or _rv is False or _order[_k - 1].get("kind") == "seam":
+                continue
+            _fa = max(2, round(_F * 0.25))
+            _post = 0 if _reg.get("cameo") else min(10, _F - _fa - 2)
+            _w0, _w1 = _S - 6, _S + _fa + _post
+            if loop:
+                _w1 = min(_w1, total - loop["frames"])
+            if _w1 - _w0 < 6:
+                continue
+            _rv = _rv if isinstance(_rv, dict) else {}
+            _mode = _rv.get("mode") or _scaffold.mode_for_band(
+                _scaffold.band_of(_reg.get("exp", 0)))
+            _dflt = {"sea": (1.3, 0.3), "lattice": (1.0, 0.4),
+                     "surface": (0.9, 0.8), "web": (1.0, 0.5)}[_mode]
+            _zw = [zoom_sched[x] for x in range(_w0, _w1)]
+            _aw = [(0.5 + cfg["drift"] * math.sin(2 * math.pi * x / 263),
+                    0.5 + cfg["drift"] * math.sin(2 * math.pi * x / 419 + 1.7))
+                   for x in range(_w0, _w1)]
+            _res = _scaffold.Resolver(
+                _mode, _zw, _aw,
+                seed=_zlib.crc32(f"{name}:{_reg.get('name')}".encode()),
+                density=_rv.get("density", _dflt[0]), size=_rv.get("size", _dflt[1]),
+                variant=_rv.get("variant"))
+            resolve_windows.append({"w0": _w0, "w1": _w1, "res": _res, "pre": 6,
+                                    "card": _reg.get("name"), "mode": _mode})
+        if resolve_windows:
+            print("[dive] RESOLVE ON — " + ", ".join(
+                f"{w['card']}({w['mode']})[{w['w0']}..{w['w1'] - 1}]"
+                for w in resolve_windows), flush=True)
     # TRACKER v3 (2026-07-31, PLAN "TRACKER v3"): two-stage point→object tracking with EXACT
     # geometry propagation (engine/track.py). Emergence point committed per run; detect.locate
     # tries at a low cadence; the first confident lock hands off seamlessly (the aim was already
@@ -810,6 +866,10 @@ def main():
             # grows the target; the tracker only steers WHERE.
             ap = approach[i] if i < len(approach) else None
             approaching = bool(ap) and not in_loop_tail(i) and cfg["build"] != "out"
+            rwin = next((w for w in resolve_windows if w["w0"] <= i < w["w1"]), None) \
+                if resolve_windows else None
+            if rwin:
+                approaching = False       # the field is still resolving — drift aim, no lock
             ev = None
             if approaching:
                 if _trk is None or _trk.ap is not ap:
@@ -932,6 +992,19 @@ def main():
                         tail_ctl, tail_cn = loop["_home_ref"], 0.2 + 0.6 * m
                     if j >= L_tail - 6:
                         fed = Image.blend(fed, frame0, 0.35 * (j - (L_tail - 6) + 1) / 6)
+            res_ctl, res_cn = None, 0.0
+            if rwin and not in_loop_tail(i):
+                _j = i - rwin["w0"]
+                _n = rwin["w1"] - rwin["w0"]
+                res_ctl = upload_image(rwin["res"].frame_image(_j),
+                                       f"zoomer_resolve_{name}.png")
+                if _j < rwin["pre"]:
+                    res_cn = 0.20 * (_j + 1) / rwin["pre"]
+                else:
+                    _t = (_j - rwin["pre"]) / max(1, _n - rwin["pre"])
+                    res_cn = 0.6 * min(1.0, 0.35 + 1.3 * _t)
+                    if _j >= _n - 2:
+                        res_cn *= 0.6     # handoff taper into normal travel
             ref = upload_image(fed, f"zoomer_feed_{name}.png")
             wf = build_workflow(cfg, prompt, seed, init_image=ref, denoise=den,
                                 prev_prompt=prev_prompt if in_transition else None,
@@ -941,9 +1014,10 @@ def main():
                                 # target's identity as it grows while pixels regenerate (not a
                                 # paste). In the loop tail the SAME channel instead carries
                                 # frame 0's depth (landing alignment) — never both at once.
-                                ctrl_image=ref if approaching else tail_ctl,
-                                cn_strength=cfg["approach_cn"] if approaching else tail_cn,
-                                depth_preproc=_depth,
+                                ctrl_image=res_ctl or (ref if approaching else tail_ctl),
+                                cn_strength=res_cn if res_ctl
+                                else (cfg["approach_cn"] if approaching else tail_cn),
+                                depth_preproc=None if res_ctl else _depth,
                                 ipa_image=loop.get("_home_ref") if tail_ipa_w > 0.01 else None,
                                 ipa_weight=tail_ipa_w)
         png = run_workflow(wf)
