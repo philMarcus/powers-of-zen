@@ -115,6 +115,34 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-14: RESOLVE-ON-APPROACH BUILT, INTEGRATED, AND PROVEN ON A FULL RENDER. Morning
+triage: the overnight batch died when Phil took the machine mid-ember_meadow (5 of 7 done;
+ember+bee re-queued at head, tonight template MS, budget 240); frame forensics on the new
+renders found the era's core sameness mechanism — MID-DIVE, EVERY frame inherits close-up
+texture, so wide/populated cards collapse into filament soup (abyssal vent_plain, ivory's
+chessboard kingdom) while texture-realms and card-0 scenes deliver (squid school, enzyme
+rotors); palette doctrine hit its numbers (all 4 in the winner pocket). Phil's microscope
+grammar reframed the fix: a realm shift = the old texture RESOLVING into countless tiny
+instances of the new realm (never a camera pull-back). BUILT: engine/scaffold.py (animated
+procedural depth scaffolds — instances in world space projected through the render's own
+zoom + drift, DEPTH-PARALLAX so near layers slide faster; modes sea/lattice/surface/web,
+lattice variants cubic/hex/diamond/layered picked from the REAL mineral, web = connected
+nearest-neighbour net; library doc in VARIATIONS.md); scripts/resolve_lab.py (schedule-
+faithful A/B harness — vent_plain lab test WON decisively); dive.py --resolve (windows
+auto-derived per card: mode by REALMS band, journey `resolve` field overrides/opts out,
+seam arrivals + cameo paste windows + loop tail protected, tracker suppressed during
+windows). FULL A/B RENDER: abyssal_chandelier v2 (same seed as v1, 9 windows) — frames
+show populated colonies and instance-seas where v1 had noodle soup; Phil judging the
+motion. NOT yet default: the nightly batch renders WITHOUT --resolve until Phil approves
+the full video (then: pass --resolve in night_batch/render_one + make it the default).
+CAMERA-MOTION PLAN (delivered, staged): Layer 1 = scaffold-space moves (parallax SHIPPED;
+scaffold-orbit spiral-in + scaffold-tilt next, days); Layer 2 = image-space depth-warp of
+the fed-back frame (true orbit/tilt/truck on real imagery, disocclusion healed by
+re-diffusion — crop-and-reimagine generalized; prototype = orbit_lab, the ENGINE 3 gate);
+then a per-card `camera` vocabulary (spiral/tilt/truck/roll/settle, moves land on beats,
+composer assigns from REALMS POV tags). IG stats auto-snapshot ran with the 08:00 post.
+OPEN: Phil's verdict on abyssal v2 → flip --resolve default + re-render the queue; remix
+slot; library curation (offline, deferred); loom_of_nights cuts (stale).
 2026-08-13 (FINAL, evening — READ THIS FIRST TOMORROW): THE REALMS RETHINK IS EXECUTED.
 Phil's decision after seeing the library evidence: IPA REALM STEERING IS DEFERRED — the
 engine is UNTOUCHED (loop-homing IPA stays; his worry: "the worst images in the video are
