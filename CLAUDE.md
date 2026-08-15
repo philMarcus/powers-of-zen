@@ -115,6 +115,20 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-15: ENGINE 3 PLANNED (see PLAN.md "ENGINE 3 — THE CAMERA" — the plan of record).
+Phil's morning verdict on the resolve era: better but marginal; 2-D-ness persists ("big and
+little things in a 2-D plane" — his log-depth instinct = Phase 1); the two missing realm
+jumps are planet→landscape (no descend/land — the `landing` hero move: approach →
+pitch-over → terrain SKIM with a varied-terrain menu) and exterior→interior (the
+`threshold` hero move: aperture-targeted crossing ON a beat into a `chamber` scaffold).
+IRON LAW: scale-zoom constant and never stops (forward/lateral speed may vary), moves are
+musical events, the loop must close (net camera ≈ identity), every frame freshly generated.
+Architecture: warp layer (depth-aware reprojection of the fed-back frame + disocclusion-
+mask denoise) + scaffold layer (performs the identical move) + semantic layer (POV ramps).
+CINEMATOGRAPHER = a separate role from the composer (rule-based v1, LLM v2). Phases gated
+by labs: 1 scaffold depth realism → 2 warp core (orbit_lab gate) → 3 vocabulary +
+cinematographer v1 → 4 landing_lab + threshold_lab → 5 polish/adoption. NEXT ACTION when
+Phil gives go: Phase 1 (same-day) then orbit_lab.
 2026-08-14: RESOLVE-ON-APPROACH BUILT, INTEGRATED, AND PROVEN ON A FULL RENDER. Morning
 triage: the overnight batch died when Phil took the machine mid-ember_meadow (5 of 7 done;
 ember+bee re-queued at head, tonight template MS, budget 240); frame forensics on the new
