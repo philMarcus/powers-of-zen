@@ -23,6 +23,15 @@ Output frames are float [0,1], near=bright — the polarity controlnet-depth-sdx
 import numpy as np
 
 W, H = 576, 1024
+D_MIN, D_MAX = 0.5, 16.0     # instance depth range (~1.5 decades, log-uniform sampling)
+
+
+def depth_value(d):
+    """Depth-map brightness for an instance at distance d: LOG-mapped onto the full 0..1
+    range (near 1.0 -> far ~0.06), so the ControlNet sees genuinely layered planes instead
+    of a clamp-bright wall (the 2-D reading Phil flagged)."""
+    t = np.log(np.clip(d, D_MIN, D_MAX) / D_MIN) / np.log(D_MAX / D_MIN)
+    return float(1.0 - 0.94 * t)
 
 
 def _gauss_blob(depth, cx, cy, r, val):
@@ -76,7 +85,10 @@ class Resolver:
             clump = rng.random((max(4, n // 22), 2)) * [1.4, 1.4] - 0.2
             picks = clump[rng.integers(0, len(clump), n // 2)]
             base[: n // 2] = picks + rng.normal(0, 0.07, (n // 2, 2))
-            d = 0.55 + 3.2 * rng.random(n) ** 1.5
+            # PHASE 1 (Phil 2026-08-15): LOG-UNIFORM depth across ~1.5 decades — equal
+            # instances per octave, so a few huge near occluders stand off a mid crowd and
+            # a deep speckle field, instead of "big and little things in a 2-D plane".
+            d = D_MIN * (D_MAX / D_MIN) ** rng.random(n)
             return [("blob", (x, y), d_) for (x, y), d_ in zip(base, d)]
         if self.mode == "lattice":
             # LATTICE LIBRARY (Phil 2026-08-14: beyond cubic; variant selectable per card
@@ -85,7 +97,7 @@ class Resolver:
             kind = self.variant or "cubic"
             items = []
             vp = (0.5, 0.48)
-            layers = (0.7, 1.1, 1.7, 2.6, 3.8)
+            layers = (0.6, 0.95, 1.5, 2.4, 3.8, 6.1, 9.7)   # log-spaced, ~1.2 decades
             for li, iz in enumerate(layers):
                 step = 0.15
                 for ix in np.arange(-0.6, 1.7, step):
@@ -112,7 +124,7 @@ class Resolver:
             items = [("ground", None, None)]
             for _ in range(int(n * 1.5)):
                 x, y = rng.random() * 1.4 - 0.2, rng.random() * 1.4 - 0.2
-                d = 0.55 + 2.0 * max(0.0, 1.0 - y) ** 1.3 + rng.random() * 0.25  # top=far
+                d = 0.5 * (14.0) ** (max(0.0, 1.0 - y) ** 1.15) + rng.random() * 0.2  # top=far, log ramp
                 items.append(("bigblob", (x, y), d))
             return items
         if self.mode == "web":
@@ -121,7 +133,7 @@ class Resolver:
             nodes = []
             for _ in range(n):
                 nodes.append((rng.random() * 1.5 - 0.25, rng.random() * 1.5 - 0.25,
-                              0.7 + 2.6 * rng.random() ** 1.3))
+                              D_MIN * (D_MAX / D_MIN) ** rng.random()))
             P = np.array(nodes)
             items = []
             # weight depth so links prefer same-layer neighbours (webs live in sheets)
@@ -156,22 +168,24 @@ class Resolver:
         for kind, geom, d in self.items:
             if kind == "ground":
                 continue
-            near = np.clip(1.35 / d, 0.12, 1.0)
+            near = depth_value(d)
             if kind in ("blob", "bigblob"):
                 shift = self.parallax * W * f / max(0.35, d)
                 px, py = _project((geom[0] * W + shift, geom[1] * H),
                                   (aim[0] * W, aim[1] * H), Z)
                 base_r = 24.0 if kind == "bigblob" else 10.0
-                r = (base_r * self.size / d) * Z
+                # compressive size falloff: far instances stay visible speckle instead of
+                # dropping under the sub-pixel cutoff (the deep field must READ)
+                r = (base_r * self.size / d ** 0.72) * Z
                 _gauss_blob(depth, px, py, r, near)
             elif kind == "node":
                 shift = self.parallax * W * f / max(0.35, d)
                 px, py = _project((geom[0] * W + shift, geom[1] * H),
                                   (aim[0] * W, aim[1] * H), Z)
-                _gauss_blob(depth, px, py, max(1.2, (7.0 * self.size / d) * Z),
+                _gauss_blob(depth, px, py, max(1.2, (7.0 * self.size / d ** 0.72) * Z),
                             min(1.0, near * 1.2))
             elif kind == "strand":
-                r = max(0.8, (2.6 * self.size / d) * Z)
+                r = max(0.8, (2.6 * self.size / d ** 0.72) * Z)
                 shift = self.parallax * W * f / max(0.35, d)
                 for (a, b) in geom:
                     pa = _project((a[0] * W + shift, a[1] * H), (aim[0] * W, aim[1] * H), Z)

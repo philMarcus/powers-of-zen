@@ -1018,8 +1018,11 @@ def main():
             if rwin and not in_loop_tail(i):
                 _j = i - rwin["w0"]
                 _n = rwin["w1"] - rwin["w0"]
-                res_ctl = upload_image(rwin["res"].frame_image(_j),
-                                       f"zoomer_resolve_{name}.png")
+                _scf_img = rwin["res"].frame_image(_j)
+                _rdir = out_dir / "build" / "resolve"
+                _rdir.mkdir(exist_ok=True)
+                _scf_img.save(_rdir / f"{rwin['card']}_{_j:03d}.png")
+                res_ctl = upload_image(_scf_img, f"zoomer_resolve_{name}.png")
                 if _j < rwin["pre"]:
                     res_cn = 0.20 * (_j + 1) / rwin["pre"]
                 else:
