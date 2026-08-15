@@ -129,6 +129,19 @@ CINEMATOGRAPHER = a separate role from the composer (rule-based v1, LLM v2). Pha
 by labs: 1 scaffold depth realism → 2 warp core (orbit_lab gate) → 3 vocabulary +
 cinematographer v1 → 4 landing_lab + threshold_lab → 5 polish/adoption. NEXT ACTION when
 Phil gives go: Phase 1 (same-day) then orbit_lab.
+2026-08-15 (later): PHASE 1 SHIPPED (log-uniform depth verified 63-87/octave, values
+0.06-0.98, compressive falloff keeps far speckle; dive dumps scaffolds to build/resolve/);
+coral_synapse rendered as the depth showcase (in Review). PHASE 2 BUILT (engine/warp.py
+truck/orbit/tilt/dolly + depth-via-comfy + EMA + disocclusion boost; scripts/orbit_lab.py).
+ORBIT GATE **FAILED in naive form** — 23° revolution washed the star into streaks by ~18°:
+cumulative warp degraded structure faster than travel-denoise re-diffusion re-anchored it
+(no subject hold, pivot not on the tracked object, noisy depth on abstract starfield).
+V2 FIX LIST (ordered): anchor the pivot object with approach-CN during orbit; pivot at the
+TRACKED subject; halve step to 0.5°/frame + fewer net degrees; blur/quantize depth into
+planes pre-warp; pair orbit with a scaffold window (conditioning+warp agree); consider
+warping the depth map forward as the CN signal. The gate worked as designed — stabilization
+before vocabulary. Known Phase-1 knob if coral still reads flat: raise far-value floor
+0.06→~0.18 (honesty vs compositional grip).
 2026-08-14: RESOLVE-ON-APPROACH BUILT, INTEGRATED, AND PROVEN ON A FULL RENDER. Morning
 triage: the overnight batch died when Phil took the machine mid-ember_meadow (5 of 7 done;
 ember+bee re-queued at head, tonight template MS, budget 240); frame forensics on the new
