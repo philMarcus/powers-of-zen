@@ -1024,3 +1024,106 @@ zoom, no detector needed). Locks are an opportunistic bonus on discrete-object c
 backbone; that matches Phil's morph-on-the-beat guardrail. The one structural miss: the
 lantern-garden card drifted to flat paper-cut style ("paper lanterns" content words) and Florence
 finds little on flat art — style-vs-detection interplay to watch.
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# ENGINE 3 — THE CAMERA (planned 2026-08-15, Phil's brief; the plan of record)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+## Why (the residual problem)
+Engine 1 gave us the zoom. Engine 2 gave us targeting and (via resolve-on-approach)
+populated realms. What remains — Phil, 2026-08-15, after reviewing the first resolve-era
+renders — is TWO-DIMENSIONALITY ("big and little things in a 2-D plane; I can't even tell
+if the parallax is working") and two realm jumps the engine still cannot perform:
+**planet → landscape** (we never descend and land; space morphs into terrain) and
+**exterior → interior** (we never pass through a window/door into a room). Camera motion
+is the fix class, and it generalizes what the engine already does: crop-and-reimagine is
+the special case "zoom" of warp-and-reimagine.
+
+## THE IRON LAW (constraints every move obeys)
+1. **The scale-zoom never stops and never changes rate.** ×10 per card at the schedule's
+   log-rate is the metronome. Camera moves are ADDITIVE on top; forward/lateral SPEED may
+   vary (rush, settle) but the scale axis is constant.
+2. **Moves are musical events.** A move begins/ends/inflects ON beats, eases across bars,
+   peaks with the anacrusis into downbeats — same grid as morphs and music.
+3. **The loop must close.** Net camera state over the video ≈ identity (orbit angles sum
+   to ~0 mod 360, tilt returns home, or the seam absorbs the residual) — a new validator
+   class alongside seam/start rules.
+4. **Every frame stays freshly generated.** Warps feed the diffusion; nothing is pasted.
+
+## Architecture: three layers that must agree
+1. **WARP layer (new — engine/warp.py).** Per-frame transform of the fed-back frame using
+   its own depth map (DepthAnything, already computed every frame): depth-parallax
+   translation (truck/pedestal), depth-rotate (true ORBIT — the camera revolves, near
+   pixels sweep opposite far, re-diffusion invents newly revealed sides), homography pitch
+   (TILT), dolly (forward translation with perspective change — distinct from zoom).
+   Disocclusion handling: the warp emits a stretched-region mask → locally boosted denoise
+   via the existing mask_image channel (partial inpaint), so revealed geometry is invented,
+   not smeared. Depth is temporally EMA-smoothed to kill estimator shimmer.
+2. **SCAFFOLD layer (exists).** During resolve windows the procedural scaffold performs the
+   IDENTICAL move (it is geometry we project) so conditioning and warp always agree.
+   PHASE-1 FIX (Phil's log instinct): instance depths become LOG-UNIFORM across ~1.5
+   decades with size/brightness spanning the full range, plus 2-3 discrete parallax planes
+   with distinct velocities — motion must separate the planes or the field reads flat.
+3. **SEMANTIC layer (exists).** Prompt attitude ramps (REALMS POV tags) synchronized with
+   the warp: the words, the scaffold and the warp all describe the same camera.
+
+## The move vocabulary (per-card `camera` field, validated like everything else)
+Primitives: `roll(rate)` · `truck(dx,dy)` · `orbit(deg_per_bar)` · `tilt(from,to)` ·
+`dolly(v)` · `settle` (ease to hover). Composites:
+- **`spiral`** — orbit + the ever-running zoom: circling a star/nucleus while closing in.
+- **`vertigo`** — dolly OUT while the zoom runs: scale constant, perspective stretches
+  (legal under the iron law — the classic shot, used as rare spice on hover beats).
+- **`landing`** — THE planet fix, a choreography spanning 2-3 cards:
+  (a) APPROACH: planet grows under slight orbit (tracker owns aim);
+  (b) PITCH-OVER: as the surface scale is crossed, tilt ramps from face-on to oblique —
+      the horizon rises INTO frame (scaffold flips to surface mode with a high horizon;
+      prompt ramps "from directly above" → "low over");
+  (c) SKIM: fast forward speed low over terrain — strong parallax, surface instances
+      rushing past beneath, zoom still constant — with a TERRAIN MENU per journey
+      (canyon / forest / city / lake / dune / glacier, from REALMS landscape band);
+  (d) hand back to a normal card diving into one terrain feature.
+- **`threshold`** — the interior fix: an APERTURE (window/door/arch) is the card's target;
+  the tracker aims at its dark opening; the crossing lands ON a beat (brief dolly surge +
+  exterior→interior prompt flip + light-regime change); a new scaffold mode **`chamber`**
+  (one-point-perspective room: wall/ceiling gradients + furnishing instances) receives the
+  camera inside. Unlocks the human-scale interior play (room → animal/object/mineral
+  within) Phil wants — used when a journey has built structures, never mandatory.
+Cinema menu to grow over time: push-in, crane reveal, orbital reveal, fly-through,
+rack-focus (a cheap post-layer defocus ramp), whip-tilt on seams.
+
+## The CINEMATOGRAPHER (a separate role — never the composer)
+The journey composer stays blind to camera. A distinct pass reads the finished journey
+(cards, exps, scenes, POV tags) + REALMS + a new CINEMA.md doctrine and writes the
+`camera` plan: v1 is RULE-BASED and deterministic (planet→landscape adjacency ⇒ landing;
+aperture nouns in scene ⇒ threshold candidate; single central [amb] subject ⇒ spiral;
+wide surface ⇒ skim/tilt; default ⇒ drift + roll), auditable and testable like every
+schedule; v2 adds an LLM cinematographer for taste on top of the rule floor (headless
+opus pass in the refill, mirroring composers). A validator enforces the iron law + loop
+closure before render.
+
+## Build sequence (each phase gated by a lab A/B, the pattern that works)
+- **Phase 1 — depth realism in scaffolds** (day): log-uniform depth, full-range layering,
+  parallax planes. Gate: do resolve windows stop reading flat?
+- **Phase 2 — warp core** (the heart): engine/warp.py primitives + disocclusion-mask
+  denoise + depth EMA; extend track.py's exact propagation so tracker aim and cameo
+  positions ride ANY warp (it already does zoom+roll). Gate: orbit_lab — re-render one
+  card of an existing video with a 20-40° orbital sweep; does re-diffusion heal it at
+  travel denoise?
+- **Phase 3 — vocabulary + cinematographer v1**: camera schedules compiled like
+  zoom/denoise (grammar emits per-frame camera params; dive consumes); rule-based
+  assignment; loop-closure validator; preflight/audit checks.
+- **Phase 4 — the hero moves**: landing_lab (pitch-over + skim on a planet→landscape
+  boundary; terrain menu) and threshold_lab (compose one test journey with a window card;
+  chamber scaffold; crossing on the beat). Each ships only after its lab wins.
+- **Phase 5 — polish + adoption**: vertigo/rack-focus/settle spice, CINEMA.md doctrine,
+  LLM cinematographer, refill integration, catalog-wide adoption; IG data then judges
+  (does motion move qscore/reach?).
+
+## Risks and their mitigations
+Depth-estimate noise → EMA smoothing + small per-frame steps (≤0.5°/frame orbit).
+Warp drift accumulation → camera state resets at card boundaries (moves are per-card).
+Cameo/counter interplay → cameo paste coordinates transformed through the same warp math
+(track.py generalization); counter is post-assembly, unaffected. Disocclusion smears →
+mask-boosted denoise; if insufficient, scaffold-assisted infill during resolve windows.
+Motion sickness / brand drift → moves are spice, not sauce: the cinematographer's rule
+floor keeps most cards on drift+roll; heroes appear where the journey earns them.
