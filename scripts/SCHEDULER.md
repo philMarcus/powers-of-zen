@@ -6,8 +6,9 @@ The full no-Claude daily loop (times local):
 |---------------------|-------|-------------------------|------|
 | PowersOfZen-refill  | 00:00 | scheduled_refill.bat    | tops the JOURNEY queue toward its target — ONE headless Claude call (Fable coordinator → Opus composers), audits + auto-queues passers. Skips when queue ≥ target or refill_paused. |
 | PowersOfZen-render  | 01:30 | scheduled_render.bat    | renders queued journeys (tier template within render_budget_min), captions, drops in Video Review. Skips on backpressure (≥ max_ready_videos ready to post) or render_paused. |
-| PowersOfZen-8am     | 08:00 | scheduled_post.bat      | posts the next queued video (Chrome-zen CDP). |
-| PowersOfZen-6pm     | 18:00 | scheduled_post.bat      | second daily post. |
+| PowersOfZen-postgate | hourly | scheduled_post_gate.bat | CADENCE GATE (2026-08-17): posts fire every `post_every_hours` (settings, default 19h) at `post_next` — both dashboard-editable (Settings tab). The gate advances the clock past missed windows without burst-posting. |
+| PowersOfZen-8am     | 08:00 | scheduled_post.bat      | LEGACY — now delegates to the same gate (harmless; delete with elevation when convenient: `schtasks /Delete /TN "PowersOfZen-8am" /F`). |
+| PowersOfZen-6pm     | 18:00 | scheduled_post.bat      | LEGACY — same as above. |
 
 Knobs (queue target, budget, backpressure, tier mix, pauses) live in outbox/journeys.json
 → editable in the dashboard's ⚙ Settings tab. Times live HERE, not in settings.

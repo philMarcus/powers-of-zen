@@ -16,7 +16,9 @@
       "MS"
     ],
     "render_paused": false,
-    "refill_paused": false
+    "refill_paused": false,
+    "post_every_hours": 19,
+    "post_next": "2026-08-17 18:00"
   },
   "journeys": {
     "stormglass": {
@@ -159,45 +161,15 @@
       "ts": "2026-08-13 13:23:02",
       "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
-    "geode_cosmos": {
-      "state": "queued",
-      "order": 4,
-      "ts": "2026-08-13 13:36:46",
-      "note": "REALMS rethink wave 1 (2026-08-13)"
-    },
-    "lantern_mangrove": {
-      "state": "queued",
-      "order": 5,
-      "ts": "2026-08-13 13:36:46",
-      "note": "REALMS rethink wave 1 (2026-08-13)"
-    },
-    "ember_meadow": {
-      "state": "queued",
-      "order": -7,
-      "ts": "2026-08-13 13:57:36",
-      "note": "REALMS rethink wave 2 (2026-08-13)"
-    },
     "bee_cathedral": {
       "state": "queued",
       "order": -1,
       "ts": "2026-08-13 13:57:36",
       "note": "REALMS rethink wave 2 (2026-08-13)"
     },
-    "coral_synapse": {
-      "state": "queued",
-      "order": 9,
-      "ts": "2026-08-13 13:57:36",
-      "note": "REALMS rethink wave 2 (2026-08-13)"
-    },
     "observatory_dusk": {
       "state": "queued",
       "order": 10,
-      "ts": "2026-08-13 13:57:36",
-      "note": "REALMS rethink wave 2 (2026-08-13)"
-    },
-    "magnetite_choir": {
-      "state": "queued",
-      "order": 11,
       "ts": "2026-08-13 13:57:36",
       "note": "REALMS rethink wave 2 (2026-08-13)"
     },
@@ -213,45 +185,78 @@
       "ts": "2026-08-14 00:14:10",
       "note": "composed by midnight refill"
     },
-    "desert_rosette": {
-      "state": "queued",
-      "order": 14,
-      "ts": "2026-08-14 00:14:10",
-      "note": "composed by midnight refill"
-    },
-    "termite_citadel": {
-      "state": "queued",
-      "order": 15,
-      "ts": "2026-08-14 00:14:10",
-      "note": "composed by midnight refill"
-    },
     "wild_yeast": {
       "state": "queued",
       "order": 16,
       "ts": "2026-08-14 00:14:11",
       "note": "composed by midnight refill"
     },
-    "whale_fall_republic": {
+    "peony_shell": {
       "state": "queued",
-      "order": -9,
-      "force": true,
-      "ts": "2026-08-14 16:07:32",
-      "note": "regen with resolve-on-approach (default now)"
+      "order": 18,
+      "ts": "2026-08-15 00:17:21",
+      "note": "composed by midnight refill"
     },
-    "moth_orchard_night": {
+    "vesper_flight": {
       "state": "queued",
-      "order": -8,
-      "force": true,
-      "ts": "2026-08-14 16:07:32",
-      "note": "regen with resolve-on-approach (default now)"
+      "order": 21,
+      "ts": "2026-08-15 00:17:21",
+      "note": "composed by midnight refill"
     },
-    "squid_lantern": {
+    "anemone_arsenal": {
       "state": "queued",
-      "order": -2,
-      "force": true,
-      "ts": "2026-08-14 16:07:32",
-      "note": "regen with resolve-on-approach (default now)"
+      "order": 22,
+      "ts": "2026-08-16 00:14:47",
+      "note": "composed by midnight refill"
+    },
+    "chameleon_prism": {
+      "state": "queued",
+      "order": 23,
+      "ts": "2026-08-16 00:14:47",
+      "note": "composed by midnight refill"
+    },
+    "meteorite_cradle": {
+      "state": "queued",
+      "order": 24,
+      "ts": "2026-08-16 00:14:47",
+      "note": "composed by midnight refill"
+    },
+    "physarum_maze": {
+      "state": "queued",
+      "order": 25,
+      "ts": "2026-08-16 00:14:47",
+      "note": "composed by midnight refill"
+    },
+    "pomegranate_vault": {
+      "state": "queued",
+      "order": 26,
+      "ts": "2026-08-16 00:14:48",
+      "note": "composed by midnight refill"
+    },
+    "caddis_masonry": {
+      "state": "queued",
+      "order": 27,
+      "ts": "2026-08-17 00:17:38",
+      "note": "composed by midnight refill"
+    },
+    "cherenkov_cistern": {
+      "state": "queued",
+      "order": 28,
+      "ts": "2026-08-17 00:17:38",
+      "note": "composed by midnight refill"
+    },
+    "lissajous_stage": {
+      "state": "queued",
+      "order": 29,
+      "ts": "2026-08-17 00:17:39",
+      "note": "composed by midnight refill"
+    },
+    "motmot_cenote": {
+      "state": "queued",
+      "order": 30,
+      "ts": "2026-08-17 00:17:39",
+      "note": "composed by midnight refill"
     }
   },
-  "updated": "2026-08-14 19:10:43"
+  "updated": "2026-08-17 16:24:34"
 }

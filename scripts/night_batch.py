@@ -258,6 +258,16 @@ def main():
             log(f"{j} FAILED: {note}")
         pl.jsave(jj)
 
+    # MUSIC PRE-GENERATION (Phil 2026-08-17): after all renders, one ACE-Step load makes +
+    # ranks every new video's candidates against the unshifted cut, so approving in the
+    # morning costs seconds of realignment instead of minutes of generation.
+    for j in done:
+        log(f"music pregen: {j}")
+        rc, tail = run([sys.executable, str(ROOT / "scripts" / "music_gen.py"), j,
+                        "--pregen"])
+        if rc != 0:
+            log(f"  pregen failed (non-fatal): {tail[-160:]}")
+
     hrs = (time.time() - t0) / 3600
     summary = (f"batch done in {hrs:.1f}h — {len(done)} to Review"
                + (f", {len(failed)} failed ({', '.join(failed)})" if failed else "")

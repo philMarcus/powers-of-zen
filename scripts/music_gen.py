@@ -138,7 +138,11 @@ def _video(journey):
     return str(silent) if (ROOT / silent).exists() else v["file"]
 
 
-def generate(journey, n=N_KEEP):
+def generate(journey, n=N_KEEP, shift=True, target="music"):
+    """target="music": the normal Phil-facing candidates (aligned to the marked start).
+    target="music_pregen": the overnight PRE-GENERATION (Phil 2026-08-17 — no waiting at
+    approve time): same tracks, ranked against the UNSHIFTED cut; approve_to_music later
+    just re-aligns the keepers to the chosen start (seconds of ffmpeg, no GPU)."""
     d = pl.load(); v = pl.get(d, journey)
     if not v:
         print(f"no pipeline entry for {journey}"); return
@@ -148,7 +152,7 @@ def generate(journey, n=N_KEEP):
     # fall back to the built-in map, then a generic cosmic default.
     theme = spec.get("music_theme") or THEMES.get(journey) or DEFAULT_THEME
     key = spec.get("music_key") or key
-    shift_sec = v.get("start_t")          # dashboard-marked start frame (phase-shift, seconds)
+    shift_sec = v.get("start_t") if shift else None   # marked start (phase-shift, seconds)
     bpm, bar = bpm_for(journey, cut, shift_sec=shift_sec)
     video = _video(journey)
     # Track length isn't critical anymore: align.py strips the generator's silent tail and builds
@@ -256,13 +260,58 @@ def generate(journey, n=N_KEEP):
     d = pl.load(); v = pl.get(d, journey)
     if not v:
         print(f"{journey} vanished from pipeline.json during generation — not recorded"); return
-    v["music"] = {"bpm": bpm, "bar": round(bar, 3), "key": key, "stage": "review",
-                  "chosen": None, "candidates": cands,
-                  "for_model": model0, "for_cut": cut}  # so a model/cut switch flags stale music
+    v[target] = {"bpm": bpm, "bar": round(bar, 3), "key": key,
+                 "stage": "pregen" if target == "music_pregen" else "review",
+                 "chosen": None, "candidates": cands,
+                 "for_model": model0, "for_cut": cut}  # a model/cut switch flags stale music
     pl.save(d)
-    pl.telem("music_gen", journey=journey, detail=f"{len(cands)} candidates")
+    pl.telem("music_gen" if target == "music" else "music_pregen",
+             journey=journey, detail=f"{len(cands)} candidates")
     music.free_vram()      # ACE-Step holds ~9 GB after a run; release it for whatever's next
     print(f"recorded {len(cands)} candidates; audition in the dashboard Music panel")
+
+
+def realign(journey):
+    """Fast path at approve time: the overnight pregen already made + ranked the tracks;
+    re-align those keepers to the CURRENT file + marked start (ffmpeg only, no GPU) and
+    promote them into v["music"] for audition."""
+    d = pl.load(); v = pl.get(d, journey)
+    pg = (v or {}).get("music_pregen")
+    if not v or not pg or not pg.get("candidates"):
+        print(f"no pregen for {journey} — falling back to full generation")
+        return generate(journey)
+    shift_sec = v.get("start_t")
+    video = _video(journey)
+    outdir = ROOT / "review" / "music" / "candidates" / journey
+    outdir.mkdir(parents=True, exist_ok=True)
+    cands = []
+    for c in pg["candidates"]:
+        track = ROOT / c["track"]
+        if not track.exists():
+            print(f"  [{c['id']}] track missing — skipped"); continue
+        aligned = outdir / f"{c['id']}.mp4"
+        try:
+            info = al.align(video, str(track), str(aligned), journey=journey,
+                            cut=v["cut"], shift_sec=shift_sec)
+        except Exception as e:
+            print(f"  [{c['id']}] realign failed: {e}"); continue
+        cc = dict(c)
+        cc.update({"aligned": str(aligned.relative_to(ROOT)),
+                   "lock": round(info["lock"], 2),
+                   "kick": round(info.get("kick", 0.0), 2),
+                   "bar_conf": round(info.get("bar_conf", 0.0), 2)})
+        cands.append(cc)
+        print(f"  [{c['id']}] realigned (lock {info['lock']:.2f}x kick "
+              f"{info.get('kick', 0):.2f})")
+    d = pl.load(); v = pl.get(d, journey)
+    if not v:
+        return
+    v["music"] = {"bpm": pg["bpm"], "bar": pg["bar"], "key": pg["key"], "stage": "review",
+                  "chosen": None, "candidates": cands,
+                  "for_model": v["model"], "for_cut": v["cut"]}
+    pl.save(d)
+    pl.telem("music_realign", journey=journey, detail=f"{len(cands)} candidates")
+    print(f"realigned {len(cands)} pregen candidates to the marked start")
 
 
 def choose(journey, cand_id):
@@ -288,9 +337,17 @@ def main():
     ap.add_argument("journey")
     ap.add_argument("--n", type=int, default=5)
     ap.add_argument("--choose", help="candidate id to promote into the posting slot")
+    ap.add_argument("--pregen", action="store_true",
+                    help="overnight pre-generation (unshifted cut, stored in music_pregen)")
+    ap.add_argument("--realign", action="store_true",
+                    help="fast approve path: re-align pregen keepers to the marked start")
     a = ap.parse_args()
     if a.choose:
         choose(a.journey, a.choose)
+    elif a.pregen:
+        generate(a.journey, n=a.n, shift=False, target="music_pregen")
+    elif a.realign:
+        realign(a.journey)
     else:
         generate(a.journey, n=a.n)
 
