@@ -115,6 +115,26 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-17: ORBIT GATE PASSED (v3) + FOUR QUALITY-OF-LIFE SHIPS. Orbit v1 washed out (no
+CN), v2 washed out (circular anchor: CN held the warped frame's own smear) — the REAL
+mechanism was cumulative bilinear resample loss vs re-synthesis; v3 (denoise floor 0.52 in
+the window + post-warp unsharp) holds 15° of true revolution crisp. Engine-3 Phase 2 gate
+= PASSED; known lab artifact: palette drifts (lab lacks dive's color_match — integration
+inherits it). Phil to judge parallax in motion. SHIPPED SAME DAY: (1) mascot RHYME NAMES
+(pipeline.MASCOT_DISPLAY: Adam the Atom / Alexis the Galaxy / Cosmo / Belle the Cell /
+Clark the Quark / Dora the Flora / Janet the Planet / Kitty the City / Lamar the Star /
+Lee the Flea / Lorraine the Terrane / Dwight the Light / Tina the DNA) — captions + VLM +
+dashboard use display names, internal keys/files unchanged; old stored captions keep old
+names until regenerated. (2) MUSIC PREGEN: night_batch generates+ranks candidates per new
+video after renders (one ACE load, unshifted cut, stored music_pregen); approve→Music now
+runs music_gen --realign (seconds of ffmpeg) instead of minutes of generation. (3) POSTING
+CADENCE GATE: hourly PowersOfZen-postgate task + legacy 8am/6pm tasks all delegate to
+post_gate.py — fires when settings post_next arrives then advances by post_every_hours
+(19h; dashboard-editable in Settings; missed windows never burst). First fire tonight
+18:00. Legacy tasks are harmless but undeletable without elevation (commands in
+SCHEDULER.md). (4) Dashboard: Live tab newest-first; cadence controls in Settings.
+Phil's remaining depth verdict: coral marginal, still layered-2.5D — engine-3 camera
+motion is the bet, orbit gate now open for Phase 3.
 2026-08-15: ENGINE 3 PLANNED (see PLAN.md "ENGINE 3 — THE CAMERA" — the plan of record).
 Phil's morning verdict on the resolve era: better but marginal; 2-D-ness persists ("big and
 little things in a 2-D plane" — his log-depth instinct = Phase 1); the two missing realm
