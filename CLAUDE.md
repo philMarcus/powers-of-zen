@@ -115,6 +115,23 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-17 (later): ENGINE-3 CAMERA MOVES PAUSED (Phil's call — "get our world looking 3-D
+and parallax looking nice BEFORE adding camera moves; not too many things at once"). Phil's
+orbit-v3 verdict: not convinced — no legible orbital motion/parallax; the raised denoise
+CHANGED the content (solid gem-rock ground instead of space-plasma holes) rather than
+demonstrably revolving; also the lab A/B clips play too fast to judge ("about four
+discernible frames") — FUTURE LAB CLIPS: 12fps real-time + looped, not 6fps once. The v3
+technical gate result (resample-loss-vs-resynthesis balance) stands on file for when
+engine 3 resumes. CURRENT FOCUS = DEPTH REALISM (Phase 1.5): size-depth consistency
+(Phil keeps seeing small things IN FRONT of big things — instance size must agree with
+depth value), legible parallax inside resolve windows, far-floor knob test — deliver as a
+SLOW A/B on one window. DISK: C: at 98% (27G free); E: mounted empty (232G).
+output/ = 125G of the ~145G project. scripts/archive.py built (policy in its docstring:
+live/rejected/failed render trees + labs + orphans -> E:\zoomer_archive with copy-verify-
+remove + manifest; active-stage trees, mascots, music stay; build/labeled+raw+interp in
+kept trees = flagged delete-class, untouched pending Phil). Dry-run + the big move run
+2026-08-17. MUSIC: pregen chain run for all 11 review videos (whale_fall validated the
+realign fast path end-to-end: 5 candidates, seconds).
 2026-08-17: ORBIT GATE PASSED (v3) + FOUR QUALITY-OF-LIFE SHIPS. Orbit v1 washed out (no
 CN), v2 washed out (circular anchor: CN held the warped frame's own smear) — the REAL
 mechanism was cumulative bilinear resample loss vs re-synthesis; v3 (denoise floor 0.52 in
