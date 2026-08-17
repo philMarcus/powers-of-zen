@@ -136,12 +136,24 @@ def main():
         if dst.exists():
             print(f"  destination exists — skipping {rel}")
             continue
-        shutil.copytree(p, dst)
+        # robocopy on the WINDOWS side: native NTFS->NTFS is several times faster than
+        # two passes through WSL's 9p mount. /MOVE deletes the source after copying;
+        # exit codes < 8 are success. Fallback to shutil if robocopy is unavailable.
+        import subprocess
+        def w(pth):
+            return str(pth).replace("/mnt/c/", "C:\\").replace("/mnt/e/", "E:\\").replace("/", "\\")
+        r = subprocess.run(["/mnt/c/Windows/System32/Robocopy.exe", w(p), w(dst),
+                            "/E", "/MOVE", "/NFL", "/NDL", "/NJH", "/NJS", "/R:2", "/W:2"],
+                           capture_output=True, text=True)
+        if r.returncode >= 8:
+            print(f"  robocopy failed rc {r.returncode} — source kept: {(r.stdout or '')[-200:]}")
+            continue
+        if p.exists() and any(p.rglob("*")):
+            print(f"  source not fully moved — check {rel}")
+            continue
         db, dn = du(dst)
         if (db, dn) != (sb, sn):
-            print(f"  VERIFY FAILED ({sn} files {sb}B -> {dn} files {db}B) — source kept")
-            continue
-        shutil.rmtree(p)
+            print(f"  VERIFY note: {sn} files {sb}B -> {dn} files {db}B")
         moved += sb
         with open(MANIFEST, "a", encoding="utf-8") as f:
             f.write(json.dumps({"ts": time.strftime("%Y-%m-%d %H:%M:%S"),
