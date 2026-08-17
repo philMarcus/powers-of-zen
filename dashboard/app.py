@@ -92,11 +92,17 @@ def regenerate_music(journey):
     so on Windows we shell into wsl; candidates repopulate here on the next refresh."""
     import os
     import subprocess
+    # fast path (2026-08-17): the nightly batch pre-generated + ranked candidates
+    # (music_pregen); approving only needs them RE-ALIGNED to the marked start —
+    # seconds of ffmpeg instead of minutes of generation
+    dd0 = data()
+    v0 = pl.get(dd0, journey)
+    flag = " --realign" if (v0 or {}).get("music_pregen") else ""
     if os.name == "nt":
         cmd = ["wsl", "bash", "-lc",
-               f"cd /mnt/c/Users/Phil/zoomer && python3 scripts/music_gen.py {journey}"]
+               f"cd /mnt/c/Users/Phil/zoomer && python3 scripts/music_gen.py {journey}{flag}"]
     else:
-        cmd = ["python3", "scripts/music_gen.py", journey]
+        cmd = ["bash", "-lc", f"python3 scripts/music_gen.py {journey}{flag}"]
     # log, don't DEVNULL: a crashed gen used to vanish without a trace (resonance_hall's
     # bad keyscale died silently and the video just sat in Music with no candidates)
     logf = open(pl.ROOT / "outbox" / f"music_gen_{journey}.log", "w")
@@ -576,6 +582,10 @@ counts = Counter(v.get("state") for v in d["videos"])
 # Live/Failed are by PLATFORM status, not the top-level state: a video live on IG+YT but
 # dropped on TikTok is BOTH live (somewhere) and failed (somewhere), so it shows in both.
 live_vids = [v for v in d["videos"] if any_live(v)]
+# newest went-live first (Phil 2026-08-17): latest platform live timestamp, falling back
+# to created — the old insertion order read as random
+live_vids.sort(key=lambda v: max([pp.get("ts", "") or "" for pp in v.get("platforms", {}).values()]
+                                 + [v.get("created", "")]), reverse=True)
 failed_vids = [v for v in d["videos"] if any_failed(v)]
 PAUSED = pl.paused_platforms(d)
 PREASONS = d.get("meta", {}).get("paused_reasons", {})
@@ -876,10 +886,17 @@ with tabs[6]:  # TELEMETRY
                 + (f"  {e.get('reason','')}" if e.get('reason') else ""))
 
 with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platform pauses)
-    st.write("Pipeline knobs. Run **times** live in Windows Task Scheduler "
-             "(scripts/SCHEDULER.md): refill 00:00 · render 01:30 · posts 08:00/18:00.")
+    st.write("Pipeline knobs. Refill 00:00 and render 01:30 live in Windows Task "
+             "Scheduler (scripts/SCHEDULER.md); POSTING is cadence-based below.")
     jd = pl.jload()
     s = jd["settings"]
+    st.markdown("**posting cadence** — an hourly gate fires the poster once `next post` "
+                "arrives, then advances by the cadence (missed windows never burst-post)")
+    pcad = st.columns(2)
+    post_every = pcad[0].number_input("post every (hours)", 1.0, 96.0,
+                                      float(s.get("post_every_hours", 19)), step=1.0)
+    post_next = pcad[1].text_input("next post (YYYY-MM-DD HH:MM)",
+                                   s.get("post_next", ""))
     c = st.columns(4)
     budget = c[0].number_input("render budget (min/night)", 30, 600,
                                int(s["render_budget_min"]), step=30)
@@ -919,7 +936,9 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
                 "render_budget_min": int(budget), "max_ready_videos": int(maxready),
                 "journey_queue_target": int(qtarget), "refill_max_per_night": int(maxnight),
                 "tier_share": shares, "nightly_templates": tpl_list,
-                "render_paused": bool(rpaused), "refill_paused": bool(fpaused)})
+                "render_paused": bool(rpaused), "refill_paused": bool(fpaused),
+                "post_every_hours": float(post_every),
+                "post_next": post_next.strip()})
             pl.jsave(jj)
             dd = data()
             dd.setdefault("meta", {})["paused_platforms"] = \
