@@ -42,7 +42,7 @@ def main():
     ap.add_argument("journey")
     ap.add_argument("--card", required=True)
     ap.add_argument("--src", default=None)
-    ap.add_argument("--deg", type=float, default=1.2, help="orbit degrees per frame")
+    ap.add_argument("--deg", type=float, default=0.8, help="orbit degrees per frame")
     ap.add_argument("--frames", type=int, default=20, help="window length")
     ap.add_argument("--pivot-depth", type=float, default=0.55)
     ap.add_argument("--run", action="store_true")
@@ -99,18 +99,34 @@ def main():
         in_trans = prev_prompt is not None and kk < T
         d_raw = warp.depth_via_comfy(prev)
         depth_s = warp.ema(depth_s, d_raw, alpha=0.6)
+        # V2 (2026-08-17): quantize depth into coherent PLANES before warping — raw
+        # DepthAnything on abstract fields is noisy, and noisy parallax shredded v1
+        from PIL import ImageFilter as _IF
+        _dq = Image.fromarray((depth_s * 255).astype(np.uint8)).filter(
+            _IF.GaussianBlur(9))
+        depth_w = np.round(np.asarray(_dq, np.float32) / 255.0 * 4) / 4
         # ORBIT first (the camera moves), then the scheduled zoom untouched (iron law)
-        orbited, stretch = warp.orbit(prev, depth_s, a.deg, pivot=(0.5, 0.47),
+        orbited, stretch = warp.orbit(prev, depth_w, a.deg, pivot=(0.5, 0.47),
                                       pivot_depth=a.pivot_depth)
         cx = 0.5 + cfg["drift"] * math.sin(2 * math.pi * i / 263)
         cy = 0.5 + cfg["drift"] * math.sin(2 * math.pi * i / 419 + 1.7)
         fed = dive.zoom_transform(orbited, zoom[i], cfg["rotate_per_frame"], cx, cy)
         fed = dive.detail_boost(fed, cfg)
-        den = warp.disocclusion_denoise(den_sched[i], stretch, k=0.22)
+        # V3: the warp's extra bilinear pass low-passes the image every frame and 0.40
+        # denoise re-synthesizes less than it loses (v1+v2 wash-out). Counter with a
+        # post-warp unsharp + a raised re-synthesis floor during the orbit.
+        from PIL import ImageFilter as _IF2
+        fed = fed.filter(_IF2.UnsharpMask(radius=2, percent=90, threshold=2))
+        den = max(0.52, warp.disocclusion_denoise(den_sched[i], stretch, k=0.22))
         ref = dive.upload_image(fed, "orbit_feed.png")
+        # V2 ANCHOR: the v1 failure passed NO ControlNet — dive's own approach frames hold
+        # structure with depth-CN from the fed frame; the orbit needs the same identity
+        # hold or re-diffusion drifts the subject away instead of circling it.
         wf = dive.build_workflow(cfg, prompt, cfg["seed"] + i, init_image=ref, denoise=den,
                                  prev_prompt=prev_prompt if in_trans else None,
-                                 blend=min(1.0, (kk + 1) / (T + 1)) if in_trans else 1.0)
+                                 blend=min(1.0, (kk + 1) / (T + 1)) if in_trans else 1.0,
+                                 ctrl_image=ref, cn_strength=0.5,
+                                 depth_preproc=dive.pick_depth_preproc())
         img = Image.open(io.BytesIO(dive.run_workflow(wf))).convert("RGB")
         img.save(out_dir / "frames" / f"{i:05d}.png")
         frames.append(img)
