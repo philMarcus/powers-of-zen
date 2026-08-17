@@ -1,0 +1,96 @@
+{"ts": "2026-08-17 17:26:53", "src": "output/abyssal_chandelier", "dst": "/mnt/e/zoomer_archive/output/abyssal_chandelier", "bytes": 1955763047, "files": 1859, "reason": "video failed"}
+{"ts": "2026-08-17 17:27:04", "src": "output/alexandria", "dst": "/mnt/e/zoomer_archive/output/alexandria", "bytes": 631984757, "files": 784, "reason": "video failed"}
+{"ts": "2026-08-17 17:27:14", "src": "output/alexandria_ds", "dst": "/mnt/e/zoomer_archive/output/alexandria_ds", "bytes": 831333461, "files": 785, "reason": "video failed"}
+{"ts": "2026-08-17 17:27:21", "src": "output/ammonite_spiral", "dst": "/mnt/e/zoomer_archive/output/ammonite_spiral", "bytes": 700840993, "files": 675, "reason": "video rejected"}
+{"ts": "2026-08-17 17:27:45", "src": "output/antenna_ball", "dst": "/mnt/e/zoomer_archive/output/antenna_ball", "bytes": 1074393192, "files": 1570, "reason": "video rejected"}
+{"ts": "2026-08-17 17:28:13", "src": "output/antenna_ball_ds", "dst": "/mnt/e/zoomer_archive/output/antenna_ball_ds", "bytes": 1613068324, "files": 1732, "reason": "video rejected"}
+{"ts": "2026-08-17 17:28:23", "src": "output/antenna_ball_turbo", "dst": "/mnt/e/zoomer_archive/output/antenna_ball_turbo", "bytes": 389338202, "files": 622, "reason": "video rejected"}
+{"ts": "2026-08-17 17:28:29", "src": "output/attic_drift", "dst": "/mnt/e/zoomer_archive/output/attic_drift", "bytes": 403713186, "files": 423, "reason": "video rejected"}
+{"ts": "2026-08-17 17:29:05", "src": "output/black_hole", "dst": "/mnt/e/zoomer_archive/output/black_hole", "bytes": 2417410577, "files": 2270, "reason": "video live"}
+{"ts": "2026-08-17 17:29:19", "src": "output/black_hole_ds", "dst": "/mnt/e/zoomer_archive/output/black_hole_ds", "bytes": 985915184, "files": 1046, "reason": "video live"}
+{"ts": "2026-08-17 17:29:19", "src": "output/brand", "dst": "/mnt/e/zoomer_archive/output/brand", "bytes": 28226344, "files": 24, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:29:29", "src": "output/butterfly_meridian", "dst": "/mnt/e/zoomer_archive/output/butterfly_meridian", "bytes": 888826744, "files": 843, "reason": "video failed"}
+{"ts": "2026-08-17 17:30:17", "src": "output/cartographer", "dst": "/mnt/e/zoomer_archive/output/cartographer", "bytes": 3752389802, "files": 3834, "reason": "video failed"}
+{"ts": "2026-08-17 17:30:59", "src": "output/cartographer_ds", "dst": "/mnt/e/zoomer_archive/output/cartographer_ds", "bytes": 4247043185, "files": 3956, "reason": "video failed"}
+{"ts": "2026-08-17 17:31:01", "src": "output/cave_of_numbers", "dst": "/mnt/e/zoomer_archive/output/cave_of_numbers", "bytes": 287931223, "files": 213, "reason": "video failed"}
+{"ts": "2026-08-17 17:31:08", "src": "output/chalkboard_infinities", "dst": "/mnt/e/zoomer_archive/output/chalkboard_infinities", "bytes": 585441346, "files": 591, "reason": "video failed"}
+{"ts": "2026-08-17 17:31:17", "src": "output/chess_empires", "dst": "/mnt/e/zoomer_archive/output/chess_empires", "bytes": 862183421, "files": 843, "reason": "video rejected"}
+{"ts": "2026-08-17 17:31:27", "src": "output/cinder_veil", "dst": "/mnt/e/zoomer_archive/output/cinder_veil", "bytes": 921490551, "files": 927, "reason": "video failed"}
+{"ts": "2026-08-17 17:31:35", "src": "output/circuit_city_ds", "dst": "/mnt/e/zoomer_archive/output/circuit_city_ds", "bytes": 899222550, "files": 871, "reason": "video failed"}
+{"ts": "2026-08-17 17:32:08", "src": "output/circuit_city_turbo", "dst": "/mnt/e/zoomer_archive/output/circuit_city_turbo", "bytes": 2867782910, "files": 2835, "reason": "video failed"}
+{"ts": "2026-08-17 17:32:23", "src": "output/copper_rain", "dst": "/mnt/e/zoomer_archive/output/copper_rain", "bytes": 1256012581, "files": 1268, "reason": "video failed"}
+{"ts": "2026-08-17 17:32:34", "src": "output/cosmic_scales_remix_ds", "dst": "/mnt/e/zoomer_archive/output/cosmic_scales_remix_ds", "bytes": 1228827814, "files": 1181, "reason": "video failed"}
+{"ts": "2026-08-17 17:34:33", "src": "output/cosmic_scales_remix_turbo", "dst": "/mnt/e/zoomer_archive/output/cosmic_scales_remix_turbo", "bytes": 10747010135, "files": 11372, "reason": "video failed"}
+{"ts": "2026-08-17 17:34:40", "src": "output/dollhouse", "dst": "/mnt/e/zoomer_archive/output/dollhouse", "bytes": 786050807, "files": 1046, "reason": "video failed"}
+{"ts": "2026-08-17 17:34:55", "src": "output/dollhouse_ds", "dst": "/mnt/e/zoomer_archive/output/dollhouse_ds", "bytes": 1476600196, "files": 1692, "reason": "video failed"}
+{"ts": "2026-08-17 17:34:59", "src": "output/droplet_zoo", "dst": "/mnt/e/zoomer_archive/output/droplet_zoo", "bytes": 397017596, "files": 423, "reason": "video rejected"}
+{"ts": "2026-08-17 17:35:00", "src": "output/first_dive", "dst": "/mnt/e/zoomer_archive/output/first_dive", "bytes": 55486724, "files": 121, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:35:01", "src": "output/first_dive_ds", "dst": "/mnt/e/zoomer_archive/output/first_dive_ds", "bytes": 155266386, "files": 121, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:35:01", "src": "output/first_dive_v2", "dst": "/mnt/e/zoomer_archive/output/first_dive_v2", "bytes": 154002705, "files": 121, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:35:14", "src": "output/food_chain", "dst": "/mnt/e/zoomer_archive/output/food_chain", "bytes": 1213240249, "files": 1569, "reason": "video failed"}
+{"ts": "2026-08-17 17:35:35", "src": "output/food_chain_ds", "dst": "/mnt/e/zoomer_archive/output/food_chain_ds", "bytes": 2441780157, "files": 2462, "reason": "video failed"}
+{"ts": "2026-08-17 17:35:42", "src": "output/frost_window", "dst": "/mnt/e/zoomer_archive/output/frost_window", "bytes": 884824446, "files": 845, "reason": "video failed"}
+{"ts": "2026-08-17 17:35:45", "src": "output/frost_window_cn0", "dst": "/mnt/e/zoomer_archive/output/frost_window_cn0", "bytes": 454087408, "files": 423, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:36:48", "src": "output/full_ladder", "dst": "/mnt/e/zoomer_archive/output/full_ladder", "bytes": 6167736042, "files": 6622, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:37:16", "src": "output/full_ladder_ds", "dst": "/mnt/e/zoomer_archive/output/full_ladder_ds", "bytes": 3463906973, "files": 3311, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:37:26", "src": "output/geode_cosmos", "dst": "/mnt/e/zoomer_archive/output/geode_cosmos", "bytes": 1125560534, "files": 1062, "reason": "video failed"}
+{"ts": "2026-08-17 17:37:51", "src": "output/glass_apiary", "dst": "/mnt/e/zoomer_archive/output/glass_apiary", "bytes": 2447923404, "files": 2527, "reason": "video failed"}
+{"ts": "2026-08-17 17:37:55", "src": "output/gossamer_dawn", "dst": "/mnt/e/zoomer_archive/output/gossamer_dawn", "bytes": 407395394, "files": 423, "reason": "video rejected"}
+{"ts": "2026-08-17 17:37:57", "src": "output/grand_tour", "dst": "/mnt/e/zoomer_archive/output/grand_tour", "bytes": 226520127, "files": 162, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:38:01", "src": "output/heron_delta", "dst": "/mnt/e/zoomer_archive/output/heron_delta", "bytes": 415714673, "files": 423, "reason": "video rejected"}
+{"ts": "2026-08-17 17:38:02", "src": "output/ice_and_ember_ds", "dst": "/mnt/e/zoomer_archive/output/ice_and_ember_ds", "bytes": 192797986, "files": 130, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:38:03", "src": "output/ice_and_ember_turbo", "dst": "/mnt/e/zoomer_archive/output/ice_and_ember_turbo", "bytes": 218421961, "files": 131, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:38:11", "src": "output/ink_dynasty", "dst": "/mnt/e/zoomer_archive/output/ink_dynasty", "bytes": 801659902, "files": 843, "reason": "video failed"}
+{"ts": "2026-08-17 17:38:31", "src": "output/iris_observatory", "dst": "/mnt/e/zoomer_archive/output/iris_observatory", "bytes": 2149067576, "files": 2039, "reason": "video rejected"}
+{"ts": "2026-08-17 17:38:44", "src": "output/iris_observatory_ds", "dst": "/mnt/e/zoomer_archive/output/iris_observatory_ds", "bytes": 1304692160, "files": 1343, "reason": "video rejected"}
+{"ts": "2026-08-17 17:39:06", "src": "output/ivory_gambit", "dst": "/mnt/e/zoomer_archive/output/ivory_gambit", "bytes": 2163531918, "files": 2121, "reason": "video failed"}
+{"ts": "2026-08-17 17:39:14", "src": "output/jade_automata", "dst": "/mnt/e/zoomer_archive/output/jade_automata", "bytes": 843995441, "files": 843, "reason": "video failed"}
+{"ts": "2026-08-17 17:39:23", "src": "output/jewel_oculus", "dst": "/mnt/e/zoomer_archive/output/jewel_oculus", "bytes": 916493653, "files": 927, "reason": "video rejected"}
+{"ts": "2026-08-17 17:39:26", "src": "output/lab_4reg", "dst": "/mnt/e/zoomer_archive/output/lab_4reg", "bytes": 415224943, "files": 357, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:39:30", "src": "output/lab_4reg_in", "dst": "/mnt/e/zoomer_archive/output/lab_4reg_in", "bytes": 313842691, "files": 349, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:39:33", "src": "output/lather_atlas", "dst": "/mnt/e/zoomer_archive/output/lather_atlas", "bytes": 407633995, "files": 423, "reason": "video failed"}
+{"ts": "2026-08-17 17:39:37", "src": "output/lichen_moor", "dst": "/mnt/e/zoomer_archive/output/lichen_moor", "bytes": 643590362, "files": 591, "reason": "video failed"}
+{"ts": "2026-08-17 17:39:53", "src": "output/loom_of_nights", "dst": "/mnt/e/zoomer_archive/output/loom_of_nights", "bytes": 1883203032, "files": 1854, "reason": "video rejected"}
+{"ts": "2026-08-17 17:39:57", "src": "output/midnight_kitchen", "dst": "/mnt/e/zoomer_archive/output/midnight_kitchen", "bytes": 446885410, "files": 436, "reason": "video live"}
+{"ts": "2026-08-17 17:40:01", "src": "output/midnight_kitchen_ds", "dst": "/mnt/e/zoomer_archive/output/midnight_kitchen_ds", "bytes": 446307693, "files": 436, "reason": "video live"}
+{"ts": "2026-08-17 17:40:38", "src": "output/mineral_heart", "dst": "/mnt/e/zoomer_archive/output/mineral_heart", "bytes": 4250706562, "files": 3834, "reason": "video failed"}
+{"ts": "2026-08-17 17:41:21", "src": "output/mineral_heart_ds", "dst": "/mnt/e/zoomer_archive/output/mineral_heart_ds", "bytes": 5297205696, "files": 4846, "reason": "video failed"}
+{"ts": "2026-08-17 17:41:30", "src": "output/mineral_heart_turbo", "dst": "/mnt/e/zoomer_archive/output/mineral_heart_turbo", "bytes": 1095139919, "files": 985, "reason": "video failed"}
+{"ts": "2026-08-17 17:41:31", "src": "output/molten_clockwork_ds", "dst": "/mnt/e/zoomer_archive/output/molten_clockwork_ds", "bytes": 185067709, "files": 130, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:41:32", "src": "output/molten_clockwork_turbo", "dst": "/mnt/e/zoomer_archive/output/molten_clockwork_turbo", "bytes": 214154646, "files": 131, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:41:44", "src": "output/moth_orchard_night", "dst": "/mnt/e/zoomer_archive/output/moth_orchard_night", "bytes": 1452155860, "files": 1449, "reason": "video failed"}
+{"ts": "2026-08-17 17:41:45", "src": "output/neon_mycelium_ds", "dst": "/mnt/e/zoomer_archive/output/neon_mycelium_ds", "bytes": 182914607, "files": 130, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:41:46", "src": "output/neon_mycelium_turbo", "dst": "/mnt/e/zoomer_archive/output/neon_mycelium_turbo", "bytes": 218418162, "files": 131, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:42:43", "src": "output/night_bloom", "dst": "/mnt/e/zoomer_archive/output/night_bloom", "bytes": 5734379875, "files": 5480, "reason": "video live"}
+{"ts": "2026-08-17 17:43:00", "src": "output/night_bloom_ds", "dst": "/mnt/e/zoomer_archive/output/night_bloom_ds", "bytes": 1988538631, "files": 1917, "reason": "video live"}
+{"ts": "2026-08-17 17:43:04", "src": "output/night_lido", "dst": "/mnt/e/zoomer_archive/output/night_lido", "bytes": 419967436, "files": 423, "reason": "video rejected"}
+{"ts": "2026-08-17 17:43:04", "src": "output/orbit_lab", "dst": "/mnt/e/zoomer_archive/output/orbit_lab", "bytes": 33889442, "files": 39, "reason": "lab evidence"}
+{"ts": "2026-08-17 17:43:05", "src": "output/origami_bloom_ds", "dst": "/mnt/e/zoomer_archive/output/origami_bloom_ds", "bytes": 173978360, "files": 130, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:43:06", "src": "output/origami_bloom_turbo", "dst": "/mnt/e/zoomer_archive/output/origami_bloom_turbo", "bytes": 163644334, "files": 130, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:43:17", "src": "output/pollen_court", "dst": "/mnt/e/zoomer_archive/output/pollen_court", "bytes": 1366815056, "files": 1268, "reason": "video failed"}
+{"ts": "2026-08-17 17:43:19", "src": "output/proof_4decade", "dst": "/mnt/e/zoomer_archive/output/proof_4decade", "bytes": 322729213, "files": 433, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:43:22", "src": "output/proof_4decade_ds", "dst": "/mnt/e/zoomer_archive/output/proof_4decade_ds", "bytes": 439263128, "files": 433, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:43:46", "src": "output/quantum_orrery", "dst": "/mnt/e/zoomer_archive/output/quantum_orrery", "bytes": 2288534263, "files": 2362, "reason": "video failed"}
+{"ts": "2026-08-17 17:43:47", "src": "output/resolve_lab", "dst": "/mnt/e/zoomer_archive/output/resolve_lab", "bytes": 37665072, "files": 70, "reason": "lab evidence"}
+{"ts": "2026-08-17 17:43:54", "src": "output/resonance_hall", "dst": "/mnt/e/zoomer_archive/output/resonance_hall", "bytes": 845339088, "files": 843, "reason": "video failed"}
+{"ts": "2026-08-17 17:44:00", "src": "output/salt_mirror", "dst": "/mnt/e/zoomer_archive/output/salt_mirror", "bytes": 607888527, "files": 591, "reason": "video failed"}
+{"ts": "2026-08-17 17:44:10", "src": "output/seam_lab", "dst": "/mnt/e/zoomer_archive/output/seam_lab", "bytes": 1530394890, "files": 1070, "reason": "lab evidence"}
+{"ts": "2026-08-17 17:44:18", "src": "output/skyfog", "dst": "/mnt/e/zoomer_archive/output/skyfog", "bytes": 840109584, "files": 1046, "reason": "video rejected"}
+{"ts": "2026-08-17 17:44:54", "src": "output/skyfog_ds", "dst": "/mnt/e/zoomer_archive/output/skyfog_ds", "bytes": 3411263277, "files": 3600, "reason": "video rejected"}
+{"ts": "2026-08-17 17:44:59", "src": "output/skyfog_turbo", "dst": "/mnt/e/zoomer_archive/output/skyfog_turbo", "bytes": 404877346, "files": 523, "reason": "video rejected"}
+{"ts": "2026-08-17 17:45:05", "src": "output/snowfall", "dst": "/mnt/e/zoomer_archive/output/snowfall", "bytes": 671000474, "files": 698, "reason": "video failed"}
+{"ts": "2026-08-17 17:45:12", "src": "output/snowfall_ds", "dst": "/mnt/e/zoomer_archive/output/snowfall_ds", "bytes": 656733403, "files": 698, "reason": "video failed"}
+{"ts": "2026-08-17 17:45:16", "src": "output/snowfall_turbo", "dst": "/mnt/e/zoomer_archive/output/snowfall_turbo", "bytes": 623901389, "files": 590, "reason": "video failed"}
+{"ts": "2026-08-17 17:45:17", "src": "output/stained_glass_ocean_ds", "dst": "/mnt/e/zoomer_archive/output/stained_glass_ocean_ds", "bytes": 186190854, "files": 130, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:45:18", "src": "output/stained_glass_ocean_turbo", "dst": "/mnt/e/zoomer_archive/output/stained_glass_ocean_turbo", "bytes": 223289082, "files": 131, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:45:18", "src": "output/static_bloom", "dst": "/mnt/e/zoomer_archive/output/static_bloom", "bytes": 308, "files": 2, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-08-17 17:45:28", "src": "output/stormglass_ds", "dst": "/mnt/e/zoomer_archive/output/stormglass_ds", "bytes": 1061191786, "files": 1057, "reason": "video rejected"}
+{"ts": "2026-08-17 17:45:37", "src": "output/stormglass_turbo", "dst": "/mnt/e/zoomer_archive/output/stormglass_turbo", "bytes": 789597226, "files": 885, "reason": "video rejected"}
+{"ts": "2026-08-17 17:45:51", "src": "output/sugar_nebula", "dst": "/mnt/e/zoomer_archive/output/sugar_nebula", "bytes": 1357441548, "files": 1517, "reason": "video failed"}
+{"ts": "2026-08-17 17:46:04", "src": "output/tempo_lab", "dst": "/mnt/e/zoomer_archive/output/tempo_lab", "bytes": 1347144654, "files": 1272, "reason": "lab evidence"}
+{"ts": "2026-08-17 17:46:11", "src": "output/tesla_garden", "dst": "/mnt/e/zoomer_archive/output/tesla_garden", "bytes": 665313710, "files": 759, "reason": "video failed"}
+{"ts": "2026-08-17 17:46:16", "src": "output/tide_glass", "dst": "/mnt/e/zoomer_archive/output/tide_glass", "bytes": 607278535, "files": 591, "reason": "video failed"}
+{"ts": "2026-08-17 17:46:38", "src": "output/tide_of_life", "dst": "/mnt/e/zoomer_archive/output/tide_of_life", "bytes": 2258574983, "files": 2318, "reason": "video live"}
+{"ts": "2026-08-17 17:46:49", "src": "output/tide_of_life_ds", "dst": "/mnt/e/zoomer_archive/output/tide_of_life_ds", "bytes": 1088037781, "files": 1046, "reason": "video live"}
+{"ts": "2026-08-17 17:46:53", "src": "output/turing_springs", "dst": "/mnt/e/zoomer_archive/output/turing_springs", "bytes": 588111783, "files": 591, "reason": "video rejected"}
+{"ts": "2026-08-17 17:47:06", "src": "output/velvet_atlas", "dst": "/mnt/e/zoomer_archive/output/velvet_atlas", "bytes": 1288468584, "files": 1267, "reason": "video failed"}
