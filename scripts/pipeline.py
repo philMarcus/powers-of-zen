@@ -41,6 +41,33 @@ MASCOT_EXP = {"clark": -15, "adam": -10, "tina": -8, "belle": -5, "lee": -3, "ne
               "aleksey": 21, "amos": 26}
 CAMEO_EXP_TOL = 3.0
 
+# RHYMING DISPLAY NAMES (Phil 2026-08-17 naming doctrine). Everything USER-FACING — captions,
+# the "can you spot …" hook, hashtags, the VLM prompt, the dashboard — says the display name;
+# the INTERNAL key never changes (sprite filenames, journey JSON `cameo.sprite`, MASCOT_EXP keys,
+# pipeline entries' `cameo` field all stay the lowercase stem). Two display first names differ
+# from their key on purpose: aleksey -> "Alexis", newman -> "Dwight".
+# Lookup: MASCOT_DISPLAY.get(key, key.title())
+MASCOT_DISPLAY = {
+    "adam": "Adam the Atom",
+    "aleksey": "Alexis the Galaxy",
+    "amos": "Cosmo",
+    "belle": "Belle the Cell",
+    "clark": "Clark the Quark",
+    "dora": "Dora the Flora",
+    "janet": "Janet the Planet",
+    "kitty": "Kitty the City",
+    "lamar": "Lamar the Star",
+    "lee": "Lee the Flea",
+    "lorraine": "Lorraine the Terrane",
+    "newman": "Dwight the Light",
+    "tina": "Tina the DNA",
+}
+
+
+def mascot_display(key):
+    """User-facing name for a mascot key (sprite stem). Internal keys are never renamed."""
+    return MASCOT_DISPLAY.get((key or "").strip().lower(), (key or "").title())
+
 
 def cameo_realm_check(spec):
     """-> list of problem strings (empty = ok): every cameo's mascot vs its card's exp."""

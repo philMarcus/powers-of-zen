@@ -336,14 +336,20 @@ def card(v, actions, show_switch=True, marker=None, captions=False, extras=None)
             st.video(vp, loop=True)
         else:
             st.warning(f"file missing: {v['file']}")
-        st.caption(f"**{v['journey']}** · {v['model']} · {v['cut']} · {v.get('cameo') or 'no cameo'}")
+        # cameo shown by its user-facing rhyming display name (pl.MASCOT_DISPLAY); the stored
+        # value stays the internal sprite key.
+        cam = (v.get("cameo") or "").strip()
+        cam_disp = pl.MASCOT_DISPLAY.get(cam.lower(), cam.title()) if cam else "no cameo"
+        st.caption(f"**{v['journey']}** · {v['model']} · {v['cut']} · {cam_disp}")
     with col2:
         if captions:
             no_theme = v.get("state") == "queued"     # Production: don't redo the (locked) music theme
             # "can you spot <mascot>?" hook toggle — shown for ANY cameo (even before captions run),
             # so you can pre-decide; drop it if the sprite didn't render well.
             if v.get("cameo"):
-                hook = st.toggle(f"🔎 include “can you spot {v['cameo'].capitalize()}?” hook",
+                _ck = v["cameo"].strip()
+                _cd = pl.MASCOT_DISPLAY.get(_ck.lower(), _ck.title())
+                hook = st.toggle(f"🔎 include “can you spot {_cd}?” hook",
                                  value=v.get("spot_hook", True), key=f"hook_{v['journey']}")
                 if hook != v.get("spot_hook", True):
                     dd = data(); vv = pl.get(dd, v["journey"])

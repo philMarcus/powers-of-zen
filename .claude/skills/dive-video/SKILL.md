@@ -99,15 +99,22 @@ Engine-critical rules:
   never hand-author a last-card target for the loop.
 
 ## Mascot cast (ONE cameo per video, scale-matched, size ≥0.12, rotate the cast)
-| exp | register | mascot |   | exp | register | mascot |
+| exp | register | mascot (display name) |   | exp | register | mascot (display name) |
 |---|---|---|---|---|---|---|
-| -15 | quark | Clark |  | 1 | flora/tree | Dora |
-| -10 | atom | Adam |    | 3 | city | Kitty |
-| -8 | molecule/DNA | Tina | | 5 | landmass | Lorraine |
-| -5 | cell | Belle |    | 7 | planet | Janet |
-| -3 | small creature | Lee | | 11 | star | Lamar |
-| 0 | human scale | Newman | | 21 | galaxy | Aleksey |
-|  |  |  | | 26 | cosmos | Amos |
+| -15 | quark | clark (Clark the Quark) |  | 1 | flora/tree | dora (Dora the Flora) |
+| -10 | atom | adam (Adam the Atom) |    | 3 | city | kitty (Kitty the City) |
+| -8 | molecule/DNA | tina (Tina the DNA) | | 5 | landmass | lorraine (Lorraine the Terrane) |
+| -5 | cell | belle (Belle the Cell) |    | 7 | planet | janet (Janet the Planet) |
+| -3 | small creature | lee (Lee the Flea) | | 11 | star | lamar (Lamar the Star) |
+| 0 | human scale | newman (Dwight the Light) | | 21 | galaxy | aleksey (Alexis the Galaxy) |
+|  |  |  | | 26 | cosmos | amos (Cosmo) |
+
+The lowercase key is the IDENTIFIER — sprite filename (`output/mascots/canon/<key>.png`), the
+journey's `cameo.sprite`, `pipeline.MASCOT_EXP`, the pipeline entry's `cameo` field. The name in
+parentheses is the DISPLAY name and is what every user-facing string says (captions, the spot
+question, hashtags, the dashboard) — `pipeline.MASCOT_DISPLAY` is the single source. Note two
+display first names differ from their key on purpose: `newman` → Dwight, `aleksey` → Alexis.
+Never rename a file or a JSON field to match a display name.
 A cameo may sit on any card EXCEPT one whose frames fall inside the loop tail (the last ~24
 frames morph home and would smear it). Card 0 is fine — the engine pastes from frame 1.
 

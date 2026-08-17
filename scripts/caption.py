@@ -57,9 +57,10 @@ PROMPT = (
     '"spot_line": "...", "hashtags": ["#..","#.."], "music_theme": "..."}}'
 )
 MASCOT_INSTR = (
-    'A hidden character named {m} appears briefly somewhere in the video. Also write "spot_line" — '
+    'A hidden character named "{m}" appears briefly somewhere in the video. Also write "spot_line" — '
     'ONE short, fun, VARIED question inviting viewers to find {m} (e.g. ask if they can spot {m}, or '
-    'at what moment {m} pops up), with one playful emoji. Do NOT ask people to comment.\n'
+    'at what moment {m} pops up), with one playful emoji. Write the character\'s name EXACTLY as '
+    '"{m}" — never shorten it, never drop or change any word of it. Do NOT ask people to comment.\n'
 )
 NO_MASCOT_INSTR = 'There is no hidden character — leave "spot_line" empty.\n'
 
@@ -119,6 +120,30 @@ def _parse(raw):
         return json.loads(m.group(0)) if m else {}
 
 
+def _fix_mascot_name(text, key, display):
+    """Force the FULL rhyming display name in user-facing text. The VLM is told to write it
+    verbatim but still shortens "Adam the Atom" -> "Adam" (and may fall back on the internal
+    key). Placeholder-swap so an already-correct name can't grow a second tail."""
+    if not (text and display):
+        return text
+    ph = "\x00M\x00"
+    out = re.sub(re.escape(display), ph, text, flags=re.I)
+    for alt in sorted({key, display.split()[0]}, key=len, reverse=True):
+        if alt:
+            out = re.sub(rf"\b{re.escape(alt)}\b", ph, out, flags=re.I)
+    return out.replace(ph, display)
+
+
+def _fix_mascot_tag(tag, key, display):
+    """A hashtag naming the mascot uses the display name squished: #clarkthequark."""
+    if not (display and isinstance(tag, str)):
+        return tag
+    body = tag.lstrip("#")
+    if body.lower() in {key.lower(), display.split()[0].lower()}:
+        return "#" + re.sub(r"[^a-z0-9]", "", display.lower())
+    return tag
+
+
 def _dedupe_tags(tags):
     out, seen = [], set()
     for t in tags:
@@ -156,7 +181,10 @@ def generate(journey, model="ds", no_theme=False):
     # captioning is text-only off the worlds, so frames aren't required (they're for future
     # image-grounding); a cleaned-up render still gets captioned.
     style, worlds = journey_worlds(journey)
-    mascot = (v.get("cameo") or "").capitalize() if v else ""
+    # user-facing name only: the pipeline entry stores the internal key (sprite stem), captions
+    # always say the rhyming display name (Phil 2026-08-17) — see pl.MASCOT_DISPLAY.
+    cameo_key = (v.get("cameo") or "").strip() if v else ""
+    mascot = pl.MASCOT_DISPLAY.get(cameo_key.lower(), cameo_key.title()) if cameo_key else ""
     mline = MASCOT_INSTR.format(m=mascot) if mascot else NO_MASCOT_INSTR
     url = _ollama()
     try:
@@ -180,11 +208,13 @@ def generate(journey, model="ds", no_theme=False):
     bodies = [c.strip() for c in (raw or []) if c and c.strip()][:5]
     if not bodies:
         print(f"  no captions parsed for {journey}"); return None
+    bodies = [_fix_mascot_name(b, cameo_key, mascot) for b in bodies]
     # YouTube title = the descriptive caption body itself (the part before the mascot question +
     # hashtags), truncated to YT's limit — not a separately-written title.
     yts = [b[:100] for b in bodies]
-    spot = (data.get("spot_line") or "").strip() if mascot else ""
-    tags = " ".join(_dedupe_tags(list(data.get("hashtags", [])) + BRAND_TAGS))
+    spot = _fix_mascot_name((data.get("spot_line") or "").strip(), cameo_key, mascot) if mascot else ""
+    tags = " ".join(_dedupe_tags([_fix_mascot_tag(t, cameo_key, mascot)
+                                  for t in list(data.get("hashtags", []))] + BRAND_TAGS))
     mtheme = (data.get("music_theme") or "").strip()
     # RE-READ before writing: the Ollama call above holds this process for ~40s while the
     # dashboard may be editing pipeline.json — merge into a fresh copy, own fields only

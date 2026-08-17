@@ -366,11 +366,19 @@ myth, a trending sound, an emotion…):
   frame — a card-0 cameo appears at frame 1), but prefer a NON-first card: card 0 is the
   loop-return frame, and the sprite reads better after an arrival than over the establishing shot.
 - **REALM-MATCH BEATS ROTATION** (Phil 2026-08-03). The sprite must live at the card's scale:
-  test `|card.exp − mascot.exp| ≤ 3` against the cast table — Amos (10²⁶) does not visit
+  test `|card.exp − mascot.exp| ≤ 3` against the cast table — amos (10²⁶) does not visit
   beehives. Pick the cameo CARD first, then the mascot NEAREST its exp; use cast rotation only
-  to break ties among mascots that pass the test. It is fine for the extreme mascots (Clark,
-  Adam, Amos, Aleksey, Lamar) to appear rarely — they only travel when a journey visits their
+  to break ties among mascots that pass the test. It is fine for the extreme mascots (clark,
+  adam, amos, aleksey, lamar) to appear rarely — they only travel when a journey visits their
   realm. `scripts/audit_starts.py` hard-fails an off-realm cameo (blocks the refill auto-queue).
+- **KEY vs DISPLAY NAME** (Phil 2026-08-17). Write the lowercase KEY in the journey — it is the
+  sprite filename (`output/mascots/canon/<key>.png`) and the identifier everywhere in the code.
+  Captions say the rhyming DISPLAY name, applied downstream from `pipeline.MASCOT_DISPLAY`;
+  never write a display name into a journey file and never invent one here:
+  clark (Clark the Quark) · adam (Adam the Atom) · tina (Tina the DNA) · belle (Belle the Cell) ·
+  lee (Lee the Flea) · newman (Dwight the Light) · dora (Dora the Flora) · kitty (Kitty the City) ·
+  lorraine (Lorraine the Terrane) · janet (Janet the Planet) · lamar (Lamar the Star) ·
+  aleksey (Alexis the Galaxy) · amos (Cosmo).
 - **Counter: ALWAYS ON (`counter: true`). No exceptions** (Phil 2026-07-31: "even fiction realms
   can have quantified sizes"). It is the Powers-of-Zen signature; the engine pins the value to
   the current register and SPINS it at handoffs, so it stays honest across seam wraps — the
