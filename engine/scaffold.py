@@ -34,15 +34,24 @@ def depth_value(d):
     return float(1.0 - 0.94 * t)
 
 
-def _gauss_blob(depth, cx, cy, r, val):
-    """Stamp a soft round blob, max-composited (nearer wins)."""
+def _gauss_blob(depth, cx, cy, r, val, hard=True):
+    """Stamp a blob. V3 (2026-08-17): when stamped far->near (painter's algorithm) the
+    HARD core OVERWRITES what's behind it — a real occlusion edge, so the CN sees spheres
+    IN space, not discs ON a plane. Soft gaussian rim outside the core."""
     x0, x1 = max(0, int(cx - 3 * r)), min(W, int(cx + 3 * r) + 1)
     y0, y1 = max(0, int(cy - 3 * r)), min(H, int(cy + 3 * r) + 1)
     if x0 >= x1 or y0 >= y1 or r < 0.4:
         return
     yy, xx = np.mgrid[y0:y1, x0:x1]
-    g = np.exp(-((xx - cx) ** 2 + (yy - cy) ** 2) / (2 * r * r)) * val
-    depth[y0:y1, x0:x1] = np.maximum(depth[y0:y1, x0:x1], g)
+    d2 = (xx - cx) ** 2 + (yy - cy) ** 2
+    g = np.exp(-d2 / (2 * r * r)) * val
+    if hard and r >= 2.0:
+        core = d2 <= (0.72 * r) ** 2
+        region = depth[y0:y1, x0:x1]
+        region[core] = val * (1.0 - 0.25 * (np.sqrt(d2[core]) / (0.72 * r)) ** 2)
+        depth[y0:y1, x0:x1] = np.maximum(region, g)
+    else:
+        depth[y0:y1, x0:x1] = np.maximum(depth[y0:y1, x0:x1], g)
 
 
 def _project(p0, center, Z):
@@ -156,40 +165,58 @@ class Resolver:
             return items
         raise ValueError(self.mode)
 
+    def _advance(self, f):
+        """Cumulative camera advance after f frames: the reference plane at depth 1.0
+        grows exactly at the scheduled zoom rate; everything else looms accordingly
+        (V3, 2026-08-17 — uniform Z scaling read as cardboard cutouts in formation;
+        real approach means an instance at distance d scales by d/(d - advance))."""
+        adv = 0.0
+        for k in range(min(f, len(self.zooms))):
+            z = self.zooms[k]
+            adv += (1.0 - adv) * (z - 1.0) / z if False else (z - 1.0) / z
+        return adv
+
     def frame(self, f, floor=0.04):
-        """Depth map for window frame f (0-based). Early frames: instances sub-pixel
-        (scaffold ~= faint grain, CN weight should also ramp); late frames: the sea."""
+        """Depth map for window frame f (0-based). Painter's algorithm far->near with
+        per-instance LOOMING: d_i(f) = d_i(0) - advance(f); near instances grow fast and
+        exit past the camera, far ones crawl — size, brightness and motion all agree."""
         Z = self.Z[min(f, len(self.Z) - 1)]
+        adv = self._advance(f)
         aim = self.aims[min(f, len(self.aims) - 1)]
         depth = np.full((H, W), floor, np.float32)
         if self.mode == "surface":
             g = (np.linspace(0, 1, H)[:, None] ** 1.4) * 0.55   # ground: bottom near
             depth = np.maximum(depth, g.astype(np.float32) * np.ones((H, W), np.float32))
-        for kind, geom, d in self.items:
+        # painter's order: farthest first, so near cores overwrite (true occlusion)
+        items = sorted(self.items, key=lambda it: -(it[2] - adv))
+        for kind, geom, d in items:
+            d = d - adv                    # LOOM: the camera has advanced
+            if d <= 0.16:
+                continue                   # passed the camera
             if kind == "ground":
                 continue
             near = depth_value(d)
+            d0 = d + adv                   # original authored distance
+            grow = d0 / d                  # perspective expansion for THIS instance
             if kind in ("blob", "bigblob"):
                 shift = self.parallax * W * f / max(0.35, d)
                 px, py = _project((geom[0] * W + shift, geom[1] * H),
-                                  (aim[0] * W, aim[1] * H), Z)
+                                  (aim[0] * W, aim[1] * H), grow)
                 base_r = 24.0 if kind == "bigblob" else 10.0
-                # compressive size falloff: far instances stay visible speckle instead of
-                # dropping under the sub-pixel cutoff (the deep field must READ)
-                r = (base_r * self.size / d ** 0.72) * Z
+                r = (base_r * self.size / d ** 0.72)
                 _gauss_blob(depth, px, py, r, near)
             elif kind == "node":
                 shift = self.parallax * W * f / max(0.35, d)
                 px, py = _project((geom[0] * W + shift, geom[1] * H),
-                                  (aim[0] * W, aim[1] * H), Z)
-                _gauss_blob(depth, px, py, max(1.2, (7.0 * self.size / d ** 0.72) * Z),
+                                  (aim[0] * W, aim[1] * H), grow)
+                _gauss_blob(depth, px, py, max(1.2, 7.0 * self.size / d ** 0.72),
                             min(1.0, near * 1.2))
             elif kind == "strand":
-                r = max(0.8, (2.6 * self.size / d ** 0.72) * Z)
+                r = max(0.8, 2.6 * self.size / d ** 0.72)
                 shift = self.parallax * W * f / max(0.35, d)
                 for (a, b) in geom:
-                    pa = _project((a[0] * W + shift, a[1] * H), (aim[0] * W, aim[1] * H), Z)
-                    pb = _project((b[0] * W + shift, b[1] * H), (aim[0] * W, aim[1] * H), Z)
+                    pa = _project((a[0] * W + shift, a[1] * H), (aim[0] * W, aim[1] * H), grow)
+                    pb = _project((b[0] * W + shift, b[1] * H), (aim[0] * W, aim[1] * H), grow)
                     steps = int(max(abs(pb[0] - pa[0]), abs(pb[1] - pa[1]), 1) / (r * 0.9) ) + 1
                     for t in np.linspace(0, 1, steps + 1):
                         _gauss_blob(depth, pa[0] + (pb[0] - pa[0]) * t,

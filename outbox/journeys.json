@@ -18,7 +18,7 @@
     "render_paused": false,
     "refill_paused": false,
     "post_every_hours": 19.0,
-    "post_next": "2026-08-17 22:00"
+    "post_next": "2026-08-18 17:00"
   },
   "journeys": {
     "stormglass": {
@@ -163,100 +163,108 @@
     },
     "bee_cathedral": {
       "state": "queued",
-      "order": -1,
+      "order": 0,
       "ts": "2026-08-13 13:57:36",
       "note": "REALMS rethink wave 2 (2026-08-13)"
     },
     "observatory_dusk": {
       "state": "queued",
-      "order": 10,
+      "order": 1,
       "ts": "2026-08-13 13:57:36",
       "note": "REALMS rethink wave 2 (2026-08-13)"
     },
     "bamboo_sea": {
       "state": "queued",
-      "order": 12,
+      "order": 2,
       "ts": "2026-08-14 00:14:10",
       "note": "composed by midnight refill"
     },
     "brinicle_grove": {
       "state": "queued",
-      "order": 13,
+      "order": 3,
       "ts": "2026-08-14 00:14:10",
       "note": "composed by midnight refill"
     },
     "wild_yeast": {
       "state": "queued",
-      "order": 16,
+      "order": 4,
       "ts": "2026-08-14 00:14:11",
       "note": "composed by midnight refill"
     },
     "peony_shell": {
       "state": "queued",
-      "order": 18,
+      "order": 5,
       "ts": "2026-08-15 00:17:21",
       "note": "composed by midnight refill"
     },
     "vesper_flight": {
       "state": "queued",
-      "order": 21,
+      "order": 6,
       "ts": "2026-08-15 00:17:21",
       "note": "composed by midnight refill"
     },
     "anemone_arsenal": {
       "state": "queued",
-      "order": 22,
+      "order": 7,
       "ts": "2026-08-16 00:14:47",
       "note": "composed by midnight refill"
     },
     "chameleon_prism": {
       "state": "queued",
-      "order": 23,
+      "order": 8,
       "ts": "2026-08-16 00:14:47",
       "note": "composed by midnight refill"
     },
     "meteorite_cradle": {
       "state": "queued",
-      "order": 24,
+      "order": 9,
       "ts": "2026-08-16 00:14:47",
       "note": "composed by midnight refill"
     },
     "physarum_maze": {
       "state": "queued",
-      "order": 25,
+      "order": 10,
       "ts": "2026-08-16 00:14:47",
       "note": "composed by midnight refill"
     },
     "pomegranate_vault": {
       "state": "queued",
-      "order": 26,
+      "order": 11,
       "ts": "2026-08-16 00:14:48",
       "note": "composed by midnight refill"
     },
     "caddis_masonry": {
       "state": "queued",
-      "order": 27,
+      "order": 12,
       "ts": "2026-08-17 00:17:38",
       "note": "composed by midnight refill"
     },
     "cherenkov_cistern": {
       "state": "queued",
-      "order": 28,
+      "order": 13,
       "ts": "2026-08-17 00:17:38",
       "note": "composed by midnight refill"
     },
     "lissajous_stage": {
       "state": "queued",
-      "order": 29,
+      "order": 14,
       "ts": "2026-08-17 00:17:39",
       "note": "composed by midnight refill"
     },
     "motmot_cenote": {
       "state": "queued",
-      "order": 30,
+      "order": 15,
       "ts": "2026-08-17 00:17:39",
       "note": "composed by midnight refill"
+    },
+    "whale_fall_republic": {
+      "state": "queued",
+      "force": true,
+      "new_seed": true,
+      "ts": "2026-08-17 21:52:22",
+      "note": "re-render: video rejected in review",
+      "order": 16
     }
   },
-  "updated": "2026-08-17 21:34:05"
+  "updated": "2026-08-17 22:14:22"
 }

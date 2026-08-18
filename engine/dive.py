@@ -1016,6 +1016,12 @@ def main():
                         fed = Image.blend(fed, frame0, 0.35 * (j - (L_tail - 6) + 1) / 6)
             res_ctl, res_cn = None, 0.0
             if rwin and not in_loop_tail(i):
+                # DEPTH LANGUAGE (Phil 2026-08-17, fix #1): invite the depth-of-field the
+                # style tail otherwise suppresses — scoped to resolve windows only, no
+                # palette/gloom change (fix #2 deliberately held)
+                prompt = (prompt + ", enormous soft-focus shapes drifting close past the "
+                          "camera, countless tiny ones far beyond, vast open depth between "
+                          "them")
                 _j = i - rwin["w0"]
                 _n = rwin["w1"] - rwin["w0"]
                 _scf_img = rwin["res"].frame_image(_j)
