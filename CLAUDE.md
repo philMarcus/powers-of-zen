@@ -115,6 +115,30 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-17 (LATE NIGHT — DEPTH FIXES #1+#4 BUILT + LIVE): Phil's picks implemented, #2
+(palette gloom fade — Phil does NOT want it) and #3 (depth-aware detail_boost — "I like
+sharp") HELD. #4 = scaffold v3 in engine/scaffold.py: (a) true per-instance LOOMING —
+_advance() accumulates camera travel Σ(z−1)/z, each instance's distance shrinks by it, so
+position expands about the aim by d0/d and radius grows as 1/d^0.72 as d falls (near
+instances rocket past + exit at d≤0.16, far ones crawl — size/brightness/motion now
+AGREE); (b) painter's-algorithm occlusion — items render far-first and _gauss_blob's hard
+core (≤0.72r) OVERWRITES with a shaded dome, rim still max-blended (spheres in space, not
+discs on a plane). Verified on-CPU: looming progression strip at
+output/realm_refs/scaffold_demo/v3_loom_check.png. #1 = resolve-window prompts get a
+depth clause in dive.py ("enormous soft-focus shapes drifting close past the camera,
+countless tiny ones far beyond" — deliberately NO gloom/desat words). TEST RENDER
+launched: squid_lantern re-render, seed 1234 = SAME as v1 for A/B (lands v5,
+outbox/squid_depth_test.log); tonight's 01:30 batch (17 queued, 3/20 backpressure)
+inherits everything since --resolve is default-on. POSTING FIXED + FIRED: the missed-22:00
+root cause was the hourly gate .bats having LF endings (written via bash heredoc — Task
+Scheduler cmd needs CRLF) plus the 18:00 window burning on an empty queue; post_gate.py
+now parses post_next leniently, HOLDS the window when nothing is queued, and after firing
+advances now+19h ROUNDED TO NEAREST HOUR (Phil: always post on the hour). squid_lantern
+posted tonight ~22:14 (IG reel DcKg2bhhBG0 verified), next post armed 2026-08-18 17:00.
+DASHBOARD: 📤 Post now button in Production (opens the gate + fires post_gate.py — one
+code path with the hourly task); Live tab now shows 👁 views ❤️ likes 💬 comments per
+video from outbox/ig_stats.jsonl (join by reel shortcode from the IG url, fallback by
+journey name; 3 newest posts show nothing until the next scrape runs post-post).
 2026-08-17 (CLOSE — READ THIS FIRST IN THE MORNING): TOMORROW = DEPTH (Phase 1.5), clean
 context. THE DIAGNOSIS (settled with Phil tonight — the "what we were missing"): we
 treated depth as GEOMETRY while our own machinery strips the PICTORIAL depth cues that

@@ -680,6 +680,24 @@ with tabs[3]:  # PRODUCTION — the ordered post queue; tweak cut/model + change
     st.write("Approved & in post order (top posts next). ⬆⬇ to reorder. You can still switch "
              "cut/model or change the music pick here.")
     qv = pl.queued(d)
+    pnc = st.columns([1, 5])
+    if pnc[0].button("📤 Post now", disabled=not qv,
+                     help="posts the top video immediately; the next post then reschedules "
+                          "cadence hours later, rounded to the nearest hour"):
+        # open the gate (post_next = now) and fire it — reusing post_gate.py end to end
+        # means the button and the hourly task share ONE code path (posting, verification,
+        # and the advance-to-nearest-hour reschedule can't diverge)
+        import subprocess
+        from datetime import datetime
+        jj = pl.jload()
+        jj["settings"]["post_next"] = datetime.now().strftime("%Y-%m-%d %H:%M")
+        pl.jsave(jj)
+        args = ("cd /mnt/c/Users/Phil/zoomer && "
+                "python3 scripts/post_gate.py >> outbox/post_gate.log 2>&1")
+        cmd = ["wsl", "bash", "-lc", args] if os.name == "nt" else ["bash", "-lc", args]
+        subprocess.Popen(cmd, cwd=str(pl.ROOT))
+        pnc[1].info("posting the top video — takes a few minutes (browser + verification); "
+                    "watch outbox/post_gate.log, it lands in the Live tab when verified")
     if not qv:
         st.info("Production queue is empty.")
     for i, v in enumerate(qv):
@@ -838,12 +856,35 @@ with tabs[0]:  # JOURNEYS — the render queue the 01:30 batch draws from (journ
 with tabs[4]:  # LIVE — anything live on at least one platform (noting where)
     if not live_vids:
         st.info("Nothing live yet.")
+    # latest scraped IG numbers per reel shortcode (outbox/ig_stats.jsonl, appended by
+    # scripts/ig_stats.py after every post) — file is append-ordered, so last row wins
+    import re as _re
+    IG_STATS = {}
+    _igp = pl.ROOT / "outbox" / "ig_stats.jsonl"
+    if _igp.exists():
+        for _line in _igp.read_text(encoding="utf-8").splitlines():
+            try:
+                _r = json.loads(_line)
+            except Exception:
+                continue
+            if _r.get("code"):
+                IG_STATS[_r["code"]] = _r
+            if _r.get("journey"):        # fallback join for old posts with no recorded URL
+                IG_STATS["j:" + _r["journey"]] = _r
     for v in live_vids:
         live_on = ", ".join(platforms_by_status(v, "live"))
         failed_on = ", ".join(platforms_by_status(v, "failed"))
         st.markdown(f"**{v['journey']}** ({v['model']}/{v['cut']}) — {platform_line(v)}")
         note = f"live on **{live_on}**" + (f" · ❌ not on **{failed_on}**" if failed_on else "")
         st.caption(note)
+        _igu = v.get("platforms", {}).get("instagram", {}).get("url") or ""
+        _mc = _re.search(r"/reel/([^/?]+)", _igu)
+        _stat = (IG_STATS.get(_mc.group(1)) if _mc else None) \
+            or IG_STATS.get("j:" + v["journey"])
+        if _stat:
+            st.caption(f"👁 {_stat.get('views', '—')} views · ❤️ {_stat.get('likes', '—')} likes"
+                       f" · 💬 {_stat.get('comments', 0)} comments"
+                       f" · IG, scraped {_stat.get('ts', '')[:16]}")
         for k in pl.PLATFORMS:
             if v["platforms"].get(k, {}).get("url"):
                 st.markdown(f"- {k}: {v['platforms'][k]['url']}")
