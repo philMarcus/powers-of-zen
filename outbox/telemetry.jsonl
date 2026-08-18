@@ -273,3 +273,414 @@
 {"ts": "2026-08-02 08:01:29", "event": "post", "journey": "butterfly_meridian", "platform": "youtube", "detail": "https://youtube.com/shorts/YV5ZGIYKpb0"}
 {"ts": "2026-08-02 08:01:29", "event": "post", "journey": "butterfly_meridian", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbiXYvTxGr9/"}
 {"ts": "2026-08-02 12:37:43", "event": "review", "journey": "copper_rain", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-02 13:21:23", "event": "review", "journey": "quantum_orrery", "detail": "ds/divein (src v3)"}
+{"ts": "2026-08-02 13:33:58", "event": "review", "journey": "glass_apiary", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-02 13:45:02", "event": "review", "journey": "velvet_atlas", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-02 13:54:14", "event": "review", "journey": "sugar_nebula", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-02 13:57:34", "event": "music", "journey": "sugar_nebula"}
+{"ts": "2026-08-02 14:02:18", "event": "music_choose", "journey": "jade_automata", "detail": "warm"}
+{"ts": "2026-08-02 14:02:18", "event": "queued", "journey": "jade_automata"}
+{"ts": "2026-08-02 14:05:56", "event": "review", "journey": "quantum_orrery", "detail": "ds/divein (src v4)"}
+{"ts": "2026-08-02 14:17:49", "event": "review", "journey": "glass_apiary", "detail": "ds/divein (src v3)"}
+{"ts": "2026-08-02 14:28:26", "event": "review", "journey": "velvet_atlas", "detail": "ds/divein (src v3)"}
+{"ts": "2026-08-02 14:39:00", "event": "review", "journey": "pollen_court", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-02 14:47:20", "event": "music_gen", "journey": "sugar_nebula", "detail": "5 candidates"}
+{"ts": "2026-08-02 18:01:32", "event": "post", "journey": "jade_automata", "platform": "youtube", "detail": "https://youtube.com/shorts/FlYXhecGvLA"}
+{"ts": "2026-08-02 18:01:32", "event": "post", "journey": "jade_automata", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbjcDhyO_9n/"}
+{"ts": "2026-08-02 20:22:25", "event": "review", "journey": "iris_observatory"}
+{"ts": "2026-08-02 22:11:39", "event": "repair_install", "journey": "mineral_heart", "detail": "v6 R=84 resid=0.37"}
+{"ts": "2026-08-02 22:12:48", "event": "repair_install", "journey": "frost_window", "detail": "v2 R=106 resid=0.37"}
+{"ts": "2026-08-02 22:31:33", "event": "rejected", "journey": "iris_observatory"}
+{"ts": "2026-08-02 22:31:56", "event": "switch", "journey": "quantum_orrery", "detail": "ds/zoomout"}
+{"ts": "2026-08-02 22:37:02", "event": "phase_shift", "journey": "glass_apiary", "detail": "start @ 8.80s"}
+{"ts": "2026-08-02 22:37:02", "event": "music", "journey": "glass_apiary"}
+{"ts": "2026-08-02 22:38:35", "event": "music_gen", "journey": "glass_apiary", "detail": "5 candidates"}
+{"ts": "2026-08-03 00:17:37", "event": "refill", "journey": "attic_drift", "detail": "auto-queued (ok attic_drift              start=mote_swarm          · not cosmic/subatomic)"}
+{"ts": "2026-08-03 00:17:37", "event": "refill", "journey": "droplet_zoo", "detail": "auto-queued (ok droplet_zoo              start=pond_edge           · not cosmic/subatomic)"}
+{"ts": "2026-08-03 00:17:37", "event": "refill", "journey": "jewel_oculus", "detail": "auto-queued (ok jewel_oculus             start=lens_arcs)"}
+{"ts": "2026-08-03 00:17:38", "event": "refill", "journey": "salt_mirror", "detail": "auto-queued (ok salt_mirror              start=pond_field          · not cosmic/subatomic)"}
+{"ts": "2026-08-03 00:17:38", "event": "refill", "journey": "turing_springs", "detail": "auto-queued (ok turing_springs           start=aurora_curtains)"}
+{"ts": "2026-08-03 00:17:38", "event": "refill_done", "detail": "refill done: 5 composed, 5 queued (briefs: medium, short, long, medium, short)"}
+{"ts": "2026-08-03 02:40:24", "event": "review", "journey": "tesla_garden", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-03 02:41:21", "event": "caption", "journey": "tesla_garden", "detail": "5 options, spot=True"}
+{"ts": "2026-08-03 02:41:21", "event": "render", "journey": "tesla_garden", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-03 03:33:25", "event": "review", "journey": "chalkboard_infinities", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-03 03:34:09", "event": "caption", "journey": "chalkboard_infinities", "detail": "5 options, spot=True"}
+{"ts": "2026-08-03 03:34:09", "event": "render", "journey": "chalkboard_infinities", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-03 04:13:55", "event": "review", "journey": "pollen_court", "detail": "ds/divein (src v3)"}
+{"ts": "2026-08-03 04:14:43", "event": "caption", "journey": "pollen_court", "detail": "5 options, spot=True"}
+{"ts": "2026-08-03 04:14:43", "event": "render", "journey": "pollen_court", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-03 04:14:43", "event": "batch_done", "detail": "batch done in 2.7h — 3 to Review"}
+{"ts": "2026-08-03 08:01:34", "event": "post", "journey": "mineral_heart", "platform": "youtube", "detail": "https://youtube.com/shorts/DsIOztlEOUU"}
+{"ts": "2026-08-03 08:01:34", "event": "post", "journey": "mineral_heart", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/Dbk8L2hpUfz/"}
+{"ts": "2026-08-03 13:23:45", "event": "music", "journey": "quantum_orrery"}
+{"ts": "2026-08-03 13:24:56", "event": "phase_shift", "journey": "pollen_court", "detail": "start @ 7.40s"}
+{"ts": "2026-08-03 13:24:56", "event": "music", "journey": "pollen_court"}
+{"ts": "2026-08-03 13:26:17", "event": "music_gen", "journey": "pollen_court", "detail": "5 candidates"}
+{"ts": "2026-08-03 13:27:45", "event": "music_gen", "journey": "quantum_orrery", "detail": "5 candidates"}
+{"ts": "2026-08-03 13:28:56", "event": "music_choose", "journey": "pollen_court", "detail": "choir"}
+{"ts": "2026-08-03 13:28:56", "event": "queued", "journey": "pollen_court"}
+{"ts": "2026-08-03 13:32:35", "event": "review", "journey": "quantum_orrery"}
+{"ts": "2026-08-03 13:33:36", "event": "phase_shift", "journey": "quantum_orrery", "detail": "start @ 5.80s"}
+{"ts": "2026-08-03 13:33:36", "event": "music", "journey": "quantum_orrery"}
+{"ts": "2026-08-03 13:34:45", "event": "music_gen", "journey": "quantum_orrery", "detail": "5 candidates"}
+{"ts": "2026-08-03 13:37:17", "event": "music_choose", "journey": "quantum_orrery", "detail": "warm"}
+{"ts": "2026-08-03 13:37:17", "event": "queued", "journey": "quantum_orrery"}
+{"ts": "2026-08-03 13:41:18", "event": "edit", "journey": "velvet_atlas"}
+{"ts": "2026-08-03 13:41:24", "event": "music", "journey": "velvet_atlas"}
+{"ts": "2026-08-03 13:41:44", "event": "switch", "journey": "tesla_garden", "detail": "ds/zoomout"}
+{"ts": "2026-08-03 13:42:26", "event": "music_gen", "journey": "velvet_atlas", "detail": "5 candidates"}
+{"ts": "2026-08-03 13:43:52", "event": "edit", "journey": "tesla_garden"}
+{"ts": "2026-08-03 13:43:55", "event": "music", "journey": "tesla_garden"}
+{"ts": "2026-08-03 13:45:39", "event": "music_gen", "journey": "tesla_garden", "detail": "5 candidates"}
+{"ts": "2026-08-03 13:46:56", "event": "music_choose", "journey": "velvet_atlas", "detail": "deep"}
+{"ts": "2026-08-03 13:46:56", "event": "queued", "journey": "velvet_atlas"}
+{"ts": "2026-08-03 13:49:31", "event": "music_choose", "journey": "glass_apiary", "detail": "glassy"}
+{"ts": "2026-08-03 13:49:32", "event": "queued", "journey": "glass_apiary"}
+{"ts": "2026-08-03 13:50:36", "event": "review", "journey": "tesla_garden"}
+{"ts": "2026-08-03 13:52:22", "event": "music_choose", "journey": "sugar_nebula", "detail": "warm"}
+{"ts": "2026-08-03 13:52:22", "event": "queued", "journey": "sugar_nebula"}
+{"ts": "2026-08-03 13:52:57", "event": "edit", "journey": "tesla_garden"}
+{"ts": "2026-08-03 13:53:13", "event": "phase_shift", "journey": "tesla_garden", "detail": "start @ 17.00s"}
+{"ts": "2026-08-03 13:53:13", "event": "music", "journey": "tesla_garden"}
+{"ts": "2026-08-03 13:53:36", "event": "switch", "journey": "copper_rain", "detail": "ds/zoomout"}
+{"ts": "2026-08-03 13:54:03", "event": "switch", "journey": "copper_rain", "detail": "ds/divein"}
+{"ts": "2026-08-03 13:54:34", "event": "music_gen", "journey": "tesla_garden", "detail": "5 candidates"}
+{"ts": "2026-08-03 13:55:15", "event": "edit", "journey": "copper_rain"}
+{"ts": "2026-08-03 13:55:21", "event": "edit", "journey": "copper_rain"}
+{"ts": "2026-08-03 13:55:25", "event": "phase_shift", "journey": "copper_rain", "detail": "start @ 5.00s"}
+{"ts": "2026-08-03 13:55:25", "event": "music", "journey": "copper_rain"}
+{"ts": "2026-08-03 13:56:32", "event": "music_gen", "journey": "copper_rain", "detail": "5 candidates"}
+{"ts": "2026-08-03 14:06:24", "event": "music_choose", "journey": "copper_rain", "detail": "warm"}
+{"ts": "2026-08-03 14:06:24", "event": "queued", "journey": "copper_rain"}
+{"ts": "2026-08-03 14:08:49", "event": "music", "journey": "chalkboard_infinities"}
+{"ts": "2026-08-03 14:10:12", "event": "music_gen", "journey": "chalkboard_infinities", "detail": "5 candidates"}
+{"ts": "2026-08-03 14:11:11", "event": "music_choose", "journey": "tesla_garden", "detail": "glassy"}
+{"ts": "2026-08-03 14:11:11", "event": "queued", "journey": "tesla_garden"}
+{"ts": "2026-08-03 14:30:29", "event": "music_choose", "journey": "chalkboard_infinities", "detail": "deep"}
+{"ts": "2026-08-03 14:30:29", "event": "queued", "journey": "chalkboard_infinities"}
+{"ts": "2026-08-03 18:01:29", "event": "post", "journey": "cave_of_numbers", "platform": "youtube", "detail": "https://youtube.com/shorts/YWs2SHWgQfs"}
+{"ts": "2026-08-03 18:01:29", "event": "post", "journey": "cave_of_numbers", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbmA2MBQ0Ft/"}
+{"ts": "2026-08-04 00:17:27", "event": "refill", "journey": "lantern_canals", "detail": "auto-queued (ok lantern_canals           start=star_ring)"}
+{"ts": "2026-08-04 00:17:28", "event": "refill", "journey": "moon_jelly", "detail": "auto-queued (ok moon_jelly               start=young_star)"}
+{"ts": "2026-08-04 00:17:28", "event": "refill", "journey": "singing_dunes", "detail": "auto-queued (ok singing_dunes            start=planet)"}
+{"ts": "2026-08-04 00:17:28", "event": "refill", "journey": "vinyl_canyon", "detail": "auto-queued (ok vinyl_canyon             start=groove_field        · not cosmic/subatomic)"}
+{"ts": "2026-08-04 00:17:28", "event": "refill_done", "detail": "refill done: 4 composed, 4 queued (briefs: long, long, short, long)"}
+{"ts": "2026-08-04 02:23:14", "event": "review", "journey": "ink_dynasty", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-04 02:24:07", "event": "caption", "journey": "ink_dynasty", "detail": "5 options, spot=True"}
+{"ts": "2026-08-04 02:24:07", "event": "render", "journey": "ink_dynasty", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-04 03:05:03", "event": "review", "journey": "ammonite_spiral", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-04 03:05:52", "event": "caption", "journey": "ammonite_spiral", "detail": "5 options, spot=True"}
+{"ts": "2026-08-04 03:05:52", "event": "render", "journey": "ammonite_spiral", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-04 03:32:41", "event": "review", "journey": "gossamer_dawn", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-04 03:33:27", "event": "caption", "journey": "gossamer_dawn", "detail": "5 options, spot=True"}
+{"ts": "2026-08-04 03:33:27", "event": "render", "journey": "gossamer_dawn", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-04 03:33:27", "event": "batch_done", "detail": "batch done in 2.1h — 3 to Review"}
+{"ts": "2026-08-04 08:01:30", "event": "post", "journey": "lather_atlas", "platform": "youtube", "detail": "https://youtube.com/shorts/AzpocVt3RVk"}
+{"ts": "2026-08-04 08:01:30", "event": "post", "journey": "lather_atlas", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/Dbng-e1hZRb/"}
+{"ts": "2026-08-04 18:01:28", "event": "post", "journey": "frost_window", "platform": "youtube", "detail": "https://youtube.com/shorts/vdJSfp8GGvA"}
+{"ts": "2026-08-04 18:01:28", "event": "post", "journey": "frost_window", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbolpFYs3Tq/"}
+{"ts": "2026-08-05 00:16:26", "event": "refill", "journey": "amber_steep", "detail": "auto-queued (ok amber_steep              start=amber_liquor        · not cosmic/subatomic)"}
+{"ts": "2026-08-05 00:16:26", "event": "refill", "journey": "blueprint_harbor", "detail": "auto-queued (ok blueprint_harbor         start=master_chart        · not cosmic/subatomic)"}
+{"ts": "2026-08-05 00:16:26", "event": "refill", "journey": "girih_dome", "detail": "auto-queued (ok girih_dome               start=beam_sky)"}
+{"ts": "2026-08-05 00:16:26", "event": "refill_done", "detail": "refill done: 3 composed, 3 queued (briefs: medium, short, long)"}
+{"ts": "2026-08-05 02:48:07", "event": "review", "journey": "resonance_hall", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-05 02:49:09", "event": "caption", "journey": "resonance_hall", "detail": "5 options, spot=True"}
+{"ts": "2026-08-05 02:49:09", "event": "render", "journey": "resonance_hall", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-05 03:38:49", "event": "review", "journey": "tide_glass", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-05 03:39:38", "event": "caption", "journey": "tide_glass", "detail": "5 options, spot=True"}
+{"ts": "2026-08-05 03:39:38", "event": "render", "journey": "tide_glass", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-05 04:17:49", "event": "review", "journey": "heron_delta", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-05 04:18:44", "event": "caption", "journey": "heron_delta", "detail": "5 options, spot=True"}
+{"ts": "2026-08-05 04:18:44", "event": "render", "journey": "heron_delta", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-05 04:18:44", "event": "batch_done", "detail": "batch done in 2.8h — 3 to Review"}
+{"ts": "2026-08-05 08:01:26", "event": "post", "journey": "quantum_orrery", "platform": "youtube", "detail": "https://youtube.com/shorts/WnFjoxcB0ZQ"}
+{"ts": "2026-08-05 08:01:26", "event": "post", "journey": "quantum_orrery", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbqFxM6R-lR/"}
+{"ts": "2026-08-05 18:01:26", "event": "post", "journey": "glass_apiary", "platform": "youtube", "detail": "https://youtube.com/shorts/BRFDbG9o2lU"}
+{"ts": "2026-08-05 18:01:26", "event": "post", "journey": "glass_apiary", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbrKbv5BzMr/"}
+{"ts": "2026-08-06 00:22:35", "event": "refill", "journey": "comet_firn", "detail": "auto-queued (ok comet_firn               start=comet)"}
+{"ts": "2026-08-06 00:22:34", "event": "refill", "journey": "gill_cathedral", "detail": "auto-queued (ok gill_cathedral           start=spore_drift         · not cosmic/subatomic)"}
+{"ts": "2026-08-06 00:22:34", "event": "refill", "journey": "ochre_door", "detail": "auto-queued (ok ochre_door               start=paint_shore         · not cosmic/subatomic)"}
+{"ts": "2026-08-06 00:22:34", "event": "refill_done", "detail": "refill done: 3 composed, 3 queued (briefs: medium, short, long)"}
+{"ts": "2026-08-06 02:47:35", "event": "review", "journey": "chess_empires", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-06 02:48:29", "event": "caption", "journey": "chess_empires", "detail": "5 options, spot=True"}
+{"ts": "2026-08-06 02:48:29", "event": "render", "journey": "chess_empires", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-06 03:44:42", "event": "review", "journey": "lichen_moor", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-06 03:45:30", "event": "caption", "journey": "lichen_moor", "detail": "5 options, spot=True"}
+{"ts": "2026-08-06 03:45:30", "event": "render", "journey": "lichen_moor", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-06 04:23:59", "event": "review", "journey": "night_lido", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-06 04:24:49", "event": "caption", "journey": "night_lido", "detail": "5 options, spot=True"}
+{"ts": "2026-08-06 04:24:49", "event": "render", "journey": "night_lido", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-06 04:24:49", "event": "batch_done", "detail": "batch done in 2.9h — 3 to Review"}
+{"ts": "2026-08-06 08:01:23", "event": "post", "journey": "copper_rain", "platform": "youtube", "detail": "https://youtube.com/shorts/Nv1d6jkDykU"}
+{"ts": "2026-08-06 08:01:23", "event": "post", "journey": "copper_rain", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbsqkAqu7OB/"}
+{"ts": "2026-08-06 18:01:26", "event": "post", "journey": "pollen_court", "platform": "youtube", "detail": "https://youtube.com/shorts/tvTfgasrV60"}
+{"ts": "2026-08-06 18:01:26", "event": "post", "journey": "pollen_court", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbtvOrQMd-j/"}
+{"ts": "2026-08-07 00:16:54", "event": "refill", "journey": "latent_whorl", "detail": "auto-queued (ok latent_whorl             start=print_field         · not cosmic/subatomic)"}
+{"ts": "2026-08-07 00:16:54", "event": "refill", "journey": "marigold_carousel", "detail": "auto-queued (ok marigold_carousel        start=gold_star)"}
+{"ts": "2026-08-07 00:16:54", "event": "refill", "journey": "palm_house", "detail": "auto-queued (ok palm_house               start=stomata_ranks       · not cosmic/subatomic)"}
+{"ts": "2026-08-07 00:16:54", "event": "refill_done", "detail": "refill done: 3 composed, 3 queued (briefs: medium, short, long)"}
+{"ts": "2026-08-07 03:01:09", "event": "review", "journey": "cinder_veil", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-07 03:02:05", "event": "caption", "journey": "cinder_veil", "detail": "5 options, spot=True"}
+{"ts": "2026-08-07 03:02:05", "event": "render", "journey": "cinder_veil", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-07 03:57:12", "event": "review", "journey": "salt_mirror", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-07 03:57:56", "event": "caption", "journey": "salt_mirror", "detail": "5 options, spot=True"}
+{"ts": "2026-08-07 03:57:56", "event": "render", "journey": "salt_mirror", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-07 04:37:01", "event": "review", "journey": "attic_drift", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-07 04:37:49", "event": "caption", "journey": "attic_drift", "detail": "5 options, spot=True"}
+{"ts": "2026-08-07 04:37:49", "event": "render", "journey": "attic_drift", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-07 04:37:49", "event": "batch_done", "detail": "batch done in 3.1h — 3 to Review"}
+{"ts": "2026-08-07 08:01:29", "event": "post", "journey": "tesla_garden", "platform": "youtube", "detail": "https://youtube.com/shorts/fO9XElDOsJc"}
+{"ts": "2026-08-07 08:01:29", "event": "post", "journey": "tesla_garden", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbvPXOBPRP8/"}
+{"ts": "2026-08-07 18:01:27", "event": "post", "journey": "velvet_atlas", "platform": "youtube", "detail": "https://youtube.com/shorts/nUi126I6dg4"}
+{"ts": "2026-08-07 18:01:27", "event": "post", "journey": "velvet_atlas", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DbwUB8zQlsm/"}
+{"ts": "2026-08-08 00:16:56", "event": "refill", "journey": "hyperbolic_reef", "detail": "auto-queued (ok hyperbolic_reef          start=white_star)"}
+{"ts": "2026-08-08 00:16:57", "event": "refill", "journey": "sodium_stairwell", "detail": "auto-queued (ok sodium_stairwell         start=crack_lattice)"}
+{"ts": "2026-08-08 00:16:57", "event": "refill", "journey": "whalebone_hall", "detail": "auto-queued (ok whalebone_hall           start=galaxy)"}
+{"ts": "2026-08-08 00:16:57", "event": "refill_done", "detail": "refill done: 3 composed, 3 queued (briefs: medium, short, long)"}
+{"ts": "2026-08-08 18:01:27", "event": "post", "journey": "chalkboard_infinities", "platform": "youtube", "detail": "https://youtube.com/shorts/TdNXaK1lf0w"}
+{"ts": "2026-08-08 18:01:27", "event": "post", "journey": "chalkboard_infinities", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/Dby40v0t29S/"}
+{"ts": "2026-08-09 08:01:28", "event": "post", "journey": "sugar_nebula", "platform": "youtube", "detail": "https://youtube.com/shorts/Gzl8SvMrr9M"}
+{"ts": "2026-08-09 08:01:28", "event": "post", "journey": "sugar_nebula", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/Db0Y8-qO1-Q/"}
+{"ts": "2026-08-09 13:59:13", "event": "edit", "journey": "ink_dynasty"}
+{"ts": "2026-08-09 13:59:18", "event": "phase_shift", "journey": "ink_dynasty", "detail": "start @ 5.00s"}
+{"ts": "2026-08-09 13:59:18", "event": "music", "journey": "ink_dynasty"}
+{"ts": "2026-08-09 13:59:58", "event": "switch", "journey": "resonance_hall", "detail": "ds/zoomout"}
+{"ts": "2026-08-09 14:00:51", "event": "music_gen", "journey": "ink_dynasty", "detail": "5 candidates"}
+{"ts": "2026-08-09 14:00:58", "event": "edit", "journey": "resonance_hall"}
+{"ts": "2026-08-09 14:01:25", "event": "edit", "journey": "resonance_hall"}
+{"ts": "2026-08-09 14:01:48", "event": "phase_shift", "journey": "resonance_hall", "detail": "start @ 1.00s"}
+{"ts": "2026-08-09 14:01:48", "event": "music", "journey": "resonance_hall"}
+{"ts": "2026-08-09 14:03:20", "event": "edit", "journey": "tide_glass"}
+{"ts": "2026-08-09 14:03:25", "event": "phase_shift", "journey": "tide_glass", "detail": "start @ 6.00s"}
+{"ts": "2026-08-09 14:03:25", "event": "music", "journey": "tide_glass"}
+{"ts": "2026-08-09 14:05:11", "event": "music", "journey": "lichen_moor"}
+{"ts": "2026-08-09 14:08:27", "event": "music_choose", "journey": "ink_dynasty", "detail": "warm"}
+{"ts": "2026-08-09 14:08:27", "event": "queued", "journey": "ink_dynasty"}
+{"ts": "2026-08-09 14:13:43", "event": "music_gen", "journey": "lichen_moor", "detail": "5 candidates"}
+{"ts": "2026-08-09 18:01:28", "event": "post", "journey": "ink_dynasty", "platform": "youtube", "detail": "https://youtube.com/shorts/cjO9gocJLwo"}
+{"ts": "2026-08-09 18:01:28", "event": "post", "journey": "ink_dynasty", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/Db1dnXug0Om/"}
+{"ts": "2026-08-09 19:42:25", "event": "music_choose", "journey": "lichen_moor", "detail": "tender"}
+{"ts": "2026-08-09 19:42:25", "event": "queued", "journey": "lichen_moor"}
+{"ts": "2026-08-10 08:01:29", "event": "post", "journey": "lichen_moor", "platform": "youtube", "detail": "https://youtube.com/shorts/vFCqWaQ-9cs"}
+{"ts": "2026-08-10 08:01:29", "event": "post", "journey": "lichen_moor", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/Db29vr7gb7Y/"}
+{"ts": "2026-08-12 13:08:51", "event": "music_gen", "journey": "resonance_hall", "detail": "5 candidates"}
+{"ts": "2026-08-12 13:10:00", "event": "music_gen", "journey": "tide_glass", "detail": "5 candidates"}
+{"ts": "2026-08-12 16:08:40", "event": "music_choose", "journey": "resonance_hall", "detail": "tender"}
+{"ts": "2026-08-12 16:08:40", "event": "queued", "journey": "resonance_hall"}
+{"ts": "2026-08-12 16:10:00", "event": "music_choose", "journey": "tide_glass", "detail": "glassy"}
+{"ts": "2026-08-12 16:10:00", "event": "queued", "journey": "tide_glass"}
+{"ts": "2026-08-12 17:29:21", "event": "edit", "journey": "cinder_veil"}
+{"ts": "2026-08-12 17:29:28", "event": "phase_shift", "journey": "cinder_veil", "detail": "start @ 7.60s"}
+{"ts": "2026-08-12 17:29:28", "event": "music", "journey": "cinder_veil"}
+{"ts": "2026-08-12 17:30:57", "event": "music_gen", "journey": "cinder_veil", "detail": "5 candidates"}
+{"ts": "2026-08-12 17:31:47", "event": "edit", "journey": "salt_mirror"}
+{"ts": "2026-08-12 17:31:53", "event": "phase_shift", "journey": "salt_mirror", "detail": "start @ 5.20s"}
+{"ts": "2026-08-12 17:31:53", "event": "music", "journey": "salt_mirror"}
+{"ts": "2026-08-12 17:32:57", "event": "music_gen", "journey": "salt_mirror", "detail": "5 candidates"}
+{"ts": "2026-08-12 18:01:25", "event": "post", "journey": "resonance_hall", "platform": "youtube", "detail": "https://youtube.com/shorts/pQKdcHhyV0s"}
+{"ts": "2026-08-12 18:01:25", "event": "post", "journey": "resonance_hall", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/Db9L_ofszjn/"}
+{"ts": "2026-08-12 18:53:53", "event": "music_gen", "journey": "resonance_hall", "detail": "5 candidates"}
+{"ts": "2026-08-12 18:54:57", "event": "music_gen", "journey": "tide_glass", "detail": "5 candidates"}
+{"ts": "2026-08-12 19:07:44", "event": "music_gen", "journey": "resonance_hall", "detail": "5 candidates"}
+{"ts": "2026-08-12 19:08:45", "event": "music_gen", "journey": "tide_glass", "detail": "5 candidates"}
+{"ts": "2026-08-13 02:57:16", "event": "review", "journey": "jewel_oculus", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-13 02:58:42", "event": "caption", "journey": "jewel_oculus", "detail": "5 options, spot=True"}
+{"ts": "2026-08-13 02:58:42", "event": "render", "journey": "jewel_oculus", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-13 03:53:57", "event": "review", "journey": "turing_springs", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-13 03:54:45", "event": "caption", "journey": "turing_springs", "detail": "5 options, spot=True"}
+{"ts": "2026-08-13 03:54:45", "event": "render", "journey": "turing_springs", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-13 04:31:12", "event": "review", "journey": "droplet_zoo", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-13 04:31:55", "event": "caption", "journey": "droplet_zoo", "detail": "5 options, spot=True"}
+{"ts": "2026-08-13 04:31:55", "event": "render", "journey": "droplet_zoo", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-13 04:31:55", "event": "batch_done", "detail": "batch done in 3.0h — 3 to Review"}
+{"ts": "2026-08-13 08:01:25", "event": "post", "journey": "tide_glass", "platform": "youtube", "detail": "https://youtube.com/shorts/mrPiwkaKClc"}
+{"ts": "2026-08-13 08:01:25", "event": "post", "journey": "tide_glass", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/Db-sIZ8JNWA/"}
+{"ts": "2026-08-13 11:21:03", "event": "music_gen", "journey": "ammonite_spiral", "detail": "5 candidates"}
+{"ts": "2026-08-13 11:34:56", "event": "phase_shift", "journey": "ammonite_spiral", "detail": "start @ 2.40s"}
+{"ts": "2026-08-13 11:34:56", "event": "music", "journey": "ammonite_spiral"}
+{"ts": "2026-08-13 11:36:53", "event": "music_gen", "journey": "ammonite_spiral", "detail": "5 candidates"}
+{"ts": "2026-08-13 11:38:01", "event": "music_choose", "journey": "ammonite_spiral", "detail": "night_market"}
+{"ts": "2026-08-13 11:38:01", "event": "queued", "journey": "ammonite_spiral"}
+{"ts": "2026-08-13 11:42:12", "event": "music_gen", "journey": "cinder_veil", "detail": "5 candidates"}
+{"ts": "2026-08-13 11:42:23", "event": "music_gen", "journey": "salt_mirror", "detail": "5 candidates"}
+{"ts": "2026-08-13 11:49:52", "event": "review", "journey": "copper_rain_fpb5", "detail": "ds/divein (src fpb5_144bpm)"}
+{"ts": "2026-08-13 11:49:52", "event": "review", "journey": "copper_rain_fpb6", "detail": "ds/divein (src fpb6_120bpm)"}
+{"ts": "2026-08-13 11:49:52", "event": "review", "journey": "copper_rain_fpb10", "detail": "ds/divein (src fpb10_72bpm)"}
+{"ts": "2026-08-13 11:50:05", "event": "queue_reset", "detail": "review->rejected + requeued: gossamer_dawn, heron_delta, chess_empires, night_lido, attic_drift, jewel_oculus, turing_springs, droplet_zoo; render_paused until rewrite"}
+{"ts": "2026-08-13 11:51:44", "event": "music_gen", "journey": "copper_rain_fpb5", "detail": "5 candidates"}
+{"ts": "2026-08-13 11:53:07", "event": "music_gen", "journey": "copper_rain_fpb6", "detail": "5 candidates"}
+{"ts": "2026-08-13 11:54:54", "event": "music_gen", "journey": "copper_rain_fpb10", "detail": "5 candidates"}
+{"ts": "2026-08-13 12:07:52", "event": "music_choose", "journey": "cinder_veil", "detail": "tide_organ-wild"}
+{"ts": "2026-08-13 12:07:52", "event": "queued", "journey": "cinder_veil"}
+{"ts": "2026-08-13 12:13:14", "event": "music_choose", "journey": "salt_mirror", "detail": "analog_dawn-wild"}
+{"ts": "2026-08-13 12:13:14", "event": "queued", "journey": "salt_mirror"}
+{"ts": "2026-08-13 12:36:46", "event": "music_gen", "journey": "copper_rain_fpb5", "detail": "5 candidates"}
+{"ts": "2026-08-13 12:38:36", "event": "music_gen", "journey": "copper_rain_fpb6", "detail": "5 candidates"}
+{"ts": "2026-08-13 12:52:42", "event": "review", "journey": "ammonite_spiral"}
+{"ts": "2026-08-13 12:52:56", "event": "rejected", "journey": "ammonite_spiral"}
+{"ts": "2026-08-13 12:52:56", "event": "jqueued", "journey": "ammonite_spiral", "detail": "reject -> re-queue back"}
+{"ts": "2026-08-13 12:53:05", "event": "music_gen", "journey": "copper_rain_fpb10", "detail": "5 candidates"}
+{"ts": "2026-08-13 13:11:58", "event": "tempo_test_cleanup", "detail": "fpb5/6/10 test entries+specs+candidates removed; renders kept in output/tempo_lab"}
+{"ts": "2026-08-13 13:23:02", "event": "queue_grist", "detail": "26 old-doctrine journeys retired as grist for the rewrite"}
+{"ts": "2026-08-13 13:36:46", "event": "rewrite_queue", "detail": "wave 1 queued (6L); tonight template LLLLSSM, budget 470min"}
+{"ts": "2026-08-13 18:01:32", "event": "post", "journey": "cinder_veil", "platform": "youtube", "detail": "https://youtube.com/shorts/78IjjpANpf4"}
+{"ts": "2026-08-13 18:01:32", "event": "post", "journey": "cinder_veil", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/Db_wy6SMj1f/"}
+{"ts": "2026-08-14 00:14:10", "event": "refill", "journey": "bamboo_sea", "detail": "auto-queued (ok bamboo_sea               start=wall_bundles        · not cosmic/subatomic)"}
+{"ts": "2026-08-14 00:14:10", "event": "refill", "journey": "brinicle_grove", "detail": "auto-queued (ok brinicle_grove           start=polar_shallows      · not cosmic/subatomic)"}
+{"ts": "2026-08-14 00:14:10", "event": "refill", "journey": "desert_rosette", "detail": "auto-queued (ok desert_rosette           start=ring_galaxy)"}
+{"ts": "2026-08-14 00:14:10", "event": "refill", "journey": "termite_citadel", "detail": "auto-queued (ok termite_citadel          start=star_nursery)"}
+{"ts": "2026-08-14 00:14:11", "event": "refill", "journey": "wild_yeast", "detail": "auto-queued (ok wild_yeast               start=crumb_caverns       · not cosmic/subatomic)"}
+{"ts": "2026-08-14 00:14:11", "event": "refill_done", "detail": "refill done: 5 composed, 5 queued (briefs: short, long, short, long, medium)"}
+{"ts": "2026-08-14 03:00:18", "event": "review", "journey": "abyssal_chandelier", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-14 03:01:09", "event": "caption", "journey": "abyssal_chandelier", "detail": "5 options, spot=True"}
+{"ts": "2026-08-14 03:01:09", "event": "render", "journey": "abyssal_chandelier", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-14 04:43:07", "event": "review", "journey": "ivory_gambit", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-14 04:43:59", "event": "caption", "journey": "ivory_gambit", "detail": "5 options, spot=True"}
+{"ts": "2026-08-14 04:43:59", "event": "render", "journey": "ivory_gambit", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-14 06:28:59", "event": "review", "journey": "whale_fall_republic", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-14 06:30:07", "event": "caption", "journey": "whale_fall_republic", "detail": "5 options, spot=True"}
+{"ts": "2026-08-14 06:30:07", "event": "render", "journey": "whale_fall_republic", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-14 07:36:06", "event": "review", "journey": "moth_orchard_night", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-14 07:37:11", "event": "caption", "journey": "moth_orchard_night", "detail": "5 options, spot=True"}
+{"ts": "2026-08-14 07:37:11", "event": "render", "journey": "moth_orchard_night", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-14 08:01:28", "event": "post", "journey": "salt_mirror", "platform": "youtube", "detail": "https://youtube.com/shorts/Pj4q0aK23-M"}
+{"ts": "2026-08-14 08:01:28", "event": "post", "journey": "salt_mirror", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcBQ7cpxIRg/"}
+{"ts": "2026-08-14 08:12:24", "event": "review", "journey": "squid_lantern", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-14 08:13:26", "event": "caption", "journey": "squid_lantern", "detail": "5 options, spot=True"}
+{"ts": "2026-08-14 08:13:26", "event": "render", "journey": "squid_lantern", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-14 16:07:32", "event": "resolve_default", "detail": "reviews reset for resolve regen: ivory_gambit, whale_fall_republic, moth_orchard_night, squid_lantern; tonight LLLS"}
+{"ts": "2026-08-14 16:07:32", "event": "review", "journey": "abyssal_chandelier", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-14 16:08:46", "event": "caption", "journey": "abyssal_chandelier", "detail": "5 options, spot=True"}
+{"ts": "2026-08-14 16:18:16", "event": "review", "journey": "abyssal_chandelier", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-14 16:19:26", "event": "caption", "journey": "abyssal_chandelier", "detail": "5 options, spot=True"}
+{"ts": "2026-08-14 16:53:52", "event": "phase_shift", "journey": "abyssal_chandelier", "detail": "start @ 18.00s"}
+{"ts": "2026-08-14 16:53:52", "event": "music", "journey": "abyssal_chandelier"}
+{"ts": "2026-08-14 16:57:16", "event": "music_gen", "journey": "abyssal_chandelier", "detail": "5 candidates"}
+{"ts": "2026-08-14 16:59:42", "event": "music_choose", "journey": "abyssal_chandelier", "detail": "analog_dawn-wild"}
+{"ts": "2026-08-14 16:59:42", "event": "queued", "journey": "abyssal_chandelier"}
+{"ts": "2026-08-14 18:01:30", "event": "post", "journey": "abyssal_chandelier", "platform": "youtube", "detail": "https://youtube.com/shorts/-GcYNMnZcJA"}
+{"ts": "2026-08-14 18:01:30", "event": "post", "journey": "abyssal_chandelier", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcCVl5qtz4w/"}
+{"ts": "2026-08-14 18:35:08", "event": "review", "journey": "ivory_gambit", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-14 18:36:18", "event": "caption", "journey": "ivory_gambit", "detail": "5 options, spot=True"}
+{"ts": "2026-08-14 18:36:18", "event": "render", "journey": "ivory_gambit", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-14 18:36:18", "event": "batch_done", "detail": "batch done in 1.5h — 1 to Review"}
+{"ts": "2026-08-14 20:30:19", "event": "phase_shift", "journey": "ivory_gambit", "detail": "start @ 2.00s"}
+{"ts": "2026-08-14 20:30:19", "event": "music", "journey": "ivory_gambit"}
+{"ts": "2026-08-14 20:33:26", "event": "music_gen", "journey": "ivory_gambit", "detail": "5 candidates"}
+{"ts": "2026-08-14 20:39:38", "event": "music_choose", "journey": "ivory_gambit", "detail": "wooden_orbit-wild"}
+{"ts": "2026-08-14 20:39:38", "event": "queued", "journey": "ivory_gambit"}
+{"ts": "2026-08-15 00:17:21", "event": "refill", "journey": "cobalt_rookery", "detail": "auto-queued (ok cobalt_rookery           start=cluster_sun)"}
+{"ts": "2026-08-15 00:17:21", "event": "refill", "journey": "peony_shell", "detail": "auto-queued (ok peony_shell              start=burst_sphere        · not cosmic/subatomic)"}
+{"ts": "2026-08-15 00:17:21", "event": "refill", "journey": "ruby_furnace", "detail": "auto-queued (ok ruby_furnace             start=prominence_arcs)"}
+{"ts": "2026-08-15 00:17:21", "event": "refill", "journey": "sundew_snare", "detail": "auto-queued (ok sundew_snare             start=spiral_galaxy)"}
+{"ts": "2026-08-15 00:17:21", "event": "refill", "journey": "vesper_flight", "detail": "auto-queued (ok vesper_flight            start=light_echo)"}
+{"ts": "2026-08-15 00:17:21", "event": "refill_done", "detail": "refill done: 5 composed, 5 queued (briefs: long, long, long, short, long)"}
+{"ts": "2026-08-15 03:01:18", "event": "review", "journey": "whale_fall_republic", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-15 03:02:29", "event": "caption", "journey": "whale_fall_republic", "detail": "5 options, spot=True"}
+{"ts": "2026-08-15 03:02:29", "event": "render", "journey": "whale_fall_republic", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-15 04:02:38", "event": "review", "journey": "moth_orchard_night", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-15 04:03:43", "event": "caption", "journey": "moth_orchard_night", "detail": "5 options, spot=True"}
+{"ts": "2026-08-15 04:03:43", "event": "render", "journey": "moth_orchard_night", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-15 05:37:29", "event": "review", "journey": "geode_cosmos", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-15 05:38:42", "event": "caption", "journey": "geode_cosmos", "detail": "5 options, spot=True"}
+{"ts": "2026-08-15 05:38:42", "event": "render", "journey": "geode_cosmos", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-15 06:15:03", "event": "review", "journey": "ember_meadow", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-15 06:16:09", "event": "caption", "journey": "ember_meadow", "detail": "5 options, spot=True"}
+{"ts": "2026-08-15 06:16:09", "event": "render", "journey": "ember_meadow", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-15 06:16:09", "event": "batch_done", "detail": "batch done in 4.8h — 4 to Review"}
+{"ts": "2026-08-15 08:01:38", "event": "post", "journey": "ivory_gambit", "platform": "youtube", "detail": "https://youtube.com/shorts/3QQX_lqL_Sk"}
+{"ts": "2026-08-15 08:01:38", "event": "post", "journey": "ivory_gambit", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcD1ubzp9IM/"}
+{"ts": "2026-08-15 10:45:06", "event": "edit", "journey": "moth_orchard_night"}
+{"ts": "2026-08-15 10:45:11", "event": "phase_shift", "journey": "moth_orchard_night", "detail": "start @ 5.30s"}
+{"ts": "2026-08-15 10:45:11", "event": "music", "journey": "moth_orchard_night"}
+{"ts": "2026-08-15 10:48:01", "event": "music_gen", "journey": "moth_orchard_night", "detail": "5 candidates"}
+{"ts": "2026-08-15 10:48:08", "event": "switch", "journey": "geode_cosmos", "detail": "ds/zoomout"}
+{"ts": "2026-08-15 10:49:05", "event": "switch", "journey": "geode_cosmos", "detail": "ds/divein"}
+{"ts": "2026-08-15 10:49:45", "event": "phase_shift", "journey": "geode_cosmos", "detail": "start @ 11.30s"}
+{"ts": "2026-08-15 10:49:45", "event": "music", "journey": "geode_cosmos"}
+{"ts": "2026-08-15 10:54:49", "event": "music_gen", "journey": "geode_cosmos", "detail": "5 candidates"}
+{"ts": "2026-08-15 10:55:52", "event": "music_gen", "journey": "moth_orchard_night", "detail": "5 candidates"}
+{"ts": "2026-08-15 11:03:44", "event": "music_choose", "journey": "moth_orchard_night", "detail": "night_market-third_answer"}
+{"ts": "2026-08-15 11:03:44", "event": "queued", "journey": "moth_orchard_night"}
+{"ts": "2026-08-15 11:07:21", "event": "music_choose", "journey": "geode_cosmos", "detail": "tide_organ"}
+{"ts": "2026-08-15 11:07:21", "event": "queued", "journey": "geode_cosmos"}
+{"ts": "2026-08-15 12:39:47", "event": "review", "journey": "coral_synapse", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-15 12:41:07", "event": "caption", "journey": "coral_synapse", "detail": "5 options, spot=True"}
+{"ts": "2026-08-15 12:41:07", "event": "render", "journey": "coral_synapse", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-15 12:41:07", "event": "batch_done", "detail": "batch done in 1.4h — 1 to Review"}
+{"ts": "2026-08-15 18:01:32", "event": "post", "journey": "moth_orchard_night", "platform": "youtube", "detail": "https://youtube.com/shorts/R73Xv0arMEU"}
+{"ts": "2026-08-15 18:01:32", "event": "post", "journey": "moth_orchard_night", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcE6Y9Murh5/"}
+{"ts": "2026-08-16 00:14:47", "event": "refill", "journey": "anemone_arsenal", "detail": "auto-queued (ok anemone_arsenal          start=minicollagen)"}
+{"ts": "2026-08-16 00:14:47", "event": "refill", "journey": "chameleon_prism", "detail": "auto-queued (ok chameleon_prism          start=chromatophore_mosaic)"}
+{"ts": "2026-08-16 00:14:47", "event": "refill", "journey": "meteorite_cradle", "detail": "auto-queued (ok meteorite_cradle         start=nursery_nebula)"}
+{"ts": "2026-08-16 00:14:47", "event": "refill", "journey": "physarum_maze", "detail": "auto-queued (ok physarum_maze            start=streaming_sol       · not cosmic/subatomic)"}
+{"ts": "2026-08-16 00:14:48", "event": "refill", "journey": "pomegranate_vault", "detail": "auto-queued (ok pomegranate_vault        start=aril_tiers          · not cosmic/subatomic)"}
+{"ts": "2026-08-16 00:14:48", "event": "refill_done", "detail": "refill done: 5 composed, 5 queued (briefs: long, long, long, short, long)"}
+{"ts": "2026-08-16 02:44:01", "event": "review", "journey": "lantern_mangrove", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-16 02:45:01", "event": "caption", "journey": "lantern_mangrove", "detail": "5 options, spot=True"}
+{"ts": "2026-08-16 02:45:01", "event": "render", "journey": "lantern_mangrove", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-16 04:17:38", "event": "review", "journey": "desert_rosette", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-16 04:18:59", "event": "caption", "journey": "desert_rosette", "detail": "5 options, spot=True"}
+{"ts": "2026-08-16 04:18:59", "event": "render", "journey": "desert_rosette", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-16 05:26:26", "event": "review", "journey": "termite_citadel", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-16 05:27:56", "event": "caption", "journey": "termite_citadel", "detail": "5 options, spot=True"}
+{"ts": "2026-08-16 05:27:56", "event": "render", "journey": "termite_citadel", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-16 06:00:44", "event": "review", "journey": "squid_lantern", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-16 06:01:39", "event": "caption", "journey": "squid_lantern", "detail": "5 options, spot=True"}
+{"ts": "2026-08-16 06:01:39", "event": "render", "journey": "squid_lantern", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-16 06:01:39", "event": "batch_done", "detail": "batch done in 4.5h — 4 to Review"}
+{"ts": "2026-08-16 08:01:33", "event": "post", "journey": "geode_cosmos", "platform": "youtube", "detail": "https://youtube.com/shorts/hd2XBvNA59U"}
+{"ts": "2026-08-16 08:01:33", "event": "post", "journey": "geode_cosmos", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcGahIISzJw/"}
+{"ts": "2026-08-16 17:45:20", "event": "switch", "journey": "termite_citadel", "detail": "ds/zoomout"}
+{"ts": "2026-08-17 00:17:38", "event": "refill", "journey": "caddis_masonry", "detail": "auto-queued (ok caddis_masonry           start=grain_pack          · not cosmic/subatomic)"}
+{"ts": "2026-08-17 00:17:38", "event": "refill", "journey": "cherenkov_cistern", "detail": "auto-queued (ok cherenkov_cistern        start=flared_star)"}
+{"ts": "2026-08-17 00:17:39", "event": "refill", "journey": "lissajous_stage", "detail": "auto-queued (ok lissajous_stage          start=winding_coil        · not cosmic/subatomic)"}
+{"ts": "2026-08-17 00:17:39", "event": "refill", "journey": "motmot_cenote", "detail": "auto-queued (ok motmot_cenote            start=atom_shells)"}
+{"ts": "2026-08-17 00:17:39", "event": "refill_done", "detail": "refill done: 4 composed, 4 queued (briefs: long, long, short, long)"}
+{"ts": "2026-08-17 03:05:12", "event": "review", "journey": "cobalt_rookery", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-17 03:06:32", "event": "caption", "journey": "cobalt_rookery", "detail": "5 options, spot=True"}
+{"ts": "2026-08-17 03:06:32", "event": "render", "journey": "cobalt_rookery", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-17 04:13:53", "event": "review", "journey": "ruby_furnace", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-17 04:14:40", "event": "caption", "journey": "ruby_furnace", "detail": "5 options, spot=True"}
+{"ts": "2026-08-17 04:14:40", "event": "render", "journey": "ruby_furnace", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-17 05:53:31", "event": "review", "journey": "sundew_snare", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-17 05:54:45", "event": "caption", "journey": "sundew_snare", "detail": "5 options, spot=True"}
+{"ts": "2026-08-17 05:54:45", "event": "render", "journey": "sundew_snare", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-17 06:41:06", "event": "review", "journey": "magnetite_choir", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-17 06:42:05", "event": "caption", "journey": "magnetite_choir", "detail": "5 options, spot=True"}
+{"ts": "2026-08-17 06:42:05", "event": "render", "journey": "magnetite_choir", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-17 06:42:05", "event": "batch_done", "detail": "batch done in 5.2h — 4 to Review"}
+{"ts": "2026-08-17 16:48:44", "event": "music_pregen", "journey": "whale_fall_republic", "detail": "5 candidates"}
+{"ts": "2026-08-17 16:48:53", "event": "music_realign", "journey": "whale_fall_republic", "detail": "5 candidates"}
+{"ts": "2026-08-17 16:56:06", "event": "caption", "journey": "ruby_furnace", "detail": "5 options, spot=True"}
+{"ts": "2026-08-17 17:03:58", "event": "music_pregen", "journey": "squid_lantern", "detail": "5 candidates"}
+{"ts": "2026-08-17 17:05:49", "event": "music_pregen", "journey": "ember_meadow", "detail": "5 candidates"}
+{"ts": "2026-08-17 17:09:20", "event": "music_pregen", "journey": "coral_synapse", "detail": "5 candidates"}
+{"ts": "2026-08-17 17:12:54", "event": "music_pregen", "journey": "lantern_mangrove", "detail": "5 candidates"}
+{"ts": "2026-08-17 17:16:08", "event": "music_pregen", "journey": "desert_rosette", "detail": "5 candidates"}
+{"ts": "2026-08-17 17:18:54", "event": "music_pregen", "journey": "termite_citadel", "detail": "5 candidates"}
+{"ts": "2026-08-17 17:23:12", "event": "music_pregen", "journey": "cobalt_rookery", "detail": "5 candidates"}
+{"ts": "2026-08-17 17:26:08", "event": "music_pregen", "journey": "ruby_furnace", "detail": "5 candidates"}
+{"ts": "2026-08-17 17:29:36", "event": "music_pregen", "journey": "sundew_snare", "detail": "5 candidates"}
+{"ts": "2026-08-17 17:32:50", "event": "music_pregen", "journey": "magnetite_choir", "detail": "5 candidates"}
+{"ts": "2026-08-17 17:47:06", "event": "archive", "detail": "moved 121.9G to E:"}
+{"ts": "2026-08-17 18:07:19", "event": "switch", "journey": "ruby_furnace", "detail": "ds/zoomout"}
+{"ts": "2026-08-17 21:30:56", "event": "phase_shift", "journey": "sundew_snare", "detail": "start @ 6.00s"}
+{"ts": "2026-08-17 21:30:56", "event": "music", "journey": "sundew_snare"}
+{"ts": "2026-08-17 21:31:06", "event": "music_realign", "journey": "sundew_snare", "detail": "5 candidates"}
+{"ts": "2026-08-17 21:31:37", "event": "music", "journey": "squid_lantern"}
+{"ts": "2026-08-17 21:31:45", "event": "music_realign", "journey": "squid_lantern", "detail": "5 candidates"}
+{"ts": "2026-08-17 21:33:22", "event": "music_choose", "journey": "sundew_snare", "detail": "choir_of_dust-third_answer"}
+{"ts": "2026-08-17 21:33:22", "event": "queued", "journey": "sundew_snare"}
+{"ts": "2026-08-17 21:34:05", "event": "settings", "detail": "edited in dashboard"}
+{"ts": "2026-08-17 21:35:45", "event": "phase_shift", "journey": "ember_meadow", "detail": "start @ 2.00s"}
+{"ts": "2026-08-17 21:35:45", "event": "music", "journey": "ember_meadow"}
+{"ts": "2026-08-17 21:35:53", "event": "music_realign", "journey": "ember_meadow", "detail": "5 candidates"}
+{"ts": "2026-08-17 21:37:08", "event": "music_choose", "journey": "squid_lantern", "detail": "glass_chapel-halftime"}
+{"ts": "2026-08-17 21:37:08", "event": "queued", "journey": "squid_lantern"}
+{"ts": "2026-08-17 21:38:33", "event": "music_choose", "journey": "ember_meadow", "detail": "glass_chapel-wild"}
+{"ts": "2026-08-17 21:38:33", "event": "queued", "journey": "ember_meadow"}
+{"ts": "2026-08-17 21:39:56", "event": "caption", "journey": "whale_fall_republic", "detail": "5 options, spot=True"}
+{"ts": "2026-08-17 21:40:39", "event": "caption", "journey": "coral_synapse", "detail": "5 options, spot=True"}
+{"ts": "2026-08-17 21:45:30", "event": "caption", "journey": "ember_meadow", "detail": "5 options, spot=True"}

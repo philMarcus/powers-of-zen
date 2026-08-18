@@ -1,122 +1,122 @@
 {
- "name": "moth_orchard_night",
- "theme": "a lantern-hung orchard at night read all the way down one moth and back — from the amber trees and their beetles and fox, down a settled moth's forewing into the ranked scales, one scale's ridge grid, the folded photonic wall inside it, the chitin chains and the carbon net that build it, folding out to a barred spiral and its star nursery, and home when the newborn stars become the orchard's lanterns",
- "style": "enchanted_wild",
- "music_lane": "night_market",
- "format": {
-  "beats_per_bar": 4,
-  "frames_per_beat": 6,
-  "exact_loop": true,
-  "counter": true
- },
- "registers": [
-  {
-   "name": "orchard_night",
-   "exp": 1,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "lantern amber on night black",
-   "scene": "a row of old fruit trees at night with paper lanterns hung through the low branches, warm amber light pooled on the rough bark and the grass beneath, moths gathered around every lantern, hard-backed beetles on the bark, a fox in the darker grass between the trunks, small webs strung across the gaps in the branches, no one present among the trees, black orchard rows receding behind",
-   "target": "a pale grey moth",
-   "target_phrase": "a pale moth"
+  "name": "moth_orchard_night",
+  "theme": "a lantern-hung orchard at night read all the way down one moth and back — from the amber trees and their beetles and fox, down a settled moth's forewing into the ranked scales, one scale's ridge grid, the folded photonic wall inside it, the chitin chains and the carbon net that build it, folding out to a barred spiral and its star nursery, and home when the newborn stars become the orchard's lanterns",
+  "style": "enchanted_wild",
+  "music_lane": "night_market",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
   },
-  {
-   "name": "lantern_moth",
-   "exp": -1.5,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "silver-grey and teal against amber light",
-   "scene": "the air beside one paper lantern hung in a branch, amber light standing on the ribbed paper, a large silver-grey moth settled against it with its forewings outspread and banded in umber and teal, two more moths on the twig above, black night behind and thin dark twigs crossing it",
-   "target": "a broad banded forewing",
-   "target_phrase": "a moth wing"
-  },
-  {
-   "name": "wing_shingles",
-   "exp": -2.5,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "copper and violet sheen on umber black",
-   "scene": "the outspread upper face of a moth's forewing, ranks of small flat scales lapped over one another in even rows running away on either side, each scale a rounded copper plate shot through with violet and teal, dark seams between the rows, a few gaps where scales are missing and the sooty membrane shows beneath",
-   "target": "a single copper scale",
-   "target_phrase": "a bright copper scale"
-  },
-  {
-   "name": "ridge_grid",
-   "exp": -4,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "viridian and steel blue on deep umber",
-   "scene": "the upper face of one moth scale, straight parallel ridges running its whole length, short cross-struts bridging every gap between them, a regular grid of dark oval openings set between the struts, viridian and steel-blue colour standing off the ridge crests, deep umber shadow in each trough",
-   "target": "a dark oval opening",
-   "target_phrase": "a dark oval opening"
-  },
-  {
-   "name": "gyroid_core",
-   "exp": -6,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "electric teal and violet on black",
-   "scene": "the interior of a moth scale, one smooth curved chitin wall folded back through itself in every direction, round openings passing straight through it along three directions at once, the folded surfaces holding a hard teal and violet glow, black voids in all the gaps",
-   "target": "a fine amber strand",
-   "target_phrase": "a bright amber strand"
-  },
-  {
-   "name": "chitin_chains",
-   "exp": -8.5,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "honey gold and bronze on black",
-   "scene": "the molecular structure of chitin, flat ribbon chains of linked sugar rings laid side by side and stacked into broad sheets, short bonds strung between neighbouring chains at even spacing, whole bundles of sheets set back into blackness, honey-gold and bronze light along every chain",
-   "target": "a six-sided carbon ring",
-   "target_phrase": "a bright hexagonal ring",
-   "cameo": {
-    "sprite": "output/mascots/canon/tina.png",
-    "pos": [
-     0.63,
-     0.42
-    ],
-    "size": 0.13
-   }
-  },
-  {
-   "name": "carbon_net",
-   "exp": -10,
-   "kind": "seam",
-   "dur": 4,
-   "palette": "cyan-white on black",
-   "scene": "a hexagonal net of carbon atoms, bright round nodes at every corner with straight bond struts between them, further sheets of the same net stacked back into the dark, cold cyan-white light along each strut and black space in every gap"
-  },
-  {
-   "name": "barred_spiral",
-   "exp": 21,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "amber core and magenta dust on black",
-   "scene": "a barred spiral galaxy at a tilt, a long amber bar across its crowded core, two heavy arms wound out from the bar ends, dark dust lanes cutting the inner edge of each arm, magenta star-forming knots strung down the arms, black space and a scatter of far galaxies beyond",
-   "target": "a glowing magenta gas cloud",
-   "target_phrase": "a glowing magenta cloud"
-  },
-  {
-   "name": "ember_nebula",
-   "exp": 17,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "ember orange rims on indigo black",
-   "scene": "a star-forming nebula in one arm of the galaxy, standing columns and ridges of dark dust with ember-orange light along their rims, sheets of glowing gas banked behind them in indigo and rust, hot blue-white points scattered through the thinner gas, the cloud seen from outside it with black sky beyond",
-   "target": "a dark rounded dust knot",
-   "target_phrase": "a dark dust knot",
-   "loop_target": "a star-forming nebula, standing columns of dark dust with ember-orange rims and sheets of glowing indigo gas banked behind them"
-  },
-  {
-   "name": "star_cradle",
-   "exp": 13,
-   "kind": "seam",
-   "dur": 4,
-   "palette": "gold points in charcoal dust",
-   "scene": "the inside of one dust knot in the nebula, banked charcoal walls of dust standing on every side of a small hollow, four newborn stars burning gold within it, thin gold light reaching out through the breaks in the dust, cold black gas beyond"
-  }
- ],
- "music_theme": "a lantern-lit orchard opening into deep sky — soft hang drum and plucked koto over a velvet low pad, a deep kick on every scale change, a bright struck accent where the carbon net flips into the galaxy, easing back into quiet amber warmth as the newborn stars become lanterns",
- "music_key": "D minor",
- "render_start": "ember_nebula"
+  "registers": [
+    {
+      "name": "orchard_night",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "lantern amber on night black",
+      "scene": "a row of old fruit trees at night with paper lanterns hung through the low branches, warm amber light pooled on the rough bark and the grass beneath, moths gathered around every lantern, hard-backed beetles on the bark, a fox in the darker grass between the trunks, small webs strung across the gaps in the branches, no one present among the trees, black orchard rows receding behind",
+      "target": "a pale grey moth",
+      "target_phrase": "a pale moth"
+    },
+    {
+      "name": "lantern_moth",
+      "exp": -1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver-grey and teal against amber light",
+      "scene": "the air beside one paper lantern hung in a branch, amber light standing on the ribbed paper, a large silver-grey moth settled against it with its forewings outspread and banded in umber and teal, two more moths on the twig above, black night behind and thin dark twigs crossing it",
+      "target": "a broad banded forewing",
+      "target_phrase": "a moth wing"
+    },
+    {
+      "name": "wing_shingles",
+      "exp": -2.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "copper and violet sheen on umber black",
+      "scene": "the outspread upper face of a moth's forewing, ranks of small flat scales lapped over one another in even rows running away on either side, each scale a rounded copper plate shot through with violet and teal, dark seams between the rows, a few gaps where scales are missing and the sooty membrane shows beneath",
+      "target": "a single copper scale",
+      "target_phrase": "a bright copper scale"
+    },
+    {
+      "name": "ridge_grid",
+      "exp": -4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "viridian and steel blue on deep umber",
+      "scene": "the upper face of one moth scale, straight parallel ridges running its whole length, short cross-struts bridging every gap between them, a regular grid of dark oval openings set between the struts, viridian and steel-blue colour standing off the ridge crests, deep umber shadow in each trough",
+      "target": "a dark oval opening",
+      "target_phrase": "a dark oval opening"
+    },
+    {
+      "name": "gyroid_core",
+      "exp": -6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "electric teal and violet on black",
+      "scene": "the interior of a moth scale, one smooth curved chitin wall folded back through itself in every direction, round openings passing straight through it along three directions at once, the folded surfaces holding a hard teal and violet glow, black voids in all the gaps",
+      "target": "a fine amber strand",
+      "target_phrase": "a bright amber strand"
+    },
+    {
+      "name": "chitin_chains",
+      "exp": -8.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "honey gold and bronze on black",
+      "scene": "the molecular structure of chitin, flat ribbon chains of linked sugar rings laid side by side and stacked into broad sheets, short bonds strung between neighbouring chains at even spacing, whole bundles of sheets set back into blackness, honey-gold and bronze light along every chain",
+      "target": "a six-sided carbon ring",
+      "target_phrase": "a bright hexagonal ring",
+      "cameo": {
+        "sprite": "output/mascots/canon/tina.png",
+        "pos": [
+          0.63,
+          0.42
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "carbon_net",
+      "exp": -10,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "cyan-white on black",
+      "scene": "a hexagonal net of carbon atoms, bright round nodes at every corner with straight bond struts between them, further sheets of the same net stacked back into the dark, cold cyan-white light along each strut and black space in every gap"
+    },
+    {
+      "name": "barred_spiral",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber core and magenta dust on black",
+      "scene": "a barred spiral galaxy at a tilt, a long amber bar across its crowded core, two heavy arms wound out from the bar ends, dark dust lanes cutting the inner edge of each arm, magenta star-forming knots strung down the arms, black space and a scatter of far galaxies beyond",
+      "target": "a glowing magenta gas cloud",
+      "target_phrase": "a glowing magenta cloud"
+    },
+    {
+      "name": "ember_nebula",
+      "exp": 17,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ember orange rims on indigo black",
+      "scene": "a star-forming nebula in one arm of the galaxy, standing columns and ridges of dark dust with ember-orange light along their rims, sheets of glowing gas banked behind them in indigo and rust, hot blue-white points scattered through the thinner gas, the cloud seen from outside it with black sky beyond",
+      "target": "a dark rounded dust knot",
+      "target_phrase": "a dark dust knot",
+      "loop_target": "a star-forming nebula, standing columns of dark dust with ember-orange rims and sheets of glowing indigo gas banked behind them"
+    },
+    {
+      "name": "star_cradle",
+      "exp": 13,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "gold points in charcoal dust",
+      "scene": "the inside of one dust knot in the nebula, banked charcoal walls of dust standing on every side of a small hollow, four newborn stars burning gold within it, thin gold light reaching out through the breaks in the dust, cold black gas beyond"
+    }
+  ],
+  "music_theme": "a lantern-lit orchard opening into deep sky — soft hang drum and plucked koto over a velvet low pad, a deep kick on every scale change, a bright struck accent where the carbon net flips into the galaxy, easing back into quiet amber warmth as the newborn stars become lanterns",
+  "music_key": "D minor",
+  "render_start": "ember_nebula"
 }
