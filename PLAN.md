@@ -1027,6 +1027,13 @@ finds little on flat art — style-vs-detection interplay to watch.
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # ENGINE 3 — THE CAMERA (planned 2026-08-15, Phil's brief; the plan of record)
+# STATUS 2026-08-17: PAUSED at Phase 2 by Phil — "get our world looking 3-D and parallax
+# looking nice before adding camera moves." The orbit gate's technical finding stands
+# (warps survive re-diffusion only when re-synthesis outpaces resample loss — v3: denoise
+# floor 0.52 + post-warp unsharp held 15° crisp), but the result did not read as orbital
+# motion to Phil (content re-interpretation at higher denoise; parallax not legible;
+# labs must ship 12fps looped clips). Phase 1.5 (depth realism in scaffolds) is the
+# active work; resume here after depth reads 3-D.
 # ═══════════════════════════════════════════════════════════════════════════════
 
 ## Why (the residual problem)

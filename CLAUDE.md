@@ -115,6 +115,22 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-17 (CLOSE — READ THIS FIRST IN THE MORNING): TOMORROW = DEPTH (Phase 1.5), clean
+context. The one job: make resolve-window worlds read 3-D. Concretely: (a) SIZE-DEPTH
+AGREEMENT — Phil repeatedly sees small instances IN FRONT of big ones; scaffold size and
+depth-value must be strictly consistent per instance (engine/scaffold.py); (b) LEGIBLE
+PARALLAX — per-plane lateral velocities strong enough to separate planes in motion;
+(c) far-value floor test (0.06 vs ~0.18 — depth honesty vs CN grip; abyssal v2 frames
+suggest faint far fields condition weakly); (d) deliver ONE slow looped A/B (12fps
+real-time, loops — never 6fps once-through, Phil couldn't judge the orbit clips) on a
+single resolve window BEFORE touching full renders. ENGINE-3 CAMERA MOVES REMAIN PAUSED
+(Phil). Everything else is settled and running: captions now use rhyme names (generator
+verified fresh: "Dora the Flora"; all 11 review/music videos' STORED captions migrated —
+live videos keep their posted captions); all 11 review videos carry music pregen
+candidates (approve = seconds); posting = 19h cadence gate (Settings-editable, fired
+first at 18:00 today); C: at 86% after archiving 121.9G/96 trees to E:\zoomer_archive
+(manifest in outbox/archive_manifest.jsonl; delete-class 6.4G flagged, untouched);
+nightly refill+render run themselves (refill assigns tempos; batch pregens music).
 2026-08-17 (later): ENGINE-3 CAMERA MOVES PAUSED (Phil's call — "get our world looking 3-D
 and parallax looking nice BEFORE adding camera moves; not too many things at once"). Phil's
 orbit-v3 verdict: not convinced — no legible orbital motion/parallax; the raised denoise
