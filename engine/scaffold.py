@@ -173,7 +173,7 @@ class Resolver:
         adv = 0.0
         for k in range(min(f, len(self.zooms))):
             z = self.zooms[k]
-            adv += (1.0 - adv) * (z - 1.0) / z if False else (z - 1.0) / z
+            adv += (z - 1.0) / z
         return adv
 
     def frame(self, f, floor=0.04):
@@ -187,14 +187,14 @@ class Resolver:
         if self.mode == "surface":
             g = (np.linspace(0, 1, H)[:, None] ** 1.4) * 0.55   # ground: bottom near
             depth = np.maximum(depth, g.astype(np.float32) * np.ones((H, W), np.float32))
-        # painter's order: farthest first, so near cores overwrite (true occlusion)
-        items = sorted(self.items, key=lambda it: -(it[2] - adv))
+        # painter's order: farthest first, so near cores overwrite (true occlusion);
+        # depth-less sentinels (surface's "ground" marker) don't join the sort
+        items = sorted((it for it in self.items if it[2] is not None),
+                       key=lambda it: -(it[2] - adv))
         for kind, geom, d in items:
             d = d - adv                    # LOOM: the camera has advanced
             if d <= 0.16:
                 continue                   # passed the camera
-            if kind == "ground":
-                continue
             near = depth_value(d)
             d0 = d + adv                   # original authored distance
             grow = d0 / d                  # perspective expansion for THIS instance
