@@ -116,15 +116,34 @@ picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SC
 
 ## Current state (update this line as it changes)
 2026-08-17 (CLOSE — READ THIS FIRST IN THE MORNING): TOMORROW = DEPTH (Phase 1.5), clean
-context. The one job: make resolve-window worlds read 3-D. Concretely: (a) SIZE-DEPTH
-AGREEMENT — Phil repeatedly sees small instances IN FRONT of big ones; scaffold size and
-depth-value must be strictly consistent per instance (engine/scaffold.py); (b) LEGIBLE
-PARALLAX — per-plane lateral velocities strong enough to separate planes in motion;
-(c) far-value floor test (0.06 vs ~0.18 — depth honesty vs CN grip; abyssal v2 frames
-suggest faint far fields condition weakly); (d) deliver ONE slow looped A/B (12fps
-real-time, loops — never 6fps once-through, Phil couldn't judge the orbit clips) on a
-single resolve window BEFORE touching full renders. ENGINE-3 CAMERA MOVES REMAIN PAUSED
-(Phil). Everything else is settled and running: captions now use rhyme names (generator
+context. THE DIAGNOSIS (settled with Phil tonight — the "what we were missing"): we
+treated depth as GEOMETRY while our own machinery strips the PICTORIAL depth cues that
+make images read 3-D. Evidence: even the reef frame Phil called 3-D has depth ONLY from
+occlusion — zero haze/defocus/light falloff, everything equally sharp+saturated at every
+distance. The four suppressors: (1) style tail "ultra-detailed/jewel-bright/vivid
+contrast" = uniform sharpness+saturation everywhere = flat-decorative by definition, and
+the global dark+saturated doctrine forbids atmospheric desaturation of the far field;
+(2) detail_boost uniformly re-sharpens/saturates EVERY feedback frame — any hazy distance
+the model paints is erased within ~3 frames (anti-collapse == anti-depth); (3) no prompt
+ever INVITES haze/soft distance (scene grammar is planar "a field of"); (4) scaffolds
+animate WRONG: all instances scale by the same Z — real approach LOOMS (instance at
+distance d grows d/(d−Δ)): we broadcast cardboard-cutouts-in-formation, which is why
+parallax was never legible; blobs also max-composite with no occlusion edges (discs on a
+plane, not spheres in space). Proof it's us not DreamShaper: reef/squid-school read 3-D
+because those content classes' training priors carry occlusion+haze strongly enough to
+survive our suppression. THE PLAN, in variable-isolating test order: (1) depth language
+in resolve-window prompts (near soft-focus occluder passing close; far forms fading into
+gloom/haze); (2) palette doctrine amended: saturation is a NEAR-FIELD property, far field
+desaturates into gloom (consistent with likes data — dark_frac correlates POSITIVE);
+(3) DEPTH-AWARE detail_boost — sharpen/saturate weighted by depth (scaffold depth in
+windows, DepthAnything elsewhere), far field gentler + slight desat: the biggest single
+mechanical change; (4) scaffold v3: true LOOMING (d/(d−Δ) per instance), painter's-
+algorithm occlusion with hard near-edges over far, ambient fog gradient in the depth
+signal, strict size-depth agreement. DELIVERABLE: one resolve window rendered 4 ways
+(baseline/+prompts/+depth-boost/+looming) as a SLOW LOOPED 12fps A/B before any full
+render. Camera moves stay PAUSED — motion-depth's cheap 90% (looming + per-plane
+parallax) lives inside scaffolds, no image warps needed; landing/threshold resume after
+pictorial depth works. Everything else is settled and running: captions now use rhyme names (generator
 verified fresh: "Dora the Flora"; all 11 review/music videos' STORED captions migrated —
 live videos keep their posted captions); all 11 review videos carry music pregen
 candidates (approve = seconds); posting = 19h cadence gate (Settings-editable, fired
