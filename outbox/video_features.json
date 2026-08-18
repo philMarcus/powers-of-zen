@@ -222,5 +222,37 @@
   "sat": 0.8139,
   "contrast": 0.1807,
   "dark_frac": 0.3039
+ },
+ "abyssal_chandelier": {
+  "key": "abyssal_chandelier:1786690818116525400",
+  "frames": 24,
+  "lum": 0.3479,
+  "sat": 0.8181,
+  "contrast": 0.1774,
+  "dark_frac": 0.3209
+ },
+ "ivory_gambit": {
+  "key": "ivory_gambit:1786696986882979600",
+  "frames": 24,
+  "lum": 0.3083,
+  "sat": 0.7323,
+  "contrast": 0.159,
+  "dark_frac": 0.3842
+ },
+ "whale_fall_republic": {
+  "key": "whale_fall_republic:1786703338706333000",
+  "frames": 24,
+  "lum": 0.3021,
+  "sat": 0.7163,
+  "contrast": 0.1751,
+  "dark_frac": 0.4418
+ },
+ "moth_orchard_night": {
+  "key": "moth_orchard_night:1786707366726208900",
+  "frames": 20,
+  "lum": 0.3514,
+  "sat": 0.7395,
+  "contrast": 0.1926,
+  "dark_frac": 0.3516
  }
 }
