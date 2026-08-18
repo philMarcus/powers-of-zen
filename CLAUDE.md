@@ -126,10 +126,14 @@ core (≤0.72r) OVERWRITES with a shaded dome, rim still max-blended (spheres in
 discs on a plane). Verified on-CPU: looming progression strip at
 output/realm_refs/scaffold_demo/v3_loom_check.png. #1 = resolve-window prompts get a
 depth clause in dive.py ("enormous soft-focus shapes drifting close past the camera,
-countless tiny ones far beyond" — deliberately NO gloom/desat words). TEST RENDER
-launched: squid_lantern re-render, seed 1234 = SAME as v1 for A/B (lands v5,
-outbox/squid_depth_test.log); tonight's 01:30 batch (17 queued, 3/20 backpressure)
-inherits everything since --resolve is default-on. POSTING FIXED + FIRED: the missed-22:00
+countless tiny ones far beyond" — deliberately NO gloom/desat words). TEST RENDER DONE:
+squid_lantern v5, seed 1234 = SAME as v1 for A/B (first attempt crashed at the first
+surface window — the depth-less "ground" sentinel broke the painter sort; hotfixed, all
+4 modes + 4 lattice variants now CPU-exercised). A/B sent to Phil: side-by-side loop at
+output/squid_lantern/v5/build/depth_AB_loop.mp4 + frame strip depth_AB_strip.png — v5's
+windows read as populated fields with real size gradation (f52: countless small cells at
+varied depth where v1 had flat macro). Phil judges the MOTION. Tonight's 01:30 batch
+(17 queued, 3/20 backpressure) inherits everything since --resolve is default-on. POSTING FIXED + FIRED: the missed-22:00
 root cause was the hourly gate .bats having LF endings (written via bash heredoc — Task
 Scheduler cmd needs CRLF) plus the 18:00 window burning on an empty queue; post_gate.py
 now parses post_next leniently, HOLDS the window when nothing is queued, and after firing
