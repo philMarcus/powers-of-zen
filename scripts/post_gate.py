@@ -64,6 +64,13 @@ def main():
     log(f"gate open (scheduled {nxt.strftime(FMT)}) — running poster")
     r = subprocess.run([sys.executable, str(ROOT / "scripts" / "poster.py")],
                        cwd=str(ROOT))
+    if r.returncode != 0:
+        # poster CRASHED (Chrome dead, exception) — hold the window and retry next hour
+        # instead of burning 19h on a failure. A poster that ran but couldn't post a
+        # platform still exits 0 and moves the video to failed; that's not this path.
+        pl.telem("post_gate", detail=f"poster rc {r.returncode} — window held for retry")
+        log(f"poster failed (rc {r.returncode}) — holding the window, retrying next hour")
+        return
     nxt = datetime.now() + timedelta(hours=every)
     # always land ON the hour (Phil): round to the nearest whole hour
     nxt = (nxt + timedelta(minutes=30)).replace(minute=0, second=0, microsecond=0)

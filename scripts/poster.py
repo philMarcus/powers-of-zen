@@ -702,6 +702,9 @@ PLATFORMS = {"tiktok": post_tiktok, "youtube": post_youtube, "instagram": post_i
 
 # ---------------------------------------------------------------- runner
 def run(only, dry_run, journey):
+    # flags baseline: warn at the end only about flags THIS run appended (the old
+    # exists-check nagged every single run about July's long-resolved flags)
+    flags_before = FLAGS.stat().st_size if FLAGS.exists() else 0
     # health check — self-heal a down Chrome (the 2026-08-08 morning run failed only because
     # nobody relaunched zen Chrome after a reboot; start_chrome_zen.sh is idempotent + non-
     # blocking, and it brings the anti-throttle flags every scheduled run depends on).
@@ -799,8 +802,8 @@ def run(only, dry_run, journey):
         entry["state"] = "live" if allgood else "failed"
         pl.save(data)
     print("\nSummary:", json.dumps(results, indent=2))
-    if FLAGS.exists() and any(True for _ in open(FLAGS)):
-        print(f"⚠ flags recorded in {FLAGS} — review before next run.")
+    if FLAGS.exists() and FLAGS.stat().st_size > flags_before:
+        print(f"⚠ NEW flags recorded in {FLAGS} this run — review before next run.")
     # AUTO-SNAPSHOT (Phil 2026-08-13): every posting run ends by logging followers +
     # per-reel views/likes to outbox/ig_stats.jsonl — the tracker feeds itself. Uses the
     # same Chrome the poster just drove; best-effort (a scrape hiccup must never mark a
