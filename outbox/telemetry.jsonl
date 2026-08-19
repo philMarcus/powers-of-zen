@@ -771,3 +771,9 @@
 {"ts": "2026-08-19 13:14:43", "event": "music_realign", "journey": "chameleon_prism", "detail": "4 candidates"}
 {"ts": "2026-08-19 13:17:03", "event": "review", "journey": "chameleon_prism"}
 {"ts": "2026-08-19 14:44:58", "event": "state_repair", "detail": "35 failed->live (paused-platform miscount)"}
+{"ts": "2026-08-19 17:50:28", "event": "jqueued", "journey": "coral_synapse", "detail": "reject -> re-queue front, same seed (depth fix)"}
+{"ts": "2026-08-19 17:50:28", "event": "jqueued", "journey": "lantern_mangrove", "detail": "reject -> re-queue front, same seed (depth fix)"}
+{"ts": "2026-08-19 17:50:28", "event": "jqueued", "journey": "termite_citadel", "detail": "reject -> re-queue front, same seed (depth fix)"}
+{"ts": "2026-08-19 17:50:28", "event": "jqueued", "journey": "cobalt_rookery", "detail": "reject -> re-queue front, same seed (depth fix)"}
+{"ts": "2026-08-19 17:50:28", "event": "jqueued", "journey": "ruby_furnace", "detail": "reject -> re-queue front, same seed (depth fix)"}
+{"ts": "2026-08-19 17:50:28", "event": "jqueued", "journey": "magnetite_choir", "detail": "reject -> re-queue front, same seed (depth fix)"}

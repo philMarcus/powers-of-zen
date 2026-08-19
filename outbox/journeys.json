@@ -163,49 +163,49 @@
     },
     "bee_cathedral": {
       "state": "queued",
-      "order": 0,
+      "order": 6,
       "ts": "2026-08-13 13:57:36",
       "note": "REALMS rethink wave 2 (2026-08-13)"
     },
     "observatory_dusk": {
       "state": "queued",
-      "order": 1,
+      "order": 7,
       "ts": "2026-08-13 13:57:36",
       "note": "REALMS rethink wave 2 (2026-08-13)"
     },
     "bamboo_sea": {
       "state": "queued",
-      "order": 2,
+      "order": 8,
       "ts": "2026-08-14 00:14:10",
       "note": "composed by midnight refill"
     },
     "peony_shell": {
       "state": "queued",
-      "order": 5,
+      "order": 9,
       "ts": "2026-08-15 00:17:21",
       "note": "composed by midnight refill"
     },
     "pomegranate_vault": {
       "state": "queued",
-      "order": 11,
+      "order": 10,
       "ts": "2026-08-16 00:14:48",
       "note": "composed by midnight refill"
     },
     "cherenkov_cistern": {
       "state": "queued",
-      "order": 13,
+      "order": 11,
       "ts": "2026-08-17 00:17:38",
       "note": "composed by midnight refill"
     },
     "lissajous_stage": {
       "state": "queued",
-      "order": 14,
+      "order": 12,
       "ts": "2026-08-17 00:17:39",
       "note": "composed by midnight refill"
     },
     "motmot_cenote": {
       "state": "queued",
-      "order": 15,
+      "order": 13,
       "ts": "2026-08-17 00:17:39",
       "note": "composed by midnight refill"
     },
@@ -215,26 +215,74 @@
       "new_seed": true,
       "ts": "2026-08-17 21:52:22",
       "note": "re-render: video rejected in review",
-      "order": 16
+      "order": 14
     },
     "bourdon_foundry": {
       "state": "queued",
-      "order": 17,
+      "order": 15,
       "ts": "2026-08-18 00:15:19",
       "note": "composed by midnight refill"
     },
     "fiddler_commons": {
       "state": "queued",
-      "order": 18,
+      "order": 16,
       "ts": "2026-08-18 00:15:19",
       "note": "composed by midnight refill"
     },
     "kelp_dynamo": {
       "state": "queued",
-      "order": 19,
+      "order": 17,
       "ts": "2026-08-18 00:15:19",
       "note": "composed by midnight refill"
+    },
+    "coral_synapse": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-19 17:50:28",
+      "note": "re-render for depth fix (pre-2026-08-17 render; same seed — engine change)",
+      "order": 0
+    },
+    "lantern_mangrove": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-19 17:50:28",
+      "note": "re-render for depth fix (pre-2026-08-17 render; same seed — engine change)",
+      "order": 1
+    },
+    "termite_citadel": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-19 17:50:28",
+      "note": "re-render for depth fix (pre-2026-08-17 render; same seed — engine change)",
+      "order": 2
+    },
+    "cobalt_rookery": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-19 17:50:28",
+      "note": "re-render for depth fix (pre-2026-08-17 render; same seed — engine change)",
+      "order": 3
+    },
+    "ruby_furnace": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-19 17:50:28",
+      "note": "re-render for depth fix (pre-2026-08-17 render; same seed — engine change)",
+      "order": 4
+    },
+    "magnetite_choir": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-19 17:50:28",
+      "note": "re-render for depth fix (pre-2026-08-17 render; same seed — engine change)",
+      "order": 5
     }
   },
-  "updated": "2026-08-19 16:39:18"
+  "updated": "2026-08-19 17:50:28"
 }

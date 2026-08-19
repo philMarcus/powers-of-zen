@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-08-19 16:39:18",
+    "updated": "2026-08-19 17:50:28",
     "paused_platforms": [
       "tiktok"
     ],
@@ -5364,7 +5364,7 @@
       "yt_title": "Dive into the endless fractal of life 🌊✨",
       "yt_desc": "",
       "cameo": "amos",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -5495,7 +5495,7 @@
       "yt_title": "Dive into the glowing heart of a mangrove world 🌿✨",
       "yt_desc": "",
       "cameo": "tina",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -5836,7 +5836,7 @@
       "yt_title": "A cosmic lattice hums in violet dusk, galaxies caught like dew on rose-gold threads 🌌",
       "yt_desc": "",
       "cameo": "lorraine",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -5954,7 +5954,7 @@
       "yt_title": "A sun’s last breath in a sea of stars 🌌",
       "yt_desc": "",
       "cameo": "janet",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -6085,7 +6085,7 @@
       "yt_title": "A hummingbird’s ruby throat pulses like a star 🌌",
       "yt_desc": "",
       "cameo": "dora",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -6427,7 +6427,7 @@
       "yt_title": "Diving through the iron heart of a frozen world 🌌",
       "yt_desc": "",
       "cameo": "adam",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
