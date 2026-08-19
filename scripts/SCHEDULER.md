@@ -13,11 +13,32 @@ The full no-Claude daily loop (times local):
 Knobs (queue target, budget, backpressure, tier mix, pauses) live in outbox/journeys.json
 → editable in the dashboard's ⚙ Settings tab. Times live HERE, not in settings.
 
+## HIDDEN EXECUTION (2026-08-19 — hard-won, don't regress)
+A console .bat fired by Task Scheduler in the interactive session POPS A CMD WINDOW that
+steals focus (hourly gate = hourly focus theft), and an accidentally-closed window kills
+the job (a render dies mid-batch). All three owned tasks therefore run through
+`scripts/hidden_task.vbs` (a generic runner: `wscript.exe hidden_task.vbs <path-to-bat>`
+— wscript is a GUI host, `Run(...,0,False)` gives the bat NO window). The legacy 8am/6pm
+tasks are locked to scheduled_post.bat (elevation needed to edit them), so that bat now
+just hands off to the hidden runner and exits — sub-second flash instead of a lingering
+console.
+
+.bat AUTHORING RULES (each broke a night silently before being learned):
+  • CRLF line endings — bash-heredoc-written .bats get LF and Task Scheduler's cmd
+    misparses them (write with python newline="" and explicit \r\n).
+  • Task Scheduler cwd is System32 — every WSL call must `cd /mnt/c/Users/Phil/zoomer &&`
+    first or relative paths fail with an empty log and Last Result 1.
+  • `timeout /t` needs console stdin and dies under the scheduler — use `ping -n N
+    127.0.0.1 >nul` if a wait is ever needed (currently none is: poster self-heals Chrome).
+  • schtasks /Change /TR prompts for a password (hangs headless) and /TR quoting mangles
+    through WSL interop — repoint actions with PowerShell instead:
+    `Set-ScheduledTask -TaskName X -Action (New-ScheduledTaskAction -Execute 'wscript.exe'
+    -Argument 'C:\Users\Phil\zoomer\scripts\hidden_task.vbs C:\...\target.bat')`
+
 ## Register (run once in PowerShell or cmd; ADMIN if it complains):
-    schtasks /Create /TN "PowersOfZen-8am"    /TR "C:\Users\Phil\zoomer\scripts\scheduled_post.bat"   /SC DAILY /ST 08:00 /F
-    schtasks /Create /TN "PowersOfZen-6pm"    /TR "C:\Users\Phil\zoomer\scripts\scheduled_post.bat"   /SC DAILY /ST 18:00 /F
-    schtasks /Create /TN "PowersOfZen-refill" /TR "C:\Users\Phil\zoomer\scripts\scheduled_refill.bat" /SC DAILY /ST 00:00 /F
-    schtasks /Create /TN "PowersOfZen-render" /TR "C:\Users\Phil\zoomer\scripts\scheduled_render.bat" /SC DAILY /ST 01:30 /F
+    schtasks /Create /TN "PowersOfZen-refill"   /TR "wscript.exe C:\Users\Phil\zoomer\scripts\hidden_task.vbs C:\Users\Phil\zoomer\scripts\scheduled_refill.bat" /SC DAILY /ST 00:00 /F
+    schtasks /Create /TN "PowersOfZen-render"   /TR "wscript.exe C:\Users\Phil\zoomer\scripts\hidden_task.vbs C:\Users\Phil\zoomer\scripts\scheduled_render.bat" /SC DAILY /ST 01:30 /F
+    schtasks /Create /TN "PowersOfZen-postgate" /TR "wscript.exe C:\Users\Phil\zoomer\scripts\hidden_task.vbs C:\Users\Phil\zoomer\scripts\scheduled_post_gate.bat" /SC HOURLY /ST 00:05 /F
 
 All tasks run "Interactive only" (Phil stays logged in; system sleep is Never). The
 overnight pair needs the machine AWAKE at 00:00/01:30 — if that's ever not true, tick

@@ -96,13 +96,17 @@ def candidate_plan(journey, spec, bar):
     own_r = DECK["lanes"][own]["rhythm"]
     alt_r = {"downbeat": "third_answer", "third_answer": "downbeat",
              "halftime": "heartbeat", "heartbeat": "halftime"}[own_r]
+    # NOTE when own_r is "heartbeat", alt_r IS "halftime" — the fixed halftime slot would
+    # then duplicate the alt slot's id, overwrite its files, and crash the dashboard on
+    # duplicate widget keys (chameleon_prism 2026-08-19). Give that case a distinct rhythm.
+    half_r = "halftime" if alt_r != "halftime" else "third_answer"
     plan = [
         (own, own, None, None),
         (f"{own}-b", own, None, None),                      # seed jitter, same recipe
         (f"{own}-{alt_r}", own, alt_r, None),
         (f"{wild[0]}-wild", wild[0], None, None),
         (f"{wild[1]}-wild", wild[1], None, None),
-        (f"{own}-halftime", own, "halftime", None),
+        (f"{own}-{half_r}", own, half_r, None),
         (f"{wild[2]}-wild", wild[2], None, None),
     ]
     if h % 4 == 0:      # the occasional 3/4 spice (sparingly — Phil 2026-08-13)
@@ -111,7 +115,15 @@ def candidate_plan(journey, spec, bar):
         fill = next(r for r in ("heartbeat", "third_answer", "downbeat")
                     if r not in (own_r, alt_r, "halftime"))
         plan.append((f"{own}-{fill}", own, fill, None))
-    return [(cid, ln, rk, bpm, s0 + 37 * i) for i, (cid, ln, rk, bpm) in enumerate(plan)]
+    # final guard: ids must be unique — files and dashboard keys are id-derived
+    seen = {}
+    out = []
+    for i, (cid, ln, rk, bpm) in enumerate(plan):
+        seen[cid] = seen.get(cid, 0) + 1
+        if seen[cid] > 1:
+            cid = f"{cid}{seen[cid]}"
+        out.append((cid, ln, rk, bpm, s0 + 37 * i))
+    return out
 
 
 def bpm_for(journey, cut, shift_sec=None):

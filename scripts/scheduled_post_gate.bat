@@ -1,10 +1,7 @@
 @echo off
-REM Powers of Zen - posting entry point. DELEGATES to the cadence gate (post_gate.py):
-REM the dashboard's post_every_hours/post_next clock decides whether a post fires.
-REM All posting tasks run this; the gate makes double-posting impossible.
-REM NOTE Task Scheduler runs with cwd=System32 -> every WSL call must cd first
-REM (2026-08-18: relative paths silently broke every hourly run; Last Result 1, empty log).
-REM NOTE 'timeout' needs console stdin and dies under Task Scheduler -> ping-sleep.
-wsl.exe bash -lc "cd /mnt/c/Users/Phil/zoomer && bash scripts/start_chrome_zen.sh >> outbox/post_gate.log 2>&1"
-ping -n 21 127.0.0.1 >nul
+REM Powers of Zen - posting gate entry point. One silent line: post_gate.py decides
+REM whether a post fires (cadence clock in journeys.json); poster.py self-heals Chrome
+REM itself, so nothing else belongs here. Launched HIDDEN via hidden_post_gate.vbs
+REM (2026-08-19: a console .bat fired hourly by Task Scheduler stole focus every hour).
+REM NOTE Task Scheduler cwd = System32 -> the WSL call must cd first.
 wsl.exe bash -lc "cd /mnt/c/Users/Phil/zoomer && python3 scripts/post_gate.py >> outbox/post_gate.log 2>&1"

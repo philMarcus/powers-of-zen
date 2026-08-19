@@ -471,7 +471,9 @@ def audition_candidates(v, choose_advances_to=None):
                        + (f" · {c['mood']}" if c.get("mood") else "")
                        + (" · ✅ chosen" if is_chosen else ""))
             if st.button("✅ Chosen" if is_chosen else "Choose",
-                         key=f"ch_{v['journey']}_{c['id']}"):
+                         # index in the key: duplicate candidate ids (a music_gen plan
+                         # collision) must degrade to a cosmetic dupe, never crash the tab
+                         key=f"ch_{v['journey']}_{i}_{c['id']}"):
                 choose_track(v["journey"], c["id"])
                 if choose_advances_to:
                     set_state(v["journey"], choose_advances_to)
