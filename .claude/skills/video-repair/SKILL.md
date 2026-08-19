@@ -21,7 +21,9 @@ frame count + bar grid are NEVER changed, so music alignment survives.
    start). Regenerates old tail + card-0 slots + card 1's arrival as ONE continuous arc.
 3. **Opening is fine, loop seam is bad** (render predates the IPA tail, or the wrap reads ugly)
    → `python3 scripts/replace_tail.py <journey> [--model M] [--src-version vN]`
-   Regenerates only the last L (24) frames, schedule-faithful, IPA-homing onto frame 0.
+   Regenerates only the last L frames, where L = round(24 × fpb/7) (21–31 across the catalog)
+   — read `loop["frames"]` from the compile, never assume 24. Schedule-faithful, IPA-homing
+   onto frame 0.
 4. **Where does the result go?**
    - Video still in REVIEW → add `--queue-review` to either tool (upserts the review file;
      captions are preserved).
@@ -64,10 +66,16 @@ frame count + bar grid are NEVER changed, so music alignment survives.
 - **Engine-1 sources**: today's grammar must compile to EXACTLY the saved frame count
   (check `len(compile) == frames on disk`) or the slots don't line up — abort if not.
 - **Cameos**: replace_opening refuses a cameo in the regenerated slots (move it in the journey
-  first); for replace_tail, check the cameo window does not overlap the tail (last 24 frames).
+  first); for replace_tail, check the cameo window does not overlap the tail — the last L =
+  round(24 × fpb/7) frames (21–31 across the catalog); read `loop["frames"]` from the compile,
+  never assume 24.
+- **Resolve windows are NOT reproduced by the repair tools** — on a `--resolve` render (default
+  since 2026-08-14) replace_opening strips card 1's depth scaffold + depth prompt clause; full
+  re-render or accept the mismatch.
 - The native engine already does IPA homing on every NEW render (dive.py exact-loop tail;
-  `--classic-tail` restores the old gap-scaled morph for A/B) and renders frame 0 wide
-  (T_ESTABLISH + anti-close-up negatives). These tools exist for renders made before that,
+  `--classic-tail` restores the old gap-scaled morph for A/B), renders frame 0 wide
+  (T_ESTABLISH + anti-close-up negatives), and applies resolve-on-approach depth scaffolds
+  (default ON, scaffold v3 looming/occlusion). These tools exist for renders made before that,
   and for surgical fixes that keep an approved body.
 - Legacy tools `repair_seam.py` + `reseam_production.py` are superseded by replace_tail +
   make_candidate `--install` (same measurement/swap contract); keep them for reference.

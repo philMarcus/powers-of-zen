@@ -19,8 +19,11 @@ from the snapshot series.
 ```bash
 python3 scripts/ig_stats.py            # appends one row per reel to outbox/ig_stats.jsonl
 ```
-- Needs zen Chrome up (`scripts/start_chrome_zen.sh`, CDP :9222). The tool opens its OWN tab
+- Chrome is already up when invoked from the poster; standalone runs need
+  `scripts/start_chrome_zen.sh` (CDP :9222). The tool opens its OWN tab
   and closes it — the poster's platform tabs are untouched.
+- A snapshot runs automatically after every post; the dashboard Live tab shows the latest
+  views/likes/comments per video.
 - Likes/comments come from a trusted-CDP hover over each reels-grid tile (Phil's method — the
   overlay is CSS :hover, synthetic JS events do NOT trigger it); page visits only as fallback.
 - Follower count rides along on every row → follower-over-time and per-post deltas come free.
@@ -61,7 +64,7 @@ outbox/video_features.json) and correlates each with like%.
 - Big shifts (tier_share, templates) → dashboard Settings / `outbox/journeys.json`, and note
   the change + the evidence in CLAUDE.md's current-state.
 
-## Current standing findings (2026-08-13 baseline, n=31 reels, 33 followers)
+## Current standing findings — 2026-08-13 baseline (n=31 reels, 33 followers) — SUPERSEDED, re-run ig_analyze before citing; followers were 53 by 2026-08-19
 Dark+saturated beats pale high-key and STRENGTHENS under qscore (sat +0.34 / lum −0.33 /
 dark-frac +0.29); tier by qscore: L 1.36x > M 0.98x > S 0.92x (longs EARN pushes; shorts'
 decent like% never converts to reach); candy_gloss retired (0.22x sugar_nebula = catalog

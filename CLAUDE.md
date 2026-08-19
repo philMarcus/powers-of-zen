@@ -115,6 +115,33 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-19 (HARDENING DAY): dashboard music-pick crash fixed (music candidate_plan emitted
+duplicate ids when the lane rhythm is heartbeat — alt slot == halftime slot, second take
+overwrote the first's files; distinct rhythm + id-uniquify guard + index in the widget key;
+3 existing dupes deduped). SCHEDULER DE-INTRUDED: all tasks now run WINDOWLESS via
+scripts/hidden_task.vbs (a Task-Scheduler .bat pops a focus-stealing console; wscript
+Run(...,0) hides it; legacy 8am/6pm bats hand off to the same runner) — repoint actions
+with PowerShell Set-ScheduledTask, NEVER schtasks /Change (password-prompts + quote-mangles;
+rules in SCHEDULER.md "HIDDEN EXECUTION"). FULL AUDIT SWEEP (2 subagents; 15 code findings
+fixed, commit ee757f7): the big one — poster counted PAUSED platforms in the live check, so
+every post since the TikTok pause landed state=failed (34 repaired to live; Live tab was
+right, analytics/state were wrong). post_gate: flock (Post-now button + hourly task can't
+double-post), poster timeout 90min, GROUND-TRUTH advance (19h window burns only when the
+target video verifiably went live). Atomic tmp+os.replace on pipeline.json/journeys.json/
+spec writes. night_batch: per-child timeouts (a wedged ComfyUI can't hold the lock across
+nights), compile-failure retry-once, GPU wait = comfy_busy OR util≥60 (game) — dashboard
+previews no longer burn budget. Refill retry deadline-bounded to 75min total (was hitting
+01:30 exactly). music_gen: empty-candidates guard + free_vram on every exit + choose()
+re-reads before save. caption: comfy_busy gate, journey_worlds in try, utf-8 atomic spec
+write. poster: preconditions (missing file/empty caption → failed, never a blank post).
+ALL SKILLS + PLAN.md DE-STALED (subagent, ~30 corrections): zen-post now reads
+pipeline.json + documents the cadence gate; tempo math is cards×fpb/3 everywhere; composer
+schema documents `resolve`; repair skill notes tools don't reproduce resolve windows;
+PLAN.md auto-post RESUMED + Phase 1 depth DONE. OPS: 08-19 batch ran clean (4 depth-fix
+videos in Review: meteorite_cradle/physarum_maze/caddis_masonry/wild_yeast); midnight
+refill failed on EXPIRED OAUTH (Phil /login'd; headless auth re-verified — tonight runs);
+ember_meadow posted 12:00, desert_rosette next 08-20 07:00. Queue 12 journeys. Phil still
+to judge: squid_lantern v5 depth A/B (v1 vs v5 loop in output/squid_lantern/v5/build/).
 2026-08-17 (LATE NIGHT — DEPTH FIXES #1+#4 BUILT + LIVE): Phil's picks implemented, #2
 (palette gloom fade — Phil does NOT want it) and #3 (depth-aware detail_boost — "I like
 sharp") HELD. #4 = scaffold v3 in engine/scaffold.py: (a) true per-instance LOOMING —

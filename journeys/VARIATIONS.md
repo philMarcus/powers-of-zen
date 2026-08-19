@@ -33,8 +33,9 @@ Single-object approaches use the tracker, not a scaffold; seams keep their own t
 
 Raw material for composing journeys. Any register can be swapped for a variant;
 scales can be fractional (a third to half an order of magnitude apart is fine —
-set `exp` to floats and use per-card `sec` to linger). Journeys are CIRCULAR:
-the last card's `next_target` names the first card's world. The seam pair can be
+set `exp` to floats; `dur` is uniform per journey, no per-card lingering). Journeys
+are CIRCULAR: the loop target auto-derives from `regs[0]` (no manual last-card
+target needed). The seam pair can be
 anything — continent→nucleus is legal and encouraged when it's beautiful.
 
 ## Cosmological (10²⁰–10²⁶) — geometric/mathematical network plays

@@ -7,8 +7,8 @@ description: Produce a Zoomer dive video (Powers-of-Ten-style AI zoom short) fro
 
 ## What this produces
 A 9:16 looping short that dives continuously through scale registers (×10 per card), with the
-10ⁿ odometer counter and an exact loop. Length comes from CARD COUNT (every card is one bar):
-5 cards ≈ 11.7s · 7 ≈ 16.3s · 10 ≈ 23.3s · 11 ≈ 25.7s. Output: `output/<journey>/vN/`
+10ⁿ odometer counter and an exact loop. Length comes from card count × tempo — seconds ≈
+cards × fpb/3 (fpb 6–9, see journey-composer TEMPO). Output: `output/<journey>/vN/`
 (never overwritten) with `<journey>.mp4` (primary, zoom-out), `<journey>_divein.mp4`,
 `build/frames/`, `build/track.jsonl` (per-frame aim/track debug) and `run.json` (provenance:
 model, checkpoint, style, seed).
@@ -29,6 +29,7 @@ python3 engine/dive.py journeys/<j>.json --from-card K [--seed S] [--src-version
     # (source untouched) and regenerate from card K on — new seed and/or edited later cards.
     # Card = journey register (boundaries only). Refuses the loop tail (use repair_seam) and
     # cameo-window interiors. Dashboard path: review card → ↻ from-card box + Reject → re-queue.
+python3 engine/dive.py journeys/<j>.json --no-resolve   # A/B: disable resolve-on-approach depth scaffolds (DEFAULT ON)
 # active journeys live flat in journeys/; legacy schemas in journeys/engine1|engine0
 # (resolve names in python via pipeline.journey_path(), never a hand-built path)
 python3 scripts/caption.py <j>                            # 5 caption options (local VLM)
@@ -38,7 +39,9 @@ python3 scripts/night_batch.py [j ...]     # batch: auto-picks from the journey 
                                            # queue_review -> caption. render_batch.sh wraps it.
                                            # A 01:30 Task Scheduler job runs it nightly — check
                                            # the queue in the dashboard's Journeys tab before
-                                           # rendering by hand (SCHEDULER.md).
+                                           # rendering by hand (scripts/SCHEDULER.md). After all
+                                           # renders, one music-pregen pass runs over the newly
+                                           # rendered journeys.
 python3 scripts/track_lab.py overlay output/<j>/vN        # SEE the tracking (aim/lock overlay)
 python3 scripts/track_lab.py selftest                     # propagation math vs zoom_transform
 ```
@@ -50,6 +53,7 @@ CONTEXT (GPU work happens outside the model) — run them in the background and 
   2026-07-31: with it the dive holds coherently on ONE object; without it the zoom wanders).
 - `--plain` — no tracking AND no CN (engine-1-style pure feedback zoom). NOT the CN test.
 - `--style <deck name>` look A/B · `--model turbo|ds` (ds is the house default).
+- `--no-resolve` — disable resolve-on-approach depth scaffolds (they are DEFAULT ON).
 
 ## What the engine does (settled 2026-07-31 — don't re-derive or re-litigate)
 1. **Uniform bars.** Every card in a journey shares one `dur` (4 = a bar). Mixed durations made
@@ -74,6 +78,11 @@ CONTEXT (GPU work happens outside the model) — run them in the background and 
    IMAGE (IP-Adapter ramp) + depth-CN landing alignment + a small FIXED blend — the world
    converges on home while every frame stays freshly rendered and diving. `--classic-tail`
    restores the old gap-scaled pixel morph for A/B.
+9. **RESOLVE-ON-APPROACH depth scaffolds — default ON** (engine/scaffold.py; windows
+   auto-derived per card, journey `resolve` field overrides/opts out). Since 2026-08-17 they
+   carry scaffold v3 (per-instance looming + painter's-algorithm occlusion) plus a
+   depth-of-field clause appended to resolve-window prompts; palette-gloom and depth-aware
+   detail_boost were deliberately HELD by Phil.
 
 ## Repairing an existing render (don't full re-render for a fixable defect)
 See the **video-repair** skill: `replace_opening.py` (bad opening card — scene kept, arc
@@ -98,7 +107,7 @@ Engine-critical rules:
   auto-derives that loop target from `regs[0]` (`loop_target` if present, else its scene) — so
   never hand-author a last-card target for the loop.
 
-## Mascot cast (ONE cameo per video, scale-matched, size ≥0.12, rotate the cast)
+## Mascot cast (ONE cameo per video, REALM-matched: |card.exp − mascot.exp| ≤ 3, hard-failed by audit_starts; size ≥0.12; cast rotation only breaks ties among passers)
 | exp | register | mascot (display name) |   | exp | register | mascot (display name) |
 |---|---|---|---|---|---|---|
 | -15 | quark | clark (Clark the Quark) |  | 1 | flora/tree | dora (Dora the Flora) |
@@ -115,15 +124,18 @@ parentheses is the DISPLAY name and is what every user-facing string says (capti
 question, hashtags, the dashboard) — `pipeline.MASCOT_DISPLAY` is the single source. Note two
 display first names differ from their key on purpose: `newman` → Dwight, `aleksey` → Alexis.
 Never rename a file or a JSON field to match a display name.
-A cameo may sit on any card EXCEPT one whose frames fall inside the loop tail (the last ~24
-frames morph home and would smear it). Card 0 is fine — the engine pastes from frame 1.
+A cameo may sit on any card EXCEPT one whose frames fall inside the loop tail (the last
+L = round(24 × fpb/7) frames — 21–31 across the catalog — morph home and would smear it).
+Card 0 is fine — the engine pastes from frame 1.
 
 ## After a render
 `queue_review.py` then `caption.py` — THAT order. `queue_review.py` creates the pipeline.json
 entry; `caption.py` silently throws its output away if there is no entry to write into (it still
 prints "5 caption+title pairs", so the log looks fine). Then in
-the dashboard: mark a start frame → **Approve → Music** (phase-shifts, then generates + aligns 5
-candidates at the format's bpm) → choose a track → Production → the scheduler posts.
+the dashboard: mark a start frame → **Approve → Music** (phase-shifts, then REALIGNS the
+overnight pregen candidates in seconds — `music_gen --realign`; full generation only if no
+pregen exists) → choose a track → Production → the hourly post_gate fires on the
+post_every_hours (19h) cadence, holding the window when nothing is queued (scripts/SCHEDULER.md).
 
 ## Debugging
 - `build/track.jsonl` + `track_lab.py overlay` show exactly what the camera aimed at and why.

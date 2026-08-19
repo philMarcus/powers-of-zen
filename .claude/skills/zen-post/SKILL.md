@@ -1,24 +1,38 @@
 ---
 name: zen-post
-description: Post the next queued Powers of Zen video to TikTok, YouTube Shorts, and Instagram via the CDP-driven PowersOfZen Chrome profile. Use when asked to post, publish, or run the posting queue. Reads outbox/queue.json for file + captions.
+description: Post the next queued Powers of Zen video to TikTok, YouTube Shorts, and Instagram via the CDP-driven PowersOfZen Chrome profile. Use when asked to post, publish, or run the posting queue. Reads outbox/pipeline.json (pipeline.next_to_post()) for file + captions.
 ---
 
 # Posting a Powers of Zen video
 
 **scripts/poster.py is the harness** — DRY-RUN VALIDATED on all 3 platforms
 (2026-07-27). Run `python3 scripts/poster.py --dry-run --journey <name>` to test,
-then drop --dry-run to post for real. Reads outbox/queue.json (needs approved:true,
-or use --journey). This playbook below is the manual reference the harness encodes.
+then drop --dry-run to post for real. Reads outbox/pipeline.json via
+`pipeline.next_to_post()` (next queued entry, or use --journey). This playbook below
+is the manual reference the harness encodes. After a successful post the poster runs
+ig_stats.py automatically, appending views/likes/comments to outbox/ig_stats.jsonl
+(shown in the dashboard Live tab).
+
+## Cadence gate (how posting normally fires)
+Posting normally fires from the hourly PowersOfZen-postgate task → `scripts/post_gate.py`,
+controlled by settings `post_every_hours` (19h) and `post_next` (dashboard Settings,
+rounded to nearest hour). The gate HOLDS its window when nothing is queued or the post
+did not verify live. Run post_gate.py rather than poster.py unless deliberately posting
+out-of-band. See scripts/SCHEDULER.md.
+All scheduled tasks run windowless via scripts/hidden_task.vbs — see scripts/SCHEDULER.md
+"HIDDEN EXECUTION".
 
 # Posting a Powers of Zen video (browser driver playbook)
 
-Inputs come from `outbox/queue.json`: next unposted entry has `file` (repo-relative),
-`caption`, `yt_title`, `yt_desc`. Update its `status` after posting. Windows path for
+Inputs come from `outbox/pipeline.json` via `pipeline.next_to_post()`: the entry has
+`file` (repo-relative), `caption`, `yt_title`, `yt_desc`. The poster updates its state
+after posting. Windows path for
 file inject: `C:\Users\Phil\zoomer\<file with backslashes>`.
 
 ## Setup
-- Chrome must be running with the PowersOfZen profile: `scripts/start_chrome_zen.sh`
-  (CDP on :9222). Driver: `python3 scripts/zen_browser.py <cmd> --tab=<url-substring> …`
+- poster.py self-heals Chrome (CDP :9222 health-check → relaunch via
+  `scripts/start_chrome_zen.sh`); a manual start is only needed for interactive
+  debugging. Driver: `python3 scripts/zen_browser.py <cmd> --tab=<url-substring> …`
 - Target tabs by URL substring, NEVER by index (tab order changes on activation).
 - Screenshots land hi-DPI; **coordinate clicks = displayed-coords × 1.28**
   (viewport 2560 wide, DPR 1.5). Prefer DOM/JS clicks; use coordinates only when

@@ -288,8 +288,9 @@ few). NOTHING posts without Phil's approval — queue.json has `approved: false`
 Phil flips to true (or approves a range) before the harness posts.
 
 ### AUTO-POST STATUS
-Halted 2026-07-27 (was burning premium budget + would post unapproved). Resumes only
-once the LOCAL harness exists AND posts are Phil-approved. Cold-start underperformance
+RESUMED — the hourly post_gate posts on a 19h cadence (see scripts/SCHEDULER.md).
+(Originally halted 2026-07-27 — was burning premium budget + would post unapproved —
+until the LOCAL harness existed AND posts were Phil-approved.) Cold-start underperformance
 of first posts is normal, not a content verdict. Seeding to r/oddlysatisfying /
 r/interestingasfuck can prime reach.
 
@@ -360,13 +361,15 @@ view-count collection. Keep stages format-agnostic for future video styles.
 **Dashboard (Streamlit, local, free — like autonomy_dev's):** panels —
 - Queue: preview · cut · model · title · EDITABLE caption (writes to pipeline.json) · sched time
 - Review: rendered videos awaiting Phil's yes → approve moves to Queue
-- Live: posted + 3 platform links (view-count slot, filled later if safe)
+- Live: posted + 3 platform links (view-count slot now FILLED — views/likes/comments shown
+  per video)
 - Journeys pending: (once composer exists) drafts to skim/edit/approve pre-render
 - Telemetry: recent activity, failed posts, failed renders, flags
 
 **Scheduler — WINDOWS-SIDE (Phil's choice 2026-07-27; his autonomy was a Windows script,
-more stable than WSL cron/daemon which idles out). Windows Task Scheduler runs a script at
-08:00/18:00 that (a) ensures Chrome-zen is up, (b) calls `wsl … python3 scripts/poster.py`.
+more stable than WSL cron/daemon which idles out). Posting: the hourly PowersOfZen-postgate
+task fires `scripts/post_gate.py` (the legacy 8am/6pm tasks delegate to the same gate) —
+scripts/SCHEDULER.md is the authority on the tasks.
 COST-CRITICAL: NO Claude in the loop — poster.py is standalone (reads pipeline.json, posts
 next approved, writes telemetry), always-on cost = electricity only. Claude appears ONLY for
 caption-writing + journey composition. Task Scheduler also wakes WSL (solves idle-shutdown)
@@ -377,7 +380,8 @@ model) for queued/live videos. production_alternates/ = other model (both cuts) 
 cut of the chosen model. Fix promote.py to take cut direction (currently over-includes both
 cuts of chosen model).
 
-**View counts:** HOLD (scraping is fiddly + mild ban-risk on new accounts). Revisit at volume.
+**View counts:** SHIPPED 2026-08-13 — ig_stats.py trusted-CDP hover scrape, auto-runs after
+every post.
 
 **Harness polish:** click Done/Close after each post so Phil lands back on the videos list.
 
@@ -1110,7 +1114,10 @@ closure before render.
 
 ## Build sequence (each phase gated by a lab A/B, the pattern that works)
 - **Phase 1 — depth realism in scaffolds** (day): log-uniform depth, full-range layering,
-  parallax planes. Gate: do resolve windows stop reading flat?
+  parallax planes. Gate: do resolve windows stop reading flat? **DONE — scaffold v3 shipped
+  2026-08-17** (per-instance looming via `_advance()`, painter's-algorithm occlusion, depth
+  prompt clause in resolve windows); fixes #2 (palette gloom) and #3 (depth-aware
+  detail_boost) explicitly HELD by Phil.
 - **Phase 2 — warp core** (the heart): engine/warp.py primitives + disocclusion-mask
   denoise + depth EMA; extend track.py's exact propagation so tracker aim and cameo
   positions ride ANY warp (it already does zoom+roll). Gate: orbit_lab — re-render one

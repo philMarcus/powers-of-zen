@@ -1,6 +1,6 @@
 ---
 name: journey-composer
-description: Compose a Powers-of-Zen world-card JOURNEY (the Layer-3 content of a dive video) that renders correctly on engine 2.0 — a logically-consistent, object-containment zoom chain. Use when asked to write, generate, or fix a journey, or to build the local journey-generator that mass-produces them. This is the AUTHORING doctrine; engine/dive.py + engine/grammar.py implement it, .claude/skills/dive-video renders it.
+description: Compose a Powers-of-Zen world-card JOURNEY (the Layer-3 content of a dive video) that renders correctly on engine 2.x — a logically-consistent, object-containment zoom chain. Use when asked to write, generate, or fix a journey, or to build the local journey-generator that mass-produces them. This is the AUTHORING doctrine; engine/dive.py + engine/grammar.py implement it, .claude/skills/dive-video renders it.
 ---
 
 # Composing a Powers of Zen journey
@@ -112,8 +112,8 @@ moderately OFF-center) and grows the object there. So every `zoom` card's `scene
   "exp": 11,                        // 10^n metres; float ok. The exp JUMP to the next card
                                     //   decides zoom (small step) vs seam (big jump).
   "kind": "zoom",                   // "zoom" (default) | "seam"
-  "dur": 4,                         // BEATS (bar=4). Default 4=one bar; 8=linger 2 bars; subdivide a
-                                    //   bar only in groups summing to whole bars (2+2,1+3,4×1) — see pacing
+  "dur": 4,                         // BEATS (bar=4). UNIFORM for every card in the journey
+                                    //   (4 default, or 8 journey-wide), never mixed — see pacing
   "palette": "blazing orange and white",
 
   "scene": "the corona of a blazing star, arcs of fire and towering prominences, embers streaming",
@@ -123,6 +123,10 @@ moderately OFF-center) and grows the object there. So every `zoom` card's `scene
   "target_phrase": "the round banded planet",
                                     // TIGHT, 2-4 plain VISUAL words naming the object — for the detector.
   "target_pick": "salient",         // optional: how to choose among many — "salient"(default) | "random"
+  "resolve": {"mode": "sea|lattice|surface|web", "variant": ..., "density": ..., "size": ...},
+                                    // optional per-card override of the auto-derived depth scaffold;
+                                    //   "resolve": false opts the card out — see VARIATIONS.md
+                                    //   DEPTH-SCAFFOLD LIBRARY
   "cameo": { "sprite": "output/mascots/canon/<name>.png", "pos": [0.6,0.4], "size": 0.14 }  // optional, ONE card
 }
 ```
@@ -144,11 +148,11 @@ by the time we plunge, we already know where we are. When in doubt, make the tar
 - **`target`** = the object we dive into, described STATICALLY (present, prominent — no motion/time
   words). Omit on `seam` cards and on the last card (the loop auto-derives its target from card 0).
 - **`kind`** = "zoom" default; "seam" on a semantic-morph transition.
-- **`dur`** = duration in BEATS (a bar = 4). Default 4 (one bar); linger 8; faster only in groups
-  that sum to whole bars — see pacing.
+- **`dur`** = duration in BEATS (a bar = 4). UNIFORM across every card in the journey — 4
+  (default) or 8 journey-wide, never mixed — see pacing.
 - Top-level: `name`, `theme` (seed idea), `style` (a deck NAME — see STYLE below; do NOT write
-  free-text style words), `format` { `beats_per_bar` default 4, `exact_loop` true }, optional
-  `settings`.
+  free-text style words), `format` { `beats_per_bar` default 4, `exact_loop` true,
+  `frames_per_beat` 6–9 (per the TEMPO section), `counter` }, optional `settings`.
 - **`music_lane`** — a lane NAME from `styles/music_deck.json` (the sound analog of `style`:
   instrumentation lives in the deck, never free-text). Test: read each lane's `mood` line and
   pick the one a viewer of THIS journey would call right; among equally-right lanes prefer one
@@ -244,13 +248,13 @@ grid at compose time), so the pacing must be musical from the start. `dur` is in
 - **Never linger on a DIFFUSE scale** (fog, mist, plasma, featureless clouds) — if the journey
   is a dur-8 journey, diffuse scales argue for dur 4 overall instead (the skyfog lesson).
 - **The whole video = a WHOLE NUMBER OF BARS.** Sum every `dur`; it MUST be divisible by 4.
-- **LENGTH TIERS (Phil 2026-07-31): the catalog needs VARIED LENGTHS, not one size.** At 7
-  frames/beat and 12fps raw, seconds = beats × 7/12 (music bpm then varies feel further):
-  - **SHORT ≈ 9s = 16 beats (4 bars), ~4-5 cards** — a tight realm SLICE (a micro-world that
+- **LENGTH TIERS (Phil 2026-07-31): the catalog needs VARIED LENGTHS, not one size.** Seconds
+  ≈ cards × fpb/3, using the journey's own `frames_per_beat` (music bpm then varies feel further):
+  - **SHORT ~4-5 cards** — a tight realm SLICE (a micro-world that
     stays microscopic, one interior, one street). Great for realm-local loops.
-  - **MEDIUM ≈ 14-16s = 24 or 28 beats (6-7 bars), ~6-7 cards** — a roam (mathematical/quantum
+  - **MEDIUM ~6-7 cards** — a roam (mathematical/quantum
     scales, a themed traverse).
-  - **LONG ≈ 26-30s = 44-52 beats (11-13 bars), ~10-13 cards** — the full epic ladder.
+  - **LONG ~10-13 cards** — the full epic ladder.
   Don't default everything to 8 bars; pick the tier that fits the concept's natural size.
 - **Allocate bars by the visual journey AND the rhythm.** A scale you open ALREADY CLOSE on doesn't
   earn a whole bar; a big/dramatic descent or the seam deserves a clean strong-beat landing.
@@ -397,10 +401,9 @@ myth, a trending sound, an emotion…):
 3. First and last cards natural adjacent scales; last genuinely contains the first world;
    card 0 viewpoint pinned.
 4. Adjacent cards contrast in shape AND palette temperature.
-5. MEASURES: do the `dur`s group into WHOLE BARS (default 4/scale, linger 8, any sub-bar scales
-   summing to a bar like 2+2 or 1+3) so every strong beat lands a morph, and is the TOTAL divisible
-   by 4 (a whole number of bars)? Does the FIRST card open WIDE (target a small feature, not a
-   close-up)?
+5. MEASURES: is `dur` UNIFORM across every card (4, or 8 journey-wide, never mixed) so every
+   strong beat lands a morph, and is the TOTAL divisible by 4 (a whole number of bars)? Does the
+   FIRST card open WIDE (target a small feature, not a close-up)?
 6. Any object named twice across cards (double-ghost)? Any animal "traveled through"? Any
    featured face? Any MOTION/TIME language ("growing", "rushing closer", "as we approach",
    "keeps swelling until it becomes") or receding "tiny/far away" in a scene/target? (Static only.)
