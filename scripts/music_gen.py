@@ -216,6 +216,14 @@ def generate(journey, n=N_KEEP, shift=True, target="music"):
     # takes has no kick regardless of phrasing — measured). If the plan didn't yield enough
     # pulsed candidates, roll extra downbeat takes so the audition set always carries the
     # felt beat Phil asked for.
+    if not cands:
+        # every take failed (ComfyUI down / ACE missing / bad keyscale) — record WHY and
+        # free VRAM; the old unguarded max() crashed here, leaving no telemetry and
+        # ACE-Step's ~9GB resident (audit 2026-08-19)
+        print(f"{journey}: ALL {len(plan)} takes failed — nothing recorded (see errors above)")
+        pl.telem("music_fail", journey=journey, detail="all candidate takes failed")
+        music.free_vram()
+        return
     extra_seed = max(c["seed"] for c in cands) + 101
     tries = 0
     while sum(1 for c in cands if c.get("kick", 0) >= 0.25) < n and tries < 3:
@@ -271,7 +279,9 @@ def generate(journey, n=N_KEEP, shift=True, target="music"):
     model0 = v["model"]                    # what the tracks were BUILT for (staleness check)
     d = pl.load(); v = pl.get(d, journey)
     if not v:
-        print(f"{journey} vanished from pipeline.json during generation — not recorded"); return
+        print(f"{journey} vanished from pipeline.json during generation — not recorded")
+        music.free_vram()
+        return
     v[target] = {"bpm": bpm, "bar": round(bar, 3), "key": key,
                  "stage": "pregen" if target == "music_pregen" else "review",
                  "chosen": None, "candidates": cands,
@@ -329,15 +339,26 @@ def realign(journey):
 def choose(journey, cand_id):
     """Promote a candidate into the posting slot (mux its aligned full-res over the file)."""
     d = pl.load(); v = pl.get(d, journey)
+    if not v:
+        print(f"no pipeline entry for {journey}"); return
     m = v.get("music", {})
     cand = next((c for c in m.get("candidates", []) if c["id"] == cand_id), None)
     if not cand:
         print(f"no candidate {cand_id} for {journey}"); return
     src = ROOT / cand["aligned"]; dst = ROOT / v["file"]
+    if not src.exists():
+        print(f"candidate file missing: {src} — not promoting"); return
     silent = dst.with_name(dst.stem + "_silent.mp4")
     if not silent.exists():           # preserve the silent master once
         subprocess.run(["cp", str(dst), str(silent)], check=True)
     subprocess.run(["cp", str(src), str(dst)], check=True)
+    # RE-READ before writing — the copies above take seconds on drvfs, and saving the
+    # pre-copy snapshot clobbers any dashboard edit made meanwhile (same lost-update
+    # class fixed in generate(); this path was missed — audit 2026-08-19)
+    d = pl.load(); v = pl.get(d, journey)
+    if not v:
+        print(f"{journey} vanished during the copy — choice not recorded"); return
+    m = v.setdefault("music", {})
     m["chosen"] = cand_id; m["stage"] = "done"
     pl.save(d)
     pl.telem("music_choose", journey=journey, detail=cand_id)

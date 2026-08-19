@@ -16,6 +16,7 @@ Usage:
 import argparse
 import base64
 import json
+import os
 import re
 import subprocess
 import sys
@@ -170,7 +171,11 @@ def set_music_theme_if_empty(journey, theme):
     spec = json.loads(p.read_text(encoding="utf-8"))
     if not spec.get("music_theme"):        # don't clobber a theme Phil already set
         spec["music_theme"] = theme
-        p.write_text(json.dumps(spec, indent=2))
+        # explicit utf-8 (Windows python defaults to cp1252 — the mojibake class that hid
+        # frost_window) + write-then-replace so a mid-write kill can't truncate the spec
+        tmp = p.with_suffix(".json.tmp")
+        tmp.write_text(json.dumps(spec, indent=2, ensure_ascii=False), encoding="utf-8")
+        os.replace(tmp, p)
 
 
 def generate(journey, model="ds", no_theme=False):
@@ -180,7 +185,12 @@ def generate(journey, model="ds", no_theme=False):
         print(f"  no journey file for {journey}"); return None
     # captioning is text-only off the worlds, so frames aren't required (they're for future
     # image-grounding); a cleaned-up render still gets captioned.
-    style, worlds = journey_worlds(journey)
+    try:
+        style, worlds = journey_worlds(journey)
+    except Exception as e:
+        # a bad spec (legacy schema, mojibake, mid-write read) must skip THIS video,
+        # not kill the whole --all batch loop (audit 2026-08-19)
+        print(f"  journey_worlds failed for {journey}: {e}"); return None
     # user-facing name only: the pipeline entry stores the internal key (sprite stem), captions
     # always say the rhyming display name (Phil 2026-08-17) — see pl.MASCOT_DISPLAY.
     cameo_key = (v.get("cameo") or "").strip() if v else ""
@@ -259,8 +269,11 @@ def main():
     ap.add_argument("--no-theme", action="store_true", help="don't touch music_theme (production regen)")
     ap.add_argument("--force", action="store_true", help="run even if the GPU is busy")
     args = ap.parse_args()
-    if pl.gpu_busy() and not args.force:
-        print("GPU busy (render/music running) — skipping caption gen. Re-run when free, or --force.")
+    # comfy_busy (real ComfyUI work), not raw gpu_busy: the utilization check
+    # false-positives on a dashboard left open (Chrome decodes previews on the GPU),
+    # which silently left whole night batches uncaptioned (audit 2026-08-19)
+    if pl.comfy_busy() and not args.force:
+        print("ComfyUI busy (render/music running) — skipping caption gen. Re-run when free, or --force.")
         return
     if args.all:
         d = pl.load()

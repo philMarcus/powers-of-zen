@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-08-19 13:17:03",
+    "updated": "2026-08-19 16:39:18",
     "paused_platforms": [
       "tiktok"
     ],
@@ -322,7 +322,7 @@
       "yt_title": "A cozy bedroom hides a universe of tiny wonders 🌠",
       "yt_desc": "the dollhouse contains the town contains the dollhouse 🏠\n\n#shorts #powersofzen #miniature #oddlysatisfying #fyp",
       "cameo": null,
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -432,7 +432,7 @@
       "yt_title": "the atom in the ink is the planet under the city 📜🪐 10ᶻ",
       "yt_desc": "the atom in the ink is the planet under the city 📜🪐\n\n#shorts #powersofzen #mindbending #oddlysatisfying #fyp",
       "cameo": null,
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -518,7 +518,7 @@
       "yt_title": "a whole tiny world in one pond 🐟 10ᶻ",
       "yt_desc": "a whole tiny world in one pond 🐟\n\n#shorts #powersofzen #pond #oddlysatisfying #fyp",
       "cameo": null,
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -635,7 +635,7 @@
       "yt_title": "The quiet hum of falling snow",
       "yt_desc": "the village inside the snowflake ❄️\n\n#shorts #powersofzen #winter #cozy #oddlysatisfying #fyp",
       "cameo": null,
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -745,7 +745,7 @@
       "yt_title": "From moth wings to cosmic webs, a journey through infinity 🌌",
       "yt_desc": "an antique atlas world — desk to map to coastline to cosmos and back.\n\n#shorts #maps #oddlysatisfying #powersofzen",
       "cameo": null,
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -855,7 +855,7 @@
       "yt_title": "A hypnotic spiral through every scale of reality ⚡",
       "yt_desc": "",
       "cameo": "lee",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -969,7 +969,7 @@
       "yt_title": "Dive into the neon abyss and emerge among the stars 🌌",
       "yt_desc": "",
       "cameo": "adam",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1248,7 +1248,7 @@
       "yt_title": "Crystals hum in the dark, atoms whisper secrets ✨🔮",
       "yt_desc": "",
       "cameo": "lorraine",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1362,7 +1362,7 @@
       "yt_title": "Jade spores drift in the deep deep dark ⚡",
       "yt_desc": "",
       "cameo": "lamar",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1476,7 +1476,7 @@
       "yt_title": "A frozen world unfolds in endless crystalline layers 🌨️",
       "yt_desc": "",
       "cameo": "belle",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1590,7 +1590,7 @@
       "yt_title": "The cavern’s pulse—endless, luminous, calling you deeper 🌑",
       "yt_desc": "",
       "cameo": "janet",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1704,7 +1704,7 @@
       "yt_title": "A monarch’s wing reveals cosmic secrets ✨",
       "yt_desc": "",
       "cameo": "dora",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1818,7 +1818,7 @@
       "yt_title": "A ceramic basin becomes a cosmos of glowing domes ✨",
       "yt_desc": "",
       "cameo": "kitty",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -1930,7 +1930,7 @@
       "yt_title": "A brass orrery hums with cosmic whispers 🌌",
       "yt_desc": "",
       "cameo": "lee",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -2099,7 +2099,7 @@
       "yt_title": "A jade temple dissolves into cosmic foam 🌌",
       "yt_desc": "",
       "cameo": "janet",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -2213,7 +2213,7 @@
       "yt_title": "A pollen grain’s universe, blooming in golden light 🌸",
       "yt_desc": "",
       "cameo": "amos",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -2327,7 +2327,7 @@
       "yt_title": "Where bees hum and nebulae glow in perfect harmony",
       "yt_desc": "",
       "cameo": "amos",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -2441,7 +2441,7 @@
       "yt_title": "The loop begins again at the corner of forever",
       "yt_desc": "",
       "cameo": "lamar",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -2555,7 +2555,7 @@
       "yt_title": "A spiral of sugar, endless and sweet 🌌💖",
       "yt_desc": "",
       "cameo": "kitty",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -2667,7 +2667,7 @@
       "yt_title": "Every thread holds a universe—zoom in forever",
       "yt_desc": "",
       "cameo": "lorraine",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -2779,7 +2779,7 @@
       "yt_title": "Auroras ripple over copper plains, whispering secrets to the glass dome below 🌠",
       "yt_desc": "",
       "cameo": "clark",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -2893,7 +2893,7 @@
       "yt_title": "The hyperbola hums in the hollow dark",
       "yt_desc": "",
       "cameo": "adam",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -3005,7 +3005,7 @@
       "yt_title": "A moonlit studio dissolves into ink, then stars 🌙✨",
       "yt_desc": "",
       "cameo": "newman",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -3301,7 +3301,7 @@
       "yt_title": "A music-box universe, spiraling into infinity 🌌",
       "yt_desc": "",
       "cameo": "newman",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -3414,7 +3414,7 @@
       "yt_title": "One pebble holds the ocean—and it’s singing",
       "yt_desc": "",
       "cameo": "belle",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -3637,7 +3637,7 @@
       "yt_title": "Lichen dreams in amber and emerald light",
       "yt_desc": "",
       "cameo": "belle",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -3803,7 +3803,7 @@
       "yt_title": "A river of fire carves its path through the bones of the earth 🌋",
       "yt_desc": "",
       "cameo": "newman",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -3931,7 +3931,7 @@
       "yt_title": "Lost in the geometry of a vanishing world...",
       "yt_desc": "",
       "cameo": "adam",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -4279,7 +4279,7 @@
       "yt_title": "A jewel-box universe folds in on itself",
       "yt_desc": "",
       "cameo": "kitty",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -4412,7 +4412,7 @@
       "yt_title": "Ivory knights stand in vermilion light.",
       "yt_desc": "",
       "cameo": "adam",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -4681,7 +4681,7 @@
       "yt_title": "Golden lanterns glow in the void between worlds",
       "yt_desc": "",
       "cameo": "tina",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -4814,7 +4814,7 @@
       "yt_title": "Chambers of glowing cells pulse like a cosmic heartbeat ⚡️🔥",
       "yt_desc": "",
       "cameo": "belle",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -5021,7 +5021,7 @@
       "yt_title": "Where time loops forever in the pulse between stars and stones ⏳",
       "yt_desc": "",
       "cameo": "janet",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -5154,7 +5154,7 @@
       "yt_title": "Lost in the infinite zoom of a single leaf 🍂🔍",
       "yt_desc": "",
       "cameo": "dora",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -6217,7 +6217,7 @@
       "yt_title": "A galaxy’s breath unfurls into a bog at dusk 🌌💧",
       "yt_desc": "",
       "cameo": "lee",
-      "state": "failed",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {

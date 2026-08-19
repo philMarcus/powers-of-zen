@@ -29,7 +29,12 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import pipeline as pl  # noqa: E402
 
 LOCK = Path("/tmp/zoomer_refill.lock")   # WSL-local fs — flock over drvfs is unreliable
-CLAUDE_TIMEOUT = 45 * 60                 # hard stop well before the 01:30 render batch
+CLAUDE_TIMEOUT = 45 * 60                 # per-attempt cap (see DEADLINE below)
+# WALL-CLOCK deadline for ALL attempts combined: 00:00 start + 45min primary + 45min
+# retry landed at exactly 01:30 — composer subagents were still writing journeys/*.json
+# while the render batch's compile_queue read them (audit 2026-08-19). The retry now
+# gets only the time remaining to this budget.
+DEADLINE_SEC = 75 * 60
 CARD_RANGE = {"short": "4-5", "medium": "6-8", "long": "9-11"}
 
 
@@ -89,21 +94,24 @@ Step 4 — after all composers finish, end with one line per new journey: name, 
 Hard rules: do NOT queue anything, do NOT edit existing journeys (VARIATIONS.md additions excepted), do NOT delete anything. If a composer fails, note it and move on — never rewrite its journey yourself from scratch in this session."""
 
 
-def run_claude(prompt, model):
+def run_claude(prompt, model, budget=CLAUDE_TIMEOUT):
     exe = shutil.which("claude")
     if not exe:
         return 127, "claude CLI not on PATH"
+    if budget < 300:
+        return 124, "under 5min left in the refill deadline — not starting an attempt"
     argv = [exe, "-p", prompt, "--model", model,
             "--permission-mode", "acceptEdits", "--max-turns", "60",
             "--allowedTools",
             "Bash(python3 scripts/audit_starts.py:*),Bash(python3 scripts/preflight.py:*)"]
     try:
         r = subprocess.run(argv, cwd=str(ROOT), stdout=subprocess.PIPE,
-                           stderr=subprocess.STDOUT, text=True, timeout=CLAUDE_TIMEOUT)
+                           stderr=subprocess.STDOUT, text=True,
+                           timeout=min(CLAUDE_TIMEOUT, budget))
         print(r.stdout or "", flush=True)
         return r.returncode, (r.stdout or "")[-2000:]
     except subprocess.TimeoutExpired:
-        return 124, "claude run hit the 45min timeout"
+        return 124, f"claude run hit the {min(CLAUDE_TIMEOUT, budget) // 60}min timeout"
 
 
 def audit_pass(name):
@@ -149,10 +157,13 @@ def main():
     before = set(pl.journey_names())
     date = time.strftime("%Y%m%d")
     prompt = coordinator_prompt(briefs, date)
+    t_start = time.time()
     rc, tail = run_claude(prompt, "fable")
     if rc != 0:
-        log(f"coordinator on fable failed (rc {rc}: {tail[-200:]}) — retrying on opus")
-        rc, tail = run_claude(prompt, "opus")
+        remaining = int(DEADLINE_SEC - (time.time() - t_start))
+        log(f"coordinator on fable failed (rc {rc}: {tail[-200:]}) — "
+            f"retrying on opus ({remaining // 60}min left in the deadline)")
+        rc, tail = run_claude(prompt, "opus", budget=remaining)
     new = sorted(set(pl.journey_names()) - before)
     if rc != 0 and not new:
         log(f"refill FAILED (rc {rc}) — no new journeys")

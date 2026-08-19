@@ -22,6 +22,7 @@ Everything (dashboard, scheduler, poster.py, promote.py, night_batch.py) reads/w
 via this module.
 """
 import json
+import os
 import time
 from pathlib import Path
 
@@ -93,11 +94,20 @@ def load():
     return {"meta": {"cadence": "2/day 08:00,18:00 EDT"}, "videos": []}
 
 
+def _atomic_write(path, text):
+    """write-to-temp + os.replace: pipeline.json is ~0.5MB and read by the dashboard,
+    the gate, and the batch concurrently — a plain truncate-then-stream write left a
+    window where readers got half a file (JSONDecodeError) and a killed writer
+    destroyed the state outright (audit 2026-08-19)."""
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(text, encoding="utf-8")
+    os.replace(tmp, path)
+
+
 def save(data):
     data.setdefault("meta", {})["updated"] = _now()
     PIPELINE.parent.mkdir(parents=True, exist_ok=True)
-    PIPELINE.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n",
-                        encoding="utf-8")
+    _atomic_write(PIPELINE, json.dumps(data, indent=2, ensure_ascii=False) + "\n")
 
 
 def telem(event, **fields):
@@ -112,7 +122,15 @@ def read_telem(limit=200):
     if not TELEMETRY.exists():
         return []
     lines = TELEMETRY.read_text(encoding="utf-8").splitlines()[-limit:]
-    return [json.loads(x) for x in lines if x.strip()]
+    out = []
+    for x in lines:
+        if not x.strip():
+            continue
+        try:
+            out.append(json.loads(x))
+        except ValueError:
+            continue   # one torn line from a concurrent append must not blank the feed
+    return out
 
 
 def cut_of(file):
@@ -170,14 +188,15 @@ def blank_platforms():
 GPU_BUSY_PCT = 30  # utilization.gpu at/above this = something is really using the GPU
 
 
-def gpu_busy():
+def gpu_busy(threshold=None):
     """True if the GPU is ACTUALLY under load — a dive render, seam repair, music gen, OR a game.
     Reads nvidia-smi utilization directly instead of matching process names: the old pgrep
     approach falsely tripped on any process whose *command line* merely mentioned the render
     scripts (e.g. a bash watcher with 'engine/dive.py' in its until-condition), so the flag never
     cleared after a render. Gate GPU-heavy work (music gen, local-VLM captioning) on this. Works
     from Windows (dashboard) via wsl.exe and from WSL directly; fails OPEN (returns False) so a
-    smi hiccup never blocks the user."""
+    smi hiccup never blocks the user. `threshold` overrides GPU_BUSY_PCT — pass ~60 when asking
+    "is a GAME running" (default 30 false-positives on Chrome decoding dashboard previews)."""
     import os
     import subprocess
     smi = "/mnt/c/Windows/System32/nvidia-smi.exe"  # WSL2 GPU passthrough exposes the Windows smi
@@ -186,7 +205,7 @@ def gpu_busy():
         argv = (["wsl.exe", "bash", "-lc", inner] if os.name == "nt" else ["bash", "-lc", inner])
         r = subprocess.run(argv, capture_output=True, text=True, timeout=8)
         vals = [int(x) for x in (r.stdout or "").split() if x.strip().isdigit()]
-        return bool(vals) and vals[0] >= GPU_BUSY_PCT
+        return bool(vals) and vals[0] >= (threshold if threshold is not None else GPU_BUSY_PCT)
     except Exception:
         return False
 
@@ -268,8 +287,7 @@ def jload():
 def jsave(d):
     d["updated"] = _now()
     JOURNEYS_JSON.parent.mkdir(parents=True, exist_ok=True)
-    JOURNEYS_JSON.write_text(json.dumps(d, indent=2, ensure_ascii=False) + "\n",
-                             encoding="utf-8")
+    _atomic_write(JOURNEYS_JSON, json.dumps(d, indent=2, ensure_ascii=False) + "\n")
 
 
 def jqueue(jd):
@@ -322,10 +340,15 @@ def journey_frames(name):
     """Total frame count from the SAME compile the renderer uses (engine-2: 28 x cards).
     Raises on a spec the engine can't compile — callers treat that as a broken journey."""
     import sys as _sys
-    _sys.path.insert(0, str(ROOT / "engine"))
+    eng = str(ROOT / "engine")
+    if eng not in _sys.path:          # don't grow sys.path per call in the long-lived dashboard
+        _sys.path.insert(0, eng)
     import grammar
     import style as _style
-    spec = json.loads(journey_path(name).read_text(encoding="utf-8"))
+    p = journey_path(name)
+    if not p:
+        raise FileNotFoundError(f"no journey file for '{name}'")
+    spec = json.loads(p.read_text(encoding="utf-8"))
     sfx, _model, _sname = _style.resolve(spec, None)
     spec["style_suffix"] = sfx
     return len(grammar.compile_journey(spec, 12, "in")[1])

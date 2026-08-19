@@ -694,7 +694,6 @@ def post_instagram(video_rel, caption, dry_run):
            "Share clicked but the newest reel does NOT carry this caption — post did not go "
            "through. Reported as FAILED, not live.")
     return f"https://www.instagram.com{href}"
-    return "posted" if ok else "shared(unconfirmed)"
 
 
 PLATFORMS = {"tiktok": post_tiktok, "youtube": post_youtube, "instagram": post_instagram}
@@ -717,7 +716,11 @@ def run(only, dry_run, journey):
     if not cdp_up():
         import subprocess
         print("Chrome CDP down — launching via scripts/start_chrome_zen.sh")
-        subprocess.run(["bash", str(pl.ROOT / "scripts" / "start_chrome_zen.sh")], timeout=30)
+        try:
+            subprocess.run(["bash", str(pl.ROOT / "scripts" / "start_chrome_zen.sh")],
+                           cwd=str(pl.ROOT), timeout=30)
+        except subprocess.TimeoutExpired:
+            print("start_chrome_zen.sh hung past 30s — continuing to the CDP wait anyway")
         for _ in range(12):                      # profile + 3 platform tabs need a moment
             time.sleep(5)
             if cdp_up():
@@ -732,6 +735,25 @@ def run(only, dry_run, journey):
     if not entry:
         print("No queued video to post (set a video's state to 'queued' in the dashboard,"
               " or pass --journey).")
+        return
+    # PRECONDITIONS before an irreversible post (audit 2026-08-19): an empty caption
+    # posts BLANK on every platform (the field-setters are vacuously satisfied by ""),
+    # and a missing file (archived / mid-repair) burns the window. Mark the video
+    # failed (pulls it from the queue so the gate's hourly retry posts the NEXT one).
+    problems = []
+    if not (ROOT / entry.get("file", "")).exists():
+        problems.append(f"file missing: {entry.get('file')}")
+    if not (entry.get("caption") or "").strip():
+        problems.append("caption is empty")
+    if not (entry.get("yt_title") or entry.get("caption") or "").strip():
+        problems.append("yt_title is empty")
+    if problems and not dry_run:
+        why = "; ".join(problems)
+        print(f"NOT posting {entry['journey']} — {why}")
+        entry["state"] = "failed"
+        entry["note"] = f"poster precondition: {why}"
+        pl.save(data)
+        pl.telem("post_fail", journey=entry["journey"], detail=why)
         return
     print(f"Posting: {entry['journey']}  (file: {entry['file']}, {entry.get('model','?')}/"
           f"{entry.get('cut','?')}){'  [DRY RUN]' if dry_run else ''}")
@@ -797,8 +819,11 @@ def run(only, dry_run, journey):
                 "ts": pl._now()}
             pl.telem("post" if good else "post_fail", journey=entry["journey"],
                      platform=name, detail=str(r))
+        # "live" = every NON-PAUSED platform is live. Counting paused platforms (their
+        # record stays "pending") marked 34 successful posts "failed" while TikTok was
+        # paused — found by audit 2026-08-19.
         allgood = all(entry.get("platforms", {}).get(n, {}).get("status") == "live"
-                      for n in pl.PLATFORMS)
+                      for n in pl.PLATFORMS if n not in paused)
         entry["state"] = "live" if allgood else "failed"
         pl.save(data)
     print("\nSummary:", json.dumps(results, indent=2))

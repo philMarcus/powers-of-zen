@@ -44,13 +44,18 @@ def cameo_of(spec):
 
 
 def main():
+    if len(sys.argv) < 3:
+        sys.exit("usage: queue_review.py <journey> <model> [--src <run dir>]")
     journey, model = sys.argv[1], sys.argv[2]
     # --src <run dir>: ingest a specific render (e.g. one rendered under a different journey
     # name, or any vN that isn't the newest). Otherwise search both naming conventions.
     src_arg = None
     if "--src" in sys.argv:
         src_arg = ROOT / sys.argv[sys.argv.index("--src") + 1]
-    spec = json.loads(pl.journey_path(journey).read_text(encoding="utf-8"))
+    jf = pl.journey_path(journey)
+    if not jf:
+        sys.exit(f"no journey file for '{journey}' (checked journeys/ + engine1/ + engine0/)")
+    spec = json.loads(jf.read_text(encoding="utf-8"))
     _, z, *_ = grammar.compile_journey(spec, 12)
     total = len(z)
     name = f"{journey}_{model}"

@@ -48,9 +48,18 @@ def log(msg):
 
 
 def run(argv, timeout=None):
-    """Run a child with output into the batch log; return (rc, tail-of-output)."""
-    r = subprocess.run(argv, cwd=str(ROOT), stdout=subprocess.PIPE,
-                       stderr=subprocess.STDOUT, text=True, timeout=timeout)
+    """Run a child with output into the batch log; return (rc, tail-of-output).
+    Timeouts are MANDATORY protection (audit 2026-08-19): a ComfyUI that accepts the
+    prompt but never finishes left dive polling forever, the batch holding its lock
+    forever, and every later night exiting 'already running' — the 2026-08-08 class."""
+    try:
+        r = subprocess.run(argv, cwd=str(ROOT), stdout=subprocess.PIPE,
+                           stderr=subprocess.STDOUT, text=True, timeout=timeout)
+    except subprocess.TimeoutExpired as e:
+        if LOGF:
+            LOGF.write((e.stdout or "") if isinstance(e.stdout, str) else "")
+            LOGF.flush()
+        return 124, f"timed out after {timeout}s"
     if LOGF:
         LOGF.write(r.stdout or "")
         LOGF.flush()
@@ -89,9 +98,12 @@ def comfy_up():
 def wait_gpu_free():
     """Don't fight a game/other job: wait up to 2h, then proceed anyway (matches the
     old batch's behavior — at 01:30 'busy after 2h' means something is wedged, and a
-    slow render beats a silently skipped night)."""
+    slow render beats a silently skipped night). Two signals (audit 2026-08-19): real
+    ComfyUI work via comfy_busy(), and HIGH raw utilization (>=60%) for a game — the
+    old bare gpu_busy() (>=30%) false-positived on a dashboard left open overnight
+    (Chrome decodes the looping previews on the GPU) and burned 2h of the budget."""
     for i in range(240):
-        if not pl.gpu_busy():
+        if not pl.comfy_busy() and not pl.gpu_busy(threshold=60):
             return
         if i == 0:
             log("GPU busy — waiting for it to free up")
@@ -104,12 +116,23 @@ def compile_queue(jd):
     ests, tiers = {}, {}
     for name in pl.jqueue(jd):
         p = pl.journey_path(name)
-        try:
-            if not p:
-                raise FileNotFoundError("no journey file")
-            frames = pl.journey_frames(name)
-            cards = len(json.loads(p.read_text(encoding="utf-8"))["registers"])
-        except Exception as e:
+        # retry once after a pause: a spec caught mid-write (an over-running refill
+        # composer) or a drvfs hiccup must not become PERMANENT render_failed state
+        for attempt in (0, 1):
+            try:
+                if not p:
+                    raise FileNotFoundError("no journey file")
+                frames = pl.journey_frames(name)
+                cards = len(json.loads(p.read_text(encoding="utf-8"))["registers"])
+                err = None
+                break
+            except Exception as e:
+                err = e
+                if attempt == 0:
+                    time.sleep(5)
+                    p = pl.journey_path(name)
+        if err is not None:
+            e = err
             log(f"{name}: spec does not compile — marking render_failed ({e})")
             jj = pl.jload()
             jj["journeys"].setdefault(name, {})
@@ -152,15 +175,21 @@ def render_one(journey, force=False, new_seed=True, from_card=None):
             argv += ["--seed", str(random.randrange(1, 10**6))]
         if len(argv) > 3:
             log(f"{journey}: {' '.join(argv[3:])}")
-        rc, tail = run(argv)
+        # ceiling = 2.5x the estimate (slowest observed render ran ~1.4x) + 30min slack;
+        # a render past that is wedged, not slow — kill it and move to the next journey
+        try:
+            cap = int(pl.est_render_sec(pl.journey_frames(journey)) * 2.5) + 1800
+        except Exception:
+            cap = 4 * 3600
+        rc, tail = run(argv, timeout=cap)
         if rc != 0:
             return False, f"dive failed: {tail}"
         log(f"{journey}: rendered in {time.time() - t0:.0f}s")
     # queue_review FIRST — it creates the pipeline entry caption.py writes into
-    rc, tail = run(["python3", "scripts/queue_review.py", journey, "ds"])
+    rc, tail = run(["python3", "scripts/queue_review.py", journey, "ds"], timeout=1800)
     if rc != 0:
         return False, f"queue_review failed: {tail}"
-    rc, tail = run(["python3", "scripts/caption.py", journey])
+    rc, tail = run(["python3", "scripts/caption.py", journey], timeout=1800)
     if rc != 0:
         log(f"{journey}: caption.py exited {rc} ({tail}) — video is in Review uncaptioned")
     d = pl.load()
@@ -264,7 +293,7 @@ def main():
     for j in done:
         log(f"music pregen: {j}")
         rc, tail = run([sys.executable, str(ROOT / "scripts" / "music_gen.py"), j,
-                        "--pregen"])
+                        "--pregen"], timeout=3600)
         if rc != 0:
             log(f"  pregen failed (non-fatal): {tail[-160:]}")
 
