@@ -684,3 +684,90 @@
 {"ts": "2026-08-17 21:39:56", "event": "caption", "journey": "whale_fall_republic", "detail": "5 options, spot=True"}
 {"ts": "2026-08-17 21:40:39", "event": "caption", "journey": "coral_synapse", "detail": "5 options, spot=True"}
 {"ts": "2026-08-17 21:45:30", "event": "caption", "journey": "ember_meadow", "detail": "5 options, spot=True"}
+{"ts": "2026-08-17 21:48:54", "event": "phase_shift", "journey": "desert_rosette", "detail": "start @ 11.00s"}
+{"ts": "2026-08-17 21:48:54", "event": "music", "journey": "desert_rosette"}
+{"ts": "2026-08-17 21:49:03", "event": "music_realign", "journey": "desert_rosette", "detail": "5 candidates"}
+{"ts": "2026-08-17 21:51:44", "event": "music_choose", "journey": "desert_rosette", "detail": "night_market-wild"}
+{"ts": "2026-08-17 21:51:44", "event": "queued", "journey": "desert_rosette"}
+{"ts": "2026-08-17 21:51:58", "event": "switch", "journey": "whale_fall_republic", "detail": "ds/zoomout"}
+{"ts": "2026-08-17 21:52:22", "event": "rejected", "journey": "whale_fall_republic"}
+{"ts": "2026-08-17 21:52:22", "event": "jqueued", "journey": "whale_fall_republic", "detail": "reject -> re-queue back"}
+{"ts": "2026-08-17 22:13:43", "event": "post", "journey": "squid_lantern", "platform": "youtube", "detail": "https://youtube.com/shorts/UKA-Tw6-4as"}
+{"ts": "2026-08-17 22:13:43", "event": "post", "journey": "squid_lantern", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcKg2bhhBG0/"}
+{"ts": "2026-08-17 22:14:22", "event": "post_gate", "detail": "fired (rc 0); next 2026-08-18 17:00"}
+{"ts": "2026-08-18 00:15:19", "event": "refill", "journey": "bourdon_foundry", "detail": "auto-queued (ok bourdon_foundry          start=lens_arcs)"}
+{"ts": "2026-08-18 00:15:19", "event": "refill", "journey": "fiddler_commons", "detail": "auto-queued (ok fiddler_commons          start=mudbank_commons     · not cosmic/subatomic)"}
+{"ts": "2026-08-18 00:15:19", "event": "refill", "journey": "kelp_dynamo", "detail": "auto-queued (ok kelp_dynamo              start=ocean_world)"}
+{"ts": "2026-08-18 00:15:19", "event": "refill_done", "detail": "refill done: 3 composed, 3 queued (briefs: long, short, long)"}
+{"ts": "2026-08-18 02:56:01", "event": "review", "journey": "vesper_flight", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-18 02:56:58", "event": "caption", "journey": "vesper_flight", "detail": "5 options, spot=True"}
+{"ts": "2026-08-18 02:56:58", "event": "render", "journey": "vesper_flight", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-18 04:18:08", "event": "review", "journey": "anemone_arsenal", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-18 04:19:19", "event": "caption", "journey": "anemone_arsenal", "detail": "5 options, spot=True"}
+{"ts": "2026-08-18 04:19:19", "event": "render", "journey": "anemone_arsenal", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-18 05:53:42", "event": "review", "journey": "chameleon_prism", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-18 05:54:34", "event": "caption", "journey": "chameleon_prism", "detail": "5 options, spot=True"}
+{"ts": "2026-08-18 05:54:34", "event": "render", "journey": "chameleon_prism", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-18 06:44:51", "event": "review", "journey": "brinicle_grove", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-18 06:45:49", "event": "caption", "journey": "brinicle_grove", "detail": "5 options, spot=True"}
+{"ts": "2026-08-18 06:45:49", "event": "render", "journey": "brinicle_grove", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-18 06:48:36", "event": "music_pregen", "journey": "vesper_flight", "detail": "5 candidates"}
+{"ts": "2026-08-18 06:51:11", "event": "music_pregen", "journey": "anemone_arsenal", "detail": "5 candidates"}
+{"ts": "2026-08-18 06:53:59", "event": "music_pregen", "journey": "chameleon_prism", "detail": "5 candidates"}
+{"ts": "2026-08-18 06:56:20", "event": "music_pregen", "journey": "brinicle_grove", "detail": "5 candidates"}
+{"ts": "2026-08-18 06:56:20", "event": "batch_done", "detail": "batch done in 5.4h — 4 to Review"}
+{"ts": "2026-08-18 16:51:33", "event": "switch", "journey": "brinicle_grove", "detail": "ds/zoomout"}
+{"ts": "2026-08-18 16:52:29", "event": "edit", "journey": "brinicle_grove"}
+{"ts": "2026-08-18 16:52:37", "event": "phase_shift", "journey": "brinicle_grove", "detail": "start @ 2.00s"}
+{"ts": "2026-08-18 16:52:37", "event": "music", "journey": "brinicle_grove"}
+{"ts": "2026-08-18 16:52:47", "event": "music_realign", "journey": "brinicle_grove", "detail": "5 candidates"}
+{"ts": "2026-08-18 16:55:33", "event": "music_choose", "journey": "brinicle_grove", "detail": "tide_organ-wild"}
+{"ts": "2026-08-18 16:55:33", "event": "queued", "journey": "brinicle_grove"}
+{"ts": "2026-08-18 17:07:31", "event": "post", "journey": "sundew_snare", "platform": "youtube", "detail": "https://youtube.com/shorts/y47k-SGvuxI"}
+{"ts": "2026-08-18 17:07:31", "event": "post", "journey": "sundew_snare", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcMilj8BvPm/"}
+{"ts": "2026-08-18 17:08:09", "event": "post_gate", "detail": "fired (rc 0); next 2026-08-19 12:00"}
+{"ts": "2026-08-19 00:00:06", "event": "refill_fail", "detail": "Failed to authenticate: OAuth session expired and could not be refreshed\n"}
+{"ts": "2026-08-19 03:10:14", "event": "review", "journey": "meteorite_cradle", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-19 03:11:37", "event": "caption", "journey": "meteorite_cradle", "detail": "5 options, spot=True"}
+{"ts": "2026-08-19 03:11:37", "event": "render", "journey": "meteorite_cradle", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-19 04:20:54", "event": "review", "journey": "physarum_maze", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-19 04:21:49", "event": "caption", "journey": "physarum_maze", "detail": "5 options, spot=True"}
+{"ts": "2026-08-19 04:21:49", "event": "render", "journey": "physarum_maze", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-19 05:47:25", "event": "review", "journey": "caddis_masonry", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-19 05:48:18", "event": "caption", "journey": "caddis_masonry", "detail": "5 options, spot=True"}
+{"ts": "2026-08-19 05:48:18", "event": "render", "journey": "caddis_masonry", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-19 06:27:21", "event": "review", "journey": "wild_yeast", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-19 06:28:08", "event": "caption", "journey": "wild_yeast", "detail": "5 options, spot=True"}
+{"ts": "2026-08-19 06:28:08", "event": "render", "journey": "wild_yeast", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-19 06:31:13", "event": "music_pregen", "journey": "meteorite_cradle", "detail": "5 candidates"}
+{"ts": "2026-08-19 06:33:18", "event": "music_pregen", "journey": "physarum_maze", "detail": "5 candidates"}
+{"ts": "2026-08-19 06:36:12", "event": "music_pregen", "journey": "caddis_masonry", "detail": "5 candidates"}
+{"ts": "2026-08-19 06:37:47", "event": "music_pregen", "journey": "wild_yeast", "detail": "5 candidates"}
+{"ts": "2026-08-19 06:37:47", "event": "batch_done", "detail": "batch done in 5.1h — 4 to Review"}
+{"ts": "2026-08-19 12:06:27", "event": "post", "journey": "ember_meadow", "platform": "youtube", "detail": "https://youtube.com/shorts/rJgcWxPjU6U"}
+{"ts": "2026-08-19 12:06:27", "event": "post", "journey": "ember_meadow", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcOk8BQACG5/"}
+{"ts": "2026-08-19 12:06:52", "event": "post_gate", "detail": "fired (rc 0); next 2026-08-20 07:00"}
+{"ts": "2026-08-19 12:42:33", "event": "switch", "journey": "caddis_masonry", "detail": "ds/zoomout"}
+{"ts": "2026-08-19 12:44:01", "event": "phase_shift", "journey": "caddis_masonry", "detail": "start @ 3.00s"}
+{"ts": "2026-08-19 12:44:01", "event": "music", "journey": "caddis_masonry"}
+{"ts": "2026-08-19 12:44:11", "event": "music_realign", "journey": "caddis_masonry", "detail": "5 candidates"}
+{"ts": "2026-08-19 12:45:14", "event": "music", "journey": "physarum_maze"}
+{"ts": "2026-08-19 12:45:22", "event": "music_realign", "journey": "physarum_maze", "detail": "5 candidates"}
+{"ts": "2026-08-19 12:46:01", "event": "switch", "journey": "chameleon_prism", "detail": "ds/zoomout"}
+{"ts": "2026-08-19 12:46:39", "event": "phase_shift", "journey": "chameleon_prism", "detail": "start @ 1.00s"}
+{"ts": "2026-08-19 12:46:39", "event": "music", "journey": "chameleon_prism"}
+{"ts": "2026-08-19 12:46:50", "event": "music_realign", "journey": "chameleon_prism", "detail": "5 candidates"}
+{"ts": "2026-08-19 13:00:43", "event": "music_choose", "journey": "physarum_maze", "detail": "music_box-wild"}
+{"ts": "2026-08-19 13:00:43", "event": "queued", "journey": "physarum_maze"}
+{"ts": "2026-08-19 13:01:16", "event": "review", "journey": "chameleon_prism"}
+{"ts": "2026-08-19 13:03:19", "event": "music_choose", "journey": "caddis_masonry", "detail": "aurora_strings-wild"}
+{"ts": "2026-08-19 13:03:19", "event": "queued", "journey": "caddis_masonry"}
+{"ts": "2026-08-19 13:04:40", "event": "phase_shift", "journey": "chameleon_prism", "detail": "start @ 0.20s"}
+{"ts": "2026-08-19 13:04:40", "event": "music", "journey": "chameleon_prism"}
+{"ts": "2026-08-19 13:04:48", "event": "music_realign", "journey": "chameleon_prism", "detail": "4 candidates"}
+{"ts": "2026-08-19 13:14:02", "event": "review", "journey": "chameleon_prism"}
+{"ts": "2026-08-19 13:14:34", "event": "phase_shift", "journey": "chameleon_prism", "detail": "start @ 0.20s"}
+{"ts": "2026-08-19 13:14:34", "event": "music", "journey": "chameleon_prism"}
+{"ts": "2026-08-19 13:14:43", "event": "music_realign", "journey": "chameleon_prism", "detail": "4 candidates"}
+{"ts": "2026-08-19 13:17:03", "event": "review", "journey": "chameleon_prism"}
+{"ts": "2026-08-19 14:44:58", "event": "state_repair", "detail": "35 failed->live (paused-platform miscount)"}

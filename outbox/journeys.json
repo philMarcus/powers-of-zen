@@ -18,7 +18,7 @@
     "render_paused": false,
     "refill_paused": false,
     "post_every_hours": 19.0,
-    "post_next": "2026-08-18 17:00"
+    "post_next": "2026-08-20 07:00"
   },
   "journeys": {
     "stormglass": {
@@ -179,64 +179,16 @@
       "ts": "2026-08-14 00:14:10",
       "note": "composed by midnight refill"
     },
-    "brinicle_grove": {
-      "state": "queued",
-      "order": 3,
-      "ts": "2026-08-14 00:14:10",
-      "note": "composed by midnight refill"
-    },
-    "wild_yeast": {
-      "state": "queued",
-      "order": 4,
-      "ts": "2026-08-14 00:14:11",
-      "note": "composed by midnight refill"
-    },
     "peony_shell": {
       "state": "queued",
       "order": 5,
       "ts": "2026-08-15 00:17:21",
       "note": "composed by midnight refill"
     },
-    "vesper_flight": {
-      "state": "queued",
-      "order": 6,
-      "ts": "2026-08-15 00:17:21",
-      "note": "composed by midnight refill"
-    },
-    "anemone_arsenal": {
-      "state": "queued",
-      "order": 7,
-      "ts": "2026-08-16 00:14:47",
-      "note": "composed by midnight refill"
-    },
-    "chameleon_prism": {
-      "state": "queued",
-      "order": 8,
-      "ts": "2026-08-16 00:14:47",
-      "note": "composed by midnight refill"
-    },
-    "meteorite_cradle": {
-      "state": "queued",
-      "order": 9,
-      "ts": "2026-08-16 00:14:47",
-      "note": "composed by midnight refill"
-    },
-    "physarum_maze": {
-      "state": "queued",
-      "order": 10,
-      "ts": "2026-08-16 00:14:47",
-      "note": "composed by midnight refill"
-    },
     "pomegranate_vault": {
       "state": "queued",
       "order": 11,
       "ts": "2026-08-16 00:14:48",
-      "note": "composed by midnight refill"
-    },
-    "caddis_masonry": {
-      "state": "queued",
-      "order": 12,
-      "ts": "2026-08-17 00:17:38",
       "note": "composed by midnight refill"
     },
     "cherenkov_cistern": {
@@ -264,7 +216,25 @@
       "ts": "2026-08-17 21:52:22",
       "note": "re-render: video rejected in review",
       "order": 16
+    },
+    "bourdon_foundry": {
+      "state": "queued",
+      "order": 17,
+      "ts": "2026-08-18 00:15:19",
+      "note": "composed by midnight refill"
+    },
+    "fiddler_commons": {
+      "state": "queued",
+      "order": 18,
+      "ts": "2026-08-18 00:15:19",
+      "note": "composed by midnight refill"
+    },
+    "kelp_dynamo": {
+      "state": "queued",
+      "order": 19,
+      "ts": "2026-08-18 00:15:19",
+      "note": "composed by midnight refill"
     }
   },
-  "updated": "2026-08-17 22:14:22"
+  "updated": "2026-08-19 16:39:18"
 }
