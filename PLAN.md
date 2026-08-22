@@ -1263,4 +1263,8 @@ Phase C (--micro) built but UNJUDGED — needs its own with/without A/B when Phi
   CANDIDATE REFINEMENT (untested): scale gain by depth source — lower inside CN windows,
   higher on DA travel frames.
 - Delivered: coral v3 (gain 1.0+persist) A/B loop + assembled cut; squid a05p arm;
-  sequential cuts. coral v4 (gain 0.5 + persist, seed 1234) rendering ~17:15-19:00.
+  sequential cuts. coral v4 (gain 0.5 + persist, seed 1234) RENDERED + DELIVERED
+  (v2-vs-v4 AB loop, assembled v4, sequential v2→v4→v3 — all in build/ of v4).
+  AWAITING PHIL: full-journey gain verdict (0.5 vs 1.0 vs off) → set the nightly
+  --parallax default in night_batch + DEFAULTS, drop persist, then the --micro A/B.
+  VRAM freed post-renders; nightly batch tonight unaffected (parallax_gain default 0).

@@ -131,10 +131,17 @@ sinusoid per bar, downbeats at zero offset), plunge gain surge. dolly_lab GATE P
 (4 same-seed arms × squid_lantern 4 cards; scripts/dolly_gate.py): no smear at gain 1.0,
 arms diverge stably, and the KEY finding — the residual steers the model to PAINT
 foreground-over-background composition where baseline stays wallpaper (pictorial depth
-emerges from motion depth). Clip+strip sent to Phil (output/dolly_lab/). coral_synapse v3
-full A/B (seed 1234 = v1/v2, gain 1.0 + persist) rendering ~14:30-16:30. NEXT: Phil judges
-the lab clip + coral motion → pick gain, decide persist, flip nightly default; then micro
-A/B; then Phase D (ENGINE 3 vocabulary + cinematographer, plan already on file).
+emerges from motion depth). Clip+strip sent to Phil (output/dolly_lab/). EVENING ROUND 2 (Phil's first verdict: all
+parallax arms > baseline, GAIN 0.5 reads most 3-D, persist "not doing much" — CONFIRMED
+by measurement: CN windows already span ~22/24 frames so persist extends ~2 frames/card;
+a05 vs a05p byte-identical until the sea window; park persist). Labs now also ship a
+SEQUENTIAL one-after-another cut (dolly_lab --sequence-only — Phil: side-by-side ×4 is
+hard to judge). DELIVERED: squid 4-arm + 0.5-focus sequentials; coral v3 (1.0+persist)
+AB+assembled; coral v4 (0.5+persist, seed 1234) AB+assembled+sequential v2→v4→v3.
+0.5>1.0 hypotheses + per-source-gain refinement candidate in PLAN. AWAITING PHIL: full-
+journey gain verdict → set nightly --parallax default (night_batch passes no flag; DEFAULTS
+parallax_gain=0 until then), then the --micro A/B, then Phase D. VRAM freed; tonight's
+batch renders WITHOUT parallax (correct until the verdict).
 2026-08-22 (MARKETING DAY — stats now flow themselves): (1) IG stats snapshots now run
 12:00 + 00:00 via the PowersOfZen-igstats task (ONE task, two PowerShell-registered
 triggers → hidden_task.vbs → scheduled_ig_stats.bat; log outbox/ig_stats_task.log) in
