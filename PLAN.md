@@ -1240,3 +1240,27 @@ Full-journey A/B: coral_synapse v3 (seed 1234 = same as v1/v2), --parallax 1.0
 --resolve-persist, launched 2026-08-22 ~14:30. Phil judges the motion; adoption decision
 (nightly --parallax default + gain choice + whether persist ships) waits on that verdict.
 Phase C (--micro) built but UNJUDGED — needs its own with/without A/B when Phil wants it.
+
+## PHIL'S FIRST LAB VERDICT (2026-08-22 evening) + follow-ups
+- All three parallax arms > baseline. **GAIN 0.5 read the most 3-D** (his callout: a squid
+  resolving into a sphere ~4s in with visible parallax, and the ball-field just after).
+  The two 1.0 arms didn't look much different from each other; a bit better than baseline.
+  Side-by-side was hard to judge → labs now ALSO ship a one-after-another SEQUENTIAL cut
+  (dolly_lab --sequence-only; label card before each arm) — add to the 12fps-looped rule.
+- **PERSIST IS ~A NO-OP AT THESE CARD LENGTHS (measured, mechanism understood):** the CN
+  window already spans w0=S−6 .. S+fa+10 ≈ 22 of a 24-frame card, so --resolve-persist
+  extends the depth source by ~2 frames/card (~5 on 28f cards). a05 vs a05p frames are
+  byte-IDENTICAL until the first SEA window (f48), and diverge there mostly because the
+  corridor traffic-extras change the scaffold's draw — a content variant, not visible
+  "persistence". Phil called it ("not sure persistency is doing much") before the numbers
+  did. Persist would only matter on long-dur cards or with deliberately shorter CN windows
+  — park it; don't ship it as a default on current catalogs.
+- WHY 0.5 > 1.0 (hypotheses on file, coral v4 tests): (1) displacement-survival sweet spot
+  — re-diffusion re-paints toward coherence, a gentle warp survives as MOTION while a
+  strong one is absorbed as content change; (2) trackability — at 1.0 near content exits
+  too fast to register relative motion; (3) in scaffold windows the CN already animates
+  looming, a strong warp double-pushes and the model repaints the conflict away.
+  CANDIDATE REFINEMENT (untested): scale gain by depth source — lower inside CN windows,
+  higher on DA travel frames.
+- Delivered: coral v3 (gain 1.0+persist) A/B loop + assembled cut; squid a05p arm;
+  sequential cuts. coral v4 (gain 0.5 + persist, seed 1234) rendering ~17:15-19:00.
