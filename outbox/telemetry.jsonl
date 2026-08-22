@@ -860,3 +860,8 @@
 {"ts": "2026-08-22 06:18:58", "event": "batch_done", "detail": "batch done in 4.8h — 4 to Review"}
 {"ts": "2026-08-22 11:09:54", "event": "ig_stats", "detail": "21 reels, followers 59"}
 {"ts": "2026-08-22 11:13:02", "event": "ig_stats", "detail": "36 reels, followers 59"}
+{"ts": "2026-08-22 12:01:03", "event": "ig_stats", "detail": "43 reels, followers 60"}
+{"ts": "2026-08-22 16:06:08", "event": "post", "journey": "brinicle_grove", "platform": "youtube", "detail": "https://youtube.com/shorts/KNbx-m6DL00"}
+{"ts": "2026-08-22 16:06:08", "event": "post", "journey": "brinicle_grove", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcWuv6DhbSb/"}
+{"ts": "2026-08-22 16:07:16", "event": "ig_stats", "detail": "44 reels, followers 60"}
+{"ts": "2026-08-22 16:07:16", "event": "post_gate", "detail": "fired (rc 0); next 2026-08-23 11:00"}

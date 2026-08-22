@@ -18,7 +18,7 @@
     "render_paused": false,
     "refill_paused": false,
     "post_every_hours": 19.0,
-    "post_next": "2026-08-22 16:00"
+    "post_next": "2026-08-23 11:00"
   },
   "journeys": {
     "stormglass": {
@@ -258,5 +258,5 @@
       "note": "composed by midnight refill"
     }
   },
-  "updated": "2026-08-22 06:08:55"
+  "updated": "2026-08-22 16:07:16"
 }

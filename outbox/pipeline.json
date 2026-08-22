@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-08-22 06:18:58",
+    "updated": "2026-08-22 16:06:08",
     "paused_platforms": [
       "tiktok"
     ],
@@ -7095,7 +7095,7 @@
       "yt_title": "A honeycomb of ice and shadow, endless tunnels of refracted gold ⛽💎",
       "yt_desc": "",
       "cameo": "dora",
-      "state": "queued",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -7104,14 +7104,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/KNbx-m6DL00",
+          "ts": "2026-08-22 16:06:08"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DcWuv6DhbSb/",
+          "ts": "2026-08-22 16:06:08"
         }
       },
       "created": "2026-08-18",
