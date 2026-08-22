@@ -381,7 +381,12 @@ cut of the chosen model. Fix promote.py to take cut direction (currently over-in
 cuts of chosen model).
 
 **View counts:** SHIPPED 2026-08-13 — ig_stats.py trusted-CDP hover scrape, auto-runs after
-every post.
+every post. EXTENDED 2026-08-22: also scheduled 12:00 + 00:00 (PowersOfZen-igstats task —
+Phil: don't wait 19h between counts); unattended-hardened (Chrome self-heal, locks,
+skip-while-posting); grid-virtualization coverage fix (tag-while-scrolling, 36/43 reels vs
+21–28 before); dashboard Live tab = followers header + top-5-by-qscore strip + per-video
+counts. Era analysis in ig_analyze ("posted era" group): the 08-14+ rethink package
+validated on reach, engagement, and follower growth — numbers in the audience-stats skill.
 
 **Harness polish:** click Done/Close after each post so Phil lands back on the videos list.
 
