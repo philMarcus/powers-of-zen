@@ -1,0 +1,74 @@
+{
+  "name": "plasma_script",
+  "theme": "an atomic-age googie diner sign after midnight rain, taken apart by scale — in through one bent glass tube to the gas column burning in its bore, down into the plasma's own glowing grains, into a neon atom's nested shell rings, whose spike-ray of red-orange re-lights the starburst on the sign itself",
+  "style": "neon_drift",
+  "music_lane": "analog_dawn",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "tube_run",
+      "exp": -1.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "argon lilac glow on wet gunmetal steel",
+      "scene": "a run of sealed glass tubing threaded across the steel face of a roadside sign, tubes bent into loops and hooks and clamped in white ceramic saddles, lilac glow filling their bores, rain beads strung down the glass, welded steel channel and rust freckles at the back of them, hair-thin spider silk stretched amid the clamps, a blackened electrode stub seated at one tube end, the run receding into unlit night",
+      "target": "a glowing lilac tube",
+      "target_phrase": "a glowing lilac tube"
+    },
+    {
+      "name": "streamer_bore",
+      "exp": -3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "hot red-orange fire on smoked glass grey",
+      "scene": "within the bore of a neon tube, a rope of red-orange glow strung down its axis, kinked at intervals into ten-armed spike-bursts, ranked striation bands crossing the column and receding into haze, phosphor-crusted glass walls curving up at either side, mercury beads pooled in the seam beneath, hot sparks speckling the gas",
+      "target": "a hot orange spark",
+      "target_phrase": "a glowing orange speck"
+    },
+    {
+      "name": "ion_shoal",
+      "exp": -6.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "argon lilac haze speckled with red-orange embers",
+      "scene": "countless glowing grains of neon gas adrift at many depths, enormous soft-focus ones passing close by, hotter red-orange ones packed in ranks receding into a lilac plasma haze, ten-armed spike-bursts flaring where the packed ranks cross, faint striation bands sheeting through the haze, unlit gulfs amid the ranks",
+      "target": "a glowing neon atom",
+      "target_phrase": "a small glowing sphere",
+      "loop_target": "countless glowing grains of neon gas adrift at many depths in a lilac plasma haze"
+    },
+    {
+      "name": "shell_rings",
+      "exp": -9.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "red-orange fire circling on lilac black",
+      "scene": "nested rings of glow set one inside the next about a hot white core, each ring traced with ten-armed spike-rays where it crosses its neighbour, a vivid red-orange point burning on the innermost ring, the outer rings thinning to lilac and fading into unlit depth, more nested sets hanging far beyond at many depths",
+      "cameo": {
+        "sprite": "output/mascots/canon/adam.png",
+        "pos": [
+          0.63,
+          0.38
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "rain_lot",
+      "exp": 0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "neon red-orange and argon lilac on rain-slick asphalt grey",
+      "scene": "an empty diner lot after midnight rain seen from the asphalt at eye level, no one present, a tall googie sign upright on its pylon, steel spikes bursting from its face in a ten-armed starburst, looping neon script glowing red-orange across it, argon lilac tubing outlining the panel, red-orange spill pooling on the rain-slick asphalt beneath, chain-link fence and dead sodium lamps at the lot edge, weeds pushing through the asphalt seams, pale moths settled on the sign's steel, a spider net strung amid the sign frame",
+      "target": "a bent glass tube",
+      "target_phrase": "a bent neon tube"
+    }
+  ],
+  "music_theme": "warm analog synth pads with gentle tape warble under a single deep kick landing exactly on the downbeat of every bar, a driving midnight-rain pulse, one soft mallet bell struck as the shell rings give way to the sign",
+  "music_key": "F# minor",
+  "render_start": "ion_shoal"
+}

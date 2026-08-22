@@ -1,0 +1,126 @@
+{
+  "name": "meteorite_cradle",
+  "theme": "every world began as drifting grit — a fresh meteorite steaming on desert hardpan opens into the chondrule droplets that predate Earth, down olivine's own crystal structure to the curvature around one mass point, out across the cosmic web and home through a star nursery, where a protoplanetary disc carves its gaps by orbital resonance and hands a newborn stone world back to the desert floor",
+  "style": "cosmic_gloss",
+  "music_lane": "tide_organ",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 9,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "playa_basin",
+      "exp": 3.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet dusk over burnt sienna hardpan",
+      "scene": "a desert basin at nightfall seen from over the flats, cracked sienna hardpan plates running out to a rim of eroded hills, creosote scrub scattered in loose ranks across the clay, a dry wash cutting a silver seam through the middle of it, one scorched crater burned into the hardpan with a thin plume of vapour over it, violet dusk banked in the far gullies",
+      "target": "a scorched crater",
+      "target_phrase": "a scorched crater"
+    },
+    {
+      "name": "hardpan_floor",
+      "exp": 0.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ember-warm sienna clay, violet shadow, rose-gold glow",
+      "scene": "the floor of the crater at ground level, curling clay plates lifted at their corners, a fallen stone sunk into the middle of them under a haze of vapour, harvester ants ranked in a working line across the warm clay, two banded scorpions halted on the rubble, a kangaroo rat crouched among creosote roots, moths perched on the sooty crust, frost gathered on the shaded side of the stone",
+      "target": "a sooty glass-crusted stone",
+      "target_phrase": "a sooty crusted stone"
+    },
+    {
+      "name": "chondrule_field",
+      "exp": -1.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-gold beads in sooty grey dust, dull silver flecks",
+      "scene": "the broken interior of the fallen stone, thousands of glassy spheres packed tight against one another in a sooty dust matrix, each bead ringed by a fine rim of its own, nickel-iron flecks catching a hard gleam among them, hairline cracks threading the matrix, rank upon rank of beads receding into shadow, no ground and no sky",
+      "target": "a rose-gold glass bead",
+      "target_phrase": "a rose-gold bead"
+    },
+    {
+      "name": "barred_bead",
+      "exp": -3.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cool green bars in violet glass, rose-gold glints",
+      "scene": "inside one chondrule, flat olivine bars laid in parallel ranks through a violet glass droplet, a second set of bars crossing the first at an angle, dusky glass filling every gap among them, a continuous olivine rim closing the sphere all the way around, minute metal grains caught in the glass, rose-gold glints struck off the bar faces",
+      "target": "a green olivine bar",
+      "target_phrase": "a green crystal bar"
+    },
+    {
+      "name": "olivine_lattice",
+      "exp": -9.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-gold tetrahedra, violet octahedra, sienna glow in the channels",
+      "scene": "the crystal structure of olivine, four-cornered silicon-oxygen units set apart from one another in ranks and never joined corner to corner, zigzag rows of magnesium octahedra threading the gaps and binding them, oxygen spheres packed in staggered sheets underneath, rank behind rank into shadow, sienna glow held in the open channels, one hotter sphere burning violet in a row",
+      "target": "a violet-hot atom",
+      "target_phrase": "a glowing violet sphere",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "hex"
+      }
+    },
+    {
+      "name": "warp_point",
+      "exp": -15.4,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "rose-gold grid lines, violet void, one incandescent point",
+      "scene": "far inside the atom, a taut grid of rose-gold lines drawn through a violet void, the whole grid pulled into a funnel around a single incandescent point, its squares stretched long and thin near the throat and settling square again out at the margins, faint sparks strewn through the space past the grid, no ground and no sky"
+    },
+    {
+      "name": "cosmic_web",
+      "exp": 23.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-gold filaments and violet sheets on a starless void",
+      "scene": "the cosmic web strung across a starless void, rose-gold filaments of galaxies drawn from knot to knot, enormous unlit cells opening in the gaps, violet sheets of faint galaxies stretched over the emptiest of them, one massive cluster burning at a near crossing with the galaxies behind it smeared into curved arcs about it"
+    },
+    {
+      "name": "nursery_nebula",
+      "exp": 16.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet and sienna gas with rose-gold newborn stars",
+      "scene": "a star nursery, columns of violet and sienna gas reared upright across the sky, ranked one behind another into the distance, rose-gold newborn stars burning at their tips, banks of dust lit from within down their flanks, thin gas threads drawn from column to column, unlit sky opening in the gaps, one young star with a ringed disc turned on its side at the near margin",
+      "target": "a ringed dusty disc",
+      "target_phrase": "a ringed disc",
+      "loop_target": "a star nursery, columns of violet and sienna gas reared across the sky, rose-gold newborn stars burning at their tips"
+    },
+    {
+      "name": "resonance_disc",
+      "exp": 12.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-gold dust lanes, violet gaps, an incandescent hub",
+      "scene": "a protoplanetary disc turned at an angle, rose-gold dust lanes wound in nested rings about an incandescent hub, sharp circular gaps swept clean through them where the orbits fall into step, the inner lanes crowded and the outer ones drawn thin, a shepherded ridge raised at every gap's rim, violet shadow cast over the far half of the disc, one stone world newly gathered in the broadest gap",
+      "target": "a young stone world",
+      "target_phrase": "a stone planet",
+      "cameo": {
+        "sprite": "output/mascots/canon/lamar.png",
+        "pos": [
+          0.62,
+          0.38
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "newborn_world",
+      "exp": 6.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sooty basalt, rose-gold crack veins, violet dust haze",
+      "scene": "a young stone world turned against the void, sooty basalt plains cooled over most of its face, rose-gold veins of molten rock still open across them in branching networks, sienna dust storms curled over one hemisphere, fresh craters strewn through the terminator, a thin violet haze of atmosphere at the limb, one broad dry basin cracked into plates on the day side",
+      "target": "a cracked dry basin",
+      "target_phrase": "a dry basin"
+    }
+  ],
+  "music_theme": "a stone older than the world cooling on desert clay — a patient mineral breath, reed organ over a sub pulse, sienna and violet, opening out as the scale turns cosmic and settling back onto the hardpan at the close",
+  "music_key": "D minor",
+  "render_start": "nursery_nebula"
+}

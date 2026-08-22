@@ -1,0 +1,122 @@
+{
+ "name": "sundew_snare",
+ "theme": "carnivory at the pace of patience — from a spiral galaxy of counted arms through a nursery of budding gas spires and a green-black moor world down to a peat bog at dusk crowded with sundews, damselflies and calling curlews, in onto one rosette's spiral of crimson tentacles, onto a midge mired in the glue, through the gland's own cells to the enzyme machines gripping the loosed protein chains, into the atoms and the foam strung across their gaps — whose emptiness opens as the emptiness inside a cosmic void, walled by galaxy sheets the way a bog pool is walled by sphagnum shoals",
+ "style": "liquid_light",
+ "music_lane": "choir_of_dust",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 9,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "spiral_galaxy",
+   "exp": 20,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "sea-green star clouds, ivory core, sooty ink void",
+   "scene": "a spiral galaxy tilted in open space, its star clouds wound into a tight double spiral of counted arms, every arm budding into lesser arms of the same curl, sea-green gas knots strung through the windings, an ivory core, sooty dust lanes cutting each arm, hundreds of faint companion galaxies scattered through the void around it",
+   "target": "a sea-green gas knot",
+   "target_phrase": "a green gas cloud",
+   "loop_target": "a tilted spiral galaxy of counted arms, sea-green gas knots and an ivory core among faint companion galaxies"
+  },
+  {
+   "name": "spire_nursery",
+   "exp": 14,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "moss-green gas towers, copper rims, blue star cores on ink",
+   "scene": "a nursery of glowing gas spires ranked across the void, each tower budded with lesser towers of its own shape, moss-green sheets of gas banked behind the ranks, copper rims where starlight burns through the crests, newborn blue suns set into the hollows, sooty ropes of dust threading the gaps",
+   "target": "a green-black world",
+   "target_phrase": "a green planet"
+  },
+  {
+   "name": "peat_world",
+   "exp": 7,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "green-black sea, rust-brown moor, ivory storm coils",
+   "scene": "a green-black ocean world seen from orbit, ivory storm coils set over the water, one rust-brown moorland continent spread beneath them, its peat basins pooled in curving fans, a copper seam of daylight crossing the globe, the void past the world's curve",
+   "target": "a rust-brown moor",
+   "target_phrase": "a brown moorland"
+  },
+  {
+   "name": "bog_dusk",
+   "exp": 1,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "green-lacquered water, wine-red moss, bone cotton-grass, indigo dusk",
+   "scene": "a peat bog at dusk from a low hummock, cushions of sphagnum in green and wine-red shoals crowding the water, ink-still pools set among the cushions, crimson sundew rosettes glittering over the moss in their hundreds, damselflies poised over the water on stiff gauze wings, a bog frog half sunk at a pool's verge, curlews calling from a stand of bone-white cotton-grass, midge swarms hanging in the indigo air",
+   "target": "a crimson sundew rosette",
+   "target_phrase": "a red sundew rosette"
+  },
+  {
+   "name": "glue_rosette",
+   "exp": -2,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "crimson stalks, ghost-blue glass beads, russet moss",
+   "scene": "one sundew rosette on the moss, its paddle-shaped leaf blades ranked in a counted spiral, crimson tentacle stalks crowding every blade, a clear round bead of glue at each tentacle tip, thousands of ghost-blue beads over the whole rosette, a grey midge mired in the glue at one blade's centre, russet moss cushions and drowned peat fibre under the plant, an unlit pool past its rim",
+   "target": "a grey midge",
+   "target_phrase": "a grey insect"
+  },
+  {
+   "name": "snared_midge",
+   "exp": -3,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ash-grey gauze, ghost-blue glue, garnet gland heads",
+   "scene": "a grey midge mired in a glue bead, its gauze wings pressed flat and silvered by the glue, crimson tentacle stalks curved inward over the bead on every hand, each stalk swollen at its tip into a garnet gland head, glue strands drawn taut from head to head, the leaf blade's glossy green surface under it all, moss out past the rim in shadow",
+   "target": "a garnet gland head",
+   "target_phrase": "a red gland head",
+   "cameo": {
+    "sprite": "output/mascots/canon/lee.png",
+    "pos": [
+     0.26,
+     0.68
+    ],
+    "size": 0.14
+   }
+  },
+  {
+   "name": "gland_cells",
+   "exp": -5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "amber vacuoles, viridian grains, garnet cell walls",
+   "scene": "the living tissue inside one gland head, plant cells packed wall to wall in curving files, every wall a taut garnet-tinted frame, a round nucleus set in each cell, viridian chloroplast grains crowded through the cytoplasm, amber vacuole fluid filling the cell centres, clusters of secretion vesicles massed at the outer walls, a glassy cuticle sheet arched over the whole rank",
+   "target": "a clear secretion vesicle",
+   "target_phrase": "a clear round bubble"
+  },
+  {
+   "name": "enzyme_lock",
+   "exp": -8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ghost-blue ribbon, teal water shells, ink murk",
+   "scene": "the fluid inside the vesicle, crowded with folded enzyme machines, each a compact knot of coiled ribbon and pleated sheet wound in a spiral fold, a notch cut into every one, ragged protein chains adrift among the machines, one chain sunk into a notch and gripped there, sugar chains beaded over the machine surfaces, shells of water shimmering around each, more machines ranked away into the murk",
+   "target": "a glowing atom",
+   "target_phrase": "a glowing atom"
+  },
+  {
+   "name": "atom_foam",
+   "exp": -12.5,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "gold cores, jade haze shells, violet sparks in an unlit void",
+   "scene": "ranks of luminous haze-shells nested one inside another around dense gold cores, the shells thinning to jade mist at their rims, the cores ranked away into an unlit hollow, a fine foam of paired sparks strung across every gap, faint violet threads knotted through the foam, the space mostly empty"
+  },
+  {
+   "name": "void_interior",
+   "exp": 24,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ink hollow, wan viridian sheets, bone-gold cluster knots",
+   "scene": "the interior of a cosmic void, a vast unlit hollow walled on every hand by faint sheets of galaxies, the sheets thinning to gauze where they curve away, wan viridian filaments strung from wall to wall across the hollow, bone-gold knots of clusters set where the strands cross, stray galaxies adrift in the emptiness"
+  }
+ ],
+ "music_theme": "predatory patience — a hushed granular choir and glass harmonica over a warm sub drone, one deep struck downbeat in every bar, the pad thickening as the bog arrives, at its stillest around the mired midge, thinning to a single low tone through the cells, and one deep bloom where the atoms' emptiness opens into the cosmic void",
+ "music_key": "G minor",
+ "render_start": "spiral_galaxy"
+}

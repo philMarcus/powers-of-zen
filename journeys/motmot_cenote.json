@@ -1,0 +1,132 @@
+{
+  "name": "motmot_cenote",
+  "theme": "a Yucatan cenote at noon read as one net of glare at every scale — down the sun-shaft into the well's turquoise water, onto the caustic mesh lying over the drowned floor, into an algal thicket where rotifers graze, through one rotifer's feeding wheels to the cilia standing off its cells, inside a single cilium to the tiled tubes and the carriers stepping up them, down to the atoms of that tiling and the knot of strands inside one core, which folds to a hollow in the cosmic web — and the web's polygon mesh folds a second time straight back into the glare net on the cenote's water",
+  "style": "reef_pop",
+  "music_lane": "glass_chapel",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "cenote_mouth",
+      "exp": 1.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "turquoise water glow, rose-tan limestone, jungle shadow",
+      "scene": "a round limestone well opening under the jungle at noon, sheer rose-tan walls dropping to turquoise water far beneath the rim, curtains of tree roots hanging down the stone, turquoise-browed motmots perched on wall ledges, swallows cutting across the sun-shaft, catfish and slider turtles patrolling the water below a crooked mesh of glare, jungle canopy closing over the rim, no one present",
+      "target": "the turquoise water",
+      "target_phrase": "the turquoise water"
+    },
+    {
+      "name": "sunbeam_column",
+      "exp": 0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade-turquoise shaft in ink-blue water, amber motes",
+      "scene": "a slanting column of jade-turquoise sun cutting down through ink-blue water beneath the surface of the well, ranks of amber motes suspended inside the beam, a wrinkled haze layer where fresh water meets the salt water lower down, drowned boughs standing out of the murk, the sunlit stone floor showing far beneath the beam",
+      "target": "the sunlit stone floor",
+      "target_phrase": "the sunlit stone floor"
+    },
+    {
+      "name": "caustic_mesh",
+      "exp": -0.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "turquoise glare-mesh, rose-grey limestone, sunken shadow",
+      "scene": "the drowned floor of the well, a net of turquoise glare lying over rose-grey limestone, its cells drawn as crooked polygons that meet at glowing junctions, silt banked in every hollow, jade algal threads standing up out of the silt, flecks of drift suspended in the water over the stone",
+      "target": "a jade algal thread",
+      "target_phrase": "a thread of algae"
+    },
+    {
+      "name": "algal_thicket",
+      "exp": -2.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade filaments, amber specks, teal murk",
+      "scene": "a thicket of jade algal filaments standing in still water, chains of swollen cells strung end to end up every filament, transparent copepods and water fleas hanging among the strands, glassy diatom discs scattered over them, clear barrel-bodied rotifers gripping the filaments, teal murk closing off the furthest strands",
+      "target": "a clear barrel-bodied rotifer",
+      "target_phrase": "a clear rotifer"
+    },
+    {
+      "name": "rotifer_wheels",
+      "exp": -3.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "glass body, amber gut line, teal gloom",
+      "scene": "a clear rotifer gripping the algal strand, its two feeding wheels turned open at the head, each wheel ringed with hair-fine cilia set in a tight comb, an amber gut line showing through the glassy trunk, other rotifer bodies anchored further off in the teal gloom, flecks of drift suspended over the combs",
+      "target": "a ring of hair-fine cilia",
+      "target_phrase": "a ring of cilia"
+    },
+    {
+      "name": "cilia_field",
+      "exp": -5.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "milk-glass stalks, rose-lilac cell floor, indigo gloom",
+      "scene": "ranks of hair-fine cilia standing up off the cell floor, every stalk ribbed and milk-glass clear, the floor beneath them a mosaic of swollen cells with taut membranes and crowded granules inside, mitochondria stacked in the shallows at the foot of each stalk, rank on rank of stalks receding into indigo gloom",
+      "target": "a ribbed glassy stalk",
+      "target_phrase": "a ribbed stalk"
+    },
+    {
+      "name": "cilium_tubes",
+      "exp": -7.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "turquoise tubes, copper carriers, ink space",
+      "scene": "nine paired hollow tubes standing in a ring inside one cilium, every tube tiled from rows of rounded protein beads set in a spiral brickwork, forked copper carriers set astride the tile rows with rounded cargo pods on their stalks, thin spokes strung from tube to tube, further tube ranks repeating away into ink space",
+      "target": "a rounded protein bead",
+      "target_phrase": "a round protein bead",
+      "cameo": {
+        "sprite": "output/mascots/canon/tina.png",
+        "pos": [
+          0.66,
+          0.38
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "tubulin_wall",
+      "exp": -8.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-quartz beads, turquoise seams, sable gaps",
+      "scene": "the tiled wall of one hollow tube, rounded rose-quartz beads paired and locked into rows that spiral away in every direction, each bead a knot of coiled ribbon chains packed under a glassy skin, turquoise seams glowing where the rows interlock, sable gaps opening in the ranks behind, more walls of the same brickwork standing off in the gloom",
+      "target": "a glowing atom",
+      "target_phrase": "a glowing atom"
+    },
+    {
+      "name": "atom_shells",
+      "exp": -10.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-gold cores, turquoise fog shells, sable gaps",
+      "scene": "a field of atoms in the tubulin lattice, every atom a rose-gold core wrapped in nested shells of turquoise fog, the cores set out in staggered rows receding rank on rank, faint shimmer crossing the ranks where the shells overlap, wide sable gaps opening in the grid, seen level with the rows",
+      "target": "a rose-gold core",
+      "target_phrase": "a glowing core",
+      "loop_target": "a field of atoms in staggered rows, rose-gold cores in nested shells of turquoise fog"
+    },
+    {
+      "name": "strand_knot",
+      "exp": -15,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "blazing trio, turquoise strands, rose sparks on sable",
+      "scene": "a tight trio of blazing spheres hanging in emptiness, taut turquoise strands drawn from each sphere to the others and knotting where they cross, rose sparks strewn through the surrounding void, the same knotted mesh repeating away in every direction"
+    },
+    {
+      "name": "void_interior",
+      "exp": 24,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "faint rose galaxy sheets, turquoise filaments, immense hollow",
+      "scene": "an immense hollow in the cosmic web, its walls faint sheets of galaxies standing off in every direction, a mesh of turquoise filaments drawn across the hollow and meeting at rose-gold knots of clustered galaxies, the polygon cells of that mesh opening one behind another, a scatter of far galaxies strewn over the emptiness"
+    }
+  ],
+  "music_theme": "a flooded chapel dive — slow bell-toned pads over a breathing sub-pulse that tightens as each scale closes in, one wide hit on the fold from the strand-knot to the cosmic hollow and a second, keener hit as the web drops back into the well, vast quiet water in the bars either way",
+  "music_key": "C# minor",
+  "render_start": "atom_shells"
+}

@@ -1,0 +1,140 @@
+{
+ "name": "bourdon_foundry",
+ "theme": "casting night at a bell foundry, entered from the far end of the universe — a crowd of galaxies girdled by lensed arcs, one spiral galaxy whose streams of starfire become the glowing runners of molten bronze branching over a foundry's sand floor, then down the made-object continuation: the pour cup, the oxide-crackle skin of cooling bellmetal, the fir-tree dendrites of its raw grain, the cubic ranks of copper and tin, the nucleus as a shivering droplet of glowing beads, three incandescent cores knotted by strands of glare, and the sagging net of the void at that mass — which unfolds into the cosmic mesh itself and falls back through the filaments to the cluster where it began",
+ "style": "cosmic_gloss",
+ "music_lane": "ember_pulse",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 6,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "cosmic_scaffold",
+   "exp": 24.6,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ghost-blue filaments, copper-hot knots, sable void",
+   "scene": "a scaffold of ghost-blue filaments strung through an immense void, threads of faint galaxies drawn taut from knot to knot, several knots glowing hot copper where thousands of galaxies crowd together, huge unlit cavities opening under the mesh, a turquoise haze caught in the wider gaps, stray galaxies strewn as sparks over the whole field",
+   "resolve": {
+    "mode": "web"
+   }
+  },
+  {
+   "name": "lens_arcs",
+   "exp": 22.6,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "copper-flash red arcs, turquoise threads, soot void",
+   "scene": "a great crowd of galaxies gathered at a knot of the cosmic mesh, seen straight across the void, curved streaks of copper-flash red glare bent into a wide circle about the crowd, hundreds of small spiral and lens-shaped smudges scattered over the field, turquoise threads of the mesh running out of the crowd toward the far reaches, a soot gloom holding all of it",
+   "target": "a tilted spiral galaxy",
+   "target_phrase": "a spiral galaxy",
+   "loop_target": "a crowd of galaxies at a knot of the cosmic mesh, curved streaks of copper-red glare bent about it, turquoise threads running out toward the far reaches"
+  },
+  {
+   "name": "starfire_spiral",
+   "exp": 21.0,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "turquoise smoke, copper hub, soot dust lanes",
+   "scene": "a tilted spiral galaxy set in the void, its arms uncoiled in long streams of copper starfire, a blazing hub at the middle of the coil, turquoise nebular smoke caught in the gaps of the arms, a lane of soot dust cut across the nearer arm, a few small satellite smudges attending it, stray sparks scattered over the gloom beyond"
+  },
+  {
+   "name": "foundry_floor",
+   "exp": 1.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "copper-red runners, turquoise patina, smoke and soot",
+   "scene": "a bell foundry hall on casting night, empty, no one present, seen from the gantry over the floor, glowing runners of molten bronze branching across a sand floor toward a mold pit sunk in the middle of it, hoist chains slung overhead in deep hanging curves from the roof trusses, a tilted crucible propped above the pour cup, ranks of finished bells ranged at the brick wall with turquoise crackle over their bronze, iron flasks and long rakes crowded at the near edge of the floor, smoke rolling under the roof, sparks scattered over the sand",
+   "target": "a stream of molten bronze",
+   "target_phrase": "a molten metal stream"
+  },
+  {
+   "name": "pour_cup",
+   "exp": -0.4,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "molten copper-red, grey dross, scorched sand",
+   "scene": "the pour cup at the head of the buried mold, molten bronze crowded to the brim of it, a skin of copper-flash red drawn over the whole surface, rafts of grey dross broken across that skin, the sand rim scorched and smoking where the metal meets it, a thin turquoise flame over the surface, a runner channel cut away toward the mold's throat, soot walls beyond the rim",
+   "target": "a turquoise crust plate",
+   "target_phrase": "a turquoise crust"
+  },
+  {
+   "name": "chill_crust",
+   "exp": -2.6,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "turquoise crackle, copper-red seams, ash grey",
+   "scene": "the cooling skin of cast bellmetal, plates of oxide crackle tiled over the whole surface, every plate mottled turquoise and soot-green across its face, seams of copper-flash red glowing up through each crack in the tiling, blisters risen where gas pushed out of the metal, a rime of grey ash caught in the low places, one edge broken away to show the raw grain of the metal beneath, the tiling receding into smoke at the far reach",
+   "target": "a feathered silver crystal",
+   "target_phrase": "a silver crystal"
+  },
+  {
+   "name": "dendrite_grain",
+   "exp": -4.8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "copper-sheen trunks, amber pools, violet-grey hollows",
+   "scene": "the raw grain of the bellmetal, fir-tree crystals grown out in ranks over the whole field, every trunk combed with rows of short arms, amber tin-rich pools frozen in the gaps among them, boundaries where one crystal's ranks meet another's at a steep angle, a copper sheen over the trunks, violet-grey shadow sunk in the hollows, the ranks receding into a smoky gloom",
+   "target": "a glowing copper sphere",
+   "target_phrase": "a glowing copper sphere"
+  },
+  {
+   "name": "bronze_lattice",
+   "exp": -9.6,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "copper spheres, blue glare rungs, ink gloom",
+   "scene": "the atomic order of the bronze, spheres of copper glow set in close-set cubic ranks running away in every direction, a larger tin sphere seated in the grid here and there where the rows bend to admit it, rungs of blue glare drawn taut from sphere to sphere, a shimmer of heat trembling through the ranks, the deeper ranks fading off into ink gloom",
+   "target": "an incandescent core",
+   "target_phrase": "a blazing core",
+   "resolve": {
+    "mode": "lattice",
+    "variant": "cubic"
+   }
+  },
+  {
+   "name": "nucleus_droplet",
+   "exp": -14.2,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "copper-red and pearl beads, glare haze, sable emptiness",
+   "scene": "the heart of one copper atom, a droplet of glowing spheres crowded into a rough globe, copper-red and pearl beads pressed together with no room among them, a haze of glare filling every gap, the rim of the droplet unsteady and shivering, a sable emptiness about it with faint sparks strewn through",
+   "target": "a copper-red bead",
+   "target_phrase": "a red glowing bead",
+   "resolve": {
+    "mode": "sea"
+   }
+  },
+  {
+   "name": "bound_trio",
+   "exp": -15.6,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "incandescent ivory cores, amber glare strands, soot",
+   "scene": "the interior of one bead, three cores of incandescent glow held in a taut triangle, thick strands of amber glare drawn from each core to the others and knotted at the middle, the strands frayed into slender threads where they cross, a fog of sparks hung in the emptiness about them, everything beyond drowned in soot gloom",
+   "target": "a sagging net of glare",
+   "target_phrase": "a glowing net",
+   "cameo": {
+    "sprite": "output/mascots/canon/clark.png",
+    "pos": [
+     0.64,
+     0.6
+    ],
+    "size": 0.14
+   }
+  },
+  {
+   "name": "grid_warp",
+   "exp": -16.8,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "turquoise mesh, copper glare, void",
+   "scene": "a net of glowing threads laid through the emptiness, its squares stretched out of true where they crowd toward a heavy point at the middle, the mesh sunk there into a funnel of hanging curves, the threads thinning to turquoise where the net runs out to the far reaches, a copper glare welling up out of the pit of the funnel, sparks caught in the mesh"
+  }
+ ],
+ "music_theme": "a foundry heartbeat under a cold sky — one deep 808 kick on every downbeat with long empty space after it, smoky low pads through the cluster and the galaxy, the pulse heaviest and closest at the foundry floor and the pour, thinning to a single low drone through the crystal and atomic scales, distant soft chimes over the nucleus, and one struck low hit where the net sags open into the cosmic mesh",
+ "music_key": "F minor",
+ "render_start": "lens_arcs"
+}

@@ -1,0 +1,74 @@
+{
+ "name": "wild_yeast",
+ "theme": "a split sourdough loaf read all the way down and folded back on itself — from the baker's counter into the crumb's packed chamber system, onto a chamber wall where yeast bodies heap into budding towers, into one elastic strand's folded protein ribbon walls, down to the nested bands inside a starch granule, and home when those rings widen into the spiral score slashed across the crust",
+ "style": "gilded_relic",
+ "music_lane": "analog_dawn",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 7,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "split_loaf",
+   "exp": 0,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "burnt caramel and smoked umber, one amber shaft on soot",
+   "scene": "a baker's counter at daybreak, empty, no one present, a sourdough loaf halved and set cut-face up on scorched oak, its crust slashed with one spiral score and baked to burnt caramel, a squat jar of starter capped with foam beside it, a cane proving basket ringed with milled flour, a linen towel folded over a wire cooling rack, flour strewn across the boards, one amber shaft from a window and soot shadow banked in every corner",
+   "target": "a domed air pocket",
+   "target_phrase": "a hole in the bread"
+  },
+  {
+   "name": "crumb_caverns",
+   "exp": -2.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "smoke-grey brown vaults with cool amber seeping through thin membranes",
+   "scene": "the chamber system within a sourdough crumb, domed cavities of every size packed one against the next in every direction, wide vaults with lesser ones wedged into each gap and lesser still nested in the gaps of those, each partition a stretched amber-brown membrane gone glassy where it thinned, warm caramel glow soaking through the thinnest of them, sooty scorch in the far hollows, cavities on every side, overhead and below",
+   "target": "a budding yeast cell",
+   "target_phrase": "a budding yeast cell",
+   "loop_target": "the chamber system within a sourdough crumb, domed cavities of every size packed one against the next"
+  },
+  {
+   "name": "yeast_towers",
+   "exp": -5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "honeyed gold and burnt caramel on sooty umber",
+   "scene": "a chamber wall at cell scale, oval yeast bodies heaped into short leaning towers, each carrying a swollen daughter bud on its side and old bud scars ringed across its wall, chains of three and four cells still joined end to end, glossy elastic strands webbing the gaps from tower to tower, a slick amber matrix banked around every base, honeyed gold burning inside each cell and sooty umber packed in the hollows",
+   "target": "a glossy elastic strand",
+   "target_phrase": "a glossy elastic strand"
+  },
+  {
+   "name": "gluten_walls",
+   "exp": -7,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ash umber and cool bronze with a gold sheen on every coil",
+   "scene": "within the strand's protein network, folded ribbon chains stacked into looping elastic walls, each ribbon creased and coiled back on itself, the stacks knitted where they cross and drawn taut where they pull apart, springy sheets curving away in every direction, a thin gold sheen running the length of every coil, thick umber shadow packed in the gaps, one smooth banded body bedded among the sheets",
+   "target": "a banded starch granule",
+   "target_phrase": "a smooth banded sphere",
+   "cameo": {
+    "sprite": "output/mascots/canon/tina.png",
+    "pos": [
+     0.62,
+     0.42
+    ],
+    "size": 0.14
+   }
+  },
+  {
+   "name": "starch_shells",
+   "exp": -8,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "oolong amber and burnt caramel glowing through nested bands",
+   "scene": "the interior of a starch granule, curved shells of packed helical chains nested one within the next around a hidden core, hard and soft bands alternating outward ring on ring, each shell grained with the run of its own chains, oolong amber translucence carrying the glow through layer after layer, burnt caramel where the bands run thick, sooty umber in the seams"
+  }
+ ],
+ "music_theme": "a tape-warm dawn in an empty bakery — soft electric piano and dusty analog pads over a rolling sub bass, one deep kick landing on every scale change, the chords thinning to a single held tone inside the protein walls, and a warm swell where the nested bands open back out onto the scored crust",
+ "music_key": "D minor",
+ "render_start": "crumb_caverns"
+}

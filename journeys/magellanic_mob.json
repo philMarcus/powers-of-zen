@@ -1,0 +1,149 @@
+{
+ "name": "magellanic_mob",
+ "theme": "a moonlit kangaroo mob read as one stroking rank restated at every scale — a river of stars bridging two dwarf galaxies, the shoal of newborn suns kindled in its current, one smoldering sun and its worlds, the red night world, pleated dune country creased fold after fold, the claypan crossing where the mob bounds with hopping-mice, a dingo and a boobook owl for company, then the unbroken living descent through one doe's haunch: the shank's spring cable of crimped collagen ropes, the crease-field of striated ranks that shorten by folding flat, the oar-crews of the motor itself taking hold of their pearl ropes, and the carbon shells they are built from — whose drifting files stroke together and open out as the star-lanes the mob was bounding under",
+ "style": "enchanted_wild",
+ "music_lane": "wooden_orbit",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 8,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "star_river",
+   "exp": 21,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "pearl star-lanes and oxblood gas on indigo murk",
+   "scene": "a river of stars and glowing gas drawn across open space, spanning from one ragged dwarf galaxy to a smaller second, its current combed into long pearl lanes with millions of star grains strewn through them, oxblood clouds of stripped gas caught in the slack of the current, a great spiral hauling at the far end with its arms hooked toward the stream, cold stars scattered thickly past it in every direction, indigo murk deepening under the whole span",
+   "target": "a knot of blue suns",
+   "target_phrase": "a cluster of blue stars"
+  },
+  {
+   "name": "nursery_shoal",
+   "exp": 16.8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "blue-pearl suns, oxblood dust ridges, indigo depth",
+   "scene": "hundreds of newborn suns strewn through a hollow burned in a long drift of star-gas, blue-pearl and hot, oxblood dust ridges banked around the hollow with their crests lit rose-gold, taut streamers of gas drawn across the gaps, unlit globules hung in sagging chains through the ridges, ranks of fainter suns receding into indigo depth, seen from far out in open space",
+   "loop_target": "a shoal of newborn blue-pearl suns strewn through a hollow burned in oxblood star-gas",
+   "target": "a smoldering red sun",
+   "target_phrase": "a red star"
+  },
+  {
+   "name": "ember_system",
+   "exp": 11.2,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ember-red sun, ash-rose dust ring, indigo gulf",
+   "scene": "one smoldering red sun standing in an open gulf, its ember face veiled under combed streamers of its own gas, a tilted ring of ash-rose dust set about it, half a dozen worlds strung on their courses through the ring's gaps, each carrying a rind of ember glare on its sunward face, small moons scattered near the largest of them, cold stars strewn past the gulf in every direction",
+   "target": "an oxide-red planet",
+   "target_phrase": "a red planet"
+  },
+  {
+   "name": "night_world",
+   "exp": 6.8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "oxblood continent, silver salt gleam, ink-blue ocean night",
+   "scene": "a red world seen from low orbit with most of its face turned to night, one great oxide-red continent lying under the glare of a full moon, chains of salt pans gleaming silver across its middle, a vast dune sea ridged in parallel ranks over its northern half, cloud streets stacked in pearl banks over the ink-blue ocean at its margin, a thin skin of atmosphere lit at the limb, pearl star-haze past the curve of the world",
+   "target": "a rippled red dune field",
+   "target_phrase": "a red dune field",
+   "cameo": {
+    "sprite": "output/mascots/canon/janet.png",
+    "pos": [
+     0.72,
+     0.31
+    ],
+    "size": 0.13
+   }
+  },
+  {
+   "name": "dune_country",
+   "exp": 3.8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "oxblood dune ranks, silver grass-glint, umber troughs",
+   "scene": "red dune country seen from high over the ranks and tipped toward the flats, long oxblood dunes pleated across it in parallel folds, every crest silvered by the moon and every trough creased into hard shadow, fold after fold repeating to the horizon, silver-grey spinifex hummocks stippling the swales in thousands, a pearl claypan sunk pale amid the dunes, a dry creek threading braided channels through the ranks with dead mulga standing over it, night mist lying in the lowest troughs",
+   "target": "a pale claypan",
+   "target_phrase": "a pale dry lakebed"
+  },
+  {
+   "name": "mob_crossing",
+   "exp": 0.6,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "oxblood earth, silver grass-glint, pearl star-haze",
+   "scene": "the margin of a pale claypan at standing height under a full moon, a mob of red kangaroos strung across the pan in mid-bound with their tails out straight and their shadows thrown hard onto the crust, one heavy buck halted at the front of the mob, a dingo slinking parallel at the mob's flank, small hopping-mice bolting from the shade of the tussocks in ones and twos, a boobook owl slanting low over the pan, round-headed and mottled, silver-grey spinifex hummocks ranked around the rim of the pan, a pearl river of stars arched across the sky over all of it",
+   "target": "a red kangaroo",
+   "target_phrase": "a red kangaroo",
+   "resolve": {
+    "mode": "surface"
+   }
+  },
+  {
+   "name": "haunch",
+   "exp": -0.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "oxblood fur grain, silver moon-rake, ash dust",
+   "scene": "the hindquarters of one kangaroo at mid-stride, oxblood fur laid in fine grain over the thick thigh, the long shank drawn taut under it with a pale spring cable standing proud beneath the skin, moonlight raking the grain so every ridge stands out in relief, ash-grey dust hanging where the pad struck the crust, the tussocks going soft in the night behind it",
+   "target": "a taut pale tendon",
+   "target_phrase": "a pale tendon",
+   "resolve": false
+  },
+  {
+   "name": "spring_cable",
+   "exp": -3,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "pearl collagen ropes, oxblood sheath, umber murk",
+   "scene": "within the spring cable of the shank, pearl ropes of collagen laid parallel in close ranks, each rope crimped into a shallow zigzag repeated down its length, an oxblood sheath drawn over the ranks and pinned to them by hairline struts, flattened cells pressed in files amid the ropes, and at the far end of the bundle the ropes taking hold of the blunt ends of crimson fibres ranked shoulder to shoulder, further bundles receding into umber murk, no ground and no sky",
+   "target": "a banded crimson fibre",
+   "target_phrase": "a red banded fibre"
+  },
+  {
+   "name": "crease_field",
+   "exp": -5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "crimson ranks, pearl seams, plum lanes",
+   "scene": "within one muscle fibre, ranks of striated bands stacked one behind the next down its whole length, every rank ruled by a pearl seam and creased into crisp alternating folds, ridge and hollow repeating across the whole tessellated field, plum lanes of ridged mitochondria crammed amid the ranks, oval nuclei pressed in files against the fibre's sheath, a lace of fine tubules ringing every rank, further ranks receding into umber murk, no ground and no sky",
+   "target": "a glossy crimson band",
+   "target_phrase": "a crimson band",
+   "resolve": {
+    "mode": "lattice",
+    "variant": "layered"
+   }
+  },
+  {
+   "name": "oar_gangs",
+   "exp": -8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "slate-oxblood rods, pearl ropes, silver sparks on ink murk",
+   "scene": "the machinery within one striated band, thick slate-oxblood rods ranked in a six-sided array with slender pearl ropes threaded through its gaps, crews of paired oar-heads studded down every rod in files, each pair leaned onto the rope nearest it and taking hold, fine coil-springs strung from the rod ends to hold the array true, silver sparks of charge scattered through the gaps, the array repeating rank after rank into ink murk, no ground and no sky",
+   "target": "a burning carbon atom",
+   "target_phrase": "a glowing atom",
+   "resolve": {
+    "mode": "lattice",
+    "variant": "hex"
+   }
+  },
+  {
+   "name": "carbon_fog",
+   "exp": -9.6,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "pearl cores, oxblood haze, indigo murk",
+   "scene": "carbon atoms standing apart in the murk, each one a pearl core held within nested shells of glowing haze, shell within shell, the outer shells of neighbours overlapping into a soft mottled weave, the whole population drifting in long files one behind the next, oxblood ripples printed across the haze, rank after rank of them repeating into indigo murk",
+   "resolve": {
+    "mode": "sea"
+   }
+  }
+ ],
+ "music_theme": "a moonlit crossing of red country — a round woody pulse with a deep sub under it, one kick on the downbeat and a softer thump answering, kalimba figures drifting over a low drone, the pulse gathering weight as the dune country opens and heaviest where the mob crosses the pan, tightening to a single struck tine through the cable and the crease-field, one deep hit as the drifting carbon shells open out into the river of stars",
+ "music_key": "G minor",
+ "render_start": "nursery_shoal"
+}

@@ -1,0 +1,75 @@
+{
+  "name": "fiddler_commons",
+  "theme": "a dusk salt marsh worked as a crowded commons — fiddler crabs, ribbed mussels, killifish and a hunting egret sharing one mudbank — then down a cordgrass stalk through its breathing pores into the aerenchyma, the plant's own maze of air galleries walled with chloroplast-loaded cells, which opens out as the marsh's dendritic tidal creeks seen from the air and settles back onto the mudbank where it began",
+  "style": "enchanted_wild",
+  "music_lane": "wooden_orbit",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "mudbank_commons",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "chartreuse cordgrass glow and pewter mud on dusk charcoal",
+      "scene": "a salt marsh mudbank at dusk seen at eye level, dozens of fiddler crabs posted over the slick pewter mud with one outsized claw raised on each, clumps of ribbed mussels wedged upright where the cordgrass roots grip, a shoal of killifish crowding the shallow creek water, an egret hunting the far margin on stilt legs, ranks of chartreuse cordgrass rising in every direction, marsh periwinkle snails clamped up the stalks, smoke haze lying over the flats",
+      "target": "a ridged green cordgrass stalk",
+      "target_phrase": "a green grass stalk",
+      "loop_target": "a dusk salt marsh mudbank at eye level, fiddler crabs over the pewter mud among ranks of chartreuse cordgrass"
+    },
+    {
+      "name": "stalk_rind",
+      "exp": -2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "olive wax ridges and cold salt glitter",
+      "scene": "a broad ribbed expanse of green cordgrass rind, waxy ridges running in parallel ranks, salt grains crusted through the grooves in glinting crumbs, rows of slotted breathing pores set in the flats among the ridges, each pore lipped with a swollen green rim, marsh gloom opening past the far edge",
+      "target": "an oval green-lipped pore",
+      "target_phrase": "an oval green pore"
+    },
+    {
+      "name": "air_galleries",
+      "exp": -4.4,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "acid chartreuse cell glow and smoke-grey tissue",
+      "scene": "a maze of air galleries threading green stalk tissue, every hall walled with rows of boxy cells, thin cell walls glowing chartreuse from the stacked chloroplast grains crowding each compartment, junctions opening four ways where the galleries cross, strands of wall thread bridging the gaps, arch after arch receding into pewter murk",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "creek_network",
+      "exp": 4.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pewter tidewater on olive sedge plains",
+      "scene": "a salt marsh estuary seen from high above at dusk, tidal creeks branching through the flats in a dendritic web of pewter water, oxbow bends and blind ends threading olive sedge plains, salt pans glinting where the tide has drained, smoke haze lying over the whole delta",
+      "target": "a curving mud bank",
+      "target_phrase": "a curving mud bank",
+      "cameo": {
+        "sprite": "output/mascots/canon/lorraine.png",
+        "pos": [
+          0.33,
+          0.6
+        ],
+        "size": 0.15
+      }
+    },
+    {
+      "name": "creek_bend",
+      "exp": 2.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "burnt-orange dusk glow on pewter water and chartreuse reeds",
+      "scene": "a tidal creek bend at dusk from a low oblique vantage, a wide slick of pewter mud curving under a thicket of chartreuse cordgrass, wrack lines of stranded reed litter drawn in arcs over the flat, shallow water sheeting through the channel with the last dusk glow on it, burrow mouths pocking the mud in their hundreds, smoke haze at the far reach of the marsh"
+    }
+  ],
+  "music_theme": "warm marimba and kalimba figures over a round woody bass, a deep kick on every downbeat, clicking wooden taps threaded through the opening bars like claw signals on the mudbank, thinning to a hollow hushed tone through the gallery maze, one struck wooden hit on the maze-to-estuary seam, then opening wide and breathing for the return over the flats",
+  "music_key": "F minor",
+  "render_start": "mudbank_commons"
+}

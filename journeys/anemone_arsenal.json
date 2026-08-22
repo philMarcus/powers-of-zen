@@ -1,0 +1,132 @@
+{
+  "name": "anemone_arsenal",
+  "theme": "a dusk tide pool worked as a crowded coastal metropolis — anemones, hermit crabs, gobies and urchins sharing one basin — then down one anemone tentacle into the ranks of its stinging cells, into a capsule where a barbed harpoon tubule sits wound in spiral turns under pressure, on through the twisted minicollagen cords of the capsule wall to the atoms holding them; the wound spiral unwinds into a star-stream bridging two colliding galaxies, and the fold home drops from that pair through an ocean world onto the volcanic shore whose rock pool started it",
+  "style": "liquid_light",
+  "music_lane": "tide_organ",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "tide_pool",
+      "exp": 0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "smoke-grey water, olive weed, copper glare",
+      "scene": "a tide pool basin cut into a rock shelf at dusk, copper-red anemones crowded across the sunken floor with their tentacle rings open, hermit crabs hauling banded shells over turquoise-crusted stone, speckled gobies darting among the weed fronds, purple urchins wedged into every crevice with their spines fanned, olive weed ribbons swaying at the basin rim, smoke-grey water holding the last copper glare of the sky, empty, no one present",
+      "target": "a copper-red sea anemone",
+      "target_phrase": "a red sea anemone"
+    },
+    {
+      "name": "anemone_column",
+      "exp": -1.1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "molten copper-red column, turquoise crust, soot shadow",
+      "scene": "one sea anemone rising from crusted stone on the pool floor, a thick copper-red column ringed by hundreds of tapered tentacles turning outward in every direction, turquoise coralline crust spreading over the rock at its base, shell grit and drift caught among the tentacle tips, sunken green water pressing in from all sides, gloom gathering under the rock overhang past it",
+      "target": "a tapered copper tentacle",
+      "target_phrase": "a copper tentacle"
+    },
+    {
+      "name": "tentacle_skin",
+      "exp": -2.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "turquoise mottling, copper ridges, ink-green water",
+      "scene": "the outer skin of an anemone tentacle, a curving copper-red slope banded by fine ridges running its length, thousands of glassy beads set into the surface in tight ranks, a stiff trigger bristle jutting from each bead, turquoise mottling flooding the troughs among the ridges, grit and drift passing over the slope, ink-green water and gloom past the far shoulder of it",
+      "target": "a glassy stinging bead",
+      "target_phrase": "a glassy bead"
+    },
+    {
+      "name": "cnidocyte_ranks",
+      "exp": -4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber granules, milky capsules, turquoise cell walls",
+      "scene": "ranks of stinging cells packed through the tentacle wall, each cell a taut turquoise compartment pressed into a honeycomb of curved facets, a milky ovoid capsule seated inside every compartment, a stiff trigger bristle rising from each cell's outer face, amber granules and fine threads crowding the gaps, further ranks receding into a smoky gloom",
+      "target": "a milky ovoid capsule",
+      "target_phrase": "a milky capsule"
+    },
+    {
+      "name": "capsule_coil",
+      "exp": -5.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "hot copper coil, violet murk, glassy sheen",
+      "scene": "the packed interior of one stinging capsule, a long barbed tubule wound in tight spiral turns stacked in toward the middle, every turn ribbed and studded with fine spines, the coil pressed against a curved wall woven from twisted strands, hot copper glow leaking through the fluid crowding the turns, more turns receding into violet murk",
+      "target": "a taut twisted strand",
+      "target_phrase": "a twisted strand"
+    },
+    {
+      "name": "minicollagen",
+      "exp": -7.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "turquoise protein knots, copper-flash sheen, soot gloom",
+      "scene": "the molecular ropework of the capsule wall, ranks of fibrous triple-stranded protein cords twisted around one another and cross-linked wherever they cross, a copper-flash sheen running the length of every cord, turquoise knots of folded protein clamped where three cords meet, shorter strands threaded through the gaps in every direction, further ranks fading into soot-coloured gloom",
+      "target": "a shimmering atom",
+      "target_phrase": "a shimmering atom",
+      "loop_target": "ranks of twisted protein cords cross-linked into a copper-sheened weave"
+    },
+    {
+      "name": "atom_winding",
+      "exp": -10.2,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "incandescent core, taut luminous thread, copper sparks in void",
+      "scene": "inside one atom of the protein cord, a dense knot of incandescent spheres crowded at its middle, long turns of taut luminous thread wound out around the knot in a slow spiral, a second knot answering across the emptiness with spiral turns of its own, copper-flash sparks strewn through the murk separating them, fainter windings repeating away into the void"
+    },
+    {
+      "name": "galaxy_pair",
+      "exp": 22,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "turquoise sheared gas, copper star clouds, void",
+      "scene": "two spiral galaxies leaning into one another across the void, a luminous bridge of star-stream drawn from the arms of one into the core of the other in a long curving arc, both discs sheared into trailing tails, copper-flash clouds of newborn suns strung down the bridge, turquoise gas glowing where the discs graze, far galaxies specking the surrounding void",
+      "target": "a glowing knot of stars",
+      "target_phrase": "a glowing star cluster",
+      "cameo": {
+        "sprite": "output/mascots/canon/aleksey.png",
+        "pos": [
+          0.36,
+          0.62
+        ],
+        "size": 0.15
+      }
+    },
+    {
+      "name": "star_knot",
+      "exp": 18,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "blue-hot and copper-hot points, torn turquoise gas",
+      "scene": "a swarm of newborn suns burning inside the star-stream, hundreds of blue-hot and copper-hot points crowded into a globular knot, torn sheets of turquoise gas still wrapped over the swarm, thin shock filaments strung across the sheets, the surrounding void thick with drift"
+    },
+    {
+      "name": "ocean_world",
+      "exp": 6.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "indigo sea, turquoise shallows, copper cloud tops",
+      "scene": "an ocean world turning in the void, storm spirals torn across a sunken indigo sea, copper-flash sunlight raking the cloud tops from one side, turquoise shallows curving around scattered volcanic island chains, the terminator cutting the far hemisphere into gloom, a thin haze glowing at the limb",
+      "target": "a volcanic island chain",
+      "target_phrase": "a volcanic island"
+    },
+    {
+      "name": "shore_ledge",
+      "exp": 3.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "charcoal basalt, copper-lit surf, green pools",
+      "scene": "a volcanic shore seen at a low slant in the last of the dusk, terraces of charcoal basalt stepping down into copper-lit surf, green pools caught in the rock terraces, kelp heaped in the runnels among them, spray hanging over the outer reef bars, gulls specking the sky over the headland",
+      "target": "a green rock pool",
+      "target_phrase": "a green rock pool"
+    }
+  ],
+  "music_theme": "a tidal dive that keeps winding tighter — breathing reed-organ swells over a sunken sub pulse, water textures thinning as the scales close in, the pulse coiling and holding through the capsule turns, a broad low hit landing on the atom-to-star-bridge fold and a second as the star swarm becomes an ocean world, the reed opening back out over surf for the shore",
+  "music_key": "F# minor",
+  "render_start": "minicollagen"
+}

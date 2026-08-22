@@ -1,0 +1,141 @@
+{
+ "name": "natron_skein",
+ "theme": "a Rift Valley soda lake under the shadow of its volcano, read as one crowd all heading the same way at every scale — a herd of cometary globules streaming from a burning rim, the young sun kindled inside one sooty head, the rift world from orbit with paired cloud eddies unwinding downwind of the cone, the crimson shallows crossed by skeins of rose birds, the wader commons at wading height where flamingos filter in ranks and soda flies seethe on the crust, then the continuation through the MINERAL the crust really is: trona swords leaning in sheaves, the glassy terraces inside one blade, the slanted sheets of triangular carbonate groups it is stacked from, and the sodium atoms whose haze-wrapped kernels drift in files that stream out again as the globule herd",
+ "style": "stormlight",
+ "music_lane": "tide_organ",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 8,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "globule_herd",
+   "exp": 15.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "sooty dust heads, rose-kindled crests, indigo murk",
+   "scene": "a herd of cometary globules adrift in a star-forming region, sooty heads packed thick with dust, every crest kindled rose where the glare of a burning rim reaches it, their tails combed out and drawn the same way one past the next, hot blue suns strewn beyond the rim, torn gas curtains slack in the gaps, tier upon tier of further heads receding into indigo murk",
+   "target": "a rose-crested cloud head",
+   "target_phrase": "a rose-lit cloud head",
+   "resolve": {
+    "mode": "sea"
+   }
+  },
+  {
+   "name": "globule_core",
+   "exp": 12.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "hot white sun, rose dust ridges, indigo murk",
+   "scene": "the interior of one globule head, a young white sun kindled in the murk with a tilted disc of dust ringing it, lanes carved clean through the disc in curves, ridges of the dust wall reared up past the disc and glowing rose where the rim's glare reaches them, unlit knots of dust strung in files through the wall, cold stars strewn thick through every torn gap of the wall, a few worlds set on their courses in the disc's clearings, no ground and no sky",
+   "loop_target": "a young white sun kindled inside a sooty globule head, a tilted disc of dust ringing it, rose-glowing dust ridges reared past the disc",
+   "target": "an ash-black world",
+   "target_phrase": "a black planet"
+  },
+  {
+   "name": "volcano_world",
+   "exp": 6.8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "thunder-grey ash, crimson lake blade, pearl cloud streets",
+   "scene": "a world seen from low orbit with a great rift valley scored down one flank, a black volcanic cone smoking at the valley floor, a staggered procession of paired cloud eddies unwinding downwind of the cone in twin files across the haze, a crimson lake laid at the cone's foot as a slim red blade rimmed white, thunder-grey ash plains spread past it to a hazy horizon, a thin skin of atmosphere kindled at the limb, cold stars strewn past the curve of the world",
+   "target": "a crimson lake",
+   "target_phrase": "a red lake"
+  },
+  {
+   "name": "lake_air",
+   "exp": 3.3,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "crimson-rose shallows, chalk crust bars, thunder-grey ash",
+   "scene": "the soda lake from high over its shore and tipped toward the flats, crimson-rose shallows crowded margin to margin, chalk-white crust bars ruled across the red in curving tiers, skeins of rose birds poured one way over the water strand after strand, the flock winding off the ends of the bars in staggered paired eddies, the ash apron of the cone shadowing the near shore in thunder-grey, plumes of alkali dust drawn the same way over the flats, the far shore lost in haze",
+   "target": "a rank of rose-pink birds",
+   "target_phrase": "a flock of pink birds",
+   "cameo": {
+    "sprite": "output/mascots/canon/lorraine.png",
+    "pos": [
+     0.29,
+     0.63
+    ],
+    "size": 0.13
+   }
+  },
+  {
+   "name": "wader_commons",
+   "exp": 0.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "rose plumage, sooty fly slicks, ash-grey haze",
+   "scene": "the crimson shallows at wading height, lesser flamingos massed in ranks with their heads inverted under the brine and their crooked necks all set the same way, avocets stitching the shallow margin with upturned bills, a marabou stork patrolling a crust bar on stilt legs, mats of soda flies seething over the wet crust in sooty slicks, brine ripples printed rose across the flats, the smoking cone past the far shore under an ash-grey haze",
+   "target": "a puckered white crust bar",
+   "target_phrase": "a white crust bar",
+   "resolve": {
+    "mode": "surface"
+   }
+  },
+  {
+   "name": "fly_crust",
+   "exp": -1.6,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "chalk plates, amber brine films, sooty slicks",
+   "scene": "the soda crust at close quarters, chalk plates puckered and humped into low ridges, amber brine films held in every seam, mats of soda flies seething over the wet crust in slicks that all drift the same way, their pale cases packed in rows at the water's rim, clear crystal blades pushing up through the crust in leaning sheaves, alkali dust hazing the troughs, thunder-grey shadow pooled in the hollows",
+   "target": "a water-clear crystal blade",
+   "target_phrase": "a clear crystal blade"
+  },
+  {
+   "name": "trona_country",
+   "exp": -3.4,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "water-clear trona swords, rose brine, sooty ash grains",
+   "scene": "a country of trona, water-clear crystal swords grown out of the chalk crust in leaning sheaves, every blade wedge-tipped and struck through with amber brine, sheaves crossing at shallow angles tier upon tier, rose brine glowing in the gaps of the crossings, sooty ash grains caught where the blades meet, glassy step-faces cut down the flank of every blade, grey haze thickening past the far sheaves",
+   "target": "a glassy stepped face",
+   "target_phrase": "a glassy crystal step",
+   "resolve": {
+    "mode": "surface"
+   }
+  },
+  {
+   "name": "blade_interior",
+   "exp": -5.6,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "clear glassy body, rose glare, sooty inclusion files",
+   "scene": "the interior of one trona blade, glassy cleavage terraces stepping down one under the next, hairline brine inclusions strung in files through the clear body, sooty specks trapped in rows at the growth fronts, wedge-shaped striations ruled across every terrace, rose glare filtering through the body from somewhere past the ledges, murk thickening at the far terraces, no ground and no sky",
+   "target": "a glowing triangular plate",
+   "target_phrase": "a glowing triangle",
+   "resolve": false
+  },
+  {
+   "name": "carbonate_ranks",
+   "exp": -9.0,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ruby corners, slate cores, pearl water bridges on ink murk",
+   "scene": "the ordered ranks the blade is stacked from, flat triangular carbonate groups laid out in sheets, each plate slate at its core with three ruby corners, sodium beads seated in the gaps of every sheet, hairline water bridges pinning sheet to sheet, each sheet slid a little against the one beneath it so the stack leans, tier upon tier repeating into ink murk, no ground and no sky",
+   "target": "a glowing white atom",
+   "target_phrase": "a glowing atom",
+   "resolve": {
+    "mode": "lattice",
+    "variant": "layered"
+   }
+  },
+  {
+   "name": "electron_fog",
+   "exp": -10.6,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "pearl kernels, rose haze, indigo murk",
+   "scene": "sodium atoms held far apart in ink murk, each one a hot white kernel wrapped in stacked skins of haze, skin outside skin, the outermost skins of neighbours brushing and blurring into one another, the population drawn out into files that all head the same way, rose ripples printed across the haze, file upon file repeating into indigo murk",
+   "resolve": {
+    "mode": "sea"
+   }
+  }
+ ],
+ "music_theme": "a breathing alkaline lake under a smoking cone — a breathy reed organ over a deep sub pulse, one heavy kick on every downbeat with a softer answer under it, soft water textures washing the pulse as the rift world opens, the reeds crowding and thickening through the wader commons, thinning to a single held pipe through the trona blades and the leaning carbonate sheets, one deep bloom as the drifting files of atoms stream out again as the globule herd",
+ "music_key": "D minor",
+ "render_start": "globule_core"
+}

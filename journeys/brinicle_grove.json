@@ -1,0 +1,72 @@
+{
+  "name": "brinicle_grove",
+  "theme": "a polar shallows read through its own ice — a brinicle hanging from the frozen ceiling to the seafloor, the ring of creatures living where it touches down, into the brine-channel percolation network threading the frozen mass, down to the hexagonal galleries of the ice lattice itself, which open back out as the honeycombed underside of the sea ice and close onto the shallows",
+  "style": "crystalline",
+  "music_lane": "music_box",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 9,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "polar_shallows",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "honey-gold sunshafts in teal glacier water",
+      "scene": "a polar shallows under a roof of sea ice, seen from mid-water looking across, a ridged column of ice hanging from the frozen ceiling to the seafloor, honey-gold sunshafts slanting in through the ice overhead, teal water hazing away on either side, frost-crusted boulders and low kelp strands scattered over the silty floor, violet shadow pooling in the far water",
+      "target": "a ridged ice column",
+      "target_phrase": "a ridged ice column",
+      "loop_target": "a polar shallows under a roof of sea ice, a ridged ice column hanging from the frozen ceiling to the seafloor, honey-gold sunshafts slanting through teal water"
+    },
+    {
+      "name": "brinicle_foot",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "vermilion and ochre creatures on violet shadow",
+      "scene": "the frozen base of the ice column where it meets the seafloor at eye level, a crust of milky ice spread over the silt in a wide ring, glassy nodules of clearer ice studding it, vermilion sea stars stiffened against the crust, ochre urchins bristling in clusters at the rim, ribbon worms strung in crimson threads across it, plated isopods wedged in the grit among them, violet shadow in the hollows",
+      "target": "a glassy ice nodule",
+      "target_phrase": "a glassy ice nodule",
+      "cameo": {
+        "sprite": "output/mascots/canon/dora.png",
+        "pos": [
+          0.62,
+          0.56
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "brine_channels",
+      "exp": -3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "teal brine veins in blue-violet ice",
+      "scene": "the interior of the sea ice, a percolation network of brine channels threading the frozen mass in every direction, slender teal veins branching and rejoining into a crack-lattice, salt bulbs swelling where three channels meet, trapped gas beads strung through the crystal in ranks, a honey-gold cast in the blue-violet crystal further off, no floor and no sky",
+      "target": "a hexagonal crystal ring",
+      "target_phrase": "a hexagonal crystal ring"
+    },
+    {
+      "name": "hexagon_galleries",
+      "exp": -9,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "gold refraction and ice-blue crystal on violet shadow",
+      "scene": "the crystal interior of water ice, hexagonal rings of linked water molecules stacked rank on rank into open six-sided galleries, each molecule a bead of oxygen with two hydrogen nubs, hydrogen bonds drawn as taut struts holding ring to ring, the ring openings running away as tunnels in every direction, honey-gold refraction caught in the struts, violet shadow in the tunnel throats, no floor and no sky"
+    },
+    {
+      "name": "frozen_sky",
+      "exp": 2.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber-shot teal ice over violet water",
+      "scene": "the underside of the polar sea ice seen from below, a vast honeycombed ceiling of frost hexagons reaching away to the haze in every direction, honey-gold sunshafts let through in scattered patches, frost-crusted ice columns hanging from it here and there toward the sunless water, teal water opening beneath"
+    }
+  ],
+  "music_theme": "a slow music-box figure and celesta over a low warm drone, one deep kick landing on every downbeat, glacial and tender, a struck tine ringing out on the lattice-to-ceiling seam, opening into wide cold air for the return under the ice",
+  "music_key": "B minor",
+  "render_start": "polar_shallows"
+}

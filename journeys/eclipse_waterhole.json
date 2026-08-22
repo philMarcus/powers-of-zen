@@ -1,0 +1,138 @@
+{
+ "name": "eclipse_waterhole",
+ "theme": "a total solar eclipse over a baobab waterhole, read as one emblem restated at every scale — radiance ringed about a hollow. A supercluster knot walling its void, a barred spiral, the comet swarm at a sun's outer reach, that sun in totality with prominence hoops standing at its rim, the umbra spot lying on the planet, the shadowed basin, the crowded water in false dusk, then the unbroken made-of descent through the baobab: water-swollen storage cells, cellulose ropes, the carbon sheets that stiffen them, and a caged trio of burning cores whose strand-cage tears open into the cosmic weave it began in",
+ "style": "stormlight",
+ "music_lane": "choir_of_dust",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 8,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "web_knot",
+   "exp": 24,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "copper filaments and amber gas on indigo murk",
+   "scene": "the coarsest weave of the universe, six copper filaments converging on one blazing supercluster node, thousands of galaxy grains crusted through every strand, a hollow violet gulf walled off on the far side by a curved sheet of galaxies, amber gas glowing in the thinner threads, further knots of the same weave receding into indigo murk",
+   "target": "a copper spiral galaxy",
+   "target_phrase": "a spiral galaxy"
+  },
+  {
+   "name": "bar_galaxy",
+   "exp": 21,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "sienna bar and rose-gold knots on indigo gulf",
+   "scene": "a barred spiral galaxy tilted toward us, a straight sienna bar of old stars crossing its core with two arms unwinding from the bar's ends, rose-gold knots of starbirth studded down each arm, sooty dust lanes traced against the disk, looping streams of older stars strewn in rosette curves around the outer disk, dozens of globular swarms scattered through the halo, indigo gulf past it in every direction",
+   "target": "a swarm of icy comets",
+   "target_phrase": "a comet swarm"
+  },
+  {
+   "name": "comet_halo",
+   "exp": 14,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "sooty ice and copper tails on violet gulf",
+   "scene": "the outer reach of one star's system, thousands of sooty ice bodies strewn through a violet gulf, each dragging a copper tail combed the same way by a gold glare beyond the swarm, amber frost catching on their sunward faces, cold stars scattered past the swarm in every direction, dust hazing the gulf into indigo depth",
+   "loop_target": "the outer reach of a star's system, thousands of sooty ice bodies with copper tails combed one way through a violet gulf",
+   "target": "a burning gold star",
+   "target_phrase": "a burning gold star"
+  },
+  {
+   "name": "corona_ring",
+   "exp": 9.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "rose-gold corona and ruby beads on sable and deep violet",
+   "scene": "a star in total eclipse, a ring of blazing corona radiance drawn around a sable disc, feathered streamers combed out from the ring in looping rosette curves, rose-gold prominence arches standing at the rim in a scatter of hoops, crimson chromosphere beads caught at one side of the disc, deep violet sky around it with a few stars showing through",
+   "target": "a rust-red planet",
+   "target_phrase": "a rust-red planet",
+   "cameo": {
+    "sprite": "output/mascots/canon/lamar.png",
+    "pos": [
+     0.32,
+     0.6
+    ],
+    "size": 0.14
+   }
+  },
+  {
+   "name": "umbra_spot",
+   "exp": 7,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "sunlit copper plains and olive scrub, one violet shadow disc",
+   "scene": "a rust-red planet seen from orbit, its sunlit face spread in copper plains and olive scrub with braided river courses threading them, a round violet shadow lying on the land where the eclipse touches down, its rim softened into a bruised penumbra hoop, dust hazing the curve of the limb, cloud streets stacked in rose-gold banks past the shadow's margin, starless dusk beyond the limb",
+   "target": "a shadowed ochre plain",
+   "target_phrase": "an ochre plain"
+  },
+  {
+   "name": "baobab_basin",
+   "exp": 3.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "violet gloom over ochre grassland, rose-gold horizon band",
+   "scene": "a savanna basin sunk in the umbra, seen from high over its far wall and tipped toward the flats, dozens of squat baobabs scattered across ochre grassland with their crowns thrown into violet gloom, dry watercourses cut in braided sienna channels across the flats, a shrunken copper pool left at the middle of a cracked mudflat, herds strung in ragged files toward it from every side, dust plumes hanging over the tracks, a band of rose-gold sunset burning at the horizon all the way around the basin",
+   "target": "a round copper pool",
+   "target_phrase": "a round copper pool"
+  },
+  {
+   "name": "waterhole_totality",
+   "exp": 1,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "copper mud and amber hide in violet false dusk",
+   "scene": "the rim of a shrinking waterhole at standing height in totality's false dusk, a crowd of elephants shouldered in at the water with copper mud drying on their flanks, zebra packed three deep behind them in a churn of striped rumps, a swollen fluted baobab over the pool with hundreds of woven grass nests hung from its branches and weaver birds gone still in them, a pair of nightjars roused on the cracked mudflat, mottled sienna and wide-mouthed, warthogs kneeling at a shallow spur, the air violet and dust-hazed, a copper sunset burning at the horizon on every side",
+   "target": "a swollen fluted trunk",
+   "target_phrase": "a swollen tree trunk"
+  },
+  {
+   "name": "storage_cells",
+   "exp": -4,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "amber sap chambers and violet nuclei on umber gloom",
+   "scene": "the water-swollen wood within a baobab trunk, immense thin-walled storage cells packed shoulder to shoulder into a honeycomb of chambers, each one bulging with sap and lit amber from within, sienna cable bundles of tough fibre threading the packing in ranks, a violet-stained nucleus pressed against one wall of every chamber, pit pores studding the shared walls in rows, ranks of chambers sunk into umber gloom further off",
+   "target": "a taut sienna cable",
+   "target_phrase": "a sienna cable"
+  },
+  {
+   "name": "cellulose_rope",
+   "exp": -7.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "amber ribbon faces and teal water hoops on violet murk",
+   "scene": "the molecular structure of cellulose, flat sugar-ring chains stacked face to face into stiff ribbons, dozens of ribbons wound about one another into a twisted rope with a rosette of them ringing its core, hydrogen bonds drawn as hairline struts pinning ribbon to ribbon, hooped chains of teal water trapped in the grooves amid them, amber shimmer caught on the ribbon faces, further ropes ranked back into violet murk, no ground and no sky",
+   "target": "a burning atom",
+   "target_phrase": "a burning atom"
+  },
+  {
+   "name": "carbon_sheets",
+   "exp": -9.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "gold cores and teal defect on violet murk",
+   "scene": "the carbon grid stiffening one cellulose ribbon, six-sided rings of gold cores linked corner to corner into puckered sheets, sheet stacked on sheet in staggered tiers with taut bond struts pinning them, nested hoops of electron haze standing about every core, looping rosette curves traced where the hoops of neighbouring cores overlap, one core swapped for a foreign atom and burning teal through the grid, tier after tier receding into violet murk",
+   "resolve": {
+    "mode": "lattice",
+    "variant": "layered"
+   },
+   "target": "a gold atomic nucleus",
+   "target_phrase": "a gold nucleus"
+  },
+  {
+   "name": "caged_trio",
+   "exp": -15,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "amber radiance ringing a hollow violet gulf",
+   "scene": "a trio of burning gold spheres set at the corners of a shivering droplet, taut copper strands strung sphere to sphere and bowed outward into a taut woven mesh around them, that mesh crusted with a hoop of amber radiance and a hollow violet gulf at its middle, sparks of fleeting pairs flickering through the gulf in every direction, further meshes of the same make repeating away into indigo murk, no ground and no sky"
+  }
+ ],
+ "music_theme": "totality over a crowded waterhole — a hushed granular shimmer and glass-harmonica pad over a deep sub heartbeat, the pulse thinning to near-silence as the umbra lands and the birds cut out, tightening through the wood and the cellulose ropes, one struck low bell where the caged trio tears open into the cosmic weave, opening dusty and vast for the fall back through the filaments",
+ "music_key": "D minor",
+ "render_start": "comet_halo"
+}

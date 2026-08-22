@@ -1,0 +1,75 @@
+{
+  "name": "lissajous_stage",
+  "theme": "an empty club stage after the encore, taken apart by scale — onto a guitar's wound bronze string, down its coil ridges into the crystal grain of the metal itself, into nests of looping standing-wave curves that open straight back onto the cable coils strewn over the boards",
+  "style": "lacquer_pop",
+  "music_lane": "analog_dawn",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "string_bed",
+      "exp": -1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "burnished copper and chrome on soot",
+      "scene": "an electric guitar laid face-up on the boards of a stage, six wound bronze strings stretched over the fretboard in even ranks, ridged fret wire crossing under them, pearl inlay dots set into the neck, rows of chrome pole pieces gleaming beneath the strings, rosin grit and turquoise verdigris speckling the pickguard, a cable end seated in the jack, one hot amber pool thrown over the whole instrument by a work lamp",
+      "target": "a wound bronze string",
+      "target_phrase": "a bronze guitar string"
+    },
+    {
+      "name": "winding_coil",
+      "exp": -3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "molten copper-flash red on soot",
+      "scene": "the ridged terrain of a wound guitar string, hundreds of bronze coils packed shoulder to shoulder in parallel ranks running off in every direction, sooty grooves sunken amid them, pick-worn flats burnished copper-red on the crests, rosin grit drifted into the hollows, the ranks receding into shadow",
+      "target": "a burnished copper crest",
+      "target_phrase": "a shiny copper ridge",
+      "target_pick": "random",
+      "loop_target": "ranks of bronze winding coils packed shoulder to shoulder, sooty grooves sunken amid them"
+    },
+    {
+      "name": "metal_grain",
+      "exp": -5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "verdigris turquoise and cool pewter",
+      "scene": "the crystal grain inside the bronze itself, interlocking dendrites branching into feathered combs in every direction, turquoise verdigris crusted into the seams amid them, tin-rich pools glinting cool pewter, faint copper-red hot spots caught in the branches, whole ranks of grain receding into unlit hollows",
+      "target": "a hot copper spark",
+      "target_phrase": "a glowing copper spark"
+    },
+    {
+      "name": "lissajous_nests",
+      "exp": -7.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "copper fire and turquoise crackle on charcoal",
+      "scene": "nests of looping rosette curves traced in copper fire through unlit space, each curve wound over itself dozens of times and never quite closing, one nest set inside the next at slightly turned angles, turquoise crackle glowing where the strands cross, nests hanging at many depths and fading off into charcoal"
+    },
+    {
+      "name": "stage_boards",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "vermilion amp glow and amber lamp on charcoal boards",
+      "scene": "the boards of a club stage after the encore, empty, no one present, coiled patch cables strewn everywhere in loose loops, a work lamp on a stand throwing a hot amber pool over them, amplifier cabinets ranked at the back with vermilion standby lamps burning, monitor wedges angled at the front, scuffed road cases pushed to the far wall, strips of gaffer tape marking the boards, an electric guitar laid amid the cable loops",
+      "target": "an electric guitar",
+      "target_phrase": "an electric guitar",
+      "cameo": {
+        "sprite": "output/mascots/canon/dora.png",
+        "pos": [
+          0.62,
+          0.55
+        ],
+        "size": 0.14
+      }
+    }
+  ],
+  "music_theme": "warm analog synth pads with gentle tape warble over a deep soft kick on every downbeat, a driving nocturnal pulse like gear left humming after the room empties, one struck bell as the curve nests open onto the stage boards",
+  "music_key": "E minor",
+  "render_start": "winding_coil"
+}

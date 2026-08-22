@@ -1,0 +1,94 @@
+{
+ "name": "bamboo_sea",
+ "theme": "a mist-drowned mountain bamboo stand read down its own grain — the crowded ranks with their panda, partridges, viper and rat, one snapped culm's chambered hollow, the wall's scattered vascular bundles, the fibre cells packed in files, the cellulose cables wound inside one wall and the opaline glass set among them, which combs straight back out into the ranked culms in smoke",
+ "style": "enchanted_wild",
+ "music_lane": "wooden_orbit",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 8,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "bamboo_stand",
+   "exp": 1.6,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "chartreuse blades and gunmetal smoke over sooty gaps at dusk",
+   "scene": "a mountain slope crowded with bamboo at dusk, seen obliquely from the ridge, thousands of chartreuse culms standing rank behind rank up the fold of the hill and sunk to their middles in cold pewter smoke, a red panda curled asleep on one leaning culm with its ringed tail hung down, a covey of bamboo partridges picking through the leaf litter under the stand, a green pit viper coiled on a swollen node, a bamboo rat hunched among the bared rhizomes, sooty gaps opening where the ranks crowd together, one culm snapped off partway up with its hollow interior open to the air",
+   "target": "a snapped hollow culm",
+   "target_phrase": "a snapped bamboo culm"
+  },
+  {
+   "name": "culm_break",
+   "exp": 0.0,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "waxy green shaft with ochre papery scales and a tan node ring against gloom",
+   "scene": "one bamboo culm snapped off partway up among its standing neighbours, its circular opening giving on an unlit hollow, the shaft glossy green under a chalky wax bloom, a swollen tan ring marking the node beneath the break, dry ochre scales curling off the ring, older culms behind it going silver-olive in the smoke, wet ivy strung across the intervals",
+   "target": "an unlit circular opening",
+   "target_phrase": "a hollow bamboo opening"
+  },
+  {
+   "name": "culm_hollow",
+   "exp": -1.0,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "acid-green glow through ivory walls, soot in the far chambers",
+   "scene": "the inside of the snapped culm, a stack of chambers running away down the shaft, each floor a smooth ivory diaphragm sealing the tube across, the curved walls glowing acid green where dusk comes through the skin from outside, a silky membrane peeling in sheets off the inner surface, ranks of slender ink-coloured streaks ruled down the wall, cold smoke standing in the furthest chambers",
+   "target": "an oval bundle mark",
+   "target_phrase": "a dark oval mark"
+  },
+  {
+   "name": "wall_bundles",
+   "exp": -2.6,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ashen grey ground with ink ovals and silver fibre glints",
+   "scene": "the bamboo wall met square-on at its own face, oval vascular bundles scattered at random through an ashen ground of packing cells, some crowded into clumps and some standing alone in wide clearings, every bundle a pair of circular vessel holes under a silvery cap of fibre, all of them combed the same way with every cap turned one direction, the nearest bundles broad and blurred, ranks of others banked away into grey murk",
+   "target": "a silvery fibre cap",
+   "target_phrase": "a silver fibre cap",
+   "loop_target": "a bamboo wall met square-on at its face, oval vascular bundles scattered through an ashen ground of packing cells, combed all one way"
+  },
+  {
+   "name": "fibre_files",
+   "exp": -4.7,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "olive-gold walls and emerald discs on charcoal",
+   "scene": "a stand of bamboo fibre cells met among them, each cell a narrow tube whose wall is built of concentric olive layers wound one over the next, the slot of the lumen unlit at every centre, the cells packed into files that run all one way, barrel-shaped parenchyma cells wedged among the files holding stacks of emerald chloroplast discs, circular pits set through the shared walls, olive-gold glow soaking through the thinner places, the files receding into smoke",
+   "target": "a circular wall pit",
+   "target_phrase": "a circular pit"
+  },
+  {
+   "name": "cellulose_cables",
+   "exp": -8.3,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "chartreuse cables and pewter sheets on tar",
+   "scene": "the cellulose cables inside one cell wall, each cable a bundle of chains wound tight and laid parallel to its neighbours, whole ranks of cables ruled one way and stacked sheet behind sheet, hemicellulose strands lashed across them at even intervals, tarry lignin packed solid in the interstices, a chartreuse gleam running the whole span of every cable, glassy silica beads studding one file",
+   "target": "a clear glass bead",
+   "target_phrase": "a clear glass bead",
+   "cameo": {
+    "sprite": "output/mascots/canon/tina.png",
+    "pos": [
+     0.62,
+     0.38
+    ],
+    "size": 0.13
+   }
+  },
+  {
+   "name": "opal_network",
+   "exp": -9.5,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "charcoal with chartreuse glass glints",
+   "scene": "the glass inside one silica bead, squat glass pyramids sharing their corners with their neighbours and linked into rings that never repeat, the rings hung rank behind rank into charcoal gloom, a chartreuse glint standing on every shared corner, the whole web combed one way where it set into the grooves it grew in, soot filling the hollows it left"
+  }
+ ],
+ "music_theme": "a hushed mountain stand at dusk — woody plucked figures orbiting over a low warm bass, spare and misted through the crowded culms, thinning to something glassy and granular down in the cables and the silica, one deep swell landing where the glass web combs back out into the ranked culms in smoke",
+ "music_key": "C minor",
+ "render_start": "wall_bundles"
+}

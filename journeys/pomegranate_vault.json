@@ -1,0 +1,74 @@
+{
+  "name": "pomegranate_vault",
+  "theme": "a split pomegranate under a low lamp on charcoal boards — down through the banked ranks of arils into one sac's glassy columns, the juice cells packing them, and the stacked pigment plates that make the red, whose stacked ranks re-read as the fruit's own packing and land back on the boards",
+  "style": "infrared_bloom",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "counter": true,
+    "frames_per_beat": 8
+  },
+  "registers": [
+    {
+      "name": "aril_tiers",
+      "exp": -2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "crimson and ivory on charcoal",
+      "scene": "banked ranks of crimson arils packed tier over tier inside a torn rind cup, seen from straight overhead, hundreds of swollen translucent beads glowing from within, chalky ivory membrane walls set across the ranks and dividing them into wedges, sooty charcoal shadow pooled in every gap, a faint green sheen coming off the rind rim",
+      "target": "a swollen crimson aril",
+      "target_phrase": "a glossy red seed",
+      "target_pick": "random",
+      "loop_target": "banked ranks of crimson arils packed inside a torn rind cup, chalky ivory membrane walls dividing them into wedges"
+    },
+    {
+      "name": "juice_sacs",
+      "exp": -3.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "magenta and green glass on soot",
+      "scene": "crowded columns of juice sacs packed upright in every direction, each sac a long glassy pouch swollen with magenta fluid, cellulose walls glowing green where the columns press together, narrow shadowed channels cut down amid the ranks, chalky fibre strands threaded through the packing",
+      "target": "a glassy pink sac",
+      "target_phrase": "a clear pink pouch"
+    },
+    {
+      "name": "sac_cells",
+      "exp": -5.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "hot pink and mossy green on charcoal",
+      "scene": "polygonal cell chambers packed wall to wall in every direction, each chamber swollen with a crimson vacuole, cellulose walls glowing chartreuse where two cells meet, strands of cytoplasm webbing the corners, grains of pigment-loaded chromoplast scattered against the walls, shadow filling every junction",
+      "target": "a crimson pigment grain",
+      "target_phrase": "a red grain",
+      "target_pick": "random",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.64,
+          0.37
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "pigment_stacks",
+      "exp": -9,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "magenta and violet on soot",
+      "scene": "flat pigment molecules, hexagonal ring-plates stacked plate on plate into leaning columns, ranks of columns repeating in every direction, magenta glow trapped in the gaps where plates press, sugar tails hanging off the plate rims and catching a violet gleam, the far ranks fading into sooty shadow"
+    },
+    {
+      "name": "lamp_board",
+      "exp": -1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber lamp glow and crimson on charcoal wood",
+      "scene": "a pomegranate split open on charcoal kitchen boards under a low lamp, the two halves tipped apart with their crimson ranks turned up, curls of leathery rind scattered around them, sheets of chalky membrane peeled loose across the wood, spilled arils strewn over the grain in glowing clusters, juice smears catching the lamp glow, the boards otherwise bare with no one present"
+    }
+  ],
+  "music_lane": "night_market",
+  "music_theme": "a hushed lamp-glow still life — soft hang drum and plucked koto over a velvet pad, one heavy step on every downbeat, intimate and close",
+  "music_key": "D minor",
+  "render_start": "aril_tiers"
+}

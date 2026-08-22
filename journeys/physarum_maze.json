@@ -1,0 +1,132 @@
+{
+  "name": "physarum_maze",
+  "theme": "a slime mold solving a rain-drenched spruce floor — across a rotting log that is its own crowded city, into the chrome-yellow plasmodium fan and one of its trunk veins, where the shuttle-streaming protoplasm is combed into parallel lanes; on through the nuclei and mitochondria adrift in the sol to the gel cortex's helical cables and the motor mesh that reverses the current, whose combed strands hand off to the Laniakea flow twenty-eight orders out; the fold home rhymes a second time, a galaxy's spiral becoming a storm spiral on an ocean-green world, and the rain-lashed ranges drop back to the forest floor",
+  "style": "ultraviolet",
+  "music_lane": "tide_organ",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "forest_floor",
+      "exp": 1.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sodden umber litter, pewter mist, moss chartreuse",
+      "scene": "a rain-drenched forest floor under old spruce, sodden russet needle mats and fallen cones covering the ground, moss-furred stones shouldering up through them, a long fallen spruce log crossing the middle distance, fern crowns crowding the hollows, rainwater beading on every surface, pewter mist threading the trunks beyond, at eye level among the ferns",
+      "target": "a fallen spruce log",
+      "target_phrase": "a fallen log"
+    },
+    {
+      "name": "log_city",
+      "exp": 0.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sooty charcoal bark, russet rot, ochre fungus shelves",
+      "scene": "the flank of a rotting spruce log, charcoal bark peeled back to sodden russet wood, tiers of bracket fungus shelving out in banded ochre fans, beetle galleries chewed into winding grooves under the loosened bark, herds of slate-blue springtails swarming the damp grain, a scarlet velvet mite crossing a moss cushion, cup lichen sprouting from the upper curve, chrome-yellow slime veins netted over the rot",
+      "target": "a chrome-yellow slime mold",
+      "target_phrase": "a yellow slime mold",
+      "cameo": {
+        "sprite": "output/mascots/canon/kitty.png",
+        "pos": [
+          0.62,
+          0.56
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "plasmodium_fan",
+      "exp": -0.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "chrome yellow and sulphur glow on umber wood",
+      "scene": "the outer front of a slime mold plasmodium on sodden wood, a chrome-yellow sheet of protoplasm scalloped into a fan, hundreds of veins branching backward from the rim into a combed net of loops and blind alleys, thicker trunk veins gleaming where they cross the grain, sulphur glow pooling at every junction, umber wood showing through the mesh, seen from an oblique vantage over the rot",
+      "target": "a thick chrome-yellow vein",
+      "target_phrase": "a thick yellow vein"
+    },
+    {
+      "name": "vein_channel",
+      "exp": -2.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade-translucent walls, sulphur cargo, smoke-grey shadow",
+      "scene": "inside one trunk vein of the plasmodium, a tube walled in translucent chartreuse gel, a braid of grainy protoplasm packed the length of it and combed into parallel streamlines, cargo granules strung in taut ranks through the braid, rings of thicker gel ribbing the wall, side branches opening off the tube and receding into a sulphur haze",
+      "target": "a milky nucleus",
+      "target_phrase": "a milky nucleus"
+    },
+    {
+      "name": "streaming_sol",
+      "exp": -4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "chartreuse sol, sulphur granules, smoke-green gloom",
+      "scene": "the interior of the plasmodium's streaming cytoplasm, hundreds of milky nuclei suspended through a chartreuse sol, capsule mitochondria ribbed with inner folds set among them, glassy vacuoles further off, sulphur granules strewn in ranks that recede into a smoke-green gloom, everything combed into the same parallel lanes, viewed from within the current",
+      "target": "a taut chartreuse fiber",
+      "target_phrase": "a glowing green fiber",
+      "loop_target": "milky nuclei and sulphur granules suspended in a chartreuse sol, combed into parallel lanes"
+    },
+    {
+      "name": "gel_cortex",
+      "exp": -6.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pewter cables, chartreuse rims, olive void",
+      "scene": "the gel cortex woven at the vein wall, cables of twin helical ribbons twisted about one another and ranked away in every direction, shorter rods pinned across them where the cables meet, chartreuse rims glowing at every crossing, pewter sheen on the cable flanks, an olive void opening past the furthest ranks",
+      "target": "a bristled spindle filament",
+      "target_phrase": "a bristled filament"
+    },
+    {
+      "name": "motor_mesh",
+      "exp": -8.3,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "graphite murk, sulphur sparks, chartreuse strands",
+      "scene": "the motor mesh that drives the stream, spindle-shaped filaments bristling with paired knobs, each knob hooked onto a twin-stranded helical ribbon drawn taut through the murk, every ribbon combed one way across the whole field, sulphur sparks flaring where knob meets ribbon, rank after rank of the same combed strands receding into graphite gloom"
+    },
+    {
+      "name": "laniakea_flow",
+      "exp": 24.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "gunmetal void, violet-blue streams, chartreuse cluster knots",
+      "scene": "the Laniakea flow, thousands of galaxies strung on combed streamlines that all lean toward one far watershed knot, filaments of cold violet-blue drawn taut across enormous voids, sheets of dimmer galaxies walling each void, chartreuse-gold knots blazing where the strands converge, the whole field combed one way into gunmetal distance",
+      "target": "a spiral galaxy",
+      "target_phrase": "a spiral galaxy"
+    },
+    {
+      "name": "spiral_galaxy",
+      "exp": 21,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "gold-green core, indigo arms, amber star knots",
+      "scene": "a spiral galaxy set in the void, two great arms wound out from a gold-green core, dust lanes cutting the inner curve of each arm, amber knots of newborn stars strung through the arms, a haze of far suns behind it, the disk one flat spiral seen at a tilt"
+    },
+    {
+      "name": "storm_world",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ocean-green seas, pewter cloud spirals, violet shadow",
+      "scene": "an ocean-green planet seen from orbit, storm spirals set across half the globe, an olive continent shouldered under torn cloud, lightning caught in the anvil tops, the terminator curve cutting the far side into violet shadow, a thin rind of atmosphere glowing at the horizon",
+      "target": "a forested headland",
+      "target_phrase": "a green headland"
+    },
+    {
+      "name": "rain_ranges",
+      "exp": 4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber squall glow, smoke-grey rain, spruce-green ridges",
+      "scene": "a forested range under a rainstorm, ridge after ridge of spruce crowns furred in cloud, meltwater creeks braided down every gully, torn sheets of rain sweeping the valley, amber storm glow breaking through the squall onto the nearest slope, that slope near enough to pick out single crowns, seen from an oblique vantage low over the ridges",
+      "target": "a mossy clearing",
+      "target_phrase": "a mossy clearing"
+    }
+  ],
+  "music_theme": "a shuttle-streaming pulse dive — a breathy reed organ over a deep sub heartbeat, the low pulse reversing its weight with each scale the way the veins reverse, water textures thickening as the tube closes in, one broad hit on the fold from the motor mesh into the cosmic streamlines and a second as the galaxy becomes the storm spiral, easing back to rain and organ breath over the forest",
+  "music_key": "E minor",
+  "render_start": "streaming_sol"
+}

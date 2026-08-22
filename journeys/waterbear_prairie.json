@@ -1,0 +1,83 @@
+{
+ "name": "waterbear_prairie",
+ "theme": "a city rooftop after night rain never leaves its own moss — from the micro-prairie crowding the roof seams, in among a herd of water bears and their springtail and rotifer neighbours, into one animal's plated flank, and down to the cells it has vitrified into a trehalose sugar-glass tangle, whose amorphous sheen is reread as the rain-glazed roof itself: the sodium glow plays the sky, the roof plays the planet",
+ "style": "liquid_light",
+ "music_lane": "music_box",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 6,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "roof_rain",
+   "exp": 1,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "quicksilver zinc, sodium-amber pinpoints, sooty tar and olive moss",
+   "scene": "a city rooftop after night rain, seen over the parapet from the stairhead door, ribbed zinc flashing under a quicksilver wet sheen, shallow rain pools standing across the tar sheeting, ranks of vent hoods and pipe stacks set over the roof field, plush moss cushions crowding every seam and pool rim, sodium lamp pinpoints strung through the wet haze past the parapet, the city glow banked overhead in amber, wet gravel scattered through the low corners",
+   "target": "a plush moss cushion",
+   "target_phrase": "a mossy cushion"
+  },
+  {
+   "name": "moss_prairie",
+   "exp": -2,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "bottle-glass moss, quicksilver water film, amber lamp seep",
+   "scene": "a moss micro-prairie at water level among the shoots, ranks of moss stems standing over a film of rainwater, their tiny leaves tiered in star-set whorls, the cushion mass behind them opening into square voids and lesser voids within those, a herd of plump amber water bears clambering on the wet stems, springtails vaulting from the moss crust, rotifer wheels whirring at the film, thread-fine nematodes coiled in the shallows, quicksilver bubbles caught under the water skin, amber lamp seep soaking down through the film",
+   "target": "a plump amber water bear",
+   "target_phrase": "a plump amber creature",
+   "loop_target": "a moss micro-prairie of tiered shoots over a rainwater film, water bears and springtails crowding the wet stems",
+   "resolve": {
+    "mode": "surface"
+   }
+  },
+  {
+   "name": "waterbear",
+   "exp": -3.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "amber cuticle, quicksilver bubbles, olive murk",
+   "scene": "one water bear astride a moss stem in the rain film, its barrel body plated in tiled amber cuticle, eight stubby legs gripping the stem with hooked claws, a blunt snout set with a round mouth ring, two ink-spot eyes, quicksilver bubbles caught in the film around it, moss stems rising on every hand, its flanks glassy where crowded cell masses show through, further water bears smaller in the olive murk beyond",
+   "target": "a cloudy amber cell",
+   "target_phrase": "a round cloudy cell",
+   "cameo": {
+    "sprite": "output/mascots/canon/lee.png",
+    "pos": [
+     0.72,
+     0.34
+    ],
+    "size": 0.15
+   }
+  },
+  {
+   "name": "tun_cells",
+   "exp": -5.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ghost-blue vitrification, garnet nuclei, olive grains on ink",
+   "scene": "living tissue within the flank wall, storage cells massed wall to wall in curving files, each cell shrunk to a rounded barrel and glazed over with a clear ghost-blue vitrification, a garnet-tinted nucleus set at every centre, fat droplets and olive pigment grains crowded through the cytoplasm, membranes drawn taut and pleated where the water has gone, clear amber beads standing in the shrunken gaps, ranks of further cells receding into an unlit murk",
+   "target": "a clear amber bead",
+   "target_phrase": "a clear amber bead",
+   "resolve": {
+    "mode": "sea"
+   }
+  },
+  {
+   "name": "sugar_glass",
+   "exp": -7.5,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "pale gold strands, quicksilver glints, sooty depth",
+   "scene": "trehalose sugar molecules locked in an amorphous tangle, paired sugar rings strung on looping chains that fold over one another in no repeating order, the chains knotted at every crossing, stalled water molecules trapped in the gaps as scattered bead clusters, a glassy amber sheen washing the fold crests, quicksilver glints where the strands cross, ranks of further folds receding into a sooty depth",
+   "resolve": {
+    "mode": "web"
+   }
+  }
+ ],
+ "music_theme": "a miniature nocturne for a creature that outlives everything — a tiny music box and celesta over a low warm drone, one deep struck downbeat in every bar, the box figure at its busiest through the crowded micro-prairie, narrowing to one struck tine at the plated animal, hushed and glassy through the vitrified cells, and one deep bloom where the sugar glass opens onto the rain-glazed roof",
+ "music_key": "E minor",
+ "render_start": "moss_prairie"
+}

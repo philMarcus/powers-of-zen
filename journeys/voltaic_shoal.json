@@ -1,0 +1,86 @@
+{
+ "name": "voltaic_shoal",
+ "theme": "a tannin-steeped Amazon river reach at night in hard rain, worked as a crowded commons (an electric eel over the sunken timber, a shoal of glass knifefish, armoured catfish on the wood, a floating meadow of water-lettuce) and then dived without a break down the eel's own flank — the file of pit pores in its hide, the ranked columns of disc cells that make its electric organ, the membrane of one such cell crowded with ion-channel barrels, and the field of gates alight at once, a ranked sheet of sparks whose lattice is the storm's rain-flash hammering the home reach",
+ "style": "neon_drift",
+ "music_lane": "ember_pulse",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 7,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "storm_reach",
+   "exp": 2.0,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "umber tannin water, petrol-violet sheen, storm silver",
+   "scene": "a tannin-steeped river reach at night in hard rain, met from just over the water beside a timber bar, the surface pocked into rings and rebound jets everywhere the rain strikes it, a floating meadow of water-lettuce rafted over the near side, each plant a tight whorl of ribbed olive-viridian leaves, a drowned tree bole sunk across the channel, armoured catfish clamped over that wood in twos and threes with bristled plates down their backs, an electric eel stretched over the timber in a slate-olive curve, a shoal of glass knifefish suspended in loose ranks past it, shed leaves and drift seed strewn on the slack water, the far bank a wall of unlit forest, storm glare casting violet over the reach",
+   "target": "a slate-olive eel",
+   "target_phrase": "an olive eel",
+   "cameo": {
+    "sprite": "output/mascots/canon/kitty.png",
+    "pos": [
+     0.32,
+     0.58
+    ],
+    "size": 0.13
+   }
+  },
+  {
+   "name": "eel_flank",
+   "exp": -1.0,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "oil-slick viridian and violet over charcoal hide, ochre pore rims",
+   "scene": "the flank of the eel met square-on at its own hide, scaleless skin sheeted with mucus so an oil-slick shimmer of viridian and violet crosses it wherever the storm glare falls, the hide creased into shallow transverse folds ranked one after another down the flank, a file of pit pores ruled through those folds, each pore an ochre-rimmed opening set in a soft crater, muscle courses drawn as low ridges beneath the skin, a paler ochre wash climbing from the underside, the river past the flank gone umber and unlit",
+   "target": "an ochre-rimmed pore",
+   "target_phrase": "a small ochre pore",
+   "resolve": false
+  },
+  {
+   "name": "electrocyte_columns",
+   "exp": -4.0,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "pearl disc cells, warm amber gel, slate-violet murk",
+   "scene": "a bank of flat disc cells met square across its own files, stacked face to face in columns that carry off out of sight, thousands to a column, every cell a pearl disc with one crumpled papillated face and one smooth face, the columns gathered into broad courses with gelatinous gaps ruled through them, each course divided again into narrower courses with the same gaps repeated at a smaller measure, warm amber gel flooding the intervals, nerve threads combing across the stacks in parallel, a violet sheen caught on the nearest cells, rank behind rank fading off into slate murk",
+   "target": "a pearl disc cell",
+   "target_phrase": "a pale round disc",
+   "loop_target": "a bank of pearl disc cells stacked face to face in ranked columns, amber gel in the gaps, rank behind rank into slate murk",
+   "resolve": {
+    "mode": "lattice",
+    "variant": "layered"
+   }
+  },
+  {
+   "name": "membrane_paving",
+   "exp": -6.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "indigo lipid beading, copper barrels, acid-viridian tufts",
+   "scene": "the membrane of one disc cell met square-on among its own machinery, two ranks of lipid beads stood tail to tail, paving it away in every direction, ion-channel barrels crowded through the beadwork, each barrel a ring of coiled ribbon pillars closed over a gated throat with a stopper cocked at its mouth, blockier pump units wedged among the barrels, sterol slabs packed into the beading, branched sugar tufts sprouting from the upper rank in acid viridian, loose ribbon chains looped over the beadwork, the ranks ruled off into indigo depth",
+   "target": "a copper channel barrel",
+   "target_phrase": "a small copper barrel",
+   "resolve": {
+    "mode": "surface"
+   }
+  },
+  {
+   "name": "channel_gate",
+   "exp": -8.3,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "violet sparks on ink, copper rims, charge haze",
+   "scene": "a field of open channel throats set through the lipid beading, every throat holding a keen violet spark with slender rays thrown off it, the sparks ranked in files that recede rank behind rank into ink, a charge haze hanging over the beading, copper rims gleaming wherever a spark reaches them, the farthest ranks reduced to a scatter of violet points",
+   "resolve": {
+    "mode": "lattice",
+    "variant": "hex"
+   }
+  }
+ ],
+ "music_theme": "a charged nocturne — smoky low pads and a deep 808 pulse under the rain-struck reach, the pulse dropping to one heavy hit as the ranked columns of cells arrive, thinning to a low drone across the membrane, then a single hard strike where the gates flash and the storm has the surface again",
+ "music_key": "C# minor",
+ "render_start": "electrocyte_columns"
+}

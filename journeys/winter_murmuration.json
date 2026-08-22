@@ -1,0 +1,148 @@
+{
+ "name": "winter_murmuration",
+ "theme": "a starling murmuration over a frozen estuary at dusk, read as ONE folding sheet at every scale — from a doubled-over sheet of galaxies creased by luminous caustics, down a folded star-forming cloud, a young sun's flat plane of dust and a cool ocean world, onto the tendril-fractal coastline of a winter estuary, into the reed-bed commons where the flock pours into roost past a quartering harrier and threading water rails, close on one banking starling and straight on into its feather: shingled barbule files, the hexagonal melanin platelet galleries that strike the sheen, and the pleated keratin ribbons that double over on themselves — and open out as the cosmic sheet's creases, the murmuration rebuilt in galaxies",
+ "style": "aurora_silk",
+ "music_lane": "aurora_strings",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 8,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "estuary_world",
+   "exp": 7.0,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "pewter seas, ash-grey storm masses, rose dusk band, indigo void",
+   "scene": "a cool ocean world seen from orbit, its winter hemisphere turned to dusk, ash-grey storm masses combed in ranks over pewter seas, one broad estuary opening into a tendril-fractal delta where a river country meets the coast, a rose band of sunfall laid across the curve of the planet, the night hemisphere sunless but for a few settlement glints, indigo void past the horizon",
+   "target": "a branching river estuary",
+   "target_phrase": "a branching river delta"
+  },
+  {
+   "name": "tendril_coast",
+   "exp": 4.3,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "pewter channels, ash-grey reed flats, rose glaze, smoke haze",
+   "scene": "a frozen estuary at dusk seen obliquely from high over the water, tidal creeks branching into finer creeks and finer again in a tendril-fractal maze, pewter channels threading flats of ash-grey reed, sandbanks curled into spiral hooks, panes of stranded ice strewn over the mud, a rose glaze lying on the water, the seaward horizon smoked with haze, the nearer reed flats standing up out of the mud in the foreground",
+   "target": "a broad reed bed",
+   "target_phrase": "a bed of tall reeds"
+  },
+  {
+   "name": "reed_commons",
+   "exp": 1.0,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ash-grey stems, smoke-blue flock, rose-ember horizon, pewter shallows",
+   "scene": "a reed bed at standing height in the last of the dusk, ash-grey stems crowded stalk to stalk with seed heads nodding at head height, a smoke-blue river of starlings pouring down into the roost overhead, a marsh harrier quartering low over the reed tops, water rails threading the flooded stems at the base, shed feathers and reed litter afloat on pewter shallows, a rose-ember band burning at the horizon behind the stems",
+   "target": "an iridescent starling",
+   "target_phrase": "a small glossy bird",
+   "resolve": {
+    "mode": "surface"
+   }
+  },
+  {
+   "name": "bank_starling",
+   "exp": -0.7,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "sooty plumage, teal-violet sheen, rose afterglow, smoke-blue murk",
+   "scene": "the air within the roosting flock at dusk, birds thronging in every direction in one folding smoke-blue sheet, one starling heeled over on a bank turn close at hand, its primaries fanned and its speckled breast catching the last rose glow, teal and violet sheen sliding over its plumage, curved layers of the flock stacked behind it, the reed tops far below",
+   "target": "a glossy speckled feather",
+   "target_phrase": "a glossy feather"
+  },
+  {
+   "name": "barbule_files",
+   "exp": -3.4,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "soot-brown rails, teal-violet sheen, gloom in the gaps",
+   "scene": "the vane of one feather at its own scale, stiff barb rails leaving the shaft in parallel ranks, each rail carrying files of shingled barbules hooked into its neighbour, the shingles overlapping in tiled courses, teal and violet sheen laid across the tiers, gloom sunk in the gaps beneath the weave, pollen grains and grit caught in the hooks, the ranks receding into murk",
+   "target": "a shingled barbule",
+   "target_phrase": "a flat shingled plate",
+   "resolve": {
+    "mode": "lattice",
+    "variant": "layered"
+   }
+  },
+  {
+   "name": "melanosome_gallery",
+   "exp": -6.2,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "violet and teal fire, smoke-grey cell husks, amber films",
+   "scene": "the interior of one barbule, husks of long-dead cells stacked as chambered galleries, each chamber floored with courses of melanin rods set in close hexagonal ranks, thin keratin films spacing the courses, teal and violet fire kindling off the stacks where the spacing shifts, smoke-grey hollows sunk beneath the floors, the galleries repeating outward into murk",
+   "target": "a coiled protein ribbon",
+   "target_phrase": "a twisted ribbon strand",
+   "resolve": {
+    "mode": "lattice",
+    "variant": "hex"
+   }
+  },
+  {
+   "name": "keratin_ribbons",
+   "exp": -8.6,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "pearl-amber ribbons, sulfur-gold bridges, unlit murk",
+   "scene": "keratin at molecular scale, flat pleated ribbons of protein chain doubled back on themselves and stacked into sheets, the pleats creased in even ranks, pairs of coiled ribbons wound about one another and lashed at their crossings by sulfur bridges, glassy water beads studding the folds, loose chain ends curling off the stacks, the sheets receding into unlit murk"
+  },
+  {
+   "name": "pancake_sheet",
+   "exp": 23.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "rose-gold caustic creases, smoke-blue filaments, sunless hollows",
+   "scene": "one immense sheet of galaxies doubled over on itself, tens of thousands of galaxies schooling in its plane, luminous caustic creases blazing where the fold piles up, smoke-blue filaments feeding the sheet from the hollows on either flank, those hollows sunless and near empty, a teal-violet cast over the sheet's near face, stray galaxies strewn out past its rim",
+   "target": "a tilted disk galaxy",
+   "target_phrase": "a spiral galaxy",
+   "resolve": {
+    "mode": "sea"
+   },
+   "cameo": {
+    "sprite": "output/mascots/canon/amos.png",
+    "pos": [
+     0.32,
+     0.63
+    ],
+    "size": 0.14
+   }
+  },
+  {
+   "name": "galaxy_sheet",
+   "exp": 21.0,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "gold star haze, soot dust knife, rose-ember knots",
+   "scene": "a knife-thin disk galaxy seen from its rim, its arms flattened into one glowing sheet, a knife of soot dust splitting the plane down its length, star swarms crowding the core in a gold haze, ruby star-forming knots strung down the dust lane, the halo's old suns strewn thin around it, a rose-ember cast over the nearer arm",
+   "target": "a glowing star cloud",
+   "target_phrase": "a glowing nebula"
+  },
+  {
+   "name": "nebula_sheet",
+   "exp": 16.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "smoke-blue gas, rose-ember fire, teal-violet shimmer",
+   "scene": "a star-forming cloud folded over on itself, one immense sheet of glowing gas creased into stacked layers, thousands of young suns strewn through the creases, smoke-blue dust masses drifting across the folds, rose-ember fire burning up through the gaps, teal and violet shimmer skimming the crease where the sheet doubles back, faint stars scattered off into the void past its rim",
+   "target": "a young gold sun",
+   "target_phrase": "a glowing star",
+   "loop_target": "a folded sheet of star-forming cloud, its creases strewn with young suns"
+  },
+  {
+   "name": "ecliptic_plane",
+   "exp": 11.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "rose-gold sunfire, ash-grey dust lanes, indigo void",
+   "scene": "a young gold sun with its worlds set out in one flat plane of dust and ice, the plane seen at a shallow tilt so its lanes stack in tiers, swept gaps cut through the grains where the worlds ride, rose-gold glare pouring across the sheet, ash-grey murk beneath it, the sun's fire hazed by the dust it sits in, stray icy grains strewn out past the last lane",
+   "target": "a blue-grey ice world",
+   "target_phrase": "a pale blue planet"
+  }
+ ],
+ "music_theme": "a winter dusk at 90bpm — bowed string beds swelling into every scale change over a soft deep kick on each downbeat, the swell widest as the flock pours down into the reeds, thinning to one cold silver drone through the feather interior, a single struck bloom where the pleated ribbons open out into the sheet of galaxies",
+ "music_key": "D minor",
+ "render_start": "nebula_sheet"
+}

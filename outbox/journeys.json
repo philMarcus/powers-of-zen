@@ -18,7 +18,7 @@
     "render_paused": false,
     "refill_paused": false,
     "post_every_hours": 19.0,
-    "post_next": "2026-08-20 07:00"
+    "post_next": "2026-08-22 16:00"
   },
   "journeys": {
     "stormglass": {
@@ -179,48 +179,10 @@
       "ts": "2026-08-14 00:14:10",
       "note": "composed by midnight refill"
     },
-    "peony_shell": {
-      "state": "queued",
-      "order": 9,
-      "ts": "2026-08-15 00:17:21",
-      "note": "composed by midnight refill"
-    },
-    "pomegranate_vault": {
-      "state": "queued",
-      "order": 10,
-      "ts": "2026-08-16 00:14:48",
-      "note": "composed by midnight refill"
-    },
-    "cherenkov_cistern": {
-      "state": "queued",
-      "order": 11,
-      "ts": "2026-08-17 00:17:38",
-      "note": "composed by midnight refill"
-    },
     "lissajous_stage": {
       "state": "queued",
       "order": 12,
       "ts": "2026-08-17 00:17:39",
-      "note": "composed by midnight refill"
-    },
-    "motmot_cenote": {
-      "state": "queued",
-      "order": 13,
-      "ts": "2026-08-17 00:17:39",
-      "note": "composed by midnight refill"
-    },
-    "whale_fall_republic": {
-      "state": "queued",
-      "force": true,
-      "new_seed": true,
-      "ts": "2026-08-17 21:52:22",
-      "note": "re-render: video rejected in review",
-      "order": 14
-    },
-    "bourdon_foundry": {
-      "state": "queued",
-      "order": 15,
-      "ts": "2026-08-18 00:15:19",
       "note": "composed by midnight refill"
     },
     "fiddler_commons": {
@@ -235,54 +197,66 @@
       "ts": "2026-08-18 00:15:19",
       "note": "composed by midnight refill"
     },
-    "coral_synapse": {
+    "eclipse_waterhole": {
       "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-19 17:50:28",
-      "note": "re-render for depth fix (pre-2026-08-17 render; same seed — engine change)",
-      "order": 0
+      "order": 18,
+      "ts": "2026-08-20 00:16:33",
+      "note": "composed by midnight refill"
     },
-    "lantern_mangrove": {
+    "voltaic_shoal": {
       "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-19 17:50:28",
-      "note": "re-render for depth fix (pre-2026-08-17 render; same seed — engine change)",
-      "order": 1
+      "order": 19,
+      "ts": "2026-08-20 00:16:33",
+      "note": "composed by midnight refill"
     },
-    "termite_citadel": {
+    "magellanic_mob": {
       "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-19 17:50:28",
-      "note": "re-render for depth fix (pre-2026-08-17 render; same seed — engine change)",
-      "order": 2
+      "order": 20,
+      "ts": "2026-08-21 00:23:01",
+      "note": "composed by midnight refill"
     },
-    "cobalt_rookery": {
+    "sunspot_archipelago": {
       "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-19 17:50:28",
-      "note": "re-render for depth fix (pre-2026-08-17 render; same seed — engine change)",
-      "order": 3
+      "order": 21,
+      "ts": "2026-08-21 00:23:01",
+      "note": "composed by midnight refill"
     },
-    "ruby_furnace": {
+    "waterbear_prairie": {
       "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-19 17:50:28",
-      "note": "re-render for depth fix (pre-2026-08-17 render; same seed — engine change)",
-      "order": 4
+      "order": 22,
+      "ts": "2026-08-21 00:23:01",
+      "note": "composed by midnight refill"
     },
-    "magnetite_choir": {
+    "winter_murmuration": {
       "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-19 17:50:28",
-      "note": "re-render for depth fix (pre-2026-08-17 render; same seed — engine change)",
-      "order": 5
+      "order": 23,
+      "ts": "2026-08-21 00:23:02",
+      "note": "composed by midnight refill"
+    },
+    "gecko_rampart": {
+      "state": "queued",
+      "order": 24,
+      "ts": "2026-08-22 00:25:25",
+      "note": "composed by midnight refill"
+    },
+    "lily_undercroft": {
+      "state": "queued",
+      "order": 25,
+      "ts": "2026-08-22 00:25:25",
+      "note": "composed by midnight refill"
+    },
+    "natron_skein": {
+      "state": "queued",
+      "order": 26,
+      "ts": "2026-08-22 00:25:26",
+      "note": "composed by midnight refill"
+    },
+    "plasma_script": {
+      "state": "queued",
+      "order": 27,
+      "ts": "2026-08-22 00:25:26",
+      "note": "composed by midnight refill"
     }
   },
-  "updated": "2026-08-19 17:50:28"
+  "updated": "2026-08-22 06:08:55"
 }

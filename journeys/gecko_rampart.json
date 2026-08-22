@@ -1,0 +1,142 @@
+{
+  "name": "gecko_rampart",
+  "theme": "a moat-ringed sandstone rampart on a monsoon night, its one lamp the only glow for a mile and therefore a whole hunting commons — lacewings spiralling at the bracket, weaver-ant supply files on the wet coping, an orb-weaver at her wheel, a slate-blue gecko clamped on the block. The dive goes down the gecko's toe into ADHESION: ridge fans paved with interlocking cells, a forest of keratin bristles, one frayed tip laid over the stone, and then the contact itself, where the hazy shells of stone and bristle swell into one another. Below that, an emptiness that is never still — paired sparks flaring apart and snapping shut — which restates as the shimmer of an elliptical galaxy's star-fog, and the way home falls through cast-off shells, a pair of blue-white suns sharing one envelope of glow and a monsoon world back onto the parapet. One slab shape set at differing angles so the mosaic never repeats is the wall's rule, and the same non-repeating speckle restates in the gecko's hide, the bristle ranks and the shock knots crowded through the envelope",
+  "style": "stormlight",
+  "music_lane": "night_market",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "rampart_commons",
+      "exp": 2.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "storm-slate stone and cinnabar lamp-glow, milk-pale rain haze",
+      "scene": "a sandstone rampart above its moat ring on a monsoon night, seen from the far bank at parapet height, the wall built of one slab shape set at differing angles so the mosaic never repeats, a single lamp burning on an iron bracket, a spiralling swarm of lacewings turning at the lamp, files of weaver ants crossing the wet coping, an orb-weaver at the hub of her wheel strung across a slot in the parapet, a slate-blue gecko speckled cinnabar clamped flat on a block, water skaters dimpling the moat below, rain haze lying over the wall, storm gloom past the far bank",
+      "target": "a slate-blue gecko speckled with cinnabar",
+      "target_phrase": "a speckled gecko"
+    },
+    {
+      "name": "gecko_stone",
+      "exp": -0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "slate-blue hide with cinnabar speckling on wet grey sandstone",
+      "scene": "a rain-slicked sandstone block with a slate-blue gecko clamped flat over it, cinnabar speckles strewn across its hide so no patch repeats, pebbled scale ridges running the length of its back, its toes splayed wide and flattened to the grit, a splayed grey toe set out on the stone, ant files crossing the wet grit past it, the slab mosaic running away beyond the block, lamp-glow washing over the wet stone, storm gloom past the wall",
+      "target": "a splayed grey toe",
+      "target_phrase": "a gecko toe"
+    },
+    {
+      "name": "toe_pavement",
+      "exp": -3.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "milk-pale keratin over slate shadow, cinnabar grit specks",
+      "scene": "the underside of a gecko toe, ranked ridge fans curving across it, every fan paved with interlocking flat cells packed rim to rim, stubby keratin bristles rising in rows from every cell, deep grooves parting one fan from the next, cinnabar grit lodged in the grooves, the ranks spaced so no patch of the pattern repeats, further fans receding into slate haze on every side",
+      "target": "a milk-pale keratin bristle",
+      "target_phrase": "a pale bristle",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "seta_ranks",
+      "exp": -5.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "milk-pale stalks on slate gloom, cinnabar sheen at the tips",
+      "scene": "a forest of keratin bristles rooted in a floor of flat cells, a million stalks in ranks, each stalk fraying near its end into a spray of hair-thin branches, the ranks packed dense in some patches and thin in others so the spacing never repeats, slate gloom pooling at the floor, milk-pale stalks catching a cinnabar sheen, further ranks receding into haze",
+      "target": "a milk-pale bristle tip",
+      "target_phrase": "a bristle tip",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "spatula_tip",
+      "exp": -6.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "milk-pale pads over slate stone, a cinnabar seam of glow",
+      "scene": "the frayed end of one keratin bristle, its branches ending in flattened triangular pads, each pad laid over a rolling terrain of silica humps, a shallow trough of shadow parting pad from stone, a thin cinnabar seam of glow where a pad meets the humps, further pads crowding on either side, slate emptiness past them",
+      "target": "a thin cinnabar seam",
+      "target_phrase": "a glowing seam"
+    },
+    {
+      "name": "contact_gap",
+      "exp": -9.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "slate haze shells, cinnabar cores, milk-pale sparks",
+      "scene": "the meeting place of pad and stone, two facing files of hazy glowing spheres, each sphere a nest of luminous shells about a cinnabar core, the stone's spheres locked in spiral chains of silica, the pad's strung in ranked ribbon chains of keratin, the outer shells of one file swelling into the outer shells of the other where the files close, single pale sparks winking in the trough, further ranks receding into slate emptiness on both sides",
+      "target": "a pale spark",
+      "target_phrase": "a pale spark",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "hex"
+      },
+      "cameo": {
+        "sprite": "output/mascots/canon/adam.png",
+        "pos": [
+          0.63,
+          0.44
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "flicker_floor",
+      "exp": -15.4,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "cinnabar sparks on slate blackness, milk-pale flare cores",
+      "scene": "an emptiness that is never still, paired sparks flaring apart and snapping shut all through it, each pair joined by a brief thread of glow, the flicker packed dense in some patches and thin in others, milk-pale cores at the heart of the hottest flares, the boil fading into slate blackness on every side"
+    },
+    {
+      "name": "elliptical_hill",
+      "exp": 20.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cinnabar star-fog and milk-pale core glow on slate blackness",
+      "scene": "a smooth hill of star-fog, ten billion old suns packed into one swelling mound with no arms and no dust lanes, the swarm milk-pale at its core and thinning to cinnabar haze at the rim, a restless flicker running through the fog, small cinnabar rings of cast-off gas set through the swarm, globular knots hanging off the flanks, slate blackness past the rim",
+      "target": "a small cinnabar ring",
+      "target_phrase": "a glowing ring"
+    },
+    {
+      "name": "shell_rings",
+      "exp": 16.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cinnabar rims and milk-pale filaments on slate-blue haze",
+      "scene": "nested shells cast off by an old star, three rings of glowing gas set one inside the next, their rims crimped and knotted, milk-pale filaments strung across the gaps, slate-blue haze filling the hollow, a close pair of blue-white suns seated at the centre in one shared envelope of glow, cold stars sparse past the outermost shell"
+    },
+    {
+      "name": "twin_envelope",
+      "exp": 11.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blue-white cores in milk-pale gas, cinnabar shock knots, slate emptiness",
+      "scene": "two blue-white suns orbiting inside one shared envelope of glow, seen level with the plane they turn in, the envelope drawn out into a milk-pale teardrop about the pair, a luminous stream bridging one sun to the other, cinnabar shock knots crowded where the stream lands, hot filaments lacing the gas, the envelope's outer haze fraying into slate emptiness, a small slate-blue world crossing the plain of glow, sparse cold stars past the frayed rim",
+      "target": "a small slate-blue world",
+      "target_phrase": "a small planet",
+      "loop_target": "two blue-white suns inside one shared milk-pale envelope of glow, a luminous stream bridging them"
+    },
+    {
+      "name": "monsoon_world",
+      "exp": 6.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "slate-blue cloud decks, cinnabar storm glow, milk-pale cloud tops",
+      "scene": "a storm world seen from orbit at night, monsoon cloud spirals wheeling over a river plain, lightning flickering inside the decks so no flash repeats, a braided river branching across the plain, a chain of settlement glows tracing the coast, milk-pale cloud tops catching the starglow, cinnabar glow coming up through gaps in the decks, the terminator curving past the far limb",
+      "target": "a lamplit stone rampart",
+      "target_phrase": "a stone rampart"
+    }
+  ],
+  "music_theme": "a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns",
+  "music_key": "D minor",
+  "render_start": "twin_envelope"
+}

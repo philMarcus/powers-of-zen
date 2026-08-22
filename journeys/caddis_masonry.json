@@ -1,0 +1,122 @@
+{
+  "name": "caddis_masonry",
+  "theme": "a mountain headwater riffle at daybreak where a caddisfly larva masons its case from rose-quartz and tourmaline grit — down through the case wall into the glowing force-chain skeleton of the packed jewels, on into the larva's underwater silk and the pleated fibroin stacks that bind the stones, to the shivering shells of one atom; the way home bends through optics, a galaxy cluster's lensing arcs and one galaxy drawn out into a ring folding back into the bent arcs of sun riding the gravel bed",
+  "style": "crystalline",
+  "music_lane": "music_box",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "riffle_dawn",
+      "exp": 1.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "wet slate, amber daybreak glow, jade water",
+      "scene": "curved amber arcs of sun bent across a gravel bed beneath fast standing waves, a mountain headwater riffle at daybreak seen from just above the water at the stream's rim, a slate-grey dipper bobbing on a mid-stream boulder, wan mayfly duns lifting off the surface film in ones and twos, minnows holding station over the jeweled gravel, soaked moss cushions on every boulder, conifer shadow shutting out the far bank",
+      "target": "a mossed grey cobble",
+      "target_phrase": "a mossy grey stone"
+    },
+    {
+      "name": "stone_shallows",
+      "exp": -0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "olive algae fur, rose grit, ink-teal water",
+      "scene": "the crown of one streambed cobble under fast clear current, a fur of olive algae combed flat over the rock, ranks of blackfly larvae anchored in the swiftest lane, a squat stonefly nymph gripping a crevice on hooked claws, water mites creeping through the fur, a river snail grazing a scoured patch, grit of pink and jade strewn in every hollow, crusted grain tubes standing among the fur",
+      "target": "a pebbled caddis case",
+      "target_phrase": "a pebbled tube"
+    },
+    {
+      "name": "caddis_case",
+      "exp": -1.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-quartz pink, jade rind, wet slate",
+      "scene": "a stretch of the caddis larva's case wall, rose-quartz and jade tourmaline grains set course by course into a tapering tube, every grain seated flush against its neighbours, silk lashings drawn taut across the joints, a domed air bead caught under one lashing with a curved gleam bent about its rim, older grains furred with algae toward the tube's mouth, the cobble's olive fuzz and sunken grit behind the wall",
+      "target": "a rose-quartz grain",
+      "target_phrase": "a pink quartz grain"
+    },
+    {
+      "name": "grain_pack",
+      "exp": -3.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-quartz pink, rind-jade glow, soot",
+      "scene": "masonry grains packed at every angle in every direction, rose-quartz prisms with milky fracture faces wedged among three-sided tourmaline columns zoned pink at the core and jade at the rind, a glowing stress skeleton branching from contact to contact through the whole pack, some chains burning hot where the load runs, others fading into slack pockets, taut cords lashed across the packed faces, sooty gaps opening back through the pack",
+      "target": "a taut silk cord",
+      "target_phrase": "a taut silk cord",
+      "loop_target": "packed rose-quartz and tourmaline grains threaded by a glowing stress skeleton"
+    },
+    {
+      "name": "silk_cable",
+      "exp": -4.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "milk-jade cords, amber wet sheen, indigo shade",
+      "scene": "a lashing of underwater silk crossing the packed grain faces, flattened cords of milk-jade fiber laid over one another in crossing ranks, amber glue collars swelling where each cord grips the stone, every cord splitting into finer filaments at its anchor, ranks of filaments receding into indigo shade behind the joint",
+      "target": "a fine pink filament",
+      "target_phrase": "a fine pink strand"
+    },
+    {
+      "name": "fibril_combs",
+      "exp": -6.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "hot pink skeins, ivory nodes, indigo",
+      "scene": "the fibrils packed inside one silk filament, hundreds of hot pink threads running parallel and twisting slowly about one another, combed ranks splitting and rejoining, ivory nodes studding the threads where they cross, thin water films drawn taut in the gaps, rank upon rank receding into indigo",
+      "target": "a folded pink ribbon",
+      "target_phrase": "a folded ribbon"
+    },
+    {
+      "name": "fibroin_sheets",
+      "exp": -8.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade ribbon stacks, hot pink cross-links, indigo void",
+      "scene": "folded fibroin ribbon chains stacked into pleated walls, each chain zig-zagging back on itself and locking into the chain next to it, hot pink cross-links pinning the stacks in register, whole stacks set at angles to one another with narrow gaps opening through them, glassy beads of bound water strung at the stack rims, ranked stacks repeating away into indigo",
+      "target": "a glowing atom",
+      "target_phrase": "a glowing atom"
+    },
+    {
+      "name": "atom_shells",
+      "exp": -10.8,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "incandescent gold core, pink shells, jet",
+      "scene": "one atom of the silk, a tight knot of incandescent spheres hanging in unlit emptiness, nested shells of shivering glow curving about the knot, thin arcs of radiance bent past it, six-sided rings of fainter spheres repeating away into the void in every direction"
+    },
+    {
+      "name": "lensed_cluster",
+      "exp": 23.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "gold ellipticals, jade-violet haze, ink void",
+      "scene": "a galaxy cluster massed in ink space, hundreds of gold elliptical galaxies swarming a hazy core, thin stretched arcs of curved radiance drawn about the core, several arcs closed into complete rings, a jade-violet haze webbing the swarm, far galaxies strewn thin toward the void's rim",
+      "target": "a curved gold arc",
+      "target_phrase": "a curved gold arc",
+      "cameo": {
+        "sprite": "output/mascots/canon/aleksey.png",
+        "pos": [
+          0.62,
+          0.38
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "ring_arc",
+      "exp": 21.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "hot gold ring, jade-violet hush, ink space",
+      "scene": "one lensed galaxy drawn out into a near-complete ring of gold radiance, the ring wrapping a hot bead of a core, the band swelling and thinning as it comes round, knots strung about the ring where the bending piles up, a hush of jade-violet haze filling the circle, scattered far suns behind the ring"
+    }
+  ],
+  "music_theme": "cold clear water and patient miniature masonry — a tiny struck-tine motif over a warm low drone, a soft deep kick landing on every morph, the pulse tightening as the packed jewels close in, a wide low hit on the atom-to-cluster fold and another as the ring bends home into daybreak water, wide quiet space held through the cosmic bars",
+  "music_key": "D minor",
+  "render_start": "grain_pack"
+}

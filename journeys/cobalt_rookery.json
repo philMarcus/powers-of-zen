@@ -1,0 +1,138 @@
+{
+ "name": "cobalt_rookery",
+ "theme": "an arctic seabird city read as a cliff of packed suns — from one aging gold star inside a crowded cluster down to a cobalt ice world, onto a basalt bird cliff tiered with guillemots, puffins, kittiwakes and razorbills, in against one guano-crusted shelf and onto a turquoise scrawled egg, then through the shell itself: pore pits, ranks of calcite palisade columns, the woven fiber mat of the membrane, the three-stranded protein ropes the crust roots into, the calcite lattice those ropes seed — and into a droplet of packed glowing beads that opens straight out as a globular cluster of ten thousand suns, the rookery rebuilt in stars",
+ "style": "stormlight",
+ "music_lane": "aurora_strings",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 8,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "cluster_sun",
+   "exp": 11.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "brass-gold star fire, cobalt gloom, cold silver ranks",
+   "scene": "an aging gold sun burning inside a crowded star cluster, ranked neighbour suns thick across the whole sky around it, a flat disk of ice dust circling the star, cobalt gloom pooled in the gaps among the ranks, stray faint suns scattered out toward the void",
+   "target": "a cobalt-blue ice world",
+   "target_phrase": "a blue planet",
+   "loop_target": "an aging gold sun amid ranks of crowded neighbour suns, a flat disk of ice dust circling it"
+  },
+  {
+   "name": "ice_world",
+   "exp": 6.9,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "cobalt sea, lime-crusted floes, brass low sun",
+   "scene": "a cobalt ocean world seen from orbit, sea ice broken into floes across its northern half, sunless leads splitting that ice into smaller floes and smaller again, a sheer volcanic coast rising where the floe field gives out, storm curls turning over open water, low brass sunlight raking the whole hemisphere at a shallow angle, the curve of the world against unlit space",
+   "target": "a sheer basalt headland",
+   "target_phrase": "a steep rock headland",
+   "cameo": {
+    "sprite": "output/mascots/canon/janet.png",
+    "pos": [
+     0.63,
+     0.37
+    ],
+    "size": 0.13
+   }
+  },
+  {
+   "name": "rookery_cliff",
+   "exp": 2.6,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "sooty basalt, lime-crusted tiers, cobalt swell, brass rake",
+   "scene": "a seabird cliff of banded basalt rising sheer from a cobalt swell, ledge tiers stacked one over another with unlit gaps repeating inside every tier, guillemots crowded rank to rank across the wide shelves, puffins set at burrow mouths in the turf slope up top, kittiwakes aloft over the water in loose flocks, razorbills gathered on the lower shelves, guano-limed streaks washed down the rock face, brass midnight sunlight raking the whole cliff, spray hanging at its foot",
+   "target": "a guano-limed rock ledge",
+   "target_phrase": "a white rock ledge"
+  },
+  {
+   "name": "egg_shelf",
+   "exp": 0.4,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "turquoise shells, lime crust, sooty feathers, brass glare",
+   "scene": "one shelf of the rookery at bird level, guillemots pressed flank to flank on guano-crusted stone, pear-shaped eggs in turquoise and ink scrawl set among their feet, feather litter and fish scraps scattered over the shelf, the cobalt gulf of the sea past its lip, brass sunlight lying across the crusted rock",
+   "target": "a turquoise speckled egg",
+   "target_phrase": "a blue speckled egg"
+  },
+  {
+   "name": "shell_rind",
+   "exp": -1.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "turquoise ground, ink scrawl, brass skim",
+   "scene": "the curved chalk rind of the shell, a turquoise ground crusted with mineral grain, ink-brown scrawl marks scattered over it in bands with clear gaps repeating inside every band, minute pore pits sunk across the whole surface, brass glare skimming the gloss of the crust",
+   "target": "a round pore mouth",
+   "target_phrase": "a dark round pore"
+  },
+  {
+   "name": "palisade_columns",
+   "exp": -4.2,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "cobalt gloom, turquoise-white columns, brass shaft glare",
+   "scene": "the interior of the shell wall, ranks of calcite palisade columns packed column against column and fused into a crust overhead, a pore shaft cutting straight down through the ranks, cobalt gloom filling the gaps among them, turquoise-white column rims catching a brass shaft thrown from the pore, cone-shaped column feet planted on a mat of twisted fibers underneath",
+   "target": "a twisted white fiber",
+   "target_phrase": "a twisted white fiber",
+   "resolve": {
+    "mode": "surface"
+   }
+  },
+  {
+   "name": "membrane_weave",
+   "exp": -6.1,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "milk-amber fibers, cobalt murk, glassy seed grains",
+   "scene": "the shell membrane under the mineral crust, a woven mat of twisted fibers crossing and knotting in stacked sheets, gaps of gloom sunk through the weave, glassy mineral seed grains gripping the strands where the crust roots into them, a wet sheen over every fiber, ranks of the weave repeating away into murk",
+   "target": "a three-stranded protein rope",
+   "target_phrase": "a twisted rope strand",
+   "resolve": {
+    "mode": "web"
+   }
+  },
+  {
+   "name": "protein_ropes",
+   "exp": -8.3,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "cobalt-violet ropes, amber cross-links, glassy grain",
+   "scene": "three protein strands wound about one another into a rope, ranks of such ropes stacked in staggered rows and lashed by cross-link rungs where they meet, sugar beads studding the strands at intervals, loose strand ends curling off the rows, a glassy mineral grain seeded against the ropes, the rows repeating away into cobalt murk",
+   "target": "a glassy calcite rhomb",
+   "target_phrase": "a clear angled crystal"
+  },
+  {
+   "name": "calcite_lattice",
+   "exp": -9.8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ice-white rhombs, cobalt void, brass glints",
+   "scene": "a calcite lattice, ranks of calcium atoms set at the corners of leaning rhombic cells, flat triangular carbonate groups seated at the middle of every cell, straight bond lines strung in three directions, whole lattice planes stacked with empty gaps repeating inside every plane, brass glints caught on the rows, the ranks repeating away into unlit distance",
+   "target": "a droplet of glowing spheres",
+   "target_phrase": "a cluster of glowing spheres"
+  },
+  {
+   "name": "nucleus_droplet",
+   "exp": -14.6,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "brass-gold beads, cobalt fire, unlit void",
+   "scene": "a rounded swarm of glowing beads packed into one droplet at the core of an atom, brass and cobalt fire threading the seams among the beads, the swarm thickening toward a blazing middle, stray beads adrift in a thinning fringe around it, unlit void past them"
+  },
+  {
+   "name": "globular_cluster",
+   "exp": 17.8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "gold and cold-silver suns, cobalt void",
+   "scene": "a globular cluster of ten thousand suns packed into a rounded swarm, gold and cold-silver stars thickening toward a blazing core, ranks thinning outward in shells with unlit gaps repeating inside every shell, stray suns drifting off the swarm in a scattered fringe, faint galaxies strewn far past the cluster in the void"
+  }
+ ],
+ "music_theme": "a polar swell at 90bpm — wide shimmering string beds over a slow deep kick on every downbeat, the surf-swell heaviest as the bird cliff arrives, thinning to one cold sustained drone through the shell interior, a single struck hit where the droplet of beads opens out into the cluster of suns",
+ "music_key": "B minor",
+ "render_start": "cluster_sun"
+}

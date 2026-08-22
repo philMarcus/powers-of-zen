@@ -1,0 +1,135 @@
+{
+ "name": "ruby_furnace",
+ "theme": "every atom of iron was forged in a dying star, told through a hummingbird — down from a red giant's fire arches past an ember-lit world and a daybreak orchard valley into a walled garden crowded with hummingbirds, bees, an anole and swallowtails, in to one ruby-throated hummingbird at the trumpet vine, onto the shingled ruby plates of its throat, through a vessel under the skin into the single-file river of red cells, into the four-part hemoglobin engines and the one blue-white iron atom set in each ring, down through the atom's nested shells to the nucleus as a shivering droplet of glowing spheres — which ignites into the boiling convection floor of the red giant that made it, and returns to the fire arches standing off its edge",
+ "style": "cosmic_gloss",
+ "music_lane": "ember_pulse",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 6,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "prominence_arcs",
+   "exp": 8.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ruby and orange fire on deep black",
+   "scene": "arches of glowing gas standing off the edge of a red giant star, the nearest of them rooted at both ends in the boiling granulation below, ruby and orange threads twisted along its span, smaller arches ranked along the star's edge behind it, embers strewn through the dark above them, thousands of cold stars scattered in the black beyond",
+   "target": "a dark green world",
+   "target_phrase": "a dark planet",
+   "loop_target": "arches of glowing gas standing off the edge of a red giant star, embers strewn through the dark"
+  },
+  {
+   "name": "ember_limb",
+   "exp": 6.8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ember-gold day edge, deep green land, black space",
+   "scene": "the curve of a green world seen from close orbit, a thin band of ember-gold light laid along its day edge, banks of white cloud wound over a dark ocean, a deep green continent standing out of the water with river veins branching across it, the night line drawn over the land, black space above the curve and the red star's glare low beyond it",
+   "target": "a green river valley",
+   "target_phrase": "a green valley"
+  },
+  {
+   "name": "orchard_country",
+   "exp": 3.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "deep green orchard bands, gold river, blue mist",
+   "scene": "a river valley at daybreak seen from low over the ridge, orchard rows combed in long dark-green bands across the slopes, walled gardens set among them with red vine along their walls, hedgerows dividing the fields below, blue mist lying in the folds of the valley, a river running gold with the low sun, black cypresses standing along the tracks",
+   "target": "a walled garden",
+   "target_phrase": "a walled garden"
+  },
+  {
+   "name": "daybreak_garden",
+   "exp": 1,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ruby trumpet flowers, deep emerald leaves, blue shadow",
+   "scene": "a walled garden at daybreak seen from just above the beds, ranks of ruby trumpet flowers open along the vine that covers the far wall, several hummingbirds at those flowers, orchard bees crowded over a stand of blue borage below, a green anole flat on the warm stone of the wall, swallowtails out over the open beds, long blue shadows across wet grass, low gold light under the fruit trees",
+   "target": "a ruby-throated hummingbird",
+   "target_phrase": "a green hummingbird",
+   "cameo": {
+    "sprite": "output/mascots/canon/dora.png",
+    "pos": [
+     0.66,
+     0.58
+    ],
+    "size": 0.13
+   }
+  },
+  {
+   "name": "vine_hover",
+   "exp": -1,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "emerald and bronze bird, ruby throat, dark green shade",
+   "scene": "one ruby-throated hummingbird in the air at the mouth of a trumpet flower, emerald and bronze-green along its back, a plate of ruby feathers under its long dark bill, the vine's red flowers open around it on every side, layered dark leaves behind in green shade, gnats lit in the low sun, a second hummingbird small among the far flowers",
+   "target": "a ruby throat patch",
+   "target_phrase": "a red throat patch"
+  },
+  {
+   "name": "gorget_shingles",
+   "exp": -3.2,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ruby and copper-black plates, ink seams",
+   "scene": "the ruby gorget of a hummingbird's throat, ranks of feather plates overlapping like roof shingles across the whole of it, every plate flaring ruby where the light takes it and copper-black where it turns away, fine dark barbs combing out along the edge of each rank, narrow seams of bare skin between the ranks with red threads of vessel running beneath them",
+   "target": "a fine red vessel",
+   "target_phrase": "a thin red vessel"
+  },
+  {
+   "name": "capillary_file",
+   "exp": -5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ruby discs, amber plasma, teal wall",
+   "scene": "the inside of a capillary under the skin, a narrow tube walled with thin teal-lit cells, ruby red cells folded nose to tail in single file the length of it, each one a bent disc with a pale dimple sunk at its centre, amber plasma standing in the gaps between them, small pale drifters among them, the packed tissue outside showing dark green through the wall",
+   "target": "a ruby red blood cell",
+   "target_phrase": "a red blood cell"
+  },
+  {
+   "name": "hemoglobin_engines",
+   "exp": -8.2,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "sapphire-blue and emerald-green ribbon, blue-white sparks, ink black",
+   "scene": "the machinery crowded inside one red cell, hemoglobin molecules packed through the space in their thousands, each a squat four-part engine of coiled ribbon, sapphire-blue and emerald-green where the coils turn, a flat ring set deep in every part of it with one blue-white iron atom at the ring's centre, loose ribbon ends looping between the engines, ink black in the gaps",
+   "target": "a blue-white iron atom",
+   "target_phrase": "a glowing blue atom"
+  },
+  {
+   "name": "iron_shells",
+   "exp": -10,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "blue-white shells on ink black",
+   "scene": "one iron atom in the dark, nested shells of blue-white fog drawn round a small blazing core, the inner shells tight and bright, the outer ones wide and thin, sparks of light strung through the fog in even rings, more atoms of the same kind scattered smaller through the black around it",
+   "target": "a white-hot nucleus",
+   "target_phrase": "a bright white core",
+   "resolve": {
+    "mode": "sea"
+   }
+  },
+  {
+   "name": "iron_nucleus",
+   "exp": -14.5,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "ruby and pearl beads, white haze on black",
+   "scene": "the nucleus of an iron atom, a close-packed droplet of glowing spheres, ruby and pearl beads pressed together into a rough ball, a white haze of light standing in every gap between them, the rim of the droplet shivering, deep black around it with faint sparks strewn through"
+  },
+  {
+   "name": "red_giant_floor",
+   "exp": 11,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ember-gold granules, dark orange lanes, soot black",
+   "scene": "the boiling floor of a red giant star, convection cells packed edge to edge across the whole face of it, every cell a wide granule of rising gas with a dark cooling lane sunk around it, ember light welling up through the lanes, ranks of granules running away to the star's soft edge, a haze of glowing gas standing over the floor, black space beyond"
+  }
+ ],
+ "music_theme": "a smouldering fall through fire and blood — one deep kick on every downbeat under smoky low pads, the pulse heaviest at the garden and again on the red giant's floor, thinning to a single low drone through the cell and molecule scales, a struck low hit where the nucleus opens into the star",
+ "music_key": "C minor",
+ "render_start": "prominence_arcs"
+}

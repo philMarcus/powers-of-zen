@@ -1,0 +1,77 @@
+{
+  "name": "peony_shell",
+  "theme": "a harbour firework festival taken apart down to what fire is made of — the crowded night sky over the bay doubled in the water, into the spread sphere of one burst, along a single burning pellet in its ember tail, into the spray of molten droplets coming off it, down to the glowing knots of matter burning scarlet and copper-green, which resolve straight back into the whole sky of simultaneous bursts: the burst was made of bursts",
+  "style": "neon_drift",
+  "music_lane": "night_market",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "harbor_sky",
+      "exp": 3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sooty black water, scarlet and gold sparks, turquoise quay lamps",
+      "scene": "the whole harbour at night seen low from the seawall, the sky above crowded with wide round spark bursts at every distance in scarlet, copper-green and gold, every one of them doubled upside down on the flat black water, ranks of smoke lit from within hanging between them, fishing boats moored in rows with small coloured running lights, gulls turning through the lit smoke over the breakwater, a far-off crowd of tiny silhouettes along the quay, a stub lighthouse blinking at the harbour mouth",
+      "target": "a round scarlet spark burst",
+      "target_phrase": "a round red burst"
+    },
+    {
+      "name": "burst_sphere",
+      "exp": 2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "molten copper-red and pale gold on smoke black",
+      "scene": "a black night sky full of the spark trails of one firework, hundreds of glowing points strung along straight trails running outward in every direction from a dark knot of smoke, the trail ends curling over into hooks and nested loops that almost repeat, thin copper-red and gold lines crossing the dark between them, ranks of older smoke hanging beyond, harbour lamps small and far below through the gaps",
+      "target": "a white-hot burning spark",
+      "target_phrase": "a bright white spark",
+      "loop_target": "a black night sky of hundreds of spark points strung along trails running outward in every direction"
+    },
+    {
+      "name": "star_ember",
+      "exp": -1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "white-hot core and scarlet grains on charcoal smoke",
+      "scene": "a drift of blue-grey smoke with one burning firework pellet set in it, the pellet a white-hot lump crusted with scarlet slag, hundreds of orange grains strung out behind it in a ragged tail, sibling trails crossing the darkness at wide angles beyond, flakes of smouldering ash tumbling loose on both sides, no ground and no sky",
+      "target": "a molten orange droplet",
+      "target_phrase": "a glowing orange droplet",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "droplet_spray",
+      "exp": -4.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "turquoise and copper-green flame over soot grey",
+      "scene": "a dense spray of molten droplets over a burning surface, thousands of glowing beads at every size hanging through black space, the nearest of them ringed with flickering turquoise flame, hollow ash husks and soot grains scattered among them, dim ranks of more beads receding into the dark on every side, a dull red smoulder far behind them all",
+      "target": "a small copper-green spark",
+      "target_phrase": "a small green spark",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.62,
+          0.41
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "cluster_flare",
+      "exp": -8.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "scarlet and copper-green flare on black",
+      "scene": "black space packed with small glowing knots of round beads, every knot a few dozen beads locked together and lit from inside, some of them burning scarlet and some copper-green, thin threads strung between the nearer knots in nested curls that almost repeat, loose points of scarlet and green light scattered around the hottest knots, rank after rank of the same knots receding into the dark"
+    }
+  ],
+  "music_theme": "a deep struck drum on every downbeat under lantern-lit plucked strings and a low bowed drone, wide open space between the hits so each morph blooms slowly, one bright metallic strike on the knot-field to harbour seam, nocturnal and wandering",
+  "music_key": "Bb minor",
+  "render_start": "burst_sphere"
+}

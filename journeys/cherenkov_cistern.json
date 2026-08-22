@@ -1,0 +1,130 @@
+{
+ "name": "cherenkov_cistern",
+ "theme": "a supernova's neutrino burst caught in a brass water cathedral under a mountain — from a flaring supergiant down past a storm-marbled world to dusk mountain country, into the mine yard and the flooded hall whose walls are ranked with thousands of brass-gold spheres, through the water's molecular cages into ranks of trembling nuclei that a violet needle crosses untouched, into the quivering trio inside one of them — which blooms as the ring of radiance standing in the hall's water, and that ring opens again as the nested rings of lit dust circling the star",
+ "style": "gilded_relic",
+ "music_lane": "glass_chapel",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 8,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "flared_star",
+   "exp": 12,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "violet-plum plasma, brass-gold flare, ink void",
+   "scene": "a swollen supergiant star burning in open space, granulated plasma cells packed over its whole face, brass-gold flare arcs standing off its rim, plum-shadowed streamers reaching outward past them, thousands of colder stars strewn through the void behind it, a faint haze of drifting dust across the field",
+   "target": "a storm-marbled violet world",
+   "target_phrase": "a violet planet",
+   "loop_target": "a swollen supergiant star, granulated plasma and brass-gold flare arcs, colder stars strewn behind it"
+  },
+  {
+   "name": "storm_world",
+   "exp": 6.9,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "indigo ocean, plum storm spirals, brass day glare",
+   "scene": "a storm-marbled world seen from orbit, plum cyclone spirals set over an indigo ocean, brass glare crossing the day face, a wrinkled continent of iron ranges standing under torn cloud sheets, frost fields capping the pole, the curve of the world cutting across a strewn starfield",
+   "target": "a snow-ridged mountain range",
+   "target_phrase": "a mountain range"
+  },
+  {
+   "name": "mountain_country",
+   "exp": 4.0,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "iron-grey ridges, plum valley shadow, brass dusk glare",
+   "scene": "mountain country at dusk seen from high above, ranks of iron-grey ridges running back into haze, plum shadow flooding the valleys, brass evening glare caught on the snowfields, a switchback road stitching up one flank, a river threading the trench floor, terraced spoil heaps and a steel winding tower standing at a portal cut into the rock",
+   "target": "a steel winding tower",
+   "target_phrase": "a steel tower"
+  },
+  {
+   "name": "mine_yard",
+   "exp": 2.4,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "indigo dusk, ochre scree, brass lamp glow",
+   "scene": "the mine yard on a mountainside at standing height, an arched stone portal cut into the slope with rails running out of it, the winding tower's iron legs braced over the shaft, ochre scree fanning downhill, ranks of spruce crowding the treeline, ravens perched on the winch cable, marmots out on the warm rock, cushion plants and orange lichen crusting the boulders, brass lamp glow spilling from the portal, plum dusk over the ridges, empty of people",
+   "target": "an arched stone tunnel mouth",
+   "target_phrase": "a tunnel mouth"
+  },
+  {
+   "name": "cavern_hall",
+   "exp": 1.6,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "brass-gold ranks, amber wash, plum rock shadow",
+   "scene": "a flooded hall carved out under the mountain, its walls ranked with thousands of brass-gold glass spheres in hexagonal steel frames, the ranks curving up over the vault and on down under the water, still water standing across the whole floor, a catwalk rail crossing the cavern, plum shadow in the rock overhead, amber glow washing the far wall, empty, no one present",
+   "target": "a brass-gold glass sphere",
+   "target_phrase": "a gold sphere"
+  },
+  {
+   "name": "sphere_ranks",
+   "exp": -0.6,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "brass-gold metal, violet shimmer, plum shadow seams",
+   "scene": "the ranked spheres at close range, one brass-gold dome bolted into its hexagonal steel frame, its neighbours stepping away in rows into plum shadow, riveted straps crossing every dome, a film of water standing over the glass and beads of it gathered on the metal, violet shimmer moving on the rock behind the ranks",
+   "target": "a clear water bead",
+   "target_phrase": "a water drop"
+  },
+  {
+   "name": "water_cages",
+   "exp": -8.4,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "plum-red cores, brass beads, indigo shadow",
+   "scene": "inside the water, ranks of molecules adrift in an ordered network, each one a plum-red core capped by two brass beads, taut bond struts joining them into hexagonal rings, the rings stacked into open cages repeating away into indigo shadow, violet shimmer running through the whole network",
+   "target": "a trembling amber core",
+   "target_phrase": "an amber bead"
+  },
+  {
+   "name": "untouched_matter",
+   "exp": -12.8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "amber and plum droplets, violet-white needle, starless indigo",
+   "scene": "ranks of trembling droplets adrift in vast emptiness, each droplet a knot of packed amber and plum beads with a shivering skin of radiance, rank after rank of them receding into starless indigo, a needle of violet-white radiance drawn dead straight through the whole array, passing clean through every gap it crosses",
+   "target": "a shivering amber droplet",
+   "target_phrase": "an amber droplet",
+   "cameo": {
+    "sprite": "output/mascots/canon/clark.png",
+    "pos": [
+     0.66,
+     0.62
+    ],
+    "size": 0.14
+   }
+  },
+  {
+   "name": "quivering_trio",
+   "exp": -15.4,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "plum, brass and violet spheres, brass strands, ink void",
+   "scene": "three quivering spheres knotted close together, one plum, one brass, one violet, each shot through with its own inner shimmer, taut strands of brass radiance strung tight from each to each, a boiling haze of sparks flickering in the space they enclose, nothing else in any direction"
+  },
+  {
+   "name": "arrival_ring",
+   "exp": 0.9,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "violet-blue glare, brass-gold ranks, indigo water",
+   "scene": "a ring of violet-blue radiance standing in still water, ring nested inside ring, its glare washing over ranks of brass-gold spheres set in the wall behind, the rock vault sunk in plum shadow above, the water elsewhere unlit and mirror-still"
+  },
+  {
+   "name": "echo_shells",
+   "exp": 16.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "brass-gold rings, plum dust, indigo void",
+   "scene": "nested rings of lit dust standing out in open space, ring inside ring inside ring, brass-gold on the faces turned inward and plum where the dust lies unlit, ragged filaments strung across the gaps, thousands of stars showing through the shells, the void reaching away beyond them"
+  }
+ ],
+ "music_theme": "a slow sacred descent under stone — glass bells over a wide choir pad, one deep kick on every downbeat as the dive steps down a scale, heaviest as the flooded hall arrives, thinning to a single held drone through the water and matter scales, then a struck bloom where the ring opens and the shells answer it",
+ "music_key": "B minor",
+ "render_start": "flared_star"
+}

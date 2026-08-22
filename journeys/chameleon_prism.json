@@ -1,0 +1,134 @@
+{
+  "name": "chameleon_prism",
+  "theme": "a cloud-forest chameleon whose colour is tuned crystal rather than pigment — the canopy traffic storey narrows to one moss-furred bough, to the jade-banded animal clamped on it, then inward through the pebbled scale terrain to the mosaic of star-shaped pigment cells, into one quicksilver cell where flat crystal platelets stack in tuned tiers, to the guanine sheets whose spacing IS the colour; the tuned strata fold into the cloud decks of a banded brown dwarf, and the way home falls past its mist-green companion world to the ridge country and back under the canopy. Banding recurs at every scale: broad gaps with the same gap pattern repeating at finer size inside every band",
+  "style": "ultraviolet",
+  "music_lane": "tide_organ",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "canopy_traffic",
+      "exp": 1.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "wet jade and violet sheen on charcoal, ember-orange flecks",
+      "scene": "the middle storey of a cloud forest after sundown, moss-furred boughs crossing one another in every direction, epiphyte gardens packed over every bough, bromeliad tanks brimming with rainwater, orchid sprays and fern fronds hanging thick, glass frogs set on wet leaves, orchid bees at the sprays, a violet-green sunbird among the fronds, a column of leafcutter ants crossing the bark, mist drifting through the gaps, unlit forest falling away beneath",
+      "target": "a moss-furred bough",
+      "target_phrase": "a mossy branch"
+    },
+    {
+      "name": "bough_garden",
+      "exp": 0.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moss green and wine violet on soot, amber lichen",
+      "scene": "one moss-furred bough carrying a hanging garden, cushion moss thick over the bark, orchid roots gripping it in flat coils, grey-green lichen rosettes crusting the wood, a bromeliad tank brimming with rainwater, fern fronds arching over the tank, a jade-banded chameleon clamped to the bark with tong-shaped feet and its tail coiled in a spiral, mist passing through the leaves, unlit forest falling away past the wood",
+      "target": "a jade-banded chameleon",
+      "target_phrase": "a green chameleon"
+    },
+    {
+      "name": "chameleon_perch",
+      "exp": -0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade and violet banding on soot, ember-orange grain",
+      "scene": "a chameleon gripping rough bark, bands of jade and violet crossing its flank, a ridge of horn scales running down its back, the casque angled forward, its tail coiled in a tight spiral, tong-shaped feet clamped on the wood, cushion moss and orchid roots crowding the bark around it, haze passing beyond, unlit forest gloom behind",
+      "target": "a turquoise scale band",
+      "target_phrase": "a turquoise band"
+    },
+    {
+      "name": "tubercle_field",
+      "exp": -2.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "turquoise and olive bands on charcoal, ember grain",
+      "scene": "a terrain of pebbled reptile scales, ranks of tubercle domes packed into turquoise and olive bands, charcoal grooves parting the ranks, broader gaps opening at intervals through the bands with the same gap pattern repeating at finer size inside each one, a green-violet sheen running over the domes, the ranks receding into shadow in every direction",
+      "target": "a turquoise tubercle dome",
+      "target_phrase": "a turquoise dome"
+    },
+    {
+      "name": "chromatophore_mosaic",
+      "exp": -4.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber-orange grain, indigo shadow, quicksilver glints",
+      "scene": "a mosaic of star-shaped pigment cells packed rim to rim beneath the scales, branching arms crowded with amber-orange grains, indigo lanes parting the arms, a further layer of quicksilver-glinting cells set behind the mosaic, the mosaic repeating away into indigo gloom in every direction",
+      "target": "a quicksilver-glinting cell",
+      "target_phrase": "a mirrored cell",
+      "loop_target": "a mosaic of star-shaped pigment cells packed rim to rim, quicksilver cells glinting behind them"
+    },
+    {
+      "name": "iridophore_cell",
+      "exp": -5.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "oil-slick green-violet sheen on indigo",
+      "scene": "inside a quicksilver cell, decks of flat crystal platelets stacked in even tiers, fluid gaps of matched thickness holding the tiers apart, a green-violet sheen shifting across every deck, the curved membrane wall arching behind the stacks, fine threads strung across the interior, further stacks receding into indigo gloom",
+      "target": "a glassy crystal platelet",
+      "target_phrase": "a glassy platelet"
+    },
+    {
+      "name": "platelet_lamella",
+      "exp": -7.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "petrol green-violet slabs, copper protein studs, indigo",
+      "scene": "a crystal platelet set in its membrane sac, the sac wall a double file of bead-headed lipid molecules curving over it, copper-toned protein turbines seated through the wall, a microtubule rail crossing the space with motor proteins stepping over it, coiled ribbon chains looping past the slab, the platelet itself a stack of glassy sheets, indigo emptiness beyond",
+      "target": "a glassy crystal sheet",
+      "target_phrase": "a crystal sheet"
+    },
+    {
+      "name": "guanine_lattice",
+      "exp": -8.9,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "green-violet sheen on soot, silver ties",
+      "scene": "the interior of the guanine crystal, flat six-ring molecules hydrogen-bonded rim to rim into corrugated sheets, the sheets stacked in even files at matched spacing, silver ties strung across every gap, a green-violet sheen banding the stack, broader gaps opening at intervals with the same spacing repeating at finer size inside every band, the stack repeating into soot gloom in every direction"
+    },
+    {
+      "name": "brown_dwarf",
+      "exp": 8.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ember brown and violet-grey decks on soot, sullen ember glow",
+      "scene": "a banded brown dwarf hanging in cold emptiness, ranked cloud decks of ember brown and violet-grey wrapped around the globe, broader clear gaps opening at intervals through the decks with the same banding repeating at finer size inside every deck, a slow violet storm oval set into the northern bands, iron-cloud haze reddening the rim of the globe, a sullen ember glow coming up through the gaps, a mist-green world crossing in front of the decks, sparse cold stars beyond",
+      "target": "a mist-green world",
+      "target_phrase": "a green planet"
+    },
+    {
+      "name": "world_orbit",
+      "exp": 6.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moss green and teal under ember rake, violet cloud strata",
+      "scene": "a mist-green world seen from orbit, ridge chains running in parallel folds across the ember-lit hemisphere, river veins branching down to a teal shallow sea, banded cloud strata drawn over the ranges with clear gaps repeating through them, a cyclone spiral turning over open water, the terminator curving across the far side, ember glow raking flat over the whole face",
+      "target": "a green mountain ridge",
+      "target_phrase": "a green ridge"
+    },
+    {
+      "name": "mist_ranges",
+      "exp": 4.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moss green and violet haze on charcoal, ember horizon",
+      "scene": "cloud-forest ridges seen low over the ridge tops, ridge after ridge receding into violet haze, mist decks lying in strata across the valleys with clear gaps repeating through them, river gorges cut into the folds, mossy treetops packed over every slope, ember glow lying flat over the furthest ridges",
+      "target": "a mossy treetop",
+      "target_phrase": "a mossy treetop",
+      "cameo": {
+        "sprite": "output/mascots/canon/lorraine.png",
+        "pos": [
+          0.62,
+          0.55
+        ],
+        "size": 0.14
+      }
+    }
+  ],
+  "music_theme": "a humid crystal descent — a breathing reed organ over a sunken sub pulse, the pulse tightening as each band closes in, glassy overtones sharpening through the cell and platelet scales, one broad low hit landing on the fold from the crystal stack into the brown dwarf's cloud decks, then opening out into slow mineral quiet as the ridge country returns",
+  "music_key": "G# minor",
+  "render_start": "chromatophore_mosaic"
+}

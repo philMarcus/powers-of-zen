@@ -1,0 +1,148 @@
+{
+ "name": "lily_undercroft",
+ "theme": "a giant water-lily pond on its first bloom night, dived down its own leaf — the pad-tiled commons with its beetles, whistling ducks and fish, under one pad into the self-carrying rib vault, in through the quilted bays to the blade's air-chamber froth, the mesophyll galleries and the pigment antenna rings paving one chloroplast, whose rings meeting wall to wall open out as the froth of cosmic dawn and fall home past the first galaxies, a star nursery and a night planet onto the moor that holds the pond",
+ "style": "enchanted_wild",
+ "music_lane": "night_market",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 8,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "pad_commons",
+   "exp": 1.8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "peat-tea bronze water, moonlit lily ivory, deep fern green",
+   "scene": "a giant water-lily pond met from just above the water on its first bloom night, circular pads two metres across tiled edge to edge over peat-tea bronze water, each pad walled by an upturned rim of the same green, one ivory blossom cupped wide amid the tiling with scarab beetles crowded in its warm core, whistling ducks treading the pads in twos and threes, dusky fish nosing the stems in the umber water under the gaps, pond snails grazing the rims, moonglow keen on every ripple, a reedbank closing the far side in night-black",
+   "target": "a rimmed lily pad",
+   "target_phrase": "a green lily pad"
+  },
+  {
+   "name": "rib_undercroft",
+   "exp": 0.3,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "crimson-purple ribwork, backlit jade blade, bronze murk",
+   "scene": "the undercroft of one lily pad, met from beneath in tea-bronze water, crimson-purple girder ribs radiating from the stem hub out to the rim and cross-tied by hoop after hoop, every rib bearing on its neighbours where they cross so the vault carries itself with no post at its middle, chalk thorns bristling down each rib, silver beads of trapped air caught in the bays, the pad's green blade overhead burning jade wherever moonglow strikes it from above, bronze murk closing past the rim",
+   "target": "a crimson girder rib",
+   "target_phrase": "a crimson rib"
+  },
+  {
+   "name": "rib_crossing",
+   "exp": -1.2,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "wine-red girders, jade quilting, silver air",
+   "scene": "one crossing of the pad's underside frame, three wine-red girders meeting where each lies over the next in a closed ring with nothing propping its middle, chalk thorns crowding their flanks, the bays roofed by the pad's green underside drawn taut and glowing jade from the pond glare above it, quilted panes pressed into that green in a hexagon packing, silver air caught in the corners of every bay, the farther bays receding into umber murk",
+   "target": "a jade quilted pane",
+   "target_phrase": "a green quilted pane"
+  },
+  {
+   "name": "chamber_froth",
+   "exp": -2.8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "fern-green panes, gas-clear voids, amber sap films",
+   "scene": "the air chambers packed inside the pad's blade, a froth of gas-filled compartments meeting wall to wall in hexagon courses, every wall a fern-green pane one cell thick, star-shaped brace cells wedged across the voids on stiff spurs, amber sap films pooled at the corners where three walls meet, rank upon rank of compartments receding into green gloom",
+   "target": "a green columnar cell",
+   "target_phrase": "a green cell",
+   "resolve": {
+    "mode": "lattice",
+    "variant": "hex"
+   }
+  },
+  {
+   "name": "mesophyll_gallery",
+   "exp": -4.8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ivory cell walls, emerald lenses, amber sap",
+   "scene": "a gallery of mesophyll cells inside the pad's blade, ivory-walled columns ranked in files with sap-clear middles, emerald chloroplast lenses crowded against the inner wall of every cell, a hazy nucleus sunk at one side of each, threads of cytoplasm strung across the interiors, warm amber sap flooding the gaps among the files, ranks of cells beyond fading into fern-green murk",
+   "target": "an emerald chloroplast lens",
+   "target_phrase": "a green lens",
+   "resolve": {
+    "mode": "sea"
+   }
+  },
+  {
+   "name": "antenna_rings",
+   "exp": -8.2,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "emerald pigment plates, rust-red rods, gold-green wells on ink",
+   "scene": "the pigment antenna arrays paving one chloroplast's interior, closed rings set edge to edge over a green membrane floor, each ring a palisade of upright ribbon staves clasping a wheel of tilted emerald plates that lean one on the next with no post at its middle, smaller ring-trios wedged in the gaps, rust-red rods threaded through the palisades, a gold-green shine banked in the well of every ring, the rings meeting wall to wall in a froth of circles that ranks away into ink",
+   "resolve": false
+  },
+  {
+   "name": "reion_froth",
+   "exp": 24.0,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "ivory shells of first starlight, rust neutral fog, violet-black depth",
+   "scene": "the froth of cosmic dawn, spheres of first starlight blown through a rust-coloured fog of neutral gas, their shells meeting wall to wall in a foam that packs the field, each wall beaded with young galaxies at its knots, keen blue-white cores kindling at the middle of the nearest spheres, the fog past the outermost shells still unlit and grainy, the foam ranking away into a violet-black depth",
+   "target": "a young blue-white galaxy",
+   "target_phrase": "a small blue galaxy",
+   "resolve": {
+    "mode": "web"
+   }
+  },
+  {
+   "name": "first_galaxies",
+   "exp": 20.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "blue-white knots, rust dawn haze, violet-black void",
+   "scene": "a shoal of young galaxies strewn through the haze of cosmic dawn, dozens of blue-white knots packed across the field at every depth, each one a half-drawn spiral or a ragged clump still gathering itself, bridges of glowing gas drawn from knot to knot, curved shells of older froth crossing the field as faint rust-coloured seams, countless cold stars sown through the murk, a violet-black void beyond the farthest of them",
+   "target": "a rose-gold nebula knot",
+   "target_phrase": "a pink nebula",
+   "loop_target": "a shoal of young galaxies strewn through the haze of cosmic dawn, blue-white knots packed at every depth in a violet-black void"
+  },
+  {
+   "name": "star_nursery",
+   "exp": 13.0,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "rose-gold gas towers, teal cast-off shell, blue-white new suns",
+   "scene": "a nursery of kindling stars, towers of rose-gold gas raised in ranks and eaten hollow by the glare of the newest suns, twin jets lancing from a cradle star sunk in the murk of one tower, embers of ionised gas strewn down every flank, a teal shell cast off by an older sun crossing the field, cold stars packed through the gaps, the far towers fading into a black depth",
+   "target": "a jade-black planet",
+   "target_phrase": "a green planet",
+   "resolve": {
+    "mode": "surface"
+   },
+   "cameo": {
+    "sprite": "output/mascots/canon/lamar.png",
+    "pos": [
+     0.36,
+     0.57
+    ],
+    "size": 0.14
+   }
+  },
+  {
+   "name": "night_planet",
+   "exp": 6.8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "jade drowned lowland, peat-black pools, teal polar aurora",
+   "scene": "a night planet seen from orbit, a drowned lowland spread over one hemisphere in jade and peat-black, thousands of bog pools sown across it and each catching the moonglow as a keen point, cloud sheets raked one way over the coast, a teal aurora oval burning at the pole, the terminator drawn as a curved ember seam, cold stars sown through the black past the curve of the planet",
+   "target": "a black peat moor",
+   "target_phrase": "a black marsh"
+  },
+  {
+   "name": "moor_flats",
+   "exp": 4.0,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "peat-black pools, silver mist rafts, one ivory pond glow",
+   "scene": "a peat moorland at night met from low above, hundreds of black pools strewn over the flats, sedge tussocks crowding every margin, silver mist rafts caught in the hollows, one broad pond among them quilted edge to edge with lily pads and lifting a warm ivory glow, a slow river drawn through the peat as a bronze thread, cold moonglow keen on all the still water",
+   "target": "a pad-tiled pond",
+   "target_phrase": "a green lily pond"
+  }
+ ],
+ "music_theme": "a hushed night bloom widening into cosmic dawn — velvet pad and plucked water-drop figures over the pond commons, the pulse thinning to one low note under the pad's vault, near-empty space through the cell galleries, a single deep hit where the pigment rings open out into the froth of first starlight, then a warm widening fall home past the gas towers and the moor to the pond",
+ "music_key": "Bb minor",
+ "render_start": "first_galaxies"
+}

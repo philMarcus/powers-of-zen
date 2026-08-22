@@ -1,0 +1,134 @@
+{
+ "name": "desert_rosette",
+ "theme": "a once-a-decade desert superbloom read as one ring repeated at every scale — ripple shells in the cosmic web, a ring galaxy, the echo shells of a flared star, an ochre planet flushed green after its rains, the bloom bands ringed about a playa, the crowded basin floor, one corolla rosette, its pigment-packed epidermis cells, the rungs of a DNA helix, a base ring's atoms in their rosette of electron hoops, and a ripple foam that folds back into the shells it started in",
+ "style": "enchanted_wild",
+ "music_lane": "aurora_strings",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 8,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "baryon_shells",
+   "exp": 24,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "rose glow and rind-green haze on starless ink",
+   "scene": "the cosmic web at its largest reading, immense concentric shells of matter standing one inside the next, each shell a curved sheet crowded with galaxies, thin filaments strung across the hollows amid the shells, whole voids sunk behind them holding nothing at all, rose glow on the crowded sheets and rind-green haze in the thinner gas",
+   "target": "a pink ring galaxy",
+   "target_phrase": "a ring galaxy"
+  },
+  {
+   "name": "ring_galaxy",
+   "exp": 21,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "hot pink knots and rose-gold core on starless ink",
+   "scene": "a ring galaxy seen face-on, a closed hoop of hot pink star-forming knots turning about a hollow middle, a rose-gold core suspended inside the hoop, ragged green gas streamers looping across the hollow, dust freckling the inner rim of the hoop, other galaxies strewn through the starless field beyond it",
+   "target": "a hot pink knot of new stars",
+   "target_phrase": "a glowing pink knot",
+   "loop_target": "a ring galaxy seen face-on, a hoop of hot pink star knots turning about a hollow middle with a rose-gold core suspended inside it"
+  },
+  {
+   "name": "echo_shells",
+   "exp": 13.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "green-gold flare and cool rose dust on soot",
+   "scene": "the dusty space around a star that has flared, nested luminous shells of that flash standing off in ancient dust, each shell a curved sheet of rose fire wrapped inside the next, sooty lanes of dust curling through the gaps amid them, the flared star burning as a hard green-gold point at the middle of the nest, cold starless space past the outermost shell",
+   "target": "an ochre planet streaked green",
+   "target_phrase": "an ochre planet",
+   "cameo": {
+    "sprite": "output/mascots/canon/lamar.png",
+    "pos": [
+     0.62,
+     0.58
+    ],
+    "size": 0.14
+   }
+  },
+  {
+   "name": "ochre_planet",
+   "exp": 7.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "rust ochre and green flush on ink",
+   "scene": "an ochre planet turning in space, its face rusted orange and flushed green in curving bands where a decade's rains crossed it, hoop-shaped storm systems standing over the plains, a twice-ringed impact basin on the terminator, thin cloud arcs curving past the limb, starless space all around it",
+   "target": "a green ringed basin",
+   "target_phrase": "a green crater basin"
+  },
+  {
+   "name": "bloom_basin",
+   "exp": 3.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "hot pink bands and rind-green scrub on cracked ochre clay",
+   "scene": "a desert basin after a decade's rain, seen from overhead and tipped toward its far wall, concentric bands of flowers ringed about a cracked clay playa, hot pink in the outer bands and rind-green scrub in the inner ones, dry washes cutting the rings where the water ran, the ochre ridge wall standing across the far side with its shadow reaching in",
+   "target": "a patch of pink flowers",
+   "target_phrase": "a patch of pink flowers"
+  },
+  {
+   "name": "desert_floor",
+   "exp": 0.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "hot pink blossom and green stems on shadowed grit",
+   "scene": "the floor of the basin at insect height after the rains, ranked stems of primrose and ringed poppy standing overhead in every direction, sphinx moths hovering at the throats of the taller blossoms, digger bees crowding a sandy nest hole in the open grit, a desert tortoise pushing amid the stems, two hummingbirds working a whorl of blossoms on one stalk, sable shade under the mat of leaves",
+   "target": "a hot pink blossom",
+   "target_phrase": "a pink blossom"
+  },
+  {
+   "name": "corolla",
+   "exp": -1.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "rose-quartz pink and green-gold on shaded rose",
+   "scene": "the throat of one desert blossom, five rose-quartz petals set in a rosette about a circle of anthers, each anther a green-gold knob on a slender stalk, pollen grains strewn over the petal floor, veins fanning out from the middle of every petal, shade sunk under the overlapping petal bases",
+   "target": "a rose-quartz petal",
+   "target_phrase": "a pink petal"
+  },
+  {
+   "name": "petal_cells",
+   "exp": -4.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "rose pigment and green-glass walls on shadow",
+   "scene": "the epidermis of a petal, cone-tipped cells packed shoulder to shoulder in a cobbled sheet running off in every direction, one swollen sac of rose pigment filling each cell, green-glass walls standing amid the cells, a violet nucleus pressed to one side inside every one of them, ranks of cells sunk into shadow farther off",
+   "target": "a violet cell nucleus",
+   "target_phrase": "a cell nucleus"
+  },
+  {
+   "name": "dna_rungs",
+   "exp": -8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "rose beads and green glow on void",
+   "scene": "the molecular structure of DNA, two coiled rails wound about one another and stacked away in every direction, flat pairs of hexagon rings set as rungs at even spacing amid the rails, rose beads studding both rails, green glow escaping the grooves, further helices ranked back into the void",
+   "target": "a glowing atom",
+   "target_phrase": "a glowing atom"
+  },
+  {
+   "name": "atom_ring",
+   "exp": -10,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "rose and rind-green shimmer on void",
+   "scene": "the atoms of one base ring, six burning cores held in a hexagonal frame with straight bonds strung amid them, nested hoops of electron haze standing about every core, looping petal-shaped curves traced where the hoops of neighbouring atoms cross, rose and green shimmer through the crossings, ranks of the same hexagonal frames sunk back into the void",
+   "target": "a burning atomic core",
+   "target_phrase": "a glowing core"
+  },
+  {
+   "name": "ripple_foam",
+   "exp": -14.5,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "rose crests and rind-green troughs on ink",
+   "scene": "a foam of ripple hoops far under the atoms, countless circular crests set one inside another and crossing where they meet, petal-shaped loops standing in the interference at every crossing, rose crests and rind-green troughs through the whole volume, hoops of every size packed away in all directions, no ground and no sky anywhere in it"
+  }
+ ],
+ "music_theme": "a superbloom opening out of the cosmic shells — slow shimmering strings over a velvet low pad, a deep kick on every scale change, the pulse widening as the rings widen and drawing in tight on the plunge into the blossom, a struck bell where the ripple foam turns back into the shells of the cosmic web, easing into quiet rose warmth at the loop",
+ "music_key": "F# minor",
+ "render_start": "ring_galaxy"
+}
