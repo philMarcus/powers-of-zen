@@ -1043,6 +1043,8 @@ finds little on flat art — style-vs-detection interplay to watch.
 # motion to Phil (content re-interpretation at higher denoise; parallax not legible;
 # labs must ship 12fps looped clips). Phase 1.5 (depth realism in scaffolds) is the
 # active work; resume here after depth reads 3-D.
+# STATUS 2026-08-22: superseded as a standalone plan — this section resumes as Phase D of
+# "DEPTH 2.0 — PARALLAX ERA" (end of this file), Phil-approved 2026-08-22.
 # ═══════════════════════════════════════════════════════════════════════════════
 
 ## Why (the residual problem)
@@ -1146,3 +1148,74 @@ Cameo/counter interplay → cameo paste coordinates transformed through the same
 mask-boosted denoise; if insufficient, scaffold-assisted infill during resolve windows.
 Motion sickness / brand drift → moves are spice, not sauce: the cinematographer's rule
 floor keeps most cards on drift+roll; heroes appear where the journey earns them.
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# DEPTH 2.0 — PARALLAX ERA (approved by Phil 2026-08-22; supersedes Phase-1.5
+# pictorial-depth work as the active depth effort; ENGINE 3 resumes as its Phase D)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+## The diagnosis (why depth stayed thorny — settled with Phil 2026-08-22)
+Motion parallax is the DOMINANT human depth cue, and the core transform deletes it:
+zoom_transform is a uniform crop+upscale — every pixel expands at the same rate, which is
+the optical signature of approaching a FLAT FRONTAL PLANE. However 3-D a still looks, it
+MOVES like wallpaper, and the brain trusts motion over the picture. This explains all of it:
+- Pictorial fixes (scaffold v3 looming, depth prompts) improved stills, but stills animated
+  with flat-plane motion still read flat; scaffold looming lives only in the CN conditioning
+  during resolve windows while the fed-back IMAGE moves uniformly — at travel denoise 0.40
+  the image wins.
+- coral_synapse read 3-D at the opening then flattened mid-dive: one dominant structure
+  against background gives silhouette-occlusion depth and uniform zoom passably imitates
+  approaching ONE object; when the frame fills with a FIELD of instances, uniform zoom =
+  enlarging patterned wallpaper. Flatness bites exactly in the seas.
+- The taste conflict dissolves: the pictorial cues Phil rejected (gloom fade, far-field
+  desat, depth blur — his verdicts STAND) are unnecessary for motion depth. Everything stays
+  sharp/dark/saturated; depth comes from HOW IT MOVES. The "COD feel" = parallax + occlusion
+  changes at full sharpness, exactly how a game renders.
+
+## Phase A — parallax dolly (the centerpiece)
+Compose the schedule-exact zoom with a small DEPTH-DIFFERENTIAL residual: near pixels get
+extra expansion, far pixels less, normalized so the reference plane (the TRACKED object's
+depth when locked, else median depth) stays EXACTLY on the scheduled zoom — counter, bars,
+morphs, loop math untouched; iron law intact. warp.dolly already implements the
+displacement; the work:
+1. Fuse crop-zoom + dolly residual into ONE resample (no added generation loss — we already
+   resample every frame; orbit failed on LARGE lateral warps, this residual is a few px/frame
+   at the edges, same order as existing resampling).
+2. Per-frame depth source: the scaffold's OWN depth inside resolve windows (clean, and
+   conditioning + warp finally AGREE — the orbit-v2 lesson); DepthAnything at cadence
+   ~every 3-4 frames with EMA + quantized into planes elsewhere (the noisy-depth lesson).
+3. disocclusion_denoise where the warp reveals geometry.
+4. `parallax_gain` knob, 0 = today's engine — the A/B axis and the safe retreat.
+
+## Phase B — persistent seas
+Scaffolds currently exist only at realm arrivals. Extend the population field through the
+WHOLE CARD for many-instance scenes: instances keep flowing, looming, occluding, exiting at
+the edges for the full travel, feeding both CN and the warp's depth. "Moving through a sea
+of things", not "a sea appears, then wallpaper".
+
+## Phase C — musical micro camera motion (Phil: MUST have a clean off-switch)
+Flatness is worst during LOOK bars (zoom slows, parallax stops). Add sinusoidal lateral
+truck during arrive/look bars (drifts out and back — integrates to zero within the card, so
+loop closure is safe by construction) + a dolly-gain surge on plunge downbeats. Camera
+motion as musical phrasing. Phil can't yet envision it → build behind a SINGLE default-off
+flag (`camera_micro`) so every render can run with/without; he judges the A/B when we
+get there.
+
+## Phase D — vocabulary + cinematographer (= ENGINE 3 resumed, gated on A-C verdicts)
+Orbit for showcase cards (v3 gate result stands), `landing` planet-descent and `threshold`
+window-transfer hero moves, roll/yaw/revolution kept distinct, rule-based cinematographer
+v1 assigning moves from journey POV tags.
+
+## Labs and gates (variable-isolated, 12fps SLOW LOOPED clips — Phil's standing format)
+- dolly_lab: one populated-field card (the class that flattens), same seed, four arms —
+  baseline / gain 0.5 / gain 1.0 / gain 1.0 + persistent scaffold. GATE: near instances
+  visibly overtake far and exit fast at the edges; no structure smear by card end; no
+  added morph-feel.
+- drift_lab: winning arm + hover-drift. GATE: look bars feel inhabited, not paused.
+- Full-journey A/B at the SAME SEED as an existing render (coral_synapse — the video Phil
+  cited) for his motion verdict BEFORE the nightly batch adopts anything.
+
+## Deliberately NOT doing
+No gloom fade, no far-field desaturation, no depth blur (taste verdicts stand — motion
+depth makes them unnecessary); no change to bars, tempo, seams, targeting, or the loop
+contract. Camera-move vocabulary stays gated behind the dolly foundation.

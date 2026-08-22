@@ -28,6 +28,7 @@ import sys
 import time
 from pathlib import Path
 
+import numpy as np
 import requests
 from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageStat
 
@@ -35,6 +36,7 @@ import figure
 import grammar
 import style as _style
 import track
+import warp as _warp
 
 COMFY = "http://localhost:8188"
 FFMPEG = ("/mnt/c/Users/Phil/AppData/Local/Microsoft/WinGet/Packages/"
@@ -95,6 +97,28 @@ DEFAULTS = {
     # (detection is caption-based, not area-based: a caption names what the image is ABOUT, so
     #  a featured individual is named while distant texture figures are not — see figure.py)
     "figure_watch": 28,       # also check every Nth frame mid-render (0 = off); warns only
+    # DEPTH 2.0 Phase A (2026-08-22, PLAN "PARALLAX ERA"): depth-differential parallax on
+    # the fed-back frame — near content expands beyond the scheduled zoom, far recedes
+    # relatively, median plane rides the schedule exactly (warp.parallax_residual). 0 = off
+    # (today's engine; the nightly batch stays here until Phil's verdict). Depth comes from
+    # the resolve scaffold inside windows (conditioning + warp AGREE — the orbit-v2 lesson)
+    # and DepthAnything at cadence elsewhere, EMA-smoothed + plane-quantized (raw estimator
+    # shimmer kills warps).
+    "parallax_gain": 0.0,
+    "parallax_depth_every": 3,   # DepthAnything cadence outside scaffold windows (frames)
+    "parallax_planes": 5,        # depth quantization levels
+    # Phase B: keep the arrival scaffold alive as the DEPTH source (never the CN) until its
+    # card ends — "moving through a sea", not "a sea appears, then wallpaper"
+    "resolve_persist": False,
+    # Phase C (camera_micro — Phil 2026-08-22: MUST be a clean off-switch; he judges the
+    # with/without A/B): musical micro camera motion keyed off the zoom schedule's own
+    # arrive-look-plunge curve. HOVER frames (low z) get a parallax-only lateral drift, one
+    # sinusoid cycle per music bar so every downbeat lands at zero offset (loop/seam-safe by
+    # construction; the aim plane never moves). PLUNGE frames (high z) get a parallax-gain
+    # surge instead. Both need parallax_gain > 0 — --parallax 0 kills everything at once.
+    "camera_micro": False,
+    "micro_drift_px": 12.0,   # lateral drift at the extreme near plane, px
+    "micro_surge": 0.5,       # plunge gain multiplier: pk * (1 + surge * plunge-ness)
     # anti-collapse re-texturing of each fed-back frame
     "sharpen": 1.35,
     "contrast": 1.04,
@@ -326,6 +350,20 @@ def zoom_transform(img, zoom, rotate_deg, cx=0.5, cy=0.5):
     cw, ch = w / zoom, h / zoom
     left, top = ecx * w - cw / 2, ecy * h - ch / 2
     return img.crop((left, top, left + cw, top + ch)).resize((w, h), Image.LANCZOS)
+
+
+def transform_depth(depth, zoom, rotate_deg, cx, cy, w, h):
+    """Carry the parallax depth map through the SAME uniform transform the fed frame gets
+    (rotate + clamped crop + resize), so depth stays aligned with the image between fresh
+    estimates (DEPTH 2.0 Phase A). Bilinear is fine — the map is plane-quantized anyway."""
+    im = Image.fromarray((np.clip(depth, 0.0, 1.0) * 255).astype("uint8"))
+    if rotate_deg:
+        im = im.rotate(rotate_deg, resample=Image.BILINEAR, expand=False)
+    ecx, ecy = track.crop_center(zoom, cx, cy)
+    cw, ch = w / zoom, h / zoom
+    left, top = ecx * w - cw / 2, ecy * h - ch / 2
+    im = im.crop((left, top, left + cw, top + ch)).resize((w, h), Image.BILINEAR)
+    return np.asarray(im, "float32") / 255.0
 
 
 def detail_boost(img, cfg):
@@ -590,6 +628,19 @@ def main():
                          "resolves out of the old texture as countless growing instances")
     ap.add_argument("--no-resolve", dest="resolve", action="store_false",
                     help="disable resolve-on-approach (A/B / legacy behavior)")
+    ap.add_argument("--parallax", type=float, metavar="GAIN",
+                    help="DEPTH 2.0: depth-differential parallax gain on the fed-back frame "
+                         "(0 = off/today's engine; 1.0 ≈ nearest plane zooms ~z^1.5 while the "
+                         "far field recedes relatively). Overrides cfg parallax_gain.")
+    ap.add_argument("--resolve-persist", action="store_true",
+                    help="DEPTH 2.0 Phase B: arrival scaffolds stay alive as the parallax "
+                         "DEPTH source (never the CN) until their card ends — persistent "
+                         "instance seas. Needs --parallax > 0 to have any effect.")
+    ap.add_argument("--micro", action="store_true",
+                    help="DEPTH 2.0 Phase C (camera_micro): musical micro camera motion — "
+                         "parallax-only lateral drift on hover bars, parallax surge on "
+                         "plunges. Default OFF (Phil judges the with/without A/B); needs "
+                         "--parallax > 0.")
     ap.add_argument("--cn", type=float, metavar="STRENGTH",
                     help="override depth-ControlNet strength; --cn 0 disables the CN but KEEPS "
                          "tracking/composition (the clean A/B for 'is the CN hurting the look?'). "
@@ -652,6 +703,12 @@ def main():
     cfg["build"] = args.build or spec.get("format", {}).get("build", cfg["build"])
     if args.seed is not None:
         cfg["seed"] = args.seed
+    if args.parallax is not None:
+        cfg["parallax_gain"] = args.parallax
+    if args.resolve_persist:
+        cfg["resolve_persist"] = True
+    if args.micro:
+        cfg["camera_micro"] = True
     zoom_sched = den_sched = exponent = loop = None
     cameos, arrivals, approach, seam_arrivals = [], set(), [], set()
     if "registers" in spec:
@@ -764,6 +821,8 @@ def main():
         "journey": args.journey, "name": name, "model": eff_model,
         "checkpoint": cfg["checkpoint"], "style": style_name, "frames": total,
         "fps": cfg["fps"], "seed": cfg["seed"],
+        "parallax_gain": cfg["parallax_gain"], "resolve_persist": cfg["resolve_persist"],
+        "camera_micro": cfg["camera_micro"],
         # per-CARD (register) frame counts: lets a future --from-card verify its prefix
         # still aligns after a journey edit
         "card_frames": (register_frame_counts(spec, cfg["fps"]) if "registers" in spec
@@ -774,6 +833,19 @@ def main():
     t0 = time.time()
     # img / frame0 already set above (None for a fresh run, loaded frames for --resume)
     cam = None
+    # DEPTH 2.0 Phase A state: the parallax depth map, kept aligned to the latest generated
+    # frame (propagated through the same transform at feed time, refreshed from the scaffold
+    # in windows / DepthAnything at cadence elsewhere). par_med = EMA'd reference plane.
+    par_depth, par_med, par_src = None, None, None
+    plog = open(out_dir / "build" / "parallax.jsonl", "a") if cfg["parallax_gain"] else None
+    # Phase C: plunge-ness comes from the schedule itself (p10..p90 of the per-frame zooms —
+    # the arrive-look-plunge curve is already the musical phrasing)
+    if zoom_sched:
+        _zs = sorted(zoom_sched)
+        z_lo, z_hi = _zs[len(_zs) // 10], _zs[9 * len(_zs) // 10]
+    else:
+        z_lo = z_hi = cfg["zoom_per_frame"]
+    bar_frames = 4 * spec.get("format", {}).get("frames_per_beat", 7)
     root = Path(__file__).resolve().parent.parent
     phase_refs = {}
     T = cfg["transition_frames"]
@@ -815,16 +887,23 @@ def main():
                 _scaffold.band_of(_reg.get("exp", 0)))
             _dflt = {"sea": (1.3, 0.3), "lattice": (1.0, 0.4),
                      "surface": (0.9, 0.8), "web": (1.0, 0.5)}[_mode]
-            _zw = [zoom_sched[x] for x in range(_w0, _w1)]
+            # Phase B (DEPTH 2.0, resolve_persist): the scaffold stays alive as the PARALLAX
+            # DEPTH source until its card ends (the CN window is unchanged — targeting and
+            # tracker behavior stay exactly as approved). The Resolver just gets the longer
+            # zoom/aim slice so instances keep looming, occluding and exiting all card long.
+            _wD = _w1
+            if cfg["resolve_persist"] and cfg["parallax_gain"]:
+                _wD = max(_w1, min(_S + _F, (total - loop["frames"]) if loop else _S + _F))
+            _zw = [zoom_sched[x] for x in range(_w0, _wD)]
             _aw = [(0.5 + cfg["drift"] * math.sin(2 * math.pi * x / 263),
                     0.5 + cfg["drift"] * math.sin(2 * math.pi * x / 419 + 1.7))
-                   for x in range(_w0, _w1)]
+                   for x in range(_w0, _wD)]
             _res = _scaffold.Resolver(
                 _mode, _zw, _aw,
                 seed=_zlib.crc32(f"{name}:{_reg.get('name')}".encode()),
                 density=_rv.get("density", _dflt[0]), size=_rv.get("size", _dflt[1]),
-                variant=_rv.get("variant"))
-            resolve_windows.append({"w0": _w0, "w1": _w1, "res": _res, "pre": 6,
+                variant=_rv.get("variant"), extend=(_wD > _w1))
+            resolve_windows.append({"w0": _w0, "w1": _w1, "wD": _wD, "res": _res, "pre": 6,
                                     "card": _reg.get("name"), "mode": _mode})
         if resolve_windows:
             print("[dive] RESOLVE ON — " + ", ".join(
@@ -949,6 +1028,37 @@ def main():
                     f"zoomer_mask_{name}.png")
             else:
                 fed = zoom_transform(img, z, cfg["rotate_per_frame"], cx, cy)
+                # DEPTH 2.0 Phase A: differential-parallax residual (PLAN "PARALLAX ERA").
+                # Runs BEFORE detail_boost so the sharpen doubles as the post-warp unsharp
+                # (the orbit-v3 lesson). Tapers out across the loop tail — the tail's job is
+                # homing onto frame 0 and extra differential motion would fight the landing.
+                pk = cfg["parallax_gain"] if par_depth is not None else 0.0
+                if pk and in_loop_tail(i):
+                    pk *= max(0.0, 1.0 - (i - (total - loop["frames"]) + 1) / loop["frames"])
+                if pk:
+                    _pd = transform_depth(par_depth, z, cfg["rotate_per_frame"], cx, cy,
+                                          cfg["width"], cfg["height"])
+                    par_depth = _pd            # propagated: stays aligned with the new frame
+                    _m = float(np.median(_pd))
+                    par_med = _m if par_med is None else 0.3 * _m + 0.7 * par_med
+                    _lat = 0.0
+                    if cfg["camera_micro"]:
+                        # plunge-ness from THIS frame's scheduled zoom: hover drifts,
+                        # plunge surges (see camera_micro in DEFAULTS)
+                        _zn = 0.5 if z_hi <= z_lo else min(1.0, max(
+                            0.0, (z - z_lo) / (z_hi - z_lo)))
+                        _lat = cfg["micro_drift_px"] * (1.0 - _zn) * math.sin(
+                            2 * math.pi * (i % bar_frames) / bar_frames)
+                        pk *= 1.0 + cfg["micro_surge"] * _zn
+                    fed, _stretch = _warp.parallax_residual(fed, _pd, z, pk, par_med, _lat)
+                    _dboost = _warp.disocclusion_denoise(den, _stretch)
+                    if plog:
+                        plog.write(json.dumps({
+                            "i": i, "k": round(pk, 3), "med": round(par_med, 3),
+                            "lat": round(_lat, 1), "den": round(max(den, _dboost), 3),
+                            "src": par_src}) + "\n")
+                        plog.flush()
+                    den = max(den, _dboost)
                 fed = detail_boost(fed, cfg)
                 if cfg["color_match"] and not in_transition and p_idx in phase_refs:
                     fed = color_match(fed, phase_refs[p_idx], cfg["color_match"])
@@ -1085,6 +1195,26 @@ def main():
             hit = figure.find(img, model=cfg.get("track_model"))
             if hit:
                 print(f"[dive] ⚠ figure at frame {i}: {figure.describe(hit)}", flush=True)
+        # ── DEPTH 2.0 Phase A: refresh the parallax depth, aligned to the NEW frame ──────
+        if cfg["parallax_gain"] and not in_loop_tail(i):
+            # depth window: the CN window, or (Phase B, resolve_persist) the whole card —
+            # the scaffold keeps being the depth source (never the CN) until its card ends
+            rdep = next((w for w in resolve_windows
+                         if w["w0"] <= i < w.get("wD", w["w1"])), None) \
+                if resolve_windows else None
+            if rdep is not None:
+                par_depth, par_src = rdep["res"].frame(i - rdep["w0"]), "scaffold"
+            elif par_depth is None or i % cfg["parallax_depth_every"] == 0:
+                try:
+                    fresh = _warp.quantize_planes(_warp.depth_via_comfy(img),
+                                                  cfg["parallax_planes"])
+                    par_depth, par_src = _warp.ema(par_depth, fresh, 0.6), "da"
+                except Exception as e:      # a missed estimate must never kill a render —
+                    print(f"[dive] parallax depth estimate failed ({e}) — "
+                          "propagating the previous map", flush=True)
+                    par_src = "prop"
+            else:
+                par_src = "prop"
         if cfg["build"] == "out":
             for c in cameos:
                 if i == c["start"]:

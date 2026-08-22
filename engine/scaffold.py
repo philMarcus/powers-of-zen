@@ -69,10 +69,14 @@ class Resolver:
     """
 
     def __init__(self, mode, zooms, aims, seed=0, density=1.0, size=1.0, variant=None,
-                 parallax=0.006):
+                 parallax=0.006, extend=False):
         """parallax: per-frame lateral drift of the NEAREST layer (fraction of frame width);
         deeper layers drift proportionally less (1/d) — near things slide past faster, which
-        is what makes the field read 3-D instead of a flat pattern (Phil 2026-08-14)."""
+        is what makes the field read 3-D instead of a flat pattern (Phil 2026-08-14).
+        extend (DEPTH 2.0 Phase B, 2026-08-22): a PERSISTENT window advances far past the
+        arrival — sample sea depths out to D_MAX + total_advance (instance count scaled to
+        keep per-octave density) so fresh far instances keep arriving as near ones exit,
+        instead of the sea thinning out over the card."""
         self.mode = mode
         self.variant = variant
         self.parallax = parallax
@@ -83,6 +87,10 @@ class Resolver:
         self.size = size
         self.Z = np.cumprod([1.0] + self.zooms)      # Z[f] = zoom at frame f vs start
         n_base = {"sea": 450, "lattice": 0, "surface": 90, "web": 42}[mode]
+        self.d_max = D_MAX
+        if extend and mode == "sea":
+            adv_total = sum((z - 1.0) / z for z in self.zooms)
+            self.d_max = D_MAX + adv_total
         self.items = self._build(int(n_base * density))
 
     def _build(self, n):
@@ -98,7 +106,24 @@ class Resolver:
             # instances per octave, so a few huge near occluders stand off a mid crowd and
             # a deep speckle field, instead of "big and little things in a 2-D plane".
             d = D_MIN * (D_MAX / D_MIN) ** rng.random(n)
-            return [("blob", (x, y), d_) for (x, y), d_ in zip(base, d)]
+            items = [("blob", (x, y), d_) for (x, y), d_ in zip(base, d)]
+            if self.d_max > D_MAX:
+                # TRAFFIC EXTRAS (Phase B, 2026-08-22): the standard log-uniform population
+                # is the ARRIVAL look, but under looming it drains — near instances exit and
+                # per-octave sampling puts ever fewer instances at the depths now arriving
+                # (measured: sea coverage 24% -> 0.4% by frame 80). Extras are sampled
+                # UNIFORM-LINEAR in depth (advance is linear, so arrivals stay constant) and
+                # CORRIDOR-PLACED: authored inside the cone that is on screen when THIS
+                # instance reaches mid-range (looming expands positions by d0/d, so a deep
+                # instance authored at full span is gone long before it gets near). At its
+                # prime moment each extra occupies the same screen distribution the standard
+                # build has at t=0.
+                n_extra = int(0.15 * n * (self.d_max - 3.0))
+                de = 3.0 + rng.random(n_extra) * (self.d_max - 3.0)
+                ue = rng.random((n_extra, 2)) * [1.6, 1.6] - 0.3
+                xe = 0.5 + (ue - 0.5) * (3.0 / de)[:, None]
+                items += [("blob", (x, y), d_) for (x, y), d_ in zip(xe, de)]
+            return items
         if self.mode == "lattice":
             # LATTICE LIBRARY (Phil 2026-08-14: beyond cubic; variant selectable per card
             # via journey resolve.variant, listed in VARIATIONS.md): one-point perspective,

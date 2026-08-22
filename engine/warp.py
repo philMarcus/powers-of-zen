@@ -36,7 +36,10 @@ COMFY = "http://localhost:8188"
 # ── depth ─────────────────────────────────────────────────────────────────────────────
 def depth_via_comfy(img, timeout=120):
     """DepthAnythingV2 on one frame via ComfyUI; returns float HxW in [0,1], near=1."""
-    import engine.dive as dive
+    try:
+        import dive                    # engine/ on sys.path (a dive.py run itself)
+    except ImportError:
+        import engine.dive as dive     # project root on sys.path (labs/scripts)
     name = dive.upload_image(img, "warp_depth_in.png")
     wf = {
         "img": {"class_type": "LoadImage", "inputs": {"image": name}},
@@ -148,6 +151,38 @@ def dolly(img, depth, v=0.01):
     map_x = (xx - W / 2) / s + W / 2
     map_y = (yy - H / 2) / s + H / 2
     return _remap(img, map_x, map_y)
+
+
+def parallax_residual(img, depth, zoom, k, med, lat=0.0):
+    """DEPTH 2.0 Phase A (2026-08-22, PLAN "PARALLAX ERA"): the differential-parallax
+    residual applied AFTER the schedule's uniform crop-zoom. Per output pixel the extra
+    scale is s = zoom**(k*(depth - med)) about the frame CENTER — which is the uniform
+    zoom's own fixed point (zoom_transform's crop box is centered on the clamped aim), so
+    the tracker/cameo propagation math is untouched. Content at the median plane rides the
+    schedule EXACTLY (counter stays honest); near content (depth > med) expands beyond
+    schedule and exits at the edges; the far field recedes relatively. k is
+    cfg["parallax_gain"]: 0 = off, 1.0 ≈ nearest plane zooms ~z^1.5 while farthest ~z^0.6.
+    Displacements are a few px/frame at the edges — the same order as the resampling the
+    engine already does every frame, NOT the orbit-class large warp that smeared.
+    lat (Phase C, camera_micro): a PARALLAX-ONLY lateral drift — content at depth d shifts
+    by lat*(d - med) px, so the median/aim plane does not move at all (composition stays
+    anchored) while near slides one way and far the other. The caller drives it with a
+    per-bar sinusoid, so every downbeat lands at zero offset.
+    Returns (PIL, stretch_map)."""
+    H, W = depth.shape
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+    dn = np.clip(depth, 0.0, 1.0)
+    s = zoom ** (k * (dn - med))
+    map_x = W / 2 + (xx - W / 2) / s - lat * (dn - med)
+    map_y = H / 2 + (yy - H / 2) / s
+    return _remap(img, map_x, map_y)
+
+
+def quantize_planes(depth, n=5):
+    """Bucket a depth estimate into n stable planes (level centers). Raw estimator shimmer
+    kills warps (orbit-lab lesson) — planes + EMA give the residual a steady field."""
+    q = np.floor(np.clip(depth, 0.0, 0.9999) * n) / n + 0.5 / n
+    return q.astype(np.float32)
 
 
 def disocclusion_denoise(base_den, stretch, k=0.25, cap=0.85):
