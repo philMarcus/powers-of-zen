@@ -19,23 +19,37 @@ from the snapshot series.
 ```bash
 python3 scripts/ig_stats.py            # appends one row per reel to outbox/ig_stats.jsonl
 ```
-- Chrome is already up when invoked from the poster; standalone runs need
-  `scripts/start_chrome_zen.sh` (CDP :9222). The tool opens its OWN tab
-  and closes it — the poster's platform tabs are untouched.
-- A snapshot runs automatically after every post; the dashboard Live tab shows the latest
-  views/likes/comments per video.
+- Snapshots run automatically THREE ways (Phil 2026-08-22 — count more often than the 19h
+  post cadence): after every post (poster.py, passing `--force`), and at 12:00 + 00:00 via
+  the `PowersOfZen-igstats` Task Scheduler job (two triggers, hidden runner —
+  scripts/SCHEDULER.md; log: outbox/ig_stats_task.log). Each saved snapshot emits an
+  `ig_stats` telemetry event.
+- ig_stats.py self-heals a down Chrome (same start_chrome_zen.sh contract as the poster),
+  locks against overlapping scrapes, and SKIPS if a poster/gate run is in flight (`--force`
+  overrides — the poster's own end-of-run snapshot uses it). It opens its OWN tab and closes
+  it — the poster's platform tabs are untouched.
 - Likes/comments come from a trusted-CDP hover over each reels-grid tile (Phil's method — the
   overlay is CSS :hover, synthetic JS events do NOT trigger it); page visits only as fallback.
+  Tiles are tagged INCREMENTALLY while scrolling (2026-08-22): IG virtualizes the grid, and a
+  tag-after-scrolling pass lost the newest reels when the grid top unmounted (coverage was
+  21–28 of 43; now 36+). The hover pass re-finds each tile by shortcode + absolute page-Y.
+  Rows that learned nothing (no view count) are dropped at save — a viewless row would
+  shadow the reel's last good snapshot in the analyzer's newest-wins join.
 - Follower count rides along on every row → follower-over-time and per-post deltas come free.
-- Snapshot cadence: daily is plenty. More often adds noise, not signal.
+- The dashboard Live tab reads the latest snapshot on every rerun: header = followers + last
+  scrape time, a **Top 5 by qscore** strip (same fit as ig_analyze, pure-python OLS —
+  no numpy on Windows), then per-video views/likes/comments.
 
 ## 2. Analyze
 ```bash
 python3 scripts/ig_analyze.py --features
 ```
-Groups by tier/style/scale-span/engine/cut/music-mood, and `--features` measures each posted
-video's frames (luminance, saturation, contrast, dark-fraction; cached in
-outbox/video_features.json) and correlates each with like%.
+Groups by tier/style/scale-span/engine/**posted era**/cut/music-mood, and `--features`
+measures each posted video's frames (luminance, saturation, contrast, dark-fraction; cached
+in outbox/video_features.json) and correlates each with like%. The posted-era buckets
+(jul–08-04 / 08-05–08-13 / 08-14+ rethink) track whether the 08-13 rethink package moved the
+numbers — era, engine, and music deck co-move by construction, so era contrasts measure the
+package, never one variable.
 
 ## 3. Interpretation doctrine (apply as tests — this is where analyses go wrong)
 - **Rank by qscore, claim significance by CI.** qscore absorbs reach (no outlier exclusion
@@ -64,7 +78,20 @@ outbox/video_features.json) and correlates each with like%.
 - Big shifts (tier_share, templates) → dashboard Settings / `outbox/journeys.json`, and note
   the change + the evidence in CLAUDE.md's current-state.
 
-## Current standing findings — 2026-08-13 baseline (n=31 reels, 33 followers) — SUPERSEDED, re-run ig_analyze before citing; followers were 53 by 2026-08-19
+## Current standing findings — 2026-08-22 (n=43 reels, 59 followers)
+THE RETHINK PACKAGE VALIDATED: posts since 08-14 (new-doctrine journeys + music deck +
+resolve engine, n=10) — median views 506 vs ~165 for both earlier eras, pushed >300 60% vs
+14–29%, >1000 40% vs 0–12% (the only earlier >1000s were remix re-posts), pooled like
+2.59% ±0.33 vs ~1.95%, mean qscore 1.32x — better engagement on much colder pushed traffic,
+and the era posts are the youngest (least accumulation time), so the gap is understated.
+Followers 34→59 in 9 days (~2× prior growth rate). Era 2 (08-05–08-13, the queue Phil
+"wasn't in love with") was the catalog's weakest stretch (1.08x, 0 pushes >1000) — the
+queue-reset call was right in hindsight. Standouts: sundew_snare 3.05x (choir_of_dust lane),
+squid_lantern 2982 views (biggest organic reach), desert_rosette 1.50x at 1373. reef_pop
+0.35x (n=2, both era-2 — confounded, watch before retiring). Tier L 1.36x > S 1.02x > M
+0.92x confirms the 08-13 tier finding on more data.
+
+## Prior findings — 2026-08-13 baseline (n=31 reels, 33 followers) — kept for the paper trail
 Dark+saturated beats pale high-key and STRENGTHENS under qscore (sat +0.34 / lum −0.33 /
 dark-frac +0.29); tier by qscore: L 1.36x > M 0.98x > S 0.92x (longs EARN pushes; shorts'
 decent like% never converts to reach); candy_gloss retired (0.22x sugar_nebula = catalog

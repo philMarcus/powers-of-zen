@@ -159,6 +159,16 @@ def main():
         v = pv.get(r.get("journey"), {})
         r["cut"] = v.get("cut", "?")
         r["mood"] = (v.get("music") or {}).get("chosen")
+        # posted era (Phil 2026-08-22): did the 08-13 rethink (new-doctrine journeys +
+        # music deck + resolve engine) actually move the numbers? Buckets by IG post ts:
+        # everything from abyssal_chandelier (08-14 18:01) on is the rethink catalog.
+        # NOTE era + engine + music deck co-move by construction — this measures the
+        # PACKAGE, not any one variable.
+        ts = ((v.get("platforms", {}) or {}).get("instagram", {}) or {}).get("ts") or ""
+        r["era"] = ("?" if not ts else
+                    "1 jul-0804 (e1 mix)" if ts[:10] <= "2026-08-04" else
+                    "2 0805-0813 (e2 v1)" if ts < "2026-08-14 12" else
+                    "3 0814+ (rethink)")
 
     b, coef = fit_scaling(rows, a.cw)
     if a.alpha is not None:
@@ -181,6 +191,7 @@ def main():
     show_group("style", known, lambda r: r.get("style") or "(legacy)")
     show_group("full scale", known, lambda r: r.get("full"))
     show_group("engine", known, lambda r: r.get("engine", "?"))
+    show_group("posted era", known, lambda r: r.get("era", "?"))
     show_group("cut", known, lambda r: r["cut"])
     show_group("music mood", known, lambda r: r["mood"] or "?")
 

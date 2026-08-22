@@ -1,6 +1,16 @@
 # Register variations — the differentiation library
 
-## PERFORMANCE NOTES (from measured IG data, 2026-08-13 — the refill reads this first)
+## PERFORMANCE NOTES (from measured IG data, updated 2026-08-22 — the refill reads this first)
+- **The rethink package works (2026-08-22, n=10 vs 31 earlier posts).** Videos posted since
+  2026-08-14 (new-doctrine journeys + music deck + resolve engine): median views 506 vs ~165
+  before, pushed >300 views 60% vs 14–29%, >1000 views 40% vs 0–12% (and the only earlier
+  >1000s were remix re-posts); pooled like 2.59% ±0.33 vs ~1.95% — better engagement on much
+  colder pushed traffic. Followers 34→59 in the 9 rethink days (~2× the earlier growth rate).
+  Era/engine/music co-move by construction — this validates the PACKAGE. Keep composing to
+  the current doctrine; nothing here licenses relaxing it.
+- **Standouts to learn from:** sundew_snare 3.05x qscore (5.2% like at 1410 views — catalog
+  best); squid_lantern = biggest organic reach ever (2982); desert_rosette 1.50x at 1373.
+  Weakest rethink posts: abyssal_chandelier 0.63x, physarum_maze 0.69x (young — provisional).
 - **Dark + saturated wins.** like% correlates: luminance −0.33, saturation +0.24, deep-shadow
   +0.28. Compose worlds on dark grounds with saturated accents; pale high-key washes (pastel
   sugar, frost white, foam, salt flats, pale moss) are the measured bottom quartile. candy_gloss
@@ -40,12 +50,21 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
 
 ## Cosmological (10²⁰–10²⁶) — geometric/mathematical network plays
 - classic irregular cosmic web (filaments + voids)
+- Zel'dovich pancake sheets: thousands of galaxies schooling in one doubled-over folding
+  sheet with luminous caustic creases (how the web actually forms — a murmuration writ
+  cosmic; genuinely different from filament-and-void)
 - voronoi foam of glowing cell walls (soap-bubble universe)
 - neuron-web (the universe-is-a-brain look: dendrites + synaptic nodes)
 - strange-attractor ribbons (Lorenz butterflies of galaxies)
 - hyperbolic tiling receding to a glowing rim
 - crystalline lattice of galaxy clusters (universe as mineral)
 - braided rivers of light / mycelium mat
+- reionization bubble froth: the universe's first foam — spheres of first
+  starlight swelling through a neutral fog until their walls touch and merge
+  (cosmic dawn as soap-froth; genuinely different from filament-and-void)
+- intrafilament corridor: riding INSIDE one filament of the web — galaxies
+  drifting past like lanterns in a hallway of haze, the voids glimpsed as
+  blackness through the filament's walls
 
 ## Galaxy (10²¹)
 - spiral / barred spiral / ring galaxy / colliding pair
@@ -131,6 +150,13 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
   inverted-arch forests) · Lissajous/harmonograph curve nests (pendulum-drawn
   rosettes that never quite close) · force-chain networks in packed grains
   (glowing stress skeletons branching through a granular pile)
+- self-carrying structure: reciprocal-frame grillages (Leonardo lattices —
+  spiraling beam-rings where every rib rests on its neighbour, no center post:
+  water-lily pad vaults, dome centering, basket sunbursts)
+- boil & churn: Bénard convection cells (a self-organizing polygonal boil — glowing
+  tile-cores seamed by sinking cooler lanes; solar granulation, lava lakes, miso
+  soup) · Kármán vortex streets (a staggered procession of paired eddies peeling
+  off an obstacle — cloud wakes past islands, flags, chimney smoke)
 - USE: pick ONE family per journey and reskin it to the theme (jade-carved
   automata, sugar-crystal Penrose, brass Chladni). Never repeat the previous
   video's family.
@@ -154,6 +180,14 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
   rings lighting up ancient dust, V838-style) · a protoplanetary disk with
   carved gap-rings and a glowing hub · a herd of cometary globules all
   streaming one way like tadpoles fleeing a bright rim
+- stellar SURFACES (the under-built band at close range): solar granulation sea —
+  the star's face as a boiling tile-field of glowing cells seamed by sinking
+  lanes · sunspot archipelago — void-cored islands ringed by combed copper
+  filaments · spicule forest — plasma jets standing like wind-combed wheat ·
+  coronal loop arcades bridging a spot pair · a supergranule's cell-of-cells
+  (granulation nested one order up)
+- galactic one-offs: the Magellanic stream — a river of stars and gas bridging
+  two dwarf galaxies to a great spiral (a stream you can travel, not a field)
 
 ## PALETTE FAMILIES — assign each journey ONE home family so the catalog stays varied
 (adjacent cards still contrast in temperature WITHIN the family; the family is the
@@ -190,6 +224,22 @@ video's overall color identity)
   museum green, not absinthe's chartreuse or jade's celadon) · raku
   copper-flash (molten copper-flash red/mottled turquoise crackle/smoke
   black — a ceramic-glaze pair, hotter than petrol sheen)
+- oxblood nocturne (moonlit oxide-red earth deepened to oxblood/silver
+  grass-glint/pearl star-haze — red earth by moonlight, not mirage's dusk) ·
+  garnet furnace (deep garnet-crimson fire/burnt-maroon void shadow/thin gold
+  filament highlights — crimson-forward smolder, unlike ember & ash's orange) ·
+  moss & mercury (bottle-green moss glow/mercury-silver rain sheen/sodium-amber
+  lamp pinpoints — wet-metal green, deeper than absinthe & pewter) · ash &
+  roseglow (smoke-blue ash-grey masses/a low rose-ember horizon band/green-violet
+  iridescent glints — winter dusk with a starling sheen)
+- tokay slate & cinnabar (storm-slate blue-grey field/cinnabar-orange speckling/
+  moon-milk pale accents — cool grey-blue carrying hot orange points, no gold
+  anywhere) · peat & lily ivory (peat-tea bronze water/moonlit lily ivory/deep
+  fern green — an ivory-forward night bloom, unlike viridian & bone's museum
+  green) · noble glow (gas-discharge duotone: neon red-orange script/argon
+  lilac/rain-slick asphalt grey — signage as the only color source) · alkaline
+  rose (spirulina crimson-rose shallows/soda-crust chalk blades/thunder-grey
+  volcanic ash — a saturated biological red laid on mineral white)
 - RULE: check the last few journeys' families and pick a DIFFERENT one.
 
 ## LENGTH VARIETY (Phil 2026-07-31 — the catalog must mix durations)

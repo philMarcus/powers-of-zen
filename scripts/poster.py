@@ -836,8 +836,10 @@ def run(only, dry_run, journey):
     if not dry_run and results:
         try:
             import subprocess
-            subprocess.run([sys.executable, str(pl.ROOT / "scripts" / "ig_stats.py")],
-                           timeout=600)
+            # --force: when the hourly gate ran us it still holds its lock, and ig_stats
+            # skips while a poster is "in flight" — this IS that poster, so override.
+            subprocess.run([sys.executable, str(pl.ROOT / "scripts" / "ig_stats.py"),
+                            "--force"], timeout=600)
         except Exception as e:
             print(f"(ig_stats snapshot skipped: {e})")
 

@@ -7,6 +7,7 @@ The full no-Claude daily loop (times local):
 | PowersOfZen-refill  | 00:00 | scheduled_refill.bat    | tops the JOURNEY queue toward its target — ONE headless Claude call (Fable coordinator → Opus composers), audits + auto-queues passers. Skips when queue ≥ target or refill_paused. |
 | PowersOfZen-render  | 01:30 | scheduled_render.bat    | renders queued journeys (tier template within render_budget_min), captions, drops in Video Review. Skips on backpressure (≥ max_ready_videos ready to post) or render_paused. |
 | PowersOfZen-postgate | hourly | scheduled_post_gate.bat | CADENCE GATE (2026-08-17): posts fire every `post_every_hours` (settings, default 19h) at `post_next` — both dashboard-editable (Settings tab). The gate advances the clock past missed windows without burst-posting. |
+| PowersOfZen-igstats | 12:00 + 00:00 | scheduled_ig_stats.bat | IG stats snapshot (2026-08-22: count likes/views more often than the 19h post cadence — the poster also snapshots after every post). ig_stats.py self-heals Chrome, skips if a poster run is in flight, locks against overlapping scrapes. Log: outbox/ig_stats_task.log. |
 | PowersOfZen-8am     | 08:00 | scheduled_post.bat      | LEGACY — now delegates to the same gate (harmless; delete with elevation when convenient: `schtasks /Delete /TN "PowersOfZen-8am" /F`). |
 | PowersOfZen-6pm     | 18:00 | scheduled_post.bat      | LEGACY — same as above. |
 
@@ -39,6 +40,14 @@ console.
     schtasks /Create /TN "PowersOfZen-refill"   /TR "wscript.exe C:\Users\Phil\zoomer\scripts\hidden_task.vbs C:\Users\Phil\zoomer\scripts\scheduled_refill.bat" /SC DAILY /ST 00:00 /F
     schtasks /Create /TN "PowersOfZen-render"   /TR "wscript.exe C:\Users\Phil\zoomer\scripts\hidden_task.vbs C:\Users\Phil\zoomer\scripts\scheduled_render.bat" /SC DAILY /ST 01:30 /F
     schtasks /Create /TN "PowersOfZen-postgate" /TR "wscript.exe C:\Users\Phil\zoomer\scripts\hidden_task.vbs C:\Users\Phil\zoomer\scripts\scheduled_post_gate.bat" /SC HOURLY /ST 00:05 /F
+
+PowersOfZen-igstats needs TWO daily triggers (12:00 + 00:00), which schtasks can't express
+in one task — register via PowerShell instead (this is how it was created 2026-08-22):
+
+    $a  = New-ScheduledTaskAction -Execute 'wscript.exe' -Argument 'C:\Users\Phil\zoomer\scripts\hidden_task.vbs C:\Users\Phil\zoomer\scripts\scheduled_ig_stats.bat'
+    $t1 = New-ScheduledTaskTrigger -Daily -At '12:00'
+    $t2 = New-ScheduledTaskTrigger -Daily -At '00:00'
+    Register-ScheduledTask -TaskName 'PowersOfZen-igstats' -Action $a -Trigger $t1,$t2 -Force
 
 All tasks run "Interactive only" (Phil stays logged in; system sleep is Never). The
 overnight pair needs the machine AWAKE at 00:00/01:30 — if that's ever not true, tick

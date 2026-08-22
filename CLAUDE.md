@@ -115,6 +115,29 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-22 (MARKETING DAY — stats now flow themselves): (1) IG stats snapshots now run
+12:00 + 00:00 via the PowersOfZen-igstats task (ONE task, two PowerShell-registered
+triggers → hidden_task.vbs → scheduled_ig_stats.bat; log outbox/ig_stats_task.log) in
+addition to the after-every-post scrape — Phil: don't wait 19h between counts. ig_stats.py
+hardened for unattended runs: Chrome self-heal (poster's contract), flock against
+overlapping scrapes, SKIPS when a poster/gate run is in flight (poster's own call passes
+--force since the gate lock is held), telem ig_stats event, viewless rows dropped at save
+(they'd shadow the reel's last good row in the analyzer's newest-wins join). SCRAPER
+COVERAGE BUG FIXED: IG virtualizes the reels grid — tagging tiles AFTER scrolling to the
+bottom captured only the still-mounted 21–28 of 43 tiles and one run lost the NEWEST 7
+reels; tiles are now tagged incrementally while scrolling (shortcode + absolute page-Y,
+hover pass re-finds by code), coverage 36/43 validated through the real task chain.
+(2) Dashboard Live tab: header (followers · n reels · last-scrape time) + TOP 5 BY QSCORE
+strip (same fit as ig_analyze, pure-python OLS — no numpy on Windows python) above the
+per-video stats; ig_stats telemetry icon. (3) ig_analyze grew a "posted era" group
+(jul–08-04 / 08-05–08-13 / 08-14+ rethink). THE VERDICT (full numbers in audience-stats
+skill + VARIATIONS.md performance notes): the rethink package (new-doctrine journeys +
+music deck + resolve engine, n=10 posts) = median views 506 vs ~165, pushed >1000 40% vs
+0–12% (earlier >1000s were only remix re-posts), pooled like 2.59%±0.33 vs ~1.95%,
+followers 34→59 in 9 days (~2× growth rate) — era/engine/music co-move, so this validates
+the package, not one variable. sundew_snare = catalog-best 3.05x qscore; squid_lantern =
+biggest organic reach (2982). NEXT (Phil, after context clear): DEPTH — Phase-1.5 pictorial
+depth plan in the 2026-08-17 entries; squid_lantern v5 depth A/B still awaiting his verdict.
 2026-08-19 (HARDENING DAY): dashboard music-pick crash fixed (music candidate_plan emitted
 duplicate ids when the lane rhythm is heartbeat — alt slot == halftime slot, second take
 overwrote the first's files; distinct rhythm + id-uniquify guard + index in the widget key;

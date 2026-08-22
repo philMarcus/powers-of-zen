@@ -10,8 +10,9 @@ description: Post the next queued Powers of Zen video to TikTok, YouTube Shorts,
 then drop --dry-run to post for real. Reads outbox/pipeline.json via
 `pipeline.next_to_post()` (next queued entry, or use --journey). This playbook below
 is the manual reference the harness encodes. After a successful post the poster runs
-ig_stats.py automatically, appending views/likes/comments to outbox/ig_stats.jsonl
-(shown in the dashboard Live tab).
+ig_stats.py automatically (with --force — the gate lock is still held), appending
+views/likes/comments to outbox/ig_stats.jsonl; the PowersOfZen-igstats task also
+snapshots at 12:00 + 00:00 (dashboard Live tab shows the latest + a top-5 qscore strip).
 
 ## Cadence gate (how posting normally fires)
 Posting normally fires from the hourly PowersOfZen-postgate task → `scripts/post_gate.py`,

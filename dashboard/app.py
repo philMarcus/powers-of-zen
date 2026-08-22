@@ -859,8 +859,10 @@ with tabs[4]:  # LIVE — anything live on at least one platform (noting where)
     if not live_vids:
         st.info("Nothing live yet.")
     # latest scraped IG numbers per reel shortcode (outbox/ig_stats.jsonl, appended by
-    # scripts/ig_stats.py after every post) — file is append-ordered, so last row wins
+    # scripts/ig_stats.py after every post + the 12:00/00:00 PowersOfZen-igstats task) —
+    # read fresh on every rerun (never cache this), file is append-ordered so last row wins
     import re as _re
+    import math as _math
     IG_STATS = {}
     _igp = pl.ROOT / "outbox" / "ig_stats.jsonl"
     if _igp.exists():
@@ -873,6 +875,41 @@ with tabs[4]:  # LIVE — anything live on at least one platform (noting where)
                 IG_STATS[_r["code"]] = _r
             if _r.get("journey"):        # fallback join for old posts with no recorded URL
                 IG_STATS["j:" + _r["journey"]] = _r
+    # ---- header: freshest snapshot + TOP 5 BY QSCORE (Phil 2026-08-22) ----
+    # qscore = the agreed ranking metric (audience-stats skill / ig_analyze.py): actual
+    # engagement E = likes + 3*comments divided by the catalog's own fitted scaling law
+    # a*views^b — like-rate mechanically decays with reach, so raw like% punishes videos
+    # that EARNED a push; qscore 1.0 = catalog-typical at that reach. Pure-python OLS on
+    # (log views, log E) — same fit as ig_analyze, no numpy on the Windows side.
+    _srows = [dict(r) for c, r in IG_STATS.items()
+              if not c.startswith("j:") and r.get("views") and r.get("likes") is not None]
+    if _srows:
+        _newest = max(r.get("ts", "") for r in _srows)
+        _fol = next((r.get("followers") for r in _srows
+                     if r.get("ts") == _newest and r.get("followers")), None)
+        st.caption(f"📈 **{_fol if _fol is not None else '—'} followers** · IG stats over "
+                   f"{len(_srows)} reels · last scrape {_newest[:16]} "
+                   "(auto: after every post + 12:00 + 00:00)")
+    if len(_srows) >= 5:
+        for _r in _srows:
+            _r["E"] = _r["likes"] + 3 * (_r.get("comments") or 0)
+        _xs = [_math.log(_r["views"]) for _r in _srows]
+        _ys = [_math.log(_r["E"] + 0.5) for _r in _srows]
+        _mx = sum(_xs) / len(_xs); _my = sum(_ys) / len(_ys)
+        _b = (sum((x - _mx) * (y - _my) for x, y in zip(_xs, _ys))
+              / (sum((x - _mx) ** 2 for x in _xs) or 1.0))
+        _a = _math.exp(_my - _b * _mx)
+        for _r in _srows:
+            _r["q"] = (_r["E"] + 0.5) / (_a * _r["views"] ** _b)
+        st.markdown("**🏆 Top 5 by qscore** (engagement ÷ expected at that reach; 1.0 = typical)")
+        # display floor 100 views (fit uses ALL rows, same as ig_analyze): sub-100-view
+        # qscores are jumpy — one comment swings them (audience-stats doctrine)
+        _top = sorted((r for r in _srows if r["views"] >= 100), key=lambda r: -r["q"])[:5]
+        _cols = st.columns(5)
+        for _c, _r in zip(_cols, _top):
+            _c.metric(_r.get("journey") or _r["code"], f"{_r['q']:.2f}×")
+            _c.caption(f"👁 {_r['views']} · ❤️ {_r['likes']} · 💬 {_r.get('comments') or 0}")
+        st.divider()
     for v in live_vids:
         live_on = ", ".join(platforms_by_status(v, "live"))
         failed_on = ", ".join(platforms_by_status(v, "failed"))
@@ -923,7 +960,7 @@ with tabs[6]:  # TELEMETRY
                 "render_fail": "💥", "music_gen": "🎵", "music_choose": "🎶",
                 "switch": "🔀", "batch_skip": "⏭", "batch_done": "🌙",
                 "refill": "🧭", "refill_done": "🧭", "refill_fail": "💥",
-                "jqueued": "🗺"}.get(e["event"], "•")
+                "jqueued": "🗺", "ig_stats": "📊"}.get(e["event"], "•")
         st.text(f"{icon} {e['ts']}  {e['event']}  {e.get('journey','')} "
                 f"{e.get('platform','')}  {e.get('detail','')}"
                 + (f"  {e.get('reason','')}" if e.get('reason') else ""))
