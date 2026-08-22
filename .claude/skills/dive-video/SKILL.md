@@ -54,6 +54,12 @@ CONTEXT (GPU work happens outside the model) — run them in the background and 
 - `--plain` — no tracking AND no CN (engine-1-style pure feedback zoom). NOT the CN test.
 - `--style <deck name>` look A/B · `--model turbo|ds` (ds is the house default).
 - `--no-resolve` — disable resolve-on-approach depth scaffolds (they are DEFAULT ON).
+- `--parallax <gain>` — DEPTH 2.0 depth-differential parallax on the fed-back frame
+  (PLAN "PARALLAX ERA"): 0 = off = today's engine (STILL THE NIGHTLY DEFAULT until Phil's
+  verdict), 1.0 = lab-passed full gain. `--resolve-persist` keeps arrival scaffolds as the
+  parallax depth source until card end (persistent seas). `--micro` = Phase C musical micro
+  camera moves, DEFAULT OFF — Phil judges its with/without A/B separately; never flip these
+  defaults without his verdict recorded here.
 
 ## What the engine does (settled 2026-07-31 — don't re-derive or re-litigate)
 1. **Uniform bars.** Every card in a journey shares one `dur` (4 = a bar). Mixed durations made

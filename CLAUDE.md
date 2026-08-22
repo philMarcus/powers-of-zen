@@ -115,6 +115,26 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-22 (PM — DEPTH 2.0 "PARALLAX ERA" BUILT + LAB-PASSED; read PLAN.md "DEPTH 2.0"):
+Phil approved the motion-parallax plan (the settled diagnosis: uniform crop-zoom IS the
+flat look — it deletes motion parallax, the dominant depth cue; pictorial fixes were
+fighting that headwind, and the cues we could add collide with his sharp/saturated taste
+— motion depth needs none of them). BUILT (commit ffd02e7): warp.parallax_residual (extra
+scale z^(gain·(depth−med)) about the zoom's fixed point; median plane rides the schedule
+exactly — tracker/cameo/counter untouched; --parallax 0 byte-identical to today, nightly
+unaffected); depth = resolve scaffold in windows / DepthAnything cadence+EMA+planes
+elsewhere; disocclusion denoise; loop-tail taper. Phase B --resolve-persist (scaffold
+stays DEPTH source till card end; corridor-placed traffic extras keep the sea populated
+— log-uniform drained 24%→0.4% by f80, now steady). Phase C --micro DEFAULT OFF (Phil:
+clean off-switch, judge with/without later): hover bars parallax-only lateral drift (one
+sinusoid per bar, downbeats at zero offset), plunge gain surge. dolly_lab GATE PASSED
+(4 same-seed arms × squid_lantern 4 cards; scripts/dolly_gate.py): no smear at gain 1.0,
+arms diverge stably, and the KEY finding — the residual steers the model to PAINT
+foreground-over-background composition where baseline stays wallpaper (pictorial depth
+emerges from motion depth). Clip+strip sent to Phil (output/dolly_lab/). coral_synapse v3
+full A/B (seed 1234 = v1/v2, gain 1.0 + persist) rendering ~14:30-16:30. NEXT: Phil judges
+the lab clip + coral motion → pick gain, decide persist, flip nightly default; then micro
+A/B; then Phase D (ENGINE 3 vocabulary + cinematographer, plan already on file).
 2026-08-22 (MARKETING DAY — stats now flow themselves): (1) IG stats snapshots now run
 12:00 + 00:00 via the PowersOfZen-igstats task (ONE task, two PowerShell-registered
 triggers → hidden_task.vbs → scheduled_ig_stats.bat; log outbox/ig_stats_task.log) in

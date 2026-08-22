@@ -1219,3 +1219,24 @@ v1 assigning moves from journey POV tags.
 No gloom fade, no far-field desaturation, no depth blur (taste verdicts stand — motion
 depth makes them unnecessary); no change to bars, tempo, seams, targeting, or the loop
 contract. Camera-move vocabulary stays gated behind the dolly foundation.
+
+## STATUS 2026-08-22 (same day): A-C BUILT, dolly_lab GATE PASSED, coral A/B rendering
+Lab (output/dolly_lab/, squid_lantern first 4 cards × 4 same-seed arms, 96f each):
+- MECHANICAL GATE PASSED (scripts/dolly_gate.py): parallax active frames 1+ (DA cadence +
+  scaffold windows as designed; persist arm 76/94 scaffold-sourced), arms diverge from
+  baseline (~15 by f8 → ~52 mid-render, stable not exploding), consecutive-frame crops at
+  gain 1.0 CRISP — zero directional smear (the gate's "51.7% sharpness deficit" was content
+  divergence: smooth near-domes score lower Laplacian variance than baseline's busy
+  eye-wall; metric caveat noted in dolly_gate.py).
+- THE BIG FINDING: the residual doesn't just move pixels — it STEERS WHAT THE MODEL PAINTS.
+  Parallax arms grow genuine foreground-over-background composition (looming domes, layered
+  scalloped edges, oblique surface views) exactly where baseline stays frontal wallpaper.
+  The motion cue biases the feedback chain toward depth-composed content: pictorial depth
+  emerges FROM motion depth, for free.
+- Lab-frame caveats for viewers: last ~21 frames of each arm are a fake loop tail (a
+  --frames cut lands the tail mid-card; parallax tapers there by design). Phil's clip =
+  output/dolly_lab/squid_lantern_dolly_AB_loop.mp4 (+_small delivery copy).
+Full-journey A/B: coral_synapse v3 (seed 1234 = same as v1/v2), --parallax 1.0
+--resolve-persist, launched 2026-08-22 ~14:30. Phil judges the motion; adoption decision
+(nightly --parallax default + gain choice + whether persist ships) waits on that verdict.
+Phase C (--micro) built but UNJUDGED — needs its own with/without A/B when Phil wants it.
