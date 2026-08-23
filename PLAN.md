@@ -1265,6 +1265,8 @@ Phase C (--micro) built but UNJUDGED — needs its own with/without A/B when Phi
 - Delivered: coral v3 (gain 1.0+persist) A/B loop + assembled cut; squid a05p arm;
   sequential cuts. coral v4 (gain 0.5 + persist, seed 1234) RENDERED + DELIVERED
   (v2-vs-v4 AB loop, assembled v4, sequential v2→v4→v3 — all in build/ of v4).
-  AWAITING PHIL: full-journey gain verdict (0.5 vs 1.0 vs off) → set the nightly
-  --parallax default in night_batch + DEFAULTS, drop persist, then the --micro A/B.
-  VRAM freed post-renders; nightly batch tonight unaffected (parallax_gain default 0).
+  VERDICT (same evening): **GAIN 0.5 SHIPS** — DEFAULTS["parallax_gain"] = 0.5, so the
+  nightly batch renders with parallax from 2026-08-23 on (night_batch passes no flag;
+  --parallax 0 = the off A/B). persist NOT shipped (parked). Phil reserved the right to
+  revise after the v3-vs-v4 side-by-side; coral v5 at 0.7 (+persist, seed 1234) rendered
+  the same evening as standby data. NEXT: --micro A/B when Phil wants it, then Phase D.

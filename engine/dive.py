@@ -99,12 +99,14 @@ DEFAULTS = {
     "figure_watch": 28,       # also check every Nth frame mid-render (0 = off); warns only
     # DEPTH 2.0 Phase A (2026-08-22, PLAN "PARALLAX ERA"): depth-differential parallax on
     # the fed-back frame — near content expands beyond the scheduled zoom, far recedes
-    # relatively, median plane rides the schedule exactly (warp.parallax_residual). 0 = off
-    # (today's engine; the nightly batch stays here until Phil's verdict). Depth comes from
-    # the resolve scaffold inside windows (conditioning + warp AGREE — the orbit-v2 lesson)
-    # and DepthAnything at cadence elsewhere, EMA-smoothed + plane-quantized (raw estimator
-    # shimmer kills warps).
-    "parallax_gain": 0.0,
+    # relatively, median plane rides the schedule exactly (warp.parallax_residual). Depth
+    # comes from the resolve scaffold inside windows (conditioning + warp AGREE — the
+    # orbit-v2 lesson) and DepthAnything at cadence elsewhere, EMA-smoothed +
+    # plane-quantized (raw estimator shimmer kills warps).
+    # 0.5 = PHIL'S VERDICT 2026-08-22 evening (squid 4-arm lab + coral v2/v3/v4 full A/B:
+    # 0.5 read the most 3-D; 1.0 diverged more in content without reading more 3-D).
+    # --parallax 0 is the A/B off-switch; don't change this default without a new verdict.
+    "parallax_gain": 0.5,
     "parallax_depth_every": 3,   # DepthAnything cadence outside scaffold windows (frames)
     "parallax_planes": 5,        # depth quantization levels
     # Phase B: keep the arrival scaffold alive as the DEPTH source (never the CN) until its

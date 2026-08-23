@@ -138,10 +138,11 @@ a05 vs a05p byte-identical until the sea window; park persist). Labs now also sh
 SEQUENTIAL one-after-another cut (dolly_lab --sequence-only — Phil: side-by-side ×4 is
 hard to judge). DELIVERED: squid 4-arm + 0.5-focus sequentials; coral v3 (1.0+persist)
 AB+assembled; coral v4 (0.5+persist, seed 1234) AB+assembled+sequential v2→v4→v3.
-0.5>1.0 hypotheses + per-source-gain refinement candidate in PLAN. AWAITING PHIL: full-
-journey gain verdict → set nightly --parallax default (night_batch passes no flag; DEFAULTS
-parallax_gain=0 until then), then the --micro A/B, then Phase D. VRAM freed; tonight's
-batch renders WITHOUT parallax (correct until the verdict).
+0.5>1.0 hypotheses + per-source-gain refinement candidate in PLAN. VERDICT SHIPPED:
+**parallax_gain DEFAULT = 0.5** (dive DEFAULTS; nightly renders with it from 08-23;
+--parallax 0 = off A/B; persist parked, micro still default-off awaiting its own A/B).
+Phil may revise after the v3-vs-v4 side-by-side (delivered); coral v5 gain 0.7 (+persist,
+seed 1234) rendered as standby. NEXT: micro A/B when Phil wants it, then Phase D.
 2026-08-22 (MARKETING DAY — stats now flow themselves): (1) IG stats snapshots now run
 12:00 + 00:00 via the PowersOfZen-igstats task (ONE task, two PowerShell-registered
 triggers → hidden_task.vbs → scheduled_ig_stats.bat; log outbox/ig_stats_task.log) in
