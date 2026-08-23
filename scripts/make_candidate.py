@@ -77,9 +77,10 @@ def main():
         sys.exit(f"no repaired vN with run.json under {base} — run replace_tail/replace_opening first")
     meta = json.loads((new_dir / "run.json").read_text())
     src_name = (meta.get("splice") or {}).get("body_src") \
-        or (meta.get("replace_opening") or {}).get("src")
+        or (meta.get("replace_opening") or {}).get("src") \
+        or (meta.get("prefix_src") if meta.get("from_card") else None)
     if not src_name:
-        sys.exit(f"{new_dir}/run.json has no splice/replace_opening provenance")
+        sys.exit(f"{new_dir}/run.json has no splice/replace_opening/from_card provenance")
     src_dir = base / src_name
 
     U, New = cutfile(src_dir, cut), cutfile(new_dir, cut)
@@ -94,10 +95,26 @@ def main():
     if nNew != N:
         sys.exit(f"!! frame count mismatch: production {N} vs new {nNew}")
 
+    # LOOP LAP (2026-08-23): a lap retrofit's delivered cut starts one card later in the
+    # circular order (frames [lap_cut..total) of the render), so the rotation measured
+    # against the OLD cut must shift by lap_cut (converted to final-video frames) or the
+    # candidate opens one card off Phil's chosen production opening.
+    R_use = R
+    lap_raw = meta.get("lap_cut", 0)
+    if lap_raw:
+        shift = round(lap_raw * N / (meta["frames"] - lap_raw))
+        # sign follows the CUT direction: divein plays render order forward (the new cut
+        # starts one card LATER -> subtract); zoomout is the REVERSED cut (same card step
+        # goes the other way -> add). Verified empirically on caddis (zoomout): the
+        # production opening lives at R+shift, diff 3.8 vs 72.4 at R-shift.
+        R_use = (R - shift) % N if cut == "divein" else (R + shift) % N
+        print(f"[cand] lap shift: {lap_raw} raw = {shift} final frames -> rotation "
+              f"{R} -> {R_use} ({cut})", flush=True)
+
     rot = rp.WORK / f"{args.journey}_cand_rot.mp4"
     subprocess.run([rp.FF, "-y", "-loglevel", "error", "-i", rp.win(New), "-filter_complex",
-                    f"[0:v]trim=start_frame={R},setpts=PTS-STARTPTS[a];"
-                    f"[0:v]trim=end_frame={R},setpts=PTS-STARTPTS[b];"
+                    f"[0:v]trim=start_frame={R_use},setpts=PTS-STARTPTS[a];"
+                    f"[0:v]trim=end_frame={R_use},setpts=PTS-STARTPTS[b];"
                     "[a][b]concat=n=2:v=1[v]",
                     "-map", "[v]", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18",
                     rp.win(rot)], check=True)
@@ -111,9 +128,9 @@ def main():
                     "-map", "0:v:0", "-map", "1:a:0", "-c:v", "copy", "-c:a", "copy",
                     "-shortest", rp.win(cand)], check=True)
     R2, resid2, _, _ = rp.measure_rotation(cand, New)
-    print(f"[cand] verify: candidate is rotation {R2} of the new cut (want {R}), "
+    print(f"[cand] verify: candidate is rotation {R2} of the new cut (want {R_use}), "
           f"residual {resid2:.2f}", flush=True)
-    if R2 != R:
+    if R2 != R_use:
         sys.exit("!! candidate rotation mismatch")
     print(f"[cand] candidate -> {cand}", flush=True)
 
