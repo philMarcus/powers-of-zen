@@ -125,6 +125,17 @@ DEFAULTS = {
     "camera_micro": False,
     "micro_drift_px": 12.0,   # lateral drift at the extreme near plane, px
     "micro_surge": 0.5,       # plunge gain multiplier: pk * (1 + surge * plunge-ness)
+    # HOMING CURVE v2 (Phil 2026-08-23, "stronger and earlier"): the loop tail's IPA
+    # weight rises from a NONZERO floor at tail start on a smoothstep ease — half strength
+    # by mid-tail — instead of the old 0.95*t^1.5 that back-loaded all convergence into
+    # the last ~8 frames ("the seam is too abrupt... the shift is too a drop"). The
+    # depth-CN runs across the WHOLE tail (was: only the last morph window). Zoom
+    # schedule, rhythm and frame counts untouched — same frames, more of them homing.
+    "home_ipa_floor": 0.22,   # IPA weight at tail start
+    "home_ipa_peak": 0.95,    # IPA weight at the landing
+    "home_ipa_shape": 0.8,    # exponent on the smoothstep (<1 = earlier strength)
+    "home_cn_floor": 0.15,    # depth-CN at tail start
+    "home_cn_peak": 0.80,     # depth-CN at the landing
     # anti-collapse re-texturing of each fed-back frame
     "sharpen": 1.35,
     "contrast": 1.04,
@@ -1180,11 +1191,15 @@ def main():
                             if lap_cut else frame0)
                         loop["_home_ref"] = upload_image(
                             loop["_home_img"], f"zoomer_loop_home_{name}.png")
-                    tail_ipa_w = 0.95 * t_home ** 1.5
-                    mstart = L_tail - loop["morph_frames"]
-                    if j >= mstart:
-                        m = (j - mstart + 1) / loop["morph_frames"]
-                        tail_ctl, tail_cn = loop["_home_ref"], 0.2 + 0.6 * m
+                    # HOMING CURVE v2 (see DEFAULTS): smoothstep from a nonzero floor —
+                    # the world converges across the whole tail, not in the last beat
+                    _ss = t_home * t_home * (3 - 2 * t_home)
+                    tail_ipa_w = (cfg["home_ipa_floor"]
+                                  + (cfg["home_ipa_peak"] - cfg["home_ipa_floor"])
+                                  * _ss ** cfg["home_ipa_shape"])
+                    tail_ctl = loop["_home_ref"]
+                    tail_cn = (cfg["home_cn_floor"]
+                               + (cfg["home_cn_peak"] - cfg["home_cn_floor"]) * _ss)
                     if j >= L_tail - 6:
                         fed = Image.blend(fed, loop["_home_img"],
                                           0.35 * (j - (L_tail - 6) + 1) / 6)

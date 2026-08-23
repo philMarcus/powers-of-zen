@@ -272,7 +272,11 @@ def compile_journey(spec, fps, build="in", loop_lap=None):
         # ~1.7 beats), so scale both with the journey's beat. Legacy sec-schema keeps 2.0s.
         fpb = fmt.get("frames_per_beat", 7)
         new_schema = any(r.get("dur") is not None for r in regs)
-        L = min(round(24 * fpb / 7) if new_schema else round(2.0 * fps), F_last - 2)
+        # tail = ONE FULL BAR (Phil 2026-08-23: the old ~3.4-beat tail + back-loaded IPA
+        # curve crammed convergence into the last ~8 frames — "too abrupt"; the homing now
+        # spans essentially the whole lap card). Same frames, more of them homing — the
+        # frame count and rhythm are untouched.
+        L = min(fpb * 4 if new_schema else round(2.0 * fps), F_last - 2)
         # SEAM (2026-07-29): the last L frames KEEP diving at travel denoise (alive, not settling)
         # while dive.py morphs home — natural dive → palette-match → gap-scaled morph toward frame 0
         # (no hard copy). `morph_frames` = trailing frames that morph. The old denoise-ramp + s0
