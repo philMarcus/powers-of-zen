@@ -103,10 +103,13 @@ DEFAULTS = {
     # comes from the resolve scaffold inside windows (conditioning + warp AGREE — the
     # orbit-v2 lesson) and DepthAnything at cadence elsewhere, EMA-smoothed +
     # plane-quantized (raw estimator shimmer kills warps).
-    # 0.5 = PHIL'S VERDICT 2026-08-22 evening (squid 4-arm lab + coral v2/v3/v4 full A/B:
-    # 0.5 read the most 3-D; 1.0 diverged more in content without reading more 3-D).
-    # --parallax 0 is the A/B off-switch; don't change this default without a new verdict.
-    "parallax_gain": 0.5,
+    # "random" = PHIL'S CALL 2026-08-22 night (after the v3-vs-v4 side-by-side he leaned
+    # HIGHER — 1.0 gave more depth, only its motion sometimes read abrupt; 0.8-0.9 maybe
+    # ideal): each video draws a gain from {0.5, 0.6, 0.7, 0.8, 0.9, 1.0} so gain becomes
+    # a tracked VARIABLE the audience data + his eye can settle. The draw is DETERMINISTIC
+    # from (journey name, seed) — a same-seed re-render reproduces its gain — and recorded
+    # in run.json + the pipeline entry. --parallax N pins; --parallax 0 = off A/B.
+    "parallax_gain": "random",
     "parallax_depth_every": 3,   # DepthAnything cadence outside scaffold windows (frames)
     "parallax_planes": 5,        # depth quantization levels
     # Phase B: keep the arrival scaffold alive as the DEPTH source (never the CN) until its
@@ -732,6 +735,15 @@ def main():
     if args.cn is not None:
         cfg["approach_cn"] = args.cn
         name = f"{name}_cn{args.cn:g}".replace(".", "")
+    if cfg["parallax_gain"] == "random":
+        # gain-exploration draw (see DEFAULTS): deterministic from (name, seed) so a
+        # same-seed re-render reproduces its gain
+        import zlib as _z
+        # '#' separator chosen 2026-08-22: over the first 15-journey requeue at seed 1234
+        # it spreads draws across all six gains (':' clumped 7 of 15 at 0.5)
+        cfg["parallax_gain"] = round(
+            0.5 + 0.1 * (_z.crc32(f"{name}#{cfg['seed']}".encode()) % 6), 1)
+        print(f"[dive] parallax gain (random draw): {cfg['parallax_gain']}", flush=True)
     # build-out has no txt2img frame 0 to gate, and --resume starts mid-chain (frame 0 already
     # judged), so the gate only applies to a fresh build-IN render.
     img_guard = cfg["figure_guard"] and not args.allow_figures and cfg["build"] != "out"

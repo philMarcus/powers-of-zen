@@ -169,6 +169,9 @@ def main():
                     "1 jul-0804 (e1 mix)" if ts[:10] <= "2026-08-04" else
                     "2 0805-0813 (e2 v1)" if ts < "2026-08-14 12" else
                     "3 0814+ (rethink)")
+        # DEPTH 2.0 gain exploration (2026-08-22): gain is drawn per video and recorded by
+        # queue_review from run.json — pre-parallax videos show "off"
+        r["pgain"] = (v.get("engine_params", {}) or {}).get("parallax_gain", "off")
 
     b, coef = fit_scaling(rows, a.cw)
     if a.alpha is not None:
@@ -192,6 +195,7 @@ def main():
     show_group("full scale", known, lambda r: r.get("full"))
     show_group("engine", known, lambda r: r.get("engine", "?"))
     show_group("posted era", known, lambda r: r.get("era", "?"))
+    show_group("parallax gain", known, lambda r: r.get("pgain", "off"))
     show_group("cut", known, lambda r: r["cut"])
     show_group("music mood", known, lambda r: r["mood"] or "?")
 

@@ -1,6 +1,6 @@
 {
   "settings": {
-    "render_budget_min": 340,
+    "render_budget_min": 430,
     "max_ready_videos": 20,
     "journey_queue_target": 20,
     "refill_max_per_night": 5,
@@ -10,6 +10,7 @@
       "short": 0.3
     },
     "nightly_templates": [
+      "LLLLSS",
       "LLLS",
       "LLS",
       "LMS",
@@ -163,100 +164,220 @@
     },
     "bee_cathedral": {
       "state": "queued",
-      "order": 6,
+      "order": 15,
       "ts": "2026-08-13 13:57:36",
       "note": "REALMS rethink wave 2 (2026-08-13)"
     },
     "observatory_dusk": {
       "state": "queued",
-      "order": 7,
+      "order": 16,
       "ts": "2026-08-13 13:57:36",
       "note": "REALMS rethink wave 2 (2026-08-13)"
     },
     "bamboo_sea": {
       "state": "queued",
-      "order": 8,
+      "order": 17,
       "ts": "2026-08-14 00:14:10",
       "note": "composed by midnight refill"
     },
     "lissajous_stage": {
       "state": "queued",
-      "order": 12,
+      "order": 18,
       "ts": "2026-08-17 00:17:39",
       "note": "composed by midnight refill"
     },
     "fiddler_commons": {
       "state": "queued",
-      "order": 16,
+      "order": 19,
       "ts": "2026-08-18 00:15:19",
       "note": "composed by midnight refill"
     },
     "kelp_dynamo": {
       "state": "queued",
-      "order": 17,
+      "order": 20,
       "ts": "2026-08-18 00:15:19",
       "note": "composed by midnight refill"
     },
     "eclipse_waterhole": {
       "state": "queued",
-      "order": 18,
+      "order": 21,
       "ts": "2026-08-20 00:16:33",
       "note": "composed by midnight refill"
     },
     "voltaic_shoal": {
       "state": "queued",
-      "order": 19,
+      "order": 22,
       "ts": "2026-08-20 00:16:33",
       "note": "composed by midnight refill"
     },
     "magellanic_mob": {
       "state": "queued",
-      "order": 20,
+      "order": 23,
       "ts": "2026-08-21 00:23:01",
       "note": "composed by midnight refill"
     },
     "sunspot_archipelago": {
       "state": "queued",
-      "order": 21,
+      "order": 24,
       "ts": "2026-08-21 00:23:01",
       "note": "composed by midnight refill"
     },
     "waterbear_prairie": {
       "state": "queued",
-      "order": 22,
+      "order": 25,
       "ts": "2026-08-21 00:23:01",
       "note": "composed by midnight refill"
     },
     "winter_murmuration": {
       "state": "queued",
-      "order": 23,
+      "order": 26,
       "ts": "2026-08-21 00:23:02",
       "note": "composed by midnight refill"
     },
     "gecko_rampart": {
       "state": "queued",
-      "order": 24,
+      "order": 27,
       "ts": "2026-08-22 00:25:25",
       "note": "composed by midnight refill"
     },
     "lily_undercroft": {
       "state": "queued",
-      "order": 25,
+      "order": 28,
       "ts": "2026-08-22 00:25:25",
       "note": "composed by midnight refill"
     },
     "natron_skein": {
       "state": "queued",
-      "order": 26,
+      "order": 29,
       "ts": "2026-08-22 00:25:26",
       "note": "composed by midnight refill"
     },
     "plasma_script": {
       "state": "queued",
-      "order": 27,
+      "order": 30,
       "ts": "2026-08-22 00:25:26",
       "note": "composed by midnight refill"
+    },
+    "whale_fall_republic": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-22 22:00:15",
+      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
+      "order": 0
+    },
+    "coral_synapse": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-22 22:00:15",
+      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
+      "order": 1
+    },
+    "lantern_mangrove": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-22 22:00:15",
+      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
+      "order": 2
+    },
+    "cobalt_rookery": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-22 22:00:15",
+      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
+      "order": 3
+    },
+    "ruby_furnace": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-22 22:00:15",
+      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
+      "order": 4
+    },
+    "magnetite_choir": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-22 22:00:15",
+      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
+      "order": 5
+    },
+    "vesper_flight": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-22 22:00:15",
+      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
+      "order": 6
+    },
+    "anemone_arsenal": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-22 22:00:15",
+      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
+      "order": 7
+    },
+    "meteorite_cradle": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-22 22:00:15",
+      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
+      "order": 8
+    },
+    "wild_yeast": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-22 22:00:15",
+      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
+      "order": 9
+    },
+    "cherenkov_cistern": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-22 22:00:15",
+      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
+      "order": 10
+    },
+    "peony_shell": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-22 22:00:15",
+      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
+      "order": 11
+    },
+    "motmot_cenote": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-22 22:00:15",
+      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
+      "order": 12
+    },
+    "bourdon_foundry": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-22 22:00:15",
+      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
+      "order": 13
+    },
+    "pomegranate_vault": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-08-22 22:00:15",
+      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
+      "order": 14
     }
   },
-  "updated": "2026-08-22 16:07:16"
+  "updated": "2026-08-22 22:00:34"
 }

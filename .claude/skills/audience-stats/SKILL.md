@@ -44,7 +44,10 @@ python3 scripts/ig_stats.py            # appends one row per reel to outbox/ig_s
 ```bash
 python3 scripts/ig_analyze.py --features
 ```
-Groups by tier/style/scale-span/engine/**posted era**/cut/music-mood, and `--features`
+Groups by tier/style/scale-span/engine/**posted era**/**parallax gain** (the DEPTH 2.0
+random per-video gain draw, from the pipeline entry's engine_params — pre-parallax videos
+group as "off"; Phil picks the winner from this as posts accumulate)/cut/music-mood, and
+`--features`
 measures each posted video's frames (luminance, saturation, contrast, dark-fraction; cached
 in outbox/video_features.json) and correlates each with like%. The posted-era buckets
 (jul–08-04 / 08-05–08-13 / 08-14+ rethink) track whether the 08-13 rethink package moved the

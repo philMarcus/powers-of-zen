@@ -1265,8 +1265,33 @@ Phase C (--micro) built but UNJUDGED — needs its own with/without A/B when Phi
 - Delivered: coral v3 (gain 1.0+persist) A/B loop + assembled cut; squid a05p arm;
   sequential cuts. coral v4 (gain 0.5 + persist, seed 1234) RENDERED + DELIVERED
   (v2-vs-v4 AB loop, assembled v4, sequential v2→v4→v3 — all in build/ of v4).
-  VERDICT (same evening): **GAIN 0.5 SHIPS** — DEFAULTS["parallax_gain"] = 0.5, so the
-  nightly batch renders with parallax from 2026-08-23 on (night_batch passes no flag;
-  --parallax 0 = the off A/B). persist NOT shipped (parked). Phil reserved the right to
-  revise after the v3-vs-v4 side-by-side; coral v5 at 0.7 (+persist, seed 1234) rendered
-  the same evening as standby data. NEXT: --micro A/B when Phil wants it, then Phase D.
+  VERDICT (same evening, revised after the v3-vs-v4 side-by-side): Phil leans HIGHER —
+  1.0 gives more depth, its only cost is occasionally-abrupt motion; 0.8-0.9 maybe ideal.
+  **GAIN IS NOW A RANDOM PER-VIDEO VARIABLE**: DEFAULTS["parallax_gain"] = "random" → each
+  render draws from {0.5..1.0 by tenths}, DETERMINISTIC from crc32("name#seed") (same-seed
+  re-render reproduces its gain; '#' salt chosen for even spread over the first requeue),
+  logged in run.json AND carried by queue_review into the pipeline entry
+  (engine_params.parallax_gain) so ig_analyze's new "parallax gain" group can contrast
+  them as posts accumulate. persist NOT shipped (parked); coral v5 0.7+persist rendered as
+  standby. THE REQUEUE (2026-08-22 night): all 15 review-stage videos (pre-parallax) →
+  rejected, journeys re-queued at FRONT same-seed; music/production stages untouched.
+  TONIGHT: one-off PowersOfZen-render-once task at 00:00 (delete after: schtasks /Delete
+  /TN "PowersOfZen-render-once" /F), budget 430 + LLLLSS template prepended for the extra
+  videos — RESTORE budget 340 + drop LLLLSS when the requeue backlog drains (Settings tab).
+  Verified pick: whale_fall(0.8) coral(0.8) lantern_mangrove(0.7) cobalt(0.9)
+  magnetite_choir(1.0) wild_yeast(0.5) ≈ 419min.
+
+## NEXT FRONT AFTER DEPTH (Phil 2026-08-22 night): SEAMS
+"The seams are still not really good enough" — suspects an IP-Adapter parameter or
+similar. This is the register-boundary/seam-morph look, not the loop tail per se. Start
+by A/B-ing the ipacn tail params (IPA weight curve 0.95·t^1.5, CN ramp 0.2→0.8, blend
+≤0.35) and the seam_morph_frames choreography under the new parallax engine.
+
+## AUDIENCE DATA WISHLIST (Phil 2026-08-22): reposts/saves/shares per reel
+Recon (same night): IG WEB exposes NO per-reel insights for us — no "View insights" on
+own reel pages, /accounts/professional_dashboard/ = page unavailable. Likely cause: the
+account was never actually converted to a professional/Creator account (launch plan said
+to; profile shows no dashboard link). UNLOCK: Phil flips account type in the app
+(Settings → Account type → Creator) — then re-recon web for View insights /
+professional_dashboard and extend ig_stats.py to scrape shares/saves/reposts (Meta
+Business Suite via zen Chrome is the fallback). Reposts especially matter to Phil.

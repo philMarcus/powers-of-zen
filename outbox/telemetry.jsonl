@@ -865,3 +865,18 @@
 {"ts": "2026-08-22 16:06:08", "event": "post", "journey": "brinicle_grove", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcWuv6DhbSb/"}
 {"ts": "2026-08-22 16:07:16", "event": "ig_stats", "detail": "44 reels, followers 60"}
 {"ts": "2026-08-22 16:07:16", "event": "post_gate", "detail": "fired (rc 0); next 2026-08-23 11:00"}
+{"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "whale_fall_republic", "detail": "parallax requeue (front, same seed)"}
+{"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "coral_synapse", "detail": "parallax requeue (front, same seed)"}
+{"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "lantern_mangrove", "detail": "parallax requeue (front, same seed)"}
+{"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "cobalt_rookery", "detail": "parallax requeue (front, same seed)"}
+{"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "ruby_furnace", "detail": "parallax requeue (front, same seed)"}
+{"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "magnetite_choir", "detail": "parallax requeue (front, same seed)"}
+{"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "vesper_flight", "detail": "parallax requeue (front, same seed)"}
+{"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "anemone_arsenal", "detail": "parallax requeue (front, same seed)"}
+{"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "meteorite_cradle", "detail": "parallax requeue (front, same seed)"}
+{"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "wild_yeast", "detail": "parallax requeue (front, same seed)"}
+{"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "cherenkov_cistern", "detail": "parallax requeue (front, same seed)"}
+{"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "peony_shell", "detail": "parallax requeue (front, same seed)"}
+{"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "motmot_cenote", "detail": "parallax requeue (front, same seed)"}
+{"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "bourdon_foundry", "detail": "parallax requeue (front, same seed)"}
+{"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "pomegranate_vault", "detail": "parallax requeue (front, same seed)"}

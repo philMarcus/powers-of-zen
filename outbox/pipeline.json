@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-08-22 16:06:08",
+    "updated": "2026-08-22 22:00:15",
     "paused_platforms": [
       "tiktok"
     ],
@@ -4545,7 +4545,7 @@
       "yt_title": "A silver path of moonlight leads into the abyss 🌊",
       "yt_desc": "",
       "cameo": "adam",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -5364,7 +5364,7 @@
       "yt_title": "Dive into the endless fractal of life 🌊✨",
       "yt_desc": "",
       "cameo": "amos",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -5495,7 +5495,7 @@
       "yt_title": "Dive into the glowing heart of a mangrove world 🌿✨",
       "yt_desc": "",
       "cameo": "tina",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -6045,7 +6045,7 @@
       "yt_title": "A sun’s last breath in a sea of stars 🌌",
       "yt_desc": "",
       "cameo": "janet",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -6176,7 +6176,7 @@
       "yt_title": "A hummingbird’s ruby throat pulses like a star 🌌",
       "yt_desc": "",
       "cameo": "dora",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -6518,7 +6518,7 @@
       "yt_title": "Diving through the iron heart of a frozen world 🌌",
       "yt_desc": "",
       "cameo": "adam",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -6649,7 +6649,7 @@
       "yt_title": "A star’s rings dissolve into a river of dusk 🌌",
       "yt_desc": "",
       "cameo": "dora",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -6780,7 +6780,7 @@
       "yt_title": "Dive into the infinite glow of a tide pool’s hidden cosmos 🌊✨",
       "yt_desc": "",
       "cameo": "aleksey",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -7305,7 +7305,7 @@
       "yt_title": "Dive into the endless desert of infinity 🌌",
       "yt_desc": "",
       "cameo": "lamar",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -7854,7 +7854,7 @@
       "yt_title": "A sourdough’s secret world, spiraling into infinity 🌌",
       "yt_desc": "",
       "cameo": "tina",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -7985,7 +7985,7 @@
       "yt_title": "A star’s breath, a world’s storm, a mountain’s heartbeat—dive deeper 🌌",
       "yt_desc": "",
       "cameo": "clark",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -8116,7 +8116,7 @@
       "yt_title": "A neon galaxy of fireworks blooms in endless night 🌌",
       "yt_desc": "",
       "cameo": "belle",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -8247,7 +8247,7 @@
       "yt_title": "Dive into the well’s endless turquoise dream 🌊",
       "yt_desc": "",
       "cameo": "tina",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -8378,7 +8378,7 @@
       "yt_title": "A cosmic loom weaves galaxies into being 🌌",
       "yt_desc": "",
       "cameo": "clark",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -8509,7 +8509,7 @@
       "yt_title": "A crimson cosmos unfolds in endless layers 🌌",
       "yt_desc": "",
       "cameo": "belle",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {

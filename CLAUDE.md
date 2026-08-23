@@ -138,11 +138,20 @@ a05 vs a05p byte-identical until the sea window; park persist). Labs now also sh
 SEQUENTIAL one-after-another cut (dolly_lab --sequence-only — Phil: side-by-side ×4 is
 hard to judge). DELIVERED: squid 4-arm + 0.5-focus sequentials; coral v3 (1.0+persist)
 AB+assembled; coral v4 (0.5+persist, seed 1234) AB+assembled+sequential v2→v4→v3.
-0.5>1.0 hypotheses + per-source-gain refinement candidate in PLAN. VERDICT SHIPPED:
-**parallax_gain DEFAULT = 0.5** (dive DEFAULTS; nightly renders with it from 08-23;
---parallax 0 = off A/B; persist parked, micro still default-off awaiting its own A/B).
-Phil may revise after the v3-vs-v4 side-by-side (delivered); coral v5 gain 0.7 (+persist,
-seed 1234) rendered as standby. NEXT: micro A/B when Phil wants it, then Phase D.
+0.5>1.0 hypotheses + per-source-gain refinement candidate in PLAN. FINAL CALL (after the
+v3-vs-v4 side-by-side — Phil: 1.0 = MORE depth, only sometimes abrupt; 0.8-0.9 maybe
+ideal): **parallax_gain = "random"** — every render draws {0.5..1.0 by tenths},
+deterministic crc32("name#seed") (same-seed reproduces; even spread verified), recorded
+in run.json + pipeline entry engine_params + ig_analyze "parallax gain" group. persist
+parked; micro default-off. REQUEUE: all 15 pre-parallax review videos rejected → journeys
+re-queued FRONT same-seed (music termite_citadel + queued caddis_masonry untouched).
+TONIGHT: one-off 00:00 render task (PowersOfZen-render-once — DELETE it after) + budget
+430 + LLLLSS prepended (RESTORE 340 / drop LLLLSS once the backlog drains); verified pick
+whale_fall(.8) coral(.8) lantern(.7) cobalt(.9) magnetite(1.0) wild_yeast(.5) ≈ 7h.
+NEXT FRONTS (Phil): (1) SEAMS still not good enough (suspect IPA params — see PLAN "NEXT
+FRONT"); (2) reposts/saves/shares: web recon says the IG account is likely NOT a
+professional account (no View insights anywhere, no professional_dashboard page) — PHIL
+ACTION: flip to Creator in the app, then extend ig_stats. Followers 62 (was 59 at 11:00).
 2026-08-22 (MARKETING DAY — stats now flow themselves): (1) IG stats snapshots now run
 12:00 + 00:00 via the PowersOfZen-igstats task (ONE task, two PowerShell-registered
 triggers → hidden_task.vbs → scheduled_ig_stats.bat; log outbox/ig_stats_task.log) in

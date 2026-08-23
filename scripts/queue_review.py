@@ -78,12 +78,25 @@ def main():
         else:
             print(f"  WARN missing cut: {s.relative_to(ROOT)}")
     divein_rel = str((ROOT / "review_divein" / promote.variant_basename(journey, model, "divein")).relative_to(ROOT))
+    # engine provenance the audience analysis groups by (DEPTH 2.0 gain exploration,
+    # Phil 2026-08-22: gain is a random per-video variable — carry the drawn value from
+    # the render's run.json into the pipeline entry so ig_analyze can contrast gains)
+    ep = {}
+    try:
+        rj = json.loads((src / "run.json").read_text(encoding="utf-8"))
+        for k in ("parallax_gain", "resolve_persist", "camera_micro", "seed"):
+            if k in rj:
+                ep[k] = rj[k]
+    except Exception:
+        pass
     dd = pl.load()
     v = pl.get(dd, journey)
     if v:
         already = v.get("state") == "review" and v.get("file")
         v["state"] = "review"
         v["cameo"] = cameo_of(spec)
+        if ep:
+            v["engine_params"] = ep
         if not already:   # keep the first-ingested model/cut as the displayed default
             v.update({"model": model, "cut": "divein", "file": divein_rel})
     else:
@@ -91,6 +104,7 @@ def main():
             "journey": journey, "model": model, "cut": "divein", "file": divein_rel,
             "title": "", "caption": "", "yt_title": "", "yt_desc": "",
             "cameo": cameo_of(spec), "state": "review", "scheduled": None,
+            "engine_params": ep,
             "platforms": pl.blank_platforms(), "created": pl._now()[:10]})
     pl.save(dd)
     pl.telem("review", journey=journey, detail=f"{model}/divein (src {src.name})")
