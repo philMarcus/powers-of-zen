@@ -103,13 +103,14 @@ DEFAULTS = {
     # comes from the resolve scaffold inside windows (conditioning + warp AGREE — the
     # orbit-v2 lesson) and DepthAnything at cadence elsewhere, EMA-smoothed +
     # plane-quantized (raw estimator shimmer kills warps).
-    # "random" = PHIL'S CALL 2026-08-22 night (after the v3-vs-v4 side-by-side he leaned
-    # HIGHER — 1.0 gave more depth, only its motion sometimes read abrupt; 0.8-0.9 maybe
-    # ideal): each video draws a gain from {0.5, 0.6, 0.7, 0.8, 0.9, 1.0} so gain becomes
-    # a tracked VARIABLE the audience data + his eye can settle. The draw is DETERMINISTIC
-    # from (journey name, seed) — a same-seed re-render reproduces its gain — and recorded
-    # in run.json + the pipeline entry. --parallax N pins; --parallax 0 = off A/B.
-    "parallax_gain": "random",
+    # 1.0 = PHIL'S FINAL VERDICT 2026-08-23 morning (after the full coral gain ladder
+    # 0.5/0.7/1.0): "the full gain gives us more freedom and diversity with our shifts
+    # between cards, and a more depth-filled world — I don't see a downside." The one-night
+    # random-gain exploration (2026-08-22, draws {0.5..1.0}) is retired; its six renders
+    # keep their drawn gains in engine_params for the audience data. --parallax N pins a
+    # different value for labs; --parallax 0 = the off A/B. Don't change without a new
+    # recorded verdict.
+    "parallax_gain": 1.0,
     "parallax_depth_every": 3,   # DepthAnything cadence outside scaffold windows (frames)
     "parallax_planes": 5,        # depth quantization levels
     # Phase B: keep the arrival scaffold alive as the DEPTH source (never the CN) until its

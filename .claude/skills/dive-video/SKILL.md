@@ -55,12 +55,12 @@ CONTEXT (GPU work happens outside the model) — run them in the background and 
 - `--style <deck name>` look A/B · `--model turbo|ds` (ds is the house default).
 - `--no-resolve` — disable resolve-on-approach depth scaffolds (they are DEFAULT ON).
 - `--parallax <gain>` — DEPTH 2.0 depth-differential parallax on the fed-back frame
-  (PLAN "PARALLAX ERA"). **DEFAULT 0.5 = Phil's verdict 2026-08-22** (nightly renders with
-  it); `--parallax 0` = the off A/B; higher gains diverge in content without reading more
-  3-D. `--resolve-persist` (parked — measured ~no-op at current card lengths) keeps arrival
-  scaffolds as the parallax depth source until card end. `--micro` = Phase C musical micro
-  camera moves, DEFAULT OFF — Phil judges its with/without A/B separately; never flip these
-  defaults without his verdict recorded here.
+  (PLAN "PARALLAX ERA"). **DEFAULT 1.0 = Phil's final verdict 2026-08-23** ("more freedom
+  and diversity in the shifts between cards, more depth-filled world — no downside");
+  `--parallax 0` = the off A/B. `--resolve-persist` (parked — measured ~no-op at current
+  card lengths) keeps arrival scaffolds as the parallax depth source until card end.
+  `--micro` = Phase C musical micro camera moves, DEFAULT OFF — Phil judges its
+  with/without A/B separately; never flip these defaults without his verdict recorded here.
 
 ## What the engine does (settled 2026-07-31 — don't re-derive or re-litigate)
 1. **Uniform bars.** Every card in a journey shares one `dur` (4 = a bar). Mixed durations made
