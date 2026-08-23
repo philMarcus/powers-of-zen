@@ -882,3 +882,67 @@
 {"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "pomegranate_vault", "detail": "parallax requeue (front, same seed)"}
 {"ts": "2026-08-22 22:18:01", "event": "ig_insights", "detail": "78 posts"}
 {"ts": "2026-08-22 22:25:27", "event": "jqueued", "journey": "coral_synapse", "detail": "UNQUEUED — enough versions; ingest Phil's gain pick instead"}
+{"ts": "2026-08-23 00:01:09", "event": "ig_stats", "detail": "44 reels, followers 60"}
+{"ts": "2026-08-23 00:01:27", "event": "ig_insights", "detail": "46 posts"}
+{"ts": "2026-08-23 02:04:06", "event": "review", "journey": "whale_fall_republic", "detail": "ds/divein (src v4)"}
+{"ts": "2026-08-23 02:05:03", "event": "caption", "journey": "whale_fall_republic", "detail": "5 options, spot=True"}
+{"ts": "2026-08-23 02:05:03", "event": "render", "journey": "whale_fall_republic", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-23 03:29:26", "event": "review", "journey": "lantern_mangrove", "detail": "ds/divein (src v3)"}
+{"ts": "2026-08-23 03:30:18", "event": "caption", "journey": "lantern_mangrove", "detail": "5 options, spot=True"}
+{"ts": "2026-08-23 03:30:18", "event": "render", "journey": "lantern_mangrove", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-23 05:19:29", "event": "review", "journey": "cobalt_rookery", "detail": "ds/divein (src v3)"}
+{"ts": "2026-08-23 05:20:21", "event": "caption", "journey": "cobalt_rookery", "detail": "5 options, spot=True"}
+{"ts": "2026-08-23 05:20:21", "event": "render", "journey": "cobalt_rookery", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-23 06:35:58", "event": "review", "journey": "ruby_furnace", "detail": "ds/divein (src v3)"}
+{"ts": "2026-08-23 06:36:50", "event": "caption", "journey": "ruby_furnace", "detail": "5 options, spot=True"}
+{"ts": "2026-08-23 06:36:50", "event": "render", "journey": "ruby_furnace", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-23 07:31:26", "event": "review", "journey": "magnetite_choir", "detail": "ds/divein (src v3)"}
+{"ts": "2026-08-23 07:32:21", "event": "caption", "journey": "magnetite_choir", "detail": "5 options, spot=True"}
+{"ts": "2026-08-23 07:32:21", "event": "render", "journey": "magnetite_choir", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-23 08:18:42", "event": "review", "journey": "wild_yeast", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-23 08:19:23", "event": "caption", "journey": "wild_yeast", "detail": "5 options, spot=True"}
+{"ts": "2026-08-23 08:19:23", "event": "render", "journey": "wild_yeast", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-23 08:22:51", "event": "music_pregen", "journey": "whale_fall_republic", "detail": "5 candidates"}
+{"ts": "2026-08-23 08:25:40", "event": "music_pregen", "journey": "lantern_mangrove", "detail": "5 candidates"}
+{"ts": "2026-08-23 08:29:35", "event": "music_pregen", "journey": "cobalt_rookery", "detail": "5 candidates"}
+{"ts": "2026-08-23 08:31:45", "event": "music_pregen", "journey": "ruby_furnace", "detail": "5 candidates"}
+{"ts": "2026-08-23 08:34:05", "event": "music_pregen", "journey": "magnetite_choir", "detail": "5 candidates"}
+{"ts": "2026-08-23 08:35:51", "event": "music_pregen", "journey": "wild_yeast", "detail": "5 candidates"}
+{"ts": "2026-08-23 08:35:51", "event": "batch_done", "detail": "batch done in 8.6h — 6 to Review"}
+{"ts": "2026-08-23 10:16:20", "event": "switch", "journey": "magnetite_choir", "detail": "ds/zoomout"}
+{"ts": "2026-08-23 10:17:34", "event": "switch", "journey": "ruby_furnace", "detail": "ds/zoomout"}
+{"ts": "2026-08-23 11:09:06", "event": "post", "journey": "caddis_masonry", "platform": "youtube", "detail": "https://youtube.com/shorts/4QtziTRVMKY"}
+{"ts": "2026-08-23 11:09:06", "event": "post_fail", "journey": "caddis_masonry", "platform": "instagram", "detail": "ERROR: Connection timed out"}
+{"ts": "2026-08-23 11:10:14", "event": "ig_stats", "detail": "44 reels, followers 60"}
+{"ts": "2026-08-23 11:10:32", "event": "ig_insights", "detail": "44 posts"}
+{"ts": "2026-08-23 11:10:33", "event": "post_gate", "detail": "fired (rc 0); next 2026-08-24 06:00"}
+{"ts": "2026-08-23 11:23:52", "event": "phase_shift", "journey": "ruby_furnace", "detail": "start @ 8.00s"}
+{"ts": "2026-08-23 11:23:52", "event": "music", "journey": "ruby_furnace"}
+{"ts": "2026-08-23 11:24:02", "event": "music_realign", "journey": "ruby_furnace", "detail": "5 candidates"}
+{"ts": "2026-08-23 11:32:40", "event": "review", "journey": "ruby_furnace"}
+{"ts": "2026-08-23 11:33:41", "event": "phase_shift", "journey": "ruby_furnace", "detail": "start @ 17.20s"}
+{"ts": "2026-08-23 11:33:41", "event": "music", "journey": "ruby_furnace"}
+{"ts": "2026-08-23 11:33:51", "event": "music_realign", "journey": "ruby_furnace", "detail": "5 candidates"}
+{"ts": "2026-08-23 11:35:00", "event": "review", "journey": "ruby_furnace"}
+{"ts": "2026-08-23 11:35:23", "event": "phase_shift", "journey": "ruby_furnace", "detail": "start @ 3.15s"}
+{"ts": "2026-08-23 11:35:23", "event": "music", "journey": "ruby_furnace"}
+{"ts": "2026-08-23 11:35:33", "event": "music_realign", "journey": "ruby_furnace", "detail": "5 candidates"}
+{"ts": "2026-08-23 11:37:07", "event": "music_choose", "journey": "ruby_furnace", "detail": "aurora_strings-wild"}
+{"ts": "2026-08-23 11:37:07", "event": "queued", "journey": "ruby_furnace"}
+{"ts": "2026-08-23 11:41:45", "event": "music_realign", "journey": "termite_citadel", "detail": "5 candidates"}
+{"ts": "2026-08-23 11:44:45", "event": "phase_shift", "journey": "whale_fall_republic", "detail": "start @ 3.00s"}
+{"ts": "2026-08-23 11:44:45", "event": "music", "journey": "whale_fall_republic"}
+{"ts": "2026-08-23 11:44:55", "event": "music_realign", "journey": "whale_fall_republic", "detail": "5 candidates"}
+{"ts": "2026-08-23 11:47:23", "event": "music_choose", "journey": "whale_fall_republic", "detail": "deep_archive-halftime"}
+{"ts": "2026-08-23 11:47:23", "event": "queued", "journey": "whale_fall_republic"}
+{"ts": "2026-08-23 11:49:09", "event": "music_choose", "journey": "termite_citadel", "detail": "wooden_orbit-wild"}
+{"ts": "2026-08-23 11:49:09", "event": "queued", "journey": "termite_citadel"}
+{"ts": "2026-08-23 12:00:26", "event": "ig_stats", "detail": "0 reels, followers 60"}
+{"ts": "2026-08-23 12:08:16", "event": "post", "journey": "whale_fall_republic", "platform": "youtube", "detail": "https://youtube.com/shorts/bGNpCpgsIFE"}
+{"ts": "2026-08-23 12:08:16", "event": "post_fail", "journey": "whale_fall_republic", "platform": "instagram", "detail": "ERROR: file chooser never opened"}
+{"ts": "2026-08-23 12:09:24", "event": "ig_stats", "detail": "44 reels, followers 62"}
+{"ts": "2026-08-23 12:09:42", "event": "ig_insights", "detail": "45 posts"}
+{"ts": "2026-08-23 12:09:42", "event": "post_gate", "detail": "fired (rc 0); next 2026-08-24 07:00"}
+{"ts": "2026-08-23 12:16:26", "event": "post", "journey": "whale_fall_republic", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcY5PRHxbtQ/"}
+{"ts": "2026-08-23 12:17:34", "event": "ig_stats", "detail": "44 reels, followers 62"}
+{"ts": "2026-08-23 12:17:53", "event": "ig_insights", "detail": "47 posts"}

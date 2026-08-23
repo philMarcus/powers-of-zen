@@ -643,6 +643,22 @@ def post_instagram(video_rel, caption, dry_run):
                   ".find(e=>e.textContent.trim()==='Create')?true:null", 30)
     tab.eval("[...document.querySelectorAll('a,div[role=\"button\"],span')]"
              ".find(e=>e.textContent.trim()==='Create')?.click()")
+    # PROFESSIONAL-ACCOUNT create menu (2026-08-23): converting the account (for insights)
+    # added an intermediate menu — Post / Live video / Ad — between Create and the composer.
+    # Both 08-23 failures were "file chooser never opened" behind it. Wait for EITHER the
+    # composer (personal-era behavior) or the menu; click Post when the menu shows.
+    got = wait_for(tab, "(function(){"
+                        "if([...document.querySelectorAll('button')]"
+                        ".find(b=>/select from computer/i.test(b.textContent)))return 'chooser';"
+                        "const t=[...document.querySelectorAll("
+                        "'a,div[role=\"button\"],span,div[role=\"menuitem\"]')];"
+                        "if(t.find(e=>e.textContent.trim()==='Live video')"
+                        "&&t.find(e=>e.textContent.trim()==='Post'))return 'menu';"
+                        "return null})()", 20)
+    if got == "menu":
+        tab.eval("[...document.querySelectorAll("
+                 "'a,div[role=\"button\"],span,div[role=\"menuitem\"]')]"
+                 ".find(e=>e.textContent.trim()==='Post')?.click()")
     wait_for(tab, "[...document.querySelectorAll('button')].find(b=>/select from computer/i.test(b.textContent))?true:null", 20)
     tab.choosefile("[...document.querySelectorAll('button')]"
                    ".find(b=>/select from computer/i.test(b.textContent)).click()",

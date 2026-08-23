@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-08-22 22:00:15",
+    "updated": "2026-08-23 12:18:12",
     "paused_platforms": [
       "tiktok"
     ],
@@ -4539,13 +4539,13 @@
       "journey": "whale_fall_republic",
       "model": "ds",
       "cut": "divein",
-      "file": "review_divein/whale_fall_republic_ds_divein.mp4",
+      "file": "review_divein/whale_fall_republic_ds_divein_shift.mp4",
       "title": "",
-      "caption": "A silver path of moonlight leads into the abyss 🌊 Can you spot Adam the Atom hiding in the endless dive? 👀 #bioluminescentdepths #cosmicbonejourney #endlessabyssloop #galacticwhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-      "yt_title": "A silver path of moonlight leads into the abyss 🌊",
+      "caption": "Bones whisper secrets in the dark, where life thrives in the cracks. 🦀 Can you spot Adam the Atom hiding in the cosmic dance? 👀 #BioluminescentDreams #CosmicBoneVoyage #InfiniteZoom #WhaleSkeletonGalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Bones whisper secrets in the dark, where life thrives in the cracks. 🦀",
       "yt_desc": "",
       "cameo": "adam",
-      "state": "rejected",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -4554,40 +4554,40 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/bGNpCpgsIFE",
+          "ts": "2026-08-23 12:08:16"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DcY5PRHxbtQ/",
+          "ts": "2026-08-23 12:16:26"
         }
       },
       "created": "2026-08-14",
       "caption_bodies": [
-        "A silver path of moonlight leads to the abyss 🌊✨",
-        "Whale bones whisper secrets in the deep 🦴💫",
-        "Bone rings hum with ancient light 🌀🌌",
-        "Marrow cells glow like wine-red stars 🩸💥",
-        "The galaxy folds into a dead star’s breath 🌠💨"
+        "A silver path of moonlight leads to the abyss... and beyond. 🌊",
+        "Bones whisper secrets in the dark, where life thrives in the cracks. 🦀",
+        "Dive deeper—where time and space dissolve into light. ✨",
+        "The galaxy hums in the hollows of a whale’s bones. 🌌",
+        "A loop of wonder, where the infinite folds into itself. 🌀"
       ],
       "yt_title_options": [
-        "A silver path of moonlight leads to the abyss 🌊✨",
-        "Whale bones whisper secrets in the deep 🦴💫",
-        "Bone rings hum with ancient light 🌀🌌",
-        "Marrow cells glow like wine-red stars 🩸💥",
-        "The galaxy folds into a dead star’s breath 🌠💨"
+        "A silver path of moonlight leads to the abyss... and beyond. 🌊",
+        "Bones whisper secrets in the dark, where life thrives in the cracks. 🦀",
+        "Dive deeper—where time and space dissolve into light. ✨",
+        "The galaxy hums in the hollows of a whale’s bones. 🌌",
+        "A loop of wonder, where the infinite folds into itself. 🌀"
       ],
       "spot_line": "Can you spot Adam the Atom hiding in the cosmic dance? 👀",
-      "caption_tags": "#bioluminescentdepths #cosmicbone #galacticwhispers #moleculardream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "caption_tags": "#BioluminescentDreams #CosmicBoneVoyage #InfiniteZoom #WhaleSkeletonGalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "spot_hook": true,
       "caption_options": [
-        "A silver path of moonlight leads to the abyss 🌊✨ Can you spot Adam the Atom hiding in the cosmic dance? 👀 #bioluminescentdepths #cosmicbone #galacticwhispers #moleculardream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Whale bones whisper secrets in the deep 🦴💫 Can you spot Adam the Atom hiding in the cosmic dance? 👀 #bioluminescentdepths #cosmicbone #galacticwhispers #moleculardream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Bone rings hum with ancient light 🌀🌌 Can you spot Adam the Atom hiding in the cosmic dance? 👀 #bioluminescentdepths #cosmicbone #galacticwhispers #moleculardream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Marrow cells glow like wine-red stars 🩸💥 Can you spot Adam the Atom hiding in the cosmic dance? 👀 #bioluminescentdepths #cosmicbone #galacticwhispers #moleculardream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "The galaxy folds into a dead star’s breath 🌠💨 Can you spot Adam the Atom hiding in the cosmic dance? 👀 #bioluminescentdepths #cosmicbone #galacticwhispers #moleculardream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+        "A silver path of moonlight leads to the abyss... and beyond. 🌊 Can you spot Adam the Atom hiding in the cosmic dance? 👀 #BioluminescentDreams #CosmicBoneVoyage #InfiniteZoom #WhaleSkeletonGalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Bones whisper secrets in the dark, where life thrives in the cracks. 🦀 Can you spot Adam the Atom hiding in the cosmic dance? 👀 #BioluminescentDreams #CosmicBoneVoyage #InfiniteZoom #WhaleSkeletonGalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Dive deeper—where time and space dissolve into light. ✨ Can you spot Adam the Atom hiding in the cosmic dance? 👀 #BioluminescentDreams #CosmicBoneVoyage #InfiniteZoom #WhaleSkeletonGalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The galaxy hums in the hollows of a whale’s bones. 🌌 Can you spot Adam the Atom hiding in the cosmic dance? 👀 #BioluminescentDreams #CosmicBoneVoyage #InfiniteZoom #WhaleSkeletonGalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A loop of wonder, where the infinite folds into itself. 🌀 Can you spot Adam the Atom hiding in the cosmic dance? 👀 #BioluminescentDreams #CosmicBoneVoyage #InfiniteZoom #WhaleSkeletonGalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
       ],
       "music_pregen": {
         "bpm": 90,
@@ -4616,10 +4616,10 @@
             "track": "output/music/whale_fall_republic_pulse1-deep_archive.flac",
             "aligned": "review/music/candidates/whale_fall_republic/pulse1-deep_archive.mp4",
             "seed": 2104,
-            "lock": 19.11,
+            "lock": 19.3,
             "bar_conf": 0.81,
             "kick": 0.73,
-            "score": 24.6,
+            "score": 24.84,
             "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a sunken republic working in the dark — deep sub swells under slow oceanic pads, the pulse tightening inward through bone and marrow, opening vast and cold at the atom, settling back to moonlit water, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
           },
           {
@@ -4629,10 +4629,10 @@
             "track": "output/music/whale_fall_republic_ember_pulse-wild.flac",
             "aligned": "review/music/candidates/whale_fall_republic/ember_pulse-wild.mp4",
             "seed": 1892,
-            "lock": 27.0,
+            "lock": 26.96,
             "bar_conf": 0.55,
             "kick": 0.42,
-            "score": 19.12,
+            "score": 19.1,
             "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a sunken republic working in the dark — deep sub swells under slow oceanic pads, the pulse tightening inward through bone and marrow, opening vast and cold at the atom, settling back to moonlit water, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
           },
           {
@@ -4642,10 +4642,10 @@
             "track": "output/music/whale_fall_republic_deep_archive-halftime.flac",
             "aligned": "review/music/candidates/whale_fall_republic/deep_archive-halftime.mp4",
             "seed": 1929,
-            "lock": 15.94,
+            "lock": 15.96,
             "bar_conf": 0.78,
             "kick": 0.67,
-            "score": 18.86,
+            "score": 18.88,
             "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a sunken republic working in the dark — deep sub swells under slow oceanic pads, the pulse tightening inward through bone and marrow, opening vast and cold at the atom, settling back to moonlit water, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
           },
           {
@@ -4666,10 +4666,89 @@
         "for_cut": "divein"
       },
       "music": {
-        "chosen": null,
-        "candidates": [],
-        "stale_from": "ds/divein"
-      }
+        "bpm": 90,
+        "bar": 2.667,
+        "key": "D minor",
+        "stage": "done",
+        "chosen": "deep_archive-halftime",
+        "candidates": [
+          {
+            "id": "night_market-wild",
+            "lane": "night_market",
+            "mood": "nocturnal, lantern-lit, wandering · downbeat",
+            "track": "output/music/whale_fall_republic_night_market-wild.flac",
+            "aligned": "review/music/candidates/whale_fall_republic/night_market-wild.mp4",
+            "seed": 1966,
+            "lock": 25.64,
+            "bar_conf": 0.82,
+            "kick": 0.78,
+            "score": 32.32,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a sunken republic working in the dark — deep sub swells under slow oceanic pads, the pulse tightening inward through bone and marrow, opening vast and cold at the atom, settling back to moonlit water, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "pulse1-deep_archive",
+            "lane": "deep_archive",
+            "mood": "vast, ancient, submerged · downbeat (pulse top-up)",
+            "track": "output/music/whale_fall_republic_pulse1-deep_archive.flac",
+            "aligned": "review/music/candidates/whale_fall_republic/pulse1-deep_archive.mp4",
+            "seed": 2104,
+            "lock": 20.31,
+            "bar_conf": 0.81,
+            "kick": 0.73,
+            "score": 24.84,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a sunken republic working in the dark — deep sub swells under slow oceanic pads, the pulse tightening inward through bone and marrow, opening vast and cold at the atom, settling back to moonlit water, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "ember_pulse-wild",
+            "lane": "ember_pulse",
+            "mood": "smoldering, dark, gravitational · halftime",
+            "track": "output/music/whale_fall_republic_ember_pulse-wild.flac",
+            "aligned": "review/music/candidates/whale_fall_republic/ember_pulse-wild.mp4",
+            "seed": 1892,
+            "lock": 23.72,
+            "bar_conf": 0.55,
+            "kick": 0.42,
+            "score": 19.1,
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a sunken republic working in the dark — deep sub swells under slow oceanic pads, the pulse tightening inward through bone and marrow, opening vast and cold at the atom, settling back to moonlit water, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "deep_archive-halftime",
+            "lane": "deep_archive",
+            "mood": "vast, ancient, submerged · halftime",
+            "track": "output/music/whale_fall_republic_deep_archive-halftime.flac",
+            "aligned": "review/music/candidates/whale_fall_republic/deep_archive-halftime.mp4",
+            "seed": 1929,
+            "lock": 14.54,
+            "bar_conf": 0.78,
+            "kick": 0.67,
+            "score": 18.88,
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a sunken republic working in the dark — deep sub swells under slow oceanic pads, the pulse tightening inward through bone and marrow, opening vast and cold at the atom, settling back to moonlit water, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "analog_dawn-wild",
+            "lane": "analog_dawn",
+            "mood": "nostalgic, golden, waking · downbeat",
+            "track": "output/music/whale_fall_republic_analog_dawn-wild.flac",
+            "aligned": "review/music/candidates/whale_fall_republic/analog_dawn-wild.mp4",
+            "seed": 1855,
+            "lock": 4.37,
+            "bar_conf": -0.06,
+            "kick": -0.02,
+            "score": 0.47,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a sunken republic working in the dark — deep sub swells under slow oceanic pads, the pulse tightening inward through bone and marrow, opening vast and cold at the atom, settling back to moonlit water, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      },
+      "engine_params": {
+        "parallax_gain": 0.8,
+        "resolve_persist": false,
+        "camera_micro": false,
+        "seed": 1234
+      },
+      "start_t": 3.0,
+      "orig_file": "review_divein/whale_fall_republic_ds_divein.mp4"
     },
     {
       "journey": "moth_orchard_night",
@@ -5495,7 +5574,7 @@
       "yt_title": "Dive into the glowing heart of a mangrove world 🌿✨",
       "yt_desc": "",
       "cameo": "tina",
-      "state": "rejected",
+      "state": "review",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -5516,28 +5595,28 @@
       },
       "created": "2026-08-16",
       "caption_bodies": [
-        "Dive into the glowing heart of a mangrove world 🌿✨",
-        "Where water meets wonder in endless depth 💧🔍",
-        "A journey through jewel-box seas and starlit voids 🌊🌌",
-        "Lost in the luminous labyrinth of life’s smallest scales 🦠🔥",
-        "From microcosm to cosmos, a loop of light and shadow 🌀💫"
+        "Dive into the glowing heart of the mangrove’s secret night 🌿✨",
+        "Where water splits the world and fireflies dance in the deep 💧🔥",
+        "A galaxy of shells drifts in the emerald abyss 🌊🪸",
+        "Silica dreams weave through the void, lit by starlight 🌌✨",
+        "The ocean world’s glow braids the dark like a living thread 🌊💫"
       ],
       "yt_title_options": [
-        "Dive into the glowing heart of a mangrove world 🌿✨",
-        "Where water meets wonder in endless depth 💧🔍",
-        "A journey through jewel-box seas and starlit voids 🌊🌌",
-        "Lost in the luminous labyrinth of life’s smallest scales 🦠🔥",
-        "From microcosm to cosmos, a loop of light and shadow 🌀💫"
+        "Dive into the glowing heart of the mangrove’s secret night 🌿✨",
+        "Where water splits the world and fireflies dance in the deep 💧🔥",
+        "A galaxy of shells drifts in the emerald abyss 🌊🪸",
+        "Silica dreams weave through the void, lit by starlight 🌌✨",
+        "The ocean world’s glow braids the dark like a living thread 🌊💫"
       ],
-      "spot_line": "Can you spot Tina the DNA hiding in this endless dive? 👀",
-      "caption_tags": "#bioluminescentdive #microscopicwonders #cosmicscalejourney #luminousloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_line": "Can you spot Tina the DNA hiding in the glow? 👀",
+      "caption_tags": "#bioluminescentdream #microscopicgalaxy #mangrovenight #silicauniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "spot_hook": true,
       "caption_options": [
-        "Dive into the glowing heart of a mangrove world 🌿✨ Can you spot Tina the DNA hiding in this endless dive? 👀 #bioluminescentdive #microscopicwonders #cosmicscalejourney #luminousloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Where water meets wonder in endless depth 💧🔍 Can you spot Tina the DNA hiding in this endless dive? 👀 #bioluminescentdive #microscopicwonders #cosmicscalejourney #luminousloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "A journey through jewel-box seas and starlit voids 🌊🌌 Can you spot Tina the DNA hiding in this endless dive? 👀 #bioluminescentdive #microscopicwonders #cosmicscalejourney #luminousloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Lost in the luminous labyrinth of life’s smallest scales 🦠🔥 Can you spot Tina the DNA hiding in this endless dive? 👀 #bioluminescentdive #microscopicwonders #cosmicscalejourney #luminousloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "From microcosm to cosmos, a loop of light and shadow 🌀💫 Can you spot Tina the DNA hiding in this endless dive? 👀 #bioluminescentdive #microscopicwonders #cosmicscalejourney #luminousloop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+        "Dive into the glowing heart of the mangrove’s secret night 🌿✨ Can you spot Tina the DNA hiding in the glow? 👀 #bioluminescentdream #microscopicgalaxy #mangrovenight #silicauniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where water splits the world and fireflies dance in the deep 💧🔥 Can you spot Tina the DNA hiding in the glow? 👀 #bioluminescentdream #microscopicgalaxy #mangrovenight #silicauniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A galaxy of shells drifts in the emerald abyss 🌊🪸 Can you spot Tina the DNA hiding in the glow? 👀 #bioluminescentdream #microscopicgalaxy #mangrovenight #silicauniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Silica dreams weave through the void, lit by starlight 🌌✨ Can you spot Tina the DNA hiding in the glow? 👀 #bioluminescentdream #microscopicgalaxy #mangrovenight #silicauniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The ocean world’s glow braids the dark like a living thread 🌊💫 Can you spot Tina the DNA hiding in the glow? 👀 #bioluminescentdream #microscopicgalaxy #mangrovenight #silicauniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
       ],
       "music_pregen": {
         "bpm": 103,
@@ -5614,6 +5693,12 @@
         ],
         "for_model": "ds",
         "for_cut": "divein"
+      },
+      "engine_params": {
+        "parallax_gain": 0.7,
+        "resolve_persist": false,
+        "camera_micro": false,
+        "seed": 1234
       }
     },
     {
@@ -5836,7 +5921,7 @@
       "yt_title": "A cosmic dance of violet voids and rose-gold threads 🌌",
       "yt_desc": "",
       "cameo": "lorraine",
-      "state": "music",
+      "state": "queued",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -5962,8 +6047,8 @@
         "bpm": 120,
         "bar": 2.0,
         "key": "G minor",
-        "stage": "review",
-        "chosen": null,
+        "stage": "done",
+        "chosen": "wooden_orbit-wild",
         "candidates": [
           {
             "id": "music_box-wild",
@@ -6033,7 +6118,8 @@
         ],
         "for_model": "ds",
         "for_cut": "divein"
-      }
+      },
+      "order": 1
     },
     {
       "journey": "cobalt_rookery",
@@ -6045,7 +6131,7 @@
       "yt_title": "A sun’s last breath in a sea of stars 🌌",
       "yt_desc": "",
       "cameo": "janet",
-      "state": "rejected",
+      "state": "review",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -6066,28 +6152,28 @@
       },
       "created": "2026-08-17",
       "caption_bodies": [
-        "A sun in a sea of stars, a world in a sea of ice, a cliff in a sea of birds...",
-        "Brass light on cobalt waves, guano-streaked cliffs, and the endless weave beneath.",
-        "From star clusters to shell membranes—dive deeper into infinity 🌊✨",
-        "Where every zoom reveals another world, and every loop feels like coming home.",
-        "A journey through scales: from galaxies to atoms, all bound in brass and cobalt."
+        "A sun in a sea of stars, a world in a sea of ice, a cliff in a sea of birds, a shell in a sea of atoms...",
+        "From cosmic fire to the heart of a shell, the universe folds in on itself forever...",
+        "Brass light on cobalt waves, guano-streaked cliffs, and the glittering void between atoms...",
+        "Every scale a loop, every loop a universe—dive deeper, the pattern never ends...",
+        "A journey through the infinite, where every zoom reveals another jewel-bright mystery..."
       ],
       "yt_title_options": [
-        "A sun in a sea of stars, a world in a sea of ice, a cliff in a sea of birds...",
-        "Brass light on cobalt waves, guano-streaked cliffs, and the endless weave beneath.",
-        "From star clusters to shell membranes—dive deeper into infinity 🌊✨",
-        "Where every zoom reveals another world, and every loop feels like coming home.",
-        "A journey through scales: from galaxies to atoms, all bound in brass and cobalt."
+        "A sun in a sea of stars, a world in a sea of ice, a cliff in a sea of birds, a shell in a sea of ato",
+        "From cosmic fire to the heart of a shell, the universe folds in on itself forever...",
+        "Brass light on cobalt waves, guano-streaked cliffs, and the glittering void between atoms...",
+        "Every scale a loop, every loop a universe—dive deeper, the pattern never ends...",
+        "A journey through the infinite, where every zoom reveals another jewel-bright mystery..."
       ],
-      "spot_line": "Can you spot Janet the Planet hiding somewhere in this cosmic dive? 👀",
-      "caption_tags": "#PowersOfZen #CosmicDive #InfiniteLoop #BrassAndCobalt #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_line": "Can you spot Janet the Planet hiding in the cosmic folds? 👀",
+      "caption_tags": "#cosmiczoom #infiniteuniverse #jewelbrightworlds #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "spot_hook": true,
       "caption_options": [
-        "A sun in a sea of stars, a world in a sea of ice, a cliff in a sea of birds... Can you spot Janet the Planet hiding somewhere in this cosmic dive? 👀 #PowersOfZen #CosmicDive #InfiniteLoop #BrassAndCobalt #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Brass light on cobalt waves, guano-streaked cliffs, and the endless weave beneath. Can you spot Janet the Planet hiding somewhere in this cosmic dive? 👀 #PowersOfZen #CosmicDive #InfiniteLoop #BrassAndCobalt #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "From star clusters to shell membranes—dive deeper into infinity 🌊✨ Can you spot Janet the Planet hiding somewhere in this cosmic dive? 👀 #PowersOfZen #CosmicDive #InfiniteLoop #BrassAndCobalt #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Where every zoom reveals another world, and every loop feels like coming home. Can you spot Janet the Planet hiding somewhere in this cosmic dive? 👀 #PowersOfZen #CosmicDive #InfiniteLoop #BrassAndCobalt #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "A journey through scales: from galaxies to atoms, all bound in brass and cobalt. Can you spot Janet the Planet hiding somewhere in this cosmic dive? 👀 #PowersOfZen #CosmicDive #InfiniteLoop #BrassAndCobalt #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+        "A sun in a sea of stars, a world in a sea of ice, a cliff in a sea of birds, a shell in a sea of atoms... Can you spot Janet the Planet hiding in the cosmic folds? 👀 #cosmiczoom #infiniteuniverse #jewelbrightworlds #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "From cosmic fire to the heart of a shell, the universe folds in on itself forever... Can you spot Janet the Planet hiding in the cosmic folds? 👀 #cosmiczoom #infiniteuniverse #jewelbrightworlds #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Brass light on cobalt waves, guano-streaked cliffs, and the glittering void between atoms... Can you spot Janet the Planet hiding in the cosmic folds? 👀 #cosmiczoom #infiniteuniverse #jewelbrightworlds #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Every scale a loop, every loop a universe—dive deeper, the pattern never ends... Can you spot Janet the Planet hiding in the cosmic folds? 👀 #cosmiczoom #infiniteuniverse #jewelbrightworlds #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A journey through the infinite, where every zoom reveals another jewel-bright mystery... Can you spot Janet the Planet hiding in the cosmic folds? 👀 #cosmiczoom #infiniteuniverse #jewelbrightworlds #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
       ],
       "music_pregen": {
         "bpm": 90,
@@ -6164,19 +6250,25 @@
         ],
         "for_model": "ds",
         "for_cut": "divein"
+      },
+      "engine_params": {
+        "parallax_gain": 0.9,
+        "resolve_persist": false,
+        "camera_micro": false,
+        "seed": 1234
       }
     },
     {
       "journey": "ruby_furnace",
       "model": "ds",
-      "cut": "divein",
-      "file": "review_divein/ruby_furnace_ds_divein.mp4",
+      "cut": "zoomout",
+      "file": "production/ruby_furnace_ds_shift.mp4",
       "title": "",
-      "caption": "A hummingbird’s ruby throat pulses like a star 🌌 Can you spot Dora the Flora hiding in the cosmic garden? 👀 #cosmicgarden #powersofzen #infinitezoom #stellarwhispers #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-      "yt_title": "A hummingbird’s ruby throat pulses like a star 🌌",
+      "caption": "A cosmic dance from star to garden, atom to atom 🌌 Can you spot Dora the Flora hiding in the loop? 👀 #cosmicgarden #infinitezoom #jewelboxuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A cosmic dance from star to garden, atom to atom 🌌",
       "yt_desc": "",
       "cameo": "dora",
-      "state": "rejected",
+      "state": "queued",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -6197,30 +6289,30 @@
       },
       "created": "2026-08-17",
       "caption_bodies": [
-        "A cosmic dance of light and shadow, from stars to cells 🌌",
-        "Dive into the heart of a hummingbird’s ruby glow ✨",
-        "From galaxies to gardens, every scale is alive with wonder",
-        "The universe unfolds in loops of luminous detail 🔍",
-        "A journey through time and space, one breath at a time"
+        "A cosmic dance from star to garden, atom to atom 🌌",
+        "Infinite zoom through the heart of a hummingbird's glow",
+        "From red giants to ruby throats, the universe unfolds",
+        "A never-ending dive into the jewel-box of existence",
+        "Where stars and flowers meet in the loop of infinity"
       ],
       "yt_title_options": [
-        "A cosmic dance of light and shadow, from stars to cells 🌌",
-        "Dive into the heart of a hummingbird’s ruby glow ✨",
-        "From galaxies to gardens, every scale is alive with wonder",
-        "The universe unfolds in loops of luminous detail 🔍",
-        "A journey through time and space, one breath at a time"
+        "A cosmic dance from star to garden, atom to atom 🌌",
+        "Infinite zoom through the heart of a hummingbird's glow",
+        "From red giants to ruby throats, the universe unfolds",
+        "A never-ending dive into the jewel-box of existence",
+        "Where stars and flowers meet in the loop of infinity"
       ],
-      "spot_line": "Can you spot Dora the Flora hiding in this infinite loop? 👀",
-      "caption_tags": "#cosmicjourney #infinitescale #luminousrealm #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_line": "Can you spot Dora the Flora hiding in the loop? 👀",
+      "caption_tags": "#cosmicgarden #infinitezoom #jewelboxuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "spot_hook": true,
       "caption_options": [
-        "A cosmic dance of light and shadow, from stars to cells 🌌 Can you spot Dora the Flora hiding in this infinite loop? 👀 #cosmicjourney #infinitescale #luminousrealm #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Dive into the heart of a hummingbird’s ruby glow ✨ Can you spot Dora the Flora hiding in this infinite loop? 👀 #cosmicjourney #infinitescale #luminousrealm #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "From galaxies to gardens, every scale is alive with wonder Can you spot Dora the Flora hiding in this infinite loop? 👀 #cosmicjourney #infinitescale #luminousrealm #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "The universe unfolds in loops of luminous detail 🔍 Can you spot Dora the Flora hiding in this infinite loop? 👀 #cosmicjourney #infinitescale #luminousrealm #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "A journey through time and space, one breath at a time Can you spot Dora the Flora hiding in this infinite loop? 👀 #cosmicjourney #infinitescale #luminousrealm #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+        "A cosmic dance from star to garden, atom to atom 🌌 Can you spot Dora the Flora hiding in the loop? 👀 #cosmicgarden #infinitezoom #jewelboxuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Infinite zoom through the heart of a hummingbird's glow Can you spot Dora the Flora hiding in the loop? 👀 #cosmicgarden #infinitezoom #jewelboxuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "From red giants to ruby throats, the universe unfolds Can you spot Dora the Flora hiding in the loop? 👀 #cosmicgarden #infinitezoom #jewelboxuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A never-ending dive into the jewel-box of existence Can you spot Dora the Flora hiding in the loop? 👀 #cosmicgarden #infinitezoom #jewelboxuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where stars and flowers meet in the loop of infinity Can you spot Dora the Flora hiding in the loop? 👀 #cosmicgarden #infinitezoom #jewelboxuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
       ],
-      "start_t": 8.0,
+      "start_t": 3.15,
       "music_pregen": {
         "bpm": 120,
         "bar": 2.0,
@@ -6296,7 +6388,91 @@
         ],
         "for_model": "ds",
         "for_cut": "divein"
-      }
+      },
+      "engine_params": {
+        "parallax_gain": 0.9,
+        "resolve_persist": false,
+        "camera_micro": false,
+        "seed": 1234
+      },
+      "orig_file": "production/ruby_furnace_ds.mp4",
+      "music": {
+        "bpm": 120,
+        "bar": 2.0,
+        "key": "C minor",
+        "stage": "done",
+        "chosen": "aurora_strings-wild",
+        "candidates": [
+          {
+            "id": "ember_pulse-b",
+            "lane": "ember_pulse",
+            "mood": "smoldering, dark, gravitational · halftime",
+            "track": "output/music/ruby_furnace_ember_pulse-b.flac",
+            "aligned": "review/music/candidates/ruby_furnace/ember_pulse-b.mp4",
+            "seed": 32867,
+            "lock": 27.56,
+            "bar_conf": 0.57,
+            "kick": 0.46,
+            "score": 19.66,
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a smouldering fall through fire and blood — one deep kick on every downbeat under smoky low pads, the pulse heaviest at the garden and again on the red giant's floor, thinning to a single low drone through the cell and molecule scales, a struck low hit where the nucleus opens into the star, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "aurora_strings-wild",
+            "lane": "aurora_strings",
+            "mood": "polar, shimmering, slow dawn · downbeat",
+            "track": "output/music/ruby_furnace_aurora_strings-wild.flac",
+            "aligned": "review/music/candidates/ruby_furnace/aurora_strings-wild.mp4",
+            "seed": 32941,
+            "lock": 13.43,
+            "bar_conf": 0.51,
+            "kick": 0.44,
+            "score": 9.14,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a smouldering fall through fire and blood — one deep kick on every downbeat under smoky low pads, the pulse heaviest at the garden and again on the red giant's floor, thinning to a single low drone through the cell and molecule scales, a struck low hit where the nucleus opens into the star, bowed string pad swells and sparse harp plucks, silvery and cold, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "tide_organ-wild",
+            "lane": "tide_organ",
+            "mood": "tidal, breathing, mineral · heartbeat",
+            "track": "output/music/ruby_furnace_tide_organ-wild.flac",
+            "aligned": "review/music/candidates/ruby_furnace/tide_organ-wild.mp4",
+            "seed": 33052,
+            "lock": 11.29,
+            "bar_conf": 0.48,
+            "kick": 0.33,
+            "score": 6.23,
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a smouldering fall through fire and blood — one deep kick on every downbeat under smoky low pads, the pulse heaviest at the garden and again on the red giant's floor, thinning to a single low drone through the cell and molecule scales, a struck low hit where the nucleus opens into the star, a breathy reed organ and soft water textures over a deep sub pulse, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "glass_chapel-wild",
+            "lane": "glass_chapel",
+            "mood": "sacred, luminous, weightless · downbeat",
+            "track": "output/music/ruby_furnace_glass_chapel-wild.flac",
+            "aligned": "review/music/candidates/ruby_furnace/glass_chapel-wild.mp4",
+            "seed": 32978,
+            "lock": 7.94,
+            "bar_conf": 0.62,
+            "kick": 0.37,
+            "score": 5.55,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a smouldering fall through fire and blood — one deep kick on every downbeat under smoky low pads, the pulse heaviest at the garden and again on the red giant's floor, thinning to a single low drone through the cell and molecule scales, a struck low hit where the nucleus opens into the star, crystalline glass bells and a soft distant choir pad, airy shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "ember_pulse-third_answer",
+            "lane": "ember_pulse",
+            "mood": "smoldering, dark, gravitational · third_answer",
+            "track": "output/music/ruby_furnace_ember_pulse-third_answer.flac",
+            "aligned": "review/music/candidates/ruby_furnace/ember_pulse-third_answer.mp4",
+            "seed": 33089,
+            "lock": 7.21,
+            "bar_conf": 0.56,
+            "kick": 0.42,
+            "score": 5.3,
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a smouldering fall through fire and blood — one deep kick on every downbeat under smoky low pads, the pulse heaviest at the garden and again on the red giant's floor, thinning to a single low drone through the cell and molecule scales, a struck low hit where the nucleus opens into the star, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "zoomout"
+      },
+      "order": 2
     },
     {
       "journey": "sundew_snare",
@@ -6511,14 +6687,14 @@
     {
       "journey": "magnetite_choir",
       "model": "ds",
-      "cut": "divein",
-      "file": "review_divein/magnetite_choir_ds_divein.mp4",
+      "cut": "zoomout",
+      "file": "production/magnetite_choir_ds.mp4",
       "title": "",
       "caption": "Diving through the iron heart of a frozen world 🌌 Can you spot Adam the Atom hiding in the infinite? #lodestoneauroras #atomicfractals #magneticdreaming #ironoctahedra #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "yt_title": "Diving through the iron heart of a frozen world 🌌",
       "yt_desc": "",
       "cameo": "adam",
-      "state": "rejected",
+      "state": "review",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -6539,28 +6715,28 @@
       },
       "created": "2026-08-17",
       "caption_bodies": [
-        "A universe of iron, glowing in the dark 🌌",
-        "Dive into the heart of a lodestone’s secret light",
-        "Where atoms bend and the void hums with green fire ⚛️",
-        "Lost in the lattice, where octahedra dance in amber",
-        "A fractured crystal sings under auroras"
+        "Dive into the heart of a lodestone world, where auroras whisper secrets to iron and atoms dance in the dark 🌌",
+        "A universe of iron and light, where every step reveals a deeper glow and a brighter spark ✨",
+        "Lost in the lattice, where octahedra bend and atoms shatter under the weight of infinite scale 🌀",
+        "The iron sings in violet and green, a symphony of scales where nothing is small and nothing is still 🎶",
+        "From auroras to atoms, the world unravels in loops of light and shadow, forever folding into itself 🔄"
       ],
       "yt_title_options": [
-        "A universe of iron, glowing in the dark 🌌",
-        "Dive into the heart of a lodestone’s secret light",
-        "Where atoms bend and the void hums with green fire ⚛️",
-        "Lost in the lattice, where octahedra dance in amber",
-        "A fractured crystal sings under auroras"
+        "Dive into the heart of a lodestone world, where auroras whisper secrets to iron and atoms dance in t",
+        "A universe of iron and light, where every step reveals a deeper glow and a brighter spark ✨",
+        "Lost in the lattice, where octahedra bend and atoms shatter under the weight of infinite scale 🌀",
+        "The iron sings in violet and green, a symphony of scales where nothing is small and nothing is still",
+        "From auroras to atoms, the world unravels in loops of light and shadow, forever folding into itself "
       ],
-      "spot_line": "Can you spot Adam the Atom hiding in the glow? 👀",
-      "caption_tags": "#lodestonecosmos #atomicaurora #ironvoid #octahedradream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_line": "Can you spot Adam the Atom hiding in the atomic abyss? 👀",
+      "caption_tags": "#lodestonecosmos #atomicauroras #ironlattice #infinitescale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "spot_hook": true,
       "caption_options": [
-        "A universe of iron, glowing in the dark 🌌 Can you spot Adam the Atom hiding in the glow? 👀 #lodestonecosmos #atomicaurora #ironvoid #octahedradream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Dive into the heart of a lodestone’s secret light Can you spot Adam the Atom hiding in the glow? 👀 #lodestonecosmos #atomicaurora #ironvoid #octahedradream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Where atoms bend and the void hums with green fire ⚛️ Can you spot Adam the Atom hiding in the glow? 👀 #lodestonecosmos #atomicaurora #ironvoid #octahedradream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Lost in the lattice, where octahedra dance in amber Can you spot Adam the Atom hiding in the glow? 👀 #lodestonecosmos #atomicaurora #ironvoid #octahedradream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "A fractured crystal sings under auroras Can you spot Adam the Atom hiding in the glow? 👀 #lodestonecosmos #atomicaurora #ironvoid #octahedradream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+        "Dive into the heart of a lodestone world, where auroras whisper secrets to iron and atoms dance in the dark 🌌 Can you spot Adam the Atom hiding in the atomic abyss? 👀 #lodestonecosmos #atomicauroras #ironlattice #infinitescale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A universe of iron and light, where every step reveals a deeper glow and a brighter spark ✨ Can you spot Adam the Atom hiding in the atomic abyss? 👀 #lodestonecosmos #atomicauroras #ironlattice #infinitescale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Lost in the lattice, where octahedra bend and atoms shatter under the weight of infinite scale 🌀 Can you spot Adam the Atom hiding in the atomic abyss? 👀 #lodestonecosmos #atomicauroras #ironlattice #infinitescale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The iron sings in violet and green, a symphony of scales where nothing is small and nothing is still 🎶 Can you spot Adam the Atom hiding in the atomic abyss? 👀 #lodestonecosmos #atomicauroras #ironlattice #infinitescale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "From auroras to atoms, the world unravels in loops of light and shadow, forever folding into itself 🔄 Can you spot Adam the Atom hiding in the atomic abyss? 👀 #lodestonecosmos #atomicauroras #ironlattice #infinitescale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
       ],
       "music_pregen": {
         "bpm": 90,
@@ -6637,6 +6813,12 @@
         ],
         "for_model": "ds",
         "for_cut": "divein"
+      },
+      "engine_params": {
+        "parallax_gain": 1.0,
+        "resolve_persist": false,
+        "camera_micro": false,
+        "seed": 1234
       }
     },
     {
@@ -7653,14 +7835,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/4QtziTRVMKY",
+          "ts": "2026-08-23 11:09:06"
         },
         "instagram": {
-          "status": "pending",
+          "status": "failed",
           "url": "",
-          "ts": ""
+          "ts": "2026-08-23 11:09:06"
         }
       },
       "created": "2026-08-19",
@@ -7842,7 +8024,7 @@
         "for_model": "ds",
         "for_cut": "zoomout"
       },
-      "order": 3
+      "order": 0
     },
     {
       "journey": "wild_yeast",
@@ -7854,7 +8036,7 @@
       "yt_title": "A sourdough’s secret world, spiraling into infinity 🌌",
       "yt_desc": "",
       "cameo": "tina",
-      "state": "rejected",
+      "state": "review",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -7876,27 +8058,27 @@
       "created": "2026-08-19",
       "caption_bodies": [
         "A sourdough’s secret world, spiraling into infinity 🌌",
-        "Golden crumbs dissolve into amber galaxies ✨",
-        "Yeast towers rise in a honeyed void 🍯",
-        "Ribbon chains weave through molten time ⏳",
-        "Starch shells echo with the glow of forgotten dawns 🌅"
+        "Golden crumbs dissolve into amber galaxies",
+        "Yeast towers hum in the honeyed dark",
+        "Ribbon chains coil through molten time",
+        "Starch shells whisper to the void"
       ],
       "yt_title_options": [
         "A sourdough’s secret world, spiraling into infinity 🌌",
-        "Golden crumbs dissolve into amber galaxies ✨",
-        "Yeast towers rise in a honeyed void 🍯",
-        "Ribbon chains weave through molten time ⏳",
-        "Starch shells echo with the glow of forgotten dawns 🌅"
+        "Golden crumbs dissolve into amber galaxies",
+        "Yeast towers hum in the honeyed dark",
+        "Ribbon chains coil through molten time",
+        "Starch shells whisper to the void"
       ],
-      "spot_line": "Can you spot Tina the DNA hiding in this endless dive? 👀",
-      "caption_tags": "#BreadCosmos #MicrobialInfinity #GoldenZoom #TinyUniverses #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_line": "Can you spot Tina the DNA hiding in the loop? 👀",
+      "caption_tags": "#BreadCosmos #MicrobialWonders #GoldenDepths #InfiniteLoops #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "spot_hook": true,
       "caption_options": [
-        "A sourdough’s secret world, spiraling into infinity 🌌 Can you spot Tina the DNA hiding in this endless dive? 👀 #BreadCosmos #MicrobialInfinity #GoldenZoom #TinyUniverses #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Golden crumbs dissolve into amber galaxies ✨ Can you spot Tina the DNA hiding in this endless dive? 👀 #BreadCosmos #MicrobialInfinity #GoldenZoom #TinyUniverses #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Yeast towers rise in a honeyed void 🍯 Can you spot Tina the DNA hiding in this endless dive? 👀 #BreadCosmos #MicrobialInfinity #GoldenZoom #TinyUniverses #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Ribbon chains weave through molten time ⏳ Can you spot Tina the DNA hiding in this endless dive? 👀 #BreadCosmos #MicrobialInfinity #GoldenZoom #TinyUniverses #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Starch shells echo with the glow of forgotten dawns 🌅 Can you spot Tina the DNA hiding in this endless dive? 👀 #BreadCosmos #MicrobialInfinity #GoldenZoom #TinyUniverses #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+        "A sourdough’s secret world, spiraling into infinity 🌌 Can you spot Tina the DNA hiding in the loop? 👀 #BreadCosmos #MicrobialWonders #GoldenDepths #InfiniteLoops #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Golden crumbs dissolve into amber galaxies Can you spot Tina the DNA hiding in the loop? 👀 #BreadCosmos #MicrobialWonders #GoldenDepths #InfiniteLoops #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Yeast towers hum in the honeyed dark Can you spot Tina the DNA hiding in the loop? 👀 #BreadCosmos #MicrobialWonders #GoldenDepths #InfiniteLoops #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Ribbon chains coil through molten time Can you spot Tina the DNA hiding in the loop? 👀 #BreadCosmos #MicrobialWonders #GoldenDepths #InfiniteLoops #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Starch shells whisper to the void Can you spot Tina the DNA hiding in the loop? 👀 #BreadCosmos #MicrobialWonders #GoldenDepths #InfiniteLoops #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
       ],
       "music_pregen": {
         "bpm": 103,
@@ -7973,6 +8155,12 @@
         ],
         "for_model": "ds",
         "for_cut": "divein"
+      },
+      "engine_params": {
+        "parallax_gain": 0.5,
+        "resolve_persist": false,
+        "camera_micro": false,
+        "seed": 1234
       }
     },
     {
