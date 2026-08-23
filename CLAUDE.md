@@ -147,7 +147,10 @@ parked; micro default-off. REQUEUE: all 15 pre-parallax review videos rejected �
 re-queued FRONT same-seed (music termite_citadel + queued caddis_masonry untouched).
 TONIGHT: one-off 00:00 render task (PowersOfZen-render-once — DELETE it after) + budget
 430 + LLLLSS prepended (RESTORE 340 / drop LLLLSS once the backlog drains); verified pick
-whale_fall(.8) coral(.8) lantern(.7) cobalt(.9) magnetite(1.0) wild_yeast(.5) ≈ 7h.
+whale_fall(.8) lantern(.7) cobalt(.9) ruby_furnace(.9) magnetite(1.0) wild_yeast(.5)
+≈ 6.8h. coral_synapse UNQUEUED (Phil: enough corals — v4=0.5/v5=0.7/v3=1.0 same-seed
+already exist; when he picks a gain, ingest GPU-free via queue_review --src, note in its
+registry entry).
 NEXT FRONTS (Phil): (1) SEAMS still not good enough (suspect IPA params — see PLAN "NEXT
 FRONT"); (2) DONE same night — reposts/saves/shares SHIPPED: Phil converted the account
 to professional; IG web still had no insights UI, but META BUSINESS SUITE accepts

@@ -267,12 +267,9 @@
       "order": 0
     },
     "coral_synapse": {
-      "state": "queued",
-      "force": true,
       "new_seed": false,
-      "ts": "2026-08-22 22:00:15",
-      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
-      "order": 1
+      "ts": "2026-08-22 22:25:27",
+      "note": "NOT re-rendering (Phil 2026-08-22 night: enough corals) — parallax versions already exist: v4=0.5, v5=0.7, v3=1.0, same seed. When Phil picks a gain, ingest it GPU-free: queue_review.py coral_synapse ds --src output/coral_synapse/<vN>"
     },
     "lantern_mangrove": {
       "state": "queued",
@@ -379,5 +376,5 @@
       "order": 14
     }
   },
-  "updated": "2026-08-22 22:00:34"
+  "updated": "2026-08-22 22:25:27"
 }
