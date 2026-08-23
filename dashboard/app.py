@@ -673,7 +673,16 @@ with tabs[2]:  # MUSIC — audition/generate a track, then send to Production
             audition_candidates(v, choose_advances_to="queued")
         cc = st.columns([1, 1, 4])
         if cc[0].button("↩ Back to Review", key=f"back_{v['journey']}"):
-            set_state(v["journey"], "review"); st.rerun()
+            # REVERT to the UN-SHIFTED cut (Phil 2026-08-23): the start marker is applied
+            # against the original on approve, so the review player must SHOW the original.
+            # Leaving v.file on the _shift copy made re-marking a start un-doable (the time
+            # entered never matched what was on screen) — the ruby_furnace class of bug.
+            dd2 = data(); vv = pl.get(dd2, v["journey"])
+            if vv.get("orig_file"):
+                vv["file"] = vv["orig_file"]
+            vv["state"] = "review"
+            pl.save(dd2); pl.telem("state", journey=v["journey"], detail="review (unshifted)")
+            st.rerun()
         if cc[1].button("🔇 Skip music → Production", key=f"skip_{v['journey']}"):
             set_state(v["journey"], "queued"); st.rerun()
         st.divider()

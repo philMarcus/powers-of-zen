@@ -99,6 +99,12 @@ def main():
             v["engine_params"] = ep
         if not already:   # keep the first-ingested model/cut as the displayed default
             v.update({"model": model, "cut": "divein", "file": divein_rel})
+            # a NEW render invalidates any earlier phase-shift bookkeeping: a stale
+            # orig_file would make the next approve shift the OLD video (the ruby_furnace
+            # production anomaly, 2026-08-23), and a stale start_t marks a moment that no
+            # longer exists in this render
+            v.pop("orig_file", None)
+            v.pop("start_t", None)
     else:
         dd["videos"].append({
             "journey": journey, "model": model, "cut": "divein", "file": divein_rel,
