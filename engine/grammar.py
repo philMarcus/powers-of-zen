@@ -40,6 +40,19 @@ T_MORPH = "the whole view transforming, resolving into {scene}, {style}"
 # 0 renders THIS instead: the scene wide, no target. From frame 1 the normal schedule resumes —
 # the same scene words carry, and the travel denoise inherits the wide framing.
 T_ESTABLISH = "a vast wide panoramic view of {scene}, seen from far away, {style}"
+# SCALE-AWARE establish (Phil 2026-08-23, seam forensics): "panoramic view ... seen from
+# far away" is landscape-photography language — on cosmic/abstract render_starts
+# DreamShaper's postcard prior composed LAND-UNDER-SKY every time (whale_fall's 10^14
+# stellar nursery opened on desert rocks + flowers under a Milky Way). Cards far from
+# human scale get a template with no vista/viewpoint words and an explicit no-ground
+# clause; dive.py adds landscape negatives on the same frames (ESTABLISH_SPACE_NEG).
+T_ESTABLISH_SPACE = ("an immense expanse of {scene}, stretching beyond the frame in every "
+                     "direction, no ground, no horizon, seen from within, {style}")
+SPACE_EXP_HI = 6.5    # exp >= this (orbital/planetary-whole and up): no terrestrial
+                      # foreground. Was 9.0; the 2026-08-23 pastiche showed ruby_furnace
+                      # (8.5, lava-canyon postcard -> space portal) and lantern_mangrove
+                      # (7.0, aurora-over-lake -> ocean world from orbit) both need it.
+SPACE_EXP_LO = -6.0   # exp <= this (molecular and deeper): same — no beach in a molecule
 
 SEAM_EXP_JUMP = 8.0   # |Δexp| this big to the next card = a semantic SEAM (instant morph, no zoom)
 
@@ -58,9 +71,10 @@ def _p(text, reg):
 
 
 def establish_prompt(spec):
-    """The frame-0 txt2img override (see T_ESTABLISH). Resolves the same render_start rotation
-    compile_journey uses and returns the wide establishing prompt for the card frame 0 renders.
-    Standalone (not part of the compiled schedule) so callers' tuple unpacking is untouched."""
+    """The frame-0 txt2img override (see T_ESTABLISH / T_ESTABLISH_SPACE). Resolves the same
+    render_start rotation compile_journey uses and returns the wide establishing prompt for
+    the card frame 0 renders. Returns (prompt, spaceless) — spaceless=True means the card is
+    far from human scale and dive.py should add the landscape negatives too."""
     regs = spec["registers"]
     rs = spec.get("render_start")
     names = [r.get("name") for r in regs]
@@ -68,7 +82,10 @@ def establish_prompt(spec):
         k = names.index(rs)
         regs = regs[k:] + regs[:k]
     reg = regs[0]
-    return _p(T_ESTABLISH.format(scene=_scene(reg), style=spec.get("style_suffix", "")), reg)
+    exp = reg.get("exp")
+    spaceless = isinstance(exp, (int, float)) and (exp >= SPACE_EXP_HI or exp <= SPACE_EXP_LO)
+    t = T_ESTABLISH_SPACE if spaceless else T_ESTABLISH
+    return _p(t.format(scene=_scene(reg), style=spec.get("style_suffix", "")), reg), spaceless
 
 
 def _scene(reg):
@@ -92,12 +109,24 @@ def _frames(reg, fmt, fps):
     return max(12, round(reg.get("sec", sec) * fps))
 
 
-def compile_journey(spec, fps, build="in"):
+def compile_journey(spec, fps, build="in", loop_lap=None):
     fmt = spec.get("format", {})
     travel_denoise = fmt.get("travel_denoise", 0.55 if build == "out" else 0.40)
     # (fmt.seam_denoise is read by dive.py as the seam-morph PEAK — no longer a schedule base)
     style = spec.get("style_suffix", "")
     regs = spec["registers"]
+    # LOOP LAP (Phil 2026-08-23, the seam fix — PLAN "seam forensics"): the loop home used
+    # to be frame 0, the ONLY frame not born from the feedback chain, and the whole video
+    # had to return to that alien txt2img postcard. With the lap, the chain renders ONE
+    # EXTRA card — card 0's schedule again, arrived at mid-dive like every other card —
+    # and the delivered video is CUT to start at card 1 (loop["lap_cut"] frames in). Cut
+    # one card + add one card = still exactly N bars; every world appears once; the
+    # card0→card1 morph plays at the video's end, re-rendered from deep in the chain.
+    # No card takes the old loop-home branch: the lap targets its AUTHORED next world
+    # (card 1) and dive.py's IPA tail lands the exact frame. Bonus: a seam card landing
+    # last is no longer swallowed — its morph renders normally into the lap's arrival.
+    lap = (fmt.get("exact_loop") and build != "out"
+           and (fmt.get("loop_lap", True) if loop_lap is None else loop_lap))
     # RENDER START (Phil 2026-07-31). Frame 0 is the only txt2img frame — everything else
     # inherits from it — and a LITERAL scene is the hardest thing to establish cold (frost_window
     # opened on "a white fern on a desk in a room" instead of a frosted window). Journeys are
@@ -114,8 +143,9 @@ def compile_journey(spec, fps, build="in"):
             regs = regs[k:] + regs[:k]
             # a rotation can silently move the SEAM card to an end. Last = the loop-home branch
             # swallows it (the seam vanishes entirely); first = the semantic jump becomes the
-            # video's opening morph. Both violate "seams live mid-list".
-            if regs[-1].get("kind") == "seam":
+            # video's opening morph. Both violate "seams live mid-list". (With the loop LAP the
+            # last-card case is fixed — the seam's morph renders into the lap's arrival.)
+            if regs[-1].get("kind") == "seam" and not lap:
                 print(f"[grammar] WARNING render_start {rs!r} puts the SEAM card last — the seam "
                       f"is lost (loop-home branch). Pick a different start.", flush=True)
             elif regs[0].get("kind") == "seam":
@@ -123,6 +153,8 @@ def compile_journey(spec, fps, build="in"):
         else:
             print(f"[grammar] render_start {rs!r} not a register name; using authored order")
 
+    if lap:
+        regs = regs + [dict(regs[0])]
     phases, zoom, denoise, exponent, cameos = [], [], [], [], []
     approach = []          # per-frame: {phrase, pick} on object-approach beats, else None
     arrivals = set()
@@ -131,7 +163,10 @@ def compile_journey(spec, fps, build="in"):
     prev_kind = "zoom"
     for k, reg in enumerate(regs):
         nxt = regs[k + 1] if k + 1 < len(regs) else regs[0]   # loop back
-        last = (k == len(regs) - 1)
+        # with the lap, NO card takes the loop-home branch — the lap card (a copy of card 0)
+        # compiles as a normal middle card targeting its authored next world (card 1); the
+        # IPA tail in dive.py lands the exact home frame
+        last = (k == len(regs) - 1) and not lap
         scene = _scene(reg)
         F = _frames(reg, fmt, fps)
         reg_start = len(zoom)
@@ -243,4 +278,8 @@ def compile_journey(spec, fps, build="in"):
         # (no hard copy). `morph_frames` = trailing frames that morph. The old denoise-ramp + s0
         # loop_composite tail is gone. See PLAN.md "THE SEAM".
         loop = {"frames": L, "morph_frames": min(max(4, round(12 * fpb / 7)), L - 2)}
+        if lap:
+            # the delivered video starts here (frames [0..lap_cut) are the txt2img warm-up
+            # card, cut at assembly); the tail homes onto frame lap_cut, not frame 0
+            loop["lap_cut"] = _frames(regs[0], fmt, fps)
     return phases, zoom, denoise, exponent, loop, cameos, arrivals, approach, seam_arrivals

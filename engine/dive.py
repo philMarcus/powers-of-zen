@@ -164,6 +164,12 @@ CN_DEPTH = "controlnet-depth-sdxl.safetensors"   # object-approach structural gu
 # SUPPOSED to be close-ups.
 FRAME0_NEG_EXTRA = ("close-up, macro, product shot, tabletop, still life, "
                     "shallow depth of field, bokeh")
+# extra negatives when the render_start is far from human scale (grammar returns
+# spaceless=True): the checkpoint's postcard prior otherwise paints LAND-UNDER-SKY —
+# desert + flowers in front of a 10^14 stellar nursery (whale_fall, seam forensics
+# 2026-08-23). Wrong-scale terrain is a frame-0 disease; mid-dive frames never get these.
+ESTABLISH_SPACE_NEG = (", landscape, horizon, ground, terrain, foreground rocks, flowers, "
+                       "meadow, beach, desert, mountains, trees, buildings, sky above land")
 
 # IP-Adapter loop homing (2026-08-02, validated in seam_tail_ab on dollhouse/snowfall/copper_rain):
 # frame 0's IMAGE conditions the tail's generation, so the WORLD converges on home while every
@@ -523,15 +529,19 @@ def phase_info(phases, i):
     return phases[last]["prompt"], None, i - n, last
 
 
-def assemble(cfg, name, out_dir, frames_dir, total, exponent=None, loop_pad=False):
+def assemble(cfg, name, out_dir, frames_dir, total, exponent=None, loop_pad=False, start=0):
     # zoom-out is always the primary cut: build-out generates it forward,
     # build-in generates dive-in footage that gets reversed into the primary
     fwd = f"{name}.mp4" if cfg["build"] == "out" else f"{name}_divein.mp4"
     rev = f"{name}_divein.mp4" if cfg["build"] == "out" else f"{name}.mp4"
-    """Loop crossfade, raw encode, motion interpolation, counter overlay, reverse cut."""
-    K = min(cfg["loop_fade_frames"], total // 2)
+    """Loop crossfade, raw encode, motion interpolation, counter overlay, reverse cut.
+    start (LOOP LAP, 2026-08-23): first delivered frame — frames [0..start) are the
+    txt2img warm-up card, rendered but cut; the video is frames [start..total)."""
+    n_raw = total - start
+    K = min(cfg["loop_fade_frames"], n_raw // 2)
     if K:
-        heads = [Image.open(frames_dir / f"{i:05d}.png").convert("RGB") for i in range(K)]
+        heads = [Image.open(frames_dir / f"{start + i:05d}.png").convert("RGB")
+                 for i in range(K)]
         for i in range(K):
             t = total - K + i
             tail = Image.open(frames_dir / f"{t:05d}.png").convert("RGB")
@@ -547,16 +557,18 @@ def assemble(cfg, name, out_dir, frames_dir, total, exponent=None, loop_pad=Fals
     pad = 0
     if loop_pad:
         for k_ in (0, 1):
-            shutil.copy(frames_dir / f"{k_:05d}.png", frames_dir / f"{total + k_:05d}.png")
+            shutil.copy(frames_dir / f"{start + k_:05d}.png",
+                        frames_dir / f"{total + k_:05d}.png")
         pad = 2
     raw = "build/raw.mp4"
     subprocess.run([FFMPEG, "-y", "-framerate", str(cfg["fps"]),
+                    "-start_number", str(start),
                     "-i", "build/frames/%05d.png",
                     "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", raw],
                    cwd=out_dir, check=True, capture_output=True)
 
     interp = "build/interp.mp4"
-    n_target = total * (cfg["final_fps"] or cfg["fps"]) // cfg["fps"]
+    n_target = n_raw * (cfg["final_fps"] or cfg["fps"]) // cfg["fps"]
     if cfg["final_fps"]:
         t0 = time.time()
         subprocess.run([FFMPEG, "-y", "-i", raw,
@@ -588,7 +600,8 @@ def assemble(cfg, name, out_dir, frames_dir, total, exponent=None, loop_pad=Fals
                        cwd=out_dir, check=True, capture_output=True)
         outs = sorted(lbl.glob("*.png"))
         n_out = len(outs)
-        exps = [exponent[min(total - 1, int(j * total / n_out))] for j in range(n_out)]
+        exps = [exponent[min(total - 1, start + int(j * n_raw / n_out))]
+                for j in range(n_out)]
         pulse_at = [j for j in range(1, n_out)
                     if int(round(exps[j])) != int(round(exps[j - 1]))]
         for j, f in enumerate(outs):
@@ -611,7 +624,7 @@ def assemble(cfg, name, out_dir, frames_dir, total, exponent=None, loop_pad=Fals
                      ("alt (dive-in)", f"{name}_divein.mp4")):
         mp4 = out_dir / f
         print(f"[dive] {label}: {mp4} ({mp4.stat().st_size // 1024} KB, "
-              f"{total / cfg['fps']:.1f}s)", flush=True)
+              f"{n_raw / cfg['fps']:.1f}s)", flush=True)
 
 
 def main():
@@ -628,6 +641,11 @@ def main():
                     help="pure feedback zoom — no tracking, no depth-CN (A/B vs the engine-1 look)")
     ap.add_argument("--classic-tail", action="store_true",
                     help="loop tail uses the pre-IPA gap-scaled pixel morph (A/B vs IPA homing)")
+    ap.add_argument("--classic-loop", action="store_true",
+                    help="disable the LOOP LAP (Phil 2026-08-23, default ON): render the "
+                         "extra card-0 lap and cut the txt2img warm-up card, so the loop "
+                         "home is a feedback-born frame. This flag restores the old "
+                         "home-onto-frame-0 behavior for A/B.")
     ap.add_argument("--resolve", dest="resolve", action="store_true", default=True,
                     help="RESOLVE-ON-APPROACH (DEFAULT ON, Phil 2026-08-14): field-card "
                          "arrivals get animated procedural depth scaffolds so the new realm "
@@ -719,12 +737,18 @@ def main():
     cameos, arrivals, approach, seam_arrivals = [], set(), [], set()
     if "registers" in spec:
         (phases, zoom_sched, den_sched, exponent, loop, cameos, arrivals, approach,
-         seam_arrivals) = grammar.compile_journey(spec, cfg["fps"], cfg["build"])
+         seam_arrivals) = grammar.compile_journey(
+             spec, cfg["fps"], cfg["build"],
+             loop_lap=False if args.classic_loop else None)
         if cfg["build"] == "out" and spec.get("format", {}).get("exact_loop"):
             cfg["loop_fade_frames"] = max(cfg["loop_fade_frames"], 8)
     else:
         phases = spec["phases"]
     total = args.frames or sum(p["frames"] for p in phases)
+    # LOOP LAP (see grammar.compile_journey): frames [0..lap_cut) are the txt2img warm-up
+    # card — rendered (they seed the chain) but CUT at assembly; the tail homes onto frame
+    # lap_cut. 0 = classic behavior (no lap / --classic-loop / --frames smoke tests).
+    lap_cut = (loop or {}).get("lap_cut", 0) if not args.frames else 0
     name = spec.get("name") or Path(args.journey).stem
     if args.model:
         name = f"{name}_{args.model}"
@@ -837,7 +861,7 @@ def main():
         "checkpoint": cfg["checkpoint"], "style": style_name, "frames": total,
         "fps": cfg["fps"], "seed": cfg["seed"],
         "parallax_gain": cfg["parallax_gain"], "resolve_persist": cfg["resolve_persist"],
-        "camera_micro": cfg["camera_micro"],
+        "camera_micro": cfg["camera_micro"], "lap_cut": lap_cut,
         # per-CARD (register) frame counts: lets a future --from-card verify its prefix
         # still aligns after a journey edit
         "card_frames": (register_frame_counts(spec, cfg["fps"]) if "registers" in spec
@@ -882,6 +906,12 @@ def main():
         _rot = _names.index(_rs) if _rs in _names else 0
         _order = _regs[_rot:] + _regs[:_rot]
         _cfr = register_frame_counts(spec, cfg["fps"])
+        if lap_cut:
+            # LOOP LAP: the lap card is a real arrival (from the last card, mid-dive) —
+            # it gets a resolve window like any other card; the k==0 skip below keeps
+            # applying only to the true txt2img card 0
+            _order = _order + [_order[0]]
+            _cfr = _cfr + [_cfr[0]]
         _acc = 0
         for _k, _reg in enumerate(_order):
             _F = _cfr[_k]
@@ -965,18 +995,31 @@ def main():
             # (all 5 renders of 08-01/02 opened close; seed-held ablations confirmed). Frame 0
             # renders the scene WIDE with no target + anti-close-up negatives instead; the
             # feedback chain inherits the wide framing from frame 1 on.
-            f0_prompt = grammar.establish_prompt(spec) if cfg["build"] != "out" else prompt
+            if cfg["build"] != "out":
+                f0_prompt, _f0_space = grammar.establish_prompt(spec)
+            else:
+                f0_prompt, _f0_space = prompt, False
+            f0_neg = FRAME0_NEG_EXTRA + (ESTABLISH_SPACE_NEG if _f0_space else "")
             if f0_prompt != prompt:
-                print(f"[dive] frame-0 establish: {f0_prompt[:110]}", flush=True)
-            wf = build_workflow(cfg, f0_prompt, seed, neg_extra=FRAME0_NEG_EXTRA)  # txt2img init
+                print(f"[dive] frame-0 establish{' (spaceless)' if _f0_space else ''}: "
+                      f"{f0_prompt[:110]}", flush=True)
+            wf = build_workflow(cfg, f0_prompt, seed, neg_extra=f0_neg)  # txt2img init
         else:
             drift = cfg["drift"]
-            if in_loop_tail(i):   # re-center so the frame-0 composite lines up
-                drift *= 1 - (i - (total - loop["frames"]) + 1) / loop["frames"]
+            _th = 0.0
+            if in_loop_tail(i):   # re-center so the loop-home composite lines up
+                _th = (i - (total - loop["frames"]) + 1) / loop["frames"]
+                if not lap_cut:
+                    drift *= 1 - _th   # frame 0 is txt2img/centered: taper drift to zero
             # periods far longer than any video: reads as one slow directional
             # wander, not an oscillation (sinusoidal wobble was jarring)
             cx = 0.5 + drift * math.sin(2 * math.pi * i / 263)
             cy = 0.5 + drift * math.sin(2 * math.pi * i / 419 + 1.7)
+            if _th and lap_cut:
+                # LOOP LAP: the home frame (lap_cut) was rendered WITH drift — steer the
+                # tail's zoom center toward ITS drift phase, not toward dead center
+                cx = (1 - _th) * cx + _th * (0.5 + cfg["drift"] * math.sin(2 * math.pi * lap_cut / 263))
+                cy = (1 - _th) * cy + _th * (0.5 + cfg["drift"] * math.sin(2 * math.pi * lap_cut / 419 + 1.7))
             # TRACKER v3: the tracker owns the aim on approach frames (not the loop tail — the
             # loop mechanism owns that). The scheduled ×10 arrive-look-plunge zoom (zoom_sched)
             # grows the target; the tracker only steers WHERE.
@@ -1123,22 +1166,28 @@ def main():
                             fed = Image.blend(fed, frame0, loop["morph_strength"] * m)
                 else:
                     # IPA HOMING (2026-08-02, "ipacn" — won the seam_tail_ab A/B on all three
-                    # cases incl. both blendcn-reverted hard ones): frame 0's IMAGE conditions
-                    # the generation with weight ramping in, so the WORLD converges while every
-                    # frame is freshly rendered and still zooming. Depth-CN from frame 0 aligns
-                    # the landing composition over the morph window; a small FIXED pixel blend
-                    # (never gap-scaled, max 0.35) seals the final frames. Palette pull after
-                    # generation is unchanged below.
+                    # cases incl. both blendcn-reverted hard ones): the HOME frame's IMAGE
+                    # conditions the generation with weight ramping in, so the WORLD converges
+                    # while every frame is freshly rendered and still zooming. Depth-CN from
+                    # the home frame aligns the landing composition over the morph window; a
+                    # small FIXED pixel blend (never gap-scaled, max 0.35) seals the final
+                    # frames. LOOP LAP (2026-08-23): the home is frame lap_cut — card 1's
+                    # feedback-born start — instead of the txt2img frame 0.
                     t_home = (j + 1) / L_tail
-                    if loop.get("_home_ref") is None:
-                        loop["_home_ref"] = upload_image(frame0, f"zoomer_loop_home_{name}.png")
+                    if loop.get("_home_img") is None:
+                        loop["_home_img"] = (Image.open(
+                            frames_dir / f"{lap_cut:05d}.png").convert("RGB")
+                            if lap_cut else frame0)
+                        loop["_home_ref"] = upload_image(
+                            loop["_home_img"], f"zoomer_loop_home_{name}.png")
                     tail_ipa_w = 0.95 * t_home ** 1.5
                     mstart = L_tail - loop["morph_frames"]
                     if j >= mstart:
                         m = (j - mstart + 1) / loop["morph_frames"]
                         tail_ctl, tail_cn = loop["_home_ref"], 0.2 + 0.6 * m
                     if j >= L_tail - 6:
-                        fed = Image.blend(fed, frame0, 0.35 * (j - (L_tail - 6) + 1) / 6)
+                        fed = Image.blend(fed, loop["_home_img"],
+                                          0.35 * (j - (L_tail - 6) + 1) / 6)
             res_ctl, res_cn = None, 0.0
             if rwin and not in_loop_tail(i):
                 # DEPTH LANGUAGE (Phil 2026-08-17, fix #1): invite the depth-of-field the
@@ -1193,7 +1242,7 @@ def main():
                       f"re-rolling seed, attempt {attempt}/{cfg['figure_retries']}", flush=True)
                 seed += 9973                       # a big coprime stride: a genuinely new draw
                 png = run_workflow(build_workflow(cfg, f0_prompt, seed,
-                                                  neg_extra=FRAME0_NEG_EXTRA))
+                                                  neg_extra=f0_neg))
                 img = Image.open(io.BytesIO(png)).convert("RGB")
                 if img.size != (cfg["width"], cfg["height"]):
                     img = img.resize((cfg["width"], cfg["height"]), Image.LANCZOS)
@@ -1268,7 +1317,7 @@ def main():
             show_counter = bool(counter_flag)
         assemble(cfg, name, out_dir, frames_dir, total,
                  exponent=exponent if show_counter else None,
-                 loop_pad=bool(loop) and cfg["build"] != "out")
+                 loop_pad=bool(loop) and cfg["build"] != "out", start=lap_cut)
     print(f"[dive] done in {time.time() - t0:.0f}s", flush=True)
 
 
