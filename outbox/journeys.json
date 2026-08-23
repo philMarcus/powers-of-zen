@@ -19,7 +19,7 @@
     "render_paused": false,
     "refill_paused": false,
     "post_every_hours": 19.0,
-    "post_next": "2026-08-23 11:00"
+    "post_next": "2026-08-24 07:00"
   },
   "journeys": {
     "stormglass": {
@@ -258,50 +258,10 @@
       "ts": "2026-08-22 00:25:26",
       "note": "composed by midnight refill"
     },
-    "whale_fall_republic": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-22 22:00:15",
-      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
-      "order": 0
-    },
     "coral_synapse": {
       "new_seed": false,
       "ts": "2026-08-22 22:25:27",
       "note": "NOT re-rendering (Phil 2026-08-22 night: enough corals) — parallax versions already exist: v4=0.5, v5=0.7, v3=1.0, same seed. When Phil picks a gain, ingest it GPU-free: queue_review.py coral_synapse ds --src output/coral_synapse/<vN>"
-    },
-    "lantern_mangrove": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-22 22:00:15",
-      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
-      "order": 2
-    },
-    "cobalt_rookery": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-22 22:00:15",
-      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
-      "order": 3
-    },
-    "ruby_furnace": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-22 22:00:15",
-      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
-      "order": 4
-    },
-    "magnetite_choir": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-22 22:00:15",
-      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
-      "order": 5
     },
     "vesper_flight": {
       "state": "queued",
@@ -326,14 +286,6 @@
       "ts": "2026-08-22 22:00:15",
       "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
       "order": 8
-    },
-    "wild_yeast": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-22 22:00:15",
-      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
-      "order": 9
     },
     "cherenkov_cistern": {
       "state": "queued",
@@ -376,5 +328,5 @@
       "order": 14
     }
   },
-  "updated": "2026-08-22 22:25:27"
+  "updated": "2026-08-23 12:09:42"
 }

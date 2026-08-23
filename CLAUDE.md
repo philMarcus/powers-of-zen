@@ -115,6 +115,22 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-23 (EVENING CLOSE): HOMING CURVE v2 shipped after Phil's "still too abrupt" on the
+first lap result — smoothstep IPA from a 0.22 floor (half strength by mid-tail; was
+0.95·t^1.5 = converged in the last ~8 frames), depth-CN across the WHOLE tail 0.15→0.80,
+tail = one full bar (fpb×4, ≈ the whole lap card). Knobs: home_ipa_floor/peak/shape,
+home_cn_floor/peak. ALL 7 RETROFITS RE-RUN ON v2 + DONE: review wild_yeast/lantern/
+cobalt/magnetite re-ingested (captions kept, music candidates still valid — bar grid
+unchanged); production caddis+termite installed via make_candidate (now lap-aware:
+from_card provenance + cut-direction lap shift — divein R−shift, zoomout R+shift, both
+empirically verified; backups in _seam_backup/, chosen-music copies updated). RUBY
+ANOMALY: its production video matched NO local render (flat rotation residual ~34;
+caddis/termite/whale_fall all clean — one-file mystery, possibly a stale/archived source
+in the 11:35 approve flow) — production REBUILT deterministically from v4 @ Phil's marked
+3.15s + prod's own audio, old file in _seam_backup/. 3-way seam clip (no-lap / lap-v1 /
+lap-v2) sent to Phil — his verdict on curve v2's strength pending; knobs are one-line if
+he wants more. Tonight's 01:30 batch inherits lap + curve v2 + gain 1.0 + spaceless
+establish. caddis posts 07:00 (IG only, YT live) WITH the new seam.
 2026-08-23 (SEAM DAY — loop lap + scale-aware establish SHIPPED; gain 1.0 the rule): Phil's
 morning verdicts: (1) parallax gain 1.0 EVERYWHERE going forward (more freedom/diversity in
 card shifts + deeper world; DEFAULTS parallax_gain=1.0, random-gain exploration retired

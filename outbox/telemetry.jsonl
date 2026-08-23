@@ -946,3 +946,11 @@
 {"ts": "2026-08-23 12:16:26", "event": "post", "journey": "whale_fall_republic", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcY5PRHxbtQ/"}
 {"ts": "2026-08-23 12:17:34", "event": "ig_stats", "detail": "44 reels, followers 62"}
 {"ts": "2026-08-23 12:17:53", "event": "ig_insights", "detail": "47 posts"}
+{"ts": "2026-08-23 12:57:04", "event": "review", "journey": "wild_yeast", "detail": "ds/divein (src v3)"}
+{"ts": "2026-08-23 13:35:12", "event": "review", "journey": "wild_yeast", "detail": "ds/divein (src v4)"}
+{"ts": "2026-08-23 14:02:58", "event": "review", "journey": "lantern_mangrove", "detail": "ds/divein (src v4)"}
+{"ts": "2026-08-23 14:27:52", "event": "review", "journey": "cobalt_rookery", "detail": "ds/divein (src v4)"}
+{"ts": "2026-08-23 14:52:53", "event": "review", "journey": "magnetite_choir", "detail": "ds/divein (src v4)"}
+{"ts": "2026-08-23 15:25:57", "event": "repair_install", "journey": "caddis_masonry", "detail": "v2 R=72 resid=0.34"}
+{"ts": "2026-08-23 15:41:47", "event": "repair_install", "journey": "termite_citadel", "detail": "v3 R=72 resid=0.35"}
+{"ts": "2026-08-23 16:05:13", "event": "switch", "journey": "ruby_furnace", "detail": "lap retrofit installed (rebuilt from v4 @ marked 3.15s + prod audio; old prod video matched no local render — provenance anomaly, backup kept)"}
