@@ -40,6 +40,17 @@ python3 scripts/ig_stats.py            # appends one row per reel to outbox/ig_s
   scrape time, a **Top 5 by qscore** strip (same fit as ig_analyze, pure-python OLS —
   no numpy on Windows), then per-video views/likes/comments.
 
+## 1b. Deep metrics — outbox/ig_insights.jsonl (Meta Business Suite, since 2026-08-22)
+`scripts/ig_insights.py` scrapes the Business Suite content table (linked via "Continue
+with Instagram" — no Facebook account; if the session dies it telems `ig_insights_login`
+and the link is redone by hand once): per-post **reach, shares (= reposts — Phil's key
+metric), saves, follows-from-post, watch time, average play time**, alongside
+views/likes/comments. Runs with every ig_stats invocation (post + 12:00 + 00:00). Rows
+join to journeys by caption match. Interpretation notes: shares+saves are STRONG intent
+signals (rarer than likes); follows-per-view is the conversion the account actually
+grows by; avg-play-time on low-view old posts can read implausibly high (a few looping
+sessions dominate) — trust it on posts with 300+ views.
+
 ## 2. Analyze
 ```bash
 python3 scripts/ig_analyze.py --features

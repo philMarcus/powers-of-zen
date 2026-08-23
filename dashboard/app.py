@@ -960,7 +960,8 @@ with tabs[6]:  # TELEMETRY
                 "render_fail": "💥", "music_gen": "🎵", "music_choose": "🎶",
                 "switch": "🔀", "batch_skip": "⏭", "batch_done": "🌙",
                 "refill": "🧭", "refill_done": "🧭", "refill_fail": "💥",
-                "jqueued": "🗺", "ig_stats": "📊"}.get(e["event"], "•")
+                "jqueued": "🗺", "ig_stats": "📊", "ig_insights": "📈",
+                "ig_insights_login": "🔑"}.get(e["event"], "•")
         st.text(f"{icon} {e['ts']}  {e['event']}  {e.get('journey','')} "
                 f"{e.get('platform','')}  {e.get('detail','')}"
                 + (f"  {e.get('reason','')}" if e.get('reason') else ""))

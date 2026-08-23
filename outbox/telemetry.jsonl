@@ -880,3 +880,4 @@
 {"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "motmot_cenote", "detail": "parallax requeue (front, same seed)"}
 {"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "bourdon_foundry", "detail": "parallax requeue (front, same seed)"}
 {"ts": "2026-08-22 22:00:15", "event": "jqueued", "journey": "pomegranate_vault", "detail": "parallax requeue (front, same seed)"}
+{"ts": "2026-08-22 22:18:01", "event": "ig_insights", "detail": "78 posts"}

@@ -1287,11 +1287,17 @@ similar. This is the register-boundary/seam-morph look, not the loop tail per se
 by A/B-ing the ipacn tail params (IPA weight curve 0.95·t^1.5, CN ramp 0.2→0.8, blend
 ≤0.35) and the seam_morph_frames choreography under the new parallax engine.
 
-## AUDIENCE DATA WISHLIST (Phil 2026-08-22): reposts/saves/shares per reel
-Recon (same night): IG WEB exposes NO per-reel insights for us — no "View insights" on
-own reel pages, /accounts/professional_dashboard/ = page unavailable. Likely cause: the
-account was never actually converted to a professional/Creator account (launch plan said
-to; profile shows no dashboard link). UNLOCK: Phil flips account type in the app
-(Settings → Account type → Creator) — then re-recon web for View insights /
-professional_dashboard and extend ig_stats.py to scrape shares/saves/reposts (Meta
-Business Suite via zen Chrome is the fallback). Reposts especially matter to Phil.
+## AUDIENCE DATA WISHLIST (Phil 2026-08-22): reposts/saves/shares per reel — **SHIPPED same night**
+Phil converted the account to professional. IG web STILL exposed no insights UI (no View
+insights, professional_dashboard 404) — but Meta Business Suite accepts "Continue with
+Instagram" login (no Facebook account needed): linked the zen Chrome session, and
+business.facebook.com/latest/insights/content serves a full per-post table (views, reach,
+interactions, likes, comments, SHARES, SAVES, link clicks, follows, watch time, avg play
+time). scripts/ig_insights.py scrapes it (incremental collect while scrolling — the table
+virtualizes like the reels grid; viewless remount-copies dropped at save) →
+outbox/ig_insights.jsonl; runs after every post + 12:00/00:00 (scheduled_ig_stats.bat).
+Session-expiry telems ig_insights_login (relink by hand once). FIRST SCRAPE HEADLINES
+(n=44): shares+saves leaders are ALL rethink-era (sundew 12sh/12sv, desert_rosette
+12sh/9sv, squid 7sh/10sv+14 follows, geode 5sh/10sv); mineral_heart converts follows at
+8/577 views; avg-play-time on low-view old posts reads implausibly high (looping-session
+artifact — trust ≥300 views).

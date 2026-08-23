@@ -149,9 +149,15 @@ TONIGHT: one-off 00:00 render task (PowersOfZen-render-once — DELETE it after)
 430 + LLLLSS prepended (RESTORE 340 / drop LLLLSS once the backlog drains); verified pick
 whale_fall(.8) coral(.8) lantern(.7) cobalt(.9) magnetite(1.0) wild_yeast(.5) ≈ 7h.
 NEXT FRONTS (Phil): (1) SEAMS still not good enough (suspect IPA params — see PLAN "NEXT
-FRONT"); (2) reposts/saves/shares: web recon says the IG account is likely NOT a
-professional account (no View insights anywhere, no professional_dashboard page) — PHIL
-ACTION: flip to Creator in the app, then extend ig_stats. Followers 62 (was 59 at 11:00).
+FRONT"); (2) DONE same night — reposts/saves/shares SHIPPED: Phil converted the account
+to professional; IG web still had no insights UI, but META BUSINESS SUITE accepts
+"Continue with Instagram" (no FB account) — linked the zen Chrome session, built
+scripts/ig_insights.py (per-post reach/SHARES/SAVES/follows/watch-time from the content
+table; virtualization-safe incremental collect; viewless remount-rows dropped) →
+outbox/ig_insights.jsonl, runs after every post + 12:00/00:00 + telem ig_insights /
+ig_insights_login (session-expiry = relink by hand). First scrape n=44: shares/saves
+leaders ALL rethink-era (sundew 12/12, desert_rosette 12/9, squid 7sh/10sv/14 follows);
+avg-play-time unreliable under ~300 views. Followers 62 (was 59 at 11:00).
 2026-08-22 (MARKETING DAY — stats now flow themselves): (1) IG stats snapshots now run
 12:00 + 00:00 via the PowersOfZen-igstats task (ONE task, two PowerShell-registered
 triggers → hidden_task.vbs → scheduled_ig_stats.bat; log outbox/ig_stats_task.log) in

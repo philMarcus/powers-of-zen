@@ -836,9 +836,13 @@ def run(only, dry_run, journey):
     if not dry_run and results:
         try:
             import subprocess
-            # --force: when the hourly gate ran us it still holds its lock, and ig_stats
-            # skips while a poster is "in flight" — this IS that poster, so override.
+            # --force: when the hourly gate ran us it still holds its lock, and the
+            # scrapers skip while a poster is "in flight" — this IS that poster, so
+            # override. ig_insights (2026-08-22): Business Suite reach/shares/saves/
+            # follows/watch-time per post — same best-effort contract.
             subprocess.run([sys.executable, str(pl.ROOT / "scripts" / "ig_stats.py"),
+                            "--force"], timeout=600)
+            subprocess.run([sys.executable, str(pl.ROOT / "scripts" / "ig_insights.py"),
                             "--force"], timeout=600)
         except Exception as e:
             print(f"(ig_stats snapshot skipped: {e})")
