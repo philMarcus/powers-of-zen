@@ -1281,11 +1281,28 @@ Phase C (--micro) built but UNJUDGED — needs its own with/without A/B when Phi
   Verified pick: whale_fall(0.8) coral(0.8) lantern_mangrove(0.7) cobalt(0.9)
   magnetite_choir(1.0) wild_yeast(0.5) ≈ 419min.
 
-## NEXT FRONT AFTER DEPTH (Phil 2026-08-22 night): SEAMS
-"The seams are still not really good enough" — suspects an IP-Adapter parameter or
-similar. This is the register-boundary/seam-morph look, not the loop tail per se. Start
-by A/B-ing the ipacn tail params (IPA weight curve 0.95·t^1.5, CN ramp 0.2→0.8, blend
-≤0.35) and the seam_morph_frames choreography under the new parallax engine.
+## SEAMS — DIAGNOSED AND FIXED 2026-08-23 (Phil's extra-card idea; supersedes the ipacn-
+## parameter hypothesis below)
+FORENSICS: every piece of the 08-02 seam machinery was intact and WORKING — the IPA tail
+landed perfectly on frame 0. The disease was frame 0 itself: the only frame in the video
+not born from the feedback chain. "A vast wide panoramic view … seen from far away" is
+postcard language — on cosmic render_starts DreamShaper composed LAND-UNDER-SKY (whale-
+fall's 10^14 nursery = desert rocks + flowers under the Milky Way), and the tail dutifully
+returned the whole video to it. It read WORSE lately because (a) parallax made mid-dive
+frames more coherent (wider gap to the postcard) and (b) the rethink doctrine favors
+cosmic starts (max postcard damage). BOTH FIXES SHIPPED (commit aedd70a, details there):
+1. LOOP LAP (Phil's idea, default ON, --classic-loop A/B): one extra card — card 0's
+   schedule again, arrived mid-dive — home onto card 1's feedback-born start, cut the
+   txt2img warm-up card. Still exactly N bars; music/morph grid untouched; seam-card-last
+   no longer swallowed; +1 card ≈ +10% render. Validated on wild_yeast v3 (loop closes in
+   the same visual universe; seam A/B sent to Phil).
+2. SCALE-AWARE ESTABLISH: T_ESTABLISH_SPACE + landscape negatives for render_starts at
+   exp ≥ 6.5 or ≤ −6 (pastiche: cobalt sun-wheel-in-space vs galaxy-over-clouds; ruby
+   space-portal vs lava-canyon; lantern orbital ocean-world vs aurora-over-lake).
+RETROFIT (no full re-renders — Phil): review+production videos get `--from-card N-1
+--src-version vX --parallax <source gain>` (zoom schedules byte-identical through card
+N-2, only last-card prompts + tail + lap regenerate ≈ 15 min each). Pre-parallax sources
+(caddis v1, termite v2) retrofit at --parallax 0 to match their bodies.
 
 ## AUDIENCE DATA WISHLIST (Phil 2026-08-22): reposts/saves/shares per reel — **SHIPPED same night**
 Phil converted the account to professional. IG web STILL exposed no insights UI (no View

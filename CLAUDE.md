@@ -115,6 +115,23 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-23 (SEAM DAY — loop lap + scale-aware establish SHIPPED; gain 1.0 the rule): Phil's
+morning verdicts: (1) parallax gain 1.0 EVERYWHERE going forward (more freedom/diversity in
+card shifts + deeper world; DEFAULTS parallax_gain=1.0, random-gain exploration retired
+after one night, its six renders keep drawn gains in engine_params; queued videos NOT
+redone). (2) SEAMS diagnosed + fixed — see PLAN "SEAMS — DIAGNOSED AND FIXED": machinery
+was fine, the loop HOME (txt2img frame 0 postcard) was the disease; LOOP LAP (Phil's
+extra-card idea, default ON, --classic-loop A/B) + T_ESTABLISH_SPACE (exp ≥6.5/≤−6 +
+landscape negs; threshold set by pastiche). Validated wild_yeast v3; retrofits via
+--from-card N-1 (~15min each, --parallax matches source gain; pre-parallax sources get 0)
+ran for lantern/cobalt/magnetite (auto re-ingested to review) + caddis/termite/ruby
+(production — install decision via make_candidate pending). POSTING: the professional-
+account conversion broke IG (new Create menu Post/Live/Ad — poster fixed + validated
+live; whale_fall re-posted IG DcY5PRHxbtQ; caddis IG queued first for 08-24 07:00 window,
+YT skip automatic). NOTE for tonight's batch: renders inherit lap + gain 1.0 + spaceless
+establish automatically; budget still 430/LLLLSS (restore when backlog drains); delete
+PowersOfZen-render-once task. NEXT: Phil judges retrofitted seams + lap-era renders;
+then --micro A/B; then Phase D camera vocabulary.
 2026-08-22 (PM — DEPTH 2.0 "PARALLAX ERA" BUILT + LAB-PASSED; read PLAN.md "DEPTH 2.0"):
 Phil approved the motion-parallax plan (the settled diagnosis: uniform crop-zoom IS the
 flat look — it deletes motion parallax, the dominant depth cue; pictorial fixes were
