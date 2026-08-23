@@ -1,134 +1,134 @@
 {
- "name": "termite_citadel",
- "theme": "a termite citadel read as one branching stress network at every scale — the universe's own scaffold of filaments, down through an edge-on galaxy and a dusk-side planet onto a savanna of clay spires, into the opened mound city with its castes and cultivated combs, through the fungus garden into its threads' cells, onto the protein tubes hauling cargo inside them, into the chitin lattice that armours the whole colony, and out through one shivering knotted nucleus back to the cosmic web that branches the same way",
- "style": "enchanted_wild",
- "music_lane": "choir_of_dust",
- "music_theme": "colony industry at dusk — a hushed granular shimmer over a working sub pulse, tightening as the galleries close in, opening vast and dusty at the wrap",
- "music_key": "G minor",
- "render_start": "star_nursery",
- "format": {
-  "beats_per_bar": 4,
-  "frames_per_beat": 6,
-  "exact_loop": true,
-  "counter": true
- },
- "registers": [
-  {
-   "name": "cosmic_scaffold",
-   "exp": 24,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "violet-black void, rose-gold filaments, ghost-blue sheets",
-   "scene": "the scaffolding of the universe, rose-gold filaments strung knot to knot in a branching web, combed streamlines of matter drawn toward every knot, hollow violet voids walled by faint ghost-blue sheets of galaxies, thousands of galaxy grains caught in the strands, further tiers of the lattice receding into violet dusk",
-   "target": "a glowing galaxy disk",
-   "target_phrase": "a glowing galaxy disk"
+  "name": "termite_citadel",
+  "theme": "a termite citadel read as one branching stress network at every scale — the universe's own scaffold of filaments, down through an edge-on galaxy and a dusk-side planet onto a savanna of clay spires, into the opened mound city with its castes and cultivated combs, through the fungus garden into its threads' cells, onto the protein tubes hauling cargo inside them, into the chitin lattice that armours the whole colony, and out through one shivering knotted nucleus back to the cosmic web that branches the same way",
+  "style": "enchanted_wild",
+  "music_lane": "choir_of_dust",
+  "music_theme": "colony industry at dusk — a hushed granular shimmer over a working sub pulse, tightening as the galleries close in, opening vast and dusty at the wrap",
+  "music_key": "G minor",
+  "render_start": "star_nursery",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
   },
-  {
-   "name": "galaxy_knife",
-   "exp": 21,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "cold blue-white starfog, sienna dust, violet gulf",
-   "scene": "a galaxy turned exactly on its side, its disk drawn out as a slim burning blade of blue-white starfog, one sienna dust lane cutting the blade end to end, a swollen amber bulge at its middle, globular star swarms strewn loosely around it, a violet gulf spreading in every direction with far galaxy specks scattered through it",
-   "target": "a glowing crimson dust cloud",
-   "target_phrase": "a crimson dust cloud"
-  },
-  {
-   "name": "star_nursery",
-   "exp": 14,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "burnt sienna pillars, rose-gold haze, violet gas",
-   "scene": "a starbirth cloud stacked into towering sienna pillars, their tips eaten thin by radiation, young stars glittering in clusters through the whole cloud, curtains of violet gas hung across the gulfs, rose-gold haze pooled around every young sun, rank behind rank of pillars fading into dusty violet depth",
-   "loop_target": "towering sienna pillars of starbirth cloud with young stars glittering through curtains of violet gas",
-   "target": "a banded planet half in shadow",
-   "target_phrase": "a banded planet"
-  },
-  {
-   "name": "day_night_line",
-   "exp": 7,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "violet night side, tawny gold day side, amber storm flicker",
-   "scene": "a planet seen from orbit with the day-night line curved across its face, one half drowned in violet night with amber storm flickers spattered through the cloud, the other half a tawny sunlit continent under rose-gold cloud streets, a gold seam of dawn drawn the whole way down the middle, dust-hazed air ringing the whole globe",
-   "target": "a tawny grassland plain",
-   "target_phrase": "a tawny plain"
-  },
-  {
-   "name": "mound_savanna",
-   "exp": 3.5,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "burnt sienna clay, tawny grass, violet dusk sky",
-   "scene": "a savanna at dusk seen from a low rise, dozens of clay termite spires standing scattered across the grassland with their fluted sides catching the last sun, tawny grass combed flat by wind, two hornbills perched on a spire tip, an aardvark hunched at a broken mound base with a spill of fresh sienna soil under it, a herd of grazing antelope strung across the middle distance, egrets stalking the grass in ones and twos, a violet dusk sky with rose-gold cloud banks stacked over the far horizon",
-   "target": "a tall clay spire",
-   "target_phrase": "a tall clay spire",
-   "cameo": {
-    "sprite": "output/mascots/canon/lorraine.png",
-    "pos": [
-     0.34,
-     0.62
-    ],
-    "size": 0.13
-   }
-  },
-  {
-   "name": "mound_citadel",
-   "exp": 0.5,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "ochre clay grain, amber glow, violet gloom",
-   "scene": "a termite mound opened in cutaway, tier upon tier of galleries and spiral ramps cut through packed sienna grain, branching ventilation chimneys rising through the whole tower, glowing stress skeletons threading the grain walls wherever the load runs, ivory workers in files up every ramp with cargo in their jaws, soldier termites with heavy blunt jaws posted at each gallery mouth, one swollen egg-laying termite sealed into a broad domed cell with a crowd of attendants packed around it, ridged fungus combs cultivated in the side vaults, the whole interior lit from within by a warm amber glow",
-   "target": "a ridged fungus comb",
-   "target_phrase": "a ridged fungus comb"
-  },
-  {
-   "name": "fungus_garden",
-   "exp": -1.5,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "umber sponge, rose-gold ridges, sulphur-yellow spore dust",
-   "scene": "the inside of a fungus garden vault, a spongework comb of chewed plant fibre riddled with rounded hollows, ivory mycelium fuzz creeping over every ridge, sulphur-yellow spore knobs studded thickly across the ridge tops, a few blind nymphs grazing the surface, umber shadow pooled in the hollows, the comb repeating away into the vault gloom",
-   "target": "an ivory fungal thread",
-   "target_phrase": "an ivory thread"
-  },
-  {
-   "name": "hypha_cells",
-   "exp": -4.5,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "violet-blue cell walls, amber cores, teal cytoplasm",
-   "scene": "the inside of a fungal thread, one tube partitioned into cell after cell by cross-walls, every compartment crowded with grainy teal cytoplasm, bean-shaped mitochondria with folded interiors strung through each cell, a pore at every cross-wall with vesicles queued at it, amber vacuoles bulging against the violet-blue walls, ranks of neighbouring threads crossing away into gloom",
-   "target": "a taut rose-gold cable",
-   "target_phrase": "a rose-gold cable"
-  },
-  {
-   "name": "motor_bundle",
-   "exp": -7.5,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "inky depth, rose-gold tubes, teal cargo sacs",
-   "scene": "a bundle of hollow protein tubes built from paired beads spiralling up their walls, two-legged motor proteins planted on the outer surface of each tube with a rounded teal cargo sac gripped behind them, more tubes crossing the bundle at angles, tangled filament webs strung across the gaps, a haze of loose molecules speckling the inky depth around it all",
-   "target": "a stiff ivory ribbon",
-   "target_phrase": "a stiff ivory ribbon"
-  },
-  {
-   "name": "chitin_lattice",
-   "exp": -9.5,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "ice-blue bonds, violet dusk, acid green defect row",
-   "scene": "the crystal grid inside a chitin fibril, flat six-sided rings of atoms linked corner to corner into stiff ribbons, ribbon stacked on ribbon in staggered tiers, hairline bond bridges pinning every tier to the next, one row knocked out of register and lit acid green through the whole grid, tier after tier of the lattice receding into violet dusk",
-   "target": "a glowing amber core",
-   "target_phrase": "a glowing amber core"
-  },
-  {
-   "name": "subnuclear_knot",
-   "exp": -14,
-   "kind": "seam",
-   "dur": 4,
-   "palette": "violet gulf, sienna strands, gold spheres",
-   "scene": "a knotted droplet of packed glowing gold spheres suspended in a violet gulf, taut sienna strands strung sphere to sphere in a branching net, cooler sparks strewn thickly through the gulf around it, further nets of the same kind repeating away into violet dusk"
-  }
- ]
+  "registers": [
+    {
+      "name": "cosmic_scaffold",
+      "exp": 24,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-black void, rose-gold filaments, ghost-blue sheets",
+      "scene": "the scaffolding of the universe, rose-gold filaments strung knot to knot in a branching web, combed streamlines of matter drawn toward every knot, hollow violet voids walled by faint ghost-blue sheets of galaxies, thousands of galaxy grains caught in the strands, further tiers of the lattice receding into violet dusk",
+      "target": "a glowing galaxy disk",
+      "target_phrase": "a glowing galaxy disk"
+    },
+    {
+      "name": "galaxy_knife",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold blue-white starfog, sienna dust, violet gulf",
+      "scene": "a galaxy turned exactly on its side, its disk drawn out as a slim burning blade of blue-white starfog, one sienna dust lane cutting the blade end to end, a swollen amber bulge at its middle, globular star swarms strewn loosely around it, a violet gulf spreading in every direction with far galaxy specks scattered through it",
+      "target": "a glowing crimson dust cloud",
+      "target_phrase": "a crimson dust cloud"
+    },
+    {
+      "name": "star_nursery",
+      "exp": 14,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "burnt sienna pillars, rose-gold haze, violet gas",
+      "scene": "a starbirth cloud stacked into towering sienna pillars, their tips eaten thin by radiation, young stars glittering in clusters through the whole cloud, curtains of violet gas hung across the gulfs, rose-gold haze pooled around every young sun, rank behind rank of pillars fading into dusty violet depth",
+      "loop_target": "towering sienna pillars of starbirth cloud with young stars glittering through curtains of violet gas",
+      "target": "a banded planet half in shadow",
+      "target_phrase": "a banded planet"
+    },
+    {
+      "name": "day_night_line",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet night side, tawny gold day side, amber storm flicker",
+      "scene": "a planet seen from orbit with the day-night line curved across its face, one half drowned in violet night with amber storm flickers spattered through the cloud, the other half a tawny sunlit continent under rose-gold cloud streets, a gold seam of dawn drawn the whole way down the middle, dust-hazed air ringing the whole globe",
+      "target": "a tawny grassland plain",
+      "target_phrase": "a tawny plain"
+    },
+    {
+      "name": "mound_savanna",
+      "exp": 3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "burnt sienna clay, tawny grass, violet dusk sky",
+      "scene": "a savanna at dusk seen from a low rise, dozens of clay termite spires standing scattered across the grassland with their fluted sides catching the last sun, tawny grass combed flat by wind, two hornbills perched on a spire tip, an aardvark hunched at a broken mound base with a spill of fresh sienna soil under it, a herd of grazing antelope strung across the middle distance, egrets stalking the grass in ones and twos, a violet dusk sky with rose-gold cloud banks stacked over the far horizon",
+      "target": "a tall clay spire",
+      "target_phrase": "a tall clay spire",
+      "cameo": {
+        "sprite": "output/mascots/canon/lorraine.png",
+        "pos": [
+          0.34,
+          0.62
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "mound_citadel",
+      "exp": 0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ochre clay grain, amber glow, violet gloom",
+      "scene": "a termite mound opened in cutaway, tier upon tier of galleries and spiral ramps cut through packed sienna grain, branching ventilation chimneys rising through the whole tower, glowing stress skeletons threading the grain walls wherever the load runs, ivory workers in files up every ramp with cargo in their jaws, soldier termites with heavy blunt jaws posted at each gallery mouth, one swollen egg-laying termite sealed into a broad domed cell with a crowd of attendants packed around it, ridged fungus combs cultivated in the side vaults, the whole interior lit from within by a warm amber glow",
+      "target": "a ridged fungus comb",
+      "target_phrase": "a ridged fungus comb"
+    },
+    {
+      "name": "fungus_garden",
+      "exp": -1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "umber sponge, rose-gold ridges, sulphur-yellow spore dust",
+      "scene": "the inside of a fungus garden vault, a spongework comb of chewed plant fibre riddled with rounded hollows, ivory mycelium fuzz creeping over every ridge, sulphur-yellow spore knobs studded thickly across the ridge tops, a few blind nymphs grazing the surface, umber shadow pooled in the hollows, the comb repeating away into the vault gloom",
+      "target": "an ivory fungal thread",
+      "target_phrase": "an ivory thread"
+    },
+    {
+      "name": "hypha_cells",
+      "exp": -4.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-blue cell walls, amber cores, teal cytoplasm",
+      "scene": "the inside of a fungal thread, one tube partitioned into cell after cell by cross-walls, every compartment crowded with grainy teal cytoplasm, bean-shaped mitochondria with folded interiors strung through each cell, a pore at every cross-wall with vesicles queued at it, amber vacuoles bulging against the violet-blue walls, ranks of neighbouring threads crossing away into gloom",
+      "target": "a taut rose-gold cable",
+      "target_phrase": "a rose-gold cable"
+    },
+    {
+      "name": "motor_bundle",
+      "exp": -7.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "inky depth, rose-gold tubes, teal cargo sacs",
+      "scene": "a bundle of hollow protein tubes built from paired beads spiralling up their walls, two-legged motor proteins planted on the outer surface of each tube with a rounded teal cargo sac gripped behind them, more tubes crossing the bundle at angles, tangled filament webs strung across the gaps, a haze of loose molecules speckling the inky depth around it all",
+      "target": "a stiff ivory ribbon",
+      "target_phrase": "a stiff ivory ribbon"
+    },
+    {
+      "name": "chitin_lattice",
+      "exp": -9.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ice-blue bonds, violet dusk, acid green defect row",
+      "scene": "the crystal grid inside a chitin fibril, flat six-sided rings of atoms linked corner to corner into stiff ribbons, ribbon stacked on ribbon in staggered tiers, hairline bond bridges pinning every tier to the next, one row knocked out of register and lit acid green through the whole grid, tier after tier of the lattice receding into violet dusk",
+      "target": "a glowing amber core",
+      "target_phrase": "a glowing amber core"
+    },
+    {
+      "name": "subnuclear_knot",
+      "exp": -14,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "violet gulf, sienna strands, gold spheres",
+      "scene": "a knotted droplet of packed glowing gold spheres suspended in a violet gulf, taut sienna strands strung sphere to sphere in a branching net, cooler sparks strewn thickly through the gulf around it, further nets of the same kind repeating away into violet dusk"
+    }
+  ]
 }
