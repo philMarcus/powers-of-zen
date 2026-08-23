@@ -155,6 +155,7 @@ def compile_journey(spec, fps, build="in", loop_lap=None):
 
     if lap:
         regs = regs + [dict(regs[0])]
+    lap_stub = None      # captured pieces of card 1's arrival, re-played after the lap
     phases, zoom, denoise, exponent, cameos = [], [], [], [], []
     approach = []          # per-frame: {phrase, pick} on object-approach beats, else None
     arrivals = set()
@@ -162,6 +163,7 @@ def compile_journey(spec, fps, build="in", loop_lap=None):
     prev_exp = regs[0]["exp"]
     prev_kind = "zoom"
     for k, reg in enumerate(regs):
+        n_ph0 = len(phases)
         nxt = regs[k + 1] if k + 1 < len(regs) else regs[0]   # loop back
         # with the lap, NO card takes the loop-home branch — the lap card (a copy of card 0)
         # compiles as a normal middle card targeting its authored next world (card 1); the
@@ -263,11 +265,35 @@ def compile_journey(spec, fps, build="in", loop_lap=None):
 
         if reg.get("cameo"):
             cameos.append({"start": reg_start + fa, "end": reg_start + F, **reg["cameo"]})
+        if lap and k == 0:
+            lap_kind_c0 = kind
+        if lap and k == 1 and fa:
+            lap_stub = {"phase": dict(phases[n_ph0]), "fa": fa, "zs": zs[:fa],
+                        "exps": exponent[reg_start:reg_start + fa],
+                        "seam": lap_kind_c0 == "seam", "den": travel_denoise}
         prev_kind = "zoom" if last else kind
+
+    if lap and lap_stub:
+        # ARRIVAL RE-PLAY (Phil 2026-08-23 evening — the "intermediate image" fix): homing
+        # onto card 1's arrival START meant homing onto a mid-morph HYBRID frame (cobalt:
+        # cluster_sun's rays hanging over the incoming bubble world), so every drastic
+        # card0→card1 morph put a visible third image at the seam. The lap now continues
+        # fa more frames — re-playing card 1's on-beat arrival morph mid-chain — and the
+        # video cuts/homes at the first CLEAN post-arrival frame. Delivered length is
+        # still exactly N bars: total = old + card0 + fa, lap_cut = card0 + fa.
+        if lap_stub["seam"]:
+            seam_arrivals.add(len(phases))
+        arrivals.add(len(phases))
+        phases.append({"prompt": lap_stub["phase"]["prompt"], "frames": lap_stub["fa"]})
+        zoom += lap_stub["zs"]
+        denoise += [lap_stub["den"]] * lap_stub["fa"]
+        approach += [None] * lap_stub["fa"]
+        exponent += lap_stub["exps"]
 
     loop = None
     if fmt.get("exact_loop") and build != "out":
-        F_last = _frames(regs[-1], fmt, fps)
+        F_last = _frames(regs[-1], fmt, fps) \
+            + (lap_stub["fa"] if lap and lap_stub else 0)
         # Tail length is MUSICAL: 24 frames at fpb 7 = 6/7 of a bar (and morph_frames 12 =
         # ~1.7 beats), so scale both with the journey's beat. Legacy sec-schema keeps 2.0s.
         fpb = fmt.get("frames_per_beat", 7)
@@ -283,7 +309,9 @@ def compile_journey(spec, fps, build="in", loop_lap=None):
         # loop_composite tail is gone. See PLAN.md "THE SEAM".
         loop = {"frames": L, "morph_frames": min(max(4, round(12 * fpb / 7)), L - 2)}
         if lap:
-            # the delivered video starts here (frames [0..lap_cut) are the txt2img warm-up
-            # card, cut at assembly); the tail homes onto frame lap_cut, not frame 0
-            loop["lap_cut"] = _frames(regs[0], fmt, fps)
+            # the delivered video starts here (frames [0..lap_cut) = the txt2img warm-up
+            # card + card 1's original arrival, cut at assembly); the tail homes onto
+            # frame lap_cut = the first clean post-arrival frame
+            loop["lap_cut"] = _frames(regs[0], fmt, fps) \
+                + (lap_stub["fa"] if lap_stub else 0)
     return phases, zoom, denoise, exponent, loop, cameos, arrivals, approach, seam_arrivals
