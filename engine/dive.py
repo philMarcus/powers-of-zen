@@ -1199,17 +1199,26 @@ def main():
                     # frames. LOOP LAP (2026-08-23): the home is frame lap_cut — card 1's
                     # feedback-born start — instead of the txt2img frame 0.
                     t_home = (j + 1) / L_tail
-                    if loop.get("_home_img") is None:
-                        # LOOP-MOTION CONTINUITY (Phil 2026-08-24: "we stop moving briefly
-                        # ... starting from rest"): landing ON frame lap_cut made the wrap
-                        # play two near-identical frames — a one-beat freeze. Home is now
-                        # frame lap_cut-1, the frame the chain generated ONE ZOOM STEP
-                        # BEFORE the video's first frame, so last→first continues the dive
-                        # at exactly the scheduled rate.
-                        _hidx = lap_cut - 1
-                        loop["_home_img"] = (Image.open(
-                            frames_dir / f"{_hidx:05d}.png").convert("RGB")
-                            if lap_cut else frame0)
+                    # TRAJECTORY HOMING (2026-08-24 v3 — Phil: "still feels like a stop"):
+                    # a STATIC home target makes the tail converge ASYMPTOTICALLY — as IPA
+                    # rises every frame is pulled toward the same fixed picture, so
+                    # frame-to-frame change decays below the zoom rate = a perceived
+                    # deceleration into the loop (v2's one-step-early landing fixed the
+                    # wrap, not the approach). The target now MOVES: tail frame j aims at
+                    # original frame (lap_cut - L_tail + j), the reference trajectory
+                    # leading into the video start — inter-frame change stays one zoom
+                    # step all the way in, and the wrap is just the next step. The final
+                    # target is lap_cut-1, preserving v2's continuous wrap.
+                    if lap_cut:
+                        _tidx = max(0, lap_cut - L_tail + j)
+                        if loop.get("_home_idx") != _tidx:
+                            loop["_home_img"] = Image.open(
+                                frames_dir / f"{_tidx:05d}.png").convert("RGB")
+                            loop["_home_ref"] = upload_image(
+                                loop["_home_img"], f"zoomer_loop_home_{name}.png")
+                            loop["_home_idx"] = _tidx
+                    elif loop.get("_home_img") is None:
+                        loop["_home_img"] = frame0
                         loop["_home_ref"] = upload_image(
                             loop["_home_img"], f"zoomer_loop_home_{name}.png")
                     # HOMING CURVE v2 (see DEFAULTS): smoothstep from a nonzero floor —
