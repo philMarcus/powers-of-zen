@@ -19,7 +19,7 @@
     "render_paused": false,
     "refill_paused": false,
     "post_every_hours": 19.0,
-    "post_next": "2026-08-24 07:00"
+    "post_next": "2026-08-25 02:00"
   },
   "journeys": {
     "stormglass": {
@@ -263,30 +263,6 @@
       "ts": "2026-08-22 22:25:27",
       "note": "NOT re-rendering (Phil 2026-08-22 night: enough corals) — parallax versions already exist: v4=0.5, v5=0.7, v3=1.0, same seed. When Phil picks a gain, ingest it GPU-free: queue_review.py coral_synapse ds --src output/coral_synapse/<vN>"
     },
-    "vesper_flight": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-22 22:00:15",
-      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
-      "order": 6
-    },
-    "anemone_arsenal": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-22 22:00:15",
-      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
-      "order": 7
-    },
-    "meteorite_cradle": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-22 22:00:15",
-      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
-      "order": 8
-    },
     "cherenkov_cistern": {
       "state": "queued",
       "force": true,
@@ -328,5 +304,5 @@
       "order": 14
     }
   },
-  "updated": "2026-08-23 12:09:42"
+  "updated": "2026-08-24 07:44:44"
 }

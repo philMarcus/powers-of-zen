@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-08-23 18:56:03",
+    "updated": "2026-08-24 07:54:39",
     "paused_platforms": [
       "tiktok"
     ],
@@ -6907,7 +6907,7 @@
       "yt_title": "A star’s rings dissolve into a river of dusk 🌌",
       "yt_desc": "",
       "cameo": "dora",
-      "state": "rejected",
+      "state": "review",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -6928,28 +6928,28 @@
       },
       "created": "2026-08-18",
       "caption_bodies": [
-        "A star’s rings dissolve into a river of dusk 🌌",
-        "Limestone towers rise where bats spiral to the sky ✨",
-        "The cave breathes as wings unfurl in amber light 🦇",
-        "Muscle fibers hum with the oldest light in the universe ⚡",
-        "Galaxies sag between the shells of time itself 🌀"
+        "A star’s breath unfolds into a galaxy’s pulse 🌌",
+        "Dusk rivers carve the bones of the world 🦇",
+        "Limestone spires hum with the wings of night",
+        "The cave’s heartbeat glows in amber veins 💛",
+        "Atoms hum where the universe began"
       ],
       "yt_title_options": [
-        "A star’s rings dissolve into a river of dusk 🌌",
-        "Limestone towers rise where bats spiral to the sky ✨",
-        "The cave breathes as wings unfurl in amber light 🦇",
-        "Muscle fibers hum with the oldest light in the universe ⚡",
-        "Galaxies sag between the shells of time itself 🌀"
+        "A star’s breath unfolds into a galaxy’s pulse 🌌",
+        "Dusk rivers carve the bones of the world 🦇",
+        "Limestone spires hum with the wings of night",
+        "The cave’s heartbeat glows in amber veins 💛",
+        "Atoms hum where the universe began"
       ],
-      "spot_line": "Can you spot Dora the Flora hiding in this cosmic dive? 👀",
-      "caption_tags": "#cosmicdive #limestonedreams #batsofzen #galaxieswithin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_line": "Can you spot Dora the Flora hiding in the cosmic dance? 👀",
+      "caption_tags": "#cosmicdive #limestonedreams #stellarwhispers #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "spot_hook": true,
       "caption_options": [
-        "A star’s rings dissolve into a river of dusk 🌌 Can you spot Dora the Flora hiding in this cosmic dive? 👀 #cosmicdive #limestonedreams #batsofzen #galaxieswithin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Limestone towers rise where bats spiral to the sky ✨ Can you spot Dora the Flora hiding in this cosmic dive? 👀 #cosmicdive #limestonedreams #batsofzen #galaxieswithin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "The cave breathes as wings unfurl in amber light 🦇 Can you spot Dora the Flora hiding in this cosmic dive? 👀 #cosmicdive #limestonedreams #batsofzen #galaxieswithin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Muscle fibers hum with the oldest light in the universe ⚡ Can you spot Dora the Flora hiding in this cosmic dive? 👀 #cosmicdive #limestonedreams #batsofzen #galaxieswithin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Galaxies sag between the shells of time itself 🌀 Can you spot Dora the Flora hiding in this cosmic dive? 👀 #cosmicdive #limestonedreams #batsofzen #galaxieswithin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+        "A star’s breath unfolds into a galaxy’s pulse 🌌 Can you spot Dora the Flora hiding in the cosmic dance? 👀 #cosmicdive #limestonedreams #stellarwhispers #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Dusk rivers carve the bones of the world 🦇 Can you spot Dora the Flora hiding in the cosmic dance? 👀 #cosmicdive #limestonedreams #stellarwhispers #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Limestone spires hum with the wings of night Can you spot Dora the Flora hiding in the cosmic dance? 👀 #cosmicdive #limestonedreams #stellarwhispers #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The cave’s heartbeat glows in amber veins 💛 Can you spot Dora the Flora hiding in the cosmic dance? 👀 #cosmicdive #limestonedreams #stellarwhispers #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Atoms hum where the universe began Can you spot Dora the Flora hiding in the cosmic dance? 👀 #cosmicdive #limestonedreams #stellarwhispers #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
       ],
       "music_pregen": {
         "bpm": 103,
@@ -7026,6 +7026,12 @@
         ],
         "for_model": "ds",
         "for_cut": "divein"
+      },
+      "engine_params": {
+        "parallax_gain": 1.0,
+        "resolve_persist": false,
+        "camera_micro": false,
+        "seed": 1234
       }
     },
     {
@@ -7038,7 +7044,7 @@
       "yt_title": "Dive into the infinite glow of a tide pool’s hidden cosmos 🌊✨",
       "yt_desc": "",
       "cameo": "aleksey",
-      "state": "rejected",
+      "state": "review",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -7059,28 +7065,28 @@
       },
       "created": "2026-08-18",
       "caption_bodies": [
-        "Dive into the infinite glow of a tide pool’s hidden cosmos 🌊✨",
-        "Where anemone tentacles bloom like galaxies in the deep",
-        "A spiral journey through stinging cells and starry voids",
-        "From atom to ocean, the universe folds within itself",
-        "Lost in the loop where micro meets macro, forever"
+        "Dive into the infinite, where anemones bloom into galaxies 🌊✨",
+        "A tide pool’s secret spirals into the cosmos, one zoom at a time",
+        "From tentacles to stars, the universe folds in on itself",
+        "Where the ocean meets the void, a loop of wonder begins",
+        "Every scale holds a universe—watch it unfold forever"
       ],
       "yt_title_options": [
-        "Dive into the infinite glow of a tide pool’s hidden cosmos 🌊✨",
-        "Where anemone tentacles bloom like galaxies in the deep",
-        "A spiral journey through stinging cells and starry voids",
-        "From atom to ocean, the universe folds within itself",
-        "Lost in the loop where micro meets macro, forever"
+        "Dive into the infinite, where anemones bloom into galaxies 🌊✨",
+        "A tide pool’s secret spirals into the cosmos, one zoom at a time",
+        "From tentacles to stars, the universe folds in on itself",
+        "Where the ocean meets the void, a loop of wonder begins",
+        "Every scale holds a universe—watch it unfold forever"
       ],
-      "spot_line": "Can you spot Alexis the Galaxy hiding among the stars? 👀",
-      "caption_tags": "#bioluminescentcosmos #infinitezoom #microtomacro #tidepoolgalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_line": "Can you spot Alexis the Galaxy hiding in the void? 👀",
+      "caption_tags": "#bioluminescentcosmos #infinitescale #tidepoolgalaxies #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "spot_hook": true,
       "caption_options": [
-        "Dive into the infinite glow of a tide pool’s hidden cosmos 🌊✨ Can you spot Alexis the Galaxy hiding among the stars? 👀 #bioluminescentcosmos #infinitezoom #microtomacro #tidepoolgalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Where anemone tentacles bloom like galaxies in the deep Can you spot Alexis the Galaxy hiding among the stars? 👀 #bioluminescentcosmos #infinitezoom #microtomacro #tidepoolgalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "A spiral journey through stinging cells and starry voids Can you spot Alexis the Galaxy hiding among the stars? 👀 #bioluminescentcosmos #infinitezoom #microtomacro #tidepoolgalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "From atom to ocean, the universe folds within itself Can you spot Alexis the Galaxy hiding among the stars? 👀 #bioluminescentcosmos #infinitezoom #microtomacro #tidepoolgalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Lost in the loop where micro meets macro, forever Can you spot Alexis the Galaxy hiding among the stars? 👀 #bioluminescentcosmos #infinitezoom #microtomacro #tidepoolgalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+        "Dive into the infinite, where anemones bloom into galaxies 🌊✨ Can you spot Alexis the Galaxy hiding in the void? 👀 #bioluminescentcosmos #infinitescale #tidepoolgalaxies #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A tide pool’s secret spirals into the cosmos, one zoom at a time Can you spot Alexis the Galaxy hiding in the void? 👀 #bioluminescentcosmos #infinitescale #tidepoolgalaxies #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "From tentacles to stars, the universe folds in on itself Can you spot Alexis the Galaxy hiding in the void? 👀 #bioluminescentcosmos #infinitescale #tidepoolgalaxies #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where the ocean meets the void, a loop of wonder begins Can you spot Alexis the Galaxy hiding in the void? 👀 #bioluminescentcosmos #infinitescale #tidepoolgalaxies #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Every scale holds a universe—watch it unfold forever Can you spot Alexis the Galaxy hiding in the void? 👀 #bioluminescentcosmos #infinitescale #tidepoolgalaxies #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
       ],
       "music_pregen": {
         "bpm": 103,
@@ -7157,6 +7163,12 @@
         ],
         "for_model": "ds",
         "for_cut": "divein"
+      },
+      "engine_params": {
+        "parallax_gain": 1.0,
+        "resolve_persist": false,
+        "camera_micro": false,
+        "seed": 1234
       }
     },
     {
@@ -7563,7 +7575,7 @@
       "yt_title": "Dive into the endless desert of infinity 🌌",
       "yt_desc": "",
       "cameo": "lamar",
-      "state": "rejected",
+      "state": "review",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -7584,28 +7596,28 @@
       },
       "created": "2026-08-19",
       "caption_bodies": [
-        "Dive into the endless desert of infinity 🌌",
-        "Where the earth cracks open to reveal hidden worlds ✨",
-        "Glass beads whisper secrets in the void 💫",
-        "A cosmic dance of light and shadow unfolds forever ⚡",
-        "From atoms to galaxies, the universe loops endlessly 🌀"
+        "Dive into the infinite, where deserts dissolve into atoms and stars are born from dust. 🌌",
+        "From cosmic voids to crystal lattices, the universe unfolds in endless loops. ✨",
+        "A journey through time and space, where every scale reveals a hidden wonder. 🌠",
+        "Where galaxies weave and atoms align, the cosmos breathes in perfect rhythm. 🌀",
+        "From the void to the void, the journey never ends—only the scale changes. 🌌"
       ],
       "yt_title_options": [
-        "Dive into the endless desert of infinity 🌌",
-        "Where the earth cracks open to reveal hidden worlds ✨",
-        "Glass beads whisper secrets in the void 💫",
-        "A cosmic dance of light and shadow unfolds forever ⚡",
-        "From atoms to galaxies, the universe loops endlessly 🌀"
+        "Dive into the infinite, where deserts dissolve into atoms and stars are born from dust. 🌌",
+        "From cosmic voids to crystal lattices, the universe unfolds in endless loops. ✨",
+        "A journey through time and space, where every scale reveals a hidden wonder. 🌠",
+        "Where galaxies weave and atoms align, the cosmos breathes in perfect rhythm. 🌀",
+        "From the void to the void, the journey never ends—only the scale changes. 🌌"
       ],
-      "spot_line": "Can you spot Lamar the Star hiding in this infinite dive? 👀",
-      "caption_tags": "#CosmicDesertDive #InfiniteZoomJourney #GlassBeadGalaxies #EndlessUniverseLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_line": "Can you spot Lamar the Star hiding in the cosmic dance? 👀",
+      "caption_tags": "#CosmicZoom #InfiniteJourney #AtomicWonders #StardustRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "spot_hook": true,
       "caption_options": [
-        "Dive into the endless desert of infinity 🌌 Can you spot Lamar the Star hiding in this infinite dive? 👀 #CosmicDesertDive #InfiniteZoomJourney #GlassBeadGalaxies #EndlessUniverseLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Where the earth cracks open to reveal hidden worlds ✨ Can you spot Lamar the Star hiding in this infinite dive? 👀 #CosmicDesertDive #InfiniteZoomJourney #GlassBeadGalaxies #EndlessUniverseLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "Glass beads whisper secrets in the void 💫 Can you spot Lamar the Star hiding in this infinite dive? 👀 #CosmicDesertDive #InfiniteZoomJourney #GlassBeadGalaxies #EndlessUniverseLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "A cosmic dance of light and shadow unfolds forever ⚡ Can you spot Lamar the Star hiding in this infinite dive? 👀 #CosmicDesertDive #InfiniteZoomJourney #GlassBeadGalaxies #EndlessUniverseLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-        "From atoms to galaxies, the universe loops endlessly 🌀 Can you spot Lamar the Star hiding in this infinite dive? 👀 #CosmicDesertDive #InfiniteZoomJourney #GlassBeadGalaxies #EndlessUniverseLoop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+        "Dive into the infinite, where deserts dissolve into atoms and stars are born from dust. 🌌 Can you spot Lamar the Star hiding in the cosmic dance? 👀 #CosmicZoom #InfiniteJourney #AtomicWonders #StardustRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "From cosmic voids to crystal lattices, the universe unfolds in endless loops. ✨ Can you spot Lamar the Star hiding in the cosmic dance? 👀 #CosmicZoom #InfiniteJourney #AtomicWonders #StardustRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A journey through time and space, where every scale reveals a hidden wonder. 🌠 Can you spot Lamar the Star hiding in the cosmic dance? 👀 #CosmicZoom #InfiniteJourney #AtomicWonders #StardustRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where galaxies weave and atoms align, the cosmos breathes in perfect rhythm. 🌀 Can you spot Lamar the Star hiding in the cosmic dance? 👀 #CosmicZoom #InfiniteJourney #AtomicWonders #StardustRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "From the void to the void, the journey never ends—only the scale changes. 🌌 Can you spot Lamar the Star hiding in the cosmic dance? 👀 #CosmicZoom #InfiniteJourney #AtomicWonders #StardustRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
       ],
       "music_pregen": {
         "bpm": 80,
@@ -7682,6 +7694,12 @@
         ],
         "for_model": "ds",
         "for_cut": "divein"
+      },
+      "engine_params": {
+        "parallax_gain": 1.0,
+        "resolve_persist": false,
+        "camera_micro": false,
+        "seed": 1234
       }
     },
     {
@@ -7902,7 +7920,7 @@
       "yt_title": "Every grain tells a story of the universe ✨🌌",
       "yt_desc": "",
       "cameo": "aleksey",
-      "state": "queued",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -7916,9 +7934,9 @@
           "ts": "2026-08-23 11:09:06"
         },
         "instagram": {
-          "status": "failed",
-          "url": "",
-          "ts": "2026-08-23 11:09:06"
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/Dca_2VJRSs1/",
+          "ts": "2026-08-24 07:54:39"
         }
       },
       "created": "2026-08-19",

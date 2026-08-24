@@ -965,3 +965,22 @@
 {"ts": "2026-08-23 18:02:26", "event": "review", "journey": "wild_yeast", "detail": "ds/divein (src v5)"}
 {"ts": "2026-08-23 18:29:26", "event": "review", "journey": "lantern_mangrove", "detail": "ds/divein (src v5)"}
 {"ts": "2026-08-23 18:56:03", "event": "review", "journey": "magnetite_choir", "detail": "ds/divein (src v5)"}
+{"ts": "2026-08-24 00:00:52", "event": "ig_stats", "detail": "36 reels, followers 62"}
+{"ts": "2026-08-24 00:01:09", "event": "ig_insights", "detail": "46 posts"}
+{"ts": "2026-08-24 03:32:56", "event": "review", "journey": "vesper_flight", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-24 03:33:47", "event": "caption", "journey": "vesper_flight", "detail": "5 options, spot=True"}
+{"ts": "2026-08-24 03:33:47", "event": "render", "journey": "vesper_flight", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-24 05:23:59", "event": "review", "journey": "anemone_arsenal", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-24 05:24:44", "event": "caption", "journey": "anemone_arsenal", "detail": "5 options, spot=True"}
+{"ts": "2026-08-24 05:24:44", "event": "render", "journey": "anemone_arsenal", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-24 07:05:16", "event": "post_fail", "journey": "caddis_masonry", "platform": "instagram", "detail": "FLAGGED: instagram/crop_original: could not confirm Original (phone 9:16) crop — refusing to post a squared video"}
+{"ts": "2026-08-24 07:06:06", "event": "ig_stats", "detail": "36 reels, followers 62"}
+{"ts": "2026-08-24 07:06:24", "event": "ig_insights", "detail": "44 posts"}
+{"ts": "2026-08-24 07:06:24", "event": "post_gate", "detail": "rc 0, live=False — window held for retry"}
+{"ts": "2026-08-24 07:43:40", "event": "review", "journey": "meteorite_cradle", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-24 07:44:44", "event": "caption", "journey": "meteorite_cradle", "detail": "5 options, spot=True"}
+{"ts": "2026-08-24 07:44:44", "event": "render", "journey": "meteorite_cradle", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-24 07:47:39", "event": "post_fail", "journey": "caddis_masonry", "platform": "instagram", "detail": "FLAGGED: instagram/verify_live: Share clicked but the newest reel does NOT carry this caption — post did not go through. Reported as FAILED, not live."}
+{"ts": "2026-08-24 07:48:29", "event": "ig_stats", "detail": "36 reels, followers 62"}
+{"ts": "2026-08-24 07:48:47", "event": "ig_insights", "detail": "45 posts"}
+{"ts": "2026-08-24 07:54:39", "event": "post", "journey": "caddis_masonry", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/Dca_2VJRSs1/ (driven flow, share JS-click fix)"}

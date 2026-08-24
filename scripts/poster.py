@@ -518,11 +518,25 @@ def post_youtube(video_rel, title, desc, dry_run):
 
 
 def _ig_click(tab, label, top_max=260):
-    """Click an Instagram modal-header button with EXACT text (Next / Share / Done) via a
-    SYNTHESIZED mouse click. el.click() is silently ignored by Instagram's React handlers
-    for these buttons — that is what left night_bloom's caption unsaved. Locate the topmost
-    match near the top of the screen (so we never hit feed elements behind the modal), then
-    dispatch a real press/release at its center. Returns 'ok' or None."""
+    """Click an Instagram modal-header button with EXACT text (Next / Share / Done).
+    JS el.click() FIRST, scoped to the open dialog (2026-08-24, professional-account UI):
+    the coordinate click at the Share button's center actually hit its header CONTAINER
+    (elementFromPoint = the wrapper div), which no longer delegates — Share "clicked"
+    but nothing submitted (the 07:00 caddis window). The new UI accepts el.click() on the
+    real element (verified live: Sharing… → shared toast). Coordinate press/release kept
+    as fallback for pre-conversion layouts. Returns 'ok' or None."""
+    r = tab.eval("(function(){const dlg=document.querySelector('div[role=\"dialog\"]');"
+                 "const scope=dlg||document;"
+                 "const els=[...scope.querySelectorAll("
+                 "'div[role=\"button\"],button,a,span,div[tabindex]')].filter(e=>"
+                 f"e.textContent.trim()==='{label}'&&e.offsetParent"
+                 f"&&e.getBoundingClientRect().top<{top_max});"
+                 "if(!els.length)return null;"
+                 "els.sort((a,b)=>a.getBoundingClientRect().top-b.getBoundingClientRect().top);"
+                 "const el=els[0].closest('div[role=\"button\"],button')||els[0];"
+                 "el.click();return 'js';})()")
+    if r:
+        return "ok"
     coords = tab.eval("(function(){const els=[...document.querySelectorAll("
                       "'div[role=\"button\"],button,a,span,div[tabindex]')].filter(e=>"
                       f"e.textContent.trim()==='{label}'&&e.offsetParent"
@@ -586,16 +600,30 @@ def _ig_select_original_crop(tab, tries=3):
         _ig_dismiss(tab)   # a re-popped notifications nag can cover the crop icon between tries
         if _ig_crop_is_original(tab) is True:
             return True
-        # open the Select crop (aspect) popup — svg[aria-label="Select crop"]
+        # JS clicks FIRST (2026-08-24, professional-account UI): the crop dialog SCROLLS
+        # and the aspect button can sit below the fold — coordinate clicks hit nothing
+        # (elementFromPoint at its center = null; the 07:00 caddis window died on this).
+        # The new UI accepts el.click() on BOTH controls (verified live: popup opened,
+        # Original selected, containment flipped True).
+        tab.eval(r"""(function(){const s=document.querySelector('svg[aria-label="Select crop"]');
+          if(!s)return null;(s.closest('div[role=button],button')||s.parentElement).click();return 1;})()""")
+        time.sleep(1.2)
+        tab.eval(r"""(function(){const els=[...document.querySelectorAll('span,div[role=button],button')]
+          .filter(e=>e.textContent.trim()==='Original');if(!els.length)return null;
+          (els[0].closest('div[role=button],button')||els[0]).click();return 1;})()""")
+        time.sleep(1.2)
+        if _ig_crop_is_original(tab) is True:
+            return True
+        # legacy fallback: trusted coordinate clicks (pre-conversion UI)
         coords = tab.eval(r"""(function(){const s=document.querySelector('svg[aria-label="Select crop"]');
-          if(!s)return null;const el=s.closest('div[role=button],button')||s.parentElement;const b=el.getBoundingClientRect();
+          if(!s)return null;const el=s.closest('div[role=button],button')||s.parentElement;el.scrollIntoView({block:'center'});
+          const b=el.getBoundingClientRect();
           return JSON.stringify([Math.round(b.left+b.width/2),Math.round(b.top+b.height/2)]);})()""")
         if coords:
             x, y = json.loads(coords)
             for typ in ("mousePressed", "mouseReleased"):
                 tab.cmd("Input.dispatchMouseEvent", type=typ, x=x, y=y, button="left", clickCount=1)
             time.sleep(1.2)
-        # click the exact 'Original' option (synthesized — el.click is ignored by IG React)
         oc = tab.eval(r"""(function(){const els=[...document.querySelectorAll('span,div[role=button],button')]
           .filter(e=>e.textContent.trim()==='Original'&&e.offsetParent);if(!els.length)return null;
           els.sort((a,b)=>a.getBoundingClientRect().top-b.getBoundingClientRect().top);
