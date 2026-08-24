@@ -115,6 +115,24 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-23 (NIGHT CLOSE — round 3, Phil's two catches fixed): (1) "INTERMEDIATE IMAGE"
+AT THE SEAM (cobalt's red rays) = the lap homed onto card 1's ARRIVAL START — a mid-morph
+hybrid by construction. Fix = ARRIVAL RE-PLAY (grammar): the lap continues fa more frames
+re-playing card 1's on-beat arrival morph mid-chain; cut/home = first CLEAN post-arrival
+frame; delivered still exactly N bars (lap_cut = card0 + fa). All 7 retrofits re-run on
+it: review wild_yeast/lantern/cobalt/magnetite v5s re-ingested; production caddis v3 +
+termite v4 + ruby v5 rebuilt from Phil's marked rotations (R + lap-shift for zoomout,
+R − for divein; openings verified 3-7 diff) + installed with prod's own audio; UNSHIFTED
+COMPANIONS refreshed (orig_file targets now the new cuts — future re-marks shift the
+right video). (2) MUSIC SEND-BACK BUG (Phil's report): Back-to-Review now reverts v.file
+to the unshifted cut (marker time must match what's on screen); queue_review clears
+orig_file/start_t on new-render ingest. RUBY ROOT CAUSE PROVEN: orig_file survived
+reject→re-render→re-approve pointing at production/ruby_furnace_ds.mp4 dated AUG 17 (the
+pre-rejection OLD-ENGINE render, tree archived to E:) — the 11:35 approve shifted THAT.
+Both bugs now impossible. NOTE: lantern was approved to Music mid-day (start 8.7s) — the
+re-ingest pulled it back to Review with the mark cleared (new safety rule); Phil re-enters
+8.7. Orphaned production/lantern_mangrove_ds_shift.mp4 (16:58) is harmless. caddis posts
+07:00 with the FINAL corrected seam.
 2026-08-23 (EVENING CLOSE): HOMING CURVE v2 shipped after Phil's "still too abrupt" on the
 first lap result — smoothstep IPA from a 0.22 floor (half strength by mid-tail; was
 0.95·t^1.5 = converged in the last ~8 frames), depth-CN across the WHOLE tail 0.15→0.80,

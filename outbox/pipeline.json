@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-08-23 14:52:53",
+    "updated": "2026-08-23 18:56:03",
     "paused_platforms": [
       "tiktok"
     ],
@@ -5570,8 +5570,8 @@
       "cut": "divein",
       "file": "review_divein/lantern_mangrove_ds_divein.mp4",
       "title": "",
-      "caption": "Dive into the glowing heart of a mangrove world 🌿✨ Can you spot Tina the DNA hiding in the depths? 👀 #bioluminescentdream #microscopiccosmos #endlessdepths #glowinguniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-      "yt_title": "Dive into the glowing heart of a mangrove world 🌿✨",
+      "caption": "Where water splits the world and fireflies dance in the deep 💧🔥 Can you spot Tina the DNA hiding in the glow? 👀 #bioluminescentdream #microscopicgalaxy #mangrovenight #silicauniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Where water splits the world and fireflies dance in the deep 💧🔥",
       "yt_desc": "",
       "cameo": "tina",
       "state": "review",
@@ -5699,6 +5699,82 @@
         "resolve_persist": false,
         "camera_micro": false,
         "seed": 1234
+      },
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "E minor",
+        "stage": "done",
+        "chosen": "pulse2-tide_organ",
+        "candidates": [
+          {
+            "id": "wooden_orbit-wild",
+            "lane": "wooden_orbit",
+            "mood": "playful, organic, orbiting · third_answer",
+            "track": "output/music/lantern_mangrove_wooden_orbit-wild.flac",
+            "aligned": "review/music/candidates/lantern_mangrove/wooden_orbit-wild.mp4",
+            "seed": 30696,
+            "lock": 20.33,
+            "bar_conf": 0.47,
+            "kick": 0.42,
+            "score": 16.3,
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a still night tide under mangroves, a breathing reed organ over a deep sub pulse, one long swell rising into the glass-web morph out to the nebula, warm marimba and kalimba over a round woody bass, gentle plucked figures, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "pulse2-tide_organ",
+            "lane": "tide_organ",
+            "mood": "tidal, breathing, mineral · downbeat (pulse top-up)",
+            "track": "output/music/lantern_mangrove_pulse2-tide_organ.flac",
+            "aligned": "review/music/candidates/lantern_mangrove/pulse2-tide_organ.mp4",
+            "seed": 31046,
+            "lock": 19.47,
+            "bar_conf": 0.56,
+            "kick": 0.47,
+            "score": 13.87,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a still night tide under mangroves, a breathing reed organ over a deep sub pulse, one long swell rising into the glass-web morph out to the nebula, a breathy reed organ and soft water textures over a deep sub pulse, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "pulse1-tide_organ",
+            "lane": "tide_organ",
+            "mood": "tidal, breathing, mineral · downbeat (pulse top-up)",
+            "track": "output/music/lantern_mangrove_pulse1-tide_organ.flac",
+            "aligned": "review/music/candidates/lantern_mangrove/pulse1-tide_organ.mp4",
+            "seed": 30945,
+            "lock": 13.7,
+            "bar_conf": 0.57,
+            "kick": 0.46,
+            "score": 10.6,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a still night tide under mangroves, a breathing reed organ over a deep sub pulse, one long swell rising into the glass-web morph out to the nebula, a breathy reed organ and soft water textures over a deep sub pulse, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "glass_chapel-wild",
+            "lane": "glass_chapel",
+            "mood": "sacred, luminous, weightless · downbeat",
+            "track": "output/music/lantern_mangrove_glass_chapel-wild.flac",
+            "aligned": "review/music/candidates/lantern_mangrove/glass_chapel-wild.mp4",
+            "seed": 30807,
+            "lock": 8.89,
+            "bar_conf": 0.51,
+            "kick": 0.51,
+            "score": 6.8,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a still night tide under mangroves, a breathing reed organ over a deep sub pulse, one long swell rising into the glass-web morph out to the nebula, crystalline glass bells and a soft distant choir pad, airy shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "choir_of_dust-wild",
+            "lane": "choir_of_dust",
+            "mood": "hushed, suspended, dissolving · heartbeat",
+            "track": "output/music/lantern_mangrove_choir_of_dust-wild.flac",
+            "aligned": "review/music/candidates/lantern_mangrove/choir_of_dust-wild.mp4",
+            "seed": 30733,
+            "lock": 3.5,
+            "bar_conf": -0.03,
+            "kick": -0.06,
+            "score": 0.45,
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a still night tide under mangroves, a breathing reed organ over a deep sub pulse, one long swell rising into the glass-web morph out to the nebula, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "zoomout"
       }
     },
     {
@@ -6264,8 +6340,8 @@
       "cut": "zoomout",
       "file": "production/ruby_furnace_ds_shift.mp4",
       "title": "",
-      "caption": "A cosmic dance from star to garden, atom to atom 🌌 Can you spot Dora the Flora hiding in the loop? 👀 #cosmicgarden #infinitezoom #jewelboxuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-      "yt_title": "A cosmic dance from star to garden, atom to atom 🌌",
+      "caption": "From red giants to ruby throats, the universe unfolds Can you spot Dora the Flora hiding in the loop? 👀 #cosmicgarden #infinitezoom #jewelboxuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "From red giants to ruby throats, the universe unfolds",
       "yt_desc": "",
       "cameo": "dora",
       "state": "queued",

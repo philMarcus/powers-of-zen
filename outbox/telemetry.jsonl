@@ -954,3 +954,14 @@
 {"ts": "2026-08-23 15:25:57", "event": "repair_install", "journey": "caddis_masonry", "detail": "v2 R=72 resid=0.34"}
 {"ts": "2026-08-23 15:41:47", "event": "repair_install", "journey": "termite_citadel", "detail": "v3 R=72 resid=0.35"}
 {"ts": "2026-08-23 16:05:13", "event": "switch", "journey": "ruby_furnace", "detail": "lap retrofit installed (rebuilt from v4 @ marked 3.15s + prod audio; old prod video matched no local render — provenance anomaly, backup kept)"}
+{"ts": "2026-08-23 16:57:05", "event": "switch", "journey": "lantern_mangrove", "detail": "ds/zoomout"}
+{"ts": "2026-08-23 16:58:20", "event": "phase_shift", "journey": "lantern_mangrove", "detail": "start @ 8.70s"}
+{"ts": "2026-08-23 16:58:21", "event": "music", "journey": "lantern_mangrove"}
+{"ts": "2026-08-23 16:58:32", "event": "music_realign", "journey": "lantern_mangrove", "detail": "5 candidates"}
+{"ts": "2026-08-23 17:34:52", "event": "review", "journey": "cobalt_rookery", "detail": "ds/divein (src v5)"}
+{"ts": "2026-08-23 17:49:20", "event": "edit", "journey": "ruby_furnace"}
+{"ts": "2026-08-23 18:01:23", "event": "music_choose", "journey": "lantern_mangrove", "detail": "pulse2-tide_organ"}
+{"ts": "2026-08-23 18:01:23", "event": "queued", "journey": "lantern_mangrove"}
+{"ts": "2026-08-23 18:02:26", "event": "review", "journey": "wild_yeast", "detail": "ds/divein (src v5)"}
+{"ts": "2026-08-23 18:29:26", "event": "review", "journey": "lantern_mangrove", "detail": "ds/divein (src v5)"}
+{"ts": "2026-08-23 18:56:03", "event": "review", "journey": "magnetite_choir", "detail": "ds/divein (src v5)"}
