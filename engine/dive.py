@@ -551,7 +551,11 @@ def assemble(cfg, name, out_dir, frames_dir, total, exponent=None, loop_pad=Fals
     n_raw = total - start
     K = min(cfg["loop_fade_frames"], n_raw // 2)
     if K:
-        heads = [Image.open(frames_dir / f"{start + i:05d}.png").convert("RGB")
+        # with a lap cut, blend the tail toward the frames leading INTO the start
+        # ([start-K..start)) so the final frame lands one step BEFORE the wrap target and
+        # motion continues; [start..start+K) would land AHEAD and the wrap stepped backward
+        h0 = start - K if start >= K else start
+        heads = [Image.open(frames_dir / f"{h0 + i:05d}.png").convert("RGB")
                  for i in range(K)]
         for i in range(K):
             t = total - K + i
@@ -1027,10 +1031,11 @@ def main():
             cx = 0.5 + drift * math.sin(2 * math.pi * i / 263)
             cy = 0.5 + drift * math.sin(2 * math.pi * i / 419 + 1.7)
             if _th and lap_cut:
-                # LOOP LAP: the home frame (lap_cut) was rendered WITH drift — steer the
+                # LOOP LAP: the home frame (lap_cut-1, one step before the video start —
+                # see loop-motion continuity below) was rendered WITH drift — steer the
                 # tail's zoom center toward ITS drift phase, not toward dead center
-                cx = (1 - _th) * cx + _th * (0.5 + cfg["drift"] * math.sin(2 * math.pi * lap_cut / 263))
-                cy = (1 - _th) * cy + _th * (0.5 + cfg["drift"] * math.sin(2 * math.pi * lap_cut / 419 + 1.7))
+                cx = (1 - _th) * cx + _th * (0.5 + cfg["drift"] * math.sin(2 * math.pi * (lap_cut - 1) / 263))
+                cy = (1 - _th) * cy + _th * (0.5 + cfg["drift"] * math.sin(2 * math.pi * (lap_cut - 1) / 419 + 1.7))
             # TRACKER v3: the tracker owns the aim on approach frames (not the loop tail — the
             # loop mechanism owns that). The scheduled ×10 arrive-look-plunge zoom (zoom_sched)
             # grows the target; the tracker only steers WHERE.
@@ -1186,8 +1191,15 @@ def main():
                     # feedback-born start — instead of the txt2img frame 0.
                     t_home = (j + 1) / L_tail
                     if loop.get("_home_img") is None:
+                        # LOOP-MOTION CONTINUITY (Phil 2026-08-24: "we stop moving briefly
+                        # ... starting from rest"): landing ON frame lap_cut made the wrap
+                        # play two near-identical frames — a one-beat freeze. Home is now
+                        # frame lap_cut-1, the frame the chain generated ONE ZOOM STEP
+                        # BEFORE the video's first frame, so last→first continues the dive
+                        # at exactly the scheduled rate.
+                        _hidx = lap_cut - 1
                         loop["_home_img"] = (Image.open(
-                            frames_dir / f"{lap_cut:05d}.png").convert("RGB")
+                            frames_dir / f"{_hidx:05d}.png").convert("RGB")
                             if lap_cut else frame0)
                         loop["_home_ref"] = upload_image(
                             loop["_home_img"], f"zoomer_loop_home_{name}.png")
