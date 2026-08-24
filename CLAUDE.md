@@ -132,8 +132,12 @@ scrolling dialog's fold; Share click hitting a non-delegating container — JS-f
 clicks in _ig_select_original_crop + _ig_click); caddis posted + verified
 (reel Dca_2VJRSs1); post_next 2026-08-25 02:00 (termite next, with the new seam).
 Tonight's batch renders cherenkov/motmot/bourdon/pomegranate-era queue with the FULL
-stack incl. trajectory homing. NEXT FRONTS: --micro A/B, Phase D camera vocabulary;
-Phil may fine-tune depth.
+stack incl. trajectory homing. POSTING DEAD-ZONE REMAP (Phil's exact rule, in post_gate):
+virtual window [01:00,03:30) → actually post 21:00 the NIGHT BEFORE; [03:30,07:00) →
+09:00; the 19h clock ALWAYS advances from the VIRTUAL time (walk undistorted); never
+posts 01-07 even after downtime. TONIGHT: virtual 08-25 02:00 → termite posts 08-24
+21:00 (new seam), next virtual 08-25 21:00. NEXT FRONTS: --micro A/B, Phase D camera
+vocabulary; Phil may fine-tune depth.
 2026-08-23 (NIGHT CLOSE — round 3, Phil's two catches fixed): (1) "INTERMEDIATE IMAGE"
 AT THE SEAM (cobalt's red rays) = the lap homed onto card 1's ARRIVAL START — a mid-morph
 hybrid by construction. Fix = ARRIVAL RE-PLAY (grammar): the lap continues fa more frames
