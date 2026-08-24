@@ -64,8 +64,31 @@ def main():
     if nxt is None:
         log(f"post_next {nxt_s!r} unparseable — fix it in Settings (YYYY-MM-DD HH:MM)")
         return
-    if now < nxt:
-        log(f"not yet — next post at {nxt.strftime(FMT)} (cadence {every}h)")
+    # DEAD-ZONE REMAP (Phil 2026-08-24): the VIRTUAL schedule keeps walking the clock in
+    # 19h steps, but the ACTUAL post avoids the 01:00-06:59 audience trough:
+    #   virtual in [01:00, 03:30) -> post at 21:00 the NIGHT BEFORE (pull earlier)
+    #   virtual in [03:30, 07:00) -> post at 09:00 that morning    (push later)
+    # The cadence clock ALWAYS advances from the VIRTUAL time (see the advance below), so
+    # remaps never distort the walk.
+    def effective(dt):
+        t = dt.hour * 60 + dt.minute
+        if 60 <= t < 210:
+            return (dt - timedelta(days=1)).replace(hour=21, minute=0,
+                                                    second=0, microsecond=0)
+        if 210 <= t < 420:
+            return dt.replace(hour=9, minute=0, second=0, microsecond=0)
+        return dt
+    eff = effective(nxt)
+    if eff != nxt:
+        log(f"dead-zone remap: virtual {nxt.strftime(FMT)} -> actual {eff.strftime(FMT)}")
+    if now < eff:
+        log(f"not yet — next post at {eff.strftime(FMT)}"
+            + (f" (virtual {nxt.strftime(FMT)})" if eff != nxt else "")
+            + f" (cadence {every}h)")
+        return
+    if 60 <= now.hour * 60 + now.minute < 420:
+        # woke up INSIDE the trough (gate was down past its slot) — never post 01-07
+        log("inside the dead zone now — holding until it ends")
         return
     # HOLD the window when nothing is queued (2026-08-17: the 18:00 window burned on an
     # empty queue and pushed the clock 19h — the gate must retry hourly until a video
@@ -94,8 +117,12 @@ def main():
         log(f"post did not verify (rc {rc}, went_live={went_live}) — "
             "holding the window, retrying next hour")
         return
-    nxt = datetime.now() + timedelta(hours=every)
-    # always land ON the hour (Phil): round to the nearest whole hour
+    # advance from the VIRTUAL scheduled time, not the actual post moment (Phil
+    # 2026-08-24): a dead-zone remap must not shift the 19h walk. Catch up whole steps
+    # if the machine slept past windows; always land ON the hour.
+    nxt = nxt + timedelta(hours=every)
+    while nxt <= datetime.now():
+        nxt += timedelta(hours=every)
     nxt = (nxt + timedelta(minutes=30)).replace(minute=0, second=0, microsecond=0)
     jd = pl.jload()                      # re-read: poster runs for minutes
     jd["settings"]["post_next"] = nxt.strftime(FMT)
