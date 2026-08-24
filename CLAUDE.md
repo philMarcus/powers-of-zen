@@ -115,6 +115,25 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-24 (EVENING — TRAJECTORY HOMING APPROVED + FLEET-WIDE): Phil's morning catches
+led to loop-tail v3: (1) v2 "home one step early" fixed the WRAP but the tail still
+DECELERATED into a static target (asymptotic convergence reads as a stop); v3 =
+TRAJECTORY HOMING — tail frame j targets original frame lap_cut−L+j (same position one
+loop period earlier), inter-frame change stays one zoom step all the way in; final
+target lap_cut−1 keeps the continuous wrap. Phil on cobalt: "looks good and smooth" →
+re-lapped EVERYTHING: all 8 review videos (wild_yeast v7, lantern v7, cobalt v6,
+magnetite v6, vesper/anemone/meteorite/peony v3s) re-ingested; production termite v5 +
+ruby v6 installed at marked openings (diff 3.4/6.1) with companions refreshed; caddis
+already live (untouched). ALSO: VRAM leak guard = dive POSTs /free before frame 0 (the
+12:30 crawl: 8.9GB idle-resident after morning pregen → 55s/frame swap); budget restored
+340 + LLLLSS dropped + one-off render task deleted (overnight batch had run 01:30→09:30
+on the bumped settings). MORNING: IG post fixed twice more (crop button below the
+scrolling dialog's fold; Share click hitting a non-delegating container — JS-first
+clicks in _ig_select_original_crop + _ig_click); caddis posted + verified
+(reel Dca_2VJRSs1); post_next 2026-08-25 02:00 (termite next, with the new seam).
+Tonight's batch renders cherenkov/motmot/bourdon/pomegranate-era queue with the FULL
+stack incl. trajectory homing. NEXT FRONTS: --micro A/B, Phase D camera vocabulary;
+Phil may fine-tune depth.
 2026-08-23 (NIGHT CLOSE — round 3, Phil's two catches fixed): (1) "INTERMEDIATE IMAGE"
 AT THE SEAM (cobalt's red rays) = the lap homed onto card 1's ARRIVAL START — a mid-morph
 hybrid by construction. Fix = ARRIVAL RE-PLAY (grammar): the lap continues fa more frames

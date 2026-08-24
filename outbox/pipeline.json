@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-08-24 09:44:39",
+    "updated": "2026-08-24 14:21:00",
     "paused_platforms": [
       "tiktok"
     ],

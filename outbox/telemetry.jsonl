@@ -992,3 +992,16 @@
 {"ts": "2026-08-24 09:30:01", "event": "music_pregen", "journey": "peony_shell", "detail": "5 candidates"}
 {"ts": "2026-08-24 09:30:01", "event": "batch_done", "detail": "batch done in 8.0h — 4 to Review"}
 {"ts": "2026-08-24 09:44:39", "event": "review", "journey": "wild_yeast", "detail": "ds/divein (src v6)"}
+{"ts": "2026-08-24 10:22:45", "event": "review", "journey": "lantern_mangrove", "detail": "ds/divein (src v6)"}
+{"ts": "2026-08-24 10:52:27", "event": "review", "journey": "cobalt_rookery", "detail": "ds/divein (src v6)"}
+{"ts": "2026-08-24 11:22:24", "event": "review", "journey": "magnetite_choir", "detail": "ds/divein (src v6)"}
+{"ts": "2026-08-24 11:48:37", "event": "review", "journey": "vesper_flight", "detail": "ds/divein (src v3)"}
+{"ts": "2026-08-24 12:00:51", "event": "ig_stats", "detail": "36 reels, followers 62"}
+{"ts": "2026-08-24 12:01:09", "event": "ig_insights", "detail": "45 posts"}
+{"ts": "2026-08-24 12:16:20", "event": "review", "journey": "anemone_arsenal", "detail": "ds/divein (src v3)"}
+{"ts": "2026-08-24 12:49:12", "event": "review", "journey": "meteorite_cradle", "detail": "ds/divein (src v3)"}
+{"ts": "2026-08-24 13:22:02", "event": "review", "journey": "peony_shell", "detail": "ds/divein (src v3)"}
+{"ts": "2026-08-24 13:50:58", "event": "review", "journey": "wild_yeast", "detail": "ds/divein (src v7)"}
+{"ts": "2026-08-24 14:21:00", "event": "review", "journey": "lantern_mangrove", "detail": "ds/divein (src v7)"}
+{"ts": "2026-08-24 14:46:01", "event": "switch", "journey": "termite_citadel", "detail": "trajectory-homing re-lap installed (v5)"}
+{"ts": "2026-08-24 15:10:01", "event": "switch", "journey": "ruby_furnace", "detail": "trajectory-homing re-lap installed (v6)"}
