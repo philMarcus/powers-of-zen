@@ -1,6 +1,6 @@
 {
   "settings": {
-    "render_budget_min": 430,
+    "render_budget_min": 340,
     "max_ready_videos": 20,
     "journey_queue_target": 20,
     "refill_max_per_night": 5,
@@ -10,7 +10,6 @@
       "short": 0.3
     },
     "nightly_templates": [
-      "LLLLSS",
       "LLLS",
       "LLS",
       "LMS",
@@ -271,14 +270,6 @@
       "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
       "order": 10
     },
-    "peony_shell": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-22 22:00:15",
-      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
-      "order": 11
-    },
     "motmot_cenote": {
       "state": "queued",
       "force": true,
@@ -304,5 +295,5 @@
       "order": 14
     }
   },
-  "updated": "2026-08-24 07:44:44"
+  "updated": "2026-08-24 09:42:02"
 }

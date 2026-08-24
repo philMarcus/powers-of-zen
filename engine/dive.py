@@ -884,6 +884,15 @@ def main():
         **run_extra,
     }, indent=2))
 
+    # VRAM LEAK GUARD (2026-08-24): a resident ACE-Step/other stack forces SDXL into
+    # per-step CPU<->GPU weight swapping (~3x frame time — the 12:30 wild_yeast crawl at
+    # 55s/frame with 8.9 GB idle-resident). Free whatever the last job left before frame 0;
+    # worst case is one ~15s model reload.
+    try:
+        requests.post(f"{COMFY}/free", json={"unload_models": True, "free_memory": True},
+                      timeout=15)
+    except Exception:
+        pass
     t0 = time.time()
     # img / frame0 already set above (None for a fresh run, loaded frames for --resume)
     cam = None

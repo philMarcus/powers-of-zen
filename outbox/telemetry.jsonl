@@ -984,3 +984,11 @@
 {"ts": "2026-08-24 07:48:29", "event": "ig_stats", "detail": "36 reels, followers 62"}
 {"ts": "2026-08-24 07:48:47", "event": "ig_insights", "detail": "45 posts"}
 {"ts": "2026-08-24 07:54:39", "event": "post", "journey": "caddis_masonry", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/Dca_2VJRSs1/ (driven flow, share JS-click fix)"}
+{"ts": "2026-08-24 08:58:08", "event": "review", "journey": "peony_shell", "detail": "ds/divein (src v2)"}
+{"ts": "2026-08-24 08:58:09", "event": "render", "journey": "peony_shell", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-24 09:05:28", "event": "music_pregen", "journey": "vesper_flight", "detail": "5 candidates"}
+{"ts": "2026-08-24 09:13:11", "event": "music_pregen", "journey": "anemone_arsenal", "detail": "5 candidates"}
+{"ts": "2026-08-24 09:20:33", "event": "music_pregen", "journey": "meteorite_cradle", "detail": "5 candidates"}
+{"ts": "2026-08-24 09:30:01", "event": "music_pregen", "journey": "peony_shell", "detail": "5 candidates"}
+{"ts": "2026-08-24 09:30:01", "event": "batch_done", "detail": "batch done in 8.0h — 4 to Review"}
+{"ts": "2026-08-24 09:44:39", "event": "review", "journey": "wild_yeast", "detail": "ds/divein (src v6)"}
