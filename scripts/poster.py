@@ -728,6 +728,15 @@ def post_instagram(video_rel, caption, dry_run):
         got = tab.eval(f"({csel})?.textContent?.slice(0,40)")
         print(f"  [dry-run] Instagram: reel ready, caption='{got}'. NOT sharing.")
         return "dry-run"
+    # pre-Share caption guard (2026-08-24: the caddis manual repost went out CAPTION-LESS —
+    # the caption was set in one CDP session and Share clicked from another, and IG's React
+    # dropped the text in between; the atomic flow hasn't shown this, but re-verify right
+    # before the one irreversible click anyway)
+    got = tab.eval(f"(({csel})?.textContent || '').trim()")
+    if not got:
+        expect(set_text(tab, csel, caption), "instagram", "caption_recheck", tab,
+               "caption box EMPTY right before Share — re-set failed")
+        time.sleep(1)
     expect(_ig_click(tab, "Share"), "instagram", "share", tab, "Share button not found")
     # wait for the in-flow confirmation (best-effort), THEN verify against the live profile —
     # the 'shared' text alone has false-positived (claimed shared when the reel never posted).
