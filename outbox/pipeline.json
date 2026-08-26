@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-08-26 11:07:41",
+    "updated": "2026-08-26 16:08:53",
     "paused_platforms": [
       "tiktok"
     ],
@@ -6986,7 +6986,7 @@
       "yt_title": "Limestone spires hum with the wings of night",
       "yt_desc": "",
       "cameo": "dora",
-      "state": "queued",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -6995,14 +6995,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/xgREcdxq8Uw",
+          "ts": "2026-08-26 16:02:58"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DchCOAOhmDn/",
+          "ts": "2026-08-26 16:08:53"
         }
       },
       "created": "2026-08-18",

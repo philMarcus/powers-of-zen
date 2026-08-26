@@ -115,6 +115,32 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-26 (THE CAPTION SAGA, RESOLVED — read this before touching poster.py): four IG
+posts went out caption-less (caddis 08-24, peony 08-24, termite 08-25, lantern 08-26) —
+Phil: "this is ruining my project." FINAL DIAGNOSIS (proven by controlled experiment,
+vesper 16:3x: "share click path: trusted" + caption intact natively): a JS-synthesized
+.click() on the composer's Share fires a BARE share that drops the registered caption;
+the TRUSTED pointer sequence (hover→press→release — what a real user does) carries it.
+The JS Share click was MY 08-24 change (made because coordinate clicks hit an overlay
+container); every blank post followed it. Phil's plausibility check ("I find it hard to
+believe IG is that broken") redirected the diagnosis after I wrongly blamed the platform.
+THE POSTER NOW HAS THREE LAYERS: (1) _ig_share_click = trusted-first with reacted-check
++ JS fallback, path logged + telem ig_share_method; (2) _ig_set_caption = trusted
+Input.insertText verified by IG's char counter (execCommand text renders but never
+registers on the professional UI); (3) CAPTION SELF-HEAL = post detected by reel-code
+DIFF (snapshot before posting), live caption checked, repaired via the EDIT dialog if
+missing (trusted insertText + TRUSTED-COORDS Done — JS Done closes WITHOUT saving),
+telem ig_caption_heal; a post cannot be recorded live without its caption verified on
+the live page. ALL FOUR blank reels repaired in place (caddis by Phil, peony DccarGtgKjB
++ termite Dce_d_qOwVA + lantern DcgRKhzODHi by the repair flow) + marked live. KNOWN
+FLAKINESS: the IG platform tab's CDP websocket occasionally wedges (200s hang →
+"Connection timed out", hit 3× on 08-26; wait_for swallows+retries which can stall
+long) — a FRESH process retry has always worked; a shorter ws timeout + reconnect-ping
+in platform_tab is the open hardening item. POSTED TODAY: lantern (Post-now 08:58, YT+IG,
+caption healed ~15min), vesper (16:00 YT via Post-now, IG 16:3x retry with caption
+native; reel DchCOAOhmDn). Next gate window: virtual 2026-08-27 11:00 (no remap needed).
+Queue: cobalt, ruby, meteorite, wild_yeast. NEXT FRONTS unchanged: --micro A/B, Phase D
+camera vocabulary.
 2026-08-24 (EVENING — TRAJECTORY HOMING APPROVED + FLEET-WIDE): Phil's morning catches
 led to loop-tail v3: (1) v2 "home one step early" fixed the WRAP but the tail still
 DECELERATED into a static target (asymptotic convergence reads as a stop); v3 =

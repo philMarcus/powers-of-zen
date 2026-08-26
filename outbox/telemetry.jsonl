@@ -1105,3 +1105,14 @@
 {"ts": "2026-08-26 09:29:29", "event": "music_pregen", "journey": "sunspot_archipelago", "detail": "5 candidates"}
 {"ts": "2026-08-26 09:31:49", "event": "music_pregen", "journey": "lissajous_stage", "detail": "5 candidates"}
 {"ts": "2026-08-26 09:31:49", "event": "batch_done", "detail": "batch done in 8.0h — 4 to Review · eclipse_waterhole: in Review but UNCAPTIONED (Ollama down?)"}
+{"ts": "2026-08-26 12:00:57", "event": "ig_stats", "detail": "45 reels, followers 63"}
+{"ts": "2026-08-26 12:01:14", "event": "ig_insights", "detail": "44 posts"}
+{"ts": "2026-08-26 16:02:58", "event": "post", "journey": "vesper_flight", "platform": "youtube", "detail": "https://youtube.com/shorts/xgREcdxq8Uw"}
+{"ts": "2026-08-26 16:02:58", "event": "post_fail", "journey": "vesper_flight", "platform": "instagram", "detail": "ERROR: Connection timed out"}
+{"ts": "2026-08-26 16:04:07", "event": "ig_stats", "detail": "49 reels, followers 63"}
+{"ts": "2026-08-26 16:04:24", "event": "ig_insights", "detail": "44 posts"}
+{"ts": "2026-08-26 16:04:24", "event": "post_gate", "detail": "fired (rc 0); next 2026-08-27 11:00"}
+{"ts": "2026-08-26 16:08:03", "event": "ig_share_method", "detail": "trusted"}
+{"ts": "2026-08-26 16:08:53", "event": "post", "journey": "vesper_flight", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DchCOAOhmDn/"}
+{"ts": "2026-08-26 16:10:08", "event": "ig_stats", "detail": "50 reels, followers 63"}
+{"ts": "2026-08-26 16:10:21", "event": "ig_insights", "detail": "44 posts"}
