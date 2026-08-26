@@ -680,6 +680,40 @@ def _ig_repair_caption(tab, code, caption):
     return _norm(caption)[:25] in _norm(txt)
 
 
+def _ig_share_click(tab):
+    """The terminal SUBMIT click — TRUSTED pointer sequence first (2026-08-26, Phil's
+    skepticism was right): the edit dialog's Done saves ONLY on a trusted click (JS
+    .click() closes without saving), and every caption-less post happened after Share
+    switched to a JS click on 08-24 — the leading theory is that the JS click fires a
+    bare share while the real pointer path serializes the caption into the submission.
+    Hover→press→release at the dialog Share's center (the overlay container IS the user
+    path); confirm the flow reacted; JS click only as fallback. Returns 'trusted'/'js'/
+    None — the caller logs which, so the next posts are the experiment."""
+    coords = tab.eval(r"""(function(){const dlg=document.querySelector('div[role=dialog]');
+      if(!dlg)return null;
+      const el=[...dlg.querySelectorAll('div[role=button],button,span,div[tabindex]')]
+        .find(e=>e.textContent.trim()==='Share');
+      if(!el)return null;el.scrollIntoView({block:'center'});
+      const b=el.getBoundingClientRect();
+      return JSON.stringify([Math.round(b.left+b.width/2),Math.round(b.top+b.height/2)]);})()""")
+    reacted = ("(function(){const t=document.body.innerText;"
+               "if(t.includes('Sharing')||t.includes('shared'))return true;"
+               "const dlg=document.querySelector('div[role=dialog]');"
+               "return (dlg&&!dlg.querySelector('div[contenteditable=\"true\"]'))?true:null})()")
+    if coords:
+        x, y = json.loads(coords)
+        tab.cmd("Input.dispatchMouseEvent", type="mouseMoved", x=x, y=y)
+        time.sleep(0.4)
+        for typ in ("mousePressed", "mouseReleased"):
+            tab.cmd("Input.dispatchMouseEvent", type=typ, x=x, y=y,
+                    button="left", clickCount=1)
+        if wait_for(tab, reacted, timeout=10, poll=1):
+            return "trusted"
+    if _ig_click(tab, "Share"):
+        return "js"
+    return None
+
+
 def _ig_select_original_crop(tab, tries=3):
     """On IG's crop screen, choose 'Original' so our 9:16 phone video isn't cropped to SQUARE
     (IG defaults to 1:1). Open 'Select crop', click 'Original', and VERIFY via containment
@@ -836,7 +870,10 @@ def post_instagram(video_rel, caption, dry_run):
         expect(_ig_set_caption(tab, csel, caption), "instagram", "caption_recheck", tab,
                "caption not registered right before Share — refusing to post blank")
         time.sleep(1)
-    expect(_ig_click(tab, "Share"), "instagram", "share", tab, "Share button not found")
+    _method = _ig_share_click(tab)
+    expect(_method, "instagram", "share", tab, "Share button not found")
+    print(f"  share click path: {_method}", flush=True)
+    pl.telem("ig_share_method", detail=_method or "none")
     # wait for the in-flow confirmation (best-effort) — upload takes ~30s+
     wait_for(tab, "document.body.innerText.includes('Your reel has been shared')"
                   "||document.body.innerText.includes('shared')?true:null", 60)
