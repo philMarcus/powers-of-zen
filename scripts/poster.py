@@ -591,6 +591,40 @@ def _ig_crop_is_original(tab):
       return vr.height<=minH+4;})()""")
 
 
+def _ig_set_caption(tab, csel, caption, tries=3):
+    """Set the IG composer caption with TRUSTED input (2026-08-26, the caption-less-posts
+    postmortem): the professional-UI editor renders execCommand('insertText') text
+    VISUALLY but never registers it in editor state — textContent read-backs false-pass
+    and IG submits an empty caption (peony + termite went out blank; the verifier caught
+    both). The only state-true signal is the char COUNTER ("n/2,200"), which renders from
+    the editor's real state. Method: focus, trusted ctrl+A, CDP Input.insertText, then
+    require the counter to be within a few chars of len(caption) (emoji count as 2)."""
+    want = len(caption)
+    for _ in range(tries):
+        tab.eval("(function(){const el=(" + csel + ");if(!el)return;"
+                 "el.scrollIntoView({block:'center'});el.click();el.focus();})()")
+        time.sleep(0.4)
+        tab.cmd("Input.dispatchKeyEvent", type="keyDown", key="a", code="KeyA",
+                modifiers=2, windowsVirtualKeyCode=65)
+        tab.cmd("Input.dispatchKeyEvent", type="keyUp", key="a", code="KeyA",
+                modifiers=2, windowsVirtualKeyCode=65)
+        time.sleep(0.3)
+        tab.cmd("Input.insertText", text=caption)
+        time.sleep(1.0)
+        got = tab.eval(r"""(function(){
+          return [...document.querySelectorAll('span,div')].map(e=>e.textContent.trim())
+            .find(t=>/^[\d,]+\/2,200$/.test(t))||'';})()""")
+        try:
+            n = int(got.split("/")[0].replace(",", ""))
+        except (ValueError, IndexError):
+            n = -1
+        if want <= n <= want + 40:      # emoji/astral chars count as 2 in the counter
+            return True
+        print(f"    caption counter {got!r} (want ~{want}) — retrying")
+        time.sleep(1)
+    return False
+
+
 def _ig_select_original_crop(tab, tries=3):
     """On IG's crop screen, choose 'Original' so our 9:16 phone video isn't cropped to SQUARE
     (IG defaults to 1:1). Open 'Select crop', click 'Original', and VERIFY via containment
@@ -722,20 +756,26 @@ def post_instagram(video_rel, caption, dry_run):
             "||document.querySelector('div[contenteditable=\"true\"]')")
     expect(_ig_advance(tab, "Next", f"({csel})?true:null"),
            "instagram", "reel_screen", tab, "caption screen never appeared after Next (edit->reel)")
-    expect(set_text(tab, csel, caption), "instagram", "caption", tab, "caption box not settable")
+    expect(_ig_set_caption(tab, csel, caption), "instagram", "caption", tab,
+           "caption did not REGISTER (char counter never matched) — refusing to post blank")
     time.sleep(1)
     if dry_run:
         got = tab.eval(f"({csel})?.textContent?.slice(0,40)")
         print(f"  [dry-run] Instagram: reel ready, caption='{got}'. NOT sharing.")
         return "dry-run"
-    # pre-Share caption guard (2026-08-24: the caddis manual repost went out CAPTION-LESS —
-    # the caption was set in one CDP session and Share clicked from another, and IG's React
-    # dropped the text in between; the atomic flow hasn't shown this, but re-verify right
-    # before the one irreversible click anyway)
-    got = tab.eval(f"(({csel})?.textContent || '').trim()")
-    if not got:
-        expect(set_text(tab, csel, caption), "instagram", "caption_recheck", tab,
-               "caption box EMPTY right before Share — re-set failed")
+    # pre-Share caption guard v2 (2026-08-26): verify by the CHAR COUNTER, not textContent
+    # — painted-but-unregistered text false-passed the old guard and peony/termite posted
+    # blank. The counter renders from the editor's true state.
+    got = tab.eval(r"""(function(){
+      return [...document.querySelectorAll('span,div')].map(e=>e.textContent.trim())
+        .find(t=>/^[\d,]+\/2,200$/.test(t))||'';})()""")
+    try:
+        _n = int(got.split("/")[0].replace(",", ""))
+    except (ValueError, IndexError):
+        _n = 0
+    if _n < max(1, len(caption) // 2):
+        expect(_ig_set_caption(tab, csel, caption), "instagram", "caption_recheck", tab,
+               "caption not registered right before Share — refusing to post blank")
         time.sleep(1)
     expect(_ig_click(tab, "Share"), "instagram", "share", tab, "Share button not found")
     # wait for the in-flow confirmation (best-effort), THEN verify against the live profile —
