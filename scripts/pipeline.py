@@ -268,8 +268,7 @@ JSETTINGS_DEFAULTS = {
     "max_ready_videos": 20,        # backpressure: skip the night at this many ready-to-post videos
     "journey_queue_target": 20,    # midnight refill tops the journey queue up toward this
     "refill_max_per_night": 5,     # never compose more than this in one midnight run
-    "tier_share": {"long": 0.4, "medium": 0.3, "short": 0.3},   # target queue mix
-    "nightly_templates": ["LMS", "LLM", "LLS"],   # preferred nightly render mixes, in order
+    "tier_share": {"long": 0.4, "medium": 0.3, "short": 0.3},   # refill Monte Carlo weights
     "render_paused": False,
     "refill_paused": False,
 }
@@ -327,9 +326,6 @@ def jstate(name, jd, pdata):
 
 
 # --- length tiers + render-time estimate --------------------------------------
-TIER_LETTER = {"L": "long", "M": "medium", "S": "short"}
-
-
 def tier_of(cards):
     """Length tier from card count: the catalog runs 4–5-card shorts, 6–8-card
     standards, 9–11-card longs."""
@@ -360,50 +356,38 @@ def est_render_sec(frames):
     return max(600, round(17.9 * frames - 606) + 42)
 
 
-def pick_tonight(jd, ests, tiers):
-    """Tonight's renders. `ests`/`tiers` map every eligible queued journey -> est seconds /
-    tier (callers compile once and pass both; a journey missing from ests is skipped).
-    Tries settings.nightly_templates in order — a template is satisfiable when each letter
-    finds an unused queued journey of that tier (queue order within tier) and the summed
-    estimate fits render_budget_min. Falls back to greedy queue-order under budget (always
-    at least one). Returns (names, template_or_'greedy', total_sec)."""
-    s = jd["settings"]
-    budget = s["render_budget_min"] * 60
-    q = [n for n in jqueue(jd) if n in ests]
-    for tpl in s["nightly_templates"]:
-        picks, used, ok = [], set(), True
-        for letter in tpl.upper():
-            want = TIER_LETTER.get(letter)
-            nxt = next((n for n in q if n not in used and tiers.get(n) == want), None)
-            if nxt is None:
-                ok = False
-                break
-            used.add(nxt)
-            picks.append(nxt)
-        if ok and sum(ests[n] for n in picks) <= budget:
-            return picks, tpl, sum(ests[n] for n in picks)
+def pick_tonight(jd, ests):
+    """Tonight's renders: QUEUE ORDER, as many as fit render_budget_min (Phil
+    2026-08-26 — tier templates RETIRED: they overrode the queue order Phil set, so a
+    glut of queued longs kept rendering while his front-of-queue mediums/shorts never
+    came up; now the queue's mix IS the nightly mix, and refill_tiers' Monte Carlo
+    draw keeps that mix on target). `ests` maps every eligible queued journey -> est
+    seconds (callers compile once; a journey missing from ests is skipped). A journey
+    too big for the REMAINING budget is skipped and the next tried, so one fat long
+    can't strand the night; the first pick always lands even if over budget.
+    Returns (names, total_sec)."""
+    budget = jd["settings"]["render_budget_min"] * 60
     picks, total = [], 0
-    for n in q:                      # greedy: fill the budget in queue order
+    for n in jqueue(jd):
+        if n not in ests:
+            continue
         if not picks or total + ests[n] <= budget:
             picks.append(n)
             total += ests[n]
-    return picks, ("greedy" if picks else "none"), total
+    return picks, total
 
 
-def refill_tiers(jd, queued_tiers, n):
-    """Tiers for n new briefs: repeatedly add to the tier furthest below its tier_share
-    of the queue-so-far. On an empty queue this yields Phil's alternation (2L2M1S, then
-    2L1M2S, ...) exactly."""
-    from collections import Counter
+def refill_tiers(jd, n):
+    """Tiers for n new briefs: independent MONTE CARLO draws weighted by tier_share
+    (Phil 2026-08-26 — replaces the deficit-vs-share rotation: the queue converges to
+    the target mix over time WITHOUT a predictable pattern, and since the batch renders
+    in queue order, the mix queued is the mix rendered)."""
+    import random
     share = jd["settings"]["tier_share"]
-    have = Counter(queued_tiers)
-    out = []
-    for _ in range(n):
-        total = sum(have.values()) + 1
-        t = max(share, key=lambda k: share[k] * total - have.get(k, 0))
-        have[t] += 1
-        out.append(t)
-    return out
+    tiers = [t for t in ("long", "medium", "short") if share.get(t, 0) > 0]
+    if not tiers:
+        return ["long"] * n            # degenerate settings — never return nothing
+    return random.choices(tiers, weights=[share[t] for t in tiers], k=n)
 
 
 def _now():

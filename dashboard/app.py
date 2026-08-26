@@ -757,7 +757,7 @@ with tabs[0]:  # JOURNEYS — the render queue the 01:30 batch draws from (journ
     rejected = [n for n in meta if states[n] == "rejected"]
     ests = {n: meta[n][3] for n in q_names}
     tiers = {n: meta[n][2] for n in q_names}
-    picks, tpl, total = pl.pick_tonight(jd, ests, tiers)
+    picks, total = pl.pick_tonight(jd, ests)
 
     from collections import Counter as _C
     tc = _C(tiers.values())
@@ -769,14 +769,14 @@ with tabs[0]:  # JOURNEYS — the render queue the 01:30 batch draws from (journ
     hc[1].metric("est. runway", f"{nights:.1f} nights")
     ready = counts.get("queued", 0)
     hc[2].metric("ready to post", f"{ready}/{s['max_ready_videos']}")
-    hc[3].metric("tonight", tpl if picks else "—")
+    hc[3].metric("tonight", f"{len(picks)} renders" if picks else "—")
     if s.get("render_paused"):
         st.warning("⏸ nightly rendering is PAUSED (Settings tab)")
     elif ready >= s["max_ready_videos"]:
         st.warning(f"⛔ backpressure: {ready} videos ready to post — "
                    "the 01:30 batch will skip until the production queue drains")
     elif picks:
-        st.info("🌙 tonight [" + tpl + "]: " + " + ".join(
+        st.info("🌙 tonight (queue order): " + " + ".join(
             f"{n} ({tiers[n][0].upper()} ~{ests[n] // 60}min)" for n in picks)
             + f" = {total / 3600:.1f}h of {s['render_budget_min'] // 60}h")
     else:
@@ -996,16 +996,15 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
                                 int(s["journey_queue_target"]))
     maxnight = c[3].number_input("refill: max composed/night", 0, 10,
                                  int(s["refill_max_per_night"]))
-    c2 = st.columns(4)
+    c2 = st.columns(3)
     shares = {}
     for i, t in enumerate(("long", "medium", "short")):
         shares[t] = c2[i].number_input(f"tier share — {t}", 0.0, 1.0,
                                        float(s["tier_share"].get(t, 0.3)), step=0.05,
-                                       help="relative weights for the refill's queue mix")
-    tpls = c2[3].text_input("nightly templates (priority order)",
-                            ",".join(s["nightly_templates"]),
-                            help="comma-separated tier mixes: L=long M=medium S=short; "
-                                 "first satisfiable within budget wins")
+                                       help="Monte Carlo weights for the refill's tier "
+                                            "draw — the queue (and so the nightly render "
+                                            "mix, which runs in queue order) converges "
+                                            "to these ratios")
     t1, t2, t3 = st.columns(3)
     rpaused = t1.toggle("⏸ pause nightly rendering", value=bool(s["render_paused"]))
     fpaused = t2.toggle("⏸ pause midnight refill", value=bool(s["refill_paused"]))
@@ -1016,23 +1015,19 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
         plat_paused[k] = pc[i].toggle(f"⏸ {k}", value=(k in PAUSED),
                                       key=f"set_pause_{k}")
     if st.button("💾 Save settings"):
-        tpl_list = [x.strip().upper() for x in tpls.split(",") if x.strip()]
-        bad = [x for x in tpl_list if not x or set(x) - set("LMS")]
-        if bad:
-            st.error(f"bad template(s): {', '.join(bad)} — use only L/M/S letters")
-        else:
-            jj = pl.jload()
-            jj["settings"].update({
-                "render_budget_min": int(budget), "max_ready_videos": int(maxready),
-                "journey_queue_target": int(qtarget), "refill_max_per_night": int(maxnight),
-                "tier_share": shares, "nightly_templates": tpl_list,
-                "render_paused": bool(rpaused), "refill_paused": bool(fpaused),
-                "post_every_hours": float(post_every),
-                "post_next": post_next.strip()})
-            pl.jsave(jj)
-            dd = data()
-            dd.setdefault("meta", {})["paused_platforms"] = \
-                [k for k, p in plat_paused.items() if p]
-            pl.save(dd)
-            pl.telem("settings", detail="edited in dashboard")
-            st.success("saved"); st.rerun()
+        jj = pl.jload()
+        jj["settings"].pop("nightly_templates", None)   # retired 2026-08-26 (queue order)
+        jj["settings"].update({
+            "render_budget_min": int(budget), "max_ready_videos": int(maxready),
+            "journey_queue_target": int(qtarget), "refill_max_per_night": int(maxnight),
+            "tier_share": shares,
+            "render_paused": bool(rpaused), "refill_paused": bool(fpaused),
+            "post_every_hours": float(post_every),
+            "post_next": post_next.strip()})
+        pl.jsave(jj)
+        dd = data()
+        dd.setdefault("meta", {})["paused_platforms"] = \
+            [k for k, p in plat_paused.items() if p]
+        pl.save(dd)
+        pl.telem("settings", detail="edited in dashboard")
+        st.success("saved"); st.rerun()

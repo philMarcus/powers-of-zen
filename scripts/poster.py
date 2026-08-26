@@ -46,13 +46,36 @@ PLATFORM_MATCH = {"tiktok": "tiktok", "youtube": "studio.youtube", "instagram": 
 
 
 def platform_tab(name):
-    """Return a Tab for the platform, CREATING the tab if it isn't open (self-heal;
-    the scheduler-launched Chrome may not have all platform tabs)."""
-    try:
-        return Tab(match=PLATFORM_MATCH[name])
-    except StopIteration:
+    """Return a LIVE Tab for the platform: create the tab if it isn't open (the
+    scheduler-launched Chrome may not have all platform tabs), and PING it before any
+    flow gets it (2026-08-26 hardening — the IG tab's CDP websocket occasionally wedges
+    silently; the old 200s ws timeout meant each step stalled >3min, and a fresh
+    process always cured it). The ping exercises Tab.cmd's reconnect-once path; if even
+    a fresh socket gets no answer, the tab ITSELF is wedged — close it and open a
+    brand-new one."""
+    last = ""
+    for attempt in range(3):
+        try:
+            try:
+                tab = Tab(match=PLATFORM_MATCH[name])
+            except StopIteration:
+                zen_browser.open_tab(PLATFORM_URL[name])
+                tab = Tab(match=PLATFORM_MATCH[name])
+            if tab.eval("1+1") == 2:       # cmd() reconnect-retries internally
+                if attempt:
+                    pl.telem("poster_tab_reheal", platform=name, attempt=attempt)
+                return tab
+            last = "ping returned junk"
+        except Exception as e:
+            last = f"{type(e).__name__}: {e}"
+        print(f"  {name}: tab unresponsive ({last}) — closing + reopening", flush=True)
+        t = zen_browser.find_tab(PLATFORM_MATCH[name])
+        if t:
+            zen_browser.close_tab(t["id"])
+            time.sleep(2)
         zen_browser.open_tab(PLATFORM_URL[name])
-        return Tab(match=PLATFORM_MATCH[name])
+        time.sleep(3)
+    raise PlatformError(f"{name}: platform tab unresponsive after rebuilds ({last})")
 
 def _find_ollama():
     # WSL host IP drifts between reboots; try localhost then the default gateway

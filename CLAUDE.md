@@ -66,8 +66,9 @@ Everything runs LOCAL and FREE on Phil's RTX 3080 (no paid APIs).
   — the four Task Scheduler jobs (refill 00:00 · render 01:30 · posts 08:00/18:00, no Claude
   except inside journey_refill's one headless call).
 - DAILY LOOP (closed 2026-08-01): 00:00 refill tops the journey queue (headless Fable
-  coordinator → Opus composers → audit → auto-queue) → 01:30 night_batch renders a tier
-  template (L+M+S / 2L+M / 2L+S) worth ≤4h, captions, drops in Video Review → Phil approves
+  coordinator → Opus composers → audit → auto-queue; tier per brief = Monte Carlo draw
+  weighted by tier_share) → 01:30 night_batch renders the queue head IN ORDER, as many
+  as fit render_budget_min, captions, drops in Video Review → Phil approves
   in the dashboard (review→music→queued) → posts at 08:00/18:00 → live. Backpressure: the
   batch skips once max_ready_videos (20) are approved-and-waiting; then the queue stops
   draining and the refill stops too.
@@ -99,14 +100,18 @@ architecture, and 17 legacy styleless journeys would silently have gone turbo, n
 
 ## THE NIGHTLY PIPELINE (built 2026-08-01) — journeys flow themselves now
 `scripts/night_batch.py` (01:30 task; `render_batch.sh` is a thin wrapper for manual runs)
-auto-picks from the journey queue in `outbox/journeys.json`: first satisfiable tier template
-(LMS → LLM → LLS, editable) within render_budget_min, per journey dive → queue_review →
-caption with REAL exit-code checks (a dead render marks the journey render_failed and moves
-on; queue_review before caption because it CREATES the entry captions write into). Skips
-the night on backpressure (≥ max_ready_videos ready to post) or render_paused.
+auto-picks from the journey queue in `outbox/journeys.json`: QUEUE ORDER, as many as fit
+render_budget_min (tier templates RETIRED 2026-08-26 — they overrode Phil's queue order;
+a too-big journey is skipped for the next, the first pick always lands), per journey
+dive → queue_review → caption with REAL exit-code checks (a dead render marks the journey
+render_failed and moves on; queue_review before caption because it CREATES the entry
+captions write into). Skips the night on backpressure (≥ max_ready_videos ready to post)
+or render_paused.
 `scripts/journey_refill.py` (00:00 task) tops the queue toward journey_queue_target
-(≤ refill_max_per_night/run): tiers are assigned BY THE SCRIPT from tier_share deficits
-(alternates 2L2M1S / 2L1M2S), then ONE headless claude call — coordinator on Fable reads
+(≤ refill_max_per_night/run): tiers are assigned BY THE SCRIPT — a Monte Carlo draw
+weighted by tier_share (the queue converges to the target mix with no predictable
+rotation; since the batch drains in order, queued mix = rendered mix), then ONE headless
+claude call — coordinator on Fable reads
 VARIATIONS.md + the catalog (extends VARIATIONS.md if mined out), writes briefs to
 outbox/refill_briefs_<date>.md, spawns parallel Opus composers running the journey-composer
 skill — and the SCRIPT audits (audit_starts + real compile) and auto-queues only passers.
@@ -115,6 +120,23 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-26 (LATER — CDP WEDGE HARDENED + TIER TEMPLATES RETIRED): (1) the poster's known
+flakiness (IG platform tab's CDP websocket wedges silently → 200s hangs; a fresh process
+always cured it) is CLOSED: zen_browser ws timeout 200→30s, Tab.cmd auto-reconnects +
+retries ONCE on socket-level failures (never on CDP error replies — those stay
+RuntimeError), choosefile got its own wedge retry (its raw recv loop bypasses cmd), and
+poster.platform_tab now PINGS every tab before a flow gets it, rebuilding the tab
+entirely (close + reopen, telem poster_tab_reheal) if even a fresh socket gets no
+answer. Validated live: socket killed under a live IG tab → next eval reconnected and
+answered. (2) NIGHTLY MIX (Phil's call — "we have a glut of longs"): nightly_templates
+RETIRED everywhere (pipeline defaults, night_batch, dashboard, journeys.json key
+removed); pick_tonight = QUEUE ORDER, as many as fit render_budget_min (too-big journey
+skipped for the next, first pick always lands); refill_tiers = pure MONTE CARLO draw
+weighted by tier_share (currently 0.45L/0.2M/0.35S, editable in Settings) — the queue
+converges to the target mix with no predictable rotation, and since the batch drains in
+order, queued mix = rendered mix. Dry-run verified: tonight = bee_cathedral +
+observatory_dusk + bamboo_sea (M) + fiddler_commons + voltaic_shoal (S) = 5.2h — Phil's
+front-of-queue mediums/shorts, no more template-forced longs.
 2026-08-26 (THE CAPTION SAGA, RESOLVED — read this before touching poster.py): four IG
 posts went out caption-less (caddis 08-24, peony 08-24, termite 08-25, lantern 08-26) —
 Phil: "this is ruining my project." FINAL DIAGNOSIS (proven by controlled experiment,

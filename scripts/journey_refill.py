@@ -6,9 +6,10 @@ most refill_max_per_night per run) with ONE headless Claude session:
 
   coordinator (Fable) — reads journeys/VARIATIONS.md + the active catalog, extends
     VARIATIONS.md if it's mined out, writes n bare-bones BRIEFS (tier pre-assigned
-    by THIS script from tier_share deficits — deterministic, not the model's whim)
-    to outbox/refill_briefs_<date>.md, then spawns n parallel composer subagents
-    (Opus) that each flesh one brief into journeys/<name>.json via the
+    by THIS script — a Monte Carlo draw weighted by settings.tier_share, never the
+    model's whim; the batch renders in queue order so the drawn mix is the rendered
+    mix) to outbox/refill_briefs_<date>.md, then spawns n parallel composer
+    subagents (Opus) that each flesh one brief into journeys/<name>.json via the
     journey-composer skill.
 
 Claude only WRITES files. This script then diffs the catalog, runs the render_start
@@ -40,19 +41,6 @@ CARD_RANGE = {"short": "4-5", "medium": "6-8", "long": "9-11"}
 
 def log(msg):
     print(f"=== {time.strftime('%H:%M:%S')} {msg}", flush=True)
-
-
-def queued_tiers(jd):
-    out = []
-    for name in pl.jqueue(jd):
-        p = pl.journey_path(name)
-        try:
-            import json
-            out.append(pl.tier_of(len(json.loads(
-                p.read_text(encoding="utf-8"))["registers"])))
-        except Exception:
-            pass
-    return out
 
 
 def coordinator_prompt(briefs, date):
@@ -143,7 +131,7 @@ def main():
         log(f"journey queue {depth}/{target} — no refill needed")
         return
 
-    briefs = pl.refill_tiers(jd, queued_tiers(jd), n)
+    briefs = pl.refill_tiers(jd, n)
     log(f"queue {depth}/{target} — composing {n}: {', '.join(briefs)}")
     if dry:
         return

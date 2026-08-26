@@ -9,12 +9,6 @@
       "medium": 0.2,
       "short": 0.35
     },
-    "nightly_templates": [
-      "LLLS",
-      "LLS",
-      "LMS",
-      "MS"
-    ],
     "render_paused": false,
     "refill_paused": false,
     "post_every_hours": 19.0,

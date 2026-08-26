@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """night_batch — the nightly render batch (Task Scheduler, 01:30).
 
-Auto-picks queued journeys from outbox/journeys.json worth ~render_budget_min of GPU
-time (tier templates: L+M+S, then 2L+M, then 2L+S — see pipeline.pick_tonight), renders
-each through engine/dive.py, ingests to the REVIEW queue, captions, and updates the
-registry + telemetry. Phil wakes up to captioned videos in Video Review.
+Renders the journey queue from outbox/journeys.json IN QUEUE ORDER, as many as fit
+~render_budget_min of GPU time (tier templates retired 2026-08-26 — the queue's mix is
+the nightly mix; the refill's Monte Carlo tier draw keeps that mix on target — see
+pipeline.pick_tonight), each through engine/dive.py, ingests to the REVIEW queue,
+captions, and updates the registry + telemetry. Phil wakes up to captioned videos in
+Video Review.
 
 Usage:
   python3 scripts/night_batch.py               # auto-pick (the scheduled form)
@@ -220,18 +222,19 @@ def main():
                 pl.telem("batch_skip", reason=f"backpressure {ready}")
             return
         ests, tiers = compile_queue(jd)
-        picks, tpl, total = pl.pick_tonight(pl.jload(), ests, tiers)
+        picks, total = pl.pick_tonight(pl.jload(), ests)
+        mode = "queue"
         if not picks:
             print("journey queue is empty — nothing to render "
                   "(queue journeys in the dashboard's Journeys tab)")
             if not dry:
                 pl.telem("batch_skip", reason="empty queue")
             return
-        print(f"tonight [{tpl}]: " + " + ".join(
+        print("tonight (queue order): " + " + ".join(
             f"{n}({tiers[n][0].upper()} ~{ests[n] // 60}min)" for n in picks)
             + f" = {total / 3600:.1f}h of {s['render_budget_min'] // 60}h budget")
     else:
-        picks, tpl = args, "manual"
+        picks, mode = args, "manual"
         bad = [n for n in picks if not pl.journey_path(n)]
         if bad:
             sys.exit(f"no journey file for: {', '.join(bad)}")
@@ -250,7 +253,7 @@ def main():
 
     logpath = ROOT / "outbox" / f"night_batch_{time.strftime('%m%d_%H%M%S')}.log"
     LOGF = open(logpath, "w", encoding="utf-8")
-    log(f"batch start [{tpl}] — {len(picks)} journeys: {' '.join(picks)}")
+    log(f"batch start [{mode}] — {len(picks)} journeys: {' '.join(picks)}")
 
     if not comfy_up():
         log("ABORT: ComfyUI never came up "
