@@ -625,6 +625,61 @@ def _ig_set_caption(tab, csel, caption, tries=3):
     return False
 
 
+def _ig_reel_codes(tab, n=6):
+    """The profile's newest reel shortcodes (for detecting OUR post by diff)."""
+    tab.goto(f"https://www.instagram.com/powers.of.zen/reels/")
+    time.sleep(5)
+    hrefs = tab.eval(r"""JSON.stringify([...document.querySelectorAll('a[href*="/reel/"]')]
+      .slice(0,%d).map(a=>a.getAttribute('href')))""" % n)
+    return [h.rstrip("/").split("/")[-1] for h in json.loads(hrefs or "[]")]
+
+
+def _ig_repair_caption(tab, code, caption):
+    """Set a LIVE reel's caption via the EDIT dialog — the only path that persists on the
+    professional UI (2026-08-26 postmortem: the composer DROPS captions at submit even
+    when the char counter verified them registered; four posts went out blank). Proven
+    method, 4x on live reels: trusted Input.insertText + counter check + TRUSTED-COORDS
+    click on Done (a JS click on Done silently no-ops — the inverse of the composer's
+    Share button). Returns True when the caption is verified on the live page."""
+    tab.goto(f"https://www.instagram.com/powers.of.zen/reel/{code}/")
+    time.sleep(4)
+    tab.eval(r"""(function(){const s=document.querySelector('svg[aria-label="More options"]');
+      if(s)(s.closest('div[role=button],button')||s.parentElement).click();})()""")
+    time.sleep(2)
+    tab.eval(r"""(function(){const dlg=document.querySelector('div[role=dialog]');
+      if(!dlg)return;const el=[...dlg.querySelectorAll('button,div[role=button]')]
+        .find(e=>e.textContent.trim()==='Edit');el&&el.click();})()""")
+    time.sleep(4)
+    tab.eval(r"""(function(){const dlg=document.querySelector('div[role=dialog]');
+      if(!dlg)return;const el=dlg.querySelector('div[contenteditable="true"]');
+      if(el){el.click();el.focus();}})()""")
+    time.sleep(0.5)
+    tab.cmd("Input.dispatchKeyEvent", type="keyDown", key="a", code="KeyA",
+            modifiers=2, windowsVirtualKeyCode=65)
+    tab.cmd("Input.dispatchKeyEvent", type="keyUp", key="a", code="KeyA",
+            modifiers=2, windowsVirtualKeyCode=65)
+    time.sleep(0.3)
+    tab.cmd("Input.insertText", text=caption)
+    time.sleep(1)
+    coords = tab.eval(r"""(function(){const dlg=document.querySelector('div[role=dialog]');
+      if(!dlg)return null;
+      const el=[...dlg.querySelectorAll('button,div[role=button]')]
+        .find(e=>e.textContent.trim()==='Done');
+      if(!el)return null;el.scrollIntoView({block:'center'});
+      const b=el.getBoundingClientRect();
+      return JSON.stringify([Math.round(b.left+b.width/2),Math.round(b.top+b.height/2)]);})()""")
+    if not coords:
+        return False
+    x, y = json.loads(coords)
+    for typ in ("mousePressed", "mouseReleased"):
+        tab.cmd("Input.dispatchMouseEvent", type=typ, x=x, y=y, button="left", clickCount=1)
+    time.sleep(8)
+    tab.goto(f"https://www.instagram.com/powers.of.zen/reel/{code}/")
+    time.sleep(4)
+    txt = tab.eval("document.body.innerText") or ""
+    return _norm(caption)[:25] in _norm(txt)
+
+
 def _ig_select_original_crop(tab, tries=3):
     """On IG's crop screen, choose 'Original' so our 9:16 phone video isn't cropped to SQUARE
     (IG defaults to 1:1). Open 'Select crop', click 'Original', and VERIFY via containment
@@ -699,6 +754,10 @@ def _ig_dismiss(tab):
 
 def post_instagram(video_rel, caption, dry_run):
     tab = platform_tab("instagram")
+    # snapshot the profile's reels BEFORE posting: our post is detected afterwards as the
+    # NEW shortcode (2026-08-26 — caption-match detection fails exactly when the composer
+    # drops the caption, which is the case we must heal)
+    pre_codes = set(_ig_reel_codes(tab))
     tab.goto("https://www.instagram.com/")
     _ig_dismiss(tab)   # clear Save-login/notification nags a cold session shows before Create
     wait_for(tab, "[...document.querySelectorAll('a,div[role=\"button\"],span')]"
@@ -778,15 +837,34 @@ def post_instagram(video_rel, caption, dry_run):
                "caption not registered right before Share — refusing to post blank")
         time.sleep(1)
     expect(_ig_click(tab, "Share"), "instagram", "share", tab, "Share button not found")
-    # wait for the in-flow confirmation (best-effort), THEN verify against the live profile —
-    # the 'shared' text alone has false-positived (claimed shared when the reel never posted).
+    # wait for the in-flow confirmation (best-effort) — upload takes ~30s+
     wait_for(tab, "document.body.innerText.includes('Your reel has been shared')"
-                  "||document.body.innerText.includes('shared')?true:null", 40)
-    href = verify_instagram_posted(tab, caption)
-    expect(href, "instagram", "verify_live", tab,
-           "Share clicked but the newest reel does NOT carry this caption — post did not go "
-           "through. Reported as FAILED, not live.")
-    return f"https://www.instagram.com{href}"
+                  "||document.body.innerText.includes('shared')?true:null", 60)
+    # find OUR post: the NEW shortcode on the profile (poll — processing can lag)
+    code = None
+    for _ in range(10):
+        time.sleep(12)
+        fresh = [c for c in _ig_reel_codes(tab) if c not in pre_codes]
+        if fresh:
+            code = fresh[0]
+            break
+    expect(code, "instagram", "post_appears", tab,
+           "Share clicked but NO new reel appeared on the profile — post did not go through.")
+    # CAPTION SELF-HEAL (2026-08-26): the professional-UI composer drops captions at
+    # submit even when the char counter verified them registered (four blank posts).
+    # Check the live reel; if the caption is missing, set it via the edit dialog — the
+    # one path proven to persist — and verify. A post may NOT be reported live without
+    # its caption verified on the live page.
+    tab.goto(f"https://www.instagram.com/powers.of.zen/reel/{code}/")
+    time.sleep(4)
+    txt = tab.eval("document.body.innerText") or ""
+    if _norm(caption)[:25] not in _norm(txt):
+        print("  caption missing on the live reel — repairing via edit dialog", flush=True)
+        expect(_ig_repair_caption(tab, code, caption), "instagram", "caption_heal", tab,
+               f"posted reel {code} is LIVE but the caption could not be applied — fix by "
+               f"hand (reel is up without it).")
+        pl.telem("ig_caption_heal", detail=code)
+    return f"https://www.instagram.com/powers.of.zen/reel/{code}/"
 
 
 PLATFORMS = {"tiktok": post_tiktok, "youtube": post_youtube, "instagram": post_instagram}

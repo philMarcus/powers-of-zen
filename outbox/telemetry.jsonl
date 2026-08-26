@@ -1089,3 +1089,19 @@
 {"ts": "2026-08-26 06:31:43", "event": "review", "journey": "magellanic_mob", "detail": "ds/divein (src v1)"}
 {"ts": "2026-08-26 06:32:25", "event": "caption", "journey": "magellanic_mob", "detail": "5 options, spot=True"}
 {"ts": "2026-08-26 06:32:25", "event": "render", "journey": "magellanic_mob", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-26 08:23:56", "event": "review", "journey": "sunspot_archipelago", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-26 08:24:44", "event": "caption", "journey": "sunspot_archipelago", "detail": "5 options, spot=True"}
+{"ts": "2026-08-26 08:24:44", "event": "render", "journey": "sunspot_archipelago", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-26 09:01:00", "event": "post", "journey": "lantern_mangrove", "platform": "youtube", "detail": "https://youtube.com/shorts/ZRXK2QXA6tA"}
+{"ts": "2026-08-26 09:01:00", "event": "post_fail", "journey": "lantern_mangrove", "platform": "instagram", "detail": "FLAGGED: instagram/verify_live: Share clicked but the newest reel does NOT carry this caption — post did not go through. Reported as FAILED, not live."}
+{"ts": "2026-08-26 09:02:13", "event": "ig_stats", "detail": "49 reels, followers 63"}
+{"ts": "2026-08-26 09:02:27", "event": "ig_insights", "detail": "44 posts"}
+{"ts": "2026-08-26 09:02:27", "event": "post_gate", "detail": "fired (rc 0); next 2026-08-27 04:00"}
+{"ts": "2026-08-26 09:19:05", "event": "review", "journey": "lissajous_stage", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-26 09:19:51", "event": "caption", "journey": "lissajous_stage", "detail": "5 options, spot=True"}
+{"ts": "2026-08-26 09:19:51", "event": "render", "journey": "lissajous_stage", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-26 09:23:13", "event": "music_pregen", "journey": "eclipse_waterhole", "detail": "5 candidates"}
+{"ts": "2026-08-26 09:26:23", "event": "music_pregen", "journey": "magellanic_mob", "detail": "5 candidates"}
+{"ts": "2026-08-26 09:29:29", "event": "music_pregen", "journey": "sunspot_archipelago", "detail": "5 candidates"}
+{"ts": "2026-08-26 09:31:49", "event": "music_pregen", "journey": "lissajous_stage", "detail": "5 candidates"}
+{"ts": "2026-08-26 09:31:49", "event": "batch_done", "detail": "batch done in 8.0h — 4 to Review · eclipse_waterhole: in Review but UNCAPTIONED (Ollama down?)"}

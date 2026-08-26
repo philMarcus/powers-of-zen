@@ -5,9 +5,9 @@
     "journey_queue_target": 20,
     "refill_max_per_night": 5,
     "tier_share": {
-      "long": 0.55,
-      "medium": 0.15,
-      "short": 0.3
+      "long": 0.45,
+      "medium": 0.2,
+      "short": 0.35
     },
     "nightly_templates": [
       "LLLS",
@@ -18,7 +18,7 @@
     "render_paused": false,
     "refill_paused": false,
     "post_every_hours": 19.0,
-    "post_next": "2026-08-25 02:00"
+    "post_next": "2026-08-27 04:00"
   },
   "journeys": {
     "stormglass": {
@@ -163,97 +163,67 @@
     },
     "bee_cathedral": {
       "state": "queued",
-      "order": 15,
+      "order": 3,
       "ts": "2026-08-13 13:57:36",
       "note": "REALMS rethink wave 2 (2026-08-13)"
     },
     "observatory_dusk": {
       "state": "queued",
-      "order": 16,
+      "order": 5,
       "ts": "2026-08-13 13:57:36",
       "note": "REALMS rethink wave 2 (2026-08-13)"
     },
     "bamboo_sea": {
       "state": "queued",
-      "order": 17,
+      "order": 6,
       "ts": "2026-08-14 00:14:10",
-      "note": "composed by midnight refill"
-    },
-    "lissajous_stage": {
-      "state": "queued",
-      "order": 18,
-      "ts": "2026-08-17 00:17:39",
       "note": "composed by midnight refill"
     },
     "fiddler_commons": {
       "state": "queued",
-      "order": 19,
+      "order": 8,
       "ts": "2026-08-18 00:15:19",
-      "note": "composed by midnight refill"
-    },
-    "kelp_dynamo": {
-      "state": "queued",
-      "order": 20,
-      "ts": "2026-08-18 00:15:19",
-      "note": "composed by midnight refill"
-    },
-    "eclipse_waterhole": {
-      "state": "queued",
-      "order": 21,
-      "ts": "2026-08-20 00:16:33",
       "note": "composed by midnight refill"
     },
     "voltaic_shoal": {
       "state": "queued",
-      "order": 22,
+      "order": 11,
       "ts": "2026-08-20 00:16:33",
-      "note": "composed by midnight refill"
-    },
-    "magellanic_mob": {
-      "state": "queued",
-      "order": 23,
-      "ts": "2026-08-21 00:23:01",
-      "note": "composed by midnight refill"
-    },
-    "sunspot_archipelago": {
-      "state": "queued",
-      "order": 24,
-      "ts": "2026-08-21 00:23:01",
       "note": "composed by midnight refill"
     },
     "waterbear_prairie": {
       "state": "queued",
-      "order": 25,
+      "order": 14,
       "ts": "2026-08-21 00:23:01",
       "note": "composed by midnight refill"
     },
     "winter_murmuration": {
       "state": "queued",
-      "order": 26,
+      "order": 15,
       "ts": "2026-08-21 00:23:02",
       "note": "composed by midnight refill"
     },
     "gecko_rampart": {
       "state": "queued",
-      "order": 27,
+      "order": 16,
       "ts": "2026-08-22 00:25:25",
       "note": "composed by midnight refill"
     },
     "lily_undercroft": {
       "state": "queued",
-      "order": 28,
+      "order": 17,
       "ts": "2026-08-22 00:25:25",
       "note": "composed by midnight refill"
     },
     "natron_skein": {
       "state": "queued",
-      "order": 29,
+      "order": 18,
       "ts": "2026-08-22 00:25:26",
       "note": "composed by midnight refill"
     },
     "plasma_script": {
       "state": "queued",
-      "order": 30,
+      "order": 19,
       "ts": "2026-08-22 00:25:26",
       "note": "composed by midnight refill"
     },
@@ -262,38 +232,43 @@
       "ts": "2026-08-22 22:25:27",
       "note": "NOT re-rendering (Phil 2026-08-22 night: enough corals) — parallax versions already exist: v4=0.5, v5=0.7, v3=1.0, same seed. When Phil picks a gain, ingest it GPU-free: queue_review.py coral_synapse ds --src output/coral_synapse/<vN>"
     },
-    "cherenkov_cistern": {
+    "magnetite_choir": {
       "state": "queued",
       "force": true,
-      "new_seed": false,
-      "ts": "2026-08-22 22:00:15",
-      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
-      "order": 10
+      "new_seed": true,
+      "ts": "2026-08-24 17:12:51",
+      "note": "re-render: video rejected in review",
+      "order": 20
     },
-    "motmot_cenote": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-22 22:00:15",
-      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
-      "order": 12
+    "anemone_arsenal": {
+      "state": "rejected",
+      "ts": "2026-08-24 17:14:01",
+      "note": "rejected at video review"
     },
-    "bourdon_foundry": {
+    "cicada_chorus": {
       "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-22 22:00:15",
-      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
-      "order": 13
+      "order": 21,
+      "ts": "2026-08-26 00:20:03",
+      "note": "composed by midnight refill"
     },
-    "pomegranate_vault": {
+    "circuit_grotto": {
       "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-08-22 22:00:15",
-      "note": "re-render with parallax (DEPTH 2.0 engine change, same seed) — Phil 2026-08-22",
-      "order": 14
+      "order": 22,
+      "ts": "2026-08-26 00:20:03",
+      "note": "composed by midnight refill"
+    },
+    "phage_landing": {
+      "state": "queued",
+      "order": 23,
+      "ts": "2026-08-26 00:20:03",
+      "note": "composed by midnight refill"
+    },
+    "venus_basket": {
+      "state": "queued",
+      "order": 24,
+      "ts": "2026-08-26 00:20:04",
+      "note": "composed by midnight refill"
     }
   },
-  "updated": "2026-08-24 09:42:02"
+  "updated": "2026-08-26 09:19:51"
 }
