@@ -1,139 +1,139 @@
 {
- "name": "vesper_flight",
- "theme": "a dusk bat emergence read as an echo travelling outward through every scale — from a flared star inside rings of lit dust, down past a night world's dusk band to a valley of limestone towers where a column of vesper bats winds out of a cave mouth, into the cave's sagging arches where the chirp rings stand in the black air, onto one bat's outstretched wing, into the flight muscle's cable bundles and the brass motor filaments locked onto their actin cables, down to atoms as nested shells of fog — which open out as the mottled shell of the oldest light, the echo that answers the bats' own",
- "style": "stormlight",
- "music_lane": "deep_archive",
- "format": {
-  "beats_per_bar": 4,
-  "frames_per_beat": 7,
-  "exact_loop": true,
-  "counter": true
- },
- "registers": [
-  {
-   "name": "light_echo",
-   "exp": 11,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "brass rings on violet-black",
-   "scene": "a flared star standing alone in open black space, wide rings of lit dust set around it one inside the next, every ring brass along its inner edge and cooling to violet at its outer edge, black gaps sunk between the rings, thin streamers of dust drawn across the gaps, cold blue stars scattered thickly through the black behind it, a faint haze of dust lying over the whole field, seen from far out in open space",
-   "target": "a dark violet planet",
-   "target_phrase": "a dark violet planet",
-   "loop_target": "a flared star inside wide rings of lit dust, ring inside ring on black"
+  "name": "vesper_flight",
+  "theme": "a dusk bat emergence read as an echo travelling outward through every scale — from a flared star inside rings of lit dust, down past a night world's dusk band to a valley of limestone towers where a column of vesper bats winds out of a cave mouth, into the cave's sagging arches where the chirp rings stand in the black air, onto one bat's outstretched wing, into the flight muscle's cable bundles and the brass motor filaments locked onto their actin cables, down to atoms as nested shells of fog — which open out as the mottled shell of the oldest light, the echo that answers the bats' own",
+  "style": "stormlight",
+  "music_lane": "deep_archive",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
   },
-  {
-   "name": "dusk_world",
-   "exp": 6.8,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "violet night side, brass day edge, silver water",
-   "scene": "a dark world seen from low orbit, most of its face turned to night, a broad violet band of dusk banked along the day edge with brass light caught on the cloud tops there, a great river system branching in silver across the land under the dusk band, ridged limestone country standing in long rows either side of the water, a silver storm wheel set far out over the sea, black space past the curve of the world",
-   "target": "a branching silver river",
-   "target_phrase": "a branching silver river"
-  },
-  {
-   "name": "tower_valley",
-   "exp": 2.3,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "violet dusk sky, black towers, brass water",
-   "scene": "a valley of limestone towers at dusk, seen from a high vantage on one tower's shoulder, the towers standing black in ranks with a brass-lit river winding between them, the sky above them deep violet with a low band of amber left along the horizon, a dense column of small bats wound up out of a black cave mouth in the nearest cliff and curving away over the valley, a hawk hanging in the air beside the column, pale moths scattered through the air below it, small swallows set along the cliff face in ones and twos, mist lying in the gullies between the towers",
-   "target": "a black cave mouth",
-   "target_phrase": "a dark cave mouth"
-  },
-  {
-   "name": "chain_vault",
-   "exp": 1.3,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "black air, cold brass stone, one amber glow",
-   "scene": "the vault inside the cliff, its roof a run of sagging stone arches with long chains of stalactites hung along every curve, thousands of small bats hanging in rows down the chains and packed along the ledges, brass mineral crust glazing the stone, faint rings standing in the black air between the chains, ring inside ring, a warm amber glow reaching in from the mouth far off, still black water lying on the floor below",
-   "target": "a hanging bat",
-   "target_phrase": "a hanging bat",
-   "resolve": {
-    "mode": "web"
-   },
-   "cameo": {
-    "sprite": "output/mascots/canon/dora.png",
-    "pos": [
-     0.34,
-     0.58
-    ],
-    "size": 0.13
-   }
-  },
-  {
-   "name": "wing_membrane",
-   "exp": -0.5,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "translucent smoke skin, amber backlight, scarlet cords",
-   "scene": "one bat's outstretched wing, the dark translucent membrane stretched taut between long thin finger struts that fan across it, veins branching over the whole sheet in thin red lines, warm amber light coming through the skin from behind so the struts read as dark bars, a ridge of scarlet flight muscle banked where the wing meets the body, short dark fur along the ridge, black cave air past the edge of the membrane",
-   "target": "a scarlet muscle ridge",
-   "target_phrase": "a red muscle ridge",
-   "resolve": false
-  },
-  {
-   "name": "fibre_cables",
-   "exp": -4,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "amber cables, scarlet beads, violet channels",
-   "scene": "inside the flight muscle, long cables of fibre running side by side in close ranks, every cable banded across its width in narrow dark and bright stripes, round nuclei pressed in rows along their flanks, ridged mitochondria packed thick in the violet channels between the cables, capillary tubes threaded along the ranks with scarlet cells strung single file inside them, a sheath of pale fibre closing over the whole bundle",
-   "target": "a pale banded cable",
-   "target_phrase": "a banded cable"
-  },
-  {
-   "name": "motor_array",
-   "exp": -8,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "brass filaments, cold violet cables, ink black",
-   "scene": "the inside of one muscle cable, thick brass filaments set in even ranks with slender violet actin cables strung between them in a six-sided array, paired motor heads studded in rows along every brass filament, each head bent onto the cable beside it and locked there, cross-links tying the array together at intervals, loose coils of protein ribbon lying in the black gaps, small points of light standing in the spaces between the cables",
-   "target": "a pale glowing atom",
-   "target_phrase": "a glowing atom"
-  },
-  {
-   "name": "atom_shells",
-   "exp": -10.5,
-   "kind": "seam",
-   "dur": 4,
-   "palette": "white-hot cores, brass fog, violet-black",
-   "scene": "single atoms standing apart in the dark, each one a small white-hot core inside nested shells of glowing fog, shell inside shell, the outer shells of neighbouring atoms overlapping into a soft mottled field, faint brass ripples printed across the fog, ranks of them repeating away into the black",
-   "resolve": {
-    "mode": "sea"
-   }
-  },
-  {
-   "name": "oldest_light",
-   "exp": 26,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "mottled violet shell, brass filaments, black voids",
-   "scene": "the oldest light seen as a vast mottled shell closing over everything, warm and cool patches speckling it in fine grain, wide ripple rings printed across the mottling, and hung in front of it the cosmic web itself, long brass filaments of galaxies sagging between bright knots, black voids walled off between the strands, faint sheets of light spanning the gaps",
-   "target": "a bright spiral galaxy",
-   "target_phrase": "a bright spiral galaxy"
-  },
-  {
-   "name": "tilted_spiral",
-   "exp": 21,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "brass arms, violet dust lanes, black",
-   "scene": "a tilted spiral galaxy hanging in the black, brass-gold star clouds strung along arms that wind out from a dense hot core, deep violet dust lanes cut along the inside of every arm, knots of glowing gas set among the star clouds, a few small companion galaxies standing off in the dark, thousands of faint stars over the whole field",
-   "target": "a bright gas knot",
-   "target_phrase": "a bright gas cloud"
-  },
-  {
-   "name": "dust_nursery",
-   "exp": 16,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "brass-rimmed dust ridges, violet hollows, blue-white stars",
-   "scene": "a cloud of dark dust standing across black space, its long ridges lit to brass along every rim, violet-shadowed hollows banked behind them, strings of small dark globules hung in sagging chains between the ridges, newborn blue-white stars burning through the gaps in ranks, faint shells of lit dust set around the brightest of them, cold stars scattered over the black beyond"
-  }
- ],
- "music_theme": "a hushed stone hall opening into deep sky — a low sub swell under one slow dark pad, the pulse heaviest as the tower valley arrives and the column of bats stands up out of the cliff, thinning to a single held drone through the muscle and molecular scales, one deep hit where the atom shells open out into the oldest light",
- "music_key": "F minor",
- "render_start": "light_echo"
+  "registers": [
+    {
+      "name": "light_echo",
+      "exp": 11,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "brass rings on violet-black",
+      "scene": "a flared star standing alone in open black space, wide rings of lit dust set around it one inside the next, every ring brass along its inner edge and cooling to violet at its outer edge, black gaps sunk between the rings, thin streamers of dust drawn across the gaps, cold blue stars scattered thickly through the black behind it, a faint haze of dust lying over the whole field, seen from far out in open space",
+      "target": "a dark violet planet",
+      "target_phrase": "a dark violet planet",
+      "loop_target": "a flared star inside wide rings of lit dust, ring inside ring on black"
+    },
+    {
+      "name": "dusk_world",
+      "exp": 6.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet night side, brass day edge, silver water",
+      "scene": "a dark world seen from low orbit, most of its face turned to night, a broad violet band of dusk banked along the day edge with brass light caught on the cloud tops there, a great river system branching in silver across the land under the dusk band, ridged limestone country standing in long rows either side of the water, a silver storm wheel set far out over the sea, black space past the curve of the world",
+      "target": "a branching silver river",
+      "target_phrase": "a branching silver river"
+    },
+    {
+      "name": "tower_valley",
+      "exp": 2.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet dusk sky, black towers, brass water",
+      "scene": "a valley of limestone towers at dusk, seen from a high vantage on one tower's shoulder, the towers standing black in ranks with a brass-lit river winding between them, the sky above them deep violet with a low band of amber left along the horizon, a dense column of small bats wound up out of a black cave mouth in the nearest cliff and curving away over the valley, a hawk hanging in the air beside the column, pale moths scattered through the air below it, small swallows set along the cliff face in ones and twos, mist lying in the gullies between the towers",
+      "target": "a black cave mouth",
+      "target_phrase": "a dark cave mouth"
+    },
+    {
+      "name": "chain_vault",
+      "exp": 1.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "black air, cold brass stone, one amber glow",
+      "scene": "the vault inside the cliff, its roof a run of sagging stone arches with long chains of stalactites hung along every curve, thousands of small bats hanging in rows down the chains and packed along the ledges, brass mineral crust glazing the stone, faint rings standing in the black air between the chains, ring inside ring, a warm amber glow reaching in from the mouth far off, still black water lying on the floor below",
+      "target": "a hanging bat",
+      "target_phrase": "a hanging bat",
+      "resolve": {
+        "mode": "web"
+      },
+      "cameo": {
+        "sprite": "output/mascots/canon/dora.png",
+        "pos": [
+          0.34,
+          0.58
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "wing_membrane",
+      "exp": -0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "translucent smoke skin, amber backlight, scarlet cords",
+      "scene": "one bat's outstretched wing, the dark translucent membrane stretched taut between long thin finger struts that fan across it, veins branching over the whole sheet in thin red lines, warm amber light coming through the skin from behind so the struts read as dark bars, a ridge of scarlet flight muscle banked where the wing meets the body, short dark fur along the ridge, black cave air past the edge of the membrane",
+      "target": "a scarlet muscle ridge",
+      "target_phrase": "a red muscle ridge",
+      "resolve": false
+    },
+    {
+      "name": "fibre_cables",
+      "exp": -4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber cables, scarlet beads, violet channels",
+      "scene": "inside the flight muscle, long cables of fibre running side by side in close ranks, every cable banded across its width in narrow dark and bright stripes, round nuclei pressed in rows along their flanks, ridged mitochondria packed thick in the violet channels between the cables, capillary tubes threaded along the ranks with scarlet cells strung single file inside them, a sheath of pale fibre closing over the whole bundle",
+      "target": "a pale banded cable",
+      "target_phrase": "a banded cable"
+    },
+    {
+      "name": "motor_array",
+      "exp": -8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "brass filaments, cold violet cables, ink black",
+      "scene": "the inside of one muscle cable, thick brass filaments set in even ranks with slender violet actin cables strung between them in a six-sided array, paired motor heads studded in rows along every brass filament, each head bent onto the cable beside it and locked there, cross-links tying the array together at intervals, loose coils of protein ribbon lying in the black gaps, small points of light standing in the spaces between the cables",
+      "target": "a pale glowing atom",
+      "target_phrase": "a glowing atom"
+    },
+    {
+      "name": "atom_shells",
+      "exp": -10.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "white-hot cores, brass fog, violet-black",
+      "scene": "single atoms standing apart in the dark, each one a small white-hot core inside nested shells of glowing fog, shell inside shell, the outer shells of neighbouring atoms overlapping into a soft mottled field, faint brass ripples printed across the fog, ranks of them repeating away into the black",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "oldest_light",
+      "exp": 26,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "mottled violet shell, brass filaments, black voids",
+      "scene": "the oldest light seen as a vast mottled shell closing over everything, warm and cool patches speckling it in fine grain, wide ripple rings printed across the mottling, and hung in front of it the cosmic web itself, long brass filaments of galaxies sagging between bright knots, black voids walled off between the strands, faint sheets of light spanning the gaps",
+      "target": "a bright spiral galaxy",
+      "target_phrase": "a bright spiral galaxy"
+    },
+    {
+      "name": "tilted_spiral",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "brass arms, violet dust lanes, black",
+      "scene": "a tilted spiral galaxy hanging in the black, brass-gold star clouds strung along arms that wind out from a dense hot core, deep violet dust lanes cut along the inside of every arm, knots of glowing gas set among the star clouds, a few small companion galaxies standing off in the dark, thousands of faint stars over the whole field",
+      "target": "a bright gas knot",
+      "target_phrase": "a bright gas cloud"
+    },
+    {
+      "name": "dust_nursery",
+      "exp": 16,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "brass-rimmed dust ridges, violet hollows, blue-white stars",
+      "scene": "a cloud of dark dust standing across black space, its long ridges lit to brass along every rim, violet-shadowed hollows banked behind them, strings of small dark globules hung in sagging chains between the ridges, newborn blue-white stars burning through the gaps in ranks, faint shells of lit dust set around the brightest of them, cold stars scattered over the black beyond"
+    }
+  ],
+  "music_theme": "a hushed stone hall opening into deep sky — a low sub swell under one slow dark pad, the pulse heaviest as the tower valley arrives and the column of bats stands up out of the cliff, thinning to a single held drone through the muscle and molecular scales, one deep hit where the atom shells open out into the oldest light",
+  "music_key": "F minor",
+  "render_start": "light_echo"
 }

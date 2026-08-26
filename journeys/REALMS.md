@@ -157,7 +157,8 @@ Always PICTURE-first (name-only physics words summon nothing — 2026-07-31 less
 nucleus as a shivering droplet of glowing spheres · quark trio bound by gluon light-strands
 · particle-track spray in a bubble chamber · field-fluctuation foam (virtual pairs
 flickering) · neutrino streaking through untouched matter · spacetime lattice warp around
-a mass point
+a mass point · nuclear pasta at the floor of density (nucleons kneaded together and fused
+into woven glowing sheets and strands — matter itself as a braid; the deepest weave there is)
 
 ---
 

@@ -240,6 +240,9 @@ video's overall color identity)
   lilac/rain-slick asphalt grey — signage as the only color source) · alkaline
   rose (spirulina crimson-rose shallows/soda-crust chalk blades/thunder-grey
   volcanic ash — a saturated biological red laid on mineral white)
+- phosphor & bakelite (oscilloscope-green trace glow/bakelite brown-black/one
+  vermilion indicator point + dial-lamp amber — instrument-panel light as the
+  only color source; greener and warmer-dim than noble glow's street neon)
 - RULE: check the last few journeys' families and pick a DIFFERENT one.
 
 ## LENGTH VARIETY (Phil 2026-07-31 — the catalog must mix durations)
