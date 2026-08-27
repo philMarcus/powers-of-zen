@@ -1206,6 +1206,60 @@ Orbit for showcase cards (v3 gate result stands), `landing` planet-descent and `
 window-transfer hero moves, roll/yaw/revolution kept distinct, rule-based cinematographer
 v1 assigning moves from journey POV tags.
 
+### Phase D BUILT (2026-08-27 — doctrine in journeys/CINEMA.md, labs pending Phil)
+- engine/camera.py: per-register `camera` field ({move, rate} or shorthand string) →
+  per-frame schedule. Envelope = zero across the arrival morph, one-beat smoothstep up,
+  hold, one-beat smoothstep down to zero at card end — rates are zero at every card
+  boundary, so moves inflect on beats and THE LOOP CLOSES STRUCTURALLY (no angle
+  bookkeeping; the lap card copies the camera-free render-start card). Hard exclusions
+  enforced in schedule() itself (not just validate()): render-start/lap card, seam
+  cards, depth moves on cameo cards.
+- Vocabulary v1 (proven mechanisms only): roll (extra deg/frame through the exact
+  rotation propagation — track.step takes per-frame rot), spiral (orbit about the
+  TRACKED object — pivot rides the aim, pivot depth sampled from the object's own
+  patch; the world revolves around the thing we're diving toward), orbit (median-plane
+  pivot for field cards), vertigo (near-field dolly against the zoom), tilt (pitch —
+  the `landing` component). Caps: orbit-class 0.5°/frame (the orbit-v3 gate figure),
+  roll 0.6, vertigo 0.015, tilt 0.5.
+- warp.camera_residual: parallax + micro-lat + orbit + dolly + tilt FUSED INTO ONE
+  REMAP (the Phase-A one-resample lesson). Camera-free frames keep calling
+  parallax_residual — byte-identical production path (VERIFIED 2026-08-27: fresh base
+  arm v12 vs pre-Phase-D v9, frames 0-71 byte-equal, first diff exactly at the frame-72
+  tail boundary where tail code legitimately evolved since 08-22). Orbit/tilt frames
+  get a denoise floor (cfg camera_den_floor 0.48; orbit-v3: re-synthesis must outpace
+  resample loss). Depth moves taper across the loop tail exactly like the parallax.
+- scripts/cinematographer.py: rule-based v1, a SEPARATE role from the composer
+  (composer stays camera-blind). Floor: ≤1 spiral (first eligible target card),
+  ≤1 orbit (first eligible field card), ≤2 rolls alternating sign (phase seeded by
+  name-crc32), everything else drift; never on start/seam/post-seam/cameo cards.
+  NOT wired into the nightly — a journey gains camera only when the tool is run on it.
+- scripts/camera_lab.py: same-seed A/B harness over DERIVED specs
+  (output/camera_lab/specs/ — catalog untouched); preflight prints a camera line.
+- Phase C verdict arm shipped alongside: dolly_lab a10m (gain 1.0 + --micro) vs a10.
+
+### Phase D lab log (2026-08-27, same day — three findings before the clean run)
+1. SCAFFOLD SEED BUG (fixed): resolve scaffolds seeded from the RUN name, so every
+   renamed A/B arm (lab specs, --plain/--cn suffixes) drew a DIFFERENT instance field —
+   the first camera A/B diverged at the window pre-roll, before the camera acted. Fix:
+   seed from the journey identity (spec.scaffold_name override for derived lab specs;
+   nightly renders byte-unchanged). Verified: arms then byte-identical to frame 34,
+   first divergence exactly at the frame-35 orbit onset.
+2. DEN FLOOR RE-CREATED THE ORBIT-V3 REJECTION (fixed): camera_den_floor 0.48 made the
+   cam arm re-INTERPRET content instead of revolving it — literal steel launch towers
+   hallucinated from abyssal's "gas towers" scene wording. Same failure Phil rejected
+   on orbit-v3 ("the raised denoise CHANGED the content"). Floor now defaults 0 —
+   vocabulary-rate moves displace ~1px/frame, parallax-order, healed at travel denoise.
+   Also: plane-quantized depth makes orbit shear piecewise-constant (girder-bait edges)
+   — displacement fields now use a Gaussian-smoothed depth (warp.camera_residual
+   `smooth`); the parallax SCALE term keeps the raw proven planes.
+3. PROMPT BAIT CONTAMINATES CAMERA LABS (test-bed rule): even with both fixes, abyssal's
+   card-2 ARRIVAL morph (den 0.58, prompt "...among the gas towers") coin-flipped to
+   literal towers on the cam arm's diverged feed — BEFORE spiral ramped in. A camera lab
+   journey must have bait-free wording on and around the move cards. Round 4 = the clean
+   bed: cherenkov_cistern (storm_world=spiral 0.4, mountain_country=orbit 0.35).
+   abyssal rounds kept on disk as the failure-class record
+   (output/abyssal_chandelier_cam*/).
+
 ## Labs and gates (variable-isolated, 12fps SLOW LOOPED clips — Phil's standing format)
 - dolly_lab: one populated-field card (the class that flattens), same seed, four arms —
   baseline / gain 0.5 / gain 1.0 / gain 1.0 + persistent scaffold. GATE: near instances

@@ -128,11 +128,15 @@ DEFAULTS = {
     "micro_surge": 0.5,       # plunge gain multiplier: pk * (1 + surge * plunge-ness)
     # ENGINE 3 Phase D (2026-08-27): per-card `camera` moves (engine/camera.py compiles
     # the journey's camera fields into a per-frame schedule; no field = this block inert).
-    # Orbit-class warps need re-synthesis to outpace resample loss (the orbit-v3 gate:
-    # denoise floor 0.52 + post-warp unsharp held 15 deg crisp; travel denoise 0.40
-    # smeared) — frames with a meaningful orbit/tilt component get their denoise floored
-    # here. detail_boost's sharpen doubles as the post-warp unsharp, as with parallax.
-    "camera_den_floor": 0.48,
+    # camera_den_floor DEFAULTS OFF (0): the first camera-lab round set it to 0.48 (the
+    # orbit-v3 "re-synthesis must outpace resample loss" figure) and the cam arm promptly
+    # re-created orbit-v3's REJECTED failure — content re-interpretation (steel towers
+    # hallucinated in a stellar nursery) instead of revolution. At vocabulary rates
+    # (≤0.5°/frame) orbit displaces ~1px/frame — the same order as the parallax residual,
+    # which heals fine at travel denoise with detail_boost's sharpen as the unsharp.
+    # The knob stays for bigger future arcs (landing) — use with the smear/reinterpret
+    # trade-off in mind.
+    "camera_den_floor": 0.0,
     # HOMING CURVE v2 (Phil 2026-08-23, "stronger and earlier"): the loop tail's IPA
     # weight rises from a NONZERO floor at tail start on a smoothstep ease — half strength
     # by mid-tail — instead of the old 0.95*t^1.5 that back-loaded all convergence into
@@ -988,9 +992,16 @@ def main():
             _aw = [(0.5 + cfg["drift"] * math.sin(2 * math.pi * x / 263),
                     0.5 + cfg["drift"] * math.sin(2 * math.pi * x / 419 + 1.7))
                    for x in range(_w0, _wD)]
+            # scaffold seed = the JOURNEY identity, never the run name (2026-08-27): the
+            # run name carries A/B suffixes (_plain/_cn/lab-derived names), and seeding
+            # from it gave every renamed arm a DIFFERENT instance field — the camera lab's
+            # arms diverged at the window pre-roll, before the variable under test acted.
+            # spec.scaffold_name lets a derived lab spec pin the source journey's draw;
+            # nightly renders (spec name == journey) are byte-unchanged.
+            _sname = spec.get("scaffold_name") or spec.get("name") or Path(args.journey).stem
             _res = _scaffold.Resolver(
                 _mode, _zw, _aw,
-                seed=_zlib.crc32(f"{name}:{_reg.get('name')}".encode()),
+                seed=_zlib.crc32(f"{_sname}:{_reg.get('name')}".encode()),
                 density=_rv.get("density", _dflt[0]), size=_rv.get("size", _dflt[1]),
                 variant=_rv.get("variant"), extend=(_wD > _w1))
             resolve_windows.append({"w0": _w0, "w1": _w1, "wD": _wD, "res": _res, "pre": 6,

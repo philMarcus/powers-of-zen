@@ -64,6 +64,9 @@ def derive_spec(journey, arm, moves):
     """Write the derived lab spec (renamed; cam arm carries the camera plan)."""
     spec = copy.deepcopy(json.loads(pl.journey_path(journey).read_text(encoding="utf-8")))
     spec["name"] = f"{journey}_cam{arm}"
+    # arms must draw the SOURCE journey's scaffolds, or the A/B diverges at every
+    # resolve window pre-roll regardless of the camera plan (found 2026-08-27)
+    spec["scaffold_name"] = journey
     if moves:
         by_name = {r["name"]: r for r in spec["registers"]}
         for card, plan in moves.items():

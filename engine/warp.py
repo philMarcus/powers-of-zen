@@ -28,7 +28,7 @@ import time
 
 import numpy as np
 import requests
-from PIL import Image
+from PIL import Image, ImageFilter
 
 COMFY = "http://localhost:8188"
 
@@ -179,7 +179,8 @@ def parallax_residual(img, depth, zoom, k, med, lat=0.0):
 
 
 def camera_residual(img, depth, zoom, k, med, lat=0.0, orbit_deg=0.0, pivot=(0.5, 0.5),
-                    pivot_depth=None, dolly_v=0.0, tilt_deg=0.0, tilt_horizon=0.45):
+                    pivot_depth=None, dolly_v=0.0, tilt_deg=0.0, tilt_horizon=0.45,
+                    smooth=7.0):
     """ENGINE 3 Phase D (2026-08-27): parallax_residual + the per-frame camera-move
     residuals FUSED INTO ONE REMAP (one resample — the Phase-A lesson; every extra
     bilinear pass is generation loss the re-diffusion must heal).
@@ -204,11 +205,21 @@ def camera_residual(img, depth, zoom, k, med, lat=0.0, orbit_deg=0.0, pivot=(0.5
         s = s * (1.0 + dolly_v * dn)
     map_x = W / 2 + (xx - W / 2) / s - lat * (dn - med)
     map_y = H / 2 + (yy - H / 2) / s
+    # displacement terms use a SMOOTHED depth (2026-08-27, camera-lab round 1): the
+    # plane-quantized map makes orbit's lateral shear piecewise-constant, and the crisp
+    # vertical discontinuities at plane boundaries read to the model as girders — the cam
+    # arm hallucinated steel towers in a stellar nursery. The parallax SCALE term keeps
+    # the raw planes (proven, gate-passed); only the shear fields get the blur.
+    if smooth and orbit_deg:
+        dns = np.asarray(Image.fromarray((dn * 255).astype(np.uint8))
+                         .filter(ImageFilter.GaussianBlur(smooth)), np.float32) / 255.0
+    else:
+        dns = dn
     if orbit_deg:
         rad = np.deg2rad(orbit_deg)
         pd = med if pivot_depth is None else pivot_depth
         px = pivot[0] * W
-        rel = dn - pd
+        rel = dns - pd
         map_x += np.sin(rad) * rel * W * 0.55
         map_y += (1.0 - np.cos(rad)) * rel * (xx - px) * 0.35
     if tilt_deg:
