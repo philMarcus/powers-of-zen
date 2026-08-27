@@ -401,6 +401,22 @@ def transform_depth(depth, zoom, rotate_deg, cx, cy, w, h):
     return np.asarray(im, "float32") / 255.0
 
 
+def hero_depth(w, h, fx, fy, frac):
+    """--hero-cn lab (2026-08-27, planet forensics): synthetic depth map — ONE shaded
+    sphere at the tracked position whose diameter is `frac` of the frame width, over a
+    far background. Fed as the depth-CN, the model must paint the target at its
+    SCHEDULED size each frame; re-diffusion can no longer re-normalize the object back
+    to prior-preferred marble size (cobalt's ice world grew 12%->25% over a card whose
+    zoom said x10 — the prior ate the zoom)."""
+    yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
+    cx, cy = fx * w, fy * h
+    r = max(4.0, frac * w / 2)
+    d2 = ((xx - cx) ** 2 + (yy - cy) ** 2) / (r * r)
+    dome = np.clip(0.95 - 0.4 * d2, 0.0, 1.0)
+    depth = np.where(d2 <= 1.0, np.maximum(dome, 0.06), 0.06).astype(np.float32)
+    return Image.fromarray((depth * 255).astype("uint8")).convert("RGB")
+
+
 def detail_boost(img, cfg):
     """Fight feedback collapse: sharpen, lift contrast/saturation, add faint noise."""
     if cfg["sharpen"]:
@@ -692,6 +708,19 @@ def main():
                          "parallax-only lateral drift on hover bars, parallax surge on "
                          "plunges. Default OFF (Phil judges the with/without A/B); needs "
                          "--parallax > 0.")
+    ap.add_argument("--persist-cn", action="store_true",
+                    help="PERSISTENCE LAB (2026-08-27, the hummingbird forensics): the "
+                         "resolve scaffold stays the CN through the card's TRAVEL (window "
+                         "extends to one beat before card end), cameo cards included — "
+                         "instances are held in existence past the arrival instead of "
+                         "churning at travel denoise. Default OFF until Phil's verdict.")
+    ap.add_argument("--hero-cn", action="store_true",
+                    help="PERSISTENCE LAB (2026-08-27, the planet forensics): single-target "
+                         "cards get a synthetic depth disc at the TRACKER's position whose "
+                         "size follows the zoom schedule (x10 across the card), fed as the "
+                         "CN — the object must GROW to fill the view by the boundary "
+                         "instead of being re-painted at prior-preferred size every frame. "
+                         "Default OFF until Phil's verdict.")
     ap.add_argument("--cn", type=float, metavar="STRENGTH",
                     help="override depth-ControlNet strength; --cn 0 disables the CN but KEEPS "
                          "tracking/composition (the clean A/B for 'is the CN hurting the look?'). "
@@ -902,6 +931,7 @@ def main():
         "fps": cfg["fps"], "seed": cfg["seed"],
         "parallax_gain": cfg["parallax_gain"], "resolve_persist": cfg["resolve_persist"],
         "camera_micro": cfg["camera_micro"], "camera": cam_plan, "lap_cut": lap_cut,
+        "persist_cn": bool(args.persist_cn), "hero_cn": bool(args.hero_cn),
         # per-CARD (register) frame counts: lets a future --from-card verify its prefix
         # still aligns after a journey edit
         "card_frames": (register_frame_counts(spec, cfg["fps"]) if "registers" in spec
@@ -970,7 +1000,15 @@ def main():
             if _k == 0 or _rv is False or _order[_k - 1].get("kind") == "seam":
                 continue
             _fa = max(2, round(_F * 0.25))
-            _post = 0 if _reg.get("cameo") else min(10, _F - _fa - 2)
+            if args.persist_cn:
+                # PERSISTENCE LAB (2026-08-27, garden forensics): hold the field through
+                # the TRAVEL — window runs to one beat before card end (the plunge stays
+                # the tracker/prompt's), cameo cards included. The old cameo rule left
+                # ruby's garden card with 6 scaffolded frames of 24; its birds churned
+                # into leaf rows for the rest and popped back ad hoc at the plunge.
+                _post = max(0, _F - _fa - bar_frames // 4)
+            else:
+                _post = 0 if _reg.get("cameo") else min(10, _F - _fa - 2)
             _w0, _w1 = _S - 6, _S + _fa + _post
             if loop:
                 _w1 = min(_w1, total - loop["frames"])
@@ -1017,6 +1055,7 @@ def main():
     # the known zoom geometry, so missed/garbage detections can't yank the camera.
     _depth = None
     _trk = None
+    _hero = None      # --hero-cn lab state: {"size": fraction-of-width}, per approach run
     # rotates each approach run's preferred rule-of-thirds corner; a --from-card prefix
     # already consumed start_run_idx runs, so the continuation keeps the rotation phase
     _run_idx = start_run_idx - 1
@@ -1101,6 +1140,17 @@ def main():
                                          cadence=cfg["track_cadence"],
                                          ease=cfg["approach_lock_ease"],
                                          model=cfg["track_model"])
+                    # --hero-cn: seed the disc so it ends the run at ~full frame width —
+                    # s0 = 1.05 / (product of the remaining scheduled zooms). The card's
+                    # containment contract (target fills the view by the boundary),
+                    # computed exactly instead of hoped for.
+                    _hero = None
+                    if args.hero_cn:
+                        _jr, _Zr = i, 1.0
+                        while _jr < len(approach) and approach[_jr] is ap:
+                            _Zr *= zoom_sched[_jr]
+                            _jr += 1
+                        _hero = {"size": min(0.35, max(0.06, 1.05 / _Zr))}
                 if _trk.need_repick:
                     _trk.begin(img, seed=i, run_idx=_run_idx)
                 ev = _trk.maybe_observe(img)
@@ -1110,6 +1160,7 @@ def main():
                 cx, cy = _trk.step(z, rot_i)
             else:
                 _trk = None
+                _hero = None
                 row = {"i": i - 1, "mode": "tail" if in_loop_tail(i) else "drift",
                        "z": round(z, 4)}
             row["aim"] = [round(cx, 4), round(cy, 4)]
@@ -1330,6 +1381,20 @@ def main():
                     res_cn = 0.6 * min(1.0, 0.35 + 1.3 * _t)
                     if _j >= _n - 2:
                         res_cn *= 0.6     # handoff taper into normal travel
+            hero_ctl, hero_cn = None, 0.0
+            if _hero is not None and approaching:
+                # scheduled size: grows by exactly this frame's zoom; a bigger DETECTED
+                # object is adopted (never shrunk back)
+                _hero["size"] = max(_hero["size"] * z, _trk.size or 0.0)
+                if _hero["size"] < 1.1:
+                    _himg = hero_depth(cfg["width"], cfg["height"],
+                                       min(0.98, max(0.02, _trk.tx)),
+                                       min(0.98, max(0.02, _trk.ty)), _hero["size"])
+                    _hdir = out_dir / "build" / "hero"
+                    _hdir.mkdir(exist_ok=True)
+                    _himg.save(_hdir / f"{i:05d}.png")
+                    hero_ctl = upload_image(_himg, f"zoomer_hero_{name}.png")
+                    hero_cn = 0.35 + 0.30 * min(1.0, _trk.frame / 12)
             ref = upload_image(fed, f"zoomer_feed_{name}.png")
             wf = build_workflow(cfg, prompt, seed, init_image=ref, denoise=den,
                                 prev_prompt=prev_prompt if in_transition else None,
@@ -1337,12 +1402,15 @@ def main():
                                 mask_image=mask_ref,
                                 # object-approach: depth-CN from the (zoomed) feedback holds the
                                 # target's identity as it grows while pixels regenerate (not a
-                                # paste). In the loop tail the SAME channel instead carries
-                                # frame 0's depth (landing alignment) — never both at once.
-                                ctrl_image=res_ctl or (ref if approaching else tail_ctl),
+                                # paste). --hero-cn replaces it with the SCHEDULED-size synthetic
+                                # depth (the disc IS a depth map — no preprocessor). In the loop
+                                # tail the SAME channel carries frame 0's depth — never both.
+                                ctrl_image=res_ctl or hero_ctl
+                                or (ref if approaching else tail_ctl),
                                 cn_strength=res_cn if res_ctl
-                                else (cfg["approach_cn"] if approaching else tail_cn),
-                                depth_preproc=None if res_ctl else _depth,
+                                else (hero_cn if hero_ctl
+                                      else (cfg["approach_cn"] if approaching else tail_cn)),
+                                depth_preproc=None if (res_ctl or hero_ctl) else _depth,
                                 ipa_image=loop.get("_home_ref") if tail_ipa_w > 0.01 else None,
                                 ipa_weight=tail_ipa_w)
         png = run_workflow(wf)
