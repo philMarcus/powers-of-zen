@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-08-26 16:08:53",
+    "updated": "2026-08-27 16:51:07",
     "paused_platforms": [
       "tiktok"
     ],
@@ -6411,7 +6411,8 @@
         ],
         "for_model": "ds",
         "for_cut": "zoomout"
-      }
+      },
+      "order": 0
     },
     {
       "journey": "ruby_furnace",
@@ -6627,7 +6628,7 @@
         "for_model": "ds",
         "for_cut": "zoomout"
       },
-      "order": 5
+      "order": 4
     },
     {
       "journey": "sundew_snare",
@@ -7936,7 +7937,8 @@
         ],
         "for_model": "ds",
         "for_cut": "divein"
-      }
+      },
+      "order": 1
     },
     {
       "journey": "physarum_maze",
@@ -8366,7 +8368,7 @@
       "yt_title": "A sourdough’s secret world, spiraling into infinity 🌌",
       "yt_desc": "",
       "cameo": "tina",
-      "state": "queued",
+      "state": "live",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -8375,14 +8377,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/ewtgHSxpJus",
+          "ts": "2026-08-27 11:06:26"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DcjEaHItaFN/",
+          "ts": "2026-08-27 11:06:26"
         }
       },
       "created": "2026-08-19",
@@ -9059,14 +9061,14 @@
     {
       "journey": "bourdon_foundry",
       "model": "ds",
-      "cut": "divein",
-      "file": "review_divein/bourdon_foundry_ds_divein.mp4",
+      "cut": "zoomout",
+      "file": "production/bourdon_foundry_ds.mp4",
       "title": "",
       "caption": "A cosmic loom weaves galaxies into being 🌌 Can you spot Clark the Quark in the cosmic dance? 👀 #CosmicForge #AtomicOdyssey #InfiniteLoop #VolumetricDreams #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "yt_title": "A cosmic loom weaves galaxies into being 🌌",
       "yt_desc": "",
       "cameo": "clark",
-      "state": "review",
+      "state": "rejected",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -9197,13 +9199,13 @@
       "journey": "pomegranate_vault",
       "model": "ds",
       "cut": "divein",
-      "file": "review_divein/pomegranate_vault_ds_divein.mp4",
+      "file": "review_divein/pomegranate_vault_ds_divein_shift.mp4",
       "title": "",
       "caption": "A crimson cosmos unfolds in endless layers 🌌 Can you spot Belle the Cell in this infinite dive? 👀 #pomegranatecosmos #cellulardive #infinitefruit #molecularvoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "yt_title": "A crimson cosmos unfolds in endless layers 🌌",
       "yt_desc": "",
       "cameo": "belle",
-      "state": "review",
+      "state": "queued",
       "scheduled": null,
       "platforms": {
         "tiktok": {
@@ -9328,7 +9330,86 @@
         "resolve_persist": false,
         "camera_micro": false,
         "seed": 1234
-      }
+      },
+      "start_t": 8.5,
+      "orig_file": "review_divein/pomegranate_vault_ds_divein.mp4",
+      "music": {
+        "bpm": 90,
+        "bar": 2.667,
+        "key": "D minor",
+        "stage": "done",
+        "chosen": "night_market",
+        "candidates": [
+          {
+            "id": "night_market-third_answer",
+            "lane": "night_market",
+            "mood": "nocturnal, lantern-lit, wandering · third_answer",
+            "track": "output/music/pomegranate_vault_night_market-third_answer.flac",
+            "aligned": "review/music/candidates/pomegranate_vault/night_market-third_answer.mp4",
+            "seed": 32797,
+            "lock": 60.41,
+            "bar_conf": 0.51,
+            "kick": 0.5,
+            "score": 42.41,
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a hushed lamp-glow still life — soft hang drum and plucked koto over a velvet pad, one heavy step on every downbeat, intimate and close, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "analog_dawn-wild",
+            "lane": "analog_dawn",
+            "mood": "nostalgic, golden, waking · downbeat",
+            "track": "output/music/pomegranate_vault_analog_dawn-wild.flac",
+            "aligned": "review/music/candidates/pomegranate_vault/analog_dawn-wild.mp4",
+            "seed": 32945,
+            "lock": 32.06,
+            "bar_conf": 0.65,
+            "kick": 0.63,
+            "score": 32.58,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a hushed lamp-glow still life — soft hang drum and plucked koto over a velvet pad, one heavy step on every downbeat, intimate and close, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "music_box-wild",
+            "lane": "music_box",
+            "mood": "miniature, tender, clockwork · downbeat",
+            "track": "output/music/pomegranate_vault_music_box-wild.flac",
+            "aligned": "review/music/candidates/pomegranate_vault/music_box-wild.mp4",
+            "seed": 32871,
+            "lock": 22.88,
+            "bar_conf": 0.62,
+            "kick": 0.46,
+            "score": 18.62,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a hushed lamp-glow still life — soft hang drum and plucked koto over a velvet pad, one heavy step on every downbeat, intimate and close, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "deep_archive-wild",
+            "lane": "deep_archive",
+            "mood": "vast, ancient, submerged · halftime",
+            "track": "output/music/pomegranate_vault_deep_archive-wild.flac",
+            "aligned": "review/music/candidates/pomegranate_vault/deep_archive-wild.mp4",
+            "seed": 32834,
+            "lock": 25.52,
+            "bar_conf": 0.54,
+            "kick": 0.28,
+            "score": 16.15,
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a hushed lamp-glow still life — soft hang drum and plucked koto over a velvet pad, one heavy step on every downbeat, intimate and close, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "night_market",
+            "lane": "night_market",
+            "mood": "nocturnal, lantern-lit, wandering · downbeat",
+            "track": "output/music/pomegranate_vault_night_market.flac",
+            "aligned": "review/music/candidates/pomegranate_vault/night_market.mp4",
+            "seed": 32723,
+            "lock": 16.95,
+            "bar_conf": 0.6,
+            "kick": 0.57,
+            "score": 15.91,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a hushed lamp-glow still life — soft hang drum and plucked koto over a velvet pad, one heavy step on every downbeat, intimate and close, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      },
+      "order": 2
     },
     {
       "journey": "kelp_dynamo",
@@ -9471,13 +9552,13 @@
       "journey": "eclipse_waterhole",
       "model": "ds",
       "cut": "divein",
-      "file": "review_divein/eclipse_waterhole_ds_divein.mp4",
+      "file": "review_divein/eclipse_waterhole_ds_divein_shift.mp4",
       "title": "",
-      "caption": "",
-      "yt_title": "",
+      "caption": "A cosmic weave unravels into violet gulf 🌌 Can you spot Lamar the Star in this infinite dive? 👀 #cosmicweave #eclipseworlds #baobabdusk #carboncosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "A cosmic weave unravels into violet gulf 🌌",
       "yt_desc": "",
       "cameo": "lamar",
-      "state": "review",
+      "state": "queued",
       "scheduled": null,
       "engine_params": {
         "parallax_gain": 1.0,
@@ -9578,19 +9659,122 @@
         ],
         "for_model": "ds",
         "for_cut": "divein"
-      }
+      },
+      "start_t": 16.0,
+      "caption_bodies": [
+        "A cosmic weave unravels into violet gulf 🌌",
+        "Spiral arms unwind into starbirth knots ✨",
+        "Eclipse rings cradle a rust-red world 🌑",
+        "Baobabs loom over a waterhole at false dusk 🌅",
+        "Cellulose ropes twist into carbon grids 🌀"
+      ],
+      "yt_title_options": [
+        "A cosmic weave unravels into violet gulf 🌌",
+        "Spiral arms unwind into starbirth knots ✨",
+        "Eclipse rings cradle a rust-red world 🌑",
+        "Baobabs loom over a waterhole at false dusk 🌅",
+        "Cellulose ropes twist into carbon grids 🌀"
+      ],
+      "spot_line": "Can you spot Lamar the Star in this infinite dive? 👀",
+      "caption_tags": "#cosmicweave #eclipseworlds #baobabdusk #carboncosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A cosmic weave unravels into violet gulf 🌌 Can you spot Lamar the Star in this infinite dive? 👀 #cosmicweave #eclipseworlds #baobabdusk #carboncosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Spiral arms unwind into starbirth knots ✨ Can you spot Lamar the Star in this infinite dive? 👀 #cosmicweave #eclipseworlds #baobabdusk #carboncosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Eclipse rings cradle a rust-red world 🌑 Can you spot Lamar the Star in this infinite dive? 👀 #cosmicweave #eclipseworlds #baobabdusk #carboncosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Baobabs loom over a waterhole at false dusk 🌅 Can you spot Lamar the Star in this infinite dive? 👀 #cosmicweave #eclipseworlds #baobabdusk #carboncosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Cellulose ropes twist into carbon grids 🌀 Can you spot Lamar the Star in this infinite dive? 👀 #cosmicweave #eclipseworlds #baobabdusk #carboncosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ],
+      "orig_file": "review_divein/eclipse_waterhole_ds_divein.mp4",
+      "music": {
+        "bpm": 90,
+        "bar": 2.667,
+        "key": "D minor",
+        "stage": "done",
+        "chosen": "choir_of_dust-b",
+        "candidates": [
+          {
+            "id": "analog_dawn-wild",
+            "lane": "analog_dawn",
+            "mood": "nostalgic, golden, waking · downbeat",
+            "track": "output/music/eclipse_waterhole_analog_dawn-wild.flac",
+            "aligned": "review/music/candidates/eclipse_waterhole/analog_dawn-wild.mp4",
+            "seed": 22452,
+            "lock": 27.57,
+            "bar_conf": 0.78,
+            "kick": 0.79,
+            "score": 34.23,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking totality over a crowded waterhole — a hushed granular shimmer and glass-harmonica pad over a deep sub heartbeat, the pulse thinning to near-silence as the umbra lands and the birds cut out, tightening through the wood and the cellulose ropes, one struck low bell where the caged trio tears open into the cosmic weave, opening dusty and vast for the fall back through the filaments, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "choir_of_dust-halftime",
+            "lane": "choir_of_dust",
+            "mood": "hushed, suspended, dissolving · halftime",
+            "track": "output/music/eclipse_waterhole_choir_of_dust-halftime.flac",
+            "aligned": "review/music/candidates/eclipse_waterhole/choir_of_dust-halftime.mp4",
+            "seed": 22415,
+            "lock": 38.02,
+            "bar_conf": 0.54,
+            "kick": 0.56,
+            "score": 31.98,
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking totality over a crowded waterhole — a hushed granular shimmer and glass-harmonica pad over a deep sub heartbeat, the pulse thinning to near-silence as the umbra lands and the birds cut out, tightening through the wood and the cellulose ropes, one struck low bell where the caged trio tears open into the cosmic weave, opening dusty and vast for the fall back through the filaments, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "choir_of_dust-third_answer2",
+            "lane": "choir_of_dust",
+            "mood": "hushed, suspended, dissolving · third_answer",
+            "track": "output/music/eclipse_waterhole_choir_of_dust-third_answer2.flac",
+            "aligned": "review/music/candidates/eclipse_waterhole/choir_of_dust-third_answer2.mp4",
+            "seed": 22600,
+            "lock": 28.34,
+            "bar_conf": 0.76,
+            "kick": 0.71,
+            "score": 31.55,
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking totality over a crowded waterhole — a hushed granular shimmer and glass-harmonica pad over a deep sub heartbeat, the pulse thinning to near-silence as the umbra lands and the birds cut out, tightening through the wood and the cellulose ropes, one struck low bell where the caged trio tears open into the cosmic weave, opening dusty and vast for the fall back through the filaments, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "ember_pulse-wild",
+            "lane": "ember_pulse",
+            "mood": "smoldering, dark, gravitational · halftime",
+            "track": "output/music/eclipse_waterhole_ember_pulse-wild.flac",
+            "aligned": "review/music/candidates/eclipse_waterhole/ember_pulse-wild.mp4",
+            "seed": 22489,
+            "lock": 11.19,
+            "bar_conf": 0.64,
+            "kick": 0.4,
+            "score": 8.32,
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking totality over a crowded waterhole — a hushed granular shimmer and glass-harmonica pad over a deep sub heartbeat, the pulse thinning to near-silence as the umbra lands and the birds cut out, tightening through the wood and the cellulose ropes, one struck low bell where the caged trio tears open into the cosmic weave, opening dusty and vast for the fall back through the filaments, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "choir_of_dust-b",
+            "lane": "choir_of_dust",
+            "mood": "hushed, suspended, dissolving · heartbeat",
+            "track": "output/music/eclipse_waterhole_choir_of_dust-b.flac",
+            "aligned": "review/music/candidates/eclipse_waterhole/choir_of_dust-b.mp4",
+            "seed": 22378,
+            "lock": 18.04,
+            "bar_conf": 0.79,
+            "kick": 0.7,
+            "score": 22.19,
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking totality over a crowded waterhole — a hushed granular shimmer and glass-harmonica pad over a deep sub heartbeat, the pulse thinning to near-silence as the umbra lands and the birds cut out, tightening through the wood and the cellulose ropes, one struck low bell where the caged trio tears open into the cosmic weave, opening dusty and vast for the fall back through the filaments, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      },
+      "order": 3
     },
     {
       "journey": "magellanic_mob",
       "model": "ds",
-      "cut": "divein",
-      "file": "review_divein/magellanic_mob_ds_divein.mp4",
+      "cut": "zoomout",
+      "file": "production/magellanic_mob_ds.mp4",
       "title": "",
-      "caption": "A river of stars flows into infinity 🌌 Can you spot Janet the Planet hiding in the stars? 👀 #CosmicDunes #StellarVoyage #InfiniteZoom #JanetThePlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
-      "yt_title": "A river of stars flows into infinity 🌌",
+      "caption": "Newborn suns ignite in the cosmic void Can you spot Janet the Planet hiding in the stars? 👀 #CosmicDunes #StellarVoyage #InfiniteZoom #JanetThePlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Newborn suns ignite in the cosmic void",
       "yt_desc": "",
       "cameo": "janet",
-      "state": "review",
+      "state": "music",
       "scheduled": null,
       "engine_params": {
         "parallax_gain": 1.0,
@@ -9715,7 +9899,85 @@
         ],
         "for_model": "ds",
         "for_cut": "divein"
-      }
+      },
+      "music": {
+        "bpm": 90,
+        "bar": 2.667,
+        "key": "G minor",
+        "stage": "review",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "tide_organ-wild",
+            "lane": "tide_organ",
+            "mood": "tidal, breathing, mineral · heartbeat",
+            "track": "output/music/magellanic_mob_tide_organ-wild.flac",
+            "aligned": "review/music/candidates/magellanic_mob/tide_organ-wild.mp4",
+            "seed": 24540,
+            "lock": 30.09,
+            "bar_conf": 0.85,
+            "kick": 0.76,
+            "score": 41.11,
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a moonlit crossing of red country — a round woody pulse with a deep sub under it, one kick on the downbeat and a softer thump answering, kalimba figures drifting over a low drone, the pulse gathering weight as the dune country opens and heaviest where the mob crosses the pan, tightening to a single struck tine through the cable and the crease-field, one deep hit as the drifting carbon shells open out into the river of stars, a breathy reed organ and soft water textures over a deep sub pulse, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "glass_chapel-wild",
+            "lane": "glass_chapel",
+            "mood": "sacred, luminous, weightless · downbeat",
+            "track": "output/music/magellanic_mob_glass_chapel-wild.flac",
+            "aligned": "review/music/candidates/magellanic_mob/glass_chapel-wild.mp4",
+            "seed": 24503,
+            "lock": 27.01,
+            "bar_conf": 0.83,
+            "kick": 0.77,
+            "score": 36.57,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a moonlit crossing of red country — a round woody pulse with a deep sub under it, one kick on the downbeat and a softer thump answering, kalimba figures drifting over a low drone, the pulse gathering weight as the dune country opens and heaviest where the mob crosses the pan, tightening to a single struck tine through the cable and the crease-field, one deep hit as the drifting carbon shells open out into the river of stars, crystalline glass bells and a soft distant choir pad, airy shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "wooden_orbit-halftime",
+            "lane": "wooden_orbit",
+            "mood": "playful, organic, orbiting · halftime",
+            "track": "output/music/magellanic_mob_wooden_orbit-halftime.flac",
+            "aligned": "review/music/candidates/magellanic_mob/wooden_orbit-halftime.mp4",
+            "seed": 24577,
+            "lock": 23.23,
+            "bar_conf": 0.82,
+            "kick": 0.8,
+            "score": 32.25,
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a moonlit crossing of red country — a round woody pulse with a deep sub under it, one kick on the downbeat and a softer thump answering, kalimba figures drifting over a low drone, the pulse gathering weight as the dune country opens and heaviest where the mob crosses the pan, tightening to a single struck tine through the cable and the crease-field, one deep hit as the drifting carbon shells open out into the river of stars, warm marimba and kalimba over a round woody bass, gentle plucked figures, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "waltz-wooden_orbit",
+            "lane": "wooden_orbit",
+            "mood": "playful, organic, orbiting · downbeat · 68bpm 3/4",
+            "track": "output/music/magellanic_mob_waltz-wooden_orbit.flac",
+            "aligned": "review/music/candidates/magellanic_mob/waltz-wooden_orbit.mp4",
+            "seed": 24651,
+            "lock": 21.53,
+            "bar_conf": 0.72,
+            "kick": 0.84,
+            "score": 28.56,
+            "tags": "a gently lilting waltz in 3/4 time, all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a moonlit crossing of red country — a round woody pulse with a deep sub under it, one kick on the downbeat and a softer thump answering, kalimba figures drifting over a low drone, the pulse gathering weight as the dune country opens and heaviest where the mob crosses the pan, tightening to a single struck tine through the cable and the crease-field, one deep hit as the drifting carbon shells open out into the river of stars, warm marimba and kalimba over a round woody bass, gentle plucked figures, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "choir_of_dust-wild",
+            "lane": "choir_of_dust",
+            "mood": "hushed, suspended, dissolving · heartbeat",
+            "track": "output/music/magellanic_mob_choir_of_dust-wild.flac",
+            "aligned": "review/music/candidates/magellanic_mob/choir_of_dust-wild.mp4",
+            "seed": 24614,
+            "lock": 19.02,
+            "bar_conf": 0.84,
+            "kick": 0.73,
+            "score": 24.96,
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a moonlit crossing of red country — a round woody pulse with a deep sub under it, one kick on the downbeat and a softer thump answering, kalimba figures drifting over a low drone, the pulse gathering weight as the dune country opens and heaviest where the mob crosses the pan, tightening to a single struck tine through the cable and the crease-field, one deep hit as the drifting carbon shells open out into the river of stars, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "zoomout"
+      },
+      "start_t": 0.0,
+      "orig_file": "production/magellanic_mob_ds.mp4"
     },
     {
       "journey": "sunspot_archipelago",
@@ -9985,6 +10247,691 @@
             "kick": 0.16,
             "score": 0.72,
             "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking warm analog synth pads with gentle tape warble over a deep soft kick on every downbeat, a driving nocturnal pulse like gear left humming after the room empties, one struck bell as the curve nests open onto the stage boards, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      }
+    },
+    {
+      "journey": "bee_cathedral",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/bee_cathedral_ds_divein.mp4",
+      "title": "",
+      "caption": "Dive into the golden hive’s endless glow 🐝 Can you spot Tina the DNA in the glow? 👀 #hiveinfinity #goldenpollen #molecularzen #beeswaxdream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Dive into the golden hive’s endless glow 🐝",
+      "yt_desc": "",
+      "cameo": "tina",
+      "state": "review",
+      "scheduled": null,
+      "engine_params": {
+        "parallax_gain": 1.0,
+        "resolve_persist": false,
+        "camera_micro": false,
+        "seed": 1234
+      },
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-27",
+      "music_pregen": {
+        "bpm": 90,
+        "bar": 2.667,
+        "key": "G minor",
+        "stage": "pregen",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "tide_organ-wild",
+            "lane": "tide_organ",
+            "mood": "tidal, breathing, mineral · heartbeat",
+            "track": "output/music/bee_cathedral_tide_organ-wild.flac",
+            "aligned": "review/music/candidates/bee_cathedral/tide_organ-wild.mp4",
+            "seed": 10652,
+            "lock": 45.2,
+            "bar_conf": 0.75,
+            "kick": 0.71,
+            "score": 54.32,
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a hushed nocturnal hive — suspended and dissolving, a low warm hum under the crowded comb, thinning to something weightless and granular through the pollen drift and the molecular chains, one deep swell landing where the amber packing folds back out into the hanging combs, a breathy reed organ and soft water textures over a deep sub pulse, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "aurora_strings-wild",
+            "lane": "aurora_strings",
+            "mood": "polar, shimmering, slow dawn · downbeat",
+            "track": "output/music/bee_cathedral_aurora_strings-wild.flac",
+            "aligned": "review/music/candidates/bee_cathedral/aurora_strings-wild.mp4",
+            "seed": 10689,
+            "lock": 36.02,
+            "bar_conf": 0.68,
+            "kick": 0.55,
+            "score": 34.16,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a hushed nocturnal hive — suspended and dissolving, a low warm hum under the crowded comb, thinning to something weightless and granular through the pollen drift and the molecular chains, one deep swell landing where the amber packing folds back out into the hanging combs, bowed string pad swells and sparse harp plucks, silvery and cold, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "choir_of_dust-third_answer2",
+            "lane": "choir_of_dust",
+            "mood": "hushed, suspended, dissolving · third_answer",
+            "track": "output/music/bee_cathedral_choir_of_dust-third_answer2.flac",
+            "aligned": "review/music/candidates/bee_cathedral/choir_of_dust-third_answer2.mp4",
+            "seed": 10800,
+            "lock": 23.31,
+            "bar_conf": 0.82,
+            "kick": 0.76,
+            "score": 31.03,
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a hushed nocturnal hive — suspended and dissolving, a low warm hum under the crowded comb, thinning to something weightless and granular through the pollen drift and the molecular chains, one deep swell landing where the amber packing folds back out into the hanging combs, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "choir_of_dust-b",
+            "lane": "choir_of_dust",
+            "mood": "hushed, suspended, dissolving · heartbeat",
+            "track": "output/music/bee_cathedral_choir_of_dust-b.flac",
+            "aligned": "review/music/candidates/bee_cathedral/choir_of_dust-b.mp4",
+            "seed": 10578,
+            "lock": 38.27,
+            "bar_conf": 0.33,
+            "kick": 0.34,
+            "score": 18.72,
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a hushed nocturnal hive — suspended and dissolving, a low warm hum under the crowded comb, thinning to something weightless and granular through the pollen drift and the molecular chains, one deep swell landing where the amber packing folds back out into the hanging combs, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "glass_chapel-wild",
+            "lane": "glass_chapel",
+            "mood": "sacred, luminous, weightless · downbeat",
+            "track": "output/music/bee_cathedral_glass_chapel-wild.flac",
+            "aligned": "review/music/candidates/bee_cathedral/glass_chapel-wild.mp4",
+            "seed": 10763,
+            "lock": 24.38,
+            "bar_conf": 0.47,
+            "kick": 0.42,
+            "score": 15.89,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a hushed nocturnal hive — suspended and dissolving, a low warm hum under the crowded comb, thinning to something weightless and granular through the pollen drift and the molecular chains, one deep swell landing where the amber packing folds back out into the hanging combs, crystalline glass bells and a soft distant choir pad, airy shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      },
+      "caption_bodies": [
+        "Dive into the golden hive’s endless glow 🐝",
+        "Where wax and shadow weave the night’s secret dance",
+        "A pollen storm in amber, drifting forever",
+        "The hidden world inside a single grain’s embrace",
+        "Molecules of wax, stacked in honeyed infinity"
+      ],
+      "yt_title_options": [
+        "Dive into the golden hive’s endless glow 🐝",
+        "Where wax and shadow weave the night’s secret dance",
+        "A pollen storm in amber, drifting forever",
+        "The hidden world inside a single grain’s embrace",
+        "Molecules of wax, stacked in honeyed infinity"
+      ],
+      "spot_line": "Can you spot Tina the DNA in the glow? 👀",
+      "caption_tags": "#hiveinfinity #goldenpollen #molecularzen #beeswaxdream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Dive into the golden hive’s endless glow 🐝 Can you spot Tina the DNA in the glow? 👀 #hiveinfinity #goldenpollen #molecularzen #beeswaxdream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where wax and shadow weave the night’s secret dance Can you spot Tina the DNA in the glow? 👀 #hiveinfinity #goldenpollen #molecularzen #beeswaxdream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A pollen storm in amber, drifting forever Can you spot Tina the DNA in the glow? 👀 #hiveinfinity #goldenpollen #molecularzen #beeswaxdream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The hidden world inside a single grain’s embrace Can you spot Tina the DNA in the glow? 👀 #hiveinfinity #goldenpollen #molecularzen #beeswaxdream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Molecules of wax, stacked in honeyed infinity Can you spot Tina the DNA in the glow? 👀 #hiveinfinity #goldenpollen #molecularzen #beeswaxdream #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ]
+    },
+    {
+      "journey": "observatory_dusk",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/observatory_dusk_ds_divein.mp4",
+      "title": "",
+      "caption": "Diving through the lens of the cosmos 🌌 Can you spot Belle the Cell in this endless dive? 👀 #cosmiczoom #infiniteuniverse #glassandstars #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Diving through the lens of the cosmos 🌌",
+      "yt_desc": "",
+      "cameo": "belle",
+      "state": "review",
+      "scheduled": null,
+      "engine_params": {
+        "parallax_gain": 1.0,
+        "resolve_persist": false,
+        "camera_micro": false,
+        "seed": 1234
+      },
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-27",
+      "caption_bodies": [
+        "Diving through the lens of the cosmos 🌌",
+        "Where glass meets galaxies, time dissolves",
+        "A spiral of light, from atoms to stars",
+        "Infinite zoom through the eye of the universe",
+        "From brass gears to cosmic dust, the loop never ends"
+      ],
+      "yt_title_options": [
+        "Diving through the lens of the cosmos 🌌",
+        "Where glass meets galaxies, time dissolves",
+        "A spiral of light, from atoms to stars",
+        "Infinite zoom through the eye of the universe",
+        "From brass gears to cosmic dust, the loop never ends"
+      ],
+      "spot_line": "Can you spot Belle the Cell in this endless dive? 👀",
+      "caption_tags": "#cosmiczoom #infiniteuniverse #glassandstars #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Diving through the lens of the cosmos 🌌 Can you spot Belle the Cell in this endless dive? 👀 #cosmiczoom #infiniteuniverse #glassandstars #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where glass meets galaxies, time dissolves Can you spot Belle the Cell in this endless dive? 👀 #cosmiczoom #infiniteuniverse #glassandstars #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A spiral of light, from atoms to stars Can you spot Belle the Cell in this endless dive? 👀 #cosmiczoom #infiniteuniverse #glassandstars #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Infinite zoom through the eye of the universe Can you spot Belle the Cell in this endless dive? 👀 #cosmiczoom #infiniteuniverse #glassandstars #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "From brass gears to cosmic dust, the loop never ends Can you spot Belle the Cell in this endless dive? 👀 #cosmiczoom #infiniteuniverse #glassandstars #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ],
+      "music_pregen": {
+        "bpm": 80,
+        "bar": 3.0,
+        "key": "D minor",
+        "stage": "pregen",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "pulse3-glass_chapel",
+            "lane": "glass_chapel",
+            "mood": "sacred, luminous, weightless · downbeat (pulse top-up)",
+            "track": "output/music/observatory_dusk_pulse3-glass_chapel.flac",
+            "aligned": "review/music/candidates/observatory_dusk/pulse3-glass_chapel.mp4",
+            "seed": 37039,
+            "lock": 30.54,
+            "bar_conf": 0.69,
+            "kick": 0.6,
+            "score": 30.68,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking an observatory at violet dusk and the deep sky it watches — glass bell tones over a slow weightless pad, one struck hit where the glass network opens into the star cluster, settling back into hush at the nested rings, crystalline glass bells and a soft distant choir pad, airy shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "glass_chapel-third_answer",
+            "lane": "glass_chapel",
+            "mood": "sacred, luminous, weightless · third_answer",
+            "track": "output/music/observatory_dusk_glass_chapel-third_answer.flac",
+            "aligned": "review/music/candidates/observatory_dusk/glass_chapel-third_answer.mp4",
+            "seed": 36551,
+            "lock": 22.6,
+            "bar_conf": 0.74,
+            "kick": 0.64,
+            "score": 24.81,
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking an observatory at violet dusk and the deep sky it watches — glass bell tones over a slow weightless pad, one struck hit where the glass network opens into the star cluster, settling back into hush at the nested rings, crystalline glass bells and a soft distant choir pad, airy shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "choir_of_dust-wild",
+            "lane": "choir_of_dust",
+            "mood": "hushed, suspended, dissolving · heartbeat",
+            "track": "output/music/observatory_dusk_choir_of_dust-wild.flac",
+            "aligned": "review/music/candidates/observatory_dusk/choir_of_dust-wild.mp4",
+            "seed": 36699,
+            "lock": 14.26,
+            "bar_conf": 0.73,
+            "kick": 0.56,
+            "score": 14.23,
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking an observatory at violet dusk and the deep sky it watches — glass bell tones over a slow weightless pad, one struck hit where the glass network opens into the star cluster, settling back into hush at the nested rings, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "wooden_orbit-wild",
+            "lane": "wooden_orbit",
+            "mood": "playful, organic, orbiting · third_answer",
+            "track": "output/music/observatory_dusk_wooden_orbit-wild.flac",
+            "aligned": "review/music/candidates/observatory_dusk/wooden_orbit-wild.mp4",
+            "seed": 36625,
+            "lock": 12.33,
+            "bar_conf": 0.39,
+            "kick": 0.3,
+            "score": 6.1,
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking an observatory at violet dusk and the deep sky it watches — glass bell tones over a slow weightless pad, one struck hit where the glass network opens into the star cluster, settling back into hush at the nested rings, warm marimba and kalimba over a round woody bass, gentle plucked figures, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "music_box-wild",
+            "lane": "music_box",
+            "mood": "miniature, tender, clockwork · downbeat",
+            "track": "output/music/observatory_dusk_music_box-wild.flac",
+            "aligned": "review/music/candidates/observatory_dusk/music_box-wild.mp4",
+            "seed": 36588,
+            "lock": 15.56,
+            "bar_conf": 0.23,
+            "kick": 0.2,
+            "score": 5.17,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking an observatory at violet dusk and the deep sky it watches — glass bell tones over a slow weightless pad, one struck hit where the glass network opens into the star cluster, settling back into hush at the nested rings, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      }
+    },
+    {
+      "journey": "bamboo_sea",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/bamboo_sea_ds_divein.mp4",
+      "title": "",
+      "caption": "Dusk falls through endless bamboo, a red panda dreams 🌿 Can you spot Tina the DNA hiding in the depths? 👀 #BambooCosmos #MicroscopicZen #InfiniteDusk #TinaTheDNA #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Dusk falls through endless bamboo, a red panda dreams 🌿",
+      "yt_desc": "",
+      "cameo": "tina",
+      "state": "review",
+      "scheduled": null,
+      "engine_params": {
+        "parallax_gain": 1.0,
+        "resolve_persist": false,
+        "camera_micro": false,
+        "seed": 1234
+      },
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-27",
+      "caption_bodies": [
+        "Dusk falls through endless bamboo, a red panda dreams 🌿",
+        "Into the hollow, where smoke curls in silent chambers",
+        "Vascular highways stretch into the ashen unknown",
+        "Cell walls hum with emerald light, wound tight in time",
+        "Glass pyramids whisper secrets in the charcoal dark"
+      ],
+      "yt_title_options": [
+        "Dusk falls through endless bamboo, a red panda dreams 🌿",
+        "Into the hollow, where smoke curls in silent chambers",
+        "Vascular highways stretch into the ashen unknown",
+        "Cell walls hum with emerald light, wound tight in time",
+        "Glass pyramids whisper secrets in the charcoal dark"
+      ],
+      "spot_line": "Can you spot Tina the DNA hiding in the depths? 👀",
+      "caption_tags": "#BambooCosmos #MicroscopicZen #InfiniteDusk #TinaTheDNA #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Dusk falls through endless bamboo, a red panda dreams 🌿 Can you spot Tina the DNA hiding in the depths? 👀 #BambooCosmos #MicroscopicZen #InfiniteDusk #TinaTheDNA #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Into the hollow, where smoke curls in silent chambers Can you spot Tina the DNA hiding in the depths? 👀 #BambooCosmos #MicroscopicZen #InfiniteDusk #TinaTheDNA #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Vascular highways stretch into the ashen unknown Can you spot Tina the DNA hiding in the depths? 👀 #BambooCosmos #MicroscopicZen #InfiniteDusk #TinaTheDNA #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Cell walls hum with emerald light, wound tight in time Can you spot Tina the DNA hiding in the depths? 👀 #BambooCosmos #MicroscopicZen #InfiniteDusk #TinaTheDNA #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Glass pyramids whisper secrets in the charcoal dark Can you spot Tina the DNA hiding in the depths? 👀 #BambooCosmos #MicroscopicZen #InfiniteDusk #TinaTheDNA #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ],
+      "music_pregen": {
+        "bpm": 90,
+        "bar": 2.667,
+        "key": "C minor",
+        "stage": "pregen",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "wooden_orbit",
+            "lane": "wooden_orbit",
+            "mood": "playful, organic, orbiting · third_answer",
+            "track": "output/music/bamboo_sea_wooden_orbit.flac",
+            "aligned": "review/music/candidates/bamboo_sea/wooden_orbit.mp4",
+            "seed": 6508,
+            "lock": 31.05,
+            "bar_conf": 0.58,
+            "kick": 0.51,
+            "score": 25.52,
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a hushed mountain stand at dusk — woody plucked figures orbiting over a low warm bass, spare and misted through the crowded culms, thinning to something glassy and granular down in the cables and the silica, one deep swell landing where the glass web combs back out into the ranked culms in smoke, warm marimba and kalimba over a round woody bass, gentle plucked figures, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "aurora_strings-wild",
+            "lane": "aurora_strings",
+            "mood": "polar, shimmering, slow dawn · downbeat",
+            "track": "output/music/bamboo_sea_aurora_strings-wild.flac",
+            "aligned": "review/music/candidates/bamboo_sea/aurora_strings-wild.mp4",
+            "seed": 6619,
+            "lock": 26.9,
+            "bar_conf": 0.68,
+            "kick": 0.32,
+            "score": 18.06,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a hushed mountain stand at dusk — woody plucked figures orbiting over a low warm bass, spare and misted through the crowded culms, thinning to something glassy and granular down in the cables and the silica, one deep swell landing where the glass web combs back out into the ranked culms in smoke, bowed string pad swells and sparse harp plucks, silvery and cold, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "pulse1-wooden_orbit",
+            "lane": "wooden_orbit",
+            "mood": "playful, organic, orbiting · downbeat (pulse top-up)",
+            "track": "output/music/bamboo_sea_pulse1-wooden_orbit.flac",
+            "aligned": "review/music/candidates/bamboo_sea/pulse1-wooden_orbit.mp4",
+            "seed": 6868,
+            "lock": 27.47,
+            "bar_conf": 0.4,
+            "kick": 0.37,
+            "score": 15.27,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a hushed mountain stand at dusk — woody plucked figures orbiting over a low warm bass, spare and misted through the crowded culms, thinning to something glassy and granular down in the cables and the silica, one deep swell landing where the glass web combs back out into the ranked culms in smoke, warm marimba and kalimba over a round woody bass, gentle plucked figures, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "ember_pulse-wild",
+            "lane": "ember_pulse",
+            "mood": "smoldering, dark, gravitational · halftime",
+            "track": "output/music/bamboo_sea_ember_pulse-wild.flac",
+            "aligned": "review/music/candidates/bamboo_sea/ember_pulse-wild.mp4",
+            "seed": 6656,
+            "lock": 10.06,
+            "bar_conf": 0.54,
+            "kick": 0.4,
+            "score": 6.77,
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a hushed mountain stand at dusk — woody plucked figures orbiting over a low warm bass, spare and misted through the crowded culms, thinning to something glassy and granular down in the cables and the silica, one deep swell landing where the glass web combs back out into the ranked culms in smoke, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "night_market-wild",
+            "lane": "night_market",
+            "mood": "nocturnal, lantern-lit, wandering · downbeat",
+            "track": "output/music/bamboo_sea_night_market-wild.flac",
+            "aligned": "review/music/candidates/bamboo_sea/night_market-wild.mp4",
+            "seed": 6730,
+            "lock": 24.91,
+            "bar_conf": 0.12,
+            "kick": 0.05,
+            "score": 4.58,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a hushed mountain stand at dusk — woody plucked figures orbiting over a low warm bass, spare and misted through the crowded culms, thinning to something glassy and granular down in the cables and the silica, one deep swell landing where the glass web combs back out into the ranked culms in smoke, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      }
+    },
+    {
+      "journey": "fiddler_commons",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/fiddler_commons_ds_divein.mp4",
+      "title": "",
+      "caption": "Dive into the endless depths of a salt marsh’s hidden universe 🌿 Can you spot Lorraine the Terrane hiding in the marsh’s depths? 👀 #SaltMarshCosmos #InfiniteZoom #HiddenWorlds #LorraineTheTerrane #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Dive into the endless depths of a salt marsh’s hidden universe 🌿",
+      "yt_desc": "",
+      "cameo": "lorraine",
+      "state": "review",
+      "scheduled": null,
+      "engine_params": {
+        "parallax_gain": 1.0,
+        "resolve_persist": false,
+        "camera_micro": false,
+        "seed": 1234
+      },
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-27",
+      "caption_bodies": [
+        "Dive into the endless depths of a salt marsh’s hidden universe 🌿",
+        "Where the tides whisper secrets through cordgrass and crab claws 🌊",
+        "A journey through the veins of the earth, where life hums in the dark",
+        "The marsh breathes in golden dusk, revealing its glittering soul ✨",
+        "Lost in the loop of a world where every scale holds a new wonder"
+      ],
+      "yt_title_options": [
+        "Dive into the endless depths of a salt marsh’s hidden universe 🌿",
+        "Where the tides whisper secrets through cordgrass and crab claws 🌊",
+        "A journey through the veins of the earth, where life hums in the dark",
+        "The marsh breathes in golden dusk, revealing its glittering soul ✨",
+        "Lost in the loop of a world where every scale holds a new wonder"
+      ],
+      "spot_line": "Can you spot Lorraine the Terrane hiding in the marsh’s depths? 👀",
+      "caption_tags": "#SaltMarshCosmos #InfiniteZoom #HiddenWorlds #LorraineTheTerrane #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Dive into the endless depths of a salt marsh’s hidden universe 🌿 Can you spot Lorraine the Terrane hiding in the marsh’s depths? 👀 #SaltMarshCosmos #InfiniteZoom #HiddenWorlds #LorraineTheTerrane #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Where the tides whisper secrets through cordgrass and crab claws 🌊 Can you spot Lorraine the Terrane hiding in the marsh’s depths? 👀 #SaltMarshCosmos #InfiniteZoom #HiddenWorlds #LorraineTheTerrane #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A journey through the veins of the earth, where life hums in the dark Can you spot Lorraine the Terrane hiding in the marsh’s depths? 👀 #SaltMarshCosmos #InfiniteZoom #HiddenWorlds #LorraineTheTerrane #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "The marsh breathes in golden dusk, revealing its glittering soul ✨ Can you spot Lorraine the Terrane hiding in the marsh’s depths? 👀 #SaltMarshCosmos #InfiniteZoom #HiddenWorlds #LorraineTheTerrane #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Lost in the loop of a world where every scale holds a new wonder Can you spot Lorraine the Terrane hiding in the marsh’s depths? 👀 #SaltMarshCosmos #InfiniteZoom #HiddenWorlds #LorraineTheTerrane #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ],
+      "music_pregen": {
+        "bpm": 90,
+        "bar": 2.667,
+        "key": "F minor",
+        "stage": "pregen",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "glass_chapel-wild",
+            "lane": "glass_chapel",
+            "mood": "sacred, luminous, weightless · downbeat",
+            "track": "output/music/fiddler_commons_glass_chapel-wild.flac",
+            "aligned": "review/music/candidates/fiddler_commons/glass_chapel-wild.mp4",
+            "seed": 11672,
+            "lock": 43.91,
+            "bar_conf": 0.72,
+            "kick": 0.7,
+            "score": 50.86,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking warm marimba and kalimba figures over a round woody bass, a deep kick on every downbeat, clicking wooden taps threaded through the opening bars like claw signals on the mudbank, thinning to a hollow hushed tone through the gallery maze, one struck wooden hit on the maze-to-estuary seam, then opening wide and breathing for the return over the flats, crystalline glass bells and a soft distant choir pad, airy shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "pulse3-wooden_orbit",
+            "lane": "wooden_orbit",
+            "mood": "playful, organic, orbiting · downbeat (pulse top-up)",
+            "track": "output/music/fiddler_commons_pulse3-wooden_orbit.flac",
+            "aligned": "review/music/candidates/fiddler_commons/pulse3-wooden_orbit.mp4",
+            "seed": 12123,
+            "lock": 37.71,
+            "bar_conf": 0.8,
+            "kick": 0.74,
+            "score": 48.63,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking warm marimba and kalimba figures over a round woody bass, a deep kick on every downbeat, clicking wooden taps threaded through the opening bars like claw signals on the mudbank, thinning to a hollow hushed tone through the gallery maze, one struck wooden hit on the maze-to-estuary seam, then opening wide and breathing for the return over the flats, warm marimba and kalimba over a round woody bass, gentle plucked figures, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "wooden_orbit-halftime",
+            "lane": "wooden_orbit",
+            "mood": "playful, organic, orbiting · halftime",
+            "track": "output/music/fiddler_commons_wooden_orbit-halftime.flac",
+            "aligned": "review/music/candidates/fiddler_commons/wooden_orbit-halftime.mp4",
+            "seed": 11746,
+            "lock": 31.47,
+            "bar_conf": 0.72,
+            "kick": 0.65,
+            "score": 34.64,
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking warm marimba and kalimba figures over a round woody bass, a deep kick on every downbeat, clicking wooden taps threaded through the opening bars like claw signals on the mudbank, thinning to a hollow hushed tone through the gallery maze, one struck wooden hit on the maze-to-estuary seam, then opening wide and breathing for the return over the flats, warm marimba and kalimba over a round woody bass, gentle plucked figures, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "tide_organ-wild",
+            "lane": "tide_organ",
+            "mood": "tidal, breathing, mineral · heartbeat",
+            "track": "output/music/fiddler_commons_tide_organ-wild.flac",
+            "aligned": "review/music/candidates/fiddler_commons/tide_organ-wild.mp4",
+            "seed": 11709,
+            "lock": 25.65,
+            "bar_conf": 0.26,
+            "kick": 0.09,
+            "score": 6.65,
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking warm marimba and kalimba figures over a round woody bass, a deep kick on every downbeat, clicking wooden taps threaded through the opening bars like claw signals on the mudbank, thinning to a hollow hushed tone through the gallery maze, one struck wooden hit on the maze-to-estuary seam, then opening wide and breathing for the return over the flats, a breathy reed organ and soft water textures over a deep sub pulse, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "choir_of_dust-wild",
+            "lane": "choir_of_dust",
+            "mood": "hushed, suspended, dissolving · heartbeat",
+            "track": "output/music/fiddler_commons_choir_of_dust-wild.flac",
+            "aligned": "review/music/candidates/fiddler_commons/choir_of_dust-wild.mp4",
+            "seed": 11783,
+            "lock": 24.78,
+            "bar_conf": 0.35,
+            "kick": -0.0,
+            "score": 5.25,
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking warm marimba and kalimba figures over a round woody bass, a deep kick on every downbeat, clicking wooden taps threaded through the opening bars like claw signals on the mudbank, thinning to a hollow hushed tone through the gallery maze, one struck wooden hit on the maze-to-estuary seam, then opening wide and breathing for the return over the flats, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      }
+    },
+    {
+      "journey": "voltaic_shoal",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/voltaic_shoal_ds_divein.mp4",
+      "title": "",
+      "caption": "Dive into the neon depths of a storm-lit river 🌊⚡ Can you spot Kitty the City hiding in the glow? 👀 #neonbiome #stormlitdepths #infinitezoom #electriczen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "yt_title": "Dive into the neon depths of a storm-lit river 🌊⚡",
+      "yt_desc": "",
+      "cameo": "kitty",
+      "state": "review",
+      "scheduled": null,
+      "engine_params": {
+        "parallax_gain": 1.0,
+        "resolve_persist": false,
+        "camera_micro": false,
+        "seed": 1234
+      },
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-08-27",
+      "caption_bodies": [
+        "Dive into the neon depths of a storm-lit river 🌊⚡",
+        "Electric eel hide shimmers in violet rain 💜🌧️",
+        "Pearl discs stack into amber infinity 🍯✨",
+        "Lipid beads hum with violet sparks 🔮💫",
+        "A field of glowing throats recedes into ink 🖤🌌"
+      ],
+      "yt_title_options": [
+        "Dive into the neon depths of a storm-lit river 🌊⚡",
+        "Electric eel hide shimmers in violet rain 💜🌧️",
+        "Pearl discs stack into amber infinity 🍯✨",
+        "Lipid beads hum with violet sparks 🔮💫",
+        "A field of glowing throats recedes into ink 🖤🌌"
+      ],
+      "spot_line": "Can you spot Kitty the City hiding in the glow? 👀",
+      "caption_tags": "#neonbiome #stormlitdepths #infinitezoom #electriczen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Dive into the neon depths of a storm-lit river 🌊⚡ Can you spot Kitty the City hiding in the glow? 👀 #neonbiome #stormlitdepths #infinitezoom #electriczen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Electric eel hide shimmers in violet rain 💜🌧️ Can you spot Kitty the City hiding in the glow? 👀 #neonbiome #stormlitdepths #infinitezoom #electriczen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Pearl discs stack into amber infinity 🍯✨ Can you spot Kitty the City hiding in the glow? 👀 #neonbiome #stormlitdepths #infinitezoom #electriczen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "Lipid beads hum with violet sparks 🔮💫 Can you spot Kitty the City hiding in the glow? 👀 #neonbiome #stormlitdepths #infinitezoom #electriczen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
+        "A field of glowing throats recedes into ink 🖤🌌 Can you spot Kitty the City hiding in the glow? 👀 #neonbiome #stormlitdepths #infinitezoom #electriczen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats"
+      ],
+      "music_pregen": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "C# minor",
+        "stage": "pregen",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "choir_of_dust-wild",
+            "lane": "choir_of_dust",
+            "mood": "hushed, suspended, dissolving · heartbeat",
+            "track": "output/music/voltaic_shoal_choir_of_dust-wild.flac",
+            "aligned": "review/music/candidates/voltaic_shoal/choir_of_dust-wild.mp4",
+            "seed": 16396,
+            "lock": 47.06,
+            "bar_conf": 0.44,
+            "kick": 0.39,
+            "score": 28.32,
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a charged nocturne — smoky low pads and a deep 808 pulse under the rain-struck reach, the pulse dropping to one heavy hit as the ranked columns of cells arrive, thinning to a low drone across the membrane, then a single hard strike where the gates flash and the storm has the surface again, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "pulse1-ember_pulse",
+            "lane": "ember_pulse",
+            "mood": "smoldering, dark, gravitational · downbeat (pulse top-up)",
+            "track": "output/music/voltaic_shoal_pulse1-ember_pulse.flac",
+            "aligned": "review/music/candidates/voltaic_shoal/pulse1-ember_pulse.mp4",
+            "seed": 16645,
+            "lock": 17.44,
+            "bar_conf": 0.55,
+            "kick": 0.44,
+            "score": 12.54,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a charged nocturne — smoky low pads and a deep 808 pulse under the rain-struck reach, the pulse dropping to one heavy hit as the ranked columns of cells arrive, thinning to a low drone across the membrane, then a single hard strike where the gates flash and the storm has the surface again, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "pulse3-ember_pulse",
+            "lane": "ember_pulse",
+            "mood": "smoldering, dark, gravitational · downbeat (pulse top-up)",
+            "track": "output/music/voltaic_shoal_pulse3-ember_pulse.flac",
+            "aligned": "review/music/candidates/voltaic_shoal/pulse3-ember_pulse.mp4",
+            "seed": 16847,
+            "lock": 17.86,
+            "bar_conf": 0.61,
+            "kick": 0.38,
+            "score": 12.36,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a charged nocturne — smoky low pads and a deep 808 pulse under the rain-struck reach, the pulse dropping to one heavy hit as the ranked columns of cells arrive, thinning to a low drone across the membrane, then a single hard strike where the gates flash and the storm has the surface again, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "music_box-wild",
+            "lane": "music_box",
+            "mood": "miniature, tender, clockwork · downbeat",
+            "track": "output/music/voltaic_shoal_music_box-wild.flac",
+            "aligned": "review/music/candidates/voltaic_shoal/music_box-wild.mp4",
+            "seed": 16433,
+            "lock": 11.25,
+            "bar_conf": 0.42,
+            "kick": 0.15,
+            "score": 4.19,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a charged nocturne — smoky low pads and a deep 808 pulse under the rain-struck reach, the pulse dropping to one heavy hit as the ranked columns of cells arrive, thinning to a low drone across the membrane, then a single hard strike where the gates flash and the storm has the surface again, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "wooden_orbit-wild",
+            "lane": "wooden_orbit",
+            "mood": "playful, organic, orbiting · third_answer",
+            "track": "output/music/voltaic_shoal_wooden_orbit-wild.flac",
+            "aligned": "review/music/candidates/voltaic_shoal/wooden_orbit-wild.mp4",
+            "seed": 16507,
+            "lock": 6.1,
+            "bar_conf": 0.13,
+            "kick": -0.03,
+            "score": 0.97,
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a charged nocturne — smoky low pads and a deep 808 pulse under the rain-struck reach, the pulse dropping to one heavy hit as the ranked columns of cells arrive, thinning to a low drone across the membrane, then a single hard strike where the gates flash and the storm has the surface again, warm marimba and kalimba over a round woody bass, gentle plucked figures, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
           }
         ],
         "for_model": "ds",

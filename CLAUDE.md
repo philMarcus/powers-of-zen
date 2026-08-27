@@ -120,6 +120,34 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-27 (EVENING — PHIL'S VERDICT: camera/micro clips show NO perceptible motion,
+vocabulary PARKED; PERSISTENCE is the active front — read PLAN "PERSISTENCE — THE
+ACTIVE FRONT" before engine work): Phil's read confirmed quantitatively: safe-rate
+warp residuals (~0.8px/frame orbit) sit UNDER the engine's frame-churn noise floor
+(zoom flow ~26px/frame; the parallax differential that DOES read is ~6-12px/frame);
+above safe rates re-diffusion re-interprets content. Orbit has failed to read 4x
+(orbit_lab v1-v3 + camera_lab) — image-space warps are the wrong channel; any future
+camera motion must ride conditioning/scaffold or the zoom channel. ALSO method law:
+same-seed side-by-side A/Bs cannot isolate motion in a feedback engine (1px
+perturbation = different content in ~10 frames) — judge SINGLE CLIPS. Phase D stays
+committed + inert (0 catalog camera fields; off-path byte-identity proven).
+PERSISTENCE (Phil: "that's the thing to work on"): forensics found the shared root —
+re-diffusion pulls composition to the prior; nothing anchors instance existence or
+scheduled scale outside arrival windows. ruby garden: population never establishes
+(cameo rule left 6/24 scaffolded frames), birds pop in ad hoc at the plunge; cobalt
+ice_world: the planet is a marble ON the background that grows 12->25% across a x10
+card (THE PRIOR EATS THE ZOOM), then background→landscape and the marble slides off.
+BUILT (flags, default off): --persist-cn (scaffold CN through travel, cameo cards
+included) + --hero-cn (synthetic depth sphere at tracker position, size = exact
+remaining-zoom schedule → target FILLS frame at boundary). FIRST RESULTS (clips in
+output/persist_lab/, v6-reference clips alongside; Phil judging): persist = flower
+ranks establish + hold (wallpaper failure gone; open: no distinct birds yet + the
+dive plunged into the now-persistent CAMEO sprite — tracker lock, fix before
+adoption); hero = scheduled growth + boundary descends INTO the structure (slide-off
+gone, first time; open: reads as caldera-on-ground not globe-in-space — the
+world-in-space reading dies at the card ARRIVAL, upstream fix candidates in PLAN).
+ruby_furnace moved to posting-queue TAIL (Phil, while persistence work runs); cobalt
+posts next (~09:00 window remap). Nothing new in the nightly path.
 2026-08-27 (CAMERA DAY — Phase C micro A/B rendered + ENGINE 3 PHASE D BUILT + first
 camera labs; NOTHING queued — Phil judges tonight): (1) MICRO A/B ready:
 output/dolly_lab/squid_micro_dolly_AB_loop.mp4 + _SEQ.mp4 (squid_lantern 4 cards, seed

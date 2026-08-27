@@ -1260,6 +1260,77 @@ v1 assigning moves from journey POV tags.
    abyssal rounds kept on disk as the failure-class record
    (output/abyssal_chandelier_cam*/).
 
+### PHIL'S VERDICT (2026-08-27 evening) — vocabulary PARKED; the noise-floor law
+Phil on both A/Bs: no perceptible motion, "just two videos that diverge slightly in
+content." He is right, and the reason is quantitative: at rates that don't destroy
+content, orbit displaces ~0.8px/frame — under the engine's own frame-churn floor (the
+zoom's radial flow is ~26px/frame at the edges; the parallax differential that DOES
+read is ~6-12px/frame; re-diffusion repaints small structure every few frames
+regardless). Above that rate, re-diffusion smears or re-interprets (the tower class).
+IMAGE-SPACE WARP RESIDUALS AT SAFE RATES ARE BELOW THE PERCEPTUAL NOISE FLOOR — orbit
+has now failed to read 4 times (orbit_lab v1-v3, camera_lab). SECOND LESSON, method:
+in a feedback engine a 1px perturbation cascades into different content within ~10
+frames, so same-seed side-by-side A/Bs CANNOT isolate motion perception — judge single
+clips only. Phase D plumbing stays committed and INERT (no catalog journey carries a
+camera field; verified byte-identical off-path). Camera motion returns only via
+mechanisms that ride channels the engine is strong in (conditioning/scaffold-driven,
+or the zoom channel itself) — after PERSISTENCE.
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# PERSISTENCE — THE ACTIVE FRONT (Phil's call 2026-08-27 evening)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+## The shared root (forensics 2026-08-27, both cases on file in scratchpad strips)
+Re-diffusion pulls every frame's composition back toward the checkpoint's prior;
+nothing open-loop anchors instance EXISTENCE or scheduled SCALE outside resolve
+arrival windows. Two production symptoms, same disease:
+- HUMMINGBIRDS (ruby_furnace daybreak_garden, v6 f72-96): the scene's population
+  ("ranks of trumpet flowers, several hummingbirds") never establishes — the card is
+  vine-leaf wallpaper; birds materialize ad hoc only when the plunge prompt names the
+  target, hopping position and size frame to frame. Root: the cameo rule capped the
+  card's scaffold window at 6 of 24 frames; nothing held instances after it.
+- PLANETS (cobalt_rookery ice_world, v6 f50-77): the "world seen from orbit" lives as
+  a small marble ON an orange ground plane and grows only 12%->25% across a x10-zoom
+  card — THE PRIOR EATS THE ZOOM (re-diffusion re-normalizes the object to
+  prior-preferred size every frame). At the boundary the dominant background becomes
+  the landscape and the never-entered planet is re-read as decoration and slides off.
+  (Counter-example that proves the rule: cherenkov's storm_world lands cleanly because
+  its plunge FILLED the frame with surface texture before the boundary.)
+
+## Two mechanisms BUILT 2026-08-27 evening (lab flags, default OFF; commit da23d94)
+- --persist-cn: the resolve scaffold stays the CN through the card's TRAVEL (window to
+  one beat before card end; the plunge stays the tracker's), CAMEO CARDS INCLUDED.
+- --hero-cn: single-target cards get a synthetic depth SPHERE at the tracker's live
+  position whose size follows the schedule exactly — seeded at 1.05/(product of
+  remaining zooms) so the target FILLS the frame at the boundary; detected size adopted
+  upward, never shrunk. The containment contract enforced through the CN.
+
+## First lab results (single-clip format; clips in output/persist_lab/, Phil judging)
+- ruby garden + persist-cn (v7 vs v6 ref, same copied prefix): the flower population
+  now ESTABLISHES and holds through the card — the wallpaper failure is gone. Open:
+  no distinct hummingbirds appear, and the dive plunges into the CAMEO sprite (which
+  also persists now; the tracker likely locked it — the known sprite-takeover class,
+  aggravated). Cameo/tracker interaction is the next fix before adoption.
+- cobalt planet + hero-cn (v7 vs v6 ref): the forced structure grows on schedule from
+  small to frame-filling and the boundary descends INTO it — the slide-off failure is
+  gone, first time on this card. Open: it reads as a giant ringed caldera ON the
+  ground, not a globe in space — the world-in-space reading is lost at the card's
+  ARRIVAL (upstream of hero-cn): the previous card's texture feeds forward as
+  "ground" and the arrival morph keeps it. Candidate next steps: space-establish
+  language + negatives on planet-card arrivals mid-chain (the T_ESTABLISH_SPACE idea
+  applied to arrivals, not just frame 0), or a sea/space scaffold mode behind the hero.
+
+## Next steps (pending Phil's verdicts on the clips)
+1. Sprite/tracker interaction under persist-cn (veto locks inside the cameo's
+   propagated box; or suppress cameo on persist cards).
+2. Bird-species establishment: scaffold holds WHERE instances are; the species comes
+   from prompt weighting — try naming the population in the travel prompt (grammar
+   currently names only the target).
+3. Planet-arrival space treatment (above) + hero-cn on more planet cards.
+4. Adoption path when clips convince: persist-cn for populated cards + hero-cn for
+   planet-class targets as per-card `resolve`/`hero` fields the composer can set —
+   never a blanket default without A/B'd renders.
+
 ## Labs and gates (variable-isolated, 12fps SLOW LOOPED clips — Phil's standing format)
 - dolly_lab: one populated-field card (the class that flattens), same seed, four arms —
   baseline / gain 0.5 / gain 1.0 / gain 1.0 + persistent scaffold. GATE: near instances
