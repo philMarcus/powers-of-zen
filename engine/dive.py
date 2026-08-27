@@ -32,6 +32,7 @@ import numpy as np
 import requests
 from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageStat
 
+import camera as _camera
 import figure
 import grammar
 import style as _style
@@ -125,6 +126,13 @@ DEFAULTS = {
     "camera_micro": False,
     "micro_drift_px": 12.0,   # lateral drift at the extreme near plane, px
     "micro_surge": 0.5,       # plunge gain multiplier: pk * (1 + surge * plunge-ness)
+    # ENGINE 3 Phase D (2026-08-27): per-card `camera` moves (engine/camera.py compiles
+    # the journey's camera fields into a per-frame schedule; no field = this block inert).
+    # Orbit-class warps need re-synthesis to outpace resample loss (the orbit-v3 gate:
+    # denoise floor 0.52 + post-warp unsharp held 15 deg crisp; travel denoise 0.40
+    # smeared) — frames with a meaningful orbit/tilt component get their denoise floored
+    # here. detail_boost's sharpen doubles as the post-warp unsharp, as with parallax.
+    "camera_den_floor": 0.48,
     # HOMING CURVE v2 (Phil 2026-08-23, "stronger and earlier"): the loop tail's IPA
     # weight rises from a NONZERO floor at tail start on a smoothstep ease — half strength
     # by mid-tail — instead of the old 0.95*t^1.5 that back-loaded all convergence into
@@ -750,6 +758,7 @@ def main():
         cfg["camera_micro"] = True
     zoom_sched = den_sched = exponent = loop = None
     cameos, arrivals, approach, seam_arrivals = [], set(), [], set()
+    cam_sched, cam_plan = [], []
     if "registers" in spec:
         (phases, zoom_sched, den_sched, exponent, loop, cameos, arrivals, approach,
          seam_arrivals) = grammar.compile_journey(
@@ -757,6 +766,18 @@ def main():
              loop_lap=False if args.classic_loop else None)
         if cfg["build"] == "out" and spec.get("format", {}).get("exact_loop"):
             cfg["loop_fade_frames"] = max(cfg["loop_fade_frames"], 8)
+        # ENGINE 3 Phase D: compile the journey's per-card camera plans (engine/camera.py).
+        # No camera fields -> empty schedule -> every frame takes today's exact code path.
+        if cfg["build"] != "out":
+            cam_plan = _camera.plan_summary(spec)
+            if cam_plan:
+                _cprobs = _camera.validate(spec)
+                for _cp in _cprobs:
+                    print(f"[dive] camera VALIDATION: {_cp}", flush=True)
+                cam_sched = _camera.schedule(spec, cfg["fps"])
+                print(f"[dive] CAMERA ON — {'; '.join(cam_plan)}"
+                      + (f" (parallax_gain=0: only roll will act)"
+                         if not cfg["parallax_gain"] else ""), flush=True)
     else:
         phases = spec["phases"]
     total = args.frames or sum(p["frames"] for p in phases)
@@ -876,7 +897,7 @@ def main():
         "checkpoint": cfg["checkpoint"], "style": style_name, "frames": total,
         "fps": cfg["fps"], "seed": cfg["seed"],
         "parallax_gain": cfg["parallax_gain"], "resolve_persist": cfg["resolve_persist"],
-        "camera_micro": cfg["camera_micro"], "lap_cut": lap_cut,
+        "camera_micro": cfg["camera_micro"], "camera": cam_plan, "lap_cut": lap_cut,
         # per-CARD (register) frame counts: lets a future --from-card verify its prefix
         # still aligns after a journey edit
         "card_frames": (register_frame_counts(spec, cfg["fps"]) if "registers" in spec
@@ -1012,6 +1033,12 @@ def main():
         in_transition = prev_prompt is not None and k < T
         base_den = den_sched[i] if den_sched else cfg["denoise"]
         z = zoom_sched[i] if zoom_sched else cfg["zoom_per_frame"]
+        # Phase D: this frame's camera move (None on camera-free frames — the usual case).
+        # Roll folds into the rotation EVERYWHERE (transform, tracker, cameo, depth
+        # alignment) so the exact-propagation contract holds; depth moves fuse into the
+        # parallax residual below.
+        cmv = cam_sched[i] if i < len(cam_sched) else None
+        rot_i = cfg["rotate_per_frame"] + (cmv.get("roll", 0.0) if cmv else 0.0)
         seed = cfg["seed"] + i
         if img is None:
             # frame-0 ESTABLISH override (2026-08-02): the schedule's travel prompt names the
@@ -1069,7 +1096,7 @@ def main():
                 row = {"i": i - 1, "mode": "track", "z": round(z, 4), **_trk.log_row()}
                 if ev:
                     row["event"] = ev
-                cx, cy = _trk.step(z)
+                cx, cy = _trk.step(z, rot_i)
             else:
                 _trk = None
                 row = {"i": i - 1, "mode": "tail" if in_loop_tail(i) else "drift",
@@ -1110,22 +1137,30 @@ def main():
                     ring_mask(fed.width, fed.height, box),
                     f"zoomer_mask_{name}.png")
             else:
-                fed = zoom_transform(img, z, cfg["rotate_per_frame"], cx, cy)
+                fed = zoom_transform(img, z, rot_i, cx, cy)
                 # DEPTH 2.0 Phase A: differential-parallax residual (PLAN "PARALLAX ERA").
                 # Runs BEFORE detail_boost so the sharpen doubles as the post-warp unsharp
                 # (the orbit-v3 lesson). Tapers out across the loop tail — the tail's job is
                 # homing onto frame 0 and extra differential motion would fight the landing.
-                pk = cfg["parallax_gain"] if par_depth is not None else 0.0
-                if pk and in_loop_tail(i):
-                    pk *= max(0.0, 1.0 - (i - (total - loop["frames"]) + 1) / loop["frames"])
-                if pk:
-                    _pd = transform_depth(par_depth, z, cfg["rotate_per_frame"], cx, cy,
+                _tap = 1.0
+                if in_loop_tail(i):
+                    _tap = max(0.0, 1.0 - (i - (total - loop["frames"]) + 1) / loop["frames"])
+                pk = (cfg["parallax_gain"] if par_depth is not None else 0.0) * _tap
+                # Phase D: this frame's depth-move components (they ride the same depth
+                # field + fused remap as the parallax; taper with it across the loop tail)
+                _orb = _dol = _tlt = 0.0
+                if cmv and par_depth is not None:
+                    _orb = cmv.get("orbit", 0.0) * _tap
+                    _dol = cmv.get("dolly", 0.0) * _tap
+                    _tlt = cmv.get("tilt", 0.0) * _tap
+                if pk or _orb or _dol or _tlt:
+                    _pd = transform_depth(par_depth, z, rot_i, cx, cy,
                                           cfg["width"], cfg["height"])
                     par_depth = _pd            # propagated: stays aligned with the new frame
                     _m = float(np.median(_pd))
                     par_med = _m if par_med is None else 0.3 * _m + 0.7 * par_med
                     _lat = 0.0
-                    if cfg["camera_micro"]:
+                    if cfg["camera_micro"] and pk:
                         # plunge-ness from THIS frame's scheduled zoom: hover drifts,
                         # plunge surges (see camera_micro in DEFAULTS)
                         _zn = 0.5 if z_hi <= z_lo else min(1.0, max(
@@ -1133,13 +1168,42 @@ def main():
                         _lat = cfg["micro_drift_px"] * (1.0 - _zn) * math.sin(
                             2 * math.pi * (i % bar_frames) / bar_frames)
                         pk *= 1.0 + cfg["micro_surge"] * _zn
-                    fed, _stretch = _warp.parallax_residual(fed, _pd, z, pk, par_med, _lat)
+                    if _orb or _dol or _tlt:
+                        # SPIRAL pivots on the locked tracked object — the world revolves
+                        # around the thing we're diving toward, which holds its place
+                        # (pivot depth sampled from the object's own patch). orbit/center
+                        # anchors the median plane like the parallax does.
+                        _piv, _pivd = (0.5, 0.5), None
+                        if (cmv.get("pivot") == "target" and _trk is not None
+                                and _trk.phase == "object"
+                                and 0.05 < _trk.tx < 0.95 and 0.05 < _trk.ty < 0.95):
+                            _piv = (_trk.tx, _trk.ty)
+                            _px = int(_piv[0] * cfg["width"])
+                            _py = int(_piv[1] * cfg["height"])
+                            _patch = _pd[max(0, _py - 16):_py + 16,
+                                         max(0, _px - 16):_px + 16]
+                            if _patch.size:
+                                _pivd = float(np.median(_patch))
+                        fed, _stretch = _warp.camera_residual(
+                            fed, _pd, z, pk, par_med, _lat, orbit_deg=_orb, pivot=_piv,
+                            pivot_depth=_pivd, dolly_v=_dol, tilt_deg=_tlt)
+                        if abs(_orb) + abs(_tlt) > 0.05:
+                            # orbit-class warps smear at travel denoise (orbit-v3 gate) —
+                            # re-synthesis must outpace resample loss
+                            den = max(den, cfg["camera_den_floor"])
+                    else:
+                        fed, _stretch = _warp.parallax_residual(fed, _pd, z, pk, par_med, _lat)
                     _dboost = _warp.disocclusion_denoise(den, _stretch)
                     if plog:
-                        plog.write(json.dumps({
-                            "i": i, "k": round(pk, 3), "med": round(par_med, 3),
-                            "lat": round(_lat, 1), "den": round(max(den, _dboost), 3),
-                            "src": par_src}) + "\n")
+                        _row = {"i": i, "k": round(pk, 3), "med": round(par_med, 3),
+                                "lat": round(_lat, 1), "den": round(max(den, _dboost), 3),
+                                "src": par_src}
+                        if _orb or _dol or _tlt:
+                            _row["cam"] = {"move": cmv.get("move"),
+                                           "orbit": round(_orb, 4), "dolly": round(_dol, 4),
+                                           "tilt": round(_tlt, 4),
+                                           "pivot": [round(_piv[0], 3), round(_piv[1], 3)]}
+                        plog.write(json.dumps(_row) + "\n")
                         plog.flush()
                     den = max(den, _dboost)
                 fed = detail_boost(fed, cfg)
@@ -1163,7 +1227,7 @@ def main():
                         # world-attached: moves and grows with the zoom itself (exact
                         # propagation — crop clamp + rotation, same math as the tracker)
                         cam["px"], cam["py"] = track.propagate(
-                            cam["px"], cam["py"], z, cfg["rotate_per_frame"], cx, cy,
+                            cam["px"], cam["py"], z, rot_i, cx, cy,
                             cfg["width"], cfg["height"])
                         cam["size"] *= z
                         if -0.1 < cam["px"] < 1.1 and -0.1 < cam["py"] < 1.1:

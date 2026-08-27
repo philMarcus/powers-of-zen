@@ -45,6 +45,9 @@ ARMS = {
     "a10p": ("1.0 + persist", ["--parallax", "1.0", "--resolve-persist"]),
     # Phil 2026-08-22 evening: 0.5 read most 3-D of the first four — test persist on it
     "a05p": ("0.5 + persist", ["--parallax", "0.5", "--resolve-persist"]),
+    # Phase C verdict arm (2026-08-27): musical micro camera motion vs the production
+    # gain — hover-bar lateral drift + plunge surge, judged against a10
+    "a10m": ("1.0 + micro", ["--parallax", "1.0", "--micro"]),
 }
 LAB = ROOT / "output" / "dolly_lab"
 

@@ -178,6 +178,50 @@ def parallax_residual(img, depth, zoom, k, med, lat=0.0):
     return _remap(img, map_x, map_y)
 
 
+def camera_residual(img, depth, zoom, k, med, lat=0.0, orbit_deg=0.0, pivot=(0.5, 0.5),
+                    pivot_depth=None, dolly_v=0.0, tilt_deg=0.0, tilt_horizon=0.45):
+    """ENGINE 3 Phase D (2026-08-27): parallax_residual + the per-frame camera-move
+    residuals FUSED INTO ONE REMAP (one resample — the Phase-A lesson; every extra
+    bilinear pass is generation loss the re-diffusion must heal).
+
+    Components, all small per-frame amounts from engine/camera.py's schedule:
+      k / med / lat        — exactly parallax_residual's parallax + micro lateral drift
+      orbit_deg / pivot / pivot_depth — revolution about a vertical axis through `pivot`
+                             (fractional): content at pivot_depth holds, nearer sweeps one
+                             way, farther the other (warp.orbit's proven formulation).
+                             pivot_depth=None anchors the median plane, same contract as
+                             the parallax (aim/counter plane never moves).
+      dolly_v              — extra near-field perspective scale (vertigo against the zoom)
+      tilt_deg             — perspective pitch delta (horizon rises; `landing` component)
+    With all camera terms zero this computes parallax_residual's exact maps — but dive
+    keeps calling parallax_residual on camera-free frames so that path stays untouched.
+    Returns (PIL, stretch_map)."""
+    H, W = depth.shape
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+    dn = np.clip(depth, 0.0, 1.0)
+    s = zoom ** (k * (dn - med)) if k else np.float32(1.0)
+    if dolly_v:
+        s = s * (1.0 + dolly_v * dn)
+    map_x = W / 2 + (xx - W / 2) / s - lat * (dn - med)
+    map_y = H / 2 + (yy - H / 2) / s
+    if orbit_deg:
+        rad = np.deg2rad(orbit_deg)
+        pd = med if pivot_depth is None else pivot_depth
+        px = pivot[0] * W
+        rel = dn - pd
+        map_x += np.sin(rad) * rel * W * 0.55
+        map_y += (1.0 - np.cos(rad)) * rel * (xx - px) * 0.35
+    if tilt_deg:
+        p = np.deg2rad(tilt_deg)
+        squeeze = np.tan(p) * 0.5
+        hy = tilt_horizon * H
+        t = (yy - hy) / H
+        sc = np.maximum(1.0 + squeeze * t, 0.4)
+        map_x += (xx - W / 2) / sc + W / 2 - xx
+        map_y += hy + (yy - hy) / sc - yy
+    return _remap(img, map_x, map_y)
+
+
 def quantize_planes(depth, n=5):
     """Bucket a depth estimate into n stable planes (level centers). Raw estimator shimmer
     kills warps (orbit-lab lesson) — planes + EMA give the residual a steady field."""

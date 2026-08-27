@@ -161,9 +161,11 @@ class Tracker:
         return "candidate"
 
     # -- aim + geometry advance ------------------------------------------------
-    def step(self, z):
+    def step(self, z, rot=None):
         """Aim for THIS frame, then advance the track (and any pending candidate) through the
-        TRUE transform. Returns (cx, cy) for zoom_transform.
+        TRUE transform. Returns (cx, cy) for zoom_transform. `rot` overrides the standing
+        per-frame rotation for THIS step (camera-vocabulary roll varies it per frame; the
+        propagation must use whatever zoom_transform actually applies).
 
         COMPOSITION, not centering (Phil 2026-07-31). The old form eased the object toward
         CENTER, and because the offset is multiplied by (1-ease) EVERY frame it compounds:
@@ -177,14 +179,15 @@ class Tracker:
         Solving t_new = t + ease*(anchor - t) against t_new = 0.5 + (t - c)*z gives c below.
         Feasibility: at ease=0 the required |c-0.5| is |t-0.5|(1-1/z) <= (1-1/z)/2, i.e. always
         within crop authority for any on-screen point, so the clamp never fights the hold."""
+        r = self.rot if rot is None else rot
         ax, ay = self.anchor
         cx = self.tx - (self.tx + self.ease * (ax - self.tx) - 0.5) / z
         cy = self.ty - (self.ty + self.ease * (ay - self.ty) - 0.5) / z
         cx, cy = min(0.85, max(0.15, cx)), min(0.85, max(0.15, cy))
-        self.tx, self.ty = propagate(self.tx, self.ty, z, self.rot, cx, cy, self.w, self.h)
+        self.tx, self.ty = propagate(self.tx, self.ty, z, r, cx, cy, self.w, self.h)
         self.size *= z
         if self.pending:
-            px, py = propagate(self.pending["x"], self.pending["y"], z, self.rot,
+            px, py = propagate(self.pending["x"], self.pending["y"], z, r,
                                cx, cy, self.w, self.h)
             if -0.05 <= px <= 1.05 and -0.05 <= py <= 1.05:
                 self.pending["x"], self.pending["y"] = px, py

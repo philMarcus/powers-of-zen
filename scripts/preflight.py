@@ -14,6 +14,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "engine"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import camera as _camera  # noqa: E402
 import grammar  # noqa: E402
 import pipeline as pl  # noqa: E402
 import style as _style  # noqa: E402
@@ -58,4 +59,9 @@ for name in sys.argv[1:]:
     print(f"  frame-0 name-only physics: {nameonly or 'none'}")
     cam = pl.cameo_realm_check(spec)
     print(f"  cameo realm    : {'!! ' + ' | '.join(cam) if cam else 'ok'}")
+    plan = _camera.plan_summary(spec)
+    if plan:   # Phase D: only journeys carrying camera fields get the line
+        probs = _camera.validate(spec)
+        print(f"  camera         : {'; '.join(plan)}"
+              f" {'!! ' + ' | '.join(probs) if probs else 'ok'}")
     print(f"  frame-0 prompt : {p0[:150]}")
