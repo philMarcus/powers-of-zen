@@ -12,7 +12,7 @@
     "render_paused": false,
     "refill_paused": false,
     "post_every_hours": 19.0,
-    "post_next": "2026-08-27 11:00"
+    "post_next": "2026-08-28 06:00"
   },
   "journeys": {
     "stormglass": {
@@ -155,69 +155,39 @@
       "ts": "2026-08-13 13:23:02",
       "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
-    "bee_cathedral": {
-      "state": "queued",
-      "order": 3,
-      "ts": "2026-08-13 13:57:36",
-      "note": "REALMS rethink wave 2 (2026-08-13)"
-    },
-    "observatory_dusk": {
-      "state": "queued",
-      "order": 5,
-      "ts": "2026-08-13 13:57:36",
-      "note": "REALMS rethink wave 2 (2026-08-13)"
-    },
-    "bamboo_sea": {
-      "state": "queued",
-      "order": 6,
-      "ts": "2026-08-14 00:14:10",
-      "note": "composed by midnight refill"
-    },
-    "fiddler_commons": {
-      "state": "queued",
-      "order": 8,
-      "ts": "2026-08-18 00:15:19",
-      "note": "composed by midnight refill"
-    },
-    "voltaic_shoal": {
-      "state": "queued",
-      "order": 11,
-      "ts": "2026-08-20 00:16:33",
-      "note": "composed by midnight refill"
-    },
     "waterbear_prairie": {
       "state": "queued",
-      "order": 14,
+      "order": 6,
       "ts": "2026-08-21 00:23:01",
       "note": "composed by midnight refill"
     },
     "winter_murmuration": {
       "state": "queued",
-      "order": 15,
+      "order": 5,
       "ts": "2026-08-21 00:23:02",
       "note": "composed by midnight refill"
     },
     "gecko_rampart": {
       "state": "queued",
-      "order": 16,
+      "order": 7,
       "ts": "2026-08-22 00:25:25",
       "note": "composed by midnight refill"
     },
     "lily_undercroft": {
       "state": "queued",
-      "order": 17,
+      "order": 8,
       "ts": "2026-08-22 00:25:25",
       "note": "composed by midnight refill"
     },
     "natron_skein": {
       "state": "queued",
-      "order": 18,
+      "order": 9,
       "ts": "2026-08-22 00:25:26",
       "note": "composed by midnight refill"
     },
     "plasma_script": {
       "state": "queued",
-      "order": 19,
+      "order": 10,
       "ts": "2026-08-22 00:25:26",
       "note": "composed by midnight refill"
     },
@@ -232,7 +202,7 @@
       "new_seed": true,
       "ts": "2026-08-24 17:12:51",
       "note": "re-render: video rejected in review",
-      "order": 20
+      "order": 11
     },
     "anemone_arsenal": {
       "state": "rejected",
@@ -241,28 +211,57 @@
     },
     "cicada_chorus": {
       "state": "queued",
-      "order": 21,
+      "order": 12,
       "ts": "2026-08-26 00:20:03",
       "note": "composed by midnight refill"
     },
     "circuit_grotto": {
       "state": "queued",
-      "order": 22,
+      "order": 13,
       "ts": "2026-08-26 00:20:03",
       "note": "composed by midnight refill"
     },
     "phage_landing": {
       "state": "queued",
-      "order": 23,
+      "order": 14,
       "ts": "2026-08-26 00:20:03",
       "note": "composed by midnight refill"
     },
     "venus_basket": {
       "state": "queued",
-      "order": 24,
+      "order": 15,
       "ts": "2026-08-26 00:20:04",
+      "note": "composed by midnight refill"
+    },
+    "bourdon_foundry": {
+      "state": "rejected",
+      "ts": "2026-08-26 18:01:04",
+      "note": "rejected at video review"
+    },
+    "anvil_country": {
+      "state": "queued",
+      "order": 16,
+      "ts": "2026-08-27 00:20:08",
+      "note": "composed by midnight refill"
+    },
+    "chalk_cellar": {
+      "state": "queued",
+      "order": 17,
+      "ts": "2026-08-27 00:20:08",
+      "note": "composed by midnight refill"
+    },
+    "mantis_drumline": {
+      "state": "queued",
+      "order": 18,
+      "ts": "2026-08-27 00:20:09",
+      "note": "composed by midnight refill"
+    },
+    "pika_larder": {
+      "state": "queued",
+      "order": 19,
+      "ts": "2026-08-27 00:20:09",
       "note": "composed by midnight refill"
     }
   },
-  "updated": "2026-08-26 16:04:24"
+  "updated": "2026-08-27 11:07:59"
 }

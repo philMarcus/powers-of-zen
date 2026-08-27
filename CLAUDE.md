@@ -120,6 +120,39 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-27 (CAMERA DAY — Phase C micro A/B rendered + ENGINE 3 PHASE D BUILT + first
+camera labs; NOTHING queued — Phil judges tonight): (1) MICRO A/B ready:
+output/dolly_lab/squid_micro_dolly_AB_loop.mp4 + _SEQ.mp4 (squid_lantern 4 cards, seed
+1234, fresh base v12 vs micro v13; micro verified acting — hover drift to ±8.7px,
+plunge surge k→1.5, downbeats at zero offset). (2) PHASE D BUILT (commits a348429 +
+77ef13f; doctrine journeys/CINEMA.md): engine/camera.py compiles per-card `camera`
+fields → per-frame schedule (beat-quantized envelope, rates zero at card boundaries →
+loop closes structurally; exclusions enforced in schedule() itself: render-start/lap
+card, seams, depth moves on cameo cards); warp.camera_residual fuses
+parallax+micro+orbit+dolly+tilt into ONE remap; roll rides the exact propagation
+(track.step per-frame rot); spiral pivots on the tracked object when locked (in all
+lab runs it fell back to median/center — the tracker rarely locks inside move windows,
+open v2 item: pivot on the committed emergence point). BYTE-IDENTITY PROVEN: no-camera
+path unchanged (fresh v12 vs pre-Phase-D v9: frames 0-71 byte-equal, first diff at the
+frame-72 tail boundary where tail code legitimately evolved). scripts/cinematographer.py
+= rule-based v1 (spice-not-sauce floor), deliberately NOT wired into the nightly.
+(3) CAMERA LAB round 4 = the deliverable: output/camera_lab/
+cherenkov_cistern_camera_AB_loop.mp4 + _SEQ.mp4 (storm_world spiral 0.4 +
+mountain_country orbit 0.35; arms byte-identical to the frame-40 move onset; both
+moves stay on-world). THREE LAB LESSONS (PLAN "Phase D lab log"): scaffold seeds are
+now JOURNEY-keyed (renamed A/B arms drew different instance fields — latent flaw for
+every --plain/--cn A/B too); camera_den_floor 0.48 re-created orbit-v3's REJECTED
+content-reinterpretation (steel towers from abyssal's "gas towers" wording) → defaults
+0 + orbit shear uses smoothed depth; camera-lab journeys need bait-free wording on/
+around move cards (abyssal's card-2 ARRIVAL coin-flipped to literal towers BEFORE the
+move acted; output/abyssal_chandelier_cam* kept as the failure record). (4) PIPELINE
+CLEAN: hardened poster's first scheduled flight perfect (wild_yeast 11:06 YT+IG,
+trusted share path, caption carried natively, no wedge/reheal); queue-order pick's
+first night rendered 5 to Review (3M+2S — bamboo_sea, observatory_dusk, bee_cathedral
+re-captioned after an Ollama hiccup, fiddler_commons, voltaic_shoal); post_next
+2026-08-28 06:00 (11:06+19h). NEXT: Phil's verdicts on micro + camera clips → rate/
+move tuning + cinematographer adoption question; spiral pivot v2; then the hero moves
+(landing_lab / threshold_lab).
 2026-08-26 (LATER — CDP WEDGE HARDENED + TIER TEMPLATES RETIRED): (1) the poster's known
 flakiness (IG platform tab's CDP websocket wedges silently → 200s hangs; a fresh process
 always cured it) is CLOSED: zen_browser ws timeout 200→30s, Tab.cmd auto-reconnects +

@@ -44,7 +44,11 @@ import pipeline as pl  # noqa: E402
 from score import win, FFMPEG, _run  # noqa: E402
 
 LAB = ROOT / "output" / "camera_lab"
-DEFAULT_MOVES = "ember_nursery=orbit:0.35,young_star=spiral:0.5"
+# default bed = cherenkov_cistern (round 4, the clean run): storm-world revolve +
+# mountain-country orbit, NO structure-bait wording on the move cards (abyssal's
+# "gas towers" coin-flipped to literal steel — the round-1..3 lesson, PLAN "Phase D
+# lab log")
+DEFAULT_MOVES = "storm_world=spiral:0.4,mountain_country=orbit:0.35"
 
 
 def parse_moves(s):
@@ -195,7 +199,7 @@ def sequence(journey, runs, labels, scheds, frames):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--journey", default="abyssal_chandelier")
+    ap.add_argument("--journey", default="cherenkov_cistern")
     ap.add_argument("--cards", type=int, default=4)
     ap.add_argument("--moves", default=DEFAULT_MOVES,
                     help="cam-arm plan: card=move:rate,card2=move:rate")
