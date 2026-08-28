@@ -120,6 +120,27 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-28 (AFTERNOON — THE RESTART NIGHT; read SCHEDULER.md "RESTARTS"): a Windows Update
+feature upgrade rebooted the machine 01:29-01:34 (three reboots, TrustedInstaller event
+1074). CONSEQUENCES: refill 00:00 ran fine (5 composed+queued); the 01:30 RENDER WAS MISSED
+outright (never started — tonight's 01:30 picks winter_murmuration/waterbear_prairie/
+gecko_rampart/natron_skein, 5.6h); ALL tasks are "Interactive only" so nothing ran from
+boot until Phil's ~13:50 login — the hourly gate fired at 14:05 (its catch-up works) and
+posted cobalt to YT (eHyDPxeyuZY) but IG FAILED "file chooser never opened". THAT FAILURE
+WAS REPRODUCED 3/3 AND FIXED (poster.py + zen_browser.py): IG's Create button renders ~1s
+in while the home page is still readyState 'loading'; a composer opened then is WIPED when
+the load completes (or never opens) and the poster clicked a button that no longer existed
+— choosefile's raw loop swallowed the click's TypeError and reported it as a socket wedge,
+and its remedy (socket reconnect) could not help a page-state problem. Fix = wait for
+readyState complete + 1.5s settle before Create; _ig_open_composer verifies the Select-
+from-computer button persists 0.7s (retries from Create ×3); choosefile raises the JS
+exception text at once. Validated by dry-run, then cobalt IG posted for real (reel
+DcmB0c-OpAZ, trusted share, caption verified) — cobalt LIVE on both. Scheduler:
+StartWhenAvailable=True on postgate/igstats/refill (render deliberately not). Open for
+Phil: Windows Update active hours 07:00->01:00 allow restarts in the pipeline's window;
+auto-logon would make the pipeline restart-proof. Next post: meteorite_cradle tonight
+21:00 (virtual 08-29 01:00 remapped). Persistence clips (output/persist_lab/) still
+awaiting his verdict.
 2026-08-27 (EVENING — PHIL'S VERDICT: camera/micro clips show NO perceptible motion,
 vocabulary PARKED; PERSISTENCE is the active front — read PLAN "PERSISTENCE — THE
 ACTIVE FRONT" before engine work): Phil's read confirmed quantitatively: safe-rate

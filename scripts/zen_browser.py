@@ -189,6 +189,7 @@ class Tab:
                                                     "userGesture": True}}))
                 deadline = time.time() + 20
                 node = None
+                click_id = self.id
                 while time.time() < deadline:
                     try:
                         msg = json.loads(self.ws.recv())
@@ -197,6 +198,14 @@ class Tab:
                     if msg.get("method") == "Page.fileChooserOpened":
                         node = msg["params"].get("backendNodeId")
                         break
+                    # the click's OWN reply: a JS exception (button gone — the page moved
+                    # under us) is a PAGE-STATE failure, not a socket wedge. Say so at once
+                    # instead of waiting 20s and reconnecting (2026-08-28: three runs
+                    # reported "file chooser never opened" for a composer that had closed).
+                    if msg.get("id") == click_id and msg.get("result", {}).get("exceptionDetails"):
+                        desc = (msg["result"].get("result", {}).get("description")
+                                or msg["result"]["exceptionDetails"].get("text") or "JS error")
+                        raise RuntimeError(f"file chooser click failed: {desc.splitlines()[0]}")
                 if node is not None:
                     self.cmd("DOM.setFileInputFiles", files=[winpath],
                              backendNodeId=node)

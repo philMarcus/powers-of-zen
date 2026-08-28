@@ -809,6 +809,47 @@ def _ig_dismiss(tab):
     time.sleep(0.4)
 
 
+def _ig_open_composer(tab, tries=3):
+    """Create -> (professional-account menu: Post) -> composer, VERIFIED: the 'Select
+    from computer' button must be present and STILL present 0.7s later (a composer
+    opened during the page load is wiped by load completion — 2026-08-28). Retries the
+    whole open from Create; never touches anything but Create / Post."""
+    sel_js = ("[...document.querySelectorAll('button')]"
+              ".find(b=>/select from computer/i.test(b.textContent))?true:null")
+    for attempt in range(tries):
+        if attempt:
+            print(f"  (instagram composer did not persist — re-opening, try {attempt + 1})",
+                  flush=True)
+            time.sleep(2)
+        if not wait_for(tab, "[...document.querySelectorAll('a,div[role=\"button\"],span')]"
+                             ".find(e=>e.textContent.trim()==='Create')?true:null", 30):
+            continue
+        tab.eval("[...document.querySelectorAll('a,div[role=\"button\"],span')]"
+                 ".find(e=>e.textContent.trim()==='Create')?.click()")
+        # PROFESSIONAL-ACCOUNT create menu (2026-08-23): converting the account (for
+        # insights) added an intermediate menu — Post / Live video / Ad — between Create
+        # and the composer. Wait for EITHER the composer (personal-era behavior) or the
+        # menu; click Post when the menu shows.
+        got = wait_for(tab, "(function(){"
+                            "if([...document.querySelectorAll('button')]"
+                            ".find(b=>/select from computer/i.test(b.textContent)))return 'chooser';"
+                            "const t=[...document.querySelectorAll("
+                            "'a,div[role=\"button\"],span,div[role=\"menuitem\"]')];"
+                            "if(t.find(e=>e.textContent.trim()==='Live video')"
+                            "&&t.find(e=>e.textContent.trim()==='Post'))return 'menu';"
+                            "return null})()", 20)
+        if got == "menu":
+            tab.eval("[...document.querySelectorAll("
+                     "'a,div[role=\"button\"],span,div[role=\"menuitem\"]')]"
+                     ".find(e=>e.textContent.trim()==='Post')?.click()")
+        if not wait_for(tab, sel_js, 20):
+            continue
+        time.sleep(0.7)
+        if tab.eval(sel_js):
+            return True
+    return False
+
+
 def post_instagram(video_rel, caption, dry_run):
     tab = platform_tab("instagram")
     # snapshot the profile's reels BEFORE posting: our post is detected afterwards as the
@@ -817,27 +858,16 @@ def post_instagram(video_rel, caption, dry_run):
     pre_codes = set(_ig_reel_codes(tab))
     tab.goto("https://www.instagram.com/")
     _ig_dismiss(tab)   # clear Save-login/notification nags a cold session shows before Create
-    wait_for(tab, "[...document.querySelectorAll('a,div[role=\"button\"],span')]"
-                  ".find(e=>e.textContent.trim()==='Create')?true:null", 30)
-    tab.eval("[...document.querySelectorAll('a,div[role=\"button\"],span')]"
-             ".find(e=>e.textContent.trim()==='Create')?.click()")
-    # PROFESSIONAL-ACCOUNT create menu (2026-08-23): converting the account (for insights)
-    # added an intermediate menu — Post / Live video / Ad — between Create and the composer.
-    # Both 08-23 failures were "file chooser never opened" behind it. Wait for EITHER the
-    # composer (personal-era behavior) or the menu; click Post when the menu shows.
-    got = wait_for(tab, "(function(){"
-                        "if([...document.querySelectorAll('button')]"
-                        ".find(b=>/select from computer/i.test(b.textContent)))return 'chooser';"
-                        "const t=[...document.querySelectorAll("
-                        "'a,div[role=\"button\"],span,div[role=\"menuitem\"]')];"
-                        "if(t.find(e=>e.textContent.trim()==='Live video')"
-                        "&&t.find(e=>e.textContent.trim()==='Post'))return 'menu';"
-                        "return null})()", 20)
-    if got == "menu":
-        tab.eval("[...document.querySelectorAll("
-                 "'a,div[role=\"button\"],span,div[role=\"menuitem\"]')]"
-                 ".find(e=>e.textContent.trim()==='Post')?.click()")
-    wait_for(tab, "[...document.querySelectorAll('button')].find(b=>/select from computer/i.test(b.textContent))?true:null", 20)
+    # LOAD-COMPLETE GATE (2026-08-28, the post-reboot "file chooser never opened" 3/3):
+    # the Create button renders within ~1s while the home page is still readyState
+    # 'loading'; a composer opened in that state is WIPED when the load completes (or
+    # never opens at all) — the poster then clicked a button that no longer existed.
+    # Opened after 'complete' + a short settle, the composer holds indefinitely (measured).
+    if not wait_for(tab, "document.readyState==='complete'?true:null", 60):
+        print("  (instagram home never reached readyState complete — proceeding anyway)")
+    time.sleep(1.5)
+    expect(_ig_open_composer(tab), "instagram", "composer", tab,
+           "composer (Select from computer) never opened or did not persist")
     tab.choosefile("[...document.querySelectorAll('button')]"
                    ".find(b=>/select from computer/i.test(b.textContent)).click()",
                    win_path(video_rel))

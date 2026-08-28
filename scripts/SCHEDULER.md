@@ -53,6 +53,21 @@ All tasks run "Interactive only" (Phil stays logged in; system sleep is Never). 
 overnight pair needs the machine AWAKE at 00:00/01:30 — if that's ever not true, tick
 "Wake the computer to run this task" under Conditions in the GUI for refill + render.
 
+## RESTARTS (learned 2026-08-28 — a Windows Update feature upgrade rebooted the box 01:29-01:34)
+"Interactive only" means NOTHING runs from boot until Phil logs in: the 01:30 render was
+missed outright (the batch never started), and the hourly post gate stayed silent 02:05-13:05
+until the ~13:50 login (it then fired at 14:05 — the gate's own catch-up handles missed
+windows, the render task has no catch-up). Now set: StartWhenAvailable=True on postgate,
+igstats and refill (a missed start runs as soon as the task CAN, i.e. right after login);
+deliberately NOT on render — a missed night would otherwise launch an 8h GPU batch at
+whatever hour Phil logs in. Windows Update active hours were 07:00->01:00, which ALLOWS
+upgrade restarts exactly inside the pipeline's 01-07 window — shift them to cover the night
+(Settings > Windows Update > Advanced > Active hours, max 18h span, e.g. 23:00->17:00) if the
+missed nights matter. Auto-logon after restart would make the whole pipeline restart-proof;
+Phil's call (it's a security trade-off). Set the flag with PowerShell, never schtasks:
+    $t = Get-ScheduledTask -TaskName 'PowersOfZen-postgate'; $s = $t.Settings
+    $s.StartWhenAvailable = $true; Set-ScheduledTask -TaskName $t.TaskName -Settings $s
+
 ## Manage:
     schtasks /Query  /TN "PowersOfZen-render"     (status/last-run)
     schtasks /Run    /TN "PowersOfZen-render"     (test now)
