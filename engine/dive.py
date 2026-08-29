@@ -21,6 +21,7 @@ Usage:
 import argparse
 import io
 import json
+import re
 import math
 import shutil
 import subprocess
@@ -401,19 +402,58 @@ def transform_depth(depth, zoom, rotate_deg, cx, cy, w, h):
     return np.asarray(im, "float32") / 255.0
 
 
-def hero_depth(w, h, fx, fy, frac):
-    """--hero-cn lab (2026-08-27, planet forensics): synthetic depth map — ONE shaded
-    sphere at the tracked position whose diameter is `frac` of the frame width, over a
-    far background. Fed as the depth-CN, the model must paint the target at its
-    SCHEDULED size each frame; re-diffusion can no longer re-normalize the object back
-    to prior-preferred marble size (cobalt's ice world grew 12%->25% over a card whose
-    zoom said x10 — the prior ate the zoom)."""
+# --hero-cn applies only to ROUND targets (2026-08-29 forensics: the first lab put the
+# sphere on cobalt card 1's "steep rock headland" and the model painted a ringed caldera —
+# Phil: "those holes aren't really planets"). A headland is not a globe.
+HERO_ROUND = re.compile(r"\b(planet|world|moon|sun|star|sphere|globe|orb|ball|egg|droplet|"
+                        r"bead|pearl|marble|bubble|nucleus)\b", re.I)
+# while the globe is small the prompt says GLOBE IN A VOID and the negative bans the
+# hole/crater/cell readings a lone shaded disc otherwise invites
+HERO_CLAUSE = ("a single round globe, a sphere lit from one side, hanging alone in the "
+               "black void of space")
+HERO_NEG = ("crater, hole, pit, ring, eye, cell, bubble, flat disc, landscape, ground, "
+            "horizon, terrain, rocks")
+
+
+def hero_specks(w, h, seed, n=160):
+    """The VOID behind the hero: a sparse field of far specks (frame-0 px coords, depth
+    value, radius) that projects through the cumulative zoom + the orbit pan."""
+    rng = np.random.default_rng(seed)
+    xs = rng.uniform(-1.5 * w, 2.5 * w, n)          # over-wide: the pan sweeps new sky in
+    ys = rng.uniform(-0.6 * h, 1.6 * h, n)
+    dv = rng.uniform(0.10, 0.30, n)
+    rr = rng.uniform(1.2, 3.2, n)
+    return np.stack([xs, ys, dv, rr], axis=1)
+
+
+def hero_depth(w, h, fx, fy, frac, specks=None, Z=1.0, pan=0.0):
+    """--hero-cn (2026-08-27, planet forensics; v2 2026-08-29): synthetic depth map — ONE
+    shaded sphere at the tracked position whose diameter is `frac` of the frame width,
+    over a VOID of far specks (v2; was a flat far plane, which with a busy fed-back
+    background read as a dome on ground). Fed as the depth-CN, the model must paint the
+    target at its SCHEDULED size each frame; re-diffusion can no longer re-normalize the
+    object back to prior-preferred marble size (cobalt's ice world grew 12%->25% over a
+    card whose zoom said x10 — the prior ate the zoom). specks project about the sphere
+    center through the cumulative zoom Z and shift by the orbit pan (px)."""
     yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
     cx, cy = fx * w, fy * h
+    depth = np.full((h, w), 0.04, np.float32)
+    if specks is not None:
+        for sx, sy, dv, rr in specks:
+            px = cx + (sx - cx) * Z - pan
+            py = cy + (sy - cy) * Z
+            if -8 < px < w + 8 and -8 < py < h + 8:
+                rad = rr * Z ** 0.5
+                x0, x1 = int(max(0, px - 3 * rad)), int(min(w, px + 3 * rad + 1))
+                y0, y1 = int(max(0, py - 3 * rad)), int(min(h, py + 3 * rad + 1))
+                if x1 > x0 and y1 > y0:
+                    g = np.exp(-((xx[y0:y1, x0:x1] - px) ** 2
+                                 + (yy[y0:y1, x0:x1] - py) ** 2) / (2 * rad * rad))
+                    depth[y0:y1, x0:x1] = np.maximum(depth[y0:y1, x0:x1], dv * g)
     r = max(4.0, frac * w / 2)
     d2 = ((xx - cx) ** 2 + (yy - cy) ** 2) / (r * r)
     dome = np.clip(0.95 - 0.4 * d2, 0.0, 1.0)
-    depth = np.where(d2 <= 1.0, np.maximum(dome, 0.06), 0.06).astype(np.float32)
+    depth = np.where(d2 <= 1.0, np.maximum(dome, 0.55), depth).astype(np.float32)
     return Image.fromarray((depth * 255).astype("uint8")).convert("RGB")
 
 
@@ -714,6 +754,11 @@ def main():
                          "extends to one beat before card end), cameo cards included — "
                          "instances are held in existence past the arrival instead of "
                          "churning at travel denoise. Default OFF until Phil's verdict.")
+    ap.add_argument("--hero-orbit", type=float, default=0.0, metavar="DEG",
+                    help="lab: with --hero-cn, revolve DEG around the globe across its "
+                         "approach run (sphere-interior rotation + background pan)")
+    ap.add_argument("--hero-pan", type=float, default=6.0, metavar="PX_PER_DEG",
+                    help="lab: background pan per orbit degree (px)")
     ap.add_argument("--hero-cn", action="store_true",
                     help="PERSISTENCE LAB (2026-08-27, the planet forensics): single-target "
                          "cards get a synthetic depth disc at the TRACKER's position whose "
@@ -932,6 +977,7 @@ def main():
         "parallax_gain": cfg["parallax_gain"], "resolve_persist": cfg["resolve_persist"],
         "camera_micro": cfg["camera_micro"], "camera": cam_plan, "lap_cut": lap_cut,
         "persist_cn": bool(args.persist_cn), "hero_cn": bool(args.hero_cn),
+        "hero_orbit": args.hero_orbit,
         # per-CARD (register) frame counts: lets a future --from-card verify its prefix
         # still aligns after a journey edit
         "card_frames": (register_frame_counts(spec, cfg["fps"]) if "registers" in spec
@@ -1145,12 +1191,22 @@ def main():
                     # containment contract (target fills the view by the boundary),
                     # computed exactly instead of hoped for.
                     _hero = None
-                    if args.hero_cn:
+                    if args.hero_cn and HERO_ROUND.search(ap.get("phrase") or ""):
                         _jr, _Zr = i, 1.0
                         while _jr < len(approach) and approach[_jr] is ap:
                             _Zr *= zoom_sched[_jr]
                             _jr += 1
-                        _hero = {"size": min(0.35, max(0.06, 1.05 / _Zr))}
+                        _hero = {"size": min(0.35, max(0.06, 1.05 / _Zr)),
+                                 "n": max(1, _jr - i), "Z": 1.0, "pan": 0.0,
+                                 "specks": hero_specks(cfg["width"], cfg["height"],
+                                                       _zlib.crc32(f"{name}:{i}".encode()))}
+                        print(f"[dive] HERO globe for {ap.get('phrase')!r}: run {_hero['n']}f, "
+                              f"s0 {_hero['size']:.3f}"
+                              + (f", orbit {args.hero_orbit:.0f} deg" if args.hero_orbit else ""),
+                              flush=True)
+                    elif args.hero_cn:
+                        print(f"[dive] hero: {ap.get('phrase')!r} is not a round target — "
+                              "standard approach", flush=True)
                 if _trk.need_repick:
                     _trk.begin(img, seed=i, run_idx=_run_idx)
                 ev = _trk.maybe_observe(img)
@@ -1381,20 +1437,39 @@ def main():
                     res_cn = 0.6 * min(1.0, 0.35 + 1.3 * _t)
                     if _j >= _n - 2:
                         res_cn *= 0.6     # handoff taper into normal travel
-            hero_ctl, hero_cn = None, 0.0
+            hero_ctl, hero_cn, hero_neg = None, 0.0, None
             if _hero is not None and approaching:
                 # scheduled size: grows by exactly this frame's zoom; a bigger DETECTED
                 # object is adopted (never shrunk back)
                 _hero["size"] = max(_hero["size"] * z, _trk.size or 0.0)
+                _hero["Z"] *= z
+                _hx = min(0.98, max(0.02, _trk.tx))
+                _hy = min(0.98, max(0.02, _trk.ty))
                 if _hero["size"] < 1.1:
-                    _himg = hero_depth(cfg["width"], cfg["height"],
-                                       min(0.98, max(0.02, _trk.tx)),
-                                       min(0.98, max(0.02, _trk.ty)), _hero["size"])
+                    if args.hero_orbit and _hero["size"] < 0.9:
+                        # HERO ORBIT: DEG spread evenly over the run; the sphere interior
+                        # revolves, the sky pans; revealed limb -> denoise boost
+                        _dth = args.hero_orbit / _hero["n"]
+                        _bg = args.hero_pan * _dth
+                        _hero["pan"] += _bg
+                        fed, _hst = _warp.hero_orbit(
+                            fed, _hx * cfg["width"], _hy * cfg["height"],
+                            _hero["size"] * cfg["width"] / 2, _dth, _bg)
+                        fed = fed.filter(ImageFilter.UnsharpMask(radius=1.2, percent=60))
+                        den = max(den, _warp.disocclusion_denoise(den, _hst))
+                    _himg = hero_depth(cfg["width"], cfg["height"], _hx, _hy, _hero["size"],
+                                       specks=_hero["specks"], Z=_hero["Z"],
+                                       pan=_hero["pan"])
                     _hdir = out_dir / "build" / "hero"
                     _hdir.mkdir(exist_ok=True)
                     _himg.save(_hdir / f"{i:05d}.png")
                     hero_ctl = upload_image(_himg, f"zoomer_hero_{name}.png")
                     hero_cn = 0.35 + 0.30 * min(1.0, _trk.frame / 12)
+                    if _hero["size"] < 0.75:
+                        # globe-in-a-void language while the globe is still an OBJECT in
+                        # the frame; once it fills the view we are at its surface
+                        prompt = prompt + ", " + HERO_CLAUSE
+                        hero_neg = HERO_NEG
             ref = upload_image(fed, f"zoomer_feed_{name}.png")
             wf = build_workflow(cfg, prompt, seed, init_image=ref, denoise=den,
                                 prev_prompt=prev_prompt if in_transition else None,
@@ -1412,7 +1487,7 @@ def main():
                                       else (cfg["approach_cn"] if approaching else tail_cn)),
                                 depth_preproc=None if (res_ctl or hero_ctl) else _depth,
                                 ipa_image=loop.get("_home_ref") if tail_ipa_w > 0.01 else None,
-                                ipa_weight=tail_ipa_w)
+                                ipa_weight=tail_ipa_w, neg_extra=hero_neg)
         png = run_workflow(wf)
         img = Image.open(io.BytesIO(png)).convert("RGB")
         if img.size != (cfg["width"], cfg["height"]):

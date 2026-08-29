@@ -210,6 +210,16 @@ def main():
     ready = len(pl.queued(pl.load()))
 
     if not args:  # auto-pick mode: backpressure + pause gates apply
+        # MISSED-NIGHT GUARD (2026-08-28): the render task now has StartWhenAvailable, so a
+        # 01:30 start missed by a reboot fires as soon as the machine is back — fine at
+        # 01:40, NOT at 14:00 when Phil is at the keyboard. Scheduled runs (the .bat passes
+        # --scheduled) refuse to start outside the night window; manual runs are unaffected.
+        if "--scheduled" in sys.argv and not (0 <= time.localtime().tm_hour < 7):
+            print("scheduled start outside the 00:00-07:00 night window (missed-night "
+                  "catch-up after a reboot?) — skipping; tonight's 01:30 will render")
+            if not dry:
+                pl.telem("batch_skip", reason="catch-up outside night window")
+            return
         if s.get("render_paused"):
             print("render_paused is set — skipping tonight")
             if not dry:

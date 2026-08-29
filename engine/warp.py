@@ -233,6 +233,37 @@ def camera_residual(img, depth, zoom, k, med, lat=0.0, orbit_deg=0.0, pivot=(0.5
     return _remap(img, map_x, map_y)
 
 
+def hero_orbit(img, cx, cy, r, deg, bg_px=0.0):
+    """HERO ORBIT (2026-08-29, Phil: "ninety degrees around a planet while it grows from a
+    third of the screen to eighty percent"): the camera revolves about a SPHERE whose
+    silhouette the hero depth-CN pins. Inside the disc (center cx,cy, radius r px) the
+    content rotates about the vertical axis by `deg` — surface features cross the face and
+    compress at the limb, the back side rotates in at the trailing limb (disoccluded =
+    stretch>1 -> denoise boost heals it); outside the disc the whole background pans by
+    bg_px (the sky sweeping past as we circle). This is a LARGE image-space warp by design:
+    the noise-floor law (PLAN 08-27) says small warps vanish under frame churn and large
+    ones get re-interpreted — the bet here is that a void of specks has nothing to
+    misread and the CN holds the one thing that matters, the globe."""
+    import math
+    a = np.asarray(img, np.float32)
+    H, W = a.shape[:2]
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+    map_x = xx - bg_px
+    map_y = yy.copy()
+    if r > 2 and abs(deg) > 1e-3:
+        u = (xx - cx) / r
+        v = (yy - cy) / r
+        d2 = u * u + v * v
+        inside = d2 < 1.0
+        z = np.sqrt(np.clip(1.0 - d2, 0.0, 1.0))
+        th = math.radians(deg)
+        us = u * math.cos(th) - z * math.sin(th)      # inverse map: where this pixel came from
+        us = np.clip(us, -1.0, 1.0)                   # back side -> sample the limb (disoccluded)
+        map_x = np.where(inside, cx + us * r, map_x)
+        map_y = np.where(inside, yy, map_y)
+    return _remap(img, map_x, map_y)
+
+
 def quantize_planes(depth, n=5):
     """Bucket a depth estimate into n stable planes (level centers). Raw estimator shimmer
     kills warps (orbit-lab lesson) — planes + EMA give the residual a steady field."""
