@@ -120,6 +120,37 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-08-29 (PERSISTENCE ROUND 2 + PLANET HERO v2 + RESTART-PROOFING; clips in
+output/persist_lab/, Phil judging): pipeline recovered clean from the 08-28 reboot
+(meteorite posted 21:00 YT uOksS1wkj9M + IG Dcmt3kHNrQw; last night's 4 rendered fine;
+next post 08-29 20:00 pomegranate). RESTART-PROOFING: StartWhenAvailable now on
+postgate/igstats/refill AND render, render guarded by --scheduled + a 00-07 night-window
+check (a missed night no longer launches an 8h batch at login); scripts/setup_autologon.ps1
+stages Sysinternals Autologon (LSA-encrypted, NOT plaintext HKLM\Winlogon) — Phil runs it
+once with his password and the box becomes restart-proof (autologon -> tasks fire -> poster
+self-heals Chrome -> Ollama from Startup -> ComfyUI from the batch). PHIL'S ROUND-1 VERDICTS
+(read PLAN "SECOND ROUND"): persist = PROGRESS not solved (one object persists, not a sea;
+sprite-pop is fine/low-pri); planet "holes aren't planets — want a sphere in an interesting
+void"; camera FAR too timid (wants ~90 deg around a planet as it grows a third->80%). BUILT
++ TESTED TODAY (all lab flags, default OFF, nothing in the nightly path): (1) hero-cn v2
+(commit 16da4aa/532feaa) — ROUND-TARGET gate (planet/world/sun/orb/egg...; the round-1
+caldera came from forcing a globe onto a "headland"), VOID-OF-SPECKS depth replacing the
+flat far plane, globe-in-void prompt+neg; pure SCHEDULED size (dropped the tracker-box
+adoption that hijacked growth). Clip planet_static_cobalt: sphere in a star void grows +
+dive plunges in, slide-off/caldera GONE; open: reads as a fiery SUN not a blue planet (card
+wording "aging gold sun" dominates the hero roundness). (2) warp.hero_orbit + --hero-orbit
+DEG — revolves the sphere interior + pans the starfield across the approach; clip
+planet_orbit90_cobalt shows REAL circling (object slides, new sky pans in, faces change) —
+first orbit that reads as revolution, the noise-floor law's one exception (CN pins the
+silhouette, void has nothing to misread). (3) SEA PERSIST (waterbear tun_cells,
+--persist-cn): establishment FIXED (dense field of cells, 2nd case after ruby's flowers)
+but the PLUNGE still funnels to one BY DESIGN — "sea persists whole card" fights "zoom into
+one target/card". REFRAME: Phil's real want is DIVE-THROUGH-A-CROWD; levers (both untested)
+= scaffold extend=True through the plunge + a plunge prompt naming the POPULATION not just
+the target. ALSO fixed: --frames smoke tests let the loop tail (sized off truncated total)
+eat the approach -> new --no-loop flag (approach labs pass it). NEXT (pending Phil's clip
+verdicts): dive-through-a-crowd levers; planet wording so the hero reads as planet not sun;
+hero_orbit on a real full render if the motion convinces.
 2026-08-28 (AFTERNOON — THE RESTART NIGHT; read SCHEDULER.md "RESTARTS"): a Windows Update
 feature upgrade rebooted the machine 01:29-01:34 (three reboots, TrustedInstaller event
 1074). CONSEQUENCES: refill 00:00 ran fine (5 composed+queued); the 01:30 RENDER WAS MISSED
