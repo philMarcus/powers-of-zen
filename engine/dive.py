@@ -1444,9 +1444,12 @@ def main():
                         res_cn *= 0.6     # handoff taper into normal travel
             hero_ctl, hero_cn, hero_neg = None, 0.0, None
             if _hero is not None and approaching:
-                # scheduled size: grows by exactly this frame's zoom; a bigger DETECTED
-                # object is adopted (never shrunk back)
-                _hero["size"] = max(_hero["size"] * z, _trk.size or 0.0)
+                # scheduled size: grows by exactly this frame's zoom so the disc reaches
+                # ~full frame at the card boundary (s0 = 1.05/product-of-remaining-zooms).
+                # (Do NOT adopt _trk.size: the tracker box is unclamped and propagates past
+                # 1.0 once we zoom through it — adopting it hijacked the scheduled growth and
+                # shut the hero/orbit off mid-approach, 2026-08-29.)
+                _hero["size"] *= z
                 _hero["Z"] *= z
                 _hx = min(0.98, max(0.02, _trk.tx))
                 _hy = min(0.98, max(0.02, _trk.ty))
