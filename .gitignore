@@ -12,3 +12,7 @@ outbox/shots/
 _seam_backup/
 _seamwork/
 _zoomclip/
+
+# Sysinternals Autologon (downloaded binary, restart-proofing)
+/Autologon*.exe
+/Autologon*.zip
