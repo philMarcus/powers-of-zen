@@ -1320,6 +1320,51 @@ arrival windows. Two production symptoms, same disease:
   language + negatives on planet-card arrivals mid-chain (the T_ESTABLISH_SPACE idea
   applied to arrivals, not just frame 0), or a sea/space scaffold mode behind the hero.
 
+## SECOND ROUND (2026-08-29, Phil's verdicts on round 1 + these tests)
+Phil accepted round 1 as PROGRESS, not solved. His three reads, and what round 2 found:
+- PERSIST is real but it is ONE object, not a SEA. On ruby garden he saw one hummingbird
+  whose PART morphs back into a whole bird on the plunge (the fixed-point dive regrowing
+  the target from a fragment). His ask, verbatim: "making sure seas of things persist."
+  TEST (waterbear tun_cells, a sea-mode card, --persist-cn, from-card 3, v2 f72-95):
+  SAME SHAPE as ruby. f72-76 = a genuine DENSE FIELD of many cells (establishment FIXED,
+  second case now — the wallpaper failure is gone for flowers AND cells); f80-84 the zoom
+  has FUNNELLED INTO ONE cell filling the frame; f88+ we are on its surface. So persist-cn
+  fixes the LOOK phase (real crowd, not wallpaper) but the PLUNGE still collapses to one
+  BY DESIGN — every card's arrive->look->plunge dives into a single target. "A sea that
+  persists the WHOLE card" is in direct tension with "zoom into one object per card."
+  REFRAME (the productive split): Phil's real want (hummingbirds) is DIVE-THROUGH-A-CROWD,
+  not a static sea — move through a dense field, near instances passing (parallax), toward
+  ONE among many, instead of a lone object we funnel to. Levers, both untested:
+    (a) scaffold extend=True during the plunge so the field stays dense (far instances keep
+        arriving as near ones exit — the Phase-B log-uniform drain fix; persist-cn currently
+        does NOT set extend, so the sea thins as we advance);
+    (b) a PLUNGE-prompt variant that keeps naming the POPULATION ("through a dense field of
+        X toward one"), not only the single target (T_PLUNGE names one target every frame).
+  Clip: output/persist_lab/sea_persist_waterbear.mp4 (card 3, 12fps x3).
+- PLANET (cobalt): "those holes aren't planets — I want a sphere in the void, an interesting
+  void." HERO v2 built (commit 16da4aa): (1) ROUND-TARGET GATE — hero fires only on
+  planet/world/moon/sun/sphere/orb/egg/... (round 1 forced a globe onto card 1's "steep rock
+  headland" and got a ringed caldera — Phil's "holes"); (2) VOID OF SPECKS replaces the flat
+  far plane (the flat plane over a busy fed-back background was half the on-the-ground read);
+  (3) globe-in-void PROMPT ("a single round globe hanging alone in the black void of space")
+  + NEG (crater/hole/pit/ring/cell/landscape/horizon) while the globe is still an object.
+  TEST bed = cobalt CARD 0 (cluster_sun -> "a blue planet" in a crowded star cluster = his
+  "sphere in the void"). Clips: planet static + planet 90-deg orbit (see below).
+- CAMERA was FAR too timid (Phil: single degrees are nothing; he wants ~90 deg around a
+  planet as it grows a third->80% of frame). The one place a BIG image-space warp can beat
+  the noise floor is HERE: the hero depth-CN pins the sphere silhouette and a void of specks
+  has nothing to re-interpret. warp.hero_orbit (commit 16da4aa) revolves the sphere interior
+  + pans the starfield DEG across the approach, tied to the hero. THE AGGRESSIVE BET; a
+  smear shows plainly in the single clip. --hero-orbit DEG (lab flag, default 0).
+
+## --frames SMOKE-TEST TRAP (found + fixed 2026-08-29, commit pending)
+in_loop_tail = i >= total - loop["frames"]; with --frames truncating total, the loop-homing
+tail is sized off the TRUNCATED total, so it EATS the approach (cobalt --frames 40: tracker
+flipped to "tail" at frame 7, the whole planet approach became loop-homing). --frames already
+disables counter + lap_cut; it now also disables the loop tail via the new --no-loop flag
+(approach labs pass it). ANY past --frames+--from-card lab clip whose last loop["frames"]
+frames looked like homing was hitting this — re-cut from the pre-tail frames.
+
 ## Next steps (pending Phil's verdicts on the clips)
 1. Sprite/tracker interaction under persist-cn (veto locks inside the cameo's
    propagated box; or suppress cameo on persist cards).

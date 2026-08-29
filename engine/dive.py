@@ -754,6 +754,9 @@ def main():
                          "extends to one beat before card end), cameo cards included — "
                          "instances are held in existence past the arrival instead of "
                          "churning at travel denoise. Default OFF until Phil's verdict.")
+    ap.add_argument("--no-loop", action="store_true",
+                    help="lab: disable the loop-homing tail (approach labs: --frames "
+                         "truncates total so the tail, sized off total, eats the approach)")
     ap.add_argument("--hero-orbit", type=float, default=0.0, metavar="DEG",
                     help="lab: with --hero-cn, revolve DEG around the globe across its "
                          "approach run (sphere-interior rotation + background pan)")
@@ -858,6 +861,8 @@ def main():
                          if not cfg["parallax_gain"] else ""), flush=True)
     else:
         phases = spec["phases"]
+    if args.no_loop:
+        loop = None
     total = args.frames or sum(p["frames"] for p in phases)
     # LOOP LAP (see grammar.compile_journey): frames [0..lap_cut) are the txt2img warm-up
     # card — rendered (they seed the chain) but CUT at assembly; the tail homes onto frame
