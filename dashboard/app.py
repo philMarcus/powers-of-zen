@@ -87,17 +87,23 @@ def set_music_theme(journey, theme):
     p.write_text(json.dumps(spec, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
-def regenerate_music(journey):
+def regenerate_music(journey, fresh=False):
     """Fire music_gen for this journey (non-blocking). Generation needs the WSL/GPU env,
-    so on Windows we shell into wsl; candidates repopulate here on the next refresh."""
+    so on Windows we shell into wsl; candidates repopulate here on the next refresh.
+
+    fresh=True (the Music-tab Regenerate/Generate buttons, 2026-08-31): FORCE a full GPU
+    generation with re-rolled seeds + wildcard lanes — the point of the button is different
+    tracks. Without it the realign fast path returned the SAME five every click (Phil's bug).
+    fresh=False (approve_to_music): keep the fast path — realign the overnight pregen keepers
+    to the marked start (seconds, no GPU)."""
     import os
     import subprocess
-    # fast path (2026-08-17): the nightly batch pre-generated + ranked candidates
-    # (music_pregen); approving only needs them RE-ALIGNED to the marked start —
-    # seconds of ffmpeg instead of minutes of generation
     dd0 = data()
     v0 = pl.get(dd0, journey)
-    flag = " --realign" if (v0 or {}).get("music_pregen") else ""
+    if fresh:
+        flag = " --fresh"
+    else:
+        flag = " --realign" if (v0 or {}).get("music_pregen") else ""
     if os.name == "nt":
         cmd = ["wsl", "bash", "-lc",
                f"cd /mnt/c/Users/Phil/zoomer && python3 scripts/music_gen.py {journey}{flag}"]
@@ -662,14 +668,17 @@ with tabs[2]:  # MUSIC — audition/generate a track, then send to Production
             st.warning(f"{note} — generate 5 tracks for this render.")
             if tcol[1].button("🎵 Generate 5", key=f"gen_{v['journey']}"):
                 set_music_theme(v["journey"], newtheme)
-                regenerate_music(v["journey"])
-                st.info(f"Generating 5 tracks for {v['journey']} ({v['model']}/{v['cut']}) — "
-                        "refresh in ~2–3 min.")
+                regenerate_music(v["journey"], fresh=True)
+                st.info(f"Generating 5 tracks for {v['journey']} ({v['model']}/{v['cut']}) "
+                        "on ComfyUI — refresh in ~2–3 min.")
         else:
-            if tcol[1].button("🔄 Regenerate", key=f"regen_{v['journey']}"):
+            if tcol[1].button("🔄 Regenerate", key=f"regen_{v['journey']}",
+                              help="full GPU generation with re-rolled seeds AND lanes — "
+                                   "genuinely different tracks each click (~2–3 min)"):
                 set_music_theme(v["journey"], newtheme)
-                regenerate_music(v["journey"])
-                st.info(f"Regenerating {v['journey']} candidates — refresh in ~2–3 min.")
+                regenerate_music(v["journey"], fresh=True)
+                st.info(f"Regenerating {v['journey']} with fresh seeds + lanes — ComfyUI is "
+                        "generating 5 new tracks, refresh in ~2–3 min.")
             audition_candidates(v, choose_advances_to="queued")
         cc = st.columns([1, 1, 4])
         if cc[0].button("↩ Back to Review", key=f"back_{v['journey']}"):

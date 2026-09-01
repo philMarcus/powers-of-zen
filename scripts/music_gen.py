@@ -85,14 +85,19 @@ def build_tags(theme, lane_name, rhythm_key=None):
     return TAGS.format(theme=theme, instr=lane["instr"], rhythm=rhythm)
 
 
-def candidate_plan(journey, spec, bar):
+def candidate_plan(journey, spec, bar, attempt=0):
     """(id, lane, rhythm_key, bpm_override, seed) x N_GEN. Deterministic per journey (its
-    own seeds — the old fixed 500..504 made every journey's 'warm' the same take)."""
+    own seeds — the old fixed 500..504 made every journey's 'warm' the same take).
+    attempt>0 (dashboard Regenerate, 2026-08-31): re-roll — the fixed per-journey hash made
+    every regeneration return the SAME tracks (Phil: "gives me the same ones back"). A
+    non-zero attempt salts the hash so BOTH the seeds AND the wildcard lanes rotate, so each
+    Regenerate explores genuinely new music, not the same recipe re-noised."""
     h = zlib.crc32(journey.encode())
-    s0 = 500 + h % 40000
+    ha = zlib.crc32(f"{journey}#{attempt}".encode()) if attempt else h
+    s0 = 500 + ha % 40000
     own = lane_for(journey, spec)
     names = [n for n in _lane_names() if n != own]
-    wild = [names[(h // 7 + i * 3) % len(names)] for i in range(3)]
+    wild = [names[(ha // 7 + i * 3) % len(names)] for i in range(3)]
     own_r = DECK["lanes"][own]["rhythm"]
     alt_r = {"downbeat": "third_answer", "third_answer": "downbeat",
              "halftime": "heartbeat", "heartbeat": "halftime"}[own_r]
@@ -109,7 +114,7 @@ def candidate_plan(journey, spec, bar):
         (f"{own}-{half_r}", own, half_r, None),
         (f"{wild[2]}-wild", wild[2], None, None),
     ]
-    if h % 4 == 0:      # the occasional 3/4 spice (sparingly — Phil 2026-08-13)
+    if ha % 4 == 0:      # the occasional 3/4 spice (sparingly — Phil 2026-08-13)
         plan.append((f"waltz-{own}", own, "downbeat", int(round(3 * 60.0 / bar))))
     else:               # filler: a rhythm the plan doesn't already cover for this lane
         fill = next(r for r in ("heartbeat", "third_answer", "downbeat")
@@ -150,7 +155,7 @@ def _video(journey):
     return str(silent) if (ROOT / silent).exists() else v["file"]
 
 
-def generate(journey, n=N_KEEP, shift=True, target="music"):
+def generate(journey, n=N_KEEP, shift=True, target="music", attempt=0):
     """target="music": the normal Phil-facing candidates (aligned to the marked start).
     target="music_pregen": the overnight PRE-GENERATION (Phil 2026-08-17 — no waiting at
     approve time): same tracks, ranked against the UNSHIFTED cut; approve_to_music later
@@ -175,7 +180,7 @@ def generate(journey, n=N_KEEP, shift=True, target="music"):
     track_dur = int(math.ceil(vdur)) + 3
     outdir = ROOT / "review" / "music" / "candidates" / journey
     outdir.mkdir(parents=True, exist_ok=True)
-    plan = candidate_plan(journey, spec, bar)
+    plan = candidate_plan(journey, spec, bar, attempt=attempt)
     print(f"{journey} ({cut}): bar {bar:.3f}s -> {bpm} bpm, key {key}; lane "
           f"{lane_for(journey, spec)}; generating {len(plan)}, keeping {n}")
     cands = []
@@ -284,7 +289,7 @@ def generate(journey, n=N_KEEP, shift=True, target="music"):
         return
     v[target] = {"bpm": bpm, "bar": round(bar, 3), "key": key,
                  "stage": "pregen" if target == "music_pregen" else "review",
-                 "chosen": None, "candidates": cands,
+                 "chosen": None, "candidates": cands, "gen_attempt": attempt,
                  "for_model": model0, "for_cut": cut}  # a model/cut switch flags stale music
     pl.save(d)
     pl.telem("music_gen" if target == "music" else "music_pregen",
@@ -374,11 +379,19 @@ def main():
                     help="overnight pre-generation (unshifted cut, stored in music_pregen)")
     ap.add_argument("--realign", action="store_true",
                     help="fast approve path: re-align pregen keepers to the marked start")
+    ap.add_argument("--fresh", action="store_true",
+                    help="Regenerate: force a full GPU generation with re-rolled seeds AND "
+                         "wildcard lanes (never realign) — different tracks each click")
     a = ap.parse_args()
     if a.choose:
         choose(a.journey, a.choose)
     elif a.pregen:
         generate(a.journey, n=a.n, shift=False, target="music_pregen")
+    elif a.fresh:
+        d0 = pl.load(); v0 = pl.get(d0, a.journey) or {}
+        att = (v0.get("music") or {}).get("gen_attempt", 0) + 1
+        print(f"FRESH regeneration attempt {att} (re-rolled seeds + lanes)")
+        generate(a.journey, n=a.n, attempt=att)
     elif a.realign:
         realign(a.journey)
     else:
