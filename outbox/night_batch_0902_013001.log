@@ -1,0 +1,511 @@
+=== 01:30:01 batch start [queue] — 4 journeys: chalk_cellar pika_larder garnet_glass fluorite_stope
+=== 01:30:04 starting ComfyUI
+=== 01:30:44 ComfyUI ready
+=== 01:30:44 --- chalk_cellar ---
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] crystalline  ->  prismatic crystalline light, refractive glass and gemstone facets, jewel tones, ultra-detailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/chalk_cellar/v1
+[dive] chalk_cellar: 360 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — atom_foam(lattice)[26..49], cosmic_web_walls(web)[90..113], wine_column(surface)[154..177], bead_train(sea)[186..209], fossil_drift(sea)[218..231], rosette_wheel(sea)[250..273], rhomb_masonry(lattice)[282..305], calcite_lattice(lattice)[314..327]
+[dive] TRACKER v3 ON (224 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of the atomic lattice of calcite opening on every side, sheets of milk-blue calcium cores s
+[dive] frame 1/360 (31.1s/frame, ~11162s left) :: moving through the atomic lattice of calcite opening on ever
+[dive] frame 11/360 (26.6s/frame, ~9282s left) :: moving through the atomic lattice of calcite opening on ever
+[dive] frame 21/360 (25.3s/frame, ~8583s left) :: diving straight into a milk-blue atom core as it swells to f
+[dive] frame 31/360 (23.9s/frame, ~7870s left) :: diving straight into a milk-blue atom core as it swells to f
+[dive] frame 41/360 (21.2s/frame, ~6748s left) :: deep inside a froth of fog spheres crowding an unlit void, e
+[dive] frame 51/360 (19.4s/frame, ~5987s left) :: deep inside a froth of fog spheres crowding an unlit void, e
+[dive] frame 61/360 (18.6s/frame, ~5555s left) :: deep inside a froth of fog spheres crowding an unlit void, e
+[dive] parallax depth estimate failed (HTTPConnectionPool(host='localhost', port=8188): Max retries exceeded with url: /history/fdc2e198-e3df-4bd8-a303-f92dfb0f7d14 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7d83695133b0>, 'Connection to localhost timed out. (connect timeout=30)'))) — propagating the previous map
+[dive] frame 71/360 (18.1s/frame, ~5241s left) :: the whole view transforming, resolving into the first foam o
+[dive] frame 81/360 (18.9s/frame, ~5275s left) :: moving through the first foam of the universe, spheres of ne
+[dive] frame 91/360 (19.5s/frame, ~5241s left) :: diving straight into a violet wall seam as it swells to fill
+[dive] frame 101/360 (18.9s/frame, ~4886s left) :: the walls of the cosmic web, sheets of galaxies laid edge to
+[dive] frame 111/360 (18.3s/frame, ~4565s left) :: deep inside the walls of the cosmic web, sheets of galaxies 
+[dive] frame 121/360 (18.0s/frame, ~4303s left) :: deep inside the walls of the cosmic web, sheets of galaxies 
+[dive] frame 131/360 (17.6s/frame, ~4036s left) :: the whole view transforming, resolving into a vaulted galler
+[dive] frame 141/360 (17.8s/frame, ~3902s left) :: moving through a vaulted gallery hewn into a chalk hill, see
+[dive] frame 151/360 (18.5s/frame, ~3872s left) :: diving straight into a tall filled glass as it swells to fil
+[dive] frame 161/360 (18.5s/frame, ~3676s left) :: a column of amber wine standing inside curved glass, slender
+[dive] frame 171/360 (18.2s/frame, ~3442s left) :: moving through a column of amber wine standing inside curved
+[dive] frame 181/360 (18.1s/frame, ~3239s left) :: diving straight into a string of pale beads as it swells to 
+[dive] frame 191/360 (18.1s/frame, ~3050s left) :: diving straight into a string of pale beads as it swells to 
+[dive] frame 201/360 (17.8s/frame, ~2838s left) :: moving through a chain of milk-pale beads set one above anot
+[dive] frame 211/360 (17.7s/frame, ~2639s left) :: moving through a chain of milk-pale beads set one above anot
+[dive] frame 221/360 (17.8s/frame, ~2478s left) :: diving straight into a pale chalk grain as it swells to fill
+[dive] frame 231/360 (17.7s/frame, ~2278s left) :: the interior of chalk, a drift of rosette wheels heaped at e
+[dive] frame 241/360 (18.0s/frame, ~2143s left) :: moving through the interior of chalk, a drift of rosette whe
+[dive] frame 251/360 (18.3s/frame, ~1992s left) :: diving straight into a bone-ivory rosette wheel as it swells
+[dive] frame 261/360 (18.1s/frame, ~1793s left) :: one plated wheel grown by a plankton cell, a ring of wedge-s
+[dive] frame 271/360 (17.9s/frame, ~1594s left) :: moving through one plated wheel grown by a plankton cell, a 
+[dive] frame 281/360 (18.1s/frame, ~1429s left) :: diving straight into a curved shingled tile as it swells to 
+[dive] frame 291/360 (17.9s/frame, ~1238s left) :: the masonry inside one wedge tile, leaning glassy blocks sta
+[dive] frame 301/360 (17.8s/frame, ~1048s left) :: moving through the masonry inside one wedge tile, leaning gl
+[dive] frame 311/360 (17.9s/frame, ~876s left) :: diving straight into a leaning glassy rhomb as it swells to 
+[dive] frame 321/360 (17.8s/frame, ~694s left) :: the atomic lattice of calcite opening on every side, sheets 
+[dive] frame 331/360 (17.8s/frame, ~516s left) :: moving through the atomic lattice of calcite opening on ever
+[dive] frame 341/360 (18.1s/frame, ~343s left) :: diving straight into a milk-blue atom core as it swells to f
+[dive] frame 351/360 (18.3s/frame, ~164s left) :: diving straight into a milk-blue atom core as it swells to f
+[dive] frame 360/360 (18.5s/frame, ~0s left) :: a froth of fog spheres crowding an unlit void, each sphere a
+[dive] interpolated 12 -> 24fps (640 frames, loop-bridged) in 67s
+[dive] counter overlay on 640 frames (32 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/chalk_cellar/v1/chalk_cellar.mp4 (41320 KB, 26.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/chalk_cellar/v1/chalk_cellar_divein.mp4 (41912 KB, 26.7s)
+[dive] done in 6833s
+=== 03:24:38 chalk_cellar: rendered in 6834s
+  copied chalk_cellar.mp4 -> review/chalk_cellar_ds.mp4
+  copied chalk_cellar_divein.mp4 -> review_divein/chalk_cellar_ds_divein.mp4
+chalk_cellar: queued to REVIEW (ds/divein) from v1
+  chalk_cellar: 5 caption+title pairs (spot=True); theme='A haunting, ethereal melody that swells '
+    [0] Dive into the endless depths of a chalk world, where every zoom reveals a new wonder 🌌 Can you spot Belle the Cell hiding in the cosmic dance? 👀 #ChalkCosmos #InfiniteZoom #PrismaticUniverse #BelleTheCell #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive into the endless depths of a chalk world, where every zoom reveals a new wonder 🌌
+    [1] From wine to atoms, the universe unfolds in a hypnotic spiral of light and shadow ✨ Can you spot Belle the Cell hiding in the cosmic dance? 👀 #ChalkCosmos #InfiniteZoom #PrismaticUniverse #BelleTheCell #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From wine to atoms, the universe unfolds in a hypnotic spiral of light and shadow ✨
+    [2] A journey through the hidden layers of a single chalk grain, infinite and mesmerizing 🔍 Can you spot Belle the Cell hiding in the cosmic dance? 👀 #ChalkCosmos #InfiniteZoom #PrismaticUniverse #BelleTheCell #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A journey through the hidden layers of a single chalk grain, infinite and mesmerizing 🔍
+    [3] Where galaxies bloom like foam and time loops in a prism of cosmic light 🌠 Can you spot Belle the Cell hiding in the cosmic dance? 👀 #ChalkCosmos #InfiniteZoom #PrismaticUniverse #BelleTheCell #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where galaxies bloom like foam and time loops in a prism of cosmic light 🌠
+    [4] Every zoom a revelation, every loop a new discovery in this crystalline cosmos 🌍 Can you spot Belle the Cell hiding in the cosmic dance? 👀 #ChalkCosmos #InfiniteZoom #PrismaticUniverse #BelleTheCell #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Every zoom a revelation, every loop a new discovery in this crystalline cosmos 🌍
+=== 03:25:39 chalk_cellar -> REVIEW (captioned)
+=== 03:25:39 --- pika_larder ---
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] aurora_silk  ->  aurora ribbons of green and violet light, silken flowing light, soft luminous gradients, ultra-detailed, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/pika_larder/v1
+[dive] pika_larder: 264 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — antenna_array(sea)[26..49], scree_commons(surface)[90..103], stone_net(surface)[122..145], cushion_dome(surface)[154..177], leaf_mosaic(sea)[186..209], mesophyll_hall(sea)[218..231]
+[dive] TRACKER v3 ON (176 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a hall of leaf cells stacked inside the blade, rows of palisade columns standing
+[dive] frame 1/264 (31.7s/frame, ~8344s left) :: moving through a hall of leaf cells stacked inside the blade
+[dive] frame 11/264 (27.7s/frame, ~7006s left) :: moving through a hall of leaf cells stacked inside the blade
+[dive] frame 21/264 (26.0s/frame, ~6308s left) :: diving straight into a lens-shaped emerald chloroplast as it
+[dive] frame 31/264 (25.0s/frame, ~5831s left) :: diving straight into a lens-shaped emerald chloroplast as it
+[dive] frame 41/264 (22.0s/frame, ~4905s left) :: deep inside a stack of membrane discs inside a chloroplast, 
+[dive] frame 51/264 (20.0s/frame, ~4268s left) :: deep inside a stack of membrane discs inside a chloroplast, 
+[dive] frame 61/264 (19.1s/frame, ~3883s left) :: deep inside a stack of membrane discs inside a chloroplast, 
+[dive] frame 71/264 (18.3s/frame, ~3534s left) :: the whole view transforming, resolving into ice-wedge polygo
+[dive] frame 81/264 (19.1s/frame, ~3487s left) :: moving through ice-wedge polygon country in a high basin see
+[dive] frame 91/264 (19.8s/frame, ~3426s left) :: diving straight into a pale scree apron as it swells to fill
+[dive] frame 101/264 (19.1s/frame, ~3110s left) :: a moonlit alpine scree slope under a hanging glacier, boulde
+[dive] frame 111/264 (19.3s/frame, ~2953s left) :: moving through a moonlit alpine scree slope under a hanging 
+[dive] frame 121/264 (20.0s/frame, ~2856s left) :: diving straight into a sorted ring of stones as it swells to
+[dive] frame 131/264 (19.5s/frame, ~2593s left) :: a frost-sorted stone circle set into the slope, coarse ivory
+[dive] frame 141/264 (19.0s/frame, ~2342s left) :: moving through a frost-sorted stone circle set into the slop
+[dive] frame 151/264 (19.2s/frame, ~2167s left) :: diving straight into a domed viridian cushion plant as it sw
+[dive] frame 161/264 (19.0s/frame, ~1957s left) :: a cushion plant mounded over the scree, thousands of rosette
+[dive] frame 171/264 (18.8s/frame, ~1744s left) :: moving through a cushion plant mounded over the scree, thous
+[dive] frame 181/264 (18.6s/frame, ~1545s left) :: diving straight into a blunt viridian leaf as it swells to f
+[dive] frame 191/264 (18.6s/frame, ~1359s left) :: diving straight into a blunt viridian leaf as it swells to f
+[dive] frame 201/264 (18.4s/frame, ~1161s left) :: moving through a mosaic of blunt leaf tips tiled edge to edg
+[dive] frame 211/264 (18.3s/frame, ~967s left) :: moving through a mosaic of blunt leaf tips tiled edge to edg
+[dive] frame 221/264 (18.4s/frame, ~789s left) :: diving straight into an oval breathing pore as it swells to 
+[dive] frame 231/264 (18.2s/frame, ~600s left) :: a hall of leaf cells stacked inside the blade, rows of palis
+[dive] frame 241/264 (18.4s/frame, ~424s left) :: moving through a hall of leaf cells stacked inside the blade
+[dive] frame 251/264 (18.7s/frame, ~243s left) :: diving straight into a lens-shaped emerald chloroplast as it
+[dive] frame 261/264 (19.0s/frame, ~57s left) :: a stack of membrane discs inside a chloroplast, each disc fa
+[dive] frame 264/264 (19.1s/frame, ~0s left) :: a stack of membrane discs inside a chloroplast, each disc fa
+[dive] interpolated 12 -> 24fps (448 frames, loop-bridged) in 47s
+[dive] counter overlay on 448 frames (21 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/pika_larder/v1/pika_larder.mp4 (29274 KB, 18.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/pika_larder/v1/pika_larder_divein.mp4 (29677 KB, 18.7s)
+[dive] done in 5176s
+=== 04:51:55 pika_larder: rendered in 5176s
+  copied pika_larder.mp4 -> review/pika_larder_ds.mp4
+  copied pika_larder_divein.mp4 -> review_divein/pika_larder_ds_divein.mp4
+pika_larder: queued to REVIEW (ds/divein) from v1
+  pika_larder: 5 caption+title pairs (spot=True); theme='A haunting, ethereal melody that swells '
+    [0] A moonlit dance of stone and ice, spiraling into the heart of the unseen 🌙 Can you spot Dora the Flora hiding in the emerald maze? 👀 #FrostSortedSecrets #EmeraldLabyrinth #GlacierToCell #DoraTheFlora #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A moonlit dance of stone and ice, spiraling into the heart of the unseen 🌙
+    [1] Where frost and flora weave a tapestry of silent secrets 🌿 Can you spot Dora the Flora hiding in the emerald maze? 👀 #FrostSortedSecrets #EmeraldLabyrinth #GlacierToCell #DoraTheFlora #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where frost and flora weave a tapestry of silent secrets 🌿
+    [2] Dive into the emerald labyrinth where life hums in the cracks Can you spot Dora the Flora hiding in the emerald maze? 👀 #FrostSortedSecrets #EmeraldLabyrinth #GlacierToCell #DoraTheFlora #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive into the emerald labyrinth where life hums in the cracks
+    [3] A journey through the veins of the world, where light and shadow play Can you spot Dora the Flora hiding in the emerald maze? 👀 #FrostSortedSecrets #EmeraldLabyrinth #GlacierToCell #DoraTheFlora #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A journey through the veins of the world, where light and shadow play
+    [4] From glaciers to cells, the universe unfolds in a dream of detail Can you spot Dora the Flora hiding in the emerald maze? 👀 #FrostSortedSecrets #EmeraldLabyrinth #GlacierToCell #DoraTheFlora #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From glaciers to cells, the universe unfolds in a dream of detail
+=== 04:52:50 pika_larder -> REVIEW (captioned)
+=== 04:52:50 --- garnet_glass ---
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] crystalline  ->  prismatic crystalline light, refractive glass and gemstone facets, jewel tones, ultra-detailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/garnet_glass/v1
+[dive] garnet_glass: 392 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — garnet_grain(sea)[26..49], facet_interior(sea)[58..81], garnet_lattice(lattice)[90..113], nucleus_alpha(sea)[122..145], night_world(surface)[186..209], coast_air(surface)[218..241], harbour_commons(surface)[250..273], wheelhouse(surface)[282..305], sand_glass(surface)[314..337], grain_stream(sea)[346..359]
+[dive] TRACKER v3 ON (272 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of the throat of the glass, countless wine-red grains packed one against another an
+[dive] frame 1/392 (34.0s/frame, ~13305s left) :: moving through the throat of the glass, countless wine-red g
+[dive] frame 11/392 (30.0s/frame, ~11436s left) :: moving through the throat of the glass, countless wine-red g
+[dive] frame 21/392 (27.4s/frame, ~10157s left) :: diving straight into a wine-red garnet grain as it swells to
+[dive] frame 31/392 (25.7s/frame, ~9281s left) :: diving straight into a wine-red garnet grain as it swells to
+[dive] frame 41/392 (22.5s/frame, ~7914s left) :: moving through a bed of garnet crystals heaped in the lower 
+[dive] frame 51/392 (20.9s/frame, ~7128s left) :: moving through a bed of garnet crystals heaped in the lower 
+[dive] frame 61/392 (21.5s/frame, ~7118s left) :: diving straight into a twelve-faced garnet crystal as it swe
+[dive] frame 71/392 (20.3s/frame, ~6504s left) :: the interior of one garnet, a wine-dark hall of crystal comb
+[dive] frame 81/392 (19.3s/frame, ~6003s left) :: moving through the interior of one garnet, a wine-dark hall 
+[dive] frame 91/392 (19.8s/frame, ~5950s left) :: diving straight into a crimson growth band as it swells to f
+[dive] frame 101/392 (19.1s/frame, ~5544s left) :: the atomic framework of almandine garnet opening on every ha
+[dive] frame 111/392 (18.5s/frame, ~5190s left) :: moving through the atomic framework of almandine garnet open
+[dive] frame 121/392 (19.0s/frame, ~5136s left) :: diving straight into a glowing iron atom as it swells to fil
+[dive] frame 131/392 (18.6s/frame, ~4845s left) :: a fat droplet built of glowing spheres crowded rim to rim, i
+[dive] frame 141/392 (18.3s/frame, ~4582s left) :: deep inside a fat droplet built of glowing spheres crowded r
+[dive] frame 151/392 (17.9s/frame, ~4323s left) :: deep inside a fat droplet built of glowing spheres crowded r
+[dive] frame 161/392 (17.6s/frame, ~4076s left) :: the whole view transforming, resolving into two stars sharin
+[dive] frame 171/392 (17.7s/frame, ~3901s left) :: moving through two stars sharing one pinched envelope, a swo
+[dive] frame 181/392 (18.1s/frame, ~3827s left) :: diving straight into a dark ocean world as it swells to fill
+[dive] frame 191/392 (18.2s/frame, ~3653s left) :: diving straight into a dark ocean world as it swells to fill
+[dive] frame 201/392 (18.0s/frame, ~3441s left) :: moving through a night world turned against the dark, its oc
+[dive] frame 211/392 (17.9s/frame, ~3236s left) :: moving through a night world turned against the dark, its oc
+[dive] frame 221/392 (18.0s/frame, ~3078s left) :: diving straight into a lamp-lit coastline as it swells to fi
+[dive] frame 231/392 (17.8s/frame, ~2872s left) :: a rock coast seen obliquely from low over the water, headlan
+[dive] frame 241/392 (17.6s/frame, ~2660s left) :: moving through a rock coast seen obliquely from low over the
+[dive] frame 251/392 (17.9s/frame, ~2521s left) :: diving straight into a wet stone quay as it swells to fill t
+[dive] frame 261/392 (17.7s/frame, ~2322s left) :: the quay at low tide seen from the wharf at the water's rim,
+[dive] frame 271/392 (17.5s/frame, ~2122s left) :: moving through the quay at low tide seen from the wharf at t
+[dive] frame 281/392 (17.7s/frame, ~1969s left) :: diving straight into a lit wheelhouse as it swells to fill t
+[dive] frame 291/392 (17.6s/frame, ~1778s left) :: the wheelhouse of a moored fishing boat at night, seen from 
+[dive] frame 301/392 (17.4s/frame, ~1586s left) :: moving through the wheelhouse of a moored fishing boat at ni
+[dive] frame 311/392 (17.6s/frame, ~1424s left) :: diving straight into a brass-hung sand-glass as it swells to
+[dive] frame 321/392 (17.5s/frame, ~1243s left) :: a half-hour sand-glass hung in its brass gimbal, two bulbs o
+[dive] frame 331/392 (17.3s/frame, ~1058s left) :: moving through a half-hour sand-glass hung in its brass gimb
+[dive] frame 341/392 (17.4s/frame, ~887s left) :: diving straight into a crimson grain thread as it swells to 
+[dive] frame 351/392 (17.4s/frame, ~715s left) :: diving straight into a crimson grain thread as it swells to 
+[dive] frame 361/392 (17.3s/frame, ~538s left) :: moving through the throat of the glass, countless wine-red g
+[dive] frame 371/392 (17.6s/frame, ~369s left) :: moving through the throat of the glass, countless wine-red g
+[dive] frame 381/392 (17.8s/frame, ~195s left) :: diving straight into a wine-red garnet grain as it swells to
+[dive] frame 391/392 (17.9s/frame, ~18s left) :: a bed of garnet crystals heaped in the lower bulb, every sto
+[dive] frame 392/392 (18.0s/frame, ~0s left) :: a bed of garnet crystals heaped in the lower bulb, every sto
+[dive] interpolated 12 -> 24fps (704 frames, loop-bridged) in 73s
+[dive] counter overlay on 704 frames (38 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/garnet_glass/v1/garnet_glass.mp4 (40779 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/garnet_glass/v1/garnet_glass_divein.mp4 (41423 KB, 29.3s)
+[dive] done in 7242s
+=== 06:53:32 garnet_glass: rendered in 7243s
+  copied garnet_glass.mp4 -> review/garnet_glass_ds.mp4
+  copied garnet_glass_divein.mp4 -> review_divein/garnet_glass_ds_divein.mp4
+garnet_glass: queued to REVIEW (ds/divein) from v1
+  garnet_glass: 5 caption+title pairs (spot=True); theme='A haunting, ethereal melody that swells '
+    [0] A timeless dive through the heart of a fishing boat’s soul 🌊✨ Can you spot Lamar the Star hiding in the cosmic glow? 👀 #PowersOfZen #InfiniteJourney #CosmicDive #LamarTheStar #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A timeless dive through the heart of a fishing boat’s soul 🌊✨
+    [1] Where amber light and wine-red grains dance in endless flow Can you spot Lamar the Star hiding in the cosmic glow? 👀 #PowersOfZen #InfiniteJourney #CosmicDive #LamarTheStar #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where amber light and wine-red grains dance in endless flow
+    [2] Crystals whisper secrets in a hall of endless light Can you spot Lamar the Star hiding in the cosmic glow? 👀 #PowersOfZen #InfiniteJourney #CosmicDive #LamarTheStar #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Crystals whisper secrets in a hall of endless light
+    [3] A journey through the veins of the universe, one grain at a time Can you spot Lamar the Star hiding in the cosmic glow? 👀 #PowersOfZen #InfiniteJourney #CosmicDive #LamarTheStar #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A journey through the veins of the universe, one grain at a time
+    [4] From the depths of a garnet to the stars beyond, time loops forever Can you spot Lamar the Star hiding in the cosmic glow? 👀 #PowersOfZen #InfiniteJourney #CosmicDive #LamarTheStar #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From the depths of a garnet to the stars beyond, time loops forever
+=== 06:54:27 garnet_glass -> REVIEW (captioned)
+=== 06:54:27 --- fluorite_stope ---
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] ultraviolet  ->  ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/fluorite_stope/v1
+[dive] fluorite_stope: 150 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — phantom_cubes(sea)[18..29], cleavage_steps(sea)[42..63], fluorite_lattice(lattice)[66..87], vein_crust(surface)[114..125]
+[dive] TRACKER v3 ON (96 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a crusted fluorspar vein at eye level, countless fluorite cubes and octahedra cr
+[dive] frame 1/150 (36.8s/frame, ~5483s left) :: moving through a crusted fluorspar vein at eye level, countl
+[dive] frame 11/150 (27.4s/frame, ~3812s left) :: moving through a crusted fluorspar vein at eye level, countl
+[dive] frame 21/150 (23.4s/frame, ~3018s left) :: diving straight into a violet fluorite cube as it swells to 
+[dive] frame 31/150 (21.4s/frame, ~2545s left) :: moving through the interior of one fluorite crystal, ghost c
+[dive] frame 41/150 (21.6s/frame, ~2356s left) :: diving straight into a triangular cleavage step as it swells
+[dive] frame 51/150 (19.9s/frame, ~1972s left) :: a cleaved plane inside fluorite, triangular terraces steppin
+[dive] frame 61/150 (18.9s/frame, ~1686s left) :: moving through a cleaved plane inside fluorite, triangular t
+[dive] frame 71/150 (18.3s/frame, ~1448s left) :: diving straight into a cube of violet points as it swells to
+[dive] frame 81/150 (17.6s/frame, ~1217s left) :: deep inside the crystal grid within fluorite, a cube of eigh
+[dive] frame 91/150 (17.2s/frame, ~1012s left) :: deep inside the crystal grid within fluorite, a cube of eigh
+[dive] frame 101/150 (16.8s/frame, ~821s left) :: the whole view transforming, resolving into a worked fluorsp
+[dive] frame 111/150 (17.4s/frame, ~679s left) :: diving straight into a blue-violet crystal crust as it swell
+[dive] frame 121/150 (17.4s/frame, ~504s left) :: a crusted fluorspar vein at eye level, countless fluorite cu
+[dive] frame 131/150 (17.5s/frame, ~332s left) :: moving through a crusted fluorspar vein at eye level, countl
+[dive] frame 141/150 (18.0s/frame, ~162s left) :: diving straight into a violet fluorite cube as it swells to 
+[dive] frame 150/150 (18.4s/frame, ~0s left) :: the interior of one fluorite crystal, ghost cubes nested one
+[dive] interpolated 12 -> 24fps (240 frames, loop-bridged) in 23s
+[dive] counter overlay on 240 frames (17 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/fluorite_stope/v1/fluorite_stope.mp4 (16690 KB, 10.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/fluorite_stope/v1/fluorite_stope_divein.mp4 (16968 KB, 10.0s)
+[dive] done in 2835s
+=== 07:41:43 fluorite_stope: rendered in 2835s
+  copied fluorite_stope.mp4 -> review/fluorite_stope_ds.mp4
+  copied fluorite_stope_divein.mp4 -> review_divein/fluorite_stope_ds_divein.mp4
+fluorite_stope: queued to REVIEW (ds/divein) from v1
+  fluorite_stope: 5 caption+title pairs (spot=True); theme='A pulsing, ethereal drone with shimmerin'
+    [0] Diving into the glowing heart of the earth 🌌 Can you spot Dwight the Light in the glow? 👀 #FluorsparDreams #CrystalCosmos #UltravioletMines #GeologicalWonders #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Diving into the glowing heart of the earth 🌌
+    [1] A crystal universe, fractured and infinite ✨ Can you spot Dwight the Light in the glow? 👀 #FluorsparDreams #CrystalCosmos #UltravioletMines #GeologicalWonders #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A crystal universe, fractured and infinite ✨
+    [2] Where light dances on the edges of darkness 💫 Can you spot Dwight the Light in the glow? 👀 #FluorsparDreams #CrystalCosmos #UltravioletMines #GeologicalWonders #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where light dances on the edges of darkness 💫
+    [3] Timber and crystal, a scaffold of the unseen Can you spot Dwight the Light in the glow? 👀 #FluorsparDreams #CrystalCosmos #UltravioletMines #GeologicalWonders #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Timber and crystal, a scaffold of the unseen
+    [4] The grid of atoms hums in the void Can you spot Dwight the Light in the glow? 👀 #FluorsparDreams #CrystalCosmos #UltravioletMines #GeologicalWonders #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The grid of atoms hums in the void
+=== 07:42:29 fluorite_stope -> REVIEW (captioned)
+=== 07:42:29 music pregen: chalk_cellar
+chalk_cellar (divein): bar 2.667s -> 90 bpm, key G minor; lane glass_chapel; generating 8, keeping 5
+♪ generating 30.0s | 90bpm G minor | seed 9563 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 28s -> chalk_cellar_00001_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/chalk_cellar_glass_chapel.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/chalk_cellar/glass_chapel.mp4
+    bar 2.667s | music bar 2.667s (conf 0.55) -> stretch 1.0000 | phase 1.380s | lock 17.57x | kick 0.48 | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [glass_chapel] lock 17.57x conf 0.55 kick 0.48 score 13.48 -> review/music/candidates/chalk_cellar/glass_chapel.mp4
+♪ generating 30.0s | 90bpm G minor | seed 9600 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 19s -> chalk_cellar_00002_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/chalk_cellar_glass_chapel-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/chalk_cellar/glass_chapel-b.mp4
+    bar 2.667s | music bar 2.592s (conf 0.55) -> stretch 0.9720 | phase 1.730s | lock 5.96x | kick 0.22 | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [glass_chapel-b] lock 5.96x conf 0.55 kick 0.21 score 2.90 -> review/music/candidates/chalk_cellar/glass_chapel-b.mp4
+♪ generating 30.0s | 90bpm G minor | seed 9637 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 14s -> chalk_cellar_00003_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/chalk_cellar_glass_chapel-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/chalk_cellar/glass_chapel-third_answer.mp4
+    bar 2.667s | music bar 2.667s (conf 0.65) -> stretch 1.0000 | phase 2.200s | lock 13.51x | kick 0.55 | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [glass_chapel-third_answer] lock 13.51x conf 0.65 kick 0.55 score 12.42 -> review/music/candidates/chalk_cellar/glass_chapel-third_answer.mp4
+♪ generating 30.0s | 90bpm G minor | seed 9674 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 15s -> chalk_cellar_00004_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/chalk_cellar_deep_archive-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/chalk_cellar/deep_archive-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.71) -> stretch 1.0000 | phase 0.010s | lock 10.67x | kick 0.37 | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] lock 10.67x conf 0.71 kick 0.37 score 7.96 -> review/music/candidates/chalk_cellar/deep_archive-wild.mp4
+♪ generating 30.0s | 90bpm G minor | seed 9711 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 13s -> chalk_cellar_00005_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/chalk_cellar_night_market-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/chalk_cellar/night_market-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.80) -> stretch 1.0000 | phase 2.370s | lock 31.08x | kick 0.40 | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [night_market-wild] lock 31.08x conf 0.80 kick 0.40 score 26.41 -> review/music/candidates/chalk_cellar/night_market-wild.mp4
+♪ generating 30.0s | 90bpm G minor | seed 9748 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 15s -> chalk_cellar_00006_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/chalk_cellar_glass_chapel-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/chalk_cellar/glass_chapel-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.78) -> stretch 1.0000 | phase 2.660s | lock 20.59x | kick 0.32 | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [glass_chapel-halftime] lock 20.59x conf 0.78 kick 0.32 score 14.90 -> review/music/candidates/chalk_cellar/glass_chapel-halftime.mp4
+♪ generating 30.0s | 90bpm G minor | seed 9785 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 13s -> chalk_cellar_00007_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/chalk_cellar_analog_dawn-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/chalk_cellar/analog_dawn-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.05) -> stretch 1.0000 | phase 2.660s | lock 3.29x | kick -0.02 | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [analog_dawn-wild] lock 3.29x conf 0.05 kick -0.02 score 0.45 -> review/music/candidates/chalk_cellar/analog_dawn-wild.mp4
+♪ generating 30.0s | 90bpm G minor | seed 9822 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 15s -> chalk_cellar_00008_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/chalk_cellar_glass_chapel-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/chalk_cellar/glass_chapel-heartbeat.mp4
+    bar 2.667s | music bar 2.432s (conf -0.03) -> stretch 1.0000 | phase 2.580s | lock 9.32x | kick 0.00 | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [glass_chapel-heartbeat] lock 9.32x conf -0.03 kick 0.00 score 1.17 -> review/music/candidates/chalk_cellar/glass_chapel-heartbeat.mp4
+kept: night_market-wild, glass_chapel-halftime, glass_chapel, deep_archive-wild, analog_dawn-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 07:44:54 music pregen: pika_larder
+pika_larder (divein): bar 2.667s -> 90 bpm, key E minor; lane aurora_strings; generating 8, keeping 5
+♪ generating 22.0s | 90bpm E minor | seed 24086 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 18s -> pika_larder_00001_.flac (0.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/pika_larder_aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/pika_larder/aurora_strings.mp4
+    bar 2.667s | music bar 2.411s (conf -0.01) -> stretch 1.0000 | phase 0.050s | lock 14.09x | kick 0.02 | seamless loop @ 18.67s (music tiled x1, xf 0.50s)
+  [aurora_strings] lock 14.09x conf -0.01 kick 0.02 score 1.92 -> review/music/candidates/pika_larder/aurora_strings.mp4
+♪ generating 22.0s | 90bpm E minor | seed 24123 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 12s -> pika_larder_00002_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/pika_larder_aurora_strings-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/pika_larder/aurora_strings-b.mp4
+    bar 2.667s | music bar 2.432s (conf -0.03) -> stretch 1.0000 | phase 1.430s | lock 16.10x | kick -0.02 | seamless loop @ 18.67s (music tiled x2, xf 0.50s)
+  [aurora_strings-b] lock 16.10x conf -0.03 kick -0.02 score 2.01 -> review/music/candidates/pika_larder/aurora_strings-b.mp4
+♪ generating 22.0s | 90bpm E minor | seed 24160 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 11s -> pika_larder_00003_.flac (1.0 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/pika_larder_aurora_strings-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/pika_larder/aurora_strings-third_answer.mp4
+    bar 2.667s | music bar 2.667s (conf 0.51) -> stretch 1.0000 | phase 0.050s | lock 25.67x | kick 0.38 | seamless loop @ 18.67s (music tiled x1, xf 0.50s)
+  [aurora_strings-third_answer] lock 25.67x conf 0.51 kick 0.38 score 16.33 -> review/music/candidates/pika_larder/aurora_strings-third_answer.mp4
+♪ generating 22.0s | 90bpm E minor | seed 24197 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 12s -> pika_larder_00004_.flac (0.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/pika_larder_wooden_orbit-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/pika_larder/wooden_orbit-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.33) -> stretch 1.0000 | phase 0.140s | lock 16.55x | kick 0.32 | seamless loop @ 18.67s (music tiled x1, xf 0.50s)
+  [wooden_orbit-wild] lock 16.55x conf 0.33 kick 0.32 score 7.84 -> review/music/candidates/pika_larder/wooden_orbit-wild.mp4
+♪ generating 22.0s | 90bpm E minor | seed 24234 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 10s -> pika_larder_00005_.flac (1.0 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/pika_larder_deep_archive-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/pika_larder/deep_archive-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.64) -> stretch 1.0000 | phase 0.060s | lock 12.16x | kick 0.20 | seamless loop @ 18.67s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] lock 12.16x conf 0.64 kick 0.20 score 6.25 -> review/music/candidates/pika_larder/deep_archive-wild.mp4
+♪ generating 22.0s | 90bpm E minor | seed 24271 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 12s -> pika_larder_00006_.flac (0.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/pika_larder_aurora_strings-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/pika_larder/aurora_strings-halftime.mp4
+    bar 2.667s | music bar 2.891s (conf -0.04) -> stretch 1.0000 | phase 0.020s | lock 8.70x | kick -0.03 | seamless loop @ 18.67s (music tiled x2, xf 0.50s)
+  [aurora_strings-halftime] lock 8.70x conf -0.04 kick -0.03 score 1.09 -> review/music/candidates/pika_larder/aurora_strings-halftime.mp4
+♪ generating 22.0s | 90bpm E minor | seed 24308 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> pika_larder_00007_.flac (0.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/pika_larder_music_box-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/pika_larder/music_box-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.31) -> stretch 1.0000 | phase 2.270s | lock 5.20x | kick 0.01 | seamless loop @ 18.67s (music tiled x1, xf 0.50s)
+  [music_box-wild] lock 5.20x conf 0.31 kick 0.01 score 1.10 -> review/music/candidates/pika_larder/music_box-wild.mp4
+♪ generating 22.0s | 90bpm E minor | seed 24345 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 12s -> pika_larder_00008_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/pika_larder_aurora_strings-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/pika_larder/aurora_strings-heartbeat.mp4
+    bar 2.667s | music bar 2.656s (conf 0.34) -> stretch 0.9960 | phase 0.720s | lock 4.77x | kick 0.33 | seamless loop @ 18.67s (music tiled x2, xf 0.50s)
+  [aurora_strings-heartbeat] lock 4.77x conf 0.34 kick 0.33 score 2.34 -> review/music/candidates/pika_larder/aurora_strings-heartbeat.mp4
+♪ generating 22.0s | 90bpm E minor | seed 24446 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 12s -> pika_larder_00009_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/pika_larder_pulse1-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/pika_larder/pulse1-aurora_strings.mp4
+    bar 2.667s | music bar 2.667s (conf 0.65) -> stretch 1.0000 | phase 0.050s | lock 52.82x | kick 0.70 | seamless loop @ 18.67s (music tiled x1, xf 0.50s)
+  [pulse1-aurora_strings] kick 0.70 (top-up 1)
+♪ generating 22.0s | 90bpm E minor | seed 24547 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> pika_larder_00010_.flac (0.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/pika_larder_pulse2-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/pika_larder/pulse2-aurora_strings.mp4
+    bar 2.667s | music bar 2.667s (conf 0.07) -> stretch 1.0000 | phase 0.050s | lock 29.49x | kick -0.01 | seamless loop @ 18.67s (music tiled x1, xf 0.50s)
+  [pulse2-aurora_strings] kick -0.01 (top-up 2)
+♪ generating 22.0s | 90bpm E minor | seed 24648 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 12s -> pika_larder_00011_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/pika_larder_pulse3-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/pika_larder/pulse3-aurora_strings.mp4
+    bar 2.667s | music bar 2.656s (conf 0.10) -> stretch 1.0000 | phase 0.570s | lock 19.02x | kick 0.13 | seamless loop @ 18.67s (music tiled x1, xf 0.50s)
+  [pulse3-aurora_strings] kick 0.13 (top-up 3)
+kept: pulse1-aurora_strings, aurora_strings-third_answer, wooden_orbit-wild, deep_archive-wild, music_box-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 07:47:26 music pregen: garnet_glass
+garnet_glass (divein): bar 2.667s -> 90 bpm, key B minor; lane music_box; generating 8, keeping 5
+♪ generating 33.0s | 90bpm B minor | seed 26616 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 23s -> garnet_glass_00001_.flac (2.0 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/garnet_glass_music_box.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/garnet_glass/music_box.mp4
+    bar 2.667s | music bar 2.667s (conf 0.83) -> stretch 1.0000 | phase 0.030s | lock 16.82x | kick 0.71 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [music_box] lock 16.82x conf 0.83 kick 0.71 score 21.46 -> review/music/candidates/garnet_glass/music_box.mp4
+♪ generating 33.0s | 90bpm B minor | seed 26653 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 17s -> garnet_glass_00002_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/garnet_glass_music_box-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/garnet_glass/music_box-b.mp4
+    bar 2.667s | music bar 2.667s (conf 0.40) -> stretch 1.0000 | phase 0.410s | lock 10.80x | kick 0.21 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [music_box-b] lock 10.80x conf 0.40 kick 0.20 score 4.43 -> review/music/candidates/garnet_glass/music_box-b.mp4
+♪ generating 33.0s | 90bpm B minor | seed 26690 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 19s -> garnet_glass_00003_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/garnet_glass_music_box-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/garnet_glass/music_box-third_answer.mp4
+    bar 2.667s | music bar 2.667s (conf 0.64) -> stretch 1.0000 | phase 1.000s | lock 19.69x | kick 0.27 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [music_box-third_answer] lock 19.69x conf 0.64 kick 0.27 score 11.63 -> review/music/candidates/garnet_glass/music_box-third_answer.mp4
+♪ generating 33.0s | 90bpm B minor | seed 26727 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 17s -> garnet_glass_00004_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/garnet_glass_deep_archive-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/garnet_glass/deep_archive-wild.mp4
+    bar 2.667s | music bar 2.549s (conf 0.15) -> stretch 0.9700 | phase 0.470s | lock 2.49x | kick 0.25 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] lock 2.49x conf 0.15 kick 0.25 score 0.82 -> review/music/candidates/garnet_glass/deep_archive-wild.mp4
+♪ generating 33.0s | 90bpm B minor | seed 26764 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 17s -> garnet_glass_00005_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/garnet_glass_night_market-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/garnet_glass/night_market-wild.mp4
+    bar 2.667s | music bar 2.656s (conf 0.27) -> stretch 0.9960 | phase 2.590s | lock 13.64x | kick 0.22 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [night_market-wild] lock 13.64x conf 0.27 kick 0.22 score 4.98 -> review/music/candidates/garnet_glass/night_market-wild.mp4
+♪ generating 33.0s | 90bpm B minor | seed 26801 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 19s -> garnet_glass_00006_.flac (1.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/garnet_glass_music_box-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/garnet_glass/music_box-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.82) -> stretch 1.0000 | phase 0.040s | lock 16.73x | kick 0.47 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [music_box-halftime] lock 16.73x conf 0.82 kick 0.47 score 15.94 -> review/music/candidates/garnet_glass/music_box-halftime.mp4
+♪ generating 33.0s | 90bpm B minor | seed 26838 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 17s -> garnet_glass_00007_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/garnet_glass_analog_dawn-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/garnet_glass/analog_dawn-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.74) -> stretch 1.0000 | phase 2.400s | lock 10.28x | kick 0.60 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [analog_dawn-wild] lock 10.28x conf 0.74 kick 0.60 score 10.81 -> review/music/candidates/garnet_glass/analog_dawn-wild.mp4
+♪ generating 33.0s | 68bpm B minor | seed 26875 steps 8
+  tags: a gently lilting waltz in 3/4 time, all percussion is a single deep soft kick drum landing...
+  done in 19s -> garnet_glass_00008_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/garnet_glass_waltz-music_box.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/garnet_glass/waltz-music_box.mp4
+    bar 2.667s | music bar 2.645s (conf 0.17) -> stretch 0.9920 | phase 0.460s | lock 9.29x | kick 0.00 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [waltz-music_box] lock 9.29x conf 0.17 kick 0.00 score 1.58 -> review/music/candidates/garnet_glass/waltz-music_box.mp4
+kept: music_box, music_box-halftime, analog_dawn-wild, night_market-wild, deep_archive-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 07:50:06 music pregen: fluorite_stope
+fluorite_stope (divein): bar 2.000s -> 120 bpm, key F# minor; lane ember_pulse; generating 8, keeping 5
+♪ generating 13.0s | 120bpm F# minor | seed 17299 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 14s -> fluorite_stope_00001_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/fluorite_stope_ember_pulse.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fluorite_stope/ember_pulse.mp4
+    bar 2.000s | music bar 1.824s (conf -0.01) -> stretch 1.0000 | phase 1.530s | lock 11.27x | kick -0.00 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [ember_pulse] lock 11.27x conf -0.01 kick -0.00 score 1.41 -> review/music/candidates/fluorite_stope/ember_pulse.mp4
+♪ generating 13.0s | 120bpm F# minor | seed 17336 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 8s -> fluorite_stope_00002_.flac (0.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/fluorite_stope_ember_pulse-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fluorite_stope/ember_pulse-b.mp4
+    bar 2.000s | music bar 1.792s (conf -0.16) -> stretch 1.0000 | phase 1.260s | lock 3.66x | kick -0.14 | seamless loop @ 10.00s (music tiled x6, xf 0.50s)
+  [ember_pulse-b] lock 3.66x conf -0.16 kick -0.14 score 0.46 -> review/music/candidates/fluorite_stope/ember_pulse-b.mp4
+♪ generating 13.0s | 120bpm F# minor | seed 17373 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 8s -> fluorite_stope_00003_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/fluorite_stope_ember_pulse-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fluorite_stope/ember_pulse-heartbeat.mp4
+    bar 2.000s | music bar 1.995s (conf 0.45) -> stretch 0.9973 | phase 0.520s | lock 9.24x | kick 0.21 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-heartbeat] lock 9.24x conf 0.45 kick 0.21 score 4.01 -> review/music/candidates/fluorite_stope/ember_pulse-heartbeat.mp4
+♪ generating 13.0s | 120bpm F# minor | seed 17410 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 8s -> fluorite_stope_00004_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/fluorite_stope_aurora_strings-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fluorite_stope/aurora_strings-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.33) -> stretch 1.0027 | phase 1.550s | lock 8.21x | kick -0.10 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [aurora_strings-wild] lock 8.21x conf 0.33 kick -0.10 score 1.70 -> review/music/candidates/fluorite_stope/aurora_strings-wild.mp4
+♪ generating 13.0s | 120bpm F# minor | seed 17447 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 9s -> fluorite_stope_00005_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/fluorite_stope_glass_chapel-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fluorite_stope/glass_chapel-wild.mp4
+    bar 2.000s | music bar 2.005s (conf -0.05) -> stretch 1.0000 | phase 1.620s | lock 7.70x | kick -0.05 | seamless loop @ 10.00s (music tiled x1, xf 0.50s)
+  [glass_chapel-wild] lock 7.70x conf -0.05 kick -0.05 score 0.96 -> review/music/candidates/fluorite_stope/glass_chapel-wild.mp4
+♪ generating 13.0s | 120bpm F# minor | seed 17484 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 8s -> fluorite_stope_00006_.flac (0.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/fluorite_stope_ember_pulse-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fluorite_stope/ember_pulse-halftime.mp4
+    bar 2.000s | music bar 1.824s (conf -0.04) -> stretch 1.0000 | phase 0.030s | lock 27.86x | kick -0.03 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-halftime] lock 27.86x conf -0.04 kick -0.03 score 3.48 -> review/music/candidates/fluorite_stope/ember_pulse-halftime.mp4
+♪ generating 13.0s | 120bpm F# minor | seed 17521 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 7s -> fluorite_stope_00007_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/fluorite_stope_tide_organ-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fluorite_stope/tide_organ-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.13) -> stretch 1.0027 | phase 0.000s | lock 8.61x | kick 0.00 | seamless loop @ 10.00s (music tiled x1, xf 0.50s)
+  [tide_organ-wild] lock 8.61x conf 0.13 kick 0.00 score 1.36 -> review/music/candidates/fluorite_stope/tide_organ-wild.mp4
+♪ generating 13.0s | 120bpm F# minor | seed 17558 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 9s -> fluorite_stope_00008_.flac (0.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/fluorite_stope_ember_pulse-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fluorite_stope/ember_pulse-third_answer.mp4
+    bar 2.000s | music bar 1.803s (conf -0.01) -> stretch 1.0000 | phase 1.030s | lock 59.23x | kick -0.00 | seamless loop @ 10.00s (music tiled x3, xf 0.50s)
+  [ember_pulse-third_answer] lock 59.23x conf -0.01 kick -0.01 score 7.40 -> review/music/candidates/fluorite_stope/ember_pulse-third_answer.mp4
+♪ generating 13.0s | 120bpm F# minor | seed 17659 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 8s -> fluorite_stope_00009_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/fluorite_stope_pulse1-ember_pulse.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fluorite_stope/pulse1-ember_pulse.mp4
+    bar 2.000s | music bar 1.995s (conf 0.49) -> stretch 0.9973 | phase 1.040s | lock 20.64x | kick -0.09 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [pulse1-ember_pulse] kick -0.09 (top-up 1)
+♪ generating 13.0s | 120bpm F# minor | seed 17760 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 7s -> fluorite_stope_00010_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/fluorite_stope_pulse2-ember_pulse.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fluorite_stope/pulse2-ember_pulse.mp4
+    bar 2.000s | music bar 1.995s (conf 0.11) -> stretch 0.9973 | phase 0.030s | lock 16.81x | kick 0.04 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [pulse2-ember_pulse] kick 0.04 (top-up 2)
+♪ generating 13.0s | 120bpm F# minor | seed 17861 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 8s -> fluorite_stope_00011_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/fluorite_stope_pulse3-ember_pulse.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fluorite_stope/pulse3-ember_pulse.mp4
+    bar 2.000s | music bar 2.005s (conf 0.25) -> stretch 1.0027 | phase 0.020s | lock 7.98x | kick 0.01 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [pulse3-ember_pulse] kick 0.01 (top-up 3)
+kept: ember_pulse-third_answer, pulse1-ember_pulse, aurora_strings-wild, tide_organ-wild, glass_chapel-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 07:51:54 batch done in 6.4h — 4 to Review
+=== 07:51:54 ComfyUI models unloaded — VRAM freed
+=== 07:51:54 log: outbox/night_batch_0902_013001.log

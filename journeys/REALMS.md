@@ -66,6 +66,9 @@ cosmic web filaments and voids · supercluster knot seen as a glowing node · vo
 lensing arcs around a cluster · cosmic microwave mottling as a textured sky-shell ·
 baryon-acoustic ripple shells · dark-matter scaffold (blue ghost-lattice threaded with
 bright galaxies)
+Added 2026-08-31: the intercluster bridge — ONE filament strung between two cluster knots,
+galaxies beaded down its length, the rope slowly twisting (filaments measurably rotate);
+looked ALONG from one knot toward the other (rope ↔ rope with the subnuclear gluon flux tube)
 
 ## 10¹⁴–10²² · galactic `[amb]`/`[obl]`
 tilted spiral galaxy · barred spiral with a glowing bar · ragged irregular dwarf galaxy ·
@@ -126,6 +129,14 @@ rippling in waves · mitochondrial interior (cristae canyon folds) · nuclear po
 studding a vast envelope wall · amoeba engulfing prey in slow motion · biofilm city domes ·
 bone osteon growth rings · muscle fiber cable bundle · leaf vein aqueduct junction ·
 yeast colony budding towers · paramecium harbor traffic
+Added 2026-08-31 (picture-first, unused): cork honeycomb — Hooke's original "cells": a froth
+of hollow dead boxes in radial files, walls waxy, every chamber empty (the cellular card for
+any bark/cork dive; dead tissue is still tissue) · peltate shield-scale — a bromeliad blade's
+water-drinking trichome: a wheel of radiating dead cells around a living stalk, thousands
+tiled over the blade like silver umbrellas · rhizosphere swarm — rod-shaped bacteria with
+corkscrew tails crowding a root hair's surface among soil grains as big as boulders ·
+seagrass lacunae — a blade's interior as long gas-filled galleries walled by files of green
+cells (the plant's own snorkel)
 (mineral/made parents at this scale use grain/fiber/pigment archetypes instead — see rule.)
 
 ## 10⁻⁸·⁵–10⁻⁶ · molecular `[amb]` — EMPTY TODAY (0 cards with molecular machinery)
@@ -143,6 +154,34 @@ a membrane · cellulose cable bundle (for plant/paper dives) · virus capsid geo
 chlorophyll antenna array funneling light · ice lattice hexagon galleries (for water/ice
 dives) · enzyme lock accepting its key substrate · microtubule highway with walking motor
 proteins · sugar-glass amorphous tangle (for candy/glass dives)
+Added 2026-08-28 (picture-first, all unused in the catalog): nucleosome bead-string —
+the DNA cord wound twice around spool after spool, a string of beads coiling into a
+thicker rope (the chromosome's own wiring) · hemocyanin copper barrels — hexagonal
+protein barrels drifting in plasma, each cored by a pair of copper points glowing blue
+when loaded (horseshoe crabs, octopus, snails: blue blood) · aquaporin water gates —
+hourglass-shaped pores studding a membrane, water passing single-file as a bead-chain
+through each · the flagellar rotary motor — a stacked-ring turbine set in the cell wall
+spinning a corkscrew tail · clathrin cages — soccer-ball geodesic baskets budding off a
+membrane · gas vesicles — hollow ribbed protein spindles packed in a cyanobacterium ·
+spectrin mesh — a geodesic net of springs under a red cell's skin
+Added 2026-08-29 (picture-first, unused): alginate egg-box — the brown-alga cell wall as
+parallel polymer chains zipped side by side by calcium beads seated in the pockets between
+them (an egg carton of beads, chains as the rows) · cocoa-butter tempered lamellae — fat
+molecules shaped as three-pronged tuning forks stacked in tidy triple-length layers, the
+"temper" of chocolate (a fat/food dive's molecular card; layered variant) · rhodopsin discs —
+inside a retinal rod, a stack of a thousand membrane discs, each disc tiled with seven-helix
+barrels and a bent zigzag chain seated in every barrel (the pigment that catches one photon)
+· magnetosome chain — a bacterium's compass: a single-file chain of magnetite crystal cubes
+strung inside the cell like beads · ferritin cages — hollow spherical protein shells each
+holding a rust core, drifting as a sea of iron-cored beads
+Added 2026-08-31 (picture-first, unused): suberin lamellae — a cork cell wall in section:
+alternating waxy pale and dense charcoal layers, long fatty chains laid side by side within
+each waxy band (cork's waterproofing; a layered molecular card with a real name) · Rubisco
+knots — the most abundant protein on Earth, in every green cell: eight fat ribbon-knots
+joined into one round cluster, each knot a chain looped back on itself in tight coils (a
+meander at molecular scale; write the picture, the name alone renders nothing) · NOTE the
+flagellar rotary motor (08-28) is still unused — it is turned by PROTONS, so its honest next
+card is a hydrogen atom and then the proton's interior (subnuclear)
 
 ## 10⁻¹²–10⁻⁸·⁵ · atomic `[amb]`
 Name the REAL lattice per parent: quartz spiral chains · calcite rhombs · ice hexagons ·
@@ -159,6 +198,23 @@ nucleus as a shivering droplet of glowing spheres · quark trio bound by gluon l
 flickering) · neutrino streaking through untouched matter · spacetime lattice warp around
 a mass point · nuclear pasta at the floor of density (nucleons kneaded together and fused
 into woven glowing sheets and strands — matter itself as a braid; the deepest weave there is)
+Added 2026-08-28: alpha emission — a fat shivering droplet of glowing spheres pinching
+off a tight four-bead cluster that streaks away leaving a straight lit track · the gluon
+flux tube — a taut rope of light strung between two glowing points, stretching until it
+snaps into two new pairs (string-breaking, pictured as rope-and-beads) · pair-production
+cascade — one track forking into two, each forking again, a fir-tree of lit branches
+widening downward · two-lobed probability cloud — an electron's dumbbell of fog, two
+soft lobes pinched at a waist (a bipolar shape the stellar band also owns)
+Added 2026-08-29: the Coulomb crystal — bare nuclei (no electron shells left) frozen into a
+perfect cubic lattice of glowing points in a haze of free electrons; this IS the interior of
+a crystallizing white dwarf, so it seams to the stellar band's "diamond star" at 10⁷ as the
+same crystal at two scales · the quark-gluon droplet — a fireball in which the quark trios
+have melted into one seething fluid of loose sparks and light-strands, no bound triplets
+anywhere (a fluid, not a lattice — the opposite picture to the Coulomb crystal)
+Added 2026-08-31: the halo nucleus — a dense droplet of glowing spheres wrapped in an
+enormous faint fog-shell many times wider than the core, two loose spheres drifting far out
+in it (real: lithium-11's neutron halo) — the same core-and-envelope picture as a galaxy in
+its dark halo, so it seams to the cosmic-web band's nested-halo froth as halo ↔ halo
 
 ---
 
@@ -175,3 +231,19 @@ kelp forest · mangrove nursery · tide pool · cloud forest canopy · peat bog 
 savanna · alpine scree with cushion plants · cenote shaft · hydrothermal vent colony ·
 whale-fall community · desert after rain bloom · bamboo grove · salt marsh · under-ice
 plankton bloom · rooftop moss micro-prairie · hedgerow corridor · river headwater riffle
+Added 2026-08-28 (unused): vernal pool at night (fairy shrimp, wood-frog spawn, spotted
+salamander larvae, water boatmen) · horseshoe-crab spawning beach under a full moon
+(horseshoe crabs, red knots, laughing gulls, ghost crabs) · salmon-falls plunge pool
+(leaping sockeye, a brown bear on the lip, gulls, an eagle in the snag) · saguaro bajada
+at night (elf owls in trunk holes, nectar bats at the blooms, javelina, a gila monster) ·
+sargassum raft (sargassum fish, hatchling turtles, shrimp, crabs) · cypress swamp at
+night (alligator eyeshine, barred owl, bullfrogs, fireflies) · seagrass meadow (dugong,
+seahorses, cuttlefish, pipefish) · urchin barren (purple urchins, sunflower star, wolf
+eel, sculpins) · bromeliad tank (tree-frog tadpoles, damselfly nymphs, a tank crab)
+Added 2026-08-29 (unused): cacao understory at night (pollinating midges at the trunk
+flowers, tree frogs on the pods, a kinkajou, leaf-cutter ants trooping) · cork-oak dehesa at
+dusk (Iberian pigs under the oaks, a hoopoe, azure-winged magpies, a genet) · prairie-dog
+town (prairie dogs, burrowing owls, bison, a rattlesnake, a ferret) · fluorspar mine
+gallery under a UV lamp (made variant: a tri-colored bat on the timbers, cave crickets on
+the rail, a salamander in the sump) · locust swarm over sorghum (locusts, hobbies hawking
+them, a jackal, a marabou stork)

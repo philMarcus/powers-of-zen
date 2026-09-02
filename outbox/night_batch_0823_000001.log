@@ -1,0 +1,745 @@
+=== 00:00:01 batch start [LLLLSS] — 6 journeys: whale_fall_republic lantern_mangrove cobalt_rookery ruby_furnace magnetite_choir wild_yeast
+=== 00:00:01 --- whale_fall_republic ---
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] parallax gain (random draw): 0.8
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/whale_fall_republic/v4
+[dive] whale_fall_republic: 352 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — ocean_world(surface)[26..49], sea_surface(surface)[58..81], whale_fall(surface)[90..113], bone_arch(surface)[122..145], osteon(sea)[154..177], marrow(sea)[186..209], collagen(sea)[218..241], apatite(lattice)[250..263], atom_fog(sea)[282..305]
+[dive] TRACKER v3 ON (224 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of the ruins of a dead star hanging in torn lacework shells of cyan and violet gas,
+[dive] frame 1/352 (48.9s/frame, ~17173s left) :: moving through the ruins of a dead star hanging in torn lace
+[dive] frame 11/352 (39.1s/frame, ~13339s left) :: moving through the ruins of a dead star hanging in torn lace
+[dive] frame 21/352 (35.4s/frame, ~11718s left) :: diving straight into a blue ocean planet as it swells to fil
+[dive] frame 31/352 (32.8s/frame, ~10533s left) :: diving straight into a blue ocean planet as it swells to fil
+[dive] frame 41/352 (28.1s/frame, ~8730s left) :: moving through an ocean world turned night side outward agai
+[dive] frame 51/352 (25.7s/frame, ~7740s left) :: moving through an ocean world turned night side outward agai
+[dive] frame 61/352 (26.5s/frame, ~7706s left) :: diving straight into a bright patch of silver moonlight as i
+[dive] frame 71/352 (24.6s/frame, ~6907s left) :: the open ocean at night seen from high above, long swells ru
+[dive] frame 81/352 (23.1s/frame, ~6269s left) :: moving through the open ocean at night seen from high above,
+[dive] frame 91/352 (24.3s/frame, ~6343s left) :: diving straight into a dark still pool of water as it swells
+[dive] frame 101/352 (23.2s/frame, ~5811s left) :: the abyssal floor in black water, a whale's stripped skeleto
+[dive] frame 111/352 (22.2s/frame, ~5354s left) :: moving through the abyssal floor in black water, a whale's s
+[dive] frame 121/352 (22.8s/frame, ~5272s left) :: diving straight into a tall arch of ivory bone as it swells 
+[dive] frame 131/352 (22.2s/frame, ~4914s left) :: low among the rib arches, tall ivory bones curving up on eit
+[dive] frame 141/352 (21.7s/frame, ~4572s left) :: moving through low among the rib arches, tall ivory bones cu
+[dive] frame 151/352 (22.0s/frame, ~4416s left) :: diving straight into a black bore hole as it swells to fill 
+[dive] frame 161/352 (21.8s/frame, ~4159s left) :: inside the bone, ivory growth rings wound ring within ring a
+[dive] frame 171/352 (21.5s/frame, ~3885s left) :: moving through inside the bone, ivory growth rings wound rin
+[dive] frame 181/352 (21.3s/frame, ~3642s left) :: diving straight into a wide dark hollow as it swells to fill
+[dive] frame 191/352 (21.4s/frame, ~3442s left) :: diving straight into a wide dark hollow as it swells to fill
+[dive] frame 201/352 (21.2s/frame, ~3196s left) :: moving through a marrow chamber walled by bone, round cells 
+[dive] frame 211/352 (21.0s/frame, ~2954s left) :: moving through a marrow chamber walled by bone, round cells 
+[dive] frame 221/352 (21.1s/frame, ~2768s left) :: diving straight into a pale twisted fiber as it swells to fi
+[dive] frame 231/352 (20.9s/frame, ~2531s left) :: the molecular scaffolding of bone, three-strand ropes twiste
+[dive] frame 241/352 (20.6s/frame, ~2284s left) :: moving through the molecular scaffolding of bone, three-stra
+[dive] frame 251/352 (21.0s/frame, ~2124s left) :: diving straight into a blue-white mineral plate as it swells
+[dive] frame 261/352 (20.9s/frame, ~1899s left) :: the apatite lattice that hardens bone, hexagonal cells repea
+[dive] frame 271/352 (21.1s/frame, ~1710s left) :: moving through the apatite lattice that hardens bone, hexago
+[dive] frame 281/352 (21.7s/frame, ~1537s left) :: diving straight into a glowing white bead as it swells to fi
+[dive] frame 291/352 (21.4s/frame, ~1308s left) :: a fog of dim light-grains with no surface anywhere, faint pa
+[dive] frame 301/352 (21.2s/frame, ~1079s left) :: deep inside a fog of dim light-grains with no surface anywhe
+[dive] frame 311/352 (21.0s/frame, ~859s left) :: deep inside a fog of dim light-grains with no surface anywhe
+[dive] frame 321/352 (20.7s/frame, ~642s left) :: the whole view transforming, resolving into a spiral galaxy 
+[dive] frame 331/352 (20.6s/frame, ~432s left) :: moving through a spiral galaxy turned three-quarters against
+[dive] frame 341/352 (20.5s/frame, ~226s left) :: diving straight into torn lacework shells of cyan and violet
+[dive] frame 351/352 (20.6s/frame, ~21s left) :: diving straight into torn lacework shells of cyan and violet
+[dive] frame 352/352 (20.6s/frame, ~0s left) :: diving straight into torn lacework shells of cyan and violet
+[dive] interpolated 12 -> 24fps (704 frames, loop-bridged) in 72s
+[dive] counter overlay on 704 frames (38 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/whale_fall_republic/v4/whale_fall_republic.mp4 (40874 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/whale_fall_republic/v4/whale_fall_republic_divein.mp4 (41472 KB, 29.3s)
+[dive] done in 7444s
+=== 02:04:05 whale_fall_republic: rendered in 7444s
+  copied whale_fall_republic.mp4 -> review/whale_fall_republic_ds.mp4
+  copied whale_fall_republic_divein.mp4 -> review_divein/whale_fall_republic_ds_divein.mp4
+whale_fall_republic: queued to REVIEW (ds/divein) from v4
+  whale_fall_republic: 5 caption+title pairs (spot=True); theme='A slow, swelling symphony of deep ocean '
+    [0] A silver path of moonlight leads to the abyss... and beyond. 🌊 Can you spot Adam the Atom hiding in the cosmic dance? 👀 #BioluminescentDreams #CosmicBoneVoyage #InfiniteZoom #WhaleSkeletonGalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A silver path of moonlight leads to the abyss... and beyond. 🌊
+    [1] Bones whisper secrets in the dark, where life thrives in the cracks. 🦀 Can you spot Adam the Atom hiding in the cosmic dance? 👀 #BioluminescentDreams #CosmicBoneVoyage #InfiniteZoom #WhaleSkeletonGalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Bones whisper secrets in the dark, where life thrives in the cracks. 🦀
+    [2] Dive deeper—where time and space dissolve into light. ✨ Can you spot Adam the Atom hiding in the cosmic dance? 👀 #BioluminescentDreams #CosmicBoneVoyage #InfiniteZoom #WhaleSkeletonGalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive deeper—where time and space dissolve into light. ✨
+    [3] The galaxy hums in the hollows of a whale’s bones. 🌌 Can you spot Adam the Atom hiding in the cosmic dance? 👀 #BioluminescentDreams #CosmicBoneVoyage #InfiniteZoom #WhaleSkeletonGalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The galaxy hums in the hollows of a whale’s bones. 🌌
+    [4] A loop of wonder, where the infinite folds into itself. 🌀 Can you spot Adam the Atom hiding in the cosmic dance? 👀 #BioluminescentDreams #CosmicBoneVoyage #InfiniteZoom #WhaleSkeletonGalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A loop of wonder, where the infinite folds into itself. 🌀
+=== 02:05:03 whale_fall_republic -> REVIEW (captioned)
+=== 02:05:03 --- lantern_mangrove ---
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] parallax gain (random draw): 0.7
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v3
+[dive] lantern_mangrove: 280 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — tidal_coast(surface)[22..44], root_nursery(surface)[50..72], waterline(surface)[78..100], plankton_drift(sea)[106..128], glass_shells(sea)[134..156], cell_interior(sea)[162..184], antenna_array(sea)[190..202], silica_network(lattice)[218..240]
+[dive] TRACKER v3 ON (175 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of the night side of a dark ocean world seen from low orbit, the curve of the world
+[dive] frame 1/280 (31.6s/frame, ~8819s left) :: moving through the night side of a dark ocean world seen fro
+[dive] frame 11/280 (28.6s/frame, ~7698s left) :: moving through the night side of a dark ocean world seen fro
+[dive] frame 21/280 (26.9s/frame, ~6969s left) :: diving straight into a glowing green coast as it swells to f
+[dive] frame 31/280 (24.1s/frame, ~5991s left) :: a mangrove coast seen from low above at night, black tidal c
+[dive] frame 41/280 (21.3s/frame, ~5095s left) :: moving through a mangrove coast seen from low above at night
+[dive] frame 51/280 (21.2s/frame, ~4852s left) :: diving straight into a black tidal channel as it swells to f
+[dive] frame 61/280 (20.0s/frame, ~4388s left) :: a mangrove nursery at night seen at eye level just above the
+[dive] frame 71/280 (19.0s/frame, ~3971s left) :: moving through a mangrove nursery at night seen at eye level
+[dive] frame 81/280 (19.1s/frame, ~3808s left) :: diving straight into a flat patch of black water as it swell
+[dive] frame 91/280 (18.6s/frame, ~3513s left) :: the waterline of the mangrove shallows seen edge-on, the fla
+[dive] frame 101/280 (18.0s/frame, ~3227s left) :: diving straight into a cloudy green bloom as it swells to fi
+[dive] frame 111/280 (18.5s/frame, ~3118s left) :: diving straight into a cloudy green bloom as it swells to fi
+[dive] frame 121/280 (18.1s/frame, ~2881s left) :: moving through inside the green water among a crowd of plank
+[dive] frame 131/280 (18.0s/frame, ~2682s left) :: diving straight into a ribbed glass disc as it swells to fil
+[dive] frame 141/280 (18.0s/frame, ~2505s left) :: ornate glass shells adrift at every depth, pillbox discs sta
+[dive] frame 151/280 (17.8s/frame, ~2299s left) :: moving through ornate glass shells adrift at every depth, pi
+[dive] frame 161/280 (18.0s/frame, ~2139s left) :: diving straight into a dark green cell as it swells to fill 
+[dive] frame 171/280 (17.9s/frame, ~1948s left) :: inside one diatom, golden-brown chloroplast slabs stacked fl
+[dive] frame 181/280 (17.6s/frame, ~1741s left) :: moving through inside one diatom, golden-brown chloroplast s
+[dive] frame 191/280 (17.8s/frame, ~1583s left) :: diving straight into a golden-brown chloroplast as it swells
+[dive] frame 201/280 (17.6s/frame, ~1392s left) :: row upon row of ring-shaped pigment complexes set into folde
+[dive] frame 211/280 (17.9s/frame, ~1236s left) :: moving through row upon row of ring-shaped pigment complexes
+[dive] frame 221/280 (18.1s/frame, ~1065s left) :: diving straight into a pale glass strand as it swells to fil
+[dive] frame 231/280 (17.9s/frame, ~877s left) :: the random network of fused silica, three-armed joins of gla
+[dive] frame 241/280 (17.7s/frame, ~690s left) :: deep inside the random network of fused silica, three-armed 
+[dive] frame 251/280 (17.5s/frame, ~507s left) :: deep inside the random network of fused silica, three-armed 
+[dive] frame 261/280 (17.4s/frame, ~331s left) :: moving through a star-forming nebula, green-black dust colum
+[dive] frame 271/280 (17.4s/frame, ~157s left) :: diving straight into a dark ocean world at night seen from l
+[dive] frame 280/280 (17.5s/frame, ~0s left) :: diving straight into a dark ocean world at night seen from l
+[dive] interpolated 12 -> 24fps (560 frames, loop-bridged) in 57s
+[dive] counter overlay on 560 frames (26 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v3/lantern_mangrove.mp4 (33558 KB, 23.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v3/lantern_mangrove_divein.mp4 (34153 KB, 23.3s)
+[dive] done in 5062s
+=== 03:29:26 lantern_mangrove: rendered in 5063s
+  copied lantern_mangrove.mp4 -> review/lantern_mangrove_ds.mp4
+  copied lantern_mangrove_divein.mp4 -> review_divein/lantern_mangrove_ds_divein.mp4
+lantern_mangrove: queued to REVIEW (ds/divein) from v3
+  lantern_mangrove: 5 caption+title pairs (spot=True); theme='A slow, pulsing synthwave with deep bass'
+    [0] Dive into the glowing heart of the mangrove’s secret night 🌿✨ Can you spot Tina the DNA hiding in the glow? 👀 #bioluminescentdream #microscopicgalaxy #mangrovenight #silicauniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive into the glowing heart of the mangrove’s secret night 🌿✨
+    [1] Where water splits the world and fireflies dance in the deep 💧🔥 Can you spot Tina the DNA hiding in the glow? 👀 #bioluminescentdream #microscopicgalaxy #mangrovenight #silicauniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where water splits the world and fireflies dance in the deep 💧🔥
+    [2] A galaxy of shells drifts in the emerald abyss 🌊🪸 Can you spot Tina the DNA hiding in the glow? 👀 #bioluminescentdream #microscopicgalaxy #mangrovenight #silicauniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A galaxy of shells drifts in the emerald abyss 🌊🪸
+    [3] Silica dreams weave through the void, lit by starlight 🌌✨ Can you spot Tina the DNA hiding in the glow? 👀 #bioluminescentdream #microscopicgalaxy #mangrovenight #silicauniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Silica dreams weave through the void, lit by starlight 🌌✨
+    [4] The ocean world’s glow braids the dark like a living thread 🌊💫 Can you spot Tina the DNA hiding in the glow? 👀 #bioluminescentdream #microscopicgalaxy #mangrovenight #silicauniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The ocean world’s glow braids the dark like a living thread 🌊💫
+=== 03:30:18 lantern_mangrove -> REVIEW (captioned)
+=== 03:30:18 --- cobalt_rookery ---
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] parallax gain (random draw): 0.9
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v3
+[dive] cobalt_rookery: 352 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — ice_world(surface)[26..39], rookery_cliff(surface)[58..81], egg_shelf(surface)[90..113], shell_rind(surface)[122..145], palisade_columns(surface)[154..177], membrane_weave(web)[186..209], protein_ropes(sea)[218..241], calcite_lattice(lattice)[250..273], nucleus_droplet(sea)[282..305]
+[dive] TRACKER v3 ON (224 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of an aging gold sun burning inside a crowded star cluster, ranked neighbour suns t
+[dive] frame 1/352 (42.6s/frame, ~14950s left) :: moving through an aging gold sun burning inside a crowded st
+[dive] frame 11/352 (29.2s/frame, ~9964s left) :: moving through an aging gold sun burning inside a crowded st
+[dive] frame 21/352 (27.1s/frame, ~8975s left) :: diving straight into a cobalt-blue ice world as it swells to
+[dive] frame 31/352 (25.7s/frame, ~8254s left) :: diving straight into a cobalt-blue ice world as it swells to
+[dive] frame 41/352 (23.0s/frame, ~7162s left) :: moving through a cobalt ocean world seen from orbit, sea ice
+[dive] frame 51/352 (23.5s/frame, ~7079s left) :: moving through a cobalt ocean world seen from orbit, sea ice
+[dive] frame 61/352 (23.7s/frame, ~6895s left) :: diving straight into a sheer basalt headland as it swells to
+[dive] frame 71/352 (22.2s/frame, ~6231s left) :: a seabird cliff of banded basalt rising sheer from a cobalt 
+[dive] frame 81/352 (21.0s/frame, ~5696s left) :: moving through a seabird cliff of banded basalt rising sheer
+[dive] frame 91/352 (21.4s/frame, ~5589s left) :: diving straight into a guano-limed rock ledge as it swells t
+[dive] frame 101/352 (20.6s/frame, ~5163s left) :: one shelf of the rookery at bird level, guillemots pressed f
+[dive] frame 111/352 (19.9s/frame, ~4791s left) :: moving through one shelf of the rookery at bird level, guill
+[dive] frame 121/352 (20.3s/frame, ~4690s left) :: diving straight into a turquoise speckled egg as it swells t
+[dive] frame 131/352 (19.8s/frame, ~4384s left) :: the curved chalk rind of the shell, a turquoise ground crust
+[dive] frame 141/352 (19.5s/frame, ~4104s left) :: moving through the curved chalk rind of the shell, a turquoi
+[dive] frame 151/352 (19.7s/frame, ~3954s left) :: diving straight into a round pore mouth as it swells to fill
+[dive] frame 161/352 (19.5s/frame, ~3725s left) :: the interior of the shell wall, ranks of calcite palisade co
+[dive] frame 171/352 (19.3s/frame, ~3484s left) :: moving through the interior of the shell wall, ranks of calc
+[dive] frame 181/352 (19.1s/frame, ~3267s left) :: diving straight into a twisted white fiber as it swells to f
+[dive] frame 191/352 (19.1s/frame, ~3080s left) :: diving straight into a twisted white fiber as it swells to f
+[dive] frame 201/352 (19.0s/frame, ~2866s left) :: moving through the shell membrane under the mineral crust, a
+[dive] frame 211/352 (18.8s/frame, ~2655s left) :: moving through the shell membrane under the mineral crust, a
+[dive] frame 221/352 (18.9s/frame, ~2479s left) :: diving straight into a three-stranded protein rope as it swe
+[dive] frame 231/352 (18.7s/frame, ~2268s left) :: three protein strands wound about one another into a rope, r
+[dive] frame 241/352 (18.5s/frame, ~2053s left) :: moving through three protein strands wound about one another
+[dive] frame 251/352 (18.7s/frame, ~1893s left) :: diving straight into a glassy calcite rhomb as it swells to 
+[dive] frame 261/352 (18.6s/frame, ~1690s left) :: a calcite lattice, ranks of calcium atoms set at the corners
+[dive] frame 271/352 (18.4s/frame, ~1487s left) :: moving through a calcite lattice, ranks of calcium atoms set
+[dive] frame 281/352 (18.5s/frame, ~1316s left) :: diving straight into a droplet of glowing spheres as it swel
+[dive] frame 291/352 (18.4s/frame, ~1122s left) :: a rounded swarm of glowing beads packed into one droplet at 
+[dive] frame 301/352 (18.2s/frame, ~929s left) :: deep inside a rounded swarm of glowing beads packed into one
+[dive] frame 311/352 (18.1s/frame, ~742s left) :: deep inside a rounded swarm of glowing beads packed into one
+[dive] frame 321/352 (18.0s/frame, ~557s left) :: the whole view transforming, resolving into a globular clust
+[dive] frame 331/352 (17.9s/frame, ~375s left) :: moving through a globular cluster of ten thousand suns packe
+[dive] frame 341/352 (17.9s/frame, ~197s left) :: diving straight into an aging gold sun amid ranks of crowded
+[dive] frame 351/352 (18.0s/frame, ~18s left) :: diving straight into an aging gold sun amid ranks of crowded
+[dive] frame 352/352 (18.0s/frame, ~0s left) :: diving straight into an aging gold sun amid ranks of crowded
+[dive] interpolated 12 -> 24fps (704 frames, loop-bridged) in 75s
+[dive] counter overlay on 704 frames (36 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v3/cobalt_rookery.mp4 (47146 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v3/cobalt_rookery_divein.mp4 (47781 KB, 29.3s)
+[dive] done in 6549s
+=== 05:19:28 cobalt_rookery: rendered in 6550s
+  copied cobalt_rookery.mp4 -> review/cobalt_rookery_ds.mp4
+  copied cobalt_rookery_divein.mp4 -> review_divein/cobalt_rookery_ds_divein.mp4
+cobalt_rookery: queued to REVIEW (ds/divein) from v3
+  cobalt_rookery: 5 caption+title pairs (spot=True); theme='A haunting, hypnotic melody that swells '
+    [0] A sun in a sea of stars, a world in a sea of ice, a cliff in a sea of birds, a shell in a sea of atoms... Can you spot Janet the Planet hiding in the cosmic folds? 👀 #cosmiczoom #infiniteuniverse #jewelbrightworlds #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A sun in a sea of stars, a world in a sea of ice, a cliff in a sea of birds, a shell in a sea of ato
+    [1] From cosmic fire to the heart of a shell, the universe folds in on itself forever... Can you spot Janet the Planet hiding in the cosmic folds? 👀 #cosmiczoom #infiniteuniverse #jewelbrightworlds #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From cosmic fire to the heart of a shell, the universe folds in on itself forever...
+    [2] Brass light on cobalt waves, guano-streaked cliffs, and the glittering void between atoms... Can you spot Janet the Planet hiding in the cosmic folds? 👀 #cosmiczoom #infiniteuniverse #jewelbrightworlds #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Brass light on cobalt waves, guano-streaked cliffs, and the glittering void between atoms...
+    [3] Every scale a loop, every loop a universe—dive deeper, the pattern never ends... Can you spot Janet the Planet hiding in the cosmic folds? 👀 #cosmiczoom #infiniteuniverse #jewelbrightworlds #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Every scale a loop, every loop a universe—dive deeper, the pattern never ends...
+    [4] A journey through the infinite, where every zoom reveals another jewel-bright mystery... Can you spot Janet the Planet hiding in the cosmic folds? 👀 #cosmiczoom #infiniteuniverse #jewelbrightworlds #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A journey through the infinite, where every zoom reveals another jewel-bright mystery...
+=== 05:20:21 cobalt_rookery -> REVIEW (captioned)
+=== 05:20:21 --- ruby_furnace ---
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] cosmic_gloss  ->  luminous volumetric light, glossy hyperreal render, deep-space glow, ultra-detailed, cinematic, epic scale, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] parallax gain (random draw): 0.9
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/ruby_furnace/v3
+[dive] ruby_furnace: 264 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — ember_limb(surface)[18..39], orchard_country(surface)[42..63], daybreak_garden(surface)[66..77], vine_hover(surface)[90..111], gorget_shingles(sea)[114..135], capillary_file(sea)[138..159], hemoglobin_engines(sea)[162..183], iron_shells(sea)[186..207], iron_nucleus(sea)[210..231]
+[dive] TRACKER v3 ON (168 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of arches of glowing gas standing off the edge of a red giant star, the nearest of 
+[dive] frame 1/264 (34.3s/frame, ~9025s left) :: moving through arches of glowing gas standing off the edge o
+[dive] frame 11/264 (29.4s/frame, ~7433s left) :: moving through arches of glowing gas standing off the edge o
+[dive] frame 21/264 (25.8s/frame, ~6260s left) :: diving straight into a dark green world as it swells to fill
+[dive] frame 31/264 (22.2s/frame, ~5170s left) :: moving through the curve of a green world seen from close or
+[dive] frame 41/264 (20.5s/frame, ~4569s left) :: diving straight into a green river valley as it swells to fi
+[dive] frame 51/264 (19.1s/frame, ~4079s left) :: a river valley at daybreak seen from low over the ridge, orc
+[dive] frame 61/264 (18.5s/frame, ~3756s left) :: moving through a river valley at daybreak seen from low over
+[dive] frame 71/264 (18.1s/frame, ~3501s left) :: diving straight into a walled garden as it swells to fill th
+[dive] frame 81/264 (18.0s/frame, ~3302s left) :: moving through a walled garden at daybreak seen from just ab
+[dive] frame 91/264 (19.0s/frame, ~3285s left) :: diving straight into a ruby-throated hummingbird as it swell
+[dive] frame 101/264 (18.4s/frame, ~2999s left) :: one ruby-throated hummingbird in the air at the mouth of a t
+[dive] frame 111/264 (17.9s/frame, ~2742s left) :: diving straight into a ruby throat patch as it swells to fil
+[dive] frame 121/264 (17.9s/frame, ~2559s left) :: the ruby gorget of a hummingbird's throat, ranks of feather 
+[dive] frame 131/264 (17.5s/frame, ~2332s left) :: moving through the ruby gorget of a hummingbird's throat, ra
+[dive] frame 141/264 (17.5s/frame, ~2156s left) :: diving straight into a fine red vessel as it swells to fill 
+[dive] frame 151/264 (17.3s/frame, ~1954s left) :: moving through the inside of a capillary under the skin, a n
+[dive] frame 161/264 (17.1s/frame, ~1766s left) :: diving straight into a ruby red blood cell as it swells to f
+[dive] frame 171/264 (17.0s/frame, ~1583s left) :: the machinery crowded inside one red cell, hemoglobin molecu
+[dive] frame 181/264 (16.8s/frame, ~1395s left) :: moving through the machinery crowded inside one red cell, he
+[dive] frame 191/264 (16.8s/frame, ~1228s left) :: diving straight into a blue-white iron atom as it swells to 
+[dive] frame 201/264 (16.8s/frame, ~1055s left) :: moving through one iron atom in the dark, nested shells of b
+[dive] frame 211/264 (16.7s/frame, ~885s left) :: diving straight into a white-hot nucleus as it swells to fil
+[dive] frame 221/264 (16.5s/frame, ~711s left) :: the nucleus of an iron atom, a close-packed droplet of glowi
+[dive] frame 231/264 (16.5s/frame, ~543s left) :: deep inside the nucleus of an iron atom, a close-packed drop
+[dive] parallax depth estimate failed (HTTPConnectionPool(host='localhost', port=8188): Max retries exceeded with url: /history/4a676884-9e7d-420e-95be-136ce81855ab (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7486a48ed580>, 'Connection to localhost timed out. (connect timeout=30)'))) — propagating the previous map
+[dive] frame 241/264 (16.4s/frame, ~378s left) :: the whole view transforming, resolving into the boiling floo
+[dive] frame 251/264 (16.3s/frame, ~213s left) :: moving through the boiling floor of a red giant star, convec
+[dive] frame 261/264 (16.6s/frame, ~50s left) :: diving straight into arches of glowing gas standing off the 
+[dive] frame 264/264 (16.6s/frame, ~0s left) :: diving straight into arches of glowing gas standing off the 
+[dive] interpolated 12 -> 24fps (528 frames, loop-bridged) in 56s
+[dive] counter overlay on 528 frames (31 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/ruby_furnace/v3/ruby_furnace.mp4 (30965 KB, 22.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/ruby_furnace/v3/ruby_furnace_divein.mp4 (31860 KB, 22.0s)
+[dive] done in 4536s
+=== 06:35:57 ruby_furnace: rendered in 4536s
+  copied ruby_furnace.mp4 -> review/ruby_furnace_ds.mp4
+  copied ruby_furnace_divein.mp4 -> review_divein/ruby_furnace_ds_divein.mp4
+ruby_furnace: queued to REVIEW (ds/divein) from v3
+  ruby_furnace: 5 caption+title pairs (spot=True); theme='A celestial lullaby blending cosmic dron'
+    [0] A cosmic dance from star to garden, atom to atom 🌌 Can you spot Dora the Flora hiding in the loop? 👀 #cosmicgarden #infinitezoom #jewelboxuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A cosmic dance from star to garden, atom to atom 🌌
+    [1] Infinite zoom through the heart of a hummingbird's glow Can you spot Dora the Flora hiding in the loop? 👀 #cosmicgarden #infinitezoom #jewelboxuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Infinite zoom through the heart of a hummingbird's glow
+    [2] From red giants to ruby throats, the universe unfolds Can you spot Dora the Flora hiding in the loop? 👀 #cosmicgarden #infinitezoom #jewelboxuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From red giants to ruby throats, the universe unfolds
+    [3] A never-ending dive into the jewel-box of existence Can you spot Dora the Flora hiding in the loop? 👀 #cosmicgarden #infinitezoom #jewelboxuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A never-ending dive into the jewel-box of existence
+    [4] Where stars and flowers meet in the loop of infinity Can you spot Dora the Flora hiding in the loop? 👀 #cosmicgarden #infinitezoom #jewelboxuniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where stars and flowers meet in the loop of infinity
+=== 06:36:50 ruby_furnace -> REVIEW (captioned)
+=== 06:36:50 --- magnetite_choir ---
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] ultraviolet  ->  ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] parallax gain (random draw): 1.0
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/magnetite_choir/v3
+[dive] magnetite_choir: 160 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — magnetite_lattice(lattice)[26..39], lattice_flaw(lattice)[58..81], lodestone_face(surface)[122..132]
+[dive] TRACKER v3 ON (80 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of ragged patches of aligned iron packed edge to edge in every direction inside the
+[dive] frame 1/160 (33.1s/frame, ~5261s left) :: moving through ragged patches of aligned iron packed edge to
+[dive] frame 11/160 (29.5s/frame, ~4390s left) :: moving through ragged patches of aligned iron packed edge to
+[dive] frame 21/160 (27.3s/frame, ~3801s left) :: diving straight into a bright green patch as it swells to fi
+[dive] frame 31/160 (25.6s/frame, ~3300s left) :: diving straight into a bright green patch as it swells to fi
+[dive] frame 41/160 (23.1s/frame, ~2743s left) :: moving through the iron-oxide lattice standing open in the b
+[dive] frame 51/160 (23.6s/frame, ~2573s left) :: moving through the iron-oxide lattice standing open in the b
+[dive] frame 61/160 (23.8s/frame, ~2357s left) :: diving straight into a glowing white sphere as it swells to 
+[dive] frame 71/160 (22.3s/frame, ~1986s left) :: ranks of octahedra broken open around a core of white-green 
+[dive] frame 81/160 (21.2s/frame, ~1674s left) :: deep inside ranks of octahedra broken open around a core of 
+[dive] frame 91/160 (20.3s/frame, ~1404s left) :: deep inside ranks of octahedra broken open around a core of 
+[dive] frame 101/160 (19.7s/frame, ~1162s left) :: the whole view transforming, resolving into a plain of lodes
+[dive] frame 111/160 (20.0s/frame, ~980s left) :: moving through a plain of lodestone boulders strewn over fro
+[dive] frame 121/160 (20.7s/frame, ~808s left) :: diving straight into a squat lodestone boulder as it swells 
+[dive] frame 131/160 (20.2s/frame, ~587s left) :: an iron-black lodestone rock, its stepped and pitted face ru
+[dive] frame 141/160 (19.9s/frame, ~378s left) :: moving through an iron-black lodestone rock, its stepped and
+[dive] frame 151/160 (19.9s/frame, ~179s left) :: diving straight into ragged green-lit patches of iron packed
+[dive] frame 160/160 (19.9s/frame, ~0s left) :: diving straight into ragged green-lit patches of iron packed
+[dive] interpolated 12 -> 24fps (320 frames, loop-bridged) in 32s
+[dive] counter overlay on 320 frames (15 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/magnetite_choir/v3/magnetite_choir.mp4 (21029 KB, 13.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/magnetite_choir/v3/magnetite_choir_divein.mp4 (21379 KB, 13.3s)
+[dive] done in 3275s
+=== 07:31:26 magnetite_choir: rendered in 3276s
+  copied magnetite_choir.mp4 -> review/magnetite_choir_ds.mp4
+  copied magnetite_choir_divein.mp4 -> review_divein/magnetite_choir_ds_divein.mp4
+magnetite_choir: queued to REVIEW (ds/divein) from v3
+  magnetite_choir: 5 caption+title pairs (spot=True); theme='A haunting, pulsing drone that swells in'
+    [0] Dive into the heart of a lodestone world, where auroras whisper secrets to iron and atoms dance in the dark 🌌 Can you spot Adam the Atom hiding in the atomic abyss? 👀 #lodestonecosmos #atomicauroras #ironlattice #infinitescale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive into the heart of a lodestone world, where auroras whisper secrets to iron and atoms dance in t
+    [1] A universe of iron and light, where every step reveals a deeper glow and a brighter spark ✨ Can you spot Adam the Atom hiding in the atomic abyss? 👀 #lodestonecosmos #atomicauroras #ironlattice #infinitescale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A universe of iron and light, where every step reveals a deeper glow and a brighter spark ✨
+    [2] Lost in the lattice, where octahedra bend and atoms shatter under the weight of infinite scale 🌀 Can you spot Adam the Atom hiding in the atomic abyss? 👀 #lodestonecosmos #atomicauroras #ironlattice #infinitescale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Lost in the lattice, where octahedra bend and atoms shatter under the weight of infinite scale 🌀
+    [3] The iron sings in violet and green, a symphony of scales where nothing is small and nothing is still 🎶 Can you spot Adam the Atom hiding in the atomic abyss? 👀 #lodestonecosmos #atomicauroras #ironlattice #infinitescale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The iron sings in violet and green, a symphony of scales where nothing is small and nothing is still
+    [4] From auroras to atoms, the world unravels in loops of light and shadow, forever folding into itself 🔄 Can you spot Adam the Atom hiding in the atomic abyss? 👀 #lodestonecosmos #atomicauroras #ironlattice #infinitescale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From auroras to atoms, the world unravels in loops of light and shadow, forever folding into itself 
+=== 07:32:21 magnetite_choir -> REVIEW (captioned)
+=== 07:32:21 --- wild_yeast ---
+[style] gilded_relic  ->  warm gilded light, painterly, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] parallax gain (random draw): 0.5
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/wild_yeast/v2
+[dive] wild_yeast: 140 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — yeast_towers(sea)[22..44], gluten_walls(sea)[50..62], starch_shells(sea)[78..100]
+[dive] TRACKER v3 ON (70 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of the chamber system within a sourdough crumb, domed cavities of every size packed
+[dive] frame 1/140 (44.4s/frame, ~6175s left) :: moving through the chamber system within a sourdough crumb, 
+[dive] frame 11/140 (32.2s/frame, ~4156s left) :: moving through the chamber system within a sourdough crumb, 
+[dive] frame 21/140 (28.9s/frame, ~3435s left) :: diving straight into a budding yeast cell as it swells to fi
+[dive] frame 31/140 (25.3s/frame, ~2762s left) :: a chamber wall at cell scale, oval yeast bodies heaped into 
+[dive] frame 41/140 (22.4s/frame, ~2219s left) :: moving through a chamber wall at cell scale, oval yeast bodi
+[dive] frame 51/140 (22.3s/frame, ~1988s left) :: diving straight into a glossy elastic strand as it swells to
+[dive] frame 61/140 (21.1s/frame, ~1667s left) :: within the strand's protein network, folded ribbon chains st
+[dive] frame 71/140 (21.5s/frame, ~1483s left) :: moving through within the strand's protein network, folded r
+[dive] frame 81/140 (21.7s/frame, ~1281s left) :: diving straight into a banded starch granule as it swells to
+[dive] frame 91/140 (20.9s/frame, ~1026s left) :: the interior of a starch granule, curved shells of packed he
+[dive] frame 101/140 (20.2s/frame, ~786s left) :: deep inside the interior of a starch granule, curved shells 
+[dive] frame 111/140 (19.5s/frame, ~567s left) :: deep inside the interior of a starch granule, curved shells 
+[dive] frame 121/140 (19.2s/frame, ~366s left) :: moving through a baker's counter at daybreak, empty, no one 
+[dive] frame 131/140 (19.1s/frame, ~172s left) :: diving straight into the chamber system within a sourdough c
+[dive] frame 140/140 (19.3s/frame, ~0s left) :: diving straight into the chamber system within a sourdough c
+[dive] interpolated 12 -> 24fps (280 frames, loop-bridged) in 29s
+[dive] counter overlay on 280 frames (15 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/wild_yeast/v2/wild_yeast.mp4 (15706 KB, 11.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/wild_yeast/v2/wild_yeast_divein.mp4 (16006 KB, 11.7s)
+[dive] done in 2781s
+=== 08:18:42 wild_yeast: rendered in 2781s
+  copied wild_yeast.mp4 -> review/wild_yeast_ds.mp4
+  copied wild_yeast_divein.mp4 -> review_divein/wild_yeast_ds_divein.mp4
+wild_yeast: queued to REVIEW (ds/divein) from v2
+  wild_yeast: 5 caption+title pairs (spot=True); theme='A slow, hypnotic pulse of warm synths an'
+    [0] A sourdough’s secret world, spiraling into infinity 🌌 Can you spot Tina the DNA hiding in the loop? 👀 #BreadCosmos #MicrobialWonders #GoldenDepths #InfiniteLoops #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A sourdough’s secret world, spiraling into infinity 🌌
+    [1] Golden crumbs dissolve into amber galaxies Can you spot Tina the DNA hiding in the loop? 👀 #BreadCosmos #MicrobialWonders #GoldenDepths #InfiniteLoops #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Golden crumbs dissolve into amber galaxies
+    [2] Yeast towers hum in the honeyed dark Can you spot Tina the DNA hiding in the loop? 👀 #BreadCosmos #MicrobialWonders #GoldenDepths #InfiniteLoops #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Yeast towers hum in the honeyed dark
+    [3] Ribbon chains coil through molten time Can you spot Tina the DNA hiding in the loop? 👀 #BreadCosmos #MicrobialWonders #GoldenDepths #InfiniteLoops #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Ribbon chains coil through molten time
+    [4] Starch shells whisper to the void Can you spot Tina the DNA hiding in the loop? 👀 #BreadCosmos #MicrobialWonders #GoldenDepths #InfiniteLoops #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Starch shells whisper to the void
+=== 08:19:23 wild_yeast -> REVIEW (captioned)
+=== 08:19:23 music pregen: whale_fall_republic
+whale_fall_republic (divein): bar 2.667s -> 90 bpm, key D minor; lane deep_archive; generating 8, keeping 5
+♪ generating 33.0s | 90bpm D minor | seed 1744 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 36s -> whale_fall_republic_00019_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_deep_archive.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/deep_archive.mp4
+    bar 2.667s | music bar 2.421s (conf -0.00) -> stretch 1.0000 | phase 2.550s | lock 3.29x | kick -0.01 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [deep_archive] lock 3.29x conf -0.00 kick -0.01 score 0.41 -> review/music/candidates/whale_fall_republic/deep_archive.mp4
+♪ generating 33.0s | 90bpm D minor | seed 1781 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 20s -> whale_fall_republic_00020_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_deep_archive-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/deep_archive-b.mp4
+    bar 2.667s | music bar 2.645s (conf -0.02) -> stretch 1.0000 | phase 0.020s | lock 10.17x | kick -0.04 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [deep_archive-b] lock 10.17x conf -0.02 kick -0.04 score 1.27 -> review/music/candidates/whale_fall_republic/deep_archive-b.mp4
+♪ generating 33.0s | 90bpm D minor | seed 1818 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 19s -> whale_fall_republic_00021_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_deep_archive-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/deep_archive-heartbeat.mp4
+    bar 2.667s | music bar 2.613s (conf 0.58) -> stretch 0.9800 | phase 0.710s | lock 8.27x | kick 0.40 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [deep_archive-heartbeat] lock 8.27x conf 0.58 kick 0.40 score 5.78 -> review/music/candidates/whale_fall_republic/deep_archive-heartbeat.mp4
+♪ generating 33.0s | 90bpm D minor | seed 1855 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 19s -> whale_fall_republic_00022_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_analog_dawn-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/analog_dawn-wild.mp4
+    bar 2.667s | music bar 2.560s (conf -0.06) -> stretch 1.0000 | phase 2.630s | lock 3.75x | kick -0.02 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [analog_dawn-wild] lock 3.75x conf -0.06 kick -0.02 score 0.47 -> review/music/candidates/whale_fall_republic/analog_dawn-wild.mp4
+♪ generating 33.0s | 90bpm D minor | seed 1892 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 19s -> whale_fall_republic_00023_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_ember_pulse-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/ember_pulse-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.55) -> stretch 1.0000 | phase 0.030s | lock 26.96x | kick 0.42 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [ember_pulse-wild] lock 26.96x conf 0.55 kick 0.42 score 19.10 -> review/music/candidates/whale_fall_republic/ember_pulse-wild.mp4
+♪ generating 33.0s | 90bpm D minor | seed 1929 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 21s -> whale_fall_republic_00024_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_deep_archive-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/deep_archive-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.78) -> stretch 1.0000 | phase 0.690s | lock 15.96x | kick 0.67 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [deep_archive-halftime] lock 15.96x conf 0.78 kick 0.67 score 18.88 -> review/music/candidates/whale_fall_republic/deep_archive-halftime.mp4
+♪ generating 33.0s | 90bpm D minor | seed 1966 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 19s -> whale_fall_republic_00025_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_night_market-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/night_market-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.82) -> stretch 1.0000 | phase 0.340s | lock 23.96x | kick 0.77 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [night_market-wild] lock 23.96x conf 0.82 kick 0.78 score 32.32 -> review/music/candidates/whale_fall_republic/night_market-wild.mp4
+♪ generating 33.0s | 68bpm D minor | seed 2003 steps 8
+  tags: a gently lilting waltz in 3/4 time, all percussion is a single deep soft kick drum landing...
+  done in 19s -> whale_fall_republic_00026_.flac (1.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_waltz-deep_archive.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/waltz-deep_archive.mp4
+    bar 2.667s | music bar 2.624s (conf 0.32) -> stretch 0.9840 | phase 0.940s | lock 5.89x | kick -0.02 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [waltz-deep_archive] lock 5.89x conf 0.32 kick -0.02 score 1.21 -> review/music/candidates/whale_fall_republic/waltz-deep_archive.mp4
+♪ generating 33.0s | 90bpm D minor | seed 2104 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 19s -> whale_fall_republic_00027_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_pulse1-deep_archive.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/pulse1-deep_archive.mp4
+    bar 2.667s | music bar 2.667s (conf 0.81) -> stretch 1.0000 | phase 1.310s | lock 19.30x | kick 0.73 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [pulse1-deep_archive] kick 0.73 (top-up 1)
+kept: night_market-wild, pulse1-deep_archive, ember_pulse-wild, deep_archive-halftime, analog_dawn-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 08:22:51 music pregen: lantern_mangrove
+lantern_mangrove (divein): bar 2.333s -> 103 bpm, key E minor; lane tide_organ; generating 8, keeping 5
+♪ generating 27.0s | 103bpm E minor | seed 30585 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 20s -> lantern_mangrove_00020_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_tide_organ.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/tide_organ.mp4
+    bar 2.333s | music bar 2.197s (conf 0.14) -> stretch 0.9700 | phase 1.620s | lock 2.56x | kick 0.12 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [tide_organ] lock 2.56x conf 0.14 kick 0.12 score 0.60 -> review/music/candidates/lantern_mangrove/tide_organ.mp4
+♪ generating 27.0s | 103bpm E minor | seed 30622 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 14s -> lantern_mangrove_00021_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_tide_organ-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/tide_organ-b.mp4
+    bar 2.333s | music bar 2.304s (conf 0.58) -> stretch 0.9874 | phase 0.060s | lock 11.08x | kick 0.52 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [tide_organ-b] lock 11.08x conf 0.58 kick 0.52 score 9.16 -> review/music/candidates/lantern_mangrove/tide_organ-b.mp4
+♪ generating 27.0s | 103bpm E minor | seed 30659 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 16s -> lantern_mangrove_00022_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_tide_organ-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/tide_organ-halftime.mp4
+    bar 2.333s | music bar 2.293s (conf 0.20) -> stretch 0.9829 | phase 0.040s | lock 6.55x | kick 0.06 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [tide_organ-halftime] lock 6.55x conf 0.20 kick 0.06 score 1.40 -> review/music/candidates/lantern_mangrove/tide_organ-halftime.mp4
+♪ generating 27.0s | 103bpm E minor | seed 30696 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 15s -> lantern_mangrove_00023_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_wooden_orbit-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/wooden_orbit-wild.mp4
+    bar 2.333s | music bar 2.293s (conf 0.47) -> stretch 0.9829 | phase 0.050s | lock 25.18x | kick 0.42 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] lock 25.18x conf 0.47 kick 0.42 score 16.30 -> review/music/candidates/lantern_mangrove/wooden_orbit-wild.mp4
+♪ generating 27.0s | 103bpm E minor | seed 30733 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 14s -> lantern_mangrove_00024_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_choir_of_dust-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/choir_of_dust-wild.mp4
+    bar 2.333s | music bar 2.133s (conf -0.03) -> stretch 1.0000 | phase 0.930s | lock 3.60x | kick -0.06 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] lock 3.60x conf -0.03 kick -0.06 score 0.45 -> review/music/candidates/lantern_mangrove/choir_of_dust-wild.mp4
+♪ generating 27.0s | 103bpm E minor | seed 30770 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 15s -> lantern_mangrove_00025_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_tide_organ-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/tide_organ-third_answer.mp4
+    bar 2.333s | music bar 2.261s (conf 0.13) -> stretch 0.9700 | phase 0.840s | lock 7.49x | kick 0.08 | seamless loop @ 23.33s (music tiled x1, xf 0.50s)
+  [tide_organ-third_answer] lock 7.49x conf 0.13 kick 0.08 score 1.53 -> review/music/candidates/lantern_mangrove/tide_organ-third_answer.mp4
+♪ generating 27.0s | 103bpm E minor | seed 30807 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 14s -> lantern_mangrove_00026_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_glass_chapel-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/glass_chapel-wild.mp4
+    bar 2.333s | music bar 2.325s (conf 0.51) -> stretch 0.9966 | phase 0.070s | lock 8.96x | kick 0.50 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] lock 8.96x conf 0.51 kick 0.51 score 6.80 -> review/music/candidates/lantern_mangrove/glass_chapel-wild.mp4
+♪ generating 27.0s | 103bpm E minor | seed 30844 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 15s -> lantern_mangrove_00027_.flac (1.0 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_tide_organ-third_answer2.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/tide_organ-third_answer2.mp4
+    bar 2.333s | music bar 2.315s (conf 0.24) -> stretch 0.9920 | phase 0.020s | lock 4.36x | kick 0.00 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [tide_organ-third_answer2] lock 4.36x conf 0.24 kick 0.00 score 0.82 -> review/music/candidates/lantern_mangrove/tide_organ-third_answer2.mp4
+♪ generating 27.0s | 103bpm E minor | seed 30945 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 15s -> lantern_mangrove_00028_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_pulse1-tide_organ.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/pulse1-tide_organ.mp4
+    bar 2.333s | music bar 2.283s (conf 0.57) -> stretch 0.9783 | phase 0.080s | lock 13.89x | kick 0.46 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [pulse1-tide_organ] kick 0.46 (top-up 1)
+♪ generating 27.0s | 103bpm E minor | seed 31046 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 16s -> lantern_mangrove_00029_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_pulse2-tide_organ.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/pulse2-tide_organ.mp4
+    bar 2.333s | music bar 2.315s (conf 0.56) -> stretch 0.9920 | phase 2.330s | lock 18.19x | kick 0.47 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [pulse2-tide_organ] kick 0.47 (top-up 2)
+kept: wooden_orbit-wild, pulse2-tide_organ, pulse1-tide_organ, glass_chapel-wild, choir_of_dust-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 08:25:40 music pregen: cobalt_rookery
+cobalt_rookery (divein): bar 2.667s -> 90 bpm, key B minor; lane aurora_strings; generating 8, keeping 5
+♪ generating 33.0s | 90bpm B minor | seed 17724 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 24s -> cobalt_rookery_00023_.flac (1.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/aurora_strings.mp4
+    bar 2.667s | music bar 2.667s (conf 0.67) -> stretch 1.0000 | phase 1.380s | lock 9.30x | kick -0.07 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [aurora_strings] lock 9.30x conf 0.67 kick -0.07 score 2.73 -> review/music/candidates/cobalt_rookery/aurora_strings.mp4
+♪ generating 33.0s | 90bpm B minor | seed 17761 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 19s -> cobalt_rookery_00024_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_aurora_strings-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/aurora_strings-b.mp4
+    bar 2.667s | music bar 2.667s (conf 0.22) -> stretch 1.0000 | phase 0.050s | lock 6.11x | kick -0.01 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [aurora_strings-b] lock 6.11x conf 0.22 kick -0.01 score 1.10 -> review/music/candidates/cobalt_rookery/aurora_strings-b.mp4
+♪ generating 33.0s | 90bpm B minor | seed 17798 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 19s -> cobalt_rookery_00025_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_aurora_strings-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/aurora_strings-third_answer.mp4
+    bar 2.667s | music bar 2.667s (conf 0.13) -> stretch 1.0000 | phase 0.050s | lock 21.74x | kick 0.03 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [aurora_strings-third_answer] lock 21.74x conf 0.13 kick 0.03 score 3.81 -> review/music/candidates/cobalt_rookery/aurora_strings-third_answer.mp4
+♪ generating 33.0s | 90bpm B minor | seed 17835 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 19s -> cobalt_rookery_00026_.flac (1.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_wooden_orbit-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/wooden_orbit-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.75) -> stretch 1.0000 | phase 0.050s | lock 17.08x | kick 0.56 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] lock 17.08x conf 0.75 kick 0.56 score 17.39 -> review/music/candidates/cobalt_rookery/wooden_orbit-wild.mp4
+♪ generating 33.0s | 90bpm B minor | seed 17872 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 19s -> cobalt_rookery_00027_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_deep_archive-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/deep_archive-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.87) -> stretch 1.0000 | phase 2.240s | lock 23.06x | kick 0.75 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] lock 23.06x conf 0.87 kick 0.75 score 31.56 -> review/music/candidates/cobalt_rookery/deep_archive-wild.mp4
+♪ generating 33.0s | 90bpm B minor | seed 17909 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 21s -> cobalt_rookery_00028_.flac (1.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_aurora_strings-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/aurora_strings-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.60) -> stretch 1.0000 | phase 0.060s | lock 22.45x | kick 0.36 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [aurora_strings-halftime] lock 22.45x conf 0.60 kick 0.36 score 15.08 -> review/music/candidates/cobalt_rookery/aurora_strings-halftime.mp4
+♪ generating 33.0s | 90bpm B minor | seed 17946 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 19s -> cobalt_rookery_00029_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_music_box-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/music_box-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.49) -> stretch 1.0000 | phase 0.060s | lock 12.29x | kick 0.15 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [music_box-wild] lock 12.29x conf 0.49 kick 0.14 score 4.81 -> review/music/candidates/cobalt_rookery/music_box-wild.mp4
+♪ generating 33.0s | 68bpm B minor | seed 17983 steps 8
+  tags: a gently lilting waltz in 3/4 time, all percussion is a single deep soft kick drum landing...
+  done in 19s -> cobalt_rookery_00030_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_waltz-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/waltz-aurora_strings.mp4
+    bar 2.667s | music bar 2.645s (conf 0.55) -> stretch 0.9920 | phase 2.450s | lock 23.11x | kick 0.10 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [waltz-aurora_strings] lock 23.11x conf 0.55 kick 0.10 score 8.43 -> review/music/candidates/cobalt_rookery/waltz-aurora_strings.mp4
+♪ generating 33.0s | 90bpm B minor | seed 18084 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 19s -> cobalt_rookery_00031_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_pulse1-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/pulse1-aurora_strings.mp4
+    bar 2.667s | music bar 2.667s (conf 0.07) -> stretch 1.0000 | phase 0.870s | lock 2.16x | kick 0.00 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [pulse1-aurora_strings] kick 0.01 (top-up 1)
+♪ generating 33.0s | 90bpm B minor | seed 18185 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 19s -> cobalt_rookery_00032_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_pulse2-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/pulse2-aurora_strings.mp4
+    bar 2.667s | music bar 2.667s (conf 0.34) -> stretch 1.0000 | phase 0.060s | lock 15.74x | kick 0.29 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [pulse2-aurora_strings] kick 0.29 (top-up 2)
+♪ generating 33.0s | 90bpm B minor | seed 18286 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 19s -> cobalt_rookery_00033_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_pulse3-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/pulse3-aurora_strings.mp4
+    bar 2.667s | music bar 2.848s (conf -0.02) -> stretch 1.0000 | phase 0.050s | lock 20.74x | kick -0.01 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [pulse3-aurora_strings] kick -0.01 (top-up 3)
+kept: deep_archive-wild, wooden_orbit-wild, aurora_strings-halftime, waltz-aurora_strings, music_box-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 08:29:35 music pregen: ruby_furnace
+ruby_furnace (divein): bar 2.000s -> 120 bpm, key C minor; lane ember_pulse; generating 8, keeping 5
+♪ generating 25.0s | 120bpm C minor | seed 32830 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 20s -> ruby_furnace_00017_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ruby_furnace_ember_pulse.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/ember_pulse.mp4
+    bar 2.000s | music bar 2.005s (conf 0.53) -> stretch 1.0027 | phase 1.490s | lock 5.78x | kick -0.02 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [ember_pulse] lock 5.78x conf 0.53 kick -0.02 score 1.48 -> review/music/candidates/ruby_furnace/ember_pulse.mp4
+♪ generating 25.0s | 120bpm C minor | seed 32867 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 14s -> ruby_furnace_00018_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ruby_furnace_ember_pulse-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/ember_pulse-b.mp4
+    bar 2.000s | music bar 1.973s (conf 0.57) -> stretch 0.9867 | phase 0.500s | lock 25.72x | kick 0.46 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-b] lock 25.72x conf 0.57 kick 0.46 score 19.66 -> review/music/candidates/ruby_furnace/ember_pulse-b.mp4
+♪ generating 25.0s | 120bpm C minor | seed 32904 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 14s -> ruby_furnace_00019_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ruby_furnace_ember_pulse-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/ember_pulse-heartbeat.mp4
+    bar 2.000s | music bar 1.995s (conf 0.63) -> stretch 0.9973 | phase 1.000s | lock 8.84x | kick 0.09 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-heartbeat] lock 8.84x conf 0.63 kick 0.09 score 3.43 -> review/music/candidates/ruby_furnace/ember_pulse-heartbeat.mp4
+♪ generating 25.0s | 120bpm C minor | seed 32941 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 14s -> ruby_furnace_00020_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ruby_furnace_aurora_strings-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/aurora_strings-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.51) -> stretch 1.0027 | phase 0.970s | lock 13.04x | kick 0.44 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [aurora_strings-wild] lock 13.04x conf 0.51 kick 0.44 score 9.14 -> review/music/candidates/ruby_furnace/aurora_strings-wild.mp4
+♪ generating 25.0s | 120bpm C minor | seed 32978 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 14s -> ruby_furnace_00021_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ruby_furnace_glass_chapel-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/glass_chapel-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.62) -> stretch 1.0027 | phase 0.040s | lock 7.94x | kick 0.37 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] lock 7.94x conf 0.62 kick 0.37 score 5.55 -> review/music/candidates/ruby_furnace/glass_chapel-wild.mp4
+♪ generating 25.0s | 120bpm C minor | seed 33015 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 14s -> ruby_furnace_00022_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ruby_furnace_ember_pulse-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/ember_pulse-halftime.mp4
+    bar 2.000s | music bar 2.005s (conf 0.53) -> stretch 1.0027 | phase 0.520s | lock 6.56x | kick 0.18 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-halftime] lock 6.56x conf 0.53 kick 0.18 score 2.90 -> review/music/candidates/ruby_furnace/ember_pulse-halftime.mp4
+♪ generating 25.0s | 120bpm C minor | seed 33052 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 14s -> ruby_furnace_00023_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ruby_furnace_tide_organ-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/tide_organ-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.48) -> stretch 1.0027 | phase 1.530s | lock 10.94x | kick 0.33 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] lock 10.94x conf 0.48 kick 0.33 score 6.23 -> review/music/candidates/ruby_furnace/tide_organ-wild.mp4
+♪ generating 25.0s | 120bpm C minor | seed 33089 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 15s -> ruby_furnace_00024_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ruby_furnace_ember_pulse-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/ember_pulse-third_answer.mp4
+    bar 2.000s | music bar 2.005s (conf 0.56) -> stretch 1.0027 | phase 0.020s | lock 7.44x | kick 0.42 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-third_answer] lock 7.44x conf 0.56 kick 0.42 score 5.30 -> review/music/candidates/ruby_furnace/ember_pulse-third_answer.mp4
+kept: ember_pulse-b, aurora_strings-wild, tide_organ-wild, glass_chapel-wild, ember_pulse-third_answer
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 08:31:45 music pregen: magnetite_choir
+magnetite_choir (divein): bar 2.667s -> 90 bpm, key C# minor; lane aurora_strings; generating 8, keeping 5
+♪ generating 17.0s | 90bpm C# minor | seed 15916 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 18s -> magnetite_choir_00023_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/aurora_strings.mp4
+    bar 2.667s | music bar 2.859s (conf 0.04) -> stretch 1.0000 | phase 0.240s | lock 4.23x | kick 0.08 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [aurora_strings] lock 4.23x conf 0.04 kick 0.08 score 0.74 -> review/music/candidates/magnetite_choir/aurora_strings.mp4
+♪ generating 17.0s | 90bpm C# minor | seed 15953 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 11s -> magnetite_choir_00024_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_aurora_strings-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/aurora_strings-b.mp4
+    bar 2.667s | music bar 2.656s (conf 0.04) -> stretch 1.0000 | phase 0.030s | lock 25.11x | kick 0.19 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [aurora_strings-b] lock 25.11x conf 0.04 kick 0.19 score 5.96 -> review/music/candidates/magnetite_choir/aurora_strings-b.mp4
+♪ generating 17.0s | 90bpm C# minor | seed 15990 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 11s -> magnetite_choir_00025_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_aurora_strings-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/aurora_strings-third_answer.mp4
+    bar 2.667s | music bar 2.453s (conf -0.03) -> stretch 1.0000 | phase 0.040s | lock 8.70x | kick -0.07 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [aurora_strings-third_answer] lock 8.70x conf -0.03 kick -0.07 score 1.09 -> review/music/candidates/magnetite_choir/aurora_strings-third_answer.mp4
+♪ generating 17.0s | 90bpm C# minor | seed 16027 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 11s -> magnetite_choir_00026_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_glass_chapel-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/glass_chapel-wild.mp4
+    bar 2.667s | music bar 2.656s (conf 0.10) -> stretch 1.0000 | phase 0.020s | lock 31.69x | kick 0.20 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] lock 31.69x conf 0.10 kick 0.20 score 8.42 -> review/music/candidates/magnetite_choir/glass_chapel-wild.mp4
+♪ generating 17.0s | 90bpm C# minor | seed 16064 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 11s -> magnetite_choir_00027_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_tide_organ-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/tide_organ-wild.mp4
+    bar 2.667s | music bar 2.656s (conf 0.23) -> stretch 0.9960 | phase 1.340s | lock 19.52x | kick 0.10 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] lock 19.52x conf 0.23 kick 0.10 score 4.89 -> review/music/candidates/magnetite_choir/tide_organ-wild.mp4
+♪ generating 17.0s | 90bpm C# minor | seed 16101 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 11s -> magnetite_choir_00028_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_aurora_strings-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/aurora_strings-halftime.mp4
+    bar 2.667s | music bar 2.592s (conf 0.03) -> stretch 1.0000 | phase 1.970s | lock 3.89x | kick 0.08 | seamless loop @ 13.33s (music tiled x1, xf 0.50s)
+  [aurora_strings-halftime] lock 3.89x conf 0.03 kick 0.07 score 0.67 -> review/music/candidates/magnetite_choir/aurora_strings-halftime.mp4
+♪ generating 17.0s | 90bpm C# minor | seed 16138 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 10s -> magnetite_choir_00029_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_choir_of_dust-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/choir_of_dust-wild.mp4
+    bar 2.667s | music bar 2.656s (conf 0.20) -> stretch 0.9960 | phase 0.040s | lock 24.45x | kick 0.02 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] lock 24.45x conf 0.20 kick 0.02 score 4.59 -> review/music/candidates/magnetite_choir/choir_of_dust-wild.mp4
+♪ generating 17.0s | 68bpm C# minor | seed 16175 steps 8
+  tags: a gently lilting waltz in 3/4 time, all percussion is a single deep soft kick drum landing...
+  done in 11s -> magnetite_choir_00030_.flac (0.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_waltz-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/waltz-aurora_strings.mp4
+    bar 2.667s | music bar 2.496s (conf -0.03) -> stretch 1.0000 | phase 0.040s | lock 13.73x | kick -0.01 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [waltz-aurora_strings] lock 13.73x conf -0.03 kick -0.01 score 1.72 -> review/music/candidates/magnetite_choir/waltz-aurora_strings.mp4
+♪ generating 17.0s | 90bpm C# minor | seed 16276 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 12s -> magnetite_choir_00031_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_pulse1-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/pulse1-aurora_strings.mp4
+    bar 2.667s | music bar 2.453s (conf 0.05) -> stretch 1.0000 | phase 0.690s | lock 3.66x | kick 0.12 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [pulse1-aurora_strings] kick 0.12 (top-up 1)
+♪ generating 17.0s | 90bpm C# minor | seed 16377 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> magnetite_choir_00032_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_pulse2-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/pulse2-aurora_strings.mp4
+    bar 2.667s | music bar 2.667s (conf 0.64) -> stretch 1.0000 | phase 1.000s | lock 18.53x | kick 0.51 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [pulse2-aurora_strings] kick 0.51 (top-up 2)
+♪ generating 17.0s | 90bpm C# minor | seed 16478 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> magnetite_choir_00033_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_pulse3-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/pulse3-aurora_strings.mp4
+    bar 2.667s | music bar 2.677s (conf 0.31) -> stretch 1.0040 | phase 0.500s | lock 12.59x | kick 0.34 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [pulse3-aurora_strings] kick 0.34 (top-up 3)
+kept: pulse2-aurora_strings, glass_chapel-wild, pulse3-aurora_strings, tide_organ-wild, choir_of_dust-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 08:34:05 music pregen: wild_yeast
+wild_yeast (divein): bar 2.333s -> 103 bpm, key D minor; lane analog_dawn; generating 8, keeping 5
+♪ generating 15.0s | 103bpm D minor | seed 7604 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 17s -> wild_yeast_00009_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/wild_yeast_analog_dawn.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/wild_yeast/analog_dawn.mp4
+    bar 2.333s | music bar 2.101s (conf 0.13) -> stretch 0.9700 | phase 1.980s | lock 2.85x | kick 0.15 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [analog_dawn] lock 2.85x conf 0.13 kick 0.15 score 0.71 -> review/music/candidates/wild_yeast/analog_dawn.mp4
+♪ generating 15.0s | 103bpm D minor | seed 7641 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> wild_yeast_00010_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/wild_yeast_analog_dawn-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/wild_yeast/analog_dawn-b.mp4
+    bar 2.333s | music bar 2.347s (conf 0.48) -> stretch 1.0057 | phase 0.000s | lock 16.04x | kick 0.38 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [analog_dawn-b] lock 16.04x conf 0.48 kick 0.38 score 9.88 -> review/music/candidates/wild_yeast/analog_dawn-b.mp4
+♪ generating 15.0s | 103bpm D minor | seed 7678 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 10s -> wild_yeast_00011_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/wild_yeast_analog_dawn-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/wild_yeast/analog_dawn-third_answer.mp4
+    bar 2.333s | music bar 2.315s (conf 0.37) -> stretch 0.9920 | phase 0.590s | lock 8.45x | kick 0.34 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [analog_dawn-third_answer] lock 8.45x conf 0.37 kick 0.34 score 4.37 -> review/music/candidates/wild_yeast/analog_dawn-third_answer.mp4
+♪ generating 15.0s | 103bpm D minor | seed 7715 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 10s -> wild_yeast_00012_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/wild_yeast_choir_of_dust-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/wild_yeast/choir_of_dust-wild.mp4
+    bar 2.333s | music bar 2.304s (conf 0.60) -> stretch 0.9874 | phase 2.210s | lock 10.67x | kick 0.33 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] lock 10.67x conf 0.60 kick 0.33 score 6.81 -> review/music/candidates/wild_yeast/choir_of_dust-wild.mp4
+♪ generating 15.0s | 103bpm D minor | seed 7752 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> wild_yeast_00013_.flac (0.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/wild_yeast_glass_chapel-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/wild_yeast/glass_chapel-wild.mp4
+    bar 2.333s | music bar 2.283s (conf 0.62) -> stretch 0.9783 | phase 1.790s | lock 12.70x | kick 0.66 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] lock 12.70x conf 0.62 kick 0.66 score 12.97 -> review/music/candidates/wild_yeast/glass_chapel-wild.mp4
+♪ generating 15.0s | 103bpm D minor | seed 7789 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 10s -> wild_yeast_00014_.flac (0.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/wild_yeast_analog_dawn-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/wild_yeast/analog_dawn-halftime.mp4
+    bar 2.333s | music bar 2.293s (conf 0.53) -> stretch 0.9829 | phase 0.020s | lock 13.47x | kick 0.40 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [analog_dawn-halftime] lock 13.47x conf 0.53 kick 0.40 score 8.94 -> review/music/candidates/wild_yeast/analog_dawn-halftime.mp4
+♪ generating 15.0s | 103bpm D minor | seed 7826 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 10s -> wild_yeast_00015_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/wild_yeast_tide_organ-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/wild_yeast/tide_organ-wild.mp4
+    bar 2.333s | music bar 2.325s (conf 0.31) -> stretch 0.9966 | phase 2.320s | lock 17.18x | kick 0.26 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] lock 17.18x conf 0.31 kick 0.26 score 7.07 -> review/music/candidates/wild_yeast/tide_organ-wild.mp4
+♪ generating 15.0s | 77bpm D minor | seed 7863 steps 8
+  tags: a gently lilting waltz in 3/4 time, all percussion is a single deep soft kick drum landing...
+  done in 18s -> wild_yeast_00016_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/wild_yeast_waltz-analog_dawn.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/wild_yeast/waltz-analog_dawn.mp4
+    bar 2.333s | music bar 2.368s (conf 0.03) -> stretch 1.0000 | phase 0.020s | lock 6.88x | kick -0.10 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [waltz-analog_dawn] lock 6.88x conf 0.03 kick -0.10 score 0.92 -> review/music/candidates/wild_yeast/waltz-analog_dawn.mp4
+kept: glass_chapel-wild, analog_dawn-b, analog_dawn-halftime, tide_organ-wild, choir_of_dust-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 08:35:51 batch done in 8.6h — 6 to Review
+=== 08:35:51 ComfyUI models unloaded — VRAM freed
+=== 08:35:51 log: outbox/night_batch_0823_000001.log

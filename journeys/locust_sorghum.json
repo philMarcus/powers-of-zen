@@ -1,0 +1,75 @@
+{
+  "name": "locust_sorghum",
+  "theme": "a sorghum field at dusk under a locust swarm worked as a crowded commons — locusts massed overhead in two looping bands, hobby falcons poised among them, a jackal in the furrows, marabou storks at the margin — then onto one bowed grain head, onto one grain, into its floury cell chambers crowded with round starch spheres, whose crowd is reread as the swarm itself seen from high above the crop blocks, and settles back low over the rows where it began",
+  "style": "stormlight",
+  "music_lane": "ember_pulse",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "field_commons",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bronze-red grain heads and ochre locusts under bruised violet-grey dust",
+      "scene": "a sorghum field at dusk seen at eye level, thousands of bowed bronze-red grain heads crowding row after row, locusts massed overhead in two great looping bands folded over one another, ochre-brown bodies with straw-yellow flashes, dozens more locusts clamped on the stalks at head height, a pair of hobby falcons poised in the air among the swarm, a jackal in the open furrow with umber fur under grey dust, marabou storks posted at the far margin on slate legs, a violet-grey murk of dust hanging over the whole plain",
+      "target": "a bowed bronze-red grain head",
+      "target_phrase": "a bronze grain head",
+      "loop_target": "a sorghum field at eye level at dusk, bowed bronze-red grain heads crowding the rows under a violet-grey dust sky"
+    },
+    {
+      "name": "grain_head",
+      "exp": -0.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bronze-red grain and ochre husk on violet gloom",
+      "scene": "a sorghum grain head at dusk, hundreds of round bronze-red grains crowding the branchlets in tight clusters, split ochre husk scales curling off each grain, awn bristles combed through the whole cluster, one locust clamped on a branchlet with ochre-brown body and straw-yellow flashes, violet-grey dust gloom opening past the far side",
+      "target": "a round bronze-red grain",
+      "target_phrase": "a round bronze grain",
+      "cameo": {
+        "sprite": "output/mascots/canon/newman.png",
+        "pos": [
+          0.66,
+          0.34
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "starch_chambers",
+      "exp": -4.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "ochre and amber starch spheres in violet-grey murk",
+      "scene": "a country of cell chambers throughout a sorghum grain, every compartment crowded with round starch spheres in ochre and amber, smaller garnet protein bodies wedged in the gaps among them, scorched-amber chamber walls dividing one compartment from the next, chamber after chamber receding into violet-grey murk",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "swarm_from_air",
+      "exp": 3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bronze-red crop blocks and ochre swarm under violet dust",
+      "scene": "a locust swarm over sorghum country seen from high above at dusk, the swarm a dense scatter of ochre specks gathered into two great looping whorls, bronze-red crop blocks quilted across the plain below in strips and squares, umber earth tracks dividing them, a slate river course threading the far side, violet-grey dust haze laid over everything",
+      "target": "a bronze-red crop block",
+      "target_phrase": "a bronze crop block"
+    },
+    {
+      "name": "field_block",
+      "exp": 2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "umber furrows and bronze-red rows under bruised violet dusk",
+      "scene": "a block of sorghum seen low and oblique at dusk, rows of bowed bronze-red grain heads running away over a rise in combed parallel lines, umber earth showing in the furrows, locusts settled over the crop in a loose ochre scatter, the last dusk glow banded low beneath a violet-grey dust sky"
+    }
+  ],
+  "music_theme": "a smoldering low drone under a deep kick on every downbeat, dry husk-rattle percussion threaded through the field bars, the pulse tightening and narrowing as the dive enters the grain, one struck low hit on the morph out to the swarm seen from above, then the drone opening wide again for the return over the rows",
+  "music_key": "D minor",
+  "render_start": "field_commons"
+}

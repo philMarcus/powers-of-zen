@@ -1,0 +1,269 @@
+=== natron_skein [persist+hero] start Mon Aug 31 21:01:59 EDT 2026
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/natron_skein/v2
+[dive] natron_skein: 360 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — volcano_world(surface)[26..55], lake_air(surface)[58..87], wader_commons(surface)[90..119], fly_crust(sea)[122..151], trona_country(surface)[154..183], carbonate_ranks(lattice)[218..247], electron_fog(sea)[250..279], globule_core(sea)[314..327]
+[dive] TRACKER v3 ON (248 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of the interior of one globule head, a young white sun kindled in the murk with a tilted di
+[dive] FIGURE on frame 0 (woman — Florence: "A woman with blonde hair is wearing a futuristic outfit. There is a large planet behind her. There is a white moon in the sky above her.") — re-rolling seed, attempt 1/4
+[dive] FIGURE on frame 0 (woman — Florence: "A woman is standing in front of a planet. She is wearing a black and silver suit. There is a large circle above her head. There is a planet in the sky") — re-rolling seed, attempt 2/4
+[dive] FIGURE on frame 0 (woman — Florence: "A woman is wearing a long blue dress. She is standing in front of a large circular object. There are clouds in the sky behind the woman.") — re-rolling seed, attempt 3/4
+[dive] FIGURE on frame 0 (woman — Florence: "A painting of a woman. The woman has blue and pink hair. There is a blue headband on the woman's head. There is a bright yellow light behind the woman") — re-rolling seed, attempt 4/4
+[dive] frame 1/360 (120.2s/frame, ~43148s left) :: moving through the interior of one globule head, a young whi
+[dive] HERO globe for 'a black planet': run 31f, s0 0.109
+[dive] frame 11/360 (29.6s/frame, ~10344s left) :: moving through the interior of one globule head, a young whi
+[dive] frame 21/360 (24.5s/frame, ~8289s left) :: diving straight into an ash-black world as it swells to fill
+[dive] frame 31/360 (23.0s/frame, ~7552s left) :: diving straight into an ash-black world as it swells to fill
+[dive] frame 41/360 (20.4s/frame, ~6509s left) :: moving through a world seen from low orbit with a great rift
+[dive] frame 51/360 (18.8s/frame, ~5811s left) :: moving through a world seen from low orbit with a great rift
+[dive] hero: 'a red lake' is not a round target — standard approach
+[dive] frame 61/360 (18.7s/frame, ~5579s left) :: diving straight into a crimson lake as it swells to fill the
+[dive] frame 71/360 (17.8s/frame, ~5143s left) :: the soda lake from high over its shore and tipped toward the
+[dive] frame 81/360 (17.1s/frame, ~4774s left) :: moving through the soda lake from high over its shore and ti
+[dive] hero: 'a flock of pink birds' is not a round target — standard approach
+[dive] frame 91/360 (17.0s/frame, ~4576s left) :: diving straight into a rank of rose-pink birds as it swells 
+[dive] frame 101/360 (16.6s/frame, ~4287s left) :: the crimson shallows at wading height, lesser flamingos mass
+[dive] frame 111/360 (16.2s/frame, ~4028s left) :: moving through the crimson shallows at wading height, lesser
+[dive] hero: 'a white crust bar' is not a round target — standard approach
+[dive] frame 121/360 (16.2s/frame, ~3871s left) :: diving straight into a puckered white crust bar as it swells
+[dive] frame 131/360 (16.0s/frame, ~3666s left) :: the soda crust at close quarters, chalk plates puckered and 
+[dive] frame 141/360 (15.8s/frame, ~3460s left) :: moving through the soda crust at close quarters, chalk plate
+[dive] frame 151/360 (15.6s/frame, ~3264s left) :: diving straight into a water-clear crystal blade as it swell
+[dive] hero: 'a clear crystal blade' is not a round target — standard approach
+[dive] frame 161/360 (15.7s/frame, ~3117s left) :: a country of trona, water-clear crystal swords grown out of 
+[dive] frame 171/360 (15.5s/frame, ~2937s left) :: moving through a country of trona, water-clear crystal sword
+[dive] frame 181/360 (15.4s/frame, ~2749s left) :: diving straight into a glassy stepped face as it swells to f
+[dive] hero: 'a glassy crystal step' is not a round target — standard approach
+[dive] frame 191/360 (15.7s/frame, ~2647s left) :: diving straight into a glassy stepped face as it swells to f
+[dive] hero: 'a glowing triangle' is not a round target — standard approach
+[dive] frame 201/360 (15.7s/frame, ~2503s left) :: moving through the interior of one trona blade, glassy cleav
+[dive] frame 211/360 (16.2s/frame, ~2407s left) :: moving through the interior of one trona blade, glassy cleav
+[dive] frame 221/360 (16.4s/frame, ~2284s left) :: diving straight into a glowing triangular plate as it swells
+[dive] frame 231/360 (16.3s/frame, ~2106s left) :: the ordered ranks the blade is stacked from, flat triangular
+[dive] frame 241/360 (16.2s/frame, ~1923s left) :: moving through the ordered ranks the blade is stacked from, 
+[dive] hero: 'a glowing atom' is not a round target — standard approach
+[dive] frame 251/360 (16.2s/frame, ~1761s left) :: diving straight into a glowing white atom as it swells to fi
+[dive] frame 261/360 (16.1s/frame, ~1591s left) :: sodium atoms held far apart in ink murk, each one a hot whit
+[dive] frame 271/360 (15.9s/frame, ~1418s left) :: deep inside sodium atoms held far apart in ink murk, each on
+[dive] frame 281/360 (15.8s/frame, ~1249s left) :: deep inside sodium atoms held far apart in ink murk, each on
+[dive] frame 291/360 (15.7s/frame, ~1085s left) :: the whole view transforming, resolving into a herd of cometa
+[dive] hero: 'a rose-lit cloud head' is not a round target — standard approach
+[dive] frame 301/360 (15.9s/frame, ~939s left) :: moving through a herd of cometary globules adrift in a star-
+[dive] frame 311/360 (16.2s/frame, ~796s left) :: diving straight into a rose-crested cloud head as it swells 
+[dive] frame 321/360 (16.3s/frame, ~634s left) :: the interior of one globule head, a young white sun kindled 
+[dive] frame 331/360 (16.3s/frame, ~472s left) :: moving through the interior of one globule head, a young whi
+[dive] frame 341/360 (16.6s/frame, ~315s left) :: diving straight into an ash-black world as it swells to fill
+[dive] frame 351/360 (16.8s/frame, ~151s left) :: diving straight into an ash-black world as it swells to fill
+[dive] frame 360/360 (17.0s/frame, ~0s left) :: a world seen from low orbit with a great rift valley scored 
+[dive] interpolated 12 -> 24fps (640 frames, loop-bridged) in 37s
+[dive] counter overlay on 640 frames (35 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/natron_skein/v2/natron_skein.mp4 (42831 KB, 26.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/natron_skein/v2/natron_skein_divein.mp4 (43558 KB, 26.7s)
+[dive] done in 6285s
+=== natron_skein rc=0 Mon Aug 31 22:46:45 EDT 2026
+=== lily_undercroft [persist+hero] start Mon Aug 31 22:46:45 EDT 2026
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] enchanted_wild  ->  enchanted golden light, lush saturated color, painterly fantasy illustration, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/lily_undercroft/v2
+[dive] lily_undercroft: 392 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — star_nursery(surface)[26..55], night_planet(surface)[58..87], moor_flats(surface)[90..119], pad_commons(surface)[122..151], rib_undercroft(surface)[154..183], rib_crossing(surface)[186..215], chamber_froth(lattice)[218..247], mesophyll_gallery(sea)[250..279], first_galaxies(sea)[346..359]
+[dive] TRACKER v3 ON (272 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of a shoal of young galaxies strewn through the haze of cosmic dawn, dozens of blue-white k
+[dive] frame 1/392 (28.2s/frame, ~11026s left) :: moving through a shoal of young galaxies strewn through the 
+[dive] hero: 'a pink nebula' is not a round target — standard approach
+[dive] frame 11/392 (26.0s/frame, ~9904s left) :: moving through a shoal of young galaxies strewn through the 
+[dive] frame 21/392 (25.0s/frame, ~9283s left) :: diving straight into a rose-gold nebula knot as it swells to
+[dive] frame 31/392 (23.7s/frame, ~8561s left) :: diving straight into a rose-gold nebula knot as it swells to
+[dive] frame 41/392 (21.0s/frame, ~7370s left) :: moving through a nursery of kindling stars, towers of rose-g
+[dive] frame 51/392 (19.2s/frame, ~6563s left) :: moving through a nursery of kindling stars, towers of rose-g
+[dive] HERO globe for 'a green planet': run 8f, s0 0.350
+[dive] frame 61/392 (19.0s/frame, ~6294s left) :: diving straight into a jade-black planet as it swells to fil
+[dive] frame 71/392 (18.1s/frame, ~5818s left) :: a night planet seen from orbit, a drowned lowland spread ove
+[dive] frame 81/392 (17.4s/frame, ~5411s left) :: moving through a night planet seen from orbit, a drowned low
+[dive] hero: 'a black marsh' is not a round target — standard approach
+[dive] frame 91/392 (17.3s/frame, ~5199s left) :: diving straight into a black peat moor as it swells to fill 
+[dive] frame 101/392 (16.8s/frame, ~4882s left) :: a peat moorland at night met from low above, hundreds of bla
+[dive] frame 111/392 (16.4s/frame, ~4599s left) :: moving through a peat moorland at night met from low above, 
+[dive] hero: 'a green lily pond' is not a round target — standard approach
+[dive] frame 121/392 (16.4s/frame, ~4446s left) :: diving straight into a pad-tiled pond as it swells to fill t
+[dive] frame 131/392 (16.2s/frame, ~4226s left) :: a giant water-lily pond met from just above the water on its
+[dive] frame 141/392 (16.0s/frame, ~4023s left) :: moving through a giant water-lily pond met from just above t
+[dive] frame 151/392 (15.8s/frame, ~3814s left) :: diving straight into a rimmed lily pad as it swells to fill 
+[dive] hero: 'a green lily pad' is not a round target — standard approach
+[dive] frame 161/392 (15.9s/frame, ~3679s left) :: the undercroft of one lily pad, met from beneath in tea-bron
+[dive] frame 171/392 (15.8s/frame, ~3503s left) :: moving through the undercroft of one lily pad, met from bene
+[dive] frame 181/392 (15.6s/frame, ~3302s left) :: diving straight into a crimson girder rib as it swells to fi
+[dive] hero: 'a crimson rib' is not a round target — standard approach
+[dive] frame 191/392 (15.6s/frame, ~3133s left) :: diving straight into a crimson girder rib as it swells to fi
+[dive] frame 201/392 (15.5s/frame, ~2960s left) :: moving through one crossing of the pad's underside frame, th
+[dive] frame 211/392 (15.3s/frame, ~2775s left) :: moving through one crossing of the pad's underside frame, th
+[dive] hero: 'a green quilted pane' is not a round target — standard approach
+[dive] frame 221/392 (15.4s/frame, ~2629s left) :: diving straight into a jade quilted pane as it swells to fil
+[dive] frame 231/392 (15.3s/frame, ~2470s left) :: the air chambers packed inside the pad's blade, a froth of g
+[dive] frame 241/392 (15.2s/frame, ~2299s left) :: moving through the air chambers packed inside the pad's blad
+[dive] hero: 'a green cell' is not a round target — standard approach
+[dive] frame 251/392 (15.3s/frame, ~2153s left) :: diving straight into a green columnar cell as it swells to f
+[dive] frame 261/392 (15.2s/frame, ~1992s left) :: a gallery of mesophyll cells inside the pad's blade, ivory-w
+[dive] frame 271/392 (15.1s/frame, ~1827s left) :: moving through a gallery of mesophyll cells inside the pad's
+[dive] hero: 'a green lens' is not a round target — standard approach
+[dive] frame 281/392 (15.1s/frame, ~1675s left) :: diving straight into an emerald chloroplast lens as it swell
+[dive] frame 291/392 (15.3s/frame, ~1549s left) :: the pigment antenna arrays paving one chloroplast's interior
+[dive] frame 301/392 (15.3s/frame, ~1390s left) :: deep inside the pigment antenna arrays paving one chloroplas
+[dive] frame 311/392 (15.3s/frame, ~1238s left) :: deep inside the pigment antenna arrays paving one chloroplas
+[dive] frame 321/392 (15.2s/frame, ~1079s left) :: the whole view transforming, resolving into the froth of cos
+[dive] hero: 'a small blue galaxy' is not a round target — standard approach
+[dive] frame 331/392 (15.3s/frame, ~930s left) :: moving through the froth of cosmic dawn, spheres of first st
+[dive] frame 341/392 (15.6s/frame, ~797s left) :: diving straight into a young blue-white galaxy as it swells 
+[dive] frame 351/392 (15.7s/frame, ~645s left) :: diving straight into a young blue-white galaxy as it swells 
+[dive] frame 361/392 (15.7s/frame, ~486s left) :: moving through a shoal of young galaxies strewn through the 
+[dive] frame 371/392 (16.0s/frame, ~336s left) :: moving through a shoal of young galaxies strewn through the 
+[dive] frame 381/392 (16.2s/frame, ~178s left) :: diving straight into a rose-gold nebula knot as it swells to
+[dive] frame 391/392 (16.4s/frame, ~16s left) :: a nursery of kindling stars, towers of rose-gold gas raised 
+[dive] frame 392/392 (16.5s/frame, ~0s left) :: a nursery of kindling stars, towers of rose-gold gas raised 
+[dive] interpolated 12 -> 24fps (704 frames, loop-bridged) in 42s
+[dive] counter overlay on 704 frames (42 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/lily_undercroft/v2/lily_undercroft.mp4 (45408 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/lily_undercroft/v2/lily_undercroft_divein.mp4 (46056 KB, 29.3s)
+[dive] done in 6620s
+=== lily_undercroft rc=0 Tue Sep  1 00:37:05 EDT 2026
+=== gecko_rampart [persist+hero] start Tue Sep  1 00:37:05 EDT 2026
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/gecko_rampart/v2
+[dive] gecko_rampart: 343 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — monsoon_world(surface)[22..48], rampart_commons(surface)[50..76], gecko_stone(surface)[78..104], toe_pavement(surface)[106..132], seta_ranks(surface)[134..160], spatula_tip(sea)[162..188], contact_gap(lattice)[190..216], flicker_floor(sea)[218..244], shell_rings(sea)[274..300], twin_envelope(sea)[302..314]
+[dive] TRACKER v3 ON (217 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of two blue-white suns orbiting inside one shared envelope of glow, seen level with the pla
+[dive] frame 1/343 (33.5s/frame, ~11442s left) :: moving through two blue-white suns orbiting inside one share
+[dive] HERO globe for 'a small planet': run 27f, s0 0.109
+[dive] frame 11/343 (24.1s/frame, ~7997s left) :: moving through two blue-white suns orbiting inside one share
+[dive] frame 21/343 (22.5s/frame, ~7248s left) :: diving straight into a small slate-blue world as it swells t
+[dive] frame 31/343 (20.6s/frame, ~6428s left) :: a storm world seen from orbit at night, monsoon cloud spiral
+[dive] frame 41/343 (18.6s/frame, ~5624s left) :: moving through a storm world seen from orbit at night, monso
+[dive] hero: 'a stone rampart' is not a round target — standard approach
+[dive] frame 51/343 (17.8s/frame, ~5195s left) :: diving straight into a lamplit stone rampart as it swells to
+[dive] frame 61/343 (17.1s/frame, ~4831s left) :: a sandstone rampart above its moat ring on a monsoon night, 
+[dive] frame 71/343 (16.5s/frame, ~4476s left) :: moving through a sandstone rampart above its moat ring on a 
+[dive] hero: 'a speckled gecko' is not a round target — standard approach
+[dive] frame 81/343 (16.2s/frame, ~4241s left) :: diving straight into a slate-blue gecko speckled with cinnab
+[dive] frame 91/343 (15.9s/frame, ~4011s left) :: a rain-slicked sandstone block with a slate-blue gecko clamp
+[dive] frame 101/343 (15.6s/frame, ~3771s left) :: diving straight into a splayed grey toe as it swells to fill
+[dive] hero: 'a gecko toe' is not a round target — standard approach
+[dive] frame 111/343 (15.6s/frame, ~3622s left) :: diving straight into a splayed grey toe as it swells to fill
+[dive] frame 121/343 (15.5s/frame, ~3438s left) :: moving through the underside of a gecko toe, ranked ridge fa
+[dive] frame 131/343 (15.3s/frame, ~3235s left) :: diving straight into a milk-pale keratin bristle as it swell
+[dive] hero: 'a pale bristle' is not a round target — standard approach
+[dive] frame 141/343 (15.3s/frame, ~3096s left) :: a forest of keratin bristles rooted in a floor of flat cells
+[dive] frame 151/343 (15.2s/frame, ~2915s left) :: moving through a forest of keratin bristles rooted in a floo
+[dive] frame 161/343 (15.0s/frame, ~2731s left) :: diving straight into a milk-pale bristle tip as it swells to
+[dive] hero: 'a bristle tip' is not a round target — standard approach
+[dive] frame 171/343 (15.0s/frame, ~2588s left) :: the frayed end of one keratin bristle, its branches ending i
+[dive] frame 181/343 (14.9s/frame, ~2414s left) :: moving through the frayed end of one keratin bristle, its br
+[dive] hero: 'a glowing seam' is not a round target — standard approach
+[dive] frame 191/343 (15.0s/frame, ~2273s left) :: diving straight into a thin cinnabar seam as it swells to fi
+[dive] frame 201/343 (14.9s/frame, ~2115s left) :: the meeting place of pad and stone, two facing files of hazy
+[dive] frame 211/343 (14.8s/frame, ~1950s left) :: moving through the meeting place of pad and stone, two facin
+[dive] hero: 'a pale spark' is not a round target — standard approach
+[dive] frame 221/343 (14.7s/frame, ~1799s left) :: diving straight into a pale spark as it swells to fill the e
+[dive] frame 231/343 (14.7s/frame, ~1649s left) :: an emptiness that is never still, paired sparks flaring apar
+[dive] frame 241/343 (14.6s/frame, ~1491s left) :: deep inside an emptiness that is never still, paired sparks 
+[dive] frame 251/343 (14.6s/frame, ~1339s left) :: deep inside an emptiness that is never still, paired sparks 
+[dive] hero: 'a glowing ring' is not a round target — standard approach
+[dive] frame 261/343 (14.6s/frame, ~1197s left) :: moving through a smooth hill of star-fog, ten billion old su
+[dive] frame 271/343 (15.0s/frame, ~1080s left) :: diving straight into a small cinnabar ring as it swells to f
+[dive] frame 281/343 (15.2s/frame, ~940s left) :: nested shells cast off by an old star, three rings of glowin
+[dive] frame 291/343 (15.1s/frame, ~784s left) :: moving through nested shells cast off by an old star, three 
+[dive] frame 301/343 (15.0s/frame, ~630s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 311/343 (15.0s/frame, ~479s left) :: two blue-white suns orbiting inside one shared envelope of g
+[dive] frame 321/343 (15.1s/frame, ~333s left) :: moving through two blue-white suns orbiting inside one share
+[dive] frame 331/343 (15.4s/frame, ~185s left) :: diving straight into a small slate-blue world as it swells t
+[dive] frame 341/343 (15.8s/frame, ~32s left) :: a storm world seen from orbit at night, monsoon cloud spiral
+[dive] frame 343/343 (15.8s/frame, ~0s left) :: a storm world seen from orbit at night, monsoon cloud spiral
+[dive] interpolated 12 -> 24fps (616 frames, loop-bridged) in 37s
+[dive] counter overlay on 616 frames (45 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/gecko_rampart/v2/gecko_rampart.mp4 (39356 KB, 25.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/gecko_rampart/v2/gecko_rampart_divein.mp4 (39997 KB, 25.7s)
+[dive] done in 5574s
+=== gecko_rampart rc=0 Tue Sep  1 02:10:00 EDT 2026
+=== phage_landing [persist+hero] start Tue Sep  1 02:10:00 EDT 2026
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] ultraviolet  ->  ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/phage_landing/v2
+[dive] phage_landing: 264 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — phage_landing(surface)[26..55], capsid_shell(sea)[58..87], coiled_cable(sea)[90..119], compost_commons(surface)[154..183], crumb_galleries(sea)[186..215], actinomycete_web(web)[218..231]
+[dive] TRACKER v3 ON (176 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a branching web of actinomycete filaments threading a hollow within the crumb, h
+[dive] frame 1/264 (40.5s/frame, ~10642s left) :: moving through a branching web of actinomycete filaments thr
+[dive] hero: 'a glossy green rod' is not a round target — standard approach
+[dive] frame 11/264 (27.4s/frame, ~6935s left) :: moving through a branching web of actinomycete filaments thr
+[dive] frame 21/264 (25.8s/frame, ~6273s left) :: diving straight into a rod-shaped green bacterium as it swel
+[dive] frame 31/264 (24.7s/frame, ~5744s left) :: diving straight into a rod-shaped green bacterium as it swel
+[dive] frame 41/264 (21.7s/frame, ~4840s left) :: moving through the bacterium's hull curving away as a ground
+[dive] frame 51/264 (19.8s/frame, ~4227s left) :: moving through the bacterium's hull curving away as a ground
+[dive] hero: 'a faceted green dome' is not a round target — standard approach
+[dive] frame 61/264 (19.5s/frame, ~3962s left) :: diving straight into a faceted green dome as it swells to fi
+[dive] frame 71/264 (18.5s/frame, ~3579s left) :: a tiled dome-scape of triangular protein plates curving over
+[dive] frame 81/264 (17.8s/frame, ~3255s left) :: moving through a tiled dome-scape of triangular protein plat
+[dive] hero: 'a triangular green plate' is not a round target — standard approach
+[dive] frame 91/264 (17.6s/frame, ~3051s left) :: diving straight into a triangular green plate as it swells t
+[dive] frame 101/264 (17.1s/frame, ~2790s left) :: the crammed interior of the capsid, one long double-helix ca
+[dive] frame 111/264 (16.7s/frame, ~2553s left) :: deep inside the crammed interior of the capsid, one long dou
+[dive] frame 121/264 (16.5s/frame, ~2357s left) :: deep inside the crammed interior of the capsid, one long dou
+[dive] frame 131/264 (16.2s/frame, ~2160s left) :: the whole view transforming, resolving into a walled kitchen
+[dive] hero: 'a steaming straw mound' is not a round target — standard approach
+[dive] frame 141/264 (16.5s/frame, ~2034s left) :: moving through a walled kitchen garden on a cold night, empt
+[dive] frame 151/264 (17.1s/frame, ~1935s left) :: diving straight into a steaming straw mound as it swells to 
+[dive] frame 161/264 (17.2s/frame, ~1769s left) :: the warm interior of the heap at eye level among the straw, 
+[dive] frame 171/264 (17.0s/frame, ~1585s left) :: moving through the warm interior of the heap at eye level am
+[dive] frame 181/264 (16.8s/frame, ~1394s left) :: diving straight into a wet earth crumb as it swells to fill 
+[dive] hero: 'a wet earth crumb' is not a round target — standard approach
+[dive] frame 191/264 (16.7s/frame, ~1218s left) :: diving straight into a wet earth crumb as it swells to fill 
+[dive] frame 201/264 (16.6s/frame, ~1044s left) :: moving through the pore system within one crumb of worm-turn
+[dive] frame 211/264 (16.4s/frame, ~868s left) :: moving through the pore system within one crumb of worm-turn
+[dive] hero: 'a silver thread' is not a round target — standard approach
+[dive] frame 221/264 (16.4s/frame, ~705s left) :: diving straight into a silver-grey filament as it swells to 
+[dive] frame 231/264 (16.3s/frame, ~538s left) :: a branching web of actinomycete filaments threading a hollow
+[dive] frame 241/264 (16.6s/frame, ~383s left) :: moving through a branching web of actinomycete filaments thr
+[dive] frame 251/264 (17.0s/frame, ~221s left) :: diving straight into a rod-shaped green bacterium as it swel
+[dive] frame 261/264 (17.3s/frame, ~52s left) :: the bacterium's hull curving away as a ground of oxidized gr
+[dive] frame 264/264 (17.4s/frame, ~0s left) :: the bacterium's hull curving away as a ground of oxidized gr
+[dive] interpolated 12 -> 24fps (448 frames, loop-bridged) in 26s
+[dive] counter overlay on 448 frames (17 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/phage_landing/v2/phage_landing.mp4 (29847 KB, 18.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/phage_landing/v2/phage_landing_divein.mp4 (30232 KB, 18.7s)
+[dive] done in 4706s
+=== phage_landing rc=0 Tue Sep  1 03:28:26 EDT 2026
+=== waterbear_prairie [persist+hero] start Tue Sep  1 03:28:26 EDT 2026
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/waterbear_prairie/v3
+[dive] waterbear_prairie: 150 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — waterbear(sea)[18..41], tun_cells(sea)[42..65], sugar_glass(web)[66..89], moss_prairie(surface)[114..125]
+[dive] TRACKER v3 ON (96 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a moss micro-prairie at water level among the shoots, ranks of moss stems standi
+[dive] frame 1/150 (29.9s/frame, ~4458s left) :: moving through a moss micro-prairie at water level among the
+[dive] hero: 'a plump amber creature' is not a round target — standard approach
+[dive] frame 11/150 (27.2s/frame, ~3774s left) :: moving through a moss micro-prairie at water level among the
+[dive] frame 21/150 (23.3s/frame, ~3008s left) :: diving straight into a plump amber water bear as it swells t
+[dive] frame 31/150 (20.6s/frame, ~2449s left) :: moving through one water bear astride a moss stem in the rai
+[dive] frame 41/150 (18.6s/frame, ~2023s left) :: diving straight into a cloudy amber cell as it swells to fil
+[dive] frame 51/150 (17.4s/frame, ~1720s left) :: living tissue within the flank wall, storage cells massed wa
+[dive] frame 61/150 (17.0s/frame, ~1510s left) :: moving through living tissue within the flank wall, storage 
+[dive] frame 71/150 (16.4s/frame, ~1293s left) :: diving straight into a clear amber bead as it swells to fill
+[dive] frame 81/150 (16.0s/frame, ~1102s left) :: deep inside trehalose sugar molecules locked in an amorphous
+[dive] frame 91/150 (15.9s/frame, ~939s left) :: deep inside trehalose sugar molecules locked in an amorphous
+[dive] frame 101/150 (15.7s/frame, ~767s left) :: the whole view transforming, resolving into a city rooftop a
+[dive] hero: 'a mossy cushion' is not a round target — standard approach
+[dive] frame 111/150 (16.6s/frame, ~647s left) :: diving straight into a plush moss cushion as it swells to fi
+[dive] frame 121/150 (16.6s/frame, ~482s left) :: a moss micro-prairie at water level among the shoots, ranks 
+[dive] frame 131/150 (16.8s/frame, ~320s left) :: moving through a moss micro-prairie at water level among the
+[dive] frame 141/150 (17.5s/frame, ~157s left) :: diving straight into a plump amber water bear as it swells t
+[dive] frame 150/150 (18.0s/frame, ~0s left) :: one water bear astride a moss stem in the rain film, its bar
+[dive] interpolated 12 -> 24fps (240 frames, loop-bridged) in 15s
+[dive] counter overlay on 240 frames (14 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/waterbear_prairie/v3/waterbear_prairie.mp4 (16279 KB, 10.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/waterbear_prairie/v3/waterbear_prairie_divein.mp4 (16566 KB, 10.0s)
+[dive] done in 2753s
+=== waterbear_prairie rc=0 Tue Sep  1 04:14:19 EDT 2026
+render_paused restored to False
+=== REVIEW AB DONE Tue Sep  1 04:14:19 EDT 2026

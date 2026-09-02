@@ -1,0 +1,92 @@
+geode_cosmos (divein): bar 2.667s -> 90 bpm, key C-sharp minor; lane tide_organ; generating 8, keeping 5
+  (music_key 'C-sharp minor' -> 'C# minor' for the ACE-Step keyscale enum)
+♪ generating 33.0s | 90bpm C# minor | seed 31797 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 22s -> geode_cosmos_00001_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/geode_cosmos_tide_organ.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/geode_cosmos/tide_organ.mp4
+    bar 2.667s | music bar 2.667s (conf 0.77) -> stretch 1.0000 | phase 1.300s | lock 26.23x | kick 0.40 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [tide_organ] lock 26.23x conf 0.77 kick 0.41 score 21.82 -> review/music/candidates/geode_cosmos/tide_organ.mp4
+  (music_key 'C-sharp minor' -> 'C# minor' for the ACE-Step keyscale enum)
+♪ generating 33.0s | 90bpm C# minor | seed 31834 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 19s -> geode_cosmos_00002_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/geode_cosmos_tide_organ-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/geode_cosmos/tide_organ-b.mp4
+    bar 2.667s | music bar 2.443s (conf 0.16) -> stretch 0.9700 | phase 0.130s | lock 3.30x | kick 0.18 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [tide_organ-b] lock 3.30x conf 0.16 kick 0.18 score 0.93 -> review/music/candidates/geode_cosmos/tide_organ-b.mp4
+  (music_key 'C-sharp minor' -> 'C# minor' for the ACE-Step keyscale enum)
+♪ generating 33.0s | 90bpm C# minor | seed 31871 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 19s -> geode_cosmos_00003_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/geode_cosmos_tide_organ-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/geode_cosmos/tide_organ-halftime.mp4
+    bar 2.667s | music bar 2.400s (conf 0.10) -> stretch 1.0000 | phase 1.010s | lock 8.16x | kick 0.04 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [tide_organ-halftime] lock 8.16x conf 0.10 kick 0.04 score 1.39 -> review/music/candidates/geode_cosmos/tide_organ-halftime.mp4
+  (music_key 'C-sharp minor' -> 'C# minor' for the ACE-Step keyscale enum)
+♪ generating 33.0s | 90bpm C# minor | seed 31908 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 19s -> geode_cosmos_00004_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/geode_cosmos_wooden_orbit-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/geode_cosmos/wooden_orbit-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.53) -> stretch 1.0000 | phase 0.610s | lock 18.25x | kick 0.46 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [wooden_orbit-wild] lock 18.25x conf 0.53 kick 0.46 score 13.35 -> review/music/candidates/geode_cosmos/wooden_orbit-wild.mp4
+  (music_key 'C-sharp minor' -> 'C# minor' for the ACE-Step keyscale enum)
+♪ generating 33.0s | 90bpm C# minor | seed 31945 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 20s -> geode_cosmos_00005_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/geode_cosmos_choir_of_dust-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/geode_cosmos/choir_of_dust-wild.mp4
+    bar 2.667s | music bar 2.389s (conf -0.08) -> stretch 1.0000 | phase 1.330s | lock 14.95x | kick -0.06 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] lock 14.95x conf -0.08 kick -0.06 score 1.87 -> review/music/candidates/geode_cosmos/choir_of_dust-wild.mp4
+  (music_key 'C-sharp minor' -> 'C# minor' for the ACE-Step keyscale enum)
+♪ generating 33.0s | 90bpm C# minor | seed 31982 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 33s -> geode_cosmos_00006_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/geode_cosmos_tide_organ-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/geode_cosmos/tide_organ-halftime.mp4
+    bar 2.667s | music bar 2.560s (conf -0.01) -> stretch 1.0000 | phase 0.860s | lock 2.33x | kick -0.00 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [tide_organ-halftime] lock 2.33x conf -0.01 kick -0.00 score 0.29 -> review/music/candidates/geode_cosmos/tide_organ-halftime.mp4
+  (music_key 'C-sharp minor' -> 'C# minor' for the ACE-Step keyscale enum)
+♪ generating 33.0s | 90bpm C# minor | seed 32019 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 31s -> geode_cosmos_00007_.flac (2.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/geode_cosmos_glass_chapel-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/geode_cosmos/glass_chapel-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.87) -> stretch 1.0000 | phase 1.380s | lock 14.08x | kick 0.69 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [glass_chapel-wild] lock 14.08x conf 0.87 kick 0.69 score 18.10 -> review/music/candidates/geode_cosmos/glass_chapel-wild.mp4
+  (music_key 'C-sharp minor' -> 'C# minor' for the ACE-Step keyscale enum)
+♪ generating 33.0s | 90bpm C# minor | seed 32056 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 32s -> geode_cosmos_00008_.flac (1.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/geode_cosmos_tide_organ-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/geode_cosmos/tide_organ-third_answer.mp4
+    bar 2.667s | music bar 2.667s (conf 0.76) -> stretch 1.0000 | phase 0.700s | lock 11.59x | kick 0.63 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [tide_organ-third_answer] lock 11.59x conf 0.76 kick 0.62 score 12.73 -> review/music/candidates/geode_cosmos/tide_organ-third_answer.mp4
+  (music_key 'C-sharp minor' -> 'C# minor' for the ACE-Step keyscale enum)
+♪ generating 33.0s | 90bpm C# minor | seed 32157 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 32s -> geode_cosmos_00009_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/geode_cosmos_pulse1-tide_organ.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/geode_cosmos/pulse1-tide_organ.mp4
+    bar 2.667s | music bar 2.539s (conf 0.17) -> stretch 0.9700 | phase 1.090s | lock 1.93x | kick 0.19 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [pulse1-tide_organ] kick 0.19 (top-up 1)
+  (music_key 'C-sharp minor' -> 'C# minor' for the ACE-Step keyscale enum)
+♪ generating 33.0s | 90bpm C# minor | seed 32258 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 31s -> geode_cosmos_00010_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/geode_cosmos_pulse2-tide_organ.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/geode_cosmos/pulse2-tide_organ.mp4
+    bar 2.667s | music bar 2.389s (conf 0.15) -> stretch 0.9700 | phase 1.390s | lock 2.37x | kick 0.16 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [pulse2-tide_organ] kick 0.16 (top-up 2)
+  (music_key 'C-sharp minor' -> 'C# minor' for the ACE-Step keyscale enum)
+♪ generating 33.0s | 90bpm C# minor | seed 32359 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 30s -> geode_cosmos_00011_.flac (1.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/geode_cosmos_pulse3-tide_organ.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/geode_cosmos/pulse3-tide_organ.mp4
+    bar 2.667s | music bar 2.635s (conf 0.80) -> stretch 0.9880 | phase 0.730s | lock 11.86x | kick 0.58 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [pulse3-tide_organ] kick 0.58 (top-up 3)
+kept: tide_organ, glass_chapel-wild, wooden_orbit-wild, pulse3-tide_organ, choir_of_dust-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel

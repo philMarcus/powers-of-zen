@@ -1,0 +1,406 @@
+=== 00:00:01 queue 12/20 — composing 5: short, short, medium, short, long
+All 5 journeys composed and on disk, every one preflight-PASS with the seam mid-chain and a valid frame-0 start. Briefs are in `outbox/refill_briefs_20260802.md`; nothing was queued, no existing journeys touched, no VARIATIONS.md changes needed (the library still has plenty of unused entries).
+
+- **heron_delta** — SHORT — 5 cards
+- **gossamer_dawn** — SHORT — 5 cards
+- **lichen_moor** — MEDIUM — 7 cards
+- **night_lido** — SHORT — 5 cards
+- **cinder_veil** — LONG — 11 cards
+
+Notes worth knowing at review time: the five are fully distinct in palette family (arctic / pastel dawn / jade & vermilion / jewel tones / ember & ash), math family (moiré / log-spiral curves / percolation / caustics / Apollonian gasket), and seam type — only cinder_veil goes cosmic (supernova-remnant lace, no nebula or spiral galaxy). Composers made a few skill-forced calls: heron_delta opens on the plumage field rather than the aerial delta (rotation constraint — the delta can still be the playback opening via phase_shift), cinder_veil added a `cinder_ring` card to avoid an accidental second auto-seam and dropped the word "veil" from all prompts (figure-bait list), and lichen_moor styles as `enchanted_wild` to avoid look-twinning jade_automata.
+
+=== 00:12:17 5 new journeys: cinder_veil, gossamer_dawn, heron_delta, lichen_moor, night_lido
+=== 00:12:17   cinder_veil: QUEUED (ok cinder_veil              start=cinder_ring)
+=== 00:12:17   gossamer_dawn: QUEUED (ok gossamer_dawn            start=hedgerow            · not cosmic/subatomic)
+=== 00:12:17   heron_delta: QUEUED (ok heron_delta              start=plumage             · not cosmic/subatomic)
+=== 00:12:17   lichen_moor: QUEUED (ok lichen_moor              start=lichen_crust        · not cosmic/subatomic)
+=== 00:12:17   night_lido: QUEUED (ok night_lido               start=caustic_floor       · not cosmic/subatomic)
+=== 00:12:17 refill done: 5 composed, 5 queued (briefs: short, short, medium, short, long)
+=== 00:00:01 queue 14/20 — composing 5: medium, short, long, medium, short
+Tonight's refill is complete. All five journeys are composed, preflight-passed, and audit-clean; nothing was queued and no existing journey was touched (the pre-existing `sugar_nebula.json` / `outbox/journeys.json` modifications predate this session).
+
+**The roster:**
+- **salt_mirror** — MEDIUM, 7 cards
+- **attic_drift** — SHORT, 5 cards
+- **jewel_oculus** — LONG, 11 cards
+- **turing_springs** — MEDIUM, 7 cards
+- **droplet_zoo** — SHORT, 5 cards
+
+Supporting detail: briefs are in `outbox/refill_briefs_20260803.md`; each journey uses a first-use combination for the active catalog — cubic hopper-crystal lattice with a non-cosmic pattern seam (salt_mirror), a realm-local dust-mote-swarm-as-cosmos loop (attic_drift), girih/E8 quasicrystal into a stained-glass cosmic web with Einstein-ring lensing (jewel_oculus), Turing reaction-diffusion stripes seaming into a banded gas giant with aurora curtains (turing_springs), and a diatom geodesic-shell dive with an image-carrier droplet-lens seam (droplet_zoo). Deck styles landed on reef_pop, cosmic_gloss, crystalline, and liquid_light×2 (both composers judged it the honest fit for their wet realms; per-card palettes keep them far apart — pearl-on-cream vs ember-on-charcoal). Cameos rotate cleanly after one fix: the salt_mirror composer swapped its tina pick (which collided with droplet_zoo's) for adam on the exp −9 lattice card, his tightest scale match. Final spread: tina, adam, lorraine, dora, belle. VARIATIONS.md needed no additions — the library still has unused entries beyond what tonight consumed.
+
+All five are sitting unqueued in `journeys/`, ready for the Journeys tab or the next refill's auto-queue.
+
+=== 00:17:37 5 new journeys: attic_drift, droplet_zoo, jewel_oculus, salt_mirror, turing_springs
+=== 00:17:37   attic_drift: QUEUED (ok attic_drift              start=mote_swarm          · not cosmic/subatomic)
+=== 00:17:37   droplet_zoo: QUEUED (ok droplet_zoo              start=pond_edge           · not cosmic/subatomic)
+=== 00:17:37   jewel_oculus: QUEUED (ok jewel_oculus             start=lens_arcs)
+=== 00:17:38   salt_mirror: QUEUED (ok salt_mirror              start=pond_field          · not cosmic/subatomic)
+=== 00:17:38   turing_springs: QUEUED (ok turing_springs           start=aurora_curtains)
+=== 00:17:38 refill done: 5 composed, 5 queued (briefs: medium, short, long, medium, short)
+=== 00:00:02 queue 16/20 — composing 4: long, long, short, long
+All four composers finished — every journey written and preflight-clean, nothing queued, no existing journeys touched.
+
+- **singing_dunes** — LONG, 11 cards
+- **moon_jelly** — LONG, 11 cards
+- **vinyl_canyon** — SHORT, 5 cards
+- **lantern_canals** — LONG, 11 cards
+
+Supporting detail: all four passed preflight and audit_starts with zero flags (catalog now 38 journeys, 0 needing attention); each has a uniform dur-4 grid, a mid-list seam after rotation, and a realm-matched cameo. The four fill catalog gaps that had zero coverage — desert, open ocean, a music object, and a city — with four brand-new palette families (mirage, abyssal opal, petrol sheen, cobalt & whitewash) added to VARIATIONS.md tonight along with medusae and music-object entries.
+
+Three small honesty notes from the composers, worth knowing at review time: "ring galaxy" wasn't literally a catalog first (chess_empires hides an ivory one — lantern_canals differentiated the look), moiré appears as a one-card detail on heron_delta (singing_dunes makes it the journey-wide identity), and both singing_dunes and vinyl_canyon independently chose **tina** for their micro-realm cameo cards since she had zero prior uses — realm-match agrees in both cases, but if you'd rather not debut her twice in one batch, swapping one is a one-line edit in the Journeys tab era.
+
+Briefs are in `outbox/refill_briefs_20260804.md`; the journeys are ready to queue from the dashboard whenever you approve them.
+
+=== 00:17:27 4 new journeys: lantern_canals, moon_jelly, singing_dunes, vinyl_canyon
+=== 00:17:27   lantern_canals: QUEUED (ok lantern_canals           start=star_ring)
+=== 00:17:28   moon_jelly: QUEUED (ok moon_jelly               start=young_star)
+=== 00:17:28   singing_dunes: QUEUED (ok singing_dunes            start=planet)
+=== 00:17:28   vinyl_canyon: QUEUED (ok vinyl_canyon             start=groove_field        · not cosmic/subatomic)
+=== 00:17:28 refill done: 4 composed, 4 queued (briefs: long, long, short, long)
+=== 00:00:02 queue 17/20 — composing 3: medium, short, long
+Tonight's refill is complete — all three journeys composed, validated (preflight + full-catalog audit_starts: 41 journeys, 0 flags), and NOT queued, per instructions:
+
+- **blueprint_harbor** — MEDIUM, **8 cards** (224f, ~18.7s). Cyanotype naval-architect's loft; Hilbert-curve street plan; map-contour → real-coastline carrier seam. Style `gilded_relic`, belle cameo.
+- **amber_steep** — SHORT, **5 cards** (140f, ~11.7s). Midnight teapot that never leaves the tea; Lorenz-ribbon tannin swirls; steam-beads-as-sky realm-local seam. Style `stormlight`, adam cameo.
+- **girih_dome** — LONG, **11 cards** (308f, ~25.7s). Girih-tiled hilltop observatory under a pulsar-swept sky; E8 quasicrystal micro end; pattern-writ-large wrap. Style `crystalline`, Lorraine cameo.
+
+Notes for the morning review:
+
+- **Briefs** are at `outbox/refill_briefs_20260805.md`. Differentiation was checked against the full 38-journey catalog *including* last night's four (which had just claimed moiré, knot braids, KAM tori, and four palette families) — tonight's math families (Hilbert curve, strange attractors, girih/E8), the pulsar space personality, and all three palette families are first uses.
+- **VARIATIONS.md** gained two palette families ("smoked amber", "desert rose & turquoise") — the palette list was effectively mined out; that's the only edit to any existing file.
+- **Style collision caught and fixed:** all three composers independently picked `gilded_relic` (each rejecting `lacquer_pop` for its hardcoded vermilion+green suffix). I sent amber_steep and girih_dome back to re-judge against deck.json; they switched to `stormlight` and `crystalline` respectively with sound color-pollution reasoning, and both re-validated clean. Worth noting for the deck itself: only ~3 entries are color-neutral, which funnels every muted-palette journey toward the same few styles.
+- **girih_dome deviation from its brief:** a monotonic ladder can't both descend sky→dome and wrap the micro end back onto the vault, so its wrap lands on the sky's star-lattice (same ten-rayed pattern writ large) with the dome reached on the way back down — a reasonable structural fix, flagging it since it differs from the brief's seam wording.
+
+=== 00:16:26 3 new journeys: amber_steep, blueprint_harbor, girih_dome
+=== 00:16:26   amber_steep: QUEUED (ok amber_steep              start=amber_liquor        · not cosmic/subatomic)
+=== 00:16:26   blueprint_harbor: QUEUED (ok blueprint_harbor         start=master_chart        · not cosmic/subatomic)
+=== 00:16:26   girih_dome: QUEUED (ok girih_dome               start=beam_sky)
+=== 00:16:26 refill done: 3 composed, 3 queued (briefs: medium, short, long)
+=== 00:00:02 queue 17/20 — composing 3: medium, short, long
+Tonight's refill is done — three journeys composed, all preflight-clean, nothing queued (per the rules; they're ready for the refill/queue flow or the Journeys tab).
+
+**How the night went:** the palette-family library was fully mined out (every family claimed by the catalog or the 08-02–08-05 briefs), so I added five fresh families and five new math entries to `journeys/VARIATIONS.md` first, then drew tonight's identities from them. Briefs are in `outbox/refill_briefs_20260806.md`. All three Opus composers succeeded on the first pass. One coordination fix: gill_cathedral and ochre_door had independently both picked `lacquer_pop` from the style deck, so I had the ochre_door composer re-pick — it chose `gilded_relic` (mildest suffix, doesn't overwrite the new olive & terracotta palette) and re-verified preflight clean. The trio now has three distinct styles, palette families (vermilion lacquer & bone / olive & terracotta / midnight sun), math personalities (Romanesco phyllotaxis / Julia coastlines / laminar streamline foliation — the last two were the final untouched classics), and seam classes (pattern-writ-large / texture→landscape / same-swarm-at-two-scales). Porcelain prism and plum & brass remain unused in the library for tomorrow's refill.
+
+- **gill_cathedral** — MEDIUM, 7 cards (the catalog's first fungal journey; realm-local, spore-print→fairy-ring seam)
+- **ochre_door** — SHORT, 5 cards (first hard-noon journey; peeling paint strata → painted-desert mesas)
+- **comet_firn** — LONG, 11 cards (first glacier and first comet; ice-bubble constellations ↔ Oort halo seam)
+
+=== 00:22:35 3 new journeys: comet_firn, gill_cathedral, ochre_door
+=== 00:22:35   comet_firn: QUEUED (ok comet_firn               start=comet)
+=== 00:22:34   gill_cathedral: QUEUED (ok gill_cathedral           start=spore_drift         · not cosmic/subatomic)
+=== 00:22:34   ochre_door: QUEUED (ok ochre_door               start=paint_shore         · not cosmic/subatomic)
+=== 00:22:34 refill done: 3 composed, 3 queued (briefs: medium, short, long)
+=== 00:00:01 queue 17/20 — composing 3: medium, short, long
+Tonight's refill is complete — three journeys composed, validated, and written; nothing queued, no existing journeys touched.
+
+**What was done:**
+- Surveyed the 44-journey active catalog plus all five prior nights' brief files to build the claim ledger. The palette library had exactly two families left (porcelain prism, plum & brass — reserved for tonight by the 08-06 refill), so I added two fresh families to VARIATIONS.md: **marigold & indigo** (used tonight) and **absinthe & pewter** (banked for a future refill).
+- Wrote three briefs to `outbox/refill_briefs_20260807.md`, all first-uses: math families Menger-sponge canyons / Truchet curve mazes / epicycloid rosettes, the lenticular dust-lane disk as space personality, and three mutually distinct seam classes (pattern-writ-large / glowing-things-as-sky / rotation-rhyme cosmic fold). Tone spread includes the catalog's first high-key bright journey (white dawn).
+- Spawned three Opus composers in parallel; all three passed `preflight.py` and `audit_starts.py` with zero flags, and each verified via git status that it wrote only its own file.
+
+**The new journeys:**
+- **palm_house** — MEDIUM, 7 cards (196f, ~16.3s) — Victorian palm house at white dawn into the leaf's mesophyll sponge-labyrinth; crystalline deck, belle cameo, realm-local seam back to the glazing vault.
+- **latent_whorl** — SHORT, 5 cards (140f, ~11.7s) — midnight detective's office into a fingerprint's Truchet ridge maze and salt-crystal stars; gilded_relic deck, belle cameo, glow-as-sky seam to the rain-jeweled window.
+- **marigold_carousel** — LONG, 11 cards (308f, ~25.7s) — night fairground carousel down to spirograph metal-grain, seaming to a lenticular dust-lane galaxy; gilded_relic deck, janet cameo (exact realm match), no carousel animals anywhere in rendered prompts.
+
+Two notes for the morning review: both palm_house and latent_whorl independently landed **belle** cameos (realm-match doctrine makes that legitimate — she owns the 10⁻⁵ realm — but it's two belles in one night), and two of three picked **gilded_relic** (the marigold_carousel composer explicitly chose it over lacquer_pop to protect the marigold-and-indigo identity). Neither violates doctrine; queueing decisions stay with Phil in the Journeys tab.
+
+=== 00:16:54 3 new journeys: latent_whorl, marigold_carousel, palm_house
+=== 00:16:54   latent_whorl: QUEUED (ok latent_whorl             start=print_field         · not cosmic/subatomic)
+=== 00:16:54   marigold_carousel: QUEUED (ok marigold_carousel        start=gold_star)
+=== 00:16:54   palm_house: QUEUED (ok palm_house               start=stomata_ranks       · not cosmic/subatomic)
+=== 00:16:54 refill done: 3 composed, 3 queued (briefs: medium, short, long)
+=== 00:00:02 queue 17/20 — composing 3: medium, short, long
+Refill complete. Three new journeys are composed, written to `journeys/`, and preflight-clean — nothing queued, no existing journeys touched, per the rules.
+
+- **hyperbolic_reef** — MEDIUM, **7 cards** (196f, ~16.3s). Night coral reef, hyperbolic ruffle math, supernova-remnant lace seam; ultraviolet deck, watermelon tourmaline palette, lorraine cameo.
+- **sodium_stairwell** — SHORT, **5 cards** (140f, ~11.7s). Brutalist concrete stairwell, percolation crack-lattices, realm-local pattern-writ-large seam; stormlight deck, absinthe & pewter palette, kitty cameo.
+- **whalebone_hall** — LONG, **11 cards** (308f, ~25.7s). Museum whale skeleton, gyroid bone labyrinth, dark-matter-scaffold seam; cosmic_gloss deck, viridian & bone palette, Lamar cameo (his first appearance).
+
+Supporting artifacts from tonight: briefs in `outbox/refill_briefs_20260808.md`, and `journeys/VARIATIONS.md` extended (the palette pool was fully mined except absinthe & pewter, so I added watermelon tourmaline + viridian & bone — both used tonight — and banked raku copper-flash for tomorrow, plus a new "folds & forces" math line and three deep-sky space one-offs for future refills). All three journeys pass `preflight.py` and `audit_starts.py` with 0 flags, all cameos realm-matched, all seams land mid-rotation. All three composers succeeded — no failures to report.
+
+=== 00:16:56 3 new journeys: hyperbolic_reef, sodium_stairwell, whalebone_hall
+=== 00:16:56   hyperbolic_reef: QUEUED (ok hyperbolic_reef          start=white_star)
+=== 00:16:57   sodium_stairwell: QUEUED (ok sodium_stairwell         start=crack_lattice)
+=== 00:16:57   whalebone_hall: QUEUED (ok whalebone_hall           start=galaxy)
+=== 00:16:57 refill done: 3 composed, 3 queued (briefs: medium, short, long)
+=== 00:00:01 journey queue 20/20 — no refill needed
+=== 00:00:02 journey queue 20/20 — no refill needed
+=== 00:00:01 journey queue 20/20 — no refill needed
+=== 00:00:02 journey queue 20/20 — no refill needed
+=== 00:00:01 journey queue 20/20 — no refill needed
+=== 00:00:01 queue 12/20 — composing 5: short, long, short, long, medium
+All five journeys are composed, verified, and on disk. My independent preflight re-run confirms every composer's claim — all clean, 0 flags — and git shows exactly the five new files added: nothing queued, no existing journey touched, per the hard rules.
+
+**Tonight's five new journeys:**
+
+- **brinicle_grove** — SHORT, 5 cards (180f / 15.0s, crystalline, music_box, fpb 9)
+- **termite_citadel** — LONG, 11 cards (264f / 22.0s, enchanted_wild, choir_of_dust, fpb 6, span +24→−14)
+- **wild_yeast** — SHORT, 5 cards (140f / 11.7s, gilded_relic, analog_dawn, fpb 7)
+- **desert_rosette** — LONG, 11 cards (352f / 29.3s, enchanted_wild, aurora_strings, fpb 8, span +24→−14.5)
+- **bamboo_sea** — MEDIUM, 7 cards (224f / 18.7s, enchanted_wild, wooden_orbit, fpb 8)
+
+Every journey carries a real molecular-machinery card (ice-lattice galleries, microtubule motor proteins, gluten/starch interiors, DNA rungs, cellulose cables) and the two Ls each have populated ecosystem cards and full cosmic-to-subatomic span — directly attacking the novelty report's three biggest gaps. Tempos landed spread 6/7/8/8/9 because the briefs assigned them. Composer deviations were all doctrine-driven and sound (added cellular/ramp cards where briefs skipped a band, de-baited "queen"/"armored" vocabulary, metaphor-trap rewrites); none needed intervention, and none failed.
+
+One note for the next refill: three of five composers independently picked **enchanted_wild** for style. Tempo clustering was fixed by assigning fpb in the brief — style may want the same treatment. Briefs are archived at `outbox/refill_briefs_20260814.md`; queueing is left for Phil in the Journeys tab.
+
+=== 00:14:10 5 new journeys: bamboo_sea, brinicle_grove, desert_rosette, termite_citadel, wild_yeast
+=== 00:14:10   bamboo_sea: QUEUED (ok bamboo_sea               start=wall_bundles        · not cosmic/subatomic)
+=== 00:14:10   brinicle_grove: QUEUED (ok brinicle_grove           start=polar_shallows      · not cosmic/subatomic)
+=== 00:14:10   desert_rosette: QUEUED (ok desert_rosette           start=ring_galaxy)
+=== 00:14:10   termite_citadel: QUEUED (ok termite_citadel          start=star_nursery)
+=== 00:14:11   wild_yeast: QUEUED (ok wild_yeast               start=crumb_caverns       · not cosmic/subatomic)
+=== 00:14:11 refill done: 5 composed, 5 queued (briefs: short, long, short, long, medium)
+=== 00:00:01 queue 15/20 — composing 5: long, long, long, short, long
+Refill complete. All 5 journeys composed, all preflight-clean, every assigned tempo honored, nothing queued (`outbox/journeys.json` untouched — queueing is Phil's call from the Journeys tab).
+
+- **vesper_flight** — LONG, 11 cards (fpb 7, 25.7s) — dusk bat emergence; myosin-motor molecular card; echo seam re-sited to atom_shells→CMB to keep containment
+- **cobalt_rookery** — LONG, 11 cards (fpb 8, 29.3s) — arctic seabird cliff through a guillemot egg; seam nucleus_droplet→globular_cluster carries the speckles-as-suns rhyme
+- **ruby_furnace** — LONG, 11 cards (fpb 6, 22.0s) — hummingbird→hemoglobin→iron nucleus, seamed into the red giant that forged the iron
+- **peony_shell** — SHORT, 5 cards (fpb 8, 13.3s) — slow-motion fireworks; the catalog's first fire/plasma continuation; non-cosmic self-similar seam
+- **sundew_snare** — LONG, 10 cards (fpb 9, 30.0s) — peat-bog carnivory with an enzyme-lock molecular card; seam into the unused void-interior archetype (10 cards not 11: 11 at fpb 9 would breach the ~30s ceiling)
+
+Report targets hit: molecular machinery in 4 of 5, populated ≥3-species cards in all four longs, subnuclear + stellar + cosmic-web bands all served, five never-used palette families and five never-used math families, and no brief leans on the monoculture words. Briefs are on file at `outbox/refill_briefs_20260815.md`; no VARIATIONS.md additions were needed — the library still has unused entries.
+
+Two notes for Phil at review time: vesper_flight and cobalt_rookery both independently picked **stormlight** style (a same-night pairing worth an eye before both are queued), and sundew_snare swapped the suggested music_box lane for choir_of_dust to avoid duplicating brinicle_grove's fpb-9 + music_box combination.
+
+=== 00:17:20 5 new journeys: cobalt_rookery, peony_shell, ruby_furnace, sundew_snare, vesper_flight
+=== 00:17:21   cobalt_rookery: QUEUED (ok cobalt_rookery           start=cluster_sun)
+=== 00:17:21   peony_shell: QUEUED (ok peony_shell              start=burst_sphere        · not cosmic/subatomic)
+=== 00:17:21   ruby_furnace: QUEUED (ok ruby_furnace             start=prominence_arcs)
+=== 00:17:21   sundew_snare: QUEUED (ok sundew_snare             start=spiral_galaxy)
+=== 00:17:21   vesper_flight: QUEUED (ok vesper_flight            start=light_echo)
+=== 00:17:21 refill done: 5 composed, 5 queued (briefs: long, long, long, short, long)
+=== 00:00:02 queue 15/20 — composing 5: long, long, long, short, long
+All five composers finished and I independently re-verified every file on disk: all parse, all carry their assigned frames_per_beat, and all five pass preflight clean (uniform durs, counters on, seams mid-list, no frame-0 bait, cameo realm checks ok).
+
+**Tonight's five new journeys:**
+
+- **anemone_arsenal** — LONG, 11 cards
+- **chameleon_prism** — LONG, 11 cards
+- **physarum_maze** — LONG, 11 cards
+- **pomegranate_vault** — SHORT, 5 cards
+- **meteorite_cradle** — LONG, 10 cards
+
+Against the novelty report: three new populated-ecosystem cards at human scale (tide pool with 4 named kinds, deadwood log city with 5, cloud-forest canopy with 4 — versus 2 in the entire prior catalog), four journeys with real molecular machinery (nematocyst harpoon coil, actin-myosin motor mesh, guanine platelet lamellae, anthocyanin stacks), and all three under-built bands covered: subnuclear (meteorite_cradle's warp point), stellar (brown dwarf, protoplanetary resonance disc, nursery nebula), cosmic-web (Laniakea streamlines, filament knots). Every journey uses a palette family, math family, and seam type untouched by the active catalog, and the composers report zero hits on the overused-word list.
+
+Briefs are archived in `outbox/refill_briefs_20260816.md`. Per the hard rules nothing was queued and no existing journey was edited — the five specs sit in `journeys/` awaiting queueing from the Journeys tab (or the next refill's auto-queue).
+
+=== 00:14:47 5 new journeys: anemone_arsenal, chameleon_prism, meteorite_cradle, physarum_maze, pomegranate_vault
+=== 00:14:47   anemone_arsenal: QUEUED (ok anemone_arsenal          start=minicollagen)
+=== 00:14:47   chameleon_prism: QUEUED (ok chameleon_prism          start=chromatophore_mosaic)
+=== 00:14:47   meteorite_cradle: QUEUED (ok meteorite_cradle         start=nursery_nebula)
+=== 00:14:47   physarum_maze: QUEUED (ok physarum_maze            start=streaming_sol       · not cosmic/subatomic)
+=== 00:14:48   pomegranate_vault: QUEUED (ok pomegranate_vault        start=aril_tiers          · not cosmic/subatomic)
+=== 00:14:48 refill done: 5 composed, 5 queued (briefs: long, long, long, short, long)
+=== 00:00:02 queue 16/20 — composing 4: long, long, short, long
+All four journeys are composed, validated, and on disk — verified against the actual files, and none were queued (`outbox/journeys.json` untouched by this run). Every composer reported preflight + audit_starts passing with zero flags, and the assigned frames_per_beat values are confirmed in the files.
+
+Final tally:
+
+- **motmot_cenote** · LONG · 11 cards (fpb 7, reef_pop) — cenote ecosystem → rotifer → microtubule motors; caustic-net ↔ cosmic-web seam
+- **cherenkov_cistern** · LONG · 11 cards (fpb 8, gilded_relic) — light-echo shells → golden photomultiplier cathedral → 3 subnuclear cards; Cherenkov-ring ↔ echo-shell double seam
+- **lissajous_stage** · SHORT · 5 cards (fpb 6, lacquer_pop) — after-encore stage → wound-string coils → Lissajous nests; non-cosmic cable-loop seam
+- **caddis_masonry** · LONG · 10 cards (fpb 8, crystalline) — populated riffle → jewel-case force-chains → silk fibroin; Einstein-ring refraction seam
+
+Against tonight's novelty report, the batch delivers: 3 genuinely populated ecosystem cards (the report found 6 in the whole catalog), molecular machinery on three journeys (microtubule motors, water ring-cages, fibroin sheets — all previously unused archetypes), real coverage of all three under-built bands (subnuclear ×3 cards in cherenkov_cistern, stellar light-echo shells, cosmic-web void interior + lensing arcs), four previously-unused math/space families (caustics, Lissajous, force-chains, light echoes), four unused palette families, and zero overused-word hits in scene text. Briefs are on file at `outbox/refill_briefs_20260817.md`. Nothing was queued, edited, or deleted beyond the four new files and the briefs — queueing is left for the dashboard/refill flow.
+
+=== 00:17:38 4 new journeys: caddis_masonry, cherenkov_cistern, lissajous_stage, motmot_cenote
+=== 00:17:38   caddis_masonry: QUEUED (ok caddis_masonry           start=grain_pack          · not cosmic/subatomic)
+=== 00:17:38   cherenkov_cistern: QUEUED (ok cherenkov_cistern        start=flared_star)
+=== 00:17:39   lissajous_stage: QUEUED (ok lissajous_stage          start=winding_coil        · not cosmic/subatomic)
+=== 00:17:39   motmot_cenote: QUEUED (ok motmot_cenote            start=atom_shells)
+=== 00:17:39 refill done: 4 composed, 4 queued (briefs: long, long, short, long)
+=== 00:00:01 queue 17/20 — composing 3: long, short, long
+Coordination complete. All three journeys are composed, written, and preflight-clean; briefs are on file at `outbox/refill_briefs_20260818.md`. Nothing was queued and no existing journeys were touched (the variation library still had unused entries — no VARIATIONS.md additions were needed).
+
+- **kelp_dynamo** — LONG, 11 cards (fpb 7): moonlit kelp forest with a five-species fish-traffic card, unbroken living continuation down to a spinning ATP-synthase rotor that seams into pulsar beams; span 12.6 → −8.4.
+- **fiddler_commons** — SHORT, 5 cards (fpb 8): dusk salt-marsh commons (five named inhabitants) diving into cordgrass aerenchyma pipe-mazes, with a non-cosmic seam out to the tidal-creek network.
+- **bourdon_foundry** — LONG, 11 cards (fpb 6): bell-foundry casting night down the bellmetal continuation into deep subnuclear (−16.8), seaming out through Einstein-ring lensing to the cosmic web; span 24.6 → −16.8.
+
+Each hits the novelty report's gaps directly — molecular machinery, populated human-scale ecosystems, and the under-built subnuclear/stellar/cosmic-web bands — using previously unused palette families (viridian & bone, absinthe & pewter, raku copper-flash), math families (laminar streamlines, Truchet mazes, catenary chain-nets), and space personalities (pulsar lighthouse, gravitational lensing, dark-matter scaffold), with zero hits on the fifteen overused words across all three files. They're ready for Phil to queue from the Journeys tab.
+
+=== 00:15:19 3 new journeys: bourdon_foundry, fiddler_commons, kelp_dynamo
+=== 00:15:19   bourdon_foundry: QUEUED (ok bourdon_foundry          start=lens_arcs)
+=== 00:15:19   fiddler_commons: QUEUED (ok fiddler_commons          start=mudbank_commons     · not cosmic/subatomic)
+=== 00:15:19   kelp_dynamo: QUEUED (ok kelp_dynamo              start=ocean_world)
+=== 00:15:19 refill done: 3 composed, 3 queued (briefs: long, short, long)
+=== 00:00:01 queue 16/20 — composing 4: long, long, short, long
+Failed to authenticate: OAuth session expired and could not be refreshed
+
+=== 00:00:04 coordinator on fable failed (rc 1: Failed to authenticate: OAuth session expired and could not be refreshed
+) — retrying on opus
+Failed to authenticate: OAuth session expired and could not be refreshed
+
+=== 00:00:06 refill FAILED (rc 1) — no new journeys
+=== 00:00:02 queue 18/20 — composing 2: short, long
+Both journeys are composed, preflight-clean, and audit-passing. Nothing was queued and no existing files were touched, per the hard rules — briefs are on file at `outbox/refill_briefs_20260820.md`.
+
+Both target the novelty report's gaps directly: molecular machinery (ion-channel turbines / cellulose ribbons), populated ecosystem cards (4 and 5 named kinds), unbroken continuation, the under-built stellar + subnuclear + cosmic-web bands (eclipse_waterhole spans +24 → −15), the catalog's first mammals, and previously-unused palette families (petrol sheen, mirage), math families (Cantor-dust strata, epicycloid rosettes), and seam types (non-cosmic rain-flash echo vs. an emblem restated at both extremes). Zero overused-monoculture words in either file.
+
+- **voltaic_shoal** — SHORT, 5 cards
+- **eclipse_waterhole** — LONG, 11 cards
+
+=== 00:16:33 2 new journeys: eclipse_waterhole, voltaic_shoal
+=== 00:16:33   eclipse_waterhole: QUEUED (ok eclipse_waterhole        start=comet_halo)
+=== 00:16:33   voltaic_shoal: QUEUED (ok voltaic_shoal            start=electrocyte_columns · not cosmic/subatomic)
+=== 00:16:33 refill done: 2 composed, 2 queued (briefs: short, long)
+=== 00:00:01 queue 16/20 — composing 4: long, long, short, long
+Tonight's refill is complete: 4 new journeys composed, all preflight-clean, none queued (per the hard rules — queueing is left to the pipeline/Phil).
+
+- **sunspot_archipelago** — LONG, 10 cards (fpb 7; a dive into a star, granulation → umbra → quark trio, Clark cameo)
+- **magellanic_mob** — LONG, 11 cards (fpb 8; kangaroo mob → sarcomere Miura-ori → myosin motors, Janet cameo)
+- **waterbear_prairie** — SHORT, 5 cards (fpb 6; rooftop tardigrade prairie → trehalose sugar-glass, Lee cameo)
+- **winter_murmuration** — LONG, 11 cards (fpb 8; Zel'dovich pancake → murmuration → keratin ribbons, Amos cameo)
+
+Supporting work from the session: briefs are at `outbox/refill_briefs_20260821.md`, aimed squarely at the novelty report's gaps — stellar and subnuclear bands (sunspot_archipelago), molecular machinery (myosin oar-gangs, trehalose glass, keratin ribbons), populated ecosystem cards in all four, unbroken living continuations, and zero open-ocean settings in an ocean-heavy catalog. Because the palette and math libraries were fully claimed by past briefs, I first extended `journeys/VARIATIONS.md` with 4 new palette families (oxblood nocturne, garnet furnace, moss & mercury, ash & roseglow), 2 math families (Bénard convection, Kármán vortex streets), Zel'dovich pancake sheets, a stellar-surfaces clutch, and the Magellanic stream — each brief draws on those or verified-unclaimed entries, so the four can't rhyme with the catalog or each other (distinct styles, music lanes, cameos, and seam types throughout).
+
+=== 00:23:01 4 new journeys: magellanic_mob, sunspot_archipelago, waterbear_prairie, winter_murmuration
+=== 00:23:01   magellanic_mob: QUEUED (ok magellanic_mob           start=nursery_shoal)
+=== 00:23:01   sunspot_archipelago: QUEUED (ok sunspot_archipelago      start=granulation_sea)
+=== 00:23:01   waterbear_prairie: QUEUED (ok waterbear_prairie        start=moss_prairie)
+=== 00:23:02   winter_murmuration: QUEUED (ok winter_murmuration       start=nebula_sheet)
+=== 00:23:02 refill done: 4 composed, 4 queued (briefs: long, long, short, long)
+=== 00:00:05 queue 16/20 — composing 4: long, long, short, long
+All four journeys are composed, verified, and left unqueued. Final report:
+
+| journey | tier | cards | span | style / fpb |
+|---|---|---|---|---|
+| **gecko_rampart** | LONG | 11 | +20.6 → −15.4 | stormlight · fpb 7 |
+| **lily_undercroft** | LONG | 11 | +24.0 → −8.2 | enchanted_wild · fpb 8 |
+| **plasma_script** | SHORT | 5 | +0.5 → −9.5 | neon_drift · fpb 6 |
+| **natron_skein** | LONG | 10 | +15.5 → −10.6 | stormlight · fpb 8 |
+
+Ground truth confirmed by my own runs, not just composer claims: all four pass `preflight.py`, all four are `ok` in `audit_starts.py` (0 flags), and `outbox/journeys.json` has zero mentions of them — nothing queued, nothing existing edited, per the hard rules.
+
+What tonight's report gaps got: gecko_rampart lands the subnuclear floor (virtual-pair foam) plus the atomic contact-gap and a populated rampart commons; lily_undercroft lands molecular machinery (chlorophyll antenna rings) plus a cosmic-web card (reionization froth) and a populated pad commons; natron_skein carries an unbroken mineral continuation (trona lattice, named real mineral) and a populated wader metropolis; plasma_script is atomic-band S-tier spice with a made-object continuation and a non-cosmic seam.
+
+Notes for the morning:
+
+- **Library extended** (the palette and cosmic-web libraries were mined out again): VARIATIONS.md gained 4 palette families (tokay slate & cinnabar, peat & lily ivory, noble glow, alkaline rose — all claimed tonight), the reciprocal-frame grillage math family (claimed), and 2 cosmic-web archetypes (reionization froth claimed, **intrafilament corridor still unclaimed** — stock for tomorrow's refill).
+- **One mid-flight correction**: the gecko composer's first draft included a `granulation_sea` star-surface card — sunspot_archipelago's claimed centerpiece, composed only last night. I sent that composer back to revise its own card; it's now `twin_envelope` (a blue-white star pair in one shared envelope, verified unclaimed), with every granulation reference scrubbed and preflight re-passed.
+- **Minor**: gecko_rampart and natron_skein both picked the `stormlight` deck. Palette families differ in the scene text, so the videos will read differently, but whoever queues these may want to not render them back-to-back.
+
+=== 00:25:25 4 new journeys: gecko_rampart, lily_undercroft, natron_skein, plasma_script
+=== 00:25:25   gecko_rampart: QUEUED (ok gecko_rampart            start=twin_envelope)
+=== 00:25:25   lily_undercroft: QUEUED (ok lily_undercroft          start=first_galaxies)
+=== 00:25:26   natron_skein: QUEUED (ok natron_skein             start=globule_core)
+=== 00:25:26   plasma_script: QUEUED (ok plasma_script            start=ion_shoal)
+=== 00:25:26 refill done: 4 composed, 4 queued (briefs: long, long, short, long)
+=== 00:00:01 journey queue 30/20 — no refill needed
+=== 00:00:01 journey queue 24/20 — no refill needed
+=== 00:00:01 journey queue 20/20 — no refill needed
+=== 00:00:02 queue 16/20 — composing 4: long, medium, short, long
+All 4 journeys composed, verified, and on disk — refill complete. All four passed preflight (my independent re-run confirms each composer's claim: uniform bars, seams ok, no frame-0 bait, cameo realms ok), and none were queued, per tonight's rules.
+
+- **venus_basket** — LONG, 11 cards (fpb 7): abyssal glass-sponge reef, nuclear-pasta ↔ cosmic-filament-corridor seam, span 24 to −15.6
+- **phage_landing** — MEDIUM, 7 cards (fpb 8): compost heap → bacteriophage landers, earthbound capsid-geodesic → garden-cloche seam
+- **circuit_grotto** — SHORT, 5 cards (fpb 6): synth workbench → silicon lattice, dopant-atom ↔ panel-indicator realm-local loop
+- **cicada_chorus** — LONG, 11 cards (fpb 8): seventeen-year brood emergence, crossed-wing moiré ↔ colliding-galaxy-pair seam, span 21 to −10.2
+
+Supporting work from the session: briefs are in `outbox/refill_briefs_20260826.md`, aimed at the novelty report's gaps — molecular machinery appears in three of the four (silicatein glass-laying, phage capsid + injection tail, Bouligand chitin plywood), the under-built cosmic-web band gets the previously-unused intrafilament-corridor personality, and three journeys carry populated ecosystem cards naming ≥3 kinds (reef commons, compost commons, emergence commons). Two library additions were made as permitted: palette family **phosphor & bakelite** in VARIATIONS.md and the **nuclear pasta** archetype in REALMS.md's under-built subnuclear band. Palettes, math personalities (Menger nesting / geodesic domes / Truchet-Hilbert circuitry / moiré), and seam types are disjoint across all four and from the recent catalog. No failures; nothing deleted, edited, or queued beyond the above.
+
+=== 00:20:03 4 new journeys: cicada_chorus, circuit_grotto, phage_landing, venus_basket
+=== 00:20:03   cicada_chorus: QUEUED (ok cicada_chorus            start=shock_brood)
+=== 00:20:03   circuit_grotto: QUEUED (ok circuit_grotto           start=trace_maze          · not cosmic/subatomic)
+=== 00:20:03   phage_landing: QUEUED (ok phage_landing            start=actinomycete_web    · not cosmic/subatomic)
+=== 00:20:04   venus_basket: QUEUED (ok venus_basket             start=silica_network)
+=== 00:20:04 refill done: 4 composed, 4 queued (briefs: long, medium, short, long)
+=== 00:00:01 queue 16/20 — composing 4: long, long, medium, medium
+All four journeys are composed, validated, and on disk. Nothing was queued and no existing journey was touched, per the rules.
+
+- **anvil_country** — LONG, 10 cards (fpb 7 / 315 frames ≈ 26.2s)
+- **chalk_cellar** — LONG, 10 cards (fpb 8 / 360 frames ≈ 30.0s)
+- **mantis_drumline** — MEDIUM, 8 cards (fpb 6 / 222 frames ≈ 18.5s)
+- **pika_larder** — MEDIUM, 7 cards (fpb 8 / 264 frames ≈ 22.0s)
+
+Every composer ran `preflight.py` (all clean: uniform dur, seams ok, no frame-0 bait, cameo realm ok) and `audit_starts.py`, whose final catalog-wide result is **102 journeys · 0 need attention**. I independently re-verified all four files parse with the assigned card counts and frames_per_beat.
+
+How tonight lands against the novelty report: the stellar band gets light-echo shells (anvil_country), cosmic-web gets reionization froth → web walls (chalk_cellar), subnuclear gets a bubble-chamber card with Clark cameoing in his home realm (mantis_drumline); molecular machinery appears in three of the four (ice hexagon galleries, myosin winch machinery, chlorophyll antenna arrays); three new populated ecosystem cards (gust-front commons, rubble-flat commons, scree commons, each naming ≥4 inhabitant kinds); all four continuations unbroken; zero hits on the overused-word list. Supporting artifacts: briefs at `outbox/refill_briefs_20260827.md`, plus two new math-pattern entries in VARIATIONS.md (Bouligand helicoid stacks, periglacial sorted patterned ground) that two of the briefs drew on.
+
+Two notes for the morning: mantis_drumline carries three seams (structurally required to visit subnuclear and return within 8 cards — cherenkov_cistern precedent, preflight passes); and anvil_country + pika_larder both independently drew the aurora_strings music lane, so if both queue the same night the music picks may want spreading at audition time.
+
+=== 00:20:08 4 new journeys: anvil_country, chalk_cellar, mantis_drumline, pika_larder
+=== 00:20:08   anvil_country: QUEUED (ok anvil_country            start=night_world)
+=== 00:20:08   chalk_cellar: QUEUED (ok chalk_cellar             start=calcite_lattice)
+=== 00:20:09   mantis_drumline: QUEUED (ok mantis_drumline          start=cell_layer          · not cosmic/subatomic)
+=== 00:20:09   pika_larder: QUEUED (ok pika_larder              start=mesophyll_hall      · not cosmic/subatomic)
+=== 00:20:09 refill done: 4 composed, 4 queued (briefs: long, long, medium, medium)
+=== 00:00:01 queue 15/20 — composing 5: long, long, short, medium, long
+All five journeys are composed, written to `journeys/`, and verified with the real tools — every one passes `scripts/preflight.py`, and `scripts/audit_starts.py` reports 107 journeys / 0 need attention. Nothing was queued, no existing journey was edited, nothing deleted.
+
+**Tonight's five (name · tier · cards):**
+- `vernal_clutch` · LONG · 11 cards · fpb 7 — vernal-pool commons → wood-frog spawn → cleaving embryo → spindle theatre → nucleosome bead-string → two-lobed atom ↔ bipolar butterfly nebula → dying star's floor → night world (liquid_light / music_box; cameo tina)
+- `garnet_glass` · LONG · 11 cards · fpb 8 — empty wheelhouse sand-glass running on garnet → grain stream → almandine lattice → alpha-emitting nucleus ↔ Roche-lobe hourglass binary → night world → coast → harbour commons (crystalline / music_box; cameo lamar)
+- `sockeye_stair` · SHORT · 5 cards · fpb 6 — salmon-falls plunge pool commons → one fish's flank → a scale's growth rings ↔ the cascade's stepped ledges; realm-local, no space (liquid_light / tide_organ; cameo lee)
+- `horseshoe_tide` · MEDIUM · 8 cards · fpb 8 — horseshoe-crab spawning beach → carapace → compound-eye dome array → blue-blood channel with amoebocytes → hemocyanin copper barrels → copper atom ↔ haloed full moon → silvered bay (liquid_light / deep_archive; cameo janet)
+- `saguaro_vigil` · LONG · 10 cards · fpb 9 — great-wall curtain → spiral galaxy → star face with spicule forest + coronal arcades → desert world → bajada from the air → bajada commons → pleated trunk → water-storage cells → aquaporin membrane gates → atom (ultraviolet / choir_of_dust; cameo lamar)
+
+**What the briefs targeted (from the novelty report):** every journey carries an unbroken material continuation; four of five carry a populated ≥3-kind human-scale card in ecosystems the catalog had never used (vernal pool, salmon falls, spawning beach, saguaro bajada, plus a harbour quay in the made-object journey); four carry picture-first molecular machinery new to the catalog (nucleosome string, hemocyanin barrels, aquaporin gates); the under-built bands got new stellar (butterfly-nebula lobes + star floor, hourglass binary, spicule/coronal face), cosmic-web (great-wall curtain) and subnuclear (alpha-emitting nucleus) cards. Five fresh palette families, three math families, six space personalities, seven molecular machines, four subnuclear pictures and nine ecosystems were added to `journeys/VARIATIONS.md` / `journeys/REALMS.md` because the palette library was fully claimed; briefs are in `outbox/refill_briefs_20260828.md`.
+
+**Two things worth knowing for the next refill:**
+- Style spread came out weaker than briefed: three of five landed on `liquid_light` (already the most-loaded deck entry). The horseshoe composer checked the deck and found `reef_pop`'s actual suffix is "sunlit… tropical glow, hot pink", which would fight any moonlit scene — so the deck has no honest under-used entry for night water. That's a deck gap, not a composer error.
+- `vernal_clutch` and `garnet_glass` both picked `music_box` because both were told it was the least-used lane. Lanes should be assigned per brief the same way tempo is, or they cluster.
+
+=== 00:20:49 5 new journeys: garnet_glass, horseshoe_tide, saguaro_vigil, sockeye_stair, vernal_clutch
+=== 00:20:49   garnet_glass: QUEUED (ok garnet_glass             start=grain_stream        · not cosmic/subatomic)
+=== 00:20:50   horseshoe_tide: QUEUED (ok horseshoe_tide           start=blood_channel)
+=== 00:20:50   saguaro_vigil: QUEUED (ok saguaro_vigil            start=spiral_galaxy)
+=== 00:20:50   sockeye_stair: QUEUED (ok sockeye_stair            start=plunge_pool         · not cosmic/subatomic)
+=== 00:20:50   vernal_clutch: QUEUED (ok vernal_clutch            start=star_floor)
+=== 00:20:50 refill done: 5 composed, 5 queued (briefs: long, long, short, medium, long)
+=== 00:00:01 journey queue 20/20 — no refill needed
+=== 23:59:59 queue 16/20 — composing 4: long, long, short, medium
+Permission allow rule (.claude/settings.local.json): Bash(grep -vE '^\\s*$' __TRACKED_VAR__/render_all.log) has a wildcard before the rest of the command, so it also matches any options inserted at that position and approves them without a prompt. Replace that * with the exact value you mean, or only use * after the subcommand.
+Refill night complete. All four journeys composed, preflight-clean, audit 0 flags across the 111-journey catalog, nothing queued, no existing journey touched.
+
+**What was done**
+- Studied VARIATIONS.md, REALMS.md, and all 107 active journeys against tonight's novelty report (under-built: subnuclear, cosmic-web; molecular machinery thin; populated cards 8/202).
+- Every palette family was already claimed, so the libraries were extended first: VARIATIONS.md +3 math families (Langmuir windrows, rouleaux stacks, meander & oxbow) +4 palette families; REALMS.md +5 molecular machines, +2 subnuclear pictures (Coulomb crystal, quark-gluon droplet), +5 ecosystems.
+- Briefs written to `outbox/refill_briefs_20260829.md`; four Opus composers ran the journey-composer skill in parallel.
+
+**Tonight's journeys**
+- `sargasso_windrow` — LONG, 11 cards, fpb 7, reef_pop · seam: pair-production cascade ↔ cluster-infall delta (subnuclear + cosmic-web), alginate egg-box molecular card, populated weed-raft commons
+- `cacao_temper` — LONG, 11 cards, fpb 8, lacquer_pop · seam: Coulomb crystal ↔ crystallizing white dwarf (subnuclear + stellar), cocoa-butter lamellae molecular card, populated cacao understory
+- `fluorite_stope` — SHORT, 5 cards, fpb 6, ultraviolet · realm-local, non-cosmic seam: fluorite cube-in-cube lattice ↔ square-set mine timbering
+- `bayou_eyeshine` — MEDIUM, 8 cards, fpb 8, aurora_silk · seam: rhodopsin disc ↔ moon's face (planetary), rod-palisade cellular + rhodopsin molecular cards, populated cypress swamp
+
+One note for the script's audit: `cacao_temper` runs 32.7s at fpb 8 × 11 cards (the composer confirmed this matches every other 11-card fpb-8 journey in the catalog — the loop lap adds the extra bar), so the brief's "cap at 11" was honored; if a hard ≤30s line is enforced, it's the one to trim by a card.
+
+=== 00:20:18 4 new journeys: bayou_eyeshine, cacao_temper, fluorite_stope, sargasso_windrow
+=== 00:20:18   bayou_eyeshine: QUEUED (ok bayou_eyeshine           start=rod_palisade        · not cosmic/subatomic)
+=== 00:20:18   cacao_temper: QUEUED (ok cacao_temper             start=diamond_star)
+=== 00:20:18   fluorite_stope: QUEUED (ok fluorite_stope           start=vein_crust          · not cosmic/subatomic)
+=== 00:20:19   sargasso_windrow: QUEUED (ok sargasso_windrow         start=brightest_galaxy)
+=== 00:20:19 refill done: 4 composed, 4 queued (briefs: long, long, short, medium)
+=== 00:00:01 queue 15/20 — composing 5: short, long, short, long, medium
+Permission allow rule (.claude/settings.local.json): Bash(grep -vE '^\\s*$' __TRACKED_VAR__/render_all.log) has a wildcard before the rest of the command, so it also matches any options inserted at that position and approves them without a prompt. Replace that * with the exact value you mean, or only use * after the subcommand.
+Verification clean: all five pass `audit_starts` (116 journeys · 0 need attention), nothing was queued (0 mentions in `outbox/journeys.json`), and the only changes are the five new journey files plus additive-only insertions to `VARIATIONS.md`/`REALMS.md`.
+
+## Tonight's five journeys
+
+| journey | tier | cards | fpb | style · lane | seam |
+|---|---|---|---|---|---|
+| `bromeliad_tank` | SHORT | 5 | 7 | infrared_bloom · music_box | trichome wheel (10⁻³·⁵) ↔ rosette whorls of a tree crown (10¹·⁵), realm-local |
+| `cork_dehesa` | LONG | 11 | 8 | lacquer_pop · wooden_orbit | halo nucleus (10⁻¹⁴·²) ↔ nested-halo froth (10²⁴·⁵) |
+| `locust_sorghum` | SHORT | 5 | 6 | stormlight · ember_pulse | starch-crammed cells (10⁻⁴·⁵) ↔ swarm from the air (10³), realm-local |
+| `prairie_town` | LONG | 11 | 8 | enchanted_wild · analog_dawn | gluon flux tube (10⁻¹⁵·⁵) ↔ intercluster filament bridge (10²⁴·⁵) |
+| `dugong_meadow` | MEDIUM | 8 | 9 | reef_pop · glass_chapel | Rubisco loops (10⁻⁷·⁸) ↔ river meanders from orbit (10⁵·⁵) |
+
+**What the briefs targeted (per the novelty report):** five unused ecosystems as populated cards (bromeliad tank, cork-oak dehesa, locust swarm over sorghum, prairie-dog town, seagrass meadow); unbroken living→cellular→molecular continuation on every journey that goes deep (cork honeycomb → suberin lamellae; rhizosphere swarm → flagellar rotary motor; lacunae → Rubisco); both longs land a subnuclear picture AND a cosmic-web picture that had never been used; five different styles, five different music lanes, five new palette families; zero hits on the overused-word list in any spec.
+
+**Library additions (`VARIATIONS.md` / `REALMS.md`, additive only):** 5 palette families, 2 structural families (core & envelope, helices & screws), 3 space personalities (intercluster bridge, ragged irregular dwarf, river meanders from orbit), 4 cellular + 2 molecular + 1 subnuclear picture. Briefs are in `outbox/refill_briefs_20260831.md`.
+
+**One judgment call to flag for Phil:** `cork_dehesa`'s return path steps disk galaxy (exp 20.4) → dusk world (7.2) on a `zoom` card — a 13-decade step, above the catalog's previous max non-seam step (saguaro_vigil 11.5). The composer notes the engine's card zoom is a fixed ×10 regardless of exp, so only the counter spins harder; it came from fitting the brief's froth→galaxy→world→dehesa return inside the 11-card cap.
+
+**Next:** nothing queued by me, per the rules — `journey_refill.py`'s own audit + compile pass decides auto-queueing; Phil can reorder/reject from the dashboard's 🗺 Journeys tab in the morning.
+
+=== 00:24:46 5 new journeys: bromeliad_tank, cork_dehesa, dugong_meadow, locust_sorghum, prairie_town
+=== 00:24:46   bromeliad_tank: QUEUED (ok bromeliad_tank           start=bough_whorls        · not cosmic/subatomic)
+=== 00:24:46   cork_dehesa: QUEUED (ok cork_dehesa              start=disk_galaxy)
+=== 00:24:47   dugong_meadow: QUEUED (ok dugong_meadow            start=meadow_from_above   · not cosmic/subatomic)
+=== 00:24:47   locust_sorghum: QUEUED (ok locust_sorghum           start=field_commons       · not cosmic/subatomic)
+=== 00:24:47   prairie_town: QUEUED (ok prairie_town             start=dwarf_scatter)
+=== 00:24:47 refill done: 5 composed, 5 queued (briefs: short, long, short, long, medium)
+=== 00:00:02 journey queue 20/20 — no refill needed
+=== 00:00:01 journey queue 20/20 — no refill needed

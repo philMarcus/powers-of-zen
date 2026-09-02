@@ -1,0 +1,78 @@
+{
+ "name": "bromeliad_tank",
+ "theme": "a night cloud-forest bough shagged with moss and crowded with bromeliad rosettes, down into one rosette's tank — a whole pond held in a plant, its commons awake with tree-frog tadpoles, damselfly nymphs, a tank crab and rafts of mosquito larvae — then onto a sunken leaf frosted with silver scale-discs, into one disc's wheel of hollow dead cells around a living stalk, which is reread as the whorls crowding a whole tree canopy from the air, and back down to the one bough it started on",
+ "style": "infrared_bloom",
+ "music_lane": "music_box",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 7,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "bough_whorls",
+   "exp": 0.3,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "bract scarlet and acid lime on cloud-forest umber",
+   "scene": "a cloud-forest bough at night seen from above, moss shagging the wood in cushions and hanging fringes, dozens of bromeliad rosettes crowding the bark in every direction, each rosette a whorl of strap leaves scarlet at the base and acid lime where the moonlight crosses them, every whorl funnelling to a still pool of tannin water at its middle, orchid roots coiling over the bark in flat loops, grey-green lichen crusts mottling the wood, mist hanging in the gaps of the foliage, further boughs dimming into umber haze beyond",
+   "target": "a scarlet bromeliad rosette",
+   "target_phrase": "a scarlet rosette",
+   "loop_target": "a cloud-forest bough seen from above at night, bromeliad rosettes crowding the moss with a tannin pool at every middle"
+  },
+  {
+   "name": "rosette_tank",
+   "exp": -0.7,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "tannin-black water, acid lime leaves, scarlet bract bases",
+   "scene": "a whole pond held in a plant, seen from above the water film, a whorl of strap leaves rising all round the basin with scarlet bases and acid lime upper faces, tannin water almost lightless over a floor of drowned leaf litter, tree-frog tadpoles crowding the shallows with round heads and paddle tails, damselfly nymphs posted on the sunken leaves with three feathered tail plates, a small crab wedged in a leaf axil, rafts of mosquito larvae hung from the water film in clusters, drowned petals afloat on the film, silver-frosted leaf faces going down into the murk at the basin wall",
+   "target": "a silver-frosted leaf",
+   "target_phrase": "a frosted leaf",
+   "resolve": {
+    "mode": "sea"
+   },
+   "cameo": {
+    "sprite": "output/mascots/canon/newman.png",
+    "pos": [
+     0.68,
+     0.63
+    ],
+    "size": 0.14
+   }
+  },
+  {
+   "name": "leaf_frost",
+   "exp": -2.0,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "silver frost over olive-lime leaf tissue in umber water",
+   "scene": "a sunken bromeliad leaf turned toward the water, silver scale-discs tiled over it in curving rows, each disc a round plate laid flat on the tissue with a dimple at its middle and a rim of pale spokes, olive-lime tissue showing through the gaps of the tiling, umber tannin water pressing over the whole field, silt grains and algae threads caught in the rows, drowned pollen lodged where discs overlap, further rows of discs receding into the murk",
+   "target": "a round silver scale",
+   "target_phrase": "a silver scale",
+   "resolve": {
+    "mode": "surface"
+   }
+  },
+  {
+   "name": "trichome_wheel",
+   "exp": -3.5,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "silver-white cell walls, amber-lime core, umber shadow",
+   "scene": "the wheel of one water-drinking scale, dead cells radiating from a hub as flat spokes, every cell a hollow chamber walled in silver-white and empty of all but air, a ring of shorter cells around the hub, a living stalk seated at the middle in amber-lime, the outer spokes lapping their neighbours at the rim, umber leaf tissue showing beneath the whole wheel, neighbouring wheels crowding in from all sides"
+  },
+  {
+   "name": "canopy_whorls",
+   "exp": 1.5,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "scarlet whorl points over deep olive foliage on umber",
+   "scene": "a cloud-forest tree from the air at night, its boughs spread from the trunk in a wide radiating spray, whorls of scarlet bromeliad rosettes crowding every bough out to the smallest twigs, moss furring the wood around them, an acid lime cast over the upper foliage where the moonlight lands, a point of tannin water held at the middle of the nearer whorls, mist lying in the gaps of the canopy, further treetops dimming into umber below"
+  }
+ ],
+ "music_theme": "a miniature night piece — a tiny music box and celesta over a low warm drone, one deep soft kick on every downbeat, the tines spare and spaced over the mossy bough, thickening into a busy little clockwork figure for the crowded pond, hushed and glassy over the frosted leaf, one held tine at the wheel of cells, then a wide warm swell as the wheel opens into the whole canopy and the box returns to its opening figure over the bough",
+ "music_key": "B minor",
+ "render_start": "bough_whorls"
+}

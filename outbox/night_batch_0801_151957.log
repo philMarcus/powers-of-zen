@@ -1,0 +1,132 @@
+=== 15:19:57 batch start [LMS] — 3 journeys: glass_apiary quantum_orrery copper_rain
+=== 15:19:58 --- glass_apiary ---
+[style] candy_gloss  ->  glossy candy-coated surfaces, soft pastel gradient light, bubblegum pink and pale aqua, plush 3d render, ultra-detailed, playful, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/glass_apiary/v1
+[dive] glass_apiary: 280 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (154 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 1/280 (13.4s/frame, ~3740s left) :: moving through a great amber nebula, bronze dust lanes carve
+[dive] frame 11/280 (19.3s/frame, ~5189s left) :: moving through a great amber nebula, bronze dust lanes carve
+[dive] frame 21/280 (18.2s/frame, ~4716s left) :: diving straight into a round banded planet of honey gold, pa
+[dive] frame 31/280 (17.7s/frame, ~4398s left) :: an enormous honey-gold planet hangs in space, broad pale-gol
+[dive] frame 41/280 (17.4s/frame, ~4157s left) :: moving through an enormous honey-gold planet hangs in space,
+[dive] frame 51/280 (17.8s/frame, ~4075s left) :: diving straight into a clear round gap in the cloud bands as
+[dive] frame 61/280 (17.6s/frame, ~3849s left) :: sunlit orchard country seen from high above, long ranks of b
+[dive] frame 71/280 (16.3s/frame, ~3400s left) :: moving through sunlit orchard country seen from high above, 
+[dive] frame 81/280 (15.3s/frame, ~3042s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 91/280 (14.7s/frame, ~2771s left) :: a wide sunset apiary orchard seen from a low rise at the end
+[dive] frame 101/280 (15.3s/frame, ~2740s left) :: diving straight into a pale wooden beehive box, weathered sq
+[dive] frame 111/280 (15.7s/frame, ~2654s left) :: diving straight into a pale wooden beehive box, weathered sq
+[dive] frame 121/280 (15.7s/frame, ~2499s left) :: moving through the open top of a beehive box in the orchard 
+[dive] frame 131/280 (16.2s/frame, ~2411s left) :: diving straight into a frame of golden honeycomb, a close-pa
+[dive] frame 141/280 (16.8s/frame, ~2334s left) :: a wall of honeycomb running off in every direction, a tight 
+[dive] frame 151/280 (16.6s/frame, ~2141s left) :: moving through a wall of honeycomb running off in every dire
+[dive] frame 161/280 (17.0s/frame, ~2024s left) :: diving straight into an open wax cell full of dark gold hone
+[dive] frame 171/280 (17.1s/frame, ~1864s left) :: the inside of a single wax cell, six walls of dull gold wax 
+[dive] frame 181/280 (17.1s/frame, ~1689s left) :: moving through the inside of a single wax cell, six walls of
+[dive] frame 191/280 (17.2s/frame, ~1530s left) :: diving straight into a small clear sugar crystal, a hard cub
+[dive] frame 201/280 (17.3s/frame, ~1364s left) :: a clear cubic sugar crystal among its neighbours, flat squar
+[dive] frame 211/280 (17.3s/frame, ~1194s left) :: moving through a clear cubic sugar crystal among its neighbo
+[dive] frame 221/280 (17.5s/frame, ~1032s left) :: diving straight into a cubic lattice of bright nodes, small 
+[dive] frame 231/280 (17.3s/frame, ~848s left) :: a vast cubic lattice of bright nodes in perfect ordered rank
+[dive] frame 241/280 (16.9s/frame, ~661s left) :: deep inside a vast cubic lattice of bright nodes in perfect 
+[dive] frame 251/280 (16.6s/frame, ~482s left) :: deep inside a vast cubic lattice of bright nodes in perfect 
+[dive] frame 261/280 (16.3s/frame, ~311s left) :: moving through a globular cluster of a million golden stars 
+[dive] frame 271/280 (16.1s/frame, ~145s left) :: diving straight into a great amber nebula, bronze dust lanes
+[dive] frame 280/280 (15.8s/frame, ~0s left) :: diving straight into a great amber nebula, bronze dust lanes
+[dive] interpolated 12 -> 24fps in 59s
+[dive] counter overlay on 557 frames (33 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/glass_apiary/v1/glass_apiary.mp4 (31180 KB, 23.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/glass_apiary/v1/glass_apiary_divein.mp4 (31910 KB, 23.3s)
+[dive] done in 4583s
+=== 16:36:21 glass_apiary: rendered in 4583s
+  copied glass_apiary.mp4 -> review/glass_apiary_ds.mp4
+  copied glass_apiary_divein.mp4 -> review_divein/glass_apiary_ds_divein.mp4
+glass_apiary: queued to REVIEW (ds/divein) from v1
+  glass_apiary: 5 caption+title pairs (spot=True); theme='A celestial lullaby blending harp glissa'
+    [0] Dive into the golden honeycomb cosmos 🌌 Can you spot Amos hiding in the honeycomb universe? 👀 #HoneycombCosmos #InfiniteOrchard #GoldenNebulaDive #FractalZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive into the golden honeycomb cosmos 🌌
+    [1] A never-ending zoom through amber and stardust ✨ Can you spot Amos hiding in the honeycomb universe? 👀 #HoneycombCosmos #InfiniteOrchard #GoldenNebulaDive #FractalZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A never-ending zoom through amber and stardust ✨
+    [2] From orchards to galaxies, a loop of endless wonder Can you spot Amos hiding in the honeycomb universe? 👀 #HoneycombCosmos #InfiniteOrchard #GoldenNebulaDive #FractalZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From orchards to galaxies, a loop of endless wonder
+    [3] Where bees hum and nebulae glow in perfect harmony Can you spot Amos hiding in the honeycomb universe? 👀 #HoneycombCosmos #InfiniteOrchard #GoldenNebulaDive #FractalZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where bees hum and nebulae glow in perfect harmony
+    [4] Lost in the fractal dance of light and wax Can you spot Amos hiding in the honeycomb universe? 👀 #HoneycombCosmos #InfiniteOrchard #GoldenNebulaDive #FractalZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Lost in the fractal dance of light and wax
+=== 16:37:14 glass_apiary -> REVIEW (captioned)
+=== 16:37:14 --- quantum_orrery ---
+=== 16:37:14 quantum_orrery: --seed 813162
+[style] cosmic_gloss  ->  luminous volumetric light, glossy hyperreal render, deep-space glow, ultra-detailed, cinematic, epic scale, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/quantum_orrery/v2
+[dive] quantum_orrery: 196 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (91 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 1/196 (19.1s/frame, ~3734s left) :: moving through a vast dark indigo realm opening far away int
+[dive] frame 11/196 (19.3s/frame, ~3579s left) :: moving through a vast dark indigo realm opening far away int
+[dive] frame 21/196 (18.5s/frame, ~3244s left) :: diving straight into a polished brass hub, three curved arms
+[dive] frame 31/196 (17.7s/frame, ~2916s left) :: a polished brass hub at the centre of the orrery, three curv
+[dive] frame 41/196 (15.5s/frame, ~2395s left) :: moving through a polished brass hub at the centre of the orr
+[dive] frame 51/196 (14.1s/frame, ~2042s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 61/196 (13.3s/frame, ~1802s left) :: a cluttered astronomer's study at night seen from across the
+[dive] frame 71/196 (14.1s/frame, ~1758s left) :: moving through a cluttered astronomer's study at night seen 
+[dive] frame 81/196 (15.1s/frame, ~1733s left) :: diving straight into a gleaming brass orrery, curved armatur
+[dive] frame 91/196 (14.8s/frame, ~1549s left) :: a brass orrery standing on a cluttered desk, slender curved 
+[dive] frame 101/196 (15.6s/frame, ~1482s left) :: diving straight into a small deep-blue planet bead, a smooth
+[dive] frame 111/196 (16.1s/frame, ~1367s left) :: diving straight into a small deep-blue planet bead, a smooth
+[dive] frame 121/196 (16.0s/frame, ~1199s left) :: moving through a deep-blue stone bead set on a slender brass
+[dive] frame 131/196 (16.4s/frame, ~1063s left) :: diving straight into a bright pale fleck of metal, a small a
+[dive] frame 141/196 (16.8s/frame, ~922s left) :: a mosaic of faceted crystal domains in polished metal, flat 
+[dive] frame 151/196 (16.3s/frame, ~731s left) :: deep inside a mosaic of faceted crystal domains in polished 
+[dive] frame 161/196 (15.8s/frame, ~552s left) :: deep inside a mosaic of faceted crystal domains in polished 
+[dive] frame 171/196 (15.4s/frame, ~385s left) :: the whole view transforming, resolving into a vast bubble-ch
+[dive] frame 181/196 (15.0s/frame, ~225s left) :: moving through a vast bubble-chamber realm of deep indigo fo
+[dive] frame 191/196 (14.7s/frame, ~73s left) :: diving straight into a vast dark indigo realm opening far aw
+[dive] frame 196/196 (14.5s/frame, ~0s left) :: diving straight into a vast dark indigo realm opening far aw
+[dive] interpolated 12 -> 24fps in 41s
+[dive] counter overlay on 389 frames (19 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/quantum_orrery/v2/quantum_orrery.mp4 (21919 KB, 16.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/quantum_orrery/v2/quantum_orrery_divein.mp4 (22405 KB, 16.3s)
+[dive] done in 2951s
+=== 17:26:25 quantum_orrery: rendered in 2951s
+  copied quantum_orrery.mp4 -> review/quantum_orrery_ds.mp4
+  copied quantum_orrery_divein.mp4 -> review_divein/quantum_orrery_ds_divein.mp4
+quantum_orrery: queued to REVIEW (ds/divein) from v2
+  quantum_orrery: 5 caption+title pairs (spot=True); theme='A slow, swelling ambient drone with cele'
+    [0] A brass orrery hums with cosmic whispers 🌌 Can you spot Lee hiding in the infinite loop? 👀 #cosmicorrery #fractalvoid #stardustbead #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A brass orrery hums with cosmic whispers 🌌
+    [1] Lost in the fractal heart of a stardust bead ✨ Can you spot Lee hiding in the infinite loop? 👀 #cosmicorrery #fractalvoid #stardustbead #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Lost in the fractal heart of a stardust bead ✨
+    [2] Where crystal domains dance in violet shadows 🔮 Can you spot Lee hiding in the infinite loop? 👀 #cosmicorrery #fractalvoid #stardustbead #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where crystal domains dance in violet shadows 🔮
+    [3] Three stars weave light across the void ⚡ Can you spot Lee hiding in the infinite loop? 👀 #cosmicorrery #fractalvoid #stardustbead #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Three stars weave light across the void ⚡
+    [4] The universe unfolds in an astronomer’s lamp glow 💫 Can you spot Lee hiding in the infinite loop? 👀 #cosmicorrery #fractalvoid #stardustbead #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The universe unfolds in an astronomer’s lamp glow 💫
+=== 17:27:13 quantum_orrery -> REVIEW (captioned)
+=== 17:27:13 --- copper_rain ---
+[style] neon_drift  ->  electric neon glow, magenta and cyan light bloom, wet chrome sheen, retro-futurist night haze, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/copper_rain/v1
+[dive] copper_rain: 140 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (49 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 1/140 (15.3s/frame, ~2121s left) :: moving through a verdigris world of stepped terraces, turquo
+[dive] frame 11/140 (22.1s/frame, ~2854s left) :: moving through a verdigris world of stepped terraces, turquo
+[dive] frame 21/140 (21.7s/frame, ~2580s left) :: diving straight into a rust-orange dendrite, a forked spine 
+[dive] frame 31/140 (20.9s/frame, ~2277s left) :: a branched fractal lattice spread over a dark plain, rust-or
+[dive] frame 41/140 (17.8s/frame, ~1767s left) :: deep inside a branched fractal lattice spread over a dark pl
+[dive] frame 51/140 (16.0s/frame, ~1420s left) :: deep inside a branched fractal lattice spread over a dark pl
+[dive] frame 61/140 (14.9s/frame, ~1179s left) :: the whole view transforming, resolving into a rainy city at 
+[dive] frame 71/140 (14.0s/frame, ~967s left) :: moving through a rainy city at night seen from high above, a
+[dive] frame 81/140 (13.3s/frame, ~787s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 91/140 (12.9s/frame, ~633s left) :: a rainy evening street corner seen from the sidewalk at rail
+[dive] frame 101/140 (13.9s/frame, ~541s left) :: diving straight into a scrolled section of bronze railing, c
+[dive] frame 111/140 (14.5s/frame, ~420s left) :: diving straight into a scrolled section of bronze railing, c
+[dive] frame 121/140 (14.3s/frame, ~271s left) :: moving through a curled length of old bronze scrollwork alon
+[dive] frame 131/140 (13.8s/frame, ~124s left) :: diving straight into a verdigris world of stepped terraces, 
+[dive] frame 140/140 (13.5s/frame, ~0s left) :: diving straight into a verdigris world of stepped terraces, 
+[dive] interpolated 12 -> 24fps in 29s
+[dive] counter overlay on 277 frames (16 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/copper_rain/v1/copper_rain.mp4 (17292 KB, 11.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/copper_rain/v1/copper_rain_divein.mp4 (17742 KB, 11.7s)
+[dive] done in 1963s
+=== 17:59:56 copper_rain: rendered in 1963s
+  copied copper_rain.mp4 -> review/copper_rain_ds.mp4
+  copied copper_rain_divein.mp4 -> review_divein/copper_rain_ds_divein.mp4
+copper_rain: queued to REVIEW (ds/divein) from v1
+  copper_rain: 5 caption+title pairs (spot=True); theme='A pulsing synth heartbeat beneath a rain'
+    [0] A raindrop’s journey through neon infinity 🌧️ Can you spot Lamar hiding in the glow? 👀 #neonzen #fractalcities #infinitezoom #verdigrisdreams #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A raindrop’s journey through neon infinity 🌧️
+    [1] Bronze scrolls whisper secrets to the city below Can you spot Lamar hiding in the glow? 👀 #neonzen #fractalcities #infinitezoom #verdigrisdreams #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Bronze scrolls whisper secrets to the city below
+    [2] Turquoise terraces rise in a fractal dream Can you spot Lamar hiding in the glow? 👀 #neonzen #fractalcities #infinitezoom #verdigrisdreams #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Turquoise terraces rise in a fractal dream
+    [3] Golden veins pulse beneath the endless night Can you spot Lamar hiding in the glow? 👀 #neonzen #fractalcities #infinitezoom #verdigrisdreams #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Golden veins pulse beneath the endless night
+    [4] The loop begins again at the corner of forever Can you spot Lamar hiding in the glow? 👀 #neonzen #fractalcities #infinitezoom #verdigrisdreams #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The loop begins again at the corner of forever
+=== 18:00:37 copper_rain -> REVIEW (captioned)
+=== 18:00:37 batch done in 2.7h — 3 to Review
+=== 18:00:37 log: outbox/night_batch_0801_151957.log

@@ -1,0 +1,102 @@
+=== 01:30:01 batch start [LMS] — 3 journeys: sugar_nebula static_bloom velvet_atlas
+=== 01:30:02 --- sugar_nebula ---
+[style] candy_gloss  ->  glossy candy-coated surfaces, soft pastel gradient light, bubblegum pink and pale aqua, plush 3d render, ultra-detailed, playful, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/sugar_nebula/v1
+[dive] sugar_nebula: 252 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (133 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 1/252 (18.5s/frame, ~4638s left) :: moving through vast banks of cotton-candy nebula in the blac
+[dive] frame 11/252 (20.7s/frame, ~4999s left) :: moving through vast banks of cotton-candy nebula in the blac
+[dive] frame 21/252 (20.7s/frame, ~4790s left) :: diving straight into a banded gumball planet, a round sphere
+[dive] frame 31/252 (20.3s/frame, ~4478s left) :: an enormous gumball planet hanging in the black, a hard cand
+[dive] frame 41/252 (19.2s/frame, ~4061s left) :: moving through an enormous gumball planet hanging in the bla
+[dive] frame 51/252 (19.3s/frame, ~3882s left) :: diving straight into a clear gap in the striped cloud deck a
+[dive] frame 61/252 (18.6s/frame, ~3549s left) :: a night sky of pulled-taffy clouds, thick glossy ribbons of 
+[dive] frame 71/252 (18.3s/frame, ~3309s left) :: moving through a night sky of pulled-taffy clouds, thick glo
+[dive] frame 81/252 (18.2s/frame, ~3110s left) :: diving straight into a lit carnival street, striped stalls a
+[dive] frame 91/252 (17.5s/frame, ~2823s left) :: a night carnival street seen from just above the lane, rows 
+[dive] frame 101/252 (16.6s/frame, ~2507s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 111/252 (15.9s/frame, ~2235s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 121/252 (15.6s/frame, ~2040s left) :: moving through a neon candy stall on a dark cobbled lane at 
+[dive] frame 131/252 (15.8s/frame, ~1911s left) :: diving straight into a large spiral lollipop, a flat disc of
+[dive] frame 141/252 (15.9s/frame, ~1764s left) :: a giant spiral lollipop standing on the stall counter, a fla
+[dive] frame 151/252 (15.8s/frame, ~1591s left) :: moving through a giant spiral lollipop standing on the stall
+[dive] frame 161/252 (16.2s/frame, ~1471s left) :: diving straight into a crust of coarse sugar crystals, facet
+[dive] frame 171/252 (16.5s/frame, ~1334s left) :: a forest of rock-candy spires, towering faceted sugar column
+[dive] frame 181/252 (16.5s/frame, ~1172s left) :: moving through a forest of rock-candy spires, towering facet
+[dive] frame 191/252 (16.7s/frame, ~1016s left) :: diving straight into a lattice of clear sugar-glass shards, 
+[dive] frame 201/252 (16.7s/frame, ~851s left) :: a lattice of clear sugar-glass shards spread through the bla
+[dive] frame 211/252 (16.3s/frame, ~667s left) :: deep inside a lattice of clear sugar-glass shards spread thr
+[dive] frame 221/252 (15.9s/frame, ~493s left) :: deep inside a lattice of clear sugar-glass shards spread thr
+[dive] frame 231/252 (15.7s/frame, ~329s left) :: the whole view transforming, resolving into a colossal quasa
+[dive] frame 241/252 (15.4s/frame, ~169s left) :: diving straight into vast banks of cotton-candy nebula in th
+[dive] frame 251/252 (15.1s/frame, ~15s left) :: diving straight into vast banks of cotton-candy nebula in th
+[dive] frame 252/252 (15.1s/frame, ~0s left) :: diving straight into vast banks of cotton-candy nebula in th
+[dive] interpolated 12 -> 24fps in 30s
+[dive] counter overlay on 501 frames (27 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/sugar_nebula/v1/sugar_nebula.mp4 (25163 KB, 21.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/sugar_nebula/v1/sugar_nebula_divein.mp4 (25777 KB, 21.0s)
+[dive] done in 3910s
+=== 02:35:12 sugar_nebula: rendered in 3910s
+  copied sugar_nebula.mp4 -> review/sugar_nebula_ds.mp4
+  copied sugar_nebula_divein.mp4 -> review_divein/sugar_nebula_ds_divein.mp4
+sugar_nebula: queued to REVIEW (ds/divein) from v1
+  sugar_nebula: 5 caption+title pairs (spot=True); theme='A dreamy, synth-driven melody that swirl'
+    [0] Dive into a neon candy cosmos 🍭✨ Can you spot Kitty in the candy cosmos? 🐱 #CandyCosmos #SugarGalaxy #NeonSweetDreams #InfiniteLollipop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive into a neon candy cosmos 🍭✨
+    [1] A spiral of sugar, endless and sweet 🌌💖 Can you spot Kitty in the candy cosmos? 🐱 #CandyCosmos #SugarGalaxy #NeonSweetDreams #InfiniteLollipop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A spiral of sugar, endless and sweet 🌌💖
+    [2] Lost in the crystal forests of a lollipop world ✨🌿 Can you spot Kitty in the candy cosmos? 🐱 #CandyCosmos #SugarGalaxy #NeonSweetDreams #InfiniteLollipop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Lost in the crystal forests of a lollipop world ✨🌿
+    [3] Where galaxies taste like cotton candy ❄️🌠 Can you spot Kitty in the candy cosmos? 🐱 #CandyCosmos #SugarGalaxy #NeonSweetDreams #InfiniteLollipop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where galaxies taste like cotton candy ❄️🌠
+    [4] The universe is just one giant gumball machine 🍬🚀 Can you spot Kitty in the candy cosmos? 🐱 #CandyCosmos #SugarGalaxy #NeonSweetDreams #InfiniteLollipop #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The universe is just one giant gumball machine 🍬🚀
+=== 02:36:09 sugar_nebula -> REVIEW (captioned)
+=== 02:36:09 --- static_bloom ---
+[style] neon_drift  ->  electric neon glow, magenta and cyan light bloom, wet chrome sheen, retro-futurist night haze, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/static_bloom/v1
+[dive] static_bloom: 196 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (91 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] FIGURE on frame 0 (woman — Florence: "A woman is wearing a colorful mask on her face. The mask is green and black. The woman has long dark brown hair. She is wearing a black jacket that ha") — re-rolling seed, attempt 1/4
+[dive] FIGURE on frame 0 (woman — Florence: "A woman is wearing a mask on her face. The mask is green and pink. The woman is wearing a black and pink outfit. The woman has long brown hair.") — re-rolling seed, attempt 2/4
+[dive] FIGURE on frame 0 (woman — Florence: "A woman is wearing a green and black mask. The mask has a spider web design on it. The woman has dark brown hair and dark red lipstick. She is wearing") — re-rolling seed, attempt 3/4
+[dive] FIGURE on frame 0 (woman — Florence: "A woman is wearing a colorful mask. The mask is green, blue, and black. The woman has purple hair. She is wearing a black top that has green and blue ") — re-rolling seed, attempt 4/4
+[dive] ABORT: frame 0 keeps rendering a lone figure after 4 seeds. This is a PROMPT problem, not luck — fix the render_start card (drop halo/gilded/regalia words, name a concrete object) or pick a different render_start. Re-run with --allow-figures to override.
+=== 02:37:57 static_bloom FAILED: dive failed: ue ") — re-rolling seed, attempt 4/4 | [dive] ABORT: frame 0 keeps rendering a lone figure after 4 seeds. This is a PROMPT problem, not luck — fix the render_start card (drop halo/gilded/regalia words, name a concrete object) or pick a different render_start. Re-run with --allow-figures to override.
+=== 02:37:57 --- velvet_atlas ---
+[style] gilded_relic  ->  warm gilded light, painterly, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/velvet_atlas/v1
+[dive] velvet_atlas: 140 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (70 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] FIGURE on frame 0 (woman — Florence: "A woman is wearing a long blue dress. There is a gold design on the dress. The woman is standing in front of a table with a lamp on it.") — re-rolling seed, attempt 1/4
+[dive] FIGURE on frame 0 (woman — Florence: "A woman is standing in a room. She is wearing a long blue dress with gold embroidery on the sleeves. There is a large picture hanging on the wall behi") — re-rolling seed, attempt 2/4
+[dive] FIGURE on frame 0 (woman — Florence: "A woman is wearing a long blue dress. There are pictures hanging on the wall behind the woman. There is a small table in front of the woman with a lam") — re-rolling seed, attempt 3/4
+[dive] frame 1/140 (94.6s/frame, ~13144s left) :: moving through a tailor's atelier at night seen from across 
+[dive] frame 11/140 (27.1s/frame, ~3500s left) :: moving through a tailor's atelier at night seen from across 
+[dive] frame 21/140 (24.1s/frame, ~2864s left) :: diving straight into a gold-embroidered cuff, heavy bullion 
+[dive] ⚠ figure at frame 28: woman — Florence: "A woman is standing in a room. She is wearing a long dress that is gold and blue. There is a table in front of her with a gold table cloth on it. Ther"
+[dive] frame 31/140 (21.3s/frame, ~2327s left) :: the coat's cuff at full width, heavy gold bullion embroidery
+[dive] frame 41/140 (20.2s/frame, ~2003s left) :: moving through the coat's cuff at full width, heavy gold bul
+[dive] frame 51/140 (20.1s/frame, ~1789s left) :: diving straight into a bare panel of blue velvet, its surfac
+[dive] frame 61/140 (19.6s/frame, ~1546s left) :: the twill weave beneath the embroidery, thick indigo thread 
+[dive] frame 71/140 (19.3s/frame, ~1331s left) :: moving through the twill weave beneath the embroidery, thick
+[dive] frame 81/140 (19.5s/frame, ~1150s left) :: diving straight into a single blue fiber, a slender strand s
+[dive] frame 91/140 (18.8s/frame, ~923s left) :: the surface of a single dyed fiber, shingled in overlapping 
+[dive] frame 101/140 (17.8s/frame, ~694s left) :: deep inside the surface of a single dyed fiber, shingled in 
+[dive] frame 111/140 (16.9s/frame, ~491s left) :: deep inside the surface of a single dyed fiber, shingled in 
+[dive] frame 121/140 (16.3s/frame, ~310s left) :: moving through a wide country of quilted coat lining, padded
+[dive] frame 131/140 (15.7s/frame, ~142s left) :: diving straight into a tailor's atelier at night, a dress-fo
+[dive] frame 140/140 (15.3s/frame, ~0s left) :: diving straight into a tailor's atelier at night, a dress-fo
+[dive] interpolated 12 -> 24fps in 16s
+[dive] counter overlay on 277 frames (17 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/velvet_atlas/v1/velvet_atlas.mp4 (15594 KB, 11.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/velvet_atlas/v1/velvet_atlas_divein.mp4 (15950 KB, 11.7s)
+[dive] done in 2200s
+=== 03:14:37 velvet_atlas: rendered in 2200s
+  copied velvet_atlas.mp4 -> review/velvet_atlas_ds.mp4
+  copied velvet_atlas_divein.mp4 -> review_divein/velvet_atlas_ds_divein.mp4
+velvet_atlas: queued to REVIEW (ds/divein) from v1
+  velvet_atlas: 5 caption+title pairs (spot=True); theme='A slow, hypnotic waltz of harps and gild'
+    [0] A dress-form’s cuff unravels into a golden labyrinth 🌌 Can you spot Lorraine hiding in the embroidery? 👀 #goldenvelvetdream #microworlds #endlesszoom #texturedesign #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A dress-form’s cuff unravels into a golden labyrinth 🌌
+    [1] Velvet valleys deepen into endless twilight hills ⛱️ Can you spot Lorraine hiding in the embroidery? 👀 #goldenvelvetdream #microworlds #endlesszoom #texturedesign #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Velvet valleys deepen into endless twilight hills ⛱️
+    [2] Dyed threads shimmer like violet mountain ranges 🏔️ Can you spot Lorraine hiding in the embroidery? 👀 #goldenvelvetdream #microworlds #endlesszoom #texturedesign #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dyed threads shimmer like violet mountain ranges 🏔️
+    [3] Stitches weave the sky into a quilt of midnight and gold ✨ Can you spot Lorraine hiding in the embroidery? 👀 #goldenvelvetdream #microworlds #endlesszoom #texturedesign #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Stitches weave the sky into a quilt of midnight and gold ✨
+    [4] Every thread holds a universe—zoom in forever Can you spot Lorraine hiding in the embroidery? 👀 #goldenvelvetdream #microworlds #endlesszoom #texturedesign #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Every thread holds a universe—zoom in forever
+=== 03:15:30 velvet_atlas -> REVIEW (captioned)
+=== 03:15:30 batch done in 1.8h — 2 to Review, 1 failed (static_bloom)
+=== 03:15:30 log: outbox/night_batch_0802_013001.log

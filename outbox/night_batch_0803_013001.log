@@ -1,0 +1,133 @@
+=== 01:30:01 batch start [LMS] — 3 journeys: tesla_garden chalkboard_infinities pollen_court
+=== 01:30:02 --- tesla_garden ---
+[style] neon_drift  ->  electric neon glow, magenta and cyan light bloom, wet chrome sheen, retro-futurist night haze, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/tesla_garden/v1
+[dive] tesla_garden: 252 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (133 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of twin pulsar beams stand from a white neutron star, two long cones of pale blue l
+[dive] frame 1/252 (22.1s/frame, ~5537s left) :: moving through twin pulsar beams stand from a white neutron 
+[dive] frame 11/252 (20.7s/frame, ~4998s left) :: moving through twin pulsar beams stand from a white neutron 
+[dive] frame 21/252 (20.2s/frame, ~4673s left) :: diving straight into a copper-toned metal planet, burnished 
+[dive] frame 31/252 (19.6s/frame, ~4329s left) :: a copper-toned metal planet hanging in the black, burnished 
+[dive] frame 41/252 (18.7s/frame, ~3952s left) :: moving through a copper-toned metal planet hanging in the bl
+[dive] frame 51/252 (18.9s/frame, ~3802s left) :: diving straight into a tall aurora curtain, a pleated wall o
+[dive] frame 61/252 (18.7s/frame, ~3579s left) :: within a pleated aurora curtain high over a dark copper plai
+[dive] frame 71/252 (19.0s/frame, ~3435s left) :: moving through within a pleated aurora curtain high over a d
+[dive] frame 81/252 (19.2s/frame, ~3291s left) :: diving straight into a ribbed glass dome, heavy brass ribs f
+[dive] ⚠ figure at frame 84: person — Florence: "A person is standing on top of a hill. There are streams of light coming off of the hill. The person is wearing a black shirt."
+[dive] frame 91/252 (18.6s/frame, ~2995s left) :: a ribbed glass observatory dome on the dark copper plain, he
+[dive] frame 101/252 (17.6s/frame, ~2656s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 111/252 (16.8s/frame, ~2362s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 121/252 (16.5s/frame, ~2166s left) :: moving through a wide Victorian electrical laboratory at nig
+[dive] frame 131/252 (16.8s/frame, ~2028s left) :: diving straight into a round glass globe alight with violet 
+[dive] frame 141/252 (16.8s/frame, ~1864s left) :: the inside of a glass plasma globe, a deep violet chamber wa
+[dive] frame 151/252 (16.6s/frame, ~1675s left) :: moving through the inside of a glass plasma globe, a deep vi
+[dive] frame 161/252 (16.9s/frame, ~1541s left) :: diving straight into a bright arc filament, a jagged rope of
+[dive] frame 171/252 (17.1s/frame, ~1388s left) :: a single arc filament set against the black, a jagged rope o
+[dive] frame 181/252 (17.1s/frame, ~1213s left) :: moving through a single arc filament set against the black, 
+[dive] frame 191/252 (17.2s/frame, ~1050s left) :: diving straight into a forked fan of fine white and violet t
+[dive] frame 201/252 (17.2s/frame, ~879s left) :: a Lichtenberg tree of electrical discharge on black, forked 
+[dive] frame 211/252 (16.8s/frame, ~689s left) :: deep inside a Lichtenberg tree of electrical discharge on bl
+[dive] frame 221/252 (16.4s/frame, ~509s left) :: deep inside a Lichtenberg tree of electrical discharge on bl
+[dive] frame 231/252 (16.2s/frame, ~340s left) :: the whole view transforming, resolving into a magnetar held 
+[dive] frame 241/252 (16.1s/frame, ~178s left) :: diving straight into twin pulsar beams stand from a white ne
+[dive] frame 251/252 (16.3s/frame, ~16s left) :: diving straight into twin pulsar beams stand from a white ne
+[dive] frame 252/252 (16.3s/frame, ~0s left) :: diving straight into twin pulsar beams stand from a white ne
+[dive] interpolated 12 -> 24fps in 29s
+[dive] counter overlay on 501 frames (22 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/tesla_garden/v1/tesla_garden.mp4 (25416 KB, 21.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/tesla_garden/v1/tesla_garden_divein.mp4 (26123 KB, 21.0s)
+[dive] done in 4221s
+=== 02:40:23 tesla_garden: rendered in 4221s
+  copied tesla_garden.mp4 -> review/tesla_garden_ds.mp4
+  copied tesla_garden_divein.mp4 -> review_divein/tesla_garden_ds_divein.mp4
+tesla_garden: queued to REVIEW (ds/divein) from v1
+  tesla_garden: 5 caption+title pairs (spot=True); theme='A slow, hypnotic synth pulse with crackl'
+    [0] A violet glow hums through the empty lab, pulling you into the plasma heart 🌌 Can you spot Clark hiding in this electric dream? 👀 #NeonCosmos #FractalPlasma #RetroStellarDive #AuroraLabyrinth #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A violet glow hums through the empty lab, pulling you into the plasma heart 🌌
+    [1] Electric branches bloom in silent fractal storms, endless and alive ✨ Can you spot Clark hiding in this electric dream? 👀 #NeonCosmos #FractalPlasma #RetroStellarDive #AuroraLabyrinth #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Electric branches bloom in silent fractal storms, endless and alive ✨
+    [2] Neutron stars pulse like twin lighthouses in the cosmic dark 🔮 Can you spot Clark hiding in this electric dream? 👀 #NeonCosmos #FractalPlasma #RetroStellarDive #AuroraLabyrinth #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Neutron stars pulse like twin lighthouses in the cosmic dark 🔮
+    [3] Auroras ripple over copper plains, whispering secrets to the glass dome below 🌠 Can you spot Clark hiding in this electric dream? 👀 #NeonCosmos #FractalPlasma #RetroStellarDive #AuroraLabyrinth #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Auroras ripple over copper plains, whispering secrets to the glass dome below 🌠
+    [4] The lab door opens again—where does the loop begin? ⚡ Can you spot Clark hiding in this electric dream? 👀 #NeonCosmos #FractalPlasma #RetroStellarDive #AuroraLabyrinth #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The lab door opens again—where does the loop begin? ⚡
+=== 02:41:21 tesla_garden -> REVIEW (captioned)
+=== 02:41:21 --- chalkboard_infinities ---
+[style] gilded_relic  ->  warm gilded light, painterly, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/chalkboard_infinities/v1
+[dive] chalkboard_infinities: 196 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (91 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a chalk constellation diagram drawn out on deep slate black, circled white nodes
+[dive] frame 1/196 (17.7s/frame, ~3456s left) :: moving through a chalk constellation diagram drawn out on de
+[dive] frame 11/196 (20.9s/frame, ~3868s left) :: moving through a chalk constellation diagram drawn out on de
+[dive] frame 21/196 (20.3s/frame, ~3552s left) :: diving straight into a chalked plan of a tiered amphitheater
+[dive] frame 31/196 (19.6s/frame, ~3239s left) :: a chalked plan of a great tiered amphitheater drawn across a
+[dive] frame 41/196 (16.9s/frame, ~2618s left) :: moving through a chalked plan of a great tiered amphitheater
+[dive] frame 51/196 (15.2s/frame, ~2207s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 61/196 (14.4s/frame, ~1940s left) :: a vast old lecture hall seen from the high back row, empty, 
+[dive] frame 71/196 (14.9s/frame, ~1864s left) :: moving through a vast old lecture hall seen from the high ba
+[dive] frame 81/196 (15.7s/frame, ~1805s left) :: diving straight into a great chalked spiral, wide white arcs
+[dive] frame 91/196 (15.4s/frame, ~1622s left) :: a great chalk spiral chalked across the slate board, broad w
+[dive] frame 101/196 (16.0s/frame, ~1518s left) :: diving straight into a thick chalk stroke, a broad white lin
+[dive] frame 111/196 (16.3s/frame, ~1386s left) :: diving straight into a thick chalk stroke, a broad white lin
+[dive] frame 121/196 (16.2s/frame, ~1213s left) :: moving through a single chalk stroke laid across a dark slat
+[dive] frame 131/196 (16.4s/frame, ~1068s left) :: diving straight into a loose chalk grain, a blocky white cry
+[dive] frame 141/196 (16.8s/frame, ~921s left) :: a tumbled scree of white calcite blocks, each a rhombic crys
+[dive] frame 151/196 (16.2s/frame, ~731s left) :: deep inside a tumbled scree of white calcite blocks, each a 
+[dive] frame 161/196 (15.7s/frame, ~551s left) :: deep inside a tumbled scree of white calcite blocks, each a 
+[dive] frame 171/196 (15.4s/frame, ~385s left) :: the whole view transforming, resolving into an endless chalk
+[dive] frame 181/196 (15.2s/frame, ~229s left) :: moving through an endless chalk-white realm on deep green-bl
+[dive] frame 191/196 (15.4s/frame, ~77s left) :: diving straight into a chalk constellation diagram drawn out
+[dive] frame 196/196 (15.5s/frame, ~0s left) :: diving straight into a chalk constellation diagram drawn out
+[dive] interpolated 12 -> 24fps in 23s
+[dive] counter overlay on 389 frames (24 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/chalkboard_infinities/v1/chalkboard_infinities.mp4 (21675 KB, 16.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/chalkboard_infinities/v1/chalkboard_infinities_divein.mp4 (22159 KB, 16.3s)
+[dive] done in 3123s
+=== 03:33:24 chalkboard_infinities: rendered in 3123s
+  copied chalkboard_infinities.mp4 -> review/chalkboard_infinities_ds.mp4
+  copied chalkboard_infinities_divein.mp4 -> review_divein/chalkboard_infinities_ds_divein.mp4
+chalkboard_infinities: queued to REVIEW (ds/divein) from v1
+  chalkboard_infinities: 5 caption+title pairs (spot=True); theme='A slow, swelling ambient drone with dist'
+    [0] Dive into the infinite chalkboard spiral 🌀 Can you spot Adam hiding in the infinite chalkboard? #chalkboardcosmos #infinitelecturehall #geometryofdreams #adaminthevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive into the infinite chalkboard spiral 🌀
+    [1] A lecture hall of lost equations, waiting for you Can you spot Adam hiding in the infinite chalkboard? #chalkboardcosmos #infinitelecturehall #geometryofdreams #adaminthevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A lecture hall of lost equations, waiting for you
+    [2] Where every stroke reveals a universe untold ✨ Can you spot Adam hiding in the infinite chalkboard? #chalkboardcosmos #infinitelecturehall #geometryofdreams #adaminthevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where every stroke reveals a universe untold ✨
+    [3] The hyperbola hums in the hollow dark Can you spot Adam hiding in the infinite chalkboard? #chalkboardcosmos #infinitelecturehall #geometryofdreams #adaminthevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The hyperbola hums in the hollow dark
+    [4] Adam’s ghost lingers in the geometry Can you spot Adam hiding in the infinite chalkboard? #chalkboardcosmos #infinitelecturehall #geometryofdreams #adaminthevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Adam’s ghost lingers in the geometry
+=== 03:34:09 chalkboard_infinities -> REVIEW (captioned)
+=== 03:34:09 --- pollen_court ---
+[style] infrared_bloom  ->  false-colour infrared palette, hot magenta and cyan, blooming light, high-saturation dreamscape, ultra-detailed, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/pollen_court/v3
+[dive] pollen_court: 140 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (70 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a blossoming spring park in low golden light, seen from the gravel path at stand
+[dive] frame 1/140 (18.0s/frame, ~2499s left) :: moving through a blossoming spring park in low golden light,
+[dive] frame 11/140 (23.5s/frame, ~3035s left) :: moving through a blossoming spring park in low golden light,
+[dive] frame 21/140 (20.6s/frame, ~2454s left) :: diving straight into an old green wooden bench, its painted 
+[dive] frame 31/140 (19.0s/frame, ~2075s left) :: a weathered green bench slat running away under the blossom 
+[dive] frame 41/140 (18.6s/frame, ~1844s left) :: moving through a weathered green bench slat running away und
+[dive] frame 51/140 (19.3s/frame, ~1718s left) :: diving straight into a spiky pollen grain, a small round gol
+[dive] frame 61/140 (19.6s/frame, ~1545s left) :: a single pollen grain in a drift of its neighbours, a round 
+[dive] frame 71/140 (19.5s/frame, ~1346s left) :: moving through a single pollen grain in a drift of its neigh
+[dive] frame 81/140 (19.5s/frame, ~1153s left) :: diving straight into a deep round pore, a dark opening ringe
+[dive] frame 91/140 (18.7s/frame, ~918s left) :: a reticulated honeycomb mesh spread across a golden land, ra
+[dive] frame 101/140 (17.7s/frame, ~690s left) :: deep inside a reticulated honeycomb mesh spread across a gol
+[dive] frame 111/140 (16.9s/frame, ~489s left) :: deep inside a reticulated honeycomb mesh spread across a gol
+[dive] frame 121/140 (16.5s/frame, ~313s left) :: moving through a flowering tree canopy seen wide against a p
+[dive] frame 131/140 (16.4s/frame, ~148s left) :: diving straight into a blossoming spring park in golden ligh
+[dive] frame 140/140 (16.6s/frame, ~0s left) :: diving straight into a blossoming spring park in golden ligh
+[dive] interpolated 12 -> 24fps in 16s
+[dive] counter overlay on 277 frames (14 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/pollen_court/v3/pollen_court.mp4 (17500 KB, 11.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/pollen_court/v3/pollen_court_divein.mp4 (17864 KB, 11.7s)
+[dive] done in 2385s
+=== 04:13:55 pollen_court: rendered in 2385s
+  copied pollen_court.mp4 -> review/pollen_court_ds.mp4
+  copied pollen_court_divein.mp4 -> review_divein/pollen_court_ds_divein.mp4
+pollen_court: queued to REVIEW (ds/divein) from v3
+  pollen_court: 5 caption+title pairs (spot=True); theme='A shimmering, slow-motion descent throug'
+    [0] A pollen grain’s universe, blooming in golden light 🌸 Can you spot Amos hiding in this infinite spring? 👀 #InfiniteBloom #PollenCosmos #ZenZoom #DreamDive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A pollen grain’s universe, blooming in golden light 🌸
+    [1] Lost in the fractal forests of spring’s last breath ✨ Can you spot Amos hiding in this infinite spring? 👀 #InfiniteBloom #PollenCosmos #ZenZoom #DreamDive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Lost in the fractal forests of spring’s last breath ✨
+    [2] Where every bench is a world, and every world a bench 🌿 Can you spot Amos hiding in this infinite spring? 👀 #InfiniteBloom #PollenCosmos #ZenZoom #DreamDive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where every bench is a world, and every world a bench 🌿
+    [3] Diving through petals, past the sky, into the heart of bloom ⚡ Can you spot Amos hiding in this infinite spring? 👀 #InfiniteBloom #PollenCosmos #ZenZoom #DreamDive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Diving through petals, past the sky, into the heart of bloom ⚡
+    [4] A park, a grain, a galaxy—all one endless loop 🌀 Can you spot Amos hiding in this infinite spring? 👀 #InfiniteBloom #PollenCosmos #ZenZoom #DreamDive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A park, a grain, a galaxy—all one endless loop 🌀
+=== 04:14:43 pollen_court -> REVIEW (captioned)
+=== 04:14:43 batch done in 2.7h — 3 to Review
+=== 04:14:43 log: outbox/night_batch_0803_013001.log

@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ember_meadow/tide_organ-wild.mp4
+    bar 2.333s | music bar 2.283s (conf 0.55) -> stretch 0.9783 | phase 2.040s | lock 27.08x | kick 0.55 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] realigned (lock 27.08x kick 0.55)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ember_meadow/glass_chapel-wild.mp4
+    bar 2.333s | music bar 2.283s (conf 0.56) -> stretch 0.9783 | phase 2.330s | lock 23.02x | kick 0.44 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] realigned (lock 23.02x kick 0.44)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ember_meadow/wooden_orbit-b.mp4
+    bar 2.333s | music bar 2.347s (conf 0.32) -> stretch 1.0057 | phase 2.020s | lock 24.89x | kick 0.12 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [wooden_orbit-b] realigned (lock 24.89x kick 0.12)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ember_meadow/wooden_orbit-downbeat.mp4
+    bar 2.333s | music bar 2.325s (conf 0.47) -> stretch 0.9966 | phase 0.760s | lock 13.47x | kick 0.43 | seamless loop @ 11.67s (music tiled x1, xf 0.50s)
+  [wooden_orbit-downbeat] realigned (lock 13.47x kick 0.43)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ember_meadow/choir_of_dust-wild.mp4
+    bar 2.333s | music bar 2.293s (conf 0.30) -> stretch 0.9829 | phase 0.270s | lock 14.28x | kick 0.17 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] realigned (lock 14.28x kick 0.17)
+realigned 5 pregen candidates to the marked start

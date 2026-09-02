@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/voltaic_shoal/choir_of_dust-wild.mp4
+    bar 2.333s | music bar 2.304s (conf 0.44) -> stretch 0.9874 | phase 0.250s | lock 51.52x | kick 0.39 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] realigned (lock 51.52x kick 0.39)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/voltaic_shoal/pulse1-ember_pulse.mp4
+    bar 2.333s | music bar 2.283s (conf 0.55) -> stretch 0.9783 | phase 1.910s | lock 16.19x | kick 0.44 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [pulse1-ember_pulse] realigned (lock 16.19x kick 0.44)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/voltaic_shoal/pulse3-ember_pulse.mp4
+    bar 2.333s | music bar 2.283s (conf 0.61) -> stretch 0.9783 | phase 1.090s | lock 18.22x | kick 0.38 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [pulse3-ember_pulse] realigned (lock 18.22x kick 0.38)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/voltaic_shoal/music_box-wild.mp4
+    bar 2.333s | music bar 2.315s (conf 0.42) -> stretch 0.9920 | phase 0.800s | lock 9.77x | kick 0.16 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [music_box-wild] realigned (lock 9.77x kick 0.15)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/voltaic_shoal/wooden_orbit-wild.mp4
+    bar 2.333s | music bar 2.304s (conf 0.13) -> stretch 0.9874 | phase 0.170s | lock 7.12x | kick -0.02 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] realigned (lock 7.12x kick -0.03)
+realigned 5 pregen candidates to the marked start

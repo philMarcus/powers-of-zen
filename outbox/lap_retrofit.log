@@ -1,0 +1,555 @@
+[style] gilded_relic  ->  warm gilded light, painterly, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 4 (frame 112/168) — prefix from v2, regenerating 56 frames into v3
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/wild_yeast/v3
+[dive] wild_yeast: 168 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — yeast_towers(sea)[22..44], gluten_walls(sea)[50..62], starch_shells(sea)[78..100], crumb_caverns(sea)[134..143]
+[dive] TRACKER v3 ON (112 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 121/168 (22.6s/frame, ~1060s left) :: moving through a baker's counter at daybreak, empty, no one 
+[dive] frame 131/168 (25.2s/frame, ~932s left) :: diving straight into a domed air pocket as it swells to fill
+[dive] frame 141/168 (22.9s/frame, ~619s left) :: the chamber system within a sourdough crumb, domed cavities 
+[dive] frame 151/168 (21.0s/frame, ~357s left) :: moving through the chamber system within a sourdough crumb, 
+[dive] frame 161/168 (20.7s/frame, ~145s left) :: diving straight into a budding yeast cell as it swells to fi
+[dive] frame 168/168 (20.8s/frame, ~0s left) :: diving straight into a budding yeast cell as it swells to fi
+[dive] interpolated 12 -> 24fps (280 frames, loop-bridged) in 27s
+[dive] counter overlay on 280 frames (16 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/wild_yeast/v3/wild_yeast.mp4 (16925 KB, 11.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/wild_yeast/v3/wild_yeast_divein.mp4 (17215 KB, 11.7s)
+[dive] done in 1248s
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 9 (frame 252/308) — prefix from v3, regenerating 56 frames into v4
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v4
+[dive] lantern_mangrove: 308 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — tidal_coast(surface)[22..44], root_nursery(surface)[50..72], waterline(surface)[78..100], plankton_drift(sea)[106..128], glass_shells(sea)[134..156], cell_interior(sea)[162..184], antenna_array(sea)[190..202], silica_network(lattice)[218..240], ocean_world(surface)[274..283]
+[dive] TRACKER v3 ON (217 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 261/308 (19.3s/frame, ~905s left) :: moving through a star-forming nebula, green-black dust colum
+[dive] frame 271/308 (23.3s/frame, ~863s left) :: diving straight into a dark blue world as it swells to fill 
+[dive] frame 281/308 (21.8s/frame, ~590s left) :: the night side of a dark ocean world seen from low orbit, th
+[dive] frame 291/308 (20.2s/frame, ~343s left) :: moving through the night side of a dark ocean world seen fro
+[style] gilded_relic  ->  warm gilded light, painterly, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 4 (frame 112/168) — prefix from v2, regenerating 56 frames into v4
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/wild_yeast/v4
+[dive] wild_yeast: 168 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — yeast_towers(sea)[22..44], gluten_walls(sea)[50..62], starch_shells(sea)[78..100], crumb_caverns(sea)[134..141]
+[dive] TRACKER v3 ON (112 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 121/168 (20.7s/frame, ~974s left) :: moving through a baker's counter at daybreak, empty, no one 
+[dive] frame 131/168 (24.2s/frame, ~894s left) :: diving straight into a domed air pocket as it swells to fill
+[dive] frame 141/168 (22.2s/frame, ~600s left) :: the chamber system within a sourdough crumb, domed cavities 
+[dive] frame 151/168 (22.2s/frame, ~377s left) :: moving through the chamber system within a sourdough crumb, 
+[dive] frame 161/168 (22.1s/frame, ~155s left) :: diving straight into a budding yeast cell as it swells to fi
+[dive] frame 168/168 (22.0s/frame, ~0s left) :: diving straight into a budding yeast cell as it swells to fi
+[dive] interpolated 12 -> 24fps (280 frames, loop-bridged) in 20s
+[dive] counter overlay on 280 frames (16 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/wild_yeast/v4/wild_yeast.mp4 (16914 KB, 11.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/wild_yeast/v4/wild_yeast_divein.mp4 (17194 KB, 11.7s)
+[dive] done in 1306s
+  copied wild_yeast.mp4 -> review/wild_yeast_ds.mp4
+  copied wild_yeast_divein.mp4 -> review_divein/wild_yeast_ds_divein.mp4
+wild_yeast: queued to REVIEW (ds/divein) from v4
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 9 (frame 252/308) — prefix from v3, regenerating 56 frames into v4
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v4
+[dive] lantern_mangrove: 308 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — tidal_coast(surface)[22..44], root_nursery(surface)[50..72], waterline(surface)[78..100], plankton_drift(sea)[106..128], glass_shells(sea)[134..156], cell_interior(sea)[162..184], antenna_array(sea)[190..202], silica_network(lattice)[218..240], ocean_world(surface)[274..281]
+[dive] TRACKER v3 ON (217 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 261/308 (24.8s/frame, ~1164s left) :: moving through a star-forming nebula, green-black dust colum
+[dive] frame 271/308 (29.8s/frame, ~1103s left) :: diving straight into a dark blue world as it swells to fill 
+[dive] frame 281/308 (27.8s/frame, ~751s left) :: the night side of a dark ocean world seen from low orbit, th
+[dive] frame 291/308 (27.3s/frame, ~464s left) :: moving through the night side of a dark ocean world seen fro
+[dive] frame 301/308 (26.8s/frame, ~187s left) :: diving straight into a glowing green coast as it swells to f
+[dive] frame 308/308 (26.5s/frame, ~0s left) :: diving straight into a glowing green coast as it swells to f
+[dive] interpolated 12 -> 24fps (560 frames, loop-bridged) in 57s
+[dive] counter overlay on 560 frames (32 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v4/lantern_mangrove.mp4 (34790 KB, 23.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v4/lantern_mangrove_divein.mp4 (35291 KB, 23.3s)
+[dive] done in 1655s
+  copied lantern_mangrove.mp4 -> review/lantern_mangrove_ds.mp4
+  copied lantern_mangrove_divein.mp4 -> review_divein/lantern_mangrove_ds_divein.mp4
+lantern_mangrove: queued to REVIEW (ds/divein) from v4
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 10 (frame 320/384) — prefix from v3, regenerating 64 frames into v4
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v4
+[dive] cobalt_rookery: 384 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — ice_world(surface)[26..39], rookery_cliff(surface)[58..81], egg_shelf(surface)[90..113], shell_rind(surface)[122..145], palisade_columns(surface)[154..177], membrane_weave(web)[186..209], protein_ropes(sea)[218..241], calcite_lattice(lattice)[250..273], nucleus_droplet(sea)[282..305], cluster_sun(sea)[346..353]
+[dive] TRACKER v3 ON (248 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 321/384 (21.6s/frame, ~1359s left) :: the whole view transforming, resolving into a globular clust
+[dive] frame 331/384 (16.6s/frame, ~881s left) :: moving through a globular cluster of ten thousand suns packe
+[dive] frame 341/384 (16.4s/frame, ~704s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 351/384 (16.1s/frame, ~532s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 361/384 (17.6s/frame, ~404s left) :: moving through an aging gold sun burning inside a crowded st
+[dive] frame 371/384 (19.5s/frame, ~253s left) :: moving through an aging gold sun burning inside a crowded st
+[dive] frame 381/384 (20.1s/frame, ~60s left) :: diving straight into a cobalt-blue ice world as it swells to
+[dive] frame 384/384 (20.2s/frame, ~0s left) :: diving straight into a cobalt-blue ice world as it swells to
+[dive] interpolated 12 -> 24fps (704 frames, loop-bridged) in 42s
+[dive] counter overlay on 704 frames (41 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v4/cobalt_rookery.mp4 (48445 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v4/cobalt_rookery_divein.mp4 (49152 KB, 29.3s)
+[dive] done in 1479s
+  copied cobalt_rookery.mp4 -> review/cobalt_rookery_ds.mp4
+  copied cobalt_rookery_divein.mp4 -> review_divein/cobalt_rookery_ds_divein.mp4
+cobalt_rookery: queued to REVIEW (ds/divein) from v4
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] ultraviolet  ->  ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 4 (frame 128/192) — prefix from v3, regenerating 64 frames into v4
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/magnetite_choir/v4
+[dive] magnetite_choir: 192 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — magnetite_lattice(lattice)[26..39], lattice_flaw(lattice)[58..81], lodestone_face(surface)[122..145], domain_patchwork(sea)[154..161]
+[dive] TRACKER v3 ON (128 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 131/192 (15.2s/frame, ~925s left) :: an iron-black lodestone rock, its stepped and pitted face ru
+[dive] frame 141/192 (15.1s/frame, ~769s left) :: moving through an iron-black lodestone rock, its stepped and
+[dive] frame 151/192 (19.2s/frame, ~786s left) :: diving straight into a glinting black grain as it swells to 
+[dive] frame 161/192 (19.6s/frame, ~608s left) :: ragged patches of aligned iron packed edge to edge in every 
+[dive] frame 171/192 (21.4s/frame, ~449s left) :: moving through ragged patches of aligned iron packed edge to
+[dive] frame 181/192 (21.8s/frame, ~240s left) :: diving straight into a bright green patch as it swells to fi
+[dive] frame 191/192 (22.0s/frame, ~22s left) :: diving straight into a bright green patch as it swells to fi
+[dive] frame 192/192 (22.0s/frame, ~0s left) :: diving straight into a bright green patch as it swells to fi
+[dive] interpolated 12 -> 24fps (320 frames, loop-bridged) in 19s
+[dive] counter overlay on 320 frames (18 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/magnetite_choir/v4/magnetite_choir.mp4 (21977 KB, 13.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/magnetite_choir/v4/magnetite_choir_divein.mp4 (22327 KB, 13.3s)
+[dive] done in 1495s
+  copied magnetite_choir.mp4 -> review/magnetite_choir_ds.mp4
+  copied magnetite_choir_divein.mp4 -> review_divein/magnetite_choir_ds_divein.mp4
+magnetite_choir: queued to REVIEW (ds/divein) from v4
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] crystalline  ->  prismatic crystalline light, refractive glass and gemstone facets, jewel tones, ultra-detailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 9 (frame 288/352) — prefix from v1, regenerating 64 frames into v2
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/caddis_masonry/v2
+[dive] caddis_masonry: 352 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — silk_cable(sea)[26..49], fibril_combs(sea)[58..81], fibroin_sheets(sea)[90..113], atom_shells(lattice)[122..145], ring_arc(sea)[186..209], stone_shallows(surface)[250..273], caddis_case(sea)[282..305], grain_pack(sea)[314..321]
+[dive] TRACKER v3 ON (224 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 291/352 (15.5s/frame, ~944s left) :: a stretch of the caddis larva's case wall, rose-quartz and j
+[dive] frame 301/352 (14.3s/frame, ~727s left) :: moving through a stretch of the caddis larva's case wall, ro
+[dive] frame 311/352 (20.5s/frame, ~842s left) :: diving straight into a rose-quartz grain as it swells to fil
+[dive] frame 321/352 (19.2s/frame, ~594s left) :: masonry grains packed at every angle in every direction, ros
+[dive] frame 331/352 (20.0s/frame, ~420s left) :: moving through masonry grains packed at every angle in every
+[dive] frame 341/352 (21.8s/frame, ~240s left) :: diving straight into a taut silk cord as it swells to fill t
+[dive] frame 351/352 (21.9s/frame, ~22s left) :: diving straight into a taut silk cord as it swells to fill t
+[dive] frame 352/352 (21.9s/frame, ~0s left) :: diving straight into a taut silk cord as it swells to fill t
+[dive] interpolated 12 -> 24fps (640 frames, loop-bridged) in 38s
+[dive] counter overlay on 640 frames (33 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/caddis_masonry/v2/caddis_masonry.mp4 (39316 KB, 26.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/caddis_masonry/v2/caddis_masonry_divein.mp4 (39937 KB, 26.7s)
+[dive] done in 1572s
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] enchanted_wild  ->  enchanted golden light, lush saturated color, painterly fantasy illustration, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 10 (frame 240/288) — prefix from v2, regenerating 48 frames into v3
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/termite_citadel/v3
+[dive] termite_citadel: 288 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — day_night_line(surface)[18..39], mound_savanna(surface)[42..53], mound_citadel(surface)[66..87], fungus_garden(surface)[90..111], hypha_cells(sea)[114..135], motor_bundle(sea)[138..159], chitin_lattice(lattice)[162..183], subnuclear_knot(sea)[186..207], galaxy_knife(sea)[234..255], star_nursery(sea)[258..265]
+[dive] TRACKER v3 ON (204 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 241/288 (18.6s/frame, ~875s left) :: a galaxy turned exactly on its side, its disk drawn out as a
+[dive] frame 251/288 (16.5s/frame, ~612s left) :: moving through a galaxy turned exactly on its side, its disk
+[dive] frame 261/288 (20.7s/frame, ~559s left) :: diving straight into a glowing crimson dust cloud as it swel
+[dive] frame 271/288 (20.4s/frame, ~346s left) :: moving through a starbirth cloud stacked into towering sienn
+[dive] frame 281/288 (21.2s/frame, ~148s left) :: diving straight into a banded planet half in shadow as it sw
+[dive] frame 288/288 (21.9s/frame, ~0s left) :: diving straight into a banded planet half in shadow as it sw
+[dive] interpolated 12 -> 24fps (528 frames, loop-bridged) in 32s
+[dive] counter overlay on 528 frames (43 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/termite_citadel/v3/termite_citadel.mp4 (35616 KB, 22.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/termite_citadel/v3/termite_citadel_divein.mp4 (36180 KB, 22.0s)
+[dive] done in 1193s
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] cosmic_gloss  ->  luminous volumetric light, glossy hyperreal render, deep-space glow, ultra-detailed, cinematic, epic scale, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 10 (frame 240/288) — prefix from v3, regenerating 48 frames into v4
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/ruby_furnace/v4
+[dive] ruby_furnace: 288 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — ember_limb(surface)[18..39], orchard_country(surface)[42..63], daybreak_garden(surface)[66..77], vine_hover(surface)[90..111], gorget_shingles(sea)[114..135], capillary_file(sea)[138..159], hemoglobin_engines(sea)[162..183], iron_shells(sea)[186..207], iron_nucleus(sea)[210..231], prominence_arcs(surface)[258..265]
+[dive] TRACKER v3 ON (186 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 241/288 (26.1s/frame, ~1226s left) :: the whole view transforming, resolving into the boiling floo
+[dive] frame 251/288 (18.4s/frame, ~681s left) :: moving through the boiling floor of a red giant star, convec
+[dive] frame 261/288 (17.8s/frame, ~480s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 271/288 (18.4s/frame, ~313s left) :: moving through arches of glowing gas standing off the edge o
+[dive] frame 281/288 (19.7s/frame, ~138s left) :: diving straight into a dark green world as it swells to fill
+[dive] frame 288/288 (20.7s/frame, ~0s left) :: diving straight into a dark green world as it swells to fill
+[dive] interpolated 12 -> 24fps (528 frames, loop-bridged) in 32s
+[dive] counter overlay on 528 frames (32 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/ruby_furnace/v4/ruby_furnace.mp4 (32155 KB, 22.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/ruby_furnace/v4/ruby_furnace_divein.mp4 (33019 KB, 22.0s)
+[dive] done in 1132s
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 10 (frame 320/392) — prefix from v3, regenerating 72 frames into v5
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v5
+[dive] cobalt_rookery: 392 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — ice_world(surface)[26..39], rookery_cliff(surface)[58..81], egg_shelf(surface)[90..113], shell_rind(surface)[122..145], palisade_columns(surface)[154..177], membrane_weave(web)[186..209], protein_ropes(sea)[218..241], calcite_lattice(lattice)[250..273], nucleus_droplet(sea)[282..305], cluster_sun(sea)[346..359]
+[dive] TRACKER v3 ON (248 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 321/392 (27.3s/frame, ~1939s left) :: the whole view transforming, resolving into a globular clust
+[dive] frame 331/392 (17.6s/frame, ~1074s left) :: moving through a globular cluster of ten thousand suns packe
+[dive] frame 341/392 (17.2s/frame, ~878s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 351/392 (16.6s/frame, ~681s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 361/392 (16.3s/frame, ~506s left) :: moving through an aging gold sun burning inside a crowded st
+[dive] frame 371/392 (18.1s/frame, ~379s left) :: moving through an aging gold sun burning inside a crowded st
+[dive] frame 381/392 (18.6s/frame, ~205s left) :: diving straight into a cobalt-blue ice world as it swells to
+[dive] frame 391/392 (19.0s/frame, ~19s left) :: a cobalt ocean world seen from orbit, sea ice broken into fl
+[dive] frame 392/392 (19.0s/frame, ~0s left) :: a cobalt ocean world seen from orbit, sea ice broken into fl
+[dive] interpolated 12 -> 24fps (704 frames, loop-bridged) in 71s
+[dive] counter overlay on 704 frames (42 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v5/cobalt_rookery.mp4 (48390 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v5/cobalt_rookery_divein.mp4 (49223 KB, 29.3s)
+[dive] done in 1581s
+  copied cobalt_rookery.mp4 -> review/cobalt_rookery_ds.mp4
+  copied cobalt_rookery_divein.mp4 -> review_divein/cobalt_rookery_ds_divein.mp4
+cobalt_rookery: queued to REVIEW (ds/divein) from v5
+[style] gilded_relic  ->  warm gilded light, painterly, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 4 (frame 112/175) — prefix from v2, regenerating 63 frames into v5
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/wild_yeast/v5
+[dive] wild_yeast: 175 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — yeast_towers(sea)[22..44], gluten_walls(sea)[50..62], starch_shells(sea)[78..100], crumb_caverns(sea)[134..146]
+[dive] TRACKER v3 ON (112 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 121/175 (23.3s/frame, ~1260s left) :: moving through a baker's counter at daybreak, empty, no one 
+[dive] frame 131/175 (27.8s/frame, ~1222s left) :: diving straight into a domed air pocket as it swells to fill
+[dive] frame 141/175 (25.6s/frame, ~869s left) :: the chamber system within a sourdough crumb, domed cavities 
+[dive] frame 151/175 (24.0s/frame, ~577s left) :: moving through the chamber system within a sourdough crumb, 
+[dive] frame 161/175 (24.1s/frame, ~337s left) :: diving straight into a budding yeast cell as it swells to fi
+[dive] frame 171/175 (24.9s/frame, ~100s left) :: a chamber wall at cell scale, oval yeast bodies heaped into 
+[dive] frame 175/175 (24.8s/frame, ~0s left) :: a chamber wall at cell scale, oval yeast bodies heaped into 
+[dive] interpolated 12 -> 24fps (280 frames, loop-bridged) in 28s
+[dive] counter overlay on 280 frames (17 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/wild_yeast/v5/wild_yeast.mp4 (16843 KB, 11.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/wild_yeast/v5/wild_yeast_divein.mp4 (17164 KB, 11.7s)
+[dive] done in 1649s
+  copied wild_yeast.mp4 -> review/wild_yeast_ds.mp4
+  copied wild_yeast_divein.mp4 -> review_divein/wild_yeast_ds_divein.mp4
+wild_yeast: queued to REVIEW (ds/divein) from v5
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 9 (frame 252/315) — prefix from v3, regenerating 63 frames into v5
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v5
+[dive] lantern_mangrove: 315 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — tidal_coast(surface)[22..44], root_nursery(surface)[50..72], waterline(surface)[78..100], plankton_drift(sea)[106..128], glass_shells(sea)[134..156], cell_interior(sea)[162..184], antenna_array(sea)[190..202], silica_network(lattice)[218..240], ocean_world(surface)[274..286]
+[dive] TRACKER v3 ON (217 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 261/315 (20.3s/frame, ~1094s left) :: moving through a star-forming nebula, green-black dust colum
+[dive] frame 271/315 (25.7s/frame, ~1129s left) :: diving straight into a dark blue world as it swells to fill 
+[dive] frame 281/315 (23.7s/frame, ~805s left) :: the night side of a dark ocean world seen from low orbit, th
+[dive] frame 291/315 (22.6s/frame, ~543s left) :: moving through the night side of a dark ocean world seen fro
+[dive] frame 301/315 (22.7s/frame, ~318s left) :: diving straight into a glowing green coast as it swells to f
+[dive] frame 311/315 (23.2s/frame, ~93s left) :: a mangrove coast seen from low above at night, black tidal c
+[dive] frame 315/315 (23.2s/frame, ~0s left) :: a mangrove coast seen from low above at night, black tidal c
+[dive] interpolated 12 -> 24fps (560 frames, loop-bridged) in 34s
+[dive] counter overlay on 560 frames (31 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v5/lantern_mangrove.mp4 (34545 KB, 23.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v5/lantern_mangrove_divein.mp4 (35042 KB, 23.3s)
+[dive] done in 1609s
+  copied lantern_mangrove.mp4 -> review/lantern_mangrove_ds.mp4
+  copied lantern_mangrove_divein.mp4 -> review_divein/lantern_mangrove_ds_divein.mp4
+lantern_mangrove: queued to REVIEW (ds/divein) from v5
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] ultraviolet  ->  ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 4 (frame 128/200) — prefix from v3, regenerating 72 frames into v5
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/magnetite_choir/v5
+[dive] magnetite_choir: 200 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — magnetite_lattice(lattice)[26..39], lattice_flaw(lattice)[58..81], lodestone_face(surface)[122..145], domain_patchwork(sea)[154..167]
+[dive] TRACKER v3 ON (128 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 131/200 (15.5s/frame, ~1071s left) :: an iron-black lodestone rock, its stepped and pitted face ru
+[dive] frame 141/200 (14.9s/frame, ~879s left) :: moving through an iron-black lodestone rock, its stepped and
+[dive] frame 151/200 (18.7s/frame, ~915s left) :: diving straight into a glinting black grain as it swells to 
+[dive] frame 161/200 (18.5s/frame, ~722s left) :: ragged patches of aligned iron packed edge to edge in every 
+[dive] frame 171/200 (19.0s/frame, ~551s left) :: moving through ragged patches of aligned iron packed edge to
+[dive] frame 181/200 (19.8s/frame, ~376s left) :: diving straight into a bright green patch as it swells to fi
+[dive] frame 191/200 (20.2s/frame, ~182s left) :: diving straight into a bright green patch as it swells to fi
+[dive] frame 200/200 (20.9s/frame, ~0s left) :: the iron-oxide lattice standing open in the black, octahedra
+[dive] interpolated 12 -> 24fps (320 frames, loop-bridged) in 19s
+[dive] counter overlay on 320 frames (19 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/magnetite_choir/v5/magnetite_choir.mp4 (21693 KB, 13.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/magnetite_choir/v5/magnetite_choir_divein.mp4 (22018 KB, 13.3s)
+[dive] done in 1589s
+  copied magnetite_choir.mp4 -> review/magnetite_choir_ds.mp4
+  copied magnetite_choir_divein.mp4 -> review_divein/magnetite_choir_ds_divein.mp4
+magnetite_choir: queued to REVIEW (ds/divein) from v5
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] crystalline  ->  prismatic crystalline light, refractive glass and gemstone facets, jewel tones, ultra-detailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 9 (frame 288/360) — prefix from v1, regenerating 72 frames into v3
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/caddis_masonry/v3
+[dive] caddis_masonry: 360 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — silk_cable(sea)[26..49], fibril_combs(sea)[58..81], fibroin_sheets(sea)[90..113], atom_shells(lattice)[122..145], ring_arc(sea)[186..209], stone_shallows(surface)[250..273], caddis_case(sea)[282..305], grain_pack(sea)[314..327]
+[dive] TRACKER v3 ON (224 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 291/360 (14.8s/frame, ~1022s left) :: a stretch of the caddis larva's case wall, rose-quartz and j
+[dive] frame 301/360 (14.1s/frame, ~831s left) :: moving through a stretch of the caddis larva's case wall, ro
+[dive] frame 311/360 (18.8s/frame, ~923s left) :: diving straight into a rose-quartz grain as it swells to fil
+[dive] frame 321/360 (17.9s/frame, ~698s left) :: masonry grains packed at every angle in every direction, ros
+[dive] frame 331/360 (17.9s/frame, ~518s left) :: moving through masonry grains packed at every angle in every
+[dive] frame 341/360 (19.6s/frame, ~372s left) :: diving straight into a taut silk cord as it swells to fill t
+[dive] frame 351/360 (20.0s/frame, ~180s left) :: diving straight into a taut silk cord as it swells to fill t
+[dive] frame 360/360 (20.3s/frame, ~0s left) :: a lashing of underwater silk crossing the packed grain faces
+[dive] interpolated 12 -> 24fps (640 frames, loop-bridged) in 38s
+[dive] counter overlay on 640 frames (33 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/caddis_masonry/v3/caddis_masonry.mp4 (39043 KB, 26.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/caddis_masonry/v3/caddis_masonry_divein.mp4 (39722 KB, 26.7s)
+[dive] done in 1629s
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] enchanted_wild  ->  enchanted golden light, lush saturated color, painterly fantasy illustration, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 10 (frame 240/294) — prefix from v2, regenerating 54 frames into v4
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/termite_citadel/v4
+[dive] termite_citadel: 294 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — day_night_line(surface)[18..39], mound_savanna(surface)[42..53], mound_citadel(surface)[66..87], fungus_garden(surface)[90..111], hypha_cells(sea)[114..135], motor_bundle(sea)[138..159], chitin_lattice(lattice)[162..183], subnuclear_knot(sea)[186..207], galaxy_knife(sea)[234..255], star_nursery(sea)[258..269]
+[dive] TRACKER v3 ON (204 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 241/294 (19.4s/frame, ~1026s left) :: a galaxy turned exactly on its side, its disk drawn out as a
+[dive] frame 251/294 (15.8s/frame, ~681s left) :: moving through a galaxy turned exactly on its side, its disk
+[dive] frame 261/294 (17.7s/frame, ~583s left) :: diving straight into a glowing crimson dust cloud as it swel
+[dive] frame 271/294 (17.2s/frame, ~396s left) :: moving through a starbirth cloud stacked into towering sienn
+[dive] frame 281/294 (19.0s/frame, ~247s left) :: diving straight into a banded planet half in shadow as it sw
+[dive] frame 291/294 (20.3s/frame, ~61s left) :: a planet seen from orbit with the day-night line curved acro
+[dive] frame 294/294 (20.4s/frame, ~0s left) :: a planet seen from orbit with the day-night line curved acro
+[dive] interpolated 12 -> 24fps (528 frames, loop-bridged) in 32s
+[dive] counter overlay on 528 frames (43 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/termite_citadel/v4/termite_citadel.mp4 (35365 KB, 22.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/termite_citadel/v4/termite_citadel_divein.mp4 (35885 KB, 22.0s)
+[dive] done in 1240s
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] cosmic_gloss  ->  luminous volumetric light, glossy hyperreal render, deep-space glow, ultra-detailed, cinematic, epic scale, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 10 (frame 240/294) — prefix from v3, regenerating 54 frames into v5
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/ruby_furnace/v5
+[dive] ruby_furnace: 294 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — ember_limb(surface)[18..39], orchard_country(surface)[42..63], daybreak_garden(surface)[66..77], vine_hover(surface)[90..111], gorget_shingles(sea)[114..135], capillary_file(sea)[138..159], hemoglobin_engines(sea)[162..183], iron_shells(sea)[186..207], iron_nucleus(sea)[210..231], prominence_arcs(surface)[258..269]
+[dive] TRACKER v3 ON (186 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 241/294 (24.6s/frame, ~1306s left) :: the whole view transforming, resolving into the boiling floo
+[dive] frame 251/294 (15.9s/frame, ~684s left) :: moving through the boiling floor of a red giant star, convec
+[dive] frame 261/294 (15.8s/frame, ~522s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 271/294 (16.1s/frame, ~370s left) :: moving through arches of glowing gas standing off the edge o
+[dive] frame 281/294 (18.2s/frame, ~236s left) :: diving straight into a dark green world as it swells to fill
+[dive] frame 291/294 (19.6s/frame, ~59s left) :: the curve of a green world seen from close orbit, a thin ban
+[dive] frame 294/294 (19.8s/frame, ~0s left) :: the curve of a green world seen from close orbit, a thin ban
+[dive] interpolated 12 -> 24fps (528 frames, loop-bridged) in 32s
+[dive] counter overlay on 528 frames (33 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/ruby_furnace/v5/ruby_furnace.mp4 (31652 KB, 22.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/ruby_furnace/v5/ruby_furnace_divein.mp4 (32574 KB, 22.0s)
+[dive] done in 1206s
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 9 (frame 252/315) — prefix from v3, regenerating 63 frames into v6
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v6
+[dive] lantern_mangrove: 315 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — tidal_coast(surface)[22..44], root_nursery(surface)[50..72], waterline(surface)[78..100], plankton_drift(sea)[106..128], glass_shells(sea)[134..156], cell_interior(sea)[162..184], antenna_array(sea)[190..202], silica_network(lattice)[218..240], ocean_world(surface)[274..286]
+[dive] TRACKER v3 ON (217 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 261/315 (22.3s/frame, ~1206s left) :: moving through a star-forming nebula, green-black dust colum
+[dive] frame 271/315 (27.6s/frame, ~1216s left) :: diving straight into a dark blue world as it swells to fill 
+[dive] frame 281/315 (25.5s/frame, ~867s left) :: the night side of a dark ocean world seen from low orbit, th
+[dive] frame 291/315 (23.8s/frame, ~570s left) :: moving through the night side of a dark ocean world seen fro
+[dive] frame 301/315 (23.3s/frame, ~327s left) :: diving straight into a glowing green coast as it swells to f
+[dive] frame 311/315 (23.6s/frame, ~94s left) :: a mangrove coast seen from low above at night, black tidal c
+[dive] frame 315/315 (23.5s/frame, ~0s left) :: a mangrove coast seen from low above at night, black tidal c
+[dive] interpolated 12 -> 24fps (560 frames, loop-bridged) in 56s
+[dive] counter overlay on 560 frames (31 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v6/lantern_mangrove.mp4 (34610 KB, 23.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v6/lantern_mangrove_divein.mp4 (35105 KB, 23.3s)
+[dive] done in 1640s
+  copied lantern_mangrove.mp4 -> review/lantern_mangrove_ds.mp4
+  copied lantern_mangrove_divein.mp4 -> review_divein/lantern_mangrove_ds_divein.mp4
+lantern_mangrove: queued to REVIEW (ds/divein) from v6
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 10 (frame 320/392) — prefix from v3, regenerating 72 frames into v6
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v6
+[dive] cobalt_rookery: 392 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — ice_world(surface)[26..39], rookery_cliff(surface)[58..81], egg_shelf(surface)[90..113], shell_rind(surface)[122..145], palisade_columns(surface)[154..177], membrane_weave(web)[186..209], protein_ropes(sea)[218..241], calcite_lattice(lattice)[250..273], nucleus_droplet(sea)[282..305], cluster_sun(sea)[346..359]
+[dive] TRACKER v3 ON (248 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 321/392 (28.9s/frame, ~2052s left) :: the whole view transforming, resolving into a globular clust
+[dive] frame 331/392 (17.0s/frame, ~1035s left) :: moving through a globular cluster of ten thousand suns packe
+[dive] frame 341/392 (16.3s/frame, ~833s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 351/392 (16.2s/frame, ~662s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 361/392 (16.1s/frame, ~499s left) :: moving through an aging gold sun burning inside a crowded st
+[dive] frame 371/392 (19.3s/frame, ~405s left) :: moving through an aging gold sun burning inside a crowded st
+[dive] frame 381/392 (20.6s/frame, ~227s left) :: diving straight into a cobalt-blue ice world as it swells to
+[dive] frame 391/392 (21.6s/frame, ~22s left) :: a cobalt ocean world seen from orbit, sea ice broken into fl
+[dive] frame 392/392 (21.7s/frame, ~0s left) :: a cobalt ocean world seen from orbit, sea ice broken into fl
+[dive] interpolated 12 -> 24fps (704 frames, loop-bridged) in 70s
+[dive] counter overlay on 704 frames (42 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v6/cobalt_rookery.mp4 (48460 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v6/cobalt_rookery_divein.mp4 (49270 KB, 29.3s)
+[dive] done in 1769s
+  copied cobalt_rookery.mp4 -> review/cobalt_rookery_ds.mp4
+  copied cobalt_rookery_divein.mp4 -> review_divein/cobalt_rookery_ds_divein.mp4
+cobalt_rookery: queued to REVIEW (ds/divein) from v6
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] ultraviolet  ->  ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 4 (frame 128/200) — prefix from v3, regenerating 72 frames into v6
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/magnetite_choir/v6
+[dive] magnetite_choir: 200 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — magnetite_lattice(lattice)[26..39], lattice_flaw(lattice)[58..81], lodestone_face(surface)[122..145], domain_patchwork(sea)[154..167]
+[dive] TRACKER v3 ON (128 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 131/200 (20.6s/frame, ~1418s left) :: an iron-black lodestone rock, its stepped and pitted face ru
+[dive] frame 141/200 (16.3s/frame, ~962s left) :: moving through an iron-black lodestone rock, its stepped and
+[dive] frame 151/200 (20.4s/frame, ~999s left) :: diving straight into a glinting black grain as it swells to 
+[dive] frame 161/200 (19.8s/frame, ~773s left) :: ragged patches of aligned iron packed edge to edge in every 
+[dive] frame 171/200 (20.2s/frame, ~587s left) :: moving through ragged patches of aligned iron packed edge to
+[dive] frame 181/200 (21.7s/frame, ~413s left) :: diving straight into a bright green patch as it swells to fi
+[dive] frame 191/200 (22.6s/frame, ~203s left) :: diving straight into a bright green patch as it swells to fi
+[dive] frame 200/200 (23.6s/frame, ~0s left) :: the iron-oxide lattice standing open in the black, octahedra
+[dive] interpolated 12 -> 24fps (320 frames, loop-bridged) in 32s
+[dive] counter overlay on 320 frames (19 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/magnetite_choir/v6/magnetite_choir.mp4 (21976 KB, 13.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/magnetite_choir/v6/magnetite_choir_divein.mp4 (22254 KB, 13.3s)
+[dive] done in 1792s
+  copied magnetite_choir.mp4 -> review/magnetite_choir_ds.mp4
+  copied magnetite_choir_divein.mp4 -> review_divein/magnetite_choir_ds_divein.mp4
+magnetite_choir: queued to REVIEW (ds/divein) from v6
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 10 (frame 280/343) — prefix from v2, regenerating 63 frames into v3
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/vesper_flight/v3
+[dive] vesper_flight: 343 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — dusk_world(surface)[22..44], tower_valley(surface)[50..72], chain_vault(web)[78..90], fibre_cables(sea)[134..156], motor_array(sea)[162..184], atom_shells(sea)[190..212], tilted_spiral(sea)[246..268], dust_nursery(sea)[274..296], light_echo(sea)[302..314]
+[dive] TRACKER v3 ON (217 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 281/343 (50.4s/frame, ~3127s left) :: a cloud of dark dust standing across black space, its long r
+[dive] frame 291/343 (18.1s/frame, ~942s left) :: moving through a cloud of dark dust standing across black sp
+[dive] frame 301/343 (16.6s/frame, ~696s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 311/343 (16.3s/frame, ~522s left) :: a flared star standing alone in open black space, wide rings
+[dive] frame 321/343 (17.9s/frame, ~394s left) :: moving through a flared star standing alone in open black sp
+[dive] frame 331/343 (19.8s/frame, ~237s left) :: diving straight into a dark violet planet as it swells to fi
+[dive] frame 341/343 (21.7s/frame, ~43s left) :: a dark world seen from low orbit, most of its face turned to
+[dive] frame 343/343 (21.9s/frame, ~0s left) :: a dark world seen from low orbit, most of its face turned to
+[dive] interpolated 12 -> 24fps (616 frames, loop-bridged) in 61s
+[dive] counter overlay on 616 frames (45 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/vesper_flight/v3/vesper_flight.mp4 (37995 KB, 25.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/vesper_flight/v3/vesper_flight_divein.mp4 (38661 KB, 25.7s)
+[dive] done in 1560s
+  copied vesper_flight.mp4 -> review/vesper_flight_ds.mp4
+  copied vesper_flight_divein.mp4 -> review_divein/vesper_flight_ds_divein.mp4
+vesper_flight: queued to REVIEW (ds/divein) from v3
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 10 (frame 280/343) — prefix from v2, regenerating 63 frames into v3
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/anemone_arsenal/v3
+[dive] anemone_arsenal: 343 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — atom_winding(lattice)[22..44], star_knot(sea)[78..100], shore_ledge(surface)[134..156], tide_pool(surface)[162..184], anemone_column(surface)[190..212], tentacle_skin(sea)[218..240], cnidocyte_ranks(sea)[246..268], capsule_coil(sea)[274..296], minicollagen(sea)[302..314]
+[dive] TRACKER v3 ON (217 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 281/343 (55.9s/frame, ~3468s left) :: the packed interior of one stinging capsule, a long barbed t
+[dive] frame 291/343 (18.4s/frame, ~958s left) :: moving through the packed interior of one stinging capsule, 
+[dive] frame 301/343 (19.6s/frame, ~824s left) :: diving straight into a taut twisted strand as it swells to f
+[dive] frame 311/343 (19.5s/frame, ~625s left) :: the molecular ropework of the capsule wall, ranks of fibrous
+[dive] frame 321/343 (20.3s/frame, ~448s left) :: moving through the molecular ropework of the capsule wall, r
+[dive] frame 331/343 (21.7s/frame, ~261s left) :: diving straight into a shimmering atom as it swells to fill 
+[dive] frame 341/343 (23.2s/frame, ~46s left) :: inside one atom of the protein cord, a dense knot of incande
+[dive] frame 343/343 (23.3s/frame, ~0s left) :: inside one atom of the protein cord, a dense knot of incande
+[dive] interpolated 12 -> 24fps (616 frames, loop-bridged) in 60s
+[dive] counter overlay on 616 frames (39 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/anemone_arsenal/v3/anemone_arsenal.mp4 (38891 KB, 25.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/anemone_arsenal/v3/anemone_arsenal_divein.mp4 (39351 KB, 25.7s)
+[dive] done in 1650s
+  copied anemone_arsenal.mp4 -> review/anemone_arsenal_ds.mp4
+  copied anemone_arsenal_divein.mp4 -> review_divein/anemone_arsenal_ds_divein.mp4
+anemone_arsenal: queued to REVIEW (ds/divein) from v3
+[dive] tempo: fpb 9 (80bpm) -> transition 8f, seam 15f, anacrusis 3f
+[style] cosmic_gloss  ->  luminous volumetric light, glossy hyperreal render, deep-space glow, ultra-detailed, cinematic, epic scale, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 9 (frame 324/405) — prefix from v2, regenerating 81 frames into v3
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/meteorite_cradle/v3
+[dive] meteorite_cradle: 405 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — resonance_disc(sea)[30..44], newborn_world(surface)[66..90], playa_basin(surface)[102..126], hardpan_floor(surface)[138..162], chondrule_field(surface)[174..198], barred_bead(sea)[210..234], olivine_lattice(lattice)[246..270], warp_point(sea)[282..306], nursery_nebula(sea)[354..368]
+[dive] TRACKER v3 ON (252 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 331/405 (16.8s/frame, ~1240s left) :: the whole view transforming, resolving into the cosmic web s
+[dive] frame 341/405 (16.3s/frame, ~1044s left) :: moving through the cosmic web strung across a starless void,
+[dive] frame 351/405 (15.6s/frame, ~841s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 361/405 (15.4s/frame, ~678s left) :: a star nursery, columns of violet and sienna gas reared upri
+[dive] frame 371/405 (16.4s/frame, ~559s left) :: moving through a star nursery, columns of violet and sienna 
+[dive] frame 381/405 (18.3s/frame, ~440s left) :: moving through a star nursery, columns of violet and sienna 
+[dive] frame 391/405 (19.7s/frame, ~275s left) :: diving straight into a ringed dusty disc as it swells to fil
+[dive] frame 401/405 (21.2s/frame, ~85s left) :: a protoplanetary disc turned at an angle, rose-gold dust lan
+[dive] frame 405/405 (21.6s/frame, ~0s left) :: a protoplanetary disc turned at an angle, rose-gold dust lan
+[dive] interpolated 12 -> 24fps (720 frames, loop-bridged) in 72s
+[dive] counter overlay on 720 frames (49 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/meteorite_cradle/v3/meteorite_cradle.mp4 (46351 KB, 30.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/meteorite_cradle/v3/meteorite_cradle_divein.mp4 (47205 KB, 30.0s)
+[dive] done in 1959s
+  copied meteorite_cradle.mp4 -> review/meteorite_cradle_ds.mp4
+  copied meteorite_cradle_divein.mp4 -> review_divein/meteorite_cradle_ds_divein.mp4
+meteorite_cradle: queued to REVIEW (ds/divein) from v3
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] neon_drift  ->  electric neon glow, magenta and cyan light bloom, wet chrome sheen, retro-futurist night haze, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 4 (frame 128/200) — prefix from v2, regenerating 72 frames into v3
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/peony_shell/v3
+[dive] peony_shell: 200 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — star_ember(sea)[26..49], droplet_spray(sea)[58..71], cluster_flare(sea)[90..113], burst_sphere(surface)[154..167]
+[dive] TRACKER v3 ON (128 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 131/200 (22.7s/frame, ~1567s left) :: the whole view transforming, resolving into the whole harbou
+[dive] frame 141/200 (23.9s/frame, ~1408s left) :: moving through the whole harbour at night seen low from the 
+[dive] frame 151/200 (26.2s/frame, ~1284s left) :: diving straight into a round scarlet spark burst as it swell
+[dive] frame 161/200 (24.7s/frame, ~964s left) :: a black night sky full of the spark trails of one firework, 
+[dive] frame 171/200 (24.0s/frame, ~695s left) :: moving through a black night sky full of the spark trails of
+[dive] frame 181/200 (24.8s/frame, ~471s left) :: diving straight into a white-hot burning spark as it swells 
+[dive] frame 191/200 (25.3s/frame, ~227s left) :: diving straight into a white-hot burning spark as it swells 
+[dive] frame 200/200 (26.1s/frame, ~0s left) :: a drift of blue-grey smoke with one burning firework pellet 
+[dive] interpolated 12 -> 24fps (320 frames, loop-bridged) in 25s
+[dive] counter overlay on 320 frames (19 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/peony_shell/v3/peony_shell.mp4 (20635 KB, 13.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/peony_shell/v3/peony_shell_divein.mp4 (20838 KB, 13.3s)
+[dive] done in 1965s
+  copied peony_shell.mp4 -> review/peony_shell_ds.mp4
+  copied peony_shell_divein.mp4 -> review_divein/peony_shell_ds_divein.mp4
+peony_shell: queued to REVIEW (ds/divein) from v3
+[style] gilded_relic  ->  warm gilded light, painterly, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 4 (frame 112/175) — prefix from v2, regenerating 63 frames into v7
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/wild_yeast/v7
+[dive] wild_yeast: 175 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — yeast_towers(sea)[22..44], gluten_walls(sea)[50..62], starch_shells(sea)[78..100], crumb_caverns(sea)[134..146]
+[dive] TRACKER v3 ON (112 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 121/175 (24.1s/frame, ~1302s left) :: moving through a baker's counter at daybreak, empty, no one 
+[dive] frame 131/175 (27.0s/frame, ~1187s left) :: diving straight into a domed air pocket as it swells to fill
+[dive] frame 141/175 (24.6s/frame, ~838s left) :: the chamber system within a sourdough crumb, domed cavities 
+[dive] frame 151/175 (23.7s/frame, ~569s left) :: moving through the chamber system within a sourdough crumb, 
+[dive] frame 161/175 (24.7s/frame, ~346s left) :: diving straight into a budding yeast cell as it swells to fi
+[dive] frame 171/175 (25.8s/frame, ~103s left) :: a chamber wall at cell scale, oval yeast bodies heaped into 
+[dive] frame 175/175 (26.0s/frame, ~0s left) :: a chamber wall at cell scale, oval yeast bodies heaped into 
+[dive] interpolated 12 -> 24fps (280 frames, loop-bridged) in 17s
+[dive] counter overlay on 280 frames (17 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/wild_yeast/v7/wild_yeast.mp4 (16810 KB, 11.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/wild_yeast/v7/wild_yeast_divein.mp4 (17147 KB, 11.7s)
+[dive] done in 1704s
+  copied wild_yeast.mp4 -> review/wild_yeast_ds.mp4
+  copied wild_yeast_divein.mp4 -> review_divein/wild_yeast_ds_divein.mp4
+wild_yeast: queued to REVIEW (ds/divein) from v7
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 9 (frame 252/315) — prefix from v3, regenerating 63 frames into v7
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v7
+[dive] lantern_mangrove: 315 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — tidal_coast(surface)[22..44], root_nursery(surface)[50..72], waterline(surface)[78..100], plankton_drift(sea)[106..128], glass_shells(sea)[134..156], cell_interior(sea)[162..184], antenna_array(sea)[190..202], silica_network(lattice)[218..240], ocean_world(surface)[274..286]
+[dive] TRACKER v3 ON (217 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 261/315 (22.2s/frame, ~1201s left) :: moving through a star-forming nebula, green-black dust colum
+[dive] frame 271/315 (25.9s/frame, ~1140s left) :: diving straight into a dark blue world as it swells to fill 
+[dive] frame 281/315 (23.8s/frame, ~811s left) :: the night side of a dark ocean world seen from low orbit, th
+[dive] frame 291/315 (23.2s/frame, ~556s left) :: moving through the night side of a dark ocean world seen fro
+[dive] frame 301/315 (24.4s/frame, ~342s left) :: diving straight into a glowing green coast as it swells to f
+[dive] frame 311/315 (25.6s/frame, ~102s left) :: a mangrove coast seen from low above at night, black tidal c
+[dive] frame 315/315 (25.8s/frame, ~0s left) :: a mangrove coast seen from low above at night, black tidal c
+[dive] interpolated 12 -> 24fps (560 frames, loop-bridged) in 52s
+[dive] counter overlay on 560 frames (31 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v7/lantern_mangrove.mp4 (34698 KB, 23.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v7/lantern_mangrove_divein.mp4 (35190 KB, 23.3s)
+[dive] done in 1793s
+  copied lantern_mangrove.mp4 -> review/lantern_mangrove_ds.mp4
+  copied lantern_mangrove_divein.mp4 -> review_divein/lantern_mangrove_ds_divein.mp4
+lantern_mangrove: queued to REVIEW (ds/divein) from v7
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] enchanted_wild  ->  enchanted golden light, lush saturated color, painterly fantasy illustration, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 10 (frame 240/294) — prefix from v2, regenerating 54 frames into v5
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/termite_citadel/v5
+[dive] termite_citadel: 294 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — day_night_line(surface)[18..39], mound_savanna(surface)[42..53], mound_citadel(surface)[66..87], fungus_garden(surface)[90..111], hypha_cells(sea)[114..135], motor_bundle(sea)[138..159], chitin_lattice(lattice)[162..183], subnuclear_knot(sea)[186..207], galaxy_knife(sea)[234..255], star_nursery(sea)[258..269]
+[dive] TRACKER v3 ON (204 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 241/294 (32.2s/frame, ~1706s left) :: a galaxy turned exactly on its side, its disk drawn out as a
+[dive] frame 251/294 (17.1s/frame, ~737s left) :: moving through a galaxy turned exactly on its side, its disk
+[dive] frame 261/294 (18.6s/frame, ~614s left) :: diving straight into a glowing crimson dust cloud as it swel
+[dive] frame 271/294 (18.1s/frame, ~417s left) :: moving through a starbirth cloud stacked into towering sienn
+[dive] frame 281/294 (21.3s/frame, ~277s left) :: diving straight into a banded planet half in shadow as it sw
+[dive] frame 291/294 (23.2s/frame, ~70s left) :: a planet seen from orbit with the day-night line curved acro
+[dive] frame 294/294 (23.6s/frame, ~0s left) :: a planet seen from orbit with the day-night line curved acro
+[dive] interpolated 12 -> 24fps (528 frames, loop-bridged) in 32s
+[dive] counter overlay on 528 frames (43 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/termite_citadel/v5/termite_citadel.mp4 (35606 KB, 22.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/termite_citadel/v5/termite_citadel_divein.mp4 (36128 KB, 22.0s)
+[dive] done in 1424s
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] cosmic_gloss  ->  luminous volumetric light, glossy hyperreal render, deep-space glow, ultra-detailed, cinematic, epic scale, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 10 (frame 240/294) — prefix from v3, regenerating 54 frames into v6
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/ruby_furnace/v6
+[dive] ruby_furnace: 294 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — ember_limb(surface)[18..39], orchard_country(surface)[42..63], daybreak_garden(surface)[66..77], vine_hover(surface)[90..111], gorget_shingles(sea)[114..135], capillary_file(sea)[138..159], hemoglobin_engines(sea)[162..183], iron_shells(sea)[186..207], iron_nucleus(sea)[210..231], prominence_arcs(surface)[258..269]
+[dive] TRACKER v3 ON (186 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 241/294 (32.6s/frame, ~1729s left) :: the whole view transforming, resolving into the boiling floo
+[dive] frame 251/294 (17.8s/frame, ~766s left) :: moving through the boiling floor of a red giant star, convec
+[dive] frame 261/294 (17.6s/frame, ~580s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 271/294 (17.5s/frame, ~403s left) :: moving through arches of glowing gas standing off the edge o
+[dive] frame 281/294 (21.0s/frame, ~273s left) :: diving straight into a dark green world as it swells to fill
+[dive] frame 291/294 (23.2s/frame, ~70s left) :: the curve of a green world seen from close orbit, a thin ban
+[dive] frame 294/294 (23.6s/frame, ~0s left) :: the curve of a green world seen from close orbit, a thin ban
+[dive] interpolated 12 -> 24fps (528 frames, loop-bridged) in 35s
+[dive] counter overlay on 528 frames (33 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/ruby_furnace/v6/ruby_furnace.mp4 (31869 KB, 22.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/ruby_furnace/v6/ruby_furnace_divein.mp4 (32782 KB, 22.0s)
+[dive] done in 1416s

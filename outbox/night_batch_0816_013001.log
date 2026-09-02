@@ -1,0 +1,207 @@
+=== 01:30:01 batch start [LLLS] — 4 journeys: lantern_mangrove desert_rosette termite_citadel squid_lantern
+=== 01:30:02 --- lantern_mangrove ---
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v1
+[dive] lantern_mangrove: 280 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — tidal_coast(surface)[22..44], root_nursery(surface)[50..72], waterline(surface)[78..100], plankton_drift(sea)[106..128], glass_shells(sea)[134..156], cell_interior(sea)[162..184], antenna_array(sea)[190..202], silica_network(lattice)[218..240]
+[dive] TRACKER v3 ON (175 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of the night side of a dark ocean world seen from low orbit, the curve of the world
+[dive] frame 1/280 (22.3s/frame, ~6226s left) :: moving through the night side of a dark ocean world seen fro
+[dive] frame 11/280 (21.3s/frame, ~5732s left) :: moving through the night side of a dark ocean world seen fro
+[dive] frame 21/280 (20.9s/frame, ~5416s left) :: diving straight into a glowing green coast as it swells to f
+[dive] frame 31/280 (19.8s/frame, ~4933s left) :: a mangrove coast seen from low above at night, black tidal c
+[dive] frame 41/280 (17.9s/frame, ~4282s left) :: moving through a mangrove coast seen from low above at night
+[dive] frame 51/280 (17.8s/frame, ~4082s left) :: diving straight into a black tidal channel as it swells to f
+[dive] frame 61/280 (17.1s/frame, ~3747s left) :: a mangrove nursery at night seen at eye level just above the
+[dive] frame 71/280 (16.4s/frame, ~3431s left) :: moving through a mangrove nursery at night seen at eye level
+[dive] frame 81/280 (16.6s/frame, ~3294s left) :: diving straight into a flat patch of black water as it swell
+[dive] frame 91/280 (16.2s/frame, ~3062s left) :: the waterline of the mangrove shallows seen edge-on, the fla
+[dive] frame 101/280 (15.8s/frame, ~2830s left) :: diving straight into a cloudy green bloom as it swells to fi
+[dive] frame 111/280 (15.9s/frame, ~2682s left) :: diving straight into a cloudy green bloom as it swells to fi
+[dive] frame 121/280 (15.7s/frame, ~2494s left) :: moving through inside the green water among a crowd of plank
+[dive] frame 131/280 (15.6s/frame, ~2323s left) :: diving straight into a ribbed glass disc as it swells to fil
+[dive] frame 141/280 (15.7s/frame, ~2176s left) :: ornate glass shells adrift at every depth, pillbox discs sta
+[dive] frame 151/280 (15.5s/frame, ~1995s left) :: moving through ornate glass shells adrift at every depth, pi
+[dive] frame 161/280 (15.5s/frame, ~1841s left) :: diving straight into a dark green cell as it swells to fill 
+[dive] frame 171/280 (15.5s/frame, ~1686s left) :: inside one diatom, golden-brown chloroplast slabs stacked fl
+[dive] frame 181/280 (15.3s/frame, ~1513s left) :: moving through inside one diatom, golden-brown chloroplast s
+[dive] frame 191/280 (15.4s/frame, ~1375s left) :: diving straight into a golden-brown chloroplast as it swells
+[dive] frame 201/280 (15.4s/frame, ~1213s left) :: row upon row of ring-shaped pigment complexes set into folde
+[dive] frame 211/280 (15.6s/frame, ~1074s left) :: moving through row upon row of ring-shaped pigment complexes
+[dive] frame 221/280 (15.7s/frame, ~926s left) :: diving straight into a pale glass strand as it swells to fil
+[dive] frame 231/280 (15.6s/frame, ~766s left) :: the random network of fused silica, three-armed joins of gla
+[dive] frame 241/280 (15.5s/frame, ~604s left) :: deep inside the random network of fused silica, three-armed 
+[dive] frame 251/280 (15.2s/frame, ~441s left) :: deep inside the random network of fused silica, three-armed 
+[dive] frame 261/280 (15.1s/frame, ~288s left) :: moving through a star-forming nebula, green-black dust colum
+[dive] frame 271/280 (15.2s/frame, ~137s left) :: diving straight into a dark ocean world at night seen from l
+[dive] frame 280/280 (15.4s/frame, ~0s left) :: diving straight into a dark ocean world at night seen from l
+[dive] interpolated 12 -> 24fps (560 frames, loop-bridged) in 38s
+[dive] counter overlay on 560 frames (26 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v1/lantern_mangrove.mp4 (32038 KB, 23.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/lantern_mangrove/v1/lantern_mangrove_divein.mp4 (32609 KB, 23.3s)
+[dive] done in 4437s
+=== 02:44:00 lantern_mangrove: rendered in 4438s
+  copied lantern_mangrove.mp4 -> review/lantern_mangrove_ds.mp4
+  copied lantern_mangrove_divein.mp4 -> review_divein/lantern_mangrove_ds_divein.mp4
+lantern_mangrove: queued to REVIEW (ds/divein) from v1
+  lantern_mangrove: 5 caption+title pairs (spot=True); theme='A slow, pulsing ambient drone with shimm'
+    [0] Dive into the glowing heart of a mangrove world 🌿✨ Can you spot Tina hiding in the depths? 👀 #bioluminescentdream #microscopiccosmos #endlessdepths #glowinguniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive into the glowing heart of a mangrove world 🌿✨
+    [1] Where water meets wonder in endless depth 💧🔍 Can you spot Tina hiding in the depths? 👀 #bioluminescentdream #microscopiccosmos #endlessdepths #glowinguniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where water meets wonder in endless depth 💧🔍
+    [2] A jewel-box universe, one shell at a time 🐚🌌 Can you spot Tina hiding in the depths? 👀 #bioluminescentdream #microscopiccosmos #endlessdepths #glowinguniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A jewel-box universe, one shell at a time 🐚🌌
+    [3] Lost in the fractal glow of life’s smallest light 🦠💫 Can you spot Tina hiding in the depths? 👀 #bioluminescentdream #microscopiccosmos #endlessdepths #glowinguniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Lost in the fractal glow of life’s smallest light 🦠💫
+    [4] From stardust to sea, the loop never ends 🌊⭕ Can you spot Tina hiding in the depths? 👀 #bioluminescentdream #microscopiccosmos #endlessdepths #glowinguniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From stardust to sea, the loop never ends 🌊⭕
+=== 02:45:01 lantern_mangrove -> REVIEW (captioned)
+=== 02:45:01 --- desert_rosette ---
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] enchanted_wild  ->  enchanted golden light, lush saturated color, painterly fantasy illustration, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/desert_rosette/v1
+[dive] desert_rosette: 352 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — echo_shells(sea)[26..39], ochre_planet(surface)[58..81], bloom_basin(surface)[90..113], desert_floor(surface)[122..145], corolla(surface)[154..177], petal_cells(sea)[186..209], dna_rungs(sea)[218..241], atom_ring(lattice)[250..273], ripple_foam(sea)[282..305]
+[dive] TRACKER v3 ON (224 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a ring galaxy seen face-on, a closed hoop of hot pink star-forming knots turning
+[dive] frame 1/352 (19.9s/frame, ~6996s left) :: moving through a ring galaxy seen face-on, a closed hoop of 
+[dive] frame 11/352 (21.0s/frame, ~7145s left) :: moving through a ring galaxy seen face-on, a closed hoop of 
+[dive] frame 21/352 (20.5s/frame, ~6796s left) :: diving straight into a hot pink knot of new stars as it swel
+[dive] frame 31/352 (19.9s/frame, ~6375s left) :: diving straight into a hot pink knot of new stars as it swel
+[dive] frame 41/352 (18.4s/frame, ~5717s left) :: moving through the dusty space around a star that has flared
+[dive] frame 51/352 (18.9s/frame, ~5689s left) :: moving through the dusty space around a star that has flared
+[dive] frame 61/352 (19.2s/frame, ~5598s left) :: diving straight into an ochre planet streaked green as it sw
+[dive] frame 71/352 (18.2s/frame, ~5124s left) :: an ochre planet turning in space, its face rusted orange and
+[dive] frame 81/352 (17.5s/frame, ~4733s left) :: moving through an ochre planet turning in space, its face ru
+[dive] frame 91/352 (17.8s/frame, ~4633s left) :: diving straight into a green ringed basin as it swells to fi
+[dive] frame 101/352 (17.2s/frame, ~4312s left) :: a desert basin after a decade's rain, seen from overhead and
+[dive] frame 111/352 (16.7s/frame, ~4028s left) :: moving through a desert basin after a decade's rain, seen fr
+[dive] frame 121/352 (17.0s/frame, ~3918s left) :: diving straight into a patch of pink flowers as it swells to
+[dive] frame 131/352 (16.6s/frame, ~3672s left) :: the floor of the basin at insect height after the rains, ran
+[dive] frame 141/352 (16.3s/frame, ~3445s left) :: moving through the floor of the basin at insect height after
+[dive] frame 151/352 (16.5s/frame, ~3311s left) :: diving straight into a hot pink blossom as it swells to fill
+[dive] frame 161/352 (16.3s/frame, ~3111s left) :: the throat of one desert blossom, five rose-quartz petals se
+[dive] frame 171/352 (16.1s/frame, ~2918s left) :: moving through the throat of one desert blossom, five rose-q
+[dive] frame 181/352 (16.1s/frame, ~2754s left) :: diving straight into a rose-quartz petal as it swells to fil
+[dive] frame 191/352 (16.1s/frame, ~2592s left) :: diving straight into a rose-quartz petal as it swells to fil
+[dive] frame 201/352 (16.0s/frame, ~2411s left) :: moving through the epidermis of a petal, cone-tipped cells p
+[dive] frame 211/352 (15.9s/frame, ~2237s left) :: moving through the epidermis of a petal, cone-tipped cells p
+[dive] frame 221/352 (16.0s/frame, ~2094s left) :: diving straight into a violet cell nucleus as it swells to f
+[dive] frame 231/352 (15.9s/frame, ~1921s left) :: the molecular structure of DNA, two coiled rails wound about
+[dive] frame 241/352 (15.7s/frame, ~1744s left) :: moving through the molecular structure of DNA, two coiled ra
+[dive] frame 251/352 (15.8s/frame, ~1600s left) :: diving straight into a glowing atom as it swells to fill the
+[dive] frame 261/352 (15.7s/frame, ~1433s left) :: the atoms of one base ring, six burning cores held in a hexa
+[dive] frame 271/352 (15.6s/frame, ~1264s left) :: moving through the atoms of one base ring, six burning cores
+[dive] frame 281/352 (15.7s/frame, ~1117s left) :: diving straight into a burning atomic core as it swells to f
+[dive] frame 291/352 (15.6s/frame, ~955s left) :: a foam of ripple hoops far under the atoms, countless circul
+[dive] frame 301/352 (15.5s/frame, ~792s left) :: deep inside a foam of ripple hoops far under the atoms, coun
+[dive] frame 311/352 (15.4s/frame, ~632s left) :: deep inside a foam of ripple hoops far under the atoms, coun
+[dive] frame 321/352 (15.2s/frame, ~471s left) :: the whole view transforming, resolving into the cosmic web a
+[dive] frame 331/352 (15.1s/frame, ~317s left) :: moving through the cosmic web at its largest reading, immens
+[dive] frame 341/352 (15.2s/frame, ~167s left) :: diving straight into a ring galaxy seen face-on, a hoop of h
+[dive] frame 351/352 (15.3s/frame, ~15s left) :: diving straight into a ring galaxy seen face-on, a hoop of h
+[dive] frame 352/352 (15.3s/frame, ~0s left) :: diving straight into a ring galaxy seen face-on, a hoop of h
+[dive] interpolated 12 -> 24fps (704 frames, loop-bridged) in 48s
+[dive] counter overlay on 704 frames (46 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/desert_rosette/v1/desert_rosette.mp4 (43087 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/desert_rosette/v1/desert_rosette_divein.mp4 (43778 KB, 29.3s)
+[dive] done in 5556s
+=== 04:17:37 desert_rosette: rendered in 5556s
+  copied desert_rosette.mp4 -> review/desert_rosette_ds.mp4
+  copied desert_rosette_divein.mp4 -> review_divein/desert_rosette_ds_divein.mp4
+desert_rosette: queued to REVIEW (ds/divein) from v1
+  desert_rosette: 5 caption+title pairs (spot=True); theme='A celestial lullaby weaving through gala'
+    [0] A cosmic dance of shells and voids, spiraling into the heart of a rose-gold galaxy 🌌 Can you spot Lamar hiding in the cosmic dance? 👀 #CosmicJourney #InfiniteZoom #DesertBlooms #AtomicWhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A cosmic dance of shells and voids, spiraling into the heart of a rose-gold galaxy 🌌
+    [1] Where desert flowers bloom in rings of pink and green, and moths hum in the shade 🌸 Can you spot Lamar hiding in the cosmic dance? 👀 #CosmicJourney #InfiniteZoom #DesertBlooms #AtomicWhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where desert flowers bloom in rings of pink and green, and moths hum in the shade 🌸
+    [2] From the vastness of space to the whisper of petals—dive deeper with every loop ✨ Can you spot Lamar hiding in the cosmic dance? 👀 #CosmicJourney #InfiniteZoom #DesertBlooms #AtomicWhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From the vastness of space to the whisper of petals—dive deeper with every loop ✨
+    [3] A planet’s storms, a blossom’s breath, atoms humming in endless harmony 🌀 Can you spot Lamar hiding in the cosmic dance? 👀 #CosmicJourney #InfiniteZoom #DesertBlooms #AtomicWhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A planet’s storms, a blossom’s breath, atoms humming in endless harmony 🌀
+    [4] Through galaxies, storms, and cells—a journey that never ends, only deepens 🌿 Can you spot Lamar hiding in the cosmic dance? 👀 #CosmicJourney #InfiniteZoom #DesertBlooms #AtomicWhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Through galaxies, storms, and cells—a journey that never ends, only deepens 🌿
+=== 04:18:59 desert_rosette -> REVIEW (captioned)
+=== 04:18:59 --- termite_citadel ---
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] enchanted_wild  ->  enchanted golden light, lush saturated color, painterly fantasy illustration, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/termite_citadel/v1
+[dive] termite_citadel: 264 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — day_night_line(surface)[18..39], mound_savanna(surface)[42..53], mound_citadel(surface)[66..87], fungus_garden(surface)[90..111], hypha_cells(sea)[114..135], motor_bundle(sea)[138..159], chitin_lattice(lattice)[162..183], subnuclear_knot(sea)[186..207], galaxy_knife(sea)[234..242]
+[dive] TRACKER v3 ON (168 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a starbirth cloud stacked into towering sienna pillars, their tips eaten thin by
+[dive] frame 1/264 (19.0s/frame, ~4999s left) :: moving through a starbirth cloud stacked into towering sienn
+[dive] frame 11/264 (21.2s/frame, ~5358s left) :: moving through a starbirth cloud stacked into towering sienn
+[dive] frame 21/264 (19.8s/frame, ~4799s left) :: diving straight into a banded planet half in shadow as it sw
+[dive] frame 31/264 (17.9s/frame, ~4170s left) :: moving through a planet seen from orbit with the day-night l
+[dive] frame 41/264 (17.2s/frame, ~3837s left) :: diving straight into a tawny grassland plain as it swells to
+[dive] frame 51/264 (16.3s/frame, ~3471s left) :: a savanna at dusk seen from a low rise, dozens of clay termi
+[dive] frame 61/264 (16.9s/frame, ~3421s left) :: moving through a savanna at dusk seen from a low rise, dozen
+[dive] frame 71/264 (16.7s/frame, ~3229s left) :: diving straight into a tall clay spire as it swells to fill 
+[dive] frame 81/264 (16.2s/frame, ~2956s left) :: moving through a termite mound opened in cutaway, tier upon 
+[dive] frame 91/264 (16.2s/frame, ~2809s left) :: diving straight into a ridged fungus comb as it swells to fi
+[dive] frame 101/264 (15.8s/frame, ~2580s left) :: the inside of a fungus garden vault, a spongework comb of ch
+[dive] frame 111/264 (15.5s/frame, ~2368s left) :: diving straight into an ivory fungal thread as it swells to 
+[dive] frame 121/264 (15.6s/frame, ~2229s left) :: the inside of a fungal thread, one tube partitioned into cel
+[dive] frame 131/264 (15.3s/frame, ~2037s left) :: moving through the inside of a fungal thread, one tube parti
+[dive] frame 141/264 (15.3s/frame, ~1886s left) :: diving straight into a taut rose-gold cable as it swells to 
+[dive] frame 151/264 (15.2s/frame, ~1713s left) :: moving through a bundle of hollow protein tubes built from p
+[dive] frame 161/264 (15.1s/frame, ~1553s left) :: diving straight into a stiff ivory ribbon as it swells to fi
+[dive] frame 171/264 (15.0s/frame, ~1396s left) :: the crystal grid inside a chitin fibril, flat six-sided ring
+[dive] frame 181/264 (14.8s/frame, ~1232s left) :: moving through the crystal grid inside a chitin fibril, flat
+[dive] frame 191/264 (14.8s/frame, ~1082s left) :: diving straight into a glowing amber core as it swells to fi
+[dive] frame 201/264 (14.8s/frame, ~929s left) :: deep inside a knotted droplet of packed glowing gold spheres
+[dive] frame 211/264 (14.6s/frame, ~772s left) :: deep inside a knotted droplet of packed glowing gold spheres
+[dive] frame 221/264 (14.3s/frame, ~615s left) :: the whole view transforming, resolving into the scaffolding 
+[dive] frame 231/264 (14.7s/frame, ~484s left) :: diving straight into a glowing galaxy disk as it swells to f
+[dive] frame 241/264 (14.6s/frame, ~337s left) :: a galaxy turned exactly on its side, its disk drawn out as a
+[dive] frame 251/264 (14.6s/frame, ~190s left) :: moving through a galaxy turned exactly on its side, its disk
+[dive] frame 261/264 (14.8s/frame, ~44s left) :: diving straight into towering sienna pillars of starbirth cl
+[dive] frame 264/264 (14.8s/frame, ~0s left) :: diving straight into towering sienna pillars of starbirth cl
+[dive] interpolated 12 -> 24fps (528 frames, loop-bridged) in 37s
+[dive] counter overlay on 528 frames (38 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/termite_citadel/v1/termite_citadel.mp4 (31967 KB, 22.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/termite_citadel/v1/termite_citadel_divein.mp4 (32700 KB, 22.0s)
+[dive] done in 4046s
+=== 05:26:25 termite_citadel: rendered in 4047s
+  copied termite_citadel.mp4 -> review/termite_citadel_ds.mp4
+  copied termite_citadel_divein.mp4 -> review_divein/termite_citadel_ds_divein.mp4
+termite_citadel: queued to REVIEW (ds/divein) from v1
+  termite_citadel: 5 caption+title pairs (spot=True); theme='A slow, swelling symphony of celestial c'
+    [0] A cosmic lattice hums in violet dusk, galaxies caught like dew on rose-gold threads 🌌 Can you spot Lorraine hiding in this endless dive? 👀 #cosmiclattice #galaxyblade #termitedusk #fungalgardens #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A cosmic lattice hums in violet dusk, galaxies caught like dew on rose-gold threads 🌌
+    [1] The blade of a galaxy burns through the void, its amber heart pulsing with starlight ✨ Can you spot Lorraine hiding in this endless dive? 👀 #cosmiclattice #galaxyblade #termitedusk #fungalgardens #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The blade of a galaxy burns through the void, its amber heart pulsing with starlight ✨
+    [2] Termite towers rise at dusk, their fluted sides catching the last gold light 🏞️ Can you spot Lorraine hiding in this endless dive? 👀 #cosmiclattice #galaxyblade #termitedusk #fungalgardens #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Termite towers rise at dusk, their fluted sides catching the last gold light 🏞️
+    [3] Fungal gardens glow in amber shadow, mycelium weaving secrets into the dark 🍄 Can you spot Lorraine hiding in this endless dive? 👀 #cosmiclattice #galaxyblade #termitedusk #fungalgardens #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Fungal gardens glow in amber shadow, mycelium weaving secrets into the dark 🍄
+    [4] A knotted droplet of gold spheres drifts in violet infinity, threads humming between them 🌀 Can you spot Lorraine hiding in this endless dive? 👀 #cosmiclattice #galaxyblade #termitedusk #fungalgardens #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A knotted droplet of gold spheres drifts in violet infinity, threads humming between them 🌀
+=== 05:27:56 termite_citadel -> REVIEW (captioned)
+=== 05:27:56 --- squid_lantern ---
+=== 05:27:56 squid_lantern: --seed 371016
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] ultraviolet  ->  ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/squid_lantern/v2
+[dive] squid_lantern: 120 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — squid_skin(surface)[18..39], light_organ(sea)[42..53], spark_membrane(sea)[66..87]
+[dive] TRACKER v3 ON (60 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of black midwater far under the waves at eye level, dozens of small squid drifting 
+[dive] frame 1/120 (18.7s/frame, ~2222s left) :: moving through black midwater far under the waves at eye lev
+[dive] frame 11/120 (23.1s/frame, ~2518s left) :: moving through black midwater far under the waves at eye lev
+[dive] frame 21/120 (21.4s/frame, ~2122s left) :: diving straight into a glowing violet-blue squid as it swell
+[dive] frame 31/120 (19.0s/frame, ~1687s left) :: moving through the taut freckled skin of a squid, a broad ro
+[dive] frame 41/120 (17.8s/frame, ~1403s left) :: diving straight into a round blue-white bead of light as it 
+[dive] frame 51/120 (16.8s/frame, ~1156s left) :: a packed chamber of light-making cells, round glowing cell w
+[dive] frame 61/120 (17.3s/frame, ~1021s left) :: moving through a packed chamber of light-making cells, round
+[dive] frame 71/120 (17.1s/frame, ~839s left) :: diving straight into a bright blue-white grain of light as i
+[dive] frame 81/120 (16.5s/frame, ~644s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] frame 91/120 (16.0s/frame, ~465s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] frame 101/120 (15.4s/frame, ~292s left) :: the whole view transforming, resolving into the open water c
+[dive] frame 111/120 (15.4s/frame, ~138s left) :: diving straight into dozens of small cyan-lit squid drifting
+[dive] frame 120/120 (15.9s/frame, ~0s left) :: diving straight into dozens of small cyan-lit squid drifting
+[dive] interpolated 12 -> 24fps (240 frames, loop-bridged) in 17s
+[dive] counter overlay on 240 frames (16 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/squid_lantern/v2/squid_lantern.mp4 (13913 KB, 10.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/squid_lantern/v2/squid_lantern_divein.mp4 (14177 KB, 10.0s)
+[dive] done in 1967s
+=== 06:00:43 squid_lantern: rendered in 1967s
+  copied squid_lantern.mp4 -> review/squid_lantern_ds.mp4
+  copied squid_lantern_divein.mp4 -> review_divein/squid_lantern_ds_divein.mp4
+squid_lantern: queued to REVIEW (ds/divein) from v2
+  squid_lantern: 5 caption+title pairs (spot=True); theme='A haunting, pulsing synthwave that swell'
+    [0] Drifting through the abyss, where light dances in endless night 🌊✨ Can you spot Belle hiding in the depths? 👀 #bioluminescentdepths #cosmicabyss #glowingmembranes #endlessnightdive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Drifting through the abyss, where light dances in endless night 🌊✨
+    [1] A squid’s skin hums with electric constellations 🐙💫 Can you spot Belle hiding in the depths? 👀 #bioluminescentdepths #cosmicabyss #glowingmembranes #endlessnightdive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A squid’s skin hums with electric constellations 🐙💫
+    [2] Chambers of glowing cells pulse like a cosmic heartbeat ⚡️🔥 Can you spot Belle hiding in the depths? 👀 #bioluminescentdepths #cosmicabyss #glowingmembranes #endlessnightdive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Chambers of glowing cells pulse like a cosmic heartbeat ⚡️🔥
+    [3] Membranes shimmer where enzymes weave light from the dark 🌌✨ Can you spot Belle hiding in the depths? 👀 #bioluminescentdepths #cosmicabyss #glowingmembranes #endlessnightdive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Membranes shimmer where enzymes weave light from the dark 🌌✨
+    [4] The deep ocean’s glow fades into infinite black, then begins again 🌌💫 Can you spot Belle hiding in the depths? 👀 #bioluminescentdepths #cosmicabyss #glowingmembranes #endlessnightdive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The deep ocean’s glow fades into infinite black, then begins again 🌌💫
+=== 06:01:39 squid_lantern -> REVIEW (captioned)
+=== 06:01:39 batch done in 4.5h — 4 to Review
+=== 06:01:39 ComfyUI models unloaded — VRAM freed
+=== 06:01:39 log: outbox/night_batch_0816_013001.log

@@ -1,0 +1,60 @@
+ivory_gambit (divein): bar 2.667s -> 90 bpm, key D minor; lane ember_pulse; generating 8, keeping 5
+♪ generating 33.0s | 90bpm D minor | seed 637 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 26s -> ivory_gambit_00001_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ivory_gambit_ember_pulse.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ivory_gambit/ember_pulse.mp4
+    bar 2.667s | music bar 2.667s (conf 0.73) -> stretch 1.0000 | phase 0.360s | lock 25.96x | kick 0.55 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [ember_pulse] lock 25.96x conf 0.73 kick 0.55 score 25.58 -> review/music/candidates/ivory_gambit/ember_pulse.mp4
+♪ generating 33.0s | 90bpm D minor | seed 674 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 21s -> ivory_gambit_00002_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ivory_gambit_ember_pulse-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ivory_gambit/ember_pulse-b.mp4
+    bar 2.667s | music bar 2.496s (conf -0.06) -> stretch 1.0000 | phase 1.930s | lock 8.01x | kick -0.05 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [ember_pulse-b] lock 8.01x conf -0.06 kick -0.05 score 1.00 -> review/music/candidates/ivory_gambit/ember_pulse-b.mp4
+♪ generating 33.0s | 90bpm D minor | seed 711 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 21s -> ivory_gambit_00003_.flac (1.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ivory_gambit_ember_pulse-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ivory_gambit/ember_pulse-heartbeat.mp4
+    bar 2.667s | music bar 2.667s (conf 0.63) -> stretch 1.0000 | phase 0.680s | lock 8.77x | kick -0.01 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [ember_pulse-heartbeat] lock 8.77x conf 0.63 kick -0.01 score 2.47 -> review/music/candidates/ivory_gambit/ember_pulse-heartbeat.mp4
+♪ generating 33.0s | 90bpm D minor | seed 748 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 21s -> ivory_gambit_00004_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ivory_gambit_wooden_orbit-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ivory_gambit/wooden_orbit-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.64) -> stretch 1.0000 | phase 1.830s | lock 21.49x | kick 0.31 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [wooden_orbit-wild] lock 21.49x conf 0.64 kick 0.31 score 13.73 -> review/music/candidates/ivory_gambit/wooden_orbit-wild.mp4
+♪ generating 33.0s | 90bpm D minor | seed 785 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 22s -> ivory_gambit_00005_.flac (1.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ivory_gambit_choir_of_dust-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ivory_gambit/choir_of_dust-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.83) -> stretch 1.0000 | phase 0.980s | lock 24.31x | kick 0.74 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [choir_of_dust-wild] lock 24.31x conf 0.83 kick 0.74 score 32.12 -> review/music/candidates/ivory_gambit/choir_of_dust-wild.mp4
+♪ generating 33.0s | 90bpm D minor | seed 822 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 20s -> ivory_gambit_00006_.flac (1.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ivory_gambit_ember_pulse-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ivory_gambit/ember_pulse-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.81) -> stretch 1.0000 | phase 2.050s | lock 11.60x | kick 0.48 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [ember_pulse-halftime] lock 11.60x conf 0.81 kick 0.48 score 11.10 -> review/music/candidates/ivory_gambit/ember_pulse-halftime.mp4
+♪ generating 33.0s | 90bpm D minor | seed 859 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 21s -> ivory_gambit_00007_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ivory_gambit_music_box-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ivory_gambit/music_box-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.70) -> stretch 1.0000 | phase 1.330s | lock 20.72x | kick 0.62 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [music_box-wild] lock 20.72x conf 0.70 kick 0.62 score 21.67 -> review/music/candidates/ivory_gambit/music_box-wild.mp4
+♪ generating 33.0s | 90bpm D minor | seed 896 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 21s -> ivory_gambit_00008_.flac (1.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ivory_gambit_ember_pulse-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ivory_gambit/ember_pulse-third_answer.mp4
+    bar 2.667s | music bar 2.667s (conf 0.69) -> stretch 1.0000 | phase 2.000s | lock 10.14x | kick 0.56 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [ember_pulse-third_answer] lock 10.14x conf 0.69 kick 0.56 score 9.79 -> review/music/candidates/ivory_gambit/ember_pulse-third_answer.mp4
+kept: choir_of_dust-wild, ember_pulse, music_box-wild, wooden_orbit-wild, ember_pulse-halftime
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel

@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/ember_pulse-b.mp4
+    bar 2.000s | music bar 1.973s (conf 0.57) -> stretch 0.9867 | phase 1.660s | lock 27.56x | kick 0.46 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-b] realigned (lock 27.56x kick 0.46)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/aurora_strings-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.51) -> stretch 1.0027 | phase 0.140s | lock 13.43x | kick 0.44 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [aurora_strings-wild] realigned (lock 13.43x kick 0.44)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/tide_organ-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.48) -> stretch 1.0027 | phase 0.690s | lock 11.29x | kick 0.33 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] realigned (lock 11.29x kick 0.33)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/glass_chapel-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.62) -> stretch 1.0027 | phase 1.200s | lock 7.94x | kick 0.37 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] realigned (lock 7.94x kick 0.37)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/ember_pulse-third_answer.mp4
+    bar 2.000s | music bar 2.005s (conf 0.56) -> stretch 1.0027 | phase 1.920s | lock 7.21x | kick 0.42 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-third_answer] realigned (lock 7.21x kick 0.42)
+realigned 5 pregen candidates to the marked start

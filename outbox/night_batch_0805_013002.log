@@ -1,0 +1,135 @@
+=== 01:30:02 batch start [LMS] — 3 journeys: resonance_hall tide_glass heron_delta
+=== 01:30:02 --- resonance_hall ---
+[style] gilded_relic  ->  warm gilded light, painterly, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/resonance_hall/v1
+[dive] resonance_hall: 280 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (154 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a blazing white-gold star, its skin a granular mosaic of bright cells, nested co
+[dive] frame 1/280 (19.5s/frame, ~5429s left) :: moving through a blazing white-gold star, its skin a granula
+[dive] frame 11/280 (20.3s/frame, ~5461s left) :: moving through a blazing white-gold star, its skin a granula
+[dive] frame 21/280 (20.7s/frame, ~5353s left) :: diving straight into a dark teal planet, pale cloud bands dr
+[dive] frame 31/280 (19.8s/frame, ~4929s left) :: a dark teal planet seen from space, its curved limb aglow, p
+[dive] frame 41/280 (18.8s/frame, ~4489s left) :: moving through a dark teal planet seen from space, its curve
+[dive] frame 51/280 (18.9s/frame, ~4322s left) :: diving straight into a golden city, avenues and squares pick
+[dive] frame 61/280 (18.4s/frame, ~4029s left) :: a night city seen from high above, gold-lit avenues in a gri
+[dive] frame 71/280 (18.2s/frame, ~3814s left) :: moving through a night city seen from high above, gold-lit a
+[dive] frame 81/280 (18.7s/frame, ~3721s left) :: diving straight into a domed concert hall, a circular staine
+[dive] frame 91/280 (18.1s/frame, ~3418s left) :: the front of a great domed concert hall at night, carved sto
+[dive] frame 101/280 (17.1s/frame, ~3059s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 111/280 (16.3s/frame, ~2748s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 121/280 (16.0s/frame, ~2548s left) :: moving through a grand music-box concert hall seen from the 
+[dive] frame 131/280 (16.5s/frame, ~2453s left) :: diving straight into a huge brass gramophone horn, a wide fl
+[dive] ⚠ figure at frame 140: people — Florence: "This is an image of a concert. The concert is taking place in a large building. The building has ornate carvings on the walls and windows. The windows"
+[dive] frame 141/280 (16.8s/frame, ~2338s left) :: a wide flared brass bell, engraved scrollwork chased in spir
+[dive] frame 151/280 (16.6s/frame, ~2138s left) :: moving through a wide flared brass bell, engraved scrollwork
+[dive] frame 161/280 (16.8s/frame, ~2001s left) :: diving straight into a brass cylinder, dense spiral rows of 
+[dive] frame 171/280 (17.0s/frame, ~1853s left) :: a brass music-box cylinder, dense spiral rows of fine steel 
+[dive] frame 181/280 (17.0s/frame, ~1678s left) :: moving through a brass music-box cylinder, dense spiral rows
+[dive] frame 191/280 (17.1s/frame, ~1520s left) :: diving straight into a square brass plate strewn with pale s
+[dive] frame 201/280 (17.0s/frame, ~1345s left) :: a square brass plate, its polished surface covered in fine p
+[dive] frame 211/280 (17.0s/frame, ~1176s left) :: moving through a square brass plate, its polished surface co
+[dive] frame 221/280 (17.3s/frame, ~1021s left) :: diving straight into a grid of luminous cells, bright wave-f
+[dive] frame 231/280 (17.1s/frame, ~839s left) :: a lattice of standing-wave light, luminous wave-fronts cross
+[dive] frame 241/280 (16.7s/frame, ~653s left) :: deep inside a lattice of standing-wave light, luminous wave-
+[dive] frame 251/280 (16.4s/frame, ~475s left) :: deep inside a lattice of standing-wave light, luminous wave-
+[dive] frame 261/280 (16.2s/frame, ~308s left) :: moving through a vast teal nebula of concentric wave-front s
+[dive] frame 271/280 (16.2s/frame, ~146s left) :: diving straight into a blazing white-gold star, its skin a g
+[dive] frame 280/280 (16.2s/frame, ~0s left) :: diving straight into a blazing white-gold star, its skin a g
+[dive] interpolated 12 -> 24fps in 33s
+[dive] counter overlay on 557 frames (25 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/resonance_hall/v1/resonance_hall.mp4 (32395 KB, 23.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/resonance_hall/v1/resonance_hall_divein.mp4 (32987 KB, 23.3s)
+[dive] done in 4684s
+=== 02:48:06 resonance_hall: rendered in 4684s
+  copied resonance_hall.mp4 -> review/resonance_hall_ds.mp4
+  copied resonance_hall_divein.mp4 -> review_divein/resonance_hall_ds_divein.mp4
+resonance_hall: queued to REVIEW (ds/divein) from v1
+  resonance_hall: 5 caption+title pairs (spot=True); theme='A haunting, celestial waltz of brass and'
+    [0] A music-box universe, spiraling into infinity 🌌 Can you spot Newman hiding in this endless loop? 👀 #MusicBoxCosmos #InfiniteZoom #GoldenNebula #BrassAndStarlight #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A music-box universe, spiraling into infinity 🌌
+    [1] Brass and starlight, woven in endless loops ✨ Can you spot Newman hiding in this endless loop? 👀 #MusicBoxCosmos #InfiniteZoom #GoldenNebula #BrassAndStarlight #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Brass and starlight, woven in endless loops ✨
+    [2] Where every grain of sand holds a galaxy 🪐 Can you spot Newman hiding in this endless loop? 👀 #MusicBoxCosmos #InfiniteZoom #GoldenNebula #BrassAndStarlight #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where every grain of sand holds a galaxy 🪐
+    [3] The city hums with the rhythm of the cosmos 🎶 Can you spot Newman hiding in this endless loop? 👀 #MusicBoxCosmos #InfiniteZoom #GoldenNebula #BrassAndStarlight #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The city hums with the rhythm of the cosmos 🎶
+    [4] Lost in the echo of an empty concert hall 🎻 Can you spot Newman hiding in this endless loop? 👀 #MusicBoxCosmos #InfiniteZoom #GoldenNebula #BrassAndStarlight #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Lost in the echo of an empty concert hall 🎻
+=== 02:49:09 resonance_hall -> REVIEW (captioned)
+=== 02:49:09 --- tide_glass ---
+[style] reef_pop  ->  electric aquamarine and hot pink, sunlit turquoise depth, high-saturation tropical glow, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/tide_glass/v1
+[dive] tide_glass: 196 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (91 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of sunlit water seen from straight above, two sets of straight wave-lines crossed i
+[dive] frame 1/196 (17.3s/frame, ~3370s left) :: moving through sunlit water seen from straight above, two se
+[dive] frame 11/196 (20.0s/frame, ~3709s left) :: moving through sunlit water seen from straight above, two se
+[dive] frame 21/196 (19.7s/frame, ~3449s left) :: diving straight into a long pale strip of shore, wet sand an
+[dive] frame 31/196 (19.2s/frame, ~3161s left) :: a stretch of shingle shore seen from low above, banks of wet
+[dive] frame 41/196 (16.4s/frame, ~2544s left) :: moving through a stretch of shingle shore seen from low abov
+[dive] frame 51/196 (14.8s/frame, ~2142s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 61/196 (13.8s/frame, ~1868s left) :: a wide shingle beach in low morning light seen from a low vi
+[dive] frame 71/196 (14.3s/frame, ~1791s left) :: moving through a wide shingle beach in low morning light see
+[dive] frame 81/196 (15.2s/frame, ~1745s left) :: diving straight into a frosted green sea-glass pebble, its b
+[dive] frame 91/196 (14.9s/frame, ~1569s left) :: a frosted green sea-glass pebble among the wet shingle, its 
+[dive] frame 101/196 (15.4s/frame, ~1463s left) :: diving straight into a cluster of small round pits, shallow 
+[dive] frame 111/196 (15.5s/frame, ~1318s left) :: diving straight into a cluster of small round pits, shallow 
+[dive] frame 121/196 (15.4s/frame, ~1154s left) :: moving through the frosted surface of sea glass, a cratered 
+[dive] frame 131/196 (15.7s/frame, ~1017s left) :: diving straight into glowing green strands, pale luminous th
+[dive] frame 141/196 (15.9s/frame, ~873s left) :: the silica network inside the glass, pale green strands stru
+[dive] frame 151/196 (15.4s/frame, ~693s left) :: deep inside the silica network inside the glass, pale green 
+[dive] frame 161/196 (14.9s/frame, ~522s left) :: deep inside the silica network inside the glass, pale green 
+[dive] frame 171/196 (14.6s/frame, ~365s left) :: the whole view transforming, resolving into a realm of packe
+[dive] frame 181/196 (14.5s/frame, ~217s left) :: moving through a realm of packed luminous bubble cells, curv
+[dive] frame 191/196 (14.6s/frame, ~73s left) :: diving straight into sunlit water seen from straight above, 
+[dive] frame 196/196 (14.7s/frame, ~0s left) :: diving straight into sunlit water seen from straight above, 
+[dive] interpolated 12 -> 24fps in 24s
+[dive] counter overlay on 389 frames (24 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/tide_glass/v1/tide_glass.mp4 (22246 KB, 16.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/tide_glass/v1/tide_glass_divein.mp4 (22676 KB, 16.3s)
+[dive] done in 2980s
+=== 03:38:49 tide_glass: rendered in 2980s
+  copied tide_glass.mp4 -> review/tide_glass_ds.mp4
+  copied tide_glass_divein.mp4 -> review_divein/tide_glass_ds_divein.mp4
+tide_glass: queued to REVIEW (ds/divein) from v1
+  tide_glass: 5 caption+title pairs (spot=True); theme='A hypnotic pulse of oceanic synths and c'
+    [0] Dive into the endless shimmer of a pebble’s universe 🌊 Can you spot Belle hiding in the endless loop? 👀 #InfiniteShores #GlassGalaxy #StandingWaveDreams #PebbleCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive into the endless shimmer of a pebble’s universe 🌊
+    [1] Where sea glass becomes a galaxy of light and shadow Can you spot Belle hiding in the endless loop? 👀 #InfiniteShores #GlassGalaxy #StandingWaveDreams #PebbleCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where sea glass becomes a galaxy of light and shadow
+    [2] A standing wave of time, frozen in diamond grids ☀️ Can you spot Belle hiding in the endless loop? 👀 #InfiniteShores #GlassGalaxy #StandingWaveDreams #PebbleCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A standing wave of time, frozen in diamond grids ☀️
+    [3] The shore is infinite when you zoom through its soul Can you spot Belle hiding in the endless loop? 👀 #InfiniteShores #GlassGalaxy #StandingWaveDreams #PebbleCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The shore is infinite when you zoom through its soul
+    [4] One pebble holds the ocean—and it’s singing Can you spot Belle hiding in the endless loop? 👀 #InfiniteShores #GlassGalaxy #StandingWaveDreams #PebbleCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: One pebble holds the ocean—and it’s singing
+=== 03:39:38 tide_glass -> REVIEW (captioned)
+=== 03:39:38 --- heron_delta ---
+[style] crystalline  ->  prismatic crystalline light, refractive glass and gemstone facets, jewel tones, ultra-detailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/heron_delta/v1
+[dive] heron_delta: 140 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (70 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of ranks of overlapping grey feathers laid over one another in long rows, seen from
+[dive] frame 1/140 (16.1s/frame, ~2245s left) :: moving through ranks of overlapping grey feathers laid over 
+[dive] frame 11/140 (20.1s/frame, ~2587s left) :: moving through ranks of overlapping grey feathers laid over 
+[dive] frame 21/140 (19.9s/frame, ~2364s left) :: diving straight into a long grey feather, chalk white along 
+[dive] frame 31/140 (19.1s/frame, ~2087s left) :: a grey vane spread out in every direction, hundreds of fine 
+[dive] frame 41/140 (18.3s/frame, ~1810s left) :: moving through a grey vane spread out in every direction, hu
+[dive] frame 51/140 (18.4s/frame, ~1642s left) :: diving straight into a glossy grey barb ridge as it swells t
+[dive] frame 61/140 (18.1s/frame, ~1433s left) :: two crossed combs of glassy barbules interlocked across a co
+[dive] frame 71/140 (16.7s/frame, ~1153s left) :: deep inside two crossed combs of glassy barbules interlocked
+[dive] frame 81/140 (15.6s/frame, ~923s left) :: deep inside two crossed combs of glassy barbules interlocked
+[dive] frame 91/140 (14.9s/frame, ~732s left) :: the whole view transforming, resolving into a braided tidal 
+[dive] frame 101/140 (15.5s/frame, ~606s left) :: diving straight into a pale curved sandbank as it swells to 
+[dive] frame 111/140 (15.9s/frame, ~460s left) :: diving straight into a pale curved sandbank as it swells to 
+[dive] frame 121/140 (15.8s/frame, ~300s left) :: moving through the shallow edge of a tidal channel at eye le
+[dive] frame 131/140 (15.8s/frame, ~142s left) :: diving straight into ranks of overlapping grey feathers edge
+[dive] frame 140/140 (15.9s/frame, ~0s left) :: diving straight into ranks of overlapping grey feathers edge
+[dive] interpolated 12 -> 24fps in 17s
+[dive] counter overlay on 277 frames (18 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/heron_delta/v1/heron_delta.mp4 (15871 KB, 11.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/heron_delta/v1/heron_delta_divein.mp4 (16208 KB, 11.7s)
+[dive] done in 2290s
+=== 04:17:49 heron_delta: rendered in 2291s
+  copied heron_delta.mp4 -> review/heron_delta_ds.mp4
+  copied heron_delta_divein.mp4 -> review_divein/heron_delta_ds_divein.mp4
+heron_delta: queued to REVIEW (ds/divein) from v1
+  heron_delta: 5 caption+title pairs (spot=True); theme='A slow, hypnotic pulse of crystalline ch'
+    [0] Diving through dawn’s fractal feathers 🌄 Can you spot Lee hiding in the loop? 👀 #FractalDawn #GlassWorlds #TidalLoop #PrismaticZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Diving through dawn’s fractal feathers 🌄
+    [1] Glass combs interlock in the cold light Can you spot Lee hiding in the loop? 👀 #FractalDawn #GlassWorlds #TidalLoop #PrismaticZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Glass combs interlock in the cold light
+    [2] Silver tides braid where the herons stand still Can you spot Lee hiding in the loop? 👀 #FractalDawn #GlassWorlds #TidalLoop #PrismaticZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Silver tides braid where the herons stand still
+    [3] A world of ridges, troughs, and endless loops Can you spot Lee hiding in the loop? 👀 #FractalDawn #GlassWorlds #TidalLoop #PrismaticZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A world of ridges, troughs, and endless loops
+    [4] Dawn’s prismatic plunge into the unknown Can you spot Lee hiding in the loop? 👀 #FractalDawn #GlassWorlds #TidalLoop #PrismaticZen #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dawn’s prismatic plunge into the unknown
+=== 04:18:44 heron_delta -> REVIEW (captioned)
+=== 04:18:44 batch done in 2.8h — 3 to Review
+=== 04:18:44 log: outbox/night_batch_0805_013002.log

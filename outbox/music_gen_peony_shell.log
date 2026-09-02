@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/peony_shell/pulse3-night_market.mp4
+    bar 2.667s | music bar 2.667s (conf 0.62) -> stretch 1.0000 | phase 1.390s | lock 39.38x | kick 0.49 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [pulse3-night_market] realigned (lock 39.38x kick 0.49)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/peony_shell/pulse1-night_market.mp4
+    bar 2.667s | music bar 2.667s (conf 0.62) -> stretch 1.0000 | phase 1.390s | lock 20.21x | kick 0.50 | seamless loop @ 13.33s (music tiled x1, xf 0.50s)
+  [pulse1-night_market] realigned (lock 20.21x kick 0.50)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/peony_shell/aurora_strings-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.46) -> stretch 1.0000 | phase 1.390s | lock 21.25x | kick 0.38 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [aurora_strings-wild] realigned (lock 21.25x kick 0.38)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/peony_shell/ember_pulse-wild.mp4
+    bar 2.667s | music bar 2.571s (conf 0.19) -> stretch 0.9700 | phase 1.720s | lock 22.95x | kick 0.17 | seamless loop @ 13.33s (music tiled x1, xf 0.50s)
+  [ember_pulse-wild] realigned (lock 22.95x kick 0.17)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/peony_shell/tide_organ-wild.mp4
+    bar 2.667s | music bar 2.923s (conf -0.04) -> stretch 1.0000 | phase 1.940s | lock 9.43x | kick -0.04 | seamless loop @ 13.33s (music tiled x1, xf 0.50s)
+  [tide_organ-wild] realigned (lock 9.43x kick -0.04)
+realigned 5 pregen candidates to the marked start

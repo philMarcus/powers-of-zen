@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/wild_yeast/glass_chapel-wild.mp4
+    bar 2.333s | music bar 2.283s (conf 0.62) -> stretch 0.9783 | phase 1.790s | lock 12.70x | kick 0.66 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] realigned (lock 12.70x kick 0.66)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/wild_yeast/analog_dawn-b.mp4
+    bar 2.333s | music bar 2.347s (conf 0.48) -> stretch 1.0057 | phase 0.000s | lock 16.04x | kick 0.38 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [analog_dawn-b] realigned (lock 16.04x kick 0.38)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/wild_yeast/analog_dawn-halftime.mp4
+    bar 2.333s | music bar 2.293s (conf 0.53) -> stretch 0.9829 | phase 0.020s | lock 13.47x | kick 0.40 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [analog_dawn-halftime] realigned (lock 13.47x kick 0.40)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/wild_yeast/tide_organ-wild.mp4
+    bar 2.333s | music bar 2.325s (conf 0.31) -> stretch 0.9966 | phase 2.320s | lock 17.18x | kick 0.26 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] realigned (lock 17.18x kick 0.26)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/wild_yeast/choir_of_dust-wild.mp4
+    bar 2.333s | music bar 2.304s (conf 0.60) -> stretch 0.9874 | phase 2.210s | lock 10.67x | kick 0.33 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] realigned (lock 10.67x kick 0.33)
+realigned 5 pregen candidates to the marked start

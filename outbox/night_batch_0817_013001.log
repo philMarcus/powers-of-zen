@@ -1,0 +1,219 @@
+=== 01:30:01 batch start [LLLS] — 4 journeys: cobalt_rookery ruby_furnace sundew_snare magnetite_choir
+=== 01:30:02 --- cobalt_rookery ---
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v1
+[dive] cobalt_rookery: 352 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — ice_world(surface)[26..39], rookery_cliff(surface)[58..81], egg_shelf(surface)[90..113], shell_rind(surface)[122..145], palisade_columns(surface)[154..177], membrane_weave(web)[186..209], protein_ropes(sea)[218..241], calcite_lattice(lattice)[250..273], nucleus_droplet(sea)[282..305]
+[dive] TRACKER v3 ON (224 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of an aging gold sun burning inside a crowded star cluster, ranked neighbour suns t
+[dive] frame 1/352 (37.7s/frame, ~13225s left) :: moving through an aging gold sun burning inside a crowded st
+[dive] frame 11/352 (23.1s/frame, ~7873s left) :: moving through an aging gold sun burning inside a crowded st
+[dive] frame 21/352 (21.8s/frame, ~7219s left) :: diving straight into a cobalt-blue ice world as it swells to
+[dive] frame 31/352 (21.0s/frame, ~6731s left) :: diving straight into a cobalt-blue ice world as it swells to
+[dive] frame 41/352 (19.3s/frame, ~5999s left) :: moving through a cobalt ocean world seen from orbit, sea ice
+[dive] frame 51/352 (19.6s/frame, ~5885s left) :: moving through a cobalt ocean world seen from orbit, sea ice
+[dive] frame 61/352 (19.7s/frame, ~5725s left) :: diving straight into a sheer basalt headland as it swells to
+[dive] frame 71/352 (18.6s/frame, ~5234s left) :: a seabird cliff of banded basalt rising sheer from a cobalt 
+[dive] frame 81/352 (17.8s/frame, ~4832s left) :: moving through a seabird cliff of banded basalt rising sheer
+[dive] frame 91/352 (18.3s/frame, ~4765s left) :: diving straight into a guano-limed rock ledge as it swells t
+[dive] frame 101/352 (17.6s/frame, ~4430s left) :: one shelf of the rookery at bird level, guillemots pressed f
+[dive] frame 111/352 (17.1s/frame, ~4131s left) :: moving through one shelf of the rookery at bird level, guill
+[dive] frame 121/352 (17.6s/frame, ~4062s left) :: diving straight into a turquoise speckled egg as it swells t
+[dive] frame 131/352 (17.2s/frame, ~3803s left) :: the curved chalk rind of the shell, a turquoise ground crust
+[dive] frame 141/352 (17.0s/frame, ~3577s left) :: moving through the curved chalk rind of the shell, a turquoi
+[dive] frame 151/352 (17.1s/frame, ~3429s left) :: diving straight into a round pore mouth as it swells to fill
+[dive] frame 161/352 (16.9s/frame, ~3220s left) :: the interior of the shell wall, ranks of calcite palisade co
+[dive] frame 171/352 (16.7s/frame, ~3025s left) :: moving through the interior of the shell wall, ranks of calc
+[dive] frame 181/352 (16.7s/frame, ~2849s left) :: diving straight into a twisted white fiber as it swells to f
+[dive] frame 191/352 (16.6s/frame, ~2680s left) :: diving straight into a twisted white fiber as it swells to f
+[dive] frame 201/352 (16.5s/frame, ~2498s left) :: moving through the shell membrane under the mineral crust, a
+[dive] frame 211/352 (16.4s/frame, ~2315s left) :: moving through the shell membrane under the mineral crust, a
+[dive] frame 221/352 (16.5s/frame, ~2158s left) :: diving straight into a three-stranded protein rope as it swe
+[dive] frame 231/352 (16.3s/frame, ~1977s left) :: three protein strands wound about one another into a rope, r
+[dive] frame 241/352 (16.2s/frame, ~1795s left) :: moving through three protein strands wound about one another
+[dive] frame 251/352 (16.3s/frame, ~1647s left) :: diving straight into a glassy calcite rhomb as it swells to 
+[dive] frame 261/352 (16.2s/frame, ~1474s left) :: a calcite lattice, ranks of calcium atoms set at the corners
+[dive] frame 271/352 (16.1s/frame, ~1300s left) :: moving through a calcite lattice, ranks of calcium atoms set
+[dive] frame 281/352 (16.2s/frame, ~1152s left) :: diving straight into a droplet of glowing spheres as it swel
+[dive] frame 291/352 (16.1s/frame, ~983s left) :: a rounded swarm of glowing beads packed into one droplet at 
+[dive] frame 301/352 (16.0s/frame, ~816s left) :: deep inside a rounded swarm of glowing beads packed into one
+[dive] frame 311/352 (15.9s/frame, ~650s left) :: deep inside a rounded swarm of glowing beads packed into one
+[dive] frame 321/352 (15.6s/frame, ~484s left) :: the whole view transforming, resolving into a globular clust
+[dive] frame 331/352 (15.5s/frame, ~326s left) :: moving through a globular cluster of ten thousand suns packe
+[dive] frame 341/352 (15.6s/frame, ~172s left) :: diving straight into an aging gold sun amid ranks of crowded
+[dive] frame 351/352 (15.7s/frame, ~16s left) :: diving straight into an aging gold sun amid ranks of crowded
+[dive] frame 352/352 (15.7s/frame, ~0s left) :: diving straight into an aging gold sun amid ranks of crowded
+[dive] interpolated 12 -> 24fps (704 frames, loop-bridged) in 42s
+[dive] counter overlay on 704 frames (36 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v1/cobalt_rookery.mp4 (44168 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v1/cobalt_rookery_divein.mp4 (44911 KB, 29.3s)
+[dive] done in 5709s
+=== 03:05:11 cobalt_rookery: rendered in 5709s
+  copied cobalt_rookery.mp4 -> review/cobalt_rookery_ds.mp4
+  copied cobalt_rookery_divein.mp4 -> review_divein/cobalt_rookery_ds_divein.mp4
+cobalt_rookery: queued to REVIEW (ds/divein) from v1
+  cobalt_rookery: 5 caption+title pairs (spot=True); theme='A slow, swelling drone of brass and coba'
+    [0] A sun’s last breath in a sea of stars 🌌 Can you spot Janet in this infinite dive? 👀 #CosmicDive #InfiniteZoom #ShellsAndStars #BrassCobaltWorld #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A sun’s last breath in a sea of stars 🌌
+    [1] Brass light on a cobalt world’s endless shore Can you spot Janet in this infinite dive? 👀 #CosmicDive #InfiniteZoom #ShellsAndStars #BrassCobaltWorld #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Brass light on a cobalt world’s endless shore
+    [2] Guillemots and guano under the midnight glow Can you spot Janet in this infinite dive? 👀 #CosmicDive #InfiniteZoom #ShellsAndStars #BrassCobaltWorld #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Guillemots and guano under the midnight glow
+    [3] Turquoise ink scrawled on a shell’s hidden map Can you spot Janet in this infinite dive? 👀 #CosmicDive #InfiniteZoom #ShellsAndStars #BrassCobaltWorld #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Turquoise ink scrawled on a shell’s hidden map
+    [4] Atoms hum where galaxies began Can you spot Janet in this infinite dive? 👀 #CosmicDive #InfiniteZoom #ShellsAndStars #BrassCobaltWorld #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Atoms hum where galaxies began
+=== 03:06:32 cobalt_rookery -> REVIEW (captioned)
+=== 03:06:32 --- ruby_furnace ---
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] cosmic_gloss  ->  luminous volumetric light, glossy hyperreal render, deep-space glow, ultra-detailed, cinematic, epic scale, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/ruby_furnace/v1
+[dive] ruby_furnace: 264 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — ember_limb(surface)[18..39], orchard_country(surface)[42..63], daybreak_garden(surface)[66..77], vine_hover(surface)[90..111], gorget_shingles(sea)[114..135], capillary_file(sea)[138..159], hemoglobin_engines(sea)[162..183], iron_shells(sea)[186..207], iron_nucleus(sea)[210..231]
+[dive] TRACKER v3 ON (168 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of arches of glowing gas standing off the edge of a red giant star, the nearest of 
+[dive] frame 1/264 (21.5s/frame, ~5653s left) :: moving through arches of glowing gas standing off the edge o
+[dive] frame 11/264 (21.1s/frame, ~5347s left) :: moving through arches of glowing gas standing off the edge o
+[dive] frame 21/264 (20.0s/frame, ~4864s left) :: diving straight into a dark green world as it swells to fill
+[dive] frame 31/264 (18.1s/frame, ~4214s left) :: moving through the curve of a green world seen from close or
+[dive] frame 41/264 (17.1s/frame, ~3810s left) :: diving straight into a green river valley as it swells to fi
+[dive] frame 51/264 (16.2s/frame, ~3458s left) :: a river valley at daybreak seen from low over the ridge, orc
+[dive] frame 61/264 (15.8s/frame, ~3204s left) :: moving through a river valley at daybreak seen from low over
+[dive] frame 71/264 (15.7s/frame, ~3024s left) :: diving straight into a walled garden as it swells to fill th
+[dive] frame 81/264 (15.6s/frame, ~2855s left) :: moving through a walled garden at daybreak seen from just ab
+[dive] frame 91/264 (16.3s/frame, ~2824s left) :: diving straight into a ruby-throated hummingbird as it swell
+[dive] frame 101/264 (15.9s/frame, ~2594s left) :: one ruby-throated hummingbird in the air at the mouth of a t
+[dive] frame 111/264 (15.6s/frame, ~2384s left) :: diving straight into a ruby throat patch as it swells to fil
+[dive] frame 121/264 (15.6s/frame, ~2237s left) :: the ruby gorget of a hummingbird's throat, ranks of feather 
+[dive] frame 131/264 (15.4s/frame, ~2046s left) :: moving through the ruby gorget of a hummingbird's throat, ra
+[dive] frame 141/264 (15.4s/frame, ~1900s left) :: diving straight into a fine red vessel as it swells to fill 
+[dive] frame 151/264 (15.3s/frame, ~1727s left) :: moving through the inside of a capillary under the skin, a n
+[dive] frame 161/264 (15.3s/frame, ~1573s left) :: diving straight into a ruby red blood cell as it swells to f
+[dive] frame 171/264 (15.2s/frame, ~1417s left) :: the machinery crowded inside one red cell, hemoglobin molecu
+[dive] frame 181/264 (15.1s/frame, ~1251s left) :: moving through the machinery crowded inside one red cell, he
+[dive] frame 191/264 (15.1s/frame, ~1102s left) :: diving straight into a blue-white iron atom as it swells to 
+[dive] frame 201/264 (15.0s/frame, ~947s left) :: moving through one iron atom in the dark, nested shells of b
+[dive] frame 211/264 (15.0s/frame, ~796s left) :: diving straight into a white-hot nucleus as it swells to fil
+[dive] frame 221/264 (14.9s/frame, ~640s left) :: the nucleus of an iron atom, a close-packed droplet of glowi
+[dive] frame 231/264 (14.9s/frame, ~491s left) :: deep inside the nucleus of an iron atom, a close-packed drop
+[dive] frame 241/264 (14.6s/frame, ~337s left) :: the whole view transforming, resolving into the boiling floo
+[dive] frame 251/264 (14.6s/frame, ~189s left) :: moving through the boiling floor of a red giant star, convec
+[dive] frame 261/264 (14.8s/frame, ~44s left) :: diving straight into arches of glowing gas standing off the 
+[dive] frame 264/264 (14.8s/frame, ~0s left) :: diving straight into arches of glowing gas standing off the 
+[dive] interpolated 12 -> 24fps (528 frames, loop-bridged) in 32s
+[dive] counter overlay on 528 frames (31 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/ruby_furnace/v1/ruby_furnace.mp4 (30229 KB, 22.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/ruby_furnace/v1/ruby_furnace_divein.mp4 (31226 KB, 22.0s)
+[dive] done in 4040s
+=== 04:13:52 ruby_furnace: rendered in 4040s
+  copied ruby_furnace.mp4 -> review/ruby_furnace_ds.mp4
+  copied ruby_furnace_divein.mp4 -> review_divein/ruby_furnace_ds_divein.mp4
+ruby_furnace: queued to REVIEW (ds/divein) from v1
+  ruby_furnace: 5 caption+title pairs (spot=True); theme='A celestial lullaby woven with hummingbi'
+    [0] A hummingbird’s ruby throat pulses like a star 🌌 Can you spot Dora hiding in the cosmic garden? 👀 #cosmicgarden #powersofzen #infinitezoom #stellarwhispers #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A hummingbird’s ruby throat pulses like a star 🌌
+    [1] From cosmic arches to garden whispers, the universe unfolds in loops 🌿 Can you spot Dora hiding in the cosmic garden? 👀 #cosmicgarden #powersofzen #infinitezoom #stellarwhispers #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From cosmic arches to garden whispers, the universe unfolds in loops 🌿
+    [2] Daybreak light spills through the veins of a living world ✨ Can you spot Dora hiding in the cosmic garden? 👀 #cosmicgarden #powersofzen #infinitezoom #stellarwhispers #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Daybreak light spills through the veins of a living world ✨
+    [3] Iron atoms hum where galaxies once burned ⚡ Can you spot Dora hiding in the cosmic garden? 👀 #cosmicgarden #powersofzen #infinitezoom #stellarwhispers #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Iron atoms hum where galaxies once burned ⚡
+    [4] The red giant’s breath cradles the smallest spark Can you spot Dora hiding in the cosmic garden? 👀 #cosmicgarden #powersofzen #infinitezoom #stellarwhispers #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The red giant’s breath cradles the smallest spark
+=== 04:14:40 ruby_furnace -> REVIEW (captioned)
+=== 04:14:40 --- sundew_snare ---
+[dive] tempo: fpb 9 (80bpm) -> transition 8f, seam 15f, anacrusis 3f
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/sundew_snare/v1
+[dive] sundew_snare: 360 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — spire_nursery(sea)[30..54], peat_world(surface)[66..90], bog_dusk(surface)[102..126], glue_rosette(sea)[138..162], snared_midge(sea)[174..188], gland_cells(sea)[210..234], enzyme_lock(sea)[246..270], atom_foam(sea)[282..306]
+[dive] TRACKER v3 ON (225 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a spiral galaxy tilted in open space, its star clouds wound into a tight double 
+[dive] frame 1/360 (25.4s/frame, ~9119s left) :: moving through a spiral galaxy tilted in open space, its sta
+[dive] frame 11/360 (21.6s/frame, ~7530s left) :: moving through a spiral galaxy tilted in open space, its sta
+[dive] frame 21/360 (20.9s/frame, ~7092s left) :: diving straight into a sea-green gas knot as it swells to fi
+[dive] frame 31/360 (21.1s/frame, ~6948s left) :: diving straight into a sea-green gas knot as it swells to fi
+[dive] frame 41/360 (18.9s/frame, ~6043s left) :: a nursery of glowing gas spires ranked across the void, each
+[dive] frame 51/360 (17.6s/frame, ~5444s left) :: moving through a nursery of glowing gas spires ranked across
+[dive] frame 61/360 (18.0s/frame, ~5376s left) :: diving straight into a green-black world as it swells to fil
+[dive] frame 71/360 (17.7s/frame, ~5119s left) :: diving straight into a green-black world as it swells to fil
+[dive] frame 81/360 (17.0s/frame, ~4751s left) :: a green-black ocean world seen from orbit, ivory storm coils
+[dive] frame 91/360 (16.6s/frame, ~4479s left) :: moving through a green-black ocean world seen from orbit, iv
+[dive] frame 101/360 (17.1s/frame, ~4439s left) :: diving straight into a rust-brown moor as it swells to fill 
+[dive] frame 111/360 (16.8s/frame, ~4186s left) :: a peat bog at dusk from a low hummock, cushions of sphagnum 
+[dive] frame 121/360 (16.5s/frame, ~3952s left) :: moving through a peat bog at dusk from a low hummock, cushio
+[dive] frame 131/360 (16.6s/frame, ~3791s left) :: diving straight into a crimson sundew rosette as it swells t
+[dive] frame 141/360 (16.7s/frame, ~3662s left) :: diving straight into a crimson sundew rosette as it swells t
+[dive] frame 151/360 (16.5s/frame, ~3443s left) :: one sundew rosette on the moss, its paddle-shaped leaf blade
+[dive] frame 161/360 (16.2s/frame, ~3227s left) :: moving through one sundew rosette on the moss, its paddle-sh
+[dive] frame 171/360 (16.5s/frame, ~3114s left) :: diving straight into a grey midge as it swells to fill the e
+[dive] frame 181/360 (16.4s/frame, ~2935s left) :: a grey midge mired in a glue bead, its gauze wings pressed f
+[dive] frame 191/360 (16.3s/frame, ~2755s left) :: moving through a grey midge mired in a glue bead, its gauze 
+[dive] frame 201/360 (16.5s/frame, ~2631s left) :: moving through a grey midge mired in a glue bead, its gauze 
+[dive] frame 211/360 (16.8s/frame, ~2508s left) :: diving straight into a garnet gland head as it swells to fil
+[dive] frame 221/360 (16.6s/frame, ~2311s left) :: the living tissue inside one gland head, plant cells packed 
+[dive] frame 231/360 (16.5s/frame, ~2127s left) :: moving through the living tissue inside one gland head, plan
+[dive] frame 241/360 (16.6s/frame, ~1972s left) :: diving straight into a clear secretion vesicle as it swells 
+[dive] frame 251/360 (16.6s/frame, ~1813s left) :: diving straight into a clear secretion vesicle as it swells 
+[dive] frame 261/360 (16.5s/frame, ~1634s left) :: the fluid inside the vesicle, crowded with folded enzyme mac
+[dive] frame 271/360 (16.4s/frame, ~1455s left) :: moving through the fluid inside the vesicle, crowded with fo
+[dive] frame 281/360 (16.7s/frame, ~1316s left) :: diving straight into a glowing atom as it swells to fill the
+[dive] frame 291/360 (16.6s/frame, ~1142s left) :: ranks of luminous haze-shells nested one inside another arou
+[dive] frame 301/360 (16.4s/frame, ~968s left) :: deep inside ranks of luminous haze-shells nested one inside 
+[dive] frame 311/360 (16.3s/frame, ~798s left) :: deep inside ranks of luminous haze-shells nested one inside 
+[dive] frame 321/360 (16.0s/frame, ~626s left) :: deep inside ranks of luminous haze-shells nested one inside 
+[dive] frame 331/360 (15.9s/frame, ~460s left) :: the whole view transforming, resolving into the interior of 
+[dive] frame 341/360 (15.9s/frame, ~301s left) :: moving through the interior of a cosmic void, a vast unlit h
+[dive] frame 351/360 (15.9s/frame, ~143s left) :: diving straight into a tilted spiral galaxy of counted arms,
+[dive] frame 360/360 (16.0s/frame, ~0s left) :: diving straight into a tilted spiral galaxy of counted arms,
+[dive] interpolated 12 -> 24fps (720 frames, loop-bridged) in 43s
+[dive] counter overlay on 720 frames (44 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/sundew_snare/v1/sundew_snare.mp4 (46354 KB, 30.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/sundew_snare/v1/sundew_snare_divein.mp4 (46872 KB, 30.0s)
+[dive] done in 5930s
+=== 05:53:30 sundew_snare: rendered in 5931s
+  copied sundew_snare.mp4 -> review/sundew_snare_ds.mp4
+  copied sundew_snare_divein.mp4 -> review_divein/sundew_snare_ds_divein.mp4
+sundew_snare: queued to REVIEW (ds/divein) from v1
+  sundew_snare: 5 caption+title pairs (spot=True); theme='A slow, pulsing drone of deep space hums'
+    [0] A galaxy’s breath unfurls into a bog at dusk 🌌💧 Can you spot Lee hiding in the infinite zoom? 👀 #CosmicBogDive #InfiniteSpiralZoom #BioluminescentUniverse #SundewGalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A galaxy’s breath unfurls into a bog at dusk 🌌💧
+    [1] From cosmic voids to crimson traps, the universe spirals on... Can you spot Lee hiding in the infinite zoom? 👀 #CosmicBogDive #InfiniteSpiralZoom #BioluminescentUniverse #SundewGalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From cosmic voids to crimson traps, the universe spirals on...
+    [2] Dive through time and tide—where stars bloom like sundew 🌙✨ Can you spot Lee hiding in the infinite zoom? 👀 #CosmicBogDive #InfiniteSpiralZoom #BioluminescentUniverse #SundewGalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive through time and tide—where stars bloom like sundew 🌙✨
+    [3] Every scale reveals another loop of light and life Can you spot Lee hiding in the infinite zoom? 👀 #CosmicBogDive #InfiniteSpiralZoom #BioluminescentUniverse #SundewGalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Every scale reveals another loop of light and life
+    [4] A midge’s fate hangs in a drop of dawn Can you spot Lee hiding in the infinite zoom? 👀 #CosmicBogDive #InfiniteSpiralZoom #BioluminescentUniverse #SundewGalaxy #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A midge’s fate hangs in a drop of dawn
+=== 05:54:45 sundew_snare -> REVIEW (captioned)
+=== 05:54:45 --- magnetite_choir ---
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] ultraviolet  ->  ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/magnetite_choir/v1
+[dive] magnetite_choir: 160 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — magnetite_lattice(lattice)[26..39], lattice_flaw(lattice)[58..81], lodestone_face(surface)[122..132]
+[dive] TRACKER v3 ON (80 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of ragged patches of aligned iron packed edge to edge in every direction inside the
+[dive] frame 1/160 (19.0s/frame, ~3026s left) :: moving through ragged patches of aligned iron packed edge to
+[dive] frame 11/160 (21.4s/frame, ~3186s left) :: moving through ragged patches of aligned iron packed edge to
+[dive] frame 21/160 (21.4s/frame, ~2981s left) :: diving straight into a bright green patch as it swells to fi
+[dive] frame 31/160 (20.9s/frame, ~2700s left) :: diving straight into a bright green patch as it swells to fi
+[dive] frame 41/160 (19.3s/frame, ~2302s left) :: moving through the iron-oxide lattice standing open in the b
+[dive] frame 51/160 (19.5s/frame, ~2124s left) :: moving through the iron-oxide lattice standing open in the b
+[dive] frame 61/160 (19.6s/frame, ~1941s left) :: diving straight into a glowing white sphere as it swells to 
+[dive] frame 71/160 (18.6s/frame, ~1655s left) :: ranks of octahedra broken open around a core of white-green 
+[dive] frame 81/160 (17.8s/frame, ~1407s left) :: deep inside ranks of octahedra broken open around a core of 
+[dive] frame 91/160 (17.0s/frame, ~1173s left) :: deep inside ranks of octahedra broken open around a core of 
+[dive] frame 101/160 (16.2s/frame, ~956s left) :: the whole view transforming, resolving into a plain of lodes
+[dive] frame 111/160 (16.3s/frame, ~801s left) :: moving through a plain of lodestone boulders strewn over fro
+[dive] frame 121/160 (17.2s/frame, ~669s left) :: diving straight into a squat lodestone boulder as it swells 
+[dive] frame 131/160 (16.8s/frame, ~488s left) :: an iron-black lodestone rock, its stepped and pitted face ru
+[dive] frame 141/160 (16.6s/frame, ~316s left) :: moving through an iron-black lodestone rock, its stepped and
+[dive] frame 151/160 (16.8s/frame, ~151s left) :: diving straight into ragged green-lit patches of iron packed
+[dive] frame 160/160 (16.9s/frame, ~0s left) :: diving straight into ragged green-lit patches of iron packed
+[dive] interpolated 12 -> 24fps (320 frames, loop-bridged) in 19s
+[dive] counter overlay on 320 frames (15 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/magnetite_choir/v1/magnetite_choir.mp4 (19838 KB, 13.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/magnetite_choir/v1/magnetite_choir_divein.mp4 (20164 KB, 13.3s)
+[dive] done in 2780s
+=== 06:41:05 magnetite_choir: rendered in 2780s
+  copied magnetite_choir.mp4 -> review/magnetite_choir_ds.mp4
+  copied magnetite_choir_divein.mp4 -> review_divein/magnetite_choir_ds_divein.mp4
+magnetite_choir: queued to REVIEW (ds/divein) from v1
+  magnetite_choir: 5 caption+title pairs (spot=True); theme='A slow, pulsing drone of deep bass and s'
+    [0] Diving through the iron heart of a frozen world 🌌 Can you spot Adam hiding in the infinite? #lodestoneauroras #atomicfractals #magneticdreaming #ironoctahedra #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Diving through the iron heart of a frozen world 🌌
+    [1] Where magnetic whispers shape the land’s soul Can you spot Adam hiding in the infinite? #lodestoneauroras #atomicfractals #magneticdreaming #ironoctahedra #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where magnetic whispers shape the land’s soul
+    [2] A dance of atoms in the aurora’s glow Can you spot Adam hiding in the infinite? #lodestoneauroras #atomicfractals #magneticdreaming #ironoctahedra #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A dance of atoms in the aurora’s glow
+    [3] Octahedra hum beneath the green light Can you spot Adam hiding in the infinite? #lodestoneauroras #atomicfractals #magneticdreaming #ironoctahedra #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Octahedra hum beneath the green light
+    [4] The universe fractures at its core Can you spot Adam hiding in the infinite? #lodestoneauroras #atomicfractals #magneticdreaming #ironoctahedra #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The universe fractures at its core
+=== 06:42:05 magnetite_choir -> REVIEW (captioned)
+=== 06:42:05 batch done in 5.2h — 4 to Review
+=== 06:42:05 ComfyUI models unloaded — VRAM freed
+=== 06:42:05 log: outbox/night_batch_0817_013001.log

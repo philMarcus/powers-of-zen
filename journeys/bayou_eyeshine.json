@@ -1,0 +1,112 @@
+{
+  "name": "bayou_eyeshine",
+  "theme": "a cypress swamp at midnight read as one stack of stacks — from the trunk columns and the paired amber-red eyeshine on black-tea water onto an alligator's armored head and the obsidian slit in its bronze-gold eye, into the retina's palisade of rod columns, down the thousand-plate stack inside one rod to a disc tiled with seven-helix barrels, whose caught photon is reread as the cratered moon that sent it, then low over the moonlit basin and home among the trunks",
+  "style": "aurora_silk",
+  "music_lane": "night_market",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "swamp_commons",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "black-tea tannin water, moss-grey swags, amber-red eyeshine points, pewter moonlight",
+      "scene": "a cypress swamp at midnight seen low over the black-tea water, buttressed trunk columns standing out of the flooded floor with cypress knees breaking the surface among them, moss curtains hung in grey swags from the branches, duckweed quilting the shallows in a green skin, paired amber-red eyeshine points burning across the water where alligators hold at the surface with armored heads and ridged backs cut into the tannin, a barred owl posted on a knee in mottled umber barring with two amber points of its own, bullfrogs squatting on the duckweed mats in olive and bronze, fireflies pricked through the hanging moss in cold yellow-green sparks, pewter moonlight raking the water between the columns, no one present",
+      "target": "an armored alligator head",
+      "target_phrase": "an alligator head"
+    },
+    {
+      "name": "gator_head",
+      "exp": -0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "olive-bronze plating, black-tea water, ivory pegs",
+      "scene": "an alligator's armored head at the waterline, black-tea water parted along the jaw, bony plates and pitted scutes tiled over the snout in olive-bronze, raised nostril domes at the muzzle's end, ivory teeth set in pegs along the closed jaw, duckweed flecks and algae threads caught in the seams of the plating, water beaded across the plates under pewter moonlight, the brow ridge lifted at the top of the skull with a bronze-gold eye set into it, tannin water sheeting off the throat plates",
+      "target": "a bronze-gold eye",
+      "target_phrase": "a bronze eye"
+    },
+    {
+      "name": "eye_slit",
+      "exp": -1.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bronze-gold iris, obsidian slit, umber lids",
+      "scene": "an alligator's eye held at the waterline, a bronze-gold iris grained with umber and olive flecks, a vertical slit of obsidian cut down its middle, gold spokes drawn out from the slit in hair-thin threads, the iris rim banded amber-red where the moon strikes it, pebbled umber lids and a scaled brow framing the socket, water beads strung along the lid margin, black-tea water lying under the jaw in a tannin sheet",
+      "target": "a vertical obsidian slit",
+      "target_phrase": "a black vertical slit"
+    },
+    {
+      "name": "rod_palisade",
+      "exp": -4.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-violet cylinders, ivory casings, ink-teal gloom",
+      "scene": "a palisade of rod cells inside the retina, countless slender columns standing shoulder to shoulder across the curved floor of the eye, every column a rose-violet cylinder cased in a clear membrane, stubbier cone cells wedged among them at intervals, hair-thin fibers threading the footings where column meets column, teal gloom pooled in the gaps, a soft rose radiance held in the nearer cylinders, tier upon tier of columns receding into ink-teal hollow",
+      "target": "a rose-violet rod column",
+      "target_phrase": "a violet column",
+      "loop_target": "a palisade of rod columns crowded inside the retina",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "hex"
+      }
+    },
+    {
+      "name": "disc_stack",
+      "exp": -6.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ivory disc rims, rose-violet wash, ink hollow",
+      "scene": "the stacked interior of one rod cell, a thousand membrane discs laid plate on plate into a column, every disc a thin round plate rimmed in ivory and washed rose-violet across its face, the column cased in a taut outer membrane, hair-thin gaps parting plate from plate, cytoplasm pooled in the gaps with granules adrift in it, a rose radiance caught along rim after rim, the plates dished slightly at their centres, the column carrying on out of sight into ink hollow at either end",
+      "target": "a rose-tinted membrane disc",
+      "target_phrase": "a round rose disc",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "layered"
+      }
+    },
+    {
+      "name": "rhodopsin_tiling",
+      "exp": -8.0,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "amber-red chains, violet barrels, ink hollow",
+      "scene": "one membrane disc tiled edge to edge with protein barrels, every barrel a bundle of seven upright helical coils sunk through the membrane, a bent zigzag chain seated in the core of each barrel and stained rose-amber, the barrels set in a hexagon tiling that repeats across the disc, amber-red radiance held in chain after chain, lipid tails combed into a double layer between the barrels, loose coils adrift at the tiling's edge, the disc's rim dimming into ink hollow"
+    },
+    {
+      "name": "moon_face",
+      "exp": 6.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pewter moon disc, ashen basins, deep indigo sky",
+      "scene": "the full moon hung high over a swamp basin in a deep indigo sky, its pewter disc mottled with ashen basins and cratered rims, ray streaks drawn out from the younger craters across the southern highlands, a shadowed bite taken from the eastern rim, hard stars pricked through the indigo, a thin cirrus band drawn under the disc, the basin far beneath carrying a pewter track over black-tea water, cypress stands massed in sable clots along its channels, mist lying low over the sloughs",
+      "target": "a pewter water channel",
+      "target_phrase": "a silver water channel"
+    },
+    {
+      "name": "swamp_air",
+      "exp": 4.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "black-tea channels, moss-grey crowns, pewter sheen",
+      "scene": "a cypress swamp basin seen low from the air on a moonlit night, black-tea channels wound through the flooded forest in tight bends with oxbow crescents cut off along them, cypress domes bulging out of the canopy in moss-grey crowns, prairie grass splitting the timber in bald strips, mist banked over the sloughs, a pewter sheen laid along every channel, tupelo stands rusting to bronze at the margins, one channel widening among buttressed trunk columns at the basin's near edge",
+      "target": "a stand of cypress trunks",
+      "target_phrase": "tall cypress trunks",
+      "cameo": {
+        "sprite": "output/mascots/canon/lorraine.png",
+        "pos": [
+          0.63,
+          0.56
+        ],
+        "size": 0.14
+      }
+    }
+  ],
+  "music_theme": "a swamp nocturne — a velvet pad and soft hang drum under sparse plucked figures, one deep kick landing on every downbeat while the eyeshine crowds the water, the figures drawing inward and closing as the dive turns cellular, a single held low tone through the rod columns and the disc stack, a broad struck bloom where the tiling is reread as the moon, and a warmer settling swell as the basin comes home among the trunks",
+  "music_key": "D minor",
+  "render_start": "rod_palisade"
+}

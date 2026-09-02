@@ -1,0 +1,44 @@
+=== TESTS start Sat Aug 29 13:26:37 EDT 2026
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v8
+[dive] cobalt_rookery: 40 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (248 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of an aging gold sun burning inside a crowded star cluster, ranked neighbour suns thick acr
+[dive] frame 1/40 (47.8s/frame, ~1863s left) :: moving through an aging gold sun burning inside a crowded st
+[dive] HERO globe for 'a blue planet': run 31f, s0 0.109
+[dive] frame 11/40 (23.9s/frame, ~693s left) :: moving through an aging gold sun burning inside a crowded st
+[dive] frame 21/40 (23.0s/frame, ~437s left) :: diving straight into a cobalt-blue ice world as it swells to
+[dive] frame 31/40 (23.1s/frame, ~207s left) :: diving straight into a cobalt-blue ice world as it swells to
+[dive] frame 40/40 (22.7s/frame, ~0s left) :: a cobalt ocean world seen from orbit, sea ice broken into fl
+[dive] done in 909s
+=== planet_static rc=0 Sat Aug 29 13:41:47 EDT 2026
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v9
+[dive] cobalt_rookery: 40 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (248 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of an aging gold sun burning inside a crowded star cluster, ranked neighbour suns thick acr
+[dive] frame 1/40 (38.7s/frame, ~1509s left) :: moving through an aging gold sun burning inside a crowded st
+[dive] HERO globe for 'a blue planet': run 31f, s0 0.109, orbit 90 deg
+[dive] frame 11/40 (22.2s/frame, ~643s left) :: moving through an aging gold sun burning inside a crowded st
+[dive] frame 21/40 (21.3s/frame, ~405s left) :: diving straight into a cobalt-blue ice world as it swells to
+[dive] frame 31/40 (21.7s/frame, ~196s left) :: diving straight into a cobalt-blue ice world as it swells to
+[dive] frame 40/40 (21.7s/frame, ~0s left) :: a cobalt ocean world seen from orbit, sea ice broken into fl
+[dive] done in 866s
+=== planet_orbit rc=0 Sat Aug 29 13:56:13 EDT 2026
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] FROM CARD 3 (frame 72/120) — prefix from v1, regenerating 48 frames into v2
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/waterbear_prairie/v2
+[dive] waterbear_prairie: 120 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — waterbear(sea)[18..41], tun_cells(sea)[42..65], sugar_glass(web)[66..89]
+[dive] TRACKER v3 ON (96 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 81/120 (16.7s/frame, ~651s left) :: deep inside trehalose sugar molecules locked in an amorphous
+[dive] frame 91/120 (15.3s/frame, ~443s left) :: deep inside trehalose sugar molecules locked in an amorphous
+[dive] frame 101/120 (16.0s/frame, ~304s left) :: the whole view transforming, resolving into a city rooftop a
+[dive] frame 111/120 (17.3s/frame, ~156s left) :: diving straight into a plush moss cushion as it swells to fi
+[dive] frame 120/120 (18.3s/frame, ~0s left) :: diving straight into a plush moss cushion as it swells to fi
+[dive] done in 880s
+=== sea_persist rc=0 Sat Aug 29 14:10:56 EDT 2026
+=== TESTS done Sat Aug 29 14:10:56 EDT 2026

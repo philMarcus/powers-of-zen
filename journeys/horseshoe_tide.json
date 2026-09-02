@@ -1,0 +1,115 @@
+{
+  "name": "horseshoe_tide",
+  "theme": "a spawning beach at the crest of the night tide read as one set of nested rings — from the crowded wash of horseshoe crabs onto one burnished carapace and its dome array of lenses, under the cuticle into the copper-blue blood with its drifting cells, on to the hexagonal protein cylinders cored by paired copper points, into one copper atom's nested rinds of fog, which open as the ringed full moon that pulled the tide, and down over the silvered bay to the wash again",
+  "style": "liquid_light",
+  "music_lane": "deep_archive",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "spawn_commons",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moon-silver on charcoal wet sand, tidewrack bronze shells, rufous plumage",
+      "scene": "a spawning beach at the crest of the night tide, moon-silver raking the wet charcoal sand, hundreds of bronze-brown horseshoe crabs shouldered together in the shallow wash with domed shells packed rim to rim and spiked tails cut into the grit, rufous-breasted knots at work over the sodden flat for eggs, slate-backed gulls with soot-dark heads posted at the water's lip, bone-white ghost crabs out on the wrack ranks of eelgrass and horn-shell rubble, foam lacing the shallows, marsh grass darkening the flat behind, no one present",
+      "target": "a domed bronze-brown shell",
+      "target_phrase": "a brown domed shell"
+    },
+    {
+      "name": "carapace_dome",
+      "exp": -0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "burnished bronze plating, ivory barnacle cones, rust-red weed",
+      "scene": "the domed carapace of one horseshoe crab risen out of the wash, burnished bronze plating swept into growth arcs, sand grit and shell rubble strewn across the wet plate, ivory barnacle cones and slipper limpets cemented in clusters over it, rust-red weed felted into the seams, saltwater beading on the plating in a moon-silvered glaze, the eye ridge lifted at the plate's shoulder with a bronze lens dome set into it, foam collared at the carapace's lip",
+      "target": "a bronze compound eye",
+      "target_phrase": "a bronze eye dome"
+    },
+    {
+      "name": "lens_array",
+      "exp": -2.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "slate-bronze cones, ice-cyan glints, umber seams",
+      "scene": "a dome array of lenses crowning the carapace ridge, hundreds of six-sided cones set shoulder to shoulder into a slate-bronze mound, every cone a stubby pillar capped with a clear cuticle window, ice-cyan glints caught in rank after rank of windows, umber seams quilting one cone to the next, sand grit lodged in the seams, the cuticle at the mound's footing translucent where a cobalt glow carries up from under the plating",
+      "target": "a glowing cobalt channel",
+      "target_phrase": "a glowing blue channel",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "hex"
+      }
+    },
+    {
+      "name": "blood_channel",
+      "exp": -4.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "copper-blue plasma, cyan cell glints, indigo gloom",
+      "scene": "a channel of copper-blue blood running under the crab's cuticle, cobalt plasma filling the passage with a soft glow, countless amoebocyte cells adrift through it in ranks, each cell a grainy oval crammed with dense granules and drawn out at the rim into fine points, cuticle walls arching over the passage in translucent amber sheets, loose granules scattered across the flow, a cyan sheen laid over the nearer cells, rank upon rank receding into indigo gloom",
+      "target": "a hexagonal blue-cored cylinder",
+      "target_phrase": "a hexagonal cylinder",
+      "loop_target": "a cobalt blood channel crowded with drifting grainy cells",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "copper_cylinders",
+      "exp": -7.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bronze-umber ribbon coils, cyan core glow, cobalt plasma",
+      "scene": "hexagonal protein cylinders packed by the thousand through the plasma, each cylinder a stubby six-sided stack wound with folded ribbon coils, a pair of copper points seated at every core and glowing cyan-blue, the cylinders shouldered together into ranks and tiers, umber ribbon strands webbing one cylinder to the next, loose coils adrift in the gaps, blue radiance pooled at core after core, the farther tiers dimming into cobalt gloom",
+      "target": "a glowing copper atom",
+      "target_phrase": "a bright copper point",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "hex"
+      }
+    },
+    {
+      "name": "copper_rinds",
+      "exp": -10.0,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "ice-blue fog rinds, ember-copper core, soot hollow",
+      "scene": "nested rinds of luminous fog set ring within ring about one fierce core, the innermost rind tight and hot copper, the outer rinds sparse and ice-blue, every rind a taut luminous sheet pricked with drifting sparks, faint ring-lines scored through the fog where one rind parts from the next, sparks sprinkled thickest at the innermost turns, the whole nest hung in soot-dark hollow"
+    },
+    {
+      "name": "moon_rings",
+      "exp": 6.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ivory moon disc, ice-light rings, deep indigo sky",
+      "scene": "the full moon hung high in a deep indigo sky over a night coast, its ivory disc mottled with grey basins and cratered rims, nested rings of ice-light set ring within ring about the disc, a fainter ring closing the set out in the indigo, hard stars pricked through the sky, cirrus streaks drawn across the outer rings, the bay's dark water beneath with a silver track laid over it, surf broken white at the shore",
+      "target": "a moon-silvered bay",
+      "target_phrase": "the silvered water",
+      "cameo": {
+        "sprite": "output/mascots/canon/janet.png",
+        "pos": [
+          0.26,
+          0.27
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "silvered_bay",
+      "exp": 4.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pewter water, umber salt marsh, charcoal flats",
+      "scene": "a tidal bay on a moon-silvered night seen low from the air, the water a pewter sheet cut by branching tide channels, sandbars and a hooked spit curving out through the shallows, umber salt marsh quilting the shore with creek threads worked through it, surf ranks combed white across the bar, dune ridges shouldering behind the strand, a crescent of wet charcoal sand curving under the marsh, no one present",
+      "target": "a crescent of wet charcoal sand",
+      "target_phrase": "a wet sand crescent"
+    }
+  ],
+  "music_theme": "an ancient tide ritual — dark oceanic pads over a deep warm sub drone, one deep kick landing on every downbeat while the wash crowds with shells, the swells blooming wider as the dive turns blue and cellular, the pads narrowing to a single held low tone through the protein tiers and the atom's rinds, a broad struck bloom when the rinds open as the ringed moon, and a warmer settling swell as the bay comes home to the wash",
+  "music_key": "B minor",
+  "render_start": "blood_channel"
+}

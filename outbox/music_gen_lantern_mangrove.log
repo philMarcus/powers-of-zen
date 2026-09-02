@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/wooden_orbit-wild.mp4
+    bar 2.333s | music bar 2.293s (conf 0.47) -> stretch 0.9829 | phase 0.050s | lock 25.18x | kick 0.42 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] realigned (lock 25.18x kick 0.42)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/pulse2-tide_organ.mp4
+    bar 2.333s | music bar 2.315s (conf 0.56) -> stretch 0.9920 | phase 2.330s | lock 18.19x | kick 0.47 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [pulse2-tide_organ] realigned (lock 18.19x kick 0.47)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/pulse1-tide_organ.mp4
+    bar 2.333s | music bar 2.283s (conf 0.57) -> stretch 0.9783 | phase 0.080s | lock 13.89x | kick 0.46 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [pulse1-tide_organ] realigned (lock 13.89x kick 0.46)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/glass_chapel-wild.mp4
+    bar 2.333s | music bar 2.325s (conf 0.51) -> stretch 0.9966 | phase 0.070s | lock 8.96x | kick 0.50 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] realigned (lock 8.96x kick 0.51)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/choir_of_dust-wild.mp4
+    bar 2.333s | music bar 2.133s (conf -0.03) -> stretch 1.0000 | phase 0.930s | lock 3.60x | kick -0.06 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] realigned (lock 3.60x kick -0.06)
+realigned 5 pregen candidates to the marked start

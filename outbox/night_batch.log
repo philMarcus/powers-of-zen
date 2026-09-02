@@ -1,0 +1,509 @@
+tonight [LMS]: glass_apiary(L ~74min) + quantum_orrery(M ~49min) + copper_rain(S ~32min) = 2.6h of 4h budget
+=== 15:19:57 batch start [LMS] — 3 journeys: glass_apiary quantum_orrery copper_rain
+=== 15:19:58 --- glass_apiary ---
+=== 16:36:21 glass_apiary: rendered in 4583s
+=== 16:37:14 glass_apiary -> REVIEW (captioned)
+=== 16:37:14 --- quantum_orrery ---
+=== 16:37:14 quantum_orrery: --seed 813162
+=== 17:26:25 quantum_orrery: rendered in 2951s
+=== 17:27:13 quantum_orrery -> REVIEW (captioned)
+=== 17:27:13 --- copper_rain ---
+=== 17:59:56 copper_rain: rendered in 1963s
+=== 18:00:37 copper_rain -> REVIEW (captioned)
+=== 18:00:37 batch done in 2.7h — 3 to Review
+=== 18:00:37 log: outbox/night_batch_0801_151957.log
+tonight [LMS]: sugar_nebula(L ~65min) + static_bloom(M ~49min) + velvet_atlas(S ~32min) = 2.5h of 4h budget
+=== 01:30:01 batch start [LMS] — 3 journeys: sugar_nebula static_bloom velvet_atlas
+=== 01:30:02 --- sugar_nebula ---
+=== 02:35:12 sugar_nebula: rendered in 3910s
+=== 02:36:09 sugar_nebula -> REVIEW (captioned)
+=== 02:36:09 --- static_bloom ---
+=== 02:37:57 static_bloom FAILED: dive failed: ue ") — re-rolling seed, attempt 4/4 | [dive] ABORT: frame 0 keeps rendering a lone figure after 4 seeds. This is a PROMPT problem, not luck — fix the render_start card (drop halo/gilded/regalia words, name a concrete object) or pick a different render_start. Re-run with --allow-figures to override.
+=== 02:37:57 --- velvet_atlas ---
+=== 03:14:37 velvet_atlas: rendered in 2200s
+=== 03:15:30 velvet_atlas -> REVIEW (captioned)
+=== 03:15:30 batch done in 1.8h — 2 to Review, 1 failed (static_bloom)
+=== 03:15:30 log: outbox/night_batch_0802_013001.log
+tonight [LMS]: tesla_garden(L ~65min) + chalkboard_infinities(M ~49min) + pollen_court(S ~32min) = 2.5h of 4h budget
+=== 01:30:01 batch start [LMS] — 3 journeys: tesla_garden chalkboard_infinities pollen_court
+=== 01:30:02 --- tesla_garden ---
+=== 02:40:23 tesla_garden: rendered in 4221s
+=== 02:41:21 tesla_garden -> REVIEW (captioned)
+=== 02:41:21 --- chalkboard_infinities ---
+=== 03:33:24 chalkboard_infinities: rendered in 3123s
+=== 03:34:09 chalkboard_infinities -> REVIEW (captioned)
+=== 03:34:09 --- pollen_court ---
+=== 04:13:55 pollen_court: rendered in 2385s
+=== 04:14:43 pollen_court -> REVIEW (captioned)
+=== 04:14:43 batch done in 2.7h — 3 to Review
+=== 04:14:43 log: outbox/night_batch_0803_013001.log
+tonight [LMS]: ink_dynasty(L ~74min) + ammonite_spiral(M ~57min) + gossamer_dawn(S ~32min) = 2.7h of 4h budget
+=== 01:30:01 batch start [LMS] — 3 journeys: ink_dynasty ammonite_spiral gossamer_dawn
+=== 01:30:02 --- ink_dynasty ---
+=== 02:23:14 ink_dynasty: rendered in 3192s
+=== 02:24:07 ink_dynasty -> REVIEW (captioned)
+=== 02:24:07 --- ammonite_spiral ---
+=== 03:05:02 ammonite_spiral: rendered in 2456s
+=== 03:05:52 ammonite_spiral -> REVIEW (captioned)
+=== 03:05:52 --- gossamer_dawn ---
+=== 03:32:40 gossamer_dawn: rendered in 1608s
+=== 03:33:27 gossamer_dawn -> REVIEW (captioned)
+=== 03:33:27 batch done in 2.1h — 3 to Review
+=== 03:33:27 log: outbox/night_batch_0804_013001.log
+tonight [LMS]: resonance_hall(L ~74min) + tide_glass(M ~49min) + heron_delta(S ~32min) = 2.6h of 4h budget
+=== 01:30:02 batch start [LMS] — 3 journeys: resonance_hall tide_glass heron_delta
+=== 01:30:02 --- resonance_hall ---
+=== 02:48:06 resonance_hall: rendered in 4684s
+=== 02:49:09 resonance_hall -> REVIEW (captioned)
+=== 02:49:09 --- tide_glass ---
+=== 03:38:49 tide_glass: rendered in 2980s
+=== 03:39:38 tide_glass -> REVIEW (captioned)
+=== 03:39:38 --- heron_delta ---
+=== 04:17:49 heron_delta: rendered in 2291s
+=== 04:18:44 heron_delta -> REVIEW (captioned)
+=== 04:18:44 batch done in 2.8h — 3 to Review
+=== 04:18:44 log: outbox/night_batch_0805_013002.log
+tonight [LMS]: chess_empires(L ~74min) + lichen_moor(M ~49min) + night_lido(S ~32min) = 2.6h of 4h budget
+=== 01:30:01 batch start [LMS] — 3 journeys: chess_empires lichen_moor night_lido
+=== 01:30:02 --- chess_empires ---
+=== 02:47:33 chess_empires: rendered in 4652s
+=== 02:48:29 chess_empires -> REVIEW (captioned)
+=== 02:48:29 --- lichen_moor ---
+=== 03:44:41 lichen_moor: rendered in 3373s
+=== 03:45:30 lichen_moor -> REVIEW (captioned)
+=== 03:45:30 --- night_lido ---
+=== 04:23:59 night_lido: rendered in 2309s
+=== 04:24:49 night_lido -> REVIEW (captioned)
+=== 04:24:49 batch done in 2.9h — 3 to Review
+=== 04:24:49 log: outbox/night_batch_0806_013001.log
+tonight [LMS]: cinder_veil(L ~82min) + salt_mirror(M ~49min) + attic_drift(S ~32min) = 2.7h of 4h budget
+=== 01:30:02 batch start [LMS] — 3 journeys: cinder_veil salt_mirror attic_drift
+=== 01:30:03 --- cinder_veil ---
+=== 03:01:09 cinder_veil: rendered in 5466s
+=== 03:02:05 cinder_veil -> REVIEW (captioned)
+=== 03:02:05 --- salt_mirror ---
+=== 03:57:12 salt_mirror: rendered in 3307s
+=== 03:57:56 salt_mirror -> REVIEW (captioned)
+=== 03:57:56 --- attic_drift ---
+=== 04:37:01 attic_drift: rendered in 2345s
+=== 04:37:49 attic_drift -> REVIEW (captioned)
+=== 04:37:49 batch done in 3.1h — 3 to Review
+=== 04:37:49 log: outbox/night_batch_0807_013002.log
+tonight [LMS]: jewel_oculus(L ~82min) + turing_springs(M ~49min) + droplet_zoo(S ~32min) = 2.7h of 4h budget
+=== 01:30:07 batch start [LMS] — 3 journeys: jewel_oculus turing_springs droplet_zoo
+=== 01:30:10 starting ComfyUI
+tonight [LMS]: jewel_oculus(L ~82min) + turing_springs(M ~49min) + droplet_zoo(S ~32min) = 2.7h of 4h budget
+another night_batch is already running — exiting
+tonight [LMS]: jewel_oculus(L ~82min) + turing_springs(M ~49min) + droplet_zoo(S ~32min) = 2.7h of 4h budget
+=== 01:30:01 batch start [LMS] — 3 journeys: jewel_oculus turing_springs droplet_zoo
+=== 01:30:02 --- jewel_oculus ---
+=== 02:57:15 jewel_oculus: rendered in 5233s
+=== 02:58:42 jewel_oculus -> REVIEW (captioned)
+=== 02:58:42 --- turing_springs ---
+=== 03:53:57 turing_springs: rendered in 3314s
+=== 03:54:45 turing_springs -> REVIEW (captioned)
+=== 03:54:45 --- droplet_zoo ---
+=== 04:31:12 droplet_zoo: rendered in 2187s
+=== 04:31:55 droplet_zoo -> REVIEW (captioned)
+=== 04:31:55 batch done in 3.0h — 3 to Review
+=== 04:31:55 ComfyUI models unloaded — VRAM freed
+=== 04:31:55 log: outbox/night_batch_0813_013001.log
+tonight [LLLLSSM]: abyssal_chandelier(L ~82min) + ivory_gambit(L ~95min) + whale_fall_republic(L ~95min) + moth_orchard_night(L ~62min) + squid_lantern(S ~26min) + ember_meadow(S ~32min) + bee_cathedral(M ~57min) = 7.5h of 8h budget
+=== 01:30:01 batch start [LLLLSSM] — 7 journeys: abyssal_chandelier ivory_gambit whale_fall_republic moth_orchard_night squid_lantern ember_meadow bee_cathedral
+=== 01:30:02 --- abyssal_chandelier ---
+=== 03:00:17 abyssal_chandelier: rendered in 5415s
+=== 03:01:09 abyssal_chandelier -> REVIEW (captioned)
+=== 03:01:09 --- ivory_gambit ---
+=== 04:43:06 ivory_gambit: rendered in 6117s
+=== 04:43:59 ivory_gambit -> REVIEW (captioned)
+=== 04:43:59 --- whale_fall_republic ---
+=== 06:28:58 whale_fall_republic: rendered in 6299s
+=== 06:30:07 whale_fall_republic -> REVIEW (captioned)
+=== 06:30:07 --- moth_orchard_night ---
+=== 07:36:06 moth_orchard_night: rendered in 3959s
+=== 07:37:11 moth_orchard_night -> REVIEW (captioned)
+=== 07:37:11 --- squid_lantern ---
+=== 08:12:23 squid_lantern: rendered in 2112s
+=== 08:13:26 squid_lantern -> REVIEW (captioned)
+=== 08:13:26 --- ember_meadow ---
+tonight [LLLS]: whale_fall_republic(L ~95min) + moth_orchard_night(L ~62min) + geode_cosmos(L ~95min) + ember_meadow(S ~32min) = 4.8h of 5h budget
+=== 01:30:01 batch start [LLLS] — 4 journeys: whale_fall_republic moth_orchard_night geode_cosmos ember_meadow
+=== 01:30:02 --- whale_fall_republic ---
+=== 01:30:02 whale_fall_republic: --seed 103465
+=== 03:01:17 whale_fall_republic: rendered in 5475s
+=== 03:02:29 whale_fall_republic -> REVIEW (captioned)
+=== 03:02:29 --- moth_orchard_night ---
+=== 03:02:29 moth_orchard_night: --seed 365150
+=== 04:02:37 moth_orchard_night: rendered in 3608s
+=== 04:03:43 moth_orchard_night -> REVIEW (captioned)
+=== 04:03:43 --- geode_cosmos ---
+=== 05:37:28 geode_cosmos: rendered in 5626s
+=== 05:38:42 geode_cosmos -> REVIEW (captioned)
+=== 05:38:42 --- ember_meadow ---
+=== 06:15:03 ember_meadow: rendered in 2181s
+=== 06:16:09 ember_meadow -> REVIEW (captioned)
+=== 06:16:09 batch done in 4.8h — 4 to Review
+=== 06:16:09 ComfyUI models unloaded — VRAM freed
+=== 06:16:09 log: outbox/night_batch_0815_013001.log
+tonight [LLLS]: lantern_mangrove(L ~74min) + desert_rosette(L ~95min) + termite_citadel(L ~69min) + squid_lantern(S ~26min) = 4.4h of 5h budget
+=== 01:30:01 batch start [LLLS] — 4 journeys: lantern_mangrove desert_rosette termite_citadel squid_lantern
+=== 01:30:02 --- lantern_mangrove ---
+=== 02:44:00 lantern_mangrove: rendered in 4438s
+=== 02:45:01 lantern_mangrove -> REVIEW (captioned)
+=== 02:45:01 --- desert_rosette ---
+=== 04:17:37 desert_rosette: rendered in 5556s
+=== 04:18:59 desert_rosette -> REVIEW (captioned)
+=== 04:18:59 --- termite_citadel ---
+=== 05:26:25 termite_citadel: rendered in 4047s
+=== 05:27:56 termite_citadel -> REVIEW (captioned)
+=== 05:27:56 --- squid_lantern ---
+=== 05:27:56 squid_lantern: --seed 371016
+=== 06:00:43 squid_lantern: rendered in 1967s
+=== 06:01:39 squid_lantern -> REVIEW (captioned)
+=== 06:01:39 batch done in 4.5h — 4 to Review
+=== 06:01:39 ComfyUI models unloaded — VRAM freed
+=== 06:01:39 log: outbox/night_batch_0816_013001.log
+tonight [LLLS]: cobalt_rookery(L ~95min) + ruby_furnace(L ~69min) + sundew_snare(L ~98min) + magnetite_choir(S ~38min) = 5.0h of 5h budget
+=== 01:30:01 batch start [LLLS] — 4 journeys: cobalt_rookery ruby_furnace sundew_snare magnetite_choir
+=== 01:30:02 --- cobalt_rookery ---
+=== 03:05:11 cobalt_rookery: rendered in 5709s
+=== 03:06:32 cobalt_rookery -> REVIEW (captioned)
+=== 03:06:32 --- ruby_furnace ---
+=== 04:13:52 ruby_furnace: rendered in 4040s
+=== 04:14:40 ruby_furnace -> REVIEW (captioned)
+=== 04:14:40 --- sundew_snare ---
+=== 05:53:30 sundew_snare: rendered in 5931s
+=== 05:54:45 sundew_snare -> REVIEW (captioned)
+=== 05:54:45 --- magnetite_choir ---
+=== 06:41:05 magnetite_choir: rendered in 2780s
+=== 06:42:05 magnetite_choir -> REVIEW (captioned)
+=== 06:42:05 batch done in 5.2h — 4 to Review
+=== 06:42:05 ComfyUI models unloaded — VRAM freed
+=== 06:42:05 log: outbox/night_batch_0817_013001.log
+tonight [LLLS]: vesper_flight(L ~82min) + anemone_arsenal(L ~82min) + chameleon_prism(L ~95min) + brinicle_grove(S ~44min) = 5.1h of 5h budget
+=== 01:30:02 batch start [LLLS] — 4 journeys: vesper_flight anemone_arsenal chameleon_prism brinicle_grove
+=== 01:30:03 --- vesper_flight ---
+=== 02:56:00 vesper_flight: rendered in 5157s
+=== 02:56:58 vesper_flight -> REVIEW (captioned)
+=== 02:56:58 --- anemone_arsenal ---
+=== 04:18:08 anemone_arsenal: rendered in 4869s
+=== 04:19:19 anemone_arsenal -> REVIEW (captioned)
+=== 04:19:19 --- chameleon_prism ---
+=== 05:53:41 chameleon_prism: rendered in 5662s
+=== 05:54:34 chameleon_prism -> REVIEW (captioned)
+=== 05:54:34 --- brinicle_grove ---
+=== 06:44:50 brinicle_grove: rendered in 3016s
+=== 06:45:49 brinicle_grove -> REVIEW (captioned)
+=== 06:45:49 music pregen: vesper_flight
+=== 06:48:36 music pregen: anemone_arsenal
+=== 06:51:11 music pregen: chameleon_prism
+=== 06:53:59 music pregen: brinicle_grove
+=== 06:56:20 batch done in 5.4h — 4 to Review
+=== 06:56:20 ComfyUI models unloaded — VRAM freed
+=== 06:56:20 log: outbox/night_batch_0818_013002.log
+tonight [LLLS]: meteorite_cradle(L ~98min) + physarum_maze(L ~69min) + caddis_masonry(L ~86min) + wild_yeast(S ~32min) = 4.8h of 5h budget
+=== 01:30:02 batch start [LLLS] — 4 journeys: meteorite_cradle physarum_maze caddis_masonry wild_yeast
+=== 01:30:02 --- meteorite_cradle ---
+=== 03:10:13 meteorite_cradle: rendered in 6011s
+=== 03:11:37 meteorite_cradle -> REVIEW (captioned)
+=== 03:11:37 --- physarum_maze ---
+=== 04:20:54 physarum_maze: rendered in 4157s
+=== 04:21:49 physarum_maze -> REVIEW (captioned)
+=== 04:21:49 --- caddis_masonry ---
+=== 05:47:24 caddis_masonry: rendered in 5135s
+=== 05:48:18 caddis_masonry -> REVIEW (captioned)
+=== 05:48:18 --- wild_yeast ---
+=== 06:27:21 wild_yeast: rendered in 2343s
+=== 06:28:08 wild_yeast -> REVIEW (captioned)
+=== 06:28:08 music pregen: meteorite_cradle
+=== 06:31:13 music pregen: physarum_maze
+=== 06:33:18 music pregen: caddis_masonry
+=== 06:36:12 music pregen: wild_yeast
+=== 06:37:47 batch done in 5.1h — 4 to Review
+=== 06:37:47 ComfyUI models unloaded — VRAM freed
+=== 06:37:47 log: outbox/night_batch_0819_013002.log
+tonight [LLLS]: coral_synapse(L ~82min) + lantern_mangrove(L ~74min) + termite_citadel(L ~69min) + magnetite_choir(S ~38min) = 4.4h of 5h budget
+=== 01:30:02 batch start [LLLS] — 4 journeys: coral_synapse lantern_mangrove termite_citadel magnetite_choir
+=== 01:30:03 --- coral_synapse ---
+=== 02:52:51 coral_synapse: rendered in 4969s
+=== 02:54:08 coral_synapse -> REVIEW (captioned)
+=== 02:54:08 --- lantern_mangrove ---
+=== 04:10:18 lantern_mangrove: rendered in 4570s
+=== 04:11:13 lantern_mangrove -> REVIEW (captioned)
+=== 04:11:13 --- termite_citadel ---
+=== 05:22:16 termite_citadel: rendered in 4263s
+=== 05:23:35 termite_citadel -> REVIEW (captioned)
+=== 05:23:35 --- magnetite_choir ---
+=== 06:10:00 magnetite_choir: rendered in 2785s
+=== 06:10:48 magnetite_choir -> REVIEW (captioned)
+=== 06:10:48 music pregen: coral_synapse
+=== 06:14:08 music pregen: lantern_mangrove
+=== 06:16:54 music pregen: termite_citadel
+=== 06:19:02 music pregen: magnetite_choir
+=== 06:21:21 batch done in 4.9h — 4 to Review
+=== 06:21:21 ComfyUI models unloaded — VRAM freed
+=== 06:21:21 log: outbox/night_batch_0820_013002.log
+tonight [LLLS]: cobalt_rookery(L ~95min) + ruby_furnace(L ~69min) + cherenkov_cistern(L ~95min) + peony_shell(S ~38min) = 5.0h of 5h budget
+=== 01:30:01 batch start [LLLS] — 4 journeys: cobalt_rookery ruby_furnace cherenkov_cistern peony_shell
+=== 01:30:02 --- cobalt_rookery ---
+=== 03:11:35 cobalt_rookery: rendered in 6093s
+=== 03:12:59 cobalt_rookery -> REVIEW (captioned)
+=== 03:12:59 --- ruby_furnace ---
+=== 04:22:41 ruby_furnace: rendered in 4182s
+=== 04:23:57 ruby_furnace -> REVIEW (captioned)
+=== 04:23:57 --- cherenkov_cistern ---
+=== 06:01:21 cherenkov_cistern: rendered in 5844s
+=== 06:02:14 cherenkov_cistern -> REVIEW (captioned)
+=== 06:02:14 --- peony_shell ---
+=== 06:45:51 peony_shell: rendered in 2617s
+=== 06:46:41 peony_shell -> REVIEW (captioned)
+=== 06:46:41 music pregen: cobalt_rookery
+=== 06:50:38 music pregen: ruby_furnace
+=== 06:52:43 music pregen: cherenkov_cistern
+=== 06:56:33 music pregen: peony_shell
+=== 06:58:47 batch done in 5.5h — 4 to Review
+=== 06:58:47 ComfyUI models unloaded — VRAM freed
+=== 06:58:47 log: outbox/night_batch_0821_013001.log
+tonight [LLLS]: motmot_cenote(L ~82min) + whale_fall_republic(L ~95min) + bourdon_foundry(L ~69min) + pomegranate_vault(S ~38min) = 4.8h of 5h budget
+=== 01:30:04 batch start [LLLS] — 4 journeys: motmot_cenote whale_fall_republic bourdon_foundry pomegranate_vault
+=== 01:30:07 starting ComfyUI
+=== 01:31:04 ComfyUI ready
+=== 01:31:04 --- motmot_cenote ---
+=== 02:46:32 motmot_cenote: rendered in 4529s
+=== 02:47:54 motmot_cenote -> REVIEW (captioned)
+=== 02:47:54 --- whale_fall_republic ---
+=== 02:47:54 whale_fall_republic: --seed 42840
+=== 04:18:09 whale_fall_republic: rendered in 5415s
+=== 04:19:08 whale_fall_republic -> REVIEW (captioned)
+=== 04:19:08 --- bourdon_foundry ---
+=== 05:25:05 bourdon_foundry: rendered in 3956s
+=== 05:26:13 bourdon_foundry -> REVIEW (captioned)
+=== 05:26:13 --- pomegranate_vault ---
+=== 06:08:04 pomegranate_vault: rendered in 2510s
+=== 06:08:55 pomegranate_vault -> REVIEW (captioned)
+=== 06:08:55 music pregen: motmot_cenote
+=== 06:12:00 music pregen: whale_fall_republic
+=== 06:14:40 music pregen: bourdon_foundry
+=== 06:17:26 music pregen: pomegranate_vault
+=== 06:18:58 batch done in 4.8h — 4 to Review
+=== 06:18:58 ComfyUI models unloaded — VRAM freed
+=== 06:18:58 log: outbox/night_batch_0822_013004.log
+tonight [LLLLSS]: whale_fall_republic(L ~95min) + lantern_mangrove(L ~74min) + cobalt_rookery(L ~95min) + ruby_furnace(L ~69min) + magnetite_choir(S ~38min) + wild_yeast(S ~32min) = 6.8h of 7h budget
+=== 00:00:01 batch start [LLLLSS] — 6 journeys: whale_fall_republic lantern_mangrove cobalt_rookery ruby_furnace magnetite_choir wild_yeast
+=== 00:00:01 --- whale_fall_republic ---
+tonight [LLLLSS]: whale_fall_republic(L ~95min) + lantern_mangrove(L ~74min) + cobalt_rookery(L ~95min) + ruby_furnace(L ~69min) + magnetite_choir(S ~38min) + wild_yeast(S ~32min) = 6.8h of 7h budget
+another night_batch is already running — exiting
+=== 02:04:05 whale_fall_republic: rendered in 7444s
+=== 02:05:03 whale_fall_republic -> REVIEW (captioned)
+=== 02:05:03 --- lantern_mangrove ---
+=== 03:29:26 lantern_mangrove: rendered in 5063s
+=== 03:30:18 lantern_mangrove -> REVIEW (captioned)
+=== 03:30:18 --- cobalt_rookery ---
+=== 05:19:28 cobalt_rookery: rendered in 6550s
+=== 05:20:21 cobalt_rookery -> REVIEW (captioned)
+=== 05:20:21 --- ruby_furnace ---
+=== 06:35:57 ruby_furnace: rendered in 4536s
+=== 06:36:50 ruby_furnace -> REVIEW (captioned)
+=== 06:36:50 --- magnetite_choir ---
+=== 07:31:26 magnetite_choir: rendered in 3276s
+=== 07:32:21 magnetite_choir -> REVIEW (captioned)
+=== 07:32:21 --- wild_yeast ---
+=== 08:18:42 wild_yeast: rendered in 2781s
+=== 08:19:23 wild_yeast -> REVIEW (captioned)
+=== 08:19:23 music pregen: whale_fall_republic
+=== 08:22:51 music pregen: lantern_mangrove
+=== 08:25:40 music pregen: cobalt_rookery
+=== 08:29:35 music pregen: ruby_furnace
+=== 08:31:45 music pregen: magnetite_choir
+=== 08:34:05 music pregen: wild_yeast
+=== 08:35:51 batch done in 8.6h — 6 to Review
+=== 08:35:51 ComfyUI models unloaded — VRAM freed
+=== 08:35:51 log: outbox/night_batch_0823_000001.log
+tonight [LLLS]: vesper_flight(L ~92min) + anemone_arsenal(L ~92min) + meteorite_cradle(L ~111min) + peony_shell(S ~50min) = 5.8h of 7h budget
+=== 01:30:01 batch start [LLLS] — 4 journeys: vesper_flight anemone_arsenal meteorite_cradle peony_shell
+=== 01:30:02 --- vesper_flight ---
+=== 03:32:55 vesper_flight: rendered in 7373s
+=== 03:33:47 vesper_flight -> REVIEW (captioned)
+=== 03:33:47 --- anemone_arsenal ---
+=== 05:23:58 anemone_arsenal: rendered in 6611s
+=== 05:24:44 anemone_arsenal -> REVIEW (captioned)
+=== 05:24:44 --- meteorite_cradle ---
+=== 07:43:39 meteorite_cradle: rendered in 8334s
+=== 07:44:44 meteorite_cradle -> REVIEW (captioned)
+=== 07:44:44 --- peony_shell ---
+=== 08:58:08 peony_shell: rendered in 4404s
+=== 08:58:09 peony_shell -> REVIEW (captioned)
+=== 08:58:09 music pregen: vesper_flight
+=== 09:05:28 music pregen: anemone_arsenal
+=== 09:13:11 music pregen: meteorite_cradle
+=== 09:20:33 music pregen: peony_shell
+=== 09:30:01 batch done in 8.0h — 4 to Review
+=== 09:30:01 ComfyUI models unloaded — VRAM freed
+=== 09:30:01 log: outbox/night_batch_0824_013001.log
+tonight [LLLS]: cherenkov_cistern(L ~107min) + bourdon_foundry(L ~78min) + kelp_dynamo(L ~92min) + pomegranate_vault(S ~50min) = 5.5h of 5h budget
+=== 01:30:01 batch start [LLLS] — 4 journeys: cherenkov_cistern bourdon_foundry kelp_dynamo pomegranate_vault
+=== 01:30:02 --- cherenkov_cistern ---
+=== 03:52:47 cherenkov_cistern: rendered in 8565s
+=== 03:53:15 cherenkov_cistern -> REVIEW (captioned)
+=== 03:53:15 --- bourdon_foundry ---
+=== 05:28:41 bourdon_foundry: rendered in 5726s
+=== 05:29:37 bourdon_foundry -> REVIEW (captioned)
+=== 05:29:37 --- kelp_dynamo ---
+=== 07:34:55 kelp_dynamo: rendered in 7517s
+=== 07:35:56 kelp_dynamo -> REVIEW (captioned)
+=== 07:35:56 --- pomegranate_vault ---
+=== 08:47:45 pomegranate_vault: rendered in 4310s
+=== 08:48:28 pomegranate_vault -> REVIEW (captioned)
+=== 08:48:28 music pregen: cherenkov_cistern
+=== 08:53:01 music pregen: bourdon_foundry
+=== 08:56:28 music pregen: kelp_dynamo
+=== 08:59:13 music pregen: pomegranate_vault
+=== 09:01:07 batch done in 7.5h — 4 to Review
+=== 09:01:07 ComfyUI models unloaded — VRAM freed
+=== 09:01:07 log: outbox/night_batch_0825_013001.log
+tonight [LLLS]: eclipse_waterhole(L ~107min) + magellanic_mob(L ~107min) + sunspot_archipelago(L ~84min) + lissajous_stage(S ~35min) = 5.6h of 5h budget
+=== 01:30:01 batch start [LLLS] — 4 journeys: eclipse_waterhole magellanic_mob sunspot_archipelago lissajous_stage
+=== 01:30:01 --- eclipse_waterhole ---
+=== 04:06:27 eclipse_waterhole: rendered in 9386s
+=== 04:07:08 eclipse_waterhole -> REVIEW (in Review but UNCAPTIONED (Ollama down?))
+=== 04:07:08 --- magellanic_mob ---
+=== 06:31:42 magellanic_mob: rendered in 8674s
+=== 06:32:25 magellanic_mob -> REVIEW (captioned)
+=== 06:32:25 --- sunspot_archipelago ---
+=== 08:23:55 sunspot_archipelago: rendered in 6690s
+=== 08:24:44 sunspot_archipelago -> REVIEW (captioned)
+=== 08:24:44 --- lissajous_stage ---
+=== 09:19:04 lissajous_stage: rendered in 3261s
+=== 09:19:51 lissajous_stage -> REVIEW (captioned)
+=== 09:19:51 music pregen: eclipse_waterhole
+=== 09:23:14 music pregen: magellanic_mob
+=== 09:26:23 music pregen: sunspot_archipelago
+=== 09:29:29 music pregen: lissajous_stage
+=== 09:31:49 batch done in 8.0h — 4 to Review · eclipse_waterhole: in Review but UNCAPTIONED (Ollama down?)
+=== 09:31:49 ComfyUI models unloaded — VRAM freed
+=== 09:31:49 log: outbox/night_batch_0826_013001.log
+tonight (queue order): bee_cathedral(M ~69min) + observatory_dusk(M ~79min) + bamboo_sea(M ~69min) + fiddler_commons(S ~50min) + voltaic_shoal(S ~42min) = 5.2h of 5h budget
+=== 01:30:01 batch start [queue] — 5 journeys: bee_cathedral observatory_dusk bamboo_sea fiddler_commons voltaic_shoal
+=== 01:30:01 --- bee_cathedral ---
+=== 03:12:33 bee_cathedral: rendered in 6151s
+=== 03:13:08 bee_cathedral -> REVIEW (in Review but UNCAPTIONED (Ollama down?))
+=== 03:13:08 --- observatory_dusk ---
+=== 05:06:03 observatory_dusk: rendered in 6775s
+=== 05:06:46 observatory_dusk -> REVIEW (captioned)
+=== 05:06:46 --- bamboo_sea ---
+=== 06:49:21 bamboo_sea: rendered in 6155s
+=== 06:50:03 bamboo_sea -> REVIEW (captioned)
+=== 06:50:03 --- fiddler_commons ---
+=== 08:05:45 fiddler_commons: rendered in 4541s
+=== 08:06:44 fiddler_commons -> REVIEW (captioned)
+=== 08:06:44 --- voltaic_shoal ---
+=== 09:18:43 voltaic_shoal: rendered in 4319s
+=== 09:19:35 voltaic_shoal -> REVIEW (captioned)
+=== 09:19:35 music pregen: bee_cathedral
+=== 09:22:07 music pregen: observatory_dusk
+=== 09:25:18 music pregen: bamboo_sea
+=== 09:27:47 music pregen: fiddler_commons
+=== 09:30:23 music pregen: voltaic_shoal
+=== 09:32:52 batch done in 8.0h — 5 to Review · bee_cathedral: in Review but UNCAPTIONED (Ollama down?)
+=== 09:32:52 ComfyUI models unloaded — VRAM freed
+=== 09:32:52 log: outbox/night_batch_0827_013001.log
+tonight (queue order): winter_murmuration(L ~107min) + waterbear_prairie(S ~35min) + gecko_rampart(L ~92min) + natron_skein(L ~98min) = 5.6h of 5h budget
+=== 01:30:01 batch start [queue] — 4 journeys: winter_murmuration waterbear_prairie gecko_rampart natron_skein
+=== 01:30:04 starting ComfyUI
+=== 01:30:52 ComfyUI ready
+=== 01:30:53 --- winter_murmuration ---
+=== 03:22:53 winter_murmuration: rendered in 6720s
+=== 03:23:46 winter_murmuration -> REVIEW (captioned)
+=== 03:23:46 --- waterbear_prairie ---
+=== 04:09:26 waterbear_prairie: rendered in 2740s
+=== 04:10:15 waterbear_prairie -> REVIEW (captioned)
+=== 04:10:15 --- gecko_rampart ---
+=== 05:47:57 gecko_rampart: rendered in 5861s
+=== 05:48:57 gecko_rampart -> REVIEW (captioned)
+=== 05:48:57 --- natron_skein ---
+=== 07:41:04 natron_skein: rendered in 6727s
+=== 07:41:57 natron_skein -> REVIEW (captioned)
+=== 07:41:57 music pregen: winter_murmuration
+=== 07:45:06 music pregen: waterbear_prairie
+=== 07:46:49 music pregen: gecko_rampart
+=== 07:48:53 music pregen: natron_skein
+=== 07:51:00 batch done in 6.3h — 4 to Review
+=== 07:51:00 ComfyUI models unloaded — VRAM freed
+=== 07:51:00 log: outbox/night_batch_0829_013001.log
+tonight (queue order): lily_undercroft(L ~107min) + plasma_script(S ~35min) + magnetite_choir(S ~50min) + cicada_chorus(L ~107min) + circuit_grotto(S ~35min) = 5.6h of 5h budget
+=== 01:30:01 batch start [queue] — 5 journeys: lily_undercroft plasma_script magnetite_choir cicada_chorus circuit_grotto
+=== 01:30:05 starting ComfyUI
+=== 01:30:53 ComfyUI ready
+=== 01:30:53 --- lily_undercroft ---
+=== 03:28:27 lily_undercroft: rendered in 7055s
+=== 03:29:20 lily_undercroft -> REVIEW (captioned)
+=== 03:29:20 --- plasma_script ---
+=== 04:14:59 plasma_script: rendered in 2738s
+=== 04:15:43 plasma_script -> REVIEW (captioned)
+=== 04:15:43 --- magnetite_choir ---
+=== 04:15:43 magnetite_choir: --seed 674501
+=== 05:20:31 magnetite_choir: rendered in 3888s
+=== 05:21:16 magnetite_choir -> REVIEW (captioned)
+=== 05:21:16 --- cicada_chorus ---
+=== 07:20:19 cicada_chorus: rendered in 7143s
+=== 07:21:08 cicada_chorus -> REVIEW (captioned)
+=== 07:21:08 --- circuit_grotto ---
+=== 08:08:20 circuit_grotto: rendered in 2831s
+=== 08:08:59 circuit_grotto -> REVIEW (captioned)
+=== 08:08:59 music pregen: lily_undercroft
+=== 08:11:50 music pregen: plasma_script
+=== 08:13:18 music pregen: magnetite_choir
+=== 08:15:25 music pregen: cicada_chorus
+=== 08:18:09 music pregen: circuit_grotto
+=== 08:19:39 batch done in 6.8h — 5 to Review
+=== 08:19:39 ComfyUI models unloaded — VRAM freed
+=== 08:19:39 log: outbox/night_batch_0830_013001.log
+tonight (queue order): phage_landing(M ~69min) + venus_basket(L ~92min) + anvil_country(L ~84min) + mantis_drumline(M ~56min) + sockeye_stair(S ~35min) = 5.7h of 5h budget
+=== 01:30:02 batch start [queue] — 5 journeys: phage_landing venus_basket anvil_country mantis_drumline sockeye_stair
+=== 01:30:02 --- phage_landing ---
+=== 02:54:19 phage_landing: rendered in 5057s
+=== 02:55:13 phage_landing -> REVIEW (captioned)
+=== 02:55:13 --- venus_basket ---
+=== 04:38:00 venus_basket: rendered in 6166s
+=== 04:38:56 venus_basket -> REVIEW (captioned)
+=== 04:38:56 --- anvil_country ---
+=== 06:14:55 anvil_country: rendered in 5759s
+=== 06:15:51 anvil_country -> REVIEW (captioned)
+=== 06:15:51 --- mantis_drumline ---
+=== 07:19:38 mantis_drumline: rendered in 3827s
+=== 07:20:28 mantis_drumline -> REVIEW (captioned)
+=== 07:20:28 --- sockeye_stair ---
+=== 08:08:02 sockeye_stair: rendered in 2854s
+=== 08:08:47 sockeye_stair -> REVIEW (captioned)
+=== 08:08:47 music pregen: phage_landing
+=== 08:11:29 music pregen: venus_basket
+=== 08:13:43 music pregen: anvil_country
+=== 08:16:05 music pregen: mantis_drumline
+=== 08:17:49 music pregen: sockeye_stair
+=== 08:19:18 batch done in 6.8h — 5 to Review
+=== 08:19:18 ComfyUI models unloaded — VRAM freed
+=== 08:19:18 log: outbox/night_batch_0831_013002.log
+render_paused is set — skipping tonight
+tonight (queue order): chalk_cellar(L ~98min) + pika_larder(M ~69min) + garnet_glass(L ~107min) + fluorite_stope(S ~35min) = 5.2h of 5h budget
+=== 01:30:01 batch start [queue] — 4 journeys: chalk_cellar pika_larder garnet_glass fluorite_stope
+=== 01:30:04 starting ComfyUI
+=== 01:30:44 ComfyUI ready
+=== 01:30:44 --- chalk_cellar ---
+=== 03:24:38 chalk_cellar: rendered in 6834s
+=== 03:25:39 chalk_cellar -> REVIEW (captioned)
+=== 03:25:39 --- pika_larder ---
+=== 04:51:55 pika_larder: rendered in 5176s
+=== 04:52:50 pika_larder -> REVIEW (captioned)
+=== 04:52:50 --- garnet_glass ---
+=== 06:53:32 garnet_glass: rendered in 7243s
+=== 06:54:27 garnet_glass -> REVIEW (captioned)
+=== 06:54:27 --- fluorite_stope ---
+=== 07:41:43 fluorite_stope: rendered in 2835s
+=== 07:42:29 fluorite_stope -> REVIEW (captioned)
+=== 07:42:29 music pregen: chalk_cellar
+=== 07:44:54 music pregen: pika_larder
+=== 07:47:26 music pregen: garnet_glass
+=== 07:50:06 music pregen: fluorite_stope
+=== 07:51:54 batch done in 6.4h — 4 to Review
+=== 07:51:54 ComfyUI models unloaded — VRAM freed
+=== 07:51:54 log: outbox/night_batch_0902_013001.log

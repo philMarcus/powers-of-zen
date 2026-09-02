@@ -1,0 +1,8 @@
+manual batch: coral_synapse
+=== 11:19:37 batch start [manual] — 1 journeys: coral_synapse
+=== 11:19:38 --- coral_synapse ---
+=== 12:39:46 coral_synapse: rendered in 4808s
+=== 12:41:07 coral_synapse -> REVIEW (captioned)
+=== 12:41:07 batch done in 1.4h — 1 to Review
+=== 12:41:07 ComfyUI models unloaded — VRAM freed
+=== 12:41:07 log: outbox/night_batch_0815_111937.log

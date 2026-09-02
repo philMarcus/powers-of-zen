@@ -1,0 +1,79 @@
+copper_rain_fpb10 (divein): bar 3.333s -> 72 bpm, key E minor; lane music_box; generating 8, keeping 5
+♪ generating 20.0s | 72bpm E minor | seed 27586 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 13s -> copper_rain_fpb10_00020_.flac (0.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb10_music_box.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb10/music_box.mp4
+    bar 3.308s | music bar 3.093s (conf 0.04) -> stretch 1.0000 | phase 1.540s | lock 6.43x | kick 0.02 | seamless loop @ 16.54s (music tiled x1, xf 0.50s)
+  [music_box] lock 6.43x conf 0.04 kick 0.02 score 0.93 -> review/music/candidates/copper_rain_fpb10/music_box.mp4
+♪ generating 20.0s | 72bpm E minor | seed 27623 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 12s -> copper_rain_fpb10_00021_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb10_music_box-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb10/music_box-b.mp4
+    bar 3.308s | music bar 3.424s (conf 0.12) -> stretch 1.0300 | phase 2.190s | lock 17.84x | kick 0.22 | seamless loop @ 16.54s (music tiled x2, xf 0.50s)
+  [music_box-b] lock 17.84x conf 0.12 kick 0.22 score 5.19 -> review/music/candidates/copper_rain_fpb10/music_box-b.mp4
+♪ generating 20.0s | 72bpm E minor | seed 27660 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 14s -> copper_rain_fpb10_00022_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb10_music_box-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb10/music_box-third_answer.mp4
+    bar 3.308s | music bar 3.019s (conf 0.17) -> stretch 0.9700 | phase 3.300s | lock 19.64x | kick 0.07 | seamless loop @ 16.54s (music tiled x2, xf 0.50s)
+  [music_box-third_answer] lock 19.64x conf 0.17 kick 0.07 score 4.17 -> review/music/candidates/copper_rain_fpb10/music_box-third_answer.mp4
+♪ generating 20.0s | 72bpm E minor | seed 27697 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 12s -> copper_rain_fpb10_00023_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb10_ember_pulse-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb10/ember_pulse-wild.mp4
+    bar 3.308s | music bar 3.339s (conf 0.60) -> stretch 1.0092 | phase 0.420s | lock 19.78x | kick 0.56 | seamless loop @ 16.54s (music tiled x2, xf 0.50s)
+  [ember_pulse-wild] lock 19.78x conf 0.60 kick 0.56 score 17.68 -> review/music/candidates/copper_rain_fpb10/ember_pulse-wild.mp4
+♪ generating 20.0s | 72bpm E minor | seed 27734 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 11s -> copper_rain_fpb10_00024_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb10_tide_organ-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb10/tide_organ-wild.mp4
+    bar 3.308s | music bar 3.456s (conf -0.00) -> stretch 1.0000 | phase 1.820s | lock 17.10x | kick -0.02 | seamless loop @ 16.54s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] lock 17.10x conf -0.00 kick -0.02 score 2.14 -> review/music/candidates/copper_rain_fpb10/tide_organ-wild.mp4
+♪ generating 20.0s | 72bpm E minor | seed 27771 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 12s -> copper_rain_fpb10_00025_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb10_music_box-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb10/music_box-halftime.mp4
+    bar 3.308s | music bar 3.008s (conf 0.16) -> stretch 0.9700 | phase 2.860s | lock 4.71x | kick 0.35 | seamless loop @ 16.54s (music tiled x2, xf 0.50s)
+  [music_box-halftime] lock 4.71x conf 0.16 kick 0.35 score 1.86 -> review/music/candidates/copper_rain_fpb10/music_box-halftime.mp4
+♪ generating 20.0s | 72bpm E minor | seed 27808 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 12s -> copper_rain_fpb10_00026_.flac (0.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb10_aurora_strings-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb10/aurora_strings-wild.mp4
+    bar 3.308s | music bar 3.317s (conf 0.42) -> stretch 1.0027 | phase 0.120s | lock 21.23x | kick 0.17 | seamless loop @ 16.54s (music tiled x2, xf 0.50s)
+  [aurora_strings-wild] lock 21.23x conf 0.42 kick 0.17 score 8.20 -> review/music/candidates/copper_rain_fpb10/aurora_strings-wild.mp4
+♪ generating 20.0s | 72bpm E minor | seed 27845 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 13s -> copper_rain_fpb10_00027_.flac (0.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb10_music_box-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb10/music_box-heartbeat.mp4
+    bar 3.308s | music bar 3.200s (conf 0.20) -> stretch 0.9700 | phase 0.050s | lock 26.62x | kick 0.05 | seamless loop @ 16.54s (music tiled x1, xf 0.50s)
+  [music_box-heartbeat] lock 26.62x conf 0.20 kick 0.05 score 5.68 -> review/music/candidates/copper_rain_fpb10/music_box-heartbeat.mp4
+♪ generating 20.0s | 72bpm E minor | seed 27946 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 13s -> copper_rain_fpb10_00028_.flac (0.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb10_pulse1-music_box.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb10/pulse1-music_box.mp4
+    bar 3.308s | music bar 3.637s (conf 0.03) -> stretch 1.0000 | phase 0.040s | lock 5.37x | kick -0.04 | seamless loop @ 16.54s (music tiled x2, xf 0.50s)
+  [pulse1-music_box] kick -0.04 (top-up 1)
+♪ generating 20.0s | 72bpm E minor | seed 28047 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 12s -> copper_rain_fpb10_00029_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb10_pulse2-music_box.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb10/pulse2-music_box.mp4
+    bar 3.308s | music bar 3.200s (conf -0.02) -> stretch 1.0000 | phase 1.520s | lock 15.61x | kick -0.03 | seamless loop @ 16.54s (music tiled x2, xf 0.50s)
+  [pulse2-music_box] kick -0.03 (top-up 2)
+♪ generating 20.0s | 72bpm E minor | seed 28148 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 12s -> copper_rain_fpb10_00030_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb10_pulse3-music_box.flac
+  [pulse3-music_box] SKIPPED — track unusable: 0.00s of audio after silence strip
+kept: ember_pulse-wild, aurora_strings-wild, music_box-heartbeat, music_box-b, tide_organ-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel

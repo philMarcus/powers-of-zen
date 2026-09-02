@@ -1,0 +1,83 @@
+whale_fall_republic (divein): bar 2.667s -> 90 bpm, key D minor; lane deep_archive; generating 8, keeping 5
+♪ generating 33.0s | 90bpm D minor | seed 1744 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 28s -> whale_fall_republic_00001_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_deep_archive.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/deep_archive.mp4
+    bar 2.667s | music bar 2.421s (conf -0.00) -> stretch 1.0000 | phase 2.550s | lock 3.29x | kick -0.01 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [deep_archive] lock 3.29x conf -0.00 kick -0.01 score 0.41 -> review/music/candidates/whale_fall_republic/deep_archive.mp4
+♪ generating 33.0s | 90bpm D minor | seed 1781 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 19s -> whale_fall_republic_00002_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_deep_archive-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/deep_archive-b.mp4
+    bar 2.667s | music bar 2.645s (conf -0.02) -> stretch 1.0000 | phase 0.020s | lock 10.17x | kick -0.04 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [deep_archive-b] lock 10.17x conf -0.02 kick -0.04 score 1.27 -> review/music/candidates/whale_fall_republic/deep_archive-b.mp4
+♪ generating 33.0s | 90bpm D minor | seed 1818 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 18s -> whale_fall_republic_00003_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_deep_archive-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/deep_archive-heartbeat.mp4
+    bar 2.667s | music bar 2.613s (conf 0.58) -> stretch 0.9800 | phase 0.710s | lock 8.28x | kick 0.40 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [deep_archive-heartbeat] lock 8.28x conf 0.58 kick 0.40 score 5.79 -> review/music/candidates/whale_fall_republic/deep_archive-heartbeat.mp4
+♪ generating 33.0s | 90bpm D minor | seed 1855 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 19s -> whale_fall_republic_00004_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_analog_dawn-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/analog_dawn-wild.mp4
+    bar 2.667s | music bar 2.560s (conf -0.06) -> stretch 1.0000 | phase 2.630s | lock 3.75x | kick -0.02 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [analog_dawn-wild] lock 3.75x conf -0.06 kick -0.02 score 0.47 -> review/music/candidates/whale_fall_republic/analog_dawn-wild.mp4
+♪ generating 33.0s | 90bpm D minor | seed 1892 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 22s -> whale_fall_republic_00005_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_ember_pulse-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/ember_pulse-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.55) -> stretch 1.0000 | phase 0.030s | lock 27.00x | kick 0.42 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [ember_pulse-wild] lock 27.00x conf 0.55 kick 0.42 score 19.12 -> review/music/candidates/whale_fall_republic/ember_pulse-wild.mp4
+♪ generating 33.0s | 90bpm D minor | seed 1929 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 20s -> whale_fall_republic_00006_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_deep_archive-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/deep_archive-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.78) -> stretch 1.0000 | phase 0.690s | lock 15.94x | kick 0.67 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [deep_archive-halftime] lock 15.94x conf 0.78 kick 0.67 score 18.86 -> review/music/candidates/whale_fall_republic/deep_archive-halftime.mp4
+♪ generating 33.0s | 90bpm D minor | seed 1966 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 18s -> whale_fall_republic_00007_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_night_market-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/night_market-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.82) -> stretch 1.0000 | phase 0.340s | lock 23.96x | kick 0.77 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [night_market-wild] lock 23.96x conf 0.82 kick 0.78 score 32.32 -> review/music/candidates/whale_fall_republic/night_market-wild.mp4
+♪ generating 33.0s | 68bpm D minor | seed 2003 steps 8
+  tags: a gently lilting waltz in 3/4 time, all percussion is a single deep soft kick drum landing...
+  done in 20s -> whale_fall_republic_00008_.flac (1.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_waltz-deep_archive.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/waltz-deep_archive.mp4
+    bar 2.667s | music bar 2.624s (conf 0.32) -> stretch 0.9840 | phase 0.940s | lock 5.89x | kick -0.02 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [waltz-deep_archive] lock 5.89x conf 0.32 kick -0.02 score 1.21 -> review/music/candidates/whale_fall_republic/waltz-deep_archive.mp4
+♪ generating 33.0s | 90bpm D minor | seed 2104 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 20s -> whale_fall_republic_00009_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/whale_fall_republic_pulse1-deep_archive.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/pulse1-deep_archive.mp4
+    bar 2.667s | music bar 2.667s (conf 0.81) -> stretch 1.0000 | phase 1.310s | lock 19.11x | kick 0.73 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [pulse1-deep_archive] kick 0.73 (top-up 1)
+kept: night_market-wild, pulse1-deep_archive, ember_pulse-wild, deep_archive-halftime, analog_dawn-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/night_market-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.82) -> stretch 1.0000 | phase 0.340s | lock 23.96x | kick 0.77 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [night_market-wild] realigned (lock 23.96x kick 0.78)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/pulse1-deep_archive.mp4
+    bar 2.667s | music bar 2.667s (conf 0.81) -> stretch 1.0000 | phase 1.310s | lock 19.11x | kick 0.73 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [pulse1-deep_archive] realigned (lock 19.11x kick 0.73)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/ember_pulse-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.55) -> stretch 1.0000 | phase 0.030s | lock 27.00x | kick 0.42 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [ember_pulse-wild] realigned (lock 27.00x kick 0.42)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/deep_archive-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.78) -> stretch 1.0000 | phase 0.690s | lock 15.94x | kick 0.67 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [deep_archive-halftime] realigned (lock 15.94x kick 0.67)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/analog_dawn-wild.mp4
+    bar 2.667s | music bar 2.560s (conf -0.06) -> stretch 1.0000 | phase 2.630s | lock 3.75x | kick -0.02 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [analog_dawn-wild] realigned (lock 3.75x kick -0.02)
+realigned 5 pregen candidates to the marked start

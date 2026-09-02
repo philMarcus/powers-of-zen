@@ -1,0 +1,10 @@
+=== saguaro_vigil [A] start Mon Aug 31 20:54:23 EDT 2026  flags: 
+[dive] tempo: fpb 9 (80bpm) -> transition 8f, seam 15f, anacrusis 3f
+[style] ultraviolet  ->  ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/saguaro_vigil/v1
+[dive] saguaro_vigil: 405 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — star_spicules(surface)[30..44], desert_world(surface)[66..90], bajada_air(surface)[102..126], bajada_commons(surface)[138..162], pleat_ribs(surface)[174..198], storage_tissue(sea)[210..234], membrane_gates(surface)[246..270], atom_grain(sea)[282..306], spiral_galaxy(sea)[354..368]
+[dive] TRACKER v3 ON (279 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of a spiral galaxy tilted across the void, amber star clouds wound out from a dense burning
+[dive] frame 1/405 (30.0s/frame, ~12111s left) :: moving through a spiral galaxy tilted across the void, amber
+[dive] frame 11/405 (27.3s/frame, ~10771s left) :: moving through a spiral galaxy tilted across the void, amber

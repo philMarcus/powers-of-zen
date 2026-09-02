@@ -1,0 +1,141 @@
+{
+  "name": "cacao_temper",
+  "theme": "tempering told as a chain of bands within bands — a night cacao grove's commons under crimson-to-saffron pods, into a pod's five rows of beans, a bean's violet folded kernel, its butter-crammed storage cells, and the cocoa-butter crystal's triple-length courses, down to a carbon atom and to bare nuclei ruled into a cubic lattice, which is the frozen interior of a dying star: out through its shed shells, onto the diamond star's faceted crust, past a night world to the rainforest coast and home among the trunks",
+  "style": "lacquer_pop",
+  "music_lane": "night_market",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "coast_from_air",
+      "exp": 4.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cacao-brown treetops, silver surf, saffron lamp points",
+      "scene": "a rainforest coast at night seen from overhead, the canopy a cacao-brown expanse of treetops creased by black gullies, a tannin-crimson river meandering out to a many-fingered delta, long silver curves of surf edging the beach, a shore road strung with saffron lamp points, mangrove maze stitched along the estuary flats, cloud smoke pooled in the inland ridges, and low over the flats the cacao groves standing in banded shade under the taller forest",
+      "target": "a low cacao grove",
+      "target_phrase": "a small grove"
+    },
+    {
+      "name": "cacao_understory",
+      "exp": 0.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "black leaf floor, crimson-to-saffron pod flame, moss green",
+      "scene": "a cacao understory at night at standing height among the trunks, ridged pods in crimson-to-saffron gradients sprouting straight from the bark of every trunk, clouds of midges thick at the button-small trunk flowers, a tree frog set on a swelling pod, files of leaf-cutter ants bearing cut-leaf sails over the buttress roots, a kinkajou hooked by its tail in the branches overhead, split husks strewn across the black leaf floor, moonlit shafts falling between the canopy tiers, the far trunks closing into brown gloom, no one present",
+      "target": "a ridged crimson pod",
+      "target_phrase": "a red pod"
+    },
+    {
+      "name": "pod_chamber",
+      "exp": -0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "wet crimson rind, honey-cream pulp, violet bean skins",
+      "scene": "the chamber inside a split cacao pod, five rows of beans sheathed in honey-cream pulp curving along a cream core, the rind arching over the rows in a wet crimson-to-saffron gradient, its inner ribs throwing long shadows down the files, violet bean skins showing where the pulp has parted, sap beads gathered along the cut edge, moonlit from the split and sunk to brown-black at the far end of the chamber",
+      "target": "a violet bean",
+      "target_phrase": "a purple bean"
+    },
+    {
+      "name": "cotyledon_folds",
+      "exp": -1.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-maroon ridges, saffron husk fiber, cacao-black troughs",
+      "scene": "a cacao bean cleft to its violet kernel, the kernel cut into winding folds that double back crease after crease, the same crease repeated inside every fold, each ridge glossed maroon and each trough sunk to purple-black, thin saffron husk fibers curling at the rim, cacao-brown crumbs strewn over the cleft, one thread of amber butter beaded in a crease, the folds tightening into gloom at the far side",
+      "target": "a violet cell",
+      "target_phrase": "a purple cell"
+    },
+    {
+      "name": "storage_cells",
+      "exp": -4.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "honey-amber droplets, saffron casings, brown gloom",
+      "scene": "the storage cells of a cacao cotyledon, cell after cell socketed into a honeycomb of thin saffron casings, every cell crammed with honey-amber butter droplets, violet polyphenol cells standing among them brimful of purple pigment, starch grains bedded between the droplets, the casings creased where neighbours press, thread-thin strands bridging cell to cell, rows of cells receding into brown gloom",
+      "target": "an amber butter droplet",
+      "target_phrase": "an amber droplet",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "butter_lamellae",
+      "exp": -7.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet gaps, thin saffron prong edges, soot-black hollow",
+      "scene": "the tempered crystal within a cocoa-butter droplet, three-pronged fat molecules stood head to tail in triple-length courses, course laid upon course into parallel sheets, a narrow violet gap repeating between every sheet and that same gap repeating again within each band, prong interlocked with prong along every course, thin saffron edges kindled where the sheets terminate, the courses receding into soot-black hollow with no ground and no horizon",
+      "target": "a bright carbon atom",
+      "target_phrase": "a bright mote",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "layered"
+      }
+    },
+    {
+      "name": "carbon_atom",
+      "exp": -10.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber haze shells, saffron core point, ink hollow",
+      "scene": "one carbon atom set in the crystal's grid, nested shells of amber haze rounding a saffron core point, four thread-thin bonds tethering it to neighbouring cores that recede into ink hollow, the haze thinning outward through fainter and fainter shells, a violet shimmer trembling over the grid, no ground and no horizon anywhere",
+      "target": "a bright nucleus",
+      "target_phrase": "a bright core",
+      "cameo": {
+        "sprite": "output/mascots/canon/adam.png",
+        "pos": [
+          0.34,
+          0.62
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "coulomb_crystal",
+      "exp": -14,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "saffron point-sparks, violet electron haze, ink void",
+      "scene": "bare nuclei frozen into a cubic lattice, point after saffron point ruled into even rows and files and tiers, each point a hard spark with no shell about it, a violet haze of loosed electrons pooled in the gaps between them, the same spacing repeating tier within tier, the courses receding into ink void with no ground and no horizon"
+    },
+    {
+      "name": "shed_shells",
+      "exp": 12,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "crimson inner shell, saffron fraying rim, violet outer rings",
+      "scene": "the shed shells of a dying star strewn across the void, a crimson inner shell ribbed and knotted, a saffron rim fraying outward where the gas thins, an outer violet haze banded into fainter and fainter rings, dust files ruled across the near shell, a hard blue-silver spark at the hub of it all, countless stars sown through the void beyond the shells",
+      "target": "a blue-silver star",
+      "target_phrase": "a small blue star"
+    },
+    {
+      "name": "diamond_star",
+      "exp": 7.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blue-silver facets, violet atmosphere fog, saffron seams",
+      "scene": "the frozen crust of a dying star, a vast carbon lattice faceted into blue-silver planes, facet after facet ruled into even rows and tiers out to the horizonless rim, a thin violet fog of atmosphere lying over the planes, saffron seams kindled in the cracks between facets, an unlit world set against the glare as a black disc, countless stars sown through the void beyond the rim",
+      "target": "an unlit world",
+      "target_phrase": "a black planet",
+      "loop_target": "a dying star's frozen crust of faceted carbon lattice"
+    },
+    {
+      "name": "night_world",
+      "exp": 6.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jungle-black continents, silver-blue sea, saffron storm cells",
+      "scene": "a night world seen from orbit, its unlit hemisphere quilted with jungle-black continents and a silver-blue sea sheeted with cloud spirals, saffron storm cells burning in the inland basins, crimson coastal towns strung in beaded chains along one shore, the terminator drawn as a silver line across the disc, a violet band of atmosphere rimming the disc's edge, stars sown through the void beyond",
+      "target": "a silt-crimson river delta",
+      "target_phrase": "a river delta"
+    }
+  ],
+  "music_theme": "a nocturnal wander through a lamp-lit grove — hand percussion and plucked gut strings over a low warm drone, one deep soft kick on every downbeat as the bands nest scale within scale, the plucking thinning to single struck notes through the kernel and cell bars, a wide struck bloom where the cubic lattice of nuclei unfolds as the star's shed shells, and a settling return phrase as the faceted crust gives way to the night world and its coast",
+  "music_key": "F minor",
+  "render_start": "diamond_star"
+}

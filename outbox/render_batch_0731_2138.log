@@ -1,0 +1,102 @@
+=== 21:38:19 batch start — long butterfly_meridian (280f/23.3s), medium quantum_orrery (196f/16.3s), short lather_atlas (140f/11.7s) ===
+=== 21:38:19 ComfyUI ready ===
+=== 21:38:19 GPU free — rendering ===
+=== 21:38:19 --- butterfly_meridian --- ===
+=== 21:38:19 python3 engine/dive.py journeys/butterfly_meridian.json ===
+[style] enchanted_wild  ->  enchanted golden light, lush saturated color, painterly fantasy illustration, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/butterfly_meridian/v1
+[dive] butterfly_meridian: 280 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (154 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 1/280 (16.8s/frame, ~4685s left) :: moving through an enormous planetary nebula spread through t
+[dive] frame 11/280 (15.7s/frame, ~4224s left) :: moving through an enormous planetary nebula spread through t
+[dive] frame 21/280 (15.4s/frame, ~3985s left) :: diving straight into a deep violet planet, a dark dusk hemis
+[dive] frame 31/280 (16.1s/frame, ~4014s left) :: a great violet planet seen close from space, its curved limb
+[dive] frame 41/280 (16.0s/frame, ~3831s left) :: moving through a great violet planet seen close from space, 
+[dive] frame 51/280 (16.8s/frame, ~3843s left) :: diving straight into a wide golden river, a broad braided ch
+[dive] frame 61/280 (16.1s/frame, ~3516s left) :: a broad river valley at golden hour seen from high above, a 
+[dive] frame 71/280 (14.6s/frame, ~3055s left) :: moving through a broad river valley at golden hour seen from
+[dive] frame 81/280 (13.8s/frame, ~2748s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 91/280 (13.2s/frame, ~2502s left) :: a wide hillside meadow at golden hour seen from the slope at
+[dive] frame 101/280 (14.4s/frame, ~2573s left) :: diving straight into a stand of milkweed, thick green stems 
+[dive] frame 111/280 (14.8s/frame, ~2506s left) :: diving straight into a stand of milkweed, thick green stems 
+[dive] frame 121/280 (14.9s/frame, ~2363s left) :: moving through a stand of milkweed on the open hillside at g
+[dive] frame 131/280 (15.2s/frame, ~2260s left) :: diving straight into a monarch butterfly, wings held open an
+[dive] frame 141/280 (14.9s/frame, ~2068s left) :: a monarch butterfly at rest on a broad green leaf, both wing
+[dive] frame 151/280 (14.8s/frame, ~1913s left) :: moving through a monarch butterfly at rest on a broad green 
+[dive] frame 161/280 (15.2s/frame, ~1806s left) :: diving straight into a long triangular forewing, an orange p
+[dive] frame 171/280 (16.5s/frame, ~1800s left) :: the tiled country of a monarch wing surface, flat scale tile
+[dive] frame 181/280 (16.7s/frame, ~1651s left) :: moving through the tiled country of a monarch wing surface, 
+[dive] frame 191/280 (16.8s/frame, ~1494s left) :: diving straight into an orange scale tile, a flat elongated 
+[dive] frame 201/280 (16.7s/frame, ~1319s left) :: a single wing scale among its overlapping neighbours, a flat
+[dive] frame 211/280 (16.7s/frame, ~1155s left) :: moving through a single wing scale among its overlapping nei
+[dive] frame 221/280 (16.7s/frame, ~983s left) :: diving straight into a dark narrow slot, a violet-rimmed ope
+[dive] frame 231/280 (16.4s/frame, ~803s left) :: a gyroid labyrinth deep inside the wing scale, smooth curved
+[dive] frame 241/280 (16.0s/frame, ~625s left) :: deep inside a gyroid labyrinth deep inside the wing scale, s
+[dive] frame 251/280 (15.7s/frame, ~454s left) :: deep inside a gyroid labyrinth deep inside the wing scale, s
+[dive] frame 261/280 (15.3s/frame, ~291s left) :: moving through deep space threaded by long looping ribbons o
+[dive] frame 271/280 (15.1s/frame, ~136s left) :: diving straight into an enormous planetary nebula spread thr
+[dive] frame 280/280 (14.8s/frame, ~0s left) :: diving straight into an enormous planetary nebula spread thr
+[dive] interpolated 12 -> 24fps in 49s
+[dive] counter overlay on 557 frames (30 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/butterfly_meridian/v1/butterfly_meridian.mp4 (35927 KB, 23.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/butterfly_meridian/v1/butterfly_meridian_divein.mp4 (36437 KB, 23.3s)
+[dive] done in 4297s
+=== 22:49:56 python3 scripts/caption.py butterfly_meridian ===
+  butterfly_meridian: 5 caption+title pairs (spot=False); theme='A celestial lullaby of shimmering string'
+    [0] Golden hour unfolds in endless layers 🌿✨ #InfiniteGoldenHour #CosmicButterflyWings #GyroidDreamscape #VioletPlanetRivers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Golden hour unfolds in endless layers 🌿✨
+    [1] A monarch’s wing reveals cosmic secrets #InfiniteGoldenHour #CosmicButterflyWings #GyroidDreamscape #VioletPlanetRivers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A monarch’s wing reveals cosmic secrets
+    [2] Dive into the gyroid labyrinth of light #InfiniteGoldenHour #CosmicButterflyWings #GyroidDreamscape #VioletPlanetRivers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive into the gyroid labyrinth of light
+    [3] Starlight ribbons weave through violet worlds #InfiniteGoldenHour #CosmicButterflyWings #GyroidDreamscape #VioletPlanetRivers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Starlight ribbons weave through violet worlds
+    [4] Endless valleys bloom beneath golden rivers #InfiniteGoldenHour #CosmicButterflyWings #GyroidDreamscape #VioletPlanetRivers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Endless valleys bloom beneath golden rivers
+=== 22:50:42 python3 scripts/queue_review.py butterfly_meridian ds ===
+  copied butterfly_meridian.mp4 -> review/butterfly_meridian_ds.mp4
+  copied butterfly_meridian_divein.mp4 -> review_divein/butterfly_meridian_ds_divein.mp4
+butterfly_meridian: queued to REVIEW (ds/divein) from v1
+=== 22:50:42 butterfly_meridian done -> REVIEW ===
+=== 22:50:42 --- quantum_orrery --- ===
+=== 22:50:42 python3 engine/dive.py journeys/quantum_orrery.json ===
+[style] gilded_relic  ->  warm gilded light, painterly, hyperdetailed, cinematic, storybook grandeur, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/quantum_orrery/v1
+[dive] quantum_orrery: 196 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (91 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 1/196 (15.3s/frame, ~2976s left) :: moving through three glowing quark cores bound close inside 
+[dive] frame 11/196 (30.8s/frame, ~5694s left) :: moving through three glowing quark cores bound close inside 
+Traceback (most recent call last):
+  File "/mnt/c/Users/Phil/zoomer/engine/dive.py", line 782, in <module>
+    main()
+  File "/mnt/c/Users/Phil/zoomer/engine/dive.py", line 739, in main
+    png = run_workflow(wf)
+          ^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Phil/zoomer/engine/dive.py", line 245, in run_workflow
+    raise TimeoutError(f"workflow {pid} did not finish in {timeout}s")
+TimeoutError: workflow 81f64161-54fe-4658-8ce5-57d7532547d5 did not finish in 300s
+!!! FAILED: python3 engine/dive.py journeys/quantum_orrery.json
+=== 23:02:15 python3 scripts/caption.py quantum_orrery ===
+GPU busy (render/music running) — skipping caption gen. Re-run when free, or --force.
+=== 23:02:15 python3 scripts/queue_review.py quantum_orrery ds ===
+no complete render for quantum_orrery_ds (need 196 frames)
+!!! FAILED: python3 scripts/queue_review.py quantum_orrery ds
+=== 23:02:15 quantum_orrery done -> REVIEW ===
+=== 23:02:15 --- lather_atlas --- ===
+=== 23:02:15 python3 engine/dive.py journeys/lather_atlas.json ===
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/lather_atlas/v1
+[dive] lather_atlas: 140 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (49 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+Traceback (most recent call last):
+  File "/mnt/c/Users/Phil/zoomer/engine/dive.py", line 782, in <module>
+    main()
+  File "/mnt/c/Users/Phil/zoomer/engine/dive.py", line 739, in main
+    png = run_workflow(wf)
+          ^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Phil/zoomer/engine/dive.py", line 245, in run_workflow
+    raise TimeoutError(f"workflow {pid} did not finish in {timeout}s")
+TimeoutError: workflow 806e941c-f61e-42b9-b7a0-944a5c4b1c54 did not finish in 300s
+!!! FAILED: python3 engine/dive.py journeys/lather_atlas.json
+=== 23:07:16 python3 scripts/caption.py lather_atlas ===
+GPU busy (render/music running) — skipping caption gen. Re-run when free, or --force.
+=== 23:07:17 python3 scripts/queue_review.py lather_atlas ds ===
+no complete render for lather_atlas_ds (need 140 frames)
+!!! FAILED: python3 scripts/queue_review.py lather_atlas ds
+=== 23:07:17 lather_atlas done -> REVIEW ===
+=== 23:07:17 BATCH COMPLETE — 3 videos in Video Review (captioned). Next: mark a start frame, Approve -> Music. ===

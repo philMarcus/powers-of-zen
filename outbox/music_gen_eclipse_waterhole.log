@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/eclipse_waterhole/analog_dawn-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.78) -> stretch 1.0000 | phase 0.020s | lock 27.57x | kick 0.79 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [analog_dawn-wild] realigned (lock 27.57x kick 0.79)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/eclipse_waterhole/choir_of_dust-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.54) -> stretch 1.0000 | phase 0.380s | lock 38.02x | kick 0.56 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [choir_of_dust-halftime] realigned (lock 38.02x kick 0.56)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/eclipse_waterhole/choir_of_dust-third_answer2.mp4
+    bar 2.667s | music bar 2.667s (conf 0.76) -> stretch 1.0000 | phase 0.010s | lock 28.34x | kick 0.71 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [choir_of_dust-third_answer2] realigned (lock 28.34x kick 0.71)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/eclipse_waterhole/ember_pulse-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.64) -> stretch 1.0000 | phase 0.390s | lock 11.19x | kick 0.40 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [ember_pulse-wild] realigned (lock 11.19x kick 0.40)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/eclipse_waterhole/choir_of_dust-b.mp4
+    bar 2.667s | music bar 2.667s (conf 0.79) -> stretch 1.0000 | phase 1.300s | lock 18.04x | kick 0.70 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [choir_of_dust-b] realigned (lock 18.04x kick 0.70)
+realigned 5 pregen candidates to the marked start

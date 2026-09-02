@@ -1,0 +1,15 @@
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/cobalt_rookery/v9
+[dive] cobalt_rookery: 40 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — ice_world(surface)[26..39], rookery_cliff(surface)[58..81], egg_shelf(surface)[90..113], shell_rind(surface)[122..145], palisade_columns(surface)[154..177], membrane_weave(web)[186..209], protein_ropes(sea)[218..241], calcite_lattice(lattice)[250..273], nucleus_droplet(sea)[282..305]
+[dive] TRACKER v3 ON (248 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of an aging gold sun burning inside a crowded star cluster, ranked neighbour suns thick acr
+[dive] frame 1/40 (37.6s/frame, ~1468s left) :: moving through an aging gold sun burning inside a crowded st
+[dive] HERO globe for 'a blue planet': run 31f, s0 0.109, orbit 90 deg
+[dive] frame 11/40 (20.0s/frame, ~579s left) :: moving through an aging gold sun burning inside a crowded st
+[dive] frame 21/40 (18.2s/frame, ~345s left) :: diving straight into a cobalt-blue ice world as it swells to
+[dive] frame 31/40 (17.3s/frame, ~156s left) :: diving straight into a cobalt-blue ice world as it swells to
+[dive] frame 40/40 (16.1s/frame, ~0s left) :: a cobalt ocean world seen from orbit, sea ice broken into fl
+[dive] done in 644s
+ORBIT REDONE rc=0 Sat Aug 29 14:50:07 EDT 2026

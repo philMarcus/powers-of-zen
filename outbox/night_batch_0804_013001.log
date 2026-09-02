@@ -1,0 +1,137 @@
+=== 01:30:01 batch start [LMS] — 3 journeys: ink_dynasty ammonite_spiral gossamer_dawn
+=== 01:30:02 --- ink_dynasty ---
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/ink_dynasty/v1
+[dive] ink_dynasty: 280 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (154 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of wet paper fiber country, a branching black thicket of ink fingers through a pale
+[dive] frame 1/280 (21.5s/frame, ~6003s left) :: moving through wet paper fiber country, a branching black th
+[dive] frame 11/280 (14.9s/frame, ~4015s left) :: moving through wet paper fiber country, a branching black th
+[dive] frame 21/280 (14.0s/frame, ~3628s left) :: diving straight into a round black soot grain, a matte dark 
+[dive] frame 31/280 (13.3s/frame, ~3322s left) :: a dark fluid realm packed with round carbon soot grains, mat
+[dive] frame 41/280 (12.7s/frame, ~3033s left) :: moving through a dark fluid realm packed with round carbon s
+[dive] frame 51/280 (12.8s/frame, ~2925s left) :: diving straight into a bright six-sided cell grid, glowing b
+[dive] frame 61/280 (12.5s/frame, ~2740s left) :: a flawless carbon lattice spread through the deep black, a g
+[dive] frame 71/280 (11.6s/frame, ~2414s left) :: deep inside a flawless carbon lattice spread through the dee
+[dive] frame 81/280 (10.8s/frame, ~2155s left) :: deep inside a flawless carbon lattice spread through the dee
+[dive] frame 91/280 (10.4s/frame, ~1963s left) :: the whole view transforming, resolving into a colossal ringe
+[dive] frame 101/280 (10.7s/frame, ~1919s left) :: diving straight into a vast six-sided storm, six straight wa
+[dive] frame 111/280 (10.9s/frame, ~1848s left) :: diving straight into a vast six-sided storm, six straight wa
+[dive] frame 121/280 (10.8s/frame, ~1724s left) :: moving through an immense six-sided storm set in a plain of 
+[dive] frame 131/280 (11.0s/frame, ~1641s left) :: diving straight into a dark round storm eye, an open well of
+[dive] frame 141/280 (11.4s/frame, ~1584s left) :: a mountain river gorge in black ink wash seen from high abov
+[dive] frame 151/280 (11.2s/frame, ~1450s left) :: moving through a mountain river gorge in black ink wash seen
+[dive] frame 161/280 (11.4s/frame, ~1357s left) :: diving straight into a small wooden pavilion, paper windows 
+[dive] frame 171/280 (11.4s/frame, ~1247s left) :: a small wooden pavilion on stilts over black water, empty, n
+[dive] frame 181/280 (11.1s/frame, ~1101s left) :: moving through a small wooden pavilion on stilts over black 
+[dive] frame 191/280 (10.8s/frame, ~965s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 201/280 (10.6s/frame, ~839s left) :: a moonlit calligraphy studio seen wide from the open doorway
+[dive] frame 211/280 (10.7s/frame, ~739s left) :: moving through a moonlit calligraphy studio seen wide from t
+[dive] frame 221/280 (10.9s/frame, ~640s left) :: diving straight into a long silk scroll unrolled flat, cream
+[dive] frame 231/280 (10.8s/frame, ~529s left) :: an unrolled silk scroll spread flat on a low lacquered table
+[dive] frame 241/280 (10.9s/frame, ~426s left) :: diving straight into a bold black brushstroke, a broad band 
+[dive] frame 251/280 (11.0s/frame, ~319s left) :: diving straight into a bold black brushstroke, a broad band 
+[dive] frame 261/280 (10.9s/frame, ~208s left) :: moving through a single bold black brushstroke laid across a
+[dive] frame 271/280 (10.9s/frame, ~98s left) :: diving straight into wet paper fiber country, a branching bl
+[dive] frame 280/280 (10.9s/frame, ~0s left) :: diving straight into wet paper fiber country, a branching bl
+[dive] interpolated 12 -> 24fps in 33s
+[dive] counter overlay on 557 frames (27 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/ink_dynasty/v1/ink_dynasty.mp4 (30812 KB, 23.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/ink_dynasty/v1/ink_dynasty_divein.mp4 (31568 KB, 23.3s)
+[dive] done in 3192s
+=== 02:23:14 ink_dynasty: rendered in 3192s
+  copied ink_dynasty.mp4 -> review/ink_dynasty_ds.mp4
+  copied ink_dynasty_divein.mp4 -> review_divein/ink_dynasty_ds_divein.mp4
+ink_dynasty: queued to REVIEW (ds/divein) from v1
+  ink_dynasty: 5 caption+title pairs (spot=True); theme='A slow, hypnotic descent through ink-was'
+    [0] A moonlit studio dissolves into ink, then stars 🌙✨ Can you spot Newman hiding in this endless loop? 👀 #InkUniverse #PaperCosmos #StormOfZen #CarbonDreaming #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A moonlit studio dissolves into ink, then stars 🌙✨
+    [1] Brushstrokes unravel into galaxies of paper and soot Can you spot Newman hiding in this endless loop? 👀 #InkUniverse #PaperCosmos #StormOfZen #CarbonDreaming #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Brushstrokes unravel into galaxies of paper and soot
+    [2] Where storms swirl in black and silver mist 🌪️💫 Can you spot Newman hiding in this endless loop? 👀 #InkUniverse #PaperCosmos #StormOfZen #CarbonDreaming #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where storms swirl in black and silver mist 🌪️💫
+    [3] Lost in the lattice of a carbon cosmos Can you spot Newman hiding in this endless loop? 👀 #InkUniverse #PaperCosmos #StormOfZen #CarbonDreaming #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Lost in the lattice of a carbon cosmos
+    [4] A pavilion floats above rivers of midnight Can you spot Newman hiding in this endless loop? 👀 #InkUniverse #PaperCosmos #StormOfZen #CarbonDreaming #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A pavilion floats above rivers of midnight
+=== 02:24:07 ink_dynasty -> REVIEW (captioned)
+=== 02:24:07 --- ammonite_spiral ---
+[style] crystalline  ->  prismatic crystalline light, refractive glass and gemstone facets, jewel tones, ultra-detailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/ammonite_spiral/v1
+[dive] ammonite_spiral: 224 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (112 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a dense field of stars set in interlocking curved rows, thousands of silver-blue
+[dive] frame 1/224 (23.4s/frame, ~5229s left) :: moving through a dense field of stars set in interlocking cu
+[dive] frame 11/224 (14.5s/frame, ~3080s left) :: moving through a dense field of stars set in interlocking cu
+[dive] frame 21/224 (13.9s/frame, ~2826s left) :: diving straight into a pearl-white planet, one broad white c
+[dive] frame 31/224 (13.3s/frame, ~2563s left) :: a huge pearl-white planet hanging in space, one enormous whi
+[dive] frame 41/224 (12.7s/frame, ~2321s left) :: moving through a huge pearl-white planet hanging in space, o
+[dive] frame 51/224 (12.8s/frame, ~2208s left) :: diving straight into a clear round opening in the white clou
+[dive] frame 61/224 (12.4s/frame, ~2026s left) :: a rugged coastline seen from high above, dark slate headland
+[dive] frame 71/224 (11.5s/frame, ~1758s left) :: moving through a rugged coastline seen from high above, dark
+[dive] frame 81/224 (10.8s/frame, ~1542s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 91/224 (10.3s/frame, ~1370s left) :: a wide rocky tide-pool shore at dusk seen from a low headlan
+[dive] frame 101/224 (10.6s/frame, ~1307s left) :: diving straight into a coiled fossil shell, ribbed spiral wh
+[dive] frame 111/224 (10.8s/frame, ~1225s left) :: diving straight into a coiled fossil shell, ribbed spiral wh
+[dive] frame 121/224 (10.7s/frame, ~1106s left) :: moving through a coiled ammonite fossil set in a flat slate 
+[dive] frame 131/224 (10.9s/frame, ~1015s left) :: diving straight into an open pearl-white chamber, its curved
+[dive] frame 141/224 (11.1s/frame, ~923s left) :: the inside of one ammonite chamber, a curved pearl-white par
+[dive] frame 151/224 (11.0s/frame, ~801s left) :: moving through the inside of one ammonite chamber, a curved 
+[dive] frame 161/224 (11.2s/frame, ~703s left) :: diving straight into a stepped ledge of aragonite crystal, f
+[dive] frame 171/224 (11.3s/frame, ~596s left) :: a wide field of stepped aragonite terraces, flat crystal tie
+[dive] frame 181/224 (10.9s/frame, ~471s left) :: deep inside a wide field of stepped aragonite terraces, flat
+[dive] frame 191/224 (10.7s/frame, ~352s left) :: deep inside a wide field of stepped aragonite terraces, flat
+[dive] frame 201/224 (10.5s/frame, ~241s left) :: the whole view transforming, resolving into a barred spiral 
+[dive] frame 211/224 (10.4s/frame, ~135s left) :: moving through a barred spiral galaxy in the black, a broad 
+[dive] frame 221/224 (10.5s/frame, ~31s left) :: diving straight into a dense field of stars set in interlock
+[dive] frame 224/224 (10.5s/frame, ~0s left) :: diving straight into a dense field of stars set in interlock
+[dive] interpolated 12 -> 24fps in 26s
+[dive] counter overlay on 445 frames (29 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/ammonite_spiral/v1/ammonite_spiral.mp4 (27918 KB, 18.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/ammonite_spiral/v1/ammonite_spiral_divein.mp4 (28416 KB, 18.7s)
+[dive] done in 2455s
+=== 03:05:02 ammonite_spiral: rendered in 2456s
+  copied ammonite_spiral.mp4 -> review/ammonite_spiral_ds.mp4
+  copied ammonite_spiral_divein.mp4 -> review_divein/ammonite_spiral_ds_divein.mp4
+ammonite_spiral: queued to REVIEW (ds/divein) from v1
+  ammonite_spiral: 5 caption+title pairs (spot=True); theme='A hypnotic pulse of glass harps and deep'
+    [0] Dive into the infinite fractals of a tidepool’s soul 🌊✨ Can you spot Lorraine hiding in the infinite zoom? 👀 #FossilGalaxies #InfiniteTidepool #CosmicCrystals #PearlUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive into the infinite fractals of a tidepool’s soul 🌊✨
+    [1] A fossil’s whisper spirals into cosmic light 🌀💎 Can you spot Lorraine hiding in the infinite zoom? 👀 #FossilGalaxies #InfiniteTidepool #CosmicCrystals #PearlUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A fossil’s whisper spirals into cosmic light 🌀💎
+    [2] Pearl chambers hum with the rhythm of galaxies 🌌🐚 Can you spot Lorraine hiding in the infinite zoom? 👀 #FossilGalaxies #InfiniteTidepool #CosmicCrystals #PearlUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Pearl chambers hum with the rhythm of galaxies 🌌🐚
+    [3] Crystalline terraces echo the birth of stars ✨🔮 Can you spot Lorraine hiding in the infinite zoom? 👀 #FossilGalaxies #InfiniteTidepool #CosmicCrystals #PearlUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Crystalline terraces echo the birth of stars ✨🔮
+    [4] One loop, a thousand worlds—where does it end? 🌀🌍 Can you spot Lorraine hiding in the infinite zoom? 👀 #FossilGalaxies #InfiniteTidepool #CosmicCrystals #PearlUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: One loop, a thousand worlds—where does it end? 🌀🌍
+=== 03:05:52 ammonite_spiral -> REVIEW (captioned)
+=== 03:05:52 --- gossamer_dawn ---
+[style] aurora_silk  ->  aurora ribbons of green and violet light, silken flowing light, soft luminous gradients, ultra-detailed, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/gossamer_dawn/v1
+[dive] gossamer_dawn: 140 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (70 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a tall hedgerow at first light seen from the meadow at standing height, dozens o
+[dive] frame 1/140 (12.2s/frame, ~1691s left) :: moving through a tall hedgerow at first light seen from the 
+[dive] frame 11/140 (14.4s/frame, ~1855s left) :: moving through a tall hedgerow at first light seen from the 
+[dive] frame 21/140 (14.0s/frame, ~1669s left) :: diving straight into a round silk orb web beaded with water 
+[dive] frame 31/140 (13.5s/frame, ~1467s left) :: an orb web spun across a gap in the hedge, straight silk spo
+[dive] frame 41/140 (12.9s/frame, ~1278s left) :: moving through an orb web spun across a gap in the hedge, st
+[dive] frame 51/140 (13.0s/frame, ~1161s left) :: diving straight into a dense pale knot of silk as it swells 
+[dive] frame 61/140 (12.8s/frame, ~1009s left) :: a knot of thick ropy silk cables at the middle of the web, c
+[dive] frame 71/140 (12.6s/frame, ~871s left) :: moving through a knot of thick ropy silk cables at the middl
+[dive] frame 81/140 (12.9s/frame, ~758s left) :: diving straight into a clear round water bead as it swells t
+[dive] frame 91/140 (12.5s/frame, ~610s left) :: inside a clear water bead, a curved wall of water bending th
+[dive] frame 101/140 (11.8s/frame, ~460s left) :: deep inside inside a clear water bead, a curved wall of wate
+[dive] frame 111/140 (11.3s/frame, ~326s left) :: deep inside inside a clear water bead, a curved wall of wate
+[dive] frame 121/140 (11.0s/frame, ~209s left) :: moving through a wide dawn meadow seen from above the grass,
+[dive] frame 131/140 (11.0s/frame, ~99s left) :: diving straight into a tall hedgerow at first light seen fro
+[dive] frame 140/140 (11.0s/frame, ~0s left) :: diving straight into a tall hedgerow at first light seen fro
+[dive] interpolated 12 -> 24fps in 17s
+[dive] counter overlay on 277 frames (12 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/gossamer_dawn/v1/gossamer_dawn.mp4 (15207 KB, 11.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/gossamer_dawn/v1/gossamer_dawn_divein.mp4 (15599 KB, 11.7s)
+[dive] done in 1608s
+=== 03:32:40 gossamer_dawn: rendered in 1608s
+  copied gossamer_dawn.mp4 -> review/gossamer_dawn_ds.mp4
+  copied gossamer_dawn_divein.mp4 -> review_divein/gossamer_dawn_ds_divein.mp4
+gossamer_dawn: queued to REVIEW (ds/divein) from v1
+  gossamer_dawn: 5 caption+title pairs (spot=True); theme='A slow, hypnotic pulse of strings and ch'
+    [0] Dew-kissed silk spirals in the dawn’s first glow 🌅 Can you spot Lee hiding in this endless loop? 👀 #SilkenCosmos #DawnsWebWeaver #InfiniteMeadow #DewdropUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dew-kissed silk spirals in the dawn’s first glow 🌅
+    [1] A universe of water and light, suspended in time ✨ Can you spot Lee hiding in this endless loop? 👀 #SilkenCosmos #DawnsWebWeaver #InfiniteMeadow #DewdropUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A universe of water and light, suspended in time ✨
+    [2] Lost in the labyrinth of a spider’s morning masterpiece Can you spot Lee hiding in this endless loop? 👀 #SilkenCosmos #DawnsWebWeaver #InfiniteMeadow #DewdropUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Lost in the labyrinth of a spider’s morning masterpiece
+    [3] Where every drop holds a galaxy of its own 💧 Can you spot Lee hiding in this endless loop? 👀 #SilkenCosmos #DawnsWebWeaver #InfiniteMeadow #DewdropUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where every drop holds a galaxy of its own 💧
+    [4] The meadow breathes as the sun climbs higher Can you spot Lee hiding in this endless loop? 👀 #SilkenCosmos #DawnsWebWeaver #InfiniteMeadow #DewdropUniverse #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The meadow breathes as the sun climbs higher
+=== 03:33:27 gossamer_dawn -> REVIEW (captioned)
+=== 03:33:27 batch done in 2.1h — 3 to Review
+=== 03:33:27 log: outbox/night_batch_0804_013001.log

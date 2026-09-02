@@ -1,0 +1,43 @@
+resonance_hall (zoomout): bar 2.333s -> 103 bpm, key E-flat major; generating 5
+  (music_key 'E-flat major' -> 'Eb major' for the ACE-Step keyscale enum)
+♪ generating 27.0s | 103bpm Eb major | seed 500 steps 8
+  tags: chill hypnotic ambient evoking a vast empty concert hall of brass and stained glass, hymnl...
+  done in 16s -> resonance_hall_00011_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/resonance_hall_warm.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/resonance_hall/warm.mp4
+    bar 2.321s | music bar 2.283s (conf 0.06) -> stretch 1.0000 | phase 1.050s | lock 2.95x | seamless loop @ 23.21s (music tiled x2, xf 0.50s)
+  [warm] lock 2.95x -> review/music/candidates/resonance_hall/warm.mp4
+  (music_key 'E-flat major' -> 'Eb major' for the ACE-Step keyscale enum)
+♪ generating 27.0s | 103bpm Eb major | seed 501 steps 8
+  tags: chill hypnotic ambient evoking a vast empty concert hall of brass and stained glass, hymnl...
+  done in 14s -> resonance_hall_00012_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/resonance_hall_glassy.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/resonance_hall/glassy.mp4
+    bar 2.321s | music bar 2.325s (conf 0.26) -> stretch 1.0020 | phase 2.150s | lock 8.74x | seamless loop @ 23.21s (music tiled x2, xf 0.50s)
+  [glassy] lock 8.74x -> review/music/candidates/resonance_hall/glassy.mp4
+  (music_key 'E-flat major' -> 'Eb major' for the ACE-Step keyscale enum)
+♪ generating 27.0s | 103bpm Eb major | seed 502 steps 8
+  tags: chill hypnotic ambient evoking a vast empty concert hall of brass and stained glass, hymnl...
+  done in 14s -> resonance_hall_00013_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/resonance_hall_deep.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/resonance_hall/deep.mp4
+    bar 2.321s | music bar 2.336s (conf -0.19) -> stretch 1.0000 | phase 1.950s | lock 4.20x | seamless loop @ 23.21s (music tiled x2, xf 0.50s)
+  [deep] lock 4.20x -> review/music/candidates/resonance_hall/deep.mp4
+  (music_key 'E-flat major' -> 'Eb major' for the ACE-Step keyscale enum)
+♪ generating 27.0s | 103bpm Eb major | seed 503 steps 8
+  tags: chill hypnotic ambient evoking a vast empty concert hall of brass and stained glass, hymnl...
+  done in 14s -> resonance_hall_00014_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/resonance_hall_tender.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/resonance_hall/tender.mp4
+    bar 2.321s | music bar 2.293s (conf 0.33) -> stretch 0.9882 | phase 1.010s | lock 11.72x | seamless loop @ 23.21s (music tiled x2, xf 0.50s)
+  [tender] lock 11.72x -> review/music/candidates/resonance_hall/tender.mp4
+  (music_key 'E-flat major' -> 'Eb major' for the ACE-Step keyscale enum)
+♪ generating 27.0s | 103bpm Eb major | seed 504 steps 8
+  tags: chill hypnotic ambient evoking a vast empty concert hall of brass and stained glass, hymnl...
+  done in 14s -> resonance_hall_00015_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/resonance_hall_choir.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/resonance_hall/choir.mp4
+    bar 2.321s | music bar 2.549s (conf 0.11) -> stretch 1.0300 | phase 1.650s | lock 3.90x | seamless loop @ 23.21s (music tiled x2, xf 0.50s)
+  [choir] lock 3.90x -> review/music/candidates/resonance_hall/choir.mp4
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel

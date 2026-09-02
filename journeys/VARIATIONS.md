@@ -157,6 +157,42 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
   tile-cores seamed by sinking cooler lanes; solar granulation, lava lakes, miso
   soup) · Kármán vortex streets (a staggered procession of paired eddies peeling
   off an obstacle — cloud wakes past islands, flags, chimney smoke)
+- helicoid armor: Bouligand twisted-plywood stacks — fiber sheets each rotated a few
+  degrees from the sheet beneath, so the grain descends like a spiral staircase
+  (mantis-club and crab-cuticle impact armor; also nacre-adjacent layered shells)
+- periglacial sorting: frost-heave patterned ground — sorted stone circles and
+  polygon nets self-organized on flats, stone stripes combed down slopes, and
+  ice-wedge polygon country seen from the air (the same net at two scales — a
+  built-in pattern-writ-large seam that never touches space)
+- recursive bisection: a sphere split in half, each half again, each again — a
+  raspberry of ever-finer equal cells with the same cut repeated inside every piece
+  (early embryo cleavage 1→2→4→8, quadtree tilings, Cantor dust in three dimensions)
+- growth-ring annuli: nested concentric rings laid down over time, crossed by radial
+  grooves (fish-scale circuli, tree rings, otoliths, agate banding, stalagmite
+  cross-sections, ripple rings on a pool) — a timeline read as a target
+- hopper stairsteps: skeletal crystal growth where edges outrun faces, so every face is
+  a square-spiral staircase descending into itself (bismuth hoppers, halite hopper cubes,
+  frost hoppers) — a stepped spiral that rhymes with terraced pits and spiral towers
+- Langmuir windrows (added 2026-08-29): floating things combed into long parallel streaks by
+  counter-rotating roll vortices under the wind — weed lines on the open sea, foam lanes on a
+  lake, leaf-litter stripes on a pond; the same combing at small scale = polymer chains zipped
+  side by side, at cosmic scale = galaxies streaming down parallel filaments into a knot
+- rouleaux stacks (added 2026-08-29): discs stacked into columns and the columns themselves
+  arrayed — coin-stack towers of red cells, the thousand-disc column inside a retinal rod,
+  columnar basalt, stacked-plate capacitors, nacre tablet piles; a stack-of-stacks family
+  distinct from layered sheets (this is discrete columns, not continuous strata)
+- meander & oxbow (added 2026-08-29): a single sinuous channel folding back on itself until
+  loops pinch off as crescent lakes — river bends from the air, a zigzag chain kinking at one
+  bond, a coiled tube's cut-off loops; the crescent-scar motif repeats at every scale
+- core & envelope (added 2026-08-31): exactly TWO parts — a compact bright core wrapped in a
+  far wider, fainter sheath (an atom's nucleus in its electron fog, a halo nucleus's tight core
+  in its vast two-neutron fog, a galaxy in its dark halo, a lenticular's bulge in its lens, a
+  stripped cork bole in its grey cork sheath, an acorn in its cup) — distinct from nested
+  shells (many rings) and recursive nesting: two components only; the size ratio is the drama
+- helices & screws (added 2026-08-31): ONE line wound around an axis — a bacterium's corkscrew
+  flagellum, a dust-devil column, a rattlesnake's coil, tendril and vine coils, a spiral stair,
+  a slowly twisting rope-filament of galaxies (the web's filaments measurably rotate) — a
+  single-strand family, unlike knot braids (many strands) or loxodrome shells (a surface)
 - USE: pick ONE family per journey and reskin it to the theme (jade-carved
   automata, sugar-crystal Penrose, brass Chladni). Never repeat the previous
   video's family.
@@ -188,6 +224,27 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
   (granulation nested one order up)
 - galactic one-offs: the Magellanic stream — a river of stars and gas bridging
   two dwarf galaxies to a great spiral (a stream you can travel, not a field)
+- stellar PAIRS and CORES (under-built band, 2026-08-28): the hourglass binary — two
+  stars sharing one pinched envelope, a bright stream of gas pouring through the neck
+  from the swollen star into the compact one's glowing disk (Roche-lobe overflow; an
+  hourglass of fire) · the crystallizing white dwarf — a dying star's core freezing
+  from the centre out into a colossal faceted carbon lattice under a thin fog of
+  atmosphere · the bipolar butterfly nebula as TWO LOBES pinched at a waist (a dumbbell
+  of lit gas, not a ring)
+- cosmic-web one-offs (under-built band, 2026-08-28): the great-wall curtain — a sheet
+  of galaxies seen nearly face-on, a luminous hanging curtain with the void's blackness
+  behind it · the cluster-infall delta — galaxies streaming down several filaments into
+  one cluster, a river delta of light converging on its knot · nested-halo froth — dark
+  haloes inside haloes, a bubble-within-bubble hierarchy each bubble carrying its own
+  small galaxy
+- (added 2026-08-31) cosmic-web: the intercluster bridge — ONE filament strung between two
+  cluster knots, galaxies beaded down its length, the whole rope slowly twisting; a bridge
+  you look ALONG from one knot toward the other, not a field or a corridor · galactic: the
+  ragged irregular dwarf — a torn loose scatter of blue star-knots and pink nursery patches
+  with no disk and no core (every catalog galaxy so far has been a spiral/bar/ring/
+  elliptical/edge-on) · planetary one-off: moonlit river meanders from orbit — silver
+  looping channels across a night plain, crescent oxbow lakes glinting, the coast a dark
+  scallop (a meander read as a planet's skin)
 
 ## PALETTE FAMILIES — assign each journey ONE home family so the catalog stays varied
 (adjacent cards still contrast in temperature WITHIN the family; the family is the
@@ -243,6 +300,39 @@ video's overall color identity)
 - phosphor & bakelite (oscilloscope-green trace glow/bakelite brown-black/one
   vermilion indicator point + dial-lamp amber — instrument-panel light as the
   only color source; greener and warmer-dim than noble glow's street neon)
+- bog iron & spawn jelly (rust-orange bog-iron water/clear jelly with cool moonlit
+  grey-teal glints/a new-leaf yellow-lime accent on ink black — a spring pool at night,
+  iron-stained, not peat & lily ivory's bronze tea) · wine-dark & verdigris (deep
+  wine-red garnet grains/verdigris-green brass patina/cold moon-silver on tar black —
+  red grains carried by a green metal, unlike garnet furnace's crimson-on-gold) ·
+  sockeye & slate (sockeye crimson bodies/wet slate blue-grey rock/foam ivory streaks on
+  peat-black water — a moving red on cold grey, no gold) · hemocyanin & tidewrack
+  (copper-blue blood glow/tidewrack bronze-brown shells/full-moon silver on wet-sand
+  charcoal — a cool blue laid on warm brown) · indigo & saguaro (moon-indigo sky/deep
+  cactus olive-teal ribs/one waxy cream bloom + amber eyeshine points on shadow black —
+  a desert NIGHT green, not olive & terracotta's noon)
+- (added 2026-08-29) sargasso gold & ultramarine (kelp-gold/amber weed masses/moonlit
+  ultramarine open water/foam-ivory streaks + copper eyeshine points on abyss black — a warm
+  gold laid on cold blue, unlike gilded's verdigris or midnight sun's teal) · cacao & pod flame
+  (cacao nib brown-black ground/pod crimson-to-saffron ridge gradients/one raw-bean violet
+  accent — the catalog's first brown-forward family; the crimson carries the saturation) ·
+  fluorescent duotone (UV-lamp mineral glow: fluorite blue-violet/willemite green/calcite
+  red-orange on mine black — three glows and no ambient light at all; cooler and harder than
+  ultraviolet noir's electric blue) · bayou eyeshine (paired amber-red eyeshine points/moss-grey
+  hanging drapery/black-tea tannin water/pewter moonlight — the only reds are eyes)
+- (added 2026-08-31) tree-frog lime & bract scarlet (bromeliad bract scarlet/acid tree-frog
+  lime blade glow/tannin-black tank water/silver trichome frost on cloud-forest umber — an ACID
+  lime, not jade & vermilion's celadon; the red is a leaf, not lacquer) · cork oxblood &
+  magpie azure (freshly-stripped cork-oak bole oxblood-orange/azure-winged-magpie sky-blue/
+  dusk-olive canopy/umber pasture on shadow — the catalog's first red-trunk + azure pair,
+  nothing gold anywhere) · sorghum bronze & swarm-dust violet (bronze-red sorghum heads/locust
+  ochre-brown bodies with straw-yellow hindwing flashes/bruised violet-grey dust sky/marabou
+  slate on umber earth — a bronze-red with NO rose-gold, unlike mirage) · prairie afterglow
+  (one tangerine afterglow band low on an indigo-black sky/bison-and-mound umber/dusk grass
+  gone bronze/lemon owl-eye points — umber-forward, unlike marigold & indigo's saffron festival
+  bulbs) · seagrass & cuttle-copper (bottle-green ribbon fields/slate-blue moon-water/
+  cuttlefish copper-bronze mottle/moon-ivory sand scars on ink — green-forward and coppery,
+  unlike bioluminescent deep's teal glow or hemocyanin & tidewrack's blue-on-brown)
 - RULE: check the last few journeys' families and pick a DIFFERENT one.
 
 ## LENGTH VARIETY (Phil 2026-07-31 — the catalog must mix durations)

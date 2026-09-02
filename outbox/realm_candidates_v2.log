@@ -1,0 +1,17 @@
+[1] cellular/wide_capillary2 s0 ok
+[2] cellular/wide_capillary2 s1 ok
+[3] cellular/wide_neuron_web s0 ok
+[4] cellular/wide_neuron_web s1 ok
+[5] cellular/wide_diatom_drift s0 ok
+[6] cellular/wide_diatom_drift s1 ok
+[7] mineral/wide_selenite_within s0 ok
+[8] mineral/wide_selenite_within s1 ok
+[9] mineral/wide_opal_within s0 ok
+[10] mineral/wide_opal_within s1 ok
+[11] atomic/wide_lattice2 s0 ok
+[12] atomic/wide_lattice2 s1 ok
+[13] human_eco/wide_vent_far s0 ok
+[14] human_eco/wide_vent_far s1 ok
+[15] mm/wide_moss_drift s0 ok
+[16] mm/wide_moss_drift s1 ok
+16 candidates in 2.6 min -> /mnt/c/Users/Phil/zoomer/output/realm_refs/candidates

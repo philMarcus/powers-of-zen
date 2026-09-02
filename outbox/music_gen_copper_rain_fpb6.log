@@ -1,0 +1,81 @@
+copper_rain_fpb6 (divein): bar 2.000s -> 120 bpm, key E minor; lane aurora_strings; generating 8, keeping 5
+♪ generating 13.0s | 120bpm E minor | seed 39911 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 15s -> copper_rain_fpb6_00009_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb6_aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb6/aurora_strings.mp4
+    bar 1.975s | music bar 2.005s (conf 0.15) -> stretch 1.0154 | phase 0.040s | lock 19.19x | kick -0.01 | seamless loop @ 9.88s (music tiled x1, xf 0.50s)
+  [aurora_strings] lock 19.19x conf 0.15 kick -0.01 score 3.10 -> review/music/candidates/copper_rain_fpb6/aurora_strings.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39948 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 8s -> copper_rain_fpb6_00010_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb6_aurora_strings-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb6/aurora_strings-b.mp4
+    bar 1.975s | music bar 2.005s (conf 0.03) -> stretch 1.0000 | phase 0.110s | lock 5.50x | kick 0.10 | seamless loop @ 9.88s (music tiled x1, xf 0.50s)
+  [aurora_strings-b] lock 5.50x conf 0.03 kick 0.10 score 1.03 -> review/music/candidates/copper_rain_fpb6/aurora_strings-b.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39985 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 8s -> copper_rain_fpb6_00011_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb6_aurora_strings-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb6/aurora_strings-third_answer.mp4
+    bar 1.975s | music bar 1.973s (conf -0.01) -> stretch 1.0000 | phase 0.050s | lock 7.87x | kick -0.01 | seamless loop @ 9.88s (music tiled x2, xf 0.50s)
+  [aurora_strings-third_answer] lock 7.87x conf -0.01 kick -0.01 score 0.98 -> review/music/candidates/copper_rain_fpb6/aurora_strings-third_answer.mp4
+♪ generating 13.0s | 120bpm E minor | seed 40022 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 9s -> copper_rain_fpb6_00012_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb6_glass_chapel-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb6/glass_chapel-wild.mp4
+    bar 1.975s | music bar 2.005s (conf 0.49) -> stretch 1.0154 | phase 0.530s | lock 18.06x | kick 0.45 | seamless loop @ 9.88s (music tiled x1, xf 0.50s)
+  [glass_chapel-wild] lock 18.06x conf 0.49 kick 0.45 score 12.43 -> review/music/candidates/copper_rain_fpb6/glass_chapel-wild.mp4
+♪ generating 13.0s | 120bpm E minor | seed 40059 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 9s -> copper_rain_fpb6_00013_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb6_tide_organ-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb6/tide_organ-wild.mp4
+    bar 1.975s | music bar 2.005s (conf 0.56) -> stretch 1.0154 | phase 0.740s | lock 11.15x | kick 0.53 | seamless loop @ 9.88s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] lock 11.15x conf 0.56 kick 0.53 score 9.23 -> review/music/candidates/copper_rain_fpb6/tide_organ-wild.mp4
+♪ generating 13.0s | 120bpm E minor | seed 40096 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 9s -> copper_rain_fpb6_00014_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb6_aurora_strings-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb6/aurora_strings-halftime.mp4
+    bar 1.975s | music bar 2.005s (conf 0.02) -> stretch 1.0000 | phase 0.270s | lock 15.68x | kick -0.04 | seamless loop @ 9.88s (music tiled x2, xf 0.50s)
+  [aurora_strings-halftime] lock 15.68x conf 0.02 kick -0.04 score 2.04 -> review/music/candidates/copper_rain_fpb6/aurora_strings-halftime.mp4
+♪ generating 13.0s | 120bpm E minor | seed 40133 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 9s -> copper_rain_fpb6_00015_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb6_choir_of_dust-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb6/choir_of_dust-wild.mp4
+    bar 1.975s | music bar 1.995s (conf 0.56) -> stretch 1.0100 | phase 0.020s | lock 12.27x | kick 0.53 | seamless loop @ 9.88s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] lock 12.27x conf 0.56 kick 0.53 score 10.18 -> review/music/candidates/copper_rain_fpb6/choir_of_dust-wild.mp4
+♪ generating 13.0s | 120bpm E minor | seed 40170 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 9s -> copper_rain_fpb6_00016_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb6_aurora_strings-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb6/aurora_strings-heartbeat.mp4
+    bar 1.975s | music bar 1.824s (conf -0.15) -> stretch 1.0000 | phase 0.060s | lock 16.68x | kick -0.01 | seamless loop @ 9.88s (music tiled x1, xf 0.50s)
+  [aurora_strings-heartbeat] lock 16.68x conf -0.15 kick -0.01 score 2.08 -> review/music/candidates/copper_rain_fpb6/aurora_strings-heartbeat.mp4
+♪ generating 13.0s | 120bpm E minor | seed 40271 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 8s -> copper_rain_fpb6_00017_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb6_pulse1-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb6/pulse1-aurora_strings.mp4
+    bar 1.975s | music bar 1.995s (conf 0.09) -> stretch 1.0000 | phase 0.050s | lock 8.56x | kick 0.18 | seamless loop @ 9.88s (music tiled x2, xf 0.50s)
+  [pulse1-aurora_strings] kick 0.18 (top-up 1)
+♪ generating 13.0s | 120bpm E minor | seed 40372 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 9s -> copper_rain_fpb6_00018_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb6_pulse2-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb6/pulse2-aurora_strings.mp4
+    bar 1.975s | music bar 2.005s (conf 0.05) -> stretch 1.0000 | phase 0.800s | lock 12.28x | kick 0.05 | seamless loop @ 9.88s (music tiled x2, xf 0.50s)
+  [pulse2-aurora_strings] kick 0.05 (top-up 2)
+♪ generating 13.0s | 120bpm E minor | seed 40473 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 8s -> copper_rain_fpb6_00019_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/copper_rain_fpb6_pulse3-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/copper_rain_fpb6/pulse3-aurora_strings.mp4
+    bar 1.975s | music bar 1.995s (conf 0.37) -> stretch 1.0100 | phase 0.830s | lock 8.07x | kick 0.30 | seamless loop @ 9.88s (music tiled x2, xf 0.50s)
+  [pulse3-aurora_strings] kick 0.30 (top-up 3)
+kept: glass_chapel-wild, choir_of_dust-wild, tide_organ-wild, pulse3-aurora_strings, aurora_strings
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel

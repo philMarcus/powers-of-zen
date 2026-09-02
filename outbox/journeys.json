@@ -12,7 +12,7 @@
     "render_paused": false,
     "refill_paused": false,
     "post_every_hours": 19.0,
-    "post_next": "2026-08-28 06:00"
+    "post_next": "2026-09-02 19:00"
   },
   "journeys": {
     "stormglass": {
@@ -155,113 +155,132 @@
       "ts": "2026-08-13 13:23:02",
       "note": "GRIST 2026-08-13 — superseded by the REALMS rethink; theme minable, spec not for rendering"
     },
-    "waterbear_prairie": {
-      "state": "queued",
-      "order": 6,
-      "ts": "2026-08-21 00:23:01",
-      "note": "composed by midnight refill"
-    },
-    "winter_murmuration": {
-      "state": "queued",
-      "order": 5,
-      "ts": "2026-08-21 00:23:02",
-      "note": "composed by midnight refill"
-    },
-    "gecko_rampart": {
-      "state": "queued",
-      "order": 7,
-      "ts": "2026-08-22 00:25:25",
-      "note": "composed by midnight refill"
-    },
-    "lily_undercroft": {
-      "state": "queued",
-      "order": 8,
-      "ts": "2026-08-22 00:25:25",
-      "note": "composed by midnight refill"
-    },
-    "natron_skein": {
-      "state": "queued",
-      "order": 9,
-      "ts": "2026-08-22 00:25:26",
-      "note": "composed by midnight refill"
-    },
-    "plasma_script": {
-      "state": "queued",
-      "order": 10,
-      "ts": "2026-08-22 00:25:26",
-      "note": "composed by midnight refill"
-    },
     "coral_synapse": {
       "new_seed": false,
       "ts": "2026-08-22 22:25:27",
       "note": "NOT re-rendering (Phil 2026-08-22 night: enough corals) — parallax versions already exist: v4=0.5, v5=0.7, v3=1.0, same seed. When Phil picks a gain, ingest it GPU-free: queue_review.py coral_synapse ds --src output/coral_synapse/<vN>"
-    },
-    "magnetite_choir": {
-      "state": "queued",
-      "force": true,
-      "new_seed": true,
-      "ts": "2026-08-24 17:12:51",
-      "note": "re-render: video rejected in review",
-      "order": 11
     },
     "anemone_arsenal": {
       "state": "rejected",
       "ts": "2026-08-24 17:14:01",
       "note": "rejected at video review"
     },
-    "cicada_chorus": {
-      "state": "queued",
-      "order": 12,
-      "ts": "2026-08-26 00:20:03",
-      "note": "composed by midnight refill"
-    },
-    "circuit_grotto": {
-      "state": "queued",
-      "order": 13,
-      "ts": "2026-08-26 00:20:03",
-      "note": "composed by midnight refill"
-    },
-    "phage_landing": {
-      "state": "queued",
-      "order": 14,
-      "ts": "2026-08-26 00:20:03",
-      "note": "composed by midnight refill"
-    },
-    "venus_basket": {
-      "state": "queued",
-      "order": 15,
-      "ts": "2026-08-26 00:20:04",
-      "note": "composed by midnight refill"
-    },
     "bourdon_foundry": {
       "state": "rejected",
       "ts": "2026-08-26 18:01:04",
       "note": "rejected at video review"
     },
-    "anvil_country": {
+    "horseshoe_tide": {
       "state": "queued",
-      "order": 16,
-      "ts": "2026-08-27 00:20:08",
+      "order": 3,
+      "ts": "2026-08-28 00:20:50",
       "note": "composed by midnight refill"
     },
-    "chalk_cellar": {
+    "saguaro_vigil": {
       "state": "queued",
-      "order": 17,
-      "ts": "2026-08-27 00:20:08",
+      "order": 4,
+      "ts": "2026-08-28 00:20:50",
+      "note": "composed by midnight refill"
+    },
+    "vernal_clutch": {
+      "state": "queued",
+      "order": 5,
+      "ts": "2026-08-28 00:20:50",
+      "note": "composed by midnight refill"
+    },
+    "bayou_eyeshine": {
+      "state": "queued",
+      "order": 6,
+      "ts": "2026-08-30 00:20:18",
+      "note": "composed by midnight refill"
+    },
+    "cacao_temper": {
+      "state": "queued",
+      "order": 7,
+      "ts": "2026-08-30 00:20:18",
+      "note": "composed by midnight refill"
+    },
+    "sargasso_windrow": {
+      "state": "queued",
+      "order": 9,
+      "ts": "2026-08-30 00:20:19",
+      "note": "composed by midnight refill"
+    },
+    "bromeliad_tank": {
+      "state": "queued",
+      "order": 10,
+      "ts": "2026-08-31 00:24:46",
+      "note": "composed by midnight refill"
+    },
+    "cork_dehesa": {
+      "state": "queued",
+      "order": 11,
+      "ts": "2026-08-31 00:24:46",
+      "note": "composed by midnight refill"
+    },
+    "dugong_meadow": {
+      "state": "queued",
+      "order": 12,
+      "ts": "2026-08-31 00:24:47",
+      "note": "composed by midnight refill"
+    },
+    "locust_sorghum": {
+      "state": "queued",
+      "order": 13,
+      "ts": "2026-08-31 00:24:47",
+      "note": "composed by midnight refill"
+    },
+    "prairie_town": {
+      "state": "queued",
+      "order": 14,
+      "ts": "2026-08-31 00:24:47",
       "note": "composed by midnight refill"
     },
     "mantis_drumline": {
       "state": "queued",
-      "order": 18,
-      "ts": "2026-08-27 00:20:09",
-      "note": "composed by midnight refill"
+      "force": true,
+      "new_seed": true,
+      "ts": "2026-08-31 09:29:27",
+      "note": "re-render: video rejected in review",
+      "order": 15
     },
-    "pika_larder": {
+    "cherenkov_cistern": {
       "state": "queued",
-      "order": 19,
-      "ts": "2026-08-27 00:20:09",
-      "note": "composed by midnight refill"
+      "force": true,
+      "new_seed": true,
+      "ts": "2026-08-31 13:47:45",
+      "note": "re-render: video rejected in review",
+      "order": 16
+    },
+    "kelp_dynamo": {
+      "state": "queued",
+      "force": true,
+      "new_seed": true,
+      "ts": "2026-08-31 13:47:52",
+      "note": "re-render: video rejected in review",
+      "order": 17
+    },
+    "sunspot_archipelago": {
+      "state": "queued",
+      "force": true,
+      "new_seed": true,
+      "ts": "2026-08-31 13:48:35",
+      "note": "re-render: video rejected in review",
+      "order": 18
+    },
+    "lissajous_stage": {
+      "state": "queued",
+      "force": true,
+      "new_seed": true,
+      "ts": "2026-08-31 13:49:03",
+      "note": "re-render: video rejected in review",
+      "order": 19
+    },
+    "observatory_dusk": {
+      "state": "rejected",
+      "ts": "2026-08-31 13:51:01",
+      "note": "rejected at video review"
     }
   },
-  "updated": "2026-08-27 11:07:59"
+  "updated": "2026-09-02 07:42:29"
 }

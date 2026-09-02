@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/circuit_grotto/analog_dawn-halftime.mp4
+    bar 2.000s | music bar 1.995s (conf 0.61) -> stretch 0.9973 | phase 1.770s | lock 27.66x | kick 0.59 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [analog_dawn-halftime] realigned (lock 27.66x kick 0.59)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/circuit_grotto/pulse1-analog_dawn.mp4
+    bar 2.000s | music bar 1.995s (conf 0.58) -> stretch 0.9973 | phase 1.480s | lock 19.86x | kick 0.51 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [pulse1-analog_dawn] realigned (lock 19.86x kick 0.51)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/circuit_grotto/night_market-wild.mp4
+    bar 2.000s | music bar 1.995s (conf 0.64) -> stretch 0.9973 | phase 1.060s | lock 12.00x | kick 0.37 | seamless loop @ 10.00s (music tiled x1, xf 0.50s)
+  [night_market-wild] realigned (lock 12.00x kick 0.37)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/circuit_grotto/aurora_strings-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.35) -> stretch 1.0027 | phase 0.050s | lock 7.21x | kick 0.35 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [aurora_strings-wild] realigned (lock 7.21x kick 0.35)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/circuit_grotto/ember_pulse-wild.mp4
+    bar 2.000s | music bar 1.995s (conf 0.08) -> stretch 1.0000 | phase 1.250s | lock 14.94x | kick 0.06 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-wild] realigned (lock 14.94x kick 0.06)
+realigned 5 pregen candidates to the marked start

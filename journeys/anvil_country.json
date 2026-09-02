@@ -1,0 +1,131 @@
+{
+  "name": "anvil_country",
+  "theme": "a night supercell over shortgrass prairie read down through the hail it makes — the moonlit anvil and its staggered eddy wake, the absinthe vault of the updraft, the gust-front commons at a stock pond, one fallen stone and the onion of growth shells inside it, the ice grain mosaic, the hexagon galleries of the ice lattice and the shimmer of its atom shells — where nested shells open out as the echo shells around a flared star, and the way home descends past the storm world seen from orbit",
+  "style": "stormlight",
+  "music_lane": "aurora_strings",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "anvil_country",
+      "exp": 4.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "absinthe core-glow, pewter anvil, umber prairie",
+      "scene": "a night supercell standing over open shortgrass prairie, seen from high above, one vast tower drawn up out of the plains with its anvil spread flat for miles under the moon, a sour absinthe radiance sunk deep in the storm's core, staggered pewter eddies peeling off the tower's flank in paired files and marching downwind in a long wake, a lowered cloud hung under the storm base with a silver rain shaft let down past it, moonlit grass country reaching to the horizon on all sides, lightning silvering the cloud walls from within, unlit sky past the anvil's rim",
+      "target": "a lowered wall cloud",
+      "target_phrase": "a low round cloud",
+      "cameo": {
+        "sprite": "output/mascots/canon/lorraine.png",
+        "pos": [
+          0.63,
+          0.42
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "green_vault",
+      "exp": 3.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sour chartreuse vault, slate cloud walls, silver rain",
+      "scene": "the vault of a supercell's updraft seen from underneath, slate cloud walls curving up into a hollowed chamber, absinthe radiance banked far up inside it, ragged cloud tags strung under the rim and turned in one slow wheel, a hail shaft let down at the vault's edge in a milk-pale column, eddies peeling off the flank of the vault in staggered pairs and trailing into the murk downwind, moonlit shortgrass country far below the rim, a round stock pond catching the storm-glare out on the plain",
+      "target": "a round stock pond",
+      "target_phrase": "a round pond"
+    },
+    {
+      "name": "gust_front_commons",
+      "exp": 0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "olive grass, pewter water sheen, ember eye-shine",
+      "scene": "a prairie stock pond at eye level with the gust front over it, shortgrass laid over in combed waves all around the bank, a band of pronghorn bunched at the water with their heads up, a coyote trotting the wire fence line along the far bank, nighthawks cutting low over the pond after insects, kangaroo rats bolting across the hard mud for their burrow mouths, hail pocking the water and skittering over the mud, leaning fence posts strung with slack wire, an absinthe wash on the sky over the ridge, no one present at the bank",
+      "target": "a milk-pale hailstone",
+      "target_phrase": "a pale round stone"
+    },
+    {
+      "name": "hail_drift",
+      "exp": -1.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "milk-pale stones, umber trampled grass, absinthe sky wash",
+      "scene": "a stretch of trampled shortgrass strewn with fallen hail, milk-pale stones crowded in the stem hollows and heaped in windrows where the gusts raked them, one big lobed stone set among the blades with frosted ridges and clear glassy bands wrapping it, wet umber earth showing through the flattened grass, an absinthe wash from the sky lying over every rounded stone, more stones receding into the murk of the grass",
+      "target": "a glassy ice lobe",
+      "target_phrase": "a clear ice lobe",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "growth_shells",
+      "exp": -2.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pewter cloudy bands, absinthe clear ice, soot core",
+      "scene": "an onion of growth shells inside a hailstone, milk-pale cloudy layers alternating with clear pewter ones, ring within ring around a small frosted seed at the middle, tiny air pockets strung in crowded files through every cloudy band, hairline fracture seams cutting across the rings, an absinthe cast riding the curve of each shell, the outer rings sunk into murk where the moonglare thins",
+      "target": "a cloudy pale band",
+      "target_phrase": "a pale cloudy band"
+    },
+    {
+      "name": "grain_mosaic",
+      "exp": -4.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "wet chartreuse seams, pewter grains, umber murk",
+      "scene": "the grain country within a hailstone's cloudy band, rounded ice grains fitted edge to edge into a mosaic that carries off on all sides, each grain taking the moonglare at its own angle so the mosaic reads as a quilt of pewter shades, strings of trapped air beads threaded along every grain boundary, wet chartreuse pooled in the seams among them, more courses of grains sunk under the first and fading into umber murk",
+      "target": "a hexagonal water ring",
+      "target_phrase": "a hexagonal ring"
+    },
+    {
+      "name": "ice_lattice",
+      "exp": -6.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold absinthe struts, pewter depth, ink hollows",
+      "scene": "the hexagon galleries of an ice lattice, six-sided rings of water molecules stacked course on course into open corridors, every corner a rounded oxygen node with two short hydrogen struts reaching to its neighbours, the hollow shafts of the galleries receding into pewter depth, a cold absinthe shimmer riding the struts, ink shadow in the openings, the courses repeating into murk on all sides",
+      "target": "a rounded oxygen node",
+      "target_phrase": "a pale round node",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "hex"
+      }
+    },
+    {
+      "name": "atom_shells",
+      "exp": -9.7,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "ember cores, chartreuse shells, smoke voids",
+      "scene": "a field of luminous atom cores at rest in their courses, each core wrapped in nested shells of radiance one within the next, the outermost shells thinning into smoke, a slow thermal shimmer trembling through them in staggered files so the ordered courses ripple, ember at every core and chartreuse on the shells around it, unlit voids in the corridors among them"
+    },
+    {
+      "name": "echo_shells",
+      "exp": 14,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ember star, chartreuse rings, pewter dust",
+      "scene": "a flared star with its echo shells opened around it, nested luminous rings one within the next standing out through ancient dust, each ring waking a different course of that dust so the shells read as scalloped walls of ember and chartreuse, one fierce small sun at the middle of them, ragged dust ridges caught mid-shell, further shells fading into pewter murk, far suns strewn through the void past the outermost ring",
+      "target": "a round night world",
+      "target_phrase": "a round planet"
+    },
+    {
+      "name": "night_world",
+      "exp": 6.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pewter cloud plain, chartreuse airglow, ember coast sparks",
+      "scene": "a night world seen from low orbit, cloud country spread edge to edge across the sphere, one wide cyclone whorl turning at the middle of a mottled cloud plain, staggered pairs of cloud eddies streaming off an island chain in a long wake, storm cells strewn over the night side with silver lightning flickering inside them, a chartreuse airglow band arching over the rim, ember city sparks sown along a coastline, the void and its far stars past the rim",
+      "target": "a pale storm anvil",
+      "target_phrase": "a pale anvil cloud",
+      "loop_target": "a night world seen from low orbit, cloud country edge to edge with one cyclone whorl and storm cells strewn over the night side"
+    }
+  ],
+  "music_theme": "a prairie storm at 103bpm — a shimmering polar string pad over one deep kick on every downbeat, the pad massing into a low churn as the vault arrives, thinning to a single held tone through the ice galleries, one struck hit where the atom shells open out into the star's echo rings, then easing back to the pad for the descent from orbit",
+  "music_key": "D minor",
+  "render_start": "night_world"
+}

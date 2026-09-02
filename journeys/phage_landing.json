@@ -1,0 +1,103 @@
+{
+  "name": "phage_landing",
+  "theme": "a compost heap smoldering in a walled kitchen garden on a cold night, read all the way down to the workers making the heat — through the straw galleries and the worm-turned crumb into the silver actinomycete web, onto a bacterium's hull where a flotilla of phages has touched down on jointed fibres, in through the geodesic shell to the double-helix cable spooled under pressure, and home when that faceted dome is reread as the paned glass dome over the seedbed",
+  "style": "ultraviolet",
+  "music_lane": "ember_pulse",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "walled_garden",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bottle-green moss on black wet brick, mercury-silver frost mist, sodium-amber lamp points",
+      "scene": "a walled kitchen garden on a cold night, empty, no one present, seedbeds ruled into rows of frosted soil running to the far brick wall, a paned glass dome of triangular leading set over the nearest bed, moss burning bottle-green in the wet mortar, mercury-silver mist lying low over the beds, one sodium-amber lamp at the gate throwing its glow down the brick path, a slatted timber bin at the path's end mounded with straw and vegetable peelings, steam lifting off the mound into the frost",
+      "target": "a steaming straw mound",
+      "target_phrase": "a steaming straw mound"
+    },
+    {
+      "name": "compost_commons",
+      "exp": -0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sodium-amber warmth in wet straw, oxidized bronze and slate-grey shells, sooty black rot",
+      "scene": "the warm interior of the heap at eye level among the straw, hollow galleries roofed with bent stems and torn leaf, brandling worms banded red and gold threading the crumb in their dozens, springtails silvering every wet stem in their thousands, woodlice plated slate-grey working the rot, a slow-worm coiled bronze in the warmest hollow, drifts of worm-turned crumb heaped underfoot, sodium-amber glow soaking down through the stems and sooty black gathering in the deeper galleries",
+      "target": "a wet earth crumb",
+      "target_phrase": "a wet earth crumb"
+    },
+    {
+      "name": "crumb_galleries",
+      "exp": -3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "peat-black grain walls, mercury-silver water films, cold green quartz glints",
+      "scene": "the pore system within one crumb of worm-turned soil, rounded chambers hollowed through cemented mineral grains, frayed straw fibres bridging the wider gaps, every wall glazed with a mercury-silver film of water, quartz grains catching cold green glints, silver-grey filaments strung across chamber after chamber in every direction, peat-black shadow banked in the deeper pores",
+      "target": "a silver-grey filament",
+      "target_phrase": "a silver thread",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "actinomycete_web",
+      "exp": -5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "mercury-silver strands through green-black murk, a faint sodium-amber soak",
+      "scene": "a branching web of actinomycete filaments threading a hollow within the crumb, hair-fine hyphae forking again and again and knitting where they cross, spore chains coiled tight at hundreds of tips, mercury-silver strands crossing in every direction through green-black murk, water beads strung down their lengths, glossy green rods bedded among the strands and adrift in the gaps, a faint sodium-amber glow soaking the far reaches",
+      "target": "a rod-shaped green bacterium",
+      "target_phrase": "a glossy green rod",
+      "loop_target": "a branching web of silver-grey filaments threading a hollow within a crumb of soil",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "phage_landing",
+      "exp": -6.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "oxidized green hull sheen, sodium-amber wells, mercury-silver struts",
+      "scene": "the bacterium's hull curving away as a ground of oxidized green, its wall ridged in long grooves and pitted with sodium-amber wells, a flotilla of phages set upright over it in scores, each one a faceted dome on a straight silver tube with six jointed fibres planted on the hull, hair-fine pili trailing off across the curve, green-black gulf past the hull's far rim",
+      "target": "a faceted green dome",
+      "target_phrase": "a faceted green dome",
+      "resolve": {
+        "mode": "surface"
+      },
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.66,
+          0.38
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "capsid_shell",
+      "exp": -7.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bottle-green translucence with mercury-silver seam rims and amber glow from beneath",
+      "scene": "a tiled dome-scape of triangular protein plates curving over the phage's shell, knobbed clusters set where five and six plates meet, mercury-silver rims tracing every seam, bottle-green translucence carrying an amber glow up from beneath, a silver ring hub seated at one apex over the straight injection tube, green-black gulf past the dome's horizon",
+      "target": "a triangular green plate",
+      "target_phrase": "a triangular green plate"
+    },
+    {
+      "name": "coiled_cable",
+      "exp": -8.4,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "amber glow through green-black turns, mercury-silver rims on the outermost coil",
+      "scene": "the crammed interior of the capsid, one long double-helix cable spooled turn against turn into concentric rings, the coils bowed taut where they bear on the shell, base-pair rungs legible down every strand, amber glow soaking through the stacked turns, mercury-silver rims where the glow catches the outermost coil, the faceted dome of triangular plates closing overhead in every direction"
+    }
+  ],
+  "music_theme": "a frozen garden with something smoldering at its heart — a deep 808 heartbeat under smoky low pads, distant soft chimes marking each scale change, the pads narrowing to one held drone out on the bacterium's hull, and a slow gravitational swell as the spooled turns open back out onto the frosted beds",
+  "music_key": "E minor",
+  "render_start": "actinomycete_web"
+}

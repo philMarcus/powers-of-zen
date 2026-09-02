@@ -1,0 +1,130 @@
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/coral_synapse/v3
+[dive] coral_synapse: 308 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — atom_core(sea)[22..44], spiral_galaxy(sea)[78..100], reef_shelf(surface)[134..156], brain_dome(surface)[162..184], polyp_valley(surface)[190..212], coral_tissue(sea)[218..240], nerve_mesh(sea)[246..268], junction_gap(sea)[274..283]
+[dive] TRACKER v3 ON (175 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of the aragonite lattice of the coral skeleton, ranked rows of blue-white spheres s
+[dive] frame 1/308 (38.7s/frame, ~11869s left) :: moving through the aragonite lattice of the coral skeleton, 
+[dive] frame 11/308 (32.7s/frame, ~9700s left) :: moving through the aragonite lattice of the coral skeleton, 
+[dive] frame 21/308 (28.2s/frame, ~8106s left) :: diving straight into a glowing atom as it swells to fill the
+[dive] frame 31/308 (24.6s/frame, ~6820s left) :: deep inside one atom, a tight droplet of packed white-hot sp
+[dive] frame 41/308 (21.7s/frame, ~5801s left) :: deep inside deep inside one atom, a tight droplet of packed 
+[dive] frame 51/308 (19.4s/frame, ~4993s left) :: deep inside deep inside one atom, a tight droplet of packed 
+[dive] frame 61/308 (18.2s/frame, ~4506s left) :: the whole view transforming, resolving into the cosmic web s
+[dive] frame 71/308 (19.0s/frame, ~4505s left) :: moving through the cosmic web strung across black space, lon
+[dive] frame 81/308 (19.6s/frame, ~4440s left) :: diving straight into a bright spiral galaxy as it swells to 
+[dive] frame 91/308 (19.0s/frame, ~4128s left) :: a spiral galaxy set in black space, two great arms of cold b
+[dive] frame 101/308 (18.4s/frame, ~3809s left) :: deep inside a spiral galaxy set in black space, two great ar
+[dive] frame 111/308 (17.5s/frame, ~3454s left) :: deep inside a spiral galaxy set in black space, two great ar
+[dive] frame 121/308 (17.5s/frame, ~3276s left) :: moving through a black night ocean seen from high and obliqu
+[dive] frame 131/308 (18.5s/frame, ~3283s left) :: diving straight into a shallow reef bank as it swells to fil
+[dive] frame 141/308 (18.6s/frame, ~3100s left) :: a moonlit coral reef slope seen from a little above the sand
+[dive] frame 151/308 (18.2s/frame, ~2865s left) :: moving through a moonlit coral reef slope seen from a little
+[dive] frame 161/308 (18.1s/frame, ~2661s left) :: diving straight into a round ridged brain coral as it swells
+[dive] frame 171/308 (18.1s/frame, ~2480s left) :: a great brain coral standing clear of the sand, winding ridg
+[dive] frame 181/308 (17.8s/frame, ~2260s left) :: moving through a great brain coral standing clear of the san
+[dive] frame 191/308 (17.9s/frame, ~2090s left) :: diving straight into a deep shadowed groove as it swells to 
+[dive] frame 201/308 (17.9s/frame, ~1916s left) :: the crowded trough between two coral ridges, ranks of round 
+[dive] frame 211/308 (17.8s/frame, ~1726s left) :: moving through the crowded trough between two coral ridges, 
+[dive] frame 221/308 (18.3s/frame, ~1591s left) :: diving straight into a translucent coral polyp as it swells 
+[dive] frame 231/308 (18.3s/frame, ~1407s left) :: living coral tissue in layers, sheets of glassy blue-green c
+[dive] frame 241/308 (18.2s/frame, ~1217s left) :: diving straight into a glowing thread as it swells to fill t
+[dive] frame 251/308 (18.4s/frame, ~1049s left) :: diving straight into a glowing thread as it swells to fill t
+[dive] frame 261/308 (18.3s/frame, ~861s left) :: moving through the coral's nerve net, long threads of cold e
+[dive] frame 271/308 (18.2s/frame, ~674s left) :: diving straight into a glowing junction bead as it swells to
+[dive] frame 281/308 (18.2s/frame, ~492s left) :: the narrow gap inside one nerve junction, round vesicles cro
+[dive] frame 291/308 (18.2s/frame, ~309s left) :: moving through the narrow gap inside one nerve junction, rou
+[dive] frame 301/308 (18.2s/frame, ~127s left) :: diving straight into ranked rows of blue-white spheres in a 
+[dive] frame 308/308 (18.3s/frame, ~0s left) :: diving straight into ranked rows of blue-white spheres in a 
+[dive] interpolated 12 -> 24fps (616 frames, loop-bridged) in 61s
+[dive] counter overlay on 616 frames (38 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/coral_synapse/v3/coral_synapse.mp4 (39161 KB, 25.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/coral_synapse/v3/coral_synapse_divein.mp4 (39759 KB, 25.7s)
+[dive] done in 5811s
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/coral_synapse/v4
+[dive] coral_synapse: 308 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — atom_core(sea)[22..44], spiral_galaxy(sea)[78..100], reef_shelf(surface)[134..156], brain_dome(surface)[162..184], polyp_valley(surface)[190..212], coral_tissue(sea)[218..240], nerve_mesh(sea)[246..268], junction_gap(sea)[274..283]
+[dive] TRACKER v3 ON (175 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of the aragonite lattice of the coral skeleton, ranked rows of blue-white spheres s
+[dive] frame 1/308 (45.6s/frame, ~13997s left) :: moving through the aragonite lattice of the coral skeleton, 
+[dive] frame 11/308 (32.7s/frame, ~9705s left) :: moving through the aragonite lattice of the coral skeleton, 
+[dive] frame 21/308 (28.6s/frame, ~8202s left) :: diving straight into a glowing atom as it swells to fill the
+[dive] frame 31/308 (24.9s/frame, ~6895s left) :: deep inside one atom, a tight droplet of packed white-hot sp
+[dive] frame 41/308 (21.9s/frame, ~5835s left) :: deep inside deep inside one atom, a tight droplet of packed 
+[dive] frame 51/308 (19.6s/frame, ~5036s left) :: deep inside deep inside one atom, a tight droplet of packed 
+[dive] frame 61/308 (18.4s/frame, ~4539s left) :: the whole view transforming, resolving into the cosmic web s
+[dive] frame 71/308 (19.2s/frame, ~4545s left) :: moving through the cosmic web strung across black space, lon
+[dive] frame 81/308 (19.7s/frame, ~4480s left) :: diving straight into a bright spiral galaxy as it swells to 
+[dive] frame 91/308 (19.2s/frame, ~4159s left) :: a spiral galaxy set in black space, two great arms of cold b
+[dive] frame 101/308 (18.5s/frame, ~3832s left) :: deep inside a spiral galaxy set in black space, two great ar
+[dive] frame 111/308 (17.7s/frame, ~3477s left) :: deep inside a spiral galaxy set in black space, two great ar
+[dive] frame 121/308 (17.6s/frame, ~3289s left) :: moving through a black night ocean seen from high and obliqu
+[dive] frame 131/308 (18.4s/frame, ~3255s left) :: diving straight into a shallow reef bank as it swells to fil
+[dive] frame 141/308 (18.4s/frame, ~3080s left) :: a moonlit coral reef slope seen from a little above the sand
+[dive] frame 151/308 (18.1s/frame, ~2844s left) :: moving through a moonlit coral reef slope seen from a little
+[dive] frame 161/308 (18.0s/frame, ~2644s left) :: diving straight into a round ridged brain coral as it swells
+[dive] frame 171/308 (18.0s/frame, ~2462s left) :: a great brain coral standing clear of the sand, winding ridg
+[dive] frame 181/308 (17.7s/frame, ~2246s left) :: moving through a great brain coral standing clear of the san
+[dive] frame 191/308 (17.8s/frame, ~2081s left) :: diving straight into a deep shadowed groove as it swells to 
+[dive] frame 201/308 (17.6s/frame, ~1884s left) :: the crowded trough between two coral ridges, ranks of round 
+[dive] frame 211/308 (17.4s/frame, ~1683s left) :: moving through the crowded trough between two coral ridges, 
+[dive] frame 221/308 (17.5s/frame, ~1518s left) :: diving straight into a translucent coral polyp as it swells 
+[dive] frame 231/308 (17.3s/frame, ~1333s left) :: living coral tissue in layers, sheets of glassy blue-green c
+[dive] frame 241/308 (17.1s/frame, ~1147s left) :: diving straight into a glowing thread as it swells to fill t
+[dive] frame 251/308 (17.2s/frame, ~983s left) :: diving straight into a glowing thread as it swells to fill t
+[dive] frame 261/308 (17.1s/frame, ~806s left) :: moving through the coral's nerve net, long threads of cold e
+[dive] frame 271/308 (17.1s/frame, ~632s left) :: diving straight into a glowing junction bead as it swells to
+[dive] frame 281/308 (17.2s/frame, ~463s left) :: the narrow gap inside one nerve junction, round vesicles cro
+[dive] frame 291/308 (17.1s/frame, ~290s left) :: moving through the narrow gap inside one nerve junction, rou
+[dive] frame 301/308 (17.1s/frame, ~120s left) :: diving straight into ranked rows of blue-white spheres in a 
+[dive] frame 308/308 (17.2s/frame, ~0s left) :: diving straight into ranked rows of blue-white spheres in a 
+[dive] interpolated 12 -> 24fps (616 frames, loop-bridged) in 37s
+[dive] counter overlay on 616 frames (38 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/coral_synapse/v4/coral_synapse.mp4 (39984 KB, 25.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/coral_synapse/v4/coral_synapse_divein.mp4 (40466 KB, 25.7s)
+[dive] done in 5457s
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/coral_synapse/v5
+[dive] coral_synapse: 308 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — atom_core(sea)[22..44], spiral_galaxy(sea)[78..100], reef_shelf(surface)[134..156], brain_dome(surface)[162..184], polyp_valley(surface)[190..212], coral_tissue(sea)[218..240], nerve_mesh(sea)[246..268], junction_gap(sea)[274..283]
+[dive] TRACKER v3 ON (175 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of the aragonite lattice of the coral skeleton, ranked rows of blue-white spheres s
+[dive] frame 1/308 (74.2s/frame, ~22769s left) :: moving through the aragonite lattice of the coral skeleton, 
+[dive] frame 11/308 (49.5s/frame, ~14715s left) :: moving through the aragonite lattice of the coral skeleton, 
+[dive] frame 21/308 (44.6s/frame, ~12799s left) :: diving straight into a glowing atom as it swells to fill the
+[dive] frame 31/308 (36.8s/frame, ~10198s left) :: deep inside one atom, a tight droplet of packed white-hot sp
+[dive] frame 41/308 (31.0s/frame, ~8290s left) :: deep inside deep inside one atom, a tight droplet of packed 
+[dive] frame 51/308 (27.0s/frame, ~6937s left) :: deep inside deep inside one atom, a tight droplet of packed 
+[dive] frame 61/308 (24.9s/frame, ~6153s left) :: the whole view transforming, resolving into the cosmic web s
+[dive] frame 71/308 (25.4s/frame, ~6023s left) :: moving through the cosmic web strung across black space, lon
+[dive] frame 81/308 (25.9s/frame, ~5878s left) :: diving straight into a bright spiral galaxy as it swells to 
+[dive] frame 91/308 (24.8s/frame, ~5387s left) :: a spiral galaxy set in black space, two great arms of cold b
+[dive] frame 101/308 (23.7s/frame, ~4901s left) :: deep inside a spiral galaxy set in black space, two great ar
+[dive] frame 111/308 (22.4s/frame, ~4407s left) :: deep inside a spiral galaxy set in black space, two great ar
+[dive] frame 121/308 (22.1s/frame, ~4133s left) :: moving through a black night ocean seen from high and obliqu
+[dive] frame 131/308 (22.8s/frame, ~4036s left) :: diving straight into a shallow reef bank as it swells to fil
+[dive] frame 141/308 (22.7s/frame, ~3790s left) :: a moonlit coral reef slope seen from a little above the sand
+[dive] frame 151/308 (22.1s/frame, ~3469s left) :: moving through a moonlit coral reef slope seen from a little
+[dive] frame 161/308 (21.8s/frame, ~3204s left) :: diving straight into a round ridged brain coral as it swells
+[dive] frame 171/308 (21.6s/frame, ~2959s left) :: a great brain coral standing clear of the sand, winding ridg
+[dive] frame 181/308 (21.1s/frame, ~2682s left) :: moving through a great brain coral standing clear of the san
+[dive] frame 191/308 (21.2s/frame, ~2476s left) :: diving straight into a deep shadowed groove as it swells to 
+[dive] ⚠ figure at frame 196: people — Florence: "The image is a desert. The sand is a golden brown color. There are ridges and bumps in the sand. There is a thin white line in the middle of the sand."
+[dive] frame 201/308 (20.9s/frame, ~2234s left) :: the crowded trough between two coral ridges, ranks of round 
+[dive] frame 211/308 (20.5s/frame, ~1989s left) :: moving through the crowded trough between two coral ridges, 
+[dive] frame 221/308 (20.6s/frame, ~1789s left) :: diving straight into a translucent coral polyp as it swells 
+[dive] frame 231/308 (20.3s/frame, ~1567s left) :: living coral tissue in layers, sheets of glassy blue-green c
+[dive] frame 241/308 (20.1s/frame, ~1348s left) :: diving straight into a glowing thread as it swells to fill t
+[dive] frame 251/308 (20.3s/frame, ~1157s left) :: diving straight into a glowing thread as it swells to fill t
+[dive] frame 261/308 (20.1s/frame, ~946s left) :: moving through the coral's nerve net, long threads of cold e
+[dive] frame 271/308 (20.0s/frame, ~741s left) :: diving straight into a glowing junction bead as it swells to
+[dive] frame 281/308 (20.0s/frame, ~539s left) :: the narrow gap inside one nerve junction, round vesicles cro
+[dive] frame 291/308 (19.8s/frame, ~337s left) :: moving through the narrow gap inside one nerve junction, rou
+[dive] frame 301/308 (19.9s/frame, ~139s left) :: diving straight into ranked rows of blue-white spheres in a 
+[dive] frame 308/308 (19.9s/frame, ~0s left) :: diving straight into ranked rows of blue-white spheres in a 
+[dive] interpolated 12 -> 24fps (616 frames, loop-bridged) in 60s
+[dive] counter overlay on 616 frames (38 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/coral_synapse/v5/coral_synapse.mp4 (39187 KB, 25.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/coral_synapse/v5/coral_synapse_divein.mp4 (39788 KB, 25.7s)
+[dive] done in 6305s

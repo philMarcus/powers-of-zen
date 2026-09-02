@@ -1,0 +1,137 @@
+=== 01:30:02 batch start [LMS] — 3 journeys: cinder_veil salt_mirror attic_drift
+=== 01:30:03 --- cinder_veil ---
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/cinder_veil/v1
+[dive] cinder_veil: 308 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (196 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a dying ember star ringed by a broad disk of burning cinder debris seen at a sha
+[dive] frame 1/308 (18.2s/frame, ~5595s left) :: moving through a dying ember star ringed by a broad disk of 
+[dive] frame 11/308 (20.3s/frame, ~6029s left) :: moving through a dying ember star ringed by a broad disk of 
+[dive] frame 21/308 (20.4s/frame, ~5851s left) :: diving straight into a black planet veined with molten orang
+[dive] frame 31/308 (19.7s/frame, ~5448s left) :: a black rogue planet in deep space, long veins of molten ora
+[dive] frame 41/308 (18.8s/frame, ~5011s left) :: moving through a black rogue planet in deep space, long vein
+[dive] frame 51/308 (19.0s/frame, ~4878s left) :: diving straight into a grey ash cloud, a wide torn sheet as 
+[dive] frame 61/308 (18.5s/frame, ~4576s left) :: an ash cloud deck seen from high above, torn grey sheets spr
+[dive] frame 71/308 (18.4s/frame, ~4357s left) :: moving through an ash cloud deck seen from high above, torn 
+[dive] frame 81/308 (18.7s/frame, ~4253s left) :: diving straight into a branching orange fissure, a bright cr
+[dive] frame 91/308 (18.3s/frame, ~3967s left) :: volcanic caldera country at night seen from high above, a bl
+[dive] frame 101/308 (18.5s/frame, ~3831s left) :: diving straight into a molten lava river, a bright orange ch
+[dive] frame 111/308 (18.6s/frame, ~3661s left) :: diving straight into a molten lava river, a bright orange ch
+[dive] frame 121/308 (18.2s/frame, ~3411s left) :: moving through a molten lava river running down a black rock
+[dive] frame 131/308 (18.3s/frame, ~3246s left) :: diving straight into a stepped basalt terrace, black hexagon
+[dive] frame 141/308 (18.6s/frame, ~3104s left) :: wide terraces of black basalt stepping down in tiers, a pave
+[dive] frame 151/308 (18.2s/frame, ~2863s left) :: moving through wide terraces of black basalt stepping down i
+[dive] frame 161/308 (18.5s/frame, ~2715s left) :: diving straight into a dark cave mouth, a black arched openi
+[dive] frame 171/308 (18.4s/frame, ~2526s left) :: a lava tube running back into the dark, ribbed walls of glas
+[dive] frame 181/308 (18.3s/frame, ~2330s left) :: moving through a lava tube running back into the dark, ribbe
+[dive] frame 191/308 (18.4s/frame, ~2154s left) :: diving straight into a pale grey pumice stone, rough and pit
+[dive] frame 201/308 (18.3s/frame, ~1959s left) :: a pale grey pumice stone resting in cinder rubble, its rough
+[dive] frame 211/308 (18.3s/frame, ~1776s left) :: moving through a pale grey pumice stone resting in cinder ru
+[dive] frame 221/308 (18.4s/frame, ~1602s left) :: diving straight into a round gas pocket, a smooth-walled hol
+[dive] frame 231/308 (18.2s/frame, ~1404s left) :: a cavern world of round gas pockets inside pale volcanic gla
+[dive] frame 241/308 (18.3s/frame, ~1228s left) :: diving straight into a knot of tiny nested bubbles, circles 
+[dive] frame 251/308 (18.4s/frame, ~1047s left) :: diving straight into a knot of tiny nested bubbles, circles 
+[dive] frame 261/308 (18.1s/frame, ~852s left) :: deep inside a foam of glass-thin circles nested inside circl
+[dive] frame 271/308 (17.8s/frame, ~657s left) :: deep inside a foam of glass-thin circles nested inside circl
+[dive] frame 281/308 (17.5s/frame, ~472s left) :: the whole view transforming, resolving into a supernova remn
+[dive] frame 291/308 (17.3s/frame, ~294s left) :: moving through a supernova remnant strewn across the black, 
+[dive] frame 301/308 (17.3s/frame, ~121s left) :: diving straight into a dying ember star ringed by a broad di
+[dive] frame 308/308 (17.3s/frame, ~0s left) :: diving straight into a dying ember star ringed by a broad di
+[dive] interpolated 12 -> 24fps in 36s
+[dive] counter overlay on 613 frames (27 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/cinder_veil/v1/cinder_veil.mp4 (37228 KB, 25.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/cinder_veil/v1/cinder_veil_divein.mp4 (37876 KB, 25.7s)
+[dive] done in 5466s
+=== 03:01:09 cinder_veil: rendered in 5466s
+  copied cinder_veil.mp4 -> review/cinder_veil_ds.mp4
+  copied cinder_veil_divein.mp4 -> review_divein/cinder_veil_ds_divein.mp4
+cinder_veil: queued to REVIEW (ds/divein) from v1
+  cinder_veil: 5 caption+title pairs (spot=True); theme='A haunting, slow-burning melody that swe'
+    [0] A river of fire carves its path through the bones of the earth 🌋 Can you spot Newman hiding in the lava tube? 👀 #VolcanicDreamscape #CosmicLaceFilaments #RoguePlanetVeil #EmberLightRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A river of fire carves its path through the bones of the earth 🌋
+    [1] Hexagonal steps descend into a world of molten whispers Can you spot Newman hiding in the lava tube? 👀 #VolcanicDreamscape #CosmicLaceFilaments #RoguePlanetVeil #EmberLightRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Hexagonal steps descend into a world of molten whispers
+    [2] Glass bubbles float in an ocean of ember light ✨ Can you spot Newman hiding in the lava tube? 👀 #VolcanicDreamscape #CosmicLaceFilaments #RoguePlanetVeil #EmberLightRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Glass bubbles float in an ocean of ember light ✨
+    [3] The universe unfolds in tangled sheets of burning lace Can you spot Newman hiding in the lava tube? 👀 #VolcanicDreamscape #CosmicLaceFilaments #RoguePlanetVeil #EmberLightRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The universe unfolds in tangled sheets of burning lace
+    [4] A rogue planet drifts, veins of fire pulsing beneath its skin Can you spot Newman hiding in the lava tube? 👀 #VolcanicDreamscape #CosmicLaceFilaments #RoguePlanetVeil #EmberLightRealms #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A rogue planet drifts, veins of fire pulsing beneath its skin
+=== 03:02:05 cinder_veil -> REVIEW (captioned)
+=== 03:02:05 --- salt_mirror ---
+[style] reef_pop  ->  electric aquamarine and hot pink, sunlit turquoise depth, high-saturation tropical glow, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/salt_mirror/v1
+[dive] salt_mirror: 196 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (112 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of salt evaporation ponds at dusk seen from the air on a long slant, a broad patchw
+[dive] frame 1/196 (17.5s/frame, ~3408s left) :: moving through salt evaporation ponds at dusk seen from the 
+[dive] frame 11/196 (20.1s/frame, ~3727s left) :: moving through salt evaporation ponds at dusk seen from the 
+[dive] frame 21/196 (19.7s/frame, ~3452s left) :: diving straight into a white crust island, ridged and bright
+[dive] frame 31/196 (19.2s/frame, ~3161s left) :: a wide plain of thick white salt crust seen from just above 
+[dive] frame 41/196 (18.3s/frame, ~2834s left) :: moving through a wide plain of thick white salt crust seen f
+[dive] frame 51/196 (18.5s/frame, ~2685s left) :: diving straight into a cracked crust plate, flat and white-r
+[dive] frame 61/196 (18.1s/frame, ~2446s left) :: a country of thick salt plates at ground level, chalk-white 
+[dive] frame 71/196 (18.0s/frame, ~2255s left) :: moving through a country of thick salt plates at ground leve
+[dive] frame 81/196 (18.4s/frame, ~2117s left) :: diving straight into a stepped white crystal, square-sided a
+[dive] frame 91/196 (17.8s/frame, ~1871s left) :: a terrain of right-angled salt terraces, broad square ledges
+[dive] frame 101/196 (18.2s/frame, ~1729s left) :: diving straight into a deep square hollow, its sides cut in 
+[dive] frame 111/196 (18.4s/frame, ~1568s left) :: diving straight into a deep square hollow, its sides cut in 
+[dive] frame 121/196 (18.2s/frame, ~1365s left) :: moving through a smooth salt plain of growth steps, straight
+[dive] frame 131/196 (18.3s/frame, ~1188s left) :: diving straight into a glowing cube of light, its edges brig
+[dive] frame 141/196 (18.2s/frame, ~998s left) :: a cubic lattice of light, straight pale green lines running 
+[dive] frame 151/196 (17.5s/frame, ~788s left) :: deep inside a cubic lattice of light, straight pale green li
+[dive] frame 161/196 (16.9s/frame, ~592s left) :: deep inside a cubic lattice of light, straight pale green li
+[dive] frame 171/196 (16.5s/frame, ~412s left) :: the whole view transforming, resolving into a whole coastal 
+[dive] frame 181/196 (16.3s/frame, ~244s left) :: moving through a whole coastal saltworks seen from very high
+[dive] frame 191/196 (16.4s/frame, ~82s left) :: diving straight into salt evaporation ponds at dusk seen fro
+[dive] frame 196/196 (16.4s/frame, ~0s left) :: diving straight into salt evaporation ponds at dusk seen fro
+[dive] interpolated 12 -> 24fps in 23s
+[dive] counter overlay on 389 frames (22 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/salt_mirror/v1/salt_mirror.mp4 (23987 KB, 16.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/salt_mirror/v1/salt_mirror_divein.mp4 (24401 KB, 16.3s)
+[dive] done in 3307s
+=== 03:57:12 salt_mirror: rendered in 3307s
+  copied salt_mirror.mp4 -> review/salt_mirror_ds.mp4
+  copied salt_mirror_divein.mp4 -> review_divein/salt_mirror_ds_divein.mp4
+salt_mirror: queued to REVIEW (ds/divein) from v1
+  salt_mirror: 5 caption+title pairs (spot=True); theme='A hypnotic pulse of synth and ambient, l'
+    [0] Diving through salt dreams, where dusk never ends 🌅 Can you spot Adam hiding in this endless dive? 👀 #SaltWorlds #InfiniteZoom #CrystalDreamscape #DuskGeometry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Diving through salt dreams, where dusk never ends 🌅
+    [1] A crystal labyrinth stretching into infinity ✨ Can you spot Adam hiding in this endless dive? 👀 #SaltWorlds #InfiniteZoom #CrystalDreamscape #DuskGeometry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A crystal labyrinth stretching into infinity ✨
+    [2] Lost in the geometry of a vanishing world... Can you spot Adam hiding in this endless dive? 👀 #SaltWorlds #InfiniteZoom #CrystalDreamscape #DuskGeometry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Lost in the geometry of a vanishing world...
+    [3] Where light and brine weave endless patterns 🔵 Can you spot Adam hiding in this endless dive? 👀 #SaltWorlds #InfiniteZoom #CrystalDreamscape #DuskGeometry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where light and brine weave endless patterns 🔵
+    [4] Falling forever through the fractal heart of salt Can you spot Adam hiding in this endless dive? 👀 #SaltWorlds #InfiniteZoom #CrystalDreamscape #DuskGeometry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Falling forever through the fractal heart of salt
+=== 03:57:56 salt_mirror -> REVIEW (captioned)
+=== 03:57:56 --- attic_drift ---
+[style] cosmic_gloss  ->  luminous volumetric light, glossy hyperreal render, deep-space glow, ultra-detailed, cinematic, epic scale, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/attic_drift/v1
+[dive] attic_drift: 140 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (70 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of countless amber specks strewn at every depth through deep umber dark, packed den
+[dive] frame 1/140 (18.1s/frame, ~2515s left) :: moving through countless amber specks strewn at every depth 
+[dive] frame 11/140 (22.1s/frame, ~2855s left) :: moving through countless amber specks strewn at every depth 
+[dive] frame 21/140 (20.9s/frame, ~2489s left) :: diving straight into a pale glassy grain, jagged and clear a
+[dive] frame 31/140 (20.3s/frame, ~2210s left) :: a jagged clear grain of dust suspended in bright amber light
+[dive] frame 41/140 (19.2s/frame, ~1901s left) :: moving through a jagged clear grain of dust suspended in bri
+[dive] frame 51/140 (19.2s/frame, ~1712s left) :: diving straight into a dull white crust patch, rough and pit
+[dive] frame 61/140 (18.8s/frame, ~1483s left) :: a frosted crust spread across a glassy plain, low white ridg
+[dive] frame 71/140 (17.3s/frame, ~1191s left) :: deep inside a frosted crust spread across a glassy plain, lo
+[dive] frame 81/140 (16.1s/frame, ~951s left) :: deep inside a frosted crust spread across a glassy plain, lo
+[dive] frame 91/140 (15.5s/frame, ~758s left) :: the whole view transforming, resolving into a dark attic und
+[dive] frame 101/140 (16.0s/frame, ~623s left) :: diving straight into a broad amber shaft of daylight as it s
+[dive] frame 111/140 (16.3s/frame, ~474s left) :: diving straight into a broad amber shaft of daylight as it s
+[dive] frame 121/140 (16.2s/frame, ~308s left) :: moving through a broad amber column of daylight standing in 
+[dive] frame 131/140 (16.2s/frame, ~145s left) :: diving straight into countless amber specks strewn at every 
+[dive] frame 140/140 (16.3s/frame, ~0s left) :: diving straight into countless amber specks strewn at every 
+[dive] interpolated 12 -> 24fps in 16s
+[dive] counter overlay on 277 frames (15 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/attic_drift/v1/attic_drift.mp4 (15877 KB, 11.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/attic_drift/v1/attic_drift_divein.mp4 (16192 KB, 11.7s)
+[dive] done in 2345s
+=== 04:37:01 attic_drift: rendered in 2345s
+  copied attic_drift.mp4 -> review/attic_drift_ds.mp4
+  copied attic_drift_divein.mp4 -> review_divein/attic_drift_ds_divein.mp4
+attic_drift: queued to REVIEW (ds/divein) from v1
+  attic_drift: 5 caption+title pairs (spot=True); theme='A slow, hypnotic swell of strings and am'
+    [0] Dust motes drift through amber light, endless and bright 🌟 Can you spot Belle hiding in this endless dive? 👀 #InfiniteAttic #DustUniverse #GoldenVoid #FrostedCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dust motes drift through amber light, endless and bright 🌟
+    [1] A jagged crystal floats in the void of an attic’s glow Can you spot Belle hiding in this endless dive? 👀 #InfiniteAttic #DustUniverse #GoldenVoid #FrostedCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A jagged crystal floats in the void of an attic’s glow
+    [2] Countless specks swirl in the dark, thinning to infinity Can you spot Belle hiding in this endless dive? 👀 #InfiniteAttic #DustUniverse #GoldenVoid #FrostedCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Countless specks swirl in the dark, thinning to infinity
+    [3] Frosted ridges stretch across a glassy plain under golden haze Can you spot Belle hiding in this endless dive? 👀 #InfiniteAttic #DustUniverse #GoldenVoid #FrostedCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Frosted ridges stretch across a glassy plain under golden haze
+    [4] The universe hides in a beam of light—watch it loop forever Can you spot Belle hiding in this endless dive? 👀 #InfiniteAttic #DustUniverse #GoldenVoid #FrostedCosmos #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The universe hides in a beam of light—watch it loop forever
+=== 04:37:49 attic_drift -> REVIEW (captioned)
+=== 04:37:49 batch done in 3.1h — 3 to Review
+=== 04:37:49 log: outbox/night_batch_0807_013002.log

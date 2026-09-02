@@ -1,0 +1,75 @@
+{
+ "name": "sockeye_stair",
+ "theme": "a salmon-run cascade at dusk worked as a crowded commons — sockeye in spawning crimson massed in the plunge pool with a brown bear on the ledge lip, gulls over the tailrace and an eagle in a snag — then onto one fish's flank, into the shingled plates of its skin, down to a single scale whose concentric growth ridges and radial grooves are reread as the cascade's own stepped slate ledges, water spilling down them back into the pool where it began",
+ "style": "liquid_light",
+ "music_lane": "tide_organ",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 6,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "plunge_pool",
+   "exp": 1,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "wet slate blue-grey rock, sockeye crimson, foam ivory on peat-dark water",
+   "scene": "a salmon-run plunge pool at dusk seen at eye level from the gravel bar, wet slate ledges stepping up out of the churn in every direction, dozens of sockeye crowding the peat-dark eddies in spawning crimson with olive-bronze heads, ivory foam streaks combed over the water, a brown bear posted on the lip of the lowest ledge, gulls scattered over the tailrace shallows, an eagle perched in a bleached spruce snag at the bank, spray haze hanging under the cascade, ranks of wet cobbles at the waterline",
+   "target": "a crimson sockeye",
+   "target_phrase": "a crimson fish",
+   "loop_target": "a salmon-run plunge pool at dusk at eye level, sockeye crowding the peat-dark eddies under wet slate ledges"
+  },
+  {
+   "name": "tailrace_fish",
+   "exp": -0.3,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "sockeye crimson and olive-bronze against ivory foam and slate",
+   "scene": "the tailrace under the lowest slate ledge, one sockeye clear of the peat-dark water in full spawning crimson, its olive-bronze head and hooked jaw set forward, its humped back ridged over a flank of packed scales, ivory foam sheeting off the rock at its shoulder, further sockeye ranked in the dim current beneath, wet slate walls rising on either hand, mist drifting through the gorge",
+   "target": "the crimson flank",
+   "target_phrase": "the crimson flank"
+  },
+  {
+   "name": "flank_shingles",
+   "exp": -1.6,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "crimson plates, slate-silver rims, glassy grey slick",
+   "scene": "a field of overlapping scales across the sockeye flank, ranks of domed crimson plates shingled one over the next in curving rows, each plate rimmed in slate-silver where it laps its neighbour, a glassy slick of mucus washing the whole field, fine grit and river silt caught in the laps, olive-bronze mottling running the upper ranks, the peat-dark current dimming the far ranks",
+   "target": "a crimson scale",
+   "target_phrase": "a crimson scale",
+   "resolve": {
+    "mode": "surface"
+   },
+   "cameo": {
+    "sprite": "output/mascots/canon/lee.png",
+    "pos": [
+     0.68,
+     0.37
+    ],
+    "size": 0.15
+   }
+  },
+  {
+   "name": "scale_rings",
+   "exp": -2.9,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "bone-ivory ridges over a crimson underglow, smoke-dark grooves",
+   "scene": "the ridge field of one sockeye scale, close-set growth rings laid in concentric annuli out from a knot at the centre, every ring raised into a bone-ivory terrace with a smoke-dark groove cut beneath it, radial grooves splitting the rings into stepped facets, a crimson underglow soaking up through the translucent plate, silt grains caught in the grooves, further ring terraces receding into a slate murk"
+  },
+  {
+   "name": "cascade_ledges",
+   "exp": 2,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "wet slate blue-grey steps, ivory foam, peat-dark pools",
+   "scene": "the stepped cascade at dusk from a low oblique vantage across the river, ranks of wet slate ledges terraced one under the next in broad steps, sheets of water spilling from step to step in ivory foam, peat-dark shelf pools held on the terraces with ring ripples spreading over them, moss cushions crowding the wet risers, the plunge pool churning at the foot of the lowest ledge, spray banked over the whole staircase, bleached spruce snags on the dim banks"
+  }
+ ],
+ "music_theme": "a driving dusk-river piece — a breathy reed organ over a deep sub pulse, two low beats then space in every bar for the hurl and the fall back, water textures thickening through the crowded pool, tightening to a single held reed at the flank of one fish, hushed and glassy over the ring terraces of the scale, then one deep swell as the rings open onto the cascade and the organ breathes wide for the return to the pool",
+ "music_key": "D minor",
+ "render_start": "plunge_pool"
+}

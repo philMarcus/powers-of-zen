@@ -1,0 +1,81 @@
+{
+  "name": "fluorite_stope",
+  "theme": "a fluorspar stope worked in square-set timbering and lit by one ultraviolet lamp, where every mineral answers in its own colour and nothing else is lit — onto the vein's crust of fluorite cubes and octahedra, into one crystal's nested phantom cubes and its octahedral cleavage terraces, down to fluorite's own grid where a cube of fluorine points sits inside a cube of calcium points, and that cube-within-cube is reread as the square-set timbering itself, cube joined to cube, back in the stope where it began",
+  "style": "ultraviolet",
+  "music_lane": "ember_pulse",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "stope",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "fluorite blue-violet, willemite green, calcite red-orange on mine black",
+      "scene": "a worked fluorspar stope at eye level from the sill floor, square-set timbering framing the space into a cubic scaffold of squared timbers, cube joined to cube in tiers up the back and off down the drift, one ultraviolet lamp clamped to a timber post as the only source in the stope, the ribs answering it in three colours — blue-violet fluorite crusts, willemite green speckle, calcite red-orange seams — and everything it does not reach sunk in mine black, a tri-colored bat hooked under a cross-timber, cave crickets stilted along the ore-car rail, a salamander in the flooded sump at the foot of the sets, a muck pile of broken ore heaped at the vein, countless timber joints receding down the drift, empty, no one present",
+      "target": "a blue-violet crystal crust",
+      "target_phrase": "a violet crystal crust"
+    },
+    {
+      "name": "vein_crust",
+      "exp": -0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blue-violet crystal burn, willemite green joints, sooty ore black",
+      "scene": "a crusted fluorspar vein at eye level, countless fluorite cubes and octahedra crowded over it corner to corner, every crystal burning blue-violet, hair-thin willemite green filming the joints between them, calcite red-orange bands coursing under the crust, sooty ore dust dulling the lower rows, ragged cavities cut into the crust where the crystals stand in loose clusters, tiers of crystal edges stepping off into mine black",
+      "target": "a violet fluorite cube",
+      "target_phrase": "a violet cube",
+      "loop_target": "a crusted fluorspar vein at eye level, countless fluorite cubes and octahedra crowded over it, every crystal burning blue-violet",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "phantom_cubes",
+      "exp": -1.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blue-violet outer zones, willemite green core burn, ink black",
+      "scene": "the interior of one fluorite crystal, ghost cubes nested one inside the next, each squared outline set true with the outline enclosing it and burning its own colour — blue-violet through the outer zones, willemite green in the core — hair-thin films of trapped bubbles marking every boundary, a red-orange grain sealed at one zone edge, the crystal parted along a stepped triangular break at its corner, the nested outlines receding into an ink-black core",
+      "target": "a triangular cleavage step",
+      "target_phrase": "a triangular step",
+      "cameo": {
+        "sprite": "output/mascots/canon/newman.png",
+        "pos": [
+          0.63,
+          0.36
+        ],
+        "size": 0.15
+      }
+    },
+    {
+      "name": "cleavage_steps",
+      "exp": -4.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blue-violet risers, smoke-black treads, one red-orange flare",
+      "scene": "a cleaved plane inside fluorite, triangular terraces stepping down one within another, each terrace edge set parallel to the edge enclosing it, the risers burning blue-violet and the treads sunk in smoke black, minute triangular etch pits cut into the treads, hair-thin cleavage cracks threading them, one tread flaring red-orange where a foreign grain sits in the step, further terraces stepping off into black depth-fog",
+      "target": "a cube of violet points",
+      "target_phrase": "a cube of points"
+    },
+    {
+      "name": "fluorite_lattice",
+      "exp": -9.4,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "blue-violet fluorine points, silver calcium points, void black",
+      "scene": "the crystal grid within fluorite, a cube of eight blue-violet fluorine points seated inside a larger cube of silver calcium points set at its corners and face centres, that nest repeating cube joined to cube in ordered files, taut struts strung point to point along every edge, the near cubes hard-edged and the far files dimming into black depth-fog, one file set out of true where the grid faults",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "cubic"
+      }
+    }
+  ],
+  "music_theme": "a driving underground piece — a deep 808 heartbeat on every downbeat under smoky low pads, cold struck-metal chimes ringing out the three mineral colours in the stope, thinning and tightening over the crystal crust, hushed and glassy inside the nested cubes, one bright struck bell where the grid becomes the timbering, then the pads breaking wide for the return to the stope",
+  "music_key": "F# minor",
+  "render_start": "vein_crust"
+}

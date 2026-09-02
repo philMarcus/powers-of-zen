@@ -1,0 +1,138 @@
+=== 01:30:01 batch start [LMS] — 3 journeys: jewel_oculus turing_springs droplet_zoo
+=== 01:30:02 --- jewel_oculus ---
+[style] crystalline  ->  prismatic crystalline light, refractive glass and gemstone facets, jewel tones, ultra-detailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/jewel_oculus/v1
+[dive] jewel_oculus: 308 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (196 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a dense cluster of galaxies burning gold in the black, long thin arcs of red and
+[dive] frame 1/308 (23.9s/frame, ~7340s left) :: moving through a dense cluster of galaxies burning gold in t
+[dive] frame 11/308 (20.4s/frame, ~6050s left) :: moving through a dense cluster of galaxies burning gold in t
+[dive] frame 21/308 (19.6s/frame, ~5619s left) :: diving straight into a nebula of green and blue light as it 
+[dive] frame 31/308 (19.0s/frame, ~5264s left) :: a nebula of coloured light standing in the black, broad shee
+[dive] frame 41/308 (18.1s/frame, ~4832s left) :: moving through a nebula of coloured light standing in the bl
+[dive] frame 51/308 (18.2s/frame, ~4688s left) :: diving straight into a deep red star wrapped in a thin brigh
+[dive] frame 61/308 (17.8s/frame, ~4395s left) :: a deep red sun low in the black, its face mottled into dark 
+[dive] frame 71/308 (17.8s/frame, ~4230s left) :: moving through a deep red sun low in the black, its face mot
+[dive] frame 81/308 (17.8s/frame, ~4046s left) :: diving straight into a dark blue planet, a smooth banded sph
+[dive] frame 91/308 (17.1s/frame, ~3718s left) :: a dark blue planet against the black, a bright line of dawn 
+[dive] frame 101/308 (17.5s/frame, ~3615s left) :: diving straight into a wide pale plain, ridged and dry as it
+[dive] frame 111/308 (17.6s/frame, ~3464s left) :: diving straight into a wide pale plain, ridged and dry as it
+[dive] frame 121/308 (17.3s/frame, ~3232s left) :: moving through a wide pale desert plain at first light seen 
+[dive] frame 131/308 (17.4s/frame, ~3076s left) :: diving straight into a walled palace of coloured glass under
+[dive] frame 141/308 (17.6s/frame, ~2935s left) :: a vast empty hall of coloured glass at dusk, seen wide from 
+[dive] frame 151/308 (17.3s/frame, ~2710s left) :: moving through a vast empty hall of coloured glass at dusk, 
+[dive] frame 161/308 (17.5s/frame, ~2577s left) :: diving straight into a ribbed glass vault of ten-pointed sta
+[dive] frame 171/308 (17.6s/frame, ~2411s left) :: the glass vault of the hall seen from straight below, ten-po
+[dive] frame 181/308 (17.5s/frame, ~2219s left) :: moving through the glass vault of the hall seen from straigh
+[dive] frame 191/308 (17.5s/frame, ~2053s left) :: diving straight into a ten-pointed star of deep red glass as
+[dive] frame 201/308 (17.5s/frame, ~1867s left) :: a ten-pointed star of deep red glass set in the vault, a ban
+[dive] frame 211/308 (17.4s/frame, ~1691s left) :: moving through a ten-pointed star of deep red glass set in t
+[dive] frame 221/308 (17.6s/frame, ~1531s left) :: diving straight into a string of round bubbles in the red gl
+[dive] frame 231/308 (17.4s/frame, ~1339s left) :: the deep red body of the glass, a dark red field crossed by 
+[dive] frame 241/308 (17.5s/frame, ~1173s left) :: diving straight into a field of bright points packed in tenf
+[dive] frame 251/308 (17.6s/frame, ~1001s left) :: diving straight into a field of bright points packed in tenf
+[dive] frame 261/308 (17.3s/frame, ~813s left) :: deep inside a tenfold starburst of packed bright points, lon
+[dive] frame 271/308 (17.0s/frame, ~627s left) :: deep inside a tenfold starburst of packed bright points, lon
+[dive] frame 281/308 (16.6s/frame, ~449s left) :: the whole view transforming, resolving into a cosmic web spr
+[dive] frame 291/308 (16.5s/frame, ~280s left) :: moving through a cosmic web spread through the void, long fi
+[dive] frame 301/308 (16.5s/frame, ~115s left) :: diving straight into a dense cluster of galaxies burning gol
+[dive] frame 308/308 (16.5s/frame, ~0s left) :: diving straight into a dense cluster of galaxies burning gol
+[dive] interpolated 12 -> 24fps in 36s
+[dive] counter overlay on 613 frames (40 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/jewel_oculus/v1/jewel_oculus.mp4 (36242 KB, 25.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/jewel_oculus/v1/jewel_oculus_divein.mp4 (37058 KB, 25.7s)
+[dive] done in 5233s
+=== 02:57:15 jewel_oculus: rendered in 5233s
+  copied jewel_oculus.mp4 -> review/jewel_oculus_ds.mp4
+  copied jewel_oculus_divein.mp4 -> review_divein/jewel_oculus_ds_divein.mp4
+jewel_oculus: queued to REVIEW (ds/divein) from v1
+  jewel_oculus: 5 caption+title pairs (spot=True); theme='A haunting, ethereal melody that swells '
+    [0] A glass cathedral dissolving into stardust 🌌 Can you spot Kitty hiding in this endless loop? 🐱 #GlassCosmos #InfiniteFractals #StardustCathedral #EndlessLoopJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A glass cathedral dissolving into stardust 🌌
+    [1] Where the sky becomes a kaleidoscope of light Can you spot Kitty hiding in this endless loop? 🐱 #GlassCosmos #InfiniteFractals #StardustCathedral #EndlessLoopJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where the sky becomes a kaleidoscope of light
+    [2] Lost in the infinite fractals of a gemstone world ✨ Can you spot Kitty hiding in this endless loop? 🐱 #GlassCosmos #InfiniteFractals #StardustCathedral #EndlessLoopJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Lost in the infinite fractals of a gemstone world ✨
+    [3] From cosmic webs to desert dawns, time loops forever Can you spot Kitty hiding in this endless loop? 🐱 #GlassCosmos #InfiniteFractals #StardustCathedral #EndlessLoopJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From cosmic webs to desert dawns, time loops forever
+    [4] A journey through glass and galaxies, endlessly unfolding Can you spot Kitty hiding in this endless loop? 🐱 #GlassCosmos #InfiniteFractals #StardustCathedral #EndlessLoopJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A journey through glass and galaxies, endlessly unfolding
+=== 02:58:42 jewel_oculus -> REVIEW (captioned)
+=== 02:58:42 --- turing_springs ---
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/turing_springs/v1
+[dive] turing_springs: 196 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (112 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of towering aurora curtains standing over a dark banded cloud deck, seen from high 
+[dive] frame 1/196 (17.0s/frame, ~3309s left) :: moving through towering aurora curtains standing over a dark
+[dive] frame 11/196 (19.6s/frame, ~3624s left) :: moving through towering aurora curtains standing over a dark
+[dive] frame 21/196 (20.2s/frame, ~3537s left) :: diving straight into a pale glowing fog bank as it swells to
+[dive] frame 31/196 (19.4s/frame, ~3199s left) :: a bank of white steam clouds low over dark volcanic country,
+[dive] frame 41/196 (18.5s/frame, ~2870s left) :: moving through a bank of white steam clouds low over dark vo
+[dive] frame 51/196 (18.6s/frame, ~2697s left) :: diving straight into a patch of orange-rimmed ground as it s
+[dive] frame 61/196 (18.2s/frame, ~2452s left) :: a wide spread of stepped hot-spring terraces seen from high 
+[dive] frame 71/196 (18.0s/frame, ~2246s left) :: moving through a wide spread of stepped hot-spring terraces 
+[dive] frame 81/196 (18.2s/frame, ~2094s left) :: diving straight into a round teal pool ringed in orange as i
+[dive] frame 91/196 (17.6s/frame, ~1850s left) :: one hot-spring pool seen from its stone rim, clear teal wate
+[dive] frame 101/196 (17.9s/frame, ~1704s left) :: diving straight into a broad band of orange crust as it swel
+[dive] frame 111/196 (18.2s/frame, ~1548s left) :: diving straight into a broad band of orange crust as it swel
+[dive] frame 121/196 (18.0s/frame, ~1352s left) :: moving through the crusted surface of an orange microbial ma
+[dive] frame 131/196 (18.1s/frame, ~1175s left) :: diving straight into a single ember-orange stripe as it swel
+[dive] frame 141/196 (18.3s/frame, ~1005s left) :: a forest of fine glassy threads standing inside one stripe o
+[dive] frame 151/196 (17.6s/frame, ~793s left) :: deep inside a forest of fine glassy threads standing inside 
+[dive] frame 161/196 (17.0s/frame, ~596s left) :: deep inside a forest of fine glassy threads standing inside 
+[dive] frame 171/196 (16.6s/frame, ~415s left) :: the whole view transforming, resolving into a banded gas gia
+[dive] frame 181/196 (16.4s/frame, ~246s left) :: moving through a banded gas giant hanging in deep space, bro
+[dive] frame 191/196 (16.4s/frame, ~82s left) :: diving straight into towering aurora curtains of green and t
+[dive] frame 196/196 (16.4s/frame, ~0s left) :: diving straight into towering aurora curtains of green and t
+[dive] interpolated 12 -> 24fps in 23s
+[dive] counter overlay on 389 frames (20 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/turing_springs/v1/turing_springs.mp4 (23204 KB, 16.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/turing_springs/v1/turing_springs_divein.mp4 (23663 KB, 16.3s)
+[dive] done in 3314s
+=== 03:53:57 turing_springs: rendered in 3314s
+  copied turing_springs.mp4 -> review/turing_springs_ds.mp4
+  copied turing_springs_divein.mp4 -> review_divein/turing_springs_ds_divein.mp4
+turing_springs: queued to REVIEW (ds/divein) from v1
+  turing_springs: 5 caption+title pairs (spot=True); theme='A slow, pulsing synth melody that swells'
+    [0] Diving through the infinite glow of mineral dreams 🌋 Can you spot Dora hiding in the glow? 👀 #MineralCosmos #InfiniteZoom #VolcanicBioluminescence #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Diving through the infinite glow of mineral dreams 🌋
+    [1] Where hot springs whisper secrets to the stars ✨ Can you spot Dora hiding in the glow? 👀 #MineralCosmos #InfiniteZoom #VolcanicBioluminescence #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where hot springs whisper secrets to the stars ✨
+    [2] A journey from steam to starlight, looped forever Can you spot Dora hiding in the glow? 👀 #MineralCosmos #InfiniteZoom #VolcanicBioluminescence #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A journey from steam to starlight, looped forever
+    [3] Lost in the fractal glow of a living planet Can you spot Dora hiding in the glow? 👀 #MineralCosmos #InfiniteZoom #VolcanicBioluminescence #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Lost in the fractal glow of a living planet
+    [4] From volcanic mist to cosmic auroras, endlessly Can you spot Dora hiding in the glow? 👀 #MineralCosmos #InfiniteZoom #VolcanicBioluminescence #DreamscapeJourney #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From volcanic mist to cosmic auroras, endlessly
+=== 03:54:45 turing_springs -> REVIEW (captioned)
+=== 03:54:45 --- droplet_zoo ---
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/droplet_zoo/v1
+[dive] droplet_zoo: 140 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (70 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a moonlit pond seen from a flat wet stone at the water's edge, still black water
+[dive] frame 1/140 (26.8s/frame, ~3725s left) :: moving through a moonlit pond seen from a flat wet stone at 
+[dive] frame 11/140 (20.2s/frame, ~2611s left) :: moving through a moonlit pond seen from a flat wet stone at 
+[dive] frame 21/140 (19.6s/frame, ~2336s left) :: diving straight into a round bead of water, a clear low dome
+[dive] frame 31/140 (19.3s/frame, ~2108s left) :: a lit water world inside one droplet, warm green water crowd
+[dive] frame 41/140 (18.6s/frame, ~1842s left) :: moving through a lit water world inside one droplet, warm gr
+[dive] frame 51/140 (18.4s/frame, ~1635s left) :: diving straight into a small glass shell, a pale ribbed disc
+[dive] frame 61/140 (17.5s/frame, ~1385s left) :: a domed glass shell spread across a green water field, cream
+[dive] frame 71/140 (17.5s/frame, ~1204s left) :: moving through a domed glass shell spread across a green wat
+[dive] frame 81/140 (17.6s/frame, ~1040s left) :: diving straight into a smooth white glass strut, a rounded r
+[dive] frame 91/140 (17.0s/frame, ~831s left) :: a lattice of smooth glass struts spanning a dark violet fiel
+[dive] frame 101/140 (16.0s/frame, ~626s left) :: deep inside a lattice of smooth glass struts spanning a dark
+[dive] frame 111/140 (15.3s/frame, ~444s left) :: deep inside a lattice of smooth glass struts spanning a dark
+[dive] frame 121/140 (15.0s/frame, ~285s left) :: moving through a dark pond seen wide from the high bank at n
+[dive] frame 131/140 (15.0s/frame, ~135s left) :: diving straight into the moonlit pond seen from a flat wet s
+[dive] frame 140/140 (15.2s/frame, ~0s left) :: diving straight into the moonlit pond seen from a flat wet s
+[dive] interpolated 12 -> 24fps in 16s
+[dive] counter overlay on 277 frames (18 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/droplet_zoo/v1/droplet_zoo.mp4 (14915 KB, 11.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/droplet_zoo/v1/droplet_zoo_divein.mp4 (15201 KB, 11.7s)
+[dive] done in 2187s
+=== 04:31:12 droplet_zoo: rendered in 2187s
+  copied droplet_zoo.mp4 -> review/droplet_zoo_ds.mp4
+  copied droplet_zoo_divein.mp4 -> review_divein/droplet_zoo_ds_divein.mp4
+droplet_zoo: queued to REVIEW (ds/divein) from v1
+  droplet_zoo: 5 caption+title pairs (spot=True); theme='A slow, pulsing synth melody drifting be'
+    [0] A droplet’s universe, glowing green and endless 🌊 Can you spot Lee hiding in the glow? 👀 #bioluminescentdream #glassuniverse #moonlitmicrocosm #endlessdepths #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A droplet’s universe, glowing green and endless 🌊
+    [1] Glass shells humming in the deep violet dark ✨ Can you spot Lee hiding in the glow? 👀 #bioluminescentdream #glassuniverse #moonlitmicrocosm #endlessdepths #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Glass shells humming in the deep violet dark ✨
+    [2] Moonlight fractures into a thousand black ponds Can you spot Lee hiding in the glow? 👀 #bioluminescentdream #glassuniverse #moonlitmicrocosm #endlessdepths #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Moonlight fractures into a thousand black ponds
+    [3] Where the water ends, the glass lattice begins... Can you spot Lee hiding in the glow? 👀 #bioluminescentdream #glassuniverse #moonlitmicrocosm #endlessdepths #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where the water ends, the glass lattice begins...
+    [4] One stone holds the whole world Can you spot Lee hiding in the glow? 👀 #bioluminescentdream #glassuniverse #moonlitmicrocosm #endlessdepths #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: One stone holds the whole world
+=== 04:31:55 droplet_zoo -> REVIEW (captioned)
+=== 04:31:55 batch done in 3.0h — 3 to Review
+=== 04:31:55 ComfyUI models unloaded — VRAM freed
+=== 04:31:55 log: outbox/night_batch_0813_013001.log

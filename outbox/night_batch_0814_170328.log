@@ -1,0 +1,67 @@
+=== 17:03:28 batch start [manual] — 1 journeys: ivory_gambit
+=== 17:03:28 --- ivory_gambit ---
+=== 17:03:28 ivory_gambit: --seed 974201
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] lacquer_pop  ->  deep lacquer enamel sheen, vermilion red and deep green, bold flat colour blocking, lustrous graphic poster look, ultra-detailed, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/ivory_gambit/v2
+[dive] ivory_gambit: 352 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — star_ranks(sea)[26..49], night_planet(surface)[58..81], board_kingdom(surface)[90..113], knight(surface)[122..145], ivory_grain(sea)[154..177], dentin_cells(sea)[186..209], collagen(sea)[218..241], apatite_lattice(lattice)[250..263], nucleus_shiver(sea)[282..305]
+[dive] TRACKER v3 ON (224 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a spiral galaxy tilted three-quarters against the black, ivory star-arms wound o
+[dive] frame 1/352 (33.0s/frame, ~11574s left) :: moving through a spiral galaxy tilted three-quarters against
+[dive] frame 11/352 (22.0s/frame, ~7511s left) :: moving through a spiral galaxy tilted three-quarters against
+[dive] frame 21/352 (20.9s/frame, ~6931s left) :: diving straight into a white burning star as it swells to fi
+[dive] frame 31/352 (20.1s/frame, ~6447s left) :: diving straight into a white burning star as it swells to fi
+[dive] frame 41/352 (18.1s/frame, ~5616s left) :: moving through a white star burning inside ranked circles of
+[dive] frame 51/352 (17.1s/frame, ~5159s left) :: moving through a white star burning inside ranked circles of
+[dive] frame 61/352 (17.3s/frame, ~5035s left) :: diving straight into a dark planet with a thin bright rim as
+[dive] frame 71/352 (16.5s/frame, ~4643s left) :: the night face of a planet turned outward against the black,
+[dive] frame 81/352 (15.9s/frame, ~4321s left) :: moving through the night face of a planet turned outward aga
+[dive] frame 91/352 (16.5s/frame, ~4301s left) :: diving straight into a checkered plain of black and ivory sq
+[dive] frame 101/352 (16.0s/frame, ~4019s left) :: a whole kingdom ruled into a battle board, seen from a high 
+[dive] frame 111/352 (15.6s/frame, ~3765s left) :: moving through a whole kingdom ruled into a battle board, se
+[dive] frame 121/352 (15.9s/frame, ~3683s left) :: diving straight into a horse-headed ivory knight as it swell
+[dive] frame 131/352 (15.7s/frame, ~3461s left) :: a colossal horse-headed knight of moonlit ivory standing mid
+[dive] ⚠ figure at frame 140: man — Florence: "A painting of a man on a horse. The man on the horse is wearing a helmet. The man on the horse is holding a long stick. The horse is white. The man on"
+[dive] frame 141/352 (15.4s/frame, ~3256s left) :: moving through a colossal horse-headed knight of moonlit ivo
+[dive] frame 151/352 (15.7s/frame, ~3149s left) :: diving straight into a dark hairline crack as it swells to f
+[dive] frame 161/352 (15.5s/frame, ~2964s left) :: carved ivory grain running in long parallel ridges across th
+[dive] frame 171/352 (15.4s/frame, ~2783s left) :: moving through carved ivory grain running in long parallel r
+[dive] frame 181/352 (15.4s/frame, ~2627s left) :: diving straight into a dark round channel mouth as it swells
+[dive] frame 191/352 (15.4s/frame, ~2478s left) :: diving straight into a dark round channel mouth as it swells
+[dive] frame 201/352 (15.3s/frame, ~2310s left) :: moving through inside the ivory, ranks of round channel mout
+[dive] frame 211/352 (15.2s/frame, ~2144s left) :: moving through inside the ivory, ranks of round channel mout
+[dive] frame 221/352 (15.3s/frame, ~2001s left) :: diving straight into a braided amber rope as it swells to fi
+[dive] frame 231/352 (15.2s/frame, ~1837s left) :: three-stranded collagen ropes wound tight and stacked into l
+[dive] frame 241/352 (15.0s/frame, ~1670s left) :: moving through three-stranded collagen ropes wound tight and
+[dive] frame 251/352 (15.3s/frame, ~1541s left) :: diving straight into a flat teal crystal plate as it swells 
+[dive] frame 261/352 (15.2s/frame, ~1382s left) :: the apatite lattice built through the black, hexagonal cells
+[dive] frame 271/352 (15.3s/frame, ~1240s left) :: moving through the apatite lattice built through the black, 
+[dive] frame 281/352 (15.6s/frame, ~1107s left) :: diving straight into a small violet-white sphere as it swell
+[dive] frame 291/352 (15.5s/frame, ~946s left) :: a shivering droplet of crowded glowing beads, taut threads o
+[dive] frame 301/352 (15.4s/frame, ~785s left) :: deep inside a shivering droplet of crowded glowing beads, ta
+[dive] frame 311/352 (15.2s/frame, ~625s left) :: deep inside a shivering droplet of crowded glowing beads, ta
+[dive] frame 321/352 (15.0s/frame, ~466s left) :: the whole view transforming, resolving into the cosmic web s
+[dive] frame 331/352 (14.9s/frame, ~313s left) :: moving through the cosmic web strung through the black, deep
+[dive] frame 341/352 (15.0s/frame, ~165s left) :: diving straight into a spiral galaxy tilted three-quarters a
+[dive] frame 351/352 (15.1s/frame, ~15s left) :: diving straight into a spiral galaxy tilted three-quarters a
+[dive] frame 352/352 (15.1s/frame, ~0s left) :: diving straight into a spiral galaxy tilted three-quarters a
+[dive] interpolated 12 -> 24fps (704 frames, loop-bridged) in 48s
+[dive] counter overlay on 704 frames (46 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/ivory_gambit/v2/ivory_gambit.mp4 (43547 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/ivory_gambit/v2/ivory_gambit_divein.mp4 (44176 KB, 29.3s)
+[dive] done in 5499s
+=== 18:35:07 ivory_gambit: rendered in 5499s
+  copied ivory_gambit.mp4 -> review/ivory_gambit_ds.mp4
+  copied ivory_gambit_divein.mp4 -> review_divein/ivory_gambit_ds_divein.mp4
+ivory_gambit: queued to REVIEW (ds/divein) from v2
+  ivory_gambit: 5 caption+title pairs (spot=True); theme='A slow, hypnotic pulse of deep gongs and'
+    [0] A galaxy unwinds into a kingdom, then dust. 🌌♟️ Can you spot Adam hiding in the loop? 👀 #PowersOfZen #InfiniteCosmicDive #LatticeAndLight #VermilionVoid #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A galaxy unwinds into a kingdom, then dust. 🌌♟️
+    [1] From star to stone, the board breathes alone. Can you spot Adam hiding in the loop? 👀 #PowersOfZen #InfiniteCosmicDive #LatticeAndLight #VermilionVoid #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From star to stone, the board breathes alone.
+    [2] Ivory knights stand in vermilion light. Can you spot Adam hiding in the loop? 👀 #PowersOfZen #InfiniteCosmicDive #LatticeAndLight #VermilionVoid #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Ivory knights stand in vermilion light.
+    [3] Cells hum where the lattice ends. Can you spot Adam hiding in the loop? 👀 #PowersOfZen #InfiniteCosmicDive #LatticeAndLight #VermilionVoid #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Cells hum where the lattice ends.
+    [4] The cosmic web shivers—find your thread. Can you spot Adam hiding in the loop? 👀 #PowersOfZen #InfiniteCosmicDive #LatticeAndLight #VermilionVoid #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The cosmic web shivers—find your thread.
+=== 18:36:18 ivory_gambit -> REVIEW (captioned)
+=== 18:36:18 batch done in 1.5h — 1 to Review
+=== 18:36:18 ComfyUI models unloaded — VRAM freed
+=== 18:36:18 log: outbox/night_batch_0814_170328.log

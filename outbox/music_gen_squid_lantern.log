@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/squid_lantern/music_box-wild.mp4
+    bar 2.000s | music bar 1.984s (conf 0.29) -> stretch 0.9920 | phase 0.510s | lock 43.84x | kick 0.33 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [music_box-wild] realigned (lock 43.84x kick 0.33)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/squid_lantern/choir_of_dust-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.57) -> stretch 1.0027 | phase 1.060s | lock 23.46x | kick 0.53 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] realigned (lock 23.46x kick 0.53)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/squid_lantern/glass_chapel-halftime.mp4
+    bar 2.000s | music bar 2.005s (conf 0.57) -> stretch 1.0027 | phase 0.040s | lock 18.56x | kick 0.54 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [glass_chapel-halftime] realigned (lock 18.56x kick 0.54)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/squid_lantern/wooden_orbit-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.34) -> stretch 1.0027 | phase 1.530s | lock 22.03x | kick 0.30 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] realigned (lock 22.03x kick 0.30)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/squid_lantern/glass_chapel.mp4
+    bar 2.000s | music bar 2.005s (conf 0.54) -> stretch 1.0027 | phase 0.530s | lock 11.82x | kick 0.36 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [glass_chapel] realigned (lock 11.82x kick 0.36)
+realigned 5 pregen candidates to the marked start

@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/physarum_maze/tide_organ.mp4
+    bar 2.000s | music bar 2.005s (conf 0.52) -> stretch 1.0027 | phase 0.050s | lock 10.11x | kick 0.59 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [tide_organ] realigned (lock 10.11x kick 0.59)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/physarum_maze/tide_organ-b.mp4
+    bar 2.000s | music bar 1.995s (conf 0.68) -> stretch 0.9973 | phase 0.110s | lock 7.30x | kick 0.61 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [tide_organ-b] realigned (lock 7.30x kick 0.61)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/physarum_maze/music_box-wild.mp4
+    bar 2.000s | music bar 1.995s (conf 0.60) -> stretch 0.9973 | phase 0.320s | lock 7.94x | kick 0.55 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [music_box-wild] realigned (lock 7.94x kick 0.55)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/physarum_maze/deep_archive-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.56) -> stretch 1.0027 | phase 1.760s | lock 10.20x | kick 0.24 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] realigned (lock 10.20x kick 0.24)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/physarum_maze/analog_dawn-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.53) -> stretch 1.0027 | phase 0.510s | lock 5.41x | kick 0.39 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [analog_dawn-wild] realigned (lock 5.41x kick 0.39)
+realigned 5 pregen candidates to the marked start

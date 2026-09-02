@@ -1,0 +1,503 @@
+=== 01:30:01 batch start [LLLS] — 4 journeys: eclipse_waterhole magellanic_mob sunspot_archipelago lissajous_stage
+=== 01:30:01 --- eclipse_waterhole ---
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/eclipse_waterhole/v1
+[dive] eclipse_waterhole: 392 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — corona_ring(sea)[26..39], umbra_spot(surface)[58..81], baobab_basin(surface)[90..113], waterhole_totality(surface)[122..145], storage_cells(sea)[154..177], cellulose_rope(sea)[186..209], carbon_sheets(lattice)[218..241], caged_trio(sea)[250..273], bar_galaxy(sea)[314..337], comet_halo(sea)[346..359]
+[dive] TRACKER v3 ON (272 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of the outer reach of one star's system, thousands of sooty ice bodies strewn through a vio
+[dive] frame 1/392 (44.3s/frame, ~17303s left) :: moving through the outer reach of one star's system, thousan
+[dive] frame 11/392 (37.5s/frame, ~14290s left) :: moving through the outer reach of one star's system, thousan
+[dive] frame 21/392 (35.6s/frame, ~13198s left) :: diving straight into a burning gold star as it swells to fil
+[dive] frame 31/392 (33.9s/frame, ~12251s left) :: diving straight into a burning gold star as it swells to fil
+[dive] frame 41/392 (30.0s/frame, ~10546s left) :: moving through a star in total eclipse, a ring of blazing co
+[dive] frame 51/392 (31.1s/frame, ~10589s left) :: moving through a star in total eclipse, a ring of blazing co
+[dive] frame 61/392 (31.7s/frame, ~10482s left) :: diving straight into a rust-red planet as it swells to fill 
+[dive] frame 71/392 (29.2s/frame, ~9386s left) :: a rust-red planet seen from orbit, its sunlit face spread in
+[dive] frame 81/392 (27.4s/frame, ~8518s left) :: moving through a rust-red planet seen from orbit, its sunlit
+[dive] frame 91/392 (28.0s/frame, ~8413s left) :: diving straight into a shadowed ochre plain as it swells to 
+[dive] frame 101/392 (26.6s/frame, ~7736s left) :: a savanna basin sunk in the umbra, seen from high over its f
+[dive] frame 111/392 (25.5s/frame, ~7156s left) :: moving through a savanna basin sunk in the umbra, seen from 
+[dive] frame 121/392 (26.0s/frame, ~7041s left) :: diving straight into a round copper pool as it swells to fil
+[dive] frame 131/392 (25.3s/frame, ~6598s left) :: the rim of a shrinking waterhole at standing height in total
+[dive] frame 141/392 (24.7s/frame, ~6191s left) :: moving through the rim of a shrinking waterhole at standing 
+[dive] frame 151/392 (24.9s/frame, ~6010s left) :: diving straight into a swollen fluted trunk as it swells to 
+[dive] frame 161/392 (24.7s/frame, ~5701s left) :: the water-swollen wood within a baobab trunk, immense thin-w
+[dive] frame 171/392 (24.3s/frame, ~5360s left) :: moving through the water-swollen wood within a baobab trunk,
+[dive] frame 181/392 (24.0s/frame, ~5070s left) :: diving straight into a taut sienna cable as it swells to fil
+[dive] frame 191/392 (24.1s/frame, ~4844s left) :: diving straight into a taut sienna cable as it swells to fil
+[dive] frame 201/392 (23.8s/frame, ~4537s left) :: moving through the molecular structure of cellulose, flat su
+[dive] frame 211/392 (23.5s/frame, ~4259s left) :: moving through the molecular structure of cellulose, flat su
+[dive] frame 221/392 (23.7s/frame, ~4055s left) :: diving straight into a burning atom as it swells to fill the
+[dive] frame 231/392 (23.4s/frame, ~3772s left) :: the carbon grid stiffening one cellulose ribbon, six-sided r
+[dive] frame 241/392 (23.0s/frame, ~3480s left) :: moving through the carbon grid stiffening one cellulose ribb
+[dive] frame 251/392 (23.5s/frame, ~3308s left) :: diving straight into a gold atomic nucleus as it swells to f
+[dive] frame 261/392 (23.2s/frame, ~3041s left) :: a trio of burning gold spheres set at the corners of a shive
+[dive] frame 271/392 (22.9s/frame, ~2769s left) :: deep inside a trio of burning gold spheres set at the corner
+[dive] frame 281/392 (22.6s/frame, ~2512s left) :: deep inside a trio of burning gold spheres set at the corner
+[dive] frame 291/392 (22.4s/frame, ~2261s left) :: the whole view transforming, resolving into the coarsest wea
+[dive] frame 301/392 (22.6s/frame, ~2055s left) :: moving through the coarsest weave of the universe, six coppe
+[dive] frame 311/392 (23.1s/frame, ~1869s left) :: diving straight into a copper spiral galaxy as it swells to 
+[dive] frame 321/392 (23.1s/frame, ~1639s left) :: a barred spiral galaxy tilted toward us, a straight sienna b
+[dive] frame 331/392 (22.8s/frame, ~1393s left) :: moving through a barred spiral galaxy tilted toward us, a st
+[dive] frame 341/392 (22.9s/frame, ~1168s left) :: diving straight into a swarm of icy comets as it swells to f
+[dive] frame 351/392 (23.0s/frame, ~943s left) :: diving straight into a swarm of icy comets as it swells to f
+[dive] frame 361/392 (22.8s/frame, ~707s left) :: moving through the outer reach of one star's system, thousan
+[dive] frame 371/392 (23.1s/frame, ~485s left) :: moving through the outer reach of one star's system, thousan
+[dive] frame 381/392 (23.3s/frame, ~256s left) :: diving straight into a burning gold star as it swells to fil
+[dive] frame 391/392 (23.4s/frame, ~23s left) :: a star in total eclipse, a ring of blazing corona radiance d
+[dive] frame 392/392 (23.4s/frame, ~0s left) :: a star in total eclipse, a ring of blazing corona radiance d
+[dive] interpolated 12 -> 24fps (704 frames, loop-bridged) in 73s
+[dive] counter overlay on 704 frames (48 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/eclipse_waterhole/v1/eclipse_waterhole.mp4 (48433 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/eclipse_waterhole/v1/eclipse_waterhole_divein.mp4 (48926 KB, 29.3s)
+[dive] done in 9386s
+=== 04:06:27 eclipse_waterhole: rendered in 9386s
+  copied eclipse_waterhole.mp4 -> review/eclipse_waterhole_ds.mp4
+  copied eclipse_waterhole_divein.mp4 -> review_divein/eclipse_waterhole_ds_divein.mp4
+eclipse_waterhole: queued to REVIEW (ds/divein) from v1
+  no captions parsed for eclipse_waterhole
+=== 04:07:08 eclipse_waterhole -> REVIEW (in Review but UNCAPTIONED (Ollama down?))
+=== 04:07:08 --- magellanic_mob ---
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] enchanted_wild  ->  enchanted golden light, lush saturated color, painterly fantasy illustration, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/magellanic_mob/v1
+[dive] magellanic_mob: 392 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — ember_system(sea)[26..49], night_world(surface)[58..71], dune_country(surface)[90..113], mob_crossing(surface)[122..145], spring_cable(sea)[186..209], crease_field(lattice)[218..241], oar_gangs(lattice)[250..273], carbon_fog(sea)[282..305], nursery_shoal(sea)[346..359]
+[dive] TRACKER v3 ON (272 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of hundreds of newborn suns strewn through a hollow burned in a long drift of star-gas, blu
+[dive] frame 1/392 (53.8s/frame, ~21047s left) :: moving through hundreds of newborn suns strewn through a hol
+[dive] frame 11/392 (31.9s/frame, ~12153s left) :: moving through hundreds of newborn suns strewn through a hol
+[dive] frame 21/392 (29.6s/frame, ~10965s left) :: diving straight into a smoldering red sun as it swells to fi
+[dive] ⚠ figure at frame 28: person — Florence: "A painting of a sun in the middle of a wave. The sun is yellow. The wave is blue and green. There is a person standing in the middle of the wave. Ther"
+[dive] frame 31/392 (27.7s/frame, ~10002s left) :: diving straight into a smoldering red sun as it swells to fi
+[dive] frame 41/392 (24.5s/frame, ~8588s left) :: moving through one smoldering red sun standing in an open gu
+[dive] frame 51/392 (22.9s/frame, ~7810s left) :: moving through one smoldering red sun standing in an open gu
+[dive] frame 61/392 (23.6s/frame, ~7805s left) :: diving straight into an oxide-red planet as it swells to fil
+[dive] frame 71/392 (22.4s/frame, ~7178s left) :: a red world seen from low orbit with most of its face turned
+[dive] frame 81/392 (23.1s/frame, ~7174s left) :: moving through a red world seen from low orbit with most of 
+[dive] frame 91/392 (23.5s/frame, ~7084s left) :: diving straight into a rippled red dune field as it swells t
+[dive] frame 101/392 (22.6s/frame, ~6581s left) :: red dune country seen from high over the ranks and tipped to
+[dive] frame 111/392 (21.9s/frame, ~6146s left) :: moving through red dune country seen from high over the rank
+[dive] frame 121/392 (22.3s/frame, ~6032s left) :: diving straight into a pale claypan as it swells to fill the
+[dive] frame 131/392 (21.8s/frame, ~5679s left) :: the margin of a pale claypan at standing height under a full
+[dive] frame 141/392 (21.3s/frame, ~5346s left) :: moving through the margin of a pale claypan at standing heig
+[dive] frame 151/392 (21.6s/frame, ~5213s left) :: diving straight into a red kangaroo as it swells to fill the
+[dive] frame 161/392 (22.1s/frame, ~5108s left) :: the hindquarters of one kangaroo at mid-stride, oxblood fur 
+[dive] frame 171/392 (22.1s/frame, ~4878s left) :: moving through the hindquarters of one kangaroo at mid-strid
+[dive] frame 181/392 (22.6s/frame, ~4761s left) :: diving straight into a taut pale tendon as it swells to fill
+[dive] frame 191/392 (22.4s/frame, ~4506s left) :: diving straight into a taut pale tendon as it swells to fill
+[dive] frame 201/392 (22.1s/frame, ~4222s left) :: moving through within the spring cable of the shank, pearl r
+[dive] frame 211/392 (21.9s/frame, ~3957s left) :: moving through within the spring cable of the shank, pearl r
+[dive] frame 221/392 (21.9s/frame, ~3752s left) :: diving straight into a banded crimson fibre as it swells to 
+[dive] frame 231/392 (21.7s/frame, ~3498s left) :: within one muscle fibre, ranks of striated bands stacked one
+[dive] frame 241/392 (21.5s/frame, ~3246s left) :: moving through within one muscle fibre, ranks of striated ba
+[dive] frame 251/392 (21.7s/frame, ~3064s left) :: diving straight into a glossy crimson band as it swells to f
+[dive] frame 261/392 (21.5s/frame, ~2817s left) :: the machinery within one striated band, thick slate-oxblood 
+[dive] frame 271/392 (21.2s/frame, ~2571s left) :: moving through the machinery within one striated band, thick
+[dive] frame 281/392 (21.5s/frame, ~2381s left) :: diving straight into a burning carbon atom as it swells to f
+[dive] frame 291/392 (21.3s/frame, ~2148s left) :: carbon atoms standing apart in the murk, each one a pearl co
+[dive] frame 301/392 (21.0s/frame, ~1914s left) :: deep inside carbon atoms standing apart in the murk, each on
+[dive] frame 311/392 (20.9s/frame, ~1693s left) :: deep inside carbon atoms standing apart in the murk, each on
+[dive] frame 321/392 (20.7s/frame, ~1470s left) :: the whole view transforming, resolving into a river of stars
+[dive] frame 331/392 (20.7s/frame, ~1261s left) :: moving through a river of stars and glowing gas drawn across
+[dive] frame 341/392 (21.0s/frame, ~1069s left) :: diving straight into a knot of blue suns as it swells to fil
+[dive] frame 351/392 (21.0s/frame, ~861s left) :: diving straight into a knot of blue suns as it swells to fil
+[dive] frame 361/392 (20.9s/frame, ~647s left) :: moving through hundreds of newborn suns strewn through a hol
+[dive] frame 371/392 (21.1s/frame, ~444s left) :: moving through hundreds of newborn suns strewn through a hol
+[dive] frame 381/392 (21.3s/frame, ~235s left) :: diving straight into a smoldering red sun as it swells to fi
+[dive] frame 391/392 (21.5s/frame, ~22s left) :: one smoldering red sun standing in an open gulf, its ember f
+[dive] frame 392/392 (21.6s/frame, ~0s left) :: one smoldering red sun standing in an open gulf, its ember f
+[dive] interpolated 12 -> 24fps (704 frames, loop-bridged) in 74s
+[dive] counter overlay on 704 frames (40 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/magellanic_mob/v1/magellanic_mob.mp4 (43506 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/magellanic_mob/v1/magellanic_mob_divein.mp4 (44320 KB, 29.3s)
+[dive] done in 8674s
+=== 06:31:42 magellanic_mob: rendered in 8674s
+  copied magellanic_mob.mp4 -> review/magellanic_mob_ds.mp4
+  copied magellanic_mob_divein.mp4 -> review_divein/magellanic_mob_ds_divein.mp4
+magellanic_mob: queued to REVIEW (ds/divein) from v1
+  magellanic_mob: 5 caption+title pairs (spot=True); theme='A celestial lullaby woven with cosmic wh'
+    [0] A river of stars flows into infinity 🌌 Can you spot Janet the Planet hiding in the stars? 👀 #CosmicDunes #StellarVoyage #InfiniteZoom #JanetThePlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A river of stars flows into infinity 🌌
+    [1] Newborn suns ignite in the cosmic void Can you spot Janet the Planet hiding in the stars? 👀 #CosmicDunes #StellarVoyage #InfiniteZoom #JanetThePlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Newborn suns ignite in the cosmic void
+    [2] Ember worlds dance in the crimson gulf Can you spot Janet the Planet hiding in the stars? 👀 #CosmicDunes #StellarVoyage #InfiniteZoom #JanetThePlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Ember worlds dance in the crimson gulf
+    [3] Dunes whisper secrets under the moonlit sky Can you spot Janet the Planet hiding in the stars? 👀 #CosmicDunes #StellarVoyage #InfiniteZoom #JanetThePlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dunes whisper secrets under the moonlit sky
+    [4] The heartbeat of the universe, seen in a single leap Can you spot Janet the Planet hiding in the stars? 👀 #CosmicDunes #StellarVoyage #InfiniteZoom #JanetThePlanet #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The heartbeat of the universe, seen in a single leap
+=== 06:32:25 magellanic_mob -> REVIEW (captioned)
+=== 06:32:25 --- sunspot_archipelago ---
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/sunspot_archipelago/v1
+[dive] sunspot_archipelago: 315 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — spot_arcade(surface)[22..44], umbra_floor(surface)[50..72], jet_forest(surface)[78..100], jet_throat(web)[106..128], plasma_fog(sea)[134..156], nucleus_droplet(sea)[162..174], quark_trio(sea)[190..212], smolder_rim(surface)[246..268], granulation_sea(surface)[274..286]
+[dive] TRACKER v3 ON (196 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of solar granulation crowded rim to rim across a smoldering sun, every tile a swollen dome 
+[dive] frame 1/315 (46.9s/frame, ~14732s left) :: moving through solar granulation crowded rim to rim across a
+[dive] frame 11/315 (32.7s/frame, ~9944s left) :: moving through solar granulation crowded rim to rim across a
+[dive] frame 21/315 (30.6s/frame, ~9000s left) :: diving straight into a maroon sunspot as it swells to fill t
+[dive] frame 31/315 (27.1s/frame, ~7691s left) :: one sunspot spread over the plain, a sunless maroon core at 
+[dive] frame 41/315 (24.0s/frame, ~6582s left) :: moving through one sunspot spread over the plain, a sunless 
+[dive] frame 51/315 (24.1s/frame, ~6358s left) :: diving straight into a sunless maroon core as it swells to f
+[dive] frame 61/315 (23.0s/frame, ~5831s left) :: the sunken floor within a sunspot's core, burnt-maroon groun
+[dive] frame 71/315 (21.8s/frame, ~5308s left) :: moving through the sunken floor within a sunspot's core, bur
+[dive] frame 81/315 (21.8s/frame, ~5109s left) :: diving straight into a narrow fire jet as it swells to fill 
+[dive] frame 91/315 (21.2s/frame, ~4752s left) :: combed ranks of narrow fire-jets standing off a smoldering g
+[dive] frame 101/315 (20.6s/frame, ~4400s left) :: diving straight into a braided fire rope as it swells to fil
+[dive] frame 111/315 (21.0s/frame, ~4290s left) :: diving straight into a braided fire rope as it swells to fil
+[dive] frame 121/315 (20.7s/frame, ~4009s left) :: moving through the interior of one fire-jet, ropes of plasma
+[dive] frame 131/315 (20.6s/frame, ~3784s left) :: diving straight into a fine gold spark as it swells to fill 
+[dive] frame 141/315 (20.5s/frame, ~3563s left) :: the plasma shown at its own grain, countless small spheres o
+[dive] frame 151/315 (20.2s/frame, ~3305s left) :: moving through the plasma shown at its own grain, countless 
+[dive] frame 161/315 (20.1s/frame, ~3101s left) :: diving straight into a garnet sphere as it swells to fill th
+[dive] frame 171/315 (20.1s/frame, ~2898s left) :: a nucleus held as a quivering droplet of glowing spheres, ga
+[dive] frame 181/315 (20.4s/frame, ~2730s left) :: moving through a nucleus held as a quivering droplet of glow
+[dive] frame 191/315 (20.7s/frame, ~2569s left) :: diving straight into a pearl bead as it swells to fill the e
+[dive] frame 201/315 (20.5s/frame, ~2339s left) :: three glowing cores held in taut amber strands at the floor 
+[dive] frame 211/315 (20.2s/frame, ~2104s left) :: deep inside three glowing cores held in taut amber strands a
+[dive] frame 221/315 (20.0s/frame, ~1882s left) :: deep inside three glowing cores held in taut amber strands a
+[dive] frame 231/315 (19.9s/frame, ~1668s left) :: the whole view transforming, resolving into an open cluster 
+[dive] frame 241/315 (20.4s/frame, ~1509s left) :: diving straight into a smoldering crimson sun as it swells t
+[dive] frame 251/315 (20.4s/frame, ~1308s left) :: diving straight into a smoldering crimson sun as it swells t
+[dive] frame 261/315 (20.3s/frame, ~1095s left) :: moving through a smoldering crimson sun seen from near, its 
+[dive] frame 271/315 (20.1s/frame, ~883s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 281/315 (19.9s/frame, ~678s left) :: solar granulation crowded rim to rim across a smoldering sun
+[dive] frame 291/315 (20.0s/frame, ~480s left) :: moving through solar granulation crowded rim to rim across a
+[dive] frame 301/315 (20.3s/frame, ~284s left) :: diving straight into a maroon sunspot as it swells to fill t
+[dive] frame 311/315 (20.6s/frame, ~82s left) :: one sunspot spread over the plain, a sunless maroon core at 
+[dive] frame 315/315 (20.7s/frame, ~0s left) :: one sunspot spread over the plain, a sunless maroon core at 
+[dive] interpolated 12 -> 24fps (560 frames, loop-bridged) in 58s
+[dive] counter overlay on 560 frames (41 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/sunspot_archipelago/v1/sunspot_archipelago.mp4 (37008 KB, 23.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/sunspot_archipelago/v1/sunspot_archipelago_divein.mp4 (37535 KB, 23.3s)
+[dive] done in 6689s
+=== 08:23:55 sunspot_archipelago: rendered in 6690s
+  copied sunspot_archipelago.mp4 -> review/sunspot_archipelago_ds.mp4
+  copied sunspot_archipelago_divein.mp4 -> review_divein/sunspot_archipelago_ds_divein.mp4
+sunspot_archipelago: queued to REVIEW (ds/divein) from v1
+  sunspot_archipelago: 5 caption+title pairs (spot=True); theme='A slow, hypnotic pulse of celestial fire'
+    [0] Dive into the sun’s endless boil 🔥 Can you spot Clark the Quark in the cosmic dance? 👀 #cosmiczoom #stellargranulation #plasmafire #infinitevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive into the sun’s endless boil 🔥
+    [1] A sunspot’s heart beats with fire and shadow Can you spot Clark the Quark in the cosmic dance? 👀 #cosmiczoom #stellargranulation #plasmafire #infinitevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A sunspot’s heart beats with fire and shadow
+    [2] Where plasma rivers twist into infinity 🌌 Can you spot Clark the Quark in the cosmic dance? 👀 #cosmiczoom #stellargranulation #plasmafire #infinitevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where plasma rivers twist into infinity 🌌
+    [3] The spark that holds the universe together Can you spot Clark the Quark in the cosmic dance? 👀 #cosmiczoom #stellargranulation #plasmafire #infinitevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The spark that holds the universe together
+    [4] A star’s breath, stretched across the void Can you spot Clark the Quark in the cosmic dance? 👀 #cosmiczoom #stellargranulation #plasmafire #infinitevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A star’s breath, stretched across the void
+=== 08:24:44 sunspot_archipelago -> REVIEW (captioned)
+=== 08:24:44 --- lissajous_stage ---
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] lacquer_pop  ->  deep lacquer enamel sheen, vermilion red and deep green, bold flat colour blocking, lustrous graphic poster look, ultra-detailed, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/lissajous_stage/v1
+[dive] lissajous_stage: 150 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — metal_grain(sea)[18..39], lissajous_nests(sea)[42..63], string_bed(surface)[90..111], winding_coil(sea)[114..125]
+[dive] TRACKER v3 ON (96 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of the ridged terrain of a wound guitar string, hundreds of bronze coils packed sho
+[dive] frame 1/150 (47.4s/frame, ~7059s left) :: moving through the ridged terrain of a wound guitar string, 
+[dive] frame 11/150 (32.7s/frame, ~4544s left) :: moving through the ridged terrain of a wound guitar string, 
+[dive] frame 21/150 (28.7s/frame, ~3699s left) :: diving straight into a burnished copper crest as it swells t
+[dive] frame 31/150 (24.8s/frame, ~2957s left) :: moving through the crystal grain inside the bronze itself, i
+[dive] frame 41/150 (22.9s/frame, ~2499s left) :: diving straight into a hot copper spark as it swells to fill
+[dive] frame 51/150 (21.4s/frame, ~2119s left) :: nests of looping rosette curves traced in copper fire throug
+[dive] frame 61/150 (20.7s/frame, ~1843s left) :: deep inside nests of looping rosette curves traced in copper
+[dive] frame 71/150 (19.9s/frame, ~1570s left) :: deep inside nests of looping rosette curves traced in copper
+[dive] frame 81/150 (19.9s/frame, ~1372s left) :: moving through the boards of a club stage after the encore, 
+[dive] frame 91/150 (20.8s/frame, ~1224s left) :: diving straight into an electric guitar as it swells to fill
+[dive] frame 101/150 (20.1s/frame, ~987s left) :: an electric guitar laid face-up on the boards of a stage, si
+[dive] frame 111/150 (19.7s/frame, ~769s left) :: diving straight into a wound bronze string as it swells to f
+[dive] frame 121/150 (19.7s/frame, ~571s left) :: the ridged terrain of a wound guitar string, hundreds of bro
+[dive] frame 131/150 (19.9s/frame, ~378s left) :: moving through the ridged terrain of a wound guitar string, 
+[dive] frame 141/150 (20.7s/frame, ~186s left) :: diving straight into a burnished copper crest as it swells t
+[dive] frame 150/150 (21.3s/frame, ~0s left) :: the crystal grain inside the bronze itself, interlocking den
+[dive] interpolated 12 -> 24fps (240 frames, loop-bridged) in 25s
+[dive] counter overlay on 240 frames (15 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/lissajous_stage/v1/lissajous_stage.mp4 (14431 KB, 10.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/lissajous_stage/v1/lissajous_stage_divein.mp4 (14788 KB, 10.0s)
+[dive] done in 3260s
+=== 09:19:04 lissajous_stage: rendered in 3261s
+  copied lissajous_stage.mp4 -> review/lissajous_stage_ds.mp4
+  copied lissajous_stage_divein.mp4 -> review_divein/lissajous_stage_ds_divein.mp4
+lissajous_stage: queued to REVIEW (ds/divein) from v1
+  lissajous_stage: 5 caption+title pairs (spot=True); theme='A slow, hypnotic pulse of electric hums '
+    [0] A guitar’s soul, coiled in bronze and light 🌌 Can you spot Dora the Flora in the loop? 👀 #guitarcosmos #metalmicroworlds #stageafterglow #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A guitar’s soul, coiled in bronze and light 🌌
+    [1] Dendrites dance where metal dreams unfold Can you spot Dora the Flora in the loop? 👀 #guitarcosmos #metalmicroworlds #stageafterglow #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dendrites dance where metal dreams unfold
+    [2] Verdigris veins pulse in the copper dark Can you spot Dora the Flora in the loop? 👀 #guitarcosmos #metalmicroworlds #stageafterglow #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Verdigris veins pulse in the copper dark
+    [3] Rosette fire loops through the void’s embrace Can you spot Dora the Flora in the loop? 👀 #guitarcosmos #metalmicroworlds #stageafterglow #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Rosette fire loops through the void’s embrace
+    [4] Empty stages hum with phantom strings Can you spot Dora the Flora in the loop? 👀 #guitarcosmos #metalmicroworlds #stageafterglow #infinitezoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Empty stages hum with phantom strings
+=== 09:19:51 lissajous_stage -> REVIEW (captioned)
+=== 09:19:51 music pregen: eclipse_waterhole
+eclipse_waterhole (divein): bar 2.667s -> 90 bpm, key D minor; lane choir_of_dust; generating 8, keeping 5
+♪ generating 33.0s | 90bpm D minor | seed 22341 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 39s -> eclipse_waterhole_00001_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/eclipse_waterhole_choir_of_dust.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/eclipse_waterhole/choir_of_dust.mp4
+    bar 2.667s | music bar 2.667s (conf 0.68) -> stretch 1.0000 | phase 0.070s | lock 13.75x | kick 0.55 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [choir_of_dust] lock 13.75x conf 0.68 kick 0.55 score 12.95 -> review/music/candidates/eclipse_waterhole/choir_of_dust.mp4
+♪ generating 33.0s | 90bpm D minor | seed 22378 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 22s -> eclipse_waterhole_00002_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/eclipse_waterhole_choir_of_dust-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/eclipse_waterhole/choir_of_dust-b.mp4
+    bar 2.667s | music bar 2.667s (conf 0.79) -> stretch 1.0000 | phase 1.300s | lock 18.13x | kick 0.70 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [choir_of_dust-b] lock 18.13x conf 0.79 kick 0.70 score 22.19 -> review/music/candidates/eclipse_waterhole/choir_of_dust-b.mp4
+♪ generating 33.0s | 90bpm D minor | seed 22415 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 23s -> eclipse_waterhole_00003_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/eclipse_waterhole_choir_of_dust-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/eclipse_waterhole/choir_of_dust-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.54) -> stretch 1.0000 | phase 0.380s | lock 38.02x | kick 0.56 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [choir_of_dust-halftime] lock 38.02x conf 0.54 kick 0.56 score 31.98 -> review/music/candidates/eclipse_waterhole/choir_of_dust-halftime.mp4
+♪ generating 33.0s | 90bpm D minor | seed 22452 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 21s -> eclipse_waterhole_00004_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/eclipse_waterhole_analog_dawn-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/eclipse_waterhole/analog_dawn-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.78) -> stretch 1.0000 | phase 0.020s | lock 25.90x | kick 0.79 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [analog_dawn-wild] lock 25.90x conf 0.78 kick 0.79 score 34.23 -> review/music/candidates/eclipse_waterhole/analog_dawn-wild.mp4
+♪ generating 33.0s | 90bpm D minor | seed 22489 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 21s -> eclipse_waterhole_00005_.flac (1.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/eclipse_waterhole_ember_pulse-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/eclipse_waterhole/ember_pulse-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.64) -> stretch 1.0000 | phase 0.390s | lock 11.19x | kick 0.40 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [ember_pulse-wild] lock 11.19x conf 0.64 kick 0.40 score 8.32 -> review/music/candidates/eclipse_waterhole/ember_pulse-wild.mp4
+♪ generating 33.0s | 90bpm D minor | seed 22526 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 22s -> eclipse_waterhole_00006_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/eclipse_waterhole_choir_of_dust-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/eclipse_waterhole/choir_of_dust-third_answer.mp4
+    bar 2.667s | music bar 2.667s (conf 0.68) -> stretch 1.0000 | phase 0.520s | lock 7.04x | kick 0.32 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [choir_of_dust-third_answer] lock 7.04x conf 0.68 kick 0.32 score 4.72 -> review/music/candidates/eclipse_waterhole/choir_of_dust-third_answer.mp4
+♪ generating 33.0s | 90bpm D minor | seed 22563 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 20s -> eclipse_waterhole_00007_.flac (0.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/eclipse_waterhole_night_market-wild.flac
+  [night_market-wild] SKIPPED — track unusable: 0.00s of audio after silence strip
+♪ generating 33.0s | 90bpm D minor | seed 22600 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 22s -> eclipse_waterhole_00008_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/eclipse_waterhole_choir_of_dust-third_answer2.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/eclipse_waterhole/choir_of_dust-third_answer2.mp4
+    bar 2.667s | music bar 2.667s (conf 0.76) -> stretch 1.0000 | phase 0.010s | lock 26.05x | kick 0.71 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [choir_of_dust-third_answer2] lock 26.05x conf 0.76 kick 0.71 score 31.55 -> review/music/candidates/eclipse_waterhole/choir_of_dust-third_answer2.mp4
+kept: analog_dawn-wild, choir_of_dust-halftime, choir_of_dust-third_answer2, ember_pulse-wild, choir_of_dust-b
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 09:23:14 music pregen: magellanic_mob
+magellanic_mob (divein): bar 2.667s -> 90 bpm, key G minor; lane wooden_orbit; generating 8, keeping 5
+♪ generating 33.0s | 90bpm G minor | seed 24392 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 25s -> magellanic_mob_00001_.flac (1.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magellanic_mob_wooden_orbit.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magellanic_mob/wooden_orbit.mp4
+    bar 2.667s | music bar 2.667s (conf 0.78) -> stretch 1.0000 | phase 1.380s | lock 13.95x | kick 0.77 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [wooden_orbit] lock 13.95x conf 0.78 kick 0.77 score 18.14 -> review/music/candidates/magellanic_mob/wooden_orbit.mp4
+♪ generating 33.0s | 90bpm G minor | seed 24429 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 22s -> magellanic_mob_00002_.flac (1.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magellanic_mob_wooden_orbit-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magellanic_mob/wooden_orbit-b.mp4
+    bar 2.667s | music bar 2.667s (conf 0.51) -> stretch 1.0000 | phase 2.050s | lock 21.20x | kick 0.10 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [wooden_orbit-b] lock 21.20x conf 0.51 kick 0.10 score 7.43 -> review/music/candidates/magellanic_mob/wooden_orbit-b.mp4
+♪ generating 33.0s | 90bpm G minor | seed 24466 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 21s -> magellanic_mob_00003_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magellanic_mob_wooden_orbit-downbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magellanic_mob/wooden_orbit-downbeat.mp4
+    bar 2.667s | music bar 2.667s (conf 0.70) -> stretch 1.0000 | phase 1.070s | lock 7.38x | kick 0.58 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [wooden_orbit-downbeat] lock 7.38x conf 0.70 kick 0.58 score 7.32 -> review/music/candidates/magellanic_mob/wooden_orbit-downbeat.mp4
+♪ generating 33.0s | 90bpm G minor | seed 24503 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 21s -> magellanic_mob_00004_.flac (1.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magellanic_mob_glass_chapel-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magellanic_mob/glass_chapel-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.83) -> stretch 1.0000 | phase 0.030s | lock 27.01x | kick 0.77 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [glass_chapel-wild] lock 27.01x conf 0.83 kick 0.77 score 36.57 -> review/music/candidates/magellanic_mob/glass_chapel-wild.mp4
+♪ generating 33.0s | 90bpm G minor | seed 24540 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 23s -> magellanic_mob_00005_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magellanic_mob_tide_organ-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magellanic_mob/tide_organ-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.85) -> stretch 1.0000 | phase 2.580s | lock 30.09x | kick 0.76 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] lock 30.09x conf 0.85 kick 0.76 score 41.11 -> review/music/candidates/magellanic_mob/tide_organ-wild.mp4
+♪ generating 33.0s | 90bpm G minor | seed 24577 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 22s -> magellanic_mob_00006_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magellanic_mob_wooden_orbit-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magellanic_mob/wooden_orbit-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.82) -> stretch 1.0000 | phase 0.720s | lock 23.23x | kick 0.80 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [wooden_orbit-halftime] lock 23.23x conf 0.82 kick 0.80 score 32.25 -> review/music/candidates/magellanic_mob/wooden_orbit-halftime.mp4
+♪ generating 33.0s | 90bpm G minor | seed 24614 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 21s -> magellanic_mob_00007_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magellanic_mob_choir_of_dust-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magellanic_mob/choir_of_dust-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.84) -> stretch 1.0000 | phase 1.010s | lock 19.02x | kick 0.73 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] lock 19.02x conf 0.84 kick 0.73 score 24.96 -> review/music/candidates/magellanic_mob/choir_of_dust-wild.mp4
+♪ generating 33.0s | 68bpm G minor | seed 24651 steps 8
+  tags: a gently lilting waltz in 3/4 time, all percussion is a single deep soft kick drum landing...
+  done in 21s -> magellanic_mob_00008_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magellanic_mob_waltz-wooden_orbit.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magellanic_mob/waltz-wooden_orbit.mp4
+    bar 2.667s | music bar 2.645s (conf 0.72) -> stretch 0.9920 | phase 1.730s | lock 21.53x | kick 0.84 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [waltz-wooden_orbit] lock 21.53x conf 0.72 kick 0.84 score 28.56 -> review/music/candidates/magellanic_mob/waltz-wooden_orbit.mp4
+kept: tide_organ-wild, glass_chapel-wild, wooden_orbit-halftime, waltz-wooden_orbit, choir_of_dust-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 09:26:23 music pregen: sunspot_archipelago
+sunspot_archipelago (divein): bar 2.333s -> 103 bpm, key D minor; lane ember_pulse; generating 8, keeping 5
+♪ generating 27.0s | 103bpm D minor | seed 5313 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 22s -> sunspot_archipelago_00001_.flac (0.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sunspot_archipelago_ember_pulse.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sunspot_archipelago/ember_pulse.mp4
+    bar 2.333s | music bar 2.325s (conf 0.30) -> stretch 0.9966 | phase 0.030s | lock 30.77x | kick 0.00 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [ember_pulse] lock 30.77x conf 0.30 kick 0.00 score 6.13 -> review/music/candidates/sunspot_archipelago/ember_pulse.mp4
+♪ generating 27.0s | 103bpm D minor | seed 5350 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 17s -> sunspot_archipelago_00002_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sunspot_archipelago_ember_pulse-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sunspot_archipelago/ember_pulse-b.mp4
+    bar 2.333s | music bar 2.357s (conf 0.59) -> stretch 1.0103 | phase 2.260s | lock 9.98x | kick -0.03 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [ember_pulse-b] lock 9.98x conf 0.59 kick -0.03 score 2.73 -> review/music/candidates/sunspot_archipelago/ember_pulse-b.mp4
+♪ generating 27.0s | 103bpm D minor | seed 5387 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 16s -> sunspot_archipelago_00003_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sunspot_archipelago_ember_pulse-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sunspot_archipelago/ember_pulse-heartbeat.mp4
+    bar 2.333s | music bar 2.325s (conf 0.57) -> stretch 0.9966 | phase 0.780s | lock 7.24x | kick -0.02 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [ember_pulse-heartbeat] lock 7.24x conf 0.57 kick -0.02 score 1.94 -> review/music/candidates/sunspot_archipelago/ember_pulse-heartbeat.mp4
+♪ generating 27.0s | 103bpm D minor | seed 5424 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 17s -> sunspot_archipelago_00004_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sunspot_archipelago_choir_of_dust-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sunspot_archipelago/choir_of_dust-wild.mp4
+    bar 2.333s | music bar 2.304s (conf 0.15) -> stretch 0.9874 | phase 0.030s | lock 7.01x | kick 0.10 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] lock 7.01x conf 0.15 kick 0.10 score 1.60 -> review/music/candidates/sunspot_archipelago/choir_of_dust-wild.mp4
+♪ generating 27.0s | 103bpm D minor | seed 5461 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 16s -> sunspot_archipelago_00005_.flac (0.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sunspot_archipelago_music_box-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sunspot_archipelago/music_box-wild.mp4
+    bar 2.333s | music bar 2.272s (conf 0.27) -> stretch 0.9737 | phase 0.030s | lock 48.00x | kick 0.04 | seamless loop @ 23.33s (music tiled x3, xf 0.50s)
+  [music_box-wild] lock 48.00x conf 0.27 kick 0.04 score 10.88 -> review/music/candidates/sunspot_archipelago/music_box-wild.mp4
+♪ generating 27.0s | 103bpm D minor | seed 5498 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 16s -> sunspot_archipelago_00006_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sunspot_archipelago_ember_pulse-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sunspot_archipelago/ember_pulse-halftime.mp4
+    bar 2.333s | music bar 2.283s (conf 0.67) -> stretch 0.9783 | phase 0.900s | lock 16.43x | kick 0.55 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [ember_pulse-halftime] lock 16.43x conf 0.67 kick 0.55 score 15.38 -> review/music/candidates/sunspot_archipelago/ember_pulse-halftime.mp4
+♪ generating 27.0s | 103bpm D minor | seed 5535 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 16s -> sunspot_archipelago_00007_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sunspot_archipelago_wooden_orbit-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sunspot_archipelago/wooden_orbit-wild.mp4
+    bar 2.333s | music bar 2.336s (conf 0.73) -> stretch 1.0012 | phase 0.050s | lock 12.41x | kick 0.71 | seamless loop @ 23.33s (music tiled x1, xf 0.50s)
+  [wooden_orbit-wild] lock 12.41x conf 0.73 kick 0.71 score 14.70 -> review/music/candidates/sunspot_archipelago/wooden_orbit-wild.mp4
+♪ generating 27.0s | 103bpm D minor | seed 5572 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 16s -> sunspot_archipelago_00008_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sunspot_archipelago_ember_pulse-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sunspot_archipelago/ember_pulse-third_answer.mp4
+    bar 2.333s | music bar 2.304s (conf 0.50) -> stretch 0.9874 | phase 1.470s | lock 13.84x | kick 0.29 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [ember_pulse-third_answer] lock 13.84x conf 0.50 kick 0.29 score 7.53 -> review/music/candidates/sunspot_archipelago/ember_pulse-third_answer.mp4
+♪ generating 27.0s | 103bpm D minor | seed 5673 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 18s -> sunspot_archipelago_00009_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sunspot_archipelago_pulse1-ember_pulse.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sunspot_archipelago/pulse1-ember_pulse.mp4
+    bar 2.333s | music bar 2.283s (conf 0.61) -> stretch 0.9783 | phase 1.780s | lock 13.35x | kick 0.57 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [pulse1-ember_pulse] kick 0.57 (top-up 1)
+♪ generating 27.0s | 103bpm D minor | seed 5774 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 15s -> sunspot_archipelago_00010_.flac (0.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sunspot_archipelago_pulse2-ember_pulse.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sunspot_archipelago/pulse2-ember_pulse.mp4
+    bar 2.333s | music bar 2.144s (conf 0.83) -> stretch 0.9700 | phase 0.920s | lock 3.31x | kick 0.82 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [pulse2-ember_pulse] kick 0.82 (top-up 2)
+kept: ember_pulse-halftime, wooden_orbit-wild, pulse1-ember_pulse, music_box-wild, choir_of_dust-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 09:29:29 music pregen: lissajous_stage
+lissajous_stage (divein): bar 2.000s -> 120 bpm, key E minor; lane analog_dawn; generating 8, keeping 5
+♪ generating 13.0s | 120bpm E minor | seed 39323 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 20s -> lissajous_stage_00001_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_analog_dawn.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/analog_dawn.mp4
+    bar 2.000s | music bar 2.016s (conf 0.40) -> stretch 1.0080 | phase 0.060s | lock 9.36x | kick 0.42 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [analog_dawn] lock 9.36x conf 0.40 kick 0.42 score 5.64 -> review/music/candidates/lissajous_stage/analog_dawn.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39360 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> lissajous_stage_00002_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_analog_dawn-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/analog_dawn-b.mp4
+    bar 2.000s | music bar 2.005s (conf 0.23) -> stretch 1.0027 | phase 1.540s | lock 4.97x | kick -0.04 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [analog_dawn-b] lock 4.97x conf 0.23 kick -0.04 score 0.90 -> review/music/candidates/lissajous_stage/analog_dawn-b.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39397 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 11s -> lissajous_stage_00003_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_analog_dawn-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/analog_dawn-third_answer.mp4
+    bar 2.000s | music bar 1.867s (conf 0.15) -> stretch 0.9700 | phase 1.840s | lock 2.49x | kick 0.28 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [analog_dawn-third_answer] lock 2.49x conf 0.15 kick 0.28 score 0.86 -> review/music/candidates/lissajous_stage/analog_dawn-third_answer.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39434 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 10s -> lissajous_stage_00004_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_wooden_orbit-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/wooden_orbit-wild.mp4
+    bar 2.000s | music bar 1.973s (conf -0.04) -> stretch 1.0000 | phase 0.090s | lock 20.28x | kick -0.04 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] lock 20.28x conf -0.04 kick -0.04 score 2.54 -> review/music/candidates/lissajous_stage/wooden_orbit-wild.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39471 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 11s -> lissajous_stage_00005_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_deep_archive-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/deep_archive-wild.mp4
+    bar 2.000s | music bar 1.835s (conf 0.13) -> stretch 0.9700 | phase 0.190s | lock 2.75x | kick 0.16 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] lock 2.75x conf 0.13 kick 0.16 score 0.72 -> review/music/candidates/lissajous_stage/deep_archive-wild.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39508 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 11s -> lissajous_stage_00006_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_analog_dawn-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/analog_dawn-halftime.mp4
+    bar 2.000s | music bar 2.005s (conf 0.51) -> stretch 1.0027 | phase 1.050s | lock 18.04x | kick 0.50 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [analog_dawn-halftime] lock 18.04x conf 0.51 kick 0.50 score 13.73 -> review/music/candidates/lissajous_stage/analog_dawn-halftime.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39545 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 11s -> lissajous_stage_00007_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_music_box-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/music_box-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.54) -> stretch 1.0027 | phase 0.060s | lock 24.91x | kick 0.51 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [music_box-wild] lock 24.91x conf 0.54 kick 0.51 score 19.62 -> review/music/candidates/lissajous_stage/music_box-wild.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39582 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 13s -> lissajous_stage_00008_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_analog_dawn-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/analog_dawn-heartbeat.mp4
+    bar 2.000s | music bar 1.995s (conf 0.23) -> stretch 0.9973 | phase 0.070s | lock 8.87x | kick 0.21 | seamless loop @ 10.00s (music tiled x1, xf 0.50s)
+  [analog_dawn-heartbeat] lock 8.87x conf 0.23 kick 0.21 score 3.01 -> review/music/candidates/lissajous_stage/analog_dawn-heartbeat.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39683 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> lissajous_stage_00009_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_pulse1-analog_dawn.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/pulse1-analog_dawn.mp4
+    bar 2.000s | music bar 2.005s (conf 0.17) -> stretch 1.0027 | phase 1.540s | lock 10.15x | kick 0.05 | seamless loop @ 10.00s (music tiled x1, xf 0.50s)
+  [pulse1-analog_dawn] kick 0.05 (top-up 1)
+♪ generating 13.0s | 120bpm E minor | seed 39784 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 9s -> lissajous_stage_00010_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_pulse2-analog_dawn.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/pulse2-analog_dawn.mp4
+    bar 2.000s | music bar 2.037s (conf 0.48) -> stretch 1.0187 | phase 0.870s | lock 8.15x | kick -0.07 | seamless loop @ 10.00s (music tiled x1, xf 0.50s)
+  [pulse2-analog_dawn] kick -0.07 (top-up 2)
+♪ generating 13.0s | 120bpm E minor | seed 39885 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> lissajous_stage_00011_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_pulse3-analog_dawn.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/pulse3-analog_dawn.mp4
+    bar 2.000s | music bar 2.005s (conf 0.20) -> stretch 1.0027 | phase 0.040s | lock 9.91x | kick -0.02 | seamless loop @ 10.00s (music tiled x1, xf 0.50s)
+  [pulse3-analog_dawn] kick -0.02 (top-up 3)
+kept: music_box-wild, analog_dawn-halftime, analog_dawn, wooden_orbit-wild, deep_archive-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 09:31:49 batch done in 8.0h — 4 to Review · eclipse_waterhole: in Review but UNCAPTIONED (Ollama down?)
+=== 09:31:49 ComfyUI models unloaded — VRAM freed
+=== 09:31:49 log: outbox/night_batch_0826_013001.log

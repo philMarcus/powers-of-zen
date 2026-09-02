@@ -1,0 +1,24 @@
+=== 21:38:19 batch start — long butterfly_meridian (280f/23.3s), medium quantum_orrery (196f/16.3s), short lather_atlas (140f/11.7s) ===
+=== 21:38:19 ComfyUI ready ===
+=== 21:38:19 GPU free — rendering ===
+=== 21:38:19 --- butterfly_meridian --- ===
+=== 21:38:19 python3 engine/dive.py journeys/butterfly_meridian.json ===
+=== 22:49:56 python3 scripts/caption.py butterfly_meridian ===
+=== 22:50:42 python3 scripts/queue_review.py butterfly_meridian ds ===
+=== 22:50:42 butterfly_meridian done -> REVIEW ===
+=== 22:50:42 --- quantum_orrery --- ===
+=== 22:50:42 python3 engine/dive.py journeys/quantum_orrery.json ===
+!!! FAILED: python3 engine/dive.py journeys/quantum_orrery.json
+=== 23:02:15 python3 scripts/caption.py quantum_orrery ===
+=== 23:02:15 python3 scripts/queue_review.py quantum_orrery ds ===
+!!! FAILED: python3 scripts/queue_review.py quantum_orrery ds
+=== 23:02:15 quantum_orrery done -> REVIEW ===
+=== 23:02:15 --- lather_atlas --- ===
+=== 23:02:15 python3 engine/dive.py journeys/lather_atlas.json ===
+!!! FAILED: python3 engine/dive.py journeys/lather_atlas.json
+=== 23:07:16 python3 scripts/caption.py lather_atlas ===
+=== 23:07:17 python3 scripts/queue_review.py lather_atlas ds ===
+!!! FAILED: python3 scripts/queue_review.py lather_atlas ds
+=== 23:07:17 lather_atlas done -> REVIEW ===
+=== 23:07:17 BATCH COMPLETE — 3 videos in Video Review (captioned). Next: mark a start frame, Approve -> Music. ===
+log: outbox/render_batch_0731_2138.log

@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/pomegranate_vault/night_market-third_answer.mp4
+    bar 2.667s | music bar 2.667s (conf 0.51) -> stretch 1.0000 | phase 0.860s | lock 60.41x | kick 0.50 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [night_market-third_answer] realigned (lock 60.41x kick 0.50)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/pomegranate_vault/analog_dawn-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.65) -> stretch 1.0000 | phase 0.540s | lock 32.06x | kick 0.63 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [analog_dawn-wild] realigned (lock 32.06x kick 0.63)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/pomegranate_vault/music_box-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.62) -> stretch 1.0000 | phase 1.570s | lock 22.88x | kick 0.46 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [music_box-wild] realigned (lock 22.88x kick 0.46)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/pomegranate_vault/deep_archive-wild.mp4
+    bar 2.667s | music bar 2.677s (conf 0.54) -> stretch 1.0040 | phase 0.520s | lock 25.52x | kick 0.28 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] realigned (lock 25.52x kick 0.28)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/pomegranate_vault/night_market.mp4
+    bar 2.667s | music bar 2.667s (conf 0.60) -> stretch 1.0000 | phase 1.510s | lock 16.95x | kick 0.57 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [night_market] realigned (lock 16.95x kick 0.57)
+realigned 5 pregen candidates to the marked start

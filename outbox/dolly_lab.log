@@ -1,0 +1,120 @@
+dolly_lab: squid_lantern, 4 cards = 96 frames/arm, arms ['a0', 'a05', 'a10', 'a10p'] (~122 min GPU)
+
+=== ARM a0 (baseline): /mnt/c/Users/Phil/zoomer/journeys/squid_lantern.json --frames 96 --no-video --parallax 0
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] ultraviolet  ->  ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/squid_lantern/v7
+[dive] squid_lantern: 96 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — squid_skin(surface)[18..39], light_organ(sea)[42..53], spark_membrane(sea)[66..74]
+[dive] TRACKER v3 ON (60 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of black midwater far under the waves at eye level, dozens of small squid drifting 
+[dive] frame 1/96 (29.4s/frame, ~2796s left) :: moving through black midwater far under the waves at eye lev
+[dive] frame 11/96 (22.3s/frame, ~1893s left) :: moving through black midwater far under the waves at eye lev
+[dive] frame 21/96 (20.4s/frame, ~1532s left) :: diving straight into a glowing violet-blue squid as it swell
+[dive] frame 31/96 (18.1s/frame, ~1177s left) :: moving through the taut freckled skin of a squid, a broad ro
+[dive] frame 41/96 (17.2s/frame, ~946s left) :: diving straight into a round blue-white bead of light as it 
+[dive] frame 51/96 (16.3s/frame, ~733s left) :: a packed chamber of light-making cells, round glowing cell w
+[dive] frame 61/96 (17.1s/frame, ~598s left) :: moving through a packed chamber of light-making cells, round
+[dive] frame 71/96 (17.2s/frame, ~429s left) :: diving straight into a bright blue-white grain of light as i
+[dive] frame 81/96 (16.7s/frame, ~250s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] frame 91/96 (16.9s/frame, ~85s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] frame 96/96 (17.1s/frame, ~0s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] done in 1641s
+=== ARM a0 done in 27.4 min -> /mnt/c/Users/Phil/zoomer/output/squid_lantern/v7
+
+=== ARM a05 (gain 0.5): /mnt/c/Users/Phil/zoomer/journeys/squid_lantern.json --frames 96 --no-video --parallax 0.5
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] ultraviolet  ->  ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/squid_lantern/v8
+[dive] squid_lantern: 96 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — squid_skin(surface)[18..39], light_organ(sea)[42..53], spark_membrane(sea)[66..74]
+[dive] TRACKER v3 ON (60 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of black midwater far under the waves at eye level, dozens of small squid drifting 
+[dive] frame 1/96 (40.2s/frame, ~3822s left) :: moving through black midwater far under the waves at eye lev
+[dive] frame 11/96 (27.8s/frame, ~2361s left) :: moving through black midwater far under the waves at eye lev
+[dive] frame 21/96 (24.4s/frame, ~1827s left) :: diving straight into a glowing violet-blue squid as it swell
+[dive] frame 31/96 (21.1s/frame, ~1370s left) :: moving through the taut freckled skin of a squid, a broad ro
+[dive] frame 41/96 (19.7s/frame, ~1084s left) :: diving straight into a round blue-white bead of light as it 
+[dive] frame 51/96 (18.4s/frame, ~830s left) :: a packed chamber of light-making cells, round glowing cell w
+[dive] frame 61/96 (19.3s/frame, ~675s left) :: moving through a packed chamber of light-making cells, round
+[dive] frame 71/96 (19.2s/frame, ~480s left) :: diving straight into a bright blue-white grain of light as i
+[dive] frame 81/96 (18.5s/frame, ~278s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] frame 91/96 (18.8s/frame, ~94s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] frame 96/96 (19.0s/frame, ~0s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] done in 1820s
+=== ARM a05 done in 30.3 min -> /mnt/c/Users/Phil/zoomer/output/squid_lantern/v8
+
+=== ARM a10 (gain 1.0): /mnt/c/Users/Phil/zoomer/journeys/squid_lantern.json --frames 96 --no-video --parallax 1.0
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] ultraviolet  ->  ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/squid_lantern/v9
+[dive] squid_lantern: 96 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — squid_skin(surface)[18..39], light_organ(sea)[42..53], spark_membrane(sea)[66..74]
+[dive] TRACKER v3 ON (60 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of black midwater far under the waves at eye level, dozens of small squid drifting 
+[dive] frame 1/96 (41.4s/frame, ~3933s left) :: moving through black midwater far under the waves at eye lev
+[dive] frame 11/96 (29.9s/frame, ~2539s left) :: moving through black midwater far under the waves at eye lev
+[dive] frame 21/96 (27.5s/frame, ~2065s left) :: diving straight into a glowing violet-blue squid as it swell
+[dive] frame 31/96 (25.4s/frame, ~1654s left) :: moving through the taut freckled skin of a squid, a broad ro
+[dive] frame 41/96 (24.2s/frame, ~1331s left) :: diving straight into a round blue-white bead of light as it 
+[dive] frame 51/96 (22.7s/frame, ~1023s left) :: a packed chamber of light-making cells, round glowing cell w
+[dive] frame 61/96 (23.9s/frame, ~837s left) :: moving through a packed chamber of light-making cells, round
+[dive] frame 71/96 (23.8s/frame, ~594s left) :: diving straight into a bright blue-white grain of light as i
+[dive] frame 81/96 (22.8s/frame, ~342s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] frame 91/96 (22.8s/frame, ~114s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] frame 96/96 (22.8s/frame, ~0s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] done in 2193s
+=== ARM a10 done in 36.6 min -> /mnt/c/Users/Phil/zoomer/output/squid_lantern/v9
+
+=== ARM a10p (1.0 + persist): /mnt/c/Users/Phil/zoomer/journeys/squid_lantern.json --frames 96 --no-video --parallax 1.0 --resolve-persist
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] ultraviolet  ->  ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/squid_lantern/v10
+[dive] squid_lantern: 96 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — squid_skin(surface)[18..39], light_organ(sea)[42..53], spark_membrane(sea)[66..74]
+[dive] TRACKER v3 ON (60 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of black midwater far under the waves at eye level, dozens of small squid drifting 
+[dive] frame 1/96 (39.6s/frame, ~3761s left) :: moving through black midwater far under the waves at eye lev
+[dive] frame 11/96 (33.0s/frame, ~2805s left) :: moving through black midwater far under the waves at eye lev
+[dive] frame 21/96 (31.6s/frame, ~2367s left) :: diving straight into a glowing violet-blue squid as it swell
+[dive] frame 31/96 (27.7s/frame, ~1801s left) :: moving through the taut freckled skin of a squid, a broad ro
+[dive] frame 41/96 (25.5s/frame, ~1401s left) :: diving straight into a round blue-white bead of light as it 
+[dive] frame 51/96 (23.8s/frame, ~1070s left) :: a packed chamber of light-making cells, round glowing cell w
+[dive] frame 61/96 (24.2s/frame, ~848s left) :: moving through a packed chamber of light-making cells, round
+[dive] frame 71/96 (23.9s/frame, ~596s left) :: diving straight into a bright blue-white grain of light as i
+[dive] frame 81/96 (22.9s/frame, ~343s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] frame 91/96 (22.8s/frame, ~114s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] frame 96/96 (22.7s/frame, ~0s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] done in 2180s
+=== ARM a10p done in 36.3 min -> /mnt/c/Users/Phil/zoomer/output/squid_lantern/v10
+
+lab deliverables:
+  /mnt/c/Users/Phil/zoomer/output/dolly_lab/squid_lantern_dolly_AB_loop.mp4
+  /mnt/c/Users/Phil/zoomer/output/dolly_lab/squid_lantern_dolly_AB_strip.png  (96 frames x 4 arms)
+dolly_lab: squid_lantern, 4 cards = 96 frames/arm, arms ['a05p'] (~30 min GPU)
+
+=== ARM a05p (0.5 + persist): /mnt/c/Users/Phil/zoomer/journeys/squid_lantern.json --frames 96 --no-video --parallax 0.5 --resolve-persist
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] ultraviolet  ->  ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/squid_lantern/v11
+[dive] squid_lantern: 96 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — squid_skin(surface)[18..39], light_organ(sea)[42..53], spark_membrane(sea)[66..74]
+[dive] TRACKER v3 ON (60 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of black midwater far under the waves at eye level, dozens of small squid drifting 
+[dive] frame 1/96 (38.4s/frame, ~3644s left) :: moving through black midwater far under the waves at eye lev
+[dive] frame 11/96 (33.9s/frame, ~2880s left) :: moving through black midwater far under the waves at eye lev
+[dive] frame 21/96 (29.1s/frame, ~2183s left) :: diving straight into a glowing violet-blue squid as it swell
+[dive] frame 31/96 (24.4s/frame, ~1584s left) :: moving through the taut freckled skin of a squid, a broad ro
+[dive] frame 41/96 (22.3s/frame, ~1227s left) :: diving straight into a round blue-white bead of light as it 
+[dive] frame 51/96 (20.6s/frame, ~928s left) :: a packed chamber of light-making cells, round glowing cell w
+[dive] frame 61/96 (20.9s/frame, ~730s left) :: moving through a packed chamber of light-making cells, round
+[dive] frame 71/96 (20.4s/frame, ~510s left) :: diving straight into a bright blue-white grain of light as i
+[dive] frame 81/96 (19.6s/frame, ~293s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] frame 91/96 (19.7s/frame, ~99s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] frame 96/96 (19.8s/frame, ~0s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] done in 1897s
+=== ARM a05p done in 31.6 min -> /mnt/c/Users/Phil/zoomer/output/squid_lantern/v11
+
+lab deliverables:
+  /mnt/c/Users/Phil/zoomer/output/dolly_lab/squid_lantern_dolly_AB_loop.mp4
+  /mnt/c/Users/Phil/zoomer/output/dolly_lab/squid_lantern_dolly_AB_strip.png  (96 frames x 5 arms)

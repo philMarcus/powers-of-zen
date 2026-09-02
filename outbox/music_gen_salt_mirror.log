@@ -1,0 +1,60 @@
+salt_mirror (divein): bar 2.333s -> 103 bpm, key D major; lane aurora_strings; generating 8, keeping 5
+♪ generating 20.0s | 103bpm D major | seed 37361 steps 8
+  tags: chill hypnotic ambient evoking a still dusk over mirrored water — warm airy pads and slow ...
+  done in 22s -> salt_mirror_00006_.flac (0.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/salt_mirror_aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/salt_mirror/aurora_strings.mp4
+    bar 2.315s | music bar 2.325s (conf 0.03) -> stretch 1.0000 | phase 0.760s | lock 3.58x | seamless loop @ 16.21s (music tiled x1, xf 0.50s)
+  [aurora_strings] lock 3.58x conf 0.03 score 1.91 -> review/music/candidates/salt_mirror/aurora_strings.mp4
+♪ generating 20.0s | 103bpm D major | seed 37398 steps 8
+  tags: chill hypnotic ambient evoking a still dusk over mirrored water — warm airy pads and slow ...
+  done in 24s -> salt_mirror_00007_.flac (0.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/salt_mirror_aurora_strings-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/salt_mirror/aurora_strings-b.mp4
+    bar 2.315s | music bar 2.315s (conf 0.53) -> stretch 0.9997 | phase 0.570s | lock 6.89x | seamless loop @ 16.21s (music tiled x1, xf 0.50s)
+  [aurora_strings-b] lock 6.89x conf 0.53 score 7.06 -> review/music/candidates/salt_mirror/aurora_strings-b.mp4
+♪ generating 20.0s | 103bpm D major | seed 37435 steps 8
+  tags: chill hypnotic ambient evoking a still dusk over mirrored water — warm airy pads and slow ...
+  done in 24s -> salt_mirror_00008_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/salt_mirror_aurora_strings-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/salt_mirror/aurora_strings-third_answer.mp4
+    bar 2.315s | music bar 2.293s (conf 0.19) -> stretch 0.9905 | phase 0.650s | lock 4.29x | seamless loop @ 16.21s (music tiled x2, xf 0.50s)
+  [aurora_strings-third_answer] lock 4.29x conf 0.19 score 2.98 -> review/music/candidates/salt_mirror/aurora_strings-third_answer.mp4
+♪ generating 20.0s | 103bpm D major | seed 37472 steps 8
+  tags: chill hypnotic ambient evoking a still dusk over mirrored water — warm airy pads and slow ...
+  done in 25s -> salt_mirror_00009_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/salt_mirror_ember_pulse-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/salt_mirror/ember_pulse-wild.mp4
+    bar 2.315s | music bar 2.357s (conf 0.52) -> stretch 1.0181 | phase 1.720s | lock 15.23x | seamless loop @ 16.21s (music tiled x1, xf 0.50s)
+  [ember_pulse-wild] lock 15.23x conf 0.52 score 15.59 -> review/music/candidates/salt_mirror/ember_pulse-wild.mp4
+♪ generating 20.0s | 103bpm D major | seed 37509 steps 8
+  tags: chill hypnotic ambient evoking a still dusk over mirrored water — warm airy pads and slow ...
+  done in 25s -> salt_mirror_00010_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/salt_mirror_night_market-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/salt_mirror/night_market-wild.mp4
+    bar 2.315s | music bar 2.357s (conf 0.58) -> stretch 1.0181 | phase 1.480s | lock 11.98x | seamless loop @ 16.21s (music tiled x2, xf 0.50s)
+  [night_market-wild] lock 11.98x conf 0.58 score 12.94 -> review/music/candidates/salt_mirror/night_market-wild.mp4
+♪ generating 20.0s | 103bpm D major | seed 37546 steps 8
+  tags: chill hypnotic ambient evoking a still dusk over mirrored water — warm airy pads and slow ...
+  done in 26s -> salt_mirror_00011_.flac (1.0 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/salt_mirror_aurora_strings-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/salt_mirror/aurora_strings-halftime.mp4
+    bar 2.315s | music bar 2.325s (conf 0.74) -> stretch 1.0043 | phase 0.010s | lock 52.83x | seamless loop @ 16.21s (music tiled x2, xf 0.50s)
+  [aurora_strings-halftime] lock 52.83x conf 0.74 score 65.55 -> review/music/candidates/salt_mirror/aurora_strings-halftime.mp4
+♪ generating 20.0s | 103bpm D major | seed 37583 steps 8
+  tags: chill hypnotic ambient evoking a still dusk over mirrored water — warm airy pads and slow ...
+  done in 26s -> salt_mirror_00012_.flac (1.0 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/salt_mirror_analog_dawn-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/salt_mirror/analog_dawn-wild.mp4
+    bar 2.315s | music bar 2.357s (conf 0.68) -> stretch 1.0181 | phase 0.560s | lock 11.77x | seamless loop @ 16.21s (music tiled x1, xf 0.50s)
+  [analog_dawn-wild] lock 11.77x conf 0.68 score 13.90 -> review/music/candidates/salt_mirror/analog_dawn-wild.mp4
+♪ generating 20.0s | 103bpm D major | seed 37620 steps 8
+  tags: chill hypnotic ambient evoking a still dusk over mirrored water — warm airy pads and slow ...
+  done in 27s -> salt_mirror_00013_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/salt_mirror_aurora_strings-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/salt_mirror/aurora_strings-heartbeat.mp4
+    bar 2.315s | music bar 2.304s (conf 0.32) -> stretch 0.9951 | phase 1.160s | lock 16.47x | seamless loop @ 16.21s (music tiled x1, xf 0.50s)
+  [aurora_strings-heartbeat] lock 16.47x conf 0.32 score 13.57 -> review/music/candidates/salt_mirror/aurora_strings-heartbeat.mp4
+kept: aurora_strings-halftime, ember_pulse-wild, analog_dawn-wild, aurora_strings-heartbeat, night_market-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel

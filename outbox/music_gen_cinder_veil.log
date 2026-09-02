@@ -1,0 +1,60 @@
+cinder_veil (divein): bar 2.333s -> 103 bpm, key F minor; lane ember_pulse; generating 8, keeping 5
+♪ generating 29.0s | 103bpm F minor | seed 784 steps 8
+  tags: chill hypnotic ambient evoking a volcanic night — a deep subterranean drone under slow str...
+  done in 21s -> cinder_veil_00006_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cinder_veil_ember_pulse.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cinder_veil/ember_pulse.mp4
+    bar 2.322s | music bar 2.283s (conf 0.76) -> stretch 0.9831 | phase 0.120s | lock 18.15x | seamless loop @ 25.54s (music tiled x2, xf 0.50s)
+  [ember_pulse] lock 18.15x conf 0.76 score 22.95 -> review/music/candidates/cinder_veil/ember_pulse.mp4
+♪ generating 29.0s | 103bpm F minor | seed 821 steps 8
+  tags: chill hypnotic ambient evoking a volcanic night — a deep subterranean drone under slow str...
+  done in 25s -> cinder_veil_00007_.flac (1.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cinder_veil_ember_pulse-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cinder_veil/ember_pulse-b.mp4
+    bar 2.322s | music bar 2.336s (conf 0.52) -> stretch 1.0060 | phase 1.790s | lock 11.02x | seamless loop @ 25.54s (music tiled x2, xf 0.50s)
+  [ember_pulse-b] lock 11.02x conf 0.52 score 11.22 -> review/music/candidates/cinder_veil/ember_pulse-b.mp4
+♪ generating 29.0s | 103bpm F minor | seed 858 steps 8
+  tags: chill hypnotic ambient evoking a volcanic night — a deep subterranean drone under slow str...
+  done in 23s -> cinder_veil_00008_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cinder_veil_ember_pulse-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cinder_veil/ember_pulse-heartbeat.mp4
+    bar 2.322s | music bar 2.283s (conf 0.58) -> stretch 0.9831 | phase 1.910s | lock 22.52x | seamless loop @ 25.54s (music tiled x2, xf 0.50s)
+  [ember_pulse-heartbeat] lock 22.52x conf 0.58 score 24.25 -> review/music/candidates/cinder_veil/ember_pulse-heartbeat.mp4
+♪ generating 29.0s | 103bpm F minor | seed 895 steps 8
+  tags: chill hypnotic ambient evoking a volcanic night — a deep subterranean drone under slow str...
+  done in 24s -> cinder_veil_00009_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cinder_veil_aurora_strings-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cinder_veil/aurora_strings-wild.mp4
+    bar 2.322s | music bar 2.080s (conf 0.04) -> stretch 1.0000 | phase 1.650s | lock 2.76x | seamless loop @ 25.54s (music tiled x2, xf 0.50s)
+  [aurora_strings-wild] lock 2.76x conf 0.04 score 1.50 -> review/music/candidates/cinder_veil/aurora_strings-wild.mp4
+♪ generating 29.0s | 103bpm F minor | seed 932 steps 8
+  tags: chill hypnotic ambient evoking a volcanic night — a deep subterranean drone under slow str...
+  done in 25s -> cinder_veil_00010_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cinder_veil_glass_chapel-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cinder_veil/glass_chapel-wild.mp4
+    bar 2.322s | music bar 2.091s (conf -0.00) -> stretch 1.0000 | phase 0.790s | lock 3.37x | seamless loop @ 25.54s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] lock 3.37x conf -0.00 score 1.69 -> review/music/candidates/cinder_veil/glass_chapel-wild.mp4
+♪ generating 29.0s | 103bpm F minor | seed 969 steps 8
+  tags: chill hypnotic ambient evoking a volcanic night — a deep subterranean drone under slow str...
+  done in 26s -> cinder_veil_00011_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cinder_veil_ember_pulse-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cinder_veil/ember_pulse-halftime.mp4
+    bar 2.322s | music bar 2.336s (conf 0.11) -> stretch 1.0060 | phase 1.210s | lock 3.97x | seamless loop @ 25.54s (music tiled x2, xf 0.50s)
+  [ember_pulse-halftime] lock 3.97x conf 0.11 score 2.44 -> review/music/candidates/cinder_veil/ember_pulse-halftime.mp4
+♪ generating 29.0s | 103bpm F minor | seed 1006 steps 8
+  tags: chill hypnotic ambient evoking a volcanic night — a deep subterranean drone under slow str...
+  done in 26s -> cinder_veil_00012_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cinder_veil_tide_organ-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cinder_veil/tide_organ-wild.mp4
+    bar 2.322s | music bar 2.080s (conf 0.07) -> stretch 1.0000 | phase 0.730s | lock 7.20x | seamless loop @ 25.54s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] lock 7.20x conf 0.07 score 4.10 -> review/music/candidates/cinder_veil/tide_organ-wild.mp4
+♪ generating 29.0s | 77bpm F minor | seed 1043 steps 8
+  tags: a gently lilting waltz in 3/4 time, chill hypnotic ambient evoking a volcanic night — a de...
+  done in 26s -> cinder_veil_00013_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cinder_veil_waltz-ember_pulse.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cinder_veil/waltz-ember_pulse.mp4
+    bar 2.322s | music bar 2.325s (conf 0.52) -> stretch 1.0014 | phase 1.450s | lock 11.71x | seamless loop @ 25.54s (music tiled x2, xf 0.50s)
+  [waltz-ember_pulse] lock 11.71x conf 0.52 score 11.92 -> review/music/candidates/cinder_veil/waltz-ember_pulse.mp4
+kept: ember_pulse-heartbeat, ember_pulse, tide_organ-wild, glass_chapel-wild, aurora_strings-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel

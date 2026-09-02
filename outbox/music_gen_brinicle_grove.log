@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/brinicle_grove/ember_pulse-wild.mp4
+    bar 3.000s | music bar 2.997s (conf 0.52) -> stretch 0.9991 | phase 0.140s | lock 30.69x | kick 0.56 | seamless loop @ 15.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-wild] realigned (lock 30.69x kick 0.56)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/brinicle_grove/tide_organ-wild.mp4
+    bar 3.000s | music bar 2.997s (conf 0.47) -> stretch 0.9991 | phase 2.040s | lock 30.96x | kick 0.40 | seamless loop @ 15.00s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] realigned (lock 30.96x kick 0.40)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/brinicle_grove/music_box-third_answer.mp4
+    bar 3.000s | music bar 2.987s (conf 0.41) -> stretch 0.9956 | phase 2.030s | lock 20.50x | kick 0.16 | seamless loop @ 15.00s (music tiled x2, xf 0.50s)
+  [music_box-third_answer] realigned (lock 20.50x kick 0.16)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/brinicle_grove/pulse3-music_box.mp4
+    bar 3.000s | music bar 2.997s (conf 0.41) -> stretch 0.9991 | phase 0.540s | lock 19.07x | kick 0.15 | seamless loop @ 15.00s (music tiled x2, xf 0.50s)
+  [pulse3-music_box] realigned (lock 19.07x kick 0.15)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/brinicle_grove/aurora_strings-wild.mp4
+    bar 3.000s | music bar 2.709s (conf -0.14) -> stretch 1.0000 | phase 0.820s | lock 4.67x | kick -0.14 | seamless loop @ 15.00s (music tiled x2, xf 0.50s)
+  [aurora_strings-wild] realigned (lock 4.67x kick -0.14)
+realigned 5 pregen candidates to the marked start

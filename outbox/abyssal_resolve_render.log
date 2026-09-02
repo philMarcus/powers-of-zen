@@ -1,0 +1,43 @@
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/abyssal_chandelier/v2
+[dive] abyssal_chandelier: 308 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — ember_nursery(sea)[22..44], young_star(sea)[50..72], night_ocean(surface)[78..100], vent_plain(surface)[106..118], chimney_flank(surface)[134..156], compound_eye(sea)[162..184], retinal_cells(sea)[190..212], enzyme_turbines(sea)[218..240], sulfide_lattice(lattice)[246..268]
+[dive] TRACKER v3 ON (196 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a tilted spiral galaxy hanging in open black space, blue-white star clouds strun
+[dive] frame 1/308 (27.5s/frame, ~8440s left) :: moving through a tilted spiral galaxy hanging in open black 
+[dive] frame 11/308 (23.5s/frame, ~6984s left) :: moving through a tilted spiral galaxy hanging in open black 
+[dive] frame 21/308 (21.9s/frame, ~6286s left) :: diving straight into a hot pink gas knot as it swells to fil
+[dive] frame 31/308 (19.9s/frame, ~5519s left) :: a nursery of glowing gas towers standing across black space,
+[dive] frame 41/308 (18.1s/frame, ~4824s left) :: moving through a nursery of glowing gas towers standing acro
+[dive] frame 51/308 (17.9s/frame, ~4613s left) :: diving straight into a newborn blue-white star as it swells 
+[dive] frame 61/308 (17.5s/frame, ~4325s left) :: a young blue-white star burning in a clearing among the gas 
+[dive] frame 71/308 (16.7s/frame, ~3966s left) :: moving through a young blue-white star burning in a clearing
+[dive] frame 81/308 (16.8s/frame, ~3814s left) :: diving straight into a dark blue ocean world as it swells to
+[dive] frame 91/308 (16.4s/frame, ~3563s left) :: a night ocean world seen from orbit, black water covering it
+[dive] frame 101/308 (16.0s/frame, ~3311s left) :: diving straight into a long dark rift line as it swells to f
+[dive] frame 111/308 (16.1s/frame, ~3176s left) :: diving straight into a long dark rift line as it swells to f
+[dive] frame 121/308 (16.1s/frame, ~3012s left) :: moving through an abyssal vent plain on the floor of a black
+[dive] frame 131/308 (16.4s/frame, ~2903s left) :: diving straight into a smoking black chimney as it swells to
+[dive] frame 141/308 (16.4s/frame, ~2740s left) :: the flank of one sulfide chimney standing in black water, it
+[dive] frame 151/308 (16.2s/frame, ~2541s left) :: moving through the flank of one sulfide chimney standing in 
+[dive] frame 161/308 (16.1s/frame, ~2372s left) :: diving straight into a dark round eye as it swells to fill t
+[dive] frame 171/308 (16.2s/frame, ~2220s left) :: a shrimp's compound eye, a dome of hexagonal lenses packed e
+[dive] frame 181/308 (16.0s/frame, ~2029s left) :: moving through a shrimp's compound eye, a dome of hexagonal 
+[dive] frame 191/308 (16.1s/frame, ~1880s left) :: diving straight into a bottle-green lens as it swells to fil
+[dive] frame 201/308 (15.9s/frame, ~1705s left) :: the living tissue under one lens, tall clear retinal cells s
+[dive] frame 211/308 (15.8s/frame, ~1528s left) :: moving through the living tissue under one lens, tall clear 
+[dive] frame 221/308 (15.9s/frame, ~1382s left) :: diving straight into a dark ridged mitochondrion as it swell
+[dive] frame 231/308 (15.8s/frame, ~1218s left) :: the inner membrane inside the mitochondrion, folded into ran
+[dive] frame 241/308 (15.7s/frame, ~1050s left) :: diving straight into a small iron-and-sulfur cube as it swel
+[dive] frame 251/308 (15.8s/frame, ~899s left) :: diving straight into a small iron-and-sulfur cube as it swel
+[dive] frame 261/308 (15.7s/frame, ~738s left) :: deep inside an iron-sulfide crystal lattice, ranks of brass-
+[dive] frame 271/308 (15.5s/frame, ~575s left) :: deep inside an iron-sulfide crystal lattice, ranks of brass-
+[dive] frame 281/308 (15.3s/frame, ~414s left) :: the whole view transforming, resolving into the cosmic web a
+[dive] frame 291/308 (15.2s/frame, ~259s left) :: moving through the cosmic web at its largest scale, long amb
+[dive] frame 301/308 (15.3s/frame, ~107s left) :: diving straight into a tilted spiral galaxy among smaller co
+[dive] frame 308/308 (15.5s/frame, ~0s left) :: diving straight into a tilted spiral galaxy among smaller co
+[dive] interpolated 12 -> 24fps in 50s
+[dive] counter overlay on 613 frames (40 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/abyssal_chandelier/v2/abyssal_chandelier.mp4 (39792 KB, 25.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/abyssal_chandelier/v2/abyssal_chandelier_divein.mp4 (40296 KB, 25.7s)
+[dive] done in 4924s

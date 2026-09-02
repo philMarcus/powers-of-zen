@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/termite_citadel/music_box-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.73) -> stretch 1.0027 | phase 0.330s | lock 17.73x | kick 0.72 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [music_box-wild] realigned (lock 17.73x kick 0.72)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/termite_citadel/choir_of_dust-third_answer.mp4
+    bar 2.000s | music bar 2.005s (conf 0.59) -> stretch 1.0027 | phase 1.120s | lock 22.48x | kick 0.32 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [choir_of_dust-third_answer] realigned (lock 22.48x kick 0.32)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/termite_citadel/choir_of_dust-halftime.mp4
+    bar 2.000s | music bar 1.995s (conf 0.64) -> stretch 0.9973 | phase 0.110s | lock 12.17x | kick 0.64 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [choir_of_dust-halftime] realigned (lock 12.17x kick 0.65)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/termite_citadel/wooden_orbit-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.59) -> stretch 1.0027 | phase 1.730s | lock 10.35x | kick 0.50 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] realigned (lock 10.35x kick 0.50)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/termite_citadel/deep_archive-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.27) -> stretch 1.0027 | phase 1.530s | lock 6.52x | kick 0.05 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] realigned (lock 6.52x kick 0.05)
+realigned 5 pregen candidates to the marked start

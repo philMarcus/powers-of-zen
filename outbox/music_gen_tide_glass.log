@@ -1,0 +1,38 @@
+tide_glass (divein): bar 2.333s -> 103 bpm, key G major; generating 5
+♪ generating 20.0s | 103bpm G major | seed 500 steps 8
+  tags: chill hypnotic ambient evoking a bright tidal morning — glassy bells and a light rolling s...
+  done in 15s -> tide_glass_00015_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/tide_glass_warm.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/tide_glass/warm.mp4
+    bar 2.315s | music bar 2.283s (conf 0.10) -> stretch 0.9859 | phase 0.000s | lock 5.85x | seamless loop @ 16.21s (music tiled x1, xf 0.50s)
+  [warm] lock 5.85x -> review/music/candidates/tide_glass/warm.mp4
+♪ generating 20.0s | 103bpm G major | seed 501 steps 8
+  tags: chill hypnotic ambient evoking a bright tidal morning — glassy bells and a light rolling s...
+  done in 11s -> tide_glass_00016_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/tide_glass_glassy.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/tide_glass/glassy.mp4
+    bar 2.315s | music bar 2.336s (conf 0.50) -> stretch 1.0089 | phase 2.070s | lock 18.60x | seamless loop @ 16.21s (music tiled x1, xf 0.50s)
+  [glassy] lock 18.60x -> review/music/candidates/tide_glass/glassy.mp4
+♪ generating 20.0s | 103bpm G major | seed 502 steps 8
+  tags: chill hypnotic ambient evoking a bright tidal morning — glassy bells and a light rolling s...
+  done in 8s -> tide_glass_00017_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/tide_glass_deep.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/tide_glass/deep.mp4
+    bar 2.315s | music bar 2.283s (conf 0.60) -> stretch 0.9859 | phase 1.450s | lock 16.72x | seamless loop @ 16.21s (music tiled x1, xf 0.50s)
+  [deep] lock 16.72x -> review/music/candidates/tide_glass/deep.mp4
+♪ generating 20.0s | 103bpm G major | seed 503 steps 8
+  tags: chill hypnotic ambient evoking a bright tidal morning — glassy bells and a light rolling s...
+  done in 11s -> tide_glass_00018_.flac (0.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/tide_glass_tender.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/tide_glass/tender.mp4
+    bar 2.315s | music bar 2.144s (conf -0.02) -> stretch 1.0000 | phase 0.920s | lock 8.94x | seamless loop @ 16.21s (music tiled x2, xf 0.50s)
+  [tender] lock 8.94x -> review/music/candidates/tide_glass/tender.mp4
+♪ generating 20.0s | 103bpm G major | seed 504 steps 8
+  tags: chill hypnotic ambient evoking a bright tidal morning — glassy bells and a light rolling s...
+  done in 9s -> tide_glass_00019_.flac (0.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/tide_glass_choir.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/tide_glass/choir.mp4
+    bar 2.315s | music bar 2.325s (conf 0.22) -> stretch 1.0043 | phase 2.230s | lock 10.14x | seamless loop @ 16.21s (music tiled x1, xf 0.50s)
+  [choir] lock 10.14x -> review/music/candidates/tide_glass/choir.mp4
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel

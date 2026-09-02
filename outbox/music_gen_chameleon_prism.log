@@ -1,0 +1,13 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/chameleon_prism/tide_organ-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.87) -> stretch 1.0000 | phase 2.570s | lock 32.82x | kick 0.82 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [tide_organ-halftime] realigned (lock 32.82x kick 0.82)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/chameleon_prism/aurora_strings-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.85) -> stretch 1.0000 | phase 0.580s | lock 17.71x | kick 0.80 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [aurora_strings-wild] realigned (lock 17.71x kick 0.80)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/chameleon_prism/ember_pulse-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.83) -> stretch 1.0000 | phase 1.620s | lock 11.68x | kick 0.58 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [ember_pulse-wild] realigned (lock 11.68x kick 0.58)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/chameleon_prism/night_market-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.77) -> stretch 1.0000 | phase 1.260s | lock 13.87x | kick 0.46 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [night_market-wild] realigned (lock 13.87x kick 0.46)
+realigned 4 pregen candidates to the marked start

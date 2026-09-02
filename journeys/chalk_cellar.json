@@ -1,0 +1,134 @@
+{
+  "name": "chalk_cellar",
+  "theme": "a sparkling-wine cellar cut into a chalk hill read as one froth at every scale — from the candle-lit riddling racks down a glass's bead-trains to a chalk grain lodged on the wall, into the fossil sea that chalk really is (drifts of coccolith rosette wheels, each a plankton cell's plating), through one wedge plate into its leaning calcite rhombs and the atomic lattice beneath them, where the atoms' fog shells crowd and merge exactly as the mousse's foam does — and that froth folds out into cosmic dawn's first foam, spheres of first starlight swollen through neutral fog until their walls touch and merge, opening onto the cosmic web's galaxy walls before the loop drops back onto the candle-lit rack",
+  "style": "crystalline",
+  "music_lane": "glass_chapel",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "cellar_gallery",
+      "exp": 1.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt gloom, chalk-lime walls, brass lamp amber",
+      "scene": "a vaulted gallery hewn into a chalk hill, seen from the head of the gallery at standing height, its tooled walls chalk-lime under a low arch, A-frame riddling racks standing in rows down the floor with bottles set nose-down in tiers, tier over tier receding into cobalt gloom, a brass candle-lamp hooked on the nearest rack laying amber over the crowded necks, a tall filled glass set on a chalk ledge beside it, chalk grit silted across the floor, cobalt shadow pooled under the arch, empty, no one present",
+      "target": "a tall filled glass",
+      "target_phrase": "a filled wine glass"
+    },
+    {
+      "name": "wine_column",
+      "exp": -0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt shadow, oxblood amber, milk-pale foam",
+      "scene": "a column of amber wine standing inside curved glass, slender strings of milk-pale beads set one above another through it from pinpoints on the wall, a collar of foam riding the surface overhead with domes of every size wedged into the hollows among larger domes, brass lamp-glow raking one flank of the column, cobalt shadow sunk toward the foot, further strings crowding the far wall",
+      "target": "a string of pale beads",
+      "target_phrase": "a string of beads"
+    },
+    {
+      "name": "bead_train",
+      "exp": -2.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "oxblood amber, milk-pale beads, cobalt murk",
+      "scene": "a chain of milk-pale beads set one above another in oxblood amber, each bead broader than the one beneath it, the chain rooted on a chalk grain lodged against the curved glass, further chains standing at intervals along the wall, a ceiling of crowded foam domes overhead with smaller domes wedged into every hollow, cobalt murk deepening below the chain",
+      "target": "a pale chalk grain",
+      "target_phrase": "a chalk grain"
+    },
+    {
+      "name": "fossil_drift",
+      "exp": -4.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bone-ivory rosettes, cobalt murk, teal sheen",
+      "scene": "the interior of chalk, a drift of rosette wheels heaped at every angle, each wheel a ring of wedge tiles turned about a round central socket, smaller wheels wedged into the hollows among the larger ones, snapped tiles silted through the heap, cobalt murk hanging in the crannies, a teal sheen crossing every rim, the drift dimming into gloom at its furthest reach",
+      "target": "a bone-ivory rosette wheel",
+      "target_phrase": "a rosette wheel",
+      "resolve": {
+        "mode": "sea",
+        "density": 1.5
+      },
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.63,
+          0.38
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "rosette_wheel",
+      "exp": -5.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "chalk-lime plates, cobalt socket shadow, brass rim glint",
+      "scene": "one plated wheel grown by a plankton cell, a ring of wedge-shaped plates overlapping about a round socket at its hub, every plate a curved tile stepped along its edge, a second ring seated beneath the first and offset from it, neighbour wheels crowded up against the rim and canted at every angle, cobalt shadow sunk in the hub socket, a lime sheen along the shingled tiles",
+      "target": "a curved shingled tile",
+      "target_phrase": "a shingled tile"
+    },
+    {
+      "name": "rhomb_masonry",
+      "exp": -7.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "glassy leaning blocks, honey seam glints, cobalt murk",
+      "scene": "the masonry inside one wedge tile, leaning glassy blocks stacked course over course, every block a slanted rhomb with two keen corners and two blunt, each edge repeated in a faint second edge by the stone's split vision, honey glints tracing the cleavage steps, cobalt murk sunk in the seams, the courses stepping off into gloom",
+      "target": "a leaning glassy rhomb",
+      "target_phrase": "a glassy rhomb",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "cubic"
+      }
+    },
+    {
+      "name": "calcite_lattice",
+      "exp": -9.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt void, milk-blue cores, violet shimmer",
+      "scene": "the atomic lattice of calcite opening on every side, sheets of milk-blue calcium cores stacked one slanted course over another, a three-cornered carbonate plate seated in each cell of a sheet and the plates of every second course turned to face the other way, slim bonds strung core to plate along three leaning slants, cobalt void sunk through the cells, a violet thermal shimmer trembling across the array, the sheets dimming into gloom at their furthest reach",
+      "target": "a milk-blue atom core",
+      "target_phrase": "a pale blue sphere",
+      "loop_target": "the atomic lattice of calcite, sheets of milk-blue cores with cobalt void sunk through the cells",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "cubic"
+      }
+    },
+    {
+      "name": "atom_foam",
+      "exp": -10.6,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "milk-blue fog shells, amber cores, cobalt void",
+      "scene": "a froth of fog spheres crowding an unlit void, each sphere a shell of luminous haze thickening toward an amber core, large spheres crowded rim to rim with smaller ones wedged into every hollow among them and smaller again inside those hollows, their walls merged into violet seams where they meet, cobalt murk sunk through the froth, the spheres dimming into the void at the furthest reach"
+    },
+    {
+      "name": "first_light_froth",
+      "exp": 24.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt neutral fog, ivory starlight spheres, violet merge seams",
+      "scene": "the first foam of the universe, spheres of new starlight swollen through a cobalt fog of neutral gas, each sphere cleared and alight within, crowded rim to rim with smaller spheres wedged into the hollows among them, their walls merged along violet seams where two spheres meet, seed galaxies studding every wall in amber points, the fog thickening into gloom past the furthest spheres",
+      "target": "a violet wall seam",
+      "target_phrase": "a violet seam"
+    },
+    {
+      "name": "cosmic_web_walls",
+      "exp": 23.3,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "cobalt void hollows, amber galaxy swarms, milk-blue haze",
+      "scene": "the walls of the cosmic web, sheets of galaxies laid edge to edge into vast curved partitions, amber and milk-blue swarms crowding every sheet, cobalt void hollows opening behind the partitions with nothing sown inside them, thinner sheets crossing at shallow angles where two partitions meet, a haze of far galaxy dust hanging over the array"
+    }
+  ],
+  "music_theme": "a chalk-vault chapel dive — struck glass tones over a low bowed drone with one deep kick on every downbeat, the pulse tightening bar by bar through the fossil drifts and the calcite courses, the drone thinning to a single held tone across the atomic bars, a wide bloom of struck bells where the froth opens into cosmic dawn, and a softer, closer bloom as the galaxy walls drop back onto the cellar rack",
+  "music_key": "G minor",
+  "render_start": "calcite_lattice"
+}

@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bee_cathedral/tide_organ-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.75) -> stretch 1.0000 | phase 0.990s | lock 38.22x | kick 0.71 | seamless loop @ 18.67s (music tiled x1, xf 0.50s)
+  [tide_organ-wild] realigned (lock 38.22x kick 0.71)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bee_cathedral/aurora_strings-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.68) -> stretch 1.0000 | phase 0.830s | lock 30.75x | kick 0.55 | seamless loop @ 18.67s (music tiled x1, xf 0.50s)
+  [aurora_strings-wild] realigned (lock 30.75x kick 0.55)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bee_cathedral/choir_of_dust-third_answer2.mp4
+    bar 2.667s | music bar 2.667s (conf 0.82) -> stretch 1.0000 | phase 1.680s | lock 23.43x | kick 0.76 | seamless loop @ 18.67s (music tiled x1, xf 0.50s)
+  [choir_of_dust-third_answer2] realigned (lock 23.43x kick 0.76)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bee_cathedral/choir_of_dust-b.mp4
+    bar 2.667s | music bar 2.667s (conf 0.33) -> stretch 1.0000 | phase 1.020s | lock 37.43x | kick 0.34 | seamless loop @ 18.67s (music tiled x1, xf 0.50s)
+  [choir_of_dust-b] realigned (lock 37.43x kick 0.34)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bee_cathedral/glass_chapel-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.47) -> stretch 1.0000 | phase 0.970s | lock 21.13x | kick 0.42 | seamless loop @ 18.67s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] realigned (lock 21.13x kick 0.42)
+realigned 5 pregen candidates to the marked start

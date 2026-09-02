@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/pulse2-aurora_strings.mp4
+    bar 2.667s | music bar 2.667s (conf 0.64) -> stretch 1.0000 | phase 2.500s | lock 20.24x | kick 0.51 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [pulse2-aurora_strings] realigned (lock 20.24x kick 0.51)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/glass_chapel-wild.mp4
+    bar 2.667s | music bar 2.656s (conf 0.10) -> stretch 1.0000 | phase 1.520s | lock 25.18x | kick 0.20 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] realigned (lock 25.18x kick 0.20)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/pulse3-aurora_strings.mp4
+    bar 2.667s | music bar 2.677s (conf 0.31) -> stretch 1.0040 | phase 2.000s | lock 13.46x | kick 0.34 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [pulse3-aurora_strings] realigned (lock 13.46x kick 0.34)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/tide_organ-wild.mp4
+    bar 2.667s | music bar 2.656s (conf 0.23) -> stretch 0.9960 | phase 0.180s | lock 20.04x | kick 0.10 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] realigned (lock 20.04x kick 0.10)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/choir_of_dust-wild.mp4
+    bar 2.667s | music bar 2.656s (conf 0.20) -> stretch 0.9960 | phase 1.540s | lock 18.84x | kick 0.02 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] realigned (lock 18.84x kick 0.02)
+realigned 5 pregen candidates to the marked start

@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/night_market-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.82) -> stretch 1.0000 | phase 0.670s | lock 25.64x | kick 0.77 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [night_market-wild] realigned (lock 25.64x kick 0.78)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/pulse1-deep_archive.mp4
+    bar 2.667s | music bar 2.667s (conf 0.81) -> stretch 1.0000 | phase 0.310s | lock 20.31x | kick 0.73 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [pulse1-deep_archive] realigned (lock 20.31x kick 0.73)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/ember_pulse-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.55) -> stretch 1.0000 | phase 0.360s | lock 23.72x | kick 0.42 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [ember_pulse-wild] realigned (lock 23.72x kick 0.42)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/deep_archive-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.78) -> stretch 1.0000 | phase 1.020s | lock 14.54x | kick 0.67 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [deep_archive-halftime] realigned (lock 14.54x kick 0.67)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/whale_fall_republic/analog_dawn-wild.mp4
+    bar 2.667s | music bar 2.560s (conf -0.06) -> stretch 1.0000 | phase 0.430s | lock 4.37x | kick -0.02 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [analog_dawn-wild] realigned (lock 4.37x kick -0.02)
+realigned 5 pregen candidates to the marked start

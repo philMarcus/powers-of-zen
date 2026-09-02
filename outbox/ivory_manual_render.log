@@ -1,0 +1,9 @@
+manual batch: ivory_gambit
+=== 17:03:28 batch start [manual] — 1 journeys: ivory_gambit
+=== 17:03:28 --- ivory_gambit ---
+=== 17:03:28 ivory_gambit: --seed 974201
+=== 18:35:07 ivory_gambit: rendered in 5499s
+=== 18:36:18 ivory_gambit -> REVIEW (captioned)
+=== 18:36:18 batch done in 1.5h — 1 to Review
+=== 18:36:18 ComfyUI models unloaded — VRAM freed
+=== 18:36:18 log: outbox/night_batch_0814_170328.log

@@ -1,0 +1,136 @@
+=== 01:30:01 batch start [LMS] — 3 journeys: chess_empires lichen_moor night_lido
+=== 01:30:02 --- chess_empires ---
+[style] crystalline  ->  prismatic crystalline light, refractive glass and gemstone facets, jewel tones, ultra-detailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/chess_empires/v1
+[dive] chess_empires: 280 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (154 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of an aperiodic tiling of ivory kites and obsidian darts locked edge to edge across
+[dive] frame 1/280 (19.7s/frame, ~5501s left) :: moving through an aperiodic tiling of ivory kites and obsidi
+[dive] frame 11/280 (20.5s/frame, ~5502s left) :: moving through an aperiodic tiling of ivory kites and obsidi
+[dive] frame 21/280 (19.9s/frame, ~5146s left) :: diving straight into a glowing emerald tile, a single bright
+[dive] frame 31/280 (19.4s/frame, ~4821s left) :: a hyperbolic tiling of ivory and obsidian cells curving outw
+[dive] frame 41/280 (16.6s/frame, ~3968s left) :: deep inside a hyperbolic tiling of ivory and obsidian cells 
+[dive] frame 51/280 (14.9s/frame, ~3407s left) :: deep inside a hyperbolic tiling of ivory and obsidian cells 
+[dive] frame 61/280 (13.9s/frame, ~3051s left) :: the whole view transforming, resolving into a crystalline la
+[dive] frame 71/280 (14.4s/frame, ~3014s left) :: moving through a crystalline lattice universe, galaxy cluste
+[dive] frame 81/280 (15.2s/frame, ~3029s left) :: diving straight into an ivory ring galaxy, a closed ring of 
+[dive] frame 91/280 (15.0s/frame, ~2832s left) :: an ivory ring galaxy set against the black, a smooth closed 
+[dive] frame 101/280 (15.6s/frame, ~2786s left) :: diving straight into a bright white star, thin dark orbit ci
+[dive] frame 111/280 (16.0s/frame, ~2703s left) :: diving straight into a bright white star, thin dark orbit ci
+[dive] frame 121/280 (15.9s/frame, ~2522s left) :: moving through a white star burning at the centre of thin ob
+[dive] frame 131/280 (16.1s/frame, ~2406s left) :: diving straight into a pale marble planet, an ivory sphere m
+[dive] frame 141/280 (16.5s/frame, ~2291s left) :: a monochrome marble planet hanging in the black, an ivory sp
+[dive] frame 151/280 (16.3s/frame, ~2099s left) :: moving through a monochrome marble planet hanging in the bla
+[dive] frame 161/280 (16.5s/frame, ~1959s left) :: diving straight into a green continent of dense forest as it
+[dive] frame 171/280 (16.4s/frame, ~1787s left) :: a green hedge country seen from high above, vast clipped hed
+[dive] frame 181/280 (15.9s/frame, ~1577s left) :: moving through a green hedge country seen from high above, v
+[dive] frame 191/280 (15.5s/frame, ~1381s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] ⚠ figure at frame 196: people — Florence: "The image is an aerial view of a garden. The garden has hedges and trees. The hedges are cut into squares. The grass is a bright green color. There ar"
+[dive] frame 201/280 (15.2s/frame, ~1201s left) :: a topiary chess garden seen from a low stone terrace at the 
+[dive] frame 211/280 (15.4s/frame, ~1063s left) :: moving through a topiary chess garden seen from a low stone 
+[dive] frame 221/280 (15.8s/frame, ~931s left) :: diving straight into a tall carved obsidian knight, a styliz
+[dive] ⚠ figure at frame 224: man — Florence: "An aerial view of a garden is shown. The garden is very neat and neat and has a lot of green bushes. There is a black statue of a man riding a black h"
+[dive] frame 231/280 (15.7s/frame, ~770s left) :: a giant carved obsidian knight standing on its square, a sty
+[dive] frame 241/280 (16.0s/frame, ~626s left) :: diving straight into a pale white mineral vein, a bright bra
+[dive] frame 251/280 (16.2s/frame, ~469s left) :: diving straight into a pale white mineral vein, a bright bra
+[dive] frame 261/280 (16.1s/frame, ~306s left) :: moving through a broad ivory vein branching through a plain 
+[dive] frame 271/280 (16.1s/frame, ~145s left) :: diving straight into an aperiodic tiling of ivory kites and 
+[dive] frame 280/280 (16.1s/frame, ~0s left) :: diving straight into an aperiodic tiling of ivory kites and 
+[dive] interpolated 12 -> 24fps in 33s
+[dive] counter overlay on 557 frames (42 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/chess_empires/v1/chess_empires.mp4 (33174 KB, 23.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/chess_empires/v1/chess_empires_divein.mp4 (33892 KB, 23.3s)
+[dive] done in 4651s
+=== 02:47:33 chess_empires: rendered in 4652s
+  copied chess_empires.mp4 -> review/chess_empires_ds.mp4
+  copied chess_empires_divein.mp4 -> review_divein/chess_empires_ds_divein.mp4
+chess_empires: queued to REVIEW (ds/divein) from v1
+  chess_empires: 5 caption+title pairs (spot=True); theme='A slow, shimmering pulse of glass harps '
+    [0] A knight’s shadow stretches across the cosmos 🌌 Can you spot Newman hiding in the endless zoom? 👀 #InfiniteGardenCosmos #CrystalUniverseDive #LoopingStarlight #HypnoticZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A knight’s shadow stretches across the cosmos 🌌
+    [1] Where hedges weave galaxies and stars breathe stone ✨ Can you spot Newman hiding in the endless zoom? 👀 #InfiniteGardenCosmos #CrystalUniverseDive #LoopingStarlight #HypnoticZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where hedges weave galaxies and stars breathe stone ✨
+    [2] Lost in the infinite garden of light and dark Can you spot Newman hiding in the endless zoom? 👀 #InfiniteGardenCosmos #CrystalUniverseDive #LoopingStarlight #HypnoticZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Lost in the infinite garden of light and dark
+    [3] The universe tilts—can you feel the loop? Can you spot Newman hiding in the endless zoom? 👀 #InfiniteGardenCosmos #CrystalUniverseDive #LoopingStarlight #HypnoticZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The universe tilts—can you feel the loop?
+    [4] From chessboard to cosmos, a seamless spiral Can you spot Newman hiding in the endless zoom? 👀 #InfiniteGardenCosmos #CrystalUniverseDive #LoopingStarlight #HypnoticZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From chessboard to cosmos, a seamless spiral
+=== 02:48:29 chess_empires -> REVIEW (captioned)
+=== 02:48:29 --- lichen_moor ---
+[style] enchanted_wild  ->  enchanted golden light, lush saturated color, painterly fantasy illustration, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/lichen_moor/v1
+[dive] lichen_moor: 196 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (112 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a rust-orange lichen crust spread across pale grey stone seen from straight abov
+[dive] frame 1/196 (26.3s/frame, ~5138s left) :: moving through a rust-orange lichen crust spread across pale
+[dive] frame 11/196 (22.2s/frame, ~4104s left) :: moving through a rust-orange lichen crust spread across pale
+[dive] frame 21/196 (21.3s/frame, ~3723s left) :: diving straight into a pale sage-green tuft, branched and sp
+[dive] frame 31/196 (20.6s/frame, ~3394s left) :: a forest of lichen stalks standing up from the crust, pale s
+[dive] frame 41/196 (19.5s/frame, ~3024s left) :: moving through a forest of lichen stalks standing up from th
+[dive] frame 51/196 (19.5s/frame, ~2831s left) :: diving straight into a bright emerald bead, round and glossy
+[dive] frame 61/196 (19.0s/frame, ~2565s left) :: the packed weave inside a lichen stalk, pale amber threads b
+[dive] frame 71/196 (18.7s/frame, ~2341s left) :: moving through the packed weave inside a lichen stalk, pale 
+[dive] frame 81/196 (19.0s/frame, ~2182s left) :: diving straight into a dark hairline crack as it swells to f
+[dive] frame 91/196 (18.5s/frame, ~1938s left) :: a branching network of hairline cracks running through pale 
+[dive] frame 101/196 (17.4s/frame, ~1654s left) :: deep inside a branching network of hairline cracks running t
+[dive] frame 111/196 (16.6s/frame, ~1407s left) :: deep inside a branching network of hairline cracks running t
+[dive] frame 121/196 (16.2s/frame, ~1214s left) :: moving through a wide dusk moor seen from high above, dark h
+[dive] frame 131/196 (16.4s/frame, ~1067s left) :: diving straight into a tall leaning standing stone, rough gr
+[dive] frame 141/196 (16.8s/frame, ~922s left) :: a ring of standing stones on the moor top at eye level, seve
+[dive] frame 151/196 (16.5s/frame, ~744s left) :: moving through a ring of standing stones on the moor top at 
+[dive] frame 161/196 (16.8s/frame, ~588s left) :: diving straight into a broad rounded stone, grey and weather
+[dive] frame 171/196 (16.9s/frame, ~422s left) :: a great rounded weathered stone set against the deep indigo 
+[dive] frame 181/196 (16.7s/frame, ~250s left) :: moving through a great rounded weathered stone set against t
+[dive] frame 191/196 (16.7s/frame, ~83s left) :: diving straight into a rust-orange lichen crust on pale grey
+[dive] frame 196/196 (16.7s/frame, ~0s left) :: diving straight into a rust-orange lichen crust on pale grey
+[dive] interpolated 12 -> 24fps in 23s
+[dive] counter overlay on 389 frames (16 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/lichen_moor/v1/lichen_moor.mp4 (26752 KB, 16.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/lichen_moor/v1/lichen_moor_divein.mp4 (27085 KB, 16.3s)
+[dive] done in 3373s
+=== 03:44:41 lichen_moor: rendered in 3373s
+  copied lichen_moor.mp4 -> review/lichen_moor_ds.mp4
+  copied lichen_moor_divein.mp4 -> review_divein/lichen_moor_ds_divein.mp4
+lichen_moor: queued to REVIEW (ds/divein) from v1
+  lichen_moor: 5 caption+title pairs (spot=True); theme='A slow, hypnotic pulse of strings and ch'
+    [0] A moor’s breath, a stone’s whisper 🌙 Can you spot Belle hiding in the loop? 👀 #enchantedmoor #lichenrealm #stonewhispers #endlessdive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A moor’s breath, a stone’s whisper 🌙
+    [1] Where the earth hums in forgotten tongues Can you spot Belle hiding in the loop? 👀 #enchantedmoor #lichenrealm #stonewhispers #endlessdive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where the earth hums in forgotten tongues
+    [2] Lichen dreams in amber and emerald light Can you spot Belle hiding in the loop? 👀 #enchantedmoor #lichenrealm #stonewhispers #endlessdive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Lichen dreams in amber and emerald light
+    [3] Cracks that tell secrets to the wind Can you spot Belle hiding in the loop? 👀 #enchantedmoor #lichenrealm #stonewhispers #endlessdive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Cracks that tell secrets to the wind
+    [4] The world unspools in silent spirals Can you spot Belle hiding in the loop? 👀 #enchantedmoor #lichenrealm #stonewhispers #endlessdive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The world unspools in silent spirals
+=== 03:45:30 lichen_moor -> REVIEW (captioned)
+=== 03:45:30 --- night_lido ---
+[style] ultraviolet  ->  ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/night_lido/v1
+[dive] night_lido: 140 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (70 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of the tiled floor of a night swimming pool seen down through still clear water fro
+[dive] frame 1/140 (20.1s/frame, ~2789s left) :: moving through the tiled floor of a night swimming pool seen
+[dive] frame 11/140 (20.2s/frame, ~2601s left) :: moving through the tiled floor of a night swimming pool seen
+[dive] frame 21/140 (19.1s/frame, ~2274s left) :: diving straight into a bright green knot of light as it swel
+[dive] frame 31/140 (17.8s/frame, ~1945s left) :: a knot of green-white light burning on the glazed tile of a 
+[dive] frame 41/140 (18.5s/frame, ~1833s left) :: moving through a knot of green-white light burning on the gl
+[dive] frame 51/140 (18.7s/frame, ~1665s left) :: diving straight into a thin bright thread of light as it swe
+[dive] frame 61/140 (18.3s/frame, ~1447s left) :: a thread of white-green light lying along wet glazed tile, a
+[dive] frame 71/140 (18.2s/frame, ~1256s left) :: moving through a thread of white-green light lying along wet
+[dive] frame 81/140 (18.6s/frame, ~1097s left) :: diving straight into a bright round grain of light as it swe
+[dive] frame 91/140 (18.0s/frame, ~882s left) :: ranks of fine green-white threads crossing in every directio
+[dive] frame 101/140 (17.0s/frame, ~663s left) :: deep inside ranks of fine green-white threads crossing in ev
+[dive] frame 111/140 (16.2s/frame, ~469s left) :: deep inside ranks of fine green-white threads crossing in ev
+[dive] frame 121/140 (15.8s/frame, ~301s left) :: moving through the whole open-air pool at night seen from th
+[dive] frame 131/140 (15.8s/frame, ~142s left) :: diving straight into the tiled floor of the night pool seen 
+[dive] frame 140/140 (16.0s/frame, ~0s left) :: diving straight into the tiled floor of the night pool seen 
+[dive] interpolated 12 -> 24fps in 16s
+[dive] counter overlay on 277 frames (16 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/night_lido/v1/night_lido.mp4 (14706 KB, 11.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/night_lido/v1/night_lido_divein.mp4 (14927 KB, 11.7s)
+[dive] done in 2308s
+=== 04:23:59 night_lido: rendered in 2309s
+  copied night_lido.mp4 -> review/night_lido_ds.mp4
+  copied night_lido_divein.mp4 -> review_divein/night_lido_ds_divein.mp4
+night_lido: queued to REVIEW (ds/divein) from v1
+  night_lido: 5 caption+title pairs (spot=True); theme='A hypnotic pulse of synth waves and deep'
+    [0] Dive into the neon abyss of a midnight pool 🌊✨ Can you spot Newman hiding in the neon? 👀 #neonabyss #fluorescentdream #endlessgrid #midnightpool #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive into the neon abyss of a midnight pool 🌊✨
+    [1] Where light and water weave an endless grid ✶ Can you spot Newman hiding in the neon? 👀 #neonabyss #fluorescentdream #endlessgrid #midnightpool #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where light and water weave an endless grid ✶
+    [2] A fluorescent dream beneath the surface 💧🔮 Can you spot Newman hiding in the neon? 👀 #neonabyss #fluorescentdream #endlessgrid #midnightpool #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A fluorescent dream beneath the surface 💧🔮
+    [3] Lost in the electric dance of rippling glow 🌀 Can you spot Newman hiding in the neon? 👀 #neonabyss #fluorescentdream #endlessgrid #midnightpool #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Lost in the electric dance of rippling glow 🌀
+    [4] The pool’s secret universe, glowing in the deep 🌌 Can you spot Newman hiding in the neon? 👀 #neonabyss #fluorescentdream #endlessgrid #midnightpool #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The pool’s secret universe, glowing in the deep 🌌
+=== 04:24:49 night_lido -> REVIEW (captioned)
+=== 04:24:49 batch done in 2.9h — 3 to Review
+=== 04:24:49 log: outbox/night_batch_0806_013001.log

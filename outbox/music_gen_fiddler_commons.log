@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fiddler_commons/glass_chapel-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.72) -> stretch 1.0000 | phase 2.220s | lock 34.52x | kick 0.70 | seamless loop @ 13.33s (music tiled x1, xf 0.50s)
+  [glass_chapel-wild] realigned (lock 34.52x kick 0.70)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fiddler_commons/pulse3-wooden_orbit.mp4
+    bar 2.667s | music bar 2.667s (conf 0.80) -> stretch 1.0000 | phase 2.230s | lock 29.08x | kick 0.74 | seamless loop @ 13.33s (music tiled x1, xf 0.50s)
+  [pulse3-wooden_orbit] realigned (lock 29.08x kick 0.74)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fiddler_commons/wooden_orbit-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.72) -> stretch 1.0000 | phase 1.220s | lock 29.54x | kick 0.65 | seamless loop @ 13.33s (music tiled x1, xf 0.50s)
+  [wooden_orbit-halftime] realigned (lock 29.54x kick 0.65)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fiddler_commons/tide_organ-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.26) -> stretch 1.0000 | phase 0.890s | lock 24.27x | kick 0.09 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] realigned (lock 24.27x kick 0.09)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fiddler_commons/choir_of_dust-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.35) -> stretch 1.0000 | phase 1.220s | lock 26.06x | kick -0.00 | seamless loop @ 13.33s (music tiled x1, xf 0.50s)
+  [choir_of_dust-wild] realigned (lock 26.06x kick -0.00)
+realigned 5 pregen candidates to the marked start

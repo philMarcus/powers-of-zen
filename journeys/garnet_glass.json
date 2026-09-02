@@ -1,0 +1,142 @@
+{
+  "name": "garnet_glass",
+  "theme": "a half-hour sand-glass in the gimbal of an empty wheelhouse runs on garnet instead of sand — down the combed thread of wine-red grains onto one twelve-faced crystal, through its needle-combed interior into almandine's own cubic framework and the caged iron atom at its heart, to a fat droplet of glowing spheres shedding a four-bead cluster on a straight lit track, where the pinched waist reads again as two stars sharing one envelope with a stream of fire strung through the neck — and home by the night world that circles them, its coast, the harbour commons at the quay, and the lit wheelhouse glass",
+  "style": "crystalline",
+  "music_lane": "music_box",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "wheelhouse",
+      "exp": 0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "brass lamp amber, verdigris fittings, moon-silver on tar-dark glass",
+      "scene": "the wheelhouse of a moored fishing boat at night, seen from the wheel at head height, a spoked wheel set before a bank of salt-fogged windows with the tar-dark harbour beyond them, a brass lamp lit on its bracket laying amber over the boards, verdigris crept across every fitting and cleat, a compass card afloat in its binnacle bowl, a half-hour sand-glass hung in a brass gimbal at the binnacle with wine-red grains heaped in its lower bulb, charts weighted flat on a shelf, moon-silver falling over the deck planks, empty, no one present",
+      "target": "a brass-hung sand-glass",
+      "target_phrase": "a brass hourglass"
+    },
+    {
+      "name": "sand_glass",
+      "exp": -0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "wine-red grains, verdigris brass, amber raking light",
+      "scene": "a half-hour sand-glass hung in its brass gimbal, two bulbs of blown glass pinched to a narrow throat within a verdigris brass mount, wine-red grains heaped in the lower bulb, a slender crimson thread drawn down through the throat onto the crest of that heap, amber light raking the curved glass and struck back off the gimbal, tar-dark cabin gloom sunk behind the mount, wet boards dull under it",
+      "target": "a crimson grain thread",
+      "target_phrase": "a red sand stream"
+    },
+    {
+      "name": "grain_stream",
+      "exp": -2.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "wine-red grains on tar-dark gloom, amber facet glints",
+      "scene": "the throat of the glass, countless wine-red grains packed one against another and drawn through the narrows in combed flow-lines, the lines pinched tight at the waist and opening out beneath it over a heaped drift of the same grains, further grains strewn across the curved floor past the drift, amber glints struck off crystal faces all through the column, tar-dark gloom sunk in the hollows of the heap, rank behind rank of grains dimming into shadow",
+      "target": "a wine-red garnet grain",
+      "target_phrase": "a dark red grain",
+      "loop_target": "the throat of the sand-glass, countless wine-red grains drawn through the narrows in combed flow-lines over a heaped drift"
+    },
+    {
+      "name": "garnet_grain",
+      "exp": -3.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "oxblood crystal, moon-silver ridges, crimson fire in the clear stones",
+      "scene": "a bed of garnet crystals heaped in the lower bulb, every stone a twelve-faced solid whose rhombic faces meet at blunt corners, crimson fire kindled deep in the clearer ones and oxblood shadow sunk through the frosted ones, scooped chips taken out of their faces where they have knocked together, finer crimson dust silted into the hollows among them, moon-silver running the ridges where two faces meet, the heap dimming into shadow at its furthest ranks",
+      "target": "a twelve-faced garnet crystal",
+      "target_phrase": "a dark red crystal",
+      "resolve": {
+        "mode": "sea",
+        "density": 1.6
+      }
+    },
+    {
+      "name": "facet_interior",
+      "exp": -4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "wine-dark crystal, crimson zoning, moon-silver healed planes",
+      "scene": "the interior of one garnet, a wine-dark hall of crystal combed through by ranks of needle-fine rutile threads laid parallel, a second and third set of threads crossing them at fixed angles, healed fracture planes hung as flat sheets of minute fluid bubbles, growth zones banded deeper oxblood and clearer crimson through the whole body of it, stubby apatite prisms caught here and there in the crystal, lamp-red glow gathered in the deepest bands and moon-silver skimming the healed sheets, no ground and no sky",
+      "target": "a crimson growth band",
+      "target_phrase": "a red crystal band"
+    },
+    {
+      "name": "garnet_lattice",
+      "exp": -9.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "verdigris framework, crimson iron cores, tar-dark channels",
+      "scene": "the atomic framework of almandine garnet opening on every hand, four-cornered silicon units and eight-faced aluminium units set alternately and strung corner to corner into a cubic frame, the frame repeating in combed rows one behind another into shadow, a crimson iron sphere caged in the roomy cavity of every cell, verdigris glints running the struts, tar-dark channels sunk through the open cells, a thermal shimmer trembling across the whole array",
+      "target": "a glowing iron atom",
+      "target_phrase": "a glowing red sphere",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "cubic"
+      }
+    },
+    {
+      "name": "nucleus_alpha",
+      "exp": -14.0,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "crimson and moon-silver spheres, wine haze, unlit space",
+      "scene": "a fat droplet built of glowing spheres crowded rim to rim, its outer wall dimpled and out of true where they press it, a tight cluster of four beads set clear of the droplet with one straight lit track drawn out past it, fainter tracks strewn across the space beyond, a wine-red haze hanging about the droplet, unlit emptiness on every hand, no ground and no sky"
+    },
+    {
+      "name": "hourglass_binary",
+      "exp": 12.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "crimson giant, moon-silver disc, verdigris shed gas on tar-dark space",
+      "scene": "two stars sharing one pinched envelope, a swollen crimson star and a compact white one set at either end of one continuous gas shell drawn tight to a waist at its middle, a taut bright stream of gas strung from the swollen star through that waist and down onto a moon-silver disc wound about the compact one, banks of shed gas laid in verdigris sheets wide of the pair, cold stars sown thick through the tar-dark space past them",
+      "target": "a dark ocean world",
+      "target_phrase": "a dark blue planet",
+      "cameo": {
+        "sprite": "output/mascots/canon/lamar.png",
+        "pos": [
+          0.63,
+          0.37
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "night_world",
+      "exp": 6.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "unlit ocean, moon-silver glare, amber coast lamps, verdigris aurora",
+      "scene": "a night world turned against the dark, its ocean hemisphere unlit but for a wide moon-silver glare struck off the water, one continent's coast picked out in a crowd of amber harbour lamps, storm spirals wound tight over the cold sea, a verdigris auroral band ringing the pole, cloud banks drawn in combed streaks across the terminator, the atmosphere burning a fine crimson line at the limb",
+      "target": "a lamp-lit coastline",
+      "target_phrase": "a lit coastline"
+    },
+    {
+      "name": "coast_air",
+      "exp": 4.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moon-silver sea, sodium amber wharf, tar-dark reefs",
+      "scene": "a rock coast seen obliquely from low over the water, headlands stepping down to a river mouth, a breakwater arm curled about a harbour basin, ranks of moored boats crowded at the quays with mast lights pricking the dark, ice-house and net-lofts ranged behind the wharf under sodium amber, surf drawn in combed white lines across the outer reefs, moon-silver laid over the open sea past the harbour mouth",
+      "target": "a wet stone quay",
+      "target_phrase": "a stone quay"
+    },
+    {
+      "name": "harbour_commons",
+      "exp": 1.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "verdigris cleats, amber lamp pool, moon-silver on oily water",
+      "scene": "the quay at low tide seen from the wharf at the water's rim, a moored fishing boat made fast at the bollards with its wheelhouse lit amber, a grey heron halted on the stringpiece, gulls roosting in a row on the ice-house roof-ridge, rats out on the mooring warps, a seal's head up in the oily water at the hull, verdigris cleats and rusted chain heaped on the wet stone, moon-silver laid over the basin and amber pooled beneath a lamp on its post",
+      "target": "a lit wheelhouse",
+      "target_phrase": "a lit wheelhouse"
+    }
+  ],
+  "music_theme": "a night watch measured out by falling grains — a tiny music box and celesta over a low warm drone with one deep kick on every downbeat, the struck tines tightening through the garnet ranks and the cubic frame, opening wide and slow where two stars share one stream of fire, then drawing small and close again as the harbour lamps come back onto the wheelhouse glass",
+  "music_key": "B minor",
+  "render_start": "grain_stream"
+}

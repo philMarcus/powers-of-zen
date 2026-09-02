@@ -1,0 +1,21 @@
+abyssal_chandelier · young_star: orbit window 65..83 (1.2°/frame, net 23°)
+  f65 den 0.40 orbit 1°
+  f66 den 0.40 orbit 2°
+  f67 den 0.40 orbit 4°
+  f68 den 0.40 orbit 5°
+  f69 den 0.40 orbit 6°
+  f70 den 0.40 orbit 7°
+  f71 den 0.40 orbit 8°
+  f72 den 0.40 orbit 10°
+  f73 den 0.40 orbit 11°
+  f74 den 0.40 orbit 12°
+  f75 den 0.40 orbit 13°
+  f76 den 0.40 orbit 14°
+  f77 den 0.40 orbit 16°
+  f78 den 0.40 orbit 17°
+  f79 den 0.40 orbit 18°
+  f80 den 0.40 orbit 19°
+  f81 den 0.40 orbit 20°
+  f82 den 0.40 orbit 22°
+  f83 den 0.40 orbit 23°
+A/B -> output/orbit_lab/abyssal_chandelier_young_star/orbit_AB.mp4

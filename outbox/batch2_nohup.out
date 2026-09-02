@@ -1,0 +1,26 @@
+=== 00:05:19 batch start — 4 journeys: quantum_orrery loom_of_nights jade_automata pollen_court ===
+=== 00:05:19 ComfyUI ready ===
+=== 00:05:19 GPU busy (game or another render?) — waiting for it to free up ===
+=== 00:05:46 GPU free — rendering ===
+=== 00:05:46 --- quantum_orrery --- ===
+=== 00:05:46 python3 engine/dive.py journeys/quantum_orrery.json ===
+=== 00:54:10 python3 scripts/queue_review.py quantum_orrery ds ===
+=== 00:54:10 python3 scripts/caption.py quantum_orrery ===
+=== 00:54:50 quantum_orrery done -> REVIEW ===
+=== 00:54:50 --- loom_of_nights --- ===
+=== 00:54:50 python3 engine/dive.py journeys/loom_of_nights.json ===
+=== 02:18:09 python3 scripts/queue_review.py loom_of_nights ds ===
+=== 02:18:10 python3 scripts/caption.py loom_of_nights ===
+=== 02:18:52 loom_of_nights done -> REVIEW ===
+=== 02:18:52 --- jade_automata --- ===
+=== 02:18:52 python3 engine/dive.py journeys/jade_automata.json ===
+=== 03:32:10 python3 scripts/queue_review.py jade_automata ds ===
+=== 03:32:11 python3 scripts/caption.py jade_automata ===
+=== 03:32:52 jade_automata done -> REVIEW ===
+=== 03:32:52 --- pollen_court --- ===
+=== 03:32:52 python3 engine/dive.py journeys/pollen_court.json ===
+=== 04:04:18 python3 scripts/queue_review.py pollen_court ds ===
+=== 04:04:19 python3 scripts/caption.py pollen_court ===
+=== 04:05:01 pollen_court done -> REVIEW ===
+=== 04:05:01 BATCH COMPLETE — 3 videos in Video Review (captioned). Next: mark a start frame, Approve -> Music. ===
+log: outbox/render_batch_0801_0005.log

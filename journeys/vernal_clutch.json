@@ -1,0 +1,140 @@
+{
+  "name": "vernal_clutch",
+  "theme": "a woodland vernal pool on a spring night read as one repeated halving — the pool's whole commons awake over a raft of wood-frog spawn, into one globe's charcoal embryo cut into a raspberry of equal cells, on through the division theatre and the chromosome's coiled wiring to its bead-strung cord, down to an atom's two-ended fog, which opens as a pinched double-shelled nebula, and home past a dying star's boiling floor and a moonlit night world to the pools pocking the wood",
+  "style": "liquid_light",
+  "music_lane": "music_box",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "wood_from_air",
+      "exp": 3.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink-dark branchwork, moon-silver mist, rust-orange water",
+      "scene": "a moonlit hardwood wood in early spring seen from overhead, bare oak and maple crowns netted into ink-dark branchwork, snowmelt pools scattered through the low ground and lit rust-orange where moonlight strikes their iron-stained water, hair-fine deer trails threading the leaf litter, fallen trunks bridging the wet swales, silver mist settled in the hollows, sedge tussocks ringing every pool, a beaver-flooded channel quilting the farther ground",
+      "target": "a rust-orange pool",
+      "target_phrase": "an orange pool"
+    },
+    {
+      "name": "pool_commons",
+      "exp": 1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-orange bog-iron water, moon-teal glints, new-leaf lime",
+      "scene": "a woodland vernal pool at night seen from just over the water at its brim, the shallows iron-stained rust-orange and drifted with sunken leaves, fairy shrimp rowing belly-upward in ranks through the open water, spotted-salamander larvae hung over the drift with feathered gills fanned at their throats, water boatmen sculling under the surface film, a raft of clear jelly globes moored in the sedge with one charcoal bead cored in each, new-leaf lime algal fur furring the drowned stems, moon-teal glints scattered across the ripples, alder roots and sedge tussocks flanking the shallows, no one present",
+      "target": "a raft of clear jelly globes",
+      "target_phrase": "a clump of clear eggs"
+    },
+    {
+      "name": "spawn_raft",
+      "exp": -1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moon-teal jelly, charcoal beads, rust-orange gloom",
+      "scene": "a raft of wood-frog spawn moored at a drowned twig, hundreds of clear jelly globes packed into one domed mass, every globe a taut sphere of moon-teal jelly cored by one charcoal bead, new-leaf lime algal fur clouding the older globes, silt motes suspended in the rust-orange water beyond the mass, moonlight caught in the packed jelly and pitching soft teal shadow under the raft",
+      "target": "a charcoal bead",
+      "target_phrase": "a dark bead",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "embryo_cleave",
+      "exp": -2.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "charcoal domes, moon-milk furrows, teal jelly",
+      "scene": "a charcoal embryo cut into equal domed cells by bright cleavage furrows, the same cut repeated within every piece so its cap reads as a raspberry of packed cells, moon-milk light glossing each dome and teal shadow gathering in the furrows, a clear jelly husk encasing the mass, fine silt motes suspended in the jelly, rust-orange gloom hollow beyond",
+      "target": "a domed charcoal cell",
+      "target_phrase": "a dark dome"
+    },
+    {
+      "name": "spindle_theatre",
+      "exp": -4.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink-violet cytoplasm, moon-white rods, amber yolk",
+      "scene": "the division theatre within one embryo cell, two facing files of moon-white chromosome rods strung to a pair of bright poles by hair-fine spindle threads, those threads fanned into two combed cones, amber yolk platelets packed through the ink-violet cytoplasm, tatters of the dissolved nuclear wall adrift at the flanks, a faint teal radiance pooled at each pole, the farther files dimming into violet gloom",
+      "target": "a moon-white chromosome rod",
+      "target_phrase": "a bright rod"
+    },
+    {
+      "name": "chromosome_coils",
+      "exp": -6.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moon-white coils, silver knobs, violet gloom",
+      "scene": "one chromosome at full girth, two twinned rods clasped at a pinched waist, each rod a stack of coiled loops wound rank over rank into a knobbed column, hair-fine cords looping from the flanks and folding back into the stack, a bead-strung cord surfacing where the coils loosen, moon-white radiance combing the loops, violet gloom hollow beyond the column",
+      "target": "a beaded cord",
+      "target_phrase": "a beaded cord"
+    },
+    {
+      "name": "nucleosome_string",
+      "exp": -8.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moon-teal spools, rust-orange cord, ink hollow",
+      "scene": "the chromosome's own wiring laid open, a rust-orange cord wound twice about spool after spool of moon-teal protein, the spools strung at even spacing into a slack bead-string, that string coiling upon itself into a thicker rope farther off, hair-fine strands bridging spool to spool, faint lime glints caught on the cord, ranks of beads receding into ink hollow",
+      "target": "a glowing atom",
+      "target_phrase": "a glowing mote",
+      "resolve": {
+        "mode": "web"
+      },
+      "cameo": {
+        "sprite": "output/mascots/canon/tina.png",
+        "pos": [
+          0.62,
+          0.58
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "atom_fog",
+      "exp": -10.2,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "moon-teal haze, rust-orange core point, ink dark",
+      "scene": "a soft two-ended fog pinched to a narrow waist, two swollen puffs of moon-teal haze set apart from one rust-orange point cored at the pinch, fainter shells of haze hanging farther out, a scatter of dim motes adrift in ink dark that carries no ground and no horizon"
+    },
+    {
+      "name": "nebula_waist",
+      "exp": 16,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-orange gas shells, moon-teal rims, ink void",
+      "scene": "a bipolar nebula set in the void, two swollen shells of lit gas pinched to a bright narrow waist, rust-orange ribs banding each shell and moon-teal rims fringing them where the gas frays, ranked dust rings girdling the waist, a hot point cored at the pinch, faint lime filaments veining the farther gas, countless stars strewn through the void beyond the shells",
+      "target": "a swollen rust-orange star",
+      "target_phrase": "an orange star"
+    },
+    {
+      "name": "star_floor",
+      "exp": 10,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-orange granulation, sable lanes, moon-white arcs",
+      "scene": "a swollen dying star's boiling floor seen from close within its own glare, countless granulation cells packed rank on rank into a hide of rust-orange plasma, sable lanes sunk at their seams, spot pits cored dark and combed with copper filaments, moon-white prominence arcs vaulting off the rim, an ember-dark world silhouetted against the glare, the plasma ranks receding into rust haze",
+      "target": "an ember-dark world",
+      "target_phrase": "a dark planet",
+      "loop_target": "a dying star's boiling floor of packed rust-orange granulation cells"
+    },
+    {
+      "name": "night_world",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink-blue hemisphere, moon-silver cloud, rust-orange floodwater",
+      "scene": "a wild night world seen from orbit, its dark hemisphere quilted with unlit forest and moon-silver cloud banks spiralling over a cold sea, flooded lowlands glinting rust-orange where the moon strikes them, an ice-crusted mountain spine seaming the land, no city fires anywhere on it, the terminator's silver line drawn across the disc, stars strewn beyond the disc's rim",
+      "target": "a moonlit wood",
+      "target_phrase": "a dark forest"
+    }
+  ],
+  "music_theme": "a spring-night vigil at a woodland pool — a tiny music box and celesta over a low warm drone, one deep soft kick landing on every downbeat as the clutch halves scale by scale, the tines thinning to single struck notes through the cell and cord bars, a wide struck bloom where the two-ended fog opens as the pinched nebula, and a warmer settling figure as the star's floor gives way to the moonlit wood",
+  "music_key": "D minor",
+  "render_start": "star_floor"
+}

@@ -1,0 +1,261 @@
+=== 01:30:01 batch start [LLLLSSM] — 7 journeys: abyssal_chandelier ivory_gambit whale_fall_republic moth_orchard_night squid_lantern ember_meadow bee_cathedral
+=== 01:30:02 --- abyssal_chandelier ---
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/abyssal_chandelier/v1
+[dive] abyssal_chandelier: 308 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (196 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a tilted spiral galaxy hanging in open black space, blue-white star clouds strun
+[dive] frame 1/308 (30.3s/frame, ~9309s left) :: moving through a tilted spiral galaxy hanging in open black 
+[dive] frame 11/308 (21.5s/frame, ~6392s left) :: moving through a tilted spiral galaxy hanging in open black 
+[dive] frame 21/308 (20.5s/frame, ~5875s left) :: diving straight into a hot pink gas knot as it swells to fil
+[dive] frame 31/308 (19.7s/frame, ~5456s left) :: a nursery of glowing gas towers standing across black space,
+[dive] frame 41/308 (18.7s/frame, ~4998s left) :: moving through a nursery of glowing gas towers standing acro
+[dive] frame 51/308 (18.9s/frame, ~4850s left) :: diving straight into a newborn blue-white star as it swells 
+[dive] frame 61/308 (18.4s/frame, ~4553s left) :: a young blue-white star burning in a clearing among the gas 
+[dive] frame 71/308 (18.3s/frame, ~4343s left) :: moving through a young blue-white star burning in a clearing
+[dive] frame 81/308 (18.1s/frame, ~4115s left) :: diving straight into a dark blue ocean world as it swells to
+[dive] frame 91/308 (17.4s/frame, ~3784s left) :: a night ocean world seen from orbit, black water covering it
+[dive] frame 101/308 (17.7s/frame, ~3673s left) :: diving straight into a long dark rift line as it swells to f
+[dive] frame 111/308 (17.9s/frame, ~3525s left) :: diving straight into a long dark rift line as it swells to f
+[dive] frame 121/308 (17.6s/frame, ~3291s left) :: moving through an abyssal vent plain on the floor of a black
+[dive] frame 131/308 (17.7s/frame, ~3138s left) :: diving straight into a smoking black chimney as it swells to
+[dive] frame 141/308 (18.0s/frame, ~3011s left) :: the flank of one sulfide chimney standing in black water, it
+[dive] frame 151/308 (17.7s/frame, ~2781s left) :: moving through the flank of one sulfide chimney standing in 
+[dive] frame 161/308 (17.9s/frame, ~2630s left) :: diving straight into a dark round eye as it swells to fill t
+[dive] frame 171/308 (17.9s/frame, ~2456s left) :: a shrimp's compound eye, a dome of hexagonal lenses packed e
+[dive] frame 181/308 (17.9s/frame, ~2278s left) :: moving through a shrimp's compound eye, a dome of hexagonal 
+[dive] frame 191/308 (18.1s/frame, ~2116s left) :: diving straight into a bottle-green lens as it swells to fil
+[dive] frame 201/308 (18.0s/frame, ~1926s left) :: the living tissue under one lens, tall clear retinal cells s
+[dive] frame 211/308 (18.0s/frame, ~1744s left) :: moving through the living tissue under one lens, tall clear 
+[dive] frame 221/308 (18.1s/frame, ~1575s left) :: diving straight into a dark ridged mitochondrion as it swell
+[dive] frame 231/308 (17.9s/frame, ~1381s left) :: the inner membrane inside the mitochondrion, folded into ran
+[dive] frame 241/308 (18.1s/frame, ~1210s left) :: diving straight into a small iron-and-sulfur cube as it swel
+[dive] frame 251/308 (18.1s/frame, ~1034s left) :: diving straight into a small iron-and-sulfur cube as it swel
+[dive] frame 261/308 (17.9s/frame, ~840s left) :: deep inside an iron-sulfide crystal lattice, ranks of brass-
+[dive] frame 271/308 (17.5s/frame, ~648s left) :: deep inside an iron-sulfide crystal lattice, ranks of brass-
+[dive] frame 281/308 (17.2s/frame, ~465s left) :: the whole view transforming, resolving into the cosmic web a
+[dive] frame 291/308 (17.0s/frame, ~290s left) :: moving through the cosmic web at its largest scale, long amb
+[dive] frame 301/308 (17.0s/frame, ~119s left) :: diving straight into a tilted spiral galaxy among smaller co
+[dive] frame 308/308 (17.1s/frame, ~0s left) :: diving straight into a tilted spiral galaxy among smaller co
+[dive] interpolated 12 -> 24fps in 36s
+[dive] counter overlay on 613 frames (40 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/abyssal_chandelier/v1/abyssal_chandelier.mp4 (36068 KB, 25.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/abyssal_chandelier/v1/abyssal_chandelier_divein.mp4 (36603 KB, 25.7s)
+[dive] done in 5415s
+=== 03:00:17 abyssal_chandelier: rendered in 5415s
+  copied abyssal_chandelier.mp4 -> review/abyssal_chandelier_ds.mp4
+  copied abyssal_chandelier_divein.mp4 -> review_divein/abyssal_chandelier_ds_divein.mp4
+abyssal_chandelier: queued to REVIEW (ds/divein) from v1
+  abyssal_chandelier: 5 caption+title pairs (spot=True); theme='A haunting, ethereal melody that swells '
+    [0] Dive into the endless spiral of existence 🌌 Can you spot Kitty hiding in the depths? 👀 #CosmicDive #InfiniteZoom #BioluminescentWonders #GalacticJewelry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive into the endless spiral of existence 🌌
+    [1] Where galaxies bloom like flowers in the void Can you spot Kitty hiding in the depths? 👀 #CosmicDive #InfiniteZoom #BioluminescentWonders #GalacticJewelry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where galaxies bloom like flowers in the void
+    [2] A star’s cradle, glowing with cosmic fire ⭐ Can you spot Kitty hiding in the depths? 👀 #CosmicDive #InfiniteZoom #BioluminescentWonders #GalacticJewelry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A star’s cradle, glowing with cosmic fire ⭐
+    [3] Ocean storms dance on a world without end Can you spot Kitty hiding in the depths? 👀 #CosmicDive #InfiniteZoom #BioluminescentWonders #GalacticJewelry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Ocean storms dance on a world without end
+    [4] Deep-sea vents whisper secrets to the dark Can you spot Kitty hiding in the depths? 👀 #CosmicDive #InfiniteZoom #BioluminescentWonders #GalacticJewelry #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Deep-sea vents whisper secrets to the dark
+=== 03:01:09 abyssal_chandelier -> REVIEW (captioned)
+=== 03:01:09 --- ivory_gambit ---
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] lacquer_pop  ->  deep lacquer enamel sheen, vermilion red and deep green, bold flat colour blocking, lustrous graphic poster look, ultra-detailed, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/ivory_gambit/v1
+[dive] ivory_gambit: 352 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (224 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a spiral galaxy tilted three-quarters against the black, ivory star-arms wound o
+[dive] frame 1/352 (20.5s/frame, ~7178s left) :: moving through a spiral galaxy tilted three-quarters against
+[dive] frame 11/352 (20.9s/frame, ~7136s left) :: moving through a spiral galaxy tilted three-quarters against
+[dive] frame 21/352 (20.4s/frame, ~6755s left) :: diving straight into a white burning star as it swells to fi
+[dive] frame 31/352 (21.3s/frame, ~6852s left) :: diving straight into a white burning star as it swells to fi
+[dive] frame 41/352 (18.9s/frame, ~5867s left) :: moving through a white star burning inside ranked circles of
+[dive] frame 51/352 (19.0s/frame, ~5708s left) :: moving through a white star burning inside ranked circles of
+[dive] frame 61/352 (19.4s/frame, ~5657s left) :: diving straight into a dark planet with a thin bright rim as
+[dive] frame 71/352 (18.2s/frame, ~5121s left) :: the night face of a planet turned outward against the black,
+[dive] frame 81/352 (18.4s/frame, ~4991s left) :: moving through the night face of a planet turned outward aga
+[dive] frame 91/352 (18.7s/frame, ~4871s left) :: diving straight into a checkered plain of black and ivory sq
+[dive] frame 101/352 (18.2s/frame, ~4568s left) :: a whole kingdom ruled into a battle board, seen from a high 
+[dive] frame 111/352 (18.1s/frame, ~4354s left) :: moving through a whole kingdom ruled into a battle board, se
+[dive] frame 121/352 (18.5s/frame, ~4266s left) :: diving straight into a horse-headed ivory knight as it swell
+[dive] frame 131/352 (18.1s/frame, ~4009s left) :: a colossal horse-headed knight of moonlit ivory standing mid
+[dive] ⚠ figure at frame 140: man — Florence: "The image is a close up of an ornate piece of art. The art is gold and green. There are green gemstones in the middle of the gold design. There is a g"
+[dive] frame 141/352 (18.0s/frame, ~3789s left) :: moving through a colossal horse-headed knight of moonlit ivo
+[dive] frame 151/352 (18.1s/frame, ~3642s left) :: diving straight into a dark hairline crack as it swells to f
+[dive] frame 161/352 (18.1s/frame, ~3466s left) :: carved ivory grain running in long parallel ridges across th
+[dive] frame 171/352 (17.9s/frame, ~3233s left) :: moving through carved ivory grain running in long parallel r
+[dive] frame 181/352 (18.1s/frame, ~3095s left) :: diving straight into a dark round channel mouth as it swells
+[dive] frame 191/352 (18.3s/frame, ~2942s left) :: diving straight into a dark round channel mouth as it swells
+[dive] frame 201/352 (18.0s/frame, ~2716s left) :: moving through inside the ivory, ranks of round channel mout
+[dive] frame 211/352 (18.0s/frame, ~2544s left) :: moving through inside the ivory, ranks of round channel mout
+[dive] frame 221/352 (18.2s/frame, ~2379s left) :: diving straight into a braided amber rope as it swells to fi
+[dive] frame 231/352 (17.9s/frame, ~2170s left) :: three-stranded collagen ropes wound tight and stacked into l
+[dive] frame 241/352 (18.0s/frame, ~1999s left) :: moving through three-stranded collagen ropes wound tight and
+[dive] frame 251/352 (18.0s/frame, ~1813s left) :: diving straight into a flat teal crystal plate as it swells 
+[dive] frame 261/352 (17.8s/frame, ~1620s left) :: the apatite lattice built through the black, hexagonal cells
+[dive] frame 271/352 (17.8s/frame, ~1439s left) :: moving through the apatite lattice built through the black, 
+[dive] frame 281/352 (18.0s/frame, ~1275s left) :: diving straight into a small violet-white sphere as it swell
+[dive] frame 291/352 (17.9s/frame, ~1092s left) :: a shivering droplet of crowded glowing beads, taut threads o
+[dive] frame 301/352 (17.6s/frame, ~896s left) :: deep inside a shivering droplet of crowded glowing beads, ta
+[dive] frame 311/352 (17.3s/frame, ~710s left) :: deep inside a shivering droplet of crowded glowing beads, ta
+[dive] frame 321/352 (17.0s/frame, ~528s left) :: the whole view transforming, resolving into the cosmic web s
+[dive] frame 331/352 (16.8s/frame, ~354s left) :: moving through the cosmic web strung through the black, deep
+[dive] frame 341/352 (16.9s/frame, ~185s left) :: diving straight into a spiral galaxy tilted three-quarters a
+[dive] frame 351/352 (16.9s/frame, ~17s left) :: diving straight into a spiral galaxy tilted three-quarters a
+[dive] frame 352/352 (16.9s/frame, ~0s left) :: diving straight into a spiral galaxy tilted three-quarters a
+[dive] interpolated 12 -> 24fps in 41s
+[dive] counter overlay on 701 frames (46 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/ivory_gambit/v1/ivory_gambit.mp4 (41025 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/ivory_gambit/v1/ivory_gambit_divein.mp4 (41569 KB, 29.3s)
+[dive] done in 6117s
+=== 04:43:06 ivory_gambit: rendered in 6117s
+  copied ivory_gambit.mp4 -> review/ivory_gambit_ds.mp4
+  copied ivory_gambit_divein.mp4 -> review_divein/ivory_gambit_ds_divein.mp4
+ivory_gambit: queued to REVIEW (ds/divein) from v1
+  ivory_gambit: 5 caption+title pairs (spot=True); theme='A hypnotic pulse of deep bass and shimme'
+    [0] A galaxy unwinds into a kingdom, where ivory knights stand in silent battle 🌌 Can you spot Adam hiding in the endless loop? 👀 #CosmicBattlefield #InfiniteZoom #LacquerUniverse #AweInEveryScale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A galaxy unwinds into a kingdom, where ivory knights stand in silent battle 🌌
+    [1] From cosmic dust to cellular depths, the universe folds in on itself ⚔️ Can you spot Adam hiding in the endless loop? 👀 #CosmicBattlefield #InfiniteZoom #LacquerUniverse #AweInEveryScale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From cosmic dust to cellular depths, the universe folds in on itself ⚔️
+    [2] Dive through time and space—where every zoom reveals another world Can you spot Adam hiding in the endless loop? 👀 #CosmicBattlefield #InfiniteZoom #LacquerUniverse #AweInEveryScale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive through time and space—where every zoom reveals another world
+    [3] A never-ending spiral of light and shadow, carved from the void Can you spot Adam hiding in the endless loop? 👀 #CosmicBattlefield #InfiniteZoom #LacquerUniverse #AweInEveryScale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A never-ending spiral of light and shadow, carved from the void
+    [4] The fabric of existence, stitched together in loops of infinity Can you spot Adam hiding in the endless loop? 👀 #CosmicBattlefield #InfiniteZoom #LacquerUniverse #AweInEveryScale #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The fabric of existence, stitched together in loops of infinity
+=== 04:43:59 ivory_gambit -> REVIEW (captioned)
+=== 04:43:59 --- whale_fall_republic ---
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/whale_fall_republic/v1
+[dive] whale_fall_republic: 352 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (224 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of the ruins of a dead star hanging in torn lacework shells of cyan and violet gas,
+[dive] frame 1/352 (28.1s/frame, ~9851s left) :: moving through the ruins of a dead star hanging in torn lace
+[dive] frame 11/352 (24.3s/frame, ~8278s left) :: moving through the ruins of a dead star hanging in torn lace
+[dive] frame 21/352 (23.1s/frame, ~7639s left) :: diving straight into a blue ocean planet as it swells to fil
+[dive] frame 31/352 (23.9s/frame, ~7669s left) :: diving straight into a blue ocean planet as it swells to fil
+[dive] frame 41/352 (20.8s/frame, ~6475s left) :: moving through an ocean world turned night side outward agai
+[dive] frame 51/352 (20.6s/frame, ~6186s left) :: moving through an ocean world turned night side outward agai
+[dive] frame 61/352 (21.0s/frame, ~6118s left) :: diving straight into a bright patch of silver moonlight as i
+[dive] frame 71/352 (19.6s/frame, ~5505s left) :: the open ocean at night seen from high above, long swells ru
+[dive] frame 81/352 (19.6s/frame, ~5316s left) :: moving through the open ocean at night seen from high above,
+[dive] frame 91/352 (19.8s/frame, ~5159s left) :: diving straight into a dark still pool of water as it swells
+[dive] frame 101/352 (19.2s/frame, ~4814s left) :: the abyssal floor in black water, a whale's stripped skeleto
+[dive] frame 111/352 (19.1s/frame, ~4595s left) :: moving through the abyssal floor in black water, a whale's s
+[dive] frame 121/352 (19.4s/frame, ~4482s left) :: diving straight into a tall arch of ivory bone as it swells 
+[dive] frame 131/352 (19.1s/frame, ~4225s left) :: low among the rib arches, tall ivory bones curving up on eit
+[dive] frame 141/352 (18.9s/frame, ~3985s left) :: moving through low among the rib arches, tall ivory bones cu
+[dive] frame 151/352 (19.1s/frame, ~3831s left) :: diving straight into a black bore hole as it swells to fill 
+[dive] frame 161/352 (19.0s/frame, ~3635s left) :: inside the bone, ivory growth rings wound ring within ring a
+[dive] frame 171/352 (18.7s/frame, ~3387s left) :: moving through inside the bone, ivory growth rings wound rin
+[dive] frame 181/352 (18.8s/frame, ~3223s left) :: diving straight into a wide dark hollow as it swells to fill
+[dive] frame 191/352 (18.9s/frame, ~3042s left) :: diving straight into a wide dark hollow as it swells to fill
+[dive] frame 201/352 (18.6s/frame, ~2813s left) :: moving through a marrow chamber walled by bone, round cells 
+[dive] frame 211/352 (18.7s/frame, ~2634s left) :: moving through a marrow chamber walled by bone, round cells 
+[dive] frame 221/352 (18.8s/frame, ~2461s left) :: diving straight into a pale twisted fiber as it swells to fi
+[dive] frame 231/352 (18.5s/frame, ~2239s left) :: the molecular scaffolding of bone, three-strand ropes twiste
+[dive] frame 241/352 (18.6s/frame, ~2064s left) :: moving through the molecular scaffolding of bone, three-stra
+[dive] frame 251/352 (18.7s/frame, ~1886s left) :: diving straight into a blue-white mineral plate as it swells
+[dive] frame 261/352 (18.6s/frame, ~1692s left) :: the apatite lattice that hardens bone, hexagonal cells repea
+[dive] frame 271/352 (18.5s/frame, ~1500s left) :: moving through the apatite lattice that hardens bone, hexago
+[dive] frame 281/352 (18.7s/frame, ~1324s left) :: diving straight into a glowing white bead as it swells to fi
+[dive] frame 291/352 (18.5s/frame, ~1130s left) :: a fog of dim light-grains with no surface anywhere, faint pa
+[dive] frame 301/352 (18.2s/frame, ~927s left) :: deep inside a fog of dim light-grains with no surface anywhe
+[dive] frame 311/352 (17.9s/frame, ~734s left) :: deep inside a fog of dim light-grains with no surface anywhe
+[dive] frame 321/352 (17.6s/frame, ~545s left) :: the whole view transforming, resolving into a spiral galaxy 
+[dive] frame 331/352 (17.4s/frame, ~365s left) :: moving through a spiral galaxy turned three-quarters against
+[dive] frame 341/352 (17.4s/frame, ~191s left) :: diving straight into torn lacework shells of cyan and violet
+[dive] frame 351/352 (17.4s/frame, ~17s left) :: diving straight into torn lacework shells of cyan and violet
+[dive] frame 352/352 (17.4s/frame, ~0s left) :: diving straight into torn lacework shells of cyan and violet
+[dive] interpolated 12 -> 24fps in 41s
+[dive] counter overlay on 701 frames (38 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/whale_fall_republic/v1/whale_fall_republic.mp4 (39796 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/whale_fall_republic/v1/whale_fall_republic_divein.mp4 (40408 KB, 29.3s)
+[dive] done in 6299s
+=== 06:28:58 whale_fall_republic: rendered in 6299s
+  copied whale_fall_republic.mp4 -> review/whale_fall_republic_ds.mp4
+  copied whale_fall_republic_divein.mp4 -> review_divein/whale_fall_republic_ds_divein.mp4
+whale_fall_republic: queued to REVIEW (ds/divein) from v1
+  whale_fall_republic: 5 caption+title pairs (spot=True); theme='A slow, hypnotic pulse of deep-sea hums '
+    [0] A silver path of moonlight leads into the abyss 🌊 Can you spot Adam hiding in the endless dive? 👀 #bioluminescentdepths #cosmicbonejourney #endlessabyssloop #galacticwhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A silver path of moonlight leads into the abyss 🌊
+    [1] Whale bones whisper secrets to the deep sea’s glow Can you spot Adam hiding in the endless dive? 👀 #bioluminescentdepths #cosmicbonejourney #endlessabyssloop #galacticwhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Whale bones whisper secrets to the deep sea’s glow
+    [2] Bone rings hum with the echoes of ancient tides Can you spot Adam hiding in the endless dive? 👀 #bioluminescentdepths #cosmicbonejourney #endlessabyssloop #galacticwhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Bone rings hum with the echoes of ancient tides
+    [3] Marrow cells pulse in the quiet dark of the ocean floor Can you spot Adam hiding in the endless dive? 👀 #bioluminescentdepths #cosmicbonejourney #endlessabyssloop #galacticwhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Marrow cells pulse in the quiet dark of the ocean floor
+    [4] The galaxy folds into a dead star’s fractured light Can you spot Adam hiding in the endless dive? 👀 #bioluminescentdepths #cosmicbonejourney #endlessabyssloop #galacticwhispers #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The galaxy folds into a dead star’s fractured light
+=== 06:30:07 whale_fall_republic -> REVIEW (captioned)
+=== 06:30:07 --- moth_orchard_night ---
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] enchanted_wild  ->  enchanted golden light, lush saturated color, painterly fantasy illustration, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/moth_orchard_night/v1
+[dive] moth_orchard_night: 240 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (132 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a star-forming nebula in one arm of the galaxy, standing columns and ridges of d
+[dive] frame 1/240 (17.6s/frame, ~4214s left) :: moving through a star-forming nebula in one arm of the galax
+[dive] frame 11/240 (20.2s/frame, ~4625s left) :: moving through a star-forming nebula in one arm of the galax
+[dive] frame 21/240 (19.8s/frame, ~4347s left) :: diving straight into a dark rounded dust knot as it swells t
+[dive] frame 31/240 (18.1s/frame, ~3786s left) :: deep inside the inside of one dust knot in the nebula, banke
+[dive] frame 41/240 (15.7s/frame, ~3124s left) :: deep inside the inside of one dust knot in the nebula, banke
+[dive] frame 51/240 (14.2s/frame, ~2690s left) :: the whole view transforming, resolving into a row of old fru
+[dive] frame 61/240 (15.3s/frame, ~2743s left) :: moving through a row of old fruit trees at night with paper 
+[dive] frame 71/240 (15.8s/frame, ~2666s left) :: diving straight into a pale grey moth as it swells to fill t
+[dive] frame 81/240 (15.6s/frame, ~2476s left) :: moving through the air beside one paper lantern hung in a br
+[dive] frame 91/240 (16.1s/frame, ~2402s left) :: diving straight into a broad banded forewing as it swells to
+[dive] frame 101/240 (15.8s/frame, ~2192s left) :: the outspread upper face of a moth's forewing, ranks of smal
+[dive] frame 111/240 (16.2s/frame, ~2085s left) :: diving straight into a single copper scale as it swells to f
+[dive] frame 121/240 (16.5s/frame, ~1959s left) :: the upper face of one moth scale, straight parallel ridges r
+[dive] frame 131/240 (16.4s/frame, ~1783s left) :: moving through the upper face of one moth scale, straight pa
+[dive] frame 141/240 (16.4s/frame, ~1626s left) :: diving straight into a dark oval opening as it swells to fil
+[dive] frame 151/240 (16.2s/frame, ~1446s left) :: moving through the interior of a moth scale, one smooth curv
+[dive] frame 161/240 (16.4s/frame, ~1299s left) :: diving straight into a fine amber strand as it swells to fil
+[dive] frame 171/240 (16.5s/frame, ~1141s left) :: the molecular structure of chitin, flat ribbon chains of lin
+[dive] frame 181/240 (16.6s/frame, ~977s left) :: moving through the molecular structure of chitin, flat ribbo
+[dive] frame 191/240 (16.9s/frame, ~829s left) :: diving straight into a six-sided carbon ring as it swells to
+[dive] frame 201/240 (16.6s/frame, ~647s left) :: deep inside a hexagonal net of carbon atoms, bright round no
+[dive] frame 211/240 (16.2s/frame, ~469s left) :: deep inside a hexagonal net of carbon atoms, bright round no
+[dive] frame 221/240 (15.9s/frame, ~301s left) :: the whole view transforming, resolving into a barred spiral 
+[dive] frame 231/240 (15.9s/frame, ~143s left) :: diving straight into a star-forming nebula, standing columns
+[dive] frame 240/240 (16.0s/frame, ~0s left) :: diving straight into a star-forming nebula, standing columns
+[dive] interpolated 12 -> 24fps in 28s
+[dive] counter overlay on 477 frames (32 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/moth_orchard_night/v1/moth_orchard_night.mp4 (28747 KB, 20.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/moth_orchard_night/v1/moth_orchard_night_divein.mp4 (29273 KB, 20.0s)
+[dive] done in 3959s
+=== 07:36:06 moth_orchard_night: rendered in 3959s
+  copied moth_orchard_night.mp4 -> review/moth_orchard_night_ds.mp4
+  copied moth_orchard_night_divein.mp4 -> review_divein/moth_orchard_night_ds_divein.mp4
+moth_orchard_night: queued to REVIEW (ds/divein) from v1
+  moth_orchard_night: 5 caption+title pairs (spot=True); theme='A celestial lullaby woven through rustli'
+    [0] A moth’s wing unfolds into galaxies 🌌 Can you spot Tina before the loop resets? 👀 #cosmicorchard #mothgalaxies #infinitezoomdive #enchantedchitin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A moth’s wing unfolds into galaxies 🌌
+    [1] Dust and starlight weave the night’s secret threads ✨ Can you spot Tina before the loop resets? 👀 #cosmicorchard #mothgalaxies #infinitezoomdive #enchantedchitin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dust and starlight weave the night’s secret threads ✨
+    [2] Chitin hums with cosmic echoes in amber light Can you spot Tina before the loop resets? 👀 #cosmicorchard #mothgalaxies #infinitezoomdive #enchantedchitin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Chitin hums with cosmic echoes in amber light
+    [3] Tina hides where scales meet the stars... Can you spot Tina before the loop resets? 👀 #cosmicorchard #mothgalaxies #infinitezoomdive #enchantedchitin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Tina hides where scales meet the stars...
+    [4] The orchard’s glow loops through infinity Can you spot Tina before the loop resets? 👀 #cosmicorchard #mothgalaxies #infinitezoomdive #enchantedchitin #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The orchard’s glow loops through infinity
+=== 07:37:11 moth_orchard_night -> REVIEW (captioned)
+=== 07:37:11 --- squid_lantern ---
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] ultraviolet  ->  ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/squid_lantern/v1
+[dive] squid_lantern: 120 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (60 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of black midwater far under the waves at eye level, dozens of small squid drifting 
+[dive] frame 1/120 (27.8s/frame, ~3309s left) :: moving through black midwater far under the waves at eye lev
+[dive] frame 11/120 (21.7s/frame, ~2368s left) :: moving through black midwater far under the waves at eye lev
+[dive] frame 21/120 (20.8s/frame, ~2055s left) :: diving straight into a glowing violet-blue squid as it swell
+[dive] frame 31/120 (19.1s/frame, ~1696s left) :: moving through the taut freckled skin of a squid, a broad ro
+[dive] frame 41/120 (19.2s/frame, ~1516s left) :: diving straight into a round blue-white bead of light as it 
+[dive] frame 51/120 (18.8s/frame, ~1294s left) :: a packed chamber of light-making cells, round glowing cell w
+[dive] frame 61/120 (18.7s/frame, ~1104s left) :: moving through a packed chamber of light-making cells, round
+[dive] frame 71/120 (19.2s/frame, ~943s left) :: diving straight into a bright blue-white grain of light as i
+[dive] frame 81/120 (18.0s/frame, ~704s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] frame 91/120 (17.2s/frame, ~500s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] frame 101/120 (16.4s/frame, ~312s left) :: the whole view transforming, resolving into the open water c
+[dive] frame 111/120 (16.4s/frame, ~148s left) :: diving straight into dozens of small cyan-lit squid drifting
+[dive] frame 120/120 (17.0s/frame, ~0s left) :: diving straight into dozens of small cyan-lit squid drifting
+[dive] interpolated 12 -> 24fps in 24s
+[dive] counter overlay on 237 frames (16 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/squid_lantern/v1/squid_lantern.mp4 (13133 KB, 10.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/squid_lantern/v1/squid_lantern_divein.mp4 (13364 KB, 10.0s)
+[dive] done in 2112s
+=== 08:12:23 squid_lantern: rendered in 2112s
+  copied squid_lantern.mp4 -> review/squid_lantern_ds.mp4
+  copied squid_lantern_divein.mp4 -> review_divein/squid_lantern_ds_divein.mp4
+squid_lantern: queued to REVIEW (ds/divein) from v1
+  squid_lantern: 5 caption+title pairs (spot=True); theme='A haunting, ethereal melody that swells '
+    [0] Drifting through the abyss, where light dances in endless night 🌊✨ Can you spot Belle hiding in the depths? 👀 #DeepSeaWonders #BioluminescentDive #CosmicOcean #InfiniteZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Drifting through the abyss, where light dances in endless night 🌊✨
+    [1] A squid’s skin hums with electric constellations 🐙💫 Can you spot Belle hiding in the depths? 👀 #DeepSeaWonders #BioluminescentDive #CosmicOcean #InfiniteZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A squid’s skin hums with electric constellations 🐙💫
+    [2] Chambers of glowing cells pulse like a cosmic hive 🔥🌀 Can you spot Belle hiding in the depths? 👀 #DeepSeaWonders #BioluminescentDive #CosmicOcean #InfiniteZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Chambers of glowing cells pulse like a cosmic hive 🔥🌀
+    [3] Membranes shimmer, where enzymes weave light from the dark ⚡️🌑 Can you spot Belle hiding in the depths? 👀 #DeepSeaWonders #BioluminescentDive #CosmicOcean #InfiniteZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Membranes shimmer, where enzymes weave light from the dark ⚡️🌑
+    [4] The deep ocean’s glow fades into infinite black 🌌❄️ Can you spot Belle hiding in the depths? 👀 #DeepSeaWonders #BioluminescentDive #CosmicOcean #InfiniteZoom #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The deep ocean’s glow fades into infinite black 🌌❄️
+=== 08:13:26 squid_lantern -> REVIEW (captioned)
+=== 08:13:26 --- ember_meadow ---

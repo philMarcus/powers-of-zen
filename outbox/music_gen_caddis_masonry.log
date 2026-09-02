@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/caddis_masonry/pulse2-music_box.mp4
+    bar 2.667s | music bar 2.667s (conf 0.83) -> stretch 1.0000 | phase 0.470s | lock 25.26x | kick 0.82 | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [pulse2-music_box] realigned (lock 25.26x kick 0.82)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/caddis_masonry/music_box.mp4
+    bar 2.667s | music bar 2.667s (conf 0.80) -> stretch 1.0000 | phase 2.060s | lock 22.08x | kick 0.80 | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [music_box] realigned (lock 22.08x kick 0.80)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/caddis_masonry/aurora_strings-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.78) -> stretch 1.0000 | phase 0.320s | lock 19.46x | kick 0.62 | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [aurora_strings-wild] realigned (lock 19.46x kick 0.62)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/caddis_masonry/tide_organ-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.74) -> stretch 1.0000 | phase 0.370s | lock 15.02x | kick 0.64 | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] realigned (lock 15.02x kick 0.64)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/caddis_masonry/ember_pulse-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.56) -> stretch 1.0000 | phase 0.360s | lock 40.94x | kick -0.01 | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [ember_pulse-wild] realigned (lock 40.94x kick -0.01)
+realigned 5 pregen candidates to the marked start

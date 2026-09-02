@@ -1,0 +1,25 @@
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] ultraviolet  ->  ultraviolet blacklight glow, electric violet and acid green, fluorescent wash on deep black, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/squid_lantern/v5
+[dive] squid_lantern: 120 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — squid_skin(surface)[18..39], light_organ(sea)[42..53], spark_membrane(sea)[66..87]
+[dive] TRACKER v3 ON (60 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of black midwater far under the waves at eye level, dozens of small squid drifting 
+[dive] frame 1/120 (26.6s/frame, ~3164s left) :: moving through black midwater far under the waves at eye lev
+[dive] frame 11/120 (22.3s/frame, ~2435s left) :: moving through black midwater far under the waves at eye lev
+[dive] frame 21/120 (22.5s/frame, ~2226s left) :: diving straight into a glowing violet-blue squid as it swell
+[dive] frame 31/120 (20.2s/frame, ~1800s left) :: moving through the taut freckled skin of a squid, a broad ro
+[dive] frame 41/120 (19.0s/frame, ~1499s left) :: diving straight into a round blue-white bead of light as it 
+[dive] frame 51/120 (17.9s/frame, ~1235s left) :: a packed chamber of light-making cells, round glowing cell w
+[dive] frame 61/120 (18.6s/frame, ~1094s left) :: moving through a packed chamber of light-making cells, round
+[dive] frame 71/120 (18.5s/frame, ~908s left) :: diving straight into a bright blue-white grain of light as i
+[dive] frame 81/120 (17.9s/frame, ~697s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] frame 91/120 (17.4s/frame, ~504s left) :: deep inside a dark membrane wall built of two packed layers 
+[dive] frame 101/120 (16.7s/frame, ~317s left) :: the whole view transforming, resolving into the open water c
+[dive] frame 111/120 (16.7s/frame, ~150s left) :: diving straight into dozens of small cyan-lit squid drifting
+[dive] frame 120/120 (17.2s/frame, ~0s left) :: diving straight into dozens of small cyan-lit squid drifting
+[dive] interpolated 12 -> 24fps (240 frames, loop-bridged) in 15s
+[dive] counter overlay on 240 frames (16 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/squid_lantern/v5/squid_lantern.mp4 (14114 KB, 10.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/squid_lantern/v5/squid_lantern_divein.mp4 (14298 KB, 10.0s)
+[dive] done in 2120s

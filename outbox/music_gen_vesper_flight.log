@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/vesper_flight/deep_archive-halftime.mp4
+    bar 2.333s | music bar 2.304s (conf 0.69) -> stretch 0.9874 | phase 0.120s | lock 19.19x | kick 0.54 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [deep_archive-halftime] realigned (lock 19.19x kick 0.54)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/vesper_flight/deep_archive.mp4
+    bar 2.333s | music bar 2.357s (conf 0.71) -> stretch 1.0103 | phase 1.820s | lock 8.87x | kick 0.34 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [deep_archive] realigned (lock 8.87x kick 0.34)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/vesper_flight/tide_organ-wild.mp4
+    bar 2.333s | music bar 2.304s (conf 0.61) -> stretch 0.9874 | phase 1.910s | lock 7.39x | kick 0.34 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] realigned (lock 7.39x kick 0.34)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/vesper_flight/glass_chapel-wild.mp4
+    bar 2.333s | music bar 2.304s (conf 0.70) -> stretch 0.9874 | phase 0.370s | lock 7.80x | kick 0.25 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] realigned (lock 7.80x kick 0.25)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/vesper_flight/aurora_strings-wild.mp4
+    bar 2.333s | music bar 2.101s (conf -0.06) -> stretch 1.0000 | phase 0.600s | lock 2.68x | kick -0.02 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [aurora_strings-wild] realigned (lock 2.68x kick -0.02)
+realigned 5 pregen candidates to the marked start

@@ -1,0 +1,104 @@
+{
+ "name": "mantis_drumline",
+ "theme": "the reef's percussion section — a coral rubble flat off a jetty at dusk where mantis shrimp, snapping shrimp, gobies and porcelain crabs share one basin; onto one peacock mantis shrimp with its clubs cocked, into the mineral crust of its impact armor, through the cell mosaic that lays that crust down and the stacked fiber sheets each turned a few degrees from the last, to the braided sugar-chain cables and motor proteins holding its spring bowed; the spring fires into a bloom of vapour bubbles, the bloom is reread as beaded track threads spiralling in a fogged chamber, and the dive surfaces back onto the rubble flat",
+ "style": "liquid_light",
+ "music_lane": "wooden_orbit",
+ "format": {
+  "beats_per_bar": 4,
+  "frames_per_beat": 6,
+  "exact_loop": true,
+  "counter": true
+ },
+ "registers": [
+  {
+   "name": "rubble_flat",
+   "exp": 1.2,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "copper-flash red, turquoise crust, soot-grey silt",
+   "scene": "a rubble flat of broken coral seen at a low slant under a jetty at dusk, burrow mouths ringed with shell chips scattered across the sea floor, a copper-red peacock mantis shrimp reared over one of them with both clubbed forelimbs cocked, snapping shrimp working the crevices among the slabs, sentry gobies propped on their fins over the sand, porcelain crabs fanning feathery nets into the current, turquoise crust mottling the older slabs, barnacled pilings standing up into the gloom overhead, silt smoking off the flat, empty of people",
+   "target": "a copper-red mantis shrimp",
+   "target_phrase": "a red mantis shrimp"
+  },
+  {
+   "name": "strike_arena",
+   "exp": -0.8,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "molten copper-red shell, turquoise crackle, sunless green water",
+   "scene": "a burrow mouth in the coral rubble at eye level, a peacock mantis shrimp standing over its threshold, its shell banded copper-red and turquoise crackle, both clubbed forelimbs folded and cocked, stalked eyes swivelled forward, a cracked snail shell wedged against the sill, shell chips and coral grit heaped around the rim, weed tufts on the slabs beside it, silt smoking off the rubble beyond, sunless green water pressing in overhead",
+   "target": "a copper-red armored claw",
+   "target_phrase": "a red claw"
+  },
+  {
+   "name": "club_armor",
+   "exp": -2.6,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "copper-red crust, turquoise crazing, soot-grey silt",
+   "scene": "a copper-red plain of mineral armor, its crust cratered where it has hammered stone, turquoise crazing threading every crater rim, low ridges tiering across the plain in long curved courses, chipped facets holding a wet sheen, soot-grey silt settled into the hollows, the plain falling off into murk at its far shoulder",
+   "target": "a plump turquoise cell",
+   "target_phrase": "a turquoise cell"
+  },
+  {
+   "name": "cell_layer",
+   "exp": -4.9,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "turquoise cell walls, copper-flash nuclei, soot murk",
+   "scene": "a living cell layer beneath the armor, thousands of turquoise cells crowded into a mosaic of curved walls, a copper-flash nucleus set in each one, granules and coiled membrane stacks strewn through their interiors, threads of secreted fiber laid in courses under the mosaic, sheets of that fiber tiering off into soot-grey murk, a wet sheen across the mosaic",
+   "target": "a copper-sheened fiber sheet",
+   "target_phrase": "a fiber sheet",
+   "loop_target": "a mosaic of turquoise cells over courses of secreted fiber"
+  },
+  {
+   "name": "helicoid_grain",
+   "exp": -6.4,
+   "kind": "zoom",
+   "dur": 4,
+   "palette": "copper filament sheets, turquoise mineral, ink murk",
+   "scene": "the fiber architecture of the armor, sheets of parallel copper filaments stacked one over another, every sheet rotated a few degrees from the one beneath, that rotation carried on through hundreds of sheets so the grain turns steadily through the depth of the stack, cut faces showing the turn as nested arcs and chevrons, turquoise mineral filling the spaces among the filaments, tier after tier receding into murk",
+   "target": "a twisted copper cord",
+   "target_phrase": "a twisted cord",
+   "resolve": {
+    "mode": "lattice",
+    "variant": "layered"
+   }
+  },
+  {
+   "name": "chitin_winch",
+   "exp": -8.4,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "copper-flash cables, turquoise cross-ties, soot murk",
+   "scene": "the molecular machinery loading the armor's spring, twisted cords of sugar-chain molecules braided into cables and cross-tied wherever they meet, rows of two-headed motor proteins gripping filaments alongside them, a curved plate of mineral shell bowed hard under load and lashed flat by the braid, copper-flash sheen along every cable, coiled ribbon chains crowding the spaces around them, further braidwork fading into soot murk"
+  },
+  {
+   "name": "cavitation_bloom",
+   "exp": -2.4,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "silvered vapour, hot copper core, turquoise rims",
+   "scene": "a bloom of vapour bubbles standing in seawater, hundreds of silvered spheres crowded into a cloud, the larger ones drawn out into teardrops with turquoise rims, a hot copper spark at the core of the cloud where the smallest are closed to pinpoints, shock rings drawn through the silt around the bloom, coral grit strewn through the murk beyond"
+  },
+  {
+   "name": "track_chamber",
+   "exp": -14.5,
+   "kind": "seam",
+   "dur": 4,
+   "palette": "silvered track threads, copper-flash glare, soot fog",
+   "scene": "a fogged chamber of chilled liquid crossed by threads of beaded bubbles, each thread a hair-thin string of silvered spheres, several curled into tightening spirals and one splayed into a spray of forking arcs, copper-flash glare washing along the threads, turquoise shimmer in the fog around them, older threads dissolving into a soot-grey haze",
+   "cameo": {
+    "sprite": "output/mascots/canon/clark.png",
+    "pos": [
+     0.62,
+     0.38
+    ],
+    "size": 0.15
+   }
+  }
+ ],
+ "music_theme": "an energetic percussion dive — warm marimba and kalimba figures over a round woody bass, a deep kick on every downbeat with a quieter thump answering on beat three, dry crackle textures thickening as the armor closes in and the pulse tightening through the stacked fiber sheets, a hard low hit where the spring fires and the bubble bloom opens, a second where the bloom becomes track threads, the marimba opening back out over the rubble flat",
+ "music_key": "E minor",
+ "render_start": "cell_layer"
+}

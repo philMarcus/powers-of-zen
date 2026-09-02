@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/meteorite_cradle/tide_organ-halftime.mp4
+    bar 3.000s | music bar 2.997s (conf 0.74) -> stretch 0.9991 | phase 2.560s | lock 37.68x | kick 0.76 | seamless loop @ 30.00s (music tiled x2, xf 0.50s)
+  [tide_organ-halftime] realigned (lock 37.68x kick 0.76)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/meteorite_cradle/tide_organ.mp4
+    bar 3.000s | music bar 2.997s (conf 0.68) -> stretch 0.9991 | phase 1.380s | lock 29.77x | kick 0.64 | seamless loop @ 30.00s (music tiled x3, xf 0.50s)
+  [tide_organ] realigned (lock 29.77x kick 0.64)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/meteorite_cradle/wooden_orbit-wild.mp4
+    bar 3.000s | music bar 2.805s (conf -0.01) -> stretch 1.0000 | phase 2.540s | lock 21.11x | kick -0.02 | seamless loop @ 30.00s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] realigned (lock 21.11x kick -0.02)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/meteorite_cradle/choir_of_dust-wild.mp4
+    bar 3.000s | music bar 2.891s (conf 0.30) -> stretch 0.9700 | phase 0.740s | lock 5.39x | kick 0.28 | seamless loop @ 30.00s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] realigned (lock 5.39x kick 0.28)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/meteorite_cradle/glass_chapel-wild.mp4
+    bar 3.000s | music bar 3.000s (conf 0.00) -> stretch 1.0000 | phase 0.080s | lock 11.54x | kick 0.00 | seamless loop @ 30.00s (music tiled x19, xf 0.50s)
+  [glass_chapel-wild] realigned (lock 11.54x kick 0.00)
+realigned 5 pregen candidates to the marked start

@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/winter_murmuration/music_box-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.82) -> stretch 1.0000 | phase 0.550s | lock 39.42x | kick 0.66 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [music_box-wild] realigned (lock 39.42x kick 0.66)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/winter_murmuration/wooden_orbit-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.30) -> stretch 1.0000 | phase 0.530s | lock 12.25x | kick 0.31 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [wooden_orbit-wild] realigned (lock 12.25x kick 0.31)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/winter_murmuration/pulse1-aurora_strings.mp4
+    bar 2.667s | music bar 2.667s (conf 0.31) -> stretch 1.0000 | phase 0.520s | lock 11.03x | kick 0.27 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [pulse1-aurora_strings] realigned (lock 11.03x kick 0.27)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/winter_murmuration/aurora_strings.mp4
+    bar 2.667s | music bar 2.667s (conf -0.01) -> stretch 1.0000 | phase 0.560s | lock 23.45x | kick -0.02 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [aurora_strings] realigned (lock 23.45x kick -0.02)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/winter_murmuration/deep_archive-wild.mp4
+    bar 2.667s | music bar 2.443s (conf 0.05) -> stretch 1.0000 | phase 1.700s | lock 2.11x | kick -0.01 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [deep_archive-wild] realigned (lock 2.11x kick -0.01)
+realigned 5 pregen candidates to the marked start

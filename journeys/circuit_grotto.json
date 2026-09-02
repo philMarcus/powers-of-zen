@@ -1,0 +1,78 @@
+{
+  "name": "circuit_grotto",
+  "theme": "a modular synthesizer left open on a workbench at three in the morning — the dive drops into its board's glowing copper trace-maze, under a chip's lid onto the etched die, down through silicon's own tetrahedral crystal grid to the one foreign atom burning off-key in it, which opens back out as the single vermilion indicator lamp lit on the synth panel, and the panel dives into its board again",
+  "style": "neon_drift",
+  "music_lane": "analog_dawn",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "bench_panel",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bakelite brown-black, dial-lamp amber, one vermilion point",
+      "scene": "a workbench seen from across a shuttered room at three in the morning, a modular synthesizer open on it, a wall of knobs and jack sockets across the front, patch cables looping socket to socket, one vermilion indicator lamp lit among rows of unlit ones, dial-lamp amber washing the bakelite-brown case, a soldering iron cooling in its holder, an open tin of resistors, a chipped mug, a fan of screwdrivers, a small oscilloscope showing a green waveform, the case flank swung open onto a green circuit board, empty, no one present",
+      "target": "a green circuit board",
+      "target_phrase": "a green circuit board"
+    },
+    {
+      "name": "trace_maze",
+      "exp": -2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "oscilloscope-green trace glow on bakelite brown",
+      "scene": "a circuit board seen from straight above, countless copper traces threading a glowing green maze across the whole board, right-angle turns and interlocking tile-mazes filling every corridor, rows of solder pads studding the junctions, squat capacitors and banded resistors rising off the green lacquer, hairline gold vias punched through as burning nodes, black ceramic chips bolted over the busiest crossings, brown-black shadow pooling under the components",
+      "target": "a black ceramic chip",
+      "target_phrase": "a black chip",
+      "loop_target": "a circuit board seen from straight above, countless copper traces threading a glowing green maze, gold vias burning at the junctions"
+    },
+    {
+      "name": "chip_die",
+      "exp": -4.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bronze wiring terraces, amber via glow, soot-black trenches",
+      "scene": "the etched die of a chip seen from high above, a grid of bronze wiring terraces stacked in tiers over soot-black trenches, countless identical memory blocks tiled out to the die's rim, broad bus channels crossing the whole plate, vias sunk through the tiers as burning amber wells, a stray dust mote bigger than any of the wiring caught on the metal, violet-grey silicon floor showing where the wiring parts",
+      "target": "a glowing silicon crystal",
+      "target_phrase": "a glowing crystal"
+    },
+    {
+      "name": "silicon_lattice",
+      "exp": -9.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "phosphor-green bond glow on ink black, one vermilion node",
+      "scene": "the crystal grid within silicon, countless atoms fixed at the corners of tetrahedra, each bonded to four neighbours by taut green-glowing struts, the tetrahedra repeating in ordered files off in every direction, the far files fading into ink-black depth-fog, a stepped fault line where one row sits out of true, one vermilion node burning off-key among the cool green",
+      "target": "a vermilion-glowing atom",
+      "target_phrase": "a glowing red atom",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "diamond"
+      },
+      "cameo": {
+        "sprite": "output/mascots/canon/adam.png",
+        "pos": [
+          0.64,
+          0.37
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "dopant_atom",
+      "exp": -10.2,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "vermilion bloom, amber core, black void",
+      "scene": "one foreign atom lodged in the silicon grid, a swollen vermilion bloom where four bond struts meet, the neighbouring green struts bent and strained outward from it, the cool grid nearby drowned in its glow, the far files of atoms receding into black void"
+    }
+  ],
+  "music_theme": "warm analog synth pads with soft tape warble over a deep round kick on every downbeat, patient and hypnotic, a machine idling alone at three in the morning, one bright struck mallet on the atom-to-panel seam, opening wide and warm for the return to the board",
+  "music_key": "Bb minor",
+  "render_start": "trace_maze"
+}

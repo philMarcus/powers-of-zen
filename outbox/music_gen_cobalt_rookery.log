@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/deep_archive-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.87) -> stretch 1.0000 | phase 1.410s | lock 25.87x | kick 0.75 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] realigned (lock 25.87x kick 0.75)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/wooden_orbit-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.75) -> stretch 1.0000 | phase 1.880s | lock 17.63x | kick 0.56 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] realigned (lock 17.63x kick 0.56)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/aurora_strings-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.60) -> stretch 1.0000 | phase 1.890s | lock 22.90x | kick 0.36 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [aurora_strings-halftime] realigned (lock 22.90x kick 0.36)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/waltz-aurora_strings.mp4
+    bar 2.667s | music bar 2.645s (conf 0.55) -> stretch 0.9920 | phase 1.610s | lock 21.60x | kick 0.10 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [waltz-aurora_strings] realigned (lock 21.60x kick 0.10)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/music_box-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.49) -> stretch 1.0000 | phase 1.890s | lock 14.25x | kick 0.15 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [music_box-wild] realigned (lock 14.25x kick 0.14)
+realigned 5 pregen candidates to the marked start

@@ -1116,3 +1116,273 @@
 {"ts": "2026-08-26 16:08:53", "event": "post", "journey": "vesper_flight", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DchCOAOhmDn/"}
 {"ts": "2026-08-26 16:10:08", "event": "ig_stats", "detail": "50 reels, followers 63"}
 {"ts": "2026-08-26 16:10:21", "event": "ig_insights", "detail": "44 posts"}
+{"ts": "2026-08-26 17:44:15", "event": "phase_shift", "journey": "pomegranate_vault", "detail": "start @ 8.50s"}
+{"ts": "2026-08-26 17:44:15", "event": "music", "journey": "pomegranate_vault"}
+{"ts": "2026-08-26 17:44:24", "event": "music_realign", "journey": "pomegranate_vault", "detail": "5 candidates"}
+{"ts": "2026-08-26 17:46:49", "event": "music_choose", "journey": "pomegranate_vault", "detail": "night_market"}
+{"ts": "2026-08-26 17:46:49", "event": "queued", "journey": "pomegranate_vault"}
+{"ts": "2026-08-26 17:51:48", "event": "caption", "journey": "eclipse_waterhole", "detail": "5 options, spot=True"}
+{"ts": "2026-08-26 17:53:36", "event": "phase_shift", "journey": "eclipse_waterhole", "detail": "start @ 16.00s"}
+{"ts": "2026-08-26 17:53:36", "event": "music", "journey": "eclipse_waterhole"}
+{"ts": "2026-08-26 17:53:45", "event": "music_realign", "journey": "eclipse_waterhole", "detail": "5 candidates"}
+{"ts": "2026-08-26 17:59:59", "event": "music_choose", "journey": "eclipse_waterhole", "detail": "choir_of_dust-b"}
+{"ts": "2026-08-26 17:59:59", "event": "queued", "journey": "eclipse_waterhole"}
+{"ts": "2026-08-26 18:00:18", "event": "switch", "journey": "bourdon_foundry", "detail": "ds/zoomout"}
+{"ts": "2026-08-26 18:01:04", "event": "rejected", "journey": "bourdon_foundry"}
+{"ts": "2026-08-26 18:01:17", "event": "switch", "journey": "magellanic_mob", "detail": "ds/zoomout"}
+{"ts": "2026-08-26 18:03:16", "event": "music", "journey": "magellanic_mob"}
+{"ts": "2026-08-26 18:03:27", "event": "music_realign", "journey": "magellanic_mob", "detail": "5 candidates"}
+{"ts": "2026-08-26 18:03:34", "event": "state", "journey": "magellanic_mob", "detail": "review (unshifted)"}
+{"ts": "2026-08-26 18:04:02", "event": "phase_shift", "journey": "magellanic_mob", "detail": "start @ 27.00s"}
+{"ts": "2026-08-26 18:04:02", "event": "music", "journey": "magellanic_mob"}
+{"ts": "2026-08-26 18:04:13", "event": "music_realign", "journey": "magellanic_mob", "detail": "5 candidates"}
+{"ts": "2026-08-26 18:05:21", "event": "state", "journey": "magellanic_mob", "detail": "review (unshifted)"}
+{"ts": "2026-08-26 18:06:40", "event": "music", "journey": "magellanic_mob"}
+{"ts": "2026-08-26 18:06:51", "event": "music_realign", "journey": "magellanic_mob", "detail": "5 candidates"}
+{"ts": "2026-08-27 00:01:14", "event": "ig_stats", "detail": "50 reels, followers 63"}
+{"ts": "2026-08-27 00:01:29", "event": "ig_insights", "detail": "44 posts"}
+{"ts": "2026-08-27 00:20:08", "event": "refill", "journey": "anvil_country", "detail": "auto-queued (ok anvil_country            start=night_world)"}
+{"ts": "2026-08-27 00:20:08", "event": "refill", "journey": "chalk_cellar", "detail": "auto-queued (ok chalk_cellar             start=calcite_lattice)"}
+{"ts": "2026-08-27 00:20:09", "event": "refill", "journey": "mantis_drumline", "detail": "auto-queued (ok mantis_drumline          start=cell_layer          · not cosmic/subatomic)"}
+{"ts": "2026-08-27 00:20:09", "event": "refill", "journey": "pika_larder", "detail": "auto-queued (ok pika_larder              start=mesophyll_hall      · not cosmic/subatomic)"}
+{"ts": "2026-08-27 00:20:09", "event": "refill_done", "detail": "refill done: 4 composed, 4 queued (briefs: long, long, medium, medium)"}
+{"ts": "2026-08-27 03:12:34", "event": "review", "journey": "bee_cathedral", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-27 03:13:08", "event": "render", "journey": "bee_cathedral", "detail": "in Review but UNCAPTIONED (Ollama down?)"}
+{"ts": "2026-08-27 05:06:04", "event": "review", "journey": "observatory_dusk", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-27 05:06:46", "event": "caption", "journey": "observatory_dusk", "detail": "5 options, spot=True"}
+{"ts": "2026-08-27 05:06:46", "event": "render", "journey": "observatory_dusk", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-27 06:49:21", "event": "review", "journey": "bamboo_sea", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-27 06:50:03", "event": "caption", "journey": "bamboo_sea", "detail": "5 options, spot=True"}
+{"ts": "2026-08-27 06:50:03", "event": "render", "journey": "bamboo_sea", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-27 08:05:45", "event": "review", "journey": "fiddler_commons", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-27 08:06:43", "event": "caption", "journey": "fiddler_commons", "detail": "5 options, spot=True"}
+{"ts": "2026-08-27 08:06:44", "event": "render", "journey": "fiddler_commons", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-27 09:18:43", "event": "review", "journey": "voltaic_shoal", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-27 09:19:35", "event": "caption", "journey": "voltaic_shoal", "detail": "5 options, spot=True"}
+{"ts": "2026-08-27 09:19:35", "event": "render", "journey": "voltaic_shoal", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-27 09:22:06", "event": "music_pregen", "journey": "bee_cathedral", "detail": "5 candidates"}
+{"ts": "2026-08-27 09:25:18", "event": "music_pregen", "journey": "observatory_dusk", "detail": "5 candidates"}
+{"ts": "2026-08-27 09:27:47", "event": "music_pregen", "journey": "bamboo_sea", "detail": "5 candidates"}
+{"ts": "2026-08-27 09:30:23", "event": "music_pregen", "journey": "fiddler_commons", "detail": "5 candidates"}
+{"ts": "2026-08-27 09:32:51", "event": "music_pregen", "journey": "voltaic_shoal", "detail": "5 candidates"}
+{"ts": "2026-08-27 09:32:52", "event": "batch_done", "detail": "batch done in 8.0h — 5 to Review · bee_cathedral: in Review but UNCAPTIONED (Ollama down?)"}
+{"ts": "2026-08-27 11:05:40", "event": "ig_share_method", "detail": "trusted"}
+{"ts": "2026-08-27 11:06:26", "event": "post", "journey": "wild_yeast", "platform": "youtube", "detail": "https://youtube.com/shorts/ewtgHSxpJus"}
+{"ts": "2026-08-27 11:06:26", "event": "post", "journey": "wild_yeast", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcjEaHItaFN/"}
+{"ts": "2026-08-27 11:07:40", "event": "ig_stats", "detail": "51 reels, followers 63"}
+{"ts": "2026-08-27 11:07:58", "event": "ig_insights", "detail": "44 posts"}
+{"ts": "2026-08-27 11:07:59", "event": "post_gate", "detail": "fired (rc 0); next 2026-08-28 06:00"}
+{"ts": "2026-08-27 12:01:12", "event": "ig_stats", "detail": "51 reels, followers 63"}
+{"ts": "2026-08-27 12:01:26", "event": "ig_insights", "detail": "44 posts"}
+{"ts": "2026-08-27 13:49:29", "event": "caption", "journey": "bee_cathedral", "detail": "5 options, spot=True"}
+{"ts": "2026-08-27 16:51:07", "event": "reorder", "journey": "ruby_furnace", "detail": "moved to queue tail (persistence work — Phil 2026-08-27 17:00)"}
+{"ts": "2026-08-28 00:01:12", "event": "ig_stats", "detail": "51 reels, followers 63"}
+{"ts": "2026-08-28 00:01:27", "event": "ig_insights", "detail": "44 posts"}
+{"ts": "2026-08-28 00:20:49", "event": "refill", "journey": "garnet_glass", "detail": "auto-queued (ok garnet_glass             start=grain_stream        · not cosmic/subatomic)"}
+{"ts": "2026-08-28 00:20:50", "event": "refill", "journey": "horseshoe_tide", "detail": "auto-queued (ok horseshoe_tide           start=blood_channel)"}
+{"ts": "2026-08-28 00:20:50", "event": "refill", "journey": "saguaro_vigil", "detail": "auto-queued (ok saguaro_vigil            start=spiral_galaxy)"}
+{"ts": "2026-08-28 00:20:50", "event": "refill", "journey": "sockeye_stair", "detail": "auto-queued (ok sockeye_stair            start=plunge_pool         · not cosmic/subatomic)"}
+{"ts": "2026-08-28 00:20:50", "event": "refill", "journey": "vernal_clutch", "detail": "auto-queued (ok vernal_clutch            start=star_floor)"}
+{"ts": "2026-08-28 00:20:50", "event": "refill_done", "detail": "refill done: 5 composed, 5 queued (briefs: long, long, short, medium, long)"}
+{"ts": "2026-08-28 14:07:09", "event": "post", "journey": "cobalt_rookery", "platform": "youtube", "detail": "https://youtube.com/shorts/eHyDPxeyuZY"}
+{"ts": "2026-08-28 14:07:09", "event": "post_fail", "journey": "cobalt_rookery", "platform": "instagram", "detail": "ERROR: file chooser never opened"}
+{"ts": "2026-08-28 14:07:57", "event": "ig_stats", "detail": "36 reels, followers 66"}
+{"ts": "2026-08-28 14:08:16", "event": "ig_insights", "detail": "42 posts"}
+{"ts": "2026-08-28 14:08:16", "event": "post_gate", "detail": "fired (rc 0); next 2026-08-29 01:00"}
+{"ts": "2026-08-28 14:40:47", "event": "ig_share_method", "detail": "trusted"}
+{"ts": "2026-08-28 14:41:41", "event": "post", "journey": "cobalt_rookery", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcmB0c-OpAZ/"}
+{"ts": "2026-08-28 14:42:30", "event": "ig_stats", "detail": "36 reels, followers 66"}
+{"ts": "2026-08-28 14:42:48", "event": "ig_insights", "detail": "43 posts"}
+{"ts": "2026-08-28 21:05:39", "event": "ig_share_method", "detail": "trusted"}
+{"ts": "2026-08-28 21:06:35", "event": "post", "journey": "meteorite_cradle", "platform": "youtube", "detail": "https://youtube.com/shorts/uOksS1wkj9M"}
+{"ts": "2026-08-28 21:06:35", "event": "post", "journey": "meteorite_cradle", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/Dcmt3kHNrQw/"}
+{"ts": "2026-08-28 21:07:24", "event": "ig_stats", "detail": "36 reels, followers 66"}
+{"ts": "2026-08-28 21:07:41", "event": "ig_insights", "detail": "44 posts"}
+{"ts": "2026-08-28 21:07:41", "event": "post_gate", "detail": "fired (rc 0); next 2026-08-29 20:00"}
+{"ts": "2026-08-29 00:00:52", "event": "ig_stats", "detail": "36 reels, followers 66"}
+{"ts": "2026-08-29 00:01:10", "event": "ig_insights", "detail": "44 posts"}
+{"ts": "2026-08-29 03:22:53", "event": "review", "journey": "winter_murmuration", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-29 03:23:46", "event": "caption", "journey": "winter_murmuration", "detail": "5 options, spot=True"}
+{"ts": "2026-08-29 03:23:46", "event": "render", "journey": "winter_murmuration", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-29 04:09:27", "event": "review", "journey": "waterbear_prairie", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-29 04:10:15", "event": "caption", "journey": "waterbear_prairie", "detail": "5 options, spot=True"}
+{"ts": "2026-08-29 04:10:15", "event": "render", "journey": "waterbear_prairie", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-29 05:47:57", "event": "review", "journey": "gecko_rampart", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-29 05:48:57", "event": "caption", "journey": "gecko_rampart", "detail": "5 options, spot=True"}
+{"ts": "2026-08-29 05:48:57", "event": "render", "journey": "gecko_rampart", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-29 07:41:05", "event": "review", "journey": "natron_skein", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-29 07:41:57", "event": "caption", "journey": "natron_skein", "detail": "5 options, spot=True"}
+{"ts": "2026-08-29 07:41:57", "event": "render", "journey": "natron_skein", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-29 07:45:05", "event": "music_pregen", "journey": "winter_murmuration", "detail": "5 candidates"}
+{"ts": "2026-08-29 07:46:49", "event": "music_pregen", "journey": "waterbear_prairie", "detail": "5 candidates"}
+{"ts": "2026-08-29 07:48:53", "event": "music_pregen", "journey": "gecko_rampart", "detail": "5 candidates"}
+{"ts": "2026-08-29 07:51:00", "event": "music_pregen", "journey": "natron_skein", "detail": "5 candidates"}
+{"ts": "2026-08-29 07:51:00", "event": "batch_done", "detail": "batch done in 6.3h — 4 to Review"}
+{"ts": "2026-08-29 12:00:17", "event": "igstats_chrome_selfheal"}
+{"ts": "2026-08-29 12:01:42", "event": "ig_stats", "detail": "53 reels, followers 66"}
+{"ts": "2026-08-29 12:01:58", "event": "ig_insights", "detail": "42 posts"}
+{"ts": "2026-08-29 20:05:39", "event": "ig_share_method", "detail": "trusted"}
+{"ts": "2026-08-29 20:06:27", "event": "post", "journey": "pomegranate_vault", "platform": "youtube", "detail": "https://youtube.com/shorts/e9J2gATz9K8"}
+{"ts": "2026-08-29 20:06:27", "event": "post", "journey": "pomegranate_vault", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcpLy5DNrUW/"}
+{"ts": "2026-08-29 20:07:24", "event": "ig_stats", "detail": "44 reels, followers 66"}
+{"ts": "2026-08-29 20:07:40", "event": "ig_insights", "detail": "43 posts"}
+{"ts": "2026-08-29 20:07:40", "event": "post_gate", "detail": "fired (rc 0); next 2026-08-30 15:00"}
+{"ts": "2026-08-30 00:00:55", "event": "ig_stats", "detail": "44 reels, followers 66"}
+{"ts": "2026-08-30 00:01:09", "event": "ig_insights", "detail": "43 posts"}
+{"ts": "2026-08-30 00:20:18", "event": "refill", "journey": "bayou_eyeshine", "detail": "auto-queued (ok bayou_eyeshine           start=rod_palisade        · not cosmic/subatomic)"}
+{"ts": "2026-08-30 00:20:18", "event": "refill", "journey": "cacao_temper", "detail": "auto-queued (ok cacao_temper             start=diamond_star)"}
+{"ts": "2026-08-30 00:20:18", "event": "refill", "journey": "fluorite_stope", "detail": "auto-queued (ok fluorite_stope           start=vein_crust          · not cosmic/subatomic)"}
+{"ts": "2026-08-30 00:20:19", "event": "refill", "journey": "sargasso_windrow", "detail": "auto-queued (ok sargasso_windrow         start=brightest_galaxy)"}
+{"ts": "2026-08-30 00:20:19", "event": "refill_done", "detail": "refill done: 4 composed, 4 queued (briefs: long, long, short, medium)"}
+{"ts": "2026-08-30 03:28:28", "event": "review", "journey": "lily_undercroft", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-30 03:29:20", "event": "caption", "journey": "lily_undercroft", "detail": "5 options, spot=True"}
+{"ts": "2026-08-30 03:29:20", "event": "render", "journey": "lily_undercroft", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-30 04:14:59", "event": "review", "journey": "plasma_script", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-30 04:15:43", "event": "caption", "journey": "plasma_script", "detail": "5 options, spot=True"}
+{"ts": "2026-08-30 04:15:43", "event": "render", "journey": "plasma_script", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-30 05:20:32", "event": "review", "journey": "magnetite_choir", "detail": "ds/divein (src v7)"}
+{"ts": "2026-08-30 05:21:16", "event": "caption", "journey": "magnetite_choir", "detail": "5 options, spot=True"}
+{"ts": "2026-08-30 05:21:16", "event": "render", "journey": "magnetite_choir", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-30 07:20:20", "event": "review", "journey": "cicada_chorus", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-30 07:21:08", "event": "caption", "journey": "cicada_chorus", "detail": "5 options, spot=True"}
+{"ts": "2026-08-30 07:21:08", "event": "render", "journey": "cicada_chorus", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-30 08:08:20", "event": "review", "journey": "circuit_grotto", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-30 08:08:59", "event": "caption", "journey": "circuit_grotto", "detail": "5 options, spot=True"}
+{"ts": "2026-08-30 08:08:59", "event": "render", "journey": "circuit_grotto", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-30 08:11:50", "event": "music_pregen", "journey": "lily_undercroft", "detail": "5 candidates"}
+{"ts": "2026-08-30 08:13:18", "event": "music_pregen", "journey": "plasma_script", "detail": "5 candidates"}
+{"ts": "2026-08-30 08:15:25", "event": "music_pregen", "journey": "magnetite_choir", "detail": "5 candidates"}
+{"ts": "2026-08-30 08:18:09", "event": "music_pregen", "journey": "cicada_chorus", "detail": "5 candidates"}
+{"ts": "2026-08-30 08:19:39", "event": "music_pregen", "journey": "circuit_grotto", "detail": "5 candidates"}
+{"ts": "2026-08-30 08:19:39", "event": "batch_done", "detail": "batch done in 6.8h — 5 to Review"}
+{"ts": "2026-08-30 12:00:59", "event": "ig_stats", "detail": "44 reels, followers 72"}
+{"ts": "2026-08-30 12:01:16", "event": "ig_insights", "detail": "41 posts"}
+{"ts": "2026-08-30 15:05:45", "event": "ig_share_method", "detail": "trusted"}
+{"ts": "2026-08-30 15:06:40", "event": "post", "journey": "eclipse_waterhole", "platform": "youtube", "detail": "https://youtube.com/shorts/_2xi59uAd8Q"}
+{"ts": "2026-08-30 15:06:40", "event": "post", "journey": "eclipse_waterhole", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcrORSVvyet/"}
+{"ts": "2026-08-30 15:08:00", "event": "ig_stats", "detail": "55 reels, followers 72"}
+{"ts": "2026-08-30 15:08:17", "event": "ig_insights", "detail": "41 posts"}
+{"ts": "2026-08-30 15:08:17", "event": "post_gate", "detail": "fired (rc 0); next 2026-08-31 10:00"}
+{"ts": "2026-08-31 00:01:19", "event": "ig_stats", "detail": "55 reels, followers 72"}
+{"ts": "2026-08-31 00:01:37", "event": "ig_insights", "detail": "41 posts"}
+{"ts": "2026-08-31 00:24:46", "event": "refill", "journey": "bromeliad_tank", "detail": "auto-queued (ok bromeliad_tank           start=bough_whorls        · not cosmic/subatomic)"}
+{"ts": "2026-08-31 00:24:46", "event": "refill", "journey": "cork_dehesa", "detail": "auto-queued (ok cork_dehesa              start=disk_galaxy)"}
+{"ts": "2026-08-31 00:24:47", "event": "refill", "journey": "dugong_meadow", "detail": "auto-queued (ok dugong_meadow            start=meadow_from_above   · not cosmic/subatomic)"}
+{"ts": "2026-08-31 00:24:47", "event": "refill", "journey": "locust_sorghum", "detail": "auto-queued (ok locust_sorghum           start=field_commons       · not cosmic/subatomic)"}
+{"ts": "2026-08-31 00:24:47", "event": "refill", "journey": "prairie_town", "detail": "auto-queued (ok prairie_town             start=dwarf_scatter)"}
+{"ts": "2026-08-31 00:24:47", "event": "refill_done", "detail": "refill done: 5 composed, 5 queued (briefs: short, long, short, long, medium)"}
+{"ts": "2026-08-31 02:54:19", "event": "review", "journey": "phage_landing", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-31 02:55:13", "event": "caption", "journey": "phage_landing", "detail": "5 options, spot=True"}
+{"ts": "2026-08-31 02:55:13", "event": "render", "journey": "phage_landing", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-31 04:38:01", "event": "review", "journey": "venus_basket", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-31 04:38:56", "event": "caption", "journey": "venus_basket", "detail": "5 options, spot=True"}
+{"ts": "2026-08-31 04:38:56", "event": "render", "journey": "venus_basket", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-31 06:14:56", "event": "review", "journey": "anvil_country", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-31 06:15:51", "event": "caption", "journey": "anvil_country", "detail": "5 options, spot=True"}
+{"ts": "2026-08-31 06:15:51", "event": "render", "journey": "anvil_country", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-31 06:16:05", "event": "phase_shift", "journey": "magnetite_choir", "detail": "start @ 1.50s"}
+{"ts": "2026-08-31 06:16:05", "event": "music", "journey": "magnetite_choir"}
+{"ts": "2026-08-31 06:16:07", "event": "music_skip", "journey": "magnetite_choir", "detail": "ComfyUI busy — use Generate in Music tab"}
+{"ts": "2026-08-31 06:21:34", "event": "music_choose", "journey": "magellanic_mob", "detail": "tide_organ-wild"}
+{"ts": "2026-08-31 06:21:34", "event": "queued", "journey": "magellanic_mob"}
+{"ts": "2026-08-31 07:19:39", "event": "review", "journey": "mantis_drumline", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-31 07:20:28", "event": "caption", "journey": "mantis_drumline", "detail": "5 options, spot=True"}
+{"ts": "2026-08-31 07:20:28", "event": "render", "journey": "mantis_drumline", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-31 08:08:02", "event": "review", "journey": "sockeye_stair", "detail": "ds/divein (src v1)"}
+{"ts": "2026-08-31 08:08:47", "event": "caption", "journey": "sockeye_stair", "detail": "5 options, spot=True"}
+{"ts": "2026-08-31 08:08:47", "event": "render", "journey": "sockeye_stair", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-08-31 08:11:29", "event": "music_pregen", "journey": "phage_landing", "detail": "5 candidates"}
+{"ts": "2026-08-31 08:13:43", "event": "music_pregen", "journey": "venus_basket", "detail": "5 candidates"}
+{"ts": "2026-08-31 08:16:05", "event": "music_pregen", "journey": "anvil_country", "detail": "5 candidates"}
+{"ts": "2026-08-31 08:17:49", "event": "music_pregen", "journey": "mantis_drumline", "detail": "5 candidates"}
+{"ts": "2026-08-31 08:19:17", "event": "music_pregen", "journey": "sockeye_stair", "detail": "5 candidates"}
+{"ts": "2026-08-31 08:19:18", "event": "batch_done", "detail": "batch done in 6.8h — 5 to Review"}
+{"ts": "2026-08-31 08:26:46", "event": "music_realign", "journey": "magnetite_choir", "detail": "5 candidates"}
+{"ts": "2026-08-31 08:31:03", "event": "music_choose", "journey": "magnetite_choir", "detail": "pulse2-aurora_strings"}
+{"ts": "2026-08-31 08:31:03", "event": "queued", "journey": "magnetite_choir"}
+{"ts": "2026-08-31 09:29:27", "event": "rejected", "journey": "mantis_drumline"}
+{"ts": "2026-08-31 09:29:27", "event": "jqueued", "journey": "mantis_drumline", "detail": "reject -> re-queue back"}
+{"ts": "2026-08-31 10:05:44", "event": "ig_share_method", "detail": "trusted"}
+{"ts": "2026-08-31 10:06:32", "event": "post", "journey": "magnetite_choir", "platform": "youtube", "detail": "https://youtube.com/shorts/dLYQlGriUbY"}
+{"ts": "2026-08-31 10:06:32", "event": "post", "journey": "magnetite_choir", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DctQuxrOmCO/"}
+{"ts": "2026-08-31 10:07:52", "event": "ig_stats", "detail": "56 reels, followers 72"}
+{"ts": "2026-08-31 10:08:10", "event": "ig_insights", "detail": "41 posts"}
+{"ts": "2026-08-31 10:08:10", "event": "post_gate", "detail": "fired (rc 0); next 2026-09-01 05:00"}
+{"ts": "2026-08-31 12:01:18", "event": "ig_stats", "detail": "56 reels, followers 72"}
+{"ts": "2026-08-31 12:01:35", "event": "ig_insights", "detail": "41 posts"}
+{"ts": "2026-08-31 13:47:13", "event": "switch", "journey": "cherenkov_cistern", "detail": "ds/zoomout"}
+{"ts": "2026-08-31 13:47:45", "event": "rejected", "journey": "cherenkov_cistern"}
+{"ts": "2026-08-31 13:47:45", "event": "jqueued", "journey": "cherenkov_cistern", "detail": "reject -> re-queue back"}
+{"ts": "2026-08-31 13:47:52", "event": "rejected", "journey": "kelp_dynamo"}
+{"ts": "2026-08-31 13:47:52", "event": "jqueued", "journey": "kelp_dynamo", "detail": "reject -> re-queue back"}
+{"ts": "2026-08-31 13:48:35", "event": "rejected", "journey": "sunspot_archipelago"}
+{"ts": "2026-08-31 13:48:35", "event": "jqueued", "journey": "sunspot_archipelago", "detail": "reject -> re-queue back"}
+{"ts": "2026-08-31 13:49:03", "event": "rejected", "journey": "lissajous_stage"}
+{"ts": "2026-08-31 13:49:03", "event": "jqueued", "journey": "lissajous_stage", "detail": "reject -> re-queue back"}
+{"ts": "2026-08-31 13:50:05", "event": "phase_shift", "journey": "bee_cathedral", "detail": "start @ 9.00s"}
+{"ts": "2026-08-31 13:50:05", "event": "music", "journey": "bee_cathedral"}
+{"ts": "2026-08-31 13:50:15", "event": "music_realign", "journey": "bee_cathedral", "detail": "5 candidates"}
+{"ts": "2026-08-31 13:51:01", "event": "rejected", "journey": "observatory_dusk"}
+{"ts": "2026-08-31 13:52:01", "event": "phase_shift", "journey": "bamboo_sea", "detail": "start @ 8.00s"}
+{"ts": "2026-08-31 13:52:01", "event": "music", "journey": "bamboo_sea"}
+{"ts": "2026-08-31 13:52:09", "event": "music_realign", "journey": "bamboo_sea", "detail": "5 candidates"}
+{"ts": "2026-08-31 13:53:59", "event": "phase_shift", "journey": "fiddler_commons", "detail": "start @ 3.80s"}
+{"ts": "2026-08-31 13:53:59", "event": "music", "journey": "fiddler_commons"}
+{"ts": "2026-08-31 13:54:06", "event": "music_realign", "journey": "fiddler_commons", "detail": "5 candidates"}
+{"ts": "2026-08-31 13:55:46", "event": "phase_shift", "journey": "voltaic_shoal", "detail": "start @ 2.50s"}
+{"ts": "2026-08-31 13:55:46", "event": "music", "journey": "voltaic_shoal"}
+{"ts": "2026-08-31 13:55:54", "event": "music_realign", "journey": "voltaic_shoal", "detail": "5 candidates"}
+{"ts": "2026-08-31 13:57:04", "event": "music", "journey": "circuit_grotto"}
+{"ts": "2026-08-31 13:57:12", "event": "music_realign", "journey": "circuit_grotto", "detail": "5 candidates"}
+{"ts": "2026-08-31 14:04:24", "event": "music_choose", "journey": "bee_cathedral", "detail": "choir_of_dust-third_answer2"}
+{"ts": "2026-08-31 14:04:24", "event": "queued", "journey": "bee_cathedral"}
+{"ts": "2026-08-31 14:05:30", "event": "music_choose", "journey": "bamboo_sea", "detail": "aurora_strings-wild"}
+{"ts": "2026-08-31 14:05:30", "event": "queued", "journey": "bamboo_sea"}
+{"ts": "2026-08-31 14:07:17", "event": "music_choose", "journey": "fiddler_commons", "detail": "wooden_orbit-halftime"}
+{"ts": "2026-08-31 14:07:17", "event": "queued", "journey": "fiddler_commons"}
+{"ts": "2026-08-31 14:09:19", "event": "music_choose", "journey": "voltaic_shoal", "detail": "choir_of_dust-wild"}
+{"ts": "2026-08-31 14:09:19", "event": "queued", "journey": "voltaic_shoal"}
+{"ts": "2026-08-31 14:11:23", "event": "music_realign", "journey": "circuit_grotto", "detail": "5 candidates"}
+{"ts": "2026-08-31 19:39:38", "event": "switch", "journey": "winter_murmuration", "detail": "ds/zoomout"}
+{"ts": "2026-08-31 19:40:33", "event": "phase_shift", "journey": "winter_murmuration", "detail": "start @ 11.20s"}
+{"ts": "2026-08-31 19:40:33", "event": "music", "journey": "winter_murmuration"}
+{"ts": "2026-08-31 19:40:44", "event": "music_realign", "journey": "winter_murmuration", "detail": "5 candidates"}
+{"ts": "2026-08-31 19:42:24", "event": "switch", "journey": "gecko_rampart", "detail": "ds/zoomout"}
+{"ts": "2026-08-31 20:54:08", "event": "batch_pause", "detail": "manual A/B night (persist+hero pairs); script unpauses at end"}
+{"ts": "2026-09-01 00:01:18", "event": "ig_stats", "detail": "56 reels, followers 81"}
+{"ts": "2026-09-01 00:01:35", "event": "ig_insights", "detail": "41 posts"}
+{"ts": "2026-09-01 01:30:01", "event": "batch_skip", "reason": "render_paused"}
+{"ts": "2026-09-01 04:14:19", "event": "batch_resume", "detail": "review A/B night done — normal render resumes tomorrow"}
+{"ts": "2026-09-01 09:05:46", "event": "ig_share_method", "detail": "trusted"}
+{"ts": "2026-09-01 09:06:54", "event": "post", "journey": "magellanic_mob", "platform": "youtube", "detail": "https://youtube.com/shorts/R77ZREl1NhM"}
+{"ts": "2026-09-01 09:06:54", "event": "post", "journey": "magellanic_mob", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcvuqYohsqq/"}
+{"ts": "2026-09-01 09:08:14", "event": "ig_stats", "detail": "57 reels, followers 81"}
+{"ts": "2026-09-01 09:08:31", "event": "ig_insights", "detail": "40 posts"}
+{"ts": "2026-09-01 09:08:31", "event": "post_gate", "detail": "fired (rc 0); next 2026-09-02 00:00"}
+{"ts": "2026-09-01 12:01:19", "event": "ig_stats", "detail": "57 reels, followers 81"}
+{"ts": "2026-09-01 12:01:35", "event": "ig_insights", "detail": "40 posts"}
+{"ts": "2026-09-02 00:00:51", "event": "ig_stats", "detail": "36 reels, followers 86"}
+{"ts": "2026-09-02 00:01:10", "event": "ig_insights", "detail": "40 posts"}
+{"ts": "2026-09-02 00:05:46", "event": "ig_share_method", "detail": "trusted"}
+{"ts": "2026-09-02 00:06:37", "event": "post", "journey": "bee_cathedral", "platform": "youtube", "detail": "https://youtube.com/shorts/AboX2-Z3Dc4"}
+{"ts": "2026-09-02 00:06:37", "event": "post", "journey": "bee_cathedral", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DcxVqMzv84K/"}
+{"ts": "2026-09-02 00:07:28", "event": "ig_stats", "detail": "36 reels, followers 86"}
+{"ts": "2026-09-02 00:07:44", "event": "ig_insights", "detail": "41 posts"}
+{"ts": "2026-09-02 00:07:44", "event": "post_gate", "detail": "fired (rc 0); next 2026-09-02 19:00"}
+{"ts": "2026-09-02 03:24:38", "event": "review", "journey": "chalk_cellar", "detail": "ds/divein (src v1)"}
+{"ts": "2026-09-02 03:25:39", "event": "caption", "journey": "chalk_cellar", "detail": "5 options, spot=True"}
+{"ts": "2026-09-02 03:25:39", "event": "render", "journey": "chalk_cellar", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-09-02 04:51:56", "event": "review", "journey": "pika_larder", "detail": "ds/divein (src v1)"}
+{"ts": "2026-09-02 04:52:50", "event": "caption", "journey": "pika_larder", "detail": "5 options, spot=True"}
+{"ts": "2026-09-02 04:52:50", "event": "render", "journey": "pika_larder", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-09-02 06:53:34", "event": "review", "journey": "garnet_glass", "detail": "ds/divein (src v1)"}
+{"ts": "2026-09-02 06:54:27", "event": "caption", "journey": "garnet_glass", "detail": "5 options, spot=True"}
+{"ts": "2026-09-02 06:54:27", "event": "render", "journey": "garnet_glass", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-09-02 07:41:43", "event": "review", "journey": "fluorite_stope", "detail": "ds/divein (src v1)"}
+{"ts": "2026-09-02 07:42:28", "event": "caption", "journey": "fluorite_stope", "detail": "5 options, spot=True"}
+{"ts": "2026-09-02 07:42:29", "event": "render", "journey": "fluorite_stope", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-09-02 07:44:54", "event": "music_pregen", "journey": "chalk_cellar", "detail": "5 candidates"}
+{"ts": "2026-09-02 07:47:26", "event": "music_pregen", "journey": "pika_larder", "detail": "5 candidates"}
+{"ts": "2026-09-02 07:50:06", "event": "music_pregen", "journey": "garnet_glass", "detail": "5 candidates"}
+{"ts": "2026-09-02 07:51:54", "event": "music_pregen", "journey": "fluorite_stope", "detail": "5 candidates"}
+{"ts": "2026-09-02 07:51:54", "event": "batch_done", "detail": "batch done in 6.4h — 4 to Review"}

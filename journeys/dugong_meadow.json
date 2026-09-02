@@ -1,0 +1,109 @@
+{
+  "name": "dugong_meadow",
+  "theme": "a moonlit seagrass meadow read as one meander repeating at every scale — from ribbon fields scored by looping dugong feeding trails, down among the grazing commons, onto one crusted blade and into the gas galleries of its interior, into a green cell and its lens-shaped pods, to the coiled ribbon knots that build its sugar, which are reread as silver river meanders on a planet's night side, and back down over that coast's lagoon to the meadow",
+  "style": "reef_pop",
+  "music_lane": "glass_chapel",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 9,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "meadow_from_above",
+      "exp": 2.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "viridian ribbon fields, ivory sand scars, slate-blue moon-water",
+      "scene": "a seagrass meadow in moonlit shallows seen from directly above, viridian ribbon fields combed across the shallow floor, pale sinuous feeding trails cut through the greenery and looped back on themselves, several loops pinched off as crescents of bare ivory sand, sand channels branching out among the meadows, a silver sheen laid over the slate-blue water, the nearer ribbon tops risen close under the surface, no one present",
+      "target": "an ivory crescent of bare sand",
+      "target_phrase": "a pale sand crescent",
+      "loop_target": "a moonlit seagrass meadow scored with pale looping trails"
+    },
+    {
+      "name": "meadow_commons",
+      "exp": 0.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "copper-bronze mottle, sea-green blades, pewter light on ink water",
+      "scene": "among the ribbons of a seagrass meadow at night, a cropped scar of ivory sand opening through the greenery, a slate-grey dugong settled at its head over the grubbed roots, sea-green blades crowding upward on every side, seahorses gripping the blades by their curled tails, a cuttlefish poised over the sand in copper-bronze mottle, a pair of pipefish held upright among the stems, shell rubble and cropped blade ends scattered across the scar, pewter light let down through the surface into ink water beyond the meadow, no one present",
+      "target": "a crusted green ribbon blade",
+      "target_phrase": "a green ribbon blade"
+    },
+    {
+      "name": "blade_face",
+      "exp": -1.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "emerald blade face, magenta-pink crust rosettes, amber tufts on teal",
+      "scene": "one seagrass ribbon furred over with life, an emerald blade whose face carries magenta-pink crusts spreading in rosettes, amber hydroid tufts rooted in rows across the green, minute spiral shells and coiled tube worms cemented to the surface, silt caught in the grooves of its veins, its tip squared off where a grazer has cropped it, neighbouring ribbons crossing behind it in teal water",
+      "target": "a cropped emerald tip",
+      "target_phrase": "a cut green tip",
+      "cameo": {
+        "sprite": "output/mascots/canon/lee.png",
+        "pos": [
+          0.24,
+          0.72
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "lacunae_galleries",
+      "exp": -3.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade cell files, teal gallery gas, umber gloom",
+      "scene": "the interior of a seagrass blade, gas-filled galleries opening one after another through the green tissue, every gallery a rounded corridor whose walls are files of green cells set brick on brick, each cell plump with green grains, transverse partitions crossing the corridors at even intervals, the cell walls translucent amber where the gas meets them, jade radiance carried from cell to cell through the tissue, the farther corridors dimming into teal gloom",
+      "target": "a plump green cell",
+      "target_phrase": "a green cell",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "hex"
+      }
+    },
+    {
+      "name": "chloroplast_cell",
+      "exp": -5.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "olive-green pods, amber cell wall, indigo murk",
+      "scene": "the interior of one green cell, dozens of lens-shaped chloroplasts crowded against the cell wall, each an olive-green pod grained with umber specks and turned face-on or rim-on at its own angle, a great watery cavity filling the cell's middle and pressing the pods outward, strands of cytoplasm threading across the cavity, the wall a translucent amber sheet quilted into panels, indigo murk where neighbouring cells press in",
+      "target": "an olive-green lens pod",
+      "target_phrase": "a green lens pod",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "rubisco_knots",
+      "exp": -7.8,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "jade ribbon coils, copper-lit joins, umber depth",
+      "scene": "folded ribbon chains looped back on themselves in tight coils, eight coils joined rim to rim into one round cluster, cluster after cluster crowded through a watery medium at every angle, each ribbon doubling back on itself in tight returns and crossing its own turns, copper-lit points seated where the coils meet, jade and viridian coils shading to umber in the farther crowd, loose chains adrift among the clusters"
+    },
+    {
+      "name": "orbit_meanders",
+      "exp": 5.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver channel light, indigo night plain, umber land on ink water",
+      "scene": "the night side of a planet seen from orbit, silver looping channels written across an indigo plain, one channel folded back on itself again and again in tight bends, crescent lakes glinting where its loops have pinched away, the plain matte umber under a moonlit haze, the coast drawn out as a scalloped rim of ink water, a silver-lit lagoon set into one scallop of that coast, cloud filaments combed over the plain, hard stars pricked above the limb",
+      "target": "a silver-lit lagoon",
+      "target_phrase": "a silver lagoon"
+    },
+    {
+      "name": "lagoon_from_air",
+      "exp": 4.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pewter lagoon water, viridian meadow patches, umber shore on ink",
+      "scene": "a lagoon on a moonlit coast seen low from the air, pewter water held within a scalloped shore, viridian meadows of seagrass quilting the shallow floor with pale looping trails scored through them, tide channels branching out over ivory sand flats, an umber fringe of mangrove crowding the shoreline, surf broken white across the outer bar, a silver sheen laid over the open water, no one present"
+    }
+  ],
+  "music_theme": "a moonlit tide chapel — weightless choir pads over a deep warm sub drone, one deep kick landing on every downbeat while the meadow opens, the pads narrowing as the dive goes onto the blade and into its gas galleries, a single held low tone through the cell and its coiled knots, a broad struck bloom when the coils open as silver river bends seen from orbit, and a warmer settling swell as the lagoon comes home to the meadow",
+  "music_key": "D minor",
+  "render_start": "meadow_from_above"
+}

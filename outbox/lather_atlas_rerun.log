@@ -1,0 +1,24 @@
+[style] liquid_light  ->  bioluminescent glow, wet luminous surfaces, deep saturated color, ultra-detailed, cinematic, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/lather_atlas/v1
+[dive] lather_atlas: 140 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] TRACKER v3 ON (49 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame 1/140 (14.4s/frame, ~2000s left) :: moving through a packed field of soap bubble domes seen from
+[dive] frame 11/140 (30.6s/frame, ~3953s left) :: moving through a packed field of soap bubble domes seen from
+[dive] frame 21/140 (26.1s/frame, ~3107s left) :: diving straight into a large bubble dome, its curved wall ba
+[dive] frame 31/140 (23.0s/frame, ~2512s left) :: the curved wall of a single soap bubble among its neighbours
+[dive] frame 41/140 (21.2s/frame, ~2097s left) :: moving through the curved wall of a single soap bubble among
+[dive] frame 51/140 (21.0s/frame, ~1870s left) :: diving straight into a cluster of small clear round spheres,
+[dive] frame 61/140 (19.9s/frame, ~1569s left) :: row upon row of round spheres packed in a glowing lattice, e
+[dive] frame 71/140 (18.2s/frame, ~1255s left) :: deep inside row upon row of round spheres packed in a glowin
+[dive] frame 81/140 (16.9s/frame, ~998s left) :: deep inside row upon row of round spheres packed in a glowin
+[dive] frame 91/140 (16.0s/frame, ~782s left) :: the whole view transforming, resolving into the packed domes
+[dive] frame 101/140 (15.2s/frame, ~593s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 111/140 (14.6s/frame, ~422s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 121/140 (14.0s/frame, ~267s left) :: moving through a warm evening kitchen seen from standing hei
+[dive] frame 131/140 (13.6s/frame, ~122s left) :: diving straight into a packed field of soap bubble domes see
+[dive] frame 140/140 (13.3s/frame, ~0s left) :: diving straight into a packed field of soap bubble domes see
+[dive] interpolated 12 -> 24fps in 26s
+[dive] counter overlay on 277 frames (15 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/lather_atlas/v1/lather_atlas.mp4 (15643 KB, 11.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/lather_atlas/v1/lather_atlas_divein.mp4 (15986 KB, 11.7s)
+[dive] done in 1930s

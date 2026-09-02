@@ -1,0 +1,145 @@
+{
+  "name": "cicada_chorus",
+  "theme": "a seventeen-year brood surfacing into a lamplit oak grove at midnight, read down one teneral cicada and home again — from a shock-lit chain of newborn suns and a crater-pitted night world into the oak valley, down through the emergence commons and its owl, raccoon and treefrogs onto one soft jade cicada, into the crossed glass forewings and the moire of their two vein-nets, the living cell mosaic under the membrane, the nanopillar paving those cells secrete, the twisted chitin plywood and the carbon net that builds it — and out again when two overlapped carbon sheets open as two colliding galaxy discs",
+  "style": "enchanted_wild",
+  "music_lane": "choir_of_dust",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "grove_country",
+      "exp": 3.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "plum dusk canopy, brass lamp lane, ink creek",
+      "scene": "a valley of old oak woodland at midnight from high above, canopies crowding one another into a rumpled roof over the whole valley floor, a lane of lamps threading the wood end to end with brass glow pooled under each one, a creek cutting an ink seam through the trees, clearings opening as ragged holes in the canopy, one lamp-lit path running in under the boughs where the trunks rise, plum dusk hanging over the ridges beyond",
+      "target": "a lamp-lit oak trunk",
+      "target_phrase": "a lit tree trunk"
+    },
+    {
+      "name": "emergence_commons",
+      "exp": 0.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber shells, brass lamp wash, plum night earth",
+      "scene": "the foot of one lamp-lit oak at midnight, bare earth opened by thousands of turreted exit holes crowding the root flare, amber shed shells gripping the bark in crowded files, cicadas by the thousand climbing the trunk and crossing the leaf litter, a screech owl hunched on a low bough gorging on them, a raccoon working the bark with both paws, gray treefrogs posted at the hole field picking off stragglers, brass lamp wash lying over the whole commons, no one present at the trunks, plum night past them",
+      "target": "a soft jade cicada",
+      "target_phrase": "a green cicada"
+    },
+    {
+      "name": "teneral_cicada",
+      "exp": -1.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade body, brass-veined glass, plum bark furrows",
+      "scene": "a stretch of oak bark at midnight with one newly surfaced cicada gripping it, its jade body still soft, its two glass forewings crossed roof-wise over its back and threaded with brass-lit veins, the split amber husk it left gripping the bark under it, more husks crowding the bark ridges, plum shadow sunk in every furrow, brass lamp wash raking the whole stretch",
+      "target": "a clear veined forewing",
+      "target_phrase": "a clear insect wing"
+    },
+    {
+      "name": "wing_grid",
+      "exp": -2.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "brass vein tracery, plum and green fringes, ink pane gaps",
+      "scene": "the membrane country of a cicada's crossed forewings, brass veins branching into a net of five- and six-sided panes crowding the whole clear sheet, the lower wing crossing under the upper one at a slight turn so the two nets overlap and throw drifting moire fringes of plum and green through the crossing, ink shadow sunk in every pane gap, an oil sheen riding the membrane, the net repeating away into murk",
+      "target": "a smooth clear membrane pane",
+      "target_phrase": "a clear membrane panel",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "membrane_cells",
+      "exp": -4.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade cell floors, brass hemolymph lane, plum murk",
+      "scene": "the living sheet within one teneral wing pane, flat jade cells fitted edge to edge into a mosaic floor running off in every direction, a round nucleus set in each one, a hemolymph channel cutting a brass lane through the mosaic with corpuscles adrift in it, a young cuticle ceiling drawn over the whole mosaic and studded with beaded knobs, further cell floors receding into plum murk under the first, a wet sheen over every wall",
+      "target": "a beaded cuticle knob",
+      "target_phrase": "a rounded glass knob"
+    },
+    {
+      "name": "nanopillar_paving",
+      "exp": -6.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "green-brass interference, plum troughs, ink depth",
+      "scene": "the nanopillar paving of a cicada wing, blunt rounded posts raised in ordered rows across the whole membrane, plum shadow sunk in the troughs among them, green and brass interference colour riding the post heads, a second course of posts on the far face showing through the clear sheet at a slight turn so bright fringes drift over the field, the rows repeating away into ink depth",
+      "target": "a folded chitin ribbon",
+      "target_phrase": "a twisted ribbon strand",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "hex"
+      }
+    },
+    {
+      "name": "chitin_ribbons",
+      "exp": -8.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "honey ribbons, bronze cross-rungs, plum void",
+      "scene": "the chitin plywood building the wing, flat ribbon chains of linked sugar rings laid shoulder to shoulder into a sheet, short bonds strung across every gap among the chains, sheet stacked over sheet with each one set a few degrees off the one under it so the whole stack twists through a full turn, honey and bronze glow riding every ribbon, plum void in the openings",
+      "target": "a glowing carbon atom",
+      "target_phrase": "a glowing round atom"
+    },
+    {
+      "name": "carbon_sheets",
+      "exp": -10.2,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "cyan-brass nodes, plum void, drifting fringe bands",
+      "scene": "a honeycomb net of carbon atoms, bright round nodes at every corner with straight bond struts spanning the gaps, a second identical net stacked under the first at a small angle to it, the crossing throwing a slow wide moire of bright and unlit bands over the whole field, cold cyan and brass glow on the struts, plum void in every opening",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "layered"
+      }
+    },
+    {
+      "name": "galaxy_collision",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "brass star grids, plum dust lanes, ember knots",
+      "scene": "two face-on spiral galaxies overlapping disc over disc, each wound in a fine ordered grid of stars, the two grids crossing at a slight turn and setting a slow moire of bright and unlit bands through the overlap, plum dust lanes cutting the inner curve of every arm, ember knots of newborn suns strung down the crossing front, a tidal bridge of stars drawn from one core to the other, far galaxies strewn through the void beyond",
+      "target": "a bright knot of newborn suns",
+      "target_phrase": "a bright star knot"
+    },
+    {
+      "name": "shock_brood",
+      "exp": 14,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "brass-gold suns, plum gloom, amber gas sheets",
+      "scene": "a brood of newborn suns crowded into a shock-lit ridge of gas where two galaxy discs overlap, hundreds of hot gold points crammed into one bright chain, plum gloom pooled in every gap among them, amber gas banked in curved sheets past the chain, faint far suns strewn through the void beyond",
+      "target": "a crater-pitted night world",
+      "target_phrase": "a cratered planet",
+      "loop_target": "a brood of newborn suns crowded into a shock-lit ridge of gas, plum gloom in the gaps and amber gas banked past them"
+    },
+    {
+      "name": "cratered_world",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "plum crater shadow, brass dust basins, ember terminator",
+      "scene": "a night world seen from orbit, its old highlands pitted with impact craters that crowd rim against rim, smaller pits repeating within every crater floor, plum shadow flooding each bowl the low sun cannot reach, forest black filling the widest floors with brass sparks of lamp-glow sown through it, an ember terminator cutting the disc, unlit space past the limb",
+      "target": "a wooded crater floor",
+      "target_phrase": "a round wooded basin",
+      "cameo": {
+        "sprite": "output/mascots/canon/janet.png",
+        "pos": [
+          0.62,
+          0.38
+        ],
+        "size": 0.13
+      }
+    }
+  ],
+  "music_theme": "a seventeen-year waking at 90bpm — a hushed choir pad and fine granular shimmer over a deep kick on every downbeat, the shimmer massing into a chorus wall as the emergence commons arrives, easing to one suspended glass tone through the membrane and its paving, a single struck hit where the two carbon sheets open out into the two galaxy discs",
+  "music_key": "F# minor",
+  "render_start": "shock_brood"
+}

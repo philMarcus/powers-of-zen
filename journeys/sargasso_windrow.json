@@ -1,0 +1,144 @@
+{
+  "name": "sargasso_windrow",
+  "theme": "a moonlit sargassum raft combed into a wind-lane on the deep-water sea, read as one combing repeated at every scale — the raft's crowded commons, down into a gold float and its brown-alga cells, into the casing's amber chains zipped side by side by calcium beads, to a carbon atom and a splitting cascade of luminous tracks, which folds out as galaxies streaming down parallel filaments into one cluster knot, and home by the knot's brightest galaxy, a star with its comet shoal, an ocean world, and the weed lanes on its night sea",
+  "style": "reef_pop",
+  "music_lane": "deep_archive",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "weed_raft",
+      "exp": 1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "kelp-gold weed, moonlit ultramarine sea, foam-ivory streaks",
+      "scene": "a raft of sargassum weed adrift on the deep-water sea at night, seen from just off the swell at the raft's brim, amber-gold fronds matted into one floating thicket drawn out along a wind-combed lane, moonlit ultramarine water under the mat, a sargassum frogfish lodged in the fronds with its skin frilled into weed tatters, hatchling sea turtles tucked beneath the raft's underside, sargassum shrimp and mottled crabs studding the blades, flying fish with stiff outspread fins poised in the blue under the mat, clusters of small gold floats crowded along every stem, foam-ivory streaks combing the water either side of the raft, no one present",
+      "target": "a cluster of small gold floats",
+      "target_phrase": "a cluster of gold spheres"
+    },
+    {
+      "name": "float_cluster",
+      "exp": -1.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber-gold straps, ivory lace crust, ultramarine gloom",
+      "scene": "a thicket of sargassum blades seen from within the mat, serrated amber-gold straps branching off a woody stem, clusters of small gold floats crowded in every fork, ivory bryozoan lace crusting the older straps, threadlike hydroid fuzz fringing the blade edges, drift motes suspended between the straps, moonlit ultramarine gloom hollow under the thicket",
+      "target": "a round gold float",
+      "target_phrase": "a gold sphere"
+    },
+    {
+      "name": "float_cells",
+      "exp": -4.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber casings, golden-brown discs, ultramarine gloom",
+      "scene": "the living tissue inside the float's rind, cell upon cell cased in amber and tiled into a curving mosaic, every cell crowded with golden-brown chloroplast discs strung around its rim, a clear sap pocket hollow at each centre, thick amber casings seaming cell to cell, tiers of cells receding into ultramarine gloom, no ground and no horizon",
+      "target": "a thick amber casing",
+      "target_phrase": "a thick amber band"
+    },
+    {
+      "name": "alginate_eggbox",
+      "exp": -8.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber chains, teal calcium beads, ultramarine hollow",
+      "scene": "the casing material's own architecture, long amber polymer chains laid side by side in parallel rows, every chain kinked into a file of shallow pockets, a teal calcium bead seated in each pocket and zipping neighbouring chains together, further chain-pairs tiering away in the same combing, threadlike bridges crossing row to row, ultramarine hollow beyond the rows, no ground and no horizon",
+      "target": "a bright carbon atom",
+      "target_phrase": "a bright mote",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "layered"
+      }
+    },
+    {
+      "name": "carbon_atom",
+      "exp": -10.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ochre core point, ultramarine haze, abyss black",
+      "scene": "one carbon atom pictured as nested shells of soft haze, an incandescent ochre point at its centre, two ultramarine mist shells standing off from it at even spacing, four faint bonding stubs reaching outward to dim ochre points hanging in the gloom, a hair-thin lit track cutting across the haze, abyss-black emptiness carrying no ground and no horizon",
+      "target": "a lit track",
+      "target_phrase": "a bright streak"
+    },
+    {
+      "name": "track_cascade",
+      "exp": -14,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "ochre tracks, ultramarine sparks, abyss black",
+      "scene": "a cascade of luminous tracks strung through an abyss-black field, one hair-thin ochre track splitting into two, each branch splitting again and again into widening branchwork, ultramarine sparks blooming at every junction, the outermost branches fraying into threads, dimmer older cascades strewn deeper into the black, no ground and no horizon"
+    },
+    {
+      "name": "cluster_delta",
+      "exp": 24,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "saffron knot, dust-gold lanes, ultramarine void",
+      "scene": "a galaxy cluster fed by several parallel filaments of the cosmic web, each filament a lane of galaxies drawn inward, the lanes converging on one saffron knot of massed galaxies, ultramarine void lying between the lanes, faint sheets of galaxies stretched from filament to filament, dust-gold haze combing along each lane, countless galaxies strewn through the void beyond the knot",
+      "target": "a bright spiral galaxy",
+      "target_phrase": "a spiral galaxy",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "brightest_galaxy",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "saffron starlight, molten gold core, ultramarine dust lanes",
+      "scene": "the cluster's brightest galaxy, a tilted spiral of saffron starlight, two great arms combed out from a molten gold core and stitched with amber star-nurseries, ultramarine dust lanes cutting between the arms, a mist of older stars thinning outward into abyss-black void, two ragged companion galaxies off its rim, countless stars strewn through the void beyond",
+      "target": "a gold star",
+      "target_phrase": "a bright star",
+      "loop_target": "a tilted spiral galaxy of saffron starlight around a molten gold core"
+    },
+    {
+      "name": "star_comet_shoal",
+      "exp": 12,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ember-gold star, ultramarine tails, abyss black",
+      "scene": "a gold star and its shoal of comets, the star a swollen ember-gold disc, hundreds of comet heads sown through the black around it, every ion tail drawn into a long ultramarine streak and all the streaks combed one way off the star, teal dust tails curving from the brighter heads, gloom between the streaks, an ocean-blue world standing out in the shoal, stars strewn beyond",
+      "target": "a blue ocean world",
+      "target_phrase": "a blue planet",
+      "resolve": {
+        "mode": "sea"
+      },
+      "cameo": {
+        "sprite": "output/mascots/canon/lamar.png",
+        "pos": [
+          0.63,
+          0.42
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "ocean_world",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moonlit ultramarine sea, saffron aurora, dune-brown islands",
+      "scene": "an ocean world seen from orbit at night, its hemisphere one sheet of moonlit ultramarine sea, storm spirals silvered across the far water, a saffron aurora ring set over the pole, two dune-brown islands trailing shoal-teal shallows, gold weed lines combed into parallel streaks over the sea between the storms, the terminator's silver seam drawn across the disc, stars strewn beyond the rim",
+      "target": "a gold weed line",
+      "target_phrase": "a gold streak"
+    },
+    {
+      "name": "sea_windrows",
+      "exp": 4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ultramarine swell, amber-gold lanes, moon-silver glare",
+      "scene": "the night sea from an oblique vantage low over the swell, moonlit ultramarine water combed into long parallel windrows of amber-gold weed, the lanes drawn away toward the horizon, foam-ivory streaks lying between them, the swell ridged across the lanes, one broad raft of matted gold weed thickened at a lane's bend, moon-silver glare spread over the water beyond, no land anywhere on the sea",
+      "target": "a raft of matted gold weed",
+      "target_phrase": "a mat of gold weed"
+    }
+  ],
+  "music_theme": "a night drift on the deep-water sea — dark oceanic pads and a deep warm sub drone under slow blooming swells, one heavy low kick landing on the downbeat of every scale change, the pads thinning to a single held tone through the cell and chain bars, a wide swell where the splitting tracks fold out as the cluster's converging lanes, and a warmer settling figure as the star's comet shoal gives way to the moonlit sea",
+  "music_key": "B minor",
+  "render_start": "brightest_galaxy"
+}

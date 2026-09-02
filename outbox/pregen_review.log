@@ -1,0 +1,677 @@
+squid_lantern (divein): bar 2.000s -> 120 bpm, key C# minor; lane glass_chapel; generating 8, keeping 5
+♪ generating 13.0s | 120bpm C# minor | seed 17255 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 17s -> squid_lantern_00001_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/squid_lantern_glass_chapel.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/squid_lantern/glass_chapel.mp4
+    bar 2.000s | music bar 2.005s (conf 0.54) -> stretch 1.0027 | phase 0.530s | lock 11.82x | kick 0.36 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [glass_chapel] lock 11.82x conf 0.54 kick 0.36 score 7.43 -> review/music/candidates/squid_lantern/glass_chapel.mp4
+♪ generating 13.0s | 120bpm C# minor | seed 17292 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> squid_lantern_00002_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/squid_lantern_glass_chapel-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/squid_lantern/glass_chapel-b.mp4
+    bar 2.000s | music bar 1.995s (conf 0.15) -> stretch 0.9973 | phase 1.010s | lock 3.86x | kick 0.09 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [glass_chapel-b] lock 3.86x conf 0.15 kick 0.09 score 0.86 -> review/music/candidates/squid_lantern/glass_chapel-b.mp4
+♪ generating 13.0s | 120bpm C# minor | seed 17329 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 9s -> squid_lantern_00003_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/squid_lantern_glass_chapel-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/squid_lantern/glass_chapel-third_answer.mp4
+    bar 2.000s | music bar 2.005s (conf 0.21) -> stretch 1.0027 | phase 1.030s | lock 9.58x | kick 0.33 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [glass_chapel-third_answer] lock 9.58x conf 0.21 kick 0.33 score 3.96 -> review/music/candidates/squid_lantern/glass_chapel-third_answer.mp4
+♪ generating 13.0s | 120bpm C# minor | seed 17366 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 10s -> squid_lantern_00004_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/squid_lantern_choir_of_dust-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/squid_lantern/choir_of_dust-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.57) -> stretch 1.0027 | phase 1.060s | lock 23.46x | kick 0.53 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] lock 23.46x conf 0.57 kick 0.53 score 19.53 -> review/music/candidates/squid_lantern/choir_of_dust-wild.mp4
+♪ generating 13.0s | 120bpm C# minor | seed 17403 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> squid_lantern_00005_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/squid_lantern_music_box-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/squid_lantern/music_box-wild.mp4
+    bar 2.000s | music bar 1.984s (conf 0.29) -> stretch 0.9920 | phase 0.510s | lock 43.84x | kick 0.33 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [music_box-wild] lock 43.84x conf 0.29 kick 0.33 score 19.96 -> review/music/candidates/squid_lantern/music_box-wild.mp4
+♪ generating 13.0s | 120bpm C# minor | seed 17440 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 9s -> squid_lantern_00006_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/squid_lantern_glass_chapel-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/squid_lantern/glass_chapel-halftime.mp4
+    bar 2.000s | music bar 2.005s (conf 0.57) -> stretch 1.0027 | phase 0.040s | lock 18.56x | kick 0.54 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [glass_chapel-halftime] lock 18.56x conf 0.57 kick 0.54 score 15.72 -> review/music/candidates/squid_lantern/glass_chapel-halftime.mp4
+♪ generating 13.0s | 120bpm C# minor | seed 17477 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 10s -> squid_lantern_00007_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/squid_lantern_wooden_orbit-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/squid_lantern/wooden_orbit-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.34) -> stretch 1.0027 | phase 1.530s | lock 22.03x | kick 0.30 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] lock 22.03x conf 0.34 kick 0.30 score 10.24 -> review/music/candidates/squid_lantern/wooden_orbit-wild.mp4
+♪ generating 13.0s | 120bpm C# minor | seed 17514 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 10s -> squid_lantern_00008_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/squid_lantern_glass_chapel-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/squid_lantern/glass_chapel-heartbeat.mp4
+    bar 2.000s | music bar 2.005s (conf 0.26) -> stretch 1.0027 | phase 0.510s | lock 7.95x | kick 0.21 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [glass_chapel-heartbeat] lock 7.95x conf 0.26 kick 0.21 score 2.75 -> review/music/candidates/squid_lantern/glass_chapel-heartbeat.mp4
+kept: music_box-wild, choir_of_dust-wild, glass_chapel-halftime, wooden_orbit-wild, glass_chapel
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+ember_meadow (divein): bar 2.333s -> 103 bpm, key E minor; lane wooden_orbit; generating 8, keeping 5
+♪ generating 15.0s | 103bpm E minor | seed 27453 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 19s -> ember_meadow_00001_.flac (0.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ember_meadow_wooden_orbit.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ember_meadow/wooden_orbit.mp4
+    bar 2.333s | music bar 2.293s (conf 0.19) -> stretch 0.9829 | phase 0.290s | lock 19.03x | kick 0.19 | seamless loop @ 11.67s (music tiled x1, xf 0.50s)
+  [wooden_orbit] lock 19.03x conf 0.19 kick 0.19 score 5.76 -> review/music/candidates/ember_meadow/wooden_orbit.mp4
+♪ generating 15.0s | 103bpm E minor | seed 27490 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 11s -> ember_meadow_00002_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ember_meadow_wooden_orbit-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ember_meadow/wooden_orbit-b.mp4
+    bar 2.333s | music bar 2.347s (conf 0.32) -> stretch 1.0057 | phase 0.020s | lock 28.26x | kick 0.12 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [wooden_orbit-b] lock 28.26x conf 0.32 kick 0.12 score 8.63 -> review/music/candidates/ember_meadow/wooden_orbit-b.mp4
+♪ generating 15.0s | 103bpm E minor | seed 27527 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> ember_meadow_00003_.flac (0.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ember_meadow_wooden_orbit-downbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ember_meadow/wooden_orbit-downbeat.mp4
+    bar 2.333s | music bar 2.325s (conf 0.47) -> stretch 0.9966 | phase 1.100s | lock 12.50x | kick 0.43 | seamless loop @ 11.67s (music tiled x1, xf 0.50s)
+  [wooden_orbit-downbeat] lock 12.50x conf 0.47 kick 0.43 score 8.23 -> review/music/candidates/ember_meadow/wooden_orbit-downbeat.mp4
+♪ generating 15.0s | 103bpm E minor | seed 27564 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 10s -> ember_meadow_00004_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ember_meadow_tide_organ-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ember_meadow/tide_organ-wild.mp4
+    bar 2.333s | music bar 2.283s (conf 0.55) -> stretch 0.9783 | phase 0.040s | lock 32.88x | kick 0.55 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] lock 32.88x conf 0.55 kick 0.55 score 27.57 -> review/music/candidates/ember_meadow/tide_organ-wild.mp4
+♪ generating 15.0s | 103bpm E minor | seed 27601 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 10s -> ember_meadow_00005_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ember_meadow_choir_of_dust-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ember_meadow/choir_of_dust-wild.mp4
+    bar 2.333s | music bar 2.293s (conf 0.30) -> stretch 0.9829 | phase 0.600s | lock 15.42x | kick 0.17 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] lock 15.42x conf 0.30 kick 0.17 score 5.25 -> review/music/candidates/ember_meadow/choir_of_dust-wild.mp4
+♪ generating 15.0s | 103bpm E minor | seed 27638 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 11s -> ember_meadow_00006_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ember_meadow_wooden_orbit-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ember_meadow/wooden_orbit-halftime.mp4
+    bar 2.333s | music bar 2.165s (conf 0.00) -> stretch 1.0000 | phase 0.020s | lock 42.73x | kick 0.00 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [wooden_orbit-halftime] lock 42.73x conf 0.00 kick 0.00 score 5.45 -> review/music/candidates/ember_meadow/wooden_orbit-halftime.mp4
+♪ generating 15.0s | 103bpm E minor | seed 27675 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> ember_meadow_00007_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ember_meadow_glass_chapel-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ember_meadow/glass_chapel-wild.mp4
+    bar 2.333s | music bar 2.283s (conf 0.56) -> stretch 0.9783 | phase 0.330s | lock 23.71x | kick 0.44 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] lock 23.71x conf 0.56 kick 0.44 score 17.41 -> review/music/candidates/ember_meadow/glass_chapel-wild.mp4
+♪ generating 15.0s | 103bpm E minor | seed 27712 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 9s -> ember_meadow_00008_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ember_meadow_wooden_orbit-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ember_meadow/wooden_orbit-heartbeat.mp4
+    bar 2.333s | music bar 2.347s (conf 0.29) -> stretch 1.0057 | phase 1.520s | lock 9.95x | kick 0.34 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [wooden_orbit-heartbeat] lock 9.95x conf 0.29 kick 0.34 score 4.59 -> review/music/candidates/ember_meadow/wooden_orbit-heartbeat.mp4
+♪ generating 15.0s | 103bpm E minor | seed 27813 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 11s -> ember_meadow_00009_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ember_meadow_pulse1-wooden_orbit.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ember_meadow/pulse1-wooden_orbit.mp4
+    bar 2.333s | music bar 2.357s (conf 0.30) -> stretch 1.0103 | phase 1.640s | lock 14.64x | kick 0.39 | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [pulse1-wooden_orbit] kick 0.39 (top-up 1)
+kept: tide_organ-wild, glass_chapel-wild, wooden_orbit-b, wooden_orbit-downbeat, choir_of_dust-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+coral_synapse (divein): bar 2.333s -> 103 bpm, key B minor; lane deep_archive; generating 8, keeping 5
+♪ generating 29.0s | 103bpm B minor | seed 26494 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 23s -> coral_synapse_00001_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/coral_synapse_deep_archive.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/coral_synapse/deep_archive.mp4
+    bar 2.333s | music bar 2.283s (conf 0.77) -> stretch 0.9783 | phase 1.050s | lock 10.58x | kick 0.43 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [deep_archive] lock 10.58x conf 0.77 kick 0.43 score 9.16 -> review/music/candidates/coral_synapse/deep_archive.mp4
+♪ generating 29.0s | 103bpm B minor | seed 26531 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 17s -> coral_synapse_00002_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/coral_synapse_deep_archive-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/coral_synapse/deep_archive-b.mp4
+    bar 2.333s | music bar 2.336s (conf 0.74) -> stretch 1.0011 | phase 1.850s | lock 15.30x | kick 0.61 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [deep_archive-b] lock 15.30x conf 0.74 kick 0.61 score 16.28 -> review/music/candidates/coral_synapse/deep_archive-b.mp4
+♪ generating 29.0s | 103bpm B minor | seed 26568 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 17s -> coral_synapse_00003_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/coral_synapse_deep_archive-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/coral_synapse/deep_archive-heartbeat.mp4
+    bar 2.333s | music bar 2.283s (conf 0.73) -> stretch 0.9783 | phase 1.810s | lock 12.09x | kick 0.70 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [deep_archive-heartbeat] lock 12.09x conf 0.73 kick 0.70 score 14.14 -> review/music/candidates/coral_synapse/deep_archive-heartbeat.mp4
+♪ generating 29.0s | 103bpm B minor | seed 26605 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 17s -> coral_synapse_00004_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/coral_synapse_choir_of_dust-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/coral_synapse/choir_of_dust-wild.mp4
+    bar 2.333s | music bar 2.315s (conf 0.05) -> stretch 1.0000 | phase 2.270s | lock 2.18x | kick 0.04 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] lock 2.18x conf 0.05 kick 0.04 score 0.35 -> review/music/candidates/coral_synapse/choir_of_dust-wild.mp4
+♪ generating 29.0s | 103bpm B minor | seed 26642 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 17s -> coral_synapse_00005_.flac (1.0 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/coral_synapse_music_box-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/coral_synapse/music_box-wild.mp4
+    bar 2.333s | music bar 2.293s (conf 0.19) -> stretch 0.9829 | phase 1.810s | lock 14.18x | kick 0.03 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [music_box-wild] lock 14.18x conf 0.19 kick 0.03 score 2.78 -> review/music/candidates/coral_synapse/music_box-wild.mp4
+♪ generating 29.0s | 103bpm B minor | seed 26679 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 16s -> coral_synapse_00006_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/coral_synapse_deep_archive-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/coral_synapse/deep_archive-halftime.mp4
+    bar 2.333s | music bar 2.283s (conf 0.54) -> stretch 0.9783 | phase 0.060s | lock 13.77x | kick -0.03 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [deep_archive-halftime] lock 13.77x conf 0.54 kick -0.03 score 3.57 -> review/music/candidates/coral_synapse/deep_archive-halftime.mp4
+♪ generating 29.0s | 103bpm B minor | seed 26716 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 18s -> coral_synapse_00007_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/coral_synapse_wooden_orbit-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/coral_synapse/wooden_orbit-wild.mp4
+    bar 2.333s | music bar 2.315s (conf 0.12) -> stretch 0.9920 | phase 1.250s | lock 13.51x | kick 0.10 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] lock 13.51x conf 0.12 kick 0.10 score 2.95 -> review/music/candidates/coral_synapse/wooden_orbit-wild.mp4
+♪ generating 29.0s | 103bpm B minor | seed 26753 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 17s -> coral_synapse_00008_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/coral_synapse_deep_archive-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/coral_synapse/deep_archive-third_answer.mp4
+    bar 2.333s | music bar 2.336s (conf -0.01) -> stretch 1.0000 | phase 0.630s | lock 6.59x | kick -0.02 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [deep_archive-third_answer] lock 6.59x conf -0.01 kick -0.02 score 0.82 -> review/music/candidates/coral_synapse/deep_archive-third_answer.mp4
+♪ generating 29.0s | 103bpm B minor | seed 26854 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 17s -> coral_synapse_00009_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/coral_synapse_pulse1-deep_archive.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/coral_synapse/pulse1-deep_archive.mp4
+    bar 2.333s | music bar 2.283s (conf 0.05) -> stretch 1.0000 | phase 2.300s | lock 3.22x | kick -0.04 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [pulse1-deep_archive] kick -0.04 (top-up 1)
+♪ generating 29.0s | 103bpm B minor | seed 26955 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 18s -> coral_synapse_00010_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/coral_synapse_pulse2-deep_archive.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/coral_synapse/pulse2-deep_archive.mp4
+    bar 2.333s | music bar 2.304s (conf 0.74) -> stretch 0.9874 | phase 2.330s | lock 8.59x | kick 0.36 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [pulse2-deep_archive] kick 0.36 (top-up 2)
+♪ generating 29.0s | 103bpm B minor | seed 27056 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 17s -> coral_synapse_00011_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/coral_synapse_pulse3-deep_archive.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/coral_synapse/pulse3-deep_archive.mp4
+    bar 2.333s | music bar 2.283s (conf 0.73) -> stretch 0.9783 | phase 0.800s | lock 10.18x | kick 0.50 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [pulse3-deep_archive] kick 0.50 (top-up 3)
+kept: deep_archive-b, deep_archive-heartbeat, wooden_orbit-wild, music_box-wild, choir_of_dust-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+lantern_mangrove (divein): bar 2.333s -> 103 bpm, key E minor; lane tide_organ; generating 8, keeping 5
+♪ generating 27.0s | 103bpm E minor | seed 30585 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 25s -> lantern_mangrove_00001_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_tide_organ.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/tide_organ.mp4
+    bar 2.333s | music bar 2.197s (conf 0.14) -> stretch 0.9700 | phase 1.620s | lock 2.56x | kick 0.12 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [tide_organ] lock 2.56x conf 0.14 kick 0.12 score 0.60 -> review/music/candidates/lantern_mangrove/tide_organ.mp4
+♪ generating 27.0s | 103bpm E minor | seed 30622 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 23s -> lantern_mangrove_00002_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_tide_organ-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/tide_organ-b.mp4
+    bar 2.333s | music bar 2.304s (conf 0.58) -> stretch 0.9874 | phase 0.060s | lock 11.08x | kick 0.52 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [tide_organ-b] lock 11.08x conf 0.58 kick 0.52 score 9.16 -> review/music/candidates/lantern_mangrove/tide_organ-b.mp4
+♪ generating 27.0s | 103bpm E minor | seed 30659 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 24s -> lantern_mangrove_00003_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_tide_organ-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/tide_organ-halftime.mp4
+    bar 2.333s | music bar 2.293s (conf 0.20) -> stretch 0.9829 | phase 0.040s | lock 6.55x | kick 0.06 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [tide_organ-halftime] lock 6.55x conf 0.20 kick 0.06 score 1.40 -> review/music/candidates/lantern_mangrove/tide_organ-halftime.mp4
+♪ generating 27.0s | 103bpm E minor | seed 30696 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 24s -> lantern_mangrove_00004_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_wooden_orbit-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/wooden_orbit-wild.mp4
+    bar 2.333s | music bar 2.293s (conf 0.47) -> stretch 0.9829 | phase 0.050s | lock 25.18x | kick 0.42 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] lock 25.18x conf 0.47 kick 0.42 score 16.30 -> review/music/candidates/lantern_mangrove/wooden_orbit-wild.mp4
+♪ generating 27.0s | 103bpm E minor | seed 30733 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 20s -> lantern_mangrove_00005_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_choir_of_dust-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/choir_of_dust-wild.mp4
+    bar 2.333s | music bar 2.133s (conf -0.03) -> stretch 1.0000 | phase 0.930s | lock 3.60x | kick -0.06 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] lock 3.60x conf -0.03 kick -0.06 score 0.45 -> review/music/candidates/lantern_mangrove/choir_of_dust-wild.mp4
+♪ generating 27.0s | 103bpm E minor | seed 30770 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 21s -> lantern_mangrove_00006_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_tide_organ-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/tide_organ-halftime.mp4
+    bar 2.333s | music bar 2.293s (conf 0.39) -> stretch 0.9829 | phase 0.990s | lock 7.60x | kick 0.31 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [tide_organ-halftime] lock 7.60x conf 0.39 kick 0.31 score 3.80 -> review/music/candidates/lantern_mangrove/tide_organ-halftime.mp4
+♪ generating 27.0s | 103bpm E minor | seed 30807 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 21s -> lantern_mangrove_00007_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_glass_chapel-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/glass_chapel-wild.mp4
+    bar 2.333s | music bar 2.325s (conf 0.51) -> stretch 0.9966 | phase 0.070s | lock 8.96x | kick 0.50 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] lock 8.96x conf 0.51 kick 0.51 score 6.80 -> review/music/candidates/lantern_mangrove/glass_chapel-wild.mp4
+♪ generating 27.0s | 103bpm E minor | seed 30844 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 20s -> lantern_mangrove_00008_.flac (1.0 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_tide_organ-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/tide_organ-third_answer.mp4
+    bar 2.333s | music bar 2.315s (conf 0.24) -> stretch 0.9920 | phase 0.020s | lock 4.36x | kick 0.00 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [tide_organ-third_answer] lock 4.36x conf 0.24 kick 0.00 score 0.82 -> review/music/candidates/lantern_mangrove/tide_organ-third_answer.mp4
+♪ generating 27.0s | 103bpm E minor | seed 30945 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 21s -> lantern_mangrove_00009_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lantern_mangrove_pulse1-tide_organ.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lantern_mangrove/pulse1-tide_organ.mp4
+    bar 2.333s | music bar 2.283s (conf 0.57) -> stretch 0.9783 | phase 0.080s | lock 13.89x | kick 0.46 | seamless loop @ 23.33s (music tiled x2, xf 0.50s)
+  [pulse1-tide_organ] kick 0.46 (top-up 1)
+kept: wooden_orbit-wild, pulse1-tide_organ, tide_organ-b, glass_chapel-wild, choir_of_dust-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+desert_rosette (divein): bar 2.667s -> 90 bpm, key F# minor; lane aurora_strings; generating 8, keeping 5
+♪ generating 33.0s | 90bpm F# minor | seed 23886 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 27s -> desert_rosette_00001_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/desert_rosette_aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/desert_rosette/aurora_strings.mp4
+    bar 2.667s | music bar 2.848s (conf -0.07) -> stretch 1.0000 | phase 2.470s | lock 2.16x | kick -0.06 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [aurora_strings] lock 2.16x conf -0.07 kick -0.06 score 0.27 -> review/music/candidates/desert_rosette/aurora_strings.mp4
+♪ generating 33.0s | 90bpm F# minor | seed 23923 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 23s -> desert_rosette_00002_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/desert_rosette_aurora_strings-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/desert_rosette/aurora_strings-b.mp4
+    bar 2.667s | music bar 2.667s (conf 0.71) -> stretch 1.0000 | phase 0.070s | lock 28.25x | kick 0.72 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [aurora_strings-b] lock 28.25x conf 0.71 kick 0.72 score 33.05 -> review/music/candidates/desert_rosette/aurora_strings-b.mp4
+♪ generating 33.0s | 90bpm F# minor | seed 23960 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 22s -> desert_rosette_00003_.flac (2.0 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/desert_rosette_aurora_strings-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/desert_rosette/aurora_strings-third_answer.mp4
+    bar 2.667s | music bar 2.667s (conf 0.84) -> stretch 1.0000 | phase 1.680s | lock 22.35x | kick 0.76 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [aurora_strings-third_answer] lock 22.35x conf 0.84 kick 0.76 score 30.29 -> review/music/candidates/desert_rosette/aurora_strings-third_answer.mp4
+♪ generating 33.0s | 90bpm F# minor | seed 23997 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 22s -> desert_rosette_00004_.flac (1.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/desert_rosette_night_market-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/desert_rosette/night_market-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.27) -> stretch 1.0000 | phase 0.050s | lock 8.40x | kick -0.07 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [night_market-wild] lock 8.40x conf 0.27 kick -0.07 score 1.61 -> review/music/candidates/desert_rosette/night_market-wild.mp4
+♪ generating 33.0s | 90bpm F# minor | seed 24034 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 22s -> desert_rosette_00005_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/desert_rosette_analog_dawn-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/desert_rosette/analog_dawn-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.86) -> stretch 1.0000 | phase 0.670s | lock 20.60x | kick 0.83 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [analog_dawn-wild] lock 20.60x conf 0.86 kick 0.83 score 30.26 -> review/music/candidates/desert_rosette/analog_dawn-wild.mp4
+♪ generating 33.0s | 90bpm F# minor | seed 24071 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 23s -> desert_rosette_00006_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/desert_rosette_aurora_strings-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/desert_rosette/aurora_strings-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.77) -> stretch 1.0000 | phase 2.380s | lock 40.42x | kick 0.74 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [aurora_strings-halftime] lock 40.42x conf 0.77 kick 0.74 score 50.97 -> review/music/candidates/desert_rosette/aurora_strings-halftime.mp4
+♪ generating 33.0s | 90bpm F# minor | seed 24108 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 22s -> desert_rosette_00007_.flac (1.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/desert_rosette_ember_pulse-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/desert_rosette/ember_pulse-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.49) -> stretch 1.0000 | phase 2.610s | lock 12.73x | kick 0.31 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [ember_pulse-wild] lock 12.73x conf 0.49 kick 0.31 score 7.05 -> review/music/candidates/desert_rosette/ember_pulse-wild.mp4
+♪ generating 33.0s | 90bpm F# minor | seed 24145 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 22s -> desert_rosette_00008_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/desert_rosette_aurora_strings-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/desert_rosette/aurora_strings-heartbeat.mp4
+    bar 2.667s | music bar 2.688s (conf 0.41) -> stretch 1.0080 | phase 0.050s | lock 7.35x | kick 0.02 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [aurora_strings-heartbeat] lock 7.35x conf 0.41 kick 0.03 score 1.84 -> review/music/candidates/desert_rosette/aurora_strings-heartbeat.mp4
+kept: aurora_strings-halftime, aurora_strings-b, analog_dawn-wild, ember_pulse-wild, night_market-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+termite_citadel (zoomout): bar 2.000s -> 120 bpm, key G minor; lane choir_of_dust; generating 8, keeping 5
+♪ generating 25.0s | 120bpm G minor | seed 14185 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 21s -> termite_citadel_00001_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/termite_citadel_choir_of_dust.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/termite_citadel/choir_of_dust.mp4
+    bar 2.000s | music bar 1.995s (conf 0.46) -> stretch 0.9973 | phase 1.980s | lock 7.81x | kick 0.33 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [choir_of_dust] lock 7.81x conf 0.46 kick 0.33 score 4.33 -> review/music/candidates/termite_citadel/choir_of_dust.mp4
+♪ generating 25.0s | 120bpm G minor | seed 14222 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 20s -> termite_citadel_00002_.flac (0.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/termite_citadel_choir_of_dust-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/termite_citadel/choir_of_dust-b.mp4
+    bar 2.000s | music bar 1.792s (conf 0.25) -> stretch 0.9700 | phase 0.360s | lock 2.40x | kick 0.23 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [choir_of_dust-b] lock 2.40x conf 0.25 kick 0.23 score 0.86 -> review/music/candidates/termite_citadel/choir_of_dust-b.mp4
+♪ generating 25.0s | 120bpm G minor | seed 14259 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 17s -> termite_citadel_00003_.flac (0.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/termite_citadel_choir_of_dust-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/termite_citadel/choir_of_dust-halftime.mp4
+    bar 2.000s | music bar 1.995s (conf 0.64) -> stretch 0.9973 | phase 1.110s | lock 12.33x | kick 0.64 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [choir_of_dust-halftime] lock 12.33x conf 0.64 kick 0.65 score 12.55 -> review/music/candidates/termite_citadel/choir_of_dust-halftime.mp4
+♪ generating 25.0s | 120bpm G minor | seed 14296 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 19s -> termite_citadel_00004_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/termite_citadel_wooden_orbit-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/termite_citadel/wooden_orbit-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.59) -> stretch 1.0027 | phase 0.730s | lock 9.44x | kick 0.50 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] lock 9.44x conf 0.59 kick 0.50 score 7.67 -> review/music/candidates/termite_citadel/wooden_orbit-wild.mp4
+♪ generating 25.0s | 120bpm G minor | seed 14333 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 20s -> termite_citadel_00005_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/termite_citadel_deep_archive-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/termite_citadel/deep_archive-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.27) -> stretch 1.0027 | phase 0.530s | lock 6.02x | kick 0.05 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] lock 6.02x conf 0.27 kick 0.05 score 1.39 -> review/music/candidates/termite_citadel/deep_archive-wild.mp4
+♪ generating 25.0s | 120bpm G minor | seed 14370 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 18s -> termite_citadel_00006_.flac (0.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/termite_citadel_choir_of_dust-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/termite_citadel/choir_of_dust-halftime.mp4
+    bar 2.000s | music bar 1.995s (conf 0.45) -> stretch 0.9973 | phase 0.030s | lock 15.21x | kick 0.33 | seamless loop @ 22.00s (music tiled x4, xf 0.50s)
+  [choir_of_dust-halftime] lock 15.21x conf 0.45 kick 0.34 score 8.46 -> review/music/candidates/termite_citadel/choir_of_dust-halftime.mp4
+♪ generating 25.0s | 120bpm G minor | seed 14407 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 19s -> termite_citadel_00007_.flac (0.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/termite_citadel_music_box-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/termite_citadel/music_box-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.73) -> stretch 1.0027 | phase 1.330s | lock 17.84x | kick 0.72 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [music_box-wild] lock 17.84x conf 0.73 kick 0.72 score 21.25 -> review/music/candidates/termite_citadel/music_box-wild.mp4
+♪ generating 25.0s | 120bpm G minor | seed 14444 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 19s -> termite_citadel_00008_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/termite_citadel_choir_of_dust-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/termite_citadel/choir_of_dust-third_answer.mp4
+    bar 2.000s | music bar 1.995s (conf 0.62) -> stretch 0.9973 | phase 1.280s | lock 8.46x | kick 0.55 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [choir_of_dust-third_answer] lock 8.46x conf 0.62 kick 0.55 score 7.60 -> review/music/candidates/termite_citadel/choir_of_dust-third_answer.mp4
+kept: music_box-wild, choir_of_dust-halftime, choir_of_dust-halftime, wooden_orbit-wild, deep_archive-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+cobalt_rookery (divein): bar 2.667s -> 90 bpm, key B minor; lane aurora_strings; generating 8, keeping 5
+♪ generating 33.0s | 90bpm B minor | seed 17724 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 26s -> cobalt_rookery_00001_.flac (1.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/aurora_strings.mp4
+    bar 2.667s | music bar 2.667s (conf 0.67) -> stretch 1.0000 | phase 1.380s | lock 9.30x | kick -0.07 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [aurora_strings] lock 9.30x conf 0.67 kick -0.07 score 2.73 -> review/music/candidates/cobalt_rookery/aurora_strings.mp4
+♪ generating 33.0s | 90bpm B minor | seed 17761 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 22s -> cobalt_rookery_00002_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_aurora_strings-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/aurora_strings-b.mp4
+    bar 2.667s | music bar 2.667s (conf 0.22) -> stretch 1.0000 | phase 0.050s | lock 6.11x | kick -0.01 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [aurora_strings-b] lock 6.11x conf 0.22 kick -0.01 score 1.10 -> review/music/candidates/cobalt_rookery/aurora_strings-b.mp4
+♪ generating 33.0s | 90bpm B minor | seed 17798 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 22s -> cobalt_rookery_00003_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_aurora_strings-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/aurora_strings-third_answer.mp4
+    bar 2.667s | music bar 2.667s (conf 0.13) -> stretch 1.0000 | phase 0.050s | lock 21.74x | kick 0.03 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [aurora_strings-third_answer] lock 21.74x conf 0.13 kick 0.03 score 3.81 -> review/music/candidates/cobalt_rookery/aurora_strings-third_answer.mp4
+♪ generating 33.0s | 90bpm B minor | seed 17835 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 23s -> cobalt_rookery_00004_.flac (1.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_wooden_orbit-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/wooden_orbit-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.75) -> stretch 1.0000 | phase 0.050s | lock 17.08x | kick 0.56 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] lock 17.08x conf 0.75 kick 0.56 score 17.39 -> review/music/candidates/cobalt_rookery/wooden_orbit-wild.mp4
+♪ generating 33.0s | 90bpm B minor | seed 17872 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 22s -> cobalt_rookery_00005_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_deep_archive-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/deep_archive-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.87) -> stretch 1.0000 | phase 2.240s | lock 23.06x | kick 0.75 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] lock 23.06x conf 0.87 kick 0.75 score 31.56 -> review/music/candidates/cobalt_rookery/deep_archive-wild.mp4
+♪ generating 33.0s | 90bpm B minor | seed 17909 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 22s -> cobalt_rookery_00006_.flac (1.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_aurora_strings-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/aurora_strings-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.60) -> stretch 1.0000 | phase 0.060s | lock 22.45x | kick 0.36 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [aurora_strings-halftime] lock 22.45x conf 0.60 kick 0.36 score 15.08 -> review/music/candidates/cobalt_rookery/aurora_strings-halftime.mp4
+♪ generating 33.0s | 90bpm B minor | seed 17946 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 22s -> cobalt_rookery_00007_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_music_box-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/music_box-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.49) -> stretch 1.0000 | phase 0.060s | lock 12.29x | kick 0.15 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [music_box-wild] lock 12.29x conf 0.49 kick 0.14 score 4.81 -> review/music/candidates/cobalt_rookery/music_box-wild.mp4
+♪ generating 33.0s | 68bpm B minor | seed 17983 steps 8
+  tags: a gently lilting waltz in 3/4 time, all percussion is a single deep soft kick drum landing...
+  done in 22s -> cobalt_rookery_00008_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_waltz-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/waltz-aurora_strings.mp4
+    bar 2.667s | music bar 2.645s (conf 0.55) -> stretch 0.9920 | phase 2.450s | lock 23.11x | kick 0.10 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [waltz-aurora_strings] lock 23.11x conf 0.55 kick 0.10 score 8.43 -> review/music/candidates/cobalt_rookery/waltz-aurora_strings.mp4
+♪ generating 33.0s | 90bpm B minor | seed 18084 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 20s -> cobalt_rookery_00009_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_pulse1-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/pulse1-aurora_strings.mp4
+    bar 2.667s | music bar 2.667s (conf 0.07) -> stretch 1.0000 | phase 0.870s | lock 2.16x | kick 0.00 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [pulse1-aurora_strings] kick 0.01 (top-up 1)
+♪ generating 33.0s | 90bpm B minor | seed 18185 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 20s -> cobalt_rookery_00010_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_pulse2-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/pulse2-aurora_strings.mp4
+    bar 2.667s | music bar 2.667s (conf 0.34) -> stretch 1.0000 | phase 0.060s | lock 15.74x | kick 0.29 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [pulse2-aurora_strings] kick 0.29 (top-up 2)
+♪ generating 33.0s | 90bpm B minor | seed 18286 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 21s -> cobalt_rookery_00011_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cobalt_rookery_pulse3-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cobalt_rookery/pulse3-aurora_strings.mp4
+    bar 2.667s | music bar 2.848s (conf -0.02) -> stretch 1.0000 | phase 0.050s | lock 20.74x | kick -0.01 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [pulse3-aurora_strings] kick -0.01 (top-up 3)
+kept: deep_archive-wild, wooden_orbit-wild, aurora_strings-halftime, waltz-aurora_strings, music_box-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+ruby_furnace (divein): bar 2.000s -> 120 bpm, key C minor; lane ember_pulse; generating 8, keeping 5
+♪ generating 25.0s | 120bpm C minor | seed 32830 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 22s -> ruby_furnace_00001_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ruby_furnace_ember_pulse.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/ember_pulse.mp4
+    bar 2.000s | music bar 2.005s (conf 0.53) -> stretch 1.0027 | phase 1.490s | lock 5.78x | kick -0.02 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [ember_pulse] lock 5.78x conf 0.53 kick -0.02 score 1.48 -> review/music/candidates/ruby_furnace/ember_pulse.mp4
+♪ generating 25.0s | 120bpm C minor | seed 32867 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 19s -> ruby_furnace_00002_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ruby_furnace_ember_pulse-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/ember_pulse-b.mp4
+    bar 2.000s | music bar 1.973s (conf 0.57) -> stretch 0.9867 | phase 0.500s | lock 25.72x | kick 0.46 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-b] lock 25.72x conf 0.57 kick 0.46 score 19.66 -> review/music/candidates/ruby_furnace/ember_pulse-b.mp4
+♪ generating 25.0s | 120bpm C minor | seed 32904 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 18s -> ruby_furnace_00003_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ruby_furnace_ember_pulse-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/ember_pulse-heartbeat.mp4
+    bar 2.000s | music bar 1.995s (conf 0.63) -> stretch 0.9973 | phase 1.000s | lock 8.84x | kick 0.09 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-heartbeat] lock 8.84x conf 0.63 kick 0.09 score 3.43 -> review/music/candidates/ruby_furnace/ember_pulse-heartbeat.mp4
+♪ generating 25.0s | 120bpm C minor | seed 32941 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 23s -> ruby_furnace_00004_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ruby_furnace_aurora_strings-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/aurora_strings-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.51) -> stretch 1.0027 | phase 0.970s | lock 13.04x | kick 0.44 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [aurora_strings-wild] lock 13.04x conf 0.51 kick 0.44 score 9.14 -> review/music/candidates/ruby_furnace/aurora_strings-wild.mp4
+♪ generating 25.0s | 120bpm C minor | seed 32978 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 21s -> ruby_furnace_00005_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ruby_furnace_glass_chapel-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/glass_chapel-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.62) -> stretch 1.0027 | phase 0.040s | lock 7.94x | kick 0.37 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] lock 7.94x conf 0.62 kick 0.37 score 5.55 -> review/music/candidates/ruby_furnace/glass_chapel-wild.mp4
+♪ generating 25.0s | 120bpm C minor | seed 33015 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 19s -> ruby_furnace_00006_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ruby_furnace_ember_pulse-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/ember_pulse-halftime.mp4
+    bar 2.000s | music bar 2.005s (conf 0.53) -> stretch 1.0027 | phase 0.520s | lock 6.56x | kick 0.18 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-halftime] lock 6.56x conf 0.53 kick 0.18 score 2.90 -> review/music/candidates/ruby_furnace/ember_pulse-halftime.mp4
+♪ generating 25.0s | 120bpm C minor | seed 33052 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 22s -> ruby_furnace_00007_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ruby_furnace_tide_organ-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/tide_organ-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.48) -> stretch 1.0027 | phase 1.530s | lock 10.94x | kick 0.33 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] lock 10.94x conf 0.48 kick 0.33 score 6.23 -> review/music/candidates/ruby_furnace/tide_organ-wild.mp4
+♪ generating 25.0s | 120bpm C minor | seed 33089 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 19s -> ruby_furnace_00008_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/ruby_furnace_ember_pulse-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/ruby_furnace/ember_pulse-third_answer.mp4
+    bar 2.000s | music bar 2.005s (conf 0.56) -> stretch 1.0027 | phase 0.020s | lock 7.44x | kick 0.42 | seamless loop @ 22.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-third_answer] lock 7.44x conf 0.56 kick 0.42 score 5.30 -> review/music/candidates/ruby_furnace/ember_pulse-third_answer.mp4
+kept: ember_pulse-b, aurora_strings-wild, tide_organ-wild, glass_chapel-wild, ember_pulse-third_answer
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+sundew_snare (divein): bar 3.000s -> 80 bpm, key G minor; lane choir_of_dust; generating 8, keeping 5
+♪ generating 33.0s | 80bpm G minor | seed 24678 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 26s -> sundew_snare_00001_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sundew_snare_choir_of_dust.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sundew_snare/choir_of_dust.mp4
+    bar 3.000s | music bar 2.709s (conf 0.03) -> stretch 1.0000 | phase 0.550s | lock 2.69x | kick 0.05 | seamless loop @ 30.00s (music tiled x2, xf 0.50s)
+  [choir_of_dust] lock 2.69x conf 0.03 kick 0.05 score 0.43 -> review/music/candidates/sundew_snare/choir_of_dust.mp4
+♪ generating 33.0s | 80bpm G minor | seed 24715 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 22s -> sundew_snare_00002_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sundew_snare_choir_of_dust-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sundew_snare/choir_of_dust-b.mp4
+    bar 3.000s | music bar 2.752s (conf -0.11) -> stretch 1.0000 | phase 0.030s | lock 2.68x | kick -0.10 | seamless loop @ 30.00s (music tiled x2, xf 0.50s)
+  [choir_of_dust-b] lock 2.68x conf -0.11 kick -0.10 score 0.34 -> review/music/candidates/sundew_snare/choir_of_dust-b.mp4
+♪ generating 33.0s | 80bpm G minor | seed 24752 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 23s -> sundew_snare_00003_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sundew_snare_choir_of_dust-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sundew_snare/choir_of_dust-halftime.mp4
+    bar 3.000s | music bar 2.997s (conf 0.72) -> stretch 0.9991 | phase 1.590s | lock 21.36x | kick 0.73 | seamless loop @ 30.00s (music tiled x2, xf 0.50s)
+  [choir_of_dust-halftime] lock 21.36x conf 0.72 kick 0.73 score 25.67 -> review/music/candidates/sundew_snare/choir_of_dust-halftime.mp4
+♪ generating 33.0s | 80bpm G minor | seed 24789 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 25s -> sundew_snare_00004_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sundew_snare_music_box-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sundew_snare/music_box-wild.mp4
+    bar 3.000s | music bar 3.125s (conf 0.59) -> stretch 1.0300 | phase 2.820s | lock 2.44x | kick 0.24 | seamless loop @ 30.00s (music tiled x2, xf 0.50s)
+  [music_box-wild] lock 2.44x conf 0.59 kick 0.24 score 1.30 -> review/music/candidates/sundew_snare/music_box-wild.mp4
+♪ generating 33.0s | 80bpm G minor | seed 24826 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 24s -> sundew_snare_00005_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sundew_snare_wooden_orbit-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sundew_snare/wooden_orbit-wild.mp4
+    bar 3.000s | music bar 2.997s (conf 0.76) -> stretch 0.9991 | phase 2.260s | lock 18.37x | kick 0.71 | seamless loop @ 30.00s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] lock 18.37x conf 0.76 kick 0.71 score 22.25 -> review/music/candidates/sundew_snare/wooden_orbit-wild.mp4
+♪ generating 33.0s | 80bpm G minor | seed 24863 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 23s -> sundew_snare_00006_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sundew_snare_choir_of_dust-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sundew_snare/choir_of_dust-halftime.mp4
+    bar 3.000s | music bar 2.837s (conf 0.30) -> stretch 0.9700 | phase 1.740s | lock 2.45x | kick 0.28 | seamless loop @ 30.00s (music tiled x2, xf 0.50s)
+  [choir_of_dust-halftime] lock 2.45x conf 0.30 kick 0.28 score 1.04 -> review/music/candidates/sundew_snare/choir_of_dust-halftime.mp4
+♪ generating 33.0s | 80bpm G minor | seed 24900 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 25s -> sundew_snare_00007_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sundew_snare_deep_archive-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sundew_snare/deep_archive-wild.mp4
+    bar 3.000s | music bar 2.795s (conf 0.29) -> stretch 0.9700 | phase 1.510s | lock 2.07x | kick 0.32 | seamless loop @ 30.00s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] lock 2.07x conf 0.29 kick 0.32 score 0.93 -> review/music/candidates/sundew_snare/deep_archive-wild.mp4
+♪ generating 33.0s | 80bpm G minor | seed 24937 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 25s -> sundew_snare_00008_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sundew_snare_choir_of_dust-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sundew_snare/choir_of_dust-third_answer.mp4
+    bar 3.000s | music bar 2.997s (conf 0.76) -> stretch 0.9991 | phase 0.390s | lock 17.06x | kick 0.54 | seamless loop @ 30.00s (music tiled x2, xf 0.50s)
+  [choir_of_dust-third_answer] lock 17.06x conf 0.76 kick 0.54 score 17.04 -> review/music/candidates/sundew_snare/choir_of_dust-third_answer.mp4
+kept: choir_of_dust-halftime, wooden_orbit-wild, choir_of_dust-third_answer, music_box-wild, deep_archive-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+magnetite_choir (divein): bar 2.667s -> 90 bpm, key C# minor; lane aurora_strings; generating 8, keeping 5
+♪ generating 17.0s | 90bpm C# minor | seed 15916 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 21s -> magnetite_choir_00001_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/aurora_strings.mp4
+    bar 2.667s | music bar 2.859s (conf 0.04) -> stretch 1.0000 | phase 0.240s | lock 4.23x | kick 0.08 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [aurora_strings] lock 4.23x conf 0.04 kick 0.08 score 0.74 -> review/music/candidates/magnetite_choir/aurora_strings.mp4
+♪ generating 17.0s | 90bpm C# minor | seed 15953 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 13s -> magnetite_choir_00002_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_aurora_strings-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/aurora_strings-b.mp4
+    bar 2.667s | music bar 2.656s (conf 0.04) -> stretch 1.0000 | phase 0.030s | lock 25.11x | kick 0.19 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [aurora_strings-b] lock 25.11x conf 0.04 kick 0.19 score 5.96 -> review/music/candidates/magnetite_choir/aurora_strings-b.mp4
+♪ generating 17.0s | 90bpm C# minor | seed 15990 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 15s -> magnetite_choir_00003_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_aurora_strings-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/aurora_strings-third_answer.mp4
+    bar 2.667s | music bar 2.453s (conf -0.03) -> stretch 1.0000 | phase 0.040s | lock 8.70x | kick -0.07 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [aurora_strings-third_answer] lock 8.70x conf -0.03 kick -0.07 score 1.09 -> review/music/candidates/magnetite_choir/aurora_strings-third_answer.mp4
+♪ generating 17.0s | 90bpm C# minor | seed 16027 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 17s -> magnetite_choir_00004_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_glass_chapel-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/glass_chapel-wild.mp4
+    bar 2.667s | music bar 2.656s (conf 0.10) -> stretch 1.0000 | phase 0.020s | lock 31.69x | kick 0.20 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] lock 31.69x conf 0.10 kick 0.20 score 8.42 -> review/music/candidates/magnetite_choir/glass_chapel-wild.mp4
+♪ generating 17.0s | 90bpm C# minor | seed 16064 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 15s -> magnetite_choir_00005_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_tide_organ-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/tide_organ-wild.mp4
+    bar 2.667s | music bar 2.656s (conf 0.23) -> stretch 0.9960 | phase 1.340s | lock 19.52x | kick 0.10 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] lock 19.52x conf 0.23 kick 0.10 score 4.89 -> review/music/candidates/magnetite_choir/tide_organ-wild.mp4
+♪ generating 17.0s | 90bpm C# minor | seed 16101 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 16s -> magnetite_choir_00006_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_aurora_strings-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/aurora_strings-halftime.mp4
+    bar 2.667s | music bar 2.592s (conf 0.03) -> stretch 1.0000 | phase 1.970s | lock 3.89x | kick 0.08 | seamless loop @ 13.33s (music tiled x1, xf 0.50s)
+  [aurora_strings-halftime] lock 3.89x conf 0.03 kick 0.07 score 0.67 -> review/music/candidates/magnetite_choir/aurora_strings-halftime.mp4
+♪ generating 17.0s | 90bpm C# minor | seed 16138 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 16s -> magnetite_choir_00007_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_choir_of_dust-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/choir_of_dust-wild.mp4
+    bar 2.667s | music bar 2.656s (conf 0.20) -> stretch 0.9960 | phase 0.040s | lock 24.45x | kick 0.02 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] lock 24.45x conf 0.20 kick 0.02 score 4.59 -> review/music/candidates/magnetite_choir/choir_of_dust-wild.mp4
+♪ generating 17.0s | 68bpm C# minor | seed 16175 steps 8
+  tags: a gently lilting waltz in 3/4 time, all percussion is a single deep soft kick drum landing...
+  done in 22s -> magnetite_choir_00008_.flac (0.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_waltz-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/waltz-aurora_strings.mp4
+    bar 2.667s | music bar 2.496s (conf -0.03) -> stretch 1.0000 | phase 0.040s | lock 13.73x | kick -0.01 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [waltz-aurora_strings] lock 13.73x conf -0.03 kick -0.01 score 1.72 -> review/music/candidates/magnetite_choir/waltz-aurora_strings.mp4
+♪ generating 17.0s | 90bpm C# minor | seed 16276 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 15s -> magnetite_choir_00009_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_pulse1-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/pulse1-aurora_strings.mp4
+    bar 2.667s | music bar 2.453s (conf 0.05) -> stretch 1.0000 | phase 0.690s | lock 3.66x | kick 0.12 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [pulse1-aurora_strings] kick 0.12 (top-up 1)
+♪ generating 17.0s | 90bpm C# minor | seed 16377 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 16s -> magnetite_choir_00010_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_pulse2-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/pulse2-aurora_strings.mp4
+    bar 2.667s | music bar 2.667s (conf 0.64) -> stretch 1.0000 | phase 1.000s | lock 18.53x | kick 0.51 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [pulse2-aurora_strings] kick 0.51 (top-up 2)
+♪ generating 17.0s | 90bpm C# minor | seed 16478 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 16s -> magnetite_choir_00011_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/magnetite_choir_pulse3-aurora_strings.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/magnetite_choir/pulse3-aurora_strings.mp4
+    bar 2.667s | music bar 2.677s (conf 0.31) -> stretch 1.0040 | phase 0.500s | lock 12.59x | kick 0.34 | seamless loop @ 13.33s (music tiled x2, xf 0.50s)
+  [pulse3-aurora_strings] kick 0.34 (top-up 3)
+kept: pulse2-aurora_strings, glass_chapel-wild, pulse3-aurora_strings, tide_organ-wild, choir_of_dust-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel

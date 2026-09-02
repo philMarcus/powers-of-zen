@@ -1,0 +1,97 @@
+{
+  "name": "pika_larder",
+  "theme": "a moonlit alpine scree slope read as one sorted net at every scale — from the pika hay larders and cushion domes down into a frost-sorted stone circle, on into one cushion plant, through its tiled leaf mosaic and a breathing pore to the stacked mesophyll cells and the hexagon-tiled pigment rings inside a chloroplast, whose tiling opens as ice-wedge polygon country seen from overhead — the same net writ large — before the basin settles back among the larders",
+  "style": "aurora_silk",
+  "music_lane": "aurora_strings",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "scree_commons",
+      "exp": 1.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moon-silvered ivory stone, deep viridian mounds, ochre hay",
+      "scene": "a moonlit alpine scree slope under a hanging glacier, boulders sorted into coarse rims with silt lanes combed downhill among them, sheaves of cured hay stacked under the boulder overhangs, round-eared pikas on their trails with stems crosswise in their jaws, a ptarmigan hunkered in a gravel scrape, cushion campion and moss campion mounded over the stones in taut viridian domes speckled with magenta florets, ground weevils at work on the mats, rime crusting the sorted rims, the glacier's ghost-blue snout hung over the headwall beyond, no one present",
+      "target": "a sorted ring of stones",
+      "target_phrase": "a ring of stones",
+      "cameo": {
+        "sprite": "output/mascots/canon/dora.png",
+        "pos": [
+          0.63,
+          0.55
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "stone_net",
+      "exp": 0.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bone-grey boulders, ghost-blue rime, sable shadow",
+      "scene": "a frost-sorted stone circle set into the slope, coarse ivory boulders shouldered up into a raised rim, silt-grade gravel sifted into its middle, sister circles tiling the terrace above with polygon seams quilting the ground among them, stone stripes combed downhill past the rim, one viridian cushion mound crouched on the gravel, rime needles bristling from every seam, a moon-pale wash raking the stones and pitching sable shadows behind them",
+      "target": "a domed viridian cushion plant",
+      "target_phrase": "a green mossy mound"
+    },
+    {
+      "name": "cushion_dome",
+      "exp": -0.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep viridian rosettes, magenta florets, silver down",
+      "scene": "a cushion plant mounded over the scree, thousands of rosettes crammed into one taut dome, every rosette a spiral of blunt viridian leaves furred with silver hairs, magenta florets sunk flush into the surface, spent leaves composted to peat under the crust, rime beads lodged among the hairs, chips of ivory stone breaking its footing, a moon-pale sheen laid across the dome",
+      "target": "a blunt viridian leaf",
+      "target_phrase": "a green leaf tip"
+    },
+    {
+      "name": "leaf_mosaic",
+      "exp": -2.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade wax, silver rims, ink seams",
+      "scene": "a mosaic of blunt leaf tips tiled edge to edge over the cushion's crust, every tip a waxy jade shield rimmed with silver hairs, hair-thin ink seams parting one shield from the next, oval breathing pores set into the wax with a paired guard cell flanking each slot, rime beads caught in the seams, the throat of a magenta floret opening at one side, a moon-pale sheen pooled on the wax",
+      "target": "an oval breathing pore",
+      "target_phrase": "an oval pore"
+    },
+    {
+      "name": "mesophyll_hall",
+      "exp": -5.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "emerald cells, honey-amber cement, viridian gloom",
+      "scene": "a hall of leaf cells stacked inside the blade, rows of palisade columns standing shoulder to shoulder across the chamber with rounded spongy cells crowding the hollows beneath them, every cell walled in translucent cellulose and crammed with lens-shaped chloroplasts adrift around a clear vacuole, honey-amber cement pooled where three walls meet, thread-thin strands webbing cell to cell, pale radiance sifting down among the columns, the farther files dimming into viridian gloom",
+      "target": "a lens-shaped emerald chloroplast",
+      "target_phrase": "a green chloroplast",
+      "loop_target": "a hall of stacked leaf cells crammed with drifting chloroplasts",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "antenna_array",
+      "exp": -8.2,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "sea-green pigment rings, violet cores, ink hollow",
+      "scene": "a stack of membrane discs inside a chloroplast, each disc face tiled edge to edge with hexagon-set protein complexes, every complex a ring of sea-green pigment plates fanned about a violet core pair, hair-thin rods bridging one disc to the next, moon-pale radiance caught in the rings and pooled at the cores, the tiling repeating out of sight into ink hollow"
+    },
+    {
+      "name": "polygon_country",
+      "exp": 3.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ghost-blue ice troughs, bone tundra, pewter ponds",
+      "scene": "ice-wedge polygon country in a high basin seen from far overhead, the tundra quilted into a net of raised cells by troughs of buried ice, every cell shouldered up at its rim and dished at its middle, pewter meltwater ponds sunk into the larger cells, frost cracks seaming cell to cell, sedge mats and rust-orange lichen crusts colouring the cell tops, moraine ridges shouldering along the basin's far edge where an ivory scree apron spills from the headwall under a hanging glacier, sable troughs cutting the entire net",
+      "target": "a pale scree apron",
+      "target_phrase": "a stony slope"
+    }
+  ],
+  "music_theme": "an alpine night vigil — a low sub-drone under bowed strings and struck ice tones, one deep kick landing on every downbeat as the sorted net tightens scale by scale, the pulse thinning to a single sustained bowed tone through the cell and pigment bars, a wide struck bloom where the tiling opens into the basin seen from overhead, and a softer, warmer one as the basin settles back among the hay larders",
+  "music_key": "E minor",
+  "render_start": "mesophyll_hall"
+}
