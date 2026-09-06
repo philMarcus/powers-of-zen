@@ -520,20 +520,42 @@ def post_youtube(video_rel, title, desc, dry_run):
         got = tab.eval(f"({tsel})?.textContent?.slice(0,40)")
         print(f"  [dry-run] YouTube: title='{got}', desc+audience+AI-use set. NOT publishing.")
         return "dry-run"
-    for _ in range(3):
-        tab.eval("document.querySelector('#next-button')?.click()")
+    # advance Details -> Video elements -> Checks -> Visibility. Click Next only when it's
+    # ENABLED (during copyright "Checks" it's briefly disabled), and stop once the Visibility
+    # radios appear so we don't over-click into a bad state.
+    for _ in range(8):
+        if tab.eval("[...document.querySelectorAll('tp-yt-paper-radio-button')]"
+                    ".some(r=>/^Public/.test(r.textContent.trim()))?true:null"):
+            break
+        tab.eval("(function(){const b=document.querySelector('#next-button');"
+                 "if(b&&!(b.hasAttribute('disabled')||b.getAttribute('aria-disabled')==='true'))b.click()})()")
         time.sleep(2)
     tab.eval("[...document.querySelectorAll('tp-yt-paper-radio-button')].find(r=>r.textContent.trim().startsWith('Public'))?.click()")
     time.sleep(1)
-    tab.eval("document.querySelector('#done-button')?.click()")
-    # confirmation is EITHER "Video published" OR the "Video processing … before your
-    # video is public" dialog (SD still transcoding) — both mean it published public
-    link = wait_for(tab, "(function(){const t=document.body.innerText;"
-                         "if(t.includes('Video published')||t.includes('finish processing')"
-                         "||t.includes('processing before your video is public')){"
-                         "return document.querySelector('a[href*=\"shorts\"]')?.href||'published'}"
-                         "return null})()", 30)
-    expect(link, "youtube", "publish", tab, "publish confirmation not seen")
+    # PUBLISH. YouTube keeps the Publish/Done button DISABLED while it finishes "Saving…"
+    # metadata and "Creating link…" (2026-09-05: the old code clicked it once while disabled
+    # — a no-op — then timed out looking for a confirmation that never came, so a real upload
+    # was flagged failed). Poll: click Publish whenever it's enabled, and re-check for the
+    # confirmation, until saving completes and the click lands.
+    published = None
+    for _ in range(40):                                   # ~40 * 3s = 2 min
+        tab.eval("(function(){const b=document.querySelector('#done-button');if(!b)return;"
+                 "const dis=b.hasAttribute('disabled')||b.getAttribute('aria-disabled')==='true'"
+                 "||(b.closest&&b.closest('ytcp-button[disabled]'));"
+                 "if(!dis)(b.querySelector('button')||b).click()})()")
+        # confirmation is EITHER "Video published" OR the "Video processing … before your
+        # video is public" dialog (SD still transcoding) — both mean it published public
+        published = tab.eval("(function(){const t=document.body.innerText;"
+                             "if(t.includes('Video published')||t.includes('finish processing')"
+                             "||t.includes('processing before your video is public')){"
+                             "return document.querySelector('a[href*=\"shorts\"]')?.href||'published'}"
+                             "return null})()")
+        if published:
+            break
+        time.sleep(3)
+    expect(published, "youtube", "publish", tab,
+           "publish confirmation not seen (Publish button stayed disabled — still saving?)")
+    link = published
     # close the dialog so Phil lands back on the videos list
     time.sleep(1)
     tab.eval("[...document.querySelectorAll('button,ytcp-button')].find(b=>b.textContent.trim()==='Close')?.click()")
