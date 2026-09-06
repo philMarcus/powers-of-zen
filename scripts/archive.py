@@ -12,14 +12,18 @@ Policy (Phil 2026-08-17, C: at 98%):
     * review/music/queued-stage render trees (active repairs need local frames)
     * output/mascots (render input!), output/music (pregen tracks are referenced by path)
     * production/, production_alternates/, review*/, outbox/, journeys/, styles/
-  DELETE-CLASS (identified but NOT touched — Phil approves separately):
-    * build/labeled + build/raw.mp4 + build/interp.mp4 inside KEPT trees (regenerable
-      from build/frames via dive.assemble)
+  AUTO-PRUNE at archive time (Phil 2026-09-06): rebuildable artifacts
+  (build/labeled + build/raw.mp4 + build/interp.mp4 — regenerable from build/frames via
+  dive.assemble) are DELETED from a tree just before it moves, so they never reach E:
+  and are gone from C: — roughly halves per-tree storage. build/frames stays (repairs
+  read it). The same class inside KEPT trees is reported but left alone (those trees may
+  still be edited); --prune-e cleans trees already on E: from before this existed.
 
 Usage:
   python3 scripts/archive.py            # dry run: table + totals, touches nothing
-  python3 scripts/archive.py --run     # move the ARCHIVE class (copy → verify → remove)
-Every move is appended to outbox/archive_manifest.jsonl.
+  python3 scripts/archive.py --run      # prune regenerable + move the ARCHIVE class to E:
+  python3 scripts/archive.py --prune-e  # delete regenerable already sitting in the E: archive
+Every move/prune is appended to outbox/archive_manifest.jsonl.
 """
 import argparse
 import json
@@ -47,6 +51,30 @@ def du(path):
             total += p.stat().st_size
             files += 1
     return total, files
+
+
+# Regenerable build artifacts inside a render tree — rebuildable from build/frames via
+# dive.assemble, so we DELETE rather than keep them (Phil 2026-09-06). Never touches
+# build/frames, the final mp4, run.json, hero/resolve debug, or anything else.
+REGEN_GLOBS = ("v*/build/labeled", "v*/build/raw.mp4", "v*/build/interp.mp4")
+
+
+def prune_regenerable(tree):
+    """Delete the regenerable artifacts in `tree`; return bytes freed."""
+    freed = 0
+    for g in REGEN_GLOBS:
+        for q in tree.glob(g):
+            try:
+                if q.is_dir():
+                    b, _ = du(q)
+                    shutil.rmtree(q)
+                    freed += b
+                elif q.is_file():
+                    freed += q.stat().st_size
+                    q.unlink()
+            except OSError as e:
+                print(f"  prune skip {q}: {e}")
+    return freed
 
 
 def classify():
@@ -91,7 +119,30 @@ def classify():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--run", action="store_true", help="actually move (default: dry run)")
+    ap.add_argument("--prune-e", action="store_true",
+                    help="delete regenerable artifacts already in the E: archive (moved there "
+                         "before auto-prune existed); rebuildable from the build/frames on E:")
     a = ap.parse_args()
+
+    if a.prune_e:
+        root = DEST / "output"
+        if not root.exists():
+            sys.exit(f"no archive at {root}")
+        total, ntrees = 0, 0
+        for tree in sorted(root.iterdir()):
+            if not tree.is_dir():
+                continue
+            freed = prune_regenerable(tree)
+            if freed:
+                ntrees += 1
+                total += freed
+                print(f"  {tree.name}: pruned {freed/1e9:.2f}G", flush=True)
+                with open(MANIFEST, "a", encoding="utf-8") as f:
+                    f.write(json.dumps({"ts": time.strftime("%Y-%m-%d %H:%M:%S"),
+                                        "prune_e": tree.name, "bytes": freed}) + "\n")
+        pl.telem("archive_prune_e", detail=f"pruned {total/1e9:.1f}G on E: ({ntrees} trees)")
+        print(f"\npruned {total/1e9:.2f}G of regenerable across {ntrees} trees on E:")
+        return
 
     archive, keep = classify()
     tot_a = 0
@@ -130,12 +181,16 @@ def main():
     for p, why in archive:
         rel = p.relative_to(ROOT)
         dst = DEST / rel
-        sb, sn = du(p)
-        print(f"moving {rel} ({sb/1e9:.2f}G) ...", flush=True)
-        dst.parent.mkdir(parents=True, exist_ok=True)
         if dst.exists():
             print(f"  destination exists — skipping {rel}")
             continue
+        # AUTO-PRUNE (Phil 2026-09-06): drop rebuildable artifacts BEFORE the move so they
+        # never reach E: and are gone from C: — halves per-tree storage. build/frames stays
+        # (repairs read it); the source/dest file counts still match so verify passes.
+        pruned = prune_regenerable(p)
+        sb, sn = du(p)
+        print(f"moving {rel} ({sb/1e9:.2f}G; pruned {pruned/1e9:.2f}G regenerable) ...", flush=True)
+        dst.parent.mkdir(parents=True, exist_ok=True)
         # robocopy on the WINDOWS side: native NTFS->NTFS is several times faster than
         # two passes through WSL's 9p mount. /MOVE deletes the source after copying;
         # exit codes < 8 are success. Fallback to shutil if robocopy is unavailable.
@@ -158,7 +213,8 @@ def main():
         with open(MANIFEST, "a", encoding="utf-8") as f:
             f.write(json.dumps({"ts": time.strftime("%Y-%m-%d %H:%M:%S"),
                                 "src": str(rel), "dst": str(dst), "bytes": sb,
-                                "files": sn, "reason": why}) + "\n")
+                                "files": sn, "reason": why,
+                                "pruned_bytes": pruned}) + "\n")
     pl.telem("archive", detail=f"moved {moved/1e9:.1f}G to E:")
     print(f"\narchived {moved/1e9:.2f}G to {DEST}")
 
