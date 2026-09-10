@@ -473,7 +473,15 @@ def audition_candidates(v, choose_advances_to=None):
             else:
                 st.warning(f"missing: {c['aligned']}")
             is_chosen = m.get("chosen") == c["id"]
-            st.caption(f"**{c['id']}** · lock {c['lock']}×"
+            # BEAT-LOCK LEGIBILITY (2026-09-10): the bare number told Phil nothing, so
+            # picking purely by ear shipped weakly-locked takes — 21 of 63 videos went out
+            # under HALF the lock that was sitting in the same candidate set (sockeye_stair
+            # chose 3.4x with 29.1x available). Mark the best and flag the weak ones so the
+            # trade-off is visible at the moment of choosing.
+            _best = max((x.get("lock") or 0) for x in cands) or 1
+            _lk = c.get("lock") or 0
+            _mark = " 🥇" if _lk >= _best - 0.01 else (" ⚠️ weak beat-lock" if _lk < 0.5 * _best else "")
+            st.caption(f"**{c['id']}** · lock {c['lock']}×{_mark}"
                        + (f" · {c['mood']}" if c.get("mood") else "")
                        + (" · ✅ chosen" if is_chosen else ""))
             if st.button("✅ Chosen" if is_chosen else "Choose",

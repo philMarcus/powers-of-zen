@@ -70,25 +70,114 @@ def measure_bar(env, esr, bar):
     return k / esr, float(ac[k])
 
 
-def best_phase(env, esr, morphs, f, period_m=None):
-    """Search the phase w0 only (stretch is derived, not fitted): maximize onset energy at
-    the morph times mapped into the track (mod the tile period, so morphs beyond one tile
-    still count — they play tiled content at the same grid phase)."""
+# Which beat of the bar we PREFER the morph to land on when two beats score alike.
+# Phil's rule (2026-09-10): beat 1 and beat 3 are the strong beats; 2 and 4 are weak.
+# The prior only breaks near-ties — a decisively louder beat still wins on its own merits.
+BEAT_PRIOR = {0: 1.00, 2: 0.98, 1: 0.93, 3: 0.93}
+# how far off the beat grid (in beats) the free maximum may sit before we correct it
+OFFGRID_TOL = 0.15
+
+
+def _fold(vals, grid, period):
+    """Sum a curve sampled on `grid` into one `period`-long profile (n bins)."""
+    n = max(4, int(round(period / (grid[1] - grid[0]))))
+    prof = np.zeros(n)
+    for v, g in zip(vals, grid):
+        prof[int((g % period) / period * n) % n] += v
+    return prof
+
+
+def _downbeat_phase(env, esr, bar_track, beats):
+    """Where the track's OWN bar starts, from its envelope alone — independent of where the
+    morphs sit, so it can honestly say WHICH beat a morph lands on."""
+    T = len(env) / esr
+    grid = np.arange(0.0, bar_track, 0.01)
+    scores = []
+    for ph in grid:
+        idx = ((np.arange(ph, T, bar_track)) * esr).astype(int)
+        idx = idx[(idx >= 0) & (idx < len(env))]
+        scores.append(float(env[idx].sum()) / max(1, len(idx)))
+    return float(grid[int(np.argmax(scores))])
+
+
+def best_phase(env, esr, morphs, f, period_m=None, beats=None, quantize=True):
+    """Choose the phase w0 that sits the track's accents on the morphs.
+
+    Two stages (2026-09-10). A FREE 0.01s sweep finds the raw energy maximum, exactly as
+    before — but on a sparse or busy envelope that maximum can land BETWEEN beats: audited
+    across the catalog, 9 of 61 shipped videos had their morph sitting off the beat grid,
+    4 of them almost exactly halfway between two beats (termite_citadel 0.495 of a beat
+    off, chalkboard_infinities 0.442). So we then QUANTIZE: fold the score curve at the
+    beat period to find the beat grid, evaluate the `beats` phases that put a real beat on
+    the morph, and take the best — with BEAT_PRIOR breaking near-ties toward the strong
+    beats. Each candidate is refined +/-0.2 beat so a pushed or laid-back accent is still
+    hit exactly; the guarantee is only that we never settle between beats.
+
+    Returns (w0, lock, bar, info) where info names the beat of the bar we landed on."""
     bar = float(np.median(np.diff(morphs)))
     m = np.asarray(morphs)
-    scores, best = [], None
-    for w0 in np.arange(0.0, bar, 0.01):
+
+    def score(w0):
         t = (m + w0) * f
         if period_m:
             t = np.mod(t, period_m)
         idx = (t * esr).astype(int)
         idx = idx[(idx >= 0) & (idx < len(env))]
-        sc = float(env[idx].sum())
-        scores.append(sc)
-        if best is None or sc > best[0]:
-            best = (sc, w0)
-    mean = (sum(scores) / len(scores)) or 1e-9
-    return best[1], best[0] / mean, bar
+        return float(env[idx].sum())
+
+    grid = np.arange(0.0, bar, 0.01)
+    scores = np.array([score(w) for w in grid])
+    mean = float(scores.mean()) or 1e-9
+    w0_free = float(grid[int(np.argmax(scores))])
+    info = {"quantized": False, "beats": None, "beat_no": None, "free_off": None,
+            "gain": 1.0}
+    if not quantize:
+        return w0_free, float(scores.max()) / mean, bar, info
+
+    # METER: 4/4 by construction — the format puts one morph on one bar and the deck's
+    # bar is 4 beats — so default to 4 and only accept 3 when a waltz take makes the
+    # 3-grid decisively peakier. (Guessing by raw peakiness alone called 4 of 6 audited
+    # 4/4 tracks "3": a 4/4 envelope folded at bar/3 still peaks.)
+    if beats is None:
+        def peak(b):
+            pr = _fold(scores, grid, bar / b)
+            return float(pr.max() / (pr.mean() + 1e-9))
+        beats = 3 if peak(3) > peak(4) * 1.20 else 4
+    beat_w = bar / beats
+    phi = float(np.argmax(_fold(scores, grid, beat_w))) /         max(4, int(round(beat_w / 0.01))) * beat_w
+
+    best = None
+    bar_track, dbp = bar * f, None
+    try:
+        dbp = _downbeat_phase(env, esr, bar_track, beats)
+    except Exception:
+        dbp = None
+    for k in range(beats):
+        c = (phi + k * beat_w) % bar
+        # refine onto the actual accent without leaving this beat
+        loc = [(score(c + d), (c + d) % bar)
+               for d in np.arange(-0.2 * beat_w, 0.2 * beat_w + 1e-9, 0.01)]
+        sc, w = max(loc)
+        beat_no = 0
+        if dbp is not None:                    # which beat of the bar is this, musically?
+            t0 = (m[0] + w) * f
+            beat_no = int(round((((t0 - dbp) % bar_track) / (bar_track / beats)))) % beats
+        cand = (sc * BEAT_PRIOR.get(beat_no, 0.93), sc, w, beat_no)
+        if best is None or cand[0] > best[0]:
+            best = cand
+    _, sc, w0, beat_no = best
+    d = ((w0_free - w0) % beat_w) / beat_w
+    free_off = min(d, 1 - d)
+    # CONSERVATIVE ADOPTION: the free maximum is already sitting on a beat for the large
+    # majority (46 of 61 audited videos land within 0.05 of a beat), and forcing those onto
+    # the grid only ever costs energy. Quantize ONLY when the free choice is genuinely
+    # adrift — that is the failure Phil hears, and it leaves every healthy video identical.
+    if free_off < OFFGRID_TOL:
+        info.update(beats=beats, beat_no=beat_no + 1, free_off=round(free_off, 3))
+        return w0_free, float(scores.max()) / mean, bar, info
+    info.update(quantized=True, beats=beats, beat_no=beat_no + 1,
+                free_off=round(free_off, 3), gain=round(sc / (scores.max() or 1e-9), 3))
+    return float(w0), sc / mean, bar, info
 
 
 def align(video, track, out, journey=None, cut=None, shift_sec=None):
@@ -151,8 +240,8 @@ def align(video, track, out, journey=None, cut=None, shift_sec=None):
     k = int((video_duration(ms) - XF) // bar) if need_tiles else 0
     # phase search AFTER the tiling geometry is known: morphs past one tile fold onto the tile
     # period (same content, same grid phase), so every morph in the video scores.
-    w0, lock, _ = best_phase(env_phase, esr, morphs, f,
-                             period_m=(k * bar * f) if (need_tiles and k >= 1) else None)
+    w0, lock, _, ph = best_phase(env_phase, esr, morphs, f,
+                                 period_m=(k * bar * f) if (need_tiles and k >= 1) else None)
     if need_tiles and k >= 1:
         msb = TMP / "_msb.wav"
         _run([FFMPEG, "-y", "-loglevel", "error", "-i", win(ms), "-af",
@@ -202,9 +291,11 @@ def align(video, track, out, journey=None, cut=None, shift_sec=None):
         t.unlink(missing_ok=True)
     print(f"  aligned -> {out}\n    bar {bar:.3f}s | music bar {m_bar:.3f}s (conf {conf:.2f}) -> "
           f"stretch {f:.4f} | phase {w0:.3f}s | lock {lock:.2f}x | kick {kick:.2f} | "
+          f"beat {ph['beat_no']}/{ph['beats']} of the bar | "
           f"seamless loop @ {dur:.2f}s (music tiled x{guard+1}, xf {XF:.2f}s)")
     return {"w0": w0, "stretch": f, "lock": lock, "m_bar": m_bar, "bar_conf": conf,
-            "kick": round(kick, 3)}
+            "kick": round(kick, 3), "beat_no": ph["beat_no"], "beats": ph["beats"],
+            "free_off": ph["free_off"]}
 
 
 def main():
