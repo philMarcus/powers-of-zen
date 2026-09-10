@@ -120,6 +120,31 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-09-10 (LATER — MUSIC RANKING RE-BASED ON BEAT, NOT LOCK; REGENERATE VERIFIED):
+PHIL'S CORRECTION, and he is right structurally: "the highest lock music is not necessarily
+the best — some don't have much strong beat at all but might have a high lock value... that's
+better for comparing internally in a video where to place the start rather than across
+videos." LOCK IS A SELF-RATIO (onset energy at the morphs / mean over all phases), so a
+sparse mushy track with two loud moments scores high and a track with a steady felt pulse
+scores LOW because its energy is even. Lock is therefore the right tool for choosing WHERE
+the loop starts (align.best_phase) and the WRONG tool for ranking tracks against each other.
+music_gen._rank_score now enters lock as sqrt() and lets KICK (deep-pulse presence) carry the
+ranking: sqrt(lock) x (0.5+bar_conf) x (0.25+kick)^1.5. N_GEN 8 -> 10 (Phil: ten takes, keep
+five). Verified on the real sets: waterbear's glass_chapel-wild (lock 15.69, kick 0.01 — no
+beat) now ranks LAST where the old score put it above wooden_orbit-wild (lock 11.54, kick
+0.17). Dashboard Music tab relabelled to match — "🥁 beat" (kick) leads and is what the 🥇
+marks, "sync" (lock) is shown as a within-track number; an earlier cut of that line marked
+the highest LOCK as best, which is exactly the misread Phil flagged. DELETE that instinct.
+REGENERATE BUTTON: it was NOT broken — saguaro's 09-08 click ran (gen_attempt 1, seeds
+24xxx vs pregen 31xxx, new audio at 20:46-20:48). It LOOKED broken because 4 of 5 lane names
+come back identical and nothing on screen changes. Fixes: music dict now carries
+generated_at, shown in the Music subheader; the dashboard spawns python3 -u so the log
+streams instead of sitting at 0 bytes for the whole ~10min run (block buffering — the log
+was the other reason it looked dead). BOTH music-queue videos regenerated on the new ranking
+and awaiting Phil's ear: saguaro_vigil (choir_of_dust-halftime kick 0.72 / lock 20.6 leads)
+and waterbear_prairie (music_box-third_answer kick 0.55 / lock 42.6; it had NO candidates at
+all before — its 09-08 auto-gen was skipped for comfy_busy). ComfyUI was DOWN at 08:50 and
+was restarted detached (night_batch's comfy_up contract, never start_comfyui.sh).
 2026-09-10 (MUSIC BEAT-LOCK AUDIT + MARKETING/YT PASS): (1) MUSIC — Phil's "morphs stopped
 landing on the strong beat" is NOT a regression: median chosen lock 10.3x pre-deck -> 19.2x
 deck era -> 24.9x since 08-25. What varies is THE PICK — 21 of 63 videos shipped under HALF

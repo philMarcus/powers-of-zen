@@ -106,11 +106,14 @@ def regenerate_music(journey, fresh=False):
         flag = " --realign" if (v0 or {}).get("music_pregen") else ""
     if os.name == "nt":
         cmd = ["wsl", "bash", "-lc",
-               f"cd /mnt/c/Users/Phil/zoomer && python3 scripts/music_gen.py {journey}{flag}"]
+               f"cd /mnt/c/Users/Phil/zoomer && python3 -u scripts/music_gen.py {journey}{flag}"]
     else:
-        cmd = ["bash", "-lc", f"python3 scripts/music_gen.py {journey}{flag}"]
+        cmd = ["bash", "-lc", f"python3 -u scripts/music_gen.py {journey}{flag}"]
     # log, don't DEVNULL: a crashed gen used to vanish without a trace (resonance_hall's
-    # bad keyscale died silently and the video just sat in Music with no candidates)
+    # bad keyscale died silently and the video just sat in Music with no candidates).
+    # python3 -u (2026-09-10): without it Python block-buffers stdout into the file, so the
+    # log sits at 0 bytes for the whole ~10 min run and tailing it shows nothing — which is
+    # exactly what "the button did nothing" looks like from outside.
     logf = open(pl.ROOT / "outbox" / f"music_gen_{journey}.log", "w")
     subprocess.Popen(cmd, cwd=str(pl.ROOT), stdout=logf, stderr=subprocess.STDOUT)
 
@@ -473,15 +476,28 @@ def audition_candidates(v, choose_advances_to=None):
             else:
                 st.warning(f"missing: {c['aligned']}")
             is_chosen = m.get("chosen") == c["id"]
-            # BEAT-LOCK LEGIBILITY (2026-09-10): the bare number told Phil nothing, so
-            # picking purely by ear shipped weakly-locked takes — 21 of 63 videos went out
-            # under HALF the lock that was sitting in the same candidate set (sockeye_stair
-            # chose 3.4x with 29.1x available). Mark the best and flag the weak ones so the
-            # trade-off is visible at the moment of choosing.
-            _best = max((x.get("lock") or 0) for x in cands) or 1
-            _lk = c.get("lock") or 0
-            _mark = " 🥇" if _lk >= _best - 0.01 else (" ⚠️ weak beat-lock" if _lk < 0.5 * _best else "")
-            st.caption(f"**{c['id']}** · lock {c['lock']}×{_mark}"
+            # TWO DIFFERENT NUMBERS, LABELLED AS SUCH (Phil's correction, 2026-09-10):
+            # "the highest lock music is not necessarily the best — some don't have much
+            # strong beat at all but might have a high lock value... that's better for
+            # comparing internally in a video where to place the start rather than across
+            # videos." So BEAT (kick = deep-pulse presence) is the quality signal and leads;
+            # SYNC (lock) is shown as what it is — how well this track's own accents sit on
+            # the morphs — and never ranked between tracks. An earlier cut of this line
+            # marked the highest LOCK as best, which is exactly the misread he flagged.
+            _kick = c.get("kick")
+            _best_k = max([(x.get("kick") or 0) for x in cands] or [0])
+            if _kick is None:
+                _beat = "beat ?"
+            elif _kick >= 0.40:
+                _beat = f"🥁 strong beat {_kick:.2f}"
+            elif _kick >= 0.20:
+                _beat = f"🥁 clear beat {_kick:.2f}"
+            elif _kick >= 0.10:
+                _beat = f"faint beat {_kick:.2f}"
+            else:
+                _beat = f"⚠️ no strong beat {_kick:.2f}"
+            _mark = " 🥇" if (_kick is not None and _best_k > 0 and _kick >= _best_k - 0.001) else ""
+            st.caption(f"**{c['id']}**{_mark} · {_beat} · sync {c['lock']}×"
                        + (f" · {c['mood']}" if c.get("mood") else "")
                        + (" · ✅ chosen" if is_chosen else ""))
             if st.button("✅ Chosen" if is_chosen else "Choose",
@@ -651,6 +667,10 @@ with tabs[1]:  # VIDEO REVIEW — pick cut/model, edit caption, send to Music
                   marker="start", captions=True, extras=review_extras)
 
 with tabs[2]:  # MUSIC — audition/generate a track, then send to Production
+    st.caption("🥁 **beat** = deep-pulse presence, the thing you hear as a strong beat — rank "
+               "by this. **sync** = how well that track's own accents sit on the morphs; it is "
+               "a within-track number (it picks where the loop starts), NOT a quality score to "
+               "compare tracks by.")
     st.write("Pick the soundtrack. Every candidate is auto-locked so its accent lands on each "
              "morph. Choose one → it moves to **Production**. Switch a video's model and it lands "
              "back here to get tracks for the new render.")
@@ -666,7 +686,10 @@ with tabs[2]:  # MUSIC — audition/generate a track, then send to Production
         tag = f"✅ {m['chosen']}" if m.get("chosen") else "— choose one —"
         st.subheader(f"{v['journey']} · {v['model']}/{v['cut']}"
                      + (f" · {m['bpm']}bpm {m.get('key','')}" if m.get("bpm") else "")
-                     + f" · {tag}")
+                     + f" · {tag}"
+                     # regeneration is otherwise invisible: the lanes come back with the same
+                     # names, so only a changing stamp proves the five takes are new
+                     + (f" · generated {m['generated_at']}" if m.get("generated_at") else ""))
         tcol = st.columns([5, 1])
         newtheme = tcol[0].text_input("🎵 music theme (scene)", get_music_theme(v["journey"]),
                                       key=f"mtm_{v['journey']}")

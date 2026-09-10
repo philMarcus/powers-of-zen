@@ -23,6 +23,7 @@ import math
 import subprocess
 import sys
 import zlib
+from datetime import datetime
 from pathlib import Path
 
 import numpy as np
@@ -58,7 +59,7 @@ DEFAULT_THEME = "a hypnotic journey across every scale of the universe, cosmic a
 # N_GEN variants (own lane, rhythm alternates, wildcard lanes, seed jitter — occasionally a
 # 3/4 waltz reframing, sparingly per Phil) auto-ranked down to N_KEEP by lock x bar-clarity.
 DECK = json.loads((ROOT / "styles" / "music_deck.json").read_text(encoding="utf-8"))
-N_GEN, N_KEEP = 8, 5
+N_GEN, N_KEEP = 10, 5      # Phil 2026-09-10: ten takes, keep the best five
 # rhythm FIRST (tag order carries weight) and percussion by POSITIVE EXCLUSIVITY — the old
 # "no snare, no hi-hat" tail summoned the very instruments it named (2026-08-13, Phil heard
 # snares/woodblocks across the tempo-test candidates), and ACE's negative conditioning is a
@@ -155,6 +156,28 @@ def _video(journey):
     return str(silent) if (ROOT / silent).exists() else v["file"]
 
 
+def _rank_score(info):
+    """Rank a candidate for the audition top-5.
+
+    LOCK IS DAMPED ON PURPOSE (Phil, 2026-09-10): "the highest lock music is not necessarily
+    the best — some of them don't have much strong beat at all but they might have a high
+    lock value." He is right, and it is structural: lock is the ratio of onset energy at the
+    morphs to the average over all phases, so it measures how PEAKED a track is against
+    itself. A sparse, mushy track with a couple of loud moments scores high; a track with a
+    steady felt pulse everywhere scores low precisely because its energy is even. That makes
+    lock the right tool for choosing WHERE IN A TRACK to sit the morphs (which is exactly
+    what align.best_phase uses it for) and the wrong tool for ranking tracks against each
+    other. So it enters as sqrt() — direction kept, dominance removed — while KICK, the
+    deep-pulse presence that Phil actually hears as "a strong beat", carries the ranking.
+    Measured on saguaro_vigil's own set, this is the difference that matters: the old score
+    put choir_of_dust-third_answer2 (lock 7.94, kick 0.01 — no beat at all) second, above
+    choir_of_dust (lock 2.51, kick 0.32 — an audible pulse)."""
+    lock = max(0.0, info.get("lock", 0.0))
+    kick = max(0.0, info.get("kick", 0.0))
+    conf = max(0.0, info.get("bar_conf", 0.0))
+    return math.sqrt(lock) * (0.5 + conf) * (0.25 + kick) ** 1.5
+
+
 def generate(journey, n=N_KEEP, shift=True, target="music", attempt=0):
     """target="music": the normal Phil-facing candidates (aligned to the marked start).
     target="music_pregen": the overnight PRE-GENERATION (Phil 2026-08-17 — no waiting at
@@ -199,11 +222,7 @@ def generate(journey, n=N_KEEP, shift=True, target="music", attempt=0):
         except Exception as e:
             print(f"  [{cid}] SKIPPED — {e}")
             continue
-        # rank = lock x bar-clarity x DEEP-PULSE presence (Phil 2026-08-13: the felt deep
-        # beat must be near-ever-present; a kickless take gets crushed by the x0.25 floor
-        # and can't reach the audition top-5)
-        score = (info["lock"] * (0.5 + max(0.0, info.get("bar_conf", 0.0)))
-                 * (0.25 + max(0.0, info.get("kick", 0.0))))
+        score = _rank_score(info)
         lane = DECK["lanes"][lane_name]
         cands.append({"id": cid, "lane": lane_name,
                       "mood": f"{lane['mood']} · {rk or lane['rhythm']}"
@@ -246,8 +265,7 @@ def generate(journey, n=N_KEEP, shift=True, target="music", attempt=0):
             extra_seed += 101
             tries += 1
             continue
-        score = (info["lock"] * (0.5 + max(0.0, info.get("bar_conf", 0.0)))
-                 * (0.25 + max(0.0, info.get("kick", 0.0))))
+        score = _rank_score(info)
         lane = DECK["lanes"][lane_for(journey, spec)]
         cands.append({"id": cid, "lane": lane_for(journey, spec),
                       "mood": f"{lane['mood']} · downbeat (pulse top-up)",
@@ -287,9 +305,13 @@ def generate(journey, n=N_KEEP, shift=True, target="music", attempt=0):
         print(f"{journey} vanished from pipeline.json during generation — not recorded")
         music.free_vram()
         return
+    # generated_at (2026-09-10): the Regenerate button DID work and Phil could not tell —
+    # the lane names come back mostly the same, so five fresh takes look like the old five
+    # unless something on screen changes. The dashboard prints this stamp.
     v[target] = {"bpm": bpm, "bar": round(bar, 3), "key": key,
                  "stage": "pregen" if target == "music_pregen" else "review",
                  "chosen": None, "candidates": cands, "gen_attempt": attempt,
+                 "generated_at": datetime.now().strftime("%m-%d %H:%M"),
                  "for_model": model0, "for_cut": cut}  # a model/cut switch flags stale music
     pl.save(d)
     pl.telem("music_gen" if target == "music" else "music_pregen",
