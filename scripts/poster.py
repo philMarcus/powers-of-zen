@@ -27,6 +27,7 @@ toggles, platform dialogs) are marked TUNE. Run --dry-run first, always.
 import argparse
 import base64
 import json
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -43,6 +44,105 @@ PLATFORM_URL = {"tiktok": "https://www.tiktok.com/tiktokstudio/upload",
                 "youtube": "https://studio.youtube.com",
                 "instagram": "https://www.instagram.com/"}
 PLATFORM_MATCH = {"tiktok": "tiktok", "youtube": "studio.youtube", "instagram": "instagram"}
+
+# ---- INSTAGRAM UPLOAD SIZE CAP (2026-09-10) -------------------------------------------
+# IG's web composer gained a CLIENT-SIDE file-size check around 2026-09-09: it rejects the
+# file before any network request with "This video file could not be read by your browser".
+# The message is a red herring — proven in IG's OWN renderer, the File arrives with the
+# right name/size/type, FileReader reads its bytes, and a <video> decodes it to the correct
+# duration. It is purely a size gate.
+#   MEASURED (horseshoe_tide, same content re-encoded):  24,929,057 B  PASSES
+#                                                        27,033,841 B  FAILS
+# Ruled out first, each in isolation: content, duration, resolution (a 73 MB 1080x1920
+# re-encode fails; a 6.4 MB re-encode of the SAME 21.3s video passes), frame rate, 96 kHz
+# audio, faststart/moov position, and the CDP file handoff.
+#
+# POLICY (Phil, 2026-09-10): a 25 MB cap on a video platform looks like a temporary
+# measure, so we do NOT pre-shrink. Every post ATTEMPTS THE FULL-QUALITY FILE FIRST and
+# re-encodes only after IG actually refuses it (IGUploadRejected). The probe is cheap —
+# the reject dialog paints in ~2s — and the day IG lifts the cap we return to full quality
+# automatically. Watch telem ig_size_fallback: when it stops appearing, the cap is gone.
+IG_MAX_BYTES = 24_000_000          # safe margin under the measured ~25 MB gate
+IG_TARGET_BYTES = 22_500_000       # aim here when we must shrink: spend the whole budget
+IG_UPLOAD_DIR = ROOT / "outbox" / "ig_upload"
+FFMPEG = ("/mnt/c/Users/Phil/AppData/Local/Microsoft/WinGet/Packages/"
+          "Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+          "ffmpeg-8.1.1-full_build/bin/ffmpeg.exe")
+FFPROBE = FFMPEG.replace("ffmpeg.exe", "ffprobe.exe")
+
+
+def _probe(video_rel, entries, select=None):
+    """One ffprobe value. Windows ffprobe.exe can't open /mnt/c/... paths, so every call
+    runs from ROOT with a relative name (same contract as phase_shift.shift)."""
+    cmd = [FFPROBE, "-v", "error"]
+    if select:
+        cmd += ["-select_streams", select]
+    cmd += ["-show_entries", entries, "-of", "default=noprint_wrappers=1:nokey=1", video_rel]
+    out = subprocess.run(cmd, cwd=str(ROOT), capture_output=True, text=True, timeout=120)
+    vals = [x for x in out.stdout.split() if x and x != "N/A"]
+    return float(vals[0]) if vals else 0.0
+
+
+def ig_shrink(video_rel):
+    """Re-encode video_rel to the LARGEST file that fits IG's cap, cached in
+    outbox/ig_upload/. Called ONLY after IG has actually rejected the original.
+
+    Two-pass x264 at a SIZE TARGET rather than a fixed CRF: a CRF ladder lands wherever it
+    lands (the first cut of this guard shipped 18.0 MB against a 24 MB cap — a quarter of
+    the allowed bitrate thrown away). Targeting the budget spends every byte IG allows.
+    Resolution stays NATIVE (upscaling spends bits inventing pixels) and audio is
+    stream-copied (no second-generation loss, ~0.5 MB).
+    NEVER touches the source: the review/production cut stays canonical, and YouTube keeps
+    getting the full-quality original."""
+    src = ROOT / video_rel
+    IG_UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+    out = IG_UPLOAD_DIR / (src.stem + "_ig.mp4")
+    out_rel = str(out.relative_to(ROOT)).replace("\\", "/")
+    if (out.exists() and out.stat().st_size <= IG_MAX_BYTES
+            and out.stat().st_mtime >= src.stat().st_mtime):
+        print(f"  IG size guard: reusing {out_rel} ({out.stat().st_size/1e6:.1f} MB)")
+        return out_rel
+
+    dur = _probe(video_rel, "format=duration")
+    if dur <= 0:
+        raise PlatformError(f"instagram/size: could not read duration of {video_rel}")
+    a_bps = _probe(video_rel, "stream=bit_rate", select="a:0") or 200_000
+    log = f"outbox/ig_upload/{src.stem}_pass"
+    budget = IG_TARGET_BYTES
+    for _ in range(3):
+        v_bps = int((budget * 8 - a_bps * dur) / dur)
+        common = ["-c:v", "libx264", "-preset", "slow", "-b:v", str(v_bps),
+                  "-pix_fmt", "yuv420p", "-passlogfile", log]
+        subprocess.run([FFMPEG, "-y", "-loglevel", "error", "-i", video_rel,
+                        *common, "-pass", "1", "-an", "-f", "null", "-"],
+                       check=True, cwd=str(ROOT), timeout=1800)
+        subprocess.run([FFMPEG, "-y", "-loglevel", "error", "-i", video_rel,
+                        *common, "-pass", "2", "-c:a", "copy",
+                        "-movflags", "+faststart", out_rel],
+                       check=True, cwd=str(ROOT), timeout=1800)
+        size = out.stat().st_size
+        if size <= IG_MAX_BYTES:
+            for stale in IG_UPLOAD_DIR.glob(f"{src.stem}_pass*"):
+                stale.unlink(missing_ok=True)
+            print(f"  IG size guard: re-encoded to {out_rel} "
+                  f"({size/1e6:.1f} MB, {v_bps/1e6:.2f} Mbps video, 2-pass slow)")
+            return out_rel
+        budget = int(budget * IG_MAX_BYTES / size * 0.97)   # overshot — aim lower
+    raise PlatformError(f"instagram/size: could not get {video_rel} under "
+                        f"{IG_MAX_BYTES/1e6:.0f} MB (best {out.stat().st_size/1e6:.1f} MB)")
+
+
+def post_instagram(video_rel, caption, dry_run):
+    """Post to IG, trying the FULL-QUALITY file first (see the size-cap note above) and
+    shrinking only if IG's composer actually refuses it."""
+    try:
+        return _post_instagram_once(video_rel, caption, dry_run)
+    except IGUploadRejected as e:
+        mb = (ROOT / video_rel).stat().st_size / 1e6
+        print(f"  instagram refused the full-size file — {e}; shrinking and retrying once")
+        pl.telem("ig_size_fallback", detail=f"{Path(video_rel).name} {mb:.1f} MB refused")
+        return _post_instagram_once(ig_shrink(video_rel), caption, dry_run)
+
 
 
 def platform_tab(name):
@@ -107,6 +207,12 @@ COORD_SCALE = 1.28                 # displayed-coords × this = CDP viewport coo
 
 # ---------------------------------------------------------------- infrastructure
 class PlatformError(Exception):
+    pass
+
+
+class IGUploadRejected(PlatformError):
+    """IG's composer refused the file itself (its client-side size gate) rather than
+    the flow breaking. Means: RETRY WITH A SMALLER FILE."""
     pass
 
 
@@ -872,7 +978,7 @@ def _ig_open_composer(tab, tries=3):
     return False
 
 
-def post_instagram(video_rel, caption, dry_run):
+def _post_instagram_once(video_rel, caption, dry_run):
     tab = platform_tab("instagram")
     # snapshot the profile's reels BEFORE posting: our post is detected afterwards as the
     # NEW shortcode (2026-08-26 — caption-match detection fails exactly when the composer
@@ -895,8 +1001,19 @@ def post_instagram(video_rel, caption, dry_run):
                    win_path(video_rel))
     # CROP screen: wait for it. Our video is 9:16 and IG Reels preserve that ratio by default
     # (the aspect popup is icon-only and mis-clicks dismissed the dialog, so we don't touch it).
-    expect(wait_for(tab, "document.body.innerText.includes('Crop')?true:null", 60, 2),
-           "instagram", "crop_screen", tab, "crop screen never appeared (upload failed?)")
+    # CROP or REFUSAL: poll for BOTH. IG's size gate paints "could not be read by your
+    # browser" within ~2s, so catching it here instead of waiting out the full 60s crop
+    # timeout is what makes "always try full quality first" cheap.
+    got = wait_for(tab, "(function(){var t=document.body.innerText;"
+                        "if(/could not be read by your browser|couldn.t be uploaded/i"
+                        ".test(t))return 'rejected';"
+                        "if(t.includes('Crop'))return 'crop';return null})()", 60, 2)
+    if got == "rejected":
+        raise IGUploadRejected(
+            f"{Path(video_rel).name} "
+            f"({(ROOT/video_rel).stat().st_size/1e6:.1f} MB) refused by the composer")
+    expect(got == "crop", "instagram", "crop_screen", tab,
+           "crop screen never appeared (upload failed?)")
     # WAIT for the crop <video> to actually load and lay out before measuring containment. On a
     # cold session the video hadn't rendered yet, so the Original check measured an unsized element
     # and mis-detected the crop (this morning's crop_original flag). Don't just sleep(1).

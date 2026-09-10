@@ -120,6 +120,31 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-09-10 (IG ~25 MB UPLOAD CAP — DIAGNOSED, GUARDED AS A FALLBACK): horseshoe_tide's
+09-09 22:06 IG post failed "instagram/crop_screen" with IG showing "Video couldn't be
+uploaded / This video file could not be read by your browser". THE MESSAGE IS A RED
+HERRING — it is a CLIENT-SIDE FILE-SIZE GATE IG added ~09-09. Proven in IG's OWN renderer:
+the File arrives with correct name/size/type, FileReader reads its bytes, and a <video>
+decodes it to the right duration — no network request, no decode error. Ruled out one at a
+time first: content, duration, resolution, fps, 96 kHz audio, faststart/moov position, and
+the CDP file handoff (a standalone local test page gets a perfect File object). MEASURED
+THRESHOLD, same content re-encoded: 24,929,057 B PASSES / 27,033,841 B FAILS. A 6.4 MB
+re-encode of the SAME 21.3s video uploads fine; a 73 MB 1080x1920 one does not. This is why
+bayou_eyeshine (36 MB) posted fine on 09-08 and the IDENTICAL file failed on 09-10, and why
+10s videos (~17 MB) never hit it while 21s ones (~34 MB) always do — 14 of 18 pending
+videos were over the cap.
+POLICY (Phil's call — a 25 MB cap on a video platform smells temporary): DO NOT PRE-SHRINK.
+scripts/poster.py always attempts the FULL-QUALITY file first and re-encodes only after IG
+actually refuses it (IGUploadRejected, raised from the crop wait which now polls for the
+reject dialog as well as 'Crop', so the probe costs ~2s not the 60s timeout). WHEN telem
+ig_size_fallback STOPS APPEARING, IG HAS LIFTED THE CAP and we are back to full quality
+automatically — never assume the cap is still there. ig_shrink() = two-pass x264 at a SIZE
+TARGET (22.5 MB) not a fixed CRF, preset slow, native resolution, audio stream-copied,
+cached in outbox/ig_upload/; it fills the budget (22.1 MB @ 8.24 Mbps) where the first
+CRF-ladder cut wasted a quarter of it (18.0 MB). The source cut is never touched and
+YouTube keeps getting the full-quality original.
+horseshoe_tide is LIVE on both (YT IDJS0X-mRYY, IG reel DdGpNIFRJyJ, caption native via the
+trusted share path). Fix is in the working tree, UNCOMMITTED. Next post: 2026-09-10 17:00.
 2026-08-29 (PERSISTENCE ROUND 2 + PLANET HERO v2 + RESTART-PROOFING; clips in
 output/persist_lab/, Phil judging): pipeline recovered clean from the 08-28 reboot
 (meteorite posted 21:00 YT uOksS1wkj9M + IG Dcmt3kHNrQw; last night's 4 rendered fine;
