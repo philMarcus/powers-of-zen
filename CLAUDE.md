@@ -120,6 +120,34 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-09-10 (MUSIC BEAT-LOCK AUDIT + MARKETING/YT PASS): (1) MUSIC — Phil's "morphs stopped
+landing on the strong beat" is NOT a regression: median chosen lock 10.3x pre-deck -> 19.2x
+deck era -> 24.9x since 08-25. What varies is THE PICK — 21 of 63 videos shipped under HALF
+the lock available in their own candidate set (sockeye_stair took 3.4x with 29.1x on the
+table; fluorite_stope 8.2x with 59.2x), and both are recent, which is what he has been
+watching. 120bpm takes lock worst (median 11.2x vs 20.9x at 90bpm, chosen/best 0.45).
+align.best_phase now QUANTIZES to the beat grid (fold the score curve at the beat period,
+score the phases that put a real beat on the morph, refine +/-0.2 beat, BEAT_PRIOR breaks
+near-ties toward beats 1 and 3) but only engages when the free maximum is >0.15 beat adrift
+— healthy videos are byte-identical; termite_citadel sat exactly halfway between two beats.
+Meter is 4/4 unless a waltz is decisive (raw peakiness mislabelled 4 of 6 4/4 tracks).
+Dashboard Music tab now marks the best-locking candidate and flags any under half of it.
+CAVEAT: true "which beat of the measure" labelling is NOT solved — the downbeat estimate is
+circular with the alignment; the audit tool is scratchpad/beat_audit.py.
+(2) YOUTUBE DATA EXISTS NOW — scripts/yt_stats.py, browser-free (watch-page JSON via plain
+urllib; no CDP, no API key, no quota), runs after every post + the 12:00/00:00 stats task,
+series in outbox/yt_stats.jsonl. FIRST SNAPSHOT: 64 videos, 14,046 views = 43% of IG's total
+reach, and corr(YT views, IG views) = +0.04 — A SEPARATE LOTTERY. The IG-weakest videos
+include YT's best (wild_yeast IG 0.29x / YT 1244; salt_mirror IG 0.10x / YT 973). Bimodal:
+median 23 views, 14 of 64 over 400.
+(3) HASHTAG/SEO PASS: dropped #animation/#art for #infinitezoom/#eyecandy/#livewallpaper
+(order matters — YT renders only the first three above the title); YT gets its own set with
+#shorts. yt_desc was NEVER generated so YT silently reused the IG caption — caption.py now
+builds a real description (body, spot line, the world chain, brand line, YT tags), backfilled
+to the 18 unposted videos from their stored bodies. OPEN FOR PHIL: confirm the wallpaper tag
+(#livewallpaper vs #4kwallpaper — voice transcript said "DJ wallpaper"); parallax gain 1.0
+beats the low draws (like 3.28% +/-0.39 vs 2.24% +/-0.20) so the random 0.5-1.0 draw is
+costing us; tier M still weakest on every cut.
 2026-09-10 (IG ~25 MB UPLOAD CAP — DIAGNOSED, GUARDED AS A FALLBACK): horseshoe_tide's
 09-09 22:06 IG post failed "instagram/crop_screen" with IG showing "Video couldn't be
 uploaded / This video file could not be read by your browser". THE MESSAGE IS A RED

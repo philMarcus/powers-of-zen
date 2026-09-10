@@ -1,6 +1,29 @@
 # Register variations — the differentiation library
 
-## PERFORMANCE NOTES (from measured IG data, updated 2026-08-22 — the refill reads this first)
+## PERFORMANCE NOTES (measured IG + YT data, updated 2026-09-10 — the refill reads this first)
+- **YOUTUBE IS A SEPARATE LOTTERY (2026-09-10, first YT snapshot, n=64).** YT carries 43% of
+  our total reach and `corr(YT views, IG views) = +0.04` — essentially zero. The IG-weakest
+  videos include YT's biggest: wild_yeast (IG qscore 0.29x, catalog-worst tier) has 1244 YT
+  views; salt_mirror (IG 0.10x, catalog worst) has 973. YT is bimodal — median 23 views but
+  14 of 64 over 400. NOTHING we currently vary predicts YT reach (duration corr −0.07).
+  Implication for composing: do NOT drop a journey idea because it underperformed on IG —
+  it may be a YT winner, and the two audiences are not the same people.
+- **Parallax gain 1.0 is the best draw so far (n=16).** pooled like 3.28% ±0.39 vs 2.24%
+  ±0.20 for pre-parallax (CIs separate); gain 0.9 1.64x qscore (n=2). The low draws look
+  bad (0.5 → 0.29x, 0.7 → 0.78x) but are n=1 each. Lean high.
+- **Tier L confirmed and strengthened (n=35/19/11).** L 1.35x qscore, pooled like 2.79%
+  ±0.22 vs M 1.37% ±0.41 — CIs separate cleanly. S 0.99x, M 0.96x. M remains the weakest
+  tier on every cut of the data.
+- **Saturation still pays; DARKNESS NO LONGER DOES (n=65).** sat corr +0.19 like / +0.22
+  qscore (was +0.34) — same direction, weaker. But luminance is now −0.05 and dark-fraction
+  −0.00, where the 08-13 baseline had −0.33 and +0.29. The "dark" half of the two-axis law
+  has washed out as the catalog grew: keep the saturation, stop paying for gloom.
+- **Weak styles on more data:** crystalline 0.69x (n=4) and reef_pop 0.35x (n=2) sit at the
+  bottom; aurora_silk 2.11x and lacquer_pop 1.78x lead but are n=2 each — direction only.
+- **zoomout 1.36x vs divein 1.12x** (pooled like 3.16% ±0.41 vs 2.31% ±0.19) — CIs separate,
+  BUT zoomout is concentrated in the older era, so this is confounded with era and is a
+  candidate for a deliberate test, not a law.
+
 - **The rethink package works (2026-08-22, n=10 vs 31 earlier posts).** Videos posted since
   2026-08-14 (new-doctrine journeys + music deck + resolve engine): median views 506 vs ~165
   before, pushed >300 views 60% vs 14–29%, >1000 views 40% vs 0–12% (and the only earlier
@@ -193,6 +216,47 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
   flagellum, a dust-devil column, a rattlesnake's coil, tendril and vine coils, a spiral stair,
   a slowly twisting rope-filament of galaxies (the web's filaments measurably rotate) — a
   single-strand family, unlike knot braids (many strands) or loxodrome shells (a surface)
+- plume & billow (added 2026-09-03): one fluid falling or bursting through another —
+  Rayleigh-Taylor fringes (a dense cloud sinking into a lighter one as a fence of
+  descending pillars with curling caps) · mushroom-cap vortex rings · a thrown powder
+  burst frozen mid-bloom · cream blooming in tea · supernova ejecta fingers ·
+  pyrocumulus towers — the catalog's first turbulence family (billows and curls, the
+  opposite number of laminar streamline foliation's combed flow)
+- quantized vortex lattice (added 2026-09-03): many identical small whirlpools locked
+  into a perfect triangular array — Abrikosov flux vortices threading a superconductor,
+  vortex grids in a spinning superfluid, a stirred condensate's whirlpool crystal —
+  order MADE of rotation: a lattice whose every site spins (distinct from Kármán
+  streets' staggered shed pairs and from cycloid gear-flowers)
+- Weaire–Phelan foam (added 2026-09-04): space filled by equal-volume cells of just two
+  shapes, every seam meeting at the honest soap angle — the foam that beat the century-old
+  Kelvin problem (clathrate ice cages each cradling one trapped gas bead, the Beijing
+  Water Cube's wall, an ideal dry foam) — an EQUAL-cell froth, unlike Apollonian's
+  every-size nesting or Voronoi's random shatter
+- arrested ripples (added 2026-09-04): a travelling wave frozen into a permanent record —
+  lithified ripple marks on a slab, stromatolite laminae written by days, varve and
+  ice-core banding written by years, baryon-acoustic shells written into the galaxy web
+  by the infant universe's sound — parallel wavefronts held still (distinct from
+  growth-ring annuli's rings about a center: this is a WAVE stopped mid-stride)
+- jackstraws (added 2026-09-06): straight rods thrown down at random and jammed where they
+  cross — pick-up sticks, a log jam, the crossed selenite beams of a crystal cave, rutile
+  needles crossing at sixty degrees inside a star sapphire, a felt of glass needles, the
+  faint crossed tendrils threading a cosmic void — a RANDOM crossed-rod family (distinct
+  from lattices, which are ordered, and from reciprocal frames, which are built)
+- cages of rods (added 2026-09-06): a hollow walled by parallel ribs — a barrel's staves, a
+  birdcage, a lobster pot, a whale's rib arch, the beta-barrel that holds a fluorescent
+  protein's glowing point, the filament cage a pulsar lights from inside — the HOLLOW is the
+  subject and the ribs are its wall (distinct from foam's closed cells and sponge's
+  bicontinuous maze: one open chamber, ribs you can see between)
+- helicoidal ramps (added 2026-09-06): stacked flat sheets joined by spiral ramps — a
+  multi-storey car park, the endoplasmic reticulum's sheet stacks (Terasaki ramps), the
+  "parking-garage" phase of nuclear pasta, a spiral stair threading every floor of a tower —
+  sheets AND a helix in one structure (distinct from layered lattices, which never connect
+  their sheets, and from helices & screws, which have no floors)
+- random-walk scribbles (added 2026-09-06): a path of straight hops joined at random angles
+  — a flea's hopping search, a foraging hedgehog's night track, a badger's wandering path
+  across a field, the jitter of a pollen grain in water, and the same scribble frozen into a
+  polymer's random coil (a rubber protein IS a random walk) — the one family that is both a
+  track and a structure
 - USE: pick ONE family per journey and reskin it to the theme (jade-carved
   automata, sugar-crystal Penrose, brass Chladni). Never repeat the previous
   video's family.
@@ -245,6 +309,19 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
   elliptical/edge-on) · planetary one-off: moonlit river meanders from orbit — silver
   looping channels across a night plain, crescent oxbow lakes glinting, the coast a dark
   scallop (a meander read as a planet's skin)
+- (added 2026-09-06) stellar one-offs: the Wolf–Rayet wind bubble — a star that blows its
+  own bubble: a near-perfect sphere of lit gas several light-years wide, its rim brightest
+  where the wind piles up, the blowing star burning OFF-CENTRE inside it (a bubble with its
+  blower, not a shell around a dead star) · the pulsar-wind cage — a torn hollow of ribbon
+  filaments wrapped around one point that lights them all from within (the Crab: a lantern
+  inside a cage of ribs, not a lace veil) · the runaway star's bow shock — a curved lit bow
+  wave standing ahead of a fast star ploughing through a nebula, the wave's wings trailing
+  back on both sides (one thing outrunning its own ripples) · cosmic-web one-offs: the
+  void's ghost web — inside a great void, a faint MINIATURE web of dwarf galaxies threading
+  the emptiness, a web nested in the web's own hole (voids are not empty; they hold a thin
+  sub-web of their own) · fingers of God — galaxy clusters drawn out into luminous radial
+  needles that all point at the viewer, a sky of spines converging on the eye (the
+  redshift-map picture; a needle-burst at the largest scale)
 
 ## PALETTE FAMILIES — assign each journey ONE home family so the catalog stays varied
 (adjacent cards still contrast in temperature WITHIN the family; the family is the
@@ -333,6 +410,41 @@ video's overall color identity)
   bulbs) · seagrass & cuttle-copper (bottle-green ribbon fields/slate-blue moon-water/
   cuttlefish copper-bronze mottle/moon-ivory sand scars on ink — green-forward and coppery,
   unlike bioluminescent deep's teal glow or hemocyanin & tidewrack's blue-on-brown)
+- (added 2026-09-03) gulal magenta & monsoon slate (fuchsia-magenta pigment bursts/deep
+  turmeric saffron flares/monsoon slate-blue dusk/oil-flame apricot points on wet charcoal
+  lanes — the catalog's first magenta-primary family: saturated powder colour on storm
+  grey, no gold, no neon tubing) · krill rose & glacial teal (rose-red swarm bodies/deep
+  glacial teal water-black/pale jade glow falling through ice/electric blue photophore
+  points — a living red drifting under cold green-blue, unlike sockeye & slate's grey
+  rock or arctic's silver) · banksia char & ember vein (char-black stringybark/deep ember
+  orange glowing in bark cracks/smoke grey-violet drifts/one acid chartreuse resprout
+  accent — night fire ecology, greener and more violet than ember & ash's orange-on-
+  charcoal) · helium violet & niobium frost (deep violet-black vacuum dark/frost-silver
+  metal tiers/pale cyan discharge glow/one amber indicator point — cryogenic cold-metal
+  violet, harder and emptier than ultraviolet noir's electric blue)
+- (added 2026-09-04) urchin violet & sunstar rose (deep violet urchin domes/rose-coral
+  sunflower-star rays/green-glass water-light on basalt char — a violet-forward benthic
+  family, wetter and rosier than ultraviolet noir, no neon tubing) · comet char &
+  dicarbon jade (coal-char comet crust/jade-green dicarbon coma glow/cyan ion-tail
+  threads on violet-black vacuum — green-on-black colder and emptier than bioluminescent
+  deep, no teal water, no amber) · scarab bronze & star-milk (oiled-bronze elytra
+  sheen/silver star-milk band on ink-indigo sky/straw-gold grass blades on umber night
+  earth — metal bronze under silver skylight, no lamps, no amber glow) · iron dawn
+  (rust-red laminated stone domes/ink-blue pre-dawn water/one molten-gold horizon
+  seam/silver bead points — a dark saturated dawn, redder than mirage, bluer than
+  prairie afterglow)
+- (added 2026-09-06) selenite glass & indigo steam (honey-sulfur translucent crystal
+  blades lit from within/indigo-black cave air/verdigris-grey steam/one crimson lamp
+  point — a LIT-GLASS family: the colour is light passing through stone, not smoked
+  amber's brown tea nor gilded's gold metal) · jelly green & tar piling (glass-green bell
+  glow/tar-black creosote timber/rust-orange barnacle bands/one cold blue-white dock lamp —
+  green glow laid on tar and rust, unlike bioluminescent deep's teal on plain black) ·
+  pulsar sapphire & slag ember (sapphire-blue beam light/black-iron slag plates/ember-
+  orange fissure glow/rust-violet haze — blue-lit iron with no gold, colder and heavier
+  than ember & ash) · sloe & badger-stripe (sloe blue-black thorn shadow/moonlit bone-
+  white stripe/hawthorn-red berry points/amber-brown flea shell/one ultraviolet-blue glow
+  point — a blue-black night hedge carrying red points, unlike ultraviolet noir's electric
+  blue or oxblood nocturne's red earth)
 - RULE: check the last few journeys' families and pick a DIFFERENT one.
 
 ## LENGTH VARIETY (Phil 2026-07-31 — the catalog must mix durations)
