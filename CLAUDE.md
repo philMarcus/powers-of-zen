@@ -120,6 +120,35 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-09-10 (BEAT-vs-MORPH FORENSICS — Phil: "the morphs come not at the same time each
+time"; NO SYNC BUG FOUND, THE MORPH ITSELF IS THE PROBLEM. Tools: scratchpad/morph_drift.py,
+fold_morph.py, fold_batch.py). WHAT IS PROVABLY FINE on saguaro_vigil: the chosen track's
+accents sit on the morph grid to within 10-20 ms with NO drift (choir_of_dust-b offsets
++0.15,-0.01,-0.02... over 10 morphs, -8 ms/morph end to end); the shifted production file is
+a clean rotation of exactly 15.000s = the pipeline's start_t (R=360/720, residual 0.36); the
+grid is uniform (10 cards x 3.000s = 30.0s). So audio-to-grid and grid-to-file are both
+exact. WHAT IS ACTUALLY WRONG: the VISIBLE morph is not a punctual event. Folding the
+frame-to-frame change curve over all 10 bars, the profile is a broad smear only 1.37x above
+baseline, rising through the card to peak ~0.25-0.33s BEFORE the downbeat (the plunge
+accelerating into the boundary) and bottoming out +1.0s after it (the new card arriving and
+settling). A sharp kick therefore has nothing sharp to hit — which is exactly why Phil hears
+choir_of_dust-b (kick 0.42) as "not meshed" while analog_dawn-wild (kick 0.03) "completes
+consistently": a mushy track cannot disagree with a smeared morph, a crisp one can.
+ANSWER TO PHIL'S DOCTRINE QUESTION ("peak morph on the beat, not the start — did we change
+that?"): we never had it. Measured from dive.py at saguaro's fpb 9 (_s = 9/7): anacrusis 3f,
+transition 8f. Denoise RISES 3 frames (0.25s) before the beat, hits FULL boost exactly ON the
+beat, then HOLDS that boost 8 frames (0.667s) after it. So the peak is a PLATEAU that starts
+on the downbeat and is centred +0.33s LATE — at 80bpm nearly half a beat. The plunge churn
+before the beat and the repaint plateau after it fight each other, and the net event has no
+crisp centre. FLEET CONTEXT (fold_batch over 63 videos): placement has IMPROVED, not
+regressed — median visible-change peak was +21.6% of the bar pre-08-14 and is +3.1% (1-2
+frames) since. saguaro is an OUTLIER at -11%, and the fpb-9/80bpm family is the least
+consistent of all (sundew +40%, brinicle -32%, meteorite +5.6%, saguaro -11%) because the
+transition window scales with fpb and gets long relative to the beat. CAVEAT: contrast is
+only 1.2-1.4x so per-video argmax is noisy; trust the era medians, not one video.
+PROPOSED, NOT BUILT (needs Phil's A/B): centre the arrival boost on the downbeat (start it
+transition/2 frames early) and/or shorten+raise it, so the repaint PEAKS on the beat instead
+of starting there. This is an ENGINE-2 pacing change — do not ship it without his verdict.
 2026-09-10 (LATER — MUSIC RANKING RE-BASED ON BEAT, NOT LOCK; REGENERATE VERIFIED):
 PHIL'S CORRECTION, and he is right structurally: "the highest lock music is not necessarily
 the best — some don't have much strong beat at all but might have a high lock value... that's
