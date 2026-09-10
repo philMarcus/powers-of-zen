@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-09-10 08:59:20",
+    "updated": "2026-09-10 10:58:08",
     "paused_platforms": [
       "tiktok"
     ],
@@ -14504,7 +14504,8 @@
             "bar_conf": 0.66,
             "kick": 0.72,
             "score": 4.98,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a night vigil on a desert slope — a hushed choir pad over a deep slow sub, granular shimmer through the star and cosmic scales, the pulse settling heavy and warm as the bajada commons arrives at eye level, drawing down to a single suspended tone through the pleats and the water cells, one deep hit where the grain of atoms opens out into the curtain of galaxies, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a night vigil on a desert slope — a hushed choir pad over a deep slow sub, granular shimmer through the star and cosmic scales, the pulse settling heavy and warm as the bajada commons arrives at eye level, drawing down to a single suspended tone through the pleats and the water cells, one deep hit where the grain of atoms opens out into the curtain of galaxies, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.57
           },
           {
             "id": "choir_of_dust-b",
@@ -14517,7 +14518,8 @@
             "bar_conf": 0.44,
             "kick": 0.42,
             "score": 1.74,
-            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a night vigil on a desert slope — a hushed choir pad over a deep slow sub, granular shimmer through the star and cosmic scales, the pulse settling heavy and warm as the bajada commons arrives at eye level, drawing down to a single suspended tone through the pleats and the water cells, one deep hit where the grain of atoms opens out into the curtain of galaxies, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a night vigil on a desert slope — a hushed choir pad over a deep slow sub, granular shimmer through the star and cosmic scales, the pulse settling heavy and warm as the bajada commons arrives at eye level, drawing down to a single suspended tone through the pleats and the water cells, one deep hit where the grain of atoms opens out into the curtain of galaxies, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.71
           },
           {
             "id": "analog_dawn-wild",
@@ -14530,7 +14532,8 @@
             "bar_conf": 0.44,
             "kick": 0.03,
             "score": 0.48,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a night vigil on a desert slope — a hushed choir pad over a deep slow sub, granular shimmer through the star and cosmic scales, the pulse settling heavy and warm as the bajada commons arrives at eye level, drawing down to a single suspended tone through the pleats and the water cells, one deep hit where the grain of atoms opens out into the curtain of galaxies, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a night vigil on a desert slope — a hushed choir pad over a deep slow sub, granular shimmer through the star and cosmic scales, the pulse settling heavy and warm as the bajada commons arrives at eye level, drawing down to a single suspended tone through the pleats and the water cells, one deep hit where the grain of atoms opens out into the curtain of galaxies, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": -0.11
           },
           {
             "id": "night_market-wild",
@@ -14543,7 +14546,8 @@
             "bar_conf": 0.04,
             "kick": 0.11,
             "score": 0.26,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a night vigil on a desert slope — a hushed choir pad over a deep slow sub, granular shimmer through the star and cosmic scales, the pulse settling heavy and warm as the bajada commons arrives at eye level, drawing down to a single suspended tone through the pleats and the water cells, one deep hit where the grain of atoms opens out into the curtain of galaxies, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a night vigil on a desert slope — a hushed choir pad over a deep slow sub, granular shimmer through the star and cosmic scales, the pulse settling heavy and warm as the bajada commons arrives at eye level, drawing down to a single suspended tone through the pleats and the water cells, one deep hit where the grain of atoms opens out into the curtain of galaxies, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": -0.15
           },
           {
             "id": "ember_pulse-wild",
@@ -14556,7 +14560,8 @@
             "bar_conf": 0.05,
             "kick": 0.08,
             "score": 0.14,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a night vigil on a desert slope — a hushed choir pad over a deep slow sub, granular shimmer through the star and cosmic scales, the pulse settling heavy and warm as the bajada commons arrives at eye level, drawing down to a single suspended tone through the pleats and the water cells, one deep hit where the grain of atoms opens out into the curtain of galaxies, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a night vigil on a desert slope — a hushed choir pad over a deep slow sub, granular shimmer through the star and cosmic scales, the pulse settling heavy and warm as the bajada commons arrives at eye level, drawing down to a single suspended tone through the pleats and the water cells, one deep hit where the grain of atoms opens out into the curtain of galaxies, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.2
           }
         ],
         "gen_attempt": 2,

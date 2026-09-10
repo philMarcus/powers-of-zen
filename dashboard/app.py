@@ -497,7 +497,21 @@ def audition_candidates(v, choose_advances_to=None):
             else:
                 _beat = f"⚠️ no strong beat {_kick:.2f}"
             _mark = " 🥇" if (_kick is not None and _best_k > 0 and _kick >= _best_k - 0.001) else ""
-            st.caption(f"**{c['id']}**{_mark} · {_beat} · sync {c['lock']}×"
+            # METER FIT (2026-09-10): the picture's morph is reliably periodic, so a take that
+            # feels like it lands somewhere different each time is phrasing in a grouping that
+            # is not the video's bar. It only OFFENDS when there is a pulse loud enough to
+            # hear it — saguaro's choir_of_dust-b (fit 0.71, kick 0.42) drifts audibly while
+            # analog_dawn-wild (fit -0.11 but kick 0.03) is harmless under the same picture.
+            _fit = c.get("fit")
+            if _fit is None:
+                _meter = ""
+            elif _fit >= 1.0:
+                _meter = " · ✓ fits the bar"
+            elif (_kick or 0) >= 0.20:
+                _meter = f" · ⚠️ PHRASES OFF THE BAR (fit {_fit:.2f}) — will drift against the morphs"
+            else:
+                _meter = f" · off-bar phrasing (fit {_fit:.2f}) but no real pulse"
+            st.caption(f"**{c['id']}**{_mark} · {_beat} · sync {c['lock']}×{_meter}"
                        + (f" · {c['mood']}" if c.get("mood") else "")
                        + (" · ✅ chosen" if is_chosen else ""))
             if st.button("✅ Chosen" if is_chosen else "Choose",
@@ -670,7 +684,9 @@ with tabs[2]:  # MUSIC — audition/generate a track, then send to Production
     st.caption("🥁 **beat** = deep-pulse presence, the thing you hear as a strong beat — rank "
                "by this. **sync** = how well that track's own accents sit on the morphs; it is "
                "a within-track number (it picks where the loop starts), NOT a quality score to "
-               "compare tracks by.")
+               "compare tracks by. **fit** = does the track phrase in the video's bar? Below "
+               "1.0 a rival phrase length is stronger, so its downbeat walks around the "
+               "morphs — audible only when the pulse is strong.")
     st.write("Pick the soundtrack. Every candidate is auto-locked so its accent lands on each "
              "morph. Choose one → it moves to **Production**. Switch a video's model and it lands "
              "back here to get tracks for the new render.")

@@ -175,7 +175,15 @@ def _rank_score(info):
     lock = max(0.0, info.get("lock", 0.0))
     kick = max(0.0, info.get("kick", 0.0))
     conf = max(0.0, info.get("bar_conf", 0.0))
-    return math.sqrt(lock) * (0.5 + conf) * (0.25 + kick) ** 1.5
+    # METER CLASH (2026-09-10): a take whose strongest phrase length is not the video's bar
+    # walks around the morph grid no matter how well we align it — and it only OFFENDS when
+    # there is a pulse strong enough to hear, which is why Phil finds choir_of_dust-b
+    # (kick 0.42, phrases in threes) unusable while analog_dawn-wild (kick 0.03, no bar
+    # structure at all) sits fine under the same picture. So the penalty scales with kick.
+    fit = info.get("fit", 1.0)
+    misfit = min(1.0, max(0.0, 1.0 - fit))
+    penalty = 1.0 - 0.7 * misfit * min(1.0, kick / 0.40)
+    return math.sqrt(lock) * (0.5 + conf) * (0.25 + kick) ** 1.5 * penalty
 
 
 def generate(journey, n=N_KEEP, shift=True, target="music", attempt=0):
@@ -232,6 +240,7 @@ def generate(journey, n=N_KEEP, shift=True, target="music", attempt=0):
                       "lock": round(info["lock"], 2),
                       "bar_conf": round(info.get("bar_conf", 0.0), 2),
                       "kick": round(info.get("kick", 0.0), 2),
+                      "fit": info.get("fit", 1.0),
                       "score": round(score, 2), "tags": tags})
         print(f"  [{cid}] lock {info['lock']:.2f}x conf {info.get('bar_conf', 0):.2f} "
               f"kick {info.get('kick', 0):.2f} score {score:.2f} -> {aligned.relative_to(ROOT)}")
@@ -274,6 +283,7 @@ def generate(journey, n=N_KEEP, shift=True, target="music", attempt=0):
                       "lock": round(info["lock"], 2),
                       "bar_conf": round(info.get("bar_conf", 0.0), 2),
                       "kick": round(info.get("kick", 0.0), 2),
+                      "fit": info.get("fit", 1.0),
                       "score": round(score, 2), "tags": tags})
         print(f"  [{cid}] kick {info.get('kick', 0):.2f} (top-up {tries + 1})")
         extra_seed += 101

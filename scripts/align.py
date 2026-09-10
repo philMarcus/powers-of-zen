@@ -100,6 +100,46 @@ def _downbeat_phase(env, esr, bar_track, beats):
     return float(grid[int(np.argmax(scores))])
 
 
+def meter_fit(env, esr, bar, lo_s=0.30, hi_s=7.0):
+    """Does the track PHRASE in the video's bar, or in some other grouping?
+
+    Phil, 2026-09-10: the picture's morph is reliably periodic — "every video has a good
+    periodic visual beat" — so when a track feels like it lands in a different place each
+    time, the track is what disagrees. `lock` cannot see this: a dense onset envelope always
+    has energy near every morph, so a track can score a high lock while its FELT phrase
+    walks around the morph grid. `kick` cannot see it either — it samples the autocorrelation
+    at the assumed bar lag and never asks what the dominant grouping actually is.
+
+    Measured cause on saguaro_vigil's choir_of_dust-b (kick 0.42, the take Phil says does not
+    mesh): its beat is correct at 0.747s (80bpm, 4 to the bar) but its strongest LONG grouping
+    is 2.251s and 4.501s — it phrases in THREES. Morphs come every 4 beats, so the downbeat
+    and the morph only coincide every 12 beats and drift in between. Meanwhile the bar lag
+    itself is only its 5th strongest period (ac 0.27), which measure_bar's +-10% window
+    happily picked as if it were the tempo.
+
+    Returns (fit, bar_ac, clash_ac): fit = bar_ac / clash_ac, where clash_ac is the strongest
+    periodicity that neither divides nor multiplies the bar. fit >= 1 means the bar is the
+    track's own strongest structure; below 1 a rival grouping is stronger."""
+    e = env - env.mean()
+    a = np.correlate(e, e, mode="full")[len(e) - 1:]
+    a = a / (a[0] + 1e-9)
+    lo, hi = int(lo_s * esr), min(int(hi_s * esr), len(a) - 1)
+    if hi <= lo + 2:
+        return 1.0, 0.0, 0.0
+    bar_ac = float(a[min(int(round(bar * esr)), len(a) - 1)])
+    clash = 0.0
+    for k in range(lo + 1, hi - 1):
+        if not (a[k] > a[k - 1] and a[k] >= a[k + 1]):
+            continue
+        per = k / esr
+        r1, r2 = bar / per, per / bar          # bar is n beats of it, or it is n bars long
+        if min(abs(r1 - round(r1)), abs(r2 - round(r2))) < 0.06:
+            continue                            # commensurate — not a rival
+        clash = max(clash, float(a[k]))
+    fit = bar_ac / clash if clash > 0.02 else (2.0 if bar_ac > 0 else 1.0)
+    return fit, bar_ac, clash
+
+
 def best_phase(env, esr, morphs, f, period_m=None, beats=None, quantize=True):
     """Choose the phase w0 that sits the track's accents on the morphs.
 
@@ -209,6 +249,7 @@ def align(video, track, out, journey=None, cut=None, shift_sec=None):
         raise RuntimeError(f"track unusable: {len(xm)/SR:.2f}s of audio after silence strip")
     env, esr = onset_env(xm)
     env_low, _ = onset_env(xm, lo=1, hi=6)     # deep-percussion band (~47-280Hz)
+    fit, bar_ac, clash_ac = meter_fit(env_phase if False else env, esr, bar)
     m_bar, conf = measure_bar(env, esr, bar)
     f = (m_bar / bar) if conf >= 0.10 else 1.0
     f = min(max(f, 0.97), 1.03)
@@ -291,11 +332,13 @@ def align(video, track, out, journey=None, cut=None, shift_sec=None):
         t.unlink(missing_ok=True)
     print(f"  aligned -> {out}\n    bar {bar:.3f}s | music bar {m_bar:.3f}s (conf {conf:.2f}) -> "
           f"stretch {f:.4f} | phase {w0:.3f}s | lock {lock:.2f}x | kick {kick:.2f} | "
-          f"beat {ph['beat_no']}/{ph['beats']} of the bar | "
+          f"beat {ph['beat_no']}/{ph['beats']} | fit {fit:.2f} "
+          f"(bar {bar_ac:.2f} vs rival {clash_ac:.2f}) | "
           f"seamless loop @ {dur:.2f}s (music tiled x{guard+1}, xf {XF:.2f}s)")
     return {"w0": w0, "stretch": f, "lock": lock, "m_bar": m_bar, "bar_conf": conf,
             "kick": round(kick, 3), "beat_no": ph["beat_no"], "beats": ph["beats"],
-            "free_off": ph["free_off"]}
+            "free_off": ph["free_off"], "fit": round(fit, 2),
+            "bar_ac": round(bar_ac, 3), "clash_ac": round(clash_ac, 3)}
 
 
 def main():
