@@ -120,6 +120,36 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-09-10 (CLOSE — METER FIT SHIPPED, REVIEW QUEUE AUDITED CLEAN, NOTHING RUNNING):
+THE MUSIC FIX IN ONE LINE: we now check that a track's own PHRASE LENGTH is the video's bar,
+which neither lock nor kick could see. lock is blind (a dense onset envelope always has
+energy near every morph, so a mis-phrased take still scores high); kick is blind (it samples
+the autocorrelation AT the assumed bar lag and never asks what the dominant grouping is);
+measure_bar only searches +-10% around the video bar, so it can report a confident tempo off
+a minor peak. align.meter_fit searches 0.3-7s and returns fit = ac(bar) / strongest RIVAL
+period (one that neither divides nor multiplies the bar). saguaro's choir_of_dust-b: beat
+correct at 0.747s (80bpm) but strongest groupings 2.251s/4.501s — it PHRASES IN THREES under
+a 4-beat bar, so downbeat and morph coincide only every 12 beats. fit 0.71 + kick 0.42 =
+audible drift; analog_dawn-wild fit -0.11 but kick 0.03 = harmless (nothing to clash);
+choir_of_dust-halftime fit 1.57 + kick 0.72 = the good one. Matches Phil's ear on all three.
+Ranking penalty scales with kick; fit shown in the Music tab; realign carries it through the
+approve path.
+REVIEW QUEUE AUDITED, NO REGENERATION NEEDED: all 16 review videos' pregen sets scored for
+fit with NO GPU (scratchpad/fit_pregen.py) — every one already has at least one take with
+kick >= 0.40 AND fit >= 1.0 (usable counts 1-4 of 5), so the good track was always in the
+set; it just was not labelled. fit is now written into every music_pregen entry, so approving
+shows it immediately.
+WHAT WAS BACKED OUT: the --morph-lead engine experiment. Phil's correction: the picture's
+morph is reliably periodic in EVERY video and always has been ("a good periodic visual
+beat"), so the beat problem was never visual. My pixel metric had only 1.2-1.4x contrast and
+I built on it against his direct observation — dive.py reverted, lab output deleted, renders
+killed mid-flight. DO NOT re-derive "the morph is a smear"; it is not.
+STATE AT CLOSE: nothing running; ComfyUI UP with an EMPTY queue (another agent of Phil's uses
+it); render_paused=True (pre-existing, since ~09-08 — 20 journeys sit queued and the nightly
+batch is skipping every night, telem batch_skip; UNPAUSE when he wants renders again);
+post_next 2026-09-10 17:00 with waterbear_prairie + saguaro_vigil queued to post; TikTok
+still paused. Earlier today: IG ~25MB cap guarded as a fallback, YouTube stats collection
+live (yt_stats.py, browser-free), hashtag/SEO pass + yt_desc, music ranked by beat not lock.
 2026-09-10 (BEAT-vs-MORPH FORENSICS — Phil: "the morphs come not at the same time each
 time"; NO SYNC BUG FOUND, THE MORPH ITSELF IS THE PROBLEM. Tools: scratchpad/morph_drift.py,
 fold_morph.py, fold_batch.py). WHAT IS PROVABLY FINE on saguaro_vigil: the chosen track's

@@ -358,10 +358,13 @@ def realign(journey):
         cc.update({"aligned": str(aligned.relative_to(ROOT)),
                    "lock": round(info["lock"], 2),
                    "kick": round(info.get("kick", 0.0), 2),
+                   # carry the meter fit through the approve path too, or the Music tab
+                   # loses the off-bar warning exactly when Phil is choosing
+                   "fit": info.get("fit", 1.0),
                    "bar_conf": round(info.get("bar_conf", 0.0), 2)})
         cands.append(cc)
         print(f"  [{c['id']}] realigned (lock {info['lock']:.2f}x kick "
-              f"{info.get('kick', 0):.2f})")
+              f"{info.get('kick', 0):.2f} fit {info.get('fit', 1.0):.2f})")
     d = pl.load(); v = pl.get(d, journey)
     if not v:
         return

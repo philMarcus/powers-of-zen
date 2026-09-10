@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-09-10 10:58:08",
+    "updated": "2026-09-10 12:10:16",
     "paused_platforms": [
       "tiktok"
     ],
@@ -11557,7 +11557,7 @@
       "yt_title": "One water bear’s armor glows, a kingdom of cells inside",
       "yt_desc": "One water bear’s armor glows, a kingdom of cells inside\n\nCan you spot Lee the Flea hiding in the micro-prairie? 👀\n\nOne continuous shot, no cuts, looping forever — through a city rooftop after night rain → a moss micro-prairie at water level among → one water bear astride a moss stem → living tissue within the flank wall → trehalose sugar molecules locked.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
       "cameo": "lee",
-      "state": "music",
+      "state": "queued",
       "scheduled": null,
       "engine_params": {
         "parallax_gain": 1.0,
@@ -11694,8 +11694,8 @@
         "bpm": 120,
         "bar": 2.0,
         "key": "E minor",
-        "stage": "review",
-        "chosen": null,
+        "stage": "done",
+        "chosen": "choir_of_dust-wild",
         "candidates": [
           {
             "id": "music_box-third_answer",
@@ -11847,7 +11847,8 @@
             "bar_conf": 0.59,
             "kick": 0.62,
             "score": 44.6,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.22
           },
           {
             "id": "night_market-heartbeat",
@@ -11860,7 +11861,8 @@
             "bar_conf": 0.6,
             "kick": 0.71,
             "score": 30.64,
-            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.11
           },
           {
             "id": "ember_pulse-wild",
@@ -11873,7 +11875,8 @@
             "bar_conf": 0.69,
             "kick": 0.52,
             "score": 7.34,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.53
           },
           {
             "id": "aurora_strings-wild",
@@ -11886,7 +11889,8 @@
             "bar_conf": -0.06,
             "kick": -0.03,
             "score": 1.27,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, bowed string pad swells and sparse harp plucks, silvery and cold, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, bowed string pad swells and sparse harp plucks, silvery and cold, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": -0.16
           },
           {
             "id": "night_market-third_answer",
@@ -11899,7 +11903,8 @@
             "bar_conf": 0.52,
             "kick": 0.49,
             "score": 11.87,
-            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.22
           }
         ],
         "for_model": "ds",
@@ -11991,7 +11996,8 @@
             "bar_conf": 0.79,
             "kick": 0.72,
             "score": 46.6,
-            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a breathing alkaline lake under a smoking cone — a breathy reed organ over a deep sub pulse, one heavy kick on every downbeat with a softer answer under it, soft water textures washing the pulse as the rift world opens, the reeds crowding and thickening through the wader commons, thinning to a single held pipe through the trona blades and the leaning carbonate sheets, one deep bloom as the drifting files of atoms stream out again as the globule herd, a breathy reed organ and soft water textures over a deep sub pulse, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a breathing alkaline lake under a smoking cone — a breathy reed organ over a deep sub pulse, one heavy kick on every downbeat with a softer answer under it, soft water textures washing the pulse as the rift world opens, the reeds crowding and thickening through the wader commons, thinning to a single held pipe through the trona blades and the leaning carbonate sheets, one deep bloom as the drifting files of atoms stream out again as the globule herd, a breathy reed organ and soft water textures over a deep sub pulse, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 2.05
           },
           {
             "id": "tide_organ-b",
@@ -12004,7 +12010,8 @@
             "bar_conf": 0.83,
             "kick": 0.67,
             "score": 37.97,
-            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a breathing alkaline lake under a smoking cone — a breathy reed organ over a deep sub pulse, one heavy kick on every downbeat with a softer answer under it, soft water textures washing the pulse as the rift world opens, the reeds crowding and thickening through the wader commons, thinning to a single held pipe through the trona blades and the leaning carbonate sheets, one deep bloom as the drifting files of atoms stream out again as the globule herd, a breathy reed organ and soft water textures over a deep sub pulse, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a breathing alkaline lake under a smoking cone — a breathy reed organ over a deep sub pulse, one heavy kick on every downbeat with a softer answer under it, soft water textures washing the pulse as the rift world opens, the reeds crowding and thickening through the wader commons, thinning to a single held pipe through the trona blades and the leaning carbonate sheets, one deep bloom as the drifting files of atoms stream out again as the globule herd, a breathy reed organ and soft water textures over a deep sub pulse, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.97
           },
           {
             "id": "music_box-wild",
@@ -12017,7 +12024,8 @@
             "bar_conf": 0.81,
             "kick": 0.81,
             "score": 36.18,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a breathing alkaline lake under a smoking cone — a breathy reed organ over a deep sub pulse, one heavy kick on every downbeat with a softer answer under it, soft water textures washing the pulse as the rift world opens, the reeds crowding and thickening through the wader commons, thinning to a single held pipe through the trona blades and the leaning carbonate sheets, one deep bloom as the drifting files of atoms stream out again as the globule herd, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a breathing alkaline lake under a smoking cone — a breathy reed organ over a deep sub pulse, one heavy kick on every downbeat with a softer answer under it, soft water textures washing the pulse as the rift world opens, the reeds crowding and thickening through the wader commons, thinning to a single held pipe through the trona blades and the leaning carbonate sheets, one deep bloom as the drifting files of atoms stream out again as the globule herd, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 2.06
           },
           {
             "id": "analog_dawn-wild",
@@ -12030,7 +12038,8 @@
             "bar_conf": 0.8,
             "kick": 0.74,
             "score": 19.79,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a breathing alkaline lake under a smoking cone — a breathy reed organ over a deep sub pulse, one heavy kick on every downbeat with a softer answer under it, soft water textures washing the pulse as the rift world opens, the reeds crowding and thickening through the wader commons, thinning to a single held pipe through the trona blades and the leaning carbonate sheets, one deep bloom as the drifting files of atoms stream out again as the globule herd, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a breathing alkaline lake under a smoking cone — a breathy reed organ over a deep sub pulse, one heavy kick on every downbeat with a softer answer under it, soft water textures washing the pulse as the rift world opens, the reeds crowding and thickening through the wader commons, thinning to a single held pipe through the trona blades and the leaning carbonate sheets, one deep bloom as the drifting files of atoms stream out again as the globule herd, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.43
           },
           {
             "id": "deep_archive-wild",
@@ -12043,7 +12052,8 @@
             "bar_conf": 0.75,
             "kick": 0.5,
             "score": 11.55,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a breathing alkaline lake under a smoking cone — a breathy reed organ over a deep sub pulse, one heavy kick on every downbeat with a softer answer under it, soft water textures washing the pulse as the rift world opens, the reeds crowding and thickening through the wader commons, thinning to a single held pipe through the trona blades and the leaning carbonate sheets, one deep bloom as the drifting files of atoms stream out again as the globule herd, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a breathing alkaline lake under a smoking cone — a breathy reed organ over a deep sub pulse, one heavy kick on every downbeat with a softer answer under it, soft water textures washing the pulse as the rift world opens, the reeds crowding and thickening through the wader commons, thinning to a single held pipe through the trona blades and the leaning carbonate sheets, one deep bloom as the drifting files of atoms stream out again as the globule herd, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.55
           }
         ],
         "for_model": "ds",
@@ -12135,7 +12145,8 @@
             "bar_conf": 0.8,
             "kick": 0.81,
             "score": 39.95,
-            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a hushed night bloom widening into cosmic dawn — velvet pad and plucked water-drop figures over the pond commons, the pulse thinning to one low note under the pad's vault, near-empty space through the cell galleries, a single deep hit where the pigment rings open out into the froth of first starlight, then a warm widening fall home past the gas towers and the moor to the pond, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a hushed night bloom widening into cosmic dawn — velvet pad and plucked water-drop figures over the pond commons, the pulse thinning to one low note under the pad's vault, near-empty space through the cell galleries, a single deep hit where the pigment rings open out into the froth of first starlight, then a warm widening fall home past the gas towers and the moor to the pond, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.39
           },
           {
             "id": "night_market-third_answer",
@@ -12148,7 +12159,8 @@
             "bar_conf": 0.61,
             "kick": 0.53,
             "score": 29.65,
-            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a hushed night bloom widening into cosmic dawn — velvet pad and plucked water-drop figures over the pond commons, the pulse thinning to one low note under the pad's vault, near-empty space through the cell galleries, a single deep hit where the pigment rings open out into the froth of first starlight, then a warm widening fall home past the gas towers and the moor to the pond, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a hushed night bloom widening into cosmic dawn — velvet pad and plucked water-drop figures over the pond commons, the pulse thinning to one low note under the pad's vault, near-empty space through the cell galleries, a single deep hit where the pigment rings open out into the froth of first starlight, then a warm widening fall home past the gas towers and the moor to the pond, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.71
           },
           {
             "id": "music_box-wild",
@@ -12161,7 +12173,8 @@
             "bar_conf": 0.87,
             "kick": 0.82,
             "score": 20.84,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a hushed night bloom widening into cosmic dawn — velvet pad and plucked water-drop figures over the pond commons, the pulse thinning to one low note under the pad's vault, near-empty space through the cell galleries, a single deep hit where the pigment rings open out into the froth of first starlight, then a warm widening fall home past the gas towers and the moor to the pond, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a hushed night bloom widening into cosmic dawn — velvet pad and plucked water-drop figures over the pond commons, the pulse thinning to one low note under the pad's vault, near-empty space through the cell galleries, a single deep hit where the pigment rings open out into the froth of first starlight, then a warm widening fall home past the gas towers and the moor to the pond, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 2.29
           },
           {
             "id": "analog_dawn-wild",
@@ -12174,7 +12187,8 @@
             "bar_conf": 0.3,
             "kick": 0.32,
             "score": 10.53,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a hushed night bloom widening into cosmic dawn — velvet pad and plucked water-drop figures over the pond commons, the pulse thinning to one low note under the pad's vault, near-empty space through the cell galleries, a single deep hit where the pigment rings open out into the froth of first starlight, then a warm widening fall home past the gas towers and the moor to the pond, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a hushed night bloom widening into cosmic dawn — velvet pad and plucked water-drop figures over the pond commons, the pulse thinning to one low note under the pad's vault, near-empty space through the cell galleries, a single deep hit where the pigment rings open out into the froth of first starlight, then a warm widening fall home past the gas towers and the moor to the pond, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.16
           },
           {
             "id": "deep_archive-wild",
@@ -12187,7 +12201,8 @@
             "bar_conf": 0.37,
             "kick": 0.3,
             "score": 1.04,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a hushed night bloom widening into cosmic dawn — velvet pad and plucked water-drop figures over the pond commons, the pulse thinning to one low note under the pad's vault, near-empty space through the cell galleries, a single deep hit where the pigment rings open out into the froth of first starlight, then a warm widening fall home past the gas towers and the moor to the pond, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a hushed night bloom widening into cosmic dawn — velvet pad and plucked water-drop figures over the pond commons, the pulse thinning to one low note under the pad's vault, near-empty space through the cell galleries, a single deep hit where the pigment rings open out into the froth of first starlight, then a warm widening fall home past the gas towers and the moor to the pond, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.28
           }
         ],
         "for_model": "ds",
@@ -12279,7 +12294,8 @@
             "bar_conf": 0.71,
             "kick": 0.68,
             "score": 34.26,
-            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking warm analog synth pads with gentle tape warble under a single deep kick landing exactly on the downbeat of every bar, a driving midnight-rain pulse, one soft mallet bell struck as the shell rings give way to the sign, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking warm analog synth pads with gentle tape warble under a single deep kick landing exactly on the downbeat of every bar, a driving midnight-rain pulse, one soft mallet bell struck as the shell rings give way to the sign, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.05
           },
           {
             "id": "analog_dawn-halftime",
@@ -12292,7 +12308,8 @@
             "bar_conf": 0.51,
             "kick": 0.44,
             "score": 26.88,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking warm analog synth pads with gentle tape warble under a single deep kick landing exactly on the downbeat of every bar, a driving midnight-rain pulse, one soft mallet bell struck as the shell rings give way to the sign, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking warm analog synth pads with gentle tape warble under a single deep kick landing exactly on the downbeat of every bar, a driving midnight-rain pulse, one soft mallet bell struck as the shell rings give way to the sign, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.19
           },
           {
             "id": "wooden_orbit-wild",
@@ -12305,7 +12322,8 @@
             "bar_conf": 0.27,
             "kick": 0.24,
             "score": 6.33,
-            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking warm analog synth pads with gentle tape warble under a single deep kick landing exactly on the downbeat of every bar, a driving midnight-rain pulse, one soft mallet bell struck as the shell rings give way to the sign, warm marimba and kalimba over a round woody bass, gentle plucked figures, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking warm analog synth pads with gentle tape warble under a single deep kick landing exactly on the downbeat of every bar, a driving midnight-rain pulse, one soft mallet bell struck as the shell rings give way to the sign, warm marimba and kalimba over a round woody bass, gentle plucked figures, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.78
           },
           {
             "id": "music_box-wild",
@@ -12318,7 +12336,8 @@
             "bar_conf": 0.03,
             "kick": -0.02,
             "score": 1.58,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking warm analog synth pads with gentle tape warble under a single deep kick landing exactly on the downbeat of every bar, a driving midnight-rain pulse, one soft mallet bell struck as the shell rings give way to the sign, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking warm analog synth pads with gentle tape warble under a single deep kick landing exactly on the downbeat of every bar, a driving midnight-rain pulse, one soft mallet bell struck as the shell rings give way to the sign, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": -0.32
           },
           {
             "id": "deep_archive-wild",
@@ -12331,7 +12350,8 @@
             "bar_conf": 0.07,
             "kick": 0.1,
             "score": 1.19,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking warm analog synth pads with gentle tape warble under a single deep kick landing exactly on the downbeat of every bar, a driving midnight-rain pulse, one soft mallet bell struck as the shell rings give way to the sign, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking warm analog synth pads with gentle tape warble under a single deep kick landing exactly on the downbeat of every bar, a driving midnight-rain pulse, one soft mallet bell struck as the shell rings give way to the sign, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": -0.11
           }
         ],
         "for_model": "ds",
@@ -12423,7 +12443,8 @@
             "bar_conf": 0.65,
             "kick": 0.58,
             "score": 38.53,
-            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a seventeen-year waking at 90bpm — a hushed choir pad and fine granular shimmer over a deep kick on every downbeat, the shimmer massing into a chorus wall as the emergence commons arrives, easing to one suspended glass tone through the membrane and its paving, a single struck hit where the two carbon sheets open out into the two galaxy discs, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a seventeen-year waking at 90bpm — a hushed choir pad and fine granular shimmer over a deep kick on every downbeat, the shimmer massing into a chorus wall as the emergence commons arrives, easing to one suspended glass tone through the membrane and its paving, a single struck hit where the two carbon sheets open out into the two galaxy discs, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 6.22
           },
           {
             "id": "night_market-wild",
@@ -12436,7 +12457,8 @@
             "bar_conf": 0.83,
             "kick": 0.77,
             "score": 27.11,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a seventeen-year waking at 90bpm — a hushed choir pad and fine granular shimmer over a deep kick on every downbeat, the shimmer massing into a chorus wall as the emergence commons arrives, easing to one suspended glass tone through the membrane and its paving, a single struck hit where the two carbon sheets open out into the two galaxy discs, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a seventeen-year waking at 90bpm — a hushed choir pad and fine granular shimmer over a deep kick on every downbeat, the shimmer massing into a chorus wall as the emergence commons arrives, easing to one suspended glass tone through the membrane and its paving, a single struck hit where the two carbon sheets open out into the two galaxy discs, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.12
           },
           {
             "id": "choir_of_dust-b",
@@ -12449,7 +12471,8 @@
             "bar_conf": 0.81,
             "kick": 0.81,
             "score": 23.33,
-            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a seventeen-year waking at 90bpm — a hushed choir pad and fine granular shimmer over a deep kick on every downbeat, the shimmer massing into a chorus wall as the emergence commons arrives, easing to one suspended glass tone through the membrane and its paving, a single struck hit where the two carbon sheets open out into the two galaxy discs, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a seventeen-year waking at 90bpm — a hushed choir pad and fine granular shimmer over a deep kick on every downbeat, the shimmer massing into a chorus wall as the emergence commons arrives, easing to one suspended glass tone through the membrane and its paving, a single struck hit where the two carbon sheets open out into the two galaxy discs, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.36
           },
           {
             "id": "analog_dawn-wild",
@@ -12462,7 +12485,8 @@
             "bar_conf": 0.66,
             "kick": 0.44,
             "score": 15.67,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a seventeen-year waking at 90bpm — a hushed choir pad and fine granular shimmer over a deep kick on every downbeat, the shimmer massing into a chorus wall as the emergence commons arrives, easing to one suspended glass tone through the membrane and its paving, a single struck hit where the two carbon sheets open out into the two galaxy discs, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a seventeen-year waking at 90bpm — a hushed choir pad and fine granular shimmer over a deep kick on every downbeat, the shimmer massing into a chorus wall as the emergence commons arrives, easing to one suspended glass tone through the membrane and its paving, a single struck hit where the two carbon sheets open out into the two galaxy discs, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.97
           },
           {
             "id": "ember_pulse-wild",
@@ -12475,7 +12499,8 @@
             "bar_conf": 0.53,
             "kick": 0.27,
             "score": 3.77,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a seventeen-year waking at 90bpm — a hushed choir pad and fine granular shimmer over a deep kick on every downbeat, the shimmer massing into a chorus wall as the emergence commons arrives, easing to one suspended glass tone through the membrane and its paving, a single struck hit where the two carbon sheets open out into the two galaxy discs, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a seventeen-year waking at 90bpm — a hushed choir pad and fine granular shimmer over a deep kick on every downbeat, the shimmer massing into a chorus wall as the emergence commons arrives, easing to one suspended glass tone through the membrane and its paving, a single struck hit where the two carbon sheets open out into the two galaxy discs, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.2
           }
         ],
         "for_model": "ds",
@@ -12780,7 +12805,8 @@
             "bar_conf": 0.68,
             "kick": 0.63,
             "score": 40.15,
-            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a frozen garden with something smoldering at its heart — a deep 808 heartbeat under smoky low pads, distant soft chimes marking each scale change, the pads narrowing to one held drone out on the bacterium's hull, and a slow gravitational swell as the spooled turns open back out onto the frosted beds, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a frozen garden with something smoldering at its heart — a deep 808 heartbeat under smoky low pads, distant soft chimes marking each scale change, the pads narrowing to one held drone out on the bacterium's hull, and a slow gravitational swell as the spooled turns open back out onto the frosted beds, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.4
           },
           {
             "id": "night_market-wild",
@@ -12793,7 +12819,8 @@
             "bar_conf": 0.66,
             "kick": 0.71,
             "score": 34.48,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a frozen garden with something smoldering at its heart — a deep 808 heartbeat under smoky low pads, distant soft chimes marking each scale change, the pads narrowing to one held drone out on the bacterium's hull, and a slow gravitational swell as the spooled turns open back out onto the frosted beds, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a frozen garden with something smoldering at its heart — a deep 808 heartbeat under smoky low pads, distant soft chimes marking each scale change, the pads narrowing to one held drone out on the bacterium's hull, and a slow gravitational swell as the spooled turns open back out onto the frosted beds, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.86
           },
           {
             "id": "ember_pulse-heartbeat",
@@ -12806,7 +12833,8 @@
             "bar_conf": 0.72,
             "kick": 0.33,
             "score": 9.51,
-            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a frozen garden with something smoldering at its heart — a deep 808 heartbeat under smoky low pads, distant soft chimes marking each scale change, the pads narrowing to one held drone out on the bacterium's hull, and a slow gravitational swell as the spooled turns open back out onto the frosted beds, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a frozen garden with something smoldering at its heart — a deep 808 heartbeat under smoky low pads, distant soft chimes marking each scale change, the pads narrowing to one held drone out on the bacterium's hull, and a slow gravitational swell as the spooled turns open back out onto the frosted beds, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.44
           },
           {
             "id": "deep_archive-wild",
@@ -12819,7 +12847,8 @@
             "bar_conf": 0.41,
             "kick": 0.34,
             "score": 6.81,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a frozen garden with something smoldering at its heart — a deep 808 heartbeat under smoky low pads, distant soft chimes marking each scale change, the pads narrowing to one held drone out on the bacterium's hull, and a slow gravitational swell as the spooled turns open back out onto the frosted beds, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a frozen garden with something smoldering at its heart — a deep 808 heartbeat under smoky low pads, distant soft chimes marking each scale change, the pads narrowing to one held drone out on the bacterium's hull, and a slow gravitational swell as the spooled turns open back out onto the frosted beds, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.23
           },
           {
             "id": "analog_dawn-wild",
@@ -12832,7 +12861,8 @@
             "bar_conf": 0.72,
             "kick": -0.04,
             "score": 5.18,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a frozen garden with something smoldering at its heart — a deep 808 heartbeat under smoky low pads, distant soft chimes marking each scale change, the pads narrowing to one held drone out on the bacterium's hull, and a slow gravitational swell as the spooled turns open back out onto the frosted beds, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a frozen garden with something smoldering at its heart — a deep 808 heartbeat under smoky low pads, distant soft chimes marking each scale change, the pads narrowing to one held drone out on the bacterium's hull, and a slow gravitational swell as the spooled turns open back out onto the frosted beds, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.37
           }
         ],
         "for_model": "ds",
@@ -12924,7 +12954,8 @@
             "bar_conf": 0.71,
             "kick": 0.72,
             "score": 13.99,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a submerged archive dive — a low sub-drone under struck glass tones, one deep kick on every downbeat as the weave tightens scale by scale, the pulse narrowing to a single held tone through the atom and nucleus bars, a wide struck bloom where matter's weave opens into the cosmic corridor, and a keener, softer one as the corridor drops back onto the reef floor, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a submerged archive dive — a low sub-drone under struck glass tones, one deep kick on every downbeat as the weave tightens scale by scale, the pulse narrowing to a single held tone through the atom and nucleus bars, a wide struck bloom where matter's weave opens into the cosmic corridor, and a keener, softer one as the corridor drops back onto the reef floor, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.32
           },
           {
             "id": "deep_archive-third_answer",
@@ -12937,7 +12968,8 @@
             "bar_conf": 0.65,
             "kick": 0.61,
             "score": 12.66,
-            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a submerged archive dive — a low sub-drone under struck glass tones, one deep kick on every downbeat as the weave tightens scale by scale, the pulse narrowing to a single held tone through the atom and nucleus bars, a wide struck bloom where matter's weave opens into the cosmic corridor, and a keener, softer one as the corridor drops back onto the reef floor, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a submerged archive dive — a low sub-drone under struck glass tones, one deep kick on every downbeat as the weave tightens scale by scale, the pulse narrowing to a single held tone through the atom and nucleus bars, a wide struck bloom where matter's weave opens into the cosmic corridor, and a keener, softer one as the corridor drops back onto the reef floor, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.34
           },
           {
             "id": "ember_pulse-wild",
@@ -12950,7 +12982,8 @@
             "bar_conf": 0.68,
             "kick": 0.71,
             "score": 11.92,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a submerged archive dive — a low sub-drone under struck glass tones, one deep kick on every downbeat as the weave tightens scale by scale, the pulse narrowing to a single held tone through the atom and nucleus bars, a wide struck bloom where matter's weave opens into the cosmic corridor, and a keener, softer one as the corridor drops back onto the reef floor, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a submerged archive dive — a low sub-drone under struck glass tones, one deep kick on every downbeat as the weave tightens scale by scale, the pulse narrowing to a single held tone through the atom and nucleus bars, a wide struck bloom where matter's weave opens into the cosmic corridor, and a keener, softer one as the corridor drops back onto the reef floor, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.11
           },
           {
             "id": "night_market-wild",
@@ -12963,7 +12996,8 @@
             "bar_conf": 0.64,
             "kick": 0.73,
             "score": 9.96,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a submerged archive dive — a low sub-drone under struck glass tones, one deep kick on every downbeat as the weave tightens scale by scale, the pulse narrowing to a single held tone through the atom and nucleus bars, a wide struck bloom where matter's weave opens into the cosmic corridor, and a keener, softer one as the corridor drops back onto the reef floor, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a submerged archive dive — a low sub-drone under struck glass tones, one deep kick on every downbeat as the weave tightens scale by scale, the pulse narrowing to a single held tone through the atom and nucleus bars, a wide struck bloom where matter's weave opens into the cosmic corridor, and a keener, softer one as the corridor drops back onto the reef floor, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.96
           },
           {
             "id": "analog_dawn-wild",
@@ -12976,7 +13010,8 @@
             "bar_conf": 0.59,
             "kick": 0.58,
             "score": 9.77,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a submerged archive dive — a low sub-drone under struck glass tones, one deep kick on every downbeat as the weave tightens scale by scale, the pulse narrowing to a single held tone through the atom and nucleus bars, a wide struck bloom where matter's weave opens into the cosmic corridor, and a keener, softer one as the corridor drops back onto the reef floor, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a submerged archive dive — a low sub-drone under struck glass tones, one deep kick on every downbeat as the weave tightens scale by scale, the pulse narrowing to a single held tone through the atom and nucleus bars, a wide struck bloom where matter's weave opens into the cosmic corridor, and a keener, softer one as the corridor drops back onto the reef floor, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.1
           }
         ],
         "for_model": "ds",
@@ -13068,7 +13103,8 @@
             "bar_conf": 0.63,
             "kick": 0.51,
             "score": 13.55,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a prairie storm at 103bpm — a shimmering polar string pad over one deep kick on every downbeat, the pad massing into a low churn as the vault arrives, thinning to a single held tone through the ice galleries, one struck hit where the atom shells open out into the star's echo rings, then easing back to the pad for the descent from orbit, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a prairie storm at 103bpm — a shimmering polar string pad over one deep kick on every downbeat, the pad massing into a low churn as the vault arrives, thinning to a single held tone through the ice galleries, one struck hit where the atom shells open out into the star's echo rings, then easing back to the pad for the descent from orbit, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.16
           },
           {
             "id": "aurora_strings-b",
@@ -13081,7 +13117,8 @@
             "bar_conf": 0.7,
             "kick": 0.65,
             "score": 12.64,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a prairie storm at 103bpm — a shimmering polar string pad over one deep kick on every downbeat, the pad massing into a low churn as the vault arrives, thinning to a single held tone through the ice galleries, one struck hit where the atom shells open out into the star's echo rings, then easing back to the pad for the descent from orbit, bowed string pad swells and sparse harp plucks, silvery and cold, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a prairie storm at 103bpm — a shimmering polar string pad over one deep kick on every downbeat, the pad massing into a low churn as the vault arrives, thinning to a single held tone through the ice galleries, one struck hit where the atom shells open out into the star's echo rings, then easing back to the pad for the descent from orbit, bowed string pad swells and sparse harp plucks, silvery and cold, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.02
           },
           {
             "id": "pulse1-aurora_strings",
@@ -13094,7 +13131,8 @@
             "bar_conf": 0.61,
             "kick": 0.57,
             "score": 11.77,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a prairie storm at 103bpm — a shimmering polar string pad over one deep kick on every downbeat, the pad massing into a low churn as the vault arrives, thinning to a single held tone through the ice galleries, one struck hit where the atom shells open out into the star's echo rings, then easing back to the pad for the descent from orbit, bowed string pad swells and sparse harp plucks, silvery and cold, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a prairie storm at 103bpm — a shimmering polar string pad over one deep kick on every downbeat, the pad massing into a low churn as the vault arrives, thinning to a single held tone through the ice galleries, one struck hit where the atom shells open out into the star's echo rings, then easing back to the pad for the descent from orbit, bowed string pad swells and sparse harp plucks, silvery and cold, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.04
           },
           {
             "id": "wooden_orbit-wild",
@@ -13107,7 +13145,8 @@
             "bar_conf": 0.37,
             "kick": 0.14,
             "score": 2.05,
-            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a prairie storm at 103bpm — a shimmering polar string pad over one deep kick on every downbeat, the pad massing into a low churn as the vault arrives, thinning to a single held tone through the ice galleries, one struck hit where the atom shells open out into the star's echo rings, then easing back to the pad for the descent from orbit, warm marimba and kalimba over a round woody bass, gentle plucked figures, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a prairie storm at 103bpm — a shimmering polar string pad over one deep kick on every downbeat, the pad massing into a low churn as the vault arrives, thinning to a single held tone through the ice galleries, one struck hit where the atom shells open out into the star's echo rings, then easing back to the pad for the descent from orbit, warm marimba and kalimba over a round woody bass, gentle plucked figures, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.26
           },
           {
             "id": "music_box-wild",
@@ -13120,7 +13159,8 @@
             "bar_conf": 0.12,
             "kick": 0.11,
             "score": 0.73,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a prairie storm at 103bpm — a shimmering polar string pad over one deep kick on every downbeat, the pad massing into a low churn as the vault arrives, thinning to a single held tone through the ice galleries, one struck hit where the atom shells open out into the star's echo rings, then easing back to the pad for the descent from orbit, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a prairie storm at 103bpm — a shimmering polar string pad over one deep kick on every downbeat, the pad massing into a low churn as the vault arrives, thinning to a single held tone through the ice galleries, one struck hit where the atom shells open out into the star's echo rings, then easing back to the pad for the descent from orbit, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.3
           }
         ],
         "for_model": "ds",
@@ -13562,7 +13602,8 @@
             "bar_conf": 0.8,
             "kick": 0.4,
             "score": 26.41,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a chalk-vault chapel dive — struck glass tones over a low bowed drone with one deep kick on every downbeat, the pulse tightening bar by bar through the fossil drifts and the calcite courses, the drone thinning to a single held tone across the atomic bars, a wide bloom of struck bells where the froth opens into cosmic dawn, and a softer, closer bloom as the galaxy walls drop back onto the cellar rack, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a chalk-vault chapel dive — struck glass tones over a low bowed drone with one deep kick on every downbeat, the pulse tightening bar by bar through the fossil drifts and the calcite courses, the drone thinning to a single held tone across the atomic bars, a wide bloom of struck bells where the froth opens into cosmic dawn, and a softer, closer bloom as the galaxy walls drop back onto the cellar rack, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.71
           },
           {
             "id": "glass_chapel-halftime",
@@ -13575,7 +13616,8 @@
             "bar_conf": 0.78,
             "kick": 0.32,
             "score": 14.9,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a chalk-vault chapel dive — struck glass tones over a low bowed drone with one deep kick on every downbeat, the pulse tightening bar by bar through the fossil drifts and the calcite courses, the drone thinning to a single held tone across the atomic bars, a wide bloom of struck bells where the froth opens into cosmic dawn, and a softer, closer bloom as the galaxy walls drop back onto the cellar rack, crystalline glass bells and a soft distant choir pad, airy shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a chalk-vault chapel dive — struck glass tones over a low bowed drone with one deep kick on every downbeat, the pulse tightening bar by bar through the fossil drifts and the calcite courses, the drone thinning to a single held tone across the atomic bars, a wide bloom of struck bells where the froth opens into cosmic dawn, and a softer, closer bloom as the galaxy walls drop back onto the cellar rack, crystalline glass bells and a soft distant choir pad, airy shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.01
           },
           {
             "id": "glass_chapel",
@@ -13588,7 +13630,8 @@
             "bar_conf": 0.55,
             "kick": 0.48,
             "score": 13.48,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a chalk-vault chapel dive — struck glass tones over a low bowed drone with one deep kick on every downbeat, the pulse tightening bar by bar through the fossil drifts and the calcite courses, the drone thinning to a single held tone across the atomic bars, a wide bloom of struck bells where the froth opens into cosmic dawn, and a softer, closer bloom as the galaxy walls drop back onto the cellar rack, crystalline glass bells and a soft distant choir pad, airy shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a chalk-vault chapel dive — struck glass tones over a low bowed drone with one deep kick on every downbeat, the pulse tightening bar by bar through the fossil drifts and the calcite courses, the drone thinning to a single held tone across the atomic bars, a wide bloom of struck bells where the froth opens into cosmic dawn, and a softer, closer bloom as the galaxy walls drop back onto the cellar rack, crystalline glass bells and a soft distant choir pad, airy shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.99
           },
           {
             "id": "deep_archive-wild",
@@ -13601,7 +13644,8 @@
             "bar_conf": 0.71,
             "kick": 0.37,
             "score": 7.96,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a chalk-vault chapel dive — struck glass tones over a low bowed drone with one deep kick on every downbeat, the pulse tightening bar by bar through the fossil drifts and the calcite courses, the drone thinning to a single held tone across the atomic bars, a wide bloom of struck bells where the froth opens into cosmic dawn, and a softer, closer bloom as the galaxy walls drop back onto the cellar rack, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a chalk-vault chapel dive — struck glass tones over a low bowed drone with one deep kick on every downbeat, the pulse tightening bar by bar through the fossil drifts and the calcite courses, the drone thinning to a single held tone across the atomic bars, a wide bloom of struck bells where the froth opens into cosmic dawn, and a softer, closer bloom as the galaxy walls drop back onto the cellar rack, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.68
           },
           {
             "id": "analog_dawn-wild",
@@ -13614,7 +13658,8 @@
             "bar_conf": 0.05,
             "kick": -0.02,
             "score": 0.45,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a chalk-vault chapel dive — struck glass tones over a low bowed drone with one deep kick on every downbeat, the pulse tightening bar by bar through the fossil drifts and the calcite courses, the drone thinning to a single held tone across the atomic bars, a wide bloom of struck bells where the froth opens into cosmic dawn, and a softer, closer bloom as the galaxy walls drop back onto the cellar rack, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a chalk-vault chapel dive — struck glass tones over a low bowed drone with one deep kick on every downbeat, the pulse tightening bar by bar through the fossil drifts and the calcite courses, the drone thinning to a single held tone across the atomic bars, a wide bloom of struck bells where the froth opens into cosmic dawn, and a softer, closer bloom as the galaxy walls drop back onto the cellar rack, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": -0.11
           }
         ],
         "gen_attempt": 0,
@@ -13707,7 +13752,8 @@
             "bar_conf": 0.65,
             "kick": 0.7,
             "score": 57.59,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking an alpine night vigil — a low sub-drone under bowed strings and struck ice tones, one deep kick landing on every downbeat as the sorted net tightens scale by scale, the pulse thinning to a single sustained bowed tone through the cell and pigment bars, a wide struck bloom where the tiling opens into the basin seen from overhead, and a softer, warmer one as the basin settles back among the hay larders, bowed string pad swells and sparse harp plucks, silvery and cold, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking an alpine night vigil — a low sub-drone under bowed strings and struck ice tones, one deep kick landing on every downbeat as the sorted net tightens scale by scale, the pulse thinning to a single sustained bowed tone through the cell and pigment bars, a wide struck bloom where the tiling opens into the basin seen from overhead, and a softer, warmer one as the basin settles back among the hay larders, bowed string pad swells and sparse harp plucks, silvery and cold, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 2.43
           },
           {
             "id": "aurora_strings-third_answer",
@@ -13720,7 +13766,8 @@
             "bar_conf": 0.51,
             "kick": 0.38,
             "score": 16.33,
-            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking an alpine night vigil — a low sub-drone under bowed strings and struck ice tones, one deep kick landing on every downbeat as the sorted net tightens scale by scale, the pulse thinning to a single sustained bowed tone through the cell and pigment bars, a wide struck bloom where the tiling opens into the basin seen from overhead, and a softer, warmer one as the basin settles back among the hay larders, bowed string pad swells and sparse harp plucks, silvery and cold, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking an alpine night vigil — a low sub-drone under bowed strings and struck ice tones, one deep kick landing on every downbeat as the sorted net tightens scale by scale, the pulse thinning to a single sustained bowed tone through the cell and pigment bars, a wide struck bloom where the tiling opens into the basin seen from overhead, and a softer, warmer one as the basin settles back among the hay larders, bowed string pad swells and sparse harp plucks, silvery and cold, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.4
           },
           {
             "id": "wooden_orbit-wild",
@@ -13733,7 +13780,8 @@
             "bar_conf": 0.33,
             "kick": 0.32,
             "score": 7.84,
-            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking an alpine night vigil — a low sub-drone under bowed strings and struck ice tones, one deep kick landing on every downbeat as the sorted net tightens scale by scale, the pulse thinning to a single sustained bowed tone through the cell and pigment bars, a wide struck bloom where the tiling opens into the basin seen from overhead, and a softer, warmer one as the basin settles back among the hay larders, warm marimba and kalimba over a round woody bass, gentle plucked figures, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking an alpine night vigil — a low sub-drone under bowed strings and struck ice tones, one deep kick landing on every downbeat as the sorted net tightens scale by scale, the pulse thinning to a single sustained bowed tone through the cell and pigment bars, a wide struck bloom where the tiling opens into the basin seen from overhead, and a softer, warmer one as the basin settles back among the hay larders, warm marimba and kalimba over a round woody bass, gentle plucked figures, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.07
           },
           {
             "id": "deep_archive-wild",
@@ -13746,7 +13794,8 @@
             "bar_conf": 0.64,
             "kick": 0.2,
             "score": 6.25,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking an alpine night vigil — a low sub-drone under bowed strings and struck ice tones, one deep kick landing on every downbeat as the sorted net tightens scale by scale, the pulse thinning to a single sustained bowed tone through the cell and pigment bars, a wide struck bloom where the tiling opens into the basin seen from overhead, and a softer, warmer one as the basin settles back among the hay larders, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking an alpine night vigil — a low sub-drone under bowed strings and struck ice tones, one deep kick landing on every downbeat as the sorted net tightens scale by scale, the pulse thinning to a single sustained bowed tone through the cell and pigment bars, a wide struck bloom where the tiling opens into the basin seen from overhead, and a softer, warmer one as the basin settles back among the hay larders, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.79
           },
           {
             "id": "music_box-wild",
@@ -13759,7 +13808,8 @@
             "bar_conf": 0.31,
             "kick": 0.01,
             "score": 1.1,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking an alpine night vigil — a low sub-drone under bowed strings and struck ice tones, one deep kick landing on every downbeat as the sorted net tightens scale by scale, the pulse thinning to a single sustained bowed tone through the cell and pigment bars, a wide struck bloom where the tiling opens into the basin seen from overhead, and a softer, warmer one as the basin settles back among the hay larders, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking an alpine night vigil — a low sub-drone under bowed strings and struck ice tones, one deep kick landing on every downbeat as the sorted net tightens scale by scale, the pulse thinning to a single sustained bowed tone through the cell and pigment bars, a wide struck bloom where the tiling opens into the basin seen from overhead, and a softer, warmer one as the basin settles back among the hay larders, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.4
           }
         ],
         "gen_attempt": 0,
@@ -13852,7 +13902,8 @@
             "bar_conf": 0.83,
             "kick": 0.71,
             "score": 21.46,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a night watch measured out by falling grains — a tiny music box and celesta over a low warm drone with one deep kick on every downbeat, the struck tines tightening through the garnet ranks and the cubic frame, opening wide and slow where two stars share one stream of fire, then drawing small and close again as the harbour lamps come back onto the wheelhouse glass, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a night watch measured out by falling grains — a tiny music box and celesta over a low warm drone with one deep kick on every downbeat, the struck tines tightening through the garnet ranks and the cubic frame, opening wide and slow where two stars share one stream of fire, then drawing small and close again as the harbour lamps come back onto the wheelhouse glass, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.05
           },
           {
             "id": "music_box-halftime",
@@ -13865,7 +13916,8 @@
             "bar_conf": 0.82,
             "kick": 0.47,
             "score": 15.94,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a night watch measured out by falling grains — a tiny music box and celesta over a low warm drone with one deep kick on every downbeat, the struck tines tightening through the garnet ranks and the cubic frame, opening wide and slow where two stars share one stream of fire, then drawing small and close again as the harbour lamps come back onto the wheelhouse glass, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a night watch measured out by falling grains — a tiny music box and celesta over a low warm drone with one deep kick on every downbeat, the struck tines tightening through the garnet ranks and the cubic frame, opening wide and slow where two stars share one stream of fire, then drawing small and close again as the harbour lamps come back onto the wheelhouse glass, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.48
           },
           {
             "id": "analog_dawn-wild",
@@ -13878,7 +13930,8 @@
             "bar_conf": 0.74,
             "kick": 0.6,
             "score": 10.81,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a night watch measured out by falling grains — a tiny music box and celesta over a low warm drone with one deep kick on every downbeat, the struck tines tightening through the garnet ranks and the cubic frame, opening wide and slow where two stars share one stream of fire, then drawing small and close again as the harbour lamps come back onto the wheelhouse glass, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a night watch measured out by falling grains — a tiny music box and celesta over a low warm drone with one deep kick on every downbeat, the struck tines tightening through the garnet ranks and the cubic frame, opening wide and slow where two stars share one stream of fire, then drawing small and close again as the harbour lamps come back onto the wheelhouse glass, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.26
           },
           {
             "id": "night_market-wild",
@@ -13891,7 +13944,8 @@
             "bar_conf": 0.27,
             "kick": 0.22,
             "score": 4.98,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a night watch measured out by falling grains — a tiny music box and celesta over a low warm drone with one deep kick on every downbeat, the struck tines tightening through the garnet ranks and the cubic frame, opening wide and slow where two stars share one stream of fire, then drawing small and close again as the harbour lamps come back onto the wheelhouse glass, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a night watch measured out by falling grains — a tiny music box and celesta over a low warm drone with one deep kick on every downbeat, the struck tines tightening through the garnet ranks and the cubic frame, opening wide and slow where two stars share one stream of fire, then drawing small and close again as the harbour lamps come back onto the wheelhouse glass, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.3
           },
           {
             "id": "deep_archive-wild",
@@ -13904,7 +13958,8 @@
             "bar_conf": 0.15,
             "kick": 0.25,
             "score": 0.82,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a night watch measured out by falling grains — a tiny music box and celesta over a low warm drone with one deep kick on every downbeat, the struck tines tightening through the garnet ranks and the cubic frame, opening wide and slow where two stars share one stream of fire, then drawing small and close again as the harbour lamps come back onto the wheelhouse glass, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a night watch measured out by falling grains — a tiny music box and celesta over a low warm drone with one deep kick on every downbeat, the struck tines tightening through the garnet ranks and the cubic frame, opening wide and slow where two stars share one stream of fire, then drawing small and close again as the harbour lamps come back onto the wheelhouse glass, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.12
           }
         ],
         "gen_attempt": 0,
@@ -14357,7 +14412,7 @@
       "yt_title": "A cosmic dance of galaxies, stars, and desert cacti 🌌🌵",
       "yt_desc": "A cosmic dance of galaxies, stars, and desert cacti 🌌🌵\n\nCan you spot Lamar the Star in this cosmic journey? 👀\n\nOne continuous shot, no cuts, looping forever — through the cosmic web at its widest scale → the burning outer shell of a star crowded → a gravel slope spread from the foot → the pleated flank of one cactus column → a cell's membrane at molecular width.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
       "cameo": "lamar",
-      "state": "music",
+      "state": "queued",
       "scheduled": null,
       "engine_params": {
         "parallax_gain": 1.0,
@@ -14490,8 +14545,8 @@
         "bpm": 80,
         "bar": 3.0,
         "key": "D minor",
-        "stage": "review",
-        "chosen": null,
+        "stage": "done",
+        "chosen": "choir_of_dust-b",
         "candidates": [
           {
             "id": "choir_of_dust-halftime",
@@ -14655,7 +14710,8 @@
             "bar_conf": 0.75,
             "kick": 0.74,
             "score": 22.43,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a spring-night vigil at a woodland pool — a tiny music box and celesta over a low warm drone, one deep soft kick landing on every downbeat as the clutch halves scale by scale, the tines thinning to single struck notes through the cell and cord bars, a wide struck bloom where the two-ended fog opens as the pinched nebula, and a warmer settling figure as the star's floor gives way to the moonlit wood, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a spring-night vigil at a woodland pool — a tiny music box and celesta over a low warm drone, one deep soft kick landing on every downbeat as the clutch halves scale by scale, the tines thinning to single struck notes through the cell and cord bars, a wide struck bloom where the two-ended fog opens as the pinched nebula, and a warmer settling figure as the star's floor gives way to the moonlit wood, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.34
           },
           {
             "id": "analog_dawn-wild",
@@ -14668,7 +14724,8 @@
             "bar_conf": 0.4,
             "kick": 0.37,
             "score": 20.24,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a spring-night vigil at a woodland pool — a tiny music box and celesta over a low warm drone, one deep soft kick landing on every downbeat as the clutch halves scale by scale, the tines thinning to single struck notes through the cell and cord bars, a wide struck bloom where the two-ended fog opens as the pinched nebula, and a warmer settling figure as the star's floor gives way to the moonlit wood, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a spring-night vigil at a woodland pool — a tiny music box and celesta over a low warm drone, one deep soft kick landing on every downbeat as the clutch halves scale by scale, the tines thinning to single struck notes through the cell and cord bars, a wide struck bloom where the two-ended fog opens as the pinched nebula, and a warmer settling figure as the star's floor gives way to the moonlit wood, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.13
           },
           {
             "id": "music_box",
@@ -14681,7 +14738,8 @@
             "bar_conf": 0.47,
             "kick": 0.41,
             "score": 10.7,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a spring-night vigil at a woodland pool — a tiny music box and celesta over a low warm drone, one deep soft kick landing on every downbeat as the clutch halves scale by scale, the tines thinning to single struck notes through the cell and cord bars, a wide struck bloom where the two-ended fog opens as the pinched nebula, and a warmer settling figure as the star's floor gives way to the moonlit wood, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a spring-night vigil at a woodland pool — a tiny music box and celesta over a low warm drone, one deep soft kick landing on every downbeat as the clutch halves scale by scale, the tines thinning to single struck notes through the cell and cord bars, a wide struck bloom where the two-ended fog opens as the pinched nebula, and a warmer settling figure as the star's floor gives way to the moonlit wood, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.14
           },
           {
             "id": "deep_archive-wild",
@@ -14694,7 +14752,8 @@
             "bar_conf": 0.14,
             "kick": -0.0,
             "score": 3.75,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a spring-night vigil at a woodland pool — a tiny music box and celesta over a low warm drone, one deep soft kick landing on every downbeat as the clutch halves scale by scale, the tines thinning to single struck notes through the cell and cord bars, a wide struck bloom where the two-ended fog opens as the pinched nebula, and a warmer settling figure as the star's floor gives way to the moonlit wood, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a spring-night vigil at a woodland pool — a tiny music box and celesta over a low warm drone, one deep soft kick landing on every downbeat as the clutch halves scale by scale, the tines thinning to single struck notes through the cell and cord bars, a wide struck bloom where the two-ended fog opens as the pinched nebula, and a warmer settling figure as the star's floor gives way to the moonlit wood, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.88
           },
           {
             "id": "night_market-wild",
@@ -14707,7 +14766,8 @@
             "bar_conf": 0.38,
             "kick": 0.05,
             "score": 1.28,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a spring-night vigil at a woodland pool — a tiny music box and celesta over a low warm drone, one deep soft kick landing on every downbeat as the clutch halves scale by scale, the tines thinning to single struck notes through the cell and cord bars, a wide struck bloom where the two-ended fog opens as the pinched nebula, and a warmer settling figure as the star's floor gives way to the moonlit wood, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a spring-night vigil at a woodland pool — a tiny music box and celesta over a low warm drone, one deep soft kick landing on every downbeat as the clutch halves scale by scale, the tines thinning to single struck notes through the cell and cord bars, a wide struck bloom where the two-ended fog opens as the pinched nebula, and a warmer settling figure as the star's floor gives way to the moonlit wood, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.83
           }
         ],
         "gen_attempt": 0,
@@ -14800,7 +14860,8 @@
             "bar_conf": 0.61,
             "kick": 0.54,
             "score": 20.59,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a miniature night piece — a tiny music box and celesta over a low warm drone, one deep soft kick on every downbeat, the tines spare and spaced over the mossy bough, thickening into a busy little clockwork figure for the crowded pond, hushed and glassy over the frosted leaf, one held tine at the wheel of cells, then a wide warm swell as the wheel opens into the whole canopy and the box returns to its opening figure over the bough, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a miniature night piece — a tiny music box and celesta over a low warm drone, one deep soft kick on every downbeat, the tines spare and spaced over the mossy bough, thickening into a busy little clockwork figure for the crowded pond, hushed and glassy over the frosted leaf, one held tine at the wheel of cells, then a wide warm swell as the wheel opens into the whole canopy and the box returns to its opening figure over the bough, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.32
           },
           {
             "id": "pulse2-music_box",
@@ -14813,7 +14874,8 @@
             "bar_conf": 0.53,
             "kick": 0.48,
             "score": 17.0,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a miniature night piece — a tiny music box and celesta over a low warm drone, one deep soft kick on every downbeat, the tines spare and spaced over the mossy bough, thickening into a busy little clockwork figure for the crowded pond, hushed and glassy over the frosted leaf, one held tine at the wheel of cells, then a wide warm swell as the wheel opens into the whole canopy and the box returns to its opening figure over the bough, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a miniature night piece — a tiny music box and celesta over a low warm drone, one deep soft kick on every downbeat, the tines spare and spaced over the mossy bough, thickening into a busy little clockwork figure for the crowded pond, hushed and glassy over the frosted leaf, one held tine at the wheel of cells, then a wide warm swell as the wheel opens into the whole canopy and the box returns to its opening figure over the bough, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.91
           },
           {
             "id": "music_box-b",
@@ -14826,7 +14888,8 @@
             "bar_conf": 0.4,
             "kick": 0.26,
             "score": 5.53,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a miniature night piece — a tiny music box and celesta over a low warm drone, one deep soft kick on every downbeat, the tines spare and spaced over the mossy bough, thickening into a busy little clockwork figure for the crowded pond, hushed and glassy over the frosted leaf, one held tine at the wheel of cells, then a wide warm swell as the wheel opens into the whole canopy and the box returns to its opening figure over the bough, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a miniature night piece — a tiny music box and celesta over a low warm drone, one deep soft kick on every downbeat, the tines spare and spaced over the mossy bough, thickening into a busy little clockwork figure for the crowded pond, hushed and glassy over the frosted leaf, one held tine at the wheel of cells, then a wide warm swell as the wheel opens into the whole canopy and the box returns to its opening figure over the bough, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.73
           },
           {
             "id": "night_market-wild",
@@ -14839,7 +14902,8 @@
             "bar_conf": 0.12,
             "kick": -0.02,
             "score": 2.68,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a miniature night piece — a tiny music box and celesta over a low warm drone, one deep soft kick on every downbeat, the tines spare and spaced over the mossy bough, thickening into a busy little clockwork figure for the crowded pond, hushed and glassy over the frosted leaf, one held tine at the wheel of cells, then a wide warm swell as the wheel opens into the whole canopy and the box returns to its opening figure over the bough, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a miniature night piece — a tiny music box and celesta over a low warm drone, one deep soft kick on every downbeat, the tines spare and spaced over the mossy bough, thickening into a busy little clockwork figure for the crowded pond, hushed and glassy over the frosted leaf, one held tine at the wheel of cells, then a wide warm swell as the wheel opens into the whole canopy and the box returns to its opening figure over the bough, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.14
           },
           {
             "id": "deep_archive-wild",
@@ -14852,7 +14916,8 @@
             "bar_conf": 0.17,
             "kick": -0.01,
             "score": 1.08,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a miniature night piece — a tiny music box and celesta over a low warm drone, one deep soft kick on every downbeat, the tines spare and spaced over the mossy bough, thickening into a busy little clockwork figure for the crowded pond, hushed and glassy over the frosted leaf, one held tine at the wheel of cells, then a wide warm swell as the wheel opens into the whole canopy and the box returns to its opening figure over the bough, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a miniature night piece — a tiny music box and celesta over a low warm drone, one deep soft kick on every downbeat, the tines spare and spaced over the mossy bough, thickening into a busy little clockwork figure for the crowded pond, hushed and glassy over the frosted leaf, one held tine at the wheel of cells, then a wide warm swell as the wheel opens into the whole canopy and the box returns to its opening figure over the bough, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.83
           }
         ],
         "gen_attempt": 0,
@@ -15159,7 +15224,8 @@
             "bar_conf": 0.77,
             "kick": 0.75,
             "score": 43.08,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a nocturnal wander through a lamp-lit grove — hand percussion and plucked gut strings over a low warm drone, one deep soft kick on every downbeat as the bands nest scale within scale, the plucking thinning to single struck notes through the kernel and cell bars, a wide struck bloom where the cubic lattice of nuclei unfolds as the star's shed shells, and a settling return phrase as the faceted crust gives way to the night world and its coast, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a nocturnal wander through a lamp-lit grove — hand percussion and plucked gut strings over a low warm drone, one deep soft kick on every downbeat as the bands nest scale within scale, the plucking thinning to single struck notes through the kernel and cell bars, a wide struck bloom where the cubic lattice of nuclei unfolds as the star's shed shells, and a settling return phrase as the faceted crust gives way to the night world and its coast, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 2.33
           },
           {
             "id": "night_market-third_answer",
@@ -15172,7 +15238,8 @@
             "bar_conf": 0.76,
             "kick": 0.59,
             "score": 26.71,
-            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a nocturnal wander through a lamp-lit grove — hand percussion and plucked gut strings over a low warm drone, one deep soft kick on every downbeat as the bands nest scale within scale, the plucking thinning to single struck notes through the kernel and cell bars, a wide struck bloom where the cubic lattice of nuclei unfolds as the star's shed shells, and a settling return phrase as the faceted crust gives way to the night world and its coast, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a nocturnal wander through a lamp-lit grove — hand percussion and plucked gut strings over a low warm drone, one deep soft kick on every downbeat as the bands nest scale within scale, the plucking thinning to single struck notes through the kernel and cell bars, a wide struck bloom where the cubic lattice of nuclei unfolds as the star's shed shells, and a settling return phrase as the faceted crust gives way to the night world and its coast, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 3.88
           },
           {
             "id": "analog_dawn-wild",
@@ -15185,7 +15252,8 @@
             "bar_conf": 0.66,
             "kick": 0.61,
             "score": 13.14,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a nocturnal wander through a lamp-lit grove — hand percussion and plucked gut strings over a low warm drone, one deep soft kick on every downbeat as the bands nest scale within scale, the plucking thinning to single struck notes through the kernel and cell bars, a wide struck bloom where the cubic lattice of nuclei unfolds as the star's shed shells, and a settling return phrase as the faceted crust gives way to the night world and its coast, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a nocturnal wander through a lamp-lit grove — hand percussion and plucked gut strings over a low warm drone, one deep soft kick on every downbeat as the bands nest scale within scale, the plucking thinning to single struck notes through the kernel and cell bars, a wide struck bloom where the cubic lattice of nuclei unfolds as the star's shed shells, and a settling return phrase as the faceted crust gives way to the night world and its coast, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.01
           },
           {
             "id": "deep_archive-wild",
@@ -15198,7 +15266,8 @@
             "bar_conf": 0.19,
             "kick": 0.12,
             "score": 3.69,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a nocturnal wander through a lamp-lit grove — hand percussion and plucked gut strings over a low warm drone, one deep soft kick on every downbeat as the bands nest scale within scale, the plucking thinning to single struck notes through the kernel and cell bars, a wide struck bloom where the cubic lattice of nuclei unfolds as the star's shed shells, and a settling return phrase as the faceted crust gives way to the night world and its coast, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a nocturnal wander through a lamp-lit grove — hand percussion and plucked gut strings over a low warm drone, one deep soft kick on every downbeat as the bands nest scale within scale, the plucking thinning to single struck notes through the kernel and cell bars, a wide struck bloom where the cubic lattice of nuclei unfolds as the star's shed shells, and a settling return phrase as the faceted crust gives way to the night world and its coast, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.57
           },
           {
             "id": "music_box-wild",
@@ -15211,7 +15280,8 @@
             "bar_conf": 0.52,
             "kick": 0.21,
             "score": 3.67,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a nocturnal wander through a lamp-lit grove — hand percussion and plucked gut strings over a low warm drone, one deep soft kick on every downbeat as the bands nest scale within scale, the plucking thinning to single struck notes through the kernel and cell bars, a wide struck bloom where the cubic lattice of nuclei unfolds as the star's shed shells, and a settling return phrase as the faceted crust gives way to the night world and its coast, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a nocturnal wander through a lamp-lit grove — hand percussion and plucked gut strings over a low warm drone, one deep soft kick on every downbeat as the bands nest scale within scale, the plucking thinning to single struck notes through the kernel and cell bars, a wide struck bloom where the cubic lattice of nuclei unfolds as the star's shed shells, and a settling return phrase as the faceted crust gives way to the night world and its coast, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.86
           }
         ],
         "gen_attempt": 0,
@@ -15304,7 +15374,8 @@
             "bar_conf": 0.71,
             "kick": 0.66,
             "score": 19.7,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a night drift on the deep-water sea — dark oceanic pads and a deep warm sub drone under slow blooming swells, one heavy low kick landing on the downbeat of every scale change, the pads thinning to a single held tone through the cell and chain bars, a wide swell where the splitting tracks fold out as the cluster's converging lanes, and a warmer settling figure as the star's comet shoal gives way to the moonlit sea, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a night drift on the deep-water sea — dark oceanic pads and a deep warm sub drone under slow blooming swells, one heavy low kick landing on the downbeat of every scale change, the pads thinning to a single held tone through the cell and chain bars, a wide swell where the splitting tracks fold out as the cluster's converging lanes, and a warmer settling figure as the star's comet shoal gives way to the moonlit sea, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.27
           },
           {
             "id": "deep_archive-heartbeat",
@@ -15317,7 +15388,8 @@
             "bar_conf": 0.75,
             "kick": 0.79,
             "score": 18.0,
-            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a night drift on the deep-water sea — dark oceanic pads and a deep warm sub drone under slow blooming swells, one heavy low kick landing on the downbeat of every scale change, the pads thinning to a single held tone through the cell and chain bars, a wide swell where the splitting tracks fold out as the cluster's converging lanes, and a warmer settling figure as the star's comet shoal gives way to the moonlit sea, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a night drift on the deep-water sea — dark oceanic pads and a deep warm sub drone under slow blooming swells, one heavy low kick landing on the downbeat of every scale change, the pads thinning to a single held tone through the cell and chain bars, a wide swell where the splitting tracks fold out as the cluster's converging lanes, and a warmer settling figure as the star's comet shoal gives way to the moonlit sea, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.63
           },
           {
             "id": "deep_archive-halftime",
@@ -15330,7 +15402,8 @@
             "bar_conf": 0.74,
             "kick": 0.6,
             "score": 11.22,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a night drift on the deep-water sea — dark oceanic pads and a deep warm sub drone under slow blooming swells, one heavy low kick landing on the downbeat of every scale change, the pads thinning to a single held tone through the cell and chain bars, a wide swell where the splitting tracks fold out as the cluster's converging lanes, and a warmer settling figure as the star's comet shoal gives way to the moonlit sea, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a night drift on the deep-water sea — dark oceanic pads and a deep warm sub drone under slow blooming swells, one heavy low kick landing on the downbeat of every scale change, the pads thinning to a single held tone through the cell and chain bars, a wide swell where the splitting tracks fold out as the cluster's converging lanes, and a warmer settling figure as the star's comet shoal gives way to the moonlit sea, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.32
           },
           {
             "id": "analog_dawn-wild",
@@ -15343,7 +15416,8 @@
             "bar_conf": -0.02,
             "kick": -0.01,
             "score": 0.86,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a night drift on the deep-water sea — dark oceanic pads and a deep warm sub drone under slow blooming swells, one heavy low kick landing on the downbeat of every scale change, the pads thinning to a single held tone through the cell and chain bars, a wide swell where the splitting tracks fold out as the cluster's converging lanes, and a warmer settling figure as the star's comet shoal gives way to the moonlit sea, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a night drift on the deep-water sea — dark oceanic pads and a deep warm sub drone under slow blooming swells, one heavy low kick landing on the downbeat of every scale change, the pads thinning to a single held tone through the cell and chain bars, a wide swell where the splitting tracks fold out as the cluster's converging lanes, and a warmer settling figure as the star's comet shoal gives way to the moonlit sea, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": -0.54
           },
           {
             "id": "night_market-wild",
@@ -15356,7 +15430,8 @@
             "bar_conf": 0.03,
             "kick": 0.06,
             "score": 0.38,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a night drift on the deep-water sea — dark oceanic pads and a deep warm sub drone under slow blooming swells, one heavy low kick landing on the downbeat of every scale change, the pads thinning to a single held tone through the cell and chain bars, a wide swell where the splitting tracks fold out as the cluster's converging lanes, and a warmer settling figure as the star's comet shoal gives way to the moonlit sea, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a night drift on the deep-water sea — dark oceanic pads and a deep warm sub drone under slow blooming swells, one heavy low kick landing on the downbeat of every scale change, the pads thinning to a single held tone through the cell and chain bars, a wide swell where the splitting tracks fold out as the cluster's converging lanes, and a warmer settling figure as the star's comet shoal gives way to the moonlit sea, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.14
           }
         ],
         "gen_attempt": 0,
@@ -15449,7 +15524,8 @@
             "bar_conf": 0.51,
             "kick": 0.44,
             "score": 18.9,
-            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a smoldering low drone under a deep kick on every downbeat, dry husk-rattle percussion threaded through the field bars, the pulse tightening and narrowing as the dive enters the grain, one struck low hit on the morph out to the swarm seen from above, then the drone opening wide again for the return over the rows, a breathy reed organ and soft water textures over a deep sub pulse, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a smoldering low drone under a deep kick on every downbeat, dry husk-rattle percussion threaded through the field bars, the pulse tightening and narrowing as the dive enters the grain, one struck low hit on the morph out to the swarm seen from above, then the drone opening wide again for the return over the rows, a breathy reed organ and soft water textures over a deep sub pulse, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 0.96
           },
           {
             "id": "ember_pulse-heartbeat",
@@ -15462,7 +15538,8 @@
             "bar_conf": 0.56,
             "kick": 0.33,
             "score": 13.44,
-            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a smoldering low drone under a deep kick on every downbeat, dry husk-rattle percussion threaded through the field bars, the pulse tightening and narrowing as the dive enters the grain, one struck low hit on the morph out to the swarm seen from above, then the drone opening wide again for the return over the rows, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a smoldering low drone under a deep kick on every downbeat, dry husk-rattle percussion threaded through the field bars, the pulse tightening and narrowing as the dive enters the grain, one struck low hit on the morph out to the swarm seen from above, then the drone opening wide again for the return over the rows, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.63
           },
           {
             "id": "ember_pulse-third_answer",
@@ -15475,7 +15552,8 @@
             "bar_conf": 0.46,
             "kick": 0.53,
             "score": 11.32,
-            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a smoldering low drone under a deep kick on every downbeat, dry husk-rattle percussion threaded through the field bars, the pulse tightening and narrowing as the dive enters the grain, one struck low hit on the morph out to the swarm seen from above, then the drone opening wide again for the return over the rows, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a smoldering low drone under a deep kick on every downbeat, dry husk-rattle percussion threaded through the field bars, the pulse tightening and narrowing as the dive enters the grain, one struck low hit on the morph out to the swarm seen from above, then the drone opening wide again for the return over the rows, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.24
           },
           {
             "id": "aurora_strings-wild",
@@ -15488,7 +15566,8 @@
             "bar_conf": 0.59,
             "kick": 0.54,
             "score": 10.28,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a smoldering low drone under a deep kick on every downbeat, dry husk-rattle percussion threaded through the field bars, the pulse tightening and narrowing as the dive enters the grain, one struck low hit on the morph out to the swarm seen from above, then the drone opening wide again for the return over the rows, bowed string pad swells and sparse harp plucks, silvery and cold, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a smoldering low drone under a deep kick on every downbeat, dry husk-rattle percussion threaded through the field bars, the pulse tightening and narrowing as the dive enters the grain, one struck low hit on the morph out to the swarm seen from above, then the drone opening wide again for the return over the rows, bowed string pad swells and sparse harp plucks, silvery and cold, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.8
           },
           {
             "id": "glass_chapel-wild",
@@ -15501,7 +15580,8 @@
             "bar_conf": 0.58,
             "kick": 0.53,
             "score": 9.97,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a smoldering low drone under a deep kick on every downbeat, dry husk-rattle percussion threaded through the field bars, the pulse tightening and narrowing as the dive enters the grain, one struck low hit on the morph out to the swarm seen from above, then the drone opening wide again for the return over the rows, crystalline glass bells and a soft distant choir pad, airy shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a smoldering low drone under a deep kick on every downbeat, dry husk-rattle percussion threaded through the field bars, the pulse tightening and narrowing as the dive enters the grain, one struck low hit on the morph out to the swarm seen from above, then the drone opening wide again for the return over the rows, crystalline glass bells and a soft distant choir pad, airy shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals",
+            "fit": 1.41
           }
         ],
         "gen_attempt": 0,
