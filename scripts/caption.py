@@ -36,10 +36,17 @@ import pipeline as pl  # noqa: E402
 VLM_MODEL = "mistral-small3.2:24b"
 # always-on brand hashtags (programmatic) — NO #fyp (dropped 2026-07-29). Journey-specific tags
 # come from the model per video.
-BRAND_TAGS = ["#powersofzen", "#oddlysatisfying", "#zoomer",
-              # always-on reach set (Phil 2026-07-31): what the work IS (animation/art/AI art)
-              # + the listening mood the music sits in
-              "#animation", "#art", "#aiart", "#chillbeats"]
+# ORDER MATTERS: YouTube renders only the FIRST THREE hashtags above the title, so the
+# search-led tags lead. Dropped 2026-09-10: #animation and #art — generic tags that huge
+# accounts saturate, where a 100-follower account is invisible. Added the format's own
+# search terms, which is what someone looking for this content actually types.
+BRAND_TAGS = ["#infinitezoom", "#eyecandy", "#oddlysatisfying", "#powersofzen",
+              "#zoomer", "#livewallpaper", "#aiart", "#chillbeats"]
+# YouTube set: #shorts is load-bearing there, and YT is a SEPARATE lottery from IG
+# (measured 2026-09-10: corr(YT views, IG views) = +0.04 across 62 videos on both), so it
+# gets its own tags rather than inheriting the IG caption wholesale.
+YT_TAGS = ["#infinitezoom", "#shorts", "#eyecandy", "#oddlysatisfying", "#powersofzen",
+           "#livewallpaper", "#fractal", "#aiart"]
 
 PROMPT = (
     'You are writing captions for "Powers of Zen" — a hypnotic, seamless Powers-of-Ten-style '
@@ -154,6 +161,52 @@ def _dedupe_tags(tags):
     return out
 
 
+def _short_world(w):
+    """A world line is full scene prose ("the wheelhouse of a moored fishing boat at night,
+    seen from the wheel at head height, a spoked wheel set before..."). A description wants
+    the NOUN, not the staging: cut the first clause, drop the camera-placement tail, and
+    never end on a dangling preposition."""
+    t = w.lstrip("- ").strip().split(",")[0].strip()
+    t = re.split(r"\s+(?:seen|viewed|looking)\s+", t)[0].strip()
+    if len(t) > 44:
+        t = t[:44].rsplit(" ", 1)[0]
+    # strip dangling tail words REPEATEDLY — a 44-char cut lands mid-phrase ("oak bark at
+    # midnight with one", "stone circle set into"), and one pass only removes the last of them
+    tail = {"from", "at", "in", "on", "of", "the", "a", "an", "with", "and", "to", "into",
+            "under", "over", "inside", "through", "across", "against", "beneath", "within",
+            "set", "one", "its", "their", "by", "for", "edge", "up", "down", "out", "off"}
+    t = t.rstrip(" .")
+    parts = t.split()
+    while len(parts) > 2 and parts[-1].lower() in tail:
+        parts.pop()
+    return " ".join(parts)
+
+
+def yt_description(body, spot_line, worlds):
+    """A SEARCHABLE YouTube description.
+
+    Until now the poster fell back to the Instagram caption verbatim, so YT got IG's tags
+    and no keywords at all — on a channel that turns out to carry 43% of our total reach
+    and pushes videos IG buries. YouTube reads the description for search, so we name the
+    format in the words people type ("infinite zoom", "seamless loop", "zoom into") and
+    list the worlds the video actually travels through."""
+    parts = [body.strip()]
+    if spot_line.strip():
+        parts.append(spot_line.strip())
+    chain = [c for c in (_short_world(w) for w in (worlds or [])) if c]
+    if len(chain) >= 2:
+        # Name the worlds rather than asserting a direction: the chain is CIRCULAR, so a
+        # "from X down to Y" line is wrong as often as it is right.
+        step = max(1, len(chain) // 5)
+        shown = chain[::step][:5]
+        parts.append("One continuous shot, no cuts, looping forever — through "
+                     + " → ".join(shown) + ".")
+    parts.append("Powers of Zen: hypnotic infinite-zoom loops through worlds inside "
+                 "worlds, from the cosmic to the microscopic. New one every day.")
+    parts.append(" ".join(YT_TAGS))
+    return "\n\n".join(parts)
+
+
 def assemble_caption(body, spot_line, tags, hook):
     """body [+ spot question if hook] + hashtags. Shared shape used by the dashboard toggle."""
     parts = [body.strip()]
@@ -239,10 +292,17 @@ def generate(journey, model="ds", no_theme=False):
         # something in the caption and I generate new captions, don't change the box").
         had = (v.get("caption") or "").strip()
         v.update({"caption_bodies": bodies, "yt_title_options": yts, "spot_line": spot,
-                  "caption_tags": tags, "spot_hook": hook, "caption_options": opts})
+                  "caption_tags": tags, "spot_hook": hook, "caption_options": opts,
+                  "yt_desc_options": [yt_description(b, spot if hook else "", worlds)
+                                      for b in bodies]})
         if not had:
             v["caption"] = opts[0]
             v["yt_title"] = yts[0] or v.get("yt_title", "")
+        # yt_desc is DERIVED, never hand-written (there is no UI for it), so keep it in sync
+        # with whichever title is live rather than guarding it like the caption. Match the
+        # body to the current yt_title so a title Phil picked keeps its own description.
+        _body = next((b for b in bodies if b[:100] == (v.get("yt_title") or "")), bodies[0])
+        v["yt_desc"] = yt_description(_body, spot if hook else "", worlds)
         pl.save(d)
         if not no_theme:
             set_music_theme_if_empty(journey, mtheme)

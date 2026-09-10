@@ -1244,8 +1244,13 @@ def run(only, dry_run, journey):
                             "--force"], timeout=600)
             subprocess.run([sys.executable, str(pl.ROOT / "scripts" / "ig_insights.py"),
                             "--force"], timeout=600)
+            # YouTube series (2026-09-10). Browser-free (plain HTTP off the watch page), so
+            # it needs no lock and cannot disturb the tabs the poster just used. YT carries
+            # ~43% of our total reach and its winners are NOT IG's — corr(YT, IG) = +0.04.
+            subprocess.run([sys.executable, str(pl.ROOT / "scripts" / "yt_stats.py")],
+                           timeout=900)
         except Exception as e:
-            print(f"(ig_stats snapshot skipped: {e})")
+            print(f"(stats snapshot skipped: {e})")
 
 
 def main():
