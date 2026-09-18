@@ -305,7 +305,10 @@ class Plate:
             # globe (the ease formula on its DESIRED position), and whatever the crop
             # carries the old disc to, the composite translates it to the desired spot.
             u = (j + 1) / max(1, self.n)
-            e = 1.0 - (1.0 - u) ** 2
+            # EVEN PACE with a soft landing (was ease-out 1-(1-u)^2: ~44 px/frame at the
+            # start = a big sliver to fill behind the globe every early frame, which the
+            # model read as a ghost bubble). smoothstep-blended linear: peak ~1.25x the mean.
+            e = 0.5 * u + 0.5 * (u * u * (3.0 - 2.0 * u))
             des = (self.entry[0] + (self.goal[0] - self.entry[0]) * e,
                    self.entry[1] + (self.goal[1] - self.entry[1]) * e)
             cx = des[0] - (des[0] + self.ease * (ax - des[0]) - 0.5) / z
@@ -414,7 +417,7 @@ class Plate:
             # clear a little PAST the old limb (1.12 R_old): with a live-void fill a wider
             # clear cannot carve a moat any more, and it takes the old limb's edge line with
             # it (faint arcs trailed the globe when the clear stopped at the limb)
-            vac_m = np.clip((R_old * 1.12 - dist_o) / 5.0, 0, 1) \
+            vac_m = np.clip((R_old * 1.12 - dist_o) / 14.0, 0, 1) \
                 * (1.0 - np.clip((R_ * 1.00 - dist_n) / 4.0, 0, 1))
             patch = a.copy()
             dx, dy = int(round(nx - ox)), int(round(ny - oy))
@@ -434,10 +437,20 @@ class Plate:
             # border, where an entering globe's trailing side lies). Continuous at the limb,
             # made of the same stuff as its surroundings; the void's full denoise does the rest.
             if vac_m.max() > 0:
-                _d = np.maximum(dist_o, 1e-3)
-                _refl = 2.0 * (R_old * 1.12) - dist_o
-                _sx = np.clip(np.rint(ox + (xx - ox) / _d * _refl), 0, W - 1).astype(np.int32)
-                _sy = np.clip(np.rint(oy + (yy - oy) / _d * _refl), 0, H - 1).astype(np.int32)
+                # DIRECTIONAL fill (v3 of this step): pull the void in ALONG THE MOTION AXIS —
+                # each crescent pixel takes the void pixel found by walking from it, in the
+                # trailing direction, to just past the old disc's edge. A mirror across the
+                # limb left a circular, symmetric echo that the model painted as a glassy
+                # bubble under the rising globe (sargasso v2 f31-43); a straight pull has no
+                # circular symmetry and is continuous with the void behind the globe.
+                _mv = math.hypot(nx - ox, ny - oy)
+                _tx, _ty = ((ox - nx) / _mv, (oy - ny) / _mv) if _mv > 1e-3 else (0.0, 1.0)
+                _px, _py = xx - ox, yy - oy
+                _b = _px * _tx + _py * _ty
+                _disc = np.maximum(_b * _b - (_px * _px + _py * _py) + (R_old * 1.12) ** 2, 0.0)
+                _ell = -_b + np.sqrt(_disc) + 3.0          # distance to the old edge along t
+                _sx = np.clip(np.rint(xx + _tx * _ell), 0, W - 1).astype(np.int32)
+                _sy = np.clip(np.rint(yy + _ty * _ell), 0, H - 1).astype(np.int32)
                 fill = patch[_sy, _sx]
                 # a mirrored sample that was clamped at the frame border can land back INSIDE
                 # a disc (an entering globe still overlaps the edge it came through): that
