@@ -1854,3 +1854,15 @@ replicated the globe's edge row into a stem); clear to 1.12 R_old so the old lim
 goes too (a wider clear cannot carve a moat once the fill is live void). CPU worst-case sim (no
 healing at all, bottom + right entries over a bright ray field): no column, no stem, no arcs.
 Batch restarted a second time at 14:18 on this code (log outbox/extra_batch_0918c.log).
+
+## 2026-09-18 (15:15) — ENTRY TRAIL: VERIFIED UNDER DIFFUSION (sargasso_windrow v2, frames 28-60)
+Third iteration of the vacate step, and the one that holds: DIRECTIONAL fill (each vacated pixel
+takes the void found by walking along the trailing direction to just past the old disc's edge),
+soft 14px edge on the cleared region, EVEN entry pace with a soft landing. The mirror fill (v2)
+had left a circular echo that the model painted as a glassy bubble under the rising globe; the
+plate fill (v1) a dark ribbed column; the 1.34R clear (v0) a moat. In the real render the ray
+field now runs right up to the limb on every side with no column, bubble, moat or arcs, and the
+orbit view still lands on the bar line. RULES LEARNED: never put void-PLATE pixels into the live
+frame; never leave a circular/symmetric patch for the model to read as an object; keep per-frame
+globe motion small. The extra batch (third start 14:47, log outbox/extra_batch_0918d.log) and
+every later render use this code (commit 45f45b4).

@@ -123,9 +123,11 @@ picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SC
 2026-09-18 (AFTERNOON — HANDOFF STATE, everything committed + pushed): the planet descent is APPROVED and
 standard (settings plate_mode=live, plate_intro=enter; PLAN "PLANET DESCENT" + the four 09-18 blocks are
 the record). Phil's last note — a dark BORDER/moat round the globe — was the enter path's wide vacate
-overwriting the live void; fixed (thin rim, vacate only the crescent the globe left, tight feathers),
-CPU-verified, first diffusion renders = the extra batch running since 13:57 in tmux `extra_batch`
-(sargasso_windrow, garnet_glass, gecko_rampart, lissajous_stage; ~19:30). tmux `after_batch` then
+overwriting the live void; fixed in three iterations (thin rim; vacate only the crescent the globe
+left; fill it by pulling the LIVE void in along the motion axis — never plate pixels, never a circular
+mirror; even entry pace) and VERIFIED UNDER DIFFUSION on sargasso_windrow v2. The extra batch was
+restarted on that code at 14:47 in tmux `extra_batch` (sargasso_windrow, garnet_glass, gecko_rampart,
+lissajous_stage; ~20:15, log outbox/extra_batch_0918d.log). tmux `after_batch` then
 regenerates cork_dehesa from its planet card (it rendered with the old moat) and runs the grow lab v11.
 Review: cherenkov_cistern (approved look, play order fixed) + cork_dehesa v2 (moat, being replaced) +
 6 no-planet videos. 01:30 nightly continues the queue (cicada_chorus, anvil_country, vernal_clutch...).
