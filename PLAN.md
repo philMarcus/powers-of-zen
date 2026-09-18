@@ -1488,3 +1488,356 @@ Session-expiry telems ig_insights_login (relink by hand once). FIRST SCRAPE HEAD
 12sh/9sv, squid 7sh/10sv+14 follows, geode 5sh/10sv); mineral_heart converts follows at
 8/577 views; avg-play-time on low-view old posts reads implausibly high (looping-session
 artifact — trust ≥300 views).
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# PLANET DESCENT — THE PLATE PLAN (2026-09-17; Phil: "plan before building")
+# ═══════════════════════════════════════════════════════════════════════════════
+Phil's problem statement: in nearly every video we go space → planet; planets have got
+better at growing, but the SPACE BACKGROUND MORPHS INTO THE PLANETARY LANDSCAPE and the
+planet fades or becomes a feature of that surface. Scope for now: top-down — arrive at a
+spherical planet, zoom onto it, its surface becomes the next scene. No canyons/biomes yet.
+
+## Ground truth (frame strips in scratchpad/strips/, 2026-09-17; read before re-deriving)
+Eight planet approaches on disk: five plain mid-chain cards (saguaro_vigil, sargasso_windrow,
+winter_murmuration, anvil_country, garnet_glass v1) and the three 08-31/09-01 hero-cn+persist-cn
+test renders (gecko_rampart, natron_skein, lily_undercroft v2). Findings:
+1. THE TRACKER HAS NEVER LOCKED A PLANET. Object-phase frames on the planet card = 0 in all
+   eight (track.jsonl: miss/candidate only). natron v2's one lock was the SUN (size 0.71) and
+   the plunge dove into it. Florence can't find "a blue planet" because there is none.
+2. NO PLANET EVER FORMS. The "star/space" card is a texture field inherited from the previous
+   card (spicule rays, foam, strata); at cfg 2.0 and travel denoise 0.40 the fed-back image
+   owns the frame and a 4-token target inside a 60-token prompt cannot conjure an object that
+   is not already in the pixels. Depth-CN from the feedback (approach_cn 0.45) then reinforces
+   whatever texture is there. The arrival onto the surface is a texture→texture morph. This is
+   why every WORD-side fix (globe clause, negatives, "one object dead centre") did nothing.
+3. CAMEO TAKEOVER on 2 of 5 (saguaro f46-64, garnet f168-190): the mascot sprite grew into the
+   dive. Which is also THE PROOF OF MECHANISM below — the one object that has ever persisted
+   and grown through a planet card is the PASTED one.
+4. THE RENDER_START HOLE (structural, never noticed): 27 of 53 planet cards are the
+   render_start card. With the loop lap, that card's DELIVERED copy is the lap card, and the
+   loop tail (L = 4 bars = 32 of its 35 frames) owns it: no tracker, no hero, IPA 0.22→0.95 +
+   depth-CN 0.15→0.80 homing onto the trajectory of the WARM-UP copy (frames 3..34) — which is
+   a cold txt2img establish of the star card (gecko: a river valley under the Milky Way). So
+   for half the catalog the planet approach is, by construction, a conditioned crossfade
+   toward a postcard, and the arrival re-play then morphs it into the surface. hero-cn is
+   gated on `approaching` and could never have run there (gecko/natron v2: it fired only in
+   the discarded warm-up copy).
+5. THE HERO TEST WAS CONFOUNDED: persist-cn's resolve windows set approaching=False for the
+   travel, so lily v2's planet card had a 2-frame approach (hero dir: 2 pngs). hero-cn + persist-cn
+   on the same card cancel each other. Don't combine them again.
+
+## What has been tried (by CHANNEL) and what has not
+Tried: WORDS (T_TRAVEL object language, globe-in-void clause, HERO_NEG, T_ESTABLISH_SPACE);
+STRUCTURE (depth-CN from the feedback; synthetic hero sphere + void-of-specks in the CN;
+scaffold-as-CN through travel); WARPS (hero_orbit); TRACKING (v3, cadence, gates). All act on
+the diffusion's steering; none puts the planet or the void INTO THE PIXELS the chain feeds on.
+NOT tried: (a) supplying the pixels — a PLATE: a rendered sphere over a space plate composited
+into the fed frame at the scheduled size every frame (the cameo mechanism, which provably
+survives the zoom); (b) MASKED denoise — protect the void (SetLatentNoiseMask, the build-out
+ring-mask plumbing already in build_workflow; DifferentialDiffusion for a graded mask) so the
+space pixels are never re-diffused at 0.40 and CANNOT morph into landscape; (c) REGIONAL
+prompts (ConditioningSetMask: void prompt outside the disc, surface prompt inside; IPAdapter
+attn_mask for a regional reference); (d) bypassing the tracker on planet cards — we OWN the
+sphere's position, so aim = its centre (fixed-point zoom), no Florence at all.
+Nodes verified on disk 2026-09-17: SetLatentNoiseMask, DifferentialDiffusion, ConditioningSetMask,
+ImageCompositeMasked, LatentCompositeMasked, GrowMask/FeatherMask, IPAdapterAdvanced attn_mask,
+SAM3 (nodes_sam3.py), controlnet-inpaint-dreamer-sdxl (unused so far).
+
+## The design — PLANET PLATE (a per-card mechanism for round targets, exp ≥ ~8 → next card 6-8)
+1. PLATE, built once at the planet card's start:
+   - SURFACE TEXTURE: one txt2img of the NEXT card's scene seen from directly above (that
+     card already describes the world from orbit — cobalt's "a cobalt ocean world seen from
+     orbit, sea ice broken into floes…"). Wrapped onto an orthographic sphere in numpy: lit
+     from one side, limb darkening, thin atmosphere rim, slight barrel so the centre of the
+     texture is what the zoom lands on.
+   - VOID: the star card's own fed-back pixels (they are the space we want to keep) OR, when
+     the card arrives as texture soup, a once-generated wide space plate (T_ESTABLISH_SPACE of
+     the star card, no target). Under a pure zoom a starfield just spreads — no morph needed.
+2. PER FRAME: sphere diameter s_j = s0·Πz (exact schedule; s0 = 1.05/Π remaining zooms, the
+   hero formula) at a thirds anchor; aim = sphere centre (tracker OFF on plate cards). Disc
+   interior = previous frame's disc interior propagated by the zoom (crop-and-reimagine INSIDE
+   the disc, so its surface is alive and grows), blended toward the plate texture with a small
+   decaying weight to keep identity. Composite → ONE img2img with a GRADED noise mask: ~0.45
+   inside the disc, ~0.12 outside (shimmer only), feathered limb. Depth-CN = hero_depth dome
+   (already built) so structure agrees with pixels. Optional regional prompts (inside: "the
+   surface of {planet}, seen from orbit, curved limb"; outside: "black void of space, sparse
+   stars").
+3. HANDOFF: when the disc diameter ≥ ~1.15× frame the mask is full and the normal chain
+   resumes; the boundary's arrival morph now starts from a frame that IS the planet's surface
+   from above, so "the planet becomes the next scene" is the ordinary continuation. Top-down.
+4. THE TAIL/LAP CASE: the plate runs inside the loop tail too (hero-cn did not). The plate is
+   deterministic (journey-keyed seed), so the warm-up copy the tail homes onto is plate-rendered
+   as well and the IPA reference trajectory AGREES with what the tail renders. Bonus: frame 0
+   of a planet render_start becomes the plate composite, not a cold postcard.
+5. CAMEOS never on a plate card (the takeover class) — composer rule + engine refusal.
+
+## Lab before any adoption (Phil's standing format: single 12fps slow looped clips, judged alone)
+Test beds, same seeds as the existing renders, --from-card + --no-loop: cobalt_rookery
+cluster_sun→ice_world (his "sphere in an interesting void" case; render_start card, so ALSO
+render it as the lap to exercise the tail) and saguaro_vigil star_spicules→desert_world
+(mid-chain, cameo-takeover case). Arms, one variable each:
+  A baseline (current engine) · B plate + global denoise 0.32 (the cameo mechanism, simplest)
+  · C plate + graded mask (void 0.12 / disc 0.45) · D = C + regional prompts + hero dome CN.
+GATE (measured, not eyeballed): sphere present from the card's first frame; disc radius per
+frame tracks the schedule (measure it); void pixels stay void (edge density / luminance outside
+the disc flat across the card); no planet-within-a-planet at handoff; limb reads as a limb; the
+boundary lands on surface and the next card's arrival is clean. Failure modes to expect: a
+mask-edge halo (feather + limb rim), a pasted/flat look (raise inside denoise), the disc read as
+a hole/eye/cell (hero v1's caldera — regional prompt + dome CN are the counters).
+Cost ≈ 30 frames/arm ≈ 8-10 min GPU/arm; the whole lab ≈ 1.5 h GPU. Nightly unaffected.
+
+## Adoption path
+Per-card `hero: "plate"` set by the composer (or auto for HERO_ROUND targets that descend to a
+6-8 card) → full-journey A/B at the same seed → Phil's verdict → default for planet-class cards.
+Until then: never run hero-cn and persist-cn together; audit_starts should WARN when the
+render_start card's target is a round object (the lap/tail hole above) — Phil's call whether to
+rotate those 27 starts to the preceding cosmic card now or wait for the plate to fix the tail.
+
+## BUILT 2026-09-17 evening (Phil's go: "run the lab"; lab flags, default OFF, nightly byte-unchanged)
+- engine/plate.py + dive.py `--plate {low,mask,region} [--plate-card K] [--plate-limb 1.15]
+  [--plate-outside 0.27]`; build_workflow grew `diff_diffusion` (DifferentialDiffusion +
+  SetLatentNoiseMask = per-pixel denoise) and `region` (ConditioningSetMask pair + Combine).
+  Lab name suffix `_plate<mode>`; --from-card prefix still read from the unsuffixed source.
+- scripts/plate_lab.py: arms A (source frames) / B low / C mask / D region, 12fps looped clips,
+  SEQ cut, strip, measured gate (void edge/luminance outside the scheduled disc) →
+  output/plate_lab/<journey>/. Test beds (Phil: nothing live/production): sargasso_windrow
+  card 1 (star_comet_shoal → ocean_world) and garnet_glass card 5 (hourglass_binary →
+  night_world), both in Review, both cameo-takeover cases in v1.
+- SMOKE (6 frames, region arm): every node accepted; the diffusion KEEPS the composited disc as
+  a sphere with a limb and the stars outside stay stars even at arrival denoise 0.58. Trap found
+  + fixed: the size schedule must span the card's FULL compiled frames, not the --frames-
+  truncated total (globe started at 1.77 instead of 0.23).
+- FIRST FULL ARM (sargasso B/low, single-card plate, 13 min): A PLANET EXISTS FOR THE FIRST
+  TIME — shaded sphere with limb, 0.24 → frame-filling on schedule, coast texture persisting,
+  void staying space, no concentric-ring attractor. AND THE NEXT FAILURE, at the bar line: the
+  next card is authored as the ORBIT VIEW ("seen from orbit ... stars beyond the rim"), so its
+  arrival at 0.58 repainted the just-landed surface into space + a strip of blue marbles.
+  FIX (v2, built same evening): THE PLATE SPANS THE BAR LINE — s_limb (1.15 x width, limb
+  visible top/bottom in portrait = the orbit view) exactly at the boundary so the next card's
+  arrival prompt MATCHES the picture, then the globe keeps growing through that arrival under
+  the mask/composite until the frame lies inside the disc (`Plate.done`), and only then the
+  next card's normal tracked approach takes over on the surface. sargasso geometry: size0
+  0.115, bar line at f56 = 1.15, covered at f65 (9 frames into the next card), ~19 frames left
+  for that card's own target. Resolve windows + cameos refused across the whole span.
+- Lab v2 running from ~19:35: sargasso B/C/D then garnet C/D (~2.5 h GPU); clips in
+  output/plate_lab/. Known open items for v3 if the clips ask for them: the void plate is
+  zoomed by resampling each frame (stars soften over a card — a synthetic star overlay fixes
+  it); the sphere reads dark (limb shading 0.22 ambient — lift if Phil wants it brighter);
+  s_limb 1.15 makes the start 0.115 of the width (raise s_limb for a bigger first sighting);
+  render_start planet cards (frame 0 = void plate + composite) untested; the loop-tail case
+  (27/53 journeys) untested — plate is skipped inside the tail today.
+
+## LAB RESULTS 2026-09-17 night (sargasso_windrow card 1 → ocean_world; garnet running)
+Deliverables: output/plate_lab/sargasso_windrow/ — `*_SEQ_best.mp4` (A baseline → B → C → D one
+after another, 12fps), `*_<arm>_best_loop.mp4` per arm, `*_strip_best.png`; the v2/v5 sets
+are the earlier iterations. Run dirs: output/sargasso_windrow_plate{low,mask,region}/vN.
+Iterations (each fixed one thing the frames showed):
+- v1 single-card plate: planet exists + grows on schedule (FIRST TIME EVER); the NEXT card's
+  orbit-view arrival repainted the landed surface → the plate now spans the bar line (v2).
+- v2 spans the bar line: B clean end to end; C/D (mask arms, full denoise in the disc) locked
+  into CONCENTRIC RINGS from ~frame 44; D also painted "a planet" INSIDE the disc from its own
+  regional prompt and dove into that marble after the handoff. Globe read as a dark ball.
+- v3/v4: revolution 1.5°/frame (texture + fed disc via warp.hero_orbit) — did NOT break the
+  rings; two compounding darkeners found + fixed (per-frame limb-shade multiply; void plate
+  blended over the whole frame incl. the disc); a 2:1 landscape texture canvas made SDXL paint
+  a horizon seascape (v3) → square texture mirrored to 2:1 (v4).
+- v5 (--plate-cn 0 on the mask arms): THE DOME CN WAS THE RING SOURCE — C has no rings with it
+  off (the hero-cn "caldera" class: a radially symmetric depth signal under full denoise paints
+  radially symmetric structure). What remains in C/D is WORDING: inside the disc C carries the
+  star card's "comet heads sown through the black" (dotted skin); after the handoff the next
+  card's "an ocean world seen from orbit" paints little worlds ONTO the surface at full
+  denoise; D's "curving away to the limb of the world" re-creates a spiral at arrival denoise.
+VERDICT (for Phil's clips): **B = plate + global denoise cap 0.32 + dome CN** is the working
+configuration end to end — sphere with limb from 0.12 of the width, revolving top-down coast,
+orbit view exactly on the bar line, the next card descends onto terrain with its own target.
+Cost of B: the previous card's texture lingers in the void through the arrival (0.32 weakens
+the arrival morph) and the globe's surface is calmer/flatter than full denoise would give.
+NEXT if Phil approves the look: (1) card-after-a-plate REWORDING at compile time ("the surface
+of {scene}, seen from straight above" in that card's arrival/travel/plunge) — the same
+reinterpretation the texture uses; removes the object framing that C/D showed; (2) then retry
+the mask arm with CN 0 + the rewording + a lower inside value (0.85) so the disc stays alive
+without ringing; (3) a synthetic star overlay for the void (resampling softens the plate over a
+card); (4) the loop-tail/lap case and render_start planet cards (frame 0 = plate) untested.
+
+## GARNET + THE GATES (2026-09-17, 21:00–22:30) — second bed confirms B; two plate gates added
+- garnet_glass card 5 (hourglass_binary → night_world), baseline = the mascot-face takeover.
+  B (plate + cap 0.32, CN 0): green world with limb grows on schedule, orbit view on the bar
+  line, hands off to night_world. C/D (mask arms, CN 0) STILL ring/iris → full denoise inside
+  a fixed-point disc rings regardless of the CN; the dome CN made it worse on sargasso but is
+  not the whole cause. VERDICT STANDS: B on both beds.
+- TWO PLATE FAILURES, both txt2img priors, both now GATED (--plate-void-gate, Florence caption,
+  seed re-roll x3, same defence as the frame-0 figure gate): (1) the VOID plate came back as a
+  glass PENDANT ON A CHAIN ("A round pendant is hanging from a silver chain" — the jewelry
+  prior; caught + re-rolled to a starfield); (2) the SURFACE plate came back as an AURORA OVER
+  A SEA CLIFF (ground level, a horizon) → surface prompt is now "a satellite view looking
+  straight down onto the surface of {scene}, a flat aerial map ... no sky, no horizon" +
+  SURFACE_BAIT (sky/horizon/beach/cliffs/...) → v7's surface = the storm spiral + lamp-lit
+  coast the card describes, top-down. VOID_NEG now also bans planet/moon/globe (the re-rolled
+  void carried its own red moon + a blue limb).
+- Deliverables sent to Phil: output/plate_lab/{sargasso_windrow,garnet_glass}/*_SEQ_best(_small)
+  .mp4 + *_strip_best.png (A → B → C → D, 12fps). Run dirs: output/<journey>_plate<mode>/vN
+  (sargasso B = platelow/v4; garnet B = platelow/v3 with both gates).
+- ENGINE STATE: everything behind `--plate` (default OFF); nightly path byte-unchanged. The
+  working recipe = `--plate low --plate-cn 0 --plate-void-gate` (spin 1.5°/f, limb 1.15,
+  square-mirrored texture, no compounding blends). Sargasso B still used the dome CN at 0.45;
+  garnet B used 0 — both fine in B, so CN 0 is the simpler default.
+- NEXT (Phil's verdict first): (1) if the look is approved, wire B as the default for
+  planet-class cards (`hero: "plate"` per card or auto via plate.is_plate_card) + make the
+  gates default-on + a full-journey A/B at the same seed; (2) card-after-a-plate rewording
+  ("the surface of {scene}, seen from straight above") so the next card stops painting worlds
+  onto the surface at full denoise; (3) mask arm only if the alive-surface look is wanted:
+  inside value ~0.85 + rewording; (4) loop-tail/lap case + render_start planet cards (frame 0
+  = void plate + composite) untested; (5) synthetic star overlay for the void.
+
+## WIRED INTO THE NIGHTLY (2026-09-17 ~23:00, Phil: "tonight's videos to use this new planet descent")
+- journeys.json settings `plate_mode` (default "low"; dashboard ⚙ Settings "🪐 planet plate"
+  low/off). night_batch passes `--plate <mode> --plate-cn 0 --plate-void-gate` to every render;
+  journeys with no planet-class card print "no planet-class card in range" and render exactly as
+  before. `dive --plan-only` prints the compiled plan (plates/cameos/resolve) without rendering.
+- POSITION AUDIT (scripts/plate_position_audit.py): the plate spans the planet card + the next,
+  so the planet card must sit at render-order index 1..n-2. The audit rotates `render_start`
+  ONLY onto a cosmic/subatomic start (audit_starts FAR realm, score ≥ 2) with the seam mid-list
+  and no single hard-edged subject — never onto an everyday wide shot (Phil: don't undo the
+  start doctrine). APPLIED to 9 non-live journeys (anvil_country→ice_lattice, cherenkov_cistern→
+  water_cages, cicada_chorus→chitin_ribbons, cork_dehesa→carbon_atom, gecko_rampart→shell_rings,
+  kelp_dynamo→moon_swell, moon_jelly→dust_cocoon, prairie_town→hydrogen_haze, weddell_lightwell→
+  spiral_galaxy); all 9 pass audit_starts + preflight (cicada: frame-0 bait note 'wing').
+  NEEDS AUTHORING (planet card at the start, only everyday starts available — plate inert, they
+  render as before): ammonite_spiral, girih_dome, hyperbolic_reef, lantern_canals,
+  marigold_carousel, singing_dunes, skyfog, vernal_clutch (+ live ones untouched: glass_apiary,
+  lantern_mangrove, natron_skein, sugar_nebula, butterfly_meridian, cinder_veil). Fix = give
+  each a cosmic/subatomic card that can start, or move the planet card — composer work.
+- CAMEO RULE: a cameo ON the planet card is refused (takeover class); a cameo on the NEXT card
+  is DEFERRED to the first frame after the handoff (cork_dehesa's Janet). Cameo-on-planet-card
+  journeys will render without a mascot — the composer skill should stop placing cameos on
+  planet-class cards.
+- TONIGHT (01:30): cork_dehesa (plate card 3 disk_galaxy→dusk_world, frames 96-159, bar line
+  128, Janet deferred to ~137) + dugong_meadow (no planet card) + prairie_town (plate card 3
+  dwarf_scatter→dusk_world). First full-length renders through the plate — the lab only ever
+  rendered card spans with --no-loop. WATCH IN THE MORNING: outbox/night_batch.log for
+  "plate void reads as an OBJECT"/"GROUND-LEVEL" re-rolls, plate.jsonl in the run dirs,
+  the tail/lap interplay (plate frames inside the loop tail are skipped by design), and the
+  captions (mascot present?). Budget note: plate frames cost ~+40% each (25 vs 18 s), ~+7 min
+  per L journey — not in est_render_sec yet.
+- UNCOMMITTED in the working tree: engine/plate.py (new), engine/dive.py, scripts/plate_lab.py
+  (new), scripts/plate_position_audit.py (new), scripts/night_batch.py, scripts/pipeline.py,
+  dashboard/app.py, 9 journeys' render_start, PLAN.md, CLAUDE.md.
+
+## 2026-09-18 MORNING — the batch RAN, the ingest failed (lab suffix leak), recovered without re-rendering
+The 01:30 batch rendered all three (cork_dehesa 5052s, dugong_meadow 4295s, prairie_town 4953s)
+but queue_review reported "no complete render" for each and the batch marked them render_failed:
+with --plate, dive.py suffixed the run name `_platelow` (the lab's separate-vN device), so the
+renders landed in output/<journey>_platelow/v1 where neither queue_review nor has_complete_render
+looks. FIX: the suffix now applies only to --frames lab runs. RECOVERY: the three run dirs were
+moved to output/<journey>/v1 (mp4s + run.json name normalized, note in run.json), ingested with
+queue_review + captioned, render_failed entries popped (state derives to rendered). All three are
+in Video Review with engine_params.plate="low" (queue_review now carries plate/plate_cn/
+plate_void_gate). FIRST FULL PLATE RENDERS LOOK RIGHT: cork_dehesa grows a banded world out of
+the galaxy void to the orbit view on the bar line, hands off to dusk_world, Janet pastes right
+after the handoff (deferred cameo works); prairie_town grows a dusty world out of the Milky Way
+and lands on orange desert terrain. Both void/surface plates passed the gates first try.
+LESSON: a lab-only naming device must be gated on a lab-only flag — the nightly runs the same
+entry point. Verified this morning with --plan-only: run dir = output/<journey>/vN.
+
+## 2026-09-18 — THE ARRIVAL: live void + absolute disc cap + GROW/ENTER introductions (Phil's review of the nightly plate renders)
+PHIL: the descent "looks pretty cool" but the planet-in-the-void ARRIVES AS A FADE, not an
+infinite zoom — jarring; and the globe must never "appear in the middle out of nowhere": it
+should EXPAND FROM A POINT or COME IN FROM OFF THE FRAME, with variety. He wants to judge a
+FULL video, not lab clips. DIAGNOSIS (arm B, by construction): the void plate was pixel-blended
+(60% on the first frame, 25%/frame after = a fading photograph, the mechanism rejected for seams
+in July); the whole span ran under the 0.32 cap, starving the arrival's live morph (normally
+0.58 + prompt crossfade); the globe was pasted in one frame.
+BUILT (mode `--plate live`, flags `--plate-intro {auto,grow,enter,plain}`):
+- VOID HELD BY CONDITIONING: IP-Adapter toward the void plate, attention-masked to outside the
+  disc (build_workflow `ipa_mask`), weight 0.25 → 0.60 across the arrival (the loop-tail homing
+  idea). No void pixel blend in live mode. The void runs the schedule's own denoise incl. the
+  arrival boost → the previous world re-imagines itself into the star scene while zooming.
+- ABSOLUTE DISC CAP: graded mask inside = 0.30/den per frame (DifferentialDiffusion), outside
+  1.0. LAB v8 proved a RELATIVE cap (0.8) fails: on the two arrival boosts the disc ran ~0.46
+  effective → re-read as a lumpy rock, then a spiral lock. With the absolute cap the globe
+  holds through both boosts (lab v9 enter: no rock, no rings).
+- INTRODUCTIONS: size = s_limb·(Z_j/Z_card)^k (exactly s_limb at the bar line for any k).
+  ENTER k=0.6: starts ~0.30 x width beyond a frame edge (right/left/top/bottom, journey-keyed
+  hash), ease-out path to (0.56,0.46) by the bar line; the carried disc is TRANSLATED each
+  frame (vacate disc + glow halo to the void plate, land the patch at the new spot) — LAB v9
+  PASSED (globe rises into frame, live void, orbit view on the beat, clean handoff); a faint
+  stripe "wake" under the moving globe → vacate radius widened 1.14R → 1.34R.
+  GROW k=2.0 FAILED in lab v9: under a tenth of the width for 2/3 of the card, repainted over by
+  the full-denoise void, then ~8 frames to reach the orbit view — never established (ghost
+  sphere; bar line landed on a starry landscape). FIX (untested, lab v10 queued after the full
+  render): k 1.5 (starts a visible dot ~0.036) + near-OPAQUE paste while size < 0.30.
+  PLAIN k=1: the lab's arm B rate. `auto` = journey-keyed grow/enter variety.
+- NIGHTLY PINNED to `--plate-intro plain` (settings key plate_intro, default plain) and
+  plate_mode "low" until Phil has judged the full video — nothing untested ships overnight.
+OPS: ComfyUI died 06:45 with "forrtl: error (200): program aborting due to window-CLOSE event"
+— its console belonged to a terminal that got closed; every job rendering against it died
+(live arm at 78/88). It now runs as its OWN minimized Windows process (PowerShell Start-Process),
+and long jobs run in detached tmux sessions (plate_full, plate_grow2) so neither a closed
+terminal nor a dead Claude session can kill them.
+FULL-VIDEO TEST (Phil's ask): cherenkov_cistern (queued, never in production; planet card 5
+flared_star → storm_world, frames 160-223, intro = ENTER FROM TOP), `--plate live --plate-cn 0
+--plate-void-gate --plate-intro auto --seed 754920`, started 09:05, chain ingests to Video
+Review + captions + consumes the registry entry (log output/plate_lab/full.log).
+
+## 2026-09-18 (midday) — PHIL APPROVED THE LIVE DESCENT; play order fixed; fleet switched; extra batch running
+PHIL on the cherenkov_cistern full video: "yes, i like it ... the fix is good and we should use it
+in all future videos." His one issue: "the scale doesn't monotonically decrease and then loop back
+to the biggest scale."
+- CAUSE = OUR WORK, not the authoring: the position audit moved render_start (water_cages, 10^-8)
+  so the plate could act, and the delivered video plays in RENDER order → the exotic wrap landed
+  3 cards in. Authored order was right (10^12 ↓ 10^-15, wrap 0.9 → 16.5, loop into 12).
+- FIX = PLAY ORDER ≠ RENDER ORDER: journey field `play_start` (the card the video OPENS on);
+  dive.assemble(rot=) rotates the delivered loop so frame 0 = the first clean post-arrival frame
+  of play_start (dive.play_rotation; uniform bars → a whole number of cards → music grid
+  unchanged; the new wrap joins two consecutive chain frames; the render's own lap seam lands
+  mid-video). `dive.py <journey> --reassemble vN` re-runs ONLY the assembly (no GPU).
+  plate_position_audit now records play_start = the old render_start whenever it rotates; the 9
+  already-rotated journeys got theirs. cherenkov_cistern v1 re-assembled (rot 128f = 4 cards),
+  verified by sampled frames (opens 10^12 with the globe entering, ends on the 10^16.5 echo
+  shells wrapping into the opening), re-ingested to Review, captions kept.
+- AUDIT v2: a start card counts as FAR when the engine itself says so (exp ≥ 6.5 or ≤ −6 — the
+  spaceless-establish rule), not only by wording → vernal_clutch + singing_dunes rotated too.
+  Still NEEDS AUTHORING (only everyday alternative starts): ammonite_spiral, girih_dome,
+  hyperbolic_reef, lantern_canals, marigold_carousel, skyfog (+ live: butterfly_meridian,
+  cinder_veil, glass_apiary, sugar_nebula).
+- FLEET: settings plate_mode="live", plate_intro="enter" (edge varies per journey: right/left/
+  top/bottom). GROW is NOT in production: lab v10 (k 1.5 + opaque while small) establishes the
+  globe but it is invisible for its first third in a busy void and gets re-read as a lumpy ball;
+  v11 (opaque until 0.5 x width, grow only) runs automatically after the extra batch (tmux
+  plate_grow3). Dashboard Settings: plate knob = live/low/off + "how the globe arrives".
+- REVIEW PURGE (Phil: "any videos without the fix ... back in the rendering queue"): the 7 Review
+  videos with a planet descent rendered the old way → video rejected, journey re-queued at the
+  FRONT, force, SAME seed: cork_dehesa, sargasso_windrow, garnet_glass, gecko_rampart,
+  cicada_chorus, anvil_country, vernal_clutch. LEFT IN REVIEW: the 6 with NO planet card
+  (plasma_script, phage_landing, venus_basket, pika_larder, locust_sorghum, dugong_meadow) —
+  the fix has nothing to act on, a re-render would be identical work — and cherenkov_cistern.
+- EXTRA BATCH started 11:37 in tmux `extra_batch` (log outbox/extra_batch_0918.log): cork_dehesa
+  + sargasso_windrow + garnet_glass, `--plate live --plate-cn 0 --plate-void-gate --plate-intro
+  enter`, ~5.1h. Tonight's 01:30 batch continues down the queue (gecko_rampart, cicada_chorus,
+  anvil_country, vernal_clutch next).
+
+## 2026-09-18 (afternoon) — THE BORDER ROUND THE GLOBE (Phil: "a bit of a border ... some space between the void and the planet ... doesn't look great")
+WHAT IT WAS (limb crops of the cherenkov full render): not the rim line — a dark EMPTY MOAT,
+0.15-0.3 R wide, between the limb and the surrounding star field. CAUSE: the enter path's vacate
+step cleared a disc 1.34 R wide back to the dark void plate on EVERY moving frame, overwriting the
+live void around the globe; the wide rim glow (sigma 0.05R, alpha 0.85) was what had forced that
+wide clear (the earlier "stripe wake").
+FIX (engine/plate.py): THIN RIM (atmosphere line 0.012R at 0.35, outer glow sigma 0.012R at alpha
+0.40, feather 0.012R); VACATE ONLY THE CRESCENT the globe actually left = old disc (its TRUE
+previous radius x this frame's zoom, +5%) MINUS the new disc; the moved patch is cut at the old
+radius (cutting it at the new radius pasted a sliver of old surroundings outside the limb each
+frame = a stack of trailing arcs — caught in CPU simulation before any render used it, except
+~10 min of a sargasso render that was killed and restarted); mask feathers 14/10px -> 6px.
+VERIFIED ON CPU (entry path over a bright busy background + dark plate, with a stand-in for the
+void's re-diffusion): ring just outside the limb 0.44/0.42 (leading/trailing) vs far field 0.49 —
+was plate-black; no arcs. NOT yet seen through diffusion: first renders with it = the restarted
+extra batch (13:57, tmux extra_batch, log outbox/extra_batch_0918b.log): sargasso_windrow +
+garnet_glass + gecko_rampart + lissajous_stage. cork_dehesa rendered at 11:37 with the OLD wide
+vacate (moat) and is in Review as v2; tmux `after_batch` regenerates it from its planet card on
+(`--from-card 3`, same flags) as soon as the batch exits, re-ingests it, then runs the grow lab
+v11 (k 1.5, opaque until 0.5 x width, thin rim). Log output/plate_lab/after_batch.log.
+OPEN ITEMS FOR THE NEXT SESSION: (1) judge the border fix + grow v11 in the new renders;
+(2) card-after-plate rewording (untested); (3) the 6 queued journeys that NEED AUTHORING (planet
+card at the render start, only everyday alternative starts); (4) render_start planet cards /
+loop-tail plate (frame-0 path exists, untested); (5) est_render_sec does not know the plate's
+~+7 min per long journey; (6) grow introduction not in production (settings plate_intro=enter).

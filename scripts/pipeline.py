@@ -271,6 +271,11 @@ JSETTINGS_DEFAULTS = {
     "tier_share": {"long": 0.4, "medium": 0.3, "short": 0.3},   # refill Monte Carlo weights
     "render_paused": False,
     "refill_paused": False,
+    # PLANET PLATE (2026-09-17, Phil: "tonight's videos to use this new planet descent"):
+    # the nightly passes `--plate <mode> --plate-cn 0 --plate-void-gate` to dive.py for
+    # every render. "low" = lab arm B (plate + denoise cap 0.32), the verdict on both beds;
+    # "" / None = off (the pre-plate engine).
+    "plate_mode": "low",
 }
 
 

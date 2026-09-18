@@ -94,3 +94,152 @@
 {"ts": "2026-08-17 17:46:49", "src": "output/tide_of_life_ds", "dst": "/mnt/e/zoomer_archive/output/tide_of_life_ds", "bytes": 1088037781, "files": 1046, "reason": "video live"}
 {"ts": "2026-08-17 17:46:53", "src": "output/turing_springs", "dst": "/mnt/e/zoomer_archive/output/turing_springs", "bytes": 588111783, "files": 591, "reason": "video rejected"}
 {"ts": "2026-08-17 17:47:06", "src": "output/velvet_atlas", "dst": "/mnt/e/zoomer_archive/output/velvet_atlas", "bytes": 1288468584, "files": 1267, "reason": "video failed"}
+{"ts": "2026-09-05 09:01:16", "src": "output/abyssal_chandelier_cambase", "dst": "/mnt/e/zoomer_archive/output/abyssal_chandelier_cambase", "bytes": 212116866, "files": 334, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-09-05 09:01:20", "src": "output/abyssal_chandelier_camcam", "dst": "/mnt/e/zoomer_archive/output/abyssal_chandelier_camcam", "bytes": 319958509, "files": 501, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-09-05 09:01:45", "src": "output/anemone_arsenal", "dst": "/mnt/e/zoomer_archive/output/anemone_arsenal", "bytes": 3006262258, "files": 3260, "reason": "video rejected"}
+{"ts": "2026-09-05 09:01:52", "src": "output/bamboo_sea", "dst": "/mnt/e/zoomer_archive/output/bamboo_sea", "bytes": 683683479, "files": 843, "reason": "video live"}
+{"ts": "2026-09-05 09:01:58", "src": "output/bee_cathedral", "dst": "/mnt/e/zoomer_archive/output/bee_cathedral", "bytes": 795042667, "files": 843, "reason": "video live"}
+{"ts": "2026-09-05 09:02:17", "src": "output/bourdon_foundry", "dst": "/mnt/e/zoomer_archive/output/bourdon_foundry", "bytes": 1687848777, "files": 1971, "reason": "video rejected"}
+{"ts": "2026-09-05 09:02:22", "src": "output/brinicle_grove", "dst": "/mnt/e/zoomer_archive/output/brinicle_grove", "bytes": 577076872, "files": 611, "reason": "video live"}
+{"ts": "2026-09-05 09:02:49", "src": "output/caddis_masonry", "dst": "/mnt/e/zoomer_archive/output/caddis_masonry", "bytes": 3056489578, "files": 3183, "reason": "video live"}
+{"ts": "2026-09-05 09:02:54", "src": "output/camera_lab", "dst": "/mnt/e/zoomer_archive/output/camera_lab", "bytes": 1102641583, "files": 782, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-09-05 09:03:05", "src": "output/chameleon_prism", "dst": "/mnt/e/zoomer_archive/output/chameleon_prism", "bytes": 1107498008, "files": 1255, "reason": "video live"}
+{"ts": "2026-09-05 09:03:27", "src": "output/cherenkov_cistern", "dst": "/mnt/e/zoomer_archive/output/cherenkov_cistern", "bytes": 2249460715, "files": 2543, "reason": "video rejected"}
+{"ts": "2026-09-05 09:03:28", "src": "output/cherenkov_cistern_cambase", "dst": "/mnt/e/zoomer_archive/output/cherenkov_cistern_cambase", "bytes": 126321536, "files": 185, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-09-05 09:03:29", "src": "output/cherenkov_cistern_camcam", "dst": "/mnt/e/zoomer_archive/output/cherenkov_cistern_camcam", "bytes": 127911520, "files": 185, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-09-05 09:04:42", "src": "output/cobalt_rookery", "dst": "/mnt/e/zoomer_archive/output/cobalt_rookery", "bytes": 7336749317, "files": 7558, "reason": "video live"}
+{"ts": "2026-09-05 09:06:07", "src": "output/coral_synapse", "dst": "/mnt/e/zoomer_archive/output/coral_synapse", "bytes": 8884479673, "files": 8363, "reason": "video rejected"}
+{"ts": "2026-09-05 09:06:17", "src": "output/desert_rosette", "dst": "/mnt/e/zoomer_archive/output/desert_rosette", "bytes": 1102019120, "files": 1268, "reason": "video live"}
+{"ts": "2026-09-05 09:06:22", "src": "output/dolly_lab", "dst": "/mnt/e/zoomer_archive/output/dolly_lab", "bytes": 1470601507, "files": 744, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-09-05 09:06:33", "src": "output/eclipse_waterhole", "dst": "/mnt/e/zoomer_archive/output/eclipse_waterhole", "bytes": 1208269034, "files": 1323, "reason": "video live"}
+{"ts": "2026-09-05 09:06:39", "src": "output/ember_meadow", "dst": "/mnt/e/zoomer_archive/output/ember_meadow", "bytes": 543616697, "files": 554, "reason": "video live"}
+{"ts": "2026-09-05 09:06:44", "src": "output/fiddler_commons", "dst": "/mnt/e/zoomer_archive/output/fiddler_commons", "bytes": 566610589, "files": 613, "reason": "video live"}
+{"ts": "2026-09-05 09:06:55", "src": "output/kelp_dynamo", "dst": "/mnt/e/zoomer_archive/output/kelp_dynamo", "bytes": 979309763, "files": 1130, "reason": "video rejected"}
+{"ts": "2026-09-05 09:08:00", "src": "output/lantern_mangrove", "dst": "/mnt/e/zoomer_archive/output/lantern_mangrove", "bytes": 6181506788, "files": 6629, "reason": "video live"}
+{"ts": "2026-09-05 09:08:05", "src": "output/lissajous_stage", "dst": "/mnt/e/zoomer_archive/output/lissajous_stage", "bytes": 392306559, "files": 475, "reason": "video rejected"}
+{"ts": "2026-09-05 09:08:16", "src": "output/magellanic_mob", "dst": "/mnt/e/zoomer_archive/output/magellanic_mob", "bytes": 1156484826, "files": 1299, "reason": "video live"}
+{"ts": "2026-09-05 09:08:48", "src": "output/magnetite_choir", "dst": "/mnt/e/zoomer_archive/output/magnetite_choir", "bytes": 3812530401, "files": 3872, "reason": "video live"}
+{"ts": "2026-09-05 09:08:54", "src": "output/mantis_drumline", "dst": "/mnt/e/zoomer_archive/output/mantis_drumline", "bytes": 644059783, "files": 713, "reason": "video rejected"}
+{"ts": "2026-09-05 09:09:29", "src": "output/meteorite_cradle", "dst": "/mnt/e/zoomer_archive/output/meteorite_cradle", "bytes": 3571358453, "files": 3760, "reason": "video live"}
+{"ts": "2026-09-05 09:09:37", "src": "output/motmot_cenote", "dst": "/mnt/e/zoomer_archive/output/motmot_cenote", "bytes": 1019747832, "files": 1091, "reason": "video rejected"}
+{"ts": "2026-09-05 09:09:44", "src": "output/observatory_dusk", "dst": "/mnt/e/zoomer_archive/output/observatory_dusk", "bytes": 840971958, "files": 913, "reason": "video rejected"}
+{"ts": "2026-09-05 09:09:58", "src": "output/peony_shell", "dst": "/mnt/e/zoomer_archive/output/peony_shell", "bytes": 1598207241, "files": 1692, "reason": "video live"}
+{"ts": "2026-09-05 09:10:00", "src": "output/persist_lab", "dst": "/mnt/e/zoomer_archive/output/persist_lab", "bytes": 469774338, "files": 348, "reason": "orphan (no pipeline entry)"}
+{"ts": "2026-09-05 09:10:09", "src": "output/physarum_maze", "dst": "/mnt/e/zoomer_archive/output/physarum_maze", "bytes": 818694676, "files": 951, "reason": "video live"}
+{"ts": "2026-09-05 09:10:20", "src": "output/pomegranate_vault", "dst": "/mnt/e/zoomer_archive/output/pomegranate_vault", "bytes": 1075069288, "files": 1151, "reason": "video live"}
+{"ts": "2026-09-05 09:11:12", "src": "output/ruby_furnace", "dst": "/mnt/e/zoomer_archive/output/ruby_furnace", "bytes": 4903519482, "files": 5667, "reason": "video live"}
+{"ts": "2026-09-05 09:11:30", "src": "output/squid_lantern", "dst": "/mnt/e/zoomer_archive/output/squid_lantern", "bytes": 1759000693, "files": 2238, "reason": "video live"}
+{"ts": "2026-09-05 09:11:40", "src": "output/sundew_snare", "dst": "/mnt/e/zoomer_archive/output/sundew_snare", "bytes": 1170422047, "files": 1276, "reason": "video live"}
+{"ts": "2026-09-05 09:11:49", "src": "output/sunspot_archipelago", "dst": "/mnt/e/zoomer_archive/output/sunspot_archipelago", "bytes": 929513930, "files": 1069, "reason": "video rejected"}
+{"ts": "2026-09-05 09:12:33", "src": "output/termite_citadel", "dst": "/mnt/e/zoomer_archive/output/termite_citadel", "bytes": 4292865118, "files": 4504, "reason": "video live"}
+{"ts": "2026-09-05 09:13:01", "src": "output/vesper_flight", "dst": "/mnt/e/zoomer_archive/output/vesper_flight", "bytes": 2923879566, "files": 3240, "reason": "video live"}
+{"ts": "2026-09-05 09:13:43", "src": "output/whale_fall_republic", "dst": "/mnt/e/zoomer_archive/output/whale_fall_republic", "bytes": 4359795393, "files": 4658, "reason": "video live"}
+{"ts": "2026-09-05 09:14:15", "src": "output/wild_yeast", "dst": "/mnt/e/zoomer_archive/output/wild_yeast", "bytes": 3426924438, "files": 3426, "reason": "video live"}
+{"ts": "2026-09-06 10:25:46", "prune_e": "abyssal_chandelier", "bytes": 1173187261}
+{"ts": "2026-09-06 10:25:49", "prune_e": "alexandria", "bytes": 346652153}
+{"ts": "2026-09-06 10:25:51", "prune_e": "alexandria_ds", "bytes": 490064049}
+{"ts": "2026-09-06 10:25:53", "prune_e": "ammonite_spiral", "bytes": 423859857}
+{"ts": "2026-09-06 10:26:01", "prune_e": "anemone_arsenal", "bytes": 1797831893}
+{"ts": "2026-09-06 10:26:06", "prune_e": "antenna_ball", "bytes": 572761240}
+{"ts": "2026-09-06 10:26:09", "prune_e": "antenna_ball_ds", "bytes": 841726855}
+{"ts": "2026-09-06 10:26:11", "prune_e": "antenna_ball_turbo", "bytes": 201735743}
+{"ts": "2026-09-06 10:26:12", "prune_e": "attic_drift", "bytes": 238192644}
+{"ts": "2026-09-06 10:26:14", "prune_e": "bamboo_sea", "bytes": 387716620}
+{"ts": "2026-09-06 10:26:16", "prune_e": "bee_cathedral", "bytes": 460009231}
+{"ts": "2026-09-06 10:26:21", "prune_e": "black_hole", "bytes": 1281234254}
+{"ts": "2026-09-06 10:26:24", "prune_e": "black_hole_ds", "bytes": 582692552}
+{"ts": "2026-09-06 10:26:28", "prune_e": "bourdon_foundry", "bytes": 1001652489}
+{"ts": "2026-09-06 10:26:30", "prune_e": "brinicle_grove", "bytes": 347132290}
+{"ts": "2026-09-06 10:26:33", "prune_e": "butterfly_meridian", "bytes": 536613792}
+{"ts": "2026-09-06 10:26:40", "prune_e": "caddis_masonry", "bytes": 1815515430}
+{"ts": "2026-09-06 10:26:51", "prune_e": "cartographer", "bytes": 2111414597}
+{"ts": "2026-09-06 10:27:01", "prune_e": "cartographer_ds", "bytes": 2434347212}
+{"ts": "2026-09-06 10:27:01", "prune_e": "cave_of_numbers", "bytes": 46144219}
+{"ts": "2026-09-06 10:27:03", "prune_e": "chalkboard_infinities", "bytes": 349195580}
+{"ts": "2026-09-06 10:27:06", "prune_e": "chameleon_prism", "bytes": 669553546}
+{"ts": "2026-09-06 10:27:11", "prune_e": "cherenkov_cistern", "bytes": 1333093313}
+{"ts": "2026-09-06 10:27:13", "prune_e": "chess_empires", "bytes": 520320646}
+{"ts": "2026-09-06 10:27:16", "prune_e": "cinder_veil", "bytes": 551448446}
+{"ts": "2026-09-06 10:27:18", "prune_e": "circuit_city_ds", "bytes": 538632509}
+{"ts": "2026-09-06 10:27:26", "prune_e": "circuit_city_turbo", "bytes": 1479473284}
+{"ts": "2026-09-06 10:27:42", "prune_e": "cobalt_rookery", "bytes": 4200172800}
+{"ts": "2026-09-06 10:27:45", "prune_e": "copper_rain", "bytes": 747446706}
+{"ts": "2026-09-06 10:27:58", "prune_e": "coral_synapse", "bytes": 3035525796}
+{"ts": "2026-09-06 10:28:01", "prune_e": "cosmic_scales_remix_ds", "bytes": 709216475}
+{"ts": "2026-09-06 10:28:29", "prune_e": "cosmic_scales_remix_turbo", "bytes": 5406189020}
+{"ts": "2026-09-06 10:28:32", "prune_e": "desert_rosette", "bytes": 666197355}
+{"ts": "2026-09-06 10:28:36", "prune_e": "dollhouse", "bytes": 428974330}
+{"ts": "2026-09-06 10:28:41", "prune_e": "dollhouse_ds", "bytes": 791648000}
+{"ts": "2026-09-06 10:28:42", "prune_e": "droplet_zoo", "bytes": 236842740}
+{"ts": "2026-09-06 10:28:44", "prune_e": "eclipse_waterhole", "bytes": 713710326}
+{"ts": "2026-09-06 10:28:45", "prune_e": "ember_meadow", "bytes": 259545273}
+{"ts": "2026-09-06 10:28:46", "prune_e": "fiddler_commons", "bytes": 319510091}
+{"ts": "2026-09-06 10:28:51", "prune_e": "food_chain", "bytes": 661582357}
+{"ts": "2026-09-06 10:28:57", "prune_e": "food_chain_ds", "bytes": 1186464001}
+{"ts": "2026-09-06 10:29:00", "prune_e": "frost_window", "bytes": 528999076}
+{"ts": "2026-09-06 10:29:01", "prune_e": "frost_window_cn0", "bytes": 270059712}
+{"ts": "2026-09-06 10:29:13", "prune_e": "full_ladder", "bytes": 2357247901}
+{"ts": "2026-09-06 10:29:19", "prune_e": "full_ladder_ds", "bytes": 1434346061}
+{"ts": "2026-09-06 10:29:22", "prune_e": "geode_cosmos", "bytes": 688005379}
+{"ts": "2026-09-06 10:29:29", "prune_e": "glass_apiary", "bytes": 1473610124}
+{"ts": "2026-09-06 10:29:30", "prune_e": "gossamer_dawn", "bytes": 243318571}
+{"ts": "2026-09-06 10:29:31", "prune_e": "heron_delta", "bytes": 247853416}
+{"ts": "2026-09-06 10:29:34", "prune_e": "ink_dynasty", "bytes": 476890838}
+{"ts": "2026-09-06 10:29:39", "prune_e": "iris_observatory", "bytes": 1098301660}
+{"ts": "2026-09-06 10:29:44", "prune_e": "iris_observatory_ds", "bytes": 699126841}
+{"ts": "2026-09-06 10:29:49", "prune_e": "ivory_gambit", "bytes": 1306843748}
+{"ts": "2026-09-06 10:29:51", "prune_e": "jade_automata", "bytes": 508171649}
+{"ts": "2026-09-06 10:29:54", "prune_e": "jewel_oculus", "bytes": 554109520}
+{"ts": "2026-09-06 10:29:56", "prune_e": "kelp_dynamo", "bytes": 578492675}
+{"ts": "2026-09-06 10:29:57", "prune_e": "lab_4reg", "bytes": 235632733}
+{"ts": "2026-09-06 10:29:58", "prune_e": "lab_4reg_in", "bytes": 176352731}
+{"ts": "2026-09-06 10:30:14", "prune_e": "lantern_mangrove", "bytes": 3706221978}
+{"ts": "2026-09-06 10:30:16", "prune_e": "lather_atlas", "bytes": 242678213}
+{"ts": "2026-09-06 10:30:17", "prune_e": "lichen_moor", "bytes": 389814854}
+{"ts": "2026-09-06 10:30:17", "prune_e": "lissajous_stage", "bytes": 219041879}
+{"ts": "2026-09-06 10:30:23", "prune_e": "loom_of_nights", "bytes": 1148046180}
+{"ts": "2026-09-06 10:30:26", "prune_e": "magellanic_mob", "bytes": 679114072}
+{"ts": "2026-09-06 10:30:37", "prune_e": "magnetite_choir", "bytes": 2228356750}
+{"ts": "2026-09-06 10:30:38", "prune_e": "mantis_drumline", "bytes": 370372653}
+{"ts": "2026-09-06 10:30:47", "prune_e": "meteorite_cradle", "bytes": 2121781454}
+{"ts": "2026-09-06 10:30:48", "prune_e": "midnight_kitchen", "bytes": 258670180}
+{"ts": "2026-09-06 10:30:49", "prune_e": "midnight_kitchen_ds", "bytes": 268019387}
+{"ts": "2026-09-06 10:30:59", "prune_e": "mineral_heart", "bytes": 2455309897}
+{"ts": "2026-09-06 10:31:12", "prune_e": "mineral_heart_ds", "bytes": 3199134046}
+{"ts": "2026-09-06 10:31:15", "prune_e": "mineral_heart_turbo", "bytes": 644673825}
+{"ts": "2026-09-06 10:31:19", "prune_e": "moth_orchard_night", "bytes": 876810266}
+{"ts": "2026-09-06 10:31:21", "prune_e": "motmot_cenote", "bytes": 619986743}
+{"ts": "2026-09-06 10:31:32", "prune_e": "night_bloom", "bytes": 2547281080}
+{"ts": "2026-09-06 10:31:38", "prune_e": "night_bloom_ds", "bytes": 1180413575}
+{"ts": "2026-09-06 10:31:39", "prune_e": "night_lido", "bytes": 255369175}
+{"ts": "2026-09-06 10:31:42", "prune_e": "observatory_dusk", "bytes": 484489762}
+{"ts": "2026-09-06 10:31:46", "prune_e": "peony_shell", "bytes": 924040020}
+{"ts": "2026-09-06 10:31:48", "prune_e": "physarum_maze", "bytes": 498594065}
+{"ts": "2026-09-06 10:31:51", "prune_e": "pollen_court", "bytes": 824773940}
+{"ts": "2026-09-06 10:31:53", "prune_e": "pomegranate_vault", "bytes": 629227075}
+{"ts": "2026-09-06 10:32:00", "prune_e": "quantum_orrery", "bytes": 1371549135}
+{"ts": "2026-09-06 10:32:02", "prune_e": "resonance_hall", "bytes": 511654117}
+{"ts": "2026-09-06 10:32:15", "prune_e": "ruby_furnace", "bytes": 2836830897}
+{"ts": "2026-09-06 10:32:16", "prune_e": "salt_mirror", "bytes": 364764909}
+{"ts": "2026-09-06 10:32:19", "prune_e": "skyfog", "bytes": 461792244}
+{"ts": "2026-09-06 10:32:27", "prune_e": "skyfog_ds", "bytes": 1720365000}
+{"ts": "2026-09-06 10:32:28", "prune_e": "skyfog_turbo", "bytes": 221420088}
+{"ts": "2026-09-06 10:32:30", "prune_e": "snowfall", "bytes": 379728241}
+{"ts": "2026-09-06 10:32:33", "prune_e": "snowfall_ds", "bytes": 386175021}
+{"ts": "2026-09-06 10:32:34", "prune_e": "snowfall_turbo", "bytes": 187298301}
+{"ts": "2026-09-06 10:32:37", "prune_e": "squid_lantern", "bytes": 646160904}
+{"ts": "2026-09-06 10:32:39", "prune_e": "stormglass_ds", "bytes": 478181987}
+{"ts": "2026-09-06 10:32:42", "prune_e": "stormglass_turbo", "bytes": 393604602}
+{"ts": "2026-09-06 10:32:46", "prune_e": "sugar_nebula", "bytes": 800578891}
+{"ts": "2026-09-06 10:32:49", "prune_e": "sundew_snare", "bytes": 713130643}
+{"ts": "2026-09-06 10:32:51", "prune_e": "sunspot_archipelago", "bytes": 545278923}
+{"ts": "2026-09-06 10:33:01", "prune_e": "termite_citadel", "bytes": 2558572298}
+{"ts": "2026-09-06 10:33:03", "prune_e": "tesla_garden", "bytes": 391784288}
+{"ts": "2026-09-06 10:33:04", "prune_e": "tide_glass", "bytes": 368297872}
+{"ts": "2026-09-06 10:33:10", "prune_e": "tide_of_life", "bytes": 1172999140}
+{"ts": "2026-09-06 10:33:13", "prune_e": "tide_of_life_ds", "bytes": 648559933}
+{"ts": "2026-09-06 10:33:14", "prune_e": "turing_springs", "bytes": 355590292}
+{"ts": "2026-09-06 10:33:18", "prune_e": "velvet_atlas", "bytes": 776112946}
+{"ts": "2026-09-06 10:33:25", "prune_e": "vesper_flight", "bytes": 1737332205}
+{"ts": "2026-09-06 10:33:35", "prune_e": "whale_fall_republic", "bytes": 2649739131}
+{"ts": "2026-09-06 10:33:44", "prune_e": "wild_yeast", "bytes": 1841605625}

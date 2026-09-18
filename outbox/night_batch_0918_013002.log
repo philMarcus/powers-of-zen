@@ -1,0 +1,178 @@
+=== 01:30:02 batch start [queue] — 3 journeys: cork_dehesa dugong_meadow prairie_town
+=== 01:30:02 --- cork_dehesa ---
+=== 01:30:02 cork_dehesa: --plate low --plate-cn 0 --plate-void-gate
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] lacquer_pop  ->  deep lacquer enamel sheen, vermilion red and deep green, bold flat colour blocking, lustrous graphic poster look, ultra-detailed, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/cork_dehesa_platelow/v1
+[dive] cork_dehesa_platelow: 392 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — shelled_nucleus(sea)[26..49], disk_galaxy(sea)[90..113], dusk_world(surface)[122..135], dehesa_from_air(surface)[154..177], oak_commons(surface)[186..209], harvest_bole(surface)[218..241], plank_face(sea)[250..273], cork_honeycomb(lattice)[282..305], suberin_lamellae(lattice)[314..337], carbon_atom(lattice)[346..359]
+[dive] plate: cameo at frame 136 (dusk_world) deferred until the plate hands off
+[dive] PLATE (low) card 3 'disk_galaxy' -> 'dusk_world': frames 96..159 (bar line at 128), globe 0.115 -> 1.15 x width at the bar line, then until the frame is inside the disc
+[dive] TRACKER v3 ON (272 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of one carbon atom seated in the cork wall's grid, a tight garnet core point wrapped in a f
+[dive] frame 1/392 (16.7s/frame, ~6545s left) :: moving through one carbon atom seated in the cork wall's gri
+[dive] frame 11/392 (15.6s/frame, ~5961s left) :: moving through one carbon atom seated in the cork wall's gri
+[dive] frame 21/392 (15.3s/frame, ~5675s left) :: diving straight into a dense garnet nucleus as it swells to 
+[dive] frame 31/392 (14.6s/frame, ~5253s left) :: diving straight into a dense garnet nucleus as it swells to 
+[dive] frame 41/392 (13.1s/frame, ~4615s left) :: deep inside a nucleus of lit spheres pressed into one shiver
+[dive] frame 51/392 (12.2s/frame, ~4164s left) :: deep inside a nucleus of lit spheres pressed into one shiver
+[dive] frame 61/392 (11.8s/frame, ~3912s left) :: deep inside a nucleus of lit spheres pressed into one shiver
+[dive] frame 71/392 (11.4s/frame, ~3663s left) :: the whole view transforming, resolving into a froth of neste
+[dive] frame 81/392 (12.0s/frame, ~3735s left) :: moving through a froth of nested fog-shells filling the void
+[dive] frame 91/392 (12.4s/frame, ~3737s left) :: diving straight into a garnet-cored disk galaxy as it swells
+[dive] plate assets for card 3: surface 'a satellite view looking straight down onto the surface of a world seen from orb' / void 'an immense expanse of a disk galaxy adrift in the void, a ga'
+[dive] frame 101/392 (12.6s/frame, ~3677s left) :: a disk galaxy adrift in the void, a garnet-amber bulge cored
+[dive] frame 111/392 (12.3s/frame, ~3449s left) :: moving through a disk galaxy adrift in the void, a garnet-am
+[dive] frame 121/392 (12.1s/frame, ~3284s left) :: diving straight into a half-lit banded world as it swells to
+[dive] frame 131/392 (11.9s/frame, ~3102s left) :: a world seen from orbit at its dusk line, an azure sea sheet
+[dive] frame 141/392 (11.9s/frame, ~2988s left) :: moving through a world seen from orbit at its dusk line, an 
+[dive] frame 151/392 (12.3s/frame, ~2957s left) :: diving straight into a wooded umber pasture as it swells to 
+[dive] frame 161/392 (12.5s/frame, ~2898s left) :: a cork-oak dehesa at dusk seen from high above, hundreds of 
+[dive] frame 171/392 (12.5s/frame, ~2763s left) :: moving through a cork-oak dehesa at dusk seen from high abov
+[dive] frame 181/392 (12.8s/frame, ~2696s left) :: diving straight into a broad oak tree as it swells to fill t
+[dive] frame 191/392 (12.8s/frame, ~2567s left) :: diving straight into a broad oak tree as it swells to fill t
+[dive] frame 201/392 (12.6s/frame, ~2410s left) :: moving through the oak commons at dusk at eye level among th
+[dive] frame 211/392 (12.5s/frame, ~2269s left) :: moving through the oak commons at dusk at eye level among th
+[dive] frame 221/392 (12.6s/frame, ~2151s left) :: diving straight into a stripped oxblood trunk as it swells t
+[dive] frame 231/392 (12.5s/frame, ~2007s left) :: a freshly harvested cork oak at dusk, its stripped bole an o
+[dive] frame 241/392 (12.3s/frame, ~1859s left) :: moving through a freshly harvested cork oak at dusk, its str
+[dive] frame 251/392 (12.5s/frame, ~1756s left) :: diving straight into a leaned cork plank as it swells to fil
+[dive] frame 261/392 (12.3s/frame, ~1617s left) :: a cork plank's sawn face, a matte pitting of countless minut
+[dive] frame 271/392 (12.2s/frame, ~1476s left) :: moving through a cork plank's sawn face, a matte pitting of 
+[dive] frame 281/392 (12.3s/frame, ~1366s left) :: diving straight into an empty cork cell as it swells to fill
+[dive] frame 291/392 (12.2s/frame, ~1233s left) :: a froth of dead cork cells, hollow six-sided boxes tiled int
+[dive] frame 301/392 (12.1s/frame, ~1100s left) :: moving through a froth of dead cork cells, hollow six-sided 
+[dive] frame 311/392 (12.2s/frame, ~985s left) :: diving straight into a creased waxy wall as it swells to fil
+[dive] frame 321/392 (12.1s/frame, ~860s left) :: suberin laid course upon course within a cork wall, waxy cre
+[dive] frame 331/392 (12.0s/frame, ~733s left) :: moving through suberin laid course upon course within a cork
+[dive] frame 341/392 (12.0s/frame, ~614s left) :: diving straight into an azure carbon atom as it swells to fi
+[dive] frame 351/392 (12.1s/frame, ~495s left) :: diving straight into an azure carbon atom as it swells to fi
+[dive] frame 361/392 (12.0s/frame, ~372s left) :: moving through one carbon atom seated in the cork wall's gri
+[dive] frame 371/392 (12.2s/frame, ~255s left) :: moving through one carbon atom seated in the cork wall's gri
+[dive] frame 381/392 (12.3s/frame, ~135s left) :: diving straight into a dense garnet nucleus as it swells to 
+[dive] frame 391/392 (12.4s/frame, ~12s left) :: a nucleus of lit spheres pressed into one shivering droplet,
+[dive] frame 392/392 (12.4s/frame, ~0s left) :: a nucleus of lit spheres pressed into one shivering droplet,
+[dive] interpolated 12 -> 24fps (704 frames, loop-bridged) in 70s
+[dive] counter overlay on 704 frames (44 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/cork_dehesa_platelow/v1/cork_dehesa_platelow.mp4 (42173 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/cork_dehesa_platelow/v1/cork_dehesa_platelow_divein.mp4 (43001 KB, 29.3s)
+[dive] done in 5051s
+=== 02:54:14 cork_dehesa: rendered in 5052s
+no complete render for cork_dehesa_ds (need 392 frames)
+=== 02:54:14 cork_dehesa FAILED: queue_review failed: no complete render for cork_dehesa_ds (need 392 frames)
+=== 02:54:14 --- dugong_meadow ---
+=== 02:54:14 dugong_meadow: --plate low --plate-cn 0 --plate-void-gate
+[dive] tempo: fpb 9 (80bpm) -> transition 8f, seam 15f, anacrusis 3f
+[style] reef_pop  ->  electric aquamarine and hot pink, sunlit turquoise depth, high-saturation tropical glow, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/dugong_meadow_platelow/v1
+[dive] dugong_meadow_platelow: 333 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — meadow_commons(surface)[30..54], blade_face(sea)[66..80], lacunae_galleries(lattice)[102..126], chloroplast_cell(sea)[138..162], rubisco_knots(sea)[174..198], lagoon_from_air(surface)[246..270], meadow_from_above(surface)[282..296]
+[dive] PLATE: no planet-class card in range — flag has no effect
+[dive] TRACKER v3 ON (198 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a seagrass meadow in moonlit shallows seen from directly above, viridian ribbon 
+[dive] frame 1/333 (18.0s/frame, ~5990s left) :: moving through a seagrass meadow in moonlit shallows seen fr
+[dive] frame 11/333 (17.4s/frame, ~5605s left) :: moving through a seagrass meadow in moonlit shallows seen fr
+[dive] frame 21/333 (16.8s/frame, ~5237s left) :: diving straight into an ivory crescent of bare sand as it sw
+[dive] frame 31/333 (16.9s/frame, ~5109s left) :: diving straight into an ivory crescent of bare sand as it sw
+[dive] frame 41/333 (14.9s/frame, ~4354s left) :: among the ribbons of a seagrass meadow at night, a cropped s
+[dive] frame 51/333 (13.7s/frame, ~3857s left) :: moving through among the ribbons of a seagrass meadow at nig
+[dive] frame 61/333 (13.9s/frame, ~3774s left) :: diving straight into a crusted green ribbon blade as it swel
+[dive] frame 71/333 (13.7s/frame, ~3590s left) :: diving straight into a crusted green ribbon blade as it swel
+[dive] frame 81/333 (13.1s/frame, ~3298s left) :: one seagrass ribbon furred over with life, an emerald blade 
+[dive] frame 91/333 (13.6s/frame, ~3303s left) :: moving through one seagrass ribbon furred over with life, an
+[dive] frame 101/333 (14.0s/frame, ~3246s left) :: diving straight into a cropped emerald tip as it swells to f
+[dive] frame 111/333 (13.6s/frame, ~3025s left) :: the interior of a seagrass blade, gas-filled galleries openi
+[dive] frame 121/333 (13.3s/frame, ~2817s left) :: moving through the interior of a seagrass blade, gas-filled 
+[dive] frame 131/333 (13.2s/frame, ~2661s left) :: diving straight into a plump green cell as it swells to fill
+[dive] frame 141/333 (13.3s/frame, ~2557s left) :: diving straight into a plump green cell as it swells to fill
+[dive] frame 151/333 (13.0s/frame, ~2374s left) :: the interior of one green cell, dozens of lens-shaped chloro
+[dive] frame 161/333 (12.8s/frame, ~2196s left) :: moving through the interior of one green cell, dozens of len
+[dive] frame 171/333 (12.9s/frame, ~2093s left) :: diving straight into an olive-green lens pod as it swells to
+[dive] frame 181/333 (12.8s/frame, ~1945s left) :: folded ribbon chains looped back on themselves in tight coil
+[dive] frame 191/333 (12.6s/frame, ~1787s left) :: deep inside folded ribbon chains looped back on themselves i
+[dive] frame 201/333 (12.4s/frame, ~1641s left) :: deep inside folded ribbon chains looped back on themselves i
+[dive] frame 211/333 (12.3s/frame, ~1497s left) :: deep inside folded ribbon chains looped back on themselves i
+[dive] frame 221/333 (12.1s/frame, ~1358s left) :: the whole view transforming, resolving into the night side o
+[dive] frame 231/333 (12.2s/frame, ~1244s left) :: moving through the night side of a planet seen from orbit, s
+[dive] frame 241/333 (12.4s/frame, ~1142s left) :: diving straight into a silver-lit lagoon as it swells to fil
+[dive] frame 251/333 (12.4s/frame, ~1020s left) :: diving straight into a silver-lit lagoon as it swells to fil
+[dive] frame 261/333 (12.3s/frame, ~887s left) :: a lagoon on a moonlit coast seen low from the air, pewter wa
+[dive] frame 271/333 (12.2s/frame, ~756s left) :: moving through a lagoon on a moonlit coast seen low from the
+[dive] frame 281/333 (12.1s/frame, ~628s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 291/333 (12.0s/frame, ~503s left) :: a seagrass meadow in moonlit shallows seen from directly abo
+[dive] frame 301/333 (12.0s/frame, ~383s left) :: moving through a seagrass meadow in moonlit shallows seen fr
+[dive] frame 311/333 (12.1s/frame, ~267s left) :: diving straight into an ivory crescent of bare sand as it sw
+[dive] frame 321/333 (12.3s/frame, ~147s left) :: diving straight into an ivory crescent of bare sand as it sw
+[dive] frame 331/333 (12.4s/frame, ~25s left) :: among the ribbons of a seagrass meadow at night, a cropped s
+[dive] frame 333/333 (12.4s/frame, ~0s left) :: among the ribbons of a seagrass meadow at night, a cropped s
+[dive] interpolated 12 -> 24fps (576 frames, loop-bridged) in 57s
+[dive] counter overlay on 576 frames (23 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/dugong_meadow_platelow/v1/dugong_meadow_platelow.mp4 (33908 KB, 24.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/dugong_meadow_platelow/v1/dugong_meadow_platelow_divein.mp4 (34459 KB, 24.0s)
+[dive] done in 4294s
+=== 04:05:48 dugong_meadow: rendered in 4295s
+no complete render for dugong_meadow_ds (need 333 frames)
+=== 04:05:48 dugong_meadow FAILED: queue_review failed: no complete render for dugong_meadow_ds (need 333 frames)
+=== 04:05:48 --- prairie_town ---
+=== 04:05:48 prairie_town: --plate low --plate-cn 0 --plate-void-gate
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] enchanted_wild  ->  enchanted golden light, lush saturated color, painterly fantasy illustration, hyperdetailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/prairie_town_platelow/v1
+[dive] prairie_town_platelow: 392 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — light_rope(sea)[26..49], dwarf_scatter(sea)[90..113], dusk_world(surface)[122..145], town_from_air(surface)[154..167], town_commons(surface)[186..209], spoil_bank(surface)[218..241], root_hairs(sea)[250..273], rhizosphere(sea)[282..305], rotary_motor(sea)[314..337], hydrogen_haze(sea)[346..359]
+[dive] PLATE (low) card 3 'dwarf_scatter' -> 'dusk_world': frames 96..159 (bar line at 128), globe 0.115 -> 1.15 x width at the bar line, then until the frame is inside the disc
+[dive] TRACKER v3 ON (248 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of atoms crowded through the emptiness at the floor of the motor's matter, each one a hot a
+[dive] frame 1/392 (19.5s/frame, ~7612s left) :: moving through atoms crowded through the emptiness at the fl
+[dive] frame 11/392 (17.4s/frame, ~6623s left) :: moving through atoms crowded through the emptiness at the fl
+[dive] frame 21/392 (16.9s/frame, ~6251s left) :: diving straight into a hot amber core as it swells to fill t
+[dive] frame 31/392 (16.1s/frame, ~5798s left) :: diving straight into a hot amber core as it swells to fill t
+[dive] frame 41/392 (14.3s/frame, ~5017s left) :: deep inside a taut rope of light drawn from one amber point 
+[dive] frame 51/392 (13.1s/frame, ~4475s left) :: deep inside a taut rope of light drawn from one amber point 
+[dive] frame 61/392 (12.7s/frame, ~4188s left) :: deep inside a taut rope of light drawn from one amber point 
+[dive] frame 71/392 (12.1s/frame, ~3895s left) :: the whole view transforming, resolving into one filament of 
+[dive] frame 81/392 (11.7s/frame, ~3639s left) :: moving through one filament of the cosmic web drawn from one
+[dive] frame 91/392 (11.5s/frame, ~3463s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] plate assets for card 3: surface 'a satellite view looking straight down onto the surface of a rust-umber world se' / void 'an immense expanse of a ragged irregular dwarf galaxy adrift'
+[dive] frame 101/392 (11.5s/frame, ~3350s left) :: a ragged irregular dwarf galaxy adrift in the void, no disk 
+[dive] frame 111/392 (11.3s/frame, ~3163s left) :: moving through a ragged irregular dwarf galaxy adrift in the
+[dive] frame 121/392 (11.2s/frame, ~3022s left) :: diving straight into a small umber world as it swells to fil
+[dive] frame 131/392 (11.0s/frame, ~2871s left) :: a rust-umber world seen from orbit at its evening line, one 
+[dive] frame 141/392 (11.1s/frame, ~2774s left) :: moving through a rust-umber world seen from orbit at its eve
+[dive] frame 151/392 (11.5s/frame, ~2779s left) :: diving straight into a wide bronze plain as it swells to fil
+[dive] frame 161/392 (11.9s/frame, ~2738s left) :: a bronze grass plain seen from high overhead and tipped towa
+[dive] frame 171/392 (11.8s/frame, ~2618s left) :: moving through a bronze grass plain seen from high overhead 
+[dive] frame 181/392 (12.2s/frame, ~2564s left) :: diving straight into a pale soil mound as it swells to fill 
+[dive] frame 191/392 (12.2s/frame, ~2442s left) :: diving straight into a pale soil mound as it swells to fill 
+[dive] frame 201/392 (12.0s/frame, ~2298s left) :: moving through the burrow town at eye level under the last o
+[dive] frame 211/392 (12.0s/frame, ~2165s left) :: moving through the burrow town at eye level under the last o
+[dive] frame 221/392 (12.0s/frame, ~2061s left) :: diving straight into a raw umber soil bank as it swells to f
+[dive] frame 231/392 (12.0s/frame, ~1926s left) :: the raw soil face of one burrow mound, umber crumbs and rust
+[dive] frame 241/392 (11.8s/frame, ~1786s left) :: moving through the raw soil face of one burrow mound, umber 
+[dive] frame 251/392 (12.0s/frame, ~1692s left) :: diving straight into a pale gold grass root as it swells to 
+[dive] frame 261/392 (11.9s/frame, ~1560s left) :: a grass root drawn through the soil, bristled its whole reac
+[dive] frame 271/392 (11.8s/frame, ~1426s left) :: moving through a grass root drawn through the soil, bristled
+[dive] frame 281/392 (11.9s/frame, ~1326s left) :: diving straight into a slender cream root hair as it swells 
+[dive] frame 291/392 (11.9s/frame, ~1198s left) :: the wall of one root hair crowded with rod-shaped bacteria, 
+[dive] frame 301/392 (11.8s/frame, ~1070s left) :: moving through the wall of one root hair crowded with rod-sh
+[dive] frame 311/392 (11.8s/frame, ~959s left) :: diving straight into a teal rod-shaped bacterium as it swell
+[dive] frame 321/392 (11.8s/frame, ~838s left) :: the rotary motor seated through a bacterium's envelope, a st
+[dive] frame 331/392 (11.7s/frame, ~714s left) :: moving through the rotary motor seated through a bacterium's
+[dive] frame 341/392 (11.7s/frame, ~599s left) :: diving straight into a small burning atom as it swells to fi
+[dive] frame 351/392 (11.8s/frame, ~484s left) :: diving straight into a small burning atom as it swells to fi
+[dive] frame 361/392 (11.7s/frame, ~364s left) :: moving through atoms crowded through the emptiness at the fl
+[dive] frame 371/392 (11.9s/frame, ~250s left) :: moving through atoms crowded through the emptiness at the fl
+[dive] frame 381/392 (12.0s/frame, ~132s left) :: diving straight into a hot amber core as it swells to fill t
+[dive] frame 391/392 (12.1s/frame, ~12s left) :: a taut rope of light drawn from one amber point to another w
+[dive] frame 392/392 (12.1s/frame, ~0s left) :: a taut rope of light drawn from one amber point to another w
+[dive] interpolated 12 -> 24fps (704 frames, loop-bridged) in 69s
+[dive] counter overlay on 704 frames (45 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/prairie_town_platelow/v1/prairie_town_platelow.mp4 (40572 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/prairie_town_platelow/v1/prairie_town_platelow_divein.mp4 (41377 KB, 29.3s)
+[dive] done in 4953s
+=== 05:28:22 prairie_town: rendered in 4953s
+no complete render for prairie_town_ds (need 392 frames)
+=== 05:28:22 prairie_town FAILED: queue_review failed: no complete render for prairie_town_ds (need 392 frames)
+=== 05:28:22 batch done in 4.0h — 0 to Review, 3 failed (cork_dehesa, dugong_meadow, prairie_town)
+=== 05:28:22 ComfyUI models unloaded — VRAM freed
+=== 05:28:22 log: outbox/night_batch_0918_013002.log

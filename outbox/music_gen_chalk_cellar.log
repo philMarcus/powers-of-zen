@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/chalk_cellar/night_market-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.80) -> stretch 1.0000 | phase 0.037s | lock 22.31x | kick 0.40 | beat 1/4 | fit 1.06 (bar 0.80 vs rival 0.76) | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [night_market-wild] realigned (lock 22.31x kick 0.40 fit 1.06)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/chalk_cellar/glass_chapel-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.78) -> stretch 1.0000 | phase 2.335s | lock 19.98x | kick 0.32 | beat 1/4 | fit 0.99 (bar 0.78 vs rival 0.79) | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [glass_chapel-halftime] realigned (lock 19.98x kick 0.32 fit 0.99)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/chalk_cellar/glass_chapel.mp4
+    bar 2.667s | music bar 2.667s (conf 0.55) -> stretch 1.0000 | phase 1.380s | lock 17.57x | kick 0.48 | beat 1/4 | fit 1.58 (bar 0.55 vs rival 0.35) | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [glass_chapel] realigned (lock 17.57x kick 0.48 fit 1.58)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/chalk_cellar/deep_archive-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.71) -> stretch 1.0000 | phase 0.010s | lock 10.67x | kick 0.37 | beat 1/4 | fit 1.04 (bar 0.71 vs rival 0.68) | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] realigned (lock 10.67x kick 0.37 fit 1.04)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/chalk_cellar/analog_dawn-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.05) -> stretch 1.0000 | phase 2.660s | lock 3.29x | kick -0.02 | beat 1/4 | fit 0.11 (bar 0.05 vs rival 0.46) | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [analog_dawn-wild] realigned (lock 3.29x kick -0.02 fit 0.11)
+realigned 5 pregen candidates to the marked start

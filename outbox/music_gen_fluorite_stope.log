@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fluorite_stope/ember_pulse-third_answer.mp4
+    bar 2.000s | music bar 1.803s (conf -0.01) -> stretch 1.0000 | phase 1.030s | lock 59.23x | kick -0.00 | seamless loop @ 10.00s (music tiled x3, xf 0.50s)
+  [ember_pulse-third_answer] realigned (lock 59.23x kick -0.01)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fluorite_stope/pulse1-ember_pulse.mp4
+    bar 2.000s | music bar 1.995s (conf 0.49) -> stretch 0.9973 | phase 1.040s | lock 20.64x | kick -0.09 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [pulse1-ember_pulse] realigned (lock 20.64x kick -0.09)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fluorite_stope/aurora_strings-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.33) -> stretch 1.0027 | phase 1.550s | lock 8.21x | kick -0.10 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [aurora_strings-wild] realigned (lock 8.21x kick -0.10)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fluorite_stope/tide_organ-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.13) -> stretch 1.0027 | phase 0.000s | lock 8.61x | kick 0.00 | seamless loop @ 10.00s (music tiled x1, xf 0.50s)
+  [tide_organ-wild] realigned (lock 8.61x kick 0.00)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/fluorite_stope/glass_chapel-wild.mp4
+    bar 2.000s | music bar 2.005s (conf -0.05) -> stretch 1.0000 | phase 1.620s | lock 7.70x | kick -0.05 | seamless loop @ 10.00s (music tiled x1, xf 0.50s)
+  [glass_chapel-wild] realigned (lock 7.70x kick -0.05)
+realigned 5 pregen candidates to the marked start

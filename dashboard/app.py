@@ -658,7 +658,15 @@ tabs = st.tabs([f"🗺 Journeys ({len(pl.jqueue(JD))})",
 with tabs[1]:  # VIDEO REVIEW — pick cut/model, edit caption, send to Music
     st.write("Look at the video, pick cut/model, edit the caption/theme, then **Approve → Music** "
              "to choose a soundtrack.")
-    rv = by_state(d, "review")
+    def _rendered_at(v):
+        # newest RENDER first (Phil 2026-09-18): `created` is the entry's first-ever date and
+        # never moves on a re-render, so sort by the review file's own mtime (queue_review
+        # re-copies it on every ingest / re-assembly); fall back to created.
+        try:
+            return (os.path.getmtime(pl.ROOT / v["file"]), v.get("created", ""))
+        except Exception:
+            return (0.0, v.get("created", ""))
+    rv = sorted(by_state(d, "review"), key=_rendered_at, reverse=True)
     if not rv:
         st.info("Nothing awaiting video review.")
     def review_extras(v):
@@ -1063,6 +1071,21 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
                                             "to these ratios")
     t1, t2, t3 = st.columns(3)
     rpaused = t1.toggle("⏸ pause nightly rendering", value=bool(s["render_paused"]))
+    # PLANET PLATE (2026-09-17): lab arm B on every planet-class card in the nightly
+    _pmodes = ["live", "low", "off"]
+    pmode = t1.selectbox("🪐 planet plate (space→planet descent)", _pmodes,
+                         index=_pmodes.index(s.get("plate_mode") or "off")
+                         if (s.get("plate_mode") or "off") in _pmodes else 0,
+                         help="live = the approved descent (live arrival, globe enters the "
+                              "frame); low = the first version (pixel-blended arrival); off = "
+                              "the pre-plate engine. Applies to the next renders.")
+    _pintros = ["enter", "auto", "grow", "plain"]
+    pintro = t1.selectbox("🪐 how the globe arrives", _pintros,
+                          index=_pintros.index(s.get("plate_intro") or "enter")
+                          if (s.get("plate_intro") or "enter") in _pintros else 0,
+                          help="enter = slides in from beyond a frame edge (edge varies per "
+                               "journey) — the approved one; grow = from a point (still in the "
+                               "lab); auto = mix of both; plain = appears at the zoom's rate.")
     fpaused = t2.toggle("⏸ pause midnight refill", value=bool(s["refill_paused"]))
     st.markdown("**platform pauses** (scheduler skips paused platforms when posting)")
     pc = st.columns(len(pl.PLATFORMS))
@@ -1078,6 +1101,7 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
             "journey_queue_target": int(qtarget), "refill_max_per_night": int(maxnight),
             "tier_share": shares,
             "render_paused": bool(rpaused), "refill_paused": bool(fpaused),
+            "plate_mode": ("" if pmode == "off" else pmode), "plate_intro": pintro,
             "post_every_hours": float(post_every),
             "post_next": post_next.strip()})
         pl.jsave(jj)

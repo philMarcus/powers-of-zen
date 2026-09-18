@@ -128,5 +128,6 @@
   ],
   "music_theme": "dry warm air over a cooling desert — low sustained drone and slow sand-shaker pulses under airy pads, the pulse doubling as the dive tightens onto the grains, one wide bright bloom where the crossed crystal planes open into the ring plane, settling back to the drone on the fall home",
   "music_key": "E minor",
-  "render_start": "planet"
+  "render_start": "growth_terraces",
+  "play_start": "planet"
 }

@@ -224,35 +224,291 @@
   "dark_frac": 0.3039
  },
  "abyssal_chandelier": {
-  "key": "abyssal_chandelier:1786690818116525400",
+  "key": "abyssal_chandelier:1786741182060017500",
   "frames": 24,
-  "lum": 0.3479,
-  "sat": 0.8181,
-  "contrast": 0.1774,
-  "dark_frac": 0.3209
+  "lum": 0.3349,
+  "sat": 0.7969,
+  "contrast": 0.1726,
+  "dark_frac": 0.3322
  },
  "ivory_gambit": {
-  "key": "ivory_gambit:1786696986882979600",
+  "key": "ivory_gambit:1786754378425541600",
   "frames": 24,
-  "lum": 0.3083,
-  "sat": 0.7323,
-  "contrast": 0.159,
-  "dark_frac": 0.3842
+  "lum": 0.3392,
+  "sat": 0.7635,
+  "contrast": 0.1728,
+  "dark_frac": 0.3488
  },
  "whale_fall_republic": {
-  "key": "whale_fall_republic:1786703338706333000",
+  "key": "whale_fall_republic:1787500043268969900",
   "frames": 24,
-  "lum": 0.3021,
-  "sat": 0.7163,
-  "contrast": 0.1751,
-  "dark_frac": 0.4418
+  "lum": 0.3428,
+  "sat": 0.8479,
+  "contrast": 0.1584,
+  "dark_frac": 0.3014
  },
  "moth_orchard_night": {
-  "key": "moth_orchard_night:1786707366726208900",
+  "key": "moth_orchard_night:1786806224635545800",
   "frames": 20,
-  "lum": 0.3514,
-  "sat": 0.7395,
-  "contrast": 0.1926,
-  "dark_frac": 0.3516
+  "lum": 0.3684,
+  "sat": 0.792,
+  "contrast": 0.181,
+  "dark_frac": 0.2998
+ },
+ "cinder_veil": {
+  "key": "cinder_veil:1786637272272262100",
+  "frames": 24,
+  "lum": 0.2683,
+  "sat": 0.7061,
+  "contrast": 0.1651,
+  "dark_frac": 0.5067
+ },
+ "salt_mirror": {
+  "key": "salt_mirror:1786637594234172600",
+  "frames": 16,
+  "lum": 0.4432,
+  "sat": 0.7617,
+  "contrast": 0.1528,
+  "dark_frac": 0.1089
+ },
+ "geode_cosmos": {
+  "key": "geode_cosmos:1786806441342274600",
+  "frames": 24,
+  "lum": 0.3208,
+  "sat": 0.714,
+  "contrast": 0.1783,
+  "dark_frac": 0.3777
+ },
+ "squid_lantern": {
+  "key": "squid_lantern:1787017028440286100",
+  "frames": 10,
+  "lum": 0.3067,
+  "sat": 0.7327,
+  "contrast": 0.2005,
+  "dark_frac": 0.4488
+ },
+ "sundew_snare": {
+  "key": "sundew_snare:1787016802072311300",
+  "frames": 24,
+  "lum": 0.4131,
+  "sat": 0.8125,
+  "contrast": 0.1732,
+  "dark_frac": 0.1935
+ },
+ "physarum_maze": {
+  "key": "physarum_maze:1787158843193352500",
+  "frames": 22,
+  "lum": 0.4367,
+  "sat": 0.8157,
+  "contrast": 0.1963,
+  "dark_frac": 0.1965
+ },
+ "chameleon_prism": {
+  "key": "chameleon_prism:1787240463453312100",
+  "frames": 24,
+  "lum": 0.3944,
+  "sat": 0.7941,
+  "contrast": 0.1796,
+  "dark_frac": 0.2315
+ },
+ "desert_rosette": {
+  "key": "desert_rosette:1787017904119862100",
+  "frames": 24,
+  "lum": 0.4417,
+  "sat": 0.8197,
+  "contrast": 0.1832,
+  "dark_frac": 0.1718
+ },
+ "ember_meadow": {
+  "key": "ember_meadow:1787017113576751700",
+  "frames": 12,
+  "lum": 0.4051,
+  "sat": 0.8311,
+  "contrast": 0.1849,
+  "dark_frac": 0.217
+ },
+ "brinicle_grove": {
+  "key": "brinicle_grove:1787086533394887300",
+  "frames": 15,
+  "lum": 0.4018,
+  "sat": 0.6492,
+  "contrast": 0.1927,
+  "dark_frac": 0.2407
+ },
+ "caddis_masonry": {
+  "key": "caddis_masonry:1787527490861540900",
+  "frames": 24,
+  "lum": 0.3728,
+  "sat": 0.7721,
+  "contrast": 0.1948,
+  "dark_frac": 0.2805
+ },
+ "peony_shell": {
+  "key": "peony_shell:1787602208426541600",
+  "frames": 13,
+  "lum": 0.2666,
+  "sat": 0.6389,
+  "contrast": 0.1773,
+  "dark_frac": 0.5424
+ },
+ "termite_citadel": {
+  "key": "termite_citadel:1787597160480547900",
+  "frames": 22,
+  "lum": 0.4106,
+  "sat": 0.8379,
+  "contrast": 0.1798,
+  "dark_frac": 0.2057
+ },
+ "lantern_mangrove": {
+  "key": "lantern_mangrove:1787601723006992300",
+  "frames": 23,
+  "lum": 0.359,
+  "sat": 0.8266,
+  "contrast": 0.178,
+  "dark_frac": 0.2902
+ },
+ "vesper_flight": {
+  "key": "vesper_flight:1787601890826317200",
+  "frames": 24,
+  "lum": 0.312,
+  "sat": 0.8249,
+  "contrast": 0.1672,
+  "dark_frac": 0.3826
+ },
+ "wild_yeast": {
+  "key": "wild_yeast:1787602105811641900",
+  "frames": 12,
+  "lum": 0.3445,
+  "sat": 0.7861,
+  "contrast": 0.1875,
+  "dark_frac": 0.3355
+ },
+ "cobalt_rookery": {
+  "key": "cobalt_rookery:1787606353159389900",
+  "frames": 24,
+  "lum": 0.3602,
+  "sat": 0.8031,
+  "contrast": 0.175,
+  "dark_frac": 0.2958
+ },
+ "meteorite_cradle": {
+  "key": "meteorite_cradle:1787606462917335600",
+  "frames": 24,
+  "lum": 0.3081,
+  "sat": 0.7766,
+  "contrast": 0.1574,
+  "dark_frac": 0.3789
+ },
+ "pomegranate_vault": {
+  "key": "pomegranate_vault:1787780809308113900",
+  "frames": 13,
+  "lum": 0.3318,
+  "sat": 0.7538,
+  "contrast": 0.1785,
+  "dark_frac": 0.3585
+ },
+ "eclipse_waterhole": {
+  "key": "eclipse_waterhole:1787781599612194100",
+  "frames": 24,
+  "lum": 0.3255,
+  "sat": 0.8149,
+  "contrast": 0.1645,
+  "dark_frac": 0.368
+ },
+ "magnetite_choir": {
+  "key": "magnetite_choir:1788179463879987200",
+  "frames": 13,
+  "lum": 0.3424,
+  "sat": 0.7512,
+  "contrast": 0.1892,
+  "dark_frac": 0.3531
+ },
+ "magellanic_mob": {
+  "key": "magellanic_mob:1788171694596168900",
+  "frames": 24,
+  "lum": 0.3495,
+  "sat": 0.8476,
+  "contrast": 0.1838,
+  "dark_frac": 0.308
+ },
+ "bee_cathedral": {
+  "key": "bee_cathedral:1788199464609419000",
+  "frames": 19,
+  "lum": 0.3624,
+  "sat": 0.8165,
+  "contrast": 0.1868,
+  "dark_frac": 0.3022
+ },
+ "ruby_furnace": {
+  "key": "ruby_furnace:1787598599737852700",
+  "frames": 22,
+  "lum": 0.3307,
+  "sat": 0.7939,
+  "contrast": 0.201,
+  "dark_frac": 0.3971
+ },
+ "bamboo_sea": {
+  "key": "bamboo_sea:1788199530146764900",
+  "frames": 19,
+  "lum": 0.4505,
+  "sat": 0.814,
+  "contrast": 0.1778,
+  "dark_frac": 0.1564
+ },
+ "fiddler_commons": {
+  "key": "fiddler_commons:1788199637462781900",
+  "frames": 13,
+  "lum": 0.423,
+  "sat": 0.7069,
+  "contrast": 0.1783,
+  "dark_frac": 0.1868
+ },
+ "voltaic_shoal": {
+  "key": "voltaic_shoal:1788199759312028800",
+  "frames": 12,
+  "lum": 0.3803,
+  "sat": 0.803,
+  "contrast": 0.177,
+  "dark_frac": 0.2373
+ },
+ "winter_murmuration": {
+  "key": "winter_murmuration:1788580683305208800",
+  "frames": 24,
+  "lum": 0.3897,
+  "sat": 0.8185,
+  "contrast": 0.1474,
+  "dark_frac": 0.1844
+ },
+ "circuit_grotto": {
+  "key": "circuit_grotto:1788580773304314000",
+  "frames": 10,
+  "lum": 0.3367,
+  "sat": 0.8072,
+  "contrast": 0.17,
+  "dark_frac": 0.3444
+ },
+ "sockeye_stair": {
+  "key": "sockeye_stair:1788752299631354000",
+  "frames": 10,
+  "lum": 0.3136,
+  "sat": 0.69,
+  "contrast": 0.1685,
+  "dark_frac": 0.3855
+ },
+ "bayou_eyeshine": {
+  "key": "bayou_eyeshine:1788752424877467600",
+  "frames": 21,
+  "lum": 0.3621,
+  "sat": 0.7517,
+  "contrast": 0.1674,
+  "dark_frac": 0.2594
+ },
+ "fluorite_stope": {
+  "key": "fluorite_stope:1788914820009423000",
+  "frames": 10,
+  "lum": 0.2988,
+  "sat": 0.7699,
+  "contrast": 0.1802,
+  "dark_frac": 0.4373
  }
 }

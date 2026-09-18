@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sockeye_stair/tide_organ-third_answer2.mp4
+    bar 2.000s | music bar 2.005s (conf 0.64) -> stretch 1.0027 | phase 1.570s | lock 29.08x | kick 0.69 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [tide_organ-third_answer2] realigned (lock 29.08x kick 0.69)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sockeye_stair/choir_of_dust-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.37) -> stretch 1.0027 | phase 0.060s | lock 12.01x | kick 0.45 | seamless loop @ 10.00s (music tiled x1, xf 0.50s)
+  [choir_of_dust-wild] realigned (lock 12.01x kick 0.45)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sockeye_stair/tide_organ-third_answer.mp4
+    bar 2.000s | music bar 2.005s (conf 0.48) -> stretch 1.0027 | phase 0.040s | lock 9.25x | kick 0.37 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [tide_organ-third_answer] realigned (lock 9.25x kick 0.37)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sockeye_stair/wooden_orbit-wild.mp4
+    bar 2.000s | music bar 1.995s (conf 0.23) -> stretch 0.9973 | phase 1.140s | lock 10.67x | kick 0.42 | seamless loop @ 10.00s (music tiled x3, xf 0.50s)
+  [wooden_orbit-wild] realigned (lock 10.67x kick 0.42)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sockeye_stair/glass_chapel-wild.mp4
+    bar 2.000s | music bar 2.027s (conf 0.27) -> stretch 1.0133 | phase 0.050s | lock 3.35x | kick 0.28 | seamless loop @ 10.00s (music tiled x1, xf 0.50s)
+  [glass_chapel-wild] realigned (lock 3.35x kick 0.28)
+realigned 5 pregen candidates to the marked start

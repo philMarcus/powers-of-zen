@@ -1,0 +1,106 @@
+{
+  "name": "firehawk_ridge",
+  "theme": "helices and screws told down a night fire-front on an Australian stringybark ridge, as ecology rather than ruin: from the pyrocumulus column twisting over the range, to a sandy creek hollow where wallabies file, fire-chaser beetles fly toward the glare and a firehawk kite carries an ember, onto a banksia cone creaking apart in the heat, into the ember-veined char of the burnt bark, into the charcoal's kept cell chambers, into the carbon's stacked sheets standing in wind-leaned ranks — which read again as the sun's spicule forest, plasma jets standing like combed wheat, and those braided fires fold once more into the ember storm streaming over the ridge, home to the smoke column",
+  "style": "infrared_bloom",
+  "music_lane": "ember_pulse",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "pyrocumulus_tower",
+      "exp": 4.1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "char-black ranges, ember orange underglow, smoke grey-violet",
+      "scene": "a pyrocumulus tower over a burning ridge at night, seen from high over the range, the column stacked upward in slow screws of smoke that twist one into the next, kindled deep ember orange low in the shaft and gone smoke grey-violet at the crest against a black sky, cinder swarms lifted through the shaft in spiral files, the ranges beneath drawn in char-black folds, a crooked bright thread of fire coursing the near crest, thin smoke shelves stepped out over the valley, stars pricking the cold air past the plume's outer rim",
+      "target": "a crooked front of fire",
+      "target_phrase": "a bright orange flame",
+      "loop_target": "a pyrocumulus tower over a burning ridge at night, its column stacked upward in slow screws of smoke"
+    },
+    {
+      "name": "creek_hollow",
+      "exp": 1.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ember orange glare, pale sand, smoke grey-violet",
+      "scene": "a sandy creek hollow at the foot of the fire front, seen from the low bank down among the stringybark trunks, swamp wallabies filing down the pale sand bed in a single file, jewel-backed fire-chaser beetles streaming in toward the glare in loose swarms, a whistling kite on a dead limb with a smouldering stick in its bill, yellow-tailed black cockatoos crowding the unburnt canopies behind, ranks of flame combed by the wind through the scrub over the far bank, ember orange thrown across the sand and the pooled water, smoke drifting grey-violet between the trunks, banksia shrubs bristling with cones at the sand's edge, no one present",
+      "target": "a bristling seed cone",
+      "target_phrase": "a spiky seed cone",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "splitting_cone",
+      "exp": -1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "singed grey-brown husk, char black, ember orange fissures",
+      "scene": "a scorched banksia cone bristling on a burnt limb, its packed woody follicles gaping in paired valves where the heat has cracked them, papery seed vanes canting out of the splits, the cone's felted grey-brown husk singed back to charcoal in patches, more cones clustered on the limb beyond it, the limb's bark crazed into a crust of black plates with deep ember orange breathing in every fissure, ash flakes curling off the twigs, smoke drifting through the scrub past them",
+      "target": "a cracked plate of char",
+      "target_phrase": "a cracked black crust"
+    },
+    {
+      "name": "char_veins",
+      "exp": -3.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "soot black plates, deep ember orange fissures, one acid chartreuse bud",
+      "scene": "charred stringybark in the dark, a crazed field of black char plates cracked apart into a network of crooked fissures, deep ember orange glowing far down in every fissure and dimming to garnet at the plate edges, plate tops glossed to a soot sheen and flaked into fine curls of grey ash, one plate lifted and cupped where the heat buckled it, a slim acid chartreuse resprout bud pushing through a fissure, cinder grit strewn in the hollows, the crust receding into soot darkness with no horizon",
+      "target": "a hollow charcoal chamber",
+      "target_phrase": "a small black chamber",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "charcoal_galleries",
+      "exp": -5.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "glassy black partitions, faint ember throats, violet sheen",
+      "scene": "the wood's own cells kept intact in charcoal, files of six-sided chambers tiled rank on rank, long vessel tunnels boring away into the depth with their far ends dark, ray partitions crossing the files at right angles, every partition vitrified to a glassy black carbon and rimmed with a faint ember glow deep in the tunnels, pit pores freckling the partitions in tidy rows, a few chambers crumpled where the heat took them, a violet sheen kindled where two files press together, the tiers receding into soot depth with no ground and no horizon",
+      "target": "a glassy carbon sheet",
+      "target_phrase": "a black glossy sheet",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.62,
+          0.37
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "carbon_sheets",
+      "exp": -8.8,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "ink-black sheets, ember orange interleaves, violet shimmer",
+      "scene": "the char's carbon laid in hexagonal sheets stacked one upon the next, the stack's edges peeling into ranks of thin curled blades that stand and lean all one way, each blade a mesh of six-sided rings, ember orange kindled in the narrow spaces between sheets and shimmering as it climbs the ranks, one sheet winding continuously into the next about a screw axis so the stack turns as a slow helix, a violet tremor over the ranks, the tiers receding into ink depth with no ground and no horizon"
+    },
+    {
+      "name": "spicule_forest",
+      "exp": 7.4,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "incandescent orange jets, garnet throats, violet-grey murk",
+      "scene": "a forest of plasma jets standing off the sun's surface, thousands of slender fiery spikes rooted in a boiling floor of glowing tiles and leaning all one way, wind-combed, each spike a twisting screw of fire drawn out to a fading tip, dark sinking lanes seaming the tiles between their roots, ember orange deepening to garnet in the throats of the ranks, a haze of falling threads sifting back down through the forest, the ranks receding into a violet-grey murk"
+    },
+    {
+      "name": "ember_sky",
+      "exp": 4.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "black night, streaming orange sparks, smoke grey-violet shelves",
+      "scene": "a night sky over a burning range thick with streaming embers, thousands of orange sparks pouring downwind in long curving files across the black, the ranges beneath scored with crooked fiery cracks and their valleys pooled in smoke, shelves of smoke stepped out over the country and kindled from beneath to deep ember orange, spark showers bursting up where a treetop catches, the far country gone smoke grey-violet to the horizon, one pale column over the near ridge stacked upward in slow screws"
+    }
+  ],
+  "music_theme": "a driving night burn — a deep 808 heartbeat under smoky low pads, a soft chime figure kindling through the creek hollow and the cone, the pulse thinning to single struck notes across the char and the charcoal chambers, a wide shimmering bloom where the carbon ranks turn into the sun's standing fires, and a rolling return through the ember sky home to the smoke column",
+  "music_key": "F minor",
+  "render_start": "pyrocumulus_tower"
+}

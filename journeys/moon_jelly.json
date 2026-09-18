@@ -128,5 +128,6 @@
   ],
   "music_theme": "a cold still lagoon opening into deep space — slow sub-bass swells under glassy bell tones and a wide airy pad, a bright struck hit landing on the crossed-filament to star-jet seam, settling back into soft water-lapping percussion",
   "music_key": "F# minor",
-  "render_start": "young_star"
+  "render_start": "dust_cocoon",
+  "play_start": "young_star"
 }

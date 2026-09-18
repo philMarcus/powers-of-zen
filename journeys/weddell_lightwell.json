@@ -1,0 +1,142 @@
+{
+  "name": "weddell_lightwell",
+  "theme": "Antarctic spring under the pack ice — where a floe thins, a well of jade glare pours down onto an inverted meadow of amber ice-algae grazed by a rose-red krill swarm, with a Weddell seal, an ice fish and a comb jelly sharing the commons; the dive takes one krill, its muscle fiber cells, the antifreeze ribbon pinning a hexagonal ice terrace so the crystal cannot grow, the ice grid itself, and a nucleus melted to a seething fireball that turns into the knot where the cosmic filaments meet — then home down a galaxy, a nursery of frozen grains, the pole from orbit and its iceberg coast to the floe again",
+  "style": "ultraviolet",
+  "music_lane": "deep_archive",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "cluster_delta",
+      "exp": 24,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-gold cluster blaze, glacial teal filament haze, black emptiness",
+      "scene": "a blazing knot of galaxies at the meeting of several filaments, ranks of galaxies beaded down every filament and converging on the knot, the ropes threading in from each direction across black emptiness, thin sheets of fainter galaxies webbed between the ropes, the deep hollows between them starless and unlit, the far ranks fading into cold teal haze",
+      "target": "a tilted spiral galaxy",
+      "target_phrase": "a spiral galaxy",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "spiral_galaxy",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "glacial teal arms, rose-pink nursery patches, dense amber core",
+      "scene": "a tilted spiral galaxy seen at a slant, two great arms unwound about a dense amber core, ranks of blue star clusters beaded down the arms, rose-pink nursery patches burning between them, a dark grain lane cutting across the near arm, faint distant galaxies peppering the black field beyond",
+      "target": "a rose-pink nursery cloud",
+      "target_phrase": "a pink nebula"
+    },
+    {
+      "name": "star_nursery",
+      "exp": 14,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "soot-dark columns, rose gas curtains, teal rim-glare",
+      "scene": "a star nursery deep in the arm, towering pillars of soot-dark cloud lit from within and seen level with their heads, ranks of newborn stars burning in cocoons of frost grains, teal glare eating the pillar rims where the radiation bites, rose curtains of glowing gas drawn across the far field, a spray of frozen grains adrift through the beams, the black hollows between the pillars receding into depth",
+      "target": "a pale blue ice world",
+      "target_phrase": "a small blue planet",
+      "loop_target": "a star nursery of soot-dark pillars lit from within, newborn stars burning in cocoons of frost grains"
+    },
+    {
+      "name": "polar_pack",
+      "exp": 6.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep teal and slate floes, ink-black leads, a thin rose dawn band",
+      "scene": "the frozen sea capping a world's pole, seen from orbit under a low slanting sun, floes jammed rim to rim out to the planet's curve, glowing pressure ridges branching through the jam as forked stress skeletons carrying the squeeze from plate to plate, the pack read deep teal and slate in the slant, ink-black leads parting between the floes, tabular bergs frozen into the jam as bright slabs, a thin rose dawn band lying across the terminator with the night hemisphere black past it",
+      "target": "a blue tabular iceberg",
+      "target_phrase": "a blue iceberg"
+    },
+    {
+      "name": "berg_coast",
+      "exp": 3.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose dusk flush, blue berg faces, black water",
+      "scene": "an iceberg coast at sea level, blue tabular cliffs standing out of black water, meltwater grooves cut down their faces, brash ice and small floes crowding the lanes between the bergs, snow petrels cutting past the cliff tops, a rose dusk flush laid across the pack behind them, a jade-glowing meltpool where one floe thins",
+      "target": "a jade meltpool",
+      "target_phrase": "a jade pool"
+    },
+    {
+      "name": "under_floe",
+      "exp": 0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "teal-black water, jade shaft, amber algae tresses, rose-red krill",
+      "scene": "the underside of the pack ice seen from below at swimming depth, an inverted meadow of amber ice-algae hanging in ragged tresses from the ceiling, a shaft of jade glare pouring down where the floe thins, a swarm of rose-red krill grazing the fronds, a Weddell seal hanging in the shaft with its head tipped back, a bone-pale ice fish holding station beneath a ridge keel, a comb jelly drifting past with rainbow paddle-rows, black water below",
+      "target": "a rose-red krill",
+      "target_phrase": "a red krill"
+    },
+    {
+      "name": "krill_swarm",
+      "exp": -1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-red bodies, electric blue points, glacial teal murk",
+      "scene": "a krill swarm crowding the teal murk, translucent segmented bodies packed rank on rank, feathery swimming legs combing the water, black bead eyes and long antennae trailing back, each glassy shell clear over the rose-red muscle cabling beneath, electric blue photophore points studding every belly, the far ranks dissolving into murk",
+      "target": "a rose-red muscle cable",
+      "target_phrase": "a red muscle cable"
+    },
+    {
+      "name": "muscle_fiber",
+      "exp": -4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pearl-grey fiber sheaths, amber mitochondria, indigo shadow",
+      "scene": "the interior of a swimming muscle, long fiber cells packed in parallel ranks, each sheathed in a smooth pearl-grey membrane, banded stripes repeating down every fiber, amber mitochondria wedged into the furrows between them with folded cristae inside, flattened nuclei pressed against the fiber flanks, a fluid channel threading the bundle with a glassy ice sliver seeded in it, the far ranks fading into indigo murk",
+      "target": "a glassy ice sliver",
+      "target_phrase": "a clear ice shard"
+    },
+    {
+      "name": "ice_terrace",
+      "exp": -8.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber shine through pale jade terraces, one rose-gold ribbon, teal murk",
+      "scene": "the stepped face of a growing ice crystal, terraces of sixfold rings tiled out plate on plate, one long rose-gold ribbon chain lying flat across the steps, sugar studs down its length seated into the pockets and pinning the plates so no new tier can rise, more ribbon chains adrift in the fluid beyond, amber shine coming up through the crystal, teal murk swallowing the far plates",
+      "target": "a bright oxygen atom",
+      "target_phrase": "a bright atom",
+      "cameo": {
+        "sprite": "output/mascots/canon/tina.png",
+        "pos": [
+          0.33,
+          0.62
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "ice_grid",
+      "exp": -10.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "electric blue bond struts, ink-black depth, one rose node",
+      "scene": "the crystal grid inside the ice, oxygen atoms fixed at the corners of sixfold rings, each atom tied to four neighbours by taut electric blue struts, the rings stacked into hollow galleries repeating off in every direction, the near ranks crisp and the far ones drowning in ink-black murk, a shimmer of thermal tremor over the perfect grid, one node burning rose where a stray atom sits in the pattern",
+      "target": "a shivering bright core",
+      "target_phrase": "a bright core",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "hex"
+      }
+    },
+    {
+      "name": "nucleus_fluid",
+      "exp": -15.2,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "rose and electric blue churn on black",
+      "scene": "the interior of a nucleus melted to one seething fluid, thousands of loose sparks adrift in it with nothing binding them into trios, taut luminous strands drawn between the sparks and broken ends drifting free, the fluid crowded out to a ragged rim, black emptiness past the rim, rose and electric blue flaring through the churn"
+    }
+  ],
+  "music_theme": "dark oceanic pads over a deep sub-bass drone, a heavy kick landing on every scale change, patient and cold, swelling as the jade shaft widens under the ice and drawing tight on each plunge, one struck bell where the fireball becomes the knot of galaxies, easing slow and wide for the return to the nursery pillars",
+  "music_key": "C# minor",
+  "render_start": "spiral_galaxy",
+  "play_start": "star_nursery"
+}

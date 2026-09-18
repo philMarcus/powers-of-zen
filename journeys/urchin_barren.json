@@ -1,0 +1,146 @@
+{
+  "name": "urchin_barren",
+  "theme": "a purple-urchin barren on a cold-water coast worked as a crowded commons rather than a ruin — violet domes carpeting the basalt with a sunflower star pouring over them, a wolf eel in its crevice, sculpins on the crust; the dive goes down one urchin spine into the stereom, a sponge labyrinth of holes within holes carved through one continuous calcite crystal, to the builder cells shipping mineral in geodesic baskets, to the grains crystallising into calcite rhombs — whose cleavage sheet opens out as a face-on curtain of galaxies, read home as the kelp forest wall still swaying at the barren's border",
+  "style": "aurora_silk",
+  "music_lane": "glass_chapel",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "barren_commons",
+      "exp": 1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet urchin domes, rose-coral star rays, green-glass water light, basalt char",
+      "scene": "a cold-water rock commons on the sea floor seen from just above the stone, violet urchin domes crowding the basalt in their thousands, every dome bristling with blunt spines, a rose-coral sunflower star sprawled across them on twenty arms and ten thousand ivory tube feet, a wolf eel's grey head wedged in a crevice mouth, mottled sculpins perched on the crust and darting through the gaps, gnawed kelp holdfasts and chewed stumps left on the rock in pink coralline patches, green-glass daylight falling from far overhead in slow shifting bars, sunless clefts running away under the ledges",
+      "target": "a violet sea urchin",
+      "target_phrase": "a violet urchin",
+      "loop_target": "a rock commons carpeted with violet urchin domes, a rose-coral sunflower star sprawled over them, green-glass light falling from overhead"
+    },
+    {
+      "name": "urchin_dome",
+      "exp": -0.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet shell plates, rose spine tips, ivory tube feet, olive-green water light",
+      "scene": "the ridged violet shell of a sea urchin crowded with blunt fluted spines, files of ivory tube feet reaching out from pores among their bases and gripping the stone, stalked pincers on slender stems worrying the shell crust, coralline flecks stuck along the plates, neighbouring domes crowding in on every side, sunless gaps running down among the spine bases, green-glass water light rippling over all of it",
+      "target": "a fluted violet spine",
+      "target_phrase": "a violet spine"
+    },
+    {
+      "name": "spine_shaft",
+      "exp": -2.1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-into-rose banded columns, ivory ridges, sea-green haze",
+      "scene": "a grove of urchin spines rising from the shell crust, each one a fluted column banded violet into rose, long ridges running their length crossed by fine growth bars, a snapped spine among them showing a rough round face riddled with openings, green algae fuzz on the older shafts, sea gloom sunk in the hollows, water light combing over the ridges from above",
+      "target": "a snapped pitted spine",
+      "target_phrase": "a broken spine"
+    },
+    {
+      "name": "stereom_galleries",
+      "exp": -3.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "milk-glass calcite, violet cast in the struts, rose light in the openings, ink gloom",
+      "scene": "a labyrinth of glassy calcite inside a broken urchin spine, round openings tiled over every wall and further openings pierced through the struts framing them, every strut one continuous stone with rounded glassy surfaces, countless hollows opening one inside another, the same holes repeating at every size off into the gloom, rose water light leaking in through the mouths nearest the break, milk-white bars crossing the far galleries",
+      "target": "a round gallery mouth",
+      "target_phrase": "a round hole",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "diamond"
+      }
+    },
+    {
+      "name": "strut_lace",
+      "exp": -4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "frost-white calcite terraces, violet shadow, rose-grey cell bodies",
+      "scene": "a crossing of calcite struts at close quarters, their surfaces stepped in fine growth terraces, the same round openings repeating through them at a tenth the size, soft rose-grey cells wrapped over the growing strut tips, their bodies drawn out into fine arms that run along the stone, granules crowding inside them, ink gloom in the hollows on every side",
+      "target": "a soft rose-grey cell",
+      "target_phrase": "a rose-grey cell"
+    },
+    {
+      "name": "sclerocyte_foundry",
+      "exp": -5.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-grey cell bodies, amber cargo sacs, violet-white calcite, ink surround",
+      "scene": "a foundry of builder cells worked over the tips of growing stone, each cell a soft rose-grey body drawn into long arms that run along the calcite, round cargo sacs crowding their interiors, amber granules milling in the fluid around them, a fine studding of round cages over their outer skins where new sacs pinch off, the stone underneath stepped in glassy terraces, more cells crowding away into gloom at every depth",
+      "target": "a round geodesic cage",
+      "target_phrase": "a round cage",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "clathrin_cargo",
+      "exp": -7.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-amber protein cages, violet membrane, ink fluid",
+      "scene": "a rippled violet membrane plain crowded with geodesic protein cages, each cage a ball woven from three-legged struts joined into pentagons and hexagons, a round sac of mineral cargo inside every one, cages at every stage of closing over the floor beneath, hundreds more strewn away into the fluid gloom, amber granules loose around them, ivory filaments trailing from the newest cages",
+      "target": "a round mineral sac",
+      "target_phrase": "a round sac",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "mineral_cargo",
+      "exp": -8.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "chalk-white grains, rose sheen, violet gloom",
+      "scene": "the crowded interior of a cargo sac, rounded mineral grains crammed against one another in their hundreds, their skins matte and chalk-white, a few grains already turned to glassy slanted facets where the crystal has taken hold, rose light coming through the sac wall arching over them, violet gloom in the gaps, finer grains strewn through the fluid",
+      "target": "a glassy faceted grain",
+      "target_phrase": "a glassy grain"
+    },
+    {
+      "name": "calcite_rhombs",
+      "exp": -9.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "violet-glass rhombs, rose parting seams, void gloom",
+      "scene": "a lattice of calcite worked in leaning rhombs, every cell a slanted box of six diamond faces, files of them stacked off in three directions, calcium points burning violet at the corners, flat carbonate triangles laid in courses through them, sheets of the lattice parting cleanly along one slanting plane, rose light running down the parting seams, void gloom in the opened gaps",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "hex"
+      }
+    },
+    {
+      "name": "great_wall_curtain",
+      "exp": 23.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "rose-white galaxy lace, amber knots, violet-ink void",
+      "scene": "a sheet of galaxies hung face-on across the void, ten thousand rose-white spirals and amber knots strung through it in a lace of luminous filaments, the sheet folded into slow swags that catch the light along their crests, void gloom beyond it holding nothing at all, fainter sheets showing far off through the openings, the nearest galaxies sprawled violet and rose against the emptiness",
+      "cameo": {
+        "sprite": "output/mascots/canon/aleksey.png",
+        "pos": [
+          0.62,
+          0.38
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "kelp_wall",
+      "exp": 2.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber-olive kelp blades, green-glass shafts, violet domes on basalt char",
+      "scene": "the front wall of a kelp forest at the border of the barren, hundreds of amber-olive blades hung from ropes of stipe that climb from the rock floor toward the surface, the blades swaying together in one slow sheet, green-glass daylight falling through them in long shafts, gnawed gaps torn through the wall where the ropes have been cut, rockfish hanging in the shafts, at the foot of the forest bare basalt running out into violet urchin domes crowded over the stone",
+      "target": "a rock floor of violet urchin domes",
+      "target_phrase": "violet urchin domes"
+    }
+  ],
+  "music_theme": "crystalline glass bells and a soft distant choir pad over a round low drone, a deep soft kick landing on every downbeat, cold-water hush and slow swells, one struck bell on the morph from the parting crystal to the sheet of galaxies, opening wide for the fall home through the kelp wall onto the rock commons",
+  "music_key": "B minor",
+  "render_start": "barren_commons"
+}

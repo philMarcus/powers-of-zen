@@ -507,3 +507,75 @@ tonight (queue order): chalk_cellar(L ~98min) + pika_larder(M ~69min) + garnet_g
 === 07:51:54 batch done in 6.4h — 4 to Review
 === 07:51:54 ComfyUI models unloaded — VRAM freed
 === 07:51:54 log: outbox/night_batch_0902_013001.log
+tonight (queue order): horseshoe_tide(M ~78min) + saguaro_vigil(L ~111min) + vernal_clutch(L ~92min) + bromeliad_tank(S ~42min) = 5.4h of 5h budget
+=== 01:30:01 batch start [queue] — 4 journeys: horseshoe_tide saguaro_vigil vernal_clutch bromeliad_tank
+=== 01:30:01 --- horseshoe_tide ---
+=== 03:02:44 horseshoe_tide: rendered in 5563s
+=== 03:03:36 horseshoe_tide -> REVIEW (captioned)
+=== 03:03:36 --- saguaro_vigil ---
+=== 05:13:28 saguaro_vigil: rendered in 7792s
+=== 05:14:25 saguaro_vigil -> REVIEW (captioned)
+=== 05:14:25 --- vernal_clutch ---
+=== 06:59:43 vernal_clutch: rendered in 6317s
+=== 07:00:36 vernal_clutch -> REVIEW (captioned)
+=== 07:00:36 --- bromeliad_tank ---
+=== 07:57:07 bromeliad_tank: rendered in 3391s
+=== 07:58:01 bromeliad_tank -> REVIEW (captioned)
+=== 07:58:01 music pregen: horseshoe_tide
+=== 08:00:16 music pregen: saguaro_vigil
+=== 08:03:56 music pregen: vernal_clutch
+=== 08:06:57 music pregen: bromeliad_tank
+=== 08:09:00 batch done in 6.6h — 4 to Review
+=== 08:09:00 ComfyUI models unloaded — VRAM freed
+=== 08:09:00 log: outbox/night_batch_0903_013001.log
+tonight (queue order): bayou_eyeshine(M ~78min) + cacao_temper(L ~107min) + sargasso_windrow(L ~92min) + locust_sorghum(S ~35min) = 5.2h of 5h budget
+=== 01:30:01 batch start [queue] — 4 journeys: bayou_eyeshine cacao_temper sargasso_windrow locust_sorghum
+=== 01:30:01 --- bayou_eyeshine ---
+=== 03:08:12 bayou_eyeshine: rendered in 5890s
+=== 03:09:05 bayou_eyeshine -> REVIEW (captioned)
+=== 03:09:05 --- cacao_temper ---
+=== 05:14:14 cacao_temper: rendered in 7509s
+=== 05:15:02 cacao_temper -> REVIEW (captioned)
+=== 05:15:02 --- sargasso_windrow ---
+=== 07:02:24 sargasso_windrow: rendered in 6442s
+=== 07:03:14 sargasso_windrow -> REVIEW (captioned)
+=== 07:03:14 --- locust_sorghum ---
+=== 07:52:56 locust_sorghum: rendered in 2981s
+=== 07:53:44 locust_sorghum -> REVIEW (captioned)
+=== 07:53:44 music pregen: bayou_eyeshine
+=== 07:56:03 music pregen: cacao_temper
+=== 07:58:49 music pregen: sargasso_windrow
+=== 08:01:19 music pregen: locust_sorghum
+=== 08:02:48 batch done in 6.5h — 4 to Review
+=== 08:02:48 ComfyUI models unloaded — VRAM freed
+=== 08:02:48 log: outbox/night_batch_0904_013001.log
+render_paused is set — skipping tonight
+render_paused is set — skipping tonight
+render_paused is set — skipping tonight
+render_paused is set — skipping tonight
+render_paused is set — skipping tonight
+render_paused is set — skipping tonight
+render_paused is set — skipping tonight
+render_paused is set — skipping tonight
+render_paused is set — skipping tonight
+render_paused is set — skipping tonight
+render_paused is set — skipping tonight
+render_paused is set — skipping tonight
+render_paused is set — skipping tonight
+tonight (queue order): cork_dehesa(L ~107min) + dugong_meadow(M ~89min) + prairie_town(L ~107min) = 5.1h of 5h budget
+=== 01:30:02 batch start [queue] — 3 journeys: cork_dehesa dugong_meadow prairie_town
+=== 01:30:02 --- cork_dehesa ---
+=== 01:30:02 cork_dehesa: --plate low --plate-cn 0 --plate-void-gate
+=== 02:54:14 cork_dehesa: rendered in 5052s
+=== 02:54:14 cork_dehesa FAILED: queue_review failed: no complete render for cork_dehesa_ds (need 392 frames)
+=== 02:54:14 --- dugong_meadow ---
+=== 02:54:14 dugong_meadow: --plate low --plate-cn 0 --plate-void-gate
+=== 04:05:48 dugong_meadow: rendered in 4295s
+=== 04:05:48 dugong_meadow FAILED: queue_review failed: no complete render for dugong_meadow_ds (need 333 frames)
+=== 04:05:48 --- prairie_town ---
+=== 04:05:48 prairie_town: --plate low --plate-cn 0 --plate-void-gate
+=== 05:28:22 prairie_town: rendered in 4953s
+=== 05:28:22 prairie_town FAILED: queue_review failed: no complete render for prairie_town_ds (need 392 frames)
+=== 05:28:22 batch done in 4.0h — 0 to Review, 3 failed (cork_dehesa, dugong_meadow, prairie_town)
+=== 05:28:22 ComfyUI models unloaded — VRAM freed
+=== 05:28:22 log: outbox/night_batch_0918_013002.log

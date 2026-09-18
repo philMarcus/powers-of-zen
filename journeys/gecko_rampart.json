@@ -138,5 +138,6 @@
   ],
   "music_theme": "a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns",
   "music_key": "D minor",
-  "render_start": "twin_envelope"
+  "render_start": "shell_rings",
+  "play_start": "twin_envelope"
 }

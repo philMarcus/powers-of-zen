@@ -1,0 +1,77 @@
+{
+  "name": "scarab_compass",
+  "theme": "a moonless southern savanna working its night shift — dung beetles rolling their prizes on dead-straight courses steered by the galaxy band overhead, down onto one scarab taking its star fix on its ball, into the ball's felt of chewed grass fibers combed by the rolling into one constant-bearing swirl, which is reread as the Milky Way itself arching over the plain and settles back onto the grass commons it began in",
+  "style": "cosmic_gloss",
+  "music_lane": "wooden_orbit",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "grass_commons",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "oiled bronze, straw gold and umber under ink-indigo",
+      "scene": "a savanna commons at eye level on a moonless night, dozens of bronze scarabs shouldering round fiber balls over open dust, each rolling a dead-straight course of its own, a springhare mid-hop over the tussocks, a bat-eared fox nosing the grass roots, a scops owl set on a termite mound with amber eyeshine, straw-gold grass heads crowding in every direction, hoof craters puddled with umber shade, a silver star band arching over the grass",
+      "target": "a bronze scarab beetle",
+      "target_phrase": "a bronze beetle",
+      "loop_target": "a savanna commons at eye level, bronze scarabs rolling round fiber balls over open dust amid straw-gold grass"
+    },
+    {
+      "name": "star_fix",
+      "exp": -1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "copper-green sheen, silver grit and umber shade",
+      "scene": "a clearing of savanna dust at beetle height, one bronze scarab perched on the top of its round fiber ball with its forelegs raised toward the sky, oiled elytra sheened copper and green over its back, straw-gold grass stems rising tall around the clearing, roll tracks combed over the grit in straight grooves, chaff and mineral grit strewn across the ground, umber shade pooled under every stem",
+      "target": "a round grass-fiber ball",
+      "target_phrase": "a round fiber ball"
+    },
+    {
+      "name": "fiber_swirl",
+      "exp": -4,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "silver-lit filament, umber dust lanes and mineral sparkle",
+      "scene": "the felt within a rolled fiber ball, chewed grass strands combed into one long swirl holding a constant bearing across the field, silver-lit filaments crowded in their millions along the swirl and loosening away to either side, umber dust drawn lengthwise through the grain in lanes that split it, mineral grit sparkling amid the strands, murk in every direction with no ground and no sky in it",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "star_road",
+      "exp": 4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver star-milk on ink-indigo over an umber plain",
+      "scene": "a savanna plain by night seen from high overhead and tipped toward the far horizon, the Milky Way arching from rim to rim as one silver band of massed starlight, umber dust lanes drawn lengthwise through the band and splitting it, thousands of cold stars freckling the ink-indigo sky to either side, the plain under it reading as an umber floor strewn with bare dust flats and termite mounds, a dry watercourse curving across the far quarter",
+      "target": "a bare dust flat",
+      "target_phrase": "a bare dust flat",
+      "cameo": {
+        "sprite": "output/mascots/canon/lorraine.png",
+        "pos": [
+          0.32,
+          0.66
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "track_ground",
+      "exp": 2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver starlight, umber grit and straw-gold tussocks",
+      "scene": "a stretch of the savanna floor from a low oblique vantage in starlight, dozens of roll tracks combed dead-straight over the dust and radiating away from one trampled midden of grazer dung, each track a shallow groove with a ridge thrown up to either side, tussocks of straw-gold grass crowding the margins of the flat, beetle burrows pocking the ground in their hundreds, silver starlight lying over the grit, umber shade held in the grooves",
+      "target": "a straw-gold grass tussock",
+      "target_phrase": "a clump of grass"
+    }
+  ],
+  "music_theme": "warm marimba and kalimba figures over a round woody bass, a deep kick on every downbeat with a lower thump answering on beat three, clicking wooden taps threaded through the commons like the straight rolling of the beetles, the pulse tightening as the dive drops onto the ball, hollow and hushed through the fiber swirl, one struck wooden hit as the grain opens out into the star band, then wide and breathing over the plain for the return",
+  "music_key": "G minor",
+  "render_start": "grass_commons"
+}

@@ -404,3 +404,87 @@ Verification clean: all five pass `audit_starts` (116 journeys · 0 need attenti
 === 00:24:47 refill done: 5 composed, 5 queued (briefs: short, long, short, long, medium)
 === 00:00:02 journey queue 20/20 — no refill needed
 === 00:00:01 journey queue 20/20 — no refill needed
+=== 00:00:01 queue 16/20 — composing 4: medium, long, medium, medium
+Permission allow rule (.claude/settings.local.json): Bash(grep -vE '^\\s*$' __TRACKED_VAR__/render_all.log) has a wildcard before the rest of the command, so it also matches any options inserted at that position and approves them without a prompt. Replace that * with the exact value you mean, or only use * after the subcommand.
+All 4 journeys are composed, on disk, and the full-catalog audit reports **120 journeys · 0 need attention**. Nothing was queued; no existing journey was edited (VARIATIONS.md additions excepted, as permitted).
+
+**Tonight's new journeys:**
+- **gulal_dusk** — MEDIUM, 7 cards (28 beats, fpb 7) — Holi festival dusk; lacquer_pop; dye-lattice ↔ embroidered-starfield double fold; first human-society journey.
+- **weddell_lightwell** — LONG, 11 cards (44 beats, fpb 8) — Antarctic under-ice, full span +24 → −15.2; ultraviolet; quark-gluon droplet ↔ cluster-infall delta seam; antifreeze-glycoprotein molecular card.
+- **firehawk_ridge** — MEDIUM, 8 cards (32 beats, fpb 6) — night fire-front ecology; infrared_bloom; char-lattice ↔ solar spicule-forest two-seam fold.
+- **niobium_winter** — MEDIUM, 8 cards (32 beats, fpb 8) — cryogenic quantum lab; neon_drift; Abrikosov vortex lattice ↔ Saturn's hexagonal pole storm.
+
+Supporting work: `outbox/refill_briefs_20260903.md` holds the four briefs (with the banned seam-idiom list from tonight's survey), and VARIATIONS.md gained two math families (plume & billow; quantized vortex lattice) and four palette families (gulal magenta & monsoon slate; krill rose & glacial teal; banksia char & ember vein; helium violet & niobium frost). Every journey passed its composer's self-check, `preflight.py`, and `audit_starts.py`; all four style decks, palette families, math families, and seam constructions are distinct from each other and from the 116-journey catalog. No composer failures.
+
+=== 00:30:39 4 new journeys: firehawk_ridge, gulal_dusk, niobium_winter, weddell_lightwell
+=== 00:30:39   firehawk_ridge: QUEUED (ok firehawk_ridge           start=pyrocumulus_tower)
+=== 00:30:39   gulal_dusk: QUEUED (ok gulal_dusk               start=powder_bloom        · not cosmic/subatomic)
+=== 00:30:39   niobium_winter: QUEUED (ok niobium_winter           start=vortex_lattice)
+=== 00:30:40   weddell_lightwell: QUEUED (ok weddell_lightwell        start=star_nursery)
+=== 00:30:40 refill done: 4 composed, 4 queued (briefs: medium, long, medium, medium)
+=== 00:00:01 queue 16/20 — composing 4: long, short, short, long
+Permission allow rule (.claude/settings.local.json): Bash(grep -vE '^\\s*$' __TRACKED_VAR__/render_all.log) has a wildcard before the rest of the command, so it also matches any options inserted at that position and approves them without a prompt. Replace that * with the exact value you mean, or only use * after the subcommand.
+All four composers finished and all four journeys compile clean. Tonight's deliverables:
+
+- **urchin_barren** — LONG, 11 cards (fpb 7, aurora_silk, glass_chapel) — preflight clean, span +23.5 → −9.5
+- **oort_hearth** — SHORT, 5 cards (fpb 8, neon_drift, choir_of_dust) — preflight clean, stellar-band realm-local loop
+- **scarab_compass** — SHORT, 5 cards (fpb 6, cosmic_gloss, wooden_orbit) — preflight clean, galaxy-as-sky seam
+- **stromatolite_dawn** — LONG, 11 cards (fpb 8, reef_pop, analog_dawn) — preflight clean, span +24 → −9.3
+
+Nothing queued, no existing journeys or renders touched. Supporting work: briefs in `outbox/refill_briefs_20260904.md`; new library entries in VARIATIONS.md (Weaire–Phelan foam + arrested ripples math families; four palette families) and REALMS.md (clathrate cages, carboxysome/Rubisco, urchin stereom, sclerocyte foundry, two menagerie ecosystems), all dated 2026-09-04.
+
+**Three things for Phil / the day session:**
+
+1. **Engine defect, confirmed and measured (found by the scarab composer):** since the loop lap shipped, `engine/grammar.py:171` (`last = ... and not lap`) means the last authored card compiles as a normal card using its own `target` — and the composer skill tells composers to *omit* the last card's target because the loop-home branch used to auto-derive it. Result: the last card's plunge prompt renders with a literal empty slot ("diving straight into  as it swells…"). I verified it live on compiled fiddler_commons and firehawk_ridge, and counted **82 of 124 active journeys** with a target-less last card — every one of them ships that degraded prompt today. The fix is engine-side (have the lap path fall back to `regs[0].loop_target`/scene like the old branch) plus a skill-text update — both outside tonight's mandate, so I only guarded tonight's output: scarab_compass got an explicit last-card target from its composer, and I patched oort_hearth the same mechanical way (target = card 0's coma object; preflight re-verified clean). urchin_barren and stromatolite_dawn already had last-card targets.
+
+2. **Style judgement calls to eyeball at review:** scarab_compass deviated from the suggested infrared_bloom to cosmic_gloss (infrared's forced magenta/cyan suffix would have fought the bronze/star-milk palette and turned the Milky Way magenta — reasonable call). stromatolite_dawn kept the suggested reef_pop despite its sunlit-turquoise suffix pulling against the iron-dawn palette; cosmic_gloss is the ready swap if the renders come out too bright.
+
+3. The midnight refill's audit/auto-queue step handles queueing from here, per the normal flow — I queued nothing.
+
+=== 00:19:51 4 new journeys: oort_hearth, scarab_compass, stromatolite_dawn, urchin_barren
+=== 00:19:51   oort_hearth: QUEUED (ok oort_hearth              start=coma)
+=== 00:19:51   scarab_compass: QUEUED (ok scarab_compass           start=grass_commons)
+=== 00:19:51   stromatolite_dawn: QUEUED (ok stromatolite_dawn        start=spiral_galaxy)
+=== 00:19:52   urchin_barren: QUEUED (ok urchin_barren            start=barren_commons)
+=== 00:19:52 refill done: 4 composed, 4 queued (briefs: long, short, short, long)
+=== 00:00:02 queue 16/20 — composing 4: long, short, long, medium
+Permission allow rule (.claude/settings.local.json): Bash(grep -vE '^\\s*$' __TRACKED_VAR__/render_all.log) has a wildcard before the rest of the command, so it also matches any options inserted at that position and approves them without a prompt. Replace that * with the exact value you mean, or only use * after the subcommand.
+You've hit your session limit · resets 1:20am (America/New_York)
+
+=== 00:17:17 coordinator on fable failed (rc 1: at that position and approves them without a prompt. Replace that * with the exact value you mean, or only use * after the subcommand.
+You've hit your session limit · resets 1:20am (America/New_York)
+) — retrying on opus (57min left in the deadline)
+Permission allow rule (.claude/settings.local.json): Bash(grep -vE '^\\s*$' __TRACKED_VAR__/render_all.log) has a wildcard before the rest of the command, so it also matches any options inserted at that position and approves them without a prompt. Replace that * with the exact value you mean, or only use * after the subcommand.
+You've hit your session limit · resets 1:20am (America/New_York)
+
+=== 00:17:28 refill FAILED (rc 1) — no new journeys
+=== 00:00:02 queue 16/20 — composing 4: long, long, short, medium
+=== 00:44:00 coordinator on fable failed (rc 124: claude run hit the 45min timeout) — retrying on opus (31min left in the deadline)
+Permission allow rule (.claude/settings.local.json): Bash(grep -vE '^\\s*$' __TRACKED_VAR__/render_all.log) has a wildcard before the rest of the command, so it also matches any options inserted at that position and approves them without a prompt. Replace that * with the exact value you mean, or only use * after the subcommand.
+All four composed and verified — `python3 scripts/audit_starts.py` reports **128 journeys · 0 need attention**, and each passed its own preflight (uniform bars, counter, seam not at either end, no frame-0 bait, cameo realm-match).
+
+One note on process: tonight's coordinator pass had already run — `outbox/refill_briefs_20260906.md` existed with four briefs on exactly tonight's tier/fpb assignment, and the 2026-09-06 VARIATIONS.md/REALMS.md library extensions they cite were already in place — but no journey file existed for any of them, so the composer stage had never landed. I re-dispatched those four briefs verbatim rather than writing duplicates, and appended a dispatch-log entry to the briefs file. Nothing queued, no existing journey touched.
+
+- **selenite_hothouse** — LONG, 10 cards (fpb 7 · aurora_silk · choir_of_dust · exp 10²⁴→10⁻⁴·⁸ · Naica selenite chamber; seam = brine pocket ↔ the void's ghost web)
+- **jelly_pier** — LONG, 10 cards (fpb 8 · ultraviolet · music_box · exp 10¹⁶·⁸→10⁻⁹·⁶ · crystal jellies under a dock lamp; seam = fluorescent lantern barrel ↔ pulsar-wind cage, no galaxy card)
+- **pulsar_pasta** — SHORT, 5 cards (fpb 6 · cosmic_gloss · tide_organ · exp 10⁴·³→10⁻¹³·⁵ · entirely inside one neutron star, stellar + subnuclear only)
+- **sloe_hedgerow** — MEDIUM, 7 cards (fpb 8 · infrared_bloom · wooden_orbit · exp 10³·⁵→10⁻⁸ · blackthorn hedgerow → hedgehog → flea → resilin net; closed terrestrial, texture→landscape seam)
+
+=== 00:55:18 4 new journeys: jelly_pier, pulsar_pasta, selenite_hothouse, sloe_hedgerow
+=== 00:55:19   jelly_pier: QUEUED (ok jelly_pier               start=pier_commons        · not cosmic/subatomic)
+=== 00:55:19   pulsar_pasta: QUEUED (ok pulsar_pasta             start=coulomb_crystal)
+=== 00:55:19   selenite_hothouse: QUEUED (ok selenite_hothouse        start=dwarf_galaxy)
+=== 00:55:19   sloe_hedgerow: QUEUED (ok sloe_hedgerow            start=hedgerow_corridor   · not cosmic/subatomic)
+=== 00:55:19 refill done: 4 composed, 4 queued (briefs: long, long, short, medium)
+=== 00:00:02 journey queue 20/20 — no refill needed
+=== 00:00:02 journey queue 20/20 — no refill needed
+=== 00:00:01 journey queue 20/20 — no refill needed
+=== 00:00:01 journey queue 20/20 — no refill needed
+=== 00:00:01 journey queue 20/20 — no refill needed
+=== 00:00:02 journey queue 20/20 — no refill needed
+=== 00:00:02 journey queue 20/20 — no refill needed
+=== 00:00:01 journey queue 20/20 — no refill needed
+=== 00:00:03 journey queue 20/20 — no refill needed
+=== 00:00:02 journey queue 20/20 — no refill needed
+=== 00:00:01 journey queue 20/20 — no refill needed
+=== 00:00:02 journey queue 20/20 — no refill needed

@@ -170,6 +170,15 @@ def render_one(journey, force=False, new_seed=True, from_card=None):
     else:
         t0 = time.time()
         argv = ["python3", "engine/dive.py", str(pl.journey_path(journey))]
+        _pm = pl.jload()["settings"].get("plate_mode")
+        if _pm:
+            # PLANET PLATE (2026-09-17): lab arm B for every planet-class card — see
+            # PLAN "PLANET DESCENT". Journeys without a planet-class card are unaffected
+            # (dive prints "no planet-class card in range").
+            # --plate-intro plain: the grow/enter introductions (2026-09-18) stay out of
+            # the nightly until Phil has judged the full-video test
+            argv += ["--plate", str(_pm), "--plate-cn", "0", "--plate-void-gate",
+                     "--plate-intro", str(pl.jload()["settings"].get("plate_intro", "plain"))]
         if from_card:
             argv += ["--from-card", str(from_card)]
         if (force or from_card) and new_seed:

@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bromeliad_tank/analog_dawn-wild.mp4
+    bar 2.333s | music bar 2.304s (conf 0.61) -> stretch 0.9874 | phase 1.560s | lock 26.48x | kick 0.54 | beat 1/4 | fit -0.03 (bar -0.01 vs rival 0.47) | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [analog_dawn-wild] realigned (lock 26.48x kick 0.54 fit -0.03)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bromeliad_tank/pulse2-music_box.mp4
+    bar 2.333s | music bar 2.315s (conf 0.53) -> stretch 0.9920 | phase 1.540s | lock 24.61x | kick 0.48 | beat 1/4 | fit 0.77 (bar 0.19 vs rival 0.25) | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [pulse2-music_box] realigned (lock 24.61x kick 0.48 fit 0.77)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bromeliad_tank/music_box-b.mp4
+    bar 2.333s | music bar 2.325s (conf 0.40) -> stretch 0.9966 | phase 1.570s | lock 13.49x | kick 0.26 | beat 1/4 | fit 1.15 (bar 0.32 vs rival 0.28) | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [music_box-b] realigned (lock 13.49x kick 0.26 fit 1.15)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bromeliad_tank/night_market-wild.mp4
+    bar 2.333s | music bar 2.368s (conf 0.12) -> stretch 1.0149 | phase 0.920s | lock 16.54x | kick -0.02 | beat 1/4 | fit -0.04 (bar -0.02 vs rival 0.44) | seamless loop @ 11.67s (music tiled x2, xf 0.50s)
+  [night_market-wild] realigned (lock 16.54x kick -0.02 fit -0.04)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bromeliad_tank/deep_archive-wild.mp4
+    bar 2.333s | music bar 2.325s (conf 0.17) -> stretch 0.9966 | phase 2.120s | lock 6.38x | kick -0.01 | beat 2/4 | fit 0.60 (bar 0.17 vs rival 0.28) | seamless loop @ 11.67s (music tiled x3, xf 0.50s)
+  [deep_archive-wild] realigned (lock 6.38x kick -0.01 fit 0.60)
+realigned 5 pregen candidates to the marked start

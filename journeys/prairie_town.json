@@ -1,141 +1,142 @@
 {
- "name": "prairie_town",
- "theme": "a prairie-dog town at dusk under one tangerine afterglow band, with a wound line restated at every scale — a torn dwarf galaxy of star-knots, a world at its evening line, the mound-pocked plain from the air with a dust column screwed over it, the commons where dogs and owls and bison and a rattlesnake share one frame, a mound's raw soil face, a grass root bristled with hairs, the corkscrew-tailed rods crowding one hair, the rotary motor seated through a bacterium's envelope, the atoms that turn it, the taut rope of light within one core, and the filament of galaxies drawn from one cluster knot to another",
- "style": "enchanted_wild",
- "music_lane": "analog_dawn",
- "format": {
-  "beats_per_bar": 4,
-  "frames_per_beat": 8,
-  "exact_loop": true,
-  "counter": true
- },
- "registers": [
-  {
-   "name": "dwarf_scatter",
-   "exp": 19.5,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "cobalt star-knots and pink nursery patches on indigo void",
-   "scene": "a ragged irregular dwarf galaxy adrift in the void, no disk and no core anywhere in it, hundreds of cobalt star-knots torn loose across its whole spread in a mottled scatter, pink nursery patches burning amid the knots, a haze of older amber stars filling the gaps, hairline wisps of gas drawn off one flank, thousands of cold field stars freckling the emptiness past it, dimmer companion galaxies sunk deep in the distance",
-   "target": "a small umber world",
-   "target_phrase": "a small umber planet",
-   "loop_target": "a ragged irregular dwarf galaxy with no disk and no core, cobalt star-knots torn loose in a mottled scatter and pink nursery patches burning amid them"
+  "name": "prairie_town",
+  "theme": "a prairie-dog town at dusk under one tangerine afterglow band, with a wound line restated at every scale — a torn dwarf galaxy of star-knots, a world at its evening line, the mound-pocked plain from the air with a dust column screwed over it, the commons where dogs and owls and bison and a rattlesnake share one frame, a mound's raw soil face, a grass root bristled with hairs, the corkscrew-tailed rods crowding one hair, the rotary motor seated through a bacterium's envelope, the atoms that turn it, the taut rope of light within one core, and the filament of galaxies drawn from one cluster knot to another",
+  "style": "enchanted_wild",
+  "music_lane": "analog_dawn",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
   },
-  {
-   "name": "dusk_world",
-   "exp": 7,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "tangerine afterglow rim, bronze plains, indigo night face",
-   "scene": "a rust-umber world seen from orbit at its evening line, one tangerine afterglow band laid over the curve of the air with indigo night spread across the rest, immense grass plains mottling the dayside in bronze, silver river channels threading them, cloud shelves piled over the far quarter, a cream ice cap at the pole, cold stars freckling the emptiness past the world's curve",
-   "target": "a wide bronze plain",
-   "target_phrase": "a bronze grass plain"
-  },
-  {
-   "name": "town_from_air",
-   "exp": 3.4,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "bronze grass and umber mounds under one tangerine sky band",
-   "scene": "a bronze grass plain seen from high overhead and tipped toward the far country, thousands of umber burrow mounds pocking the ground in a loose grain, bare craters worn at their tops, pale paths cut from mound to mound in a tangle, a tawny dust column wound tight over the far quarter, a herd of umber bison mottling the grass past the last mounds, one tangerine afterglow band low under an indigo sky",
-   "target": "a pale soil mound",
-   "target_phrase": "a pale soil mound",
-   "resolve": {
-    "mode": "surface"
-   },
-   "cameo": {
-    "sprite": "output/mascots/canon/kitty.png",
-    "pos": [
-     0.38,
-     0.61
-    ],
-    "size": 0.13
-   }
-  },
-  {
-   "name": "town_commons",
-   "exp": 0.6,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "bronze grass, umber mounds, yellow eyeshine on shadow",
-   "scene": "the burrow town at eye level under the last of the afterglow, umber mounds raised in every direction with worn craters at their tops, prairie dogs upright on the crater rims in tan and cream, two burrowing owls posted at borrowed holes with yellow eyeshine, bison browsing the bronze grass past the far mounds, a rattlesnake coiled on warm soil in tan and umber banding, a cream ferret propped at a hole mouth with soot markings over its brow and feet, raw soil heaped in a crumbling bank at one crater, tufts of bronze grass raised amid the bare ground",
-   "target": "a raw umber soil bank",
-   "target_phrase": "a raw soil bank"
-  },
-  {
-   "name": "spoil_bank",
-   "exp": -1.4,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "umber crumbs and rust pebbles with pale gold roots",
-   "scene": "the raw soil face of one burrow mound, umber crumbs and rust pebbles crammed together through the whole bank, grass roots threading the crumbs in pale gold cords, root tips reaching out of the wall into open air, hollow root channels and mite burrows opening amid the grains, seed husks caught here and there in the surface, cool shadow pooled in every hollow, tangerine afterglow light raking across the crumbs",
-   "target": "a pale gold grass root",
-   "target_phrase": "a pale gold root"
-  },
-  {
-   "name": "root_hairs",
-   "exp": -3.6,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "jade root sheath, cream hairs, umber crumbs",
-   "scene": "a grass root drawn through the soil, bristled its whole reach with slender root hairs, every hair a taut cream tube swelling out of the jade sheath of the root, umber soil crumbs crowded around it and cemented onto the hairs, hairline water films bridging crumb to crumb, further roots crossing the crumb field beyond, cool shadow filling the gaps amid the grains",
-   "target": "a slender cream root hair",
-   "target_phrase": "a cream root hair"
-  },
-  {
-   "name": "rhizosphere",
-   "exp": -5.4,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "teal rods and gold sugar sheens on umber grit",
-   "scene": "the wall of one root hair crowded with rod-shaped bacteria, hundreds of stout teal rods lying over the pale surface in every direction, a corkscrew tail wound out behind each rod, immense soil crumbs looming close on either hand and receding into umber haze, clear water films filling the gaps with drifting motes, sugars seeping out of the wall in gold sheens, further rods scattered through the haze at every distance",
-   "target": "a teal rod-shaped bacterium",
-   "target_phrase": "a rod-shaped bacterium",
-   "resolve": {
-    "mode": "sea"
-   }
-  },
-  {
-   "name": "rotary_motor",
-   "exp": -7.8,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "copper rings and a jade hook on indigo",
-   "scene": "the rotary motor seated through a bacterium's envelope, a stack of copper rings set one within another through the two-layer floor, a jade hook raised from the topmost ring with a corkscrew tail wound out of it, repeating protein knobs tiling every ring, straw-gold points of light crowding the channels around the rings, ribbon chains tangled under the floor, more motors and their tails sunk in the haze at every distance, the floor curving off in every direction with no ground under it",
-   "target": "a small burning atom",
-   "target_phrase": "a small burning atom"
-  },
-  {
-   "name": "hydrogen_haze",
-   "exp": -10.4,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "amber core points in violet-pink haze on void",
-   "scene": "atoms crowded through the emptiness at the floor of the motor's matter, each one a hot amber core point sheathed in a wide violet-pink haze many times its own width, the hazes of neighbours merged into a mottled curtain where the crowd thickens, cores freckling that curtain in files and clumps, cooler atoms sunk deeper at every distance, faint ripples printed across the whole crowd, nothing under it and nothing over it",
-   "target": "a hot amber core",
-   "target_phrase": "a hot amber core",
-   "resolve": {
-    "mode": "sea"
-   }
-  },
-  {
-   "name": "light_rope",
-   "exp": -15.5,
-   "kind": "seam",
-   "dur": 4,
-   "palette": "tangerine ropes and cream spark-points on indigo",
-   "scene": "a taut rope of light drawn from one amber point to another within the core of one atom, sparks beaded down the rope's whole reach, a second rope nearby already parted into two shorter ropes, each short rope capped with its own pair of burning points, more ropes crossing the emptiness at every distance in a slack tangle, violet haze filling the gaps, the whole field seen down the length of one rope"
-  },
-  {
-   "name": "cluster_bridge",
-   "exp": 24.5,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "amber galaxy beads and violet gas on indigo void",
-   "scene": "one filament of the cosmic web drawn from one blazing cluster knot to another, the whole rope given a slow twist over its reach, hundreds of amber galaxies beaded down its length, violet gas hazing the rope's body, both knots burning at the ends of it in crowded swarms of galaxies, the void walled off on either hand with nothing in it, further filaments crossing the emptiness deeper out, the bridge seen down its length from one knot toward the other"
-  }
- ],
- "music_theme": "a prairie town at last light — a warm analog pad opening over the torn galaxy and the world's evening line, a stately deep kick settling on the downbeat as the mound plain arrives from the air, the pulse warmest and most nostalgic through the commons and the soil, drawing down to a single held tone through the root hairs and the rods, one deep hit where the rope of light opens out into the bridge of galaxies",
- "music_key": "E minor",
- "render_start": "dwarf_scatter"
+  "registers": [
+    {
+      "name": "dwarf_scatter",
+      "exp": 19.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt star-knots and pink nursery patches on indigo void",
+      "scene": "a ragged irregular dwarf galaxy adrift in the void, no disk and no core anywhere in it, hundreds of cobalt star-knots torn loose across its whole spread in a mottled scatter, pink nursery patches burning amid the knots, a haze of older amber stars filling the gaps, hairline wisps of gas drawn off one flank, thousands of cold field stars freckling the emptiness past it, dimmer companion galaxies sunk deep in the distance",
+      "target": "a small umber world",
+      "target_phrase": "a small umber planet",
+      "loop_target": "a ragged irregular dwarf galaxy with no disk and no core, cobalt star-knots torn loose in a mottled scatter and pink nursery patches burning amid them"
+    },
+    {
+      "name": "dusk_world",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "tangerine afterglow rim, bronze plains, indigo night face",
+      "scene": "a rust-umber world seen from orbit at its evening line, one tangerine afterglow band laid over the curve of the air with indigo night spread across the rest, immense grass plains mottling the dayside in bronze, silver river channels threading them, cloud shelves piled over the far quarter, a cream ice cap at the pole, cold stars freckling the emptiness past the world's curve",
+      "target": "a wide bronze plain",
+      "target_phrase": "a bronze grass plain"
+    },
+    {
+      "name": "town_from_air",
+      "exp": 3.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bronze grass and umber mounds under one tangerine sky band",
+      "scene": "a bronze grass plain seen from high overhead and tipped toward the far country, thousands of umber burrow mounds pocking the ground in a loose grain, bare craters worn at their tops, pale paths cut from mound to mound in a tangle, a tawny dust column wound tight over the far quarter, a herd of umber bison mottling the grass past the last mounds, one tangerine afterglow band low under an indigo sky",
+      "target": "a pale soil mound",
+      "target_phrase": "a pale soil mound",
+      "resolve": {
+        "mode": "surface"
+      },
+      "cameo": {
+        "sprite": "output/mascots/canon/kitty.png",
+        "pos": [
+          0.38,
+          0.61
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "town_commons",
+      "exp": 0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bronze grass, umber mounds, yellow eyeshine on shadow",
+      "scene": "the burrow town at eye level under the last of the afterglow, umber mounds raised in every direction with worn craters at their tops, prairie dogs upright on the crater rims in tan and cream, two burrowing owls posted at borrowed holes with yellow eyeshine, bison browsing the bronze grass past the far mounds, a rattlesnake coiled on warm soil in tan and umber banding, a cream ferret propped at a hole mouth with soot markings over its brow and feet, raw soil heaped in a crumbling bank at one crater, tufts of bronze grass raised amid the bare ground",
+      "target": "a raw umber soil bank",
+      "target_phrase": "a raw soil bank"
+    },
+    {
+      "name": "spoil_bank",
+      "exp": -1.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "umber crumbs and rust pebbles with pale gold roots",
+      "scene": "the raw soil face of one burrow mound, umber crumbs and rust pebbles crammed together through the whole bank, grass roots threading the crumbs in pale gold cords, root tips reaching out of the wall into open air, hollow root channels and mite burrows opening amid the grains, seed husks caught here and there in the surface, cool shadow pooled in every hollow, tangerine afterglow light raking across the crumbs",
+      "target": "a pale gold grass root",
+      "target_phrase": "a pale gold root"
+    },
+    {
+      "name": "root_hairs",
+      "exp": -3.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade root sheath, cream hairs, umber crumbs",
+      "scene": "a grass root drawn through the soil, bristled its whole reach with slender root hairs, every hair a taut cream tube swelling out of the jade sheath of the root, umber soil crumbs crowded around it and cemented onto the hairs, hairline water films bridging crumb to crumb, further roots crossing the crumb field beyond, cool shadow filling the gaps amid the grains",
+      "target": "a slender cream root hair",
+      "target_phrase": "a cream root hair"
+    },
+    {
+      "name": "rhizosphere",
+      "exp": -5.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "teal rods and gold sugar sheens on umber grit",
+      "scene": "the wall of one root hair crowded with rod-shaped bacteria, hundreds of stout teal rods lying over the pale surface in every direction, a corkscrew tail wound out behind each rod, immense soil crumbs looming close on either hand and receding into umber haze, clear water films filling the gaps with drifting motes, sugars seeping out of the wall in gold sheens, further rods scattered through the haze at every distance",
+      "target": "a teal rod-shaped bacterium",
+      "target_phrase": "a rod-shaped bacterium",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "rotary_motor",
+      "exp": -7.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "copper rings and a jade hook on indigo",
+      "scene": "the rotary motor seated through a bacterium's envelope, a stack of copper rings set one within another through the two-layer floor, a jade hook raised from the topmost ring with a corkscrew tail wound out of it, repeating protein knobs tiling every ring, straw-gold points of light crowding the channels around the rings, ribbon chains tangled under the floor, more motors and their tails sunk in the haze at every distance, the floor curving off in every direction with no ground under it",
+      "target": "a small burning atom",
+      "target_phrase": "a small burning atom"
+    },
+    {
+      "name": "hydrogen_haze",
+      "exp": -10.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber core points in violet-pink haze on void",
+      "scene": "atoms crowded through the emptiness at the floor of the motor's matter, each one a hot amber core point sheathed in a wide violet-pink haze many times its own width, the hazes of neighbours merged into a mottled curtain where the crowd thickens, cores freckling that curtain in files and clumps, cooler atoms sunk deeper at every distance, faint ripples printed across the whole crowd, nothing under it and nothing over it",
+      "target": "a hot amber core",
+      "target_phrase": "a hot amber core",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "light_rope",
+      "exp": -15.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "tangerine ropes and cream spark-points on indigo",
+      "scene": "a taut rope of light drawn from one amber point to another within the core of one atom, sparks beaded down the rope's whole reach, a second rope nearby already parted into two shorter ropes, each short rope capped with its own pair of burning points, more ropes crossing the emptiness at every distance in a slack tangle, violet haze filling the gaps, the whole field seen down the length of one rope"
+    },
+    {
+      "name": "cluster_bridge",
+      "exp": 24.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber galaxy beads and violet gas on indigo void",
+      "scene": "one filament of the cosmic web drawn from one blazing cluster knot to another, the whole rope given a slow twist over its reach, hundreds of amber galaxies beaded down its length, violet gas hazing the rope's body, both knots burning at the ends of it in crowded swarms of galaxies, the void walled off on either hand with nothing in it, further filaments crossing the emptiness deeper out, the bridge seen down its length from one knot toward the other"
+    }
+  ],
+  "music_theme": "a prairie town at last light — a warm analog pad opening over the torn galaxy and the world's evening line, a stately deep kick settling on the downbeat as the mound plain arrives from the air, the pulse warmest and most nostalgic through the commons and the soil, drawing down to a single held tone through the root hairs and the rods, one deep hit where the rope of light opens out into the bridge of galaxies",
+  "music_key": "E minor",
+  "render_start": "hydrogen_haze",
+  "play_start": "dwarf_scatter"
 }

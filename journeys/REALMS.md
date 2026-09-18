@@ -69,6 +69,14 @@ bright galaxies)
 Added 2026-08-31: the intercluster bridge — ONE filament strung between two cluster knots,
 galaxies beaded down its length, the rope slowly twisting (filaments measurably rotate);
 looked ALONG from one knot toward the other (rope ↔ rope with the subnuclear gluon flux tube)
+Added 2026-09-06 (picture-first, unused): the void's ghost web — from INSIDE a great void,
+blackness walled far off by faint galaxy sheets, and threading the emptiness a faint
+miniature web of dwarf galaxies, a few thin luminous tendrils crossing at random with small
+blue knots where they meet (a web nested inside the web's own hole; seams to any "sealed
+bubble with a little life in it" — a fluid inclusion in a crystal, a vesicle, an egg) ·
+fingers of God — galaxy clusters drawn out into long luminous radial needles that all
+point at the viewer, a whole sky of spines converging on the eye (seams to spherulites,
+urchin spines, a dandelion clock, a star of alpha tracks from one grain)
 
 ## 10¹⁴–10²² · galactic `[amb]`/`[obl]`
 tilted spiral galaxy · barred spiral with a glowing bar · ragged irregular dwarf galaxy ·
@@ -83,6 +91,19 @@ remnant lacework · red giant's boiling convection cells · blue-white star pair
 a shared envelope · protoplanetary disk with gap-carving planets · pulsar lighthouse beams
 sweeping · black hole accretion disk with a photon ring · comet swarm in a Kuiper shell ·
 sun's corona streamers and prominences · brown dwarf banded like a failed Jupiter
+Added 2026-09-06 (picture-first, unused): the Wolf–Rayet wind bubble — a near-perfect
+sphere of lit gas light-years wide, rim brightest where the star's wind piles up, the
+blue-white blowing star burning off-centre INSIDE it (a bubble with its blower) · the
+pulsar-wind cage — a torn hollow of glowing ribbon filaments wrapped around one point
+that lights them from within, the ribs standing clear with the point's glare between them
+(the Crab as a lantern in a cage; seams to any rib-walled hollow — a barrel, a rib arch,
+the beta-barrel around a fluorescent protein's glowing point) · the runaway star's bow
+shock — a curved lit bow wave standing ahead of a fast star ploughing through a nebula,
+its wings trailing back on both sides · the neutron star from orbit — a twenty-kilometre
+sphere of black iron cracked into plates, fissures glowing between them, two pale polar
+hot spots, a spray of beam light off each pole (stellar by nature though only 10⁴ m across
+— the counter stays honest; its crust is the subnuclear band's Coulomb crystal and its
+depths are nuclear pasta, so a whole journey can live inside one star)
 
 ## 10⁴·⁵–10⁹ · planetary `[air]→[obl]`
 gas giant cloud bands and cyclone eyes · ringed planet with braided rings · ice moon with
@@ -137,6 +158,18 @@ tiled over the blade like silver umbrellas · rhizosphere swarm — rod-shaped b
 corkscrew tails crowding a root hair's surface among soil grains as big as boulders ·
 seagrass lacunae — a blade's interior as long gas-filled galleries walled by files of green
 cells (the plant's own snorkel)
+Added 2026-09-06 (picture-first, unused): brine-pocket sleepers — inside a crystal's sealed
+fluid inclusion, a lens of trapped brine with one vapour bead riding at its end and dormant
+bacteria adrift in it, rod and sphere cells with thickened coats, unmoving for fifty
+thousand years (real: the Naica cave crystals; a cellular card that belongs to a MINERAL
+dive — life sealed in stone, not life made of it) · photocyte ring — the light cells of a
+jellyfish's bell rim, a row of fat granular cells each crammed with round glowing sacs,
+the glow running the ring in a wave (a cellular card for any bioluminescent bell)
+Added 2026-09-04 (picture-first, unused): urchin stereom — a sea urchin's spine in
+section: ONE single calcite crystal carved by its builder cells into a bicontinuous
+sponge labyrinth, holes within holes at repeating sizes, every strut optically one stone
+· the sclerocyte foundry — the builder cells themselves draped over the growing strut
+tips, each shipping round mineral-loaded vesicles budded off in geodesic clathrin baskets
 (mineral/made parents at this scale use grain/fiber/pigment archetypes instead — see rule.)
 
 ## 10⁻⁸·⁵–10⁻⁶ · molecular `[amb]` — EMPTY TODAY (0 cards with molecular machinery)
@@ -174,6 +207,12 @@ barrels and a bent zigzag chain seated in every barrel (the pigment that catches
 · magnetosome chain — a bacterium's compass: a single-file chain of magnetite crystal cubes
 strung inside the cell like beads · ferritin cages — hollow spherical protein shells each
 holding a rust core, drifting as a sea of iron-cored beads
+Added 2026-09-04 (picture-first, unused): clathrate hydrate cages — water frozen into
+polyhedral cages tiled wall to wall, two cage shapes sharing every seam, one trapped gas
+bead rattling in each (comet ice, permafrost ice, the seafloor ice that burns) · the
+carboxysome — an icosahedral protein shell crammed solid with fat ribbon-knot clusters
+of Rubisco, a carbon-fixing factory in a faceted box; every cyanobacterium carries a
+fleet of them (pairs naturally with gas vesicles, 08-28, still unused)
 Added 2026-08-31 (picture-first, unused): suberin lamellae — a cork cell wall in section:
 alternating waxy pale and dense charcoal layers, long fatty chains laid side by side within
 each waxy band (cork's waterproofing; a layered molecular card with a real name) · Rubisco
@@ -182,6 +221,17 @@ joined into one round cluster, each knot a chain looped back on itself in tight 
 meander at molecular scale; write the picture, the name alone renders nothing) · NOTE the
 flagellar rotary motor (08-28) is still unused — it is turned by PROTONS, so its honest next
 card is a hydrogen atom and then the proton's interior (subnuclear)
+Added 2026-09-06 (picture-first, unused): the fluorescent lantern barrel — a can built of
+eleven flat ribbon staves standing side by side, a single three-ring chromophore sealed
+at its centre glowing green, thousands of the cans drifting in a photocyte's fluid (the
+crystal jelly's green protein — the Nobel jellyfish; seams to the pulsar-wind cage as a
+lantern in a cage of ribs) · the resilin rubber net — a loose mesh of long looping chains
+wandering like scribbles and pinned to one another at bright cross-link points, a block
+of it glowing blue under ultraviolet (the spring pad in a flea's hind-leg hinge, a
+dragonfly's wing hinge, a cicada's clicking drum — the most perfect rubber known; the
+random-walk family made solid) · crystallin bead-glass — a lens fibre packed with round
+protein beads so evenly spaced that light passes as through glass, no gaps and no order
+(the transparent solid inside every eye; a sea with no fog between its instances)
 
 ## 10⁻¹²–10⁻⁸·⁵ · atomic `[amb]`
 Name the REAL lattice per parent: quartz spiral chains · calcite rhombs · ice hexagons ·
@@ -215,6 +265,18 @@ Added 2026-08-31: the halo nucleus — a dense droplet of glowing spheres wrappe
 enormous faint fog-shell many times wider than the core, two loose spheres drifting far out
 in it (real: lithium-11's neutron halo) — the same core-and-envelope picture as a galaxy in
 its dark halo, so it seams to the cosmic-web band's nested-halo froth as halo ↔ halo
+Added 2026-09-06 (picture-first, unused): the pasta phase ladder — nuclear pasta is not one
+picture but a descent: glowing spheres (gnocchi) → the spheres fusing into parallel rods
+(spaghetti) → the rods merging into stacked sheets (lasagna) → sheets joined floor to floor
+by spiral ramps (the "parking-garage" phase, real) → then the sheets riddled with holes
+until only rods of EMPTINESS run through solid matter (anti-spaghetti) — one card can hold
+two neighbouring rungs side by side · fission necking — a fat glowing droplet drawn out
+into a dumbbell and pinching at the waist, a few loose spheres flung from the neck (a drop
+of matter about to be two) · the muon drizzle — a slanted straight rain of silver tracks
+falling through everything alike, rock, water and air, ten thousand a minute per square
+metre (cosmic-ray muons: the only subnuclear picture that lives at human scale) · spin
+precession — a field of glowing tops all leaning at one angle and wheeling about one
+shared axis (nucleon spins in a magnet; the MRI picture; seams to anything aligned)
 
 ---
 
@@ -240,6 +302,19 @@ sargassum raft (sargassum fish, hatchling turtles, shrimp, crabs) · cypress swa
 night (alligator eyeshine, barred owl, bullfrogs, fireflies) · seagrass meadow (dugong,
 seahorses, cuttlefish, pipefish) · urchin barren (purple urchins, sunflower star, wolf
 eel, sculpins) · bromeliad tank (tree-frog tadpoles, damselfly nymphs, a tank crab)
+Added 2026-09-06 (unused): night hedgerow corridor (a hedgehog nosing the leaf litter, a
+badger on its path, a barn owl on a post, a wood mouse in the blackthorn, hawk-moths at
+the honeysuckle — the flea on the hedgehog is the dive's door) · harbour piling commons
+at night (crystal jellies pulsing under a dock lamp, plumose anemones on the timber,
+shiner perch in a shoal, a Dungeness crab on the mud, a harbour seal under the pier) ·
+desert mine-yard at night (a headframe over the desert: kit fox, kangaroo rats, a great
+horned owl on the gantry, hawk-moths at the yucca blooms, free-tailed bats streaming out
+of the adit — a made-object yard with a living commons)
+Added 2026-09-04 (unused): dung-beetle savanna nightshift (ball-rolling scarabs steering
+dead-straight courses by the galaxy band overhead — the only insect proven to navigate by
+the Milky Way — plus springhares bouncing, a bat-eared fox, a scops owl) · octopus-garden
+seamount nursery (thousands of brooding pearl octopus tiled over warm rock seams,
+brittle stars, rattail fish, a lithodid crab)
 Added 2026-08-29 (unused): cacao understory at night (pollinating midges at the trunk
 flowers, tree frogs on the pods, a kinkajou, leaf-cutter ants trooping) · cork-oak dehesa at
 dusk (Iberian pigs under the oaks, a hoopoe, azure-winged magpies, a genet) · prairie-dog

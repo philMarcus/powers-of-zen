@@ -16,3 +16,8 @@ _zoomclip/
 # Sysinternals Autologon (downloaded binary, restart-proofing)
 /Autologon*.exe
 /Autologon*.zip
+
+# IG size-fallback re-encodes (video) and the live dashboard logs
+outbox/ig_upload/
+outbox/dashboard.log
+outbox/dashboard.err.log

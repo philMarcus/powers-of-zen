@@ -84,7 +84,8 @@ def main():
     ep = {}
     try:
         rj = json.loads((src / "run.json").read_text(encoding="utf-8"))
-        for k in ("parallax_gain", "resolve_persist", "camera_micro", "seed"):
+        for k in ("parallax_gain", "resolve_persist", "camera_micro", "seed", "plate",
+                  "plate_cn", "plate_void_gate", "plate_intro"):
             if k in rj:
                 ep[k] = rj[k]
     except Exception:

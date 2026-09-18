@@ -1,0 +1,106 @@
+{
+  "name": "niobium_winter",
+  "theme": "the coldest place in the universe is indoors: a midnight quantum-computing hall where a tiered cryostat hangs among helium dewars, cable looms and blinking racks, down through a porthole into the vacuum can, onto the niobium chip's ruled circuitry, into the metal's own dendritic grain, into the triangular array of whirlpools threading the superconductor, into niobium's atom ranks — which read as nested hexagons and fold out to a ringed planet's hexagonal pole storm banded by its ring plane, and that storm hands the dark hall back again",
+  "style": "neon_drift",
+  "music_lane": "aurora_strings",
+  "music_theme": "a cold hall at midnight and the order hidden inside its metal — bowed string swells and sparse harp plucks over a deep soft kick on every downbeat, the strings thinning to one cold sustain through the chip and the metal grain, a wide struck bloom where the whirlpool array folds out to the ringed planet's hexagon, settling back to hush as the dark hall returns",
+  "music_key": "C# minor",
+  "render_start": "vortex_lattice",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "hall_midnight",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-black gloom, frost-silver metal, amber indicator points",
+      "scene": "the floor of a quantum computing hall at midnight, a tiered frost-silver machine hung from an overhead frame at the middle of the room, tall helium dewars ranked on castors behind it, coiled cable looms slung from ceiling trays down into the bays, instrument racks stacked in black cabinets whose dial lamps blink amber and cyan in the dark, squat pumps crouched on rubber feet under the floor grating, corrugated cryogenic hoses threading between them, one screen at the desk bay holding a slow bright swirl, deep violet gloom filling the far end of the room, empty, no one present",
+      "target": "a tiered silver machine",
+      "target_phrase": "a hanging silver machine"
+    },
+    {
+      "name": "cryostat_tiers",
+      "exp": 0.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "brass-gold discs, frost-silver casing, violet shadow",
+      "scene": "the hanging cryostat at the middle of the dark hall, four brass-gold discs stacked one beneath the next on slender pillars, each disc narrower than the one over it, hundreds of coaxial lines dropping in bright hanks from tier to tier and coiled into flat spirals against them, copper braid straps bolted across every plate, frost feathering the uppermost tier where the bore enters it, a heavy frost-silver casing standing beside the stack, a dark porthole let into its flank at chest height, amber indicator points burning on the frame overhead, violet-black gloom past it all, empty, no one present",
+      "target": "a dark metal porthole",
+      "target_phrase": "a dark porthole"
+    },
+    {
+      "name": "cold_stage",
+      "exp": -1.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "copper-rose deck, cyan glints, violet-black hollow",
+      "scene": "the innermost stage within the vacuum can, a copper deck hung on threaded posts with a squat cylindrical shield bolted beneath it, its lid lifted to show a pale chip seated in a milled copper pocket, hair-fine bonding wires arcing from the chip's rim to a ring of gold pads, coaxial barrels screwed into the deck in rows with their thin cables dressed in careful loops, braided copper straps clamped from post to post, frost crusting every thread, cyan glints picking out the polished faces, violet-black hollow beyond the deck, empty, no one present",
+      "target": "a pale niobium chip",
+      "target_phrase": "a pale square chip"
+    },
+    {
+      "name": "chip_circuits",
+      "exp": -3.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "frost-silver traces, violet-black substrate, cyan edge sheen",
+      "scene": "the ruled circuitry across the chip's face, frost-silver niobium film cut into long meander lines that fold back on themselves in tight courses, interdigitated combs closing each meander at its end, thousands of minute etched pits perforating the ground plane between the courses, square junction pads no wider than a hair set in pairs at the crossings, violet-black substrate showing wherever the metal is cleared, cyan sheen banding every film edge, the ruling receding toward the chip's cut rim",
+      "target": "a frosted metal grain",
+      "target_phrase": "a pale metal grain",
+      "cameo": {
+        "sprite": "output/mascots/canon/lee.png",
+        "pos": [
+          0.62,
+          0.38
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "dendrite_grain",
+      "exp": -5.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pewter-frost columns, bronze boundary seams, violet gloom",
+      "scene": "within the niobium film itself, columns of metal crystal packed shoulder to shoulder into a mosaic of interlocking grains, every column feathered with fern-fine dendrite arms that branch and branch again toward its neighbours, bronze seams marking each boundary where two grains meet at a wrong angle, terraces stepping down the flat tops of the columns, pockets of violet shadow sunk between the arms, a frost-silver sheen over the mosaic, ranks of columns receding into violet gloom with no ground and no horizon",
+      "target": "a small cyan whirlpool",
+      "target_phrase": "a glowing whirlpool"
+    },
+    {
+      "name": "vortex_lattice",
+      "exp": -7.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale cyan glow cores, violet-black depth, frost-silver filaments",
+      "scene": "the interior of the superconducting metal, countless identical whirlpools locked into a perfect triangular lattice through violet-black depth, each whirlpool a dark eye circled by rings of pale cyan glow that tighten inward toward its core, every eye set the same distance from its six neighbours, faint frost-silver filaments webbing the spaces between them, ranks of whirlpools receding into violet depth-fog with no ground and no horizon, a quantum stillness over the array",
+      "target": "a glowing atom",
+      "target_phrase": "a glowing atom",
+      "loop_target": "countless whirlpools locked into a triangular lattice through violet-black depth, each a dark eye circled by rings of cyan glow",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "hex"
+      }
+    },
+    {
+      "name": "atom_ranks",
+      "exp": -9.8,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "amber core points, pale cyan haze, ink-violet depth",
+      "scene": "the atom ranks of the niobium, amber core points ordered into a cubic grid that reads as nested hexagons wherever the ranks line up down one axis, each core wrapped in a pale cyan haze thinning outward until it meets its neighbour's haze, faint violet tremors shivering through the grid, the hexagonal pattern repeating rank behind rank into ink depth with no ground and no horizon"
+    },
+    {
+      "name": "hexagon_pole",
+      "exp": 8.1,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "bronze and amber cloud bands, violet-black space, pale ring bands",
+      "scene": "the pole of a ringed gas giant, an enormous hexagon ruled into the cloud deck by a jet stream turning forever within its six straight edges, a churning eye set at the hexagon's middle, smaller cyclones parked at each corner, bronze and amber cloud bands wheeling outside the hexagon in stacked belts, the ring plane cutting past the disc in fine bright bands with a dark division sliced through them, violet-black space beyond the rings"
+    }
+  ]
+}

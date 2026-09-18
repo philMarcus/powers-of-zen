@@ -1,0 +1,60 @@
+prairie_town (divein): bar 2.667s -> 90 bpm, key E minor; lane analog_dawn; generating 8, keeping 5
+♪ generating 33.0s | 90bpm E minor | seed 39612 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 19s -> prairie_town_00001_.flac (1.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/prairie_town_analog_dawn.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/prairie_town/analog_dawn.mp4
+    bar 2.667s | music bar 2.635s (conf 0.61) -> stretch 0.9880 | phase 0.930s | lock 12.10x | kick 0.39 | beat 1/4 | fit 0.36 (bar 0.16 vs rival 0.44) | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [analog_dawn] lock 12.10x conf 0.61 kick 0.40 score 1.12 -> review/music/candidates/prairie_town/analog_dawn.mp4
+♪ generating 33.0s | 90bpm E minor | seed 39649 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> prairie_town_00002_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/prairie_town_analog_dawn-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/prairie_town/analog_dawn-b.mp4
+    bar 2.667s | music bar 2.667s (conf 0.75) -> stretch 1.0000 | phase 1.539s | lock 21.32x | kick 0.62 | beat 3/4 | fit 1.18 (bar 0.75 vs rival 0.63) | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [analog_dawn-b] lock 21.32x conf 0.75 kick 0.62 score 4.71 -> review/music/candidates/prairie_town/analog_dawn-b.mp4
+♪ generating 33.0s | 90bpm E minor | seed 39686 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 9s -> prairie_town_00003_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/prairie_town_analog_dawn-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/prairie_town/analog_dawn-third_answer.mp4
+    bar 2.667s | music bar 2.667s (conf 0.77) -> stretch 1.0000 | phase 0.280s | lock 6.80x | kick -0.03 | beat 1/4 | fit 1.09 (bar 0.77 vs rival 0.71) | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [analog_dawn-third_answer] lock 6.80x conf 0.77 kick -0.03 score 0.41 -> review/music/candidates/prairie_town/analog_dawn-third_answer.mp4
+♪ generating 33.0s | 90bpm E minor | seed 39723 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 10s -> prairie_town_00004_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/prairie_town_deep_archive-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/prairie_town/deep_archive-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.33) -> stretch 1.0000 | phase 2.020s | lock 13.24x | kick 0.20 | beat 1/4 | fit 1.56 (bar 0.33 vs rival 0.21) | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] lock 13.24x conf 0.33 kick 0.20 score 0.93 -> review/music/candidates/prairie_town/deep_archive-wild.mp4
+♪ generating 33.0s | 90bpm E minor | seed 39760 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> prairie_town_00005_.flac (2.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/prairie_town_music_box-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/prairie_town/music_box-wild.mp4
+    bar 2.667s | music bar 2.613s (conf 0.44) -> stretch 0.9800 | phase 2.280s | lock 9.43x | kick 0.31 | beat 1/4 | fit -0.04 (bar -0.02 vs rival 0.65) | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [music_box-wild] lock 9.43x conf 0.44 kick 0.31 score 0.55 -> review/music/candidates/prairie_town/music_box-wild.mp4
+♪ generating 33.0s | 90bpm E minor | seed 39797 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 9s -> prairie_town_00006_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/prairie_town_analog_dawn-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/prairie_town/analog_dawn-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.70) -> stretch 1.0000 | phase 0.930s | lock 16.29x | kick 0.44 | beat 1/4 | fit 1.41 (bar 0.70 vs rival 0.50) | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [analog_dawn-halftime] lock 16.29x conf 0.70 kick 0.43 score 2.75 -> review/music/candidates/prairie_town/analog_dawn-halftime.mp4
+♪ generating 33.0s | 90bpm E minor | seed 39834 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 10s -> prairie_town_00007_.flac (1.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/prairie_town_wooden_orbit-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/prairie_town/wooden_orbit-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.60) -> stretch 1.0000 | phase 0.650s | lock 16.96x | kick 0.44 | beat 1/4 | fit 1.23 (bar 0.60 vs rival 0.49) | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [wooden_orbit-wild] lock 16.96x conf 0.60 kick 0.45 score 2.63 -> review/music/candidates/prairie_town/wooden_orbit-wild.mp4
+♪ generating 33.0s | 68bpm E minor | seed 39871 steps 8
+  tags: a gently lilting waltz in 3/4 time, all percussion is a single deep soft kick drum landing...
+  done in 10s -> prairie_town_00008_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/prairie_town_waltz-analog_dawn.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/prairie_town/waltz-analog_dawn.mp4
+    bar 2.667s | music bar 2.645s (conf 0.24) -> stretch 0.9920 | phase 0.980s | lock 16.34x | kick 0.33 | beat 1/3 | fit 0.14 (bar 0.10 vs rival 0.75) | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [waltz-analog_dawn] lock 16.34x conf 0.24 kick 0.33 score 0.67 -> review/music/candidates/prairie_town/waltz-analog_dawn.mp4
+kept: analog_dawn-b, analog_dawn-halftime, wooden_orbit-wild, deep_archive-wild, music_box-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel

@@ -1,0 +1,133 @@
+{
+  "name": "selenite_hothouse",
+  "theme": "the Cave of Crystals at Naica told as a MINERAL dive that carries one sleeping life in it — the emblem is a sealed bubble with something alive in it, restated at every scale: from within a great cosmic void where a ghost web of dwarf galaxies threads the emptiness, into one torn dwarf galaxy, into a sphere of burning gas blown by a star that sits off-centre within it, onto that blue-white star, out to a dry world of iron-orange ranges, down onto a desert sierra at night, into a mine yard kept by a kit fox, kangaroo rats, an owl, hawk-moths and a stream of bats while the machines above them sit empty, down the shaft into the chamber where selenite beams eleven metres from tip to tip cross one another at every angle in air hot and wet as a hothouse, onto one beam's water-clear cleavage face, and into a sealed pocket of ancient brine where thick-shelled bacteria have slept fifty thousand years — which folds back to the void and its ghost web",
+  "style": "aurora_silk",
+  "music_lane": "choir_of_dust",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "ghost_void",
+      "exp": 24,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink-indigo emptiness, faint sapphire tendrils, cold blue knots",
+      "scene": "the interior of a great cosmic void, starless emptiness bounded far off by faint sheets of galaxies, and threading the hollow a faint miniature web of dwarf galaxies, thin luminous tendrils crossing one another at every angle and jammed where they meet into small blue knots, hundreds of the knots strewn through the emptiness at every depth, a dim verdigris haze sifting between the strands, the sheets at the rim drawn as sparse beaded ropes, everything between them empty",
+      "target": "a ragged blue galaxy",
+      "target_phrase": "a small blue galaxy",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "dwarf_galaxy",
+      "exp": 20,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sapphire star-knots, pink nursery patches, ink-indigo void",
+      "scene": "a ragged irregular dwarf galaxy adrift in the void, coreless and torn, its sapphire star-knots scattered loose across a haze of amber older suns, pink nursery patches kindled among them, ropes of cold dust drawn crookedly from knot to knot, thousands of faint stars sifted through the whole spread at every depth, the emptiness past its frayed edge sparse and starless",
+      "target": "a blue-white gas bubble",
+      "target_phrase": "a glowing blue bubble",
+      "loop_target": "a ragged irregular dwarf galaxy, its sapphire star-knots scattered loose across a haze of amber older suns"
+    },
+    {
+      "name": "wind_bubble",
+      "exp": 16.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sapphire shell glow, verdigris nebula haze, one white-hot point",
+      "scene": "a near-perfect sphere of burning gas blown out through a star nursery, its shell smooth and sapphire and brightest about the rim where the wind piles up, one white-hot star burning off-centre in the hollow it has emptied, curved shock fronts stacked against the shell's far reach, verdigris nebula haze pressed up against the sphere from beyond, faint stars pricking through the thin shell everywhere",
+      "target": "a blue-white star",
+      "target_phrase": "a bright white star"
+    },
+    {
+      "name": "blowing_star",
+      "exp": 10.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "white-blue glare, sulfur-gold arches, violet sink lanes",
+      "scene": "a blue-white supergiant seething in its own wind, its face packed edge to edge with granulation cells, sapphire-white at each cell's centre and sunk to violet in the lanes between, sulfur-gold arches vaulting off the rim in ranks and crossing one another, ropes of stripped gas peeling away in slow screws, cinder-grey motes of condensed dust drifting through the murk, a small rust-orange world adrift in that murk past the arches",
+      "target": "a rust-orange desert world",
+      "target_phrase": "a rust-orange planet"
+    },
+    {
+      "name": "desert_world",
+      "exp": 6.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "iron-orange ranges, ink-indigo night hemisphere, one crimson spark",
+      "scene": "a dry world seen from orbit, its ranges wrinkled across the sunlit face in ranks of iron-orange folds, salt basins glaring between them, dust storms combed out over the plains in ochre streamers, the terminator curving through it as a soft violet seam, the night hemisphere ink-indigo and cratered, one crimson spark of lamp glow burning out on a basin floor, thin cloud shelves stacked at the curved edge",
+      "target": "a wrinkled iron-orange range",
+      "target_phrase": "a wrinkled mountain range",
+      "cameo": {
+        "sprite": "output/mascots/canon/janet.png",
+        "pos": [
+          0.62,
+          0.36
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "sierra_night",
+      "exp": 4.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink-indigo ridges, verdigris star haze, one crimson point",
+      "scene": "a desert sierra at night seen from a high shoulder of the range, ridge after ridge receding in ranks of ink-indigo folds, a dry basin held between them stippled with creosote scrub and pooled with cold air, a mine yard out on the basin floor marked by one crimson lamp point and a fan of blue-white glare, a steel tower raised over the yard as a crossed cage of struts, dirt tracks scratched crookedly across the flats toward it, the sky thick with stars and a verdigris haze low at the horizon",
+      "target": "a crossed steel tower",
+      "target_phrase": "a steel tower"
+    },
+    {
+      "name": "mine_yard",
+      "exp": 2.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "tailings grey-brown, blue-white glare, one crimson lamp",
+      "scene": "a desert mine yard at night at eye level, the steel tower's crossed struts raised over the shaft, a kit fox trotting between the ore bins, kangaroo rats bounding across the tailings grit, a great horned owl perched out on the gantry rail, hawk-moths hovering at the yucca blooms by the fence, free-tailed bats pouring from the adit mouth in a ribbon, the hoist house shut with its windows unlit, one crimson lamp burning on the gantry, a fan of blue-white glare pooled over the grit, the shaft's square mouth cut through the yard floor, empty of people, no one present",
+      "target": "a square shaft mouth",
+      "target_phrase": "a square opening"
+    },
+    {
+      "name": "crystal_chamber",
+      "exp": 1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "honey-sulfur glass, ink-indigo cave air, verdigris steam",
+      "scene": "the crystal chamber three hundred metres down in the mine, jammed with selenite beams eleven metres from tip to tip thrown across one another at every angle and wedged where they cross, each beam a translucent honey-sulfur blade kindled from within, the crossings piled into a thicket over a rubble floor, verdigris steam hanging thick in air hot and wet as a hothouse, smaller blades sprouting from the rough limestone faces in crossed ranks, one crimson lamp point set out on the rubble, the far reaches of the chamber sunk in ink-indigo murk, empty, no one present",
+      "target": "a glassy selenite beam",
+      "target_phrase": "a glassy crystal beam",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "beam_face",
+      "exp": -1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "water-clear glass, ink-indigo depth, honey glow",
+      "scene": "the cleavage face of a selenite blade, a water-clear sheet of gypsum stepped into shallow terraces where the stone has parted, honey glow passing through it from within and thrown back off every step, milky feather-plumes of trapped crystal drawn through the sheet in crossed sprays, dozens of sealed pockets of ancient brine scattered through the glass at every depth, each a flattened lens with one vapour bead seated at its end, hair-fine fractures threading between them, the stone going ink-indigo where it deepens",
+      "target": "a sealed brine pocket",
+      "target_phrase": "a small milky bubble",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "brine_pocket",
+      "exp": -4.8,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "amber brine, ink-indigo depth, chalk-white cells",
+      "scene": "a sealed pocket of ancient brine held within the crystal, its ceiling and floor sheer glass faces and its rim a faceted seam, one vapour bead seated at the far end of the lens, dormant bacteria adrift through the trapped water at every depth, thick-shelled stubby rods and small spheres, many of the rods wedged together in crossed pairs, mineral grit sunk among them, a honey glow passing through the stone about the pocket, the fluid going ink-indigo where it deepens"
+    }
+  ],
+  "music_theme": "hushed and suspended — sustained choral pads over a deep slow pulse on every downbeat, the pulse thinning to single struck notes across the void and the dwarf galaxy, warming through the star and the dry world, one low breathing swell at the mine yard, dust-fine bells through the crystal chamber and the beam face, the whole texture dissolving to almost nothing at the sealed pocket before the choir opens again on the void",
+  "music_key": "C# minor",
+  "render_start": "dwarf_galaxy"
+}

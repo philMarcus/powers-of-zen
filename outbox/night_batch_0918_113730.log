@@ -1,0 +1,73 @@
+=== 11:37:30 batch start [queue] — 3 journeys: cork_dehesa sargasso_windrow garnet_glass
+=== 11:37:30 --- cork_dehesa ---
+=== 11:37:30 cork_dehesa: --plate live --plate-cn 0 --plate-void-gate --plate-intro enter
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] lacquer_pop  ->  deep lacquer enamel sheen, vermilion red and deep green, bold flat colour blocking, lustrous graphic poster look, ultra-detailed, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/cork_dehesa/v2
+[dive] cork_dehesa: 392 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — shelled_nucleus(sea)[26..49], disk_galaxy(sea)[90..113], dusk_world(surface)[122..135], dehesa_from_air(surface)[154..177], oak_commons(surface)[186..209], harvest_bole(surface)[218..241], plank_face(sea)[250..273], cork_honeycomb(lattice)[282..305], suberin_lamellae(lattice)[314..337], carbon_atom(lattice)[346..359]
+[dive] plate: cameo at frame 136 (dusk_world) deferred until the plate hands off
+[dive] PLATE (live, intro enter from bottom) card 3 'disk_galaxy' -> 'dusk_world': frames 96..159 (bar line at 128), globe 0.289 -> 1.15 x width at the bar line, then until the frame is inside the disc
+[dive] TRACKER v3 ON (272 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of one carbon atom seated in the cork wall's grid, a tight garnet core point wrapped in a f
+[dive] frame 1/392 (38.6s/frame, ~15107s left) :: moving through one carbon atom seated in the cork wall's gri
+[dive] frame 11/392 (24.4s/frame, ~9302s left) :: moving through one carbon atom seated in the cork wall's gri
+[dive] frame 21/392 (23.2s/frame, ~8599s left) :: diving straight into a dense garnet nucleus as it swells to 
+[dive] frame 31/392 (21.9s/frame, ~7917s left) :: diving straight into a dense garnet nucleus as it swells to 
+[dive] frame 41/392 (19.6s/frame, ~6888s left) :: deep inside a nucleus of lit spheres pressed into one shiver
+[dive] frame 51/392 (18.1s/frame, ~6174s left) :: deep inside a nucleus of lit spheres pressed into one shiver
+[dive] frame 61/392 (17.5s/frame, ~5795s left) :: deep inside a nucleus of lit spheres pressed into one shiver
+[dive] frame 71/392 (16.9s/frame, ~5420s left) :: the whole view transforming, resolving into a froth of neste
+[dive] frame 81/392 (17.8s/frame, ~5533s left) :: moving through a froth of nested fog-shells filling the void
+[dive] frame 91/392 (18.4s/frame, ~5533s left) :: diving straight into a garnet-cored disk galaxy as it swells
+[dive] plate assets for card 3: surface 'a satellite view looking straight down onto the surface of a world seen from orb' / void 'an immense expanse of a disk galaxy adrift in the void, a ga'
+[dive] frame 101/392 (19.1s/frame, ~5569s left) :: a disk galaxy adrift in the void, a garnet-amber bulge cored
+[dive] frame 111/392 (19.3s/frame, ~5420s left) :: moving through a disk galaxy adrift in the void, a garnet-am
+[dive] frame 121/392 (19.6s/frame, ~5307s left) :: diving straight into a half-lit banded world as it swells to
+[dive] frame 131/392 (19.8s/frame, ~5157s left) :: a world seen from orbit at its dusk line, an azure sea sheet
+[dive] frame 141/392 (20.0s/frame, ~5015s left) :: moving through a world seen from orbit at its dusk line, an 
+[dive] frame 151/392 (20.4s/frame, ~4917s left) :: diving straight into a wooded umber pasture as it swells to 
+[dive] frame 161/392 (20.7s/frame, ~4776s left) :: a cork-oak dehesa at dusk seen from high above, hundreds of 
+[dive] frame 171/392 (20.5s/frame, ~4530s left) :: moving through a cork-oak dehesa at dusk seen from high abov
+[dive] frame 181/392 (20.7s/frame, ~4375s left) :: diving straight into a broad oak tree as it swells to fill t
+[dive] frame 191/392 (20.6s/frame, ~4133s left) :: diving straight into a broad oak tree as it swells to fill t
+[dive] frame 201/392 (20.2s/frame, ~3866s left) :: moving through the oak commons at dusk at eye level among th
+[dive] frame 211/392 (20.1s/frame, ~3629s left) :: moving through the oak commons at dusk at eye level among th
+[dive] frame 221/392 (20.1s/frame, ~3431s left) :: diving straight into a stripped oxblood trunk as it swells t
+[dive] frame 231/392 (19.8s/frame, ~3189s left) :: a freshly harvested cork oak at dusk, its stripped bole an o
+[dive] frame 241/392 (19.5s/frame, ~2945s left) :: moving through a freshly harvested cork oak at dusk, its str
+[dive] frame 251/392 (19.7s/frame, ~2774s left) :: diving straight into a leaned cork plank as it swells to fil
+[dive] frame 261/392 (19.5s/frame, ~2550s left) :: a cork plank's sawn face, a matte pitting of countless minut
+[dive] frame 271/392 (19.2s/frame, ~2324s left) :: moving through a cork plank's sawn face, a matte pitting of 
+[dive] frame 281/392 (19.5s/frame, ~2162s left) :: diving straight into an empty cork cell as it swells to fill
+[dive] frame 291/392 (19.3s/frame, ~1945s left) :: a froth of dead cork cells, hollow six-sided boxes tiled int
+[dive] frame 301/392 (19.0s/frame, ~1732s left) :: moving through a froth of dead cork cells, hollow six-sided 
+[dive] frame 311/392 (19.1s/frame, ~1547s left) :: diving straight into a creased waxy wall as it swells to fil
+[dive] frame 321/392 (19.0s/frame, ~1348s left) :: suberin laid course upon course within a cork wall, waxy cre
+[dive] frame 331/392 (18.8s/frame, ~1146s left) :: moving through suberin laid course upon course within a cork
+[dive] frame 341/392 (18.8s/frame, ~959s left) :: diving straight into an azure carbon atom as it swells to fi
+[dive] frame 351/392 (18.8s/frame, ~771s left) :: diving straight into an azure carbon atom as it swells to fi
+[dive] frame 361/392 (18.7s/frame, ~579s left) :: moving through one carbon atom seated in the cork wall's gri
+[dive] frame 371/392 (18.9s/frame, ~397s left) :: moving through one carbon atom seated in the cork wall's gri
+[dive] frame 381/392 (19.0s/frame, ~210s left) :: diving straight into a dense garnet nucleus as it swells to 
+[dive] frame 391/392 (19.2s/frame, ~19s left) :: a nucleus of lit spheres pressed into one shivering droplet,
+[dive] frame 392/392 (19.2s/frame, ~0s left) :: a nucleus of lit spheres pressed into one shivering droplet,
+[dive] play order: delivered video rotated by 64 frames (5.3s) to open on the play_start card
+[dive] interpolated 12 -> 24fps (704 frames, loop-bridged) in 69s
+[dive] counter overlay on 704 frames (43 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/cork_dehesa/v2/cork_dehesa.mp4 (42506 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/cork_dehesa/v2/cork_dehesa_divein.mp4 (43242 KB, 29.3s)
+[dive] done in 7736s
+=== 13:46:26 cork_dehesa: rendered in 7736s
+  copied cork_dehesa.mp4 -> review/cork_dehesa_ds.mp4
+  copied cork_dehesa_divein.mp4 -> review_divein/cork_dehesa_ds_divein.mp4
+cork_dehesa: queued to REVIEW (ds/divein) from v2
+  cork_dehesa: 5 caption+title pairs (spot=True); theme='A hypnotic pulse of deep strings and cel'
+    [0] Dusk unfolds in fractals, from oak to atom to cosmos 🌌 Can you spot Janet the Planet hiding in the void? 👀 #CorkCosmos #FractalDusk #InfiniteZoom #JanetThePlanet #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: Dusk unfolds in fractals, from oak to atom to cosmos 🌌
+    [1] A cork plank’s secrets spiral into infinity 🌀 Can you spot Janet the Planet hiding in the void? 👀 #CorkCosmos #FractalDusk #InfiniteZoom #JanetThePlanet #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: A cork plank’s secrets spiral into infinity 🌀
+    [2] Where the earth’s breath meets the stars’ glow ✨ Can you spot Janet the Planet hiding in the void? 👀 #CorkCosmos #FractalDusk #InfiniteZoom #JanetThePlanet #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: Where the earth’s breath meets the stars’ glow ✨
+    [3] Every scale a universe, every zoom a revelation 🔍 Can you spot Janet the Planet hiding in the void? 👀 #CorkCosmos #FractalDusk #InfiniteZoom #JanetThePlanet #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: Every scale a universe, every zoom a revelation 🔍
+    [4] From dehesa to void, the loop never ends 🌀 Can you spot Janet the Planet hiding in the void? 👀 #CorkCosmos #FractalDusk #InfiniteZoom #JanetThePlanet #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: From dehesa to void, the loop never ends 🌀
+=== 13:47:17 cork_dehesa -> REVIEW (captioned)
+=== 13:47:17 --- sargasso_windrow ---
+=== 13:47:17 sargasso_windrow: --plate live --plate-cn 0 --plate-void-gate --plate-intro enter

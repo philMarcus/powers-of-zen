@@ -1,0 +1,141 @@
+{
+  "name": "stromatolite_dawn",
+  "theme": "Earth's first breath — a hypersaline bay at first light tiled with rust-red stromatolite domes, the oldest way of being alive, fizzing silver oxygen off their tops; down through one dome's laminated flank into the mat's filament colonies, into one cyanobacterium's ribbed gas-vesicle spindles and faceted carboxysomes, into the ribbon-knots that pull carbon out of the water, down to the aragonite courses the mat entombs itself in — which open out as the ripple wavefronts the infant universe's sound froze into the galaxy web, and home down a galaxy, a newborn sun and an ocean world's dawn line to the dome flats again",
+  "style": "reef_pop",
+  "music_lane": "analog_dawn",
+  "music_theme": "first light over the oldest living stone — warm analog pads with a gentle tape warble and a soft round mallet over a deep kick on every downbeat, the pads narrowing to one held tone through the mat and the ribbon-knots, a wide bloom where the stone courses open out into the ripple wavefronts of the galaxy web, settling back to a warm hush as the bay returns",
+  "music_key": "G minor",
+  "render_start": "spiral_galaxy",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "bay_dawn",
+      "exp": 3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-red stone, ink-blue water, molten-gold horizon seam",
+      "scene": "a shallow hypersaline bay at first light seen from low above the water, hundreds of rust-red stone domes tiled across the flats in loose crowds, every dome a low layered mushroom of stone, tea-brown shallows lying in curved channels among them, a salt crust rimming the far shore in ink-blue shadow, one molten-gold seam of sunrise laid along the horizon, silver bead-trails rising off every dome top, sea-mist lying over the far flats",
+      "target": "a curved tidal channel",
+      "target_phrase": "a curved water channel"
+    },
+    {
+      "name": "dome_commons",
+      "exp": 1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "tea-brown water, olive mat sheen, rust-red stone, silver beads",
+      "scene": "the tidal flat at eye level among the stone domes, a wide channel of tea-brown water running through the dome field, a file of shovelnose rays gliding the channel shoulder to shoulder over rippled sand, an olive sea snake threading the gaps in the stonework, cormorants perched on the dome tops in the first light, hermit crabs trooping the shallows in twos and threes, silver oxygen beads fizzing off the olive mat that coats every dome, ink-blue water in the far channels, a molten-gold sky seam low over the flats",
+      "target": "a rust-red stone dome",
+      "target_phrase": "a rust-red stone dome"
+    },
+    {
+      "name": "dome_flank",
+      "exp": -0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-red and umber courses, ochre grit, silver beads",
+      "scene": "the layered flank of one stone dome, hundreds of rust-red and umber courses laid one over the next, every course a frozen ripple crest held in stone, the courses running thick and lean by turns as they wrap the dome, ochre grit lodged along every trough, a jade-green film of living mat drawn over the uppermost courses, silver beads caught in the hollows, tea-brown water lapping the foot of the stone",
+      "target": "a jade-green mat patch",
+      "target_phrase": "a green mat patch"
+    },
+    {
+      "name": "mat_veneer",
+      "exp": -4.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade-green threads, amber sheath jelly, umber grit",
+      "scene": "the living veneer of the mat, a felt of jade-green threads crossing one another in every direction, every thread a file of pillbox cells stacked end to end inside a clear amber sheath, umber sand grains lodged through the felt, each grain broader than the threads it pins, carbonate grit crusting the older threads, silver gas beads caught in the tangle, sunrise light falling through the jelly in warm shafts",
+      "target": "a jade-green cell",
+      "target_phrase": "a green pillbox cell",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "cyano_interior",
+      "exp": -6.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "teal membrane tiers, silver spindles, umber-violet gloom",
+      "scene": "the crowded interior of one cyanobacterium, curved sheets of teal membrane stacked in tiers around the inner wall, a fleet of ribbed silver spindles through the middle ground, every spindle a hollow protein barrel drawn to a point at both ends, faceted protein boxes scattered among the spindles with flat facet plates catching the light, starch granules strewn along the sheets, umber-violet gloom filling the far reaches of the cell",
+      "target": "a faceted protein box",
+      "target_phrase": "a faceted box"
+    },
+    {
+      "name": "carboxysome",
+      "exp": -7.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "coral-red ribbon knots, umber facet plates, teal sparks",
+      "scene": "the crammed interior of one carbon-fixing box, hundreds of round ribbon-knot clusters stacked shoulder to shoulder in loose rows, every cluster built of eight fat coiled ribbons joined around one axis, each ribbon looping back on itself in tight turns, umber facet plates walling the crowd on every side, minute clear carbonate specks strewn through the gaps among the clusters, teal sparks of light caught on the ribbon turns",
+      "target": "a clear carbonate grain",
+      "target_phrase": "a clear mineral grain"
+    },
+    {
+      "name": "aragonite_courses",
+      "exp": -9.3,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "silver-violet lattice courses, gold fringes, umber void",
+      "scene": "the atomic courses of aragonite, flat three-cornered carbonate groups tiled wall to wall in long rows, every second row turned a half step against the row beneath it, calcium points set in files through the gaps, course stacked over course in strata that repeat without end, faint gold interference fringes running the stacking, a violet-umber void past the outermost course",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "layered"
+      }
+    },
+    {
+      "name": "ripple_web",
+      "exp": 24,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-gold galaxy points, ink-indigo voids, silver haze",
+      "scene": "the cosmic web at its largest, thousands of rust-gold galaxy points strung along filaments, the filaments gathered into nested curved wavefronts one inside the next, every wavefront a course of galaxies held still where the infant universe's sound stopped, ink-indigo voids hollowing the spaces the wavefronts arc around, a silver haze of unlit matter threading it all, no ground, no horizon",
+      "target": "a tilted spiral galaxy",
+      "target_phrase": "a tilted spiral galaxy"
+    },
+    {
+      "name": "spiral_galaxy",
+      "exp": 20,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver-blue arms, rose nursery patches, indigo void",
+      "scene": "a young spiral galaxy seen at a shallow tilt, two silver-blue arms wound out of a warm core in long sweeps, rose nursery patches beaded down the arms in strings, lanes of umber dust combing the inner turns, thousands of blue star-knots strewn through the outer sweep, a haze of older suns filling the space among the arms, the indigo void carrying scattered far galaxies in every direction, no ground, no horizon",
+      "loop_target": "a young tilted spiral galaxy, rose nursery patches beaded along its arms",
+      "target": "a young gold sun",
+      "target_phrase": "a young gold star"
+    },
+    {
+      "name": "young_sun",
+      "exp": 13,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "molten-gold star, rust-red dust ring, indigo void",
+      "scene": "a newborn sun set in the remains of its cradle cloud, a molten-gold star ringed by a disc of dust and gas, the disc cut by two swept gaps with one dim forming world sitting in each, rust-red streamers of leftover cloud drawn out past the disc rim, two narrow columns of ionised gas set at the poles, a scatter of sibling suns lighting the far cloud in rose, indigo void in every direction, no ground, no horizon",
+      "target": "a blue ocean world",
+      "target_phrase": "a blue ocean planet",
+      "cameo": {
+        "sprite": "output/mascots/canon/lamar.png",
+        "pos": [
+          0.63,
+          0.37
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "ocean_world",
+      "exp": 6.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink-blue night ocean, molten-gold dawn seam, rust-red shallows",
+      "scene": "an ocean world seen from orbit at its dawn line, a curved gold seam of sunrise running pole to pole across the globe, the night side ink-blue and unlit under a scatter of storm spirals, the lit side opening into rust-red shallow seas veined with tidal channels, a chain of low salt islands strung across the sunrise, white cloud streets combed in long parallel lines over the open water, indigo void past the limb",
+      "target": "a rust-red shallow sea",
+      "target_phrase": "a rust-red shallow bay"
+    }
+  ]
+}

@@ -1,0 +1,474 @@
+=== 01:30:01 batch start [queue] — 4 journeys: bayou_eyeshine cacao_temper sargasso_windrow locust_sorghum
+=== 01:30:01 --- bayou_eyeshine ---
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] aurora_silk  ->  aurora ribbons of green and violet light, silken flowing light, soft luminous gradients, ultra-detailed, dreamlike, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/bayou_eyeshine/v1
+[dive] bayou_eyeshine: 296 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — disc_stack(lattice)[26..49], rhodopsin_tiling(sea)[58..81], swamp_air(surface)[122..135], swamp_commons(surface)[154..177], gator_head(surface)[186..209], eye_slit(sea)[218..241], rod_palisade(lattice)[250..263]
+[dive] TRACKER v3 ON (200 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a palisade of rod cells inside the retina, countless slender columns standing sh
+[dive] frame 1/296 (30.5s/frame, ~8986s left) :: moving through a palisade of rod cells inside the retina, co
+[dive] frame 11/296 (28.8s/frame, ~8209s left) :: moving through a palisade of rod cells inside the retina, co
+[dive] frame 21/296 (27.7s/frame, ~7615s left) :: diving straight into a rose-violet rod column as it swells t
+[dive] frame 31/296 (25.8s/frame, ~6837s left) :: diving straight into a rose-violet rod column as it swells t
+[dive] frame 41/296 (22.7s/frame, ~5776s left) :: moving through the stacked interior of one rod cell, a thous
+[dive] frame 51/296 (21.1s/frame, ~5159s left) :: moving through the stacked interior of one rod cell, a thous
+[dive] frame 61/296 (21.6s/frame, ~5071s left) :: diving straight into a rose-tinted membrane disc as it swell
+[dive] frame 71/296 (20.3s/frame, ~4575s left) :: one membrane disc tiled edge to edge with protein barrels, e
+[dive] frame 81/296 (19.4s/frame, ~4164s left) :: deep inside one membrane disc tiled edge to edge with protei
+[dive] frame 91/296 (18.7s/frame, ~3830s left) :: deep inside one membrane disc tiled edge to edge with protei
+[dive] frame 101/296 (18.2s/frame, ~3546s left) :: the whole view transforming, resolving into the full moon hu
+[dive] frame 111/296 (18.8s/frame, ~3475s left) :: moving through the full moon hung high over a swamp basin in
+[dive] frame 121/296 (19.6s/frame, ~3437s left) :: diving straight into a pewter water channel as it swells to 
+[dive] frame 131/296 (19.2s/frame, ~3169s left) :: a cypress swamp basin seen low from the air on a moonlit nig
+[dive] frame 141/296 (19.4s/frame, ~3013s left) :: moving through a cypress swamp basin seen low from the air o
+[dive] frame 151/296 (19.9s/frame, ~2880s left) :: diving straight into a stand of cypress trunks as it swells 
+[dive] frame 161/296 (19.7s/frame, ~2666s left) :: a cypress swamp at midnight seen low over the black-tea wate
+[dive] frame 171/296 (19.4s/frame, ~2426s left) :: moving through a cypress swamp at midnight seen low over the
+[dive] frame 181/296 (19.3s/frame, ~2220s left) :: diving straight into an armored alligator head as it swells 
+[dive] frame 191/296 (19.3s/frame, ~2031s left) :: diving straight into an armored alligator head as it swells 
+[dive] frame 201/296 (19.1s/frame, ~1813s left) :: moving through an alligator's armored head at the waterline,
+[dive] frame 211/296 (18.9s/frame, ~1607s left) :: moving through an alligator's armored head at the waterline,
+[dive] frame 221/296 (19.0s/frame, ~1425s left) :: diving straight into a bronze-gold eye as it swells to fill 
+[dive] frame 231/296 (18.8s/frame, ~1221s left) :: an alligator's eye held at the waterline, a bronze-gold iris
+[dive] frame 241/296 (18.5s/frame, ~1019s left) :: moving through an alligator's eye held at the waterline, a b
+[dive] frame 251/296 (18.8s/frame, ~846s left) :: diving straight into a vertical obsidian slit as it swells t
+[dive] frame 261/296 (18.6s/frame, ~652s left) :: a palisade of rod cells inside the retina, countless slender
+[dive] frame 271/296 (18.8s/frame, ~469s left) :: moving through a palisade of rod cells inside the retina, co
+[dive] frame 281/296 (19.0s/frame, ~286s left) :: diving straight into a rose-violet rod column as it swells t
+[dive] frame 291/296 (19.3s/frame, ~97s left) :: the stacked interior of one rod cell, a thousand membrane di
+[dive] frame 296/296 (19.4s/frame, ~0s left) :: the stacked interior of one rod cell, a thousand membrane di
+[dive] interpolated 12 -> 24fps (512 frames, loop-bridged) in 51s
+[dive] counter overlay on 512 frames (23 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/bayou_eyeshine/v1/bayou_eyeshine.mp4 (34332 KB, 21.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/bayou_eyeshine/v1/bayou_eyeshine_divein.mp4 (34794 KB, 21.3s)
+[dive] done in 5890s
+=== 03:08:12 bayou_eyeshine: rendered in 5890s
+  copied bayou_eyeshine.mp4 -> review/bayou_eyeshine_ds.mp4
+  copied bayou_eyeshine_divein.mp4 -> review_divein/bayou_eyeshine_ds_divein.mp4
+bayou_eyeshine: queued to REVIEW (ds/divein) from v1
+  bayou_eyeshine: 5 caption+title pairs (spot=True); theme='A haunting, ethereal melody blending dee'
+    [0] Dive into the midnight swamp’s hidden glow 🌙 Can you spot Lorraine the Terrane hiding in the loop? 👀 #swamplight #cosmiczoom #hiddenworlds #eyesofthenight #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive into the midnight swamp’s hidden glow 🌙
+    [1] A world within an eye, endless depths unfold Can you spot Lorraine the Terrane hiding in the loop? 👀 #swamplight #cosmiczoom #hiddenworlds #eyesofthenight #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A world within an eye, endless depths unfold
+    [2] Where moonlight and tannin weave a silent spell Can you spot Lorraine the Terrane hiding in the loop? 👀 #swamplight #cosmiczoom #hiddenworlds #eyesofthenight #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where moonlight and tannin weave a silent spell
+    [3] From cosmic craters to the smallest cell’s light Can you spot Lorraine the Terrane hiding in the loop? 👀 #swamplight #cosmiczoom #hiddenworlds #eyesofthenight #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From cosmic craters to the smallest cell’s light
+    [4] A loop of wonder, where infinity meets the small Can you spot Lorraine the Terrane hiding in the loop? 👀 #swamplight #cosmiczoom #hiddenworlds #eyesofthenight #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A loop of wonder, where infinity meets the small
+=== 03:09:05 bayou_eyeshine -> REVIEW (captioned)
+=== 03:09:05 --- cacao_temper ---
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] lacquer_pop  ->  deep lacquer enamel sheen, vermilion red and deep green, bold flat colour blocking, lustrous graphic poster look, ultra-detailed, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/cacao_temper/v1
+[dive] cacao_temper: 392 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — night_world(surface)[26..49], coast_from_air(surface)[58..81], cacao_understory(surface)[90..113], pod_chamber(surface)[122..145], cotyledon_folds(sea)[154..177], storage_cells(sea)[186..209], butter_lamellae(lattice)[218..241], carbon_atom(lattice)[250..263], coulomb_crystal(sea)[282..305], diamond_star(surface)[346..359]
+[dive] TRACKER v3 ON (272 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of the frozen crust of a dying star, a vast carbon lattice faceted into blue-silver planes,
+[dive] frame 1/392 (32.0s/frame, ~12516s left) :: moving through the frozen crust of a dying star, a vast carb
+[dive] frame 11/392 (27.1s/frame, ~10330s left) :: moving through the frozen crust of a dying star, a vast carb
+[dive] frame 21/392 (25.8s/frame, ~9564s left) :: diving straight into an unlit world as it swells to fill the
+[dive] frame 31/392 (24.7s/frame, ~8933s left) :: diving straight into an unlit world as it swells to fill the
+[dive] frame 41/392 (21.9s/frame, ~7697s left) :: moving through a night world seen from orbit, its unlit hemi
+[dive] frame 51/392 (20.5s/frame, ~6987s left) :: moving through a night world seen from orbit, its unlit hemi
+[dive] frame 61/392 (21.1s/frame, ~6974s left) :: diving straight into a silt-crimson river delta as it swells
+[dive] frame 71/392 (19.9s/frame, ~6390s left) :: a rainforest coast at night seen from overhead, the canopy a
+[dive] frame 81/392 (19.0s/frame, ~5913s left) :: moving through a rainforest coast at night seen from overhea
+[dive] frame 91/392 (19.6s/frame, ~5897s left) :: diving straight into a low cacao grove as it swells to fill 
+[dive] frame 101/392 (18.9s/frame, ~5505s left) :: a cacao understory at night at standing height among the tru
+[dive] frame 111/392 (18.4s/frame, ~5160s left) :: moving through a cacao understory at night at standing heigh
+[dive] frame 121/392 (18.9s/frame, ~5122s left) :: diving straight into a ridged crimson pod as it swells to fi
+[dive] frame 131/392 (18.5s/frame, ~4835s left) :: the chamber inside a split cacao pod, five rows of beans she
+[dive] frame 141/392 (18.3s/frame, ~4581s left) :: moving through the chamber inside a split cacao pod, five ro
+[dive] frame 151/392 (18.5s/frame, ~4463s left) :: diving straight into a violet bean as it swells to fill the 
+[dive] frame 161/392 (18.4s/frame, ~4251s left) :: a cacao bean cleft to its violet kernel, the kernel cut into
+[dive] frame 171/392 (18.2s/frame, ~4013s left) :: moving through a cacao bean cleft to its violet kernel, the 
+[dive] frame 181/392 (18.1s/frame, ~3826s left) :: diving straight into a violet cell as it swells to fill the 
+[dive] frame 191/392 (18.3s/frame, ~3670s left) :: diving straight into a violet cell as it swells to fill the 
+[dive] frame 201/392 (18.1s/frame, ~3449s left) :: moving through the storage cells of a cacao cotyledon, cell 
+[dive] frame 211/392 (18.0s/frame, ~3254s left) :: moving through the storage cells of a cacao cotyledon, cell 
+[dive] frame 221/392 (18.1s/frame, ~3096s left) :: diving straight into an amber butter droplet as it swells to
+[dive] frame 231/392 (18.0s/frame, ~2894s left) :: the tempered crystal within a cocoa-butter droplet, three-pr
+[dive] frame 241/392 (17.8s/frame, ~2682s left) :: moving through the tempered crystal within a cocoa-butter dr
+[dive] frame 251/392 (18.1s/frame, ~2547s left) :: diving straight into a bright carbon atom as it swells to fi
+[dive] frame 261/392 (17.9s/frame, ~2350s left) :: one carbon atom set in the crystal's grid, nested shells of 
+[dive] frame 271/392 (18.1s/frame, ~2194s left) :: moving through one carbon atom set in the crystal's grid, ne
+[dive] frame 281/392 (18.3s/frame, ~2034s left) :: diving straight into a bright nucleus as it swells to fill t
+[dive] frame 291/392 (18.2s/frame, ~1836s left) :: bare nuclei frozen into a cubic lattice, point after saffron
+[dive] frame 301/392 (18.0s/frame, ~1638s left) :: deep inside bare nuclei frozen into a cubic lattice, point a
+[dive] frame 311/392 (17.9s/frame, ~1449s left) :: deep inside bare nuclei frozen into a cubic lattice, point a
+[dive] frame 321/392 (17.7s/frame, ~1260s left) :: the whole view transforming, resolving into the shed shells 
+[dive] frame 331/392 (17.7s/frame, ~1082s left) :: moving through the shed shells of a dying star strewn across
+[dive] frame 341/392 (18.0s/frame, ~920s left) :: diving straight into a blue-silver star as it swells to fill
+[dive] frame 351/392 (18.1s/frame, ~741s left) :: diving straight into a blue-silver star as it swells to fill
+[dive] frame 361/392 (18.0s/frame, ~557s left) :: moving through the frozen crust of a dying star, a vast carb
+[dive] frame 371/392 (18.2s/frame, ~383s left) :: moving through the frozen crust of a dying star, a vast carb
+[dive] frame 381/392 (18.4s/frame, ~203s left) :: diving straight into an unlit world as it swells to fill the
+[dive] frame 391/392 (18.6s/frame, ~19s left) :: a night world seen from orbit, its unlit hemisphere quilted 
+[dive] frame 392/392 (18.6s/frame, ~0s left) :: a night world seen from orbit, its unlit hemisphere quilted 
+[dive] interpolated 12 -> 24fps (704 frames, loop-bridged) in 71s
+[dive] counter overlay on 704 frames (36 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/cacao_temper/v1/cacao_temper.mp4 (45040 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/cacao_temper/v1/cacao_temper_divein.mp4 (45828 KB, 29.3s)
+[dive] done in 7509s
+=== 05:14:14 cacao_temper: rendered in 7509s
+  copied cacao_temper.mp4 -> review/cacao_temper_ds.mp4
+  copied cacao_temper_divein.mp4 -> review_divein/cacao_temper_ds_divein.mp4
+cacao_temper: queued to REVIEW (ds/divein) from v1
+  cacao_temper: 5 caption+title pairs (spot=True); theme='A hypnotic, swirling melody that mirrors'
+    [0] Dive into the heart of the cacao cosmos 🌌 Can you spot Adam the Atom hiding in the cosmic loop? 👀 #CacaoCosmos #PowersOfZen #InfiniteLoop #MicroMacroDive #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive into the heart of the cacao cosmos 🌌
+    [1] From rainforest to atom, a loop of endless wonder Can you spot Adam the Atom hiding in the cosmic loop? 👀 #CacaoCosmos #PowersOfZen #InfiniteLoop #MicroMacroDive #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From rainforest to atom, a loop of endless wonder
+    [2] A journey through the hidden worlds of chocolate Can you spot Adam the Atom hiding in the cosmic loop? 👀 #CacaoCosmos #PowersOfZen #InfiniteLoop #MicroMacroDive #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A journey through the hidden worlds of chocolate
+    [3] Where stars and seeds share the same spark Can you spot Adam the Atom hiding in the cosmic loop? 👀 #CacaoCosmos #PowersOfZen #InfiniteLoop #MicroMacroDive #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where stars and seeds share the same spark
+    [4] The universe in a single bean, forever unfolding Can you spot Adam the Atom hiding in the cosmic loop? 👀 #CacaoCosmos #PowersOfZen #InfiniteLoop #MicroMacroDive #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The universe in a single bean, forever unfolding
+=== 05:15:02 cacao_temper -> REVIEW (captioned)
+=== 05:15:02 --- sargasso_windrow ---
+[style] reef_pop  ->  electric aquamarine and hot pink, sunlit turquoise depth, high-saturation tropical glow, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/sargasso_windrow/v1
+[dive] sargasso_windrow: 343 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — star_comet_shoal(sea)[22..34], ocean_world(surface)[50..72], sea_windrows(surface)[78..100], weed_raft(surface)[106..128], float_cluster(sea)[134..156], float_cells(sea)[162..184], alginate_eggbox(lattice)[190..212], carbon_atom(lattice)[218..240], track_cascade(sea)[246..268], brightest_galaxy(sea)[302..314]
+[dive] TRACKER v3 ON (238 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of the cluster's brightest galaxy, a tilted spiral of saffron starlight, two great arms com
+[dive] frame 1/343 (33.1s/frame, ~11305s left) :: moving through the cluster's brightest galaxy, a tilted spir
+[dive] frame 11/343 (27.1s/frame, ~8995s left) :: moving through the cluster's brightest galaxy, a tilted spir
+[dive] frame 21/343 (25.9s/frame, ~8348s left) :: diving straight into a gold star as it swells to fill the en
+[dive] frame 31/343 (23.3s/frame, ~7266s left) :: a gold star and its shoal of comets, the star a swollen embe
+[dive] frame 41/343 (22.9s/frame, ~6924s left) :: moving through a gold star and its shoal of comets, the star
+[dive] frame 51/343 (23.2s/frame, ~6768s left) :: diving straight into a blue ocean world as it swells to fill
+[dive] frame 61/343 (21.7s/frame, ~6125s left) :: an ocean world seen from orbit at night, its hemisphere one 
+[dive] frame 71/343 (20.5s/frame, ~5563s left) :: moving through an ocean world seen from orbit at night, its 
+[dive] frame 81/343 (20.4s/frame, ~5354s left) :: diving straight into a gold weed line as it swells to fill t
+[dive] frame 91/343 (19.7s/frame, ~4975s left) :: the night sea from an oblique vantage low over the swell, mo
+[dive] frame 101/343 (19.1s/frame, ~4611s left) :: diving straight into a raft of matted gold weed as it swells
+[dive] frame 111/343 (19.2s/frame, ~4463s left) :: diving straight into a raft of matted gold weed as it swells
+[dive] frame 121/343 (18.8s/frame, ~4184s left) :: moving through a raft of sargassum weed adrift on the deep-w
+[dive] frame 131/343 (18.7s/frame, ~3958s left) :: diving straight into a cluster of small gold floats as it sw
+[dive] frame 141/343 (18.6s/frame, ~3753s left) :: a thicket of sargassum blades seen from within the mat, serr
+[dive] frame 151/343 (18.2s/frame, ~3502s left) :: moving through a thicket of sargassum blades seen from withi
+[dive] frame 161/343 (18.2s/frame, ~3314s left) :: diving straight into a round gold float as it swells to fill
+[dive] frame 171/343 (18.2s/frame, ~3127s left) :: the living tissue inside the float's rind, cell upon cell ca
+[dive] frame 181/343 (17.9s/frame, ~2897s left) :: moving through the living tissue inside the float's rind, ce
+[dive] frame 191/343 (18.1s/frame, ~2744s left) :: diving straight into a thick amber casing as it swells to fi
+[dive] frame 201/343 (17.9s/frame, ~2538s left) :: the casing material's own architecture, long amber polymer c
+[dive] frame 211/343 (17.6s/frame, ~2327s left) :: moving through the casing material's own architecture, long 
+[dive] frame 221/343 (17.8s/frame, ~2168s left) :: diving straight into a bright carbon atom as it swells to fi
+[dive] frame 231/343 (17.6s/frame, ~1975s left) :: one carbon atom pictured as nested shells of soft haze, an i
+[dive] frame 241/343 (17.4s/frame, ~1779s left) :: diving straight into a lit track as it swells to fill the en
+[dive] frame 251/343 (17.6s/frame, ~1622s left) :: diving straight into a lit track as it swells to fill the en
+[dive] frame 261/343 (17.5s/frame, ~1439s left) :: deep inside a cascade of luminous tracks strung through an a
+[dive] frame 271/343 (17.4s/frame, ~1251s left) :: deep inside a cascade of luminous tracks strung through an a
+[dive] frame 281/343 (17.3s/frame, ~1070s left) :: the whole view transforming, resolving into a galaxy cluster
+[dive] frame 291/343 (17.3s/frame, ~900s left) :: moving through a galaxy cluster fed by several parallel fila
+[dive] frame 301/343 (17.6s/frame, ~740s left) :: diving straight into a bright spiral galaxy as it swells to 
+[dive] frame 311/343 (17.6s/frame, ~562s left) :: the cluster's brightest galaxy, a tilted spiral of saffron s
+[dive] frame 321/343 (17.7s/frame, ~389s left) :: moving through the cluster's brightest galaxy, a tilted spir
+[dive] frame 331/343 (17.9s/frame, ~215s left) :: diving straight into a gold star as it swells to fill the en
+[dive] frame 341/343 (18.2s/frame, ~36s left) :: a gold star and its shoal of comets, the star a swollen embe
+[dive] frame 343/343 (18.3s/frame, ~0s left) :: a gold star and its shoal of comets, the star a swollen embe
+[dive] interpolated 12 -> 24fps (616 frames, loop-bridged) in 64s
+[dive] counter overlay on 616 frames (46 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/sargasso_windrow/v1/sargasso_windrow.mp4 (39348 KB, 25.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/sargasso_windrow/v1/sargasso_windrow_divein.mp4 (39965 KB, 25.7s)
+[dive] done in 6442s
+=== 07:02:24 sargasso_windrow: rendered in 6442s
+  copied sargasso_windrow.mp4 -> review/sargasso_windrow_ds.mp4
+  copied sargasso_windrow_divein.mp4 -> review_divein/sargasso_windrow_ds_divein.mp4
+sargasso_windrow: queued to REVIEW (ds/divein) from v1
+  sargasso_windrow: 5 caption+title pairs (spot=True); theme='A hypnotic blend of oceanic swells and c'
+    [0] Dive into the endless ocean of existence 🌊✨ Can you spot Lamar the Star in this endless dive? 👀 #CosmicZoom #InfiniteJourney #SargassumToStars #EndlessDive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dive into the endless ocean of existence 🌊✨
+    [1] A journey through the fractal heart of the cosmos 🌌 Can you spot Lamar the Star in this endless dive? 👀 #CosmicZoom #InfiniteJourney #SargassumToStars #EndlessDive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A journey through the fractal heart of the cosmos 🌌
+    [2] From sargassum to starlight, the universe unfolds 🌿💫 Can you spot Lamar the Star in this endless dive? 👀 #CosmicZoom #InfiniteJourney #SargassumToStars #EndlessDive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From sargassum to starlight, the universe unfolds 🌿💫
+    [3] Where every scale reveals a new infinity 🌀 Can you spot Lamar the Star in this endless dive? 👀 #CosmicZoom #InfiniteJourney #SargassumToStars #EndlessDive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Where every scale reveals a new infinity 🌀
+    [4] The cosmic zoom that never ends 🌠 Can you spot Lamar the Star in this endless dive? 👀 #CosmicZoom #InfiniteJourney #SargassumToStars #EndlessDive #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: The cosmic zoom that never ends 🌠
+=== 07:03:14 sargasso_windrow -> REVIEW (captioned)
+=== 07:03:14 --- locust_sorghum ---
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/locust_sorghum/v1
+[dive] locust_sorghum: 150 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — grain_head(surface)[18..29], starch_chambers(sea)[42..63], field_block(surface)[90..111], field_commons(surface)[114..125]
+[dive] TRACKER v3 ON (78 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of a sorghum field at dusk seen at eye level, thousands of bowed bronze-red grain h
+[dive] frame 1/150 (33.2s/frame, ~4953s left) :: moving through a sorghum field at dusk seen at eye level, th
+[dive] frame 11/150 (29.6s/frame, ~4114s left) :: moving through a sorghum field at dusk seen at eye level, th
+[dive] frame 21/150 (26.3s/frame, ~3395s left) :: diving straight into a bowed bronze-red grain head as it swe
+[dive] frame 31/150 (23.4s/frame, ~2788s left) :: moving through a sorghum grain head at dusk, hundreds of rou
+[dive] frame 41/150 (23.8s/frame, ~2591s left) :: diving straight into a round bronze-red grain as it swells t
+[dive] frame 51/150 (21.8s/frame, ~2156s left) :: a country of cell chambers throughout a sorghum grain, every
+[dive] frame 61/150 (20.7s/frame, ~1844s left) :: deep inside a country of cell chambers throughout a sorghum 
+[dive] frame 71/150 (19.6s/frame, ~1549s left) :: deep inside a country of cell chambers throughout a sorghum 
+[dive] frame 81/150 (19.3s/frame, ~1334s left) :: moving through a locust swarm over sorghum country seen from
+[dive] frame 91/150 (19.9s/frame, ~1175s left) :: diving straight into a bronze-red crop block as it swells to
+[dive] frame 101/150 (19.2s/frame, ~942s left) :: a block of sorghum seen low and oblique at dusk, rows of bow
+[dive] frame 111/150 (18.6s/frame, ~727s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 121/150 (18.2s/frame, ~528s left) :: a sorghum field at dusk seen at eye level, thousands of bowe
+[dive] frame 131/150 (18.3s/frame, ~348s left) :: moving through a sorghum field at dusk seen at eye level, th
+[dive] frame 141/150 (18.9s/frame, ~170s left) :: diving straight into a bowed bronze-red grain head as it swe
+[dive] frame 150/150 (19.4s/frame, ~0s left) :: a sorghum grain head at dusk, hundreds of round bronze-red g
+[dive] interpolated 12 -> 24fps (240 frames, loop-bridged) in 24s
+[dive] counter overlay on 240 frames (14 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/locust_sorghum/v1/locust_sorghum.mp4 (15363 KB, 10.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/locust_sorghum/v1/locust_sorghum_divein.mp4 (15665 KB, 10.0s)
+[dive] done in 2981s
+=== 07:52:56 locust_sorghum: rendered in 2981s
+  copied locust_sorghum.mp4 -> review/locust_sorghum_ds.mp4
+  copied locust_sorghum_divein.mp4 -> review_divein/locust_sorghum_ds_divein.mp4
+locust_sorghum: queued to REVIEW (ds/divein) from v1
+  locust_sorghum: 5 caption+title pairs (spot=True); theme='A slow, hypnotic pulse of dusty strings '
+    [0] Dusk’s bronze sea of sorghum, locusts swirling in twin storms 🌾 Can you spot Dwight the Light hiding in the dusty glow? 👀 #sorghumdusk #locustswarm #dustworlds #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Dusk’s bronze sea of sorghum, locusts swirling in twin storms 🌾
+    [1] A grain world of amber and garnet, dust veiling the horizon Can you spot Dwight the Light hiding in the dusty glow? 👀 #sorghumdusk #locustswarm #dustworlds #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: A grain world of amber and garnet, dust veiling the horizon
+    [2] Locusts spiral over the red quilted earth, dust choking the sky Can you spot Dwight the Light hiding in the dusty glow? 👀 #sorghumdusk #locustswarm #dustworlds #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Locusts spiral over the red quilted earth, dust choking the sky
+    [3] Bronze heads bow in endless rows, dust settling like a shroud Can you spot Dwight the Light hiding in the dusty glow? 👀 #sorghumdusk #locustswarm #dustworlds #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: Bronze heads bow in endless rows, dust settling like a shroud
+    [4] From swarm to stalk to starch, the world dissolves into dust Can you spot Dwight the Light hiding in the dusty glow? 👀 #sorghumdusk #locustswarm #dustworlds #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats  ||  YT: From swarm to stalk to starch, the world dissolves into dust
+=== 07:53:44 locust_sorghum -> REVIEW (captioned)
+=== 07:53:44 music pregen: bayou_eyeshine
+bayou_eyeshine (divein): bar 2.667s -> 90 bpm, key D minor; lane night_market; generating 8, keeping 5
+♪ generating 25.0s | 90bpm D minor | seed 8264 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 30s -> bayou_eyeshine_00001_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/bayou_eyeshine_night_market.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bayou_eyeshine/night_market.mp4
+    bar 2.667s | music bar 2.667s (conf 0.79) -> stretch 1.0000 | phase 0.030s | lock 23.28x | kick 0.64 | seamless loop @ 21.33s (music tiled x2, xf 0.50s)
+  [night_market] lock 23.28x conf 0.79 kick 0.64 score 26.74 -> review/music/candidates/bayou_eyeshine/night_market.mp4
+♪ generating 25.0s | 90bpm D minor | seed 8301 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 17s -> bayou_eyeshine_00002_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/bayou_eyeshine_night_market-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bayou_eyeshine/night_market-b.mp4
+    bar 2.667s | music bar 2.667s (conf 0.72) -> stretch 1.0000 | phase 2.650s | lock 30.95x | kick 0.73 | seamless loop @ 21.33s (music tiled x2, xf 0.50s)
+  [night_market-b] lock 30.95x conf 0.72 kick 0.73 score 36.92 -> review/music/candidates/bayou_eyeshine/night_market-b.mp4
+♪ generating 25.0s | 90bpm D minor | seed 8338 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 13s -> bayou_eyeshine_00003_.flac (1.0 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/bayou_eyeshine_night_market-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bayou_eyeshine/night_market-third_answer.mp4
+    bar 2.667s | music bar 2.613s (conf 0.31) -> stretch 0.9800 | phase 0.690s | lock 11.14x | kick 0.34 | seamless loop @ 21.33s (music tiled x2, xf 0.50s)
+  [night_market-third_answer] lock 11.14x conf 0.31 kick 0.34 score 5.33 -> review/music/candidates/bayou_eyeshine/night_market-third_answer.mp4
+♪ generating 25.0s | 90bpm D minor | seed 8375 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 14s -> bayou_eyeshine_00004_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/bayou_eyeshine_wooden_orbit-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bayou_eyeshine/wooden_orbit-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.76) -> stretch 1.0000 | phase 1.870s | lock 16.77x | kick 0.74 | seamless loop @ 21.33s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] lock 16.77x conf 0.76 kick 0.74 score 21.07 -> review/music/candidates/bayou_eyeshine/wooden_orbit-wild.mp4
+♪ generating 25.0s | 90bpm D minor | seed 8412 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 13s -> bayou_eyeshine_00005_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/bayou_eyeshine_choir_of_dust-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bayou_eyeshine/choir_of_dust-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.70) -> stretch 1.0000 | phase 0.070s | lock 14.32x | kick 0.65 | seamless loop @ 21.33s (music tiled x1, xf 0.50s)
+  [choir_of_dust-wild] lock 14.32x conf 0.70 kick 0.65 score 15.40 -> review/music/candidates/bayou_eyeshine/choir_of_dust-wild.mp4
+♪ generating 25.0s | 90bpm D minor | seed 8449 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 13s -> bayou_eyeshine_00006_.flac (1.0 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/bayou_eyeshine_night_market-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bayou_eyeshine/night_market-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.79) -> stretch 1.0000 | phase 0.040s | lock 41.17x | kick 0.78 | seamless loop @ 21.33s (music tiled x2, xf 0.50s)
+  [night_market-halftime] lock 41.17x conf 0.79 kick 0.79 score 54.84 -> review/music/candidates/bayou_eyeshine/night_market-halftime.mp4
+♪ generating 25.0s | 90bpm D minor | seed 8486 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 13s -> bayou_eyeshine_00007_.flac (1.0 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/bayou_eyeshine_glass_chapel-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bayou_eyeshine/glass_chapel-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.64) -> stretch 1.0000 | phase 0.020s | lock 28.31x | kick 0.58 | seamless loop @ 21.33s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] lock 28.31x conf 0.64 kick 0.58 score 27.02 -> review/music/candidates/bayou_eyeshine/glass_chapel-wild.mp4
+♪ generating 25.0s | 68bpm D minor | seed 8523 steps 8
+  tags: a gently lilting waltz in 3/4 time, all percussion is a single deep soft kick drum landing...
+  done in 13s -> bayou_eyeshine_00008_.flac (0.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/bayou_eyeshine_waltz-night_market.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/bayou_eyeshine/waltz-night_market.mp4
+    bar 2.667s | music bar 2.645s (conf 0.38) -> stretch 0.9920 | phase 1.080s | lock 7.30x | kick 0.03 | seamless loop @ 21.33s (music tiled x2, xf 0.50s)
+  [waltz-night_market] lock 7.30x conf 0.38 kick 0.03 score 1.80 -> review/music/candidates/bayou_eyeshine/waltz-night_market.mp4
+kept: night_market-halftime, night_market-b, glass_chapel-wild, wooden_orbit-wild, choir_of_dust-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 07:56:03 music pregen: cacao_temper
+cacao_temper (divein): bar 2.667s -> 90 bpm, key F minor; lane night_market; generating 8, keeping 5
+♪ generating 33.0s | 90bpm F minor | seed 20184 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 24s -> cacao_temper_00001_.flac (1.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cacao_temper_night_market.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cacao_temper/night_market.mp4
+    bar 2.667s | music bar 2.667s (conf 0.50) -> stretch 1.0000 | phase 0.060s | lock 22.82x | kick 0.43 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [night_market] lock 22.82x conf 0.50 kick 0.43 score 15.67 -> review/music/candidates/cacao_temper/night_market.mp4
+♪ generating 33.0s | 90bpm F minor | seed 20221 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 18s -> cacao_temper_00002_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cacao_temper_night_market-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cacao_temper/night_market-b.mp4
+    bar 2.667s | music bar 2.667s (conf 0.27) -> stretch 1.0000 | phase 1.050s | lock 15.00x | kick 0.32 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [night_market-b] lock 15.00x conf 0.27 kick 0.33 score 6.67 -> review/music/candidates/cacao_temper/night_market-b.mp4
+♪ generating 33.0s | 90bpm F minor | seed 20258 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 18s -> cacao_temper_00003_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cacao_temper_night_market-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cacao_temper/night_market-third_answer.mp4
+    bar 2.667s | music bar 2.667s (conf 0.76) -> stretch 1.0000 | phase 0.030s | lock 25.27x | kick 0.59 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [night_market-third_answer] lock 25.27x conf 0.76 kick 0.59 score 26.71 -> review/music/candidates/cacao_temper/night_market-third_answer.mp4
+♪ generating 33.0s | 90bpm F minor | seed 20295 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 18s -> cacao_temper_00004_.flac (1.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cacao_temper_music_box-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cacao_temper/music_box-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.52) -> stretch 1.0000 | phase 0.060s | lock 7.80x | kick 0.21 | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [music_box-wild] lock 7.80x conf 0.52 kick 0.21 score 3.67 -> review/music/candidates/cacao_temper/music_box-wild.mp4
+♪ generating 33.0s | 90bpm F minor | seed 20332 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 18s -> cacao_temper_00005_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cacao_temper_analog_dawn-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cacao_temper/analog_dawn-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.66) -> stretch 1.0000 | phase 2.220s | lock 13.25x | kick 0.61 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [analog_dawn-wild] lock 13.25x conf 0.66 kick 0.61 score 13.14 -> review/music/candidates/cacao_temper/analog_dawn-wild.mp4
+♪ generating 33.0s | 90bpm F minor | seed 20369 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 18s -> cacao_temper_00006_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cacao_temper_night_market-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cacao_temper/night_market-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.77) -> stretch 1.0000 | phase 0.030s | lock 33.90x | kick 0.75 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [night_market-halftime] lock 33.90x conf 0.77 kick 0.75 score 43.08 -> review/music/candidates/cacao_temper/night_market-halftime.mp4
+♪ generating 33.0s | 90bpm F minor | seed 20406 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 19s -> cacao_temper_00007_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cacao_temper_deep_archive-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cacao_temper/deep_archive-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.19) -> stretch 1.0000 | phase 1.300s | lock 14.42x | kick 0.12 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] lock 14.42x conf 0.19 kick 0.12 score 3.69 -> review/music/candidates/cacao_temper/deep_archive-wild.mp4
+♪ generating 33.0s | 68bpm F minor | seed 20443 steps 8
+  tags: a gently lilting waltz in 3/4 time, all percussion is a single deep soft kick drum landing...
+  done in 19s -> cacao_temper_00008_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/cacao_temper_waltz-night_market.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/cacao_temper/waltz-night_market.mp4
+    bar 2.667s | music bar 2.667s (conf 0.08) -> stretch 1.0000 | phase 0.920s | lock 11.40x | kick 0.05 | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [waltz-night_market] lock 11.40x conf 0.08 kick 0.05 score 2.00 -> review/music/candidates/cacao_temper/waltz-night_market.mp4
+kept: night_market-halftime, night_market-third_answer, analog_dawn-wild, deep_archive-wild, music_box-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 07:58:49 music pregen: sargasso_windrow
+sargasso_windrow (divein): bar 2.333s -> 103 bpm, key B minor; lane deep_archive; generating 8, keeping 5
+♪ generating 29.0s | 103bpm B minor | seed 4096 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 20s -> sargasso_windrow_00001_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_deep_archive.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/deep_archive.mp4
+    bar 2.333s | music bar 2.293s (conf 0.64) -> stretch 0.9829 | phase 0.030s | lock 15.26x | kick 0.38 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [deep_archive] lock 15.26x conf 0.64 kick 0.38 score 10.99 -> review/music/candidates/sargasso_windrow/deep_archive.mp4
+♪ generating 29.0s | 103bpm B minor | seed 4133 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 14s -> sargasso_windrow_00002_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_deep_archive-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/deep_archive-b.mp4
+    bar 2.333s | music bar 2.187s (conf 0.22) -> stretch 0.9700 | phase 2.290s | lock 2.53x | kick 0.22 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [deep_archive-b] lock 2.53x conf 0.22 kick 0.22 score 0.85 -> review/music/candidates/sargasso_windrow/deep_archive-b.mp4
+♪ generating 29.0s | 103bpm B minor | seed 4170 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 14s -> sargasso_windrow_00003_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_deep_archive-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/deep_archive-heartbeat.mp4
+    bar 2.333s | music bar 2.283s (conf 0.75) -> stretch 0.9783 | phase 0.920s | lock 13.92x | kick 0.79 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [deep_archive-heartbeat] lock 13.92x conf 0.75 kick 0.79 score 18.00 -> review/music/candidates/sargasso_windrow/deep_archive-heartbeat.mp4
+♪ generating 29.0s | 103bpm B minor | seed 4207 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 15s -> sargasso_windrow_00004_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_ember_pulse-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/ember_pulse-wild.mp4
+    bar 2.333s | music bar 2.304s (conf 0.71) -> stretch 0.9874 | phase 0.030s | lock 17.98x | kick 0.66 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [ember_pulse-wild] lock 17.98x conf 0.71 kick 0.66 score 19.70 -> review/music/candidates/sargasso_windrow/ember_pulse-wild.mp4
+♪ generating 29.0s | 103bpm B minor | seed 4244 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 15s -> sargasso_windrow_00005_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_night_market-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/night_market-wild.mp4
+    bar 2.333s | music bar 2.208s (conf 0.03) -> stretch 1.0000 | phase 0.180s | lock 2.31x | kick 0.06 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [night_market-wild] lock 2.31x conf 0.03 kick 0.06 score 0.38 -> review/music/candidates/sargasso_windrow/night_market-wild.mp4
+♪ generating 29.0s | 103bpm B minor | seed 4281 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 15s -> sargasso_windrow_00006_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_deep_archive-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/deep_archive-halftime.mp4
+    bar 2.333s | music bar 2.283s (conf 0.74) -> stretch 0.9783 | phase 1.200s | lock 10.67x | kick 0.60 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [deep_archive-halftime] lock 10.67x conf 0.74 kick 0.60 score 11.22 -> review/music/candidates/sargasso_windrow/deep_archive-halftime.mp4
+♪ generating 29.0s | 103bpm B minor | seed 4318 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 14s -> sargasso_windrow_00007_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_analog_dawn-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/analog_dawn-wild.mp4
+    bar 2.333s | music bar 2.123s (conf -0.02) -> stretch 1.0000 | phase 2.000s | lock 6.92x | kick -0.01 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [analog_dawn-wild] lock 6.92x conf -0.02 kick -0.01 score 0.86 -> review/music/candidates/sargasso_windrow/analog_dawn-wild.mp4
+♪ generating 29.0s | 77bpm B minor | seed 4355 steps 8
+  tags: a gently lilting waltz in 3/4 time, all percussion is a single deep soft kick drum landing...
+  done in 15s -> sargasso_windrow_00008_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_waltz-deep_archive.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/waltz-deep_archive.mp4
+    bar 2.333s | music bar 2.368s (conf 0.34) -> stretch 1.0149 | phase 0.680s | lock 8.35x | kick 0.02 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [waltz-deep_archive] lock 8.35x conf 0.34 kick 0.02 score 1.92 -> review/music/candidates/sargasso_windrow/waltz-deep_archive.mp4
+♪ generating 29.0s | 103bpm B minor | seed 4456 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 14s -> sargasso_windrow_00009_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_pulse1-deep_archive.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/pulse1-deep_archive.mp4
+    bar 2.333s | music bar 2.283s (conf 0.75) -> stretch 0.9783 | phase 0.620s | lock 8.45x | kick 0.73 | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [pulse1-deep_archive] kick 0.73 (top-up 1)
+kept: ember_pulse-wild, deep_archive-heartbeat, deep_archive-halftime, analog_dawn-wild, night_market-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 08:01:19 music pregen: locust_sorghum
+locust_sorghum (divein): bar 2.000s -> 120 bpm, key D minor; lane ember_pulse; generating 8, keeping 5
+♪ generating 13.0s | 120bpm D minor | seed 5599 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 16s -> locust_sorghum_00001_.flac (0.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/locust_sorghum_ember_pulse.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/locust_sorghum/ember_pulse.mp4
+    bar 2.000s | music bar 1.824s (conf 0.16) -> stretch 0.9700 | phase 1.560s | lock 3.98x | kick -0.08 | seamless loop @ 10.00s (music tiled x3, xf 0.50s)
+  [ember_pulse] lock 3.98x conf 0.16 kick -0.08 score 0.65 -> review/music/candidates/locust_sorghum/ember_pulse.mp4
+♪ generating 13.0s | 120bpm D minor | seed 5636 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 9s -> locust_sorghum_00002_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/locust_sorghum_ember_pulse-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/locust_sorghum/ember_pulse-b.mp4
+    bar 2.000s | music bar 1.995s (conf 0.50) -> stretch 0.9973 | phase 1.500s | lock 6.35x | kick -0.14 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-b] lock 6.35x conf 0.50 kick -0.14 score 1.58 -> review/music/candidates/locust_sorghum/ember_pulse-b.mp4
+♪ generating 13.0s | 120bpm D minor | seed 5673 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 9s -> locust_sorghum_00003_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/locust_sorghum_ember_pulse-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/locust_sorghum/ember_pulse-heartbeat.mp4
+    bar 2.000s | music bar 1.995s (conf 0.56) -> stretch 0.9973 | phase 0.030s | lock 21.96x | kick 0.33 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-heartbeat] lock 21.96x conf 0.56 kick 0.33 score 13.44 -> review/music/candidates/locust_sorghum/ember_pulse-heartbeat.mp4
+♪ generating 13.0s | 120bpm D minor | seed 5710 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 9s -> locust_sorghum_00004_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/locust_sorghum_aurora_strings-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/locust_sorghum/aurora_strings-wild.mp4
+    bar 2.000s | music bar 1.995s (conf 0.59) -> stretch 0.9973 | phase 1.060s | lock 12.03x | kick 0.54 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [aurora_strings-wild] lock 12.03x conf 0.59 kick 0.54 score 10.28 -> review/music/candidates/locust_sorghum/aurora_strings-wild.mp4
+♪ generating 13.0s | 120bpm D minor | seed 5747 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 9s -> locust_sorghum_00005_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/locust_sorghum_glass_chapel-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/locust_sorghum/glass_chapel-wild.mp4
+    bar 2.000s | music bar 1.995s (conf 0.58) -> stretch 0.9973 | phase 0.550s | lock 11.89x | kick 0.53 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] lock 11.89x conf 0.58 kick 0.53 score 9.97 -> review/music/candidates/locust_sorghum/glass_chapel-wild.mp4
+♪ generating 13.0s | 120bpm D minor | seed 5784 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 10s -> locust_sorghum_00006_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/locust_sorghum_ember_pulse-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/locust_sorghum/ember_pulse-halftime.mp4
+    bar 2.000s | music bar 2.005s (conf 0.28) -> stretch 1.0027 | phase 0.020s | lock 10.72x | kick -0.09 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-halftime] lock 10.72x conf 0.28 kick -0.09 score 2.10 -> review/music/candidates/locust_sorghum/ember_pulse-halftime.mp4
+♪ generating 13.0s | 120bpm D minor | seed 5821 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 9s -> locust_sorghum_00007_.flac (0.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/locust_sorghum_tide_organ-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/locust_sorghum/tide_organ-wild.mp4
+    bar 2.000s | music bar 1.995s (conf 0.51) -> stretch 0.9973 | phase 0.530s | lock 27.21x | kick 0.44 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [tide_organ-wild] lock 27.21x conf 0.51 kick 0.44 score 18.90 -> review/music/candidates/locust_sorghum/tide_organ-wild.mp4
+♪ generating 13.0s | 120bpm D minor | seed 5858 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 9s -> locust_sorghum_00008_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/locust_sorghum_ember_pulse-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/locust_sorghum/ember_pulse-third_answer.mp4
+    bar 2.000s | music bar 2.005s (conf 0.46) -> stretch 1.0027 | phase 1.020s | lock 15.05x | kick 0.53 | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [ember_pulse-third_answer] lock 15.05x conf 0.46 kick 0.53 score 11.32 -> review/music/candidates/locust_sorghum/ember_pulse-third_answer.mp4
+kept: tide_organ-wild, ember_pulse-heartbeat, ember_pulse-third_answer, aurora_strings-wild, glass_chapel-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 08:02:48 batch done in 6.5h — 4 to Review
+=== 08:02:48 ComfyUI models unloaded — VRAM freed
+=== 08:02:48 log: outbox/night_batch_0904_013001.log

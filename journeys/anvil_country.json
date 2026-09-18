@@ -127,5 +127,6 @@
   ],
   "music_theme": "a prairie storm at 103bpm — a shimmering polar string pad over one deep kick on every downbeat, the pad massing into a low churn as the vault arrives, thinning to a single held tone through the ice galleries, one struck hit where the atom shells open out into the star's echo rings, then easing back to the pad for the descent from orbit",
   "music_key": "D minor",
-  "render_start": "night_world"
+  "render_start": "ice_lattice",
+  "play_start": "night_world"
 }

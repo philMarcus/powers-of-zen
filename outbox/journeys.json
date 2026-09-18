@@ -5,14 +5,16 @@
     "journey_queue_target": 20,
     "refill_max_per_night": 5,
     "tier_share": {
-      "long": 0.45,
-      "medium": 0.2,
-      "short": 0.35
+      "long": 0.6,
+      "medium": 0.15,
+      "short": 0.25
     },
     "render_paused": false,
     "refill_paused": false,
+    "plate_mode": "live",
     "post_every_hours": 19.0,
-    "post_next": "2026-09-02 19:00"
+    "post_next": "2026-09-19 05:00",
+    "plate_intro": "enter"
   },
   "journeys": {
     "stormglass": {
@@ -170,87 +172,13 @@
       "ts": "2026-08-26 18:01:04",
       "note": "rejected at video review"
     },
-    "horseshoe_tide": {
-      "state": "queued",
-      "order": 3,
-      "ts": "2026-08-28 00:20:50",
-      "note": "composed by midnight refill"
-    },
-    "saguaro_vigil": {
-      "state": "queued",
-      "order": 4,
-      "ts": "2026-08-28 00:20:50",
-      "note": "composed by midnight refill"
-    },
-    "vernal_clutch": {
-      "state": "queued",
-      "order": 5,
-      "ts": "2026-08-28 00:20:50",
-      "note": "composed by midnight refill"
-    },
-    "bayou_eyeshine": {
-      "state": "queued",
-      "order": 6,
-      "ts": "2026-08-30 00:20:18",
-      "note": "composed by midnight refill"
-    },
-    "cacao_temper": {
-      "state": "queued",
-      "order": 7,
-      "ts": "2026-08-30 00:20:18",
-      "note": "composed by midnight refill"
-    },
-    "sargasso_windrow": {
-      "state": "queued",
-      "order": 9,
-      "ts": "2026-08-30 00:20:19",
-      "note": "composed by midnight refill"
-    },
-    "bromeliad_tank": {
-      "state": "queued",
-      "order": 10,
-      "ts": "2026-08-31 00:24:46",
-      "note": "composed by midnight refill"
-    },
-    "cork_dehesa": {
-      "state": "queued",
-      "order": 11,
-      "ts": "2026-08-31 00:24:46",
-      "note": "composed by midnight refill"
-    },
-    "dugong_meadow": {
-      "state": "queued",
-      "order": 12,
-      "ts": "2026-08-31 00:24:47",
-      "note": "composed by midnight refill"
-    },
-    "locust_sorghum": {
-      "state": "queued",
-      "order": 13,
-      "ts": "2026-08-31 00:24:47",
-      "note": "composed by midnight refill"
-    },
-    "prairie_town": {
-      "state": "queued",
-      "order": 14,
-      "ts": "2026-08-31 00:24:47",
-      "note": "composed by midnight refill"
-    },
     "mantis_drumline": {
       "state": "queued",
       "force": true,
       "new_seed": true,
       "ts": "2026-08-31 09:29:27",
       "note": "re-render: video rejected in review",
-      "order": 15
-    },
-    "cherenkov_cistern": {
-      "state": "queued",
-      "force": true,
-      "new_seed": true,
-      "ts": "2026-08-31 13:47:45",
-      "note": "re-render: video rejected in review",
-      "order": 16
+      "order": 7
     },
     "kelp_dynamo": {
       "state": "queued",
@@ -258,7 +186,7 @@
       "new_seed": true,
       "ts": "2026-08-31 13:47:52",
       "note": "re-render: video rejected in review",
-      "order": 17
+      "order": 8
     },
     "sunspot_archipelago": {
       "state": "queued",
@@ -266,7 +194,7 @@
       "new_seed": true,
       "ts": "2026-08-31 13:48:35",
       "note": "re-render: video rejected in review",
-      "order": 18
+      "order": 9
     },
     "lissajous_stage": {
       "state": "queued",
@@ -274,13 +202,133 @@
       "new_seed": true,
       "ts": "2026-08-31 13:49:03",
       "note": "re-render: video rejected in review",
-      "order": 19
+      "order": 10
     },
     "observatory_dusk": {
       "state": "rejected",
       "ts": "2026-08-31 13:51:01",
       "note": "rejected at video review"
+    },
+    "firehawk_ridge": {
+      "state": "queued",
+      "order": 11,
+      "ts": "2026-09-03 00:30:39",
+      "note": "composed by midnight refill"
+    },
+    "gulal_dusk": {
+      "state": "queued",
+      "order": 12,
+      "ts": "2026-09-03 00:30:39",
+      "note": "composed by midnight refill"
+    },
+    "niobium_winter": {
+      "state": "queued",
+      "order": 13,
+      "ts": "2026-09-03 00:30:39",
+      "note": "composed by midnight refill"
+    },
+    "weddell_lightwell": {
+      "state": "queued",
+      "order": 14,
+      "ts": "2026-09-03 00:30:40",
+      "note": "composed by midnight refill"
+    },
+    "oort_hearth": {
+      "state": "queued",
+      "order": 15,
+      "ts": "2026-09-04 00:19:51",
+      "note": "composed by midnight refill"
+    },
+    "scarab_compass": {
+      "state": "queued",
+      "order": 16,
+      "ts": "2026-09-04 00:19:51",
+      "note": "composed by midnight refill"
+    },
+    "stromatolite_dawn": {
+      "state": "queued",
+      "order": 17,
+      "ts": "2026-09-04 00:19:51",
+      "note": "composed by midnight refill"
+    },
+    "urchin_barren": {
+      "state": "queued",
+      "order": 18,
+      "ts": "2026-09-04 00:19:52",
+      "note": "composed by midnight refill"
+    },
+    "jelly_pier": {
+      "state": "queued",
+      "order": 19,
+      "ts": "2026-09-06 00:55:19",
+      "note": "composed by midnight refill"
+    },
+    "pulsar_pasta": {
+      "state": "queued",
+      "order": 20,
+      "ts": "2026-09-06 00:55:19",
+      "note": "composed by midnight refill"
+    },
+    "selenite_hothouse": {
+      "state": "queued",
+      "order": 21,
+      "ts": "2026-09-06 00:55:19",
+      "note": "composed by midnight refill"
+    },
+    "sloe_hedgerow": {
+      "state": "queued",
+      "order": 22,
+      "ts": "2026-09-06 00:55:19",
+      "note": "composed by midnight refill"
+    },
+    "sargasso_windrow": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-09-18 11:35:50",
+      "note": "re-render: planet descent fix (plate live) — video pulled from review 2026-09-18 (same seed)",
+      "order": 1
+    },
+    "garnet_glass": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-09-18 11:35:50",
+      "note": "re-render: planet descent fix (plate live) — video pulled from review 2026-09-18 (same seed)",
+      "order": 2
+    },
+    "gecko_rampart": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-09-18 11:35:50",
+      "note": "re-render: planet descent fix (plate live) — video pulled from review 2026-09-18 (same seed)",
+      "order": 3
+    },
+    "cicada_chorus": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-09-18 11:35:50",
+      "note": "re-render: planet descent fix (plate live) — video pulled from review 2026-09-18 (same seed)",
+      "order": 4
+    },
+    "anvil_country": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-09-18 11:35:50",
+      "note": "re-render: planet descent fix (plate live) — video pulled from review 2026-09-18 (same seed)",
+      "order": 5
+    },
+    "vernal_clutch": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-09-18 11:35:50",
+      "note": "re-render: planet descent fix (plate live) — video pulled from review 2026-09-18 (same seed)",
+      "order": 6
     }
   },
-  "updated": "2026-09-02 07:42:29"
+  "updated": "2026-09-18 13:47:17"
 }

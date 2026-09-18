@@ -136,5 +136,6 @@
   ],
   "music_theme": "a spring-night vigil at a woodland pool — a tiny music box and celesta over a low warm drone, one deep soft kick landing on every downbeat as the clutch halves scale by scale, the tines thinning to single struck notes through the cell and cord bars, a wide struck bloom where the two-ended fog opens as the pinched nebula, and a warmer settling figure as the star's floor gives way to the moonlit wood",
   "music_key": "D minor",
-  "render_start": "star_floor"
+  "render_start": "nucleosome_string",
+  "play_start": "star_floor"
 }

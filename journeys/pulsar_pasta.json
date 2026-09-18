@@ -1,0 +1,78 @@
+{
+  "name": "pulsar_pasta",
+  "theme": "a dive that never leaves one neutron star: the twenty-kilometre iron sphere seen from orbit, its crust cracked into plates with fissures burning between them and a beam flaring off each pole, down among the plates to a torn rift, into the crust's own grain of metal domains, into the ordered beads of matter at the crust's floor, and down into the star's deepest weave — spheres run into rods, rods merged into stacked sheets, sheets joined floor to floor by spiral ramps — which reads as the plated sphere and its spiralling beams all over again",
+  "style": "cosmic_gloss",
+  "music_lane": "tide_organ",
+  "music_theme": "an iron star that breathes in beams and turns thirty times a second — a deep organ pulse on every downbeat, mineral and airless, thinning to one cold sustain through the crust's grain and the ordered beads, a wide struck bloom where the stacked sheets open out into the whole star, settling back to the pulse as the plates return",
+  "music_key": "B minor",
+  "render_start": "coulomb_crystal",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "star_orbit",
+      "exp": 4.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sapphire beam glare, char-iron plates, ember-orange fissures, rust-violet haze",
+      "scene": "the whole neutron star hung in vacuum, a twenty-kilometre sphere of char-iron crust broken into hundreds of jammed plates, ember-orange fissures burning between every plate edge, two wan hot spots smouldering at the poles, a sapphire beam flaring from each pole and crossing the emptiness, rust-violet haze banked about the sphere, ink-deep vacuum past it with no ground and no horizon",
+      "target": "an ember-orange fissure",
+      "target_phrase": "a glowing orange crack"
+    },
+    {
+      "name": "crust_rift",
+      "exp": 2.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ember-orange rift glow, char-iron plate faces, thin sapphire wash",
+      "scene": "the crust plain seen from just over the plate tops, slabs of char-iron jammed together at crooked angles across the whole field, a rift torn open through the middle of them with ember-orange glow welling out of its depth, ridges of upthrust metal reared where two slabs press, glassy scree spilled down the rift flanks, a thin sapphire wash from the pole beams laid over the plate faces, rust-violet haze thickening toward the farthest plates",
+      "target": "a fractured iron slab",
+      "target_phrase": "a broken metal slab"
+    },
+    {
+      "name": "crust_grain",
+      "exp": -1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pewter-blue domains, rust-violet seams, ember glints",
+      "scene": "the crust's own grain, pewter-blue metal domains packed shoulder to shoulder into a seamless mosaic, each domain terraced in flat steps, rust-violet seams marking every boundary where two domains meet at a crooked angle, ember points glinting in the deepest steps, a sapphire sheen laid over the terraces, ranks of domains repeating on every hand into violet gloom with no ground and no horizon",
+      "target": "a glowing sapphire bead",
+      "target_phrase": "a glowing bead"
+    },
+    {
+      "name": "coulomb_crystal",
+      "exp": -12.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sapphire glow points, restless silver haze, violet depth-fog",
+      "scene": "an ordered swarm of glowing beads at the floor of the crust, every bead a hard point of sapphire glow, all of them locked into a perfect cubic lattice whose ranks run away past the frame, a restless silver haze flooding the spaces between the ranks, violet depth-fog thinning the farthest ranks, faint tremors passing through the ordered points, no ground, no horizon",
+      "target": "a swollen glowing sphere",
+      "target_phrase": "a glowing sphere",
+      "loop_target": "ranks of glowing sapphire beads locked into a cubic lattice through a restless silver haze",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "cubic"
+      }
+    },
+    {
+      "name": "nuclear_pasta",
+      "exp": -13.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "ember-gold sheets, sapphire cut rims, ink-violet voids",
+      "scene": "the deepest weave of the star, files of glowing spheres joined end to end into unbroken ember-gold rods, the rods merged flank to flank into flat sheets stacked floor over floor, every floor joined to the next by a spiral ramp of the same glowing matter, sapphire rims picking out each sheet's cut edge, ink-violet voids filling the storeys between the sheets, the stack repeating away past the frame with no ground and no horizon",
+      "cameo": {
+        "sprite": "output/mascots/canon/clark.png",
+        "pos": [
+          0.63,
+          0.42
+        ],
+        "size": 0.14
+      }
+    }
+  ]
+}

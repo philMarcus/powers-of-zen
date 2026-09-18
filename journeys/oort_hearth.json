@@ -1,0 +1,73 @@
+{
+  "name": "oort_hearth",
+  "theme": "the sun's attic — a realm-local slice of the stellar band that never touches a planet or a galaxy: one comet's jade dicarbon coma, down onto the char crust of its core, into a fracture face of the ice, and into the water cages the ice is actually built from, every cage holding one trapped gas bead; the cage froth then folds straight back out as the outermost comet swarm itself, every far ice body sitting in its own cell of vacuum — the coldest equal-cell foam there is, with the sun no more than the keenest star in it",
+  "style": "neon_drift",
+  "music_lane": "choir_of_dust",
+  "music_theme": "hushed and suspended — a soft choir-like pad over a low sub drone, glass-harmonica tones ticking on the ice scales, granular shimmer thickening as the cages tile in, the fold out to the swarm opening into near-emptiness before the coma returns",
+  "music_key": "B minor",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "frames_per_beat": 8,
+    "counter": true
+  },
+  "render_start": "coma",
+  "registers": [
+    {
+      "name": "coma",
+      "exp": 8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade green and cyan on violet-ink vacuum",
+      "scene": "a comet's jade-green coma spread wide across the void, a slow luminous cloud of green vapour, cyan ion threads combed away from it in long straight lines, ice grains adrift at every distance catching the green light, cold stars scattered far off through the violet-ink vacuum, a sooty char-crusted body seated in the middle of the green",
+      "target": "a sooty char-crusted ice body",
+      "target_phrase": "a sooty ice body",
+      "loop_target": "a comet's jade-green coma spread wide across the void, a luminous cloud of green vapour with cyan ion threads combed away from it"
+    },
+    {
+      "name": "char_crust",
+      "exp": 3.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "char grey and violet shade under jade vapour",
+      "scene": "the crust country of a comet core, char-grey ridges and rubble plains rolling away in every direction, hollows scooped through the sooty surface, jade vapour streaming from long cracks across the terrain, violet shade pooled in the pits, one raw scarp of cyan-white ice cut open among the soot",
+      "target": "a raw cyan-white ice scarp",
+      "target_phrase": "a cyan-white ice scarp",
+      "cameo": {
+        "sprite": "output/mascots/canon/lorraine.png",
+        "pos": [
+          0.63,
+          0.58
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "ice_fracture",
+      "exp": -2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cyan-white ice and soot grey",
+      "scene": "a fracture face inside comet ice, rounded frost grains crowded together on every side, soot specks lodged in the seams among them, milky cleavage planes crossing the field, cyan light carried far through the ice, a jade tint sitting in the hollows",
+      "target": "a clouded cyan ice grain",
+      "target_phrase": "a clouded ice grain"
+    },
+    {
+      "name": "water_cages",
+      "exp": -8.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "cyan-white struts and jade beads on violet-ink",
+      "scene": "a froth of water cages inside the ice, equal-sized polyhedra of cyan-white struts tiled seam to seam in every direction, two cage shapes repeating through the tiling, a jade gas bead seated at the middle of every cell, violet-ink shade in the gaps, cold cyan light travelling along the struts"
+    },
+    {
+      "name": "outer_swarm",
+      "exp": 14,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-ink void, char grey and one white star point",
+      "scene": "the outermost comet swarm of a sun, char-grey ice bodies scattered through the violet-ink void in every direction, one to a hollow of empty vacuum, faint frost catching on every one of them, a wisp of green haze about a few, one white star keener than all the others far off among them",
+      "target": "a jade-green comet coma"
+    }
+  ]
+}

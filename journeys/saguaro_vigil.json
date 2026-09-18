@@ -1,133 +1,133 @@
 {
- "name": "saguaro_vigil",
- "theme": "a moonlit saguaro bajada kept as a night vigil, its ranked cactus columns restated at every scale — a curtain of galaxies, a spiral, a star's combed jet ranks under coronal arcades, a desert world, the gravel slope from the air, the commons where owls and nectar bats and javelina share one frame, one column's accordion pleats, the water-storing cells, the hourglass water gates studding a membrane, and a grain of atoms that reads as the galaxy curtain it began in",
- "style": "ultraviolet",
- "music_lane": "choir_of_dust",
- "format": {
-  "beats_per_bar": 4,
-  "frames_per_beat": 9,
-  "exact_loop": true,
-  "counter": true
- },
- "registers": [
-  {
-   "name": "great_wall",
-   "exp": 24,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "milk-white galaxies and indigo gas on void",
-   "scene": "the cosmic web at its widest scale, one immense curtain of galaxies hung nearly face-on, thousands of milk-white and amber galaxies crowded through the sheet in a mottled grain, slender filaments strung off its underside, the void sunk behind the whole sheet holding nothing at all, indigo gas glowing faintly where the sheet thickens, further sheets ranked back through the dark",
-   "target": "a bright spiral galaxy",
-   "target_phrase": "a spiral galaxy"
+  "name": "saguaro_vigil",
+  "theme": "a moonlit saguaro bajada kept as a night vigil, its ranked cactus columns restated at every scale — a curtain of galaxies, a spiral, a star's combed jet ranks under coronal arcades, a desert world, the gravel slope from the air, the commons where owls and nectar bats and javelina share one frame, one column's accordion pleats, the water-storing cells, the hourglass water gates studding a membrane, and a grain of atoms that reads as the galaxy curtain it began in",
+  "style": "ultraviolet",
+  "music_lane": "choir_of_dust",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 9,
+    "exact_loop": true,
+    "counter": true
   },
-  {
-   "name": "spiral_galaxy",
-   "exp": 21,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "amber star clouds and indigo dust on void",
-   "scene": "a spiral galaxy tilted across the void, amber star clouds wound out from a dense burning core, indigo dust lanes cut through the inner curve of every arm, knots of teal-glowing gas strewn amid the star clouds, small companion galaxies scattered through the dark past it, thousands of cold stars freckling the whole field",
-   "target": "a burning white star",
-   "target_phrase": "a bright white star",
-   "loop_target": "a tilted spiral galaxy, amber star clouds wound out from a burning core with indigo dust lanes cut through its arms"
-  },
-  {
-   "name": "star_spicules",
-   "exp": 9.5,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "amber roots and cream tips on soot shadow",
-   "scene": "the burning outer shell of a star crowded with plasma jets, ranks of slender jets raised from the surface in their thousands and combed over in one direction, amber at their roots and cream at their tips, shadow lanes sunk amid the ranks, arcades of looping magnetic fire bridging a pair of dark spots overhead, a floor of glowing granulation tiles under the whole field, the void past the curve of the shell",
-   "target": "a rust-orange desert world",
-   "target_phrase": "a rust-orange planet",
-   "resolve": {
-    "mode": "surface"
-   },
-   "cameo": {
-    "sprite": "output/mascots/canon/lamar.png",
-    "pos": [
-     0.63,
-     0.42
-    ],
-    "size": 0.14
-   }
-  },
-  {
-   "name": "desert_world",
-   "exp": 7,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "burnt ochre dayside and deep indigo night face",
-   "scene": "a rust-orange world turned mostly to night, seen from orbit, its dayside rim burnt ochre and its night face deep indigo, silver moonlight printing mountain ranges across the dark with broad gravel slopes spread at their feet, dry channel systems branching over the plains, a dust cyclone wound over the far quarter, a hairline of teal air glowing at the curve of the world, cold stars freckling the void past it",
-   "target": "a moonlit gravel slope",
-   "target_phrase": "a moonlit slope"
-  },
-  {
-   "name": "bajada_air",
-   "exp": 3.5,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "moon-indigo slope, olive-teal columns, bright grit",
-   "scene": "a gravel slope spread from the foot of a desert range under a full moon, seen from high overhead and tipped toward the far ridgeline, thousands of cactus columns freckling the slope in a loose grain, olive-teal where the moonlight strikes them and indigo in their shadows, braided dry washes cut down the slope in bright ribbons of grit, creosote scrub mottling the ground amid the columns, the range crest cutting a hard indigo line across the head of the slope",
-   "target": "a bright gravel wash",
-   "target_phrase": "a bright gravel wash"
-  },
-  {
-   "name": "bajada_commons",
-   "exp": 1,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "olive-teal ribs, cream bloom, amber eyeshine on shadow",
-   "scene": "the bajada commons at eye level under a full moon, ribbed cactus columns raised in every direction with waxy cream night-blooms open at their tips, a nectar bat hovering at one bloom, two elf owls set in dark trunk holes with amber eyeshine, a band of javelina rooting in the grit under the columns, a gila monster crossing the open ground in orange and jet beadwork, creosote scrub mottling the gravel, moon-indigo sky past the columns",
-   "target": "a tall ribbed cactus column",
-   "target_phrase": "a tall cactus column"
-  },
-  {
-   "name": "pleat_ribs",
-   "exp": -1,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "waxy olive-teal skin, amber spines, indigo creases",
-   "scene": "the pleated flank of one cactus column under moonlight, deep accordion creases running its full height, the outward folds catching cream moonlight and the inward folds sunk to indigo, a cluster of amber spines fanned from every crease crest in a repeating grid, waxy olive-teal skin drawn taut over the swells, hairline cracks mapping the older skin lower down, jet shadow pooled under each spine cluster",
-   "target": "a swollen water cell",
-   "target_phrase": "a swollen cell"
-  },
-  {
-   "name": "storage_tissue",
-   "exp": -4.5,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "jade-teal sacs, cream walls, amber seep on shade",
-   "scene": "the water-storing tissue within the column, plump cells packed shoulder to shoulder and receding in ranks through the shade, each a taut sac of jade-teal water in a cream wall creased into accordion pleats where it presses its neighbours, a violet nucleus pressed to the rim of every sac, mucilage strands webbing the narrow gaps amid the sacs, amber light seeping through the outer ranks",
-   "target": "a glossy cell membrane",
-   "target_phrase": "a glossy cell wall"
-  },
-  {
-   "name": "membrane_gates",
-   "exp": -8,
-   "kind": "zoom",
-   "dur": 4,
-   "palette": "cream-gold barrels and teal water beads on indigo",
-   "scene": "a cell's membrane at molecular width, a two-layer floor of packed lipid heads reaching off in every direction, hourglass-shaped protein gates studding it in their thousands, four barrels clustered in each gate, a single-file bead-chain of water threading the neck of every barrel, cream-gold rims on the barrels and teal glow in the beads, tangled ribbon chains lying under the floor, further ranks of gates receding into indigo dark",
-   "target": "a burning atom",
-   "target_phrase": "a glowing atom",
-   "resolve": {
-    "mode": "surface"
-   }
-  },
-  {
-   "name": "atom_grain",
-   "exp": -10.5,
-   "kind": "seam",
-   "dur": 4,
-   "palette": "amber cores in violet fog on void",
-   "scene": "atoms scattered through the dark at the floor of the cactus's matter, each an amber core sheathed in violet fog, the fogs of neighbours merged into a mottled sheet where they crowd, the whole crowd reading as one broad grain of points with emptiness sunk behind it, faint ripples printed across the grain, no ground and no sky in it",
-   "resolve": {
-    "mode": "sea"
-   }
-  }
- ],
- "music_theme": "a night vigil on a desert slope — a hushed choir pad over a deep slow sub, granular shimmer through the star and cosmic scales, the pulse settling heavy and warm as the bajada commons arrives at eye level, drawing down to a single suspended tone through the pleats and the water cells, one deep hit where the grain of atoms opens out into the curtain of galaxies",
- "music_key": "D minor",
- "render_start": "spiral_galaxy"
+  "registers": [
+    {
+      "name": "great_wall",
+      "exp": 24,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "milk-white galaxies and indigo gas on void",
+      "scene": "the cosmic web at its widest scale, one immense curtain of galaxies hung nearly face-on, thousands of milk-white and amber galaxies crowded through the sheet in a mottled grain, slender filaments strung off its underside, the void sunk behind the whole sheet holding nothing at all, indigo gas glowing faintly where the sheet thickens, further sheets ranked back through the dark",
+      "target": "a bright spiral galaxy",
+      "target_phrase": "a spiral galaxy"
+    },
+    {
+      "name": "spiral_galaxy",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber star clouds and indigo dust on void",
+      "scene": "a spiral galaxy tilted across the void, amber star clouds wound out from a dense burning core, indigo dust lanes cut through the inner curve of every arm, knots of teal-glowing gas strewn amid the star clouds, small companion galaxies scattered through the dark past it, thousands of cold stars freckling the whole field",
+      "target": "a burning white star",
+      "target_phrase": "a bright white star",
+      "loop_target": "a tilted spiral galaxy, amber star clouds wound out from a burning core with indigo dust lanes cut through its arms"
+    },
+    {
+      "name": "star_spicules",
+      "exp": 9.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber roots and cream tips on soot shadow",
+      "scene": "the burning outer shell of a star crowded with plasma jets, ranks of slender jets raised from the surface in their thousands and combed over in one direction, amber at their roots and cream at their tips, shadow lanes sunk amid the ranks, arcades of looping magnetic fire bridging a pair of dark spots overhead, a floor of glowing granulation tiles under the whole field, the void past the curve of the shell",
+      "target": "a rust-orange desert world",
+      "target_phrase": "a rust-orange planet",
+      "resolve": {
+        "mode": "surface"
+      },
+      "cameo": {
+        "sprite": "output/mascots/canon/lamar.png",
+        "pos": [
+          0.63,
+          0.42
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "desert_world",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "burnt ochre dayside and deep indigo night face",
+      "scene": "a rust-orange world turned mostly to night, seen from orbit, its dayside rim burnt ochre and its night face deep indigo, silver moonlight printing mountain ranges across the dark with broad gravel slopes spread at their feet, dry channel systems branching over the plains, a dust cyclone wound over the far quarter, a hairline of teal air glowing at the curve of the world, cold stars freckling the void past it",
+      "target": "a moonlit gravel slope",
+      "target_phrase": "a moonlit slope"
+    },
+    {
+      "name": "bajada_air",
+      "exp": 3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moon-indigo slope, olive-teal columns, bright grit",
+      "scene": "a gravel slope spread from the foot of a desert range under a full moon, seen from high overhead and tipped toward the far ridgeline, thousands of cactus columns freckling the slope in a loose grain, olive-teal where the moonlight strikes them and indigo in their shadows, braided dry washes cut down the slope in bright ribbons of grit, creosote scrub mottling the ground amid the columns, the range crest cutting a hard indigo line across the head of the slope",
+      "target": "a bright gravel wash",
+      "target_phrase": "a bright gravel wash"
+    },
+    {
+      "name": "bajada_commons",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "olive-teal ribs, cream bloom, amber eyeshine on shadow",
+      "scene": "the bajada commons at eye level under a full moon, ribbed cactus columns raised in every direction with waxy cream night-blooms open at their tips, a nectar bat hovering at one bloom, two elf owls set in dark trunk holes with amber eyeshine, a band of javelina rooting in the grit under the columns, a gila monster crossing the open ground in orange and jet beadwork, creosote scrub mottling the gravel, moon-indigo sky past the columns",
+      "target": "a tall ribbed cactus column",
+      "target_phrase": "a tall cactus column"
+    },
+    {
+      "name": "pleat_ribs",
+      "exp": -1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "waxy olive-teal skin, amber spines, indigo creases",
+      "scene": "the pleated flank of one cactus column under moonlight, deep accordion creases running its full height, the outward folds catching cream moonlight and the inward folds sunk to indigo, a cluster of amber spines fanned from every crease crest in a repeating grid, waxy olive-teal skin drawn taut over the swells, hairline cracks mapping the older skin lower down, jet shadow pooled under each spine cluster",
+      "target": "a swollen water cell",
+      "target_phrase": "a swollen cell"
+    },
+    {
+      "name": "storage_tissue",
+      "exp": -4.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade-teal sacs, cream walls, amber seep on shade",
+      "scene": "the water-storing tissue within the column, plump cells packed shoulder to shoulder and receding in ranks through the shade, each a taut sac of jade-teal water in a cream wall creased into accordion pleats where it presses its neighbours, a violet nucleus pressed to the rim of every sac, mucilage strands webbing the narrow gaps amid the sacs, amber light seeping through the outer ranks",
+      "target": "a glossy cell membrane",
+      "target_phrase": "a glossy cell wall"
+    },
+    {
+      "name": "membrane_gates",
+      "exp": -8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cream-gold barrels and teal water beads on indigo",
+      "scene": "a cell's membrane at molecular width, a two-layer floor of packed lipid heads reaching off in every direction, hourglass-shaped protein gates studding it in their thousands, four barrels clustered in each gate, a single-file bead-chain of water threading the neck of every barrel, cream-gold rims on the barrels and teal glow in the beads, tangled ribbon chains lying under the floor, further ranks of gates receding into indigo dark",
+      "target": "a burning atom",
+      "target_phrase": "a glowing atom",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "atom_grain",
+      "exp": -10.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "amber cores in violet fog on void",
+      "scene": "atoms scattered through the dark at the floor of the cactus's matter, each an amber core sheathed in violet fog, the fogs of neighbours merged into a mottled sheet where they crowd, the whole crowd reading as one broad grain of points with emptiness sunk behind it, faint ripples printed across the grain, no ground and no sky in it",
+      "resolve": {
+        "mode": "sea"
+      }
+    }
+  ],
+  "music_theme": "a night vigil on a desert slope — a hushed choir pad over a deep slow sub, granular shimmer through the star and cosmic scales, the pulse settling heavy and warm as the bajada commons arrives at eye level, drawing down to a single suspended tone through the pleats and the water cells, one deep hit where the grain of atoms opens out into the curtain of galaxies",
+  "music_key": "D minor",
+  "render_start": "spiral_galaxy"
 }

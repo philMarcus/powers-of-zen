@@ -1,0 +1,81 @@
+FRESH regeneration attempt 1 (re-rolled seeds + lanes)
+waterbear_prairie (divein): bar 2.000s -> 120 bpm, key E minor; lane music_box; generating 8, keeping 5
+♪ generating 13.0s | 120bpm E minor | seed 40027 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 15s -> waterbear_prairie_00012_.flac (0.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/waterbear_prairie_music_box.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/waterbear_prairie/music_box.mp4
+    bar 2.000s | music bar 2.005s (conf 0.02) -> stretch 1.0000 | phase 0.760s | lock 14.89x | kick -0.01 | beat 1/4 of the bar | seamless loop @ 10.00s (music tiled x3, xf 0.50s)
+  [music_box] lock 14.89x conf 0.02 kick -0.01 score 0.25 -> review/music/candidates/waterbear_prairie/music_box.mp4
+♪ generating 13.0s | 120bpm E minor | seed 40064 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 11s -> waterbear_prairie_00013_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/waterbear_prairie_music_box-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/waterbear_prairie/music_box-b.mp4
+    bar 2.000s | music bar 2.005s (conf 0.58) -> stretch 1.0027 | phase 0.550s | lock 15.83x | kick 0.11 | beat 2/4 of the bar | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [music_box-b] lock 15.83x conf 0.58 kick 0.11 score 0.93 -> review/music/candidates/waterbear_prairie/music_box-b.mp4
+♪ generating 13.0s | 120bpm E minor | seed 40101 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 10s -> waterbear_prairie_00014_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/waterbear_prairie_music_box-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/waterbear_prairie/music_box-third_answer.mp4
+    bar 2.000s | music bar 1.995s (conf 0.43) -> stretch 0.9973 | phase 0.060s | lock 42.61x | kick 0.55 | beat 1/4 of the bar | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [music_box-third_answer] lock 42.61x conf 0.43 kick 0.55 score 4.35 -> review/music/candidates/waterbear_prairie/music_box-third_answer.mp4
+♪ generating 13.0s | 120bpm E minor | seed 40138 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> waterbear_prairie_00015_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/waterbear_prairie_glass_chapel-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/waterbear_prairie/glass_chapel-wild.mp4
+    bar 2.000s | music bar 1.995s (conf 0.12) -> stretch 0.9973 | phase 0.050s | lock 15.69x | kick 0.01 | beat 1/4 of the bar | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [glass_chapel-wild] lock 15.69x conf 0.12 kick 0.01 score 0.32 -> review/music/candidates/waterbear_prairie/glass_chapel-wild.mp4
+♪ generating 13.0s | 120bpm E minor | seed 40175 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 10s -> waterbear_prairie_00016_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/waterbear_prairie_wooden_orbit-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/waterbear_prairie/wooden_orbit-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.37) -> stretch 1.0027 | phase 1.990s | lock 11.54x | kick 0.17 | beat 1/4 of the bar | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] lock 11.54x conf 0.37 kick 0.17 score 0.80 -> review/music/candidates/waterbear_prairie/wooden_orbit-wild.mp4
+♪ generating 13.0s | 120bpm E minor | seed 40212 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 10s -> waterbear_prairie_00017_.flac (0.7 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/waterbear_prairie_music_box-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/waterbear_prairie/music_box-halftime.mp4
+    bar 2.000s | music bar 2.005s (conf 0.47) -> stretch 1.0027 | phase 0.490s | lock 6.73x | kick -0.02 | beat 3/4 of the bar | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [music_box-halftime] lock 6.73x conf 0.47 kick -0.02 score 0.32 -> review/music/candidates/waterbear_prairie/music_box-halftime.mp4
+♪ generating 13.0s | 120bpm E minor | seed 40249 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 10s -> waterbear_prairie_00018_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/waterbear_prairie_choir_of_dust-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/waterbear_prairie/choir_of_dust-wild.mp4
+    bar 2.000s | music bar 1.995s (conf 0.48) -> stretch 0.9973 | phase 0.090s | lock 14.03x | kick 0.31 | beat 1/4 of the bar | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [choir_of_dust-wild] lock 14.03x conf 0.48 kick 0.31 score 1.55 -> review/music/candidates/waterbear_prairie/choir_of_dust-wild.mp4
+♪ generating 13.0s | 120bpm E minor | seed 40286 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 10s -> waterbear_prairie_00019_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/waterbear_prairie_music_box-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/waterbear_prairie/music_box-heartbeat.mp4
+    bar 2.000s | music bar 1.995s (conf 0.52) -> stretch 0.9973 | phase 0.540s | lock 25.01x | kick 0.56 | beat 1/4 of the bar | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [music_box-heartbeat] lock 25.01x conf 0.52 kick 0.56 score 3.74 -> review/music/candidates/waterbear_prairie/music_box-heartbeat.mp4
+♪ generating 13.0s | 120bpm E minor | seed 40387 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> waterbear_prairie_00020_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/waterbear_prairie_pulse1-music_box.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/waterbear_prairie/pulse1-music_box.mp4
+    bar 2.000s | music bar 2.005s (conf 0.44) -> stretch 1.0027 | phase 0.310s | lock 6.85x | kick 0.16 | beat 2/4 of the bar | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [pulse1-music_box] kick 0.16 (top-up 1)
+♪ generating 13.0s | 120bpm E minor | seed 40488 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 8s -> waterbear_prairie_00021_.flac (0.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/waterbear_prairie_pulse2-music_box.flac
+  [pulse2-music_box] SKIPPED — track unusable: 0.77s of audio after silence strip
+♪ generating 13.0s | 120bpm E minor | seed 40589 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 8s -> waterbear_prairie_00022_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/waterbear_prairie_pulse3-music_box.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/waterbear_prairie/pulse3-music_box.mp4
+    bar 2.000s | music bar 1.995s (conf 0.30) -> stretch 0.9973 | phase 0.540s | lock 4.51x | kick 0.15 | beat 1/4 of the bar | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [pulse3-music_box] kick 0.15 (top-up 3)
+kept: music_box-third_answer, music_box-heartbeat, choir_of_dust-wild, wooden_orbit-wild, glass_chapel-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+DONE_BOTH

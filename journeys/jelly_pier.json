@@ -1,0 +1,135 @@
+{
+  "name": "jelly_pier",
+  "theme": "the jellyfish that taught science to glow — crystal jellies pulsing under one dock lamp in a Puget Sound harbour at night, the piling commons crowded with anemones, shiner perch, a Dungeness crab and a harbour seal; the dive goes onto one glass-clear bell, to the chain of sparks at its rim, into the fat granular cells of the light ring, through the fluid where thousands of ribbon-staved barrels drift with a three-ringed plate burning at every centre, down to that plate itself — which morphs to the pulsar-wind cage, a torn hollow of filament ribs wrapped about one point that lights them from within: a lantern in a cage of ribs at two scales. The fall home runs the pulsar's scorched world under its beam sweep, the sound's islands and inlets from the air by moonlight, and the pier. NOTE the molecular card `lantern_barrels` is the reference-steering candidate — the beta-barrel renders wrong by name, so the picture is written out in full and a reference image would carry the structure.",
+  "style": "ultraviolet",
+  "music_lane": "music_box",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "pier_commons",
+      "exp": 1.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sea-glass bell glow, tar-soaked timber, rust-orange barnacle bands, cold blue-white lamp cone",
+      "scene": "a working dock's piling commons at night, seen from the water among the timbers, tar-soaked pilings dropping away into the murk in a crowded colonnade, their upper reaches banded rust-orange with barnacle crust and shaggy with plumose anemones in ivory and tangerine plumes, dozens of clear glassy jellies hanging and pulsing in the cold blue-white cone that falls from the deck lamp overhead, every bell ringed at its margin with a fine chain of sparks, a shoal of shiner perch turning as one sheet through the brightest water, a Dungeness crab set out on the silt below with its claws raised, a harbour seal cruising the far edge of the glow, sunless water beyond the cone, herring scales and torn weed adrift in the beam",
+      "target": "a clear glassy jellyfish",
+      "target_phrase": "a clear jellyfish",
+      "loop_target": "a dock's piling commons at night, tar timbers crowded with anemones, clear jellies pulsing in the lamp's blue-white cone"
+    },
+    {
+      "name": "jelly_bell",
+      "exp": -0.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "glass-clear dome, sea-glass rim sparks, blue-white glare, tar murk",
+      "scene": "the glass-clear dome of a jellyfish hung in the cold blue-white glare falling from overhead, a spoke-work of fine canals running from its crown out to the margin, a curtain of hair-thin tentacles hung from the rim and trailing off into the murk, a narrow shelf of tissue drawn in under the bell mouth, small sparks seated at even spacing about the rim where the tentacles root, more bells adrift in the water beyond, tar-stained timber and rust crust far off at the edges of the murk",
+      "target": "a glowing granular bead",
+      "target_phrase": "a glowing bead"
+    },
+    {
+      "name": "rim_ring",
+      "exp": -2.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "clear jelly vault, acid-bright bead glow, ivory tentacle stems, sea murk",
+      "scene": "the rim shelf of a jellyfish bell at close quarters, glowing beads seated in a row where the tentacle stems meet the margin, each bead a knot of fat granular cells crammed with tiny sacs, the clear jelly of the bell arching over them as a smooth vault, ivory tentacle stems dropping away in tiers below, a fine groove running the shelf's length between the beads, stray motes adrift in the water, cold glare reaching down from far overhead",
+      "target": "a fat granular cell",
+      "target_phrase": "a granular cell"
+    },
+    {
+      "name": "photocyte_ring",
+      "exp": -4.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "swollen luminous cell bodies, amber granules, acid-bright sacs, ink fluid",
+      "scene": "a row of swollen glowing cells crowded shoulder to shoulder within the bell's rim, every one of them a fat grainy body crammed with luminous sacs, hundreds of the sacs packed in each cell and shining through its skin, thin fluid lanes threading between the cells, a mesh of finer support cells knitted beneath the row, the far cells receding into ink murk, one end of the row burning brighter than the rest",
+      "target": "a small glowing sac",
+      "target_phrase": "a glowing sac",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "cell_fluid",
+      "exp": -6.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "taut luminous sacs, verdigris shimmer, ivory membrane sheets, ink fluid",
+      "scene": "the crowded interior of one glowing cell, taut luminous sacs packed against one another with thin fluid lanes threading between them, granular crumbs strewn everywhere through the fluid, a folded stack of membrane sheets pressed to one flank, a smooth-domed body sunk in the murk at the rear, a faint acid shimmer carried in the fluid itself with countless specks adrift in it, further sacs receding into gloom",
+      "target": "a glowing ribbed cylinder",
+      "target_phrase": "a ribbed cylinder",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "lantern_barrels",
+      "exp": -8.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "acid-bright cores, ivory ribbon staves, verdigris haze, ink fluid",
+      "scene": "thousands of squat ribbon-staved barrels adrift in the cell's fluid, each one built of eleven flat ribbon staves set upright shoulder to shoulder and closed into a ring, a thread of chain coiling up the axis of every barrel, a small three-ringed plate sealed at the very centre and burning acid-bright out between the staves, the nearest barrels passing huge and soft-edged, smaller ones receding in files into a luminous murk, loose chains and water clusters adrift between them",
+      "target": "a bright three-ringed plate",
+      "target_phrase": "a bright point",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "stave_lantern",
+      "exp": -9.6,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "acid-bright glare, ivory ribbon ribs, sunless void",
+      "scene": "a small three-ringed plate of atoms hung at the centre of a ring-cage of flat ribbon staves, the staves rising about it in a closed tier and lit from within by its acid-bright glare, their faces stepped in fine rungs where the strands lie together, a coiled thread of chain climbing the ring's axis past the plate, the glare striking out between the ribs in flat spokes, the void beyond the cage empty and unlit",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "layered"
+      }
+    },
+    {
+      "name": "pulsar_cage",
+      "exp": 16.8,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "sapphire beam glare, ivory filament ribs, ember-orange gas, void",
+      "scene": "a torn hollow of glowing ribbon filaments strung about one blue-white point, the ribbons curving up in tiers to enclose it and lit from within by its glare, shadow lanes running between them where the emptiness shows through, a flat disc of fire wrapped tight about the point at the hollow's centre, two thin jets lancing out from its poles, torn shreds of the filament curtain streaming off into the void, wisps of ember-orange gas caught between the ribs"
+    },
+    {
+      "name": "beam_swept_world",
+      "exp": 6.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "iron-plate crust, ember-orange fissures, sapphire beam bar, rust-violet haze",
+      "scene": "a scorched world seen from orbit under the sweep of a beam, its crust broken into iron plates with ember-orange fissures burning between them, a hard-edged bar of sapphire glare laid across the day face and the rest of the sphere sunk in unlit murk, ash plains pitted with craters, a thin rust-violet haze lying at the limb, the horizon curving off into the void, faint filament ribbons hanging far out beyond it",
+      "target": "a branching ember fissure",
+      "target_phrase": "a bright fissure",
+      "cameo": {
+        "sprite": "output/mascots/canon/janet.png",
+        "pos": [
+          0.63,
+          0.37
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "sound_by_moonlight",
+      "exp": 3.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink islands, silver-sheen channels, amber shore beads, cold blue-white pier lamp",
+      "scene": "a night sound seen from the air at a slant, forested islands lying as ink shapes on a silver sheet of water, channels and inlets winding between them and taking the moon in a beaten metallic sheen, harbour towns strung with amber beads at the water's edge, log booms and a ferry's wake drawn as fine scratches on the sheen, ridges receding into a marine haze, one wooden pier reaching out from a town's shore with a cold blue-white lamp burning at its end",
+      "target": "a lit wooden pier",
+      "target_phrase": "a wooden pier"
+    }
+  ],
+  "music_theme": "a tiny music box and celesta over a low harbour drone, a deep soft kick on every downbeat, one struck tine per morph, the box tightening to a single tender figure as the ribbon barrels close in, one bell strike on the morph from the staved lantern to the filament cage, opening wide and slow for the fall home over the moonlit sound onto the pier",
+  "music_key": "D minor",
+  "render_start": "pier_commons"
+}

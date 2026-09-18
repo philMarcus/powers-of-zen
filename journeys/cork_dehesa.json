@@ -141,5 +141,6 @@
   ],
   "music_theme": "a stately walk under evening oaks — warm marimba and kalimba figures over a round woody bass, a deep kick on every downbeat with a quieter thump answering on beat three, the plucking thinning to single struck notes through the plank, honeycomb and suberin bars, a wide struck bloom where the shelled nucleus opens out as a froth of nested shells, and a settling return figure through the galaxy and the dusk world back to the pasture",
   "music_key": "D minor",
-  "render_start": "disk_galaxy"
+  "render_start": "carbon_atom",
+  "play_start": "disk_galaxy"
 }

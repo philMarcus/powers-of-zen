@@ -36,6 +36,7 @@ from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFo
 import camera as _camera
 import figure
 import grammar
+import plate as _plate
 import style as _style
 import track
 import warp as _warp
@@ -231,7 +232,8 @@ def pick_depth_preproc():
 def build_workflow(cfg, prompt, seed, init_image=None, denoise=None,
                    prev_prompt=None, blend=1.0, mask_image=None,
                    ctrl_image=None, cn_strength=0.0, depth_preproc=None,
-                   ipa_image=None, ipa_weight=0.0, neg_extra=None):
+                   ipa_image=None, ipa_weight=0.0, neg_extra=None,
+                   diff_diffusion=False, region=None, ipa_mask=None):
     """ComfyUI API-format workflow. txt2img when init_image is None, else img2img.
     When prev_prompt is given, positive conditioning is a weighted average of the old
     and new prompts (blend = weight of the NEW prompt). When ctrl_image + cn_strength are
@@ -281,6 +283,25 @@ def build_workflow(cfg, prompt, seed, init_image=None, denoise=None,
         wf["latent"] = {"class_type": "EmptyLatentImage",
                         "inputs": {"width": cfg["width"], "height": cfg["height"],
                                    "batch_size": 1}}
+    if region:
+        # PLANET PLATE regional prompts (engine/plate.py): `region["prompt"]` conditions the
+        # disc (region["mask"] = 1 inside), the schedule's own prompt the rest of the frame.
+        wf["rg_pos"] = {"class_type": "CLIPTextEncode",
+                        "inputs": {"text": region["prompt"], "clip": ["ckpt", 1]}}
+        wf["rg_img"] = {"class_type": "LoadImage", "inputs": {"image": region["mask"]}}
+        wf["rg_mask"] = {"class_type": "ImageToMask",
+                         "inputs": {"image": ["rg_img", 0], "channel": "red"}}
+        wf["rg_inv"] = {"class_type": "InvertMask", "inputs": {"mask": ["rg_mask", 0]}}
+        wf["rg_in"] = {"class_type": "ConditioningSetMask",
+                       "inputs": {"conditioning": ["rg_pos", 0], "mask": ["rg_mask", 0],
+                                  "strength": 1.0, "set_cond_area": "default"}}
+        wf["rg_out"] = {"class_type": "ConditioningSetMask",
+                        "inputs": {"conditioning": positive, "mask": ["rg_inv", 0],
+                                   "strength": 1.0, "set_cond_area": "default"}}
+        wf["rg_comb"] = {"class_type": "ConditioningCombine",
+                         "inputs": {"conditioning_1": ["rg_in", 0],
+                                    "conditioning_2": ["rg_out", 0]}}
+        positive = ["rg_comb", 0]
     negative = ["neg", 0]
     if ctrl_image and cn_strength > 0:
         wf["cnet"] = {"class_type": "ControlNetLoader", "inputs": {"control_net_name": CN_DEPTH}}
@@ -307,7 +328,20 @@ def build_workflow(cfg, prompt, seed, init_image=None, denoise=None,
                                 "image": ["ipa_img", 0], "weight": round(float(ipa_weight), 3),
                                 "weight_type": "ease in-out", "combine_embeds": "concat",
                                 "start_at": 0.0, "end_at": 1.0, "embeds_scaling": "V only"}}
+        if ipa_mask:
+            # PLANET PLATE live mode: the reference conditions only the VOID (attention
+            # mask = outside the disc), never the globe
+            wf["ipa_mask_img"] = {"class_type": "LoadImage", "inputs": {"image": ipa_mask}}
+            wf["ipa_mask"] = {"class_type": "ImageToMask",
+                              "inputs": {"image": ["ipa_mask_img", 0], "channel": "red"}}
+            wf["ipa"]["inputs"]["attn_mask"] = ["ipa_mask", 0]
         model_ref = ["ipa", 0]
+    if diff_diffusion and init_image and mask_image:
+        # graded noise mask -> per-pixel denoise strength (a mask value m = that region is
+        # denoised for the last m fraction of the steps). PLANET PLATE: 1 inside the disc,
+        # a fraction outside so the void is never repainted into terrain.
+        wf["dd"] = {"class_type": "DifferentialDiffusion", "inputs": {"model": model_ref}}
+        model_ref = ["dd", 0]
     wf["sample"] = {"class_type": "KSampler",
                     "inputs": {"seed": seed, "steps": cfg["steps"], "cfg": cfg["cfg"],
                                "sampler_name": cfg["sampler"],
@@ -608,7 +642,8 @@ def phase_info(phases, i):
     return phases[last]["prompt"], None, i - n, last
 
 
-def assemble(cfg, name, out_dir, frames_dir, total, exponent=None, loop_pad=False, start=0):
+def assemble(cfg, name, out_dir, frames_dir, total, exponent=None, loop_pad=False, start=0,
+             rot=0):
     # zoom-out is always the primary cut: build-out generates it forward,
     # build-in generates dive-in footage that gets reversed into the primary
     fwd = f"{name}.mp4" if cfg["build"] == "out" else f"{name}_divein.mp4"
@@ -638,17 +673,45 @@ def assemble(cfg, name, out_dir, frames_dir, total, exponent=None, loop_pad=Fals
     # f_last -> f0 like any other pair; the output is trimmed to the exact frame count and
     # the pads removed (repair tools count frames/ to judge completeness).
     pad = 0
-    if loop_pad:
-        for k_ in (0, 1):
-            shutil.copy(frames_dir / f"{start + k_:05d}.png",
-                        frames_dir / f"{total + k_:05d}.png")
-        pad = 2
     raw = "build/raw.mp4"
-    subprocess.run([FFMPEG, "-y", "-framerate", str(cfg["fps"]),
-                    "-start_number", str(start),
-                    "-i", "build/frames/%05d.png",
-                    "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", raw],
-                   cwd=out_dir, check=True, capture_output=True)
+    rot = int(rot) % n_raw if n_raw else 0
+    if rot:
+        # PLAY ORDER (2026-09-18, Phil: "the scale doesn't monotonically decrease and then
+        # loop back to the biggest scale"): the chain may be RENDERED from a different card
+        # than the video should OPEN on (the planet plate needs its card mid-chain, so the
+        # position audit moved render_start). The delivered video is a seamless loop, so it
+        # is simply rotated: delivered frame j = rendered frame start + (rot + j) % n_raw.
+        # The new wrap joins two CONSECUTIVE chain frames; the render's own loop point (the
+        # IPA-homed lap seam) lands mid-video. Whole-card rotations keep the music grid.
+        play = out_dir / "build" / "play"
+        play.mkdir(exist_ok=True)
+        for f in play.glob("*.png"):
+            f.unlink()
+        n_seq = n_raw + (2 if loop_pad else 0)
+        for j in range(n_seq):
+            shutil.copy(frames_dir / f"{start + (rot + j) % n_raw:05d}.png",
+                        play / f"{j:05d}.png")
+        pad = 2 if loop_pad else 0
+        subprocess.run([FFMPEG, "-y", "-framerate", str(cfg["fps"]), "-start_number", "0",
+                        "-i", "build/play/%05d.png",
+                        "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", raw],
+                       cwd=out_dir, check=True, capture_output=True)
+        shutil.rmtree(play, ignore_errors=True)
+        pad_in_frames = False
+        print(f"[dive] play order: delivered video rotated by {rot} frames "
+              f"({rot / max(1, cfg['fps']):.1f}s) to open on the play_start card", flush=True)
+    else:
+        pad_in_frames = bool(loop_pad)
+        if loop_pad:
+            for k_ in (0, 1):
+                shutil.copy(frames_dir / f"{start + k_:05d}.png",
+                            frames_dir / f"{total + k_:05d}.png")
+            pad = 2
+        subprocess.run([FFMPEG, "-y", "-framerate", str(cfg["fps"]),
+                        "-start_number", str(start),
+                        "-i", "build/frames/%05d.png",
+                        "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", raw],
+                       cwd=out_dir, check=True, capture_output=True)
 
     interp = "build/interp.mp4"
     n_target = n_raw * (cfg["final_fps"] or cfg["fps"]) // cfg["fps"]
@@ -669,8 +732,9 @@ def assemble(cfg, name, out_dir, frames_dir, total, exponent=None, loop_pad=Fals
                        cwd=out_dir, check=True, capture_output=True)
     else:
         interp = raw
-    for k_ in range(pad):
-        (frames_dir / f"{total + k_:05d}.png").unlink(missing_ok=True)
+    if pad_in_frames:
+        for k_ in range(pad):
+            (frames_dir / f"{total + k_:05d}.png").unlink(missing_ok=True)
 
     final = fwd
     if exponent:
@@ -683,7 +747,7 @@ def assemble(cfg, name, out_dir, frames_dir, total, exponent=None, loop_pad=Fals
                        cwd=out_dir, check=True, capture_output=True)
         outs = sorted(lbl.glob("*.png"))
         n_out = len(outs)
-        exps = [exponent[min(total - 1, start + int(j * n_raw / n_out))]
+        exps = [exponent[min(total - 1, start + (rot + int(j * n_raw / n_out)) % n_raw)]
                 for j in range(n_out)]
         pulse_at = [j for j in range(1, n_out)
                     if int(round(exps[j])) != int(round(exps[j - 1]))]
@@ -708,6 +772,50 @@ def assemble(cfg, name, out_dir, frames_dir, total, exponent=None, loop_pad=Fals
         mp4 = out_dir / f
         print(f"[dive] {label}: {mp4} ({mp4.stat().st_size // 1024} KB, "
               f"{n_raw / cfg['fps']:.1f}s)", flush=True)
+
+
+def play_rotation(spec, fps, lap_cut):
+    """Frames to rotate the DELIVERED video by so it opens on the first clean (post-arrival)
+    frame of the journey's `play_start` card. 0 when the field is absent, names the
+    render_start card or the card after it (the delivered cut already opens there), or
+    there is no lap. Uniform bars make this a whole number of cards."""
+    ps = spec.get("play_start")
+    if not ps or not lap_cut or "registers" not in spec:
+        return 0
+    regs = spec["registers"]
+    names = [r.get("name") for r in regs]
+    rs = spec.get("render_start")
+    k0 = names.index(rs) if rs in names else 0
+    order = names[k0:] + names[:k0]
+    if ps not in order:
+        print(f"[dive] play_start {ps!r} is not a register name — ignored", flush=True)
+        return 0
+    K = order.index(ps)
+    if K == 0:
+        return 0
+    cf = register_frame_counts(spec, fps)
+    first_clean = sum(cf[:K]) + max(2, round(cf[K] * 0.25))
+    return max(0, first_clean - lap_cut)
+
+
+def finish_video(spec, cfg, args, name, out_dir, frames_dir, total, exponent, loop, lap_cut):
+    """Counter decision + play rotation + assemble — shared by a fresh render and
+    --reassemble."""
+    # counter flag: journeys declare it in the `format` block (per the skill); fall back to
+    # settings/DEFAULTS. (Was read only from cfg, so a journey's format.counter was ignored —
+    # skyfog's counter:false silently rendered a nonsense 10^n overlay on a non-ladder path.)
+    counter_flag = spec.get("format", {}).get("counter", cfg["counter"])
+    show_counter = exponent is not None and not args.frames
+    if show_counter and counter_flag == "auto":
+        exps = [r["exp"] for r in spec["registers"]]
+        show_counter = all(a > b for a, b in zip(exps, exps[1:]))
+    elif show_counter:
+        show_counter = bool(counter_flag)
+    rot = play_rotation(spec, cfg["fps"], lap_cut) if not args.frames else 0
+    assemble(cfg, name, out_dir, frames_dir, total,
+             exponent=exponent if show_counter else None,
+             loop_pad=bool(loop) and cfg["build"] != "out", start=lap_cut, rot=rot)
+    return rot
 
 
 def main():
@@ -769,6 +877,53 @@ def main():
                          "CN — the object must GROW to fill the view by the boundary "
                          "instead of being re-painted at prior-preferred size every frame. "
                          "Default OFF until Phil's verdict.")
+    ap.add_argument("--plate", choices=("low", "mask", "region", "live"),
+                    help="PLANET PLATE LAB (2026-09-17, PLAN 'PLANET DESCENT'): planet-class "
+                         "cards get a procedurally rendered globe (texture = txt2img of the "
+                         "next card's orbit-view scene) composited at the exact scheduled "
+                         "size every frame over a void plate; tracker bypassed, cameo "
+                         "refused. low = global denoise cap 0.32; mask = graded latent noise "
+                         "mask (void protected); region = mask + regional prompts. Default "
+                         "OFF — the nightly path is byte-unchanged without it.")
+    ap.add_argument("--plate-card", type=int, action="append", metavar="K",
+                    help="with --plate: only these render-order card indices (repeatable); "
+                         "default = every planet-class card (plate.is_plate_card)")
+    ap.add_argument("--plate-limb", type=float, default=1.15, metavar="S",
+                    help="with --plate: globe diameter (x frame width) at the planet card's "
+                         "bar line — the ORBIT VIEW the next card is authored as (1.15 = "
+                         "wider than the frame, limb visible top and bottom); the plate then "
+                         "keeps growing through the next card's arrival until the frame lies "
+                         "inside the disc and hands off to that card's normal approach")
+    ap.add_argument("--plate-spin", type=float, default=1.5, metavar="DEG",
+                    help="with --plate: the globe revolves DEG per frame about its vertical "
+                         "axis (texture + fed-back disc interior together). v3: breaks the "
+                         "concentric-ring lock a fixed-point zoom into a static disc falls "
+                         "into, and is the orbit motion. 0 = static globe (the v2 arms).")
+    ap.add_argument("--plate-cn", type=float, default=None, metavar="STRENGTH",
+                    help="with --plate: depth-CN strength of the synthetic dome while the globe "
+                         "is an object (default = approach_cn). v5 lab: 0 — the radially "
+                         "symmetric dome under full denoise is the prime suspect for the "
+                         "concentric-ring lock in the mask arms (the hero-cn 'caldera' class).")
+    ap.add_argument("--plate-intro", choices=("auto", "grow", "enter", "plain"), default="auto",
+                    help="with --plate: how the globe is introduced — grow (from a star-like "
+                         "point, accelerating in), enter (already a globe, sliding in from "
+                         "beyond a frame edge), plain (the zoom's own rate, lab arm B). auto = "
+                         "journey-keyed variety between grow and enter (Phil 2026-09-18).")
+    ap.add_argument("--plate-void-gate", action="store_true",
+                    help="with --plate: caption-check both plates and re-roll seeds (x3) — "
+                         "the VOID when it reads as an OBJECT (necklace/pendant/vase: the "
+                         "product-shot prior) and the SURFACE when it reads as a ground-level "
+                         "view (sky/horizon/beach: garnet's aurora-over-a-cliff). Lab flag.")
+    ap.add_argument("--reassemble", metavar="vN",
+                    help="no GPU: re-run ONLY the assembly (interpolation, counter, play "
+                         "rotation, reverse cut) on an existing complete render's frames — "
+                         "e.g. after adding `play_start` to the journey")
+    ap.add_argument("--plan-only", action="store_true",
+                    help="print the compiled plan (resolve windows, plate spans, cameos) and "
+                         "exit before rendering — the position audit's verifier")
+    ap.add_argument("--plate-outside", type=float, default=0.27, metavar="M",
+                    help="with --plate mask/region: noise-mask value outside the disc "
+                         "(fraction of the denoise the void receives)")
     ap.add_argument("--cn", type=float, metavar="STRENGTH",
                     help="override depth-ControlNet strength; --cn 0 disables the CN but KEEPS "
                          "tracking/composition (the clean A/B for 'is the CN hurting the look?'). "
@@ -879,6 +1034,14 @@ def main():
     if args.cn is not None:
         cfg["approach_cn"] = args.cn
         name = f"{name}_cn{args.cn:g}".replace(".", "")
+    src_name = name          # --from-card prefix frames come from the UNSUFFIXED lab source
+    if args.plate and args.frames:
+        # LAB RUNS ONLY (--frames): a separate run dir so arms never share a vN sequence
+        # with the real render. A production render (no --frames) keeps the plain
+        # journey dir — 2026-09-18: the suffix on the nightly's runs sent three complete
+        # 4-hour renders to output/<journey>_platelow/ where queue_review could not find
+        # them ("no complete render ... need 392 frames").
+        name = f"{name}_plate{args.plate}"
     if cfg["parallax_gain"] == "random":
         # gain-exploration draw (see DEFAULTS): deterministic from (name, seed) so a
         # same-seed re-render reproduces its gain
@@ -893,6 +1056,22 @@ def main():
     img_guard = cfg["figure_guard"] and not args.allow_figures and cfg["build"] != "out"
 
     base = Path(__file__).resolve().parent.parent / "output" / name
+    src_base = Path(__file__).resolve().parent.parent / "output" / src_name
+    if args.reassemble:
+        _od = base / args.reassemble
+        _fd = _od / "build" / "frames"
+        _have = len(list(_fd.glob("*.png"))) if _fd.exists() else 0
+        if _have < total:
+            sys.exit(f"[dive] --reassemble: {_od} has {_have} frames, needs {total}")
+        _rot = finish_video(spec, cfg, args, name, _od, _fd, total, exponent, loop, lap_cut)
+        try:
+            _rj = json.loads((_od / "run.json").read_text())
+            _rj.update({"play_start": spec.get("play_start"), "play_rot": _rot,
+                        "reassembled": time.strftime("%Y-%m-%d %H:%M")})
+            (_od / "run.json").write_text(json.dumps(_rj, indent=2))
+        except Exception:
+            pass
+        return
     start_i = 0
     start_run_idx = 0     # approach runs already consumed by a copied prefix (--from-card)
     run_extra = {}
@@ -921,14 +1100,14 @@ def main():
                 sys.exit(f"[dive] frame {N} is inside the cameo window "
                          f"{c['start']}..{c['end']} — the sprite's propagated position can't be "
                          f"reconstructed mid-window; pick a card outside it")
-        vs = sorted([d for d in base.glob("v[0-9]*") if d.name[1:].isdigit()],
+        vs = sorted([d for d in src_base.glob("v[0-9]*") if d.name[1:].isdigit()],
                     key=lambda d: int(d.name[1:]))
         if args.src_version:
             vs = [d for d in vs if d.name == args.src_version]
         src = next((d for d in reversed(vs)
                     if len(list((d / "build" / "frames").glob("*.png"))) >= N), None)
         if not src:
-            sys.exit(f"[dive] no version under {base} has the {N} prefix frames"
+            sys.exit(f"[dive] no version under {src_base} has the {N} prefix frames"
                      + (f" (asked for {args.src_version})" if args.src_version else ""))
         n = 1 + max([int(d.name[1:]) for d in base.glob("v[0-9]*") if d.name[1:].isdigit()],
                     default=0)
@@ -983,6 +1162,12 @@ def main():
         "camera_micro": cfg["camera_micro"], "camera": cam_plan, "lap_cut": lap_cut,
         "persist_cn": bool(args.persist_cn), "hero_cn": bool(args.hero_cn),
         "hero_orbit": args.hero_orbit,
+        "plate": args.plate, "plate_cards": args.plate_card, "plate_limb": args.plate_limb,
+        "plate_outside": args.plate_outside, "plate_spin": args.plate_spin,
+        "plate_cn": args.plate_cn, "plate_void_gate": bool(args.plate_void_gate),
+        "plate_intro": args.plate_intro,
+        "play_start": spec.get("play_start"),
+        "play_rot": play_rotation(spec, cfg["fps"], lap_cut) if not args.frames else 0,
         # per-CARD (register) frame counts: lets a future --from-card verify its prefix
         # still aligns after a journey edit
         "card_frames": (register_frame_counts(spec, cfg["fps"]) if "registers" in spec
@@ -1027,8 +1212,8 @@ def main():
     # approaches keep the tracker; seam arrivals keep the seam treatment; cameo cards resolve
     # only through their arrival (the paste window must stay clean).
     resolve_windows = []
+    import zlib as _zlib
     if getattr(args, "resolve", False) and "registers" in spec and cfg["build"] != "out":
-        import zlib as _zlib
         import scaffold as _scaffold
         _regs = spec["registers"]
         _names = [r["name"] for r in _regs]
@@ -1104,13 +1289,91 @@ def main():
     # tries at a low cadence; the first confident lock hands off seamlessly (the aim was already
     # heading somewhere — a lock just moves the destination); between detections the track rides
     # the known zoom geometry, so missed/garbage detections can't yank the camera.
+    # PLANET PLATE (2026-09-17, engine/plate.py): planet-class cards render through a
+    # plate — see the module docstring. plate_at[i] = the Plate owning frame i (or None).
+    plates, plate_at = {}, [None] * total
+    if args.plate and "registers" in spec and cfg["build"] != "out":
+        _pregs = spec["registers"]
+        _pnames = [r["name"] for r in _pregs]
+        _prs = spec.get("render_start")
+        _prot = _pnames.index(_prs) if _prs in _pnames else 0
+        _porder = _pregs[_prot:] + _pregs[:_prot]
+        _pcfr = register_frame_counts(spec, cfg["fps"])
+        if lap_cut:
+            _porder = _porder + [_porder[0]]
+            _pcfr = _pcfr + [_pcfr[0]]
+        _pacc = 0
+        for _pk, _preg in enumerate(_porder):
+            _pF = _pcfr[_pk]
+            _pS, _pE = _pacc, min(_pacc + _pF, total)
+            _pacc += _pF
+            _pnxt = _porder[(_pk + 1) % len(_porder)] if not lap_cut else \
+                (_porder[_pk + 1] if _pk + 1 < len(_porder) else _porder[1])
+            _want = (args.plate_card is not None and _pk in args.plate_card) or \
+                (args.plate_card is None and _plate.is_plate_card(_preg, _pnxt))
+            if not _want or _pE <= _pS or _pS >= total:
+                continue
+            _pfa = 0 if _pk == 0 else max(2, round(_pF * 0.25))
+            # the plate spans THIS card and the NEXT (until the frame lies inside the disc);
+            # the size schedule runs over the FULL compiled span (zoom_sched is complete) —
+            # never the --frames-truncated total (the smoke-test trap)
+            _pFn = _pcfr[_pk + 1] if _pk + 1 < len(_pcfr) else _pcfr[0]
+            _pE2 = min(_pS + _pF + _pFn, len(zoom_sched))
+            _ih = _zlib.crc32(f"{spec.get('name')}:{_preg.get('name')}:intro".encode())
+            _intro = args.plate_intro
+            if _intro == "auto":
+                _intro = ("grow", "enter")[_ih % 2]
+            _edge = ("right", "left", "top", "bottom")[(_ih >> 3) % 4]
+            _pl = _plate.Plate(_pk, _pS, _pE2, _pfa, _preg, _pnxt,
+                               spec.get("style_suffix", ""),
+                               cfg["width"], cfg["height"], zoom_sched[_pS:_pE2],
+                               seed=cfg["seed"], n_card=_pF, s_limb=args.plate_limb,
+                               outside=args.plate_outside, spin_rate=args.plate_spin,
+                               intro=_intro, edge=_edge)
+            plates[_pk] = _pl
+            for _x in range(_pS, min(_pE2, total)):
+                plate_at[_x] = _pl
+            # the plate owns the span: no resolve window in it; a cameo ON the planet card
+            # is refused (the sprite-takeover class), a cameo on the NEXT card is DEFERRED —
+            # it pastes from the first frame after the handoff (cork_dehesa: Janet on the
+            # dusk_world card would otherwise vanish and the find-the-character caption
+            # would lie)
+            resolve_windows = [w for w in resolve_windows
+                               if w["w1"] <= _pS or w["w0"] >= _pE2]
+            for c in cameos:
+                if _pS <= c["start"] < _pS + _pF:
+                    c["_done"] = True
+                    print(f"[dive] plate: cameo at frame {c['start']} (planet card {_pk} "
+                          f"{_preg.get('name')}) refused", flush=True)
+                elif _pS + _pF <= c["start"] < _pE2:
+                    print(f"[dive] plate: cameo at frame {c['start']} ({_pnxt.get('name')}) "
+                          f"deferred until the plate hands off", flush=True)
+            print(f"[dive] PLATE ({args.plate}, intro {_intro}"
+                  f"{' from ' + _edge if _intro == 'enter' else ''}) card {_pk} "
+                  f"{_preg.get('name')!r} -> {_pnxt.get('name')!r}: frames {_pS}..{_pE2 - 1} "
+                  f"(bar line at {_pS + _pF}), globe {_pl.size0:.3f} -> {args.plate_limb} x "
+                  f"width at the bar line, then until the frame is inside the disc", flush=True)
+        if args.plate and not plates:
+            print("[dive] PLATE: no planet-class card in range — flag has no effect", flush=True)
+    if args.plan_only:
+        _pc = [(c["start"], c["end"], Path(c["sprite"]).stem) for c in cameos]
+        print(f"[dive] PLAN ONLY: total {total} frames, lap_cut {lap_cut}, loop "
+              f"{loop['frames'] if loop else 0} tail frames, cameos {_pc}, "
+              f"plates {[(k, pl_.s, pl_.e) for k, pl_ in plates.items()]}", flush=True)
+        try:
+            shutil.rmtree(out_dir)          # no vN left behind for a plan
+        except Exception:
+            pass
+        return
+    plate_log = open(out_dir / "build" / "plate.jsonl", "a" if start_i else "w") \
+        if plates else None
     _depth = None
     _trk = None
     _hero = None      # --hero-cn lab state: {"size": fraction-of-width}, per approach run
     # rotates each approach run's preferred rule-of-thirds corner; a --from-card prefix
     # already consumed start_run_idx runs, so the continuation keeps the rotation phase
     _run_idx = start_run_idx - 1
-    if any(approach):
+    if any(approach) or plates:
         _depth = pick_depth_preproc()
         print(f"[dive] TRACKER v3 ON ({sum(a is not None for a in approach)} approach frames; "
               f"detect every {cfg['track_cadence']}, {cfg['track_model'].split('/')[-1]}); "
@@ -1141,6 +1404,17 @@ def main():
         cmv = cam_sched[i] if i < len(cam_sched) else None
         rot_i = cfg["rotate_per_frame"] + (cmv.get("roll", 0.0) if cmv else 0.0)
         seed = cfg["seed"] + i
+        _pl = plate_at[i] if i < len(plate_at) else None
+        if _pl is not None and (in_loop_tail(i) or _pl.done):
+            _pl = None          # handed off: the next card's normal approach owns the frame
+        if img is None and _pl is not None and cfg["build"] != "out":
+            # PLANET PLATE at the render start: frame 0's txt2img renders the VOID plate
+            # (no target, space negatives) and becomes the fed frame the plate composites
+            # into — instead of a cold postcard the tail later homes onto.
+            f0_prompt, f0_neg = _pl.prompts["void"], _plate.VOID_NEG + ", " + FRAME0_NEG_EXTRA
+            print(f"[dive] frame-0 plate void: {f0_prompt[:110]}", flush=True)
+            img = Image.open(io.BytesIO(run_workflow(
+                build_workflow(cfg, f0_prompt, seed, neg_extra=f0_neg)))).convert("RGB")
         if img is None:
             # frame-0 ESTABLISH override (2026-08-02): the schedule's travel prompt names the
             # card's TARGET, and in txt2img SDXL composes a product-shot close-up around it
@@ -1182,6 +1456,8 @@ def main():
                 if resolve_windows else None
             if rwin:
                 approaching = False       # the field is still resolving — drift aim, no lock
+            if _pl is not None:
+                approaching, rwin = False, None   # the plate owns aim + composition
             ev = None
             if approaching:
                 if _trk is None or _trk.ap is not ap:
@@ -1222,8 +1498,14 @@ def main():
             else:
                 _trk = None
                 _hero = None
-                row = {"i": i - 1, "mode": "tail" if in_loop_tail(i) else "drift",
-                       "z": round(z, 4)}
+                if _pl is not None:
+                    cx, cy = _pl.aim(z, rot_i, track)
+                    row = {"i": i - 1, "mode": "plate", "z": round(z, 4),
+                           "size": round(_pl.size, 4), "tx": round(_pl.tx, 4),
+                           "ty": round(_pl.ty, 4)}
+                else:
+                    row = {"i": i - 1, "mode": "tail" if in_loop_tail(i) else "drift",
+                           "z": round(z, 4)}
             row["aim"] = [round(cx, 4), round(cy, 4)]
             tlog.write(json.dumps(row) + "\n")
             tlog.flush()
@@ -1261,6 +1543,8 @@ def main():
                     f"zoomer_mask_{name}.png")
             else:
                 fed = zoom_transform(img, z, rot_i, cx, cy)
+                if _pl is not None and _pl.void is not None:
+                    _pl.void = zoom_transform(_pl.void, z, rot_i, cx, cy)
                 # DEPTH 2.0 Phase A: differential-parallax residual (PLAN "PARALLAX ERA").
                 # Runs BEFORE detail_boost so the sharpen doubles as the post-warp unsharp
                 # (the orbit-v3 lesson). Tapers out across the loop tail — the tail's job is
@@ -1269,6 +1553,8 @@ def main():
                 if in_loop_tail(i):
                     _tap = max(0.0, 1.0 - (i - (total - loop["frames"]) + 1) / loop["frames"])
                 pk = (cfg["parallax_gain"] if par_depth is not None else 0.0) * _tap
+                if _pl is not None:
+                    pk = 0.0          # the globe's scheduled growth IS the depth motion
                 # Phase D: this frame's depth-move components (they ride the same depth
                 # field + fused remap as the parallax; taper with it across the loop tail)
                 _orb = _dol = _tlt = 0.0
@@ -1338,7 +1624,7 @@ def main():
                     # this branch, so a card-0 cameo (start=0) silently NEVER pasted — dollhouse's
                     # cameo is missing for this reason. Window semantics paste it from frame 1,
                     # and also survive --resume landing mid-window.
-                    if not c.get("_done") and c["start"] <= i < c["end"]:
+                    if not c.get("_done") and c["start"] <= i < c["end"] and _pl is None:
                         c["_done"] = True
                         cam = {"px": c["pos"][0], "py": c["pos"][1],
                                "size": c["size"], "end": c["end"],
@@ -1359,6 +1645,123 @@ def main():
                             cam_pasted = True
                 if cam_pasted:
                     den = min(den, 0.32)   # keep the mascot's face recognizable
+            plate_mask, plate_region, plate_ctl, plate_cn = None, None, None, 0.0
+            plate_dd = plate_feed_cn = False
+            plate_ipa_img, plate_ipa_w, plate_ipa_mask = None, 0.0, None
+            if _pl is not None:
+                _first = _pl.tex is None
+                if _first:
+                    # assets, once per plate: the globe's surface texture (the NEXT card's
+                    # world from straight above, square) + the void plate (this card's scene
+                    # as space, frame-sized). Journey-keyed seeds so A/B arms share them.
+                    _pdir = out_dir / "build" / "plate"
+                    _pdir.mkdir(exist_ok=True)
+                    # SQUARE (v4): a 2:1 landscape canvas made SDXL paint a seascape WITH A
+                    # HORIZON, which wrapped onto the globe as an equator line and handed off
+                    # to a sea-level view. The square top-down texture is mirrored to 2:1 in
+                    # Plate.set_assets for the 360-degree map.
+                    _tcfg = {**cfg, "width": 768, "height": 768}
+                    _tseed = cfg["seed"] + 7000 + _pl.card_idx
+                    _sseed = _tseed
+                    for _stry in range(4):
+                        _tex = Image.open(io.BytesIO(run_workflow(build_workflow(
+                            _tcfg, _pl.prompts["surface"], _sseed,
+                            neg_extra=_plate.SURFACE_NEG)))).convert("RGB")
+                        if not args.plate_void_gate or _stry == 3:
+                            break
+                        _sb = _plate.surface_bait(_tex, model=cfg.get("track_model"))
+                        if not _sb:
+                            break
+                        print(f"[dive] plate surface reads as a GROUND-LEVEL view "
+                              f"({'/'.join(_sb[0])} — Florence: \"{_sb[1][:100]}\") — "
+                              f"re-rolling seed ({_stry + 1}/3)", flush=True)
+                        _sseed += 9973
+                    _vseed = _tseed + 1000
+                    for _vtry in range(4):
+                        _void = Image.open(io.BytesIO(run_workflow(build_workflow(
+                            cfg, _pl.prompts["void"], _vseed,
+                            neg_extra=_plate.VOID_NEG + ", " + FRAME0_NEG_EXTRA)))).convert("RGB")
+                        if not args.plate_void_gate or _vtry == 3:
+                            break
+                        _bait = _plate.void_bait(_void, model=cfg.get("track_model"))
+                        if not _bait:
+                            break
+                        print(f"[dive] plate void reads as an OBJECT ({'/'.join(_bait[0])} — "
+                              f"Florence: \"{_bait[1][:100]}\") — re-rolling seed "
+                              f"({_vtry + 1}/3)", flush=True)
+                        _vseed += 9973
+                    _tex.save(_pdir / f"card{_pl.card_idx}_surface.png")
+                    _void.save(_pdir / f"card{_pl.card_idx}_void.png")
+                    _pl.set_assets(_tex, _void)
+                    _pl.specks = hero_specks(cfg["width"], cfg["height"],
+                                             _zlib.crc32(f"{spec.get('name')}:{_pl.card_idx}"
+                                                         .encode()))
+                    print(f"[dive] plate assets for card {_pl.card_idx}: surface "
+                          f"{_pl.prompts['surface'][:80]!r} / void "
+                          f"{_pl.prompts['void'][:60]!r}", flush=True)
+                if not _first:
+                    fed = _pl.rotate_disc(fed)      # v3: revolve the carried interior
+                fed = _pl.composite(fed, first=_first, live=(args.plate == "live"))
+                _cov = _pl.covered()
+                if _cov:
+                    _pl.done = True     # this frame renders over the surface; from the next
+                                        # frame the card's own tracked approach takes over
+                if args.plate == "low":
+                    den = min(den, 0.32)            # the cameo rule, frame-wide
+                if args.plate in ("mask", "region") and not _cov:
+                    plate_mask = upload_image(_pl.mask_image(_pl.noise_mask()),
+                                              f"zoomer_pmask_{name}.png")
+                    plate_dd = True
+                if args.plate == "live" and not _cov:
+                    # LIVE ARRIVAL (2026-09-18): denoise capped ONLY inside the disc (the
+                    # ring regime), the void keeps the schedule's own denoise incl. the
+                    # arrival boost; the void is HELD by IP-Adapter toward the void plate
+                    # (attention-masked to outside the disc), ramping in over the arrival
+                    # like the loop tail's homing — a live morph, not a dissolve.
+                    # ABSOLUTE disc cap (v9): inside = 0.30/den, so the globe gets ~0.30
+                    # effective denoise on EVERY frame — arm B's ring-free regime — even on
+                    # the two arrival boosts (0.58), where v8's relative 0.8 let the disc run
+                    # at ~0.46: it was re-read as a lumpy rock, then locked into a spiral.
+                    _in = min(1.0, 0.30 / max(den, 1e-3))
+                    plate_mask = upload_image(_pl.mask_image(_pl.noise_mask(inside=_in,
+                                                                            outside=1.0)),
+                                              f"zoomer_pmask_{name}.png")
+                    plate_dd = True
+                    if getattr(_pl, "void_ref", None) is None:
+                        _pl.void_ref = upload_image(_pl.void, f"zoomer_pvoid_{name}.png")
+                    _t = min(1.0, (_pl.frame + 1) / max(1, _pl.fa + 1))
+                    plate_ipa_w = 0.25 + 0.35 * (_t * _t * (3 - 2 * _t))   # 0.25 -> 0.60
+                    plate_ipa_img = _pl.void_ref
+                    plate_ipa_mask = upload_image(_pl.mask_image(_pl.outside_mask()),
+                                                  f"zoomer_pipam_{name}.png")
+                if args.plate == "region" and not _cov:
+                    plate_region = {"prompt": _pl.prompts["inside"],
+                                    "mask": upload_image(_pl.mask_image(_pl.disc_mask()),
+                                                         f"zoomer_prmask_{name}.png")}
+                elif not _cov:
+                    prompt = prompt + ", " + _plate.GLOBE_CLAUSE
+                _pcn = cfg["approach_cn"] if args.plate_cn is None else args.plate_cn
+                if not _cov and _pcn > 0:
+                    # structure agrees with pixels: the hero depth dome at the globe's
+                    # exact position/size over its void of specks
+                    _himg = hero_depth(cfg["width"], cfg["height"], _pl.tx, _pl.ty, _pl.size,
+                                       specks=_pl.specks, Z=_pl.Zacc)
+                    plate_ctl = upload_image(_himg, f"zoomer_hero_{name}.png")
+                    plate_cn = _pcn
+                elif not _cov:
+                    pass                            # v5: no CN while the globe is an object
+                else:
+                    plate_feed_cn = True            # over the surface: hold structure from
+                                                    # the fed frame like a normal approach
+                if _pl.frame <= 2 or _pl.frame % 4 == 0:
+                    fed.save(out_dir / "build" / "plate" / f"{i:05d}_composite.png")
+                    if plate_mask:
+                        _pl.mask_image(_pl.noise_mask()).save(
+                            out_dir / "build" / "plate" / f"{i:05d}_mask.png")
+                if plate_log:
+                    plate_log.write(json.dumps(_pl.row(i, den=round(den, 3),
+                                                       mode=args.plate)) + "\n")
+                    plate_log.flush()
             tail_ipa_w, tail_ctl, tail_cn = 0.0, None, 0.0
             if in_loop_tail(i):
                 j = i - (total - loop["frames"])
@@ -1482,20 +1885,28 @@ def main():
             wf = build_workflow(cfg, prompt, seed, init_image=ref, denoise=den,
                                 prev_prompt=prev_prompt if in_transition else None,
                                 blend=(k + 1) / (T + 1) if in_transition else 1.0,
-                                mask_image=mask_ref,
+                                mask_image=plate_mask or mask_ref,
+                                diff_diffusion=plate_dd, region=plate_region,
                                 # object-approach: depth-CN from the (zoomed) feedback holds the
                                 # target's identity as it grows while pixels regenerate (not a
                                 # paste). --hero-cn replaces it with the SCHEDULED-size synthetic
                                 # depth (the disc IS a depth map — no preprocessor). In the loop
                                 # tail the SAME channel carries frame 0's depth — never both.
-                                ctrl_image=res_ctl or hero_ctl
-                                or (ref if approaching else tail_ctl),
+                                ctrl_image=res_ctl or hero_ctl or plate_ctl
+                                or (ref if (approaching or plate_feed_cn) else tail_ctl),
                                 cn_strength=res_cn if res_ctl
                                 else (hero_cn if hero_ctl
-                                      else (cfg["approach_cn"] if approaching else tail_cn)),
-                                depth_preproc=None if (res_ctl or hero_ctl) else _depth,
-                                ipa_image=loop.get("_home_ref") if tail_ipa_w > 0.01 else None,
-                                ipa_weight=tail_ipa_w, neg_extra=hero_neg)
+                                      else (plate_cn if plate_ctl
+                                            else (cfg["approach_cn"]
+                                                  if (approaching or plate_feed_cn)
+                                                  else tail_cn))),
+                                depth_preproc=None if (res_ctl or hero_ctl or plate_ctl)
+                                else _depth,
+                                ipa_image=(loop.get("_home_ref") if tail_ipa_w > 0.01
+                                           else plate_ipa_img),
+                                ipa_weight=(tail_ipa_w if tail_ipa_w > 0.01 else plate_ipa_w),
+                                ipa_mask=(None if tail_ipa_w > 0.01 else plate_ipa_mask),
+                                neg_extra=hero_neg)
         png = run_workflow(wf)
         img = Image.open(io.BytesIO(png)).convert("RGB")
         if img.size != (cfg["width"], cfg["height"]):
@@ -1576,19 +1987,7 @@ def main():
                   f"~{rate * (total - i - 1):.0f}s left) :: {prompt[:60]}", flush=True)
 
     if not args.no_video:
-        # counter flag: journeys declare it in the `format` block (per the skill); fall back to
-        # settings/DEFAULTS. (Was read only from cfg, so a journey's format.counter was ignored —
-        # skyfog's counter:false silently rendered a nonsense 10^n overlay on a non-ladder path.)
-        counter_flag = spec.get("format", {}).get("counter", cfg["counter"])
-        show_counter = exponent is not None and not args.frames
-        if show_counter and counter_flag == "auto":
-            exps = [r["exp"] for r in spec["registers"]]
-            show_counter = all(a > b for a, b in zip(exps, exps[1:]))
-        elif show_counter:
-            show_counter = bool(counter_flag)
-        assemble(cfg, name, out_dir, frames_dir, total,
-                 exponent=exponent if show_counter else None,
-                 loop_pad=bool(loop) and cfg["build"] != "out", start=lap_cut)
+        finish_video(spec, cfg, args, name, out_dir, frames_dir, total, exponent, loop, lap_cut)
     print(f"[dive] done in {time.time() - t0:.0f}s", flush=True)
 
 

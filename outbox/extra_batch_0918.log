@@ -1,0 +1,8 @@
+tonight (queue order): cork_dehesa(L ~107min) + sargasso_windrow(L ~92min) + garnet_glass(L ~107min) = 5.1h of 5h budget
+=== 11:37:30 batch start [queue] — 3 journeys: cork_dehesa sargasso_windrow garnet_glass
+=== 11:37:30 --- cork_dehesa ---
+=== 11:37:30 cork_dehesa: --plate live --plate-cn 0 --plate-void-gate --plate-intro enter
+=== 13:46:26 cork_dehesa: rendered in 7736s
+=== 13:47:17 cork_dehesa -> REVIEW (captioned)
+=== 13:47:17 --- sargasso_windrow ---
+=== 13:47:17 sargasso_windrow: --plate live --plate-cn 0 --plate-void-gate --plate-intro enter

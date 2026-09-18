@@ -1,0 +1,99 @@
+{
+  "name": "gulal_dusk",
+  "theme": "the last hour of Holi in a hill-town lane at monsoon dusk — the dive leaves the lane's monkeys, dogs and parakeets for one magenta pigment burst hanging in the humid air, drops through the curling fringe of the plume into a crowd of gulal grains, into the stacked plates of the dye crystal itself, which morphs into an indigo sky worked in saffron embroidery, and comes home as the bunting cloth over the town's rooftops and back down into the lane",
+  "style": "lacquer_pop",
+  "music_lane": "night_market",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "lane_dusk",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "wet charcoal cobbles, monsoon slate dusk, fuchsia-magenta pigment, apricot oil-flame points",
+      "scene": "a narrow hill-town lane at monsoon dusk seen at standing height, wet charcoal cobbles glossed slate-blue, shuttered plaster housefronts crowding both flanks, magenta pigment thrown across their fronts in arcs and blotches, a sagging cable crossing overhead with langur monkeys perched in a row on it, rose-ringed parakeets crowding the eaves, street dogs nosing the puddles between the stones, cloth pennants hung between the balconies, apricot oil-flames burning in the doorways, bursts of magenta powder hanging in the humid air down the lane, the far end of it crowded with dark anonymous shapes too distant to read",
+      "target": "a magenta powder burst",
+      "target_phrase": "a magenta burst"
+    },
+    {
+      "name": "powder_bloom",
+      "exp": 0.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "fuchsia-magenta bloom, deep turmeric saffron, monsoon slate air",
+      "scene": "a burst of magenta gulal hanging in humid monsoon air, its cap curled over into billowing mushroom heads, fringes of pigment hanging from it as a fence of pillars, deep turmeric saffron plumes crossing through the magenta in curling ribbons, countless finer curls at its edges turned in every direction, slate-blue dusk showing through the thin places, wet charcoal cobbles glossed dark beneath, apricot flames burning as small points in the haze",
+      "target": "a curling saffron plume",
+      "target_phrase": "a saffron plume",
+      "loop_target": "a burst of magenta gulal hanging in humid air, its cap curled into billowing heads, saffron plumes crossing it"
+    },
+    {
+      "name": "curl_fringe",
+      "exp": -1.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "storm-slate depth, violet-magenta grain mist, saffron edge glow",
+      "scene": "the curling edge of a pigment plume, its sheet shredded into countless separate grains, ranks of grains combed into fine curved streaks by the humid air, hollow scrolls of violet-magenta rolled in on themselves, saffron pigment threading between them in bright filaments, storm-slate depth behind going thick and dim, stray grains catching the low glow as burning points",
+      "target": "a magenta powder grain",
+      "target_phrase": "a magenta grain",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "grain_drift",
+      "exp": -4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "milk-pale starch pebbles, hot magenta crusts, ink-black depth",
+      "scene": "a crowd of gulal grains suspended in blackness, each one a pitted milk-pale starch pebble, faceted magenta crystal flakes crusted over their pits and edges, turmeric-yellow flakes among them, the grains clumped in loose ranks at every depth, the far ranks fading into ink-black fog, chipped grains showing smooth inner cores",
+      "target": "a magenta crystal flake",
+      "target_phrase": "a magenta flake"
+    },
+    {
+      "name": "dye_decks",
+      "exp": -8.6,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "deep magenta plate glow, indigo depth, thin saffron seams",
+      "scene": "flat hexagonal molecule plates stacked face to face into leaning columns, every plate rimmed with a magenta glow, short double bridges linking the plates in pairs, the columns ranked in files repeating off in every direction, indigo depth-fog swallowing the far files, thin saffron seams where two stacks meet out of true",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "layered"
+      }
+    },
+    {
+      "name": "stitched_sky",
+      "exp": 21,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "indigo cloth dark, saffron thread glow, oxblood knot points",
+      "scene": "an indigo cloth sky worked in embroidery, a burst of saffron thread carried outward from a stitched core in curling fingers, knots of star-points crowding the field in their thousands, chain-stitch filaments looping from knot to knot, couched metallic threads picking out the curling fringes, the cloth's weave showing through the ink-dark spaces between, oxblood floss marking the densest knots"
+    },
+    {
+      "name": "town_bunting",
+      "exp": 3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "storm-slate rooftops, indigo bunting cloth, saffron thread, apricot lamp points",
+      "scene": "a hill town at monsoon dusk seen from a rooftop terrace, tiers of flat roofs stepping down the slope in their hundreds, rows of bunting cloth crossing the spaces between them, the nearest flags indigo cloth embroidered with saffron star-knots, magenta pigment haze pooled over the lanes cut deep between the rooftops, apricot lamp points burning down each of them, water tanks and antenna poles breaking the roofline, the storm sky slate-blue over the ridge",
+      "target": "a narrow cobbled lane",
+      "target_phrase": "a narrow lane",
+      "cameo": {
+        "sprite": "output/mascots/canon/kitty.png",
+        "pos": [
+          0.35,
+          0.62
+        ],
+        "size": 0.13
+      }
+    }
+  ],
+  "music_theme": "soft hang drum and plucked koto over a velvet pad, a deep round kick on every downbeat, humid and nocturnal, the last hour of a street festival winding down, one bright struck note on the crystal-to-embroidery morph, widening for the return over the rooftops",
+  "music_key": "F# minor",
+  "render_start": "powder_bloom"
+}

@@ -1,0 +1,100 @@
+{
+  "name": "sloe_hedgerow",
+  "theme": "the parasite ladder run at night: a blackthorn hedge corridor worked as a commons — a hedgehog in the leaf litter, a badger on its worn path, a barn owl on a post, a wood mouse in the thorns, hawk-moths at the honeysuckle — then down into the hedgehog's quill thicket, to a flea clamped at a quill base, into the hinge of its hind leg where a wedge of clear rubber sits between chitin plates, to the cells that lay that rubber down, and into the rubber itself: the resilin net, looping chains pinned at bright cross-link points and glowing ultraviolet-blue, the most perfect rubber known and the flea's catapult spring. The random walk is the through-line — a flea's hop, a badger's wandering track, a polymer's coil are one family — and the seam folds the rubber's pinned mesh into the hedged country's own mesh from the air, farm lamps as the bright pins, then home down into the corridor. A closed terrestrial roam: no space card, no atom, texture to landscape",
+  "style": "infrared_bloom",
+  "music_lane": "wooden_orbit",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "hedgerow_corridor",
+      "exp": 1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sloe indigo thorn shadow, bone-white badger stripe, hawthorn-red berry points, moon-wash silver",
+      "scene": "a blackthorn hedge corridor on a moonlit night at eye level from the ditch, the thorn thicket heaped into two tangled banks with a worn track wandering between them, sloe berries clustered by the thousands among the spines in dusty indigo, scarlet haws strung in points through the twigs, honeysuckle trumpets spilling out of the tangle with furred hawk-moths hovering at their mouths, a hedgehog snuffling through the leaf litter of the ditch, a badger with a bone-white face stripe padding down its worn path, a wood mouse gripping a thorn stem head-downward, a barn owl perched on a leaning post, moon-wash falling through the twigs in cold silver bars, nettles and cow parsley crowding the bank",
+      "target": "a snuffling hedgehog",
+      "target_phrase": "a hedgehog",
+      "loop_target": "a moonlit blackthorn hedge corridor seen from the ditch, sloe clusters and scarlet haws through the thorn tangle, a hedgehog in the leaf litter"
+    },
+    {
+      "name": "quill_thicket",
+      "exp": -1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bone-white shafts banded umber, slate skin lanes, moon-wash silver, amber-brown shell points",
+      "scene": "a thicket of hedgehog quills packed over the skin, seen from just above the spine tips, many hundreds of smooth tapered shafts crowded upright in ranks, each shaft banded bone-white and umber and needle-pointed, thorn scraps and leaf crumbs and seed husks lodged down among the bases, slate-grey skin showing in lanes between the ranks, a few shafts crossed over their neighbours where the coat parts, amber-brown fleas clamped at the bases where the quills leave the skin, moon-wash catching the tips in a silver sheen",
+      "target": "an amber-brown flea",
+      "target_phrase": "an amber flea"
+    },
+    {
+      "name": "flea_stubble",
+      "exp": -2.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "slate-blue skin plates, amber-brown polished shell, umber shaft stubble, ink hollows",
+      "scene": "the floor of skin at the bases of the quills, umber shafts rising from it in a stubble of columns, the skin plain crazed into slate-blue plates with fine bristles rooted through it, scurf flakes and dust caught in the hollows, a flea clamped low between two shafts, its shell amber-brown and polished and flattened narrow, combs of stout spines set at its collar, its hind leg folded up into a deep crouch against the body, further bristles curving over it from the stubble, ink shadow sunk between the columns",
+      "target": "a folded hind leg",
+      "target_phrase": "a folded hind leg"
+    },
+    {
+      "name": "hinge_pad",
+      "exp": -4.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber chitin courses, ultraviolet-blue rubber glow, umber tendon straps, ink hollows",
+      "scene": "the hinge where a flea's hind leg meets the body, plates of amber chitin lapped over one another in curved courses, a wedge of clear rubber seated between them glowing ultraviolet-blue from within, umber tendon straps anchored across the plates, stiff bristles rooted in sockets about the joint, the rubber's face glassy and slightly domed and creased where the plates bear on it, fluid glinting in the ink hollows under the courses, further plates receding into gloom",
+      "target": "a granular cell",
+      "target_phrase": "a granular cell",
+      "cameo": {
+        "sprite": "output/mascots/canon/lee.png",
+        "pos": [
+          0.31,
+          0.66
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "rubber_makers",
+      "exp": -5.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber-lit cell bodies, ultraviolet-blue granules, slate membranes, ink fluid",
+      "scene": "a floor of secretory cells laid under the rubber pad, hundreds of plump bodies packed against one another in a tiled sheet, every body crammed with clear granules that glow ultraviolet-blue, a dense oval nucleus sitting in each, fine channels running up out of them toward the pad above, threads of fresh rubber strung across the channel mouths, amber fluid held between the bodies, granules loose in it, more cells tiled away at every depth into gloom",
+      "target": "a glowing granule",
+      "target_phrase": "a glowing granule",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "resilin_net",
+      "exp": -8.0,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "ultraviolet-blue cross-link points, indigo chain mesh, ink fluid",
+      "scene": "a loose mesh of looping chains adrift in fluid, every chain a scribbled path of straight runs joined at random angles and doubling back through its own coils, the chains pinned to one another at hard bright knots that burn ultraviolet-blue, wide openings of empty fluid held between them, the same mesh repeating at every depth into indigo gloom, stray chain ends waving free, the knots strewn through it in a scatter of glowing points",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "hedge_country",
+      "exp": 3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "indigo field cells, silver hedge lines, amber farm-lamp points, moon-wash",
+      "scene": "hedged farm country by night from high above at a slant, hedge lines wandering over the ground in an irregular mesh of dozens of cells, the fields held as the mesh's own openings in indigo and umber, the lines themselves silver where moon-wash catches their tops, two amber farm lamps burning as hard bright points where several lines meet, a lane threading the mesh and ditch water glinting down one hedge, the night horizon a thin band far off, the nearest hedge running out toward the ground as a tangled bank of thorn",
+      "target": "a tangled thorn hedge",
+      "target_phrase": "a thorn hedge"
+    }
+  ],
+  "music_theme": "warm marimba and kalimba figures orbiting a woody bass drone, a deep soft kick landing on every downbeat, night-hedge hush held between the phrases, the plucked figures tightening as the dive goes small, one struck wooden hit on the morph from the rubber mesh out to the hedged country from the air, opening wide and calm for the fall home into the corridor",
+  "music_key": "D minor",
+  "render_start": "hedgerow_corridor"
+}

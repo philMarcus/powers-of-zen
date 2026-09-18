@@ -1,0 +1,16 @@
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/natron_skein/tide_organ.mp4
+    bar 2.667s | music bar 2.667s (conf 0.79) -> stretch 1.0000 | phase 0.030s | lock 37.11x | kick 0.72 | beat 1/4 | fit 1.29 (bar 0.79 vs rival 0.61) | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [tide_organ] realigned (lock 37.11x kick 0.72 fit 1.29)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/natron_skein/tide_organ-b.mp4
+    bar 2.667s | music bar 2.667s (conf 0.83) -> stretch 1.0000 | phase 0.030s | lock 31.04x | kick 0.67 | beat 1/3 | fit 1.32 (bar 0.83 vs rival 0.63) | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [tide_organ-b] realigned (lock 31.04x kick 0.67 fit 1.32)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/natron_skein/music_box-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.81) -> stretch 1.0000 | phase 2.000s | lock 26.27x | kick 0.80 | beat 1/4 | fit 1.89 (bar 0.81 vs rival 0.43) | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [music_box-wild] realigned (lock 26.27x kick 0.81 fit 1.89)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/natron_skein/analog_dawn-wild.mp4
+    bar 2.667s | music bar 2.635s (conf 0.80) -> stretch 0.9880 | phase 0.700s | lock 15.40x | kick 0.74 | beat 1/4 | fit 0.14 (bar 0.10 vs rival 0.67) | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [analog_dawn-wild] realigned (lock 15.40x kick 0.74 fit 0.14)
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/natron_skein/deep_archive-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.75) -> stretch 1.0000 | phase 1.320s | lock 12.37x | kick 0.50 | beat 1/4 | fit 1.41 (bar 0.75 vs rival 0.53) | seamless loop @ 26.67s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] realigned (lock 12.37x kick 0.50 fit 1.41)
+realigned 5 pregen candidates to the marked start

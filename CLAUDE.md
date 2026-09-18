@@ -120,6 +120,67 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-09-18 (AFTERNOON — HANDOFF STATE, everything committed + pushed): the planet descent is APPROVED and
+standard (settings plate_mode=live, plate_intro=enter; PLAN "PLANET DESCENT" + the four 09-18 blocks are
+the record). Phil's last note — a dark BORDER/moat round the globe — was the enter path's wide vacate
+overwriting the live void; fixed (thin rim, vacate only the crescent the globe left, tight feathers),
+CPU-verified, first diffusion renders = the extra batch running since 13:57 in tmux `extra_batch`
+(sargasso_windrow, garnet_glass, gecko_rampart, lissajous_stage; ~19:30). tmux `after_batch` then
+regenerates cork_dehesa from its planet card (it rendered with the old moat) and runs the grow lab v11.
+Review: cherenkov_cistern (approved look, play order fixed) + cork_dehesa v2 (moat, being replaced) +
+6 no-planet videos. 01:30 nightly continues the queue (cicada_chorus, anvil_country, vernal_clutch...).
+OPEN: see the list at the end of PLAN "THE BORDER ROUND THE GLOBE". Video Review now sorts newest
+render first. ComfyUI + dashboard run as their own Windows processes; long jobs live in tmux.
+2026-09-18 (MIDDAY — PHIL APPROVED THE LIVE PLANET DESCENT: "the fix is good and we should use it in all
+future videos"): settings plate_mode="live" + plate_intro="enter" (globe slides in from a frame edge,
+edge varies per journey; GROW still in the lab — v11 runs after the extra batch). His one issue, the
+scale not decreasing monotonically, was OUR render_start rotation playing in render order — fixed by
+PLAY ORDER: journey `play_start` + assembly-time whole-card rotation (dive.play_rotation, assemble rot=,
+`--reassemble vN` no-GPU); the audit records play_start when it rotates; cherenkov_cistern re-assembled
++ re-ingested (opens 10^12, wraps at the end). 7 Review videos with an old-style planet descent pulled
+and re-queued at the FRONT, same seed (cork_dehesa sargasso_windrow garnet_glass gecko_rampart
+cicada_chorus anvil_country vernal_clutch); the 6 Review videos with no planet card stay. EXTRA BATCH
+running since 11:37 in tmux `extra_batch` (first three of those, ~5.1h); 01:30 continues the queue.
+prairie_town posted 10:06 (YT kOzqbcqO16o, IG DdbnCiBt6vh); next post 2026-09-19 05:00 (remaps 09:00).
+ComfyUI + the dashboard now run as their own Windows processes (a closed terminal killed both 06:45).
+2026-09-18 (DAY — Phil reviewed the nightly plate renders: "looks pretty cool" BUT the planet's arrival is
+a FADE not a zoom, and the globe must never just appear mid-frame — it must GROW FROM A POINT or ENTER
+FROM OFF-FRAME, with variety; he judges FULL videos): built `--plate live` (void held by masked
+IP-Adapter instead of a pixel blend; arrival at full boost; ABSOLUTE disc cap 0.30/den — a relative cap
+let the disc run 0.46 on arrival boosts → lumpy rock + spiral) + `--plate-intro grow|enter|plain|auto`.
+Lab: ENTER passes (globe slides in from an edge, live void, clean handoff); GROW at k=2 failed (never
+establishes) → fixed to k 1.5 + opaque-while-small, re-test queued. FULL TEST rendering since 09:05 in
+tmux `plate_full`: cherenkov_cistern, live + enter-from-top, auto-ingests to Video Review (~11:10).
+Nightly stays plate_mode=low + plate_intro=plain until his verdict. ComfyUI now runs as its own
+Windows process (a closed terminal killed it at 06:45). See PLAN "2026-09-18 — THE ARRIVAL".
+2026-09-18 (MORNING — last night's 3 plate renders RECOVERED, not re-rendered): the batch ran and all
+three finished, but with --plate dive.py suffixed the run dir `_platelow` (lab device), so queue_review
+found nothing and marked them render_failed. Fixed (suffix only on --frames lab runs), the three run
+dirs moved to output/<j>/v1, ingested + captioned → cork_dehesa, dugong_meadow, prairie_town are in
+Video Review (engine_params.plate="low"). Frames confirm the plate works in full renders (globe grows
+out of the void to the orbit view on the bar line; deferred cameo pastes after the handoff). Tonight
+renders mantis_drumline + cherenkov_cistern + kelp_dynamo (plan-only verified: plain run dirs).
+2026-09-17 (RENDER PAUSE LIFTED; PLANET PLATE BUILT, LAB-PROVEN AND WIRED INTO TONIGHT'S BATCH — read
+PLAN.md "PLANET DESCENT — THE PLATE PLAN" + its follow-up blocks through "WIRED INTO THE NIGHTLY"
+before touching planet cards): render_paused=False. DIAGNOSIS (frame strips of all 8 planet approaches
+on disk): the tracker has NEVER locked a planet; no planet ever FORMS (word fixes inert at cfg 2 / den
+0.40); 27/53 planet cards were the render_start card whose delivered copy is the LAP = loop-tail homing
+onto a cold postcard. THE FIX: supply the PIXELS — engine/plate.py + dive --plate: a globe rendered
+from a txt2img of the next card's scene (square, mirrored to 360°), composited at the exact scheduled
+size every frame over a void plate, revolving 1.5°/frame, tracker bypassed, SPANNING THE BAR LINE (orbit
+view 1.15x width on the beat, growing through the next arrival until the frame is inside the disc, then
+that card's normal approach). LAB VERDICT (sargasso_windrow + garnet_glass, clips sent to Phil, Phil:
+"certainly an improvement"): B = plate + GLOBAL DENOISE CAP 0.32 works end to end; mask arms ring.
+Two txt2img priors gated by caption + seed re-roll (--plate-void-gate): void as a jewelry pendant,
+surface as a ground-level landscape. WIRED: settings plate_mode="low" (dashboard Settings knob),
+night_batch passes `--plate low --plate-cn 0 --plate-void-gate`; scripts/plate_position_audit.py rotated
+render_start on 9 non-live journeys so the planet card sits mid-chain (cosmic/subatomic starts only;
+8 journeys NEED AUTHORING — planet card at the start with only everyday alternatives — plate inert
+there); cameo on the planet card refused, on the next card deferred past the handoff. TONIGHT 01:30 =
+cork_dehesa + dugong_meadow + prairie_town = the first FULL renders through the plate (lab was card
+spans only) — check night_batch.log + captions in the morning. NEXT: card-after-plate rewording; lap/
+render_start planet cases; est_render_sec plate overhead. All of today's source is UNCOMMITTED.
+Lesson saved: never pkill -f a pattern from a call whose own text contains it (kill by PID).
 2026-09-10 (CLOSE — METER FIT SHIPPED, REVIEW QUEUE AUDITED CLEAN, NOTHING RUNNING):
 THE MUSIC FIX IN ONE LINE: we now check that a track's own PHRASE LENGTH is the video's bar,
 which neither lock nor kick could see. lock is blind (a dense onset envelope always has
