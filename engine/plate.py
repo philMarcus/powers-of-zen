@@ -411,7 +411,10 @@ class Plate:
             # the dark void plate every frame, which overwrote the live star field around
             # the planet and carved a black moat round it (Phil's "border", 2026-09-18). The
             # rim glow is now thin enough that the crescent clears it — no stripe wake.
-            vac_m = np.clip((R_old * 1.05 - dist_o) / 4.0, 0, 1) \
+            # clear a little PAST the old limb (1.12 R_old): with a live-void fill a wider
+            # clear cannot carve a moat any more, and it takes the old limb's edge line with
+            # it (faint arcs trailed the globe when the clear stopped at the limb)
+            vac_m = np.clip((R_old * 1.12 - dist_o) / 5.0, 0, 1) \
                 * (1.0 - np.clip((R_ * 1.00 - dist_n) / 4.0, 0, 1))
             patch = a.copy()
             dx, dy = int(round(nx - ox)), int(round(ny - oy))
@@ -422,9 +425,30 @@ class Plate:
             if ye > ys and xe > xs:
                 moved[ys:ye, xs:xe] = patch[ys - dy:ye - dy, xs - dx:xe - dx]
                 mm[ys:ye, xs:xe] = src_m[ys - dy:ye - dy, xs - dx:xe - dx]
-            if self.void is not None:
-                v = np.asarray(self.void, np.float32) / 255.0
-                a = a * (1 - vac_m[..., None]) + v * vac_m[..., None]   # vacate disc + halo
+            # FILL THE VACATED CRESCENT WITH THE LIVE VOID, never the void plate (Phil
+            # 2026-09-18, sargasso: a dark ribbed column trailing the rising globe — the dark
+            # plate slivers stacked up frame after frame in a bright ray field, and
+            # DepthAnything read them as a solid stalk). Mirror the fed frame across the OLD
+            # limb: a crescent pixel at distance d inside the old edge takes the void pixel
+            # the same distance OUTSIDE it, along the same radius (edge-clamped at the frame
+            # border, where an entering globe's trailing side lies). Continuous at the limb,
+            # made of the same stuff as its surroundings; the void's full denoise does the rest.
+            if vac_m.max() > 0:
+                _d = np.maximum(dist_o, 1e-3)
+                _refl = 2.0 * (R_old * 1.12) - dist_o
+                _sx = np.clip(np.rint(ox + (xx - ox) / _d * _refl), 0, W - 1).astype(np.int32)
+                _sy = np.clip(np.rint(oy + (yy - oy) / _d * _refl), 0, H - 1).astype(np.int32)
+                fill = patch[_sy, _sx]
+                # a mirrored sample that was clamped at the frame border can land back INSIDE
+                # a disc (an entering globe still overlaps the edge it came through): that
+                # replicated the globe's own edge row into a stem under it. Those samples take
+                # the mean of the true void instead; the void's denoise textures it.
+                _bad = (dist_o[_sy, _sx] < R_old * 1.10) | (dist_n[_sy, _sx] < R_ * 1.04)
+                _voidpx = (dist_o > R_old * 1.15) & (dist_n > R_ * 1.10)
+                if _bad.any() and _voidpx.any():
+                    fill = np.where(_bad[..., None], patch[_voidpx].mean(axis=0)[None, None, :],
+                                    fill)
+                a = a * (1 - vac_m[..., None]) + fill * vac_m[..., None]
             a = a * (1 - mm[..., None]) + moved * mm[..., None]        # land it at the new
         cx, cy = self.centre_px()
         R = self.radius_px()

@@ -1841,3 +1841,16 @@ OPEN ITEMS FOR THE NEXT SESSION: (1) judge the border fix + grow v11 in the new 
 card at the render start, only everyday alternative starts); (4) render_start planet cards /
 loop-tail plate (frame-0 path exists, untested); (5) est_render_sec does not know the plate's
 ~+7 min per long journey; (6) grow introduction not in production (settings plate_intro=enter).
+
+## 2026-09-18 (14:20) — THE TRAIL UNDER THE ENTERING GLOBE (Phil caught it live in the ComfyUI outputs)
+The crescent-vacate fix removed the moat but exposed the SAME root cause in a new shape: the
+vacated space was filled with the DARK VOID PLATE, and in sargasso's bright ray field the dark
+slivers stacked up behind the rising globe as a ribbed dark column (DepthAnything even read it
+as a solid stalk). RULE: a vacated region is filled with the LIVE VOID, never the plate —
+mirror the fed frame across the old limb (pixel d inside the old edge takes the void pixel d
+outside it, same radius); samples that clamp at the frame border and land back inside a disc
+(an entering globe still overlaps its edge) take the mean of the true void instead (they had
+replicated the globe's edge row into a stem); clear to 1.12 R_old so the old limb's edge line
+goes too (a wider clear cannot carve a moat once the fill is live void). CPU worst-case sim (no
+healing at all, bottom + right entries over a bright ray field): no column, no stem, no arcs.
+Batch restarted a second time at 14:18 on this code (log outbox/extra_batch_0918c.log).
