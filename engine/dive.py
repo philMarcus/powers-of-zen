@@ -1648,6 +1648,7 @@ def main():
             plate_mask, plate_region, plate_ctl, plate_cn = None, None, None, 0.0
             plate_dd = plate_feed_cn = False
             plate_ipa_img, plate_ipa_w, plate_ipa_mask = None, 0.0, None
+            plate_neg = None
             if _pl is not None:
                 _first = _pl.tex is None
                 if _first:
@@ -1699,6 +1700,8 @@ def main():
                     print(f"[dive] plate assets for card {_pl.card_idx}: surface "
                           f"{_pl.prompts['surface'][:80]!r} / void "
                           f"{_pl.prompts['void'][:60]!r}", flush=True)
+                if not _pl.covered():
+                    plate_neg = _plate.GLOBE_NEG    # no horizon reading while it is a globe
                 if not _first:
                     fed = _pl.rotate_disc(fed)      # v3: revolve the carried interior
                 fed = _pl.composite(fed, first=_first, live=(args.plate == "live"))
@@ -1722,7 +1725,7 @@ def main():
                     # effective denoise on EVERY frame — arm B's ring-free regime — even on
                     # the two arrival boosts (0.58), where v8's relative 0.8 let the disc run
                     # at ~0.46: it was re-read as a lumpy rock, then locked into a spiral.
-                    _in = min(1.0, 0.30 / max(den, 1e-3))
+                    _in = min(1.0, _pl.cap_now() / max(den, 1e-3))
                     plate_mask = upload_image(_pl.mask_image(_pl.noise_mask(inside=_in,
                                                                             outside=1.0)),
                                               f"zoomer_pmask_{name}.png")
@@ -1906,7 +1909,7 @@ def main():
                                            else plate_ipa_img),
                                 ipa_weight=(tail_ipa_w if tail_ipa_w > 0.01 else plate_ipa_w),
                                 ipa_mask=(None if tail_ipa_w > 0.01 else plate_ipa_mask),
-                                neg_extra=hero_neg)
+                                neg_extra=hero_neg or plate_neg)
         png = run_workflow(wf)
         img = Image.open(io.BytesIO(png)).convert("RGB")
         if img.size != (cfg["width"], cfg["height"]):

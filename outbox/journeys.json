@@ -13,7 +13,7 @@
     "refill_paused": false,
     "plate_mode": "live",
     "post_every_hours": 19.0,
-    "post_next": "2026-09-19 05:00",
+    "post_next": "2026-09-20 00:00",
     "plate_intro": "enter"
   },
   "journeys": {
@@ -273,14 +273,6 @@
       "ts": "2026-09-06 00:55:19",
       "note": "composed by midnight refill"
     },
-    "vernal_clutch": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-09-18 11:35:50",
-      "note": "re-render: planet descent fix (plate live) — video pulled from review 2026-09-18 (same seed)",
-      "order": 6
-    },
     "octopus_garden": {
       "state": "queued",
       "order": 23,
@@ -294,5 +286,5 @@
       "note": "composed by midnight refill"
     }
   },
-  "updated": "2026-09-19 07:24:48"
+  "updated": "2026-09-19 09:09:43"
 }

@@ -591,3 +591,14 @@ tonight (queue order): cicada_chorus(L ~107min) + anvil_country(L ~84min) + vern
 === 05:49:45 anvil_country -> REVIEW (captioned)
 === 05:49:45 --- vernal_clutch ---
 === 05:49:46 vernal_clutch: --plate live --plate-cn 0 --plate-void-gate --plate-intro enter
+=== 07:57:14 vernal_clutch: rendered in 7648s
+=== 07:58:03 vernal_clutch -> REVIEW (captioned)
+=== 07:58:03 --- oort_hearth ---
+=== 07:58:03 oort_hearth: --plate live --plate-cn 0 --plate-void-gate --plate-intro enter
+=== 07:58:04 oort_hearth FAILED: dive failed: ] oort_hearth: 200 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors) | [dive] RESOLVE ON — char_crust(surface)[26..39], ice_fracture(sea)[58..81], water_cages(sea)[90..113], coma(surface)[154..167] | [dive] PLATE: no planet-class card in range — flag has no effect
+=== 07:58:04 music pregen: cicada_chorus
+=== 08:00:58 music pregen: anvil_country
+=== 08:03:17 music pregen: vernal_clutch
+=== 08:06:44 batch done in 6.6h — 3 to Review, 1 failed (oort_hearth)
+=== 08:06:44 ComfyUI models unloaded — VRAM freed
+=== 08:06:44 log: outbox/night_batch_0919_013002.log

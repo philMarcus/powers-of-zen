@@ -101,6 +101,11 @@ def inside_prompt(nxt, style):
 
 
 GLOBE_CLAUSE = "a single round planet hanging in the black void of space"
+# while the globe is an OBJECT in the frame: once it is wider than the portrait frame its upper
+# and lower limbs are gentle arcs, and a scene word like "floor"/"plain" lets the model flatten
+# them into a HORIZON with space beneath (vernal_clutch's star_floor card, 2026-09-19: "the
+# planet stretched out horizontally and faded away into space")
+GLOBE_NEG = "horizon, horizon line, flat ground, floor, ground plane, landscape, skyline"
 
 # VOID-PLATE OBJECT GATE (2026-09-17, garnet lab): a cold txt2img of a star scene can come
 # back as a PRODUCT SHOT — garnet's "two stars sharing one pinched envelope ... a moon-silver
@@ -211,6 +216,9 @@ def render_sphere(tex, diam_px, light=(-0.45, -0.55, 0.70), rim_rgb=None, spin_d
 
 # ── per-card state ─────────────────────────────────────────────────────────────────
 class Plate:
+    GLINT_PX = 40.0      # grow: below this radius the globe is drawn as a point of light
+    MIN_CAP_PX = 34.0    # the protected (low-denoise) zone never shrinks below this radius
+
     """One plate = one planet card. Frames [s, e) render through it (arrival included: the
     sphere is introduced during the arrival morph and grows through travel + plunge)."""
 
@@ -352,6 +360,17 @@ class Plate:
     def radius_px(self):
         return self.size * self.w / 2.0
 
+    def cap_now(self):
+        """Effective denoise allowed INSIDE the protected zone this frame. 0.30 is the ring-free
+        regime for a globe; a POINT needs far less (v12 lab: at 0.30 the glint survived one frame
+        brilliantly and was re-read as an ordinary glowing dot the next) — 0.12 while the globe
+        is under GLINT_PX, easing to 0.30 by twice that radius."""
+        if self.intro != "grow":
+            return 0.30
+        R = self.radius_px()
+        t = min(1.0, max(0.0, (R - self.GLINT_PX) / self.GLINT_PX))
+        return 0.12 + 0.18 * t
+
     def centre_px(self):
         return self.tx * self.w, self.ty * self.h
 
@@ -387,9 +406,19 @@ class Plate:
             # nothing in the fed frame worth preserving and the void's full denoise repaints
             # over it (v9 grow lab: the globe never established). Paste it near-opaque while
             # small, relaxing to the usual identity blend by 0.30 x width.
-            _hold = 0.50 if self.intro == "grow" else 0.30   # v10: grow's globe was re-read
-            if self.size < _hold:                            # as a lumpy ball while relaxing
-                w_id = max(w_id, 1.0 - 0.55 * (self.size / _hold))
+            if self.intro == "grow":
+                # v12: HOLD IDENTITY through the growth. v11 relaxed to 0.45 by half the
+                # width and the globe drifted from a banded planet to a cratered rock with a
+                # dark hollow. Near-opaque while it is a point, then >= 0.6 until 0.6 x
+                # width, easing to the usual blend by 0.9.
+                if self.size < 0.20:
+                    w_id = max(w_id, 1.0 - 0.4 * (self.size / 0.20))
+                elif self.size < 0.60:
+                    w_id = max(w_id, 0.60)
+                elif self.size < 0.90:
+                    w_id = max(w_id, 0.60 - 0.30 * (self.size - 0.60) / 0.30)
+            elif self.size < 0.30:
+                w_id = max(w_id, 1.0 - 0.55 * (self.size / 0.30))
             w_shade = 0.0
             w_void = 0.0 if live else 0.25
         # ENTER: move the carried disc from where the crop left it to where the path wants
@@ -499,12 +528,35 @@ class Plate:
         if w_shade:
             blended = blended * ((1 - w_shade) + w_shade * ssh)
         a[fy0:fy1, fx0:fx1] = blended
+        if self.intro == "grow" and R < self.GLINT_PX:
+            # v12: a real approach starts as a POINT OF LIGHT. Under ~40 px the globe was
+            # simply lost in a busy star field (v11: nothing visible for its first nine
+            # frames, then "a small planet appears"). Add a star-like glint at its position
+            # whose strength fades out as the disc becomes big enough to read by itself.
+            g = (1.0 - R / self.GLINT_PX) ** 0.5
+            yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+            d2 = (xx - cx) ** 2 + (yy - cy) ** 2
+            core = np.exp(-d2 / (2.0 * max(3.4, 1.0 * R) ** 2))
+            halo = np.exp(-d2 / (2.0 * max(11.0, 3.2 * R) ** 2))
+            spike = (np.exp(-((xx - cx) ** 2) / 3.0) + np.exp(-((yy - cy) ** 2) / 3.0)) \
+                * np.exp(-d2 / (2.0 * max(14.0, 5.0 * R) ** 2))
+            tint = np.clip((self.rim if self.rim is not None else np.array([0.85, 0.9, 1.0])) * 0.5
+                           + 0.5, 0, 1).astype(np.float32)
+            light = np.clip((1.0 * core + 0.38 * halo + 0.24 * spike) * g, 0.0, 1.0)
+            # MAX-composite, never add: every frame feeds the next, so additive light
+            # accumulated into a white bloom that swallowed the scene within ten frames
+            # (caught in CPU simulation). max() is idempotent — re-applying it to a frame
+            # that already carries the glint changes nothing.
+            a = np.maximum(a, light[..., None] * tint[None, None, :])
         return Image.fromarray((np.clip(a, 0, 1) * 255).astype("uint8"))
 
-    def disc_mask(self, feather_px=6):
-        """0..1 disc (1 inside), feathered at the limb — the regional-prompt mask."""
+    def disc_mask(self, feather_px=6, min_r_px=0.0):
+        """0..1 disc (1 inside), feathered at the limb — the regional-prompt mask.
+        min_r_px (v12): the masks that PROTECT the globe (noise cap, IPA exclusion) never
+        shrink below this radius — a disc a few pixels wide protects nothing, and the void's
+        full denoise repainted the point-sized globe every frame."""
         cx, cy = self.centre_px()
-        R = self.radius_px()
+        R = max(self.radius_px(), float(min_r_px))
         yy, xx = np.mgrid[0:self.h, 0:self.w].astype(np.float32)
         d = np.sqrt((xx - cx) ** 2 + (yy - cy) ** 2)
         m = np.clip((R + feather_px / 2 - d) / max(1.0, feather_px), 0.0, 1.0)
@@ -517,12 +569,12 @@ class Plate:
         B's 0.32 at travel denoise, the ring-free regime) and leaves the void at 1.0."""
         if outside is None:
             outside = self.outside
-        m = self.disc_mask(feather_px)
+        m = self.disc_mask(feather_px, min_r_px=self.MIN_CAP_PX)
         return (outside + (inside - outside) * m).astype(np.float32)
 
     def outside_mask(self, feather_px=6):
         """1 outside the disc, 0 inside — the IP-Adapter attention mask for the void hold."""
-        return (1.0 - self.disc_mask(feather_px)).astype(np.float32)
+        return (1.0 - self.disc_mask(feather_px, min_r_px=self.MIN_CAP_PX)).astype(np.float32)
 
     @staticmethod
     def mask_image(m):

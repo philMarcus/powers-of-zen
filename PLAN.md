@@ -1889,3 +1889,28 @@ fine for 3 of 5 — the LABEL and the SELECTION were wrong:
    being re-ranked in tmux `music_rerank` (log output/plate_lab/rerank_all.log).
 ALSO 09-19: dashboard approve_to_music no longer gates the no-GPU realign on comfy_busy (that is
 why Phil could not pick music during ~20h of renders); nightly rendering is NOT paused.
+
+## 2026-09-19 — "HOW IT WORKS" TAB + GROW v12/v13 + vernal_clutch note
+- OVERVIEW TAB (Phil: "a big visual, graphically organized overview of everything ... to show it
+  off"): dashboard tab 9 "🧭 How it works" renders dashboard/overview.html, built by
+  scripts/build_overview.py (self-contained: inline CSS + hand-authored SVG + 5 real frames as
+  base64; follows light/dark; ~6900px tall at 1240 wide). Seven figures, one claim each: the daily
+  loop · a journey as a circular chain (play start / render start / seam) · inside one card (zoom
+  + denoise curves COMPUTED from the engine formulas) · the frame loop · the planet descent
+  (real cherenkov frames) · closing the loop + play order · music alignment; then an index of
+  ~45 technologies with purpose + file. Static by design for now: re-run the script to refresh
+  counts/frames. Checked by headless-Edge screenshots in light and dark. GOTCHA learned: a CSS
+  text-anchor rule beats the SVG attribute, so per-label alignment must be an inline style.
+- vernal_clutch (Phil: "the planet stretched out horizontally and faded into space"): its planet
+  card is `star_floor`; once the globe is wider than the portrait frame its limbs are gentle
+  arcs and the "floor" reading flattened them into a horizon. GUARD: plate.GLOBE_NEG (horizon,
+  floor, ground plane, landscape...) in the negative while the globe is an object. Composer
+  note: avoid floor/plain/horizon words on the card that targets a planet.
+- GROW: three fixes built (Phil's go): (1) point-of-light GLINT under 40px radius — a
+  MAX-composite (additive light accumulated into a white bloom in CPU sim: every frame feeds the
+  next); (2) MIN_CAP_PX 34: the protected low-denoise zone never shrinks below that radius;
+  (3) identity hold >= 0.6 until 0.6 x width. LAB v12: glint fires (brilliant star at f32) but is
+  inconsistent — at 0.30 effective denoise a point is re-read as one more glowing dot; globe then
+  appears clean at ~97px. v13 (running): Plate.cap_now() = 0.12 while under GLINT_PX easing to
+  0.30 by 2x, slightly larger/stronger glint. Production stays plate_intro=enter until a grow
+  version passes.

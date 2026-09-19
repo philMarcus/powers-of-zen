@@ -657,7 +657,8 @@ tabs = st.tabs([f"🗺 Journeys ({len(pl.jqueue(JD))})",
                 f"Live ({len(live_vids)})",
                 f"Failed ({len(failed_vids)})",
                 "Telemetry",
-                "⚙ Settings"])
+                "⚙ Settings",
+                "🧭 How it works"])
 
 with tabs[1]:  # VIDEO REVIEW — pick cut/model, edit caption, send to Music
     st.write("Look at the video, pick cut/model, edit the caption/theme, then **Approve → Music** "
@@ -1123,3 +1124,15 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
         pl.save(dd)
         pl.telem("settings", detail="edited in dashboard")
         st.success("saved"); st.rerun()
+
+
+with tabs[8]:  # HOW IT WORKS — the visual map of the whole project (static page, 2026-09-19)
+    # Built by scripts/build_overview.py into dashboard/overview.html: one self-contained page
+    # (inline CSS + SVG + a few real frames). Static on purpose for now; rebuild to refresh.
+    _ov = pl.ROOT / "dashboard" / "overview.html"
+    if _ov.exists():
+        import streamlit.components.v1 as _components
+        _components.html(_ov.read_text(encoding="utf-8"), height=7000, scrolling=True)
+        st.caption("Static snapshot. Rebuild with: python3 scripts/build_overview.py")
+    else:
+        st.info("Overview page not built yet — run: python3 scripts/build_overview.py")
