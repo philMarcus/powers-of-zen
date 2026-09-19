@@ -1,0 +1,141 @@
+{
+  "name": "spouter_dawn",
+  "theme": "a geyser basin at winter blue-hour dawn read down its own biology and up to the star that made it — sinter flats under snow, marmalade-orange thermophile channels cooling to lime at their rims, one sapphire vent pool, peach first light on the steam against an indigo sky. The basin commons runs at eye level (bison in the warm runoff, elk on the flats, a coyote at the treeline, ravens on a dead lodgepole, swans on the unfrozen river); the descent goes onto one perpetual spouter whose jet beads into a string of drops at its crest, into the mat turf at millimetre scale where brine flies graze among a wolf spider and a tiger beetle, into the mat's own chains of cylinder cells with their fatter bead-cells, inside one cell to the standing antenna fans of stacked discs, down to the one magnesium atom their rods feed, and to the proton's interior — a taut rope of light across two burning points that parts into a chain of paired beads, which morphs to a cradle star's jets: a beaded thread of light at two scales. The fall home runs the knotted jets down to the cradle wheel at their foot, the young world forming in its gap-rings, the basin from the air, and the commons. ONE LINE BECOMING MANY BEADS is the journey's shape at every scale. NOTE the molecular card `phyco_fans` is the reference-steering candidate — the antenna complex renders nothing by name, so the picture is written out in full and a reference image would carry the structure.",
+  "style": "reef_pop",
+  "music_lane": "analog_dawn",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "young_world",
+      "exp": 6.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "slate continents, marmalade terrace veins, sapphire shallows, peach dawn on indigo night",
+      "scene": "a young world seen from orbit, its continents raw slate rock veined with marmalade-orange terrace country and steaming vent lines, shallow seas holding a saturated sapphire, snow lying across the polar highlands, peach first light running the terminator and the night side sunk in indigo, steam plumes standing in files along the rift valleys, the curve of the limb drawn against the void",
+      "target": "a steaming vent basin",
+      "target_phrase": "a steaming basin"
+    },
+    {
+      "name": "basin_from_air",
+      "exp": 4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "chalk-grey sinter under snow, marmalade channels, sapphire pool, peach steam on indigo sky",
+      "scene": "a geyser basin seen from high above at a slant on a winter daybreak, sinter flats lying under snow as chalk-grey pavement, runoff channels cutting across them floored marmalade-orange and cooling to lime at their rims, a round vent pool holding saturated sapphire at the basin's heart, steam standing over every vent and taking the first peach light, a frozen river looping through black lodgepole forest, an empty boardwalk rail drawn as a slender line across the flats, no one present, the flats running out low toward the treeline",
+      "target": "a marmalade runoff channel",
+      "target_phrase": "an orange channel"
+    },
+    {
+      "name": "basin_commons",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "umber bison coats, marmalade turf, lime rims, peach steam, indigo dawn sky",
+      "scene": "a geyser basin at eye level on a winter dawn, a warm runoff channel steaming across the flats floored with marmalade-orange turf grading to lime at its cooler rims, bison standing in the channel with steam rising off their umber coats, elk out on the snow-crusted sinter, a coyote at the black treeline, ravens settled along a dead lodgepole, trumpeter swans riding the unfrozen river beyond, slender spouters standing among the sinter terraces with their steam taking peach light against an indigo sky, an empty boardwalk rail crossing the flats, no one present",
+      "target": "a slender water jet",
+      "target_phrase": "a water jet"
+    },
+    {
+      "name": "spouter_crest",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sapphire throat water, marmalade crust, lime scallops, peach-lit steam, indigo sky",
+      "scene": "a perpetual spouter's jet standing out of a sinter cone, the column smooth at its foot and beaded into a string of round drops at its crest, more drops hung apart at even spacing above it, the cone's rim crusted marmalade-orange with lime scallops at its cooler lip, saturated sapphire water held in the vent throat, steam drifting off the crest and taking peach dawn light, sinter terraces stepping off in shelves under an indigo sky",
+      "target": "a marmalade-orange turf",
+      "target_phrase": "an orange turf"
+    },
+    {
+      "name": "mat_turf",
+      "exp": -3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "marmalade felt, lime patches, silver bubble domes, sapphire sheet water",
+      "scene": "the runoff turf at millimetre scale, a marmalade-orange felt of hair-thin strands laid in combed streaks with lime patches through the cooler lanes, oxygen bubbles caught under the felt as silver domes, brine flies grazing the turf in loose crowds with their hard lacquered shells taking peach light, a wolf spider crouched on a mound of strands, a tiger beetle standing out in an open lane, sinter grains heaped at the lane rims, shallow sapphire water sheeting over the whole felt",
+      "target": "a hair-thin orange filament",
+      "target_phrase": "an orange filament"
+    },
+    {
+      "name": "mat_filaments",
+      "exp": -5.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "marmalade cell walls, lime tips, ivory bead-cells, amber murk",
+      "scene": "chains of squat cylinder cells set end to end, crowded shoulder to shoulder through a turf of strands, every chain marmalade-orange in the hot lanes and lime toward its cooler reaches, a fatter ivory bead-cell seated into each chain at even intervals, oxygen bubbles held in the crowd as round silver domes, hot water carrying countless motes along the lanes among the chains, the farther chains receding into an amber murk",
+      "target": "a squat cylinder cell",
+      "target_phrase": "a cylinder cell",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "phyco_fans",
+      "exp": -7.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "orange-red rod tips, rose mid-discs, violet cores, ink-violet gloom",
+      "scene": "the inner membrane sheets of one cell crowded with standing antenna fans, each fan a core of three stacked-disc cylinders lying on the membrane with six rods of stacked doughnut discs splayed up and out of that core, every disc a ring of pigment proteins, the rod tips orange-red and grading through rose to violet where they meet the core, thousands of the fans standing over the sheets in crowded files, coiled chains and water clusters adrift among them, the farther fans receding into an ink-violet gloom",
+      "target": "a squat violet core",
+      "target_phrase": "a violet core",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "magnesium_atom",
+      "exp": -9.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cerulean-into-violet haze, amber core, rose plate blur, ink field",
+      "scene": "one magnesium atom's electron fog gathered about one point, a smooth round haze of cerulean grading outward to violet, densest at its heart and softening through tier after tier of faint mist, the point at its centre burning hot amber, the whole fog seated at the middle of a flat pigment plate whose four nitrogen anchors reach inward toward it and whose ring runs off into a soft rose blur, sparks of loose charge adrift through the haze, the field past the plate unlit",
+      "target": "a hot amber core",
+      "target_phrase": "an amber core",
+      "resolve": false,
+      "cameo": {
+        "sprite": "output/mascots/canon/adam.png",
+        "pos": [
+          0.34,
+          0.62
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "flux_rope",
+      "exp": -15.2,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "molten amber rope, ivory bead pairs, ember sparks, ink void",
+      "scene": "the interior of one proton, a taut rope of light drawn across two burning points, the rope's middle narrowing along its length until it parts into a chain of paired beads of light, each pair standing apart at even spacing along the line the rope held, a haze of ember sparks crowding close about them, the emptiness past them unlit"
+    },
+    {
+      "name": "cradle_jets",
+      "exp": 16.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cyan-and-rose knots, coal-black cloud, amber hub, void",
+      "scene": "a cradle star buried out of sight in a coal-black cloud, two narrow jets standing straight out of it, each jet a lit thread strung with knots at even spacing where pulses of outflow pile up, the knots burning cyan and rose, each thread closing in a curved bow of shocked gas, the cloud around them unlit and unbroken but for a scatter of stars burning through its sparser reaches, an amber hub showing at the foot of the jets, the void beyond",
+      "target": "a lit amber hub",
+      "target_phrase": "an amber hub"
+    },
+    {
+      "name": "cradle_wheel",
+      "exp": 13,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber hub, marmalade inner rings, sapphire outer rings, indigo-black cloud",
+      "scene": "a flat wheel of unlit grit ringing one amber hub, the wheel's face ruled with sunless gap-rings swept clear by forming worlds, its inner rings burning marmalade and its outer ones cooling to sapphire, grains and pebbles crowded in files along every ring, a slender lit column standing straight out of the hub with knots strung along it, coal-black cloud lying past the wheel with a scatter of stars caught in its sparser reaches, the void behind all of it",
+      "target": "a round young world, umber and sapphire",
+      "target_phrase": "a young planet",
+      "loop_target": "a flat wheel of unlit grit about one amber hub, sunless gap-rings ruled across its face"
+    }
+  ],
+  "music_theme": "warm analog keys waking over a low mineral drone, a deep soft kick on every downbeat, one struck chime on each morph, the keys tightening to a single tender figure as the turf and the antenna fans close in, one low bell on the morph from the rope of light to the star's jets, then opening wide and golden for the fall home down the knotted jet onto the cradle wheel and the young world",
+  "music_key": "E minor",
+  "render_start": "cradle_wheel"
+}

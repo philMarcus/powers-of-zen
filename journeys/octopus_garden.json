@@ -1,0 +1,142 @@
+{
+  "name": "octopus_garden",
+  "theme": "the octopus garden — a real place three thousand metres down on the drowned flank of a volcanic island, where twenty thousand octopus mothers brood their eggs over seams of warm water rising through the basalt, each one inverted and curled into a rosette over her eggs, the whole slope tiled lilac-pink. A living dive with an unbroken material chain: the garden commons, down onto one mother, onto her skin as a field of colour dots over a shimmering platelet layer, into one colour organ (a pigment sac ringed by its radial muscle cells), through the vessel net into the blood, to the hollow protein cylinders drifting in the plasma with copper pairs seated in their walls, to ONE copper atom of a pair — its electron fog as four equal rounded clouds about a single point, which is the seam: four clouds about a point become four lensed points about a galaxy core (the Einstein Cross), and the fall home runs the lens galaxy's bar, a supergiant's tiled face under an arcade of plasma loops, and an ocean world back to the island. ONE math family throughout: a compact core with a few equal lobed swells about it, read at five scales. NOTE the molecular card `hemocyanin_cylinders` is the reference-steering candidate — the protein renders wrong by name, so the picture is written out in full and a reference image would carry the structure.",
+  "style": "infrared_bloom",
+  "music_lane": "glass_chapel",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "lens_bar",
+      "exp": 20,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "mustard-gold bar, lilac nursery knots, cerulean star files, ink void",
+      "scene": "a barred spiral galaxy seen face-on across open space, a straight mustard-gold bar driven through its crowded core, two arms swept out from the bar's ends and studded with lilac-pink nursery knots, files of cerulean stars banking those arms, sooty unlit matter lying in the lanes, thousands of colder stars strewn over the void beyond the disc, a faint lilac haze carried across the whole field",
+      "target": "a swollen sulphur-gold star",
+      "target_phrase": "a yellow star",
+      "loop_target": "a barred spiral galaxy face-on, a mustard-gold bar driven through its core, lilac nursery knots strung along the arms"
+    },
+    {
+      "name": "star_face",
+      "exp": 12.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sulphur-gold granulation, cerulean loop arcades, sooty spot cores, lilac corona haze",
+      "scene": "the burning surface of a swollen supergiant star at close quarters, tiled over with granulation cells seamed by sunken lanes, two sooty spots set side by side in the tiling with combed filaments wrapped about each, an arcade of cerulean plasma loops standing over the pair and rooted in both of them, a crowded field of slender jets standing up off the tiles, a lilac corona haze reaching out past the rim, colder stars showing through that haze",
+      "target": "a cobalt ocean world",
+      "target_phrase": "a cobalt planet"
+    },
+    {
+      "name": "ocean_world",
+      "exp": 6.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt sea, cerise storm banks, char-black island, lilac polar cap",
+      "scene": "an ocean world seen from orbit, storm spirals wheeling over a cobalt sea that covers nearly the whole globe, a chain of volcanic cones standing up through the water and trailing shoal rings where their crests come near the surface, one cone breaking the surface as a char-black island, cerise cloud banks drawn out along the day terminator, a lilac cap over the pole, the curve of the world cutting across a strewn starfield",
+      "target": "a char-black volcanic island",
+      "target_phrase": "a dark island"
+    },
+    {
+      "name": "octopus_garden",
+      "exp": 0.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "lilac-pink mothers, mustard-yellow seep mat, char-black basalt, sunless cobalt water",
+      "scene": "the drowned flank of that island three thousand metres down, seen low over the slope, warm water seeping up through cracks in the char-black basalt and shimmering over crusts of mustard-yellow mat, the whole slope tiled with lilac-pink octopus mothers by the thousand, every one of them inverted over her eggs with her arms curled inward into a closed rosette, brittle stars threaded through the tiling with their arms hooked over the rock, a rattail fish cruising the slope with its snout down, king crabs stalking among the mothers on hair-thin legs, a snailfish settled in a hollow of the stone, sediment lying over the cold rock past the seeps, the water overhead sunless",
+      "target": "a lilac-pink octopus",
+      "target_phrase": "a pink octopus"
+    },
+    {
+      "name": "brooding_mother",
+      "exp": -0.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "lilac-pink skin, cerise and rust-red dots, cream egg strings, char basalt",
+      "scene": "one octopus mother inverted over her egg strings on the char-black basalt, her eight arms curled up and inward into a closed rosette over them, her lilac-pink skin stippled all over with cerise and rust-red colour dots, cream egg strings showing in the gaps among the arms, the rock about her crusted with mustard-yellow mat, neighbouring mothers tiled off in every direction over the slope, warm water shimmering up past her from the seams in the stone",
+      "target": "a cerise colour dot",
+      "target_phrase": "a pink dot"
+    },
+    {
+      "name": "skin_dots",
+      "exp": -2.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "lilac and cerise discs, plum sac cores, pearl-grey ground, cerulean platelet flecks",
+      "scene": "a stretch of octopus skin as a crowded field of colour dots, lilac and cerise and rust-red discs set at every size over a pearl-grey ground, each disc a dark pigment sac pulled open by its own ring of radial fibres, a shimmering layer of platelet cells beneath them throwing cerulean and mustard flecks up through the gaps, low papillae standing across the field as blunt cones, the discs crowding closer over a ridge of the skin",
+      "target": "a dark plum pigment sac",
+      "target_phrase": "a dark disc"
+    },
+    {
+      "name": "chromatophore_rosette",
+      "exp": -4.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "plum pigment disc, lilac radial cells, cerulean platelet sheet, ink tissue gloom",
+      "scene": "one colour organ of the skin at cell scale, a dark elastic pigment sac at its centre drawn open into a plum disc, eighteen slender muscle cells set at even angles about the sac's rim and each one anchored straight out in the surrounding tissue, a sheet of platelet cells lying under the whole rosette and throwing cerulean up through it, further rosettes crowding off across the tissue in the same pattern, a net of hair-thin vessels running beneath them all with cells adrift inside it",
+      "target": "a cerulean capillary",
+      "target_phrase": "a narrow vessel",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.62,
+          0.41
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "copper_blood",
+      "exp": -5.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cerulean plasma, pearl-grey cells, lilac wall tiling, ink gloom",
+      "scene": "inside one capillary under the skin's colour organs, blood cells adrift in cerulean plasma, each cell a grainy round body with a rough rim, the cells crowding single file where the vessel narrows, the vessel wall standing about them as a smooth tiled sheet, the plasma itself carrying a cerulean cast with countless motes adrift in it, further cells receding into gloom",
+      "target": "a hollow ringed cylinder",
+      "target_phrase": "a ringed cylinder",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "hemocyanin_cylinders",
+      "exp": -8.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "burning copper pairs, lilac ribbon walls, cerulean murk",
+      "scene": "the plasma crowded with hollow protein cylinders adrift in it, each cylinder built of ten curved wall blocks stacked into two rings and standing open at both ends, a pair of copper points seated in the wall of every block, those pairs burning copper-blue where oxygen sits on them, the block faces knotted over with looping ribbon chains, the nearest cylinders passing huge and soft-focus, hundreds more receding in files into a cerulean murk, loose sugar chains hanging off their rims",
+      "target": "a burning copper point",
+      "target_phrase": "a copper point",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "copper_atom",
+      "exp": -10.4,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "lilac haze clouds, cerulean core point, unlit void",
+      "scene": "one copper atom's electron fog standing alone in emptiness, four equal rounded clouds of soft haze set at right angles in one plane about a single hard point at the centre, each cloud drawn to a taper where it meets that point, the haze densest where each cloud swells and fading off outward into nothing, a colder unlit skin of fog standing further out, the void past it empty in every direction",
+      "resolve": false
+    },
+    {
+      "name": "einstein_cross",
+      "exp": 22.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold cerulean points, mustard-gold core, lilac lensed smear, ink void",
+      "scene": "four hard points of cold cerulean light set at the corners of a cross about the mustard-gold core of a foreground galaxy, the four of them matched in colour and in size, the core's glare lying over the middle of the cross, the galaxy's bar and inner arms showing faintly through that glare, a lilac smear of lensed light drawn across the gaps, thousands of unrelated stars strewn over the field, the void reaching out past them",
+      "target": "a mustard-gold galaxy core",
+      "target_phrase": "a golden core"
+    }
+  ],
+  "music_theme": "a hushed sacred descent into cold water — glass bells and a wide choir pad over a low drone, one deep kick on every downbeat as the dive steps down a scale, the bells opening widest as the tiled nursery arrives, thinning to a single held tone through the cell and plasma scales, then one struck bloom on the morph where the atom's four clouds become the four lensed points, the choir widening for the fall home past the galaxy's bar",
+  "music_key": "F# minor",
+  "render_start": "lens_bar",
+  "play_start": "lens_bar"
+}

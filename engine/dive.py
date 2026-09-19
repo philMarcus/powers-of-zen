@@ -904,7 +904,11 @@ def main():
                          "is an object (default = approach_cn). v5 lab: 0 — the radially "
                          "symmetric dome under full denoise is the prime suspect for the "
                          "concentric-ring lock in the mask arms (the hero-cn 'caldera' class).")
-    ap.add_argument("--plate-intro", choices=("auto", "grow", "enter", "plain"), default="auto",
+    ap.add_argument("--plate-entrance-seed", type=int, default=0, metavar="N",
+                    help="with --plate-intro mix/travel/...: vary the journey-keyed entrance "
+                         "draw (labs: see several entrances on one card)")
+    ap.add_argument("--plate-intro", choices=("auto", "grow", "enter", "plain", "mix", "travel",
+                                              "mix-enter", "mix-grow"), default="auto",
                     help="with --plate: how the globe is introduced — grow (from a star-like "
                          "point, accelerating in), enter (already a globe, sliding in from "
                          "beyond a frame edge), plain (the zoom's own rate, lab arm B). auto = "
@@ -1324,12 +1328,27 @@ def main():
             if _intro == "auto":
                 _intro = ("grow", "enter")[_ih % 2]
             _edge = ("right", "left", "top", "bottom")[(_ih >> 3) % 4]
+            # UNIFIED ENTRANCES (2026-09-19): mix = a weighted draw of enter / grow / travel
+            # with any start point, settle point, growth law and bow; travel / mix-enter /
+            # mix-grow force one kind but keep the drawn geometry. The legacy names (enter,
+            # grow, plain) keep their exact approved behaviour.
+            _entrance = None
+            if _intro in ("mix", "travel", "mix-enter", "mix-grow"):
+                _zc = 1.0
+                for _zz in zoom_sched[_pS:_pS + _pF]:
+                    _zc *= _zz
+                _kind = {"mix": None, "travel": "travel", "mix-enter": "enter",
+                         "mix-grow": "grow"}[_intro]
+                _entrance = _plate.draw_entrance(
+                    f"{spec.get('name')}:{_preg.get('name')}:{args.plate_entrance_seed}",
+                    cfg["width"], cfg["height"], args.plate_limb, _zc, kind=_kind)
+                _intro = _entrance["kind"]
             _pl = _plate.Plate(_pk, _pS, _pE2, _pfa, _preg, _pnxt,
                                spec.get("style_suffix", ""),
                                cfg["width"], cfg["height"], zoom_sched[_pS:_pE2],
                                seed=cfg["seed"], n_card=_pF, s_limb=args.plate_limb,
                                outside=args.plate_outside, spin_rate=args.plate_spin,
-                               intro=_intro, edge=_edge)
+                               intro=_intro, edge=_edge, entrance=_entrance)
             plates[_pk] = _pl
             for _x in range(_pS, min(_pE2, total)):
                 plate_at[_x] = _pl
@@ -1349,7 +1368,9 @@ def main():
                     print(f"[dive] plate: cameo at frame {c['start']} ({_pnxt.get('name')}) "
                           f"deferred until the plate hands off", flush=True)
             print(f"[dive] PLATE ({args.plate}, intro {_intro}"
-                  f"{' from ' + _edge if _intro == 'enter' else ''}) card {_pk} "
+                  + (f" {_entrance}" if _entrance else
+                     (' from ' + _edge if _intro == 'enter' else ''))
+                  + f") card {_pk} "
                   f"{_preg.get('name')!r} -> {_pnxt.get('name')!r}: frames {_pS}..{_pE2 - 1} "
                   f"(bar line at {_pS + _pF}), globe {_pl.size0:.3f} -> {args.plate_limb} x "
                   f"width at the bar line, then until the frame is inside the disc", flush=True)

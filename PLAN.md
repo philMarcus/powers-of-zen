@@ -1922,3 +1922,38 @@ why Phil could not pick music during ~20h of renders); nightly rendering is NOT 
   later, after the arrival); (b) the glint reads as a soft glow, not a crisp star point; (c) the
   globe's look still drifts banded → cratered with a dark hollow on the unlit side (shading
   ambient / identity). Awaiting Phil's verdict before it joins `auto`; production stays `enter`.
+
+## 2026-09-19 (afternoon) — GROW v14/v15 + UNIFIED ENTRANCES (Phil: "combine grow and enter tech so we can start anywhere in frame or come in from any direction with a small planet and grow it — key is most possible variety of entrances")
+- GROW v14 (lab sargasso card 1, run sargasso_windrow_platelive/v8, clip ..._live_v14grow_loop.mp4):
+  the point is now INTRODUCED AFTER THE ARRIVAL (Plate.small_start / hold = fa / introduced — the
+  arrival morph at full boost owned the first frames and a point could not compete), crisp star
+  glint, brighter night side while small (ambient 0.60 -> 0.38 by 0.8 x width), cap_now() 0.08-0.12
+  in the point phase, k 1.75. RESULT: the sequence reads point (f36-39) -> small disc (f40) ->
+  growing globe -> orbit view on the bar line -> clean landing (covered f62). TWO FLAWS, both
+  diagnosed from the frames and fixed for v15:
+  (a) THE POINT WAS DIM in the delivered frame though bright on the composite: a 1.7 px gaussian
+      loses ~60% of its peak in one VAE round trip (8x latent) and the scene's own stars outshone
+      it. v15 = flat-topped core (1.8 x a 2.6 px gaussian clipped at 1), whiter tint.
+  (b) "THE DARK BITE OUT OF THE SPHERE" (reported in v12, v13 AND v14 as shading/identity drift —
+      WRONG, it is the TEXTURE): sargasso's surface texture has a near-black river over 16.5% of
+      its area (lum < 0.10), and black-on-black against the void reads as a missing chunk. Fix =
+      plate.lift_darks() in set_assets: luminance under 0.28 compressed toward it (L=0 -> 0.18) in
+      the pixel's own hue. Applies to EVERY plate (enter too) — a globe never carries void-black.
+- UNIFIED ENTRANCES (built, CPU-simulated, lab running): plate.draw_entrance(key, w, h, s_limb,
+  z_card, kind=None) describes EVERY arrival with four things — start (in frame, or beyond ANY
+  point of the frame boundary via perimeter_point, not four edges), goal (a central region, never
+  dead centre), k (growth law: 0.6 = already a globe, 1.0 = zoom rate, 1.75 = a point of light)
+  and bow (sideways arc of the path, fraction of its length). Kinds: `enter` (k 0.6 from off-frame
+  = the approved mechanism, now from any direction) · `grow` (k 1.75, swells IN PLACE at a drawn
+  point, keeps the spiked star glint) · `travel` (k 1.10-1.45 = a SMALL disc that comes from
+  off-frame, or crosses the frame, while it grows). Draw = deterministic crc32 of
+  "journey:card:seed", weights 3 enter / 3 grow / 4 travel. Plate takes `entrance=`; aim()'s path
+  now runs for any start != goal FROM THE INTRODUCTION FRAME to the bar line (even pace + soft
+  landing, as approved for enter); legacy intro names (enter/grow/plain) are byte-for-byte the
+  approved behaviour. dive: --plate-intro mix | travel | mix-enter | mix-grow, plus
+  --plate-entrance-seed N for labs.
+  MOVING POINTS: a travelling globe that still wears its glint gets a TIGHT halo and no spikes
+  (Plate._mover_halo), and the vacate step clears R_old + 2 sigma behind it — otherwise every
+  frame leaves a soft star behind (a string of pearls trailing the traveller).
+  CPU worst-case sim (no diffusion, so leftovers stay visible): scratchpad entrance_sim.py —
+  six draws all reach s_limb on the bar line, max path speed 22-29 px/frame (approved enter = 29).

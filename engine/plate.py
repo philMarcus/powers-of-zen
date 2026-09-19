@@ -161,7 +161,8 @@ def _bilinear(tex, tx, ty):
             + c01 * (1 - fx) * fy + c11 * fx * fy)
 
 
-def render_sphere(tex, diam_px, light=(-0.45, -0.55, 0.70), rim_rgb=None, spin_deg=0.0):
+def render_sphere(tex, diam_px, light=(-0.45, -0.55, 0.70), rim_rgb=None, spin_deg=0.0,
+                  ambient=0.38):
     """Orthographic globe of diameter diam_px from an equirect hemisphere texture.
     Returns (rgb float32 (D,D,3) in 0..1, alpha float32 (D,D), shade float32 (D,D)) where
     D = the canvas (disc + atmosphere rim), alpha covers disc + rim glow, and shade is the
@@ -192,7 +193,7 @@ def render_sphere(tex, diam_px, light=(-0.45, -0.55, 0.70), rim_rgb=None, spin_d
     lx, ly, lz = light
     ln = math.sqrt(lx * lx + ly * ly + lz * lz)
     ndl = np.clip((u * lx + v * ly + z * lz) / ln, 0.0, 1.0)
-    shade = (0.38 + 0.62 * ndl) * (0.72 + 0.28 * np.sqrt(z))
+    shade = (ambient + (1.0 - ambient) * ndl) * (0.72 + 0.28 * np.sqrt(z))
     rgb = np.clip(rgb * shade[..., None], 0.0, 1.0)
     # rim: a thin bright atmosphere line just inside the limb + a soft glow outside
     r = np.sqrt(r2)
@@ -214,6 +215,87 @@ def render_sphere(tex, diam_px, light=(-0.45, -0.55, 0.70), rim_rgb=None, spin_d
     return rgb.astype(np.float32), alpha, shade_full
 
 
+def lift_darks(t, knee=0.28, slope=0.36):
+    """No VOID-BLACK regions on a globe. Grow v12-v14 all showed "a dark bite out of the
+    sphere": not shading, not identity drift — sargasso's surface texture has a near-black
+    river across a sixth of it, and black-on-black against the void reads as a missing chunk.
+    Luminance under `knee` is compressed toward it (L=0 -> ~0.18, continuous and monotone at
+    the knee) in the pixel's own hue, or the texture's mean hue where the pixel has none."""
+    lw = np.array([0.299, 0.587, 0.114], np.float32)
+    lum = t @ lw
+    mean = t.reshape(-1, 3).mean(axis=0)
+    col = t + 0.03 * mean[None, None, :]
+    cl = np.maximum(col @ lw, 1e-4)
+    target = knee - (knee - lum) * slope
+    lifted = np.clip(col * (target / cl)[..., None], 0.0, 1.0)
+    return np.where((lum < knee)[..., None], lifted, t).astype(np.float32)
+
+
+# ── entrances ──────────────────────────────────────────────────────────────────────
+def perimeter_point(t, w, h):
+    """A point on the frame boundary, t in [0,1) running clockwise from the top-left corner,
+    in fractional coords, plus the outward unit normal (in PIXEL space)."""
+    P = 2.0 * (w + h)
+    d = (t % 1.0) * P
+    if d < w:
+        return (d / w, 0.0), (0.0, -1.0)
+    d -= w
+    if d < h:
+        return (1.0, d / h), (1.0, 0.0)
+    d -= h
+    if d < w:
+        return (1.0 - d / w, 1.0), (0.0, 1.0)
+    d -= w
+    return (0.0, 1.0 - d / h), (-1.0, 0.0)
+
+
+def draw_entrance(key, w, h, s_limb, z_card, kind=None):
+    """ONE description for every way a globe can arrive (Phil 2026-09-19: "start anywhere in
+    frame or come in from any direction with a small planet and grow it — the most possible
+    variety of entrances"). Deterministic from `key` (journey:card[:seed]).
+
+        start  where the globe is when it is introduced — in frame, or beyond ANY point of
+               the frame boundary (not just four edges)
+        goal   where it sits at the bar line (a central region, never dead centre)
+        k      growth law: size = s_limb * (Z/Z_card)^k. 0.6 = already a globe (~0.3 x width),
+               1.0 = the zoom's own rate, 1.75 = a point of light
+        bow    sideways bulge of the path as a fraction of its length (0 = straight)
+
+    kinds: 'enter' (big globe from off-frame) · 'grow' (a point that swells in place) ·
+    'travel' (a SMALL globe that comes from off-frame or across the frame while it grows) ·
+    None = a weighted draw of all three."""
+    import zlib
+    hv = zlib.crc32(key.encode())
+    r = lambda n: ((zlib.crc32(f"{key}#{n}".encode()) % 10000) / 10000.0)   # noqa: E731
+    if kind is None:
+        kind = ("enter", "enter", "enter", "grow", "grow", "grow",
+                "travel", "travel", "travel", "travel")[hv % 10]
+    goal = (0.42 + 0.20 * r(1), 0.40 + 0.14 * r(2))
+    bow = (-0.16, 0.0, 0.0, 0.16)[int(r(3) * 4) % 4]
+    if kind == "grow":
+        k = 1.75
+        start = (0.30 + 0.40 * r(4), 0.28 + 0.40 * r(5))
+        # it swells WHERE IT IS (no path: the zoom's own slow ease toward centre carries it,
+        # and a stationary point keeps the full spiked star glint)
+        goal = start
+        bow = 0.0
+    else:
+        k = 0.6 if kind == "enter" else (1.10 + 0.35 * r(6))
+        size0 = s_limb * (1.0 / z_card) ** k                 # diameter, fraction of width
+        rpx = size0 * w / 2.0
+        if kind == "travel" and r(7) < 0.35:
+            # crosses the frame: starts inside, far from where it will settle
+            start = (0.12 + 0.76 * r(8), 0.10 + 0.80 * r(9))
+            if abs(start[0] - goal[0]) + abs(start[1] - goal[1]) < 0.45:
+                start = (1.0 - goal[0] + 0.1 * (r(8) - 0.5), 0.12 if goal[1] > 0.45 else 0.86)
+        else:
+            (px, py), (nx, ny) = perimeter_point(r(8), w, h)
+            pad = rpx + 0.03 * w
+            start = (px + nx * pad / w, py + ny * pad / h)
+    return {"kind": kind, "start": (round(start[0], 4), round(start[1], 4)),
+            "goal": (round(goal[0], 4), round(goal[1], 4)), "k": round(k, 3), "bow": bow}
+
+
 # ── per-card state ─────────────────────────────────────────────────────────────────
 class Plate:
     GLINT_PX = 40.0      # grow: below this radius the globe is drawn as a point of light
@@ -224,7 +306,7 @@ class Plate:
 
     def __init__(self, card_idx, s, e, fa, reg, nxt, style, w, h, zooms, seed,
                  n_card=None, start_pos=(0.62, 0.40), s_limb=1.15, ease=0.06, outside=0.27,
-                 spin_rate=1.5, intro="grow", edge="right"):
+                 spin_rate=1.5, intro="grow", edge="right", entrance=None):
         """Frames [s, e) = the planet card PLUS the next card (the plate spans the bar line:
         the next card is authored as the ORBIT VIEW, so the globe must reach that view — a
         disc wider than the frame, limb still visible top and bottom — exactly at the
@@ -255,13 +337,27 @@ class Plate:
         # thirds of the card and then had ~8 frames to reach the orbit view — it never
         # established. 1.5 starts it as a visible bright dot (~0.036 x width) and spreads
         # the growth.
-        self.k = {"grow": 1.5, "enter": 0.6, "plain": 1.0}.get(intro, 1.0)
+        # grow 1.5 -> 1.75 (v14): the point is now introduced a beat later (after the arrival),
+        # so a slightly steeper law keeps a ~8-frame point-of-light phase before it swells
+        self.k = {"grow": 1.75, "enter": 0.6, "plain": 1.0}.get(intro, 1.0)
+        if entrance:
+            self.k = float(entrance["k"])
         self.size0 = s_limb * (1.0 / Z) ** self.k    # diameter, fraction of frame WIDTH
         self.size = self.size0
         self.edge = edge
         self.shift = (0.0, 0.0)           # px the carried disc must move this frame (enter)
         self.entry = None
-        if intro == "enter":
+        self.bow = 0.0
+        self.entrance = entrance
+        if entrance:
+            # unified entrances: any start, any settle point, any growth law, optional bow
+            self.entry = tuple(entrance["start"])
+            self.goal = tuple(entrance["goal"])
+            self.bow = float(entrance.get("bow", 0.0))
+            self.tx, self.ty = self.entry
+            if abs(self.entry[0] - self.goal[0]) + abs(self.entry[1] - self.goal[1]) < 0.02:
+                self.entry = None         # swells in place: no path
+        elif intro == "enter":
             r_frac = self.size0 / 2.0                         # radius as a fraction of W
             ax, ay = 0.5, 0.5
             pad = 0.03
@@ -274,7 +370,15 @@ class Plate:
             self.goal = (0.56, 0.46)      # where the path lands at the bar line (then the
                                           # usual ease toward centre takes over)
         self.done = False                 # set once the frame lies inside the disc
-        self.tx, self.ty = start_pos      # sphere centre (fractional), the zoom's fixed point
+        # a globe that STARTS AS A POINT is introduced only after the card's arrival morph
+        # (v13: its first ~4 frames showed nothing — the arrival at full boost owned them and
+        # the point could not compete). A globe that starts big enters during the arrival,
+        # off-frame anyway, exactly as approved.
+        self.small_start = (self.size0 * w / 2.0) < self.GLINT_PX * 1.5
+        self.hold = fa if self.small_start else 0
+        self.introduced = False
+        # sphere centre (fractional), the zoom's fixed point
+        self.tx, self.ty = tuple(entrance["start"]) if entrance else start_pos
         self.anchor = (0.5, 0.5)          # eases toward centre as it grows (descent lands on
         self.ease = ease                  # the surface, not the limb)
         self.outside = outside            # noise-mask value outside the disc (mask modes)
@@ -294,6 +398,7 @@ class Plate:
     # assets --------------------------------------------------------------------------
     def set_assets(self, tex_img, void_img):
         t = np.asarray(tex_img.convert("RGB"), np.float32) / 255.0
+        t = lift_darks(t)
         if t.shape[1] < 2 * t.shape[0] - 2:
             # square top-down texture -> 2:1 equirect by mirroring (seam-free at both ends)
             t = np.concatenate([t, t[:, ::-1]], axis=1)
@@ -307,18 +412,28 @@ class Plate:
         `track_mod` = engine.track (propagate + crop clamp), so pixels and geometry agree."""
         ax, ay = self.anchor
         j = self.frame
-        if self.intro == "enter" and j < self.n:
-            # the globe slides in from beyond the edge: an ease-out path from the entry
-            # point to the goal, arriving at the bar line. The crop still aims at the
-            # globe (the ease formula on its DESIRED position), and whatever the crop
-            # carries the old disc to, the composite translates it to the desired spot.
-            u = (j + 1) / max(1, self.n)
+        if self.entry is not None and j < self.n:
+            # the globe travels from its start to its settle point, arriving at the bar
+            # line. The crop still aims at the globe (the ease formula on its DESIRED
+            # position), and whatever the crop carries the old disc to, the composite
+            # translates it to the desired spot. A point-start globe only begins its path
+            # when it is introduced (after the arrival morph).
+            u = (j + 1 - self.hold) / max(1, self.n - self.hold)
+            u = min(1.0, max(0.0, u))
             # EVEN PACE with a soft landing (was ease-out 1-(1-u)^2: ~44 px/frame at the
             # start = a big sliver to fill behind the globe every early frame, which the
             # model read as a ghost bubble). smoothstep-blended linear: peak ~1.25x the mean.
             e = 0.5 * u + 0.5 * (u * u * (3.0 - 2.0 * u))
             des = (self.entry[0] + (self.goal[0] - self.entry[0]) * e,
                    self.entry[1] + (self.goal[1] - self.entry[1]) * e)
+            if self.bow:
+                # a gentle arc: bulge sideways, measured in PIXEL space so it is a true
+                # perpendicular in the portrait frame
+                dxp = (self.goal[0] - self.entry[0]) * self.w
+                dyp = (self.goal[1] - self.entry[1]) * self.h
+                ln = math.hypot(dxp, dyp) or 1.0
+                off = self.bow * ln * math.sin(math.pi * e)
+                des = (des[0] + (-dyp / ln) * off / self.w, des[1] + (dxp / ln) * off / self.h)
             cx = des[0] - (des[0] + self.ease * (ax - des[0]) - 0.5) / z
             cy = des[1] - (des[1] + self.ease * (ay - des[1]) - 0.5) / z
             cx, cy = min(0.85, max(0.15, cx)), min(0.85, max(0.15, cy))
@@ -350,7 +465,7 @@ class Plate:
         content and the texture-rendered globe agree (warp.hero_orbit: interior rotates about
         the vertical axis, trailing limb disoccluded -> the identity blend + diffusion fill
         it)."""
-        if not self.spin_rate or self.tex is None:
+        if not self.spin_rate or self.tex is None or not self.introduced:
             return fed
         import warp as _warp
         cx, cy = self.carried_px()
@@ -360,14 +475,21 @@ class Plate:
     def radius_px(self):
         return self.size * self.w / 2.0
 
+    @staticmethod
+    def _mover_halo(R):
+        """Glint halo sigma (px) for a travelling point — tight, so the vacate can clear it."""
+        return min(12.0, max(5.0, 1.2 * R))
+
     def cap_now(self):
         """Effective denoise allowed INSIDE the protected zone this frame. 0.30 is the ring-free
         regime for a globe; a POINT needs far less (v12 lab: at 0.30 the glint survived one frame
         brilliantly and was re-read as an ordinary glowing dot the next) — 0.12 while the globe
         is under GLINT_PX, easing to 0.30 by twice that radius."""
-        if self.intro != "grow":
+        if not self.small_start:
             return 0.30
         R = self.radius_px()
+        if R < self.GLINT_PX:
+            return 0.08 + 0.04 * (R / self.GLINT_PX)
         t = min(1.0, max(0.0, (R - self.GLINT_PX) / self.GLINT_PX))
         return 0.12 + 0.18 * t
 
@@ -392,6 +514,12 @@ class Plate:
         void plate in dive.py (the seam lesson: a pixel blend reads as a fading photograph,
         conditioning reads as a live morph) — and the globe FADES IN across the arrival beat
         (intro ramp over `fa` frames) instead of pasting in one frame."""
+        if not self.introduced:
+            if self.frame <= self.hold:
+                return fed                  # not yet: the arrival morph has the frame
+            first, self.introduced = True, True
+        else:
+            first = False
         a = np.asarray(fed.convert("RGB"), np.float32) / 255.0
         H, W = a.shape[:2]
         j = self.frame
@@ -406,7 +534,7 @@ class Plate:
             # nothing in the fed frame worth preserving and the void's full denoise repaints
             # over it (v9 grow lab: the globe never established). Paste it near-opaque while
             # small, relaxing to the usual identity blend by 0.30 x width.
-            if self.intro == "grow":
+            if self.small_start:
                 # v12: HOLD IDENTITY through the growth. v11 relaxed to 0.45 by half the
                 # width and the globe drifted from a banded planet to a cratered rock with a
                 # dark hollow. Near-opaque while it is a point, then >= 0.6 until 0.6 x
@@ -434,6 +562,12 @@ class Plate:
             R_old = getattr(self, "prev_size", self.size) * self.w / 2.0 * \
                 (self.zooms[min(self.frame - 1, len(self.zooms) - 1)] if self.zooms else 1.0)
             R_old = min(R_old, R_)
+            # what must be cleared behind the globe: the old disc + thin rim, and — while a
+            # moving globe still wears its glint — the glint's halo too (a bright soft dot
+            # left behind every frame = a string of stars trailing the traveller)
+            R_clear = R_old * 1.12
+            if self.small_start and R_old < self.GLINT_PX:
+                R_clear = max(R_clear, R_old + 2.0 * self._mover_halo(R_old))
             yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
             dist_o = np.sqrt((xx - ox) ** 2 + (yy - oy) ** 2)
             dist_n = np.sqrt((xx - nx) ** 2 + (yy - ny) ** 2)
@@ -446,7 +580,7 @@ class Plate:
             # clear a little PAST the old limb (1.12 R_old): with a live-void fill a wider
             # clear cannot carve a moat any more, and it takes the old limb's edge line with
             # it (faint arcs trailed the globe when the clear stopped at the limb)
-            vac_m = np.clip((R_old * 1.12 - dist_o) / 14.0, 0, 1) \
+            vac_m = np.clip((R_clear - dist_o) / 14.0, 0, 1) \
                 * (1.0 - np.clip((R_ * 1.00 - dist_n) / 4.0, 0, 1))
             patch = a.copy()
             dx, dy = int(round(nx - ox)), int(round(ny - oy))
@@ -476,7 +610,7 @@ class Plate:
                 _tx, _ty = ((ox - nx) / _mv, (oy - ny) / _mv) if _mv > 1e-3 else (0.0, 1.0)
                 _px, _py = xx - ox, yy - oy
                 _b = _px * _tx + _py * _ty
-                _disc = np.maximum(_b * _b - (_px * _px + _py * _py) + (R_old * 1.12) ** 2, 0.0)
+                _disc = np.maximum(_b * _b - (_px * _px + _py * _py) + R_clear ** 2, 0.0)
                 _ell = -_b + np.sqrt(_disc) + 3.0          # distance to the old edge along t
                 _sx = np.clip(np.rint(xx + _tx * _ell), 0, W - 1).astype(np.int32)
                 _sy = np.clip(np.rint(yy + _ty * _ell), 0, H - 1).astype(np.int32)
@@ -485,8 +619,8 @@ class Plate:
                 # a disc (an entering globe still overlaps the edge it came through): that
                 # replicated the globe's own edge row into a stem under it. Those samples take
                 # the mean of the true void instead; the void's denoise textures it.
-                _bad = (dist_o[_sy, _sx] < R_old * 1.10) | (dist_n[_sy, _sx] < R_ * 1.04)
-                _voidpx = (dist_o > R_old * 1.15) & (dist_n > R_ * 1.10)
+                _bad = (dist_o[_sy, _sx] < R_clear * 0.98) | (dist_n[_sy, _sx] < R_ * 1.04)
+                _voidpx = (dist_o > R_clear * 1.03) & (dist_n > R_ * 1.10)
                 if _bad.any() and _voidpx.any():
                     fill = np.where(_bad[..., None], patch[_voidpx].mean(axis=0)[None, None, :],
                                     fill)
@@ -496,7 +630,14 @@ class Plate:
         R = self.radius_px()
         if self.tex is None:
             return Image.fromarray((np.clip(a, 0, 1) * 255).astype("uint8"))
-        rgb, alpha, shade = render_sphere(self.tex, 2 * R, rim_rgb=self.rim, spin_deg=self.spin)
+        # a small globe's unlit side was painted as a HOLLOW and carried forward (grow v13:
+        # "a cratered rock with a dark bite"). Point-start globes get a brighter night side
+        # while small, easing to the normal shading by 0.8 x width.
+        amb = 0.38
+        if self.small_start:
+            amb = 0.60 - 0.22 * min(1.0, max(0.0, (self.size - 0.35) / 0.45))
+        rgb, alpha, shade = render_sphere(self.tex, 2 * R, rim_rgb=self.rim, spin_deg=self.spin,
+                                          ambient=amb)
         if self.rim is None:
             self.rim = rgb[alpha > 0.5].mean(axis=0) if (alpha > 0.5).any() else None
         D = rgb.shape[0]
@@ -528,7 +669,7 @@ class Plate:
         if w_shade:
             blended = blended * ((1 - w_shade) + w_shade * ssh)
         a[fy0:fy1, fx0:fx1] = blended
-        if self.intro == "grow" and R < self.GLINT_PX:
+        if self.small_start and R < self.GLINT_PX:
             # v12: a real approach starts as a POINT OF LIGHT. Under ~40 px the globe was
             # simply lost in a busy star field (v11: nothing visible for its first nine
             # frames, then "a small planet appears"). Add a star-like glint at its position
@@ -536,13 +677,24 @@ class Plate:
             g = (1.0 - R / self.GLINT_PX) ** 0.5
             yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
             d2 = (xx - cx) ** 2 + (yy - cy) ** 2
-            core = np.exp(-d2 / (2.0 * max(3.4, 1.0 * R) ** 2))
-            halo = np.exp(-d2 / (2.0 * max(11.0, 3.2 * R) ** 2))
-            spike = (np.exp(-((xx - cx) ** 2) / 3.0) + np.exp(-((yy - cy) ** 2) / 3.0)) \
-                * np.exp(-d2 / (2.0 * max(14.0, 5.0 * R) ** 2))
-            tint = np.clip((self.rim if self.rim is not None else np.array([0.85, 0.9, 1.0])) * 0.5
-                           + 0.5, 0, 1).astype(np.float32)
-            light = np.clip((1.0 * core + 0.38 * halo + 0.24 * spike) * g, 0.0, 1.0)
+            # v15: a FLAT-TOPPED core. v14's 1.7 px gaussian was right on the composite and
+            # dim in the delivered frame — one VAE round trip (8x latent) smears a point that
+            # narrow to ~40% of its peak, and the scene's own stars (big, saturated, spiked)
+            # outshone it. 1.8x a 2.6 px gaussian clipped at 1 keeps a ~3 px saturated disc.
+            core = np.maximum(np.minimum(1.0, 1.8 * np.exp(-d2 / (2.0 * 2.6 ** 2))),
+                              0.75 * np.exp(-d2 / (2.0 * max(3.4, 1.0 * R) ** 2)))
+            if self.entry is not None:
+                # a TRAVELLING point: tight halo, no spikes — everything it wears must fit
+                # inside what the vacate step clears behind it each frame
+                halo = np.exp(-d2 / (2.0 * self._mover_halo(R) ** 2))
+                spike = 0.0
+            else:
+                halo = np.exp(-d2 / (2.0 * max(11.0, 3.2 * R) ** 2))
+                spike = (np.exp(-((xx - cx) ** 2) / 1.4) + np.exp(-((yy - cy) ** 2) / 1.4)) \
+                    * np.exp(-d2 / (2.0 * max(22.0, 6.0 * R) ** 2))
+            tint = np.clip((self.rim if self.rim is not None else np.array([0.85, 0.9, 1.0])) * 0.3
+                           + 0.7, 0, 1).astype(np.float32)
+            light = np.clip((1.0 * core + 0.34 * halo + 0.42 * spike) * g, 0.0, 1.0)
             # MAX-composite, never add: every frame feeds the next, so additive light
             # accumulated into a white bloom that swallowed the scene within ten frames
             # (caught in CPU simulation). max() is idempotent — re-applying it to a frame
@@ -555,6 +707,8 @@ class Plate:
         min_r_px (v12): the masks that PROTECT the globe (noise cap, IPA exclusion) never
         shrink below this radius — a disc a few pixels wide protects nothing, and the void's
         full denoise repainted the point-sized globe every frame."""
+        if not self.introduced:
+            return np.zeros((self.h, self.w), np.float32)      # no globe yet, nothing to mask
         cx, cy = self.centre_px()
         R = max(self.radius_px(), float(min_r_px))
         yy, xx = np.mgrid[0:self.h, 0:self.w].astype(np.float32)
