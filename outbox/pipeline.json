@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-09-19 07:18:40",
+    "updated": "2026-09-19 07:36:01",
     "paused_platforms": [
       "tiktok"
     ],
@@ -8657,7 +8657,7 @@
       "journey": "cherenkov_cistern",
       "model": "ds",
       "cut": "divein",
-      "file": "review_divein/cherenkov_cistern_ds_divein.mp4",
+      "file": "review_divein/cherenkov_cistern_ds_divein_shift.mp4",
       "title": "",
       "caption": "Dust and droplets, spheres and shadows—where does the journey end? ⚡ Can you spot Clark the Quark in the cosmic dance? 👀 #CosmicZoom #InfiniteLoop #GoldenVoid #MolecularMysteries #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
       "yt_title": "Dust and droplets, spheres and shadows—where does the journey end? ⚡",
@@ -8814,7 +8814,7 @@
             "track": "output/music/cherenkov_cistern_pulse2-glass_chapel.flac",
             "aligned": "review/music/candidates/cherenkov_cistern/pulse2-glass_chapel.mp4",
             "seed": 16143,
-            "lock": 29.37,
+            "lock": 29.36,
             "bar_conf": 0.59,
             "kick": 0.53,
             "score": 24.97,
@@ -8842,7 +8842,7 @@
             "track": "output/music/cherenkov_cistern_glass_chapel.flac",
             "aligned": "review/music/candidates/cherenkov_cistern/glass_chapel.mp4",
             "seed": 15682,
-            "lock": 11.53,
+            "lock": 11.52,
             "bar_conf": 0.64,
             "kick": 0.46,
             "score": 9.34,
@@ -8870,7 +8870,7 @@
             "track": "output/music/cherenkov_cistern_analog_dawn-wild.flac",
             "aligned": "review/music/candidates/cherenkov_cistern/analog_dawn-wild.mp4",
             "seed": 15793,
-            "lock": 2.87,
+            "lock": 2.86,
             "bar_conf": 0.15,
             "kick": 0.16,
             "score": 0.88,
@@ -8880,7 +8880,9 @@
         ],
         "for_model": "ds",
         "for_cut": "divein"
-      }
+      },
+      "start_t": 24.0,
+      "orig_file": "review_divein/cherenkov_cistern_ds_divein.mp4"
     },
     {
       "journey": "peony_shell",
@@ -16002,20 +16004,6 @@
         "chosen": null,
         "candidates": [
           {
-            "id": "ember_pulse-wild",
-            "lane": "ember_pulse",
-            "mood": "smoldering, dark, gravitational · halftime",
-            "track": "output/music/sargasso_windrow_ember_pulse-wild.flac",
-            "aligned": "review/music/candidates/sargasso_windrow/ember_pulse-wild.mp4",
-            "seed": 4207,
-            "lock": 18.19,
-            "bar_conf": 0.71,
-            "kick": 0.66,
-            "fit": 0.1,
-            "score": 1.64,
-            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a night drift on the deep-water sea — dark oceanic pads and a deep warm sub drone under slow blooming swells, one heavy low kick landing on the downbeat of every scale change, the pads thinning to a single held tone through the cell and chain bars, a wide swell where the splitting tracks fold out as the cluster's converging lanes, and a warmer settling figure as the star's comet shoal gives way to the moonlit sea, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
-          },
-          {
             "id": "deep_archive-heartbeat",
             "lane": "deep_archive",
             "mood": "vast, ancient, submerged · heartbeat",
@@ -16025,9 +16013,23 @@
             "lock": 13.35,
             "bar_conf": 0.75,
             "kick": 0.79,
-            "fit": -0.01,
-            "score": 1.47,
+            "fit": 1.43,
+            "score": 4.81,
             "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a night drift on the deep-water sea — dark oceanic pads and a deep warm sub drone under slow blooming swells, one heavy low kick landing on the downbeat of every scale change, the pads thinning to a single held tone through the cell and chain bars, a wide swell where the splitting tracks fold out as the cluster's converging lanes, and a warmer settling figure as the star's comet shoal gives way to the moonlit sea, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "ember_pulse-wild",
+            "lane": "ember_pulse",
+            "mood": "smoldering, dark, gravitational · halftime",
+            "track": "output/music/sargasso_windrow_ember_pulse-wild.flac",
+            "aligned": "review/music/candidates/sargasso_windrow/ember_pulse-wild.mp4",
+            "seed": 4207,
+            "lock": 18.19,
+            "bar_conf": 0.71,
+            "kick": 0.66,
+            "fit": 1.09,
+            "score": 4.45,
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a night drift on the deep-water sea — dark oceanic pads and a deep warm sub drone under slow blooming swells, one heavy low kick landing on the downbeat of every scale change, the pads thinning to a single held tone through the cell and chain bars, a wide swell where the splitting tracks fold out as the cluster's converging lanes, and a warmer settling figure as the star's comet shoal gives way to the moonlit sea, a deep 808 heartbeat under smoky low pads and distant soft chimes, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
           },
           {
             "id": "pulse1-deep_archive",
@@ -16039,41 +16041,40 @@
             "lock": 8.78,
             "bar_conf": 0.75,
             "kick": 0.73,
-            "fit": 0.15,
-            "score": 1.42,
+            "fit": 0.89,
+            "score": 3.3,
             "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a night drift on the deep-water sea — dark oceanic pads and a deep warm sub drone under slow blooming swells, one heavy low kick landing on the downbeat of every scale change, the pads thinning to a single held tone through the cell and chain bars, a wide swell where the splitting tracks fold out as the cluster's converging lanes, and a warmer settling figure as the star's comet shoal gives way to the moonlit sea, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
           },
           {
-            "id": "analog_dawn-wild",
-            "lane": "analog_dawn",
-            "mood": "nostalgic, golden, waking · downbeat",
-            "track": "output/music/sargasso_windrow_analog_dawn-wild.flac",
-            "aligned": "review/music/candidates/sargasso_windrow/analog_dawn-wild.mp4",
-            "seed": 4318,
-            "lock": 7.84,
-            "bar_conf": -0.02,
-            "kick": -0.01,
-            "fit": -0.22,
-            "score": 0.16,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a night drift on the deep-water sea — dark oceanic pads and a deep warm sub drone under slow blooming swells, one heavy low kick landing on the downbeat of every scale change, the pads thinning to a single held tone through the cell and chain bars, a wide swell where the splitting tracks fold out as the cluster's converging lanes, and a warmer settling figure as the star's comet shoal gives way to the moonlit sea, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "id": "deep_archive-halftime",
+            "lane": "deep_archive",
+            "mood": "vast, ancient, submerged",
+            "tags": "",
+            "track": "output/music/sargasso_windrow_deep_archive-halftime.flac",
+            "aligned": "review/music/candidates/sargasso_windrow/deep_archive-halftime.mp4",
+            "lock": 11.15,
+            "bar_conf": 0.74,
+            "kick": 0.6,
+            "fit": 1.29,
+            "score": 3.23
           },
           {
-            "id": "night_market-wild",
-            "lane": "night_market",
-            "mood": "nocturnal, lantern-lit, wandering · downbeat",
-            "track": "output/music/sargasso_windrow_night_market-wild.flac",
-            "aligned": "review/music/candidates/sargasso_windrow/night_market-wild.mp4",
-            "seed": 4244,
-            "lock": 2.75,
-            "bar_conf": 0.03,
-            "kick": 0.06,
-            "fit": 0.0,
-            "score": 0.14,
-            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a night drift on the deep-water sea — dark oceanic pads and a deep warm sub drone under slow blooming swells, one heavy low kick landing on the downbeat of every scale change, the pads thinning to a single held tone through the cell and chain bars, a wide swell where the splitting tracks fold out as the cluster's converging lanes, and a warmer settling figure as the star's comet shoal gives way to the moonlit sea, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+            "id": "deep_archive",
+            "lane": "deep_archive",
+            "mood": "vast, ancient, submerged",
+            "tags": "",
+            "track": "output/music/sargasso_windrow_deep_archive.flac",
+            "aligned": "review/music/candidates/sargasso_windrow/deep_archive.mp4",
+            "lock": 14.33,
+            "bar_conf": 0.64,
+            "kick": 0.38,
+            "fit": 1.81,
+            "score": 2.17
           }
         ],
         "for_model": "ds",
-        "for_cut": "zoomout"
+        "for_cut": "zoomout",
+        "generated_at": "09-19 07:36 (re-ranked)"
       }
     },
     {

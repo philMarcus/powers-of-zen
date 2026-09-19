@@ -100,7 +100,7 @@ def _downbeat_phase(env, esr, bar_track, beats):
     return float(grid[int(np.argmax(scores))])
 
 
-def meter_fit(env, esr, bar, lo_s=0.30, hi_s=7.0):
+def meter_fit(env, esr, bar, lo_s=0.30, hi_s=7.0, ref=None):
     """Does the track PHRASE in the video's bar, or in some other grouping?
 
     Phil, 2026-09-10: the picture's morph is reliably periodic — "every video has a good
@@ -119,20 +119,34 @@ def meter_fit(env, esr, bar, lo_s=0.30, hi_s=7.0):
 
     Returns (fit, bar_ac, clash_ac): fit = bar_ac / clash_ac, where clash_ac is the strongest
     periodicity that neither divides nor multiplies the bar. fit >= 1 means the bar is the
-    track's own strongest structure; below 1 a rival grouping is stronger."""
+    track's own strongest structure; below 1 a rival grouping is stronger.
+
+    `ref` (2026-09-19 — the sargasso_windrow false alarm): the period to judge the track
+    AGAINST. On an UNSTRETCHED track that must be the track's own MEASURED bar, not the
+    video's nominal bar. ACE-Step lands within a percent or two of the requested tempo and
+    the aligner stretches the difference away, but autocorrelation peaks are only a few
+    hundredths of a second wide: sampled at the nominal 2.333s, a perfectly phrased 4/4
+    track whose own bar is 2.283s read bar_ac 0.02 (its real peak is 0.75), and its TRUE
+    multiples (3 bars = 6.859s) failed the commensurability test against 2.333 and were
+    counted as rivals. Every good track was labelled "phrases off the bar" (fit ~0.1), and
+    the ranking penalty then pushed strong-beat takes below beatless wildcards. Measured on
+    the finished videos, those same tracks sat within 10-40 ms of all 11 morphs."""
     e = env - env.mean()
     a = np.correlate(e, e, mode="full")[len(e) - 1:]
     a = a / (a[0] + 1e-9)
     lo, hi = int(lo_s * esr), min(int(hi_s * esr), len(a) - 1)
     if hi <= lo + 2:
         return 1.0, 0.0, 0.0
-    bar_ac = float(a[min(int(round(bar * esr)), len(a) - 1)])
+    ref = float(ref) if ref else float(bar)
+    kb = min(int(round(ref * esr)), len(a) - 1)
+    wb = max(1, int(round(0.012 * ref * esr)))          # +-1.2%: sit ON the peak, not beside it
+    bar_ac = float(a[max(0, kb - wb):kb + wb + 1].max())
     clash = 0.0
     for k in range(lo + 1, hi - 1):
         if not (a[k] > a[k - 1] and a[k] >= a[k + 1]):
             continue
         per = k / esr
-        r1, r2 = bar / per, per / bar          # bar is n beats of it, or it is n bars long
+        r1, r2 = ref / per, per / ref          # bar is n beats of it, or it is n bars long
         if min(abs(r1 - round(r1)), abs(r2 - round(r2))) < 0.06:
             continue                            # commensurate — not a rival
         clash = max(clash, float(a[k]))
@@ -249,8 +263,9 @@ def align(video, track, out, journey=None, cut=None, shift_sec=None):
         raise RuntimeError(f"track unusable: {len(xm)/SR:.2f}s of audio after silence strip")
     env, esr = onset_env(xm)
     env_low, _ = onset_env(xm, lo=1, hi=6)     # deep-percussion band (~47-280Hz)
-    fit, bar_ac, clash_ac = meter_fit(env_phase if False else env, esr, bar)
     m_bar, conf = measure_bar(env, esr, bar)
+    # judge the phrasing against the track's OWN bar (this envelope is not stretched yet)
+    fit, bar_ac, clash_ac = meter_fit(env, esr, bar, ref=(m_bar if conf >= 0.10 else None))
     f = (m_bar / bar) if conf >= 0.10 else 1.0
     f = min(max(f, 0.97), 1.03)
     # PHASE is kick-weighted (2026-08-13): full-band flux locked bright bells to the morph

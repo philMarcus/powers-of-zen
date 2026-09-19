@@ -289,16 +289,8 @@ def generate(journey, n=N_KEEP, shift=True, target="music", attempt=0):
         extra_seed += 101
         tries += 1
 
-    # keep the top n with SPREAD (max 2 per lane so the audition is never five near-twins)
-    keep = []
-    for c in sorted(cands, key=lambda c: -c["score"]):
-        if len(keep) < n and sum(1 for k in keep if k["lane"] == c["lane"]) < 2:
-            keep.append(c)
-    for c in sorted(cands, key=lambda c: -c["score"]):
-        if len(keep) >= n:
-            break
-        if c not in keep:
-            keep.append(c)
+    # keep the top n with SPREAD among good takes (see _keep_spread)
+    keep = _keep_spread(cands, n)
     for c in cands:                       # de-clutter the audition dir
         if c not in keep:
             (ROOT / c["aligned"]).unlink(missing_ok=True)
@@ -328,6 +320,100 @@ def generate(journey, n=N_KEEP, shift=True, target="music", attempt=0):
              journey=journey, detail=f"{len(cands)} candidates")
     music.free_vram()      # ACE-Step holds ~9 GB after a run; release it for whatever's next
     print(f"recorded {len(cands)} candidates; audition in the dashboard Music panel")
+
+
+def _keep_spread(cands, n):
+    """Top n with LANE SPREAD among GOOD takes only (2026-09-19). The spread rule (max 2 per
+    lane, so the audition is never five near-twins) used to apply to everything: on
+    sargasso_windrow it skipped deep_archive-halftime (score 3.23) and deep_archive (2.17)
+    and seated two beatless wildcards (0.17, 0.14) in their place. Variety is only worth
+    having among takes that are worth auditioning: a take may claim a spread seat only if it
+    scores at least 35% of the best take; the rest of the seats go by score alone."""
+    ranked = sorted(cands, key=lambda c: -c["score"])
+    floor = 0.35 * ranked[0]["score"] if ranked else 0.0
+    keep = []
+    for c in ranked:
+        if len(keep) < n and c["score"] >= floor \
+                and sum(1 for k in keep if k["lane"] == c["lane"]) < 2:
+            keep.append(c)
+    for c in ranked:
+        if len(keep) >= n:
+            break
+        if c not in keep:
+            keep.append(c)
+    return sorted(keep, key=lambda c: -c["score"])
+
+
+def _lane_of(cid):
+    """Lane name from a candidate id: '<lane>', '<lane>-<feel>', 'pulseN-<lane>', 'waltz-<lane>'."""
+    head, _, rest = cid.partition("-")
+    return rest if (head.startswith("pulse") or head == "waltz") and rest else head
+
+
+def rerank(journey, n=N_KEEP):
+    """NO GPU: re-judge EVERY take on disk for this journey (kept and discarded alike) and keep
+    the best n. Built 2026-09-19 after the meter-fit bug: fit was sampled at the video's nominal
+    bar on the unstretched track, so well-phrased strong-beat takes scored fit ~0.1, were
+    labelled "phrases off the bar", and the ranking penalty pushed them below beatless wildcards
+    and out of the kept five (sargasso_windrow kept two beatless takes and discarded four
+    own-lane ones). Raw tracks stay in output/music/, so the verdict can be redone for free.
+    Music-stage videos are re-ranked against the current file + marked start into v["music"];
+    review-stage videos against the unshifted cut into v["music_pregen"]."""
+    d = pl.load(); v = pl.get(d, journey)
+    if not v:
+        print(f"no pipeline entry for {journey}"); return
+    target = "music" if v.get("state") == "music" else "music_pregen"
+    shift_sec = v.get("start_t") if target == "music" else None
+    tracks = sorted((ROOT / "output" / "music").glob(f"{journey}_*.flac"))
+    if not tracks:
+        print(f"no raw takes on disk for {journey}"); return
+    known = {}
+    for key_ in ("music_pregen", "music"):
+        for c in ((v.get(key_) or {}).get("candidates") or []):
+            known.setdefault(c["id"], c)
+    video = _video(journey)
+    outdir = ROOT / "review" / "music" / "candidates" / journey
+    outdir.mkdir(parents=True, exist_ok=True)
+    cands = []
+    for track in tracks:
+        cid = track.stem[len(journey) + 1:]
+        aligned = outdir / f"{cid}.mp4"
+        try:
+            info = al.align(video, str(track), str(aligned), journey=journey, cut=v["cut"],
+                            shift_sec=shift_sec)
+        except Exception as e:
+            print(f"  [{cid}] skipped — {e}"); continue
+        lane_name = (known.get(cid) or {}).get("lane") or _lane_of(cid)
+        lane = DECK["lanes"].get(lane_name) or {}
+        cc = dict(known.get(cid) or {"id": cid, "lane": lane_name,
+                                     "mood": lane.get("mood", lane_name), "tags": ""})
+        cc.update({"track": str(track.relative_to(ROOT)),
+                   "aligned": str(aligned.relative_to(ROOT)),
+                   "lock": round(info["lock"], 2),
+                   "bar_conf": round(info.get("bar_conf", 0.0), 2),
+                   "kick": round(info.get("kick", 0.0), 2),
+                   "fit": info.get("fit", 1.0),
+                   "score": round(_rank_score(info), 2)})
+        cands.append(cc)
+        print(f"  [{cid}] lock {info['lock']:.2f}x kick {info.get('kick', 0):.2f} "
+              f"fit {info.get('fit', 1.0):.2f} score {cc['score']:.2f}")
+    keep = _keep_spread(cands, n)
+    for c in cands:
+        if c not in keep:
+            (ROOT / c["aligned"]).unlink(missing_ok=True)
+    print(f"kept: {', '.join(c['id'] for c in keep)}")
+    d = pl.load(); v = pl.get(d, journey)          # merge-into-fresh, never a stale snapshot
+    if not v:
+        return
+    old = v.get(target) or {}
+    chosen = old.get("chosen") if old.get("chosen") in {c["id"] for c in keep} else None
+    bar = old.get("bar") or (v.get("music_pregen") or {}).get("bar")
+    v[target] = {**old, "candidates": keep, "chosen": chosen, "bar": bar,
+                 "stage": "pregen" if target == "music_pregen" else "review",
+                 "generated_at": datetime.now().strftime("%m-%d %H:%M") + " (re-ranked)",
+                 "for_model": v["model"], "for_cut": v["cut"]}
+    pl.save(d)
+    pl.telem("music_rerank", journey=journey, detail=f"{len(keep)} of {len(cands)} takes kept")
 
 
 def realign(journey):
@@ -412,6 +498,9 @@ def main():
     ap.add_argument("--choose", help="candidate id to promote into the posting slot")
     ap.add_argument("--pregen", action="store_true",
                     help="overnight pre-generation (unshifted cut, stored in music_pregen)")
+    ap.add_argument("--rerank", action="store_true",
+                    help="NO GPU: re-judge every raw take on disk for this journey with the "
+                         "current scoring and keep the best n")
     ap.add_argument("--realign", action="store_true",
                     help="fast approve path: re-align pregen keepers to the marked start")
     ap.add_argument("--fresh", action="store_true",
@@ -427,6 +516,8 @@ def main():
         att = (v0.get("music") or {}).get("gen_attempt", 0) + 1
         print(f"FRESH regeneration attempt {att} (re-rolled seeds + lanes)")
         generate(a.journey, n=a.n, attempt=att)
+    elif a.rerank:
+        rerank(a.journey, n=a.n)
     elif a.realign:
         realign(a.journey)
     else:

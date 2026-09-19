@@ -1804,3 +1804,9 @@
 {"ts": "2026-09-19 05:49:45", "event": "render", "journey": "anvil_country", "detail": "-> REVIEW (captioned)"}
 {"ts": "2026-09-19 07:18:32", "event": "music_realign", "journey": "cherenkov_cistern", "detail": "5 candidates"}
 {"ts": "2026-09-19 07:18:40", "event": "music_realign", "journey": "sargasso_windrow", "detail": "5 candidates"}
+{"ts": "2026-09-19 07:27:16", "event": "state", "journey": "cherenkov_cistern", "detail": "review (unshifted)"}
+{"ts": "2026-09-19 07:31:02", "event": "phase_shift", "journey": "cherenkov_cistern", "detail": "start @ 24.00s"}
+{"ts": "2026-09-19 07:31:02", "event": "music", "journey": "cherenkov_cistern"}
+{"ts": "2026-09-19 07:31:10", "event": "music_realign", "journey": "cherenkov_cistern", "detail": "5 candidates"}
+{"ts": "2026-09-19 07:35:14", "event": "music_rerank", "journey": "sargasso_windrow", "detail": "5 of 9 takes kept"}
+{"ts": "2026-09-19 07:36:01", "event": "music_rerank", "journey": "sargasso_windrow", "detail": "5 of 9 takes kept"}
