@@ -120,6 +120,18 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-09-19 (MORNING — RENDERING STOPPED AT PHIL'S REQUEST, MUSIC UNBLOCKED): Phil has enough videos and
+wants to put music on them. render_paused=TRUE (unpause in dashboard Settings when he wants renders again);
+the 01:30 batch was allowed to finish vernal_clutch, and a tmux watcher (`stop_oort`) kills oort_hearth's
+dive the moment the batch launches it and restores its queue entry, so the batch goes straight to its music
+pregen. WHY HE COULD NOT PICK MUSIC: dashboard approve_to_music gated EVERYTHING on comfy_busy, including
+the no-GPU ffmpeg REALIGN of tracks already pre-generated — ~20h of back-to-back renders meant every
+approval logged music_skip. Fixed (videos with music_pregen realign on approve regardless of GPU; Music tab
+has an explicit Align button); cherenkov_cistern + sargasso_windrow realigned by hand. cork_dehesa +
+dugong_meadow had no pregen (they reached Review outside the batch) — tmux `pregen_missing` generates it
+once the batch releases the GPU. Review/Music now holds 14 videos. NOTE: live-plate renders run ~1/3
+slower than est_render_sec (a long = ~2.2h not 1.8h) — batches overrun; estimate needs the plate term.
+Grow lab v11: proper globe now, but invisible for its first ~12 frames — still lab-only.
 2026-09-18 (AFTERNOON — HANDOFF STATE, everything committed + pushed): the planet descent is APPROVED and
 standard (settings plate_mode=live, plate_intro=enter; PLAN "PLANET DESCENT" + the four 09-18 blocks are
 the record). Phil's last note — a dark BORDER/moat round the globe — was the enter path's wide vacate

@@ -9,7 +9,7 @@
       "medium": 0.15,
       "short": 0.25
     },
-    "render_paused": false,
+    "render_paused": true,
     "refill_paused": false,
     "plate_mode": "live",
     "post_every_hours": 19.0,
@@ -294,5 +294,5 @@
       "note": "composed by midnight refill"
     }
   },
-  "updated": "2026-09-19 05:49:45"
+  "updated": "2026-09-19 07:22:37"
 }
