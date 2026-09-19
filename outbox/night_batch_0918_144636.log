@@ -1,0 +1,512 @@
+=== 14:46:36 batch start [queue] — 4 journeys: sargasso_windrow garnet_glass gecko_rampart lissajous_stage
+=== 14:46:36 GPU busy — waiting for it to free up
+=== 14:47:05 --- sargasso_windrow ---
+=== 14:47:05 sargasso_windrow: --plate live --plate-cn 0 --plate-void-gate --plate-intro enter
+[style] reef_pop  ->  electric aquamarine and hot pink, sunlit turquoise depth, high-saturation tropical glow, ultra-detailed, cinematic, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/sargasso_windrow/v2
+[dive] sargasso_windrow: 343 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — star_comet_shoal(sea)[22..34], ocean_world(surface)[50..72], sea_windrows(surface)[78..100], weed_raft(surface)[106..128], float_cluster(sea)[134..156], float_cells(sea)[162..184], alginate_eggbox(lattice)[190..212], carbon_atom(lattice)[218..240], track_cascade(sea)[246..268], brightest_galaxy(sea)[302..314]
+[dive] plate: cameo at frame 35 (planet card 1 star_comet_shoal) refused
+[dive] PLATE (live, intro enter from bottom) card 1 'star_comet_shoal' -> 'ocean_world': frames 28..83 (bar line at 56), globe 0.289 -> 1.15 x width at the bar line, then until the frame is inside the disc
+[dive] TRACKER v3 ON (238 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of the cluster's brightest galaxy, a tilted spiral of saffron starlight, two great arms com
+[dive] frame 1/343 (29.4s/frame, ~10042s left) :: moving through the cluster's brightest galaxy, a tilted spir
+[dive] frame 11/343 (26.0s/frame, ~8616s left) :: moving through the cluster's brightest galaxy, a tilted spir
+[dive] frame 21/343 (25.0s/frame, ~8057s left) :: diving straight into a gold star as it swells to fill the en
+[dive] plate assets for card 1: surface 'a satellite view looking straight down onto the surface of an ocean world seen f' / void 'an immense expanse of a gold star and its shoal of comets, t'
+[dive] frame 31/343 (26.9s/frame, ~8387s left) :: a gold star and its shoal of comets, the star a swollen embe
+[dive] frame 41/343 (25.6s/frame, ~7736s left) :: moving through a gold star and its shoal of comets, the star
+[dive] frame 51/343 (24.7s/frame, ~7215s left) :: diving straight into a blue ocean world as it swells to fill
+[dive] frame 61/343 (25.0s/frame, ~7061s left) :: an ocean world seen from orbit at night, its hemisphere one 
+[dive] frame 71/343 (24.7s/frame, ~6725s left) :: moving through an ocean world seen from orbit at night, its 
+[dive] frame 81/343 (24.7s/frame, ~6477s left) :: diving straight into a gold weed line as it swells to fill t
+[dive] frame 91/343 (24.0s/frame, ~6056s left) :: the night sea from an oblique vantage low over the swell, mo
+[dive] frame 101/343 (24.7s/frame, ~5975s left) :: diving straight into a raft of matted gold weed as it swells
+[dive] frame 111/343 (24.3s/frame, ~5642s left) :: diving straight into a raft of matted gold weed as it swells
+[dive] frame 121/343 (23.5s/frame, ~5211s left) :: moving through a raft of sargassum weed adrift on the deep-w
+[dive] frame 131/343 (22.9s/frame, ~4860s left) :: diving straight into a cluster of small gold floats as it sw
+[dive] frame 141/343 (22.5s/frame, ~4548s left) :: a thicket of sargassum blades seen from within the mat, serr
+[dive] frame 151/343 (21.9s/frame, ~4207s left) :: moving through a thicket of sargassum blades seen from withi
+[dive] frame 161/343 (21.7s/frame, ~3948s left) :: diving straight into a round gold float as it swells to fill
+[dive] frame 171/343 (21.4s/frame, ~3679s left) :: the living tissue inside the float's rind, cell upon cell ca
+[dive] frame 181/343 (20.9s/frame, ~3390s left) :: moving through the living tissue inside the float's rind, ce
+[dive] frame 191/343 (21.0s/frame, ~3193s left) :: diving straight into a thick amber casing as it swells to fi
+[dive] frame 201/343 (20.7s/frame, ~2938s left) :: the casing material's own architecture, long amber polymer c
+[dive] frame 211/343 (20.4s/frame, ~2690s left) :: moving through the casing material's own architecture, long 
+[dive] frame 221/343 (20.4s/frame, ~2488s left) :: diving straight into a bright carbon atom as it swells to fi
+[dive] frame 231/343 (20.2s/frame, ~2260s left) :: one carbon atom pictured as nested shells of soft haze, an i
+[dive] frame 241/343 (19.9s/frame, ~2029s left) :: diving straight into a lit track as it swells to fill the en
+[dive] frame 251/343 (19.9s/frame, ~1831s left) :: diving straight into a lit track as it swells to fill the en
+[dive] frame 261/343 (19.7s/frame, ~1617s left) :: deep inside a cascade of luminous tracks strung through an a
+[dive] frame 271/343 (19.5s/frame, ~1406s left) :: deep inside a cascade of luminous tracks strung through an a
+[dive] frame 281/343 (19.4s/frame, ~1202s left) :: the whole view transforming, resolving into a galaxy cluster
+[dive] frame 291/343 (19.4s/frame, ~1009s left) :: moving through a galaxy cluster fed by several parallel fila
+[dive] frame 301/343 (19.7s/frame, ~827s left) :: diving straight into a bright spiral galaxy as it swells to 
+[dive] frame 311/343 (19.6s/frame, ~628s left) :: the cluster's brightest galaxy, a tilted spiral of saffron s
+[dive] frame 321/343 (19.7s/frame, ~433s left) :: moving through the cluster's brightest galaxy, a tilted spir
+[dive] frame 331/343 (19.9s/frame, ~239s left) :: diving straight into a gold star as it swells to fill the en
+[dive] frame 341/343 (20.2s/frame, ~40s left) :: a gold star and its shoal of comets, the star a swollen embe
+[dive] frame 343/343 (20.3s/frame, ~0s left) :: a gold star and its shoal of comets, the star a swollen embe
+[dive] interpolated 12 -> 24fps (616 frames, loop-bridged) in 61s
+[dive] counter overlay on 616 frames (46 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/sargasso_windrow/v2/sargasso_windrow.mp4 (40557 KB, 25.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/sargasso_windrow/v2/sargasso_windrow_divein.mp4 (41179 KB, 25.7s)
+[dive] done in 7121s
+=== 16:45:46 sargasso_windrow: rendered in 7121s
+  copied sargasso_windrow.mp4 -> review/sargasso_windrow_ds.mp4
+  copied sargasso_windrow_divein.mp4 -> review_divein/sargasso_windrow_ds_divein.mp4
+sargasso_windrow: queued to REVIEW (ds/divein) from v2
+  sargasso_windrow: 5 caption+title pairs (spot=True); theme='A dreamy, ethereal melody that swells an'
+    [0] Dive into the endless ocean of the infinite 🌊✨ Can you spot Lamar the Star hiding in the cosmic glow? 👀 #SargassumSecrets #CosmicDive #InfiniteOcean #LamarTheStar #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: Dive into the endless ocean of the infinite 🌊✨
+    [1] A journey through the hidden worlds of the sea 🌿💫 Can you spot Lamar the Star hiding in the cosmic glow? 👀 #SargassumSecrets #CosmicDive #InfiniteOcean #LamarTheStar #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: A journey through the hidden worlds of the sea 🌿💫
+    [2] From floating forests to cosmic cascades 🌌🌊 Can you spot Lamar the Star hiding in the cosmic glow? 👀 #SargassumSecrets #CosmicDive #InfiniteOcean #LamarTheStar #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: From floating forests to cosmic cascades 🌌🌊
+    [3] Where the tides of time and space collide 🌍🌀 Can you spot Lamar the Star hiding in the cosmic glow? 👀 #SargassumSecrets #CosmicDive #InfiniteOcean #LamarTheStar #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: Where the tides of time and space collide 🌍🌀
+    [4] A hypnotic spiral through the heart of the unknown 🌀💧 Can you spot Lamar the Star hiding in the cosmic glow? 👀 #SargassumSecrets #CosmicDive #InfiniteOcean #LamarTheStar #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: A hypnotic spiral through the heart of the unknown 🌀💧
+=== 16:46:44 sargasso_windrow -> REVIEW (captioned)
+=== 16:46:44 --- garnet_glass ---
+=== 16:46:44 garnet_glass: --plate live --plate-cn 0 --plate-void-gate --plate-intro enter
+[dive] tempo: fpb 8 (90bpm) -> transition 7f, seam 14f, anacrusis 2f
+[style] crystalline  ->  prismatic crystalline light, refractive glass and gemstone facets, jewel tones, ultra-detailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/garnet_glass/v2
+[dive] garnet_glass: 392 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — garnet_grain(sea)[26..49], facet_interior(sea)[58..81], garnet_lattice(lattice)[90..113], nucleus_alpha(sea)[122..145], night_world(surface)[186..209], coast_air(surface)[218..241], harbour_commons(surface)[250..273], wheelhouse(surface)[282..305], sand_glass(surface)[314..337], grain_stream(sea)[346..359]
+[dive] plate: cameo at frame 168 (planet card 5 hourglass_binary) refused
+[dive] PLATE (live, intro enter from bottom) card 5 'hourglass_binary' -> 'night_world': frames 160..223 (bar line at 192), globe 0.289 -> 1.15 x width at the bar line, then until the frame is inside the disc
+[dive] TRACKER v3 ON (272 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of the throat of the glass, countless wine-red grains packed one against another an
+[dive] frame 1/392 (34.2s/frame, ~13356s left) :: moving through the throat of the glass, countless wine-red g
+[dive] frame 11/392 (32.0s/frame, ~12179s left) :: moving through the throat of the glass, countless wine-red g
+[dive] frame 21/392 (29.4s/frame, ~10900s left) :: diving straight into a wine-red garnet grain as it swells to
+[dive] frame 31/392 (27.7s/frame, ~10004s left) :: diving straight into a wine-red garnet grain as it swells to
+[dive] frame 41/392 (24.5s/frame, ~8584s left) :: moving through a bed of garnet crystals heaped in the lower 
+[dive] frame 51/392 (22.8s/frame, ~7781s left) :: moving through a bed of garnet crystals heaped in the lower 
+[dive] frame 61/392 (23.4s/frame, ~7734s left) :: diving straight into a twelve-faced garnet crystal as it swe
+[dive] frame 71/392 (22.1s/frame, ~7094s left) :: the interior of one garnet, a wine-dark hall of crystal comb
+[dive] frame 81/392 (21.1s/frame, ~6562s left) :: moving through the interior of one garnet, a wine-dark hall 
+[dive] frame 91/392 (21.6s/frame, ~6501s left) :: diving straight into a crimson growth band as it swells to f
+[dive] frame 101/392 (20.9s/frame, ~6074s left) :: the atomic framework of almandine garnet opening on every ha
+[dive] frame 111/392 (20.3s/frame, ~5697s left) :: moving through the atomic framework of almandine garnet open
+[dive] frame 121/392 (20.8s/frame, ~5631s left) :: diving straight into a glowing iron atom as it swells to fil
+[dive] frame 131/392 (20.3s/frame, ~5307s left) :: a fat droplet built of glowing spheres crowded rim to rim, i
+[dive] frame 141/392 (20.0s/frame, ~5011s left) :: deep inside a fat droplet built of glowing spheres crowded r
+[dive] frame 151/392 (19.6s/frame, ~4719s left) :: deep inside a fat droplet built of glowing spheres crowded r
+[dive] plate void reads as an OBJECT (ring — Florence: "A ring of fire is glowing in the dark. Around the fire is a blue ring. Above the fire is a bright wh") — re-rolling seed (1/3)
+[dive] plate assets for card 5: surface 'a satellite view looking straight down onto the surface of a night world turned ' / void 'an immense expanse of two stars sharing one pinched envelope'
+[dive] frame 161/392 (19.7s/frame, ~4556s left) :: the whole view transforming, resolving into two stars sharin
+[dive] frame 171/392 (20.0s/frame, ~4411s left) :: moving through two stars sharing one pinched envelope, a swo
+[dive] frame 181/392 (20.1s/frame, ~4247s left) :: diving straight into a dark ocean world as it swells to fill
+[dive] frame 191/392 (20.2s/frame, ~4070s left) :: diving straight into a dark ocean world as it swells to fill
+[dive] frame 201/392 (20.5s/frame, ~3911s left) :: moving through a night world turned against the dark, its oc
+[dive] frame 211/392 (20.8s/frame, ~3768s left) :: moving through a night world turned against the dark, its oc
+[dive] frame 221/392 (21.1s/frame, ~3609s left) :: diving straight into a lamp-lit coastline as it swells to fi
+[dive] frame 231/392 (21.0s/frame, ~3379s left) :: a rock coast seen obliquely from low over the water, headlan
+[dive] frame 241/392 (21.3s/frame, ~3213s left) :: moving through a rock coast seen obliquely from low over the
+[dive] frame 251/392 (21.4s/frame, ~3022s left) :: diving straight into a wet stone quay as it swells to fill t
+[dive] frame 261/392 (21.2s/frame, ~2773s left) :: the quay at low tide seen from the wharf at the water's rim,
+[dive] frame 271/392 (20.9s/frame, ~2525s left) :: moving through the quay at low tide seen from the wharf at t
+[dive] frame 281/392 (21.0s/frame, ~2334s left) :: diving straight into a lit wheelhouse as it swells to fill t
+[dive] frame 291/392 (20.8s/frame, ~2100s left) :: the wheelhouse of a moored fishing boat at night, seen from 
+[dive] frame 301/392 (20.5s/frame, ~1869s left) :: moving through the wheelhouse of a moored fishing boat at ni
+[dive] frame 311/392 (20.6s/frame, ~1668s left) :: diving straight into a brass-hung sand-glass as it swells to
+[dive] frame 321/392 (20.5s/frame, ~1453s left) :: a half-hour sand-glass hung in its brass gimbal, two bulbs o
+[dive] frame 331/392 (20.2s/frame, ~1235s left) :: moving through a half-hour sand-glass hung in its brass gimb
+[dive] frame 341/392 (20.2s/frame, ~1032s left) :: diving straight into a crimson grain thread as it swells to 
+[dive] frame 351/392 (20.2s/frame, ~828s left) :: diving straight into a crimson grain thread as it swells to 
+[dive] frame 361/392 (20.0s/frame, ~621s left) :: moving through the throat of the glass, countless wine-red g
+[dive] frame 371/392 (20.3s/frame, ~426s left) :: moving through the throat of the glass, countless wine-red g
+[dive] frame 381/392 (20.4s/frame, ~225s left) :: diving straight into a wine-red garnet grain as it swells to
+[dive] frame 391/392 (20.6s/frame, ~21s left) :: a bed of garnet crystals heaped in the lower bulb, every sto
+[dive] frame 392/392 (20.6s/frame, ~0s left) :: a bed of garnet crystals heaped in the lower bulb, every sto
+[dive] interpolated 12 -> 24fps (704 frames, loop-bridged) in 69s
+[dive] counter overlay on 704 frames (38 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/garnet_glass/v2/garnet_glass.mp4 (40793 KB, 29.3s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/garnet_glass/v2/garnet_glass_divein.mp4 (41649 KB, 29.3s)
+[dive] done in 8276s
+=== 19:04:41 garnet_glass: rendered in 8277s
+  copied garnet_glass.mp4 -> review/garnet_glass_ds.mp4
+  copied garnet_glass_divein.mp4 -> review_divein/garnet_glass_ds_divein.mp4
+garnet_glass: queued to REVIEW (ds/divein) from v2
+  garnet_glass: 5 caption+title pairs (spot=True); theme='A haunting, hypnotic melody that swells '
+    [0] A timeless dive through the heart of a fishing boat’s soul 🌊✨ Can you spot Lamar the Star hiding in the cosmic folds? 👀 #PowersOfZen #InfiniteDive #CosmicFishingBoat #CrystalRealms #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats  ||  YT: A timeless dive through the heart of a fishing boat’s soul 🌊✨
+    [1] Where amber light and wine-red grains dance in endless loops Can you spot Lamar the Star hiding in the cosmic folds? 👀 #PowersOfZen #InfiniteDive #CosmicFishingBoat #CrystalRealms #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats  ||  YT: Where amber light and wine-red grains dance in endless loops
+    [2] The crystal halls of a garnet, where time dissolves into light Can you spot Lamar the Star hiding in the cosmic folds? 👀 #PowersOfZen #InfiniteDive #CosmicFishingBoat #CrystalRealms #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats  ||  YT: The crystal halls of a garnet, where time dissolves into light
+    [3] A star’s embrace, where worlds fold into the void and back again Can you spot Lamar the Star hiding in the cosmic folds? 👀 #PowersOfZen #InfiniteDive #CosmicFishingBoat #CrystalRealms #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats  ||  YT: A star’s embrace, where worlds fold into the void and back again
+    [4] Moon-silver whispers on the tide, a loop of endless return Can you spot Lamar the Star hiding in the cosmic folds? 👀 #PowersOfZen #InfiniteDive #CosmicFishingBoat #CrystalRealms #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats  ||  YT: Moon-silver whispers on the tide, a loop of endless return
+=== 19:05:36 garnet_glass -> REVIEW (captioned)
+=== 19:05:36 --- gecko_rampart ---
+=== 19:05:36 gecko_rampart: --plate live --plate-cn 0 --plate-void-gate --plate-intro enter
+[style] stormlight  ->  dramatic volumetric stormlight, moody chiaroscuro, hyperdetailed, cinematic, otherworldly, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/gecko_rampart/v3
+[dive] gecko_rampart: 343 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — twin_envelope(sea)[22..44], monsoon_world(surface)[50..72], rampart_commons(surface)[78..100], gecko_stone(surface)[106..128], toe_pavement(surface)[134..156], seta_ranks(surface)[162..184], spatula_tip(sea)[190..212], contact_gap(lattice)[218..230], flicker_floor(sea)[246..268], shell_rings(sea)[302..314]
+[dive] PLATE (live, intro enter from left) card 1 'twin_envelope' -> 'monsoon_world': frames 28..83 (bar line at 56), globe 0.289 -> 1.15 x width at the bar line, then until the frame is inside the disc
+[dive] TRACKER v3 ON (189 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish (spaceless): an immense expanse of nested shells cast off by an old star, three rings of glowing gas set one inside the nex
+[dive] frame 1/343 (32.3s/frame, ~11049s left) :: moving through nested shells cast off by an old star, three 
+[dive] frame 11/343 (15.7s/frame, ~5225s left) :: moving through nested shells cast off by an old star, three 
+[dive] frame 21/343 (14.7s/frame, ~4722s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] plate assets for card 1: surface 'a satellite view looking straight down onto the surface of a storm world seen fr' / void 'an immense expanse of two blue-white suns orbiting inside on'
+[dive] frame 31/343 (17.6s/frame, ~5478s left) :: two blue-white suns orbiting inside one shared envelope of g
+[dive] frame 41/343 (18.9s/frame, ~5707s left) :: moving through two blue-white suns orbiting inside one share
+[dive] frame 51/343 (19.6s/frame, ~5729s left) :: diving straight into a small slate-blue world as it swells t
+[dive] frame 61/343 (20.6s/frame, ~5817s left) :: a storm world seen from orbit at night, monsoon cloud spiral
+[dive] frame 71/343 (21.1s/frame, ~5748s left) :: moving through a storm world seen from orbit at night, monso
+[dive] frame 81/343 (21.7s/frame, ~5677s left) :: diving straight into a lamplit stone rampart as it swells to
+[dive] frame 91/343 (21.3s/frame, ~5375s left) :: a sandstone rampart above its moat ring on a monsoon night, 
+[dive] frame 101/343 (21.9s/frame, ~5298s left) :: diving straight into a slate-blue gecko speckled with cinnab
+[dive] frame 111/343 (21.6s/frame, ~5019s left) :: diving straight into a slate-blue gecko speckled with cinnab
+[dive] frame 121/343 (21.0s/frame, ~4671s left) :: moving through a rain-slicked sandstone block with a slate-b
+[dive] frame 131/343 (20.8s/frame, ~4413s left) :: diving straight into a splayed grey toe as it swells to fill
+[dive] frame 141/343 (20.7s/frame, ~4173s left) :: the underside of a gecko toe, ranked ridge fans curving acro
+[dive] frame 151/343 (20.2s/frame, ~3879s left) :: moving through the underside of a gecko toe, ranked ridge fa
+[dive] frame 161/343 (20.2s/frame, ~3670s left) :: diving straight into a milk-pale keratin bristle as it swell
+[dive] frame 171/343 (20.0s/frame, ~3432s left) :: a forest of keratin bristles rooted in a floor of flat cells
+[dive] frame 181/343 (19.6s/frame, ~3173s left) :: moving through a forest of keratin bristles rooted in a floo
+[dive] frame 191/343 (19.8s/frame, ~3008s left) :: diving straight into a milk-pale bristle tip as it swells to
+[dive] frame 201/343 (19.8s/frame, ~2805s left) :: the frayed end of one keratin bristle, its branches ending i
+[dive] frame 211/343 (19.5s/frame, ~2568s left) :: moving through the frayed end of one keratin bristle, its br
+[dive] frame 221/343 (19.6s/frame, ~2386s left) :: diving straight into a thin cinnabar seam as it swells to fi
+[dive] frame 231/343 (19.4s/frame, ~2174s left) :: the meeting place of pad and stone, two facing files of hazy
+[dive] frame 241/343 (19.8s/frame, ~2017s left) :: diving straight into a pale spark as it swells to fill the e
+[dive] frame 251/343 (19.8s/frame, ~1824s left) :: diving straight into a pale spark as it swells to fill the e
+[dive] frame 261/343 (19.6s/frame, ~1611s left) :: deep inside an emptiness that is never still, paired sparks 
+[dive] frame 271/343 (19.4s/frame, ~1398s left) :: deep inside an emptiness that is never still, paired sparks 
+[dive] frame 281/343 (19.3s/frame, ~1194s left) :: the whole view transforming, resolving into a smooth hill of
+[dive] frame 291/343 (19.3s/frame, ~1001s left) :: moving through a smooth hill of star-fog, ten billion old su
+[dive] frame 301/343 (19.6s/frame, ~824s left) :: diving straight into a small cinnabar ring as it swells to f
+[dive] frame 311/343 (19.5s/frame, ~624s left) :: nested shells cast off by an old star, three rings of glowin
+[dive] frame 321/343 (19.6s/frame, ~430s left) :: moving through nested shells cast off by an old star, three 
+[dive] frame 331/343 (19.8s/frame, ~237s left) :: diving straight into  as it swells to fill the entire view, 
+[dive] frame 341/343 (20.1s/frame, ~40s left) :: two blue-white suns orbiting inside one shared envelope of g
+[dive] frame 343/343 (20.1s/frame, ~0s left) :: two blue-white suns orbiting inside one shared envelope of g
+[dive] interpolated 12 -> 24fps (616 frames, loop-bridged) in 60s
+[dive] counter overlay on 616 frames (44 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/gecko_rampart/v3/gecko_rampart.mp4 (39320 KB, 25.7s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/gecko_rampart/v3/gecko_rampart_divein.mp4 (39993 KB, 25.7s)
+[dive] done in 7071s
+=== 21:03:27 gecko_rampart: rendered in 7071s
+  copied gecko_rampart.mp4 -> review/gecko_rampart_ds.mp4
+  copied gecko_rampart_divein.mp4 -> review_divein/gecko_rampart_ds_divein.mp4
+gecko_rampart: queued to REVIEW (ds/divein) from v3
+  gecko_rampart: 5 caption+title pairs (spot=True); theme='A slow, hypnotic pulse of storm winds an'
+    [0] A monsoon night’s dance of lacewings, ants, and geckos—until the world dissolves into ridges of slate and cinnabar. 🌧️ Can you spot Adam the Atom hiding in the zoom? 👀 #InfiniteZoom #CosmicMicrocosm #StormWorldDive #GeckoGalaxy #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: A monsoon night’s dance of lacewings, ants, and geckos—until the world dissolves into ridges of slat
+    [1] From sandstone to skin, the zoom never ends—where does the pattern break? Can you spot Adam the Atom hiding in the zoom? 👀 #InfiniteZoom #CosmicMicrocosm #StormWorldDive #GeckoGalaxy #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: From sandstone to skin, the zoom never ends—where does the pattern break?
+    [2] Keratin forests whisper in the dark, their roots lost in haze. 🌿 Can you spot Adam the Atom hiding in the zoom? 👀 #InfiniteZoom #CosmicMicrocosm #StormWorldDive #GeckoGalaxy #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: Keratin forests whisper in the dark, their roots lost in haze. 🌿
+    [3] Sparks flicker in the void, a dance older than stars. ⚡ Can you spot Adam the Atom hiding in the zoom? 👀 #InfiniteZoom #CosmicMicrocosm #StormWorldDive #GeckoGalaxy #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: Sparks flicker in the void, a dance older than stars. ⚡
+    [4] Two suns, one glow—until the storm world pulls you back. Can you spot Adam the Atom hiding in the zoom? 👀 #InfiniteZoom #CosmicMicrocosm #StormWorldDive #GeckoGalaxy #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: Two suns, one glow—until the storm world pulls you back.
+=== 21:04:29 gecko_rampart -> REVIEW (captioned)
+=== 21:04:29 --- lissajous_stage ---
+=== 21:04:29 lissajous_stage: --plate live --plate-cn 0 --plate-void-gate --plate-intro enter --seed 593172
+[dive] tempo: fpb 6 (120bpm) -> transition 5f, seam 10f, anacrusis 2f
+[style] lacquer_pop  ->  deep lacquer enamel sheen, vermilion red and deep green, bold flat colour blocking, lustrous graphic poster look, ultra-detailed, glittering specular highlights, iridescent sparkle, vivid complementary colour contrast, jewel-bright accents
+[dive] run dir: /mnt/c/Users/Phil/zoomer/output/lissajous_stage/v1
+[dive] lissajous_stage: 150 frames, 576x1024, zoom 1.045/frame, denoise 0.5, MODEL ds (dreamshaperXL.safetensors)
+[dive] RESOLVE ON — metal_grain(sea)[18..39], lissajous_nests(sea)[42..63], string_bed(surface)[90..111], winding_coil(sea)[114..125]
+[dive] PLATE: no planet-class card in range — flag has no effect
+[dive] TRACKER v3 ON (96 approach frames; detect every 4, Florence-2-large-ft); depth preproc=DepthAnythingV2Preprocessor
+[dive] frame-0 establish: a vast wide panoramic view of the ridged terrain of a wound guitar string, hundreds of bronze coils packed sho
+[dive] frame 1/150 (32.4s/frame, ~4832s left) :: moving through the ridged terrain of a wound guitar string, 
+[dive] frame 11/150 (30.7s/frame, ~4271s left) :: moving through the ridged terrain of a wound guitar string, 
+[dive] frame 21/150 (27.0s/frame, ~3481s left) :: diving straight into a burnished copper crest as it swells t
+[dive] frame 31/150 (23.3s/frame, ~2776s left) :: moving through the crystal grain inside the bronze itself, i
+[dive] frame 41/150 (21.7s/frame, ~2369s left) :: diving straight into a hot copper spark as it swells to fill
+[dive] frame 51/150 (20.2s/frame, ~1996s left) :: nests of looping rosette curves traced in copper fire throug
+[dive] frame 61/150 (19.4s/frame, ~1727s left) :: deep inside nests of looping rosette curves traced in copper
+[dive] frame 71/150 (18.5s/frame, ~1462s left) :: deep inside nests of looping rosette curves traced in copper
+[dive] frame 81/150 (18.4s/frame, ~1271s left) :: moving through the boards of a club stage after the encore, 
+[dive] frame 91/150 (19.1s/frame, ~1128s left) :: diving straight into an electric guitar as it swells to fill
+[dive] frame 101/150 (18.5s/frame, ~908s left) :: an electric guitar laid face-up on the boards of a stage, si
+[dive] frame 111/150 (18.0s/frame, ~703s left) :: diving straight into a wound bronze string as it swells to f
+[dive] frame 121/150 (18.0s/frame, ~521s left) :: the ridged terrain of a wound guitar string, hundreds of bro
+[dive] frame 131/150 (18.2s/frame, ~345s left) :: moving through the ridged terrain of a wound guitar string, 
+[dive] frame 141/150 (18.9s/frame, ~170s left) :: diving straight into a burnished copper crest as it swells t
+[dive] frame 150/150 (19.4s/frame, ~0s left) :: the crystal grain inside the bronze itself, interlocking den
+[dive] interpolated 12 -> 24fps (240 frames, loop-bridged) in 23s
+[dive] counter overlay on 240 frames (15 decade pulses)
+[dive] primary (zoom-out): /mnt/c/Users/Phil/zoomer/output/lissajous_stage/v1/lissajous_stage.mp4 (14479 KB, 10.0s)
+[dive] alt (dive-in): /mnt/c/Users/Phil/zoomer/output/lissajous_stage/v1/lissajous_stage_divein.mp4 (14881 KB, 10.0s)
+[dive] done in 2977s
+=== 21:54:06 lissajous_stage: rendered in 2977s
+  copied lissajous_stage.mp4 -> review/lissajous_stage_ds.mp4
+  copied lissajous_stage_divein.mp4 -> review_divein/lissajous_stage_ds_divein.mp4
+lissajous_stage: queued to REVIEW (ds/divein) from v1
+  lissajous_stage: 5 caption+title pairs (spot=True); theme='A slow, hypnotic pulse of electric hums '
+    [0] A guitar’s soul, unwound to infinity 🌌 Can you spot Dora the Flora in this endless dive? 👀 #InfiniteGuitar #VerdigrisCosmos #StageGhosts #RosetteFire #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: A guitar’s soul, unwound to infinity 🌌
+    [1] Bronze strings humming the cosmos’ secrets Can you spot Dora the Flora in this endless dive? 👀 #InfiniteGuitar #VerdigrisCosmos #StageGhosts #RosetteFire #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: Bronze strings humming the cosmos’ secrets
+    [2] Verdigris dreams in the grain of time Can you spot Dora the Flora in this endless dive? 👀 #InfiniteGuitar #VerdigrisCosmos #StageGhosts #RosetteFire #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: Verdigris dreams in the grain of time
+    [3] Rosette fire in the void’s embrace Can you spot Dora the Flora in this endless dive? 👀 #InfiniteGuitar #VerdigrisCosmos #StageGhosts #RosetteFire #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: Rosette fire in the void’s embrace
+    [4] Stage ghosts and amber echoes Can you spot Dora the Flora in this endless dive? 👀 #InfiniteGuitar #VerdigrisCosmos #StageGhosts #RosetteFire #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats  ||  YT: Stage ghosts and amber echoes
+=== 21:54:53 lissajous_stage -> REVIEW (captioned)
+=== 21:54:53 music pregen: sargasso_windrow
+sargasso_windrow (zoomout): bar 2.333s -> 103 bpm, key B minor; lane deep_archive; generating 8, keeping 5
+♪ generating 29.0s | 103bpm B minor | seed 4096 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 30s -> sargasso_windrow_00010_.flac (1.4 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_deep_archive.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/deep_archive.mp4
+    bar 2.333s | music bar 2.293s (conf 0.64) -> stretch 0.9829 | phase 0.030s | lock 15.26x | kick 0.38 | beat 1/4 | fit -0.08 (bar -0.03 vs rival 0.35) | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [deep_archive] lock 15.26x conf 0.64 kick 0.38 score 0.73 -> review/music/candidates/sargasso_windrow/deep_archive.mp4
+♪ generating 29.0s | 103bpm B minor | seed 4133 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 20s -> sargasso_windrow_00011_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_deep_archive-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/deep_archive-b.mp4
+    bar 2.333s | music bar 2.187s (conf 0.22) -> stretch 0.9700 | phase 2.290s | lock 2.53x | kick 0.22 | beat 1/4 | fit 0.40 (bar 0.18 vs rival 0.45) | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [deep_archive-b] lock 2.53x conf 0.22 kick 0.22 score 0.28 -> review/music/candidates/sargasso_windrow/deep_archive-b.mp4
+♪ generating 29.0s | 103bpm B minor | seed 4170 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 17s -> sargasso_windrow_00012_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_deep_archive-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/deep_archive-heartbeat.mp4
+    bar 2.333s | music bar 2.283s (conf 0.75) -> stretch 0.9783 | phase 0.920s | lock 13.92x | kick 0.79 | beat 1/4 | fit -0.01 (bar -0.01 vs rival 0.57) | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [deep_archive-heartbeat] lock 13.92x conf 0.75 kick 0.79 score 1.47 -> review/music/candidates/sargasso_windrow/deep_archive-heartbeat.mp4
+♪ generating 29.0s | 103bpm B minor | seed 4207 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 17s -> sargasso_windrow_00013_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_ember_pulse-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/ember_pulse-wild.mp4
+    bar 2.333s | music bar 2.304s (conf 0.71) -> stretch 0.9874 | phase 0.030s | lock 17.98x | kick 0.66 | beat 1/4 | fit 0.10 (bar 0.06 vs rival 0.65) | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [ember_pulse-wild] lock 17.98x conf 0.71 kick 0.66 score 1.64 -> review/music/candidates/sargasso_windrow/ember_pulse-wild.mp4
+♪ generating 29.0s | 103bpm B minor | seed 4244 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 18s -> sargasso_windrow_00014_.flac (1.1 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_night_market-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/night_market-wild.mp4
+    bar 2.333s | music bar 2.208s (conf 0.03) -> stretch 1.0000 | phase 0.053s | lock 2.85x | kick 0.06 | beat 1/4 | fit 0.00 (bar 0.00 vs rival 0.50) | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [night_market-wild] lock 2.85x conf 0.03 kick 0.06 score 0.14 -> review/music/candidates/sargasso_windrow/night_market-wild.mp4
+♪ generating 29.0s | 103bpm B minor | seed 4281 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 17s -> sargasso_windrow_00015_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_deep_archive-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/deep_archive-halftime.mp4
+    bar 2.333s | music bar 2.283s (conf 0.74) -> stretch 0.9783 | phase 1.200s | lock 10.67x | kick 0.60 | beat 1/4 | fit -0.07 (bar -0.04 vs rival 0.57) | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [deep_archive-halftime] lock 10.67x conf 0.74 kick 0.60 score 0.95 -> review/music/candidates/sargasso_windrow/deep_archive-halftime.mp4
+♪ generating 29.0s | 103bpm B minor | seed 4318 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 18s -> sargasso_windrow_00016_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_analog_dawn-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/analog_dawn-wild.mp4
+    bar 2.333s | music bar 2.123s (conf -0.02) -> stretch 1.0000 | phase 2.000s | lock 6.92x | kick -0.01 | beat 1/3 | fit -0.22 (bar -0.05 vs rival 0.22) | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [analog_dawn-wild] lock 6.92x conf -0.02 kick -0.01 score 0.16 -> review/music/candidates/sargasso_windrow/analog_dawn-wild.mp4
+♪ generating 29.0s | 77bpm B minor | seed 4355 steps 8
+  tags: a gently lilting waltz in 3/4 time, all percussion is a single deep soft kick drum landing...
+  done in 18s -> sargasso_windrow_00017_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_waltz-deep_archive.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/waltz-deep_archive.mp4
+    bar 2.333s | music bar 2.368s (conf 0.34) -> stretch 1.0149 | phase 0.680s | lock 8.35x | kick 0.02 | beat 1/3 | fit 0.05 (bar 0.03 vs rival 0.64) | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [waltz-deep_archive] lock 8.35x conf 0.34 kick 0.02 score 0.33 -> review/music/candidates/sargasso_windrow/waltz-deep_archive.mp4
+♪ generating 29.0s | 103bpm B minor | seed 4456 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 17s -> sargasso_windrow_00018_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/sargasso_windrow_pulse1-deep_archive.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/sargasso_windrow/pulse1-deep_archive.mp4
+    bar 2.333s | music bar 2.283s (conf 0.75) -> stretch 0.9783 | phase 0.620s | lock 8.45x | kick 0.73 | beat 1/4 | fit 0.15 (bar 0.13 vs rival 0.84) | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [pulse1-deep_archive] kick 0.73 (top-up 1)
+kept: ember_pulse-wild, deep_archive-heartbeat, pulse1-deep_archive, analog_dawn-wild, night_market-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 21:57:58 music pregen: garnet_glass
+garnet_glass (divein): bar 2.667s -> 90 bpm, key B minor; lane music_box; generating 8, keeping 5
+♪ generating 33.0s | 90bpm B minor | seed 26616 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 24s -> garnet_glass_00009_.flac (2.0 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/garnet_glass_music_box.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/garnet_glass/music_box.mp4
+    bar 2.667s | music bar 2.667s (conf 0.83) -> stretch 1.0000 | phase 0.030s | lock 16.82x | kick 0.71 | beat 1/4 | fit 1.03 (bar 0.83 vs rival 0.81) | seamless loop @ 29.33s (music tiled x1, xf 0.50s)
+  [music_box] lock 16.82x conf 0.83 kick 0.71 score 5.13 -> review/music/candidates/garnet_glass/music_box.mp4
+♪ generating 33.0s | 90bpm B minor | seed 26653 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 18s -> garnet_glass_00010_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/garnet_glass_music_box-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/garnet_glass/music_box-b.mp4
+    bar 2.667s | music bar 2.667s (conf 0.40) -> stretch 1.0000 | phase 0.410s | lock 10.80x | kick 0.21 | beat 1/4 | fit 2.37 (bar 0.40 vs rival 0.17) | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [music_box-b] lock 10.80x conf 0.40 kick 0.20 score 0.91 -> review/music/candidates/garnet_glass/music_box-b.mp4
+♪ generating 33.0s | 90bpm B minor | seed 26690 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 18s -> garnet_glass_00011_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/garnet_glass_music_box-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/garnet_glass/music_box-third_answer.mp4
+    bar 2.667s | music bar 2.667s (conf 0.64) -> stretch 1.0000 | phase 1.000s | lock 19.69x | kick 0.27 | beat 1/4 | fit 1.24 (bar 0.64 vs rival 0.52) | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [music_box-third_answer] lock 19.69x conf 0.64 kick 0.27 score 1.88 -> review/music/candidates/garnet_glass/music_box-third_answer.mp4
+♪ generating 33.0s | 90bpm B minor | seed 26727 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 19s -> garnet_glass_00012_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/garnet_glass_deep_archive-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/garnet_glass/deep_archive-wild.mp4
+    bar 2.667s | music bar 2.549s (conf 0.15) -> stretch 0.9700 | phase 0.470s | lock 2.49x | kick 0.25 | beat 1/4 | fit 0.29 (bar 0.10 vs rival 0.34) | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] lock 2.49x conf 0.15 kick 0.25 score 0.25 -> review/music/candidates/garnet_glass/deep_archive-wild.mp4
+♪ generating 33.0s | 90bpm B minor | seed 26764 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 18s -> garnet_glass_00013_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/garnet_glass_night_market-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/garnet_glass/night_market-wild.mp4
+    bar 2.667s | music bar 2.656s (conf 0.27) -> stretch 0.9960 | phase 2.590s | lock 13.64x | kick 0.22 | beat 1/3 | fit 1.24 (bar 0.23 vs rival 0.19) | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [night_market-wild] lock 13.64x conf 0.27 kick 0.22 score 0.92 -> review/music/candidates/garnet_glass/night_market-wild.mp4
+♪ generating 33.0s | 90bpm B minor | seed 26801 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 18s -> garnet_glass_00014_.flac (1.9 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/garnet_glass_music_box-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/garnet_glass/music_box-halftime.mp4
+    bar 2.667s | music bar 2.667s (conf 0.82) -> stretch 1.0000 | phase 0.040s | lock 16.73x | kick 0.47 | beat 1/4 | fit 1.73 (bar 0.82 vs rival 0.48) | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [music_box-halftime] lock 16.73x conf 0.82 kick 0.47 score 3.31 -> review/music/candidates/garnet_glass/music_box-halftime.mp4
+♪ generating 33.0s | 90bpm B minor | seed 26838 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 19s -> garnet_glass_00015_.flac (1.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/garnet_glass_analog_dawn-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/garnet_glass/analog_dawn-wild.mp4
+    bar 2.667s | music bar 2.667s (conf 0.74) -> stretch 1.0000 | phase 2.400s | lock 10.28x | kick 0.60 | beat 1/4 | fit 1.58 (bar 0.74 vs rival 0.47) | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [analog_dawn-wild] lock 10.28x conf 0.74 kick 0.60 score 3.11 -> review/music/candidates/garnet_glass/analog_dawn-wild.mp4
+♪ generating 33.0s | 68bpm B minor | seed 26875 steps 8
+  tags: a gently lilting waltz in 3/4 time, all percussion is a single deep soft kick drum landing...
+  done in 18s -> garnet_glass_00016_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/garnet_glass_waltz-music_box.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/garnet_glass/waltz-music_box.mp4
+    bar 2.667s | music bar 2.645s (conf 0.17) -> stretch 0.9920 | phase 0.460s | lock 9.29x | kick 0.00 | beat 1/3 | fit 0.10 (bar 0.02 vs rival 0.19) | seamless loop @ 29.33s (music tiled x2, xf 0.50s)
+  [waltz-music_box] lock 9.29x conf 0.17 kick 0.00 score 0.26 -> review/music/candidates/garnet_glass/waltz-music_box.mp4
+kept: music_box, music_box-halftime, analog_dawn-wild, night_market-wild, deep_archive-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 22:00:44 music pregen: gecko_rampart
+gecko_rampart (divein): bar 2.333s -> 103 bpm, key D minor; lane night_market; generating 8, keeping 5
+♪ generating 29.0s | 103bpm D minor | seed 2842 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 21s -> gecko_rampart_00009_.flac (1.0 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/gecko_rampart_night_market.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/gecko_rampart/night_market.mp4
+    bar 2.333s | music bar 2.293s (conf 0.59) -> stretch 0.9829 | phase 0.080s | lock 47.30x | kick 0.62 | beat 1/4 | fit 0.11 (bar 0.05 vs rival 0.46) | seamless loop @ 25.67s (music tiled x3, xf 0.50s)
+  [night_market] lock 47.30x conf 0.59 kick 0.62 score 2.27 -> review/music/candidates/gecko_rampart/night_market.mp4
+♪ generating 29.0s | 103bpm D minor | seed 2879 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 19s -> gecko_rampart_00010_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/gecko_rampart_night_market-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/gecko_rampart/night_market-b.mp4
+    bar 2.333s | music bar 2.283s (conf 0.54) -> stretch 0.9783 | phase 0.050s | lock 12.55x | kick 0.33 | beat 1/4 | fit -0.07 (bar -0.03 vs rival 0.46) | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [night_market-b] lock 12.55x conf 0.54 kick 0.33 score 0.69 -> review/music/candidates/gecko_rampart/night_market-b.mp4
+♪ generating 29.0s | 103bpm D minor | seed 2916 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 18s -> gecko_rampart_00011_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/gecko_rampart_night_market-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/gecko_rampart/night_market-third_answer.mp4
+    bar 2.333s | music bar 2.304s (conf 0.52) -> stretch 0.9874 | phase 0.990s | lock 15.57x | kick 0.50 | beat 1/3 | fit 0.35 (bar 0.12 vs rival 0.35) | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [night_market-third_answer] lock 15.57x conf 0.52 kick 0.49 score 1.42 -> review/music/candidates/gecko_rampart/night_market-third_answer.mp4
+♪ generating 29.0s | 103bpm D minor | seed 2953 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 18s -> gecko_rampart_00012_.flac (0.8 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/gecko_rampart_tide_organ-wild.flac
+  [tide_organ-wild] SKIPPED — track unusable: 0.00s of audio after silence strip
+♪ generating 29.0s | 103bpm D minor | seed 2990 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 19s -> gecko_rampart_00013_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/gecko_rampart_aurora_strings-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/gecko_rampart/aurora_strings-wild.mp4
+    bar 2.333s | music bar 2.165s (conf -0.06) -> stretch 1.0000 | phase 2.310s | lock 10.12x | kick -0.03 | beat 1/3 | fit -0.39 (bar -0.07 vs rival 0.17) | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [aurora_strings-wild] lock 10.12x conf -0.06 kick -0.03 score 0.20 -> review/music/candidates/gecko_rampart/aurora_strings-wild.mp4
+♪ generating 29.0s | 103bpm D minor | seed 3027 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 18s -> gecko_rampart_00014_.flac (1.2 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/gecko_rampart_night_market-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/gecko_rampart/night_market-halftime.mp4
+    bar 2.333s | music bar 2.144s (conf -0.01) -> stretch 1.0000 | phase 2.000s | lock 10.86x | kick -0.02 | beat 1/4 | fit -0.11 (bar -0.02 vs rival 0.18) | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [night_market-halftime] lock 10.86x conf -0.01 kick -0.02 score 0.21 -> review/music/candidates/gecko_rampart/night_market-halftime.mp4
+♪ generating 29.0s | 103bpm D minor | seed 3064 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 18s -> gecko_rampart_00015_.flac (1.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/gecko_rampart_ember_pulse-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/gecko_rampart/ember_pulse-wild.mp4
+    bar 2.333s | music bar 2.304s (conf 0.69) -> stretch 0.9874 | phase 0.074s | lock 6.80x | kick 0.52 | beat 4/4 | fit 0.09 (bar 0.05 vs rival 0.54) | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [ember_pulse-wild] lock 6.80x conf 0.69 kick 0.52 score 0.76 -> review/music/candidates/gecko_rampart/ember_pulse-wild.mp4
+♪ generating 29.0s | 103bpm D minor | seed 3101 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 19s -> gecko_rampart_00016_.flac (1.3 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/gecko_rampart_night_market-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/gecko_rampart/night_market-heartbeat.mp4
+    bar 2.333s | music bar 2.304s (conf 0.60) -> stretch 0.9874 | phase 0.620s | lock 29.02x | kick 0.71 | beat 1/4 | fit 0.27 (bar 0.17 vs rival 0.62) | seamless loop @ 25.67s (music tiled x2, xf 0.50s)
+  [night_market-heartbeat] lock 29.02x conf 0.60 kick 0.71 score 2.72 -> review/music/candidates/gecko_rampart/night_market-heartbeat.mp4
+kept: night_market-heartbeat, night_market, ember_pulse-wild, aurora_strings-wild, night_market-third_answer
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 22:03:27 music pregen: lissajous_stage
+lissajous_stage (divein): bar 2.000s -> 120 bpm, key E minor; lane analog_dawn; generating 8, keeping 5
+♪ generating 13.0s | 120bpm E minor | seed 39323 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 15s -> lissajous_stage_00012_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_analog_dawn.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/analog_dawn.mp4
+    bar 2.000s | music bar 2.016s (conf 0.40) -> stretch 1.0080 | phase 0.060s | lock 9.36x | kick 0.42 | beat 1/4 | fit 1.07 (bar 0.35 vs rival 0.33) | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [analog_dawn] lock 9.36x conf 0.40 kick 0.42 score 1.51 -> review/music/candidates/lissajous_stage/analog_dawn.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39360 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> lissajous_stage_00013_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_analog_dawn-b.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/analog_dawn-b.mp4
+    bar 2.000s | music bar 2.005s (conf 0.23) -> stretch 1.0027 | phase 1.540s | lock 4.97x | kick -0.04 | beat 1/4 | fit 1.14 (bar 0.23 vs rival 0.20) | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [analog_dawn-b] lock 4.97x conf 0.23 kick -0.04 score 0.20 -> review/music/candidates/lissajous_stage/analog_dawn-b.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39397 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 10s -> lissajous_stage_00014_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_analog_dawn-third_answer.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/analog_dawn-third_answer.mp4
+    bar 2.000s | music bar 1.867s (conf 0.15) -> stretch 0.9700 | phase 1.840s | lock 2.49x | kick 0.28 | beat 1/4 | fit -0.14 (bar -0.10 vs rival 0.68) | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [analog_dawn-third_answer] lock 2.49x conf 0.15 kick 0.28 score 0.20 -> review/music/candidates/lissajous_stage/analog_dawn-third_answer.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39434 steps 8
+  tags: all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump a...
+  done in 10s -> lissajous_stage_00015_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_wooden_orbit-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/wooden_orbit-wild.mp4
+    bar 2.000s | music bar 1.973s (conf -0.04) -> stretch 1.0000 | phase 0.090s | lock 20.28x | kick -0.04 | beat 1/4 | fit -0.09 (bar -0.05 vs rival 0.51) | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [wooden_orbit-wild] lock 20.28x conf -0.04 kick -0.04 score 0.28 -> review/music/candidates/lissajous_stage/wooden_orbit-wild.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39471 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 10s -> lissajous_stage_00016_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_deep_archive-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/deep_archive-wild.mp4
+    bar 2.000s | music bar 1.835s (conf 0.13) -> stretch 0.9700 | phase 0.190s | lock 2.75x | kick 0.16 | beat 1/4 | fit -0.05 (bar -0.03 vs rival 0.56) | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [deep_archive-wild] lock 2.75x conf 0.13 kick 0.16 score 0.20 -> review/music/candidates/lissajous_stage/deep_archive-wild.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39508 steps 8
+  tags: all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space...
+  done in 10s -> lissajous_stage_00017_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_analog_dawn-halftime.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/analog_dawn-halftime.mp4
+    bar 2.000s | music bar 2.005s (conf 0.51) -> stretch 1.0027 | phase 1.050s | lock 18.04x | kick 0.50 | beat 1/4 | fit 1.21 (bar 0.51 vs rival 0.42) | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [analog_dawn-halftime] lock 18.04x conf 0.51 kick 0.50 score 2.80 -> review/music/candidates/lissajous_stage/analog_dawn-halftime.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39545 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> lissajous_stage_00018_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_music_box-wild.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/music_box-wild.mp4
+    bar 2.000s | music bar 2.005s (conf 0.54) -> stretch 1.0027 | phase 0.060s | lock 24.91x | kick 0.51 | beat 1/3 | fit 2.33 (bar 0.54 vs rival 0.23) | seamless loop @ 10.00s (music tiled x2, xf 0.50s)
+  [music_box-wild] lock 24.91x conf 0.54 kick 0.51 score 3.43 -> review/music/candidates/lissajous_stage/music_box-wild.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39582 steps 8
+  tags: all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first land...
+  done in 10s -> lissajous_stage_00019_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_analog_dawn-heartbeat.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/analog_dawn-heartbeat.mp4
+    bar 2.000s | music bar 1.995s (conf 0.23) -> stretch 0.9973 | phase 0.070s | lock 8.87x | kick 0.21 | beat 1/4 | fit 0.53 (bar 0.22 vs rival 0.42) | seamless loop @ 10.00s (music tiled x1, xf 0.50s)
+  [analog_dawn-heartbeat] lock 8.87x conf 0.23 kick 0.21 score 0.57 -> review/music/candidates/lissajous_stage/analog_dawn-heartbeat.mp4
+♪ generating 13.0s | 120bpm E minor | seed 39683 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 9s -> lissajous_stage_00020_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_pulse1-analog_dawn.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/pulse1-analog_dawn.mp4
+    bar 2.000s | music bar 2.005s (conf 0.17) -> stretch 1.0027 | phase 1.540s | lock 10.15x | kick 0.05 | beat 1/4 | fit 0.44 (bar 0.17 vs rival 0.38) | seamless loop @ 10.00s (music tiled x1, xf 0.50s)
+  [pulse1-analog_dawn] kick 0.05 (top-up 1)
+♪ generating 13.0s | 120bpm E minor | seed 39784 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 8s -> lissajous_stage_00021_.flac (0.6 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_pulse2-analog_dawn.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/pulse2-analog_dawn.mp4
+    bar 2.000s | music bar 2.037s (conf 0.48) -> stretch 1.0187 | phase 0.870s | lock 8.15x | kick -0.07 | beat 1/4 | fit -0.35 (bar -0.03 vs rival 0.09) | seamless loop @ 10.00s (music tiled x1, xf 0.50s)
+  [pulse2-analog_dawn] kick -0.07 (top-up 2)
+♪ generating 13.0s | 120bpm E minor | seed 39885 steps 8
+  tags: all percussion is a single deep soft kick drum landing exactly on the downbeat of every ba...
+  done in 10s -> lissajous_stage_00022_.flac (0.5 MB)
+  saved /mnt/c/Users/Phil/zoomer/output/music/lissajous_stage_pulse3-analog_dawn.flac
+  aligned -> /mnt/c/Users/Phil/zoomer/review/music/candidates/lissajous_stage/pulse3-analog_dawn.mp4
+    bar 2.000s | music bar 2.005s (conf 0.20) -> stretch 1.0027 | phase 0.040s | lock 9.91x | kick -0.02 | beat 1/4 | fit 0.86 (bar 0.20 vs rival 0.23) | seamless loop @ 10.00s (music tiled x1, xf 0.50s)
+  [pulse3-analog_dawn] kick -0.02 (top-up 3)
+kept: music_box-wild, analog_dawn-halftime, analog_dawn, wooden_orbit-wild, deep_archive-wild
+  (ComfyUI models unloaded — VRAM freed)
+recorded 5 candidates; audition in the dashboard Music panel
+=== 22:05:27 batch done in 7.3h — 4 to Review
+=== 22:05:27 ComfyUI models unloaded — VRAM freed
+=== 22:05:27 log: outbox/night_batch_0918_144636.log

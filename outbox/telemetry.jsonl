@@ -1768,3 +1768,28 @@
 {"ts": "2026-09-18 13:46:27", "event": "review", "journey": "cork_dehesa", "detail": "ds/divein (src v2)"}
 {"ts": "2026-09-18 13:47:17", "event": "caption", "journey": "cork_dehesa", "detail": "5 options, spot=True"}
 {"ts": "2026-09-18 13:47:17", "event": "render", "journey": "cork_dehesa", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-09-18 16:45:47", "event": "review", "journey": "sargasso_windrow", "detail": "ds/divein (src v2)"}
+{"ts": "2026-09-18 16:46:44", "event": "caption", "journey": "sargasso_windrow", "detail": "5 options, spot=True"}
+{"ts": "2026-09-18 16:46:44", "event": "render", "journey": "sargasso_windrow", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-09-18 17:39:48", "event": "switch", "journey": "sargasso_windrow", "detail": "ds/zoomout"}
+{"ts": "2026-09-18 17:41:19", "event": "phase_shift", "journey": "sargasso_windrow", "detail": "start @ 20.70s"}
+{"ts": "2026-09-18 17:41:19", "event": "music", "journey": "sargasso_windrow"}
+{"ts": "2026-09-18 17:41:21", "event": "music_skip", "journey": "sargasso_windrow", "detail": "ComfyUI busy — use Generate in Music tab"}
+{"ts": "2026-09-18 19:04:42", "event": "review", "journey": "garnet_glass", "detail": "ds/divein (src v2)"}
+{"ts": "2026-09-18 19:05:36", "event": "caption", "journey": "garnet_glass", "detail": "5 options, spot=True"}
+{"ts": "2026-09-18 19:05:36", "event": "render", "journey": "garnet_glass", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-09-18 21:03:28", "event": "review", "journey": "gecko_rampart", "detail": "ds/divein (src v3)"}
+{"ts": "2026-09-18 21:04:29", "event": "caption", "journey": "gecko_rampart", "detail": "5 options, spot=True"}
+{"ts": "2026-09-18 21:04:29", "event": "render", "journey": "gecko_rampart", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-09-18 21:54:06", "event": "review", "journey": "lissajous_stage", "detail": "ds/divein (src v1)"}
+{"ts": "2026-09-18 21:54:53", "event": "caption", "journey": "lissajous_stage", "detail": "5 options, spot=True"}
+{"ts": "2026-09-18 21:54:53", "event": "render", "journey": "lissajous_stage", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-09-18 21:57:58", "event": "music_pregen", "journey": "sargasso_windrow", "detail": "5 candidates"}
+{"ts": "2026-09-18 22:00:44", "event": "music_pregen", "journey": "garnet_glass", "detail": "5 candidates"}
+{"ts": "2026-09-18 22:03:27", "event": "music_pregen", "journey": "gecko_rampart", "detail": "5 candidates"}
+{"ts": "2026-09-18 22:05:27", "event": "music_pregen", "journey": "lissajous_stage", "detail": "5 candidates"}
+{"ts": "2026-09-18 22:05:27", "event": "batch_done", "detail": "batch done in 7.3h — 4 to Review"}
+{"ts": "2026-09-18 23:52:37", "event": "review", "journey": "cork_dehesa", "detail": "ds/divein (src v3)"}
+{"ts": "2026-09-19 00:00:51", "event": "ig_stats", "detail": "36 reels, followers 110"}
+{"ts": "2026-09-19 00:01:06", "event": "ig_insights", "detail": "34 posts"}
+{"ts": "2026-09-19 00:02:55", "event": "yt_stats", "detail": "70 videos, 13614 views"}

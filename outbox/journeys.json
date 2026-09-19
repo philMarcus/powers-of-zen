@@ -196,14 +196,6 @@
       "note": "re-render: video rejected in review",
       "order": 9
     },
-    "lissajous_stage": {
-      "state": "queued",
-      "force": true,
-      "new_seed": true,
-      "ts": "2026-08-31 13:49:03",
-      "note": "re-render: video rejected in review",
-      "order": 10
-    },
     "observatory_dusk": {
       "state": "rejected",
       "ts": "2026-08-31 13:51:01",
@@ -281,30 +273,6 @@
       "ts": "2026-09-06 00:55:19",
       "note": "composed by midnight refill"
     },
-    "sargasso_windrow": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-09-18 11:35:50",
-      "note": "re-render: planet descent fix (plate live) — video pulled from review 2026-09-18 (same seed)",
-      "order": 1
-    },
-    "garnet_glass": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-09-18 11:35:50",
-      "note": "re-render: planet descent fix (plate live) — video pulled from review 2026-09-18 (same seed)",
-      "order": 2
-    },
-    "gecko_rampart": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-09-18 11:35:50",
-      "note": "re-render: planet descent fix (plate live) — video pulled from review 2026-09-18 (same seed)",
-      "order": 3
-    },
     "cicada_chorus": {
       "state": "queued",
       "force": true,
@@ -330,5 +298,5 @@
       "order": 6
     }
   },
-  "updated": "2026-09-18 13:47:17"
+  "updated": "2026-09-18 21:54:53"
 }

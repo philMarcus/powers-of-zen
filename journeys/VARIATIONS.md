@@ -257,6 +257,22 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
   across a field, the jitter of a pollen grain in water, and the same scribble frozen into a
   polymer's random coil (a rubber protein IS a random walk) — the one family that is both a
   track and a structure
+- Plateau–Rayleigh beading (added 2026-09-19): a smooth thread or jet that pinches ITSELF into
+  a chain of equal beads — a slender water jet breaking into a string of drops at its crest, a
+  dripping thread of sap or glue beading along its length, an orb web's capture spiral studded
+  with glue droplets, a membrane tube pearling when pulled, a chain of cells fattening into a
+  bead at even intervals (a cyanobacterial filament with its heterocysts), a stack of protein
+  discs strung on a rod, a taut rope of light between two points snapping into pairs of beads
+  (string-breaking), the knots strung along a cradle star's jet — ONE line becoming MANY beads
+  (distinct from rouleaux, which are discs stacked into a column, and from helices: this line
+  pinches, it never coils)
+- lobed rosettes (added 2026-09-19): a compact core with a FEW identical soft lobes about it,
+  two to eight, set at equal angles — an octopus curled with its arms tucked about its head
+  seen from above, a pigment cell ringed by its radial pull-fibres, a four-lobed cloverleaf of
+  electron fog about one nucleus point (a d-orbital), four lensed images of one quasar set
+  about a lens galaxy (the Einstein Cross), a bilobed pollen grain, a quatrefoil window — FEW
+  and EQUAL lobes (distinct from fingers of God's needle-burst of many spines, from growth-ring
+  annuli's concentric rings, and from core & envelope's single sheath)
 - USE: pick ONE family per journey and reskin it to the theme (jade-carved
   automata, sugar-crystal Penrose, brass Chladni). Never repeat the previous
   video's family.
@@ -322,6 +338,14 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
   sub-web of their own) · fingers of God — galaxy clusters drawn out into luminous radial
   needles that all point at the viewer, a sky of spines converging on the eye (the
   redshift-map picture; a needle-burst at the largest scale)
+- (added 2026-09-19) stellar one-off: the Herbig–Haro jet — a cradle star buried out of sight
+  in a coal-black cloud fires two narrow jets straight out of it, each jet a lit thread STRUNG
+  WITH KNOTS at even spacing where pulses of outflow pile up, ending in a curved bow of shocked
+  gas; the cloud unlit, the jets the only light (a beaded thread of light; seams to any jet or
+  thread that beads) · galactic one-off: the Einstein Cross — one far quasar seen FOUR TIMES,
+  four hard points of cold light set at the corners of a cross about the amber core of a
+  foreground barred galaxy whose mass bends the light (a lobed rosette at the largest scale;
+  distinct from the lensing ARCS and rings the catalog already uses — points, not arcs)
 
 ## PALETTE FAMILIES — assign each journey ONE home family so the catalog stays varied
 (adjacent cards still contrast in temperature WITHIN the family; the family is the
@@ -445,6 +469,14 @@ video's overall color identity)
   white stripe/hawthorn-red berry points/amber-brown flea shell/one ultraviolet-blue glow
   point — a blue-black night hedge carrying red points, unlike ultraviolet noir's electric
   blue or oxblood nocturne's red earth)
+- (added 2026-09-19) hot-spring marmalade & vent sapphire (marmalade-orange grading to
+  lime-yellow thermophile terraces/a sapphire-to-turquoise vent-pool core/peach first light on
+  steam against an indigo winter dawn/bison umber and snow-shadow slate — a warm orange laid
+  beside a cold saturated blue, no red, no gold metal; unlike iron dawn's rust domes or raku's
+  copper-flash) · brood lilac & copper-blue (pearl-octopus lilac-pink bodies/copper-blue blood
+  glow/mustard seep-mat yellow points on char basalt/abyss black — a cool pink carrying a
+  colder blue; unlike urchin violet & sunstar rose's coral-and-green-glass and hemocyanin &
+  tidewrack's brown shells: no brown, no green, no coral)
 - RULE: check the last few journeys' families and pick a DIFFERENT one.
 
 ## LENGTH VARIETY (Phil 2026-07-31 — the catalog must mix durations)

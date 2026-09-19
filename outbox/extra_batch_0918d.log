@@ -3,3 +3,24 @@ tonight (queue order): sargasso_windrow(L ~92min) + garnet_glass(L ~107min) + ge
 === 14:46:36 GPU busy — waiting for it to free up
 === 14:47:05 --- sargasso_windrow ---
 === 14:47:05 sargasso_windrow: --plate live --plate-cn 0 --plate-void-gate --plate-intro enter
+=== 16:45:46 sargasso_windrow: rendered in 7121s
+=== 16:46:44 sargasso_windrow -> REVIEW (captioned)
+=== 16:46:44 --- garnet_glass ---
+=== 16:46:44 garnet_glass: --plate live --plate-cn 0 --plate-void-gate --plate-intro enter
+=== 19:04:41 garnet_glass: rendered in 8277s
+=== 19:05:36 garnet_glass -> REVIEW (captioned)
+=== 19:05:36 --- gecko_rampart ---
+=== 19:05:36 gecko_rampart: --plate live --plate-cn 0 --plate-void-gate --plate-intro enter
+=== 21:03:27 gecko_rampart: rendered in 7071s
+=== 21:04:29 gecko_rampart -> REVIEW (captioned)
+=== 21:04:29 --- lissajous_stage ---
+=== 21:04:29 lissajous_stage: --plate live --plate-cn 0 --plate-void-gate --plate-intro enter --seed 593172
+=== 21:54:06 lissajous_stage: rendered in 2977s
+=== 21:54:53 lissajous_stage -> REVIEW (captioned)
+=== 21:54:53 music pregen: sargasso_windrow
+=== 21:57:58 music pregen: garnet_glass
+=== 22:00:44 music pregen: gecko_rampart
+=== 22:03:27 music pregen: lissajous_stage
+=== 22:05:27 batch done in 7.3h — 4 to Review
+=== 22:05:27 ComfyUI models unloaded — VRAM freed
+=== 22:05:27 log: outbox/night_batch_0918_144636.log

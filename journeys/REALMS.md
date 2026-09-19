@@ -84,6 +84,11 @@ elliptical galaxy as a smooth star-fog hill · colliding pair with tidal tails �
 disk with a dust lane knife · globular cluster (a sphere of ten thousand suns) · open
 cluster drifting apart · galactic-center bulge with stars swarming a black hole · quasar
 jet lancing from a bright core · Magellanic stream of stars bridging two galaxies
+Added 2026-09-19 (picture-first, unused): the Einstein Cross — one far quasar seen four times,
+four hard points of cold light set at the corners of a cross about the amber core of a
+foreground barred galaxy whose mass bends the light (a four-lobed rosette; seams to a
+four-lobed d-orbital cloverleaf, a quatrefoil, anything with four equal lobes about a core —
+distinct from the lensing arcs and rings already in the catalog: points, not arcs)
 
 ## 10⁹–10¹⁴ · stellar `[amb]`
 star-nursery nebula pillars · planetary nebula shells (dying star's rings) · supernova
@@ -104,6 +109,13 @@ sphere of black iron cracked into plates, fissures glowing between them, two pal
 hot spots, a spray of beam light off each pole (stellar by nature though only 10⁴ m across
 — the counter stays honest; its crust is the subnuclear band's Coulomb crystal and its
 depths are nuclear pasta, so a whole journey can live inside one star)
+Added 2026-09-19 (picture-first, unused): the Herbig–Haro jet — a cradle star buried out of
+sight in a coal-black cloud fires two narrow jets straight out of it, each jet a lit thread
+strung with knots at even spacing where pulses of outflow pile up, ending in a curved bow of
+shocked gas, the cloud unlit and the jets the only light (a beaded thread; seams to any thread
+that beads — string-breaking's rope of light pinching into pairs is its subnuclear twin) · the
+cradle disk at the jet's foot — a flat wheel of unlit dust with a lit hub, the jet rising
+straight out of the hub, dark gap-rings ruled into the wheel where forming worlds sweep it clean
 
 ## 10⁴·⁵–10⁹ · planetary `[air]→[obl]`
 gas giant cloud bands and cyclone eyes · ringed planet with braided rings · ice moon with
@@ -170,6 +182,15 @@ section: ONE single calcite crystal carved by its builder cells into a bicontinu
 sponge labyrinth, holes within holes at repeating sizes, every strut optically one stone
 · the sclerocyte foundry — the builder cells themselves draped over the growing strut
 tips, each shipping round mineral-loaded vesicles budded off in geodesic clathrin baskets
+Added 2026-09-19 (picture-first, unused): hot-spring mat filaments — a turf of hair-thin chains
+of cells, each chain a string of squat cylinders set end to end, marmalade-orange in the hot
+lanes and lime toward the cooler rim, a fatter pale bead-cell seated into the chain at
+intervals, oxygen bubbles caught in the turf (the cellular card of any hot-spring dive; a
+bead-chain MADE of cells) · chromatophore rosette — an octopus's colour organ: a dark elastic
+pigment sac at the centre with fifteen to twenty muscle cells radiating from its rim like the
+spokes of a wheel, the sac pulled wide into a disc when they contract, a layer of iridescent
+platelet cells beneath, thousands of the rosettes tiled through the skin, a capillary net
+running under them all (a lobed rosette made of cells; the door to the blood)
 (mineral/made parents at this scale use grain/fiber/pigment archetypes instead — see rule.)
 
 ## 10⁻⁸·⁵–10⁻⁶ · molecular `[amb]` — EMPTY TODAY (0 cards with molecular machinery)
@@ -232,6 +253,15 @@ dragonfly's wing hinge, a cicada's clicking drum — the most perfect rubber kno
 random-walk family made solid) · crystallin bead-glass — a lens fibre packed with round
 protein beads so evenly spaced that light passes as through glass, no gaps and no order
 (the transparent solid inside every eye; a sea with no fog between its instances)
+Added 2026-09-19 (picture-first, unused): the phycobilisome — a cyanobacterium's light
+antenna: a core of three stacked-disc cylinders lying on the membrane, six rods of stacked
+doughnut-shaped protein discs fanning up and out from it like a hand of splayed fingers, each
+disc a ring of pigment proteins, the rod tips orange-red grading to violet-blue at the core
+(light runs DOWN the rods into the core), thousands of the fans standing on the inner
+membranes (a beads-on-a-rod picture; write it, the name renders nothing). Its honest next
+card is the one magnesium atom seated in the reaction-centre pigment the rods feed.
+NOTE hemocyanin (08-28) is still unused — it is an octopus's and a horseshoe crab's blood; a
+cephalopod dive reaches it through the capillary net under the skin's chromatophore rosettes.
 
 ## 10⁻¹²–10⁻⁸·⁵ · atomic `[amb]`
 Name the REAL lattice per parent: quartz spiral chains · calcite rhombs · ice hexagons ·
@@ -322,3 +352,8 @@ town (prairie dogs, burrowing owls, bison, a rattlesnake, a ferret) · fluorspar
 gallery under a UV lamp (made variant: a tri-colored bat on the timbers, cave crickets on
 the rail, a salamander in the sump) · locust swarm over sorghum (locusts, hobbies hawking
 them, a jackal, a marabou stork)
+Added 2026-09-19 (unused): geyser basin at winter dawn (bison steaming in the warm runoff
+channel, elk on the sinter flats, a coyote at the treeline, ravens on a dead lodgepole,
+trumpeter swans on the unfrozen river; at mm scale the mat itself is a commons — brine flies
+grazing the orange turf, a wolf spider, a tiger beetle). The octopus-garden seamount nursery
+(09-04) is still unused.
