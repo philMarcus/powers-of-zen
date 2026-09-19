@@ -2014,3 +2014,21 @@ why Phil could not pick music during ~20h of renders); nightly rendering is NOT 
   '<json>' pins an exact entrance so a lab no longer depends on the draw. Round 3 labs (v17_*):
   enterBottom (seed 4), travelA (the old off-frame left draw, pinned), driftC (seed 3: in-frame
   from the lower right, spin reversed).
+- v17 RESULTS (round 3, the design as shipped):
+  · v17_enterBottom (k 0.6 from below, lit from above, approved mechanics, 430 px budget): clean
+    rise, orbit view on the bar line, clean landing (covered f62), NO collar. In this busy void the
+    model bends the filaments into concentric rings round the rising globe (f35-50, gone by the bar
+    line) — the radial-symmetry habit of a stable object at the zoom's fixed point; reads as
+    orbital rings. Flagged to Phil for his eye.
+  · v17_travelA (pinned off-frame left, k 1.44, flow-riding + void-copy for the remainder): clean
+    from entry to landing — round on every frame, no tail, and the v15 band at the entry point is
+    gone too.
+  · v17_driftC (seed 3: in-frame start lower right, k 1.33, spin -1.23, lit from the upper right):
+    clean from the point of introduction to the landing (covered f64); reversed spin and the drawn
+    light both work. Residual translation 0 px on every frame.
+- STATE: all five kinds of arrival have a passing lab on sargasso card 1 — grow in place (v15_grow),
+  in-frame drift (v16_travelB, v17_driftC), off-frame small traveller (v17_travelA), big globe from
+  any edge (v17_enterBottom). Clips sent to Phil. PRODUCTION STAYS plate_intro="enter" until he
+  approves; the switch is Settings → "how the globe arrives" → mix (night_batch passes the setting
+  straight to --plate-intro). NOT YET TESTED: a full-length render through `mix`; a second test
+  bed (all labs are one card of one journey); the est_render_sec plate term.

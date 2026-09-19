@@ -130,10 +130,17 @@ identity drift, I did that for three lab rounds). UNIFIED: plate.draw_entrance()
 arrival (start in frame or beyond ANY perimeter point · goal · growth exponent k · path bow · light direction),
 kinds enter / grow / travel (a small disc that comes in while it grows), deterministic per journey:card:seed;
 dive --plate-intro mix|travel|mix-enter|mix-grow + --plate-entrance-seed N; dashboard Settings knob has "mix".
-Legacy names (enter/grow/plain) are untouched = the approved behaviour. PRODUCTION STAYS plate_intro="enter" UNTIL
-PHIL APPROVES the lab clips (output/plate_lab/sargasso_windrow/*v15_*; grow + travelA sent, travelB + enterBottom
-rendering in tmux plate_entr) — then flip the setting to "mix". Known cosmetic: a translucent band is born at the
-zoom's fixed point (= the globe's start) during the hold; lever recorded in PLAN if he dislikes it.
+Legacy names (enter/grow/plain) are untouched = the approved behaviour. TWO LAWS LEARNED IN THE LABS (do not
+re-derive): (1) RIDE THE FLOW — a small globe TRANSLATED against the void grows a tail the model repaints as more
+globe (barrel, then a ghost sphere); instead put the zoom's fixed point where the stream itself carries the globe
+along its path, P=(z*old-des)/(z-1): in-frame starts then need 0 px of translation, off-frame ones only until they
+are inside; nothing can ENTER with the stream, drifting outward from any in-frame point is free. (2) ONLY FOR k>=1 —
+a globe that grows slower than the zoom (enter, k 0.6) sheds an annulus of itself every frame, which the approved
+translate+vacate clears as a by-product; without it the annuli pile into a striped collar, so big-globe entrances
+keep the approved mechanics and only their geometry is drawn (any perimeter point, 430 px path budget). ALL FIVE
+ARRIVALS PASS IN THE LAB (clips sent: v15_grow, v16_travelB, v17_enterBottom, v17_travelA, v17_driftC in
+output/plate_lab/sargasso_windrow/). PRODUCTION STAYS plate_intro="enter" UNTIL PHIL APPROVES — then Settings →
+"how the globe arrives" → mix. Untested: a full-length render through mix; a second test bed.
 2026-09-19 (MUSIC FIT FALSE ALARM FIXED): Phil — sargasso_windrow's five tracks "phrase off the bar or have no
 beat". Measured on the finished videos, 3 of 5 sat within 10-40 ms of every morph; the fit LABEL was wrong
 (align.meter_fit judged the unstretched track at the video's nominal bar instead of the track's measured
