@@ -1914,3 +1914,11 @@ why Phil could not pick music during ~20h of renders); nightly rendering is NOT 
   appears clean at ~97px. v13 (running): Plate.cap_now() = 0.12 while under GLINT_PX easing to
   0.30 by 2x, slightly larger/stronger glint. Production stays plate_intro=enter until a grow
   version passes.
+- GROW v13 RESULT (2026-09-19, clip sent to Phil: output/plate_lab/sargasso_windrow/
+  sargasso_windrow_plate_live_v13grow_loop.mp4): with cap_now() 0.12 in the point phase the globe
+  no longer pops — a soft glow forms (f32-36), condenses into a translucent sphere (f38), a solid
+  banded globe by f40, orbit view on the bar line, clean landing. STILL OPEN: (a) the first ~4
+  frames show nothing (the arrival morph at full boost owns them; the point could start a beat
+  later, after the arrival); (b) the glint reads as a soft glow, not a crisp star point; (c) the
+  globe's look still drifts banded → cratered with a dark hollow on the unlit side (shading
+  ambient / identity). Awaiting Phil's verdict before it joins `auto`; production stays `enter`.
