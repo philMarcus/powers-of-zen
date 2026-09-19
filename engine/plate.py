@@ -383,6 +383,14 @@ class Plate:
         # off-frame anyway, exactly as approved.
         self.small_start = (self.size0 * w / 2.0) < self.GLINT_PX * 1.5
         self.hold = fa if self.small_start else 0
+        # unified entrances ride the zoom's own stream (see aim); legacy enter keeps the
+        # approved aim (fixed point = the globe)
+        self.ride_flow = bool(entrance) and self.entry is not None
+        self.start_in_frame = bool(entrance) and (0.0 <= entrance["start"][0] <= 1.0
+                                                  and 0.0 <= entrance["start"][1] <= 1.0)
+        self._zpath = 1.0
+        for _z in self.zooms[self.hold:self.n]:
+            self._zpath *= _z
         self.introduced = False
         # sphere centre (fractional), the zoom's fixed point
         self.tx, self.ty = tuple(entrance["start"]) if entrance else start_pos
@@ -431,6 +439,15 @@ class Plate:
             # start = a big sliver to fill behind the globe every early frame, which the
             # model read as a ghost bubble). smoothstep-blended linear: peak ~1.25x the mean.
             e = 0.5 * u + 0.5 * (u * u * (3.0 - 2.0 * u))
+            if self.ride_flow and self.start_in_frame:
+                # FLOW PACE: progress follows the cumulative zoom, so a straight path is
+                # EXACTLY the zoom's own outward stream from one fixed point behind the start
+                # — the globe drifts with the void around it and nothing is ever vacated
+                jj = int(min(max(0, j + 1 - self.hold), self.n - self.hold))
+                zc = 1.0
+                for _z in self.zooms[self.hold:self.hold + jj]:
+                    zc *= _z
+                e = (zc - 1.0) / max(1e-6, self._zpath - 1.0)
             des = (self.entry[0] + (self.goal[0] - self.entry[0]) * e,
                    self.entry[1] + (self.goal[1] - self.entry[1]) * e)
             if self.bow:
@@ -443,6 +460,17 @@ class Plate:
                 des = (des[0] + (-dyp / ln) * off / self.w, des[1] + (dxp / ln) * off / self.h)
             cx = des[0] - (des[0] + self.ease * (ax - des[0]) - 0.5) / z
             cy = des[1] - (des[1] + self.ease * (ay - des[1]) - 0.5) / z
+            if self.ride_flow and z > 1.0005:
+                # RIDE THE FLOW (unified entrances, after the travelB lab): every void object
+                # streams outward from the zoom's fixed point; put that point where the stream
+                # itself carries the globe from where it is to where the path wants it,
+                # P = (z*old - des) / (z - 1). Globe and void then move TOGETHER — no crescent
+                # to vacate, nothing to fill, nothing for the model to repaint as a tail. P is
+                # confined to the frame (the crop clamp), so a globe still coming in through
+                # an edge moves against the stream and keeps a (smaller) translated remainder.
+                Px = min(1.0, max(0.0, (z * self.tx - des[0]) / (z - 1.0)))
+                Py = min(1.0, max(0.0, (z * self.ty - des[1]) / (z - 1.0)))
+                cx, cy = Px + (0.5 - Px) / z, Py + (0.5 - Py) / z
             cx, cy = min(0.85, max(0.15, cx)), min(0.85, max(0.15, cy))
             px, py = track_mod.propagate(self.tx, self.ty, z, rot_deg, cx, cy,
                                          self.w, self.h)
@@ -481,6 +509,42 @@ class Plate:
 
     def radius_px(self):
         return self.size * self.w / 2.0
+
+    @staticmethod
+    def _void_copy(a, vac_m, o, Ro, n, Rn, trail):
+        """The vacated crescent filled by a TRANSLATED COPY of live void: one offset T for the
+        whole crescent, chosen so every source pixel is in frame and clear of both the old and
+        the new disc, preferring directions away from the trail (the trail may carry leftovers).
+        Real texture with the right statistics, no smear; returns None if no offset fits."""
+        H, W = vac_m.shape
+        ys, xs = np.nonzero(vac_m > 0.02)
+        if len(ys) == 0:
+            return None
+        step = math.hypot(n[0] - o[0], n[1] - o[1])
+        best = None
+        for extra in (0.0, 0.5):
+            L = Ro + Rn + step + 40.0 + extra * Rn
+            for kdir in range(16):
+                ang = 2.0 * math.pi * kdir / 16.0
+                ux, uy = math.cos(ang), math.sin(ang)
+                sx = np.rint(xs + ux * L).astype(np.int32)
+                sy = np.rint(ys + uy * L).astype(np.int32)
+                ok = (sx >= 0) & (sx < W) & (sy >= 0) & (sy < H)
+                sxc, syc = np.clip(sx, 0, W - 1), np.clip(sy, 0, H - 1)
+                ok &= np.hypot(sxc - o[0], syc - o[1]) > Ro * 1.05
+                ok &= np.hypot(sxc - n[0], syc - n[1]) > Rn * 1.06
+                score = ok.mean() - 0.2 * max(0.0, ux * trail[0] + uy * trail[1]) - 0.02 * extra
+                if best is None or score > best[0]:
+                    best = (score, ok, sxc, syc)
+        _, ok, sxc, syc = best
+        if ok.mean() < 0.85:
+            return None
+        fill = a.copy()
+        samp = a[syc, sxc]
+        if (~ok).any():
+            samp[~ok] = samp[ok].mean(axis=0)
+        fill[ys, xs] = samp
+        return fill
 
     @staticmethod
     def _mover_halo(R):
@@ -631,6 +695,18 @@ class Plate:
                 if _bad.any() and _voidpx.any():
                     fill = np.where(_bad[..., None], patch[_voidpx].mean(axis=0)[None, None, :],
                                     fill)
+                if self.entrance is not None:
+                    # UNIFIED ENTRANCES: a small fast globe leaves a crescent a quarter of its
+                    # own radius thick, and the directional pull smears the pixels right behind
+                    # the old limb across it — which the model repaints as MORE GLOBE (travelB
+                    # lab: a barrel-shaped body trailing the disc, then a glassy ghost sphere;
+                    # and once a tail exists the pull copies the tail, so it feeds itself).
+                    # Fill with REAL live void copied from a clean region instead; the pull
+                    # stays as the fallback when the globe is too big for a clean region to fit.
+                    _vc = self._void_copy(patch, vac_m, (ox, oy), R_clear, (nx, ny), R_,
+                                          (_tx, _ty))
+                    if _vc is not None:
+                        fill = _vc
                 a = a * (1 - vac_m[..., None]) + fill * vac_m[..., None]
             a = a * (1 - mm[..., None]) + moved * mm[..., None]        # land it at the new
         cx, cy = self.centre_px()

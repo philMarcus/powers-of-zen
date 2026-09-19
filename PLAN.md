@@ -1971,3 +1971,26 @@ why Phil could not pick music during ~20h of renders); nightly rendering is NOT 
     point sits at the (off-frame) start. v15_grow has the same band behind its point. It reads as
     a nebula/ring behind the planet, not as a defect; if Phil dislikes it the lever is to keep the
     zoom's fixed point at the GOAL until the globe is big enough to cover it.
+  · v15_travelB (seed 9, k 1.14, IN-FRAME start at the top, bowed) — FAILED, and the failure
+    reshaped the design. The globe grew a barrel-shaped tail on its trailing side (f40-45) that
+    became a glassy ghost sphere (f46-49). MECHANISM: a small fast globe vacates a crescent a
+    quarter of its own radius thick every frame; the directional pull smears the pixels right
+    behind the old limb across it, the model repaints the smear as MORE GLOBE (worst when the
+    trailing limb is the dark side — no edge contrast), and once a tail exists the pull copies
+    the tail, so it feeds itself. travelA survived only because its trailing limb was the lit one.
+- RIDE THE FLOW (the fix, plate.Plate.aim for drawn entrances): in a zoom-in everything streams
+  outward from the zoom's fixed point. Instead of making the globe the fixed point and TRANSLATING
+  it against the void, put the fixed point where the stream itself carries the globe from where it
+  is to where the path wants it: P = (z*old - des)/(z - 1), confined to the frame (= the crop
+  clamp). Globe and void then move TOGETHER: no crescent, no fill, nothing to repaint. In-frame
+  starts use FLOW PACE (path progress = (Zcum - 1)/(Zpath - 1)), which makes a straight path
+  exactly one fixed P behind the start — residual translation 0.0 px on every frame (measured).
+  Off-frame starts move against the stream until they are far enough inside: residual 17-24
+  px/frame falls to 0 within 14-18 frames for top/bottom entries, and to ~10-12 for left/right
+  ones (the stream is weak near the side it came from). The remainder is filled by
+  Plate._void_copy: ONE translated copy of clean live void for the whole crescent (16 directions
+  x 2 distances, in frame, clear of both discs, away from the trail), the pull as fallback when
+  the globe is too big for a clean region to fit. The zoom's fixed point hands back to the globe
+  at the bar line, when the globe already spans the frame. Legacy enter/grow/plain untouched.
+  LAW WORTH KEEPING: in this engine nothing can ENTER the frame with the stream — entering is
+  always against it; drifting outward from any in-frame point is free.
