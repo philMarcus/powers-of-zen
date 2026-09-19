@@ -1994,3 +1994,23 @@ why Phil could not pick music during ~20h of renders); nightly rendering is NOT 
   at the bar line, when the globe already spans the frame. Legacy enter/grow/plain untouched.
   LAW WORTH KEEPING: in this engine nothing can ENTER the frame with the stream — entering is
   always against it; drifting outward from any in-frame point is free.
+- v16 RESULTS + THE k < 1 LESSON:
+  · v16_travelB (seed 9 in-frame start, flow-riding): CLEAN — a round planet on every frame, no
+    tail, no ghost; it appears beside the galaxy and drifts down into place as it grows, the void
+    moving with it; bar-line handoff and landing clean (covered f62). Clip sent to Phil.
+  · v16_enterBottom (k 0.6, flow-riding) FAILED from the frame the residual reached zero: a
+    STRIPED GLASS COLLAR round the globe. A globe that grows SLOWER than the zoom (k < 1) sheds a
+    thin annulus of itself every frame (the crop magnifies the carried disc by z, the schedule
+    wants z^k). The approved enter clears that annulus as a BY-PRODUCT of translating the globe;
+    remove the translation and the annuli pile up. A radial pull to clear them drew a sunburst in
+    CPU simulation. RULE: ride the flow ONLY where it is exact, k >= 1 (travel, grow). k < 1
+    entrances keep the APPROVED aim + vacate unchanged; only their geometry is drawn — any
+    perimeter point, a goal pulled toward the side they came from, and a 430 px PATH BUDGET (the
+    portrait frame makes a top/bottom entry twice the approved 350 px; over budget, the globe
+    starts partly in view inside the arrival morph), straight paths only.
+- DRAW v2: travel = 50% in-frame drifts that start 7-17% inside ANY boundary point (with the
+  stream's fixed point P = S - (G - S)/3 verified inside the frame) + 50% off-frame; spin drawn
+  1-2 deg/frame in EITHER direction; light from the left, right or above. dive --plate-entrance
+  '<json>' pins an exact entrance so a lab no longer depends on the draw. Round 3 labs (v17_*):
+  enterBottom (seed 4), travelA (the old off-frame left draw, pinned), driftC (seed 3: in-frame
+  from the lower right, spin reversed).

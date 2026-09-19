@@ -904,6 +904,9 @@ def main():
                          "is an object (default = approach_cn). v5 lab: 0 — the radially "
                          "symmetric dome under full denoise is the prime suspect for the "
                          "concentric-ring lock in the mask arms (the hero-cn 'caldera' class).")
+    ap.add_argument("--plate-entrance", default="", metavar="JSON",
+                    help="labs: an exact entrance dict (kind/start/goal/k/bow[/light/spin]) "
+                         "instead of the journey-keyed draw")
     ap.add_argument("--plate-entrance-seed", type=int, default=0, metavar="N",
                     help="with --plate-intro mix/travel/...: vary the journey-keyed entrance "
                          "draw (labs: see several entrances on one card)")
@@ -1343,6 +1346,9 @@ def main():
                     f"{spec.get('name')}:{_preg.get('name')}:{args.plate_entrance_seed}",
                     cfg["width"], cfg["height"], args.plate_limb, _zc, kind=_kind)
                 _intro = _entrance["kind"]
+            if args.plate_entrance:
+                _entrance = json.loads(args.plate_entrance)
+                _intro = _entrance.get("kind", "travel")
             _pl = _plate.Plate(_pk, _pS, _pE2, _pfa, _preg, _pnxt,
                                spec.get("style_suffix", ""),
                                cfg["width"], cfg["height"], zoom_sched[_pS:_pE2],

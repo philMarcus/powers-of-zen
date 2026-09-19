@@ -271,6 +271,7 @@ def draw_entrance(key, w, h, s_limb, z_card, kind=None):
         kind = ("enter", "enter", "enter", "grow", "grow", "grow",
                 "travel", "travel", "travel", "travel")[hv % 10]
     goal = (0.42 + 0.20 * r(1), 0.40 + 0.14 * r(2))
+    spin = (1.0 + 1.0 * r(11)) * (1.0 if r(12) < 0.5 else -1.0)      # deg/frame, either way
     bow = (-0.16, 0.0, 0.0, 0.16)[int(r(3) * 4) % 4]
     if kind == "grow":
         k = 1.75
@@ -283,22 +284,44 @@ def draw_entrance(key, w, h, s_limb, z_card, kind=None):
         k = 0.6 if kind == "enter" else (1.10 + 0.35 * r(6))
         size0 = s_limb * (1.0 / z_card) ** k                 # diameter, fraction of width
         rpx = size0 * w / 2.0
-        if kind == "travel" and r(7) < 0.35:
-            # crosses the frame: starts inside, far from where it will settle
-            start = (0.12 + 0.76 * r(8), 0.10 + 0.80 * r(9))
-            if abs(start[0] - goal[0]) + abs(start[1] - goal[1]) < 0.45:
-                start = (1.0 - goal[0] + 0.1 * (r(8) - 0.5), 0.12 if goal[1] > 0.45 else 0.86)
+        if kind == "travel" and r(7) < 0.5:
+            # DRIFTS IN FROM INSIDE THE FRAME (artifact-free by construction: it rides the
+            # zoom's stream, see Plate.aim): starts near any point of the frame boundary, a
+            # little inside it, far from where it will settle
+            (px, py), (nx, ny) = perimeter_point(r(8), w, h)
+            inset = 0.07 + 0.10 * r(9)
+            start = (px - nx * inset * (h / w if nx else 1.0) * 0.6, py - ny * inset)
+            start = (min(0.93, max(0.07, start[0])), min(0.93, max(0.06, start[1])))
+            # the stream's fixed point P = S - (G - S)/(Zpath - 1) must lie in the frame;
+            # Zpath >= ~4 on any card, so keep S - (G - S)/3 inside
+            for _ in range(12):
+                Px, Py = start[0] - (goal[0] - start[0]) / 3.0, start[1] - (goal[1] - start[1]) / 3.0
+                if 0.01 <= Px <= 0.99 and 0.01 <= Py <= 0.99:
+                    break
+                start = (start[0] + 0.12 * (goal[0] - start[0]), start[1] + 0.12 * (goal[1] - start[1]))
         else:
             (px, py), (nx, ny) = perimeter_point(r(8), w, h)
             pad = rpx + 0.03 * w
             start = (px + nx * pad / w, py + ny * pad / h)
+            if kind == "enter":
+                bow = 0.0                 # the approved enter is a straight path
+                # PATH BUDGET. The approved enter crosses ~350 px in a card; the portrait frame
+                # makes a top/bottom entry twice that, and the crescent the globe vacates each
+                # frame twice as thick. Settle nearer the side it came from, and if the path is
+                # still long let it start partly in view (it arrives inside the arrival morph).
+                goal = (min(0.62, max(0.40, 0.5 + (start[0] - 0.5) * 0.25)),
+                        min(0.60, max(0.36, 0.48 + (start[1] - 0.48) * 0.25)))
+                dxp, dyp = (start[0] - goal[0]) * w, (start[1] - goal[1]) * h
+                L = math.hypot(dxp, dyp)
+                if L > 430.0:
+                    start = (goal[0] + dxp * (430.0 / L) / w, goal[1] + dyp * (430.0 / L) / h)
     # the SUN moves too: lit from the left, the right or anywhere above (never from below —
     # under-lighting reads as wrong even in space). Same elevation as the approved look.
     az = math.radians(180.0 + 180.0 * r(10))
     light = (round(0.71 * math.cos(az), 3), round(0.71 * math.sin(az), 3), 0.70)
     return {"kind": kind, "start": (round(start[0], 4), round(start[1], 4)),
             "goal": (round(goal[0], 4), round(goal[1], 4)), "k": round(k, 3), "bow": bow,
-            "light": light}
+            "light": light, "spin": round(spin, 2)}
 
 
 # ── per-card state ─────────────────────────────────────────────────────────────────
@@ -385,7 +408,13 @@ class Plate:
         self.hold = fa if self.small_start else 0
         # unified entrances ride the zoom's own stream (see aim); legacy enter keeps the
         # approved aim (fixed point = the globe)
-        self.ride_flow = bool(entrance) and self.entry is not None
+        # ONLY for k >= 1. A globe that grows slower than the zoom (enter, k 0.6) sheds a thin
+        # annulus of itself every frame; the approved mechanism clears it as a by-product of
+        # translating the globe, and with the translation gone the annuli piled up into a
+        # striped glass collar (enterBottom lab), while a radial pull to clear them drew a
+        # sunburst in CPU simulation. So k < 1 entrances keep the APPROVED aim + vacate
+        # unchanged and only their geometry (entry point, goal, light) is drawn.
+        self.ride_flow = bool(entrance) and self.entry is not None and self.k >= 1.0
         self.start_in_frame = bool(entrance) and (0.0 <= entrance["start"][0] <= 1.0
                                                   and 0.0 <= entrance["start"][1] <= 1.0)
         self._zpath = 1.0
@@ -405,6 +434,8 @@ class Plate:
         self.rim = None
         self.spin = 0.0                   # cumulative revolution (deg); see render_sphere
         self.spin_rate = spin_rate        # deg per frame
+        if entrance and entrance.get("spin") is not None:
+            self.spin_rate = float(entrance["spin"])      # drawn: either direction, 1-2 deg
         self.prompts = {"surface": surface_prompt(nxt, style),
                         "void": void_prompt(reg, style),
                         "inside": inside_prompt(nxt, style)}
@@ -695,7 +726,7 @@ class Plate:
                 if _bad.any() and _voidpx.any():
                     fill = np.where(_bad[..., None], patch[_voidpx].mean(axis=0)[None, None, :],
                                     fill)
-                if self.entrance is not None:
+                if self.ride_flow:
                     # UNIFIED ENTRANCES: a small fast globe leaves a crescent a quarter of its
                     # own radius thick, and the directional pull smears the pixels right behind
                     # the old limb across it — which the model repaints as MORE GLOBE (travelB
