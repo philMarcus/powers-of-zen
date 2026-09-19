@@ -1092,13 +1092,16 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
                          help="live = the approved descent (live arrival, globe enters the "
                               "frame); low = the first version (pixel-blended arrival); off = "
                               "the pre-plate engine. Applies to the next renders.")
-    _pintros = ["enter", "auto", "grow", "plain"]
+    _pintros = ["enter", "mix", "auto", "grow", "plain"]
     pintro = t1.selectbox("🪐 how the globe arrives", _pintros,
                           index=_pintros.index(s.get("plate_intro") or "enter")
                           if (s.get("plate_intro") or "enter") in _pintros else 0,
                           help="enter = slides in from beyond a frame edge (edge varies per "
-                               "journey) — the approved one; grow = from a point (still in the "
-                               "lab); auto = mix of both; plain = appears at the zoom's rate.")
+                               "journey) — the approved one; mix = the unified entrances (each "
+                               "journey draws one: a globe entering from any direction, a point "
+                               "that swells in place anywhere in frame, or a small planet that "
+                               "travels in while it grows) — still in the lab; grow = from a "
+                               "point; auto = enter or grow; plain = appears at the zoom's rate.")
     fpaused = t2.toggle("⏸ pause midnight refill", value=bool(s["refill_paused"]))
     st.markdown("**platform pauses** (scheduler skips paused platforms when posting)")
     pc = st.columns(len(pl.PLATFORMS))

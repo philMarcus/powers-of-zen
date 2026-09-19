@@ -292,8 +292,13 @@ def draw_entrance(key, w, h, s_limb, z_card, kind=None):
             (px, py), (nx, ny) = perimeter_point(r(8), w, h)
             pad = rpx + 0.03 * w
             start = (px + nx * pad / w, py + ny * pad / h)
+    # the SUN moves too: lit from the left, the right or anywhere above (never from below —
+    # under-lighting reads as wrong even in space). Same elevation as the approved look.
+    az = math.radians(180.0 + 180.0 * r(10))
+    light = (round(0.71 * math.cos(az), 3), round(0.71 * math.sin(az), 3), 0.70)
     return {"kind": kind, "start": (round(start[0], 4), round(start[1], 4)),
-            "goal": (round(goal[0], 4), round(goal[1], 4)), "k": round(k, 3), "bow": bow}
+            "goal": (round(goal[0], 4), round(goal[1], 4)), "k": round(k, 3), "bow": bow,
+            "light": light}
 
 
 # ── per-card state ─────────────────────────────────────────────────────────────────
@@ -349,6 +354,8 @@ class Plate:
         self.entry = None
         self.bow = 0.0
         self.entrance = entrance
+        self.light = tuple(entrance["light"]) if entrance and entrance.get("light") \
+            else (-0.45, -0.55, 0.70)
         if entrance:
             # unified entrances: any start, any settle point, any growth law, optional bow
             self.entry = tuple(entrance["start"])
@@ -636,8 +643,8 @@ class Plate:
         amb = 0.38
         if self.small_start:
             amb = 0.60 - 0.22 * min(1.0, max(0.0, (self.size - 0.35) / 0.45))
-        rgb, alpha, shade = render_sphere(self.tex, 2 * R, rim_rgb=self.rim, spin_deg=self.spin,
-                                          ambient=amb)
+        rgb, alpha, shade = render_sphere(self.tex, 2 * R, light=self.light, rim_rgb=self.rim,
+                                          spin_deg=self.spin, ambient=amb)
         if self.rim is None:
             self.rim = rgb[alpha > 0.5].mean(axis=0) if (alpha > 0.5).any() else None
         D = rgb.shape[0]

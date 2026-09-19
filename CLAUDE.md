@@ -120,6 +120,20 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-09-19 (AFTERNOON — GROW FINISHED + UNIFIED ENTRANCES BUILT AND LAB-RUNNING; read PLAN.md "GROW v14/v15 +
+UNIFIED ENTRANCES"): Phil's ask — "combine grow and enter tech so we can start anywhere in frame or come in from
+any direction with a small planet and grow it; key is most possible variety of entrances". GROW v15 passes in the
+lab (point introduced AFTER the arrival morph; flat-topped star core that survives the VAE; THE "DARK BITE" WAS THE
+TEXTURE — a near-black river over a sixth of sargasso's surface read as a missing chunk against the void;
+plate.lift_darks() now lifts every globe texture's darks, enter included — do NOT re-diagnose it as shading or
+identity drift, I did that for three lab rounds). UNIFIED: plate.draw_entrance() = one description for every
+arrival (start in frame or beyond ANY perimeter point · goal · growth exponent k · path bow · light direction),
+kinds enter / grow / travel (a small disc that comes in while it grows), deterministic per journey:card:seed;
+dive --plate-intro mix|travel|mix-enter|mix-grow + --plate-entrance-seed N; dashboard Settings knob has "mix".
+Legacy names (enter/grow/plain) are untouched = the approved behaviour. PRODUCTION STAYS plate_intro="enter" UNTIL
+PHIL APPROVES the lab clips (output/plate_lab/sargasso_windrow/*v15_*; grow + travelA sent, travelB + enterBottom
+rendering in tmux plate_entr) — then flip the setting to "mix". Known cosmetic: a translucent band is born at the
+zoom's fixed point (= the globe's start) during the hold; lever recorded in PLAN if he dislikes it.
 2026-09-19 (MUSIC FIT FALSE ALARM FIXED): Phil — sargasso_windrow's five tracks "phrase off the bar or have no
 beat". Measured on the finished videos, 3 of 5 sat within 10-40 ms of every morph; the fit LABEL was wrong
 (align.meter_fit judged the unstretched track at the video's nominal bar instead of the track's measured

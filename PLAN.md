@@ -1957,3 +1957,17 @@ why Phil could not pick music during ~20h of renders); nightly rendering is NOT 
   frame leaves a soft star behind (a string of pearls trailing the traveller).
   CPU worst-case sim (no diffusion, so leftovers stay visible): scratchpad entrance_sim.py —
   six draws all reach s_limb on the bar line, max path speed 22-29 px/frame (approved enter = 29).
+- LAB RESULTS (sargasso card 1, live, --plate-intro mix --plate-entrance-seed N; clips in
+  output/plate_lab/sargasso_windrow/ tagged v15_*; all sent to Phil):
+  · v15_grow (seed 31, swells in place at (0.37, 0.57)): star point f35-38 now reads in the
+    delivered frame, ghost disc f39, small planet f40, smooth growth, orbit view on the bar line,
+    covered f62. The dark bite is GONE (the river reads as a blue sea). Grow is ready to join the
+    rotation.
+  · v15_travelA (seed 0, k 1.44, from beyond the left edge at 0.71 H, bow -0.16): the small disc
+    enters at f38-40, grows while it crosses, orbit view on the bar line, covered f62. No pearl
+    string, no stalk. NOTE a broad translucent band is born at the entry point before the globe
+    shows (f35-36) and the model later textures it like the globe: it is the ENGINE's own habit —
+    new large structure is always born at the zoom's fixed point, and during the hold the fixed
+    point sits at the (off-frame) start. v15_grow has the same band behind its point. It reads as
+    a nebula/ring behind the planet, not as a defect; if Phil dislikes it the lever is to keep the
+    zoom's fixed point at the GOAL until the globe is big enough to cover it.
