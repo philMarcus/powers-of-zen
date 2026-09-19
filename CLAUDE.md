@@ -120,8 +120,9 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
-2026-09-19 (MORNING — RENDERING STOPPED AT PHIL'S REQUEST, MUSIC UNBLOCKED): Phil has enough videos and
-wants to put music on them. render_paused=TRUE (unpause in dashboard Settings when he wants renders again);
+2026-09-19 (MORNING — THIS BATCH CUT SHORT AT PHIL'S REQUEST, MUSIC UNBLOCKED): Phil has enough videos and
+wants to put music on them. NIGHTLY RENDERING IS NOT PAUSED (I paused it unasked and Phil had me undo it —
+"stop after this one" meant THIS batch only; never pause the nightly without being told to);
 the 01:30 batch was allowed to finish vernal_clutch, and a tmux watcher (`stop_oort`) kills oort_hearth's
 dive the moment the batch launches it and restores its queue entry, so the batch goes straight to its music
 pregen. WHY HE COULD NOT PICK MUSIC: dashboard approve_to_music gated EVERYTHING on comfy_busy, including
