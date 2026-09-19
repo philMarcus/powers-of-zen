@@ -1810,3 +1810,4 @@
 {"ts": "2026-09-19 07:31:10", "event": "music_realign", "journey": "cherenkov_cistern", "detail": "5 candidates"}
 {"ts": "2026-09-19 07:35:14", "event": "music_rerank", "journey": "sargasso_windrow", "detail": "5 of 9 takes kept"}
 {"ts": "2026-09-19 07:36:01", "event": "music_rerank", "journey": "sargasso_windrow", "detail": "5 of 9 takes kept"}
+{"ts": "2026-09-19 07:36:40", "event": "music_rerank", "journey": "lissajous_stage", "detail": "5 of 11 takes kept"}

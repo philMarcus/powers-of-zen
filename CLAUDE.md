@@ -120,6 +120,14 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-09-19 (MUSIC FIT FALSE ALARM FIXED): Phil — sargasso_windrow's five tracks "phrase off the bar or have no
+beat". Measured on the finished videos, 3 of 5 sat within 10-40 ms of every morph; the fit LABEL was wrong
+(align.meter_fit judged the unstretched track at the video's nominal bar instead of the track's measured
+bar — now ref=m_bar) and the SELECTION was wrong (fit penalty + lane-spread rule seated beatless wildcards
+over good own-lane takes — now _keep_spread, spread only among takes >= 35% of the best). New GPU-free
+`music_gen.py <j> --rerank` re-judges every raw take on disk; sargasso re-ranked (all five have a beat),
+the other Review videos re-ranking in tmux `music_rerank`. See PLAN "MUSIC: the phrases off the bar
+false alarm".
 2026-09-19 (MORNING — THIS BATCH CUT SHORT AT PHIL'S REQUEST, MUSIC UNBLOCKED): Phil has enough videos and
 wants to put music on them. NIGHTLY RENDERING IS NOT PAUSED (I paused it unasked and Phil had me undo it —
 "stop after this one" meant THIS batch only; never pause the nightly without being told to);

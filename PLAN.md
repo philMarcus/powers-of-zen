@@ -1866,3 +1866,26 @@ orbit view still lands on the bar line. RULES LEARNED: never put void-PLATE pixe
 frame; never leave a circular/symmetric patch for the model to read as an object; keep per-frame
 globe motion small. The extra batch (third start 14:47, log outbox/extra_batch_0918d.log) and
 every later render use this code (commit 45f45b4).
+
+## 2026-09-19 — MUSIC: the "phrases off the bar" false alarm (Phil on sargasso_windrow: "none of them sit, or they don't have beat")
+GROUND TRUTH FIRST (accent offsets on the finished aligned videos, all 11 morphs): ember_pulse-wild
+-24..+2 ms (spread 7 ms, no drift); pulse1-deep_archive -45..+10 ms; deep_archive-heartbeat 9 of 11
+within -14..-40 ms; the two wildcards scattered +-285 ms (genuinely beatless). So generation was
+fine for 3 of 5 — the LABEL and the SELECTION were wrong:
+1. align.meter_fit (mine, 09-10) sampled the autocorrelation at the video's NOMINAL bar on the
+   UNSTRETCHED track, a line before measure_bar. ACE-Step lands 1-2% off the requested tempo (the
+   stretch step exists for that) and ac peaks are hundredths of a second wide → a clean 4/4 take
+   with a 2.283s bar read ~0 at 2.333s, and its true multiples (3 bars = 6.859s) failed the
+   commensurability test and counted as RIVALS. Every strong-beat take got fit ~0.1. (The 09-10
+   audit had scored fit on the ALIGNED audio, where the bar is exact — so it looked validated.)
+   FIX: meter_fit(ref=measured bar), numerator = the peak within +-1.2% of it.
+2. The rank penalty (scales with kick x misfit) then pushed strong-beat takes below beatless
+   wildcards; AND the lane-spread rule (max 2 per lane) seated 0.17/0.14-score beatless takes
+   ahead of 3.23/2.17-score own-lane ones. FIX: _keep_spread — a take may claim a spread seat
+   only if it scores >= 35% of the best.
+3. `music_gen.py <journey> --rerank` (NO GPU): re-judges EVERY raw take on disk (kept + discarded;
+   raw flacs stay in output/music/) and keeps the best n. sargasso_windrow re-ranked: all five
+   now have a beat (kick 0.38-0.79), four fit >= 1.09. The 10 other Review videos with pregen are
+   being re-ranked in tmux `music_rerank` (log output/plate_lab/rerank_all.log).
+ALSO 09-19: dashboard approve_to_music no longer gates the no-GPU realign on comfy_busy (that is
+why Phil could not pick music during ~20h of renders); nightly rendering is NOT paused.
