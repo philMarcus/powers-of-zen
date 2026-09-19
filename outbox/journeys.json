@@ -273,22 +273,6 @@
       "ts": "2026-09-06 00:55:19",
       "note": "composed by midnight refill"
     },
-    "cicada_chorus": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-09-18 11:35:50",
-      "note": "re-render: planet descent fix (plate live) — video pulled from review 2026-09-18 (same seed)",
-      "order": 4
-    },
-    "anvil_country": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-09-18 11:35:50",
-      "note": "re-render: planet descent fix (plate live) — video pulled from review 2026-09-18 (same seed)",
-      "order": 5
-    },
     "vernal_clutch": {
       "state": "queued",
       "force": true,
@@ -296,7 +280,19 @@
       "ts": "2026-09-18 11:35:50",
       "note": "re-render: planet descent fix (plate live) — video pulled from review 2026-09-18 (same seed)",
       "order": 6
+    },
+    "octopus_garden": {
+      "state": "queued",
+      "order": 23,
+      "ts": "2026-09-19 00:32:28",
+      "note": "composed by midnight refill"
+    },
+    "spouter_dawn": {
+      "state": "queued",
+      "order": 24,
+      "ts": "2026-09-19 00:32:28",
+      "note": "composed by midnight refill"
     }
   },
-  "updated": "2026-09-18 21:54:53"
+  "updated": "2026-09-19 05:49:45"
 }

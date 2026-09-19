@@ -579,3 +579,15 @@ tonight (queue order): cork_dehesa(L ~107min) + dugong_meadow(M ~89min) + prairi
 === 05:28:22 batch done in 4.0h — 0 to Review, 3 failed (cork_dehesa, dugong_meadow, prairie_town)
 === 05:28:22 ComfyUI models unloaded — VRAM freed
 === 05:28:22 log: outbox/night_batch_0918_013002.log
+tonight (queue order): cicada_chorus(L ~107min) + anvil_country(L ~84min) + vernal_clutch(L ~92min) + oort_hearth(S ~50min) = 5.6h of 5h budget
+=== 01:30:02 batch start [queue] — 4 journeys: cicada_chorus anvil_country vernal_clutch oort_hearth
+=== 01:30:02 --- cicada_chorus ---
+=== 01:30:02 cicada_chorus: --plate live --plate-cn 0 --plate-void-gate --plate-intro enter
+=== 03:53:43 cicada_chorus: rendered in 8621s
+=== 03:54:39 cicada_chorus -> REVIEW (captioned)
+=== 03:54:39 --- anvil_country ---
+=== 03:54:39 anvil_country: --plate live --plate-cn 0 --plate-void-gate --plate-intro enter
+=== 05:48:55 anvil_country: rendered in 6856s
+=== 05:49:45 anvil_country -> REVIEW (captioned)
+=== 05:49:45 --- vernal_clutch ---
+=== 05:49:46 vernal_clutch: --plate live --plate-cn 0 --plate-void-gate --plate-intro enter

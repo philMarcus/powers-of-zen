@@ -1793,3 +1793,14 @@
 {"ts": "2026-09-19 00:00:51", "event": "ig_stats", "detail": "36 reels, followers 110"}
 {"ts": "2026-09-19 00:01:06", "event": "ig_insights", "detail": "34 posts"}
 {"ts": "2026-09-19 00:02:55", "event": "yt_stats", "detail": "70 videos, 13614 views"}
+{"ts": "2026-09-19 00:32:28", "event": "refill", "journey": "octopus_garden", "detail": "auto-queued (ok octopus_garden           start=lens_bar)"}
+{"ts": "2026-09-19 00:32:28", "event": "refill", "journey": "spouter_dawn", "detail": "auto-queued (ok spouter_dawn             start=cradle_wheel)"}
+{"ts": "2026-09-19 00:32:28", "event": "refill_done", "detail": "refill done: 2 composed, 2 queued (briefs: long, long)"}
+{"ts": "2026-09-19 03:53:44", "event": "review", "journey": "cicada_chorus", "detail": "ds/divein (src v2)"}
+{"ts": "2026-09-19 03:54:39", "event": "caption", "journey": "cicada_chorus", "detail": "5 options, spot=True"}
+{"ts": "2026-09-19 03:54:39", "event": "render", "journey": "cicada_chorus", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-09-19 05:48:56", "event": "review", "journey": "anvil_country", "detail": "ds/divein (src v2)"}
+{"ts": "2026-09-19 05:49:45", "event": "caption", "journey": "anvil_country", "detail": "5 options, spot=True"}
+{"ts": "2026-09-19 05:49:45", "event": "render", "journey": "anvil_country", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-09-19 07:18:32", "event": "music_realign", "journey": "cherenkov_cistern", "detail": "5 candidates"}
+{"ts": "2026-09-19 07:18:40", "event": "music_realign", "journey": "sargasso_windrow", "detail": "5 candidates"}

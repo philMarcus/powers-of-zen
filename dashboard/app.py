@@ -283,9 +283,13 @@ def approve_to_music(journey):
     v["state"] = "music"
     pl.save(dd); pl.telem("music", journey=journey)
     # gate on ComfyUI's ACTUAL queue, not GPU utilization — the dashboard's own looping
-    # video previews kept utilization high and silently skipped this (2026-08-09)
-    if not pl.comfy_busy():
-        regenerate_music(journey)                   # async; skipped only while a render runs
+    # video previews kept utilization high and silently skipped this (2026-08-09).
+    # PREGEN NEEDS NO GATE (2026-09-19): a video with music_pregen only has to be REALIGNED to
+    # the marked start — ffmpeg, seconds, no GPU, touches nothing in ComfyUI. The gate sat in
+    # front of that too, so during ~20h of back-to-back renders every approval was skipped and
+    # Phil could not pick music for videos whose five tracks were already on disk.
+    if v.get("music_pregen") or not pl.comfy_busy():
+        regenerate_music(journey)                   # realign (no GPU) or async full gen
     else:
         pl.telem("music_skip", journey=journey, detail="ComfyUI busy — use Generate in Music tab")
 
@@ -703,8 +707,9 @@ with tabs[2]:  # MUSIC — audition/generate a track, then send to Production
         st.info("Nothing needs music. Approve a video in Video Review to send it here.")
     gpu_busy = pl.comfy_busy() if mv else False
     if gpu_busy and mv:
-        st.warning("⚠ ComfyUI is mid-job (a render or music gen) — auto-generation on approve is "
-                   "paused. You can still press Generate; it will queue behind the running job.")
+        st.warning("⚠ ComfyUI is mid-job (a render or music gen). Videos with pre-generated "
+                   "tracks still get their music on approve (aligning needs no GPU). Only a "
+                   "full Generate / Regenerate has to queue behind the running job.")
     for v in mv:
         m = v.get("music") or {}
         tag = f"✅ {m['chosen']}" if m.get("chosen") else "— choose one —"
@@ -721,6 +726,13 @@ with tabs[2]:  # MUSIC — audition/generate a track, then send to Production
             note = (f"music was generated for {m.get('stale_from')}, not {v['model']}/{v['cut']}"
                     if m.get("stale_from") or music_stale(v) else "no tracks generated yet")
             st.warning(f"{note} — generate 5 tracks for this render.")
+            if v.get("music_pregen"):
+                # the overnight tracks exist; they only need aligning to this cut + start.
+                # No GPU, so it works while a render is running.
+                if st.button("⚡ Align the pre-generated tracks (no GPU, ~1 min)",
+                             key=f"realign_{v['journey']}"):
+                    regenerate_music(v["journey"])
+                    st.info("Aligning the five pre-generated tracks — refresh in about a minute.")
             if tcol[1].button("🎵 Generate 5", key=f"gen_{v['journey']}"):
                 set_music_theme(v["journey"], newtheme)
                 regenerate_music(v["journey"], fresh=True)
