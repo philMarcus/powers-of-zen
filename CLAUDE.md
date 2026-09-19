@@ -120,6 +120,18 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-09-19 (EVENING — MIX IS LIVE): Phil on the five entrance clips: "They all look pretty good. I see the
+filaments you mean, but not terrible. I think we can turn on the mix/combo for tonight's batch." → settings
+plate_intro="mix" (plate_mode live unchanged, render NOT paused). Verified with dive --plan-only on tonight's five:
+only kelp_dynamo has a planet card (comet_shoal → grow in place at 0.57,0.53) = THE FIRST FULL-LENGTH RENDER
+THROUGH MIX — check it in Review in the morning. Planet cards are sparse in the queue (4 of the next 14:
+kelp grow, weddell enter, stromatolite grow, selenite grow — no travel draw soon, luck of the crc32).
+MY MISTAKE, FIXED AT THE ROOT: I probed `night_batch.py --help`; the script ignored unknown flags and STARTED A
+REAL BATCH (launched mantis_drumline's dive). Killed by PID after 130 s (batch parent first so it could not mark a
+failure), ComfyUI queue cleared, stray output/mantis_drumline removed, registry verified untouched (mantis still
+queued), logs annotated. night_batch.py and journey_refill.py now EXIT on any unknown option before doing work
+(scheduled invocations verified unaffected). RULE: never probe a pipeline script with --help — read its argv
+handling first; dry-run flags are `--dry-run` (night_batch, journey_refill) and `--plan-only` (dive).
 2026-09-19 (AFTERNOON — GROW FINISHED + UNIFIED ENTRANCES BUILT AND LAB-RUNNING; read PLAN.md "GROW v14/v15 +
 UNIFIED ENTRANCES"): Phil's ask — "combine grow and enter tech so we can start anywhere in frame or come in from
 any direction with a small planet and grow it; key is most possible variety of entrances". GROW v15 passes in the

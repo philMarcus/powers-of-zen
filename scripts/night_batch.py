@@ -211,6 +211,14 @@ def render_one(journey, force=False, new_seed=True, from_card=None):
 
 def main():
     global LOGF
+    # UNKNOWN FLAGS ARE FATAL. This script used to ignore them, so `night_batch.py --help`
+    # (2026-09-19, a probe) started a REAL batch and launched a render. Anything that is not
+    # a known flag or a journey name stops here, before any work.
+    _known = {"--dry-run", "--scheduled"}
+    _unknown = [a for a in sys.argv[1:] if a.startswith("-") and a not in _known]
+    if _unknown:
+        sys.exit(f"night_batch: unknown option {' '.join(_unknown)} — nothing was started.\n"
+                 f"usage: night_batch.py [--dry-run] [--scheduled] [journey ...]")
     args = [a for a in sys.argv[1:] if not a.startswith("-")]
     dry = "--dry-run" in sys.argv
 

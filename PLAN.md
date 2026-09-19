@@ -2032,3 +2032,8 @@ why Phil could not pick music during ~20h of renders); nightly rendering is NOT 
   approves; the switch is Settings → "how the globe arrives" → mix (night_batch passes the setting
   straight to --plate-intro). NOT YET TESTED: a full-length render through `mix`; a second test
   bed (all labs are one card of one journey); the est_render_sec plate term.
+- 2026-09-19 EVENING — APPROVED + SWITCHED ON: Phil: "They all look pretty good ... turn on the mix/combo for
+  tonight's batch." settings plate_intro="mix". Tonight's only planet card is kelp_dynamo's comet_shoal (draws
+  `grow`) = the first full-length render through mix. The filament rings round a rising big globe: seen,
+  "not terrible", no action. Still open: second test bed; est_render_sec plate term; a `travel` draw in a full
+  render (none in the near queue).

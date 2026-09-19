@@ -118,6 +118,11 @@ def audit_pass(name):
 
 
 def main():
+    # unknown flags are fatal (see night_batch: a `--help` probe once started a real run)
+    _unknown = [a for a in sys.argv[1:] if a not in ("--dry-run",)]
+    if _unknown:
+        sys.exit(f"journey_refill: unknown option {' '.join(_unknown)} — nothing was started.\n"
+                 f"usage: journey_refill.py [--dry-run]")
     dry = "--dry-run" in sys.argv
     jd = pl.jload()
     s = jd["settings"]
