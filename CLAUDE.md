@@ -134,6 +134,8 @@ Ollama is on localhost:11434 (not 192.168.68.1). SPEED LAB (afternoon, scripts/s
 near the floor for 12 steps at 576x1024; the rest needs quality trade-offs (tracker cadence/model, steps).
 est_render_sec is PROVISIONAL at 12.0 s/frame + 600 s/planet (unthrottled guess) — REFIT FROM TONIGHT'S ACTUALS
 (night_batch log "[dive] done in Ns" per journey; the fit script is in PLAN "E-CORES + A STALE ESTIMATE").
+PHIL'S CALL: do NOT trade model quality for speed (no fewer steps, no smaller Florence, no cadence change) —
+the P-core fix is the speed-up; he runs the elevated powercfg exemption himself when at the desktop.
 2026-09-19 (EVENING — MIX IS LIVE): Phil on the five entrance clips: "They all look pretty good. I see the
 filaments you mean, but not terrible. I think we can turn on the mix/combo for tonight's batch." → settings
 plate_intro="mix" (plate_mode live unchanged, render NOT paused). Verified with dive --plan-only on tonight's five:
