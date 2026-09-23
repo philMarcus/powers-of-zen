@@ -2037,3 +2037,40 @@ why Phil could not pick music during ~20h of renders); nightly rendering is NOT 
   `grow`) = the first full-length render through mix. The filament rings round a rising big globe: seen,
   "not terrible", no action. Still open: second test bed; est_render_sec plate term; a `travel` draw in a full
   render (none in the near queue).
+
+## 2026-09-23 — WHY THE BATCH RAN PAST 9 AM: E-CORES + A STALE ESTIMATE (Phil: "last night's batch is still going now at 9 am")
+- MIX HAS BEEN RUNNING since the 09-20 batch: five planet cards rendered through it — kelp_dynamo
+  (grow), weddell_lightwell (enter from the top-right), stromatolite_dawn (grow), selenite_hothouse
+  (grow), octopus_garden (grow); frame sheets show a globe growing from a point / entering and
+  landing on every one. All in Review. Only one enter and no travel so far (luck of the draw).
+- TWO CAUSES of the overrun, measured:
+  (1) THE ESTIMATE WAS 12-34% LOW ON EVERY RENDER. est_render_sec was fit in July/August (17.9 s/f
+      - 606); the engine has since gained parallax, the loop lap, the plate: 09-20..22 renders
+      ran 17-19 s/frame without a planet and 20.4 s/frame with one. A "5.4 h of 5 h" plan was
+      6.8 h real. REFIT: 18.3 s/frame (max err 7%) + 820 s for a planet card + 42 s
+      (pipeline.est_render_sec(frames, planet=)); the planet rule now lives ONCE in
+      pipeline.is_planet_card/has_planet_card and engine/plate.is_plate_card delegates to it;
+      night_batch and the dashboard pass the spec's planet flag.
+  (2) LAST NIGHT WAS ANOTHER ~30% SLOWER ON TOP, and it is the real find: the machine rebooted
+      00:14-00:18 for Windows Update (KB5124010 preview + KB5124009, three restarts), the batch
+      relaunched ComfyUI at 01:30, and Windows ran that python at BelowNormal PRIORITY WITH EVERY
+      THREAD ON THE FOUR E-CORES of the i7-12700K (cores 16-19 at 90-97%, the eight P-cores
+      idle). Sampling on the GPU was normal (~1.0 s/it, 11-14 s per prompt); the CPU side —
+      model staging ("prepared for dynamic VRAM loading", 7-8 s per reload), VAE/CLIP, the
+      preprocessors — crawled and the GPU sat at 0-30% util waiting. Ruled out with ground truth:
+      disk (0 MB/s reads), PCIe (gen4 x16), clocks/throttle (1954 MHz, no reasons), driver
+      (unchanged), HVCI (off), RAM (36 GB free), ComfyUI version/loader (identical logs),
+      foreign VRAM tenants (~1.2 GB, same budget 7562 MB both runs), Subsonic (a burst, <5%).
+      FIX APPLIED LIVE at 09:20: priority Normal + affinity 0xFFFF (cores 0-15) → eft_downpour
+      went from 25-55 s/frame to 8-12 s/frame on the spot — FASTER THAN THE "GOOD" NIGHTS (13-19).
+      So the throttling has probably been there in a milder form all along (E-core preference
+      without the priority drop), and the whole fleet just got ~30-40% faster.
+      DURABLE: night_batch.boost_comfy() after every ComfyUI launch and before every render;
+      start_comfyui.sh does it 40 s after launch; SCHEDULER.md has the one-time elevated
+      `powercfg /powerthrottling disable` command for the permanent exemption (Phil runs it).
+- PER-FRAME RELOAD TAX (not fixed, worth a lab): every frame the workflow evicts SDXL to fit
+  Florence/DepthAnything (VRAM peaks at 9.8 GB of 10) and re-stages it (~8 s, "0 models
+  unloaded" ×19 per 27 prompts). That is ~40% of a frame even on the P-cores. Levers: a smaller
+  Florence (base vs large-ft), --disable-dynamic-vram, or detect less often.
+- ALSO: the dashboard was down (the previous session's launcher was orphaned) — restarted.
+  Ollama answers on localhost:11434 (the scripts use localhost); 192.168.68.1 in CLAUDE.md is stale.

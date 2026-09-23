@@ -355,10 +355,40 @@ def journey_frames(name):
     return len(grammar.compile_journey(spec, 12, "in")[1])
 
 
-def est_render_sec(frames):
-    """Wall-clock estimate for one journey: least-squares fit over the six 2026-07/08
-    engine-2 renders (17.9 s/frame - 606, max error 2.5%) + ~42s queue_review+caption."""
-    return max(600, round(17.9 * frames - 606) + 42)
+import re as _re
+PLANET_TARGET = _re.compile(r"\b(planet|world|moon)\b", _re.I)
+
+
+def is_planet_card(reg, nxt):
+    """THE planet-card rule (engine/plate.is_plate_card delegates here so the batch, the
+    dashboard and the renderer can never disagree): a card whose target is a planet/world/
+    moon, at exp >= 8, whose next card sits at exp 4.5-9.5 (the orbit view), not a seam."""
+    tp = reg.get("target_phrase") or reg.get("target") or ""
+    if not PLANET_TARGET.search(tp):
+        return False
+    if reg.get("kind") == "seam":
+        return False
+    e0, e1 = reg.get("exp"), nxt.get("exp")
+    return (isinstance(e0, (int, float)) and isinstance(e1, (int, float))
+            and e0 >= 8.0 and 4.5 <= e1 <= 9.5)
+
+
+def has_planet_card(spec):
+    """Does this journey render through the planet plate? (circular chain: the last card's
+    next is the first)"""
+    regs = spec.get("registers") or []
+    n = len(regs)
+    return any(is_planet_card(regs[i], regs[(i + 1) % n]) for i in range(n))
+
+
+def est_render_sec(frames, planet=False):
+    """Wall-clock estimate for one journey. REFIT 2026-09-23 on the 13 nightly renders of
+    09-20..09-22 (parallax + loop lap + live plate era): 18.3 s/frame (max error 7%),
+    plus ~820 s when the journey has a planet card (the plate span: IP-Adapter, masks,
+    two txt2img assets with caption gates), plus ~42 s queue_review + caption. The old
+    fit (17.9 s/frame - 606, July/August engine) was 12-34% low on every render and the
+    batch overran its budget by ~1.3 h a night."""
+    return max(600, round(18.3 * frames) + (820 if planet else 0) + 42)
 
 
 def pick_tonight(jd, ests):

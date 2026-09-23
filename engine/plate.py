@@ -35,18 +35,16 @@ import numpy as np
 from PIL import Image, ImageFilter
 
 # a planet-class card: a round WORLD target that descends to the planetary band next
-PLANET_TARGET = re.compile(r"\b(planet|world|moon)\b", re.I)
+# the planet-card rule lives in scripts/pipeline.py (the batch and the dashboard need it
+# without engine imports); this module delegates so the three can never disagree
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "scripts"))
+from pipeline import PLANET_TARGET, is_planet_card as _is_planet_card  # noqa: E402
 
 
 def is_plate_card(reg, nxt):
-    tp = reg.get("target_phrase") or reg.get("target") or ""
-    if not PLANET_TARGET.search(tp):
-        return False
-    if reg.get("kind") == "seam":
-        return False
-    e0, e1 = reg.get("exp"), nxt.get("exp")
-    return (isinstance(e0, (int, float)) and isinstance(e1, (int, float))
-            and e0 >= 8.0 and 4.5 <= e1 <= 9.5)
+    return _is_planet_card(reg, nxt)
 
 
 def _scene(reg):

@@ -77,3 +77,20 @@ Logs: outbox/scheduler.log (posts) · outbox/night_batch.log + outbox/night_batc
 (renders) · outbox/refill.log (refill; briefs in outbox/refill_briefs_*.md). Telemetry
 events land in the dashboard: batch_skip / render / render_fail / batch_done / refill /
 refill_done.
+
+
+## COMFYUI ON THE PERFORMANCE CORES (2026-09-23)
+Windows 11 was running the ComfyUI python (launched through WSL interop) at BelowNormal
+priority with every thread parked on the i7-12700K's four E-cores (16-19); the eight
+P-cores idled and the GPU waited on CPU-side model staging. Frames took 25-55 s that night
+(13-19 s on "good" nights); with priority Normal + affinity to cores 0-15 a frame takes 8-12 s.
+night_batch.boost_comfy() re-applies this after every ComfyUI launch and before every render
+(non-admin, idempotent); start_comfyui.sh does the same 40 s after launch. Windows can still
+re-throttle a windowless background process ("efficiency mode"); the PERMANENT exemption
+needs ONE elevated PowerShell/cmd prompt:
+
+    powercfg /powerthrottling disable /path "C:\Users\Phil\ComfyUI\python_embeded\python.exe"
+    powercfg /powerthrottling list        (should now list that exe as disabled)
+
+Check any time: per-core load should sit on cores 0-15 while rendering; if cores 16-19 carry
+it all, the boost did not take.

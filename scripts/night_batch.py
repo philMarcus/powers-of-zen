@@ -69,6 +69,37 @@ def run(argv, timeout=None):
     return r.returncode, tail[-300:]
 
 
+BOOST_PS = (
+    "Get-CimInstance Win32_Process -Filter \"Name='python.exe'\" | "
+    "Where-Object { $_.CommandLine -like '*ComfyUI/main.py*' -or $_.CommandLine -like '*ComfyUI\\main.py*' } | "
+    "ForEach-Object { $p = Get-Process -Id $_.ProcessId; "
+    "'before ' + $p.PriorityClass + ' 0x' + ('{0:X}' -f [int64]$p.ProcessorAffinity); "
+    "$p.PriorityClass = 'Normal'; $p.ProcessorAffinity = [IntPtr]0xFFFF; "
+    "$p = Get-Process -Id $_.ProcessId; "
+    "'after ' + $p.PriorityClass + ' 0x' + ('{0:X}' -f [int64]$p.ProcessorAffinity) }")
+
+
+def boost_comfy():
+    """Keep ComfyUI on the PERFORMANCE cores at normal priority (2026-09-23). Windows 11 was
+    running the ComfyUI python at BelowNormal priority and had parked every one of its
+    threads on the four E-cores of the i7-12700K (cores 16-19) while the eight P-cores sat
+    idle — the CPU side of every frame (model staging, VAE/CLIP, preprocessors) crawled and
+    the GPU waited: 25-55 s/frame that night, 13-19 s on "good" nights. Setting priority
+    Normal + affinity 0xFFFF (cores 0-15 = the P-cores) dropped a frame to 8-12 s on the spot.
+    Windows can re-apply its throttling to a background process, so this runs after every
+    launch AND before every render (idempotent, non-admin). The permanent exemption needs an
+    elevated prompt once: powercfg /powerthrottling disable /path
+    C:/Users/Phil/ComfyUI/python_embeded/python.exe (see SCHEDULER.md)."""
+    ps = "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe"
+    try:
+        r = subprocess.run([ps, "-NoProfile", "-Command", BOOST_PS], capture_output=True,
+                           text=True, timeout=60)
+        out = " ".join(r.stdout.split())
+        log(f"comfy boost: {out or r.stderr.strip()[:120] or 'no ComfyUI process found'}")
+    except Exception as e:
+        log(f"comfy boost failed: {e}")
+
+
 def comfy_up():
     import requests
     try:
@@ -91,6 +122,7 @@ def comfy_up():
         try:
             requests.get(f"{COMFY}/system_stats", timeout=3)
             log("ComfyUI ready")
+            boost_comfy()
             return True
         except Exception:
             time.sleep(5)
@@ -125,7 +157,8 @@ def compile_queue(jd):
                 if not p:
                     raise FileNotFoundError("no journey file")
                 frames = pl.journey_frames(name)
-                cards = len(json.loads(p.read_text(encoding="utf-8"))["registers"])
+                spec = json.loads(p.read_text(encoding="utf-8"))
+                cards = len(spec["registers"])
                 err = None
                 break
             except Exception as e:
@@ -143,7 +176,7 @@ def compile_queue(jd):
             pl.jsave(jj)
             pl.telem("render_fail", journey=name, detail=f"compile: {e}")
             continue
-        ests[name] = pl.est_render_sec(frames)
+        ests[name] = pl.est_render_sec(frames, planet=pl.has_planet_card(spec))
         tiers[name] = pl.tier_of(cards)
     return ests, tiers
 
@@ -189,9 +222,10 @@ def render_one(journey, force=False, new_seed=True, from_card=None):
         # ceiling = 2.5x the estimate (slowest observed render ran ~1.4x) + 30min slack;
         # a render past that is wedged, not slow — kill it and move to the next journey
         try:
-            cap = int(pl.est_render_sec(pl.journey_frames(journey)) * 2.5) + 1800
+            cap = int(pl.est_render_sec(pl.journey_frames(journey), planet=True) * 2.5) + 1800
         except Exception:
             cap = 4 * 3600
+        boost_comfy()                      # Windows may have re-throttled it since the last one
         rc, tail = run(argv, timeout=cap)
         if rc != 0:
             return False, f"dive failed: {tail}"

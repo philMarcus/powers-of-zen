@@ -543,7 +543,7 @@ def journey_meta(name):
     fpb = spec.get("format", {}).get("frames_per_beat", 7)
     frames = sum(max(fpb, round((r.get("dur") or 4) * fpb)) for r in regs)
     tier = pl.tier_of(len(regs))
-    return (len(regs), frames, tier, pl.est_render_sec(frames),
+    return (len(regs), frames, tier, pl.est_render_sec(frames, planet=pl.has_planet_card(spec)),
             spec.get("style") or (spec.get("style_suffix") or "")[:24],
             spec.get("theme", ""))
 

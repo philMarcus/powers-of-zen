@@ -120,6 +120,15 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-09-23 (MORNING — WHY THE BATCH RAN TO 10 AM; read PLAN "E-CORES + A STALE ESTIMATE"): mix has been
+rendering since 09-20 (5 planet cards through it, all in Review). The overrun had two causes: (1) est_render_sec
+was the July fit and 12-34% low on every render — REFIT 18.3 s/frame + 820 s per planet card, planet rule
+shared via pipeline.is_planet_card (plate.py delegates); (2) after the 00:18 Windows-Update reboot, Windows ran
+ComfyUI's python at BelowNormal priority ON THE FOUR E-CORES ONLY — GPU waiting on CPU, 25-55 s/frame. Fixed
+live (priority Normal + affinity to cores 0-15 → 8-12 s/frame, faster than any night so far) and durably
+(night_batch.boost_comfy after launch + before each render; start_comfyui.sh; SCHEDULER.md has the one-time
+elevated powercfg exemption for Phil). FIRST CHECK when renders are slow: per-core load + ComfyUI priority.
+Ollama is on localhost:11434 (not 192.168.68.1). Open: the per-frame SDXL reload tax (~8 s/frame, VRAM-bound).
 2026-09-19 (EVENING — MIX IS LIVE): Phil on the five entrance clips: "They all look pretty good. I see the
 filaments you mean, but not terrible. I think we can turn on the mix/combo for tonight's batch." → settings
 plate_intro="mix" (plate_mode live unchanged, render NOT paused). Verified with dive --plan-only on tonight's five:
