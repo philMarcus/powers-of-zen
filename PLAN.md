@@ -2074,3 +2074,23 @@ why Phil could not pick music during ~20h of renders); nightly rendering is NOT 
   Florence (base vs large-ft), --disable-dynamic-vram, or detect less often.
 - ALSO: the dashboard was down (the previous session's launcher was orphaned) — restarted.
   Ollama answers on localhost:11434 (the scripts use localhost); 192.168.68.1 in CLAUDE.md is stale.
+- SPEED LAB (10:02-10:36, scripts/speed_lab.py, output/speed_lab/report.txt): the same 36 frames
+  (mantis_drumline v1 card 3, seed 673194) rendered under four ComfyUI loader settings, ComfyUI
+  restarted per arm by PID and restored after. RESULT: baseline 9.75 s/frame; baseline again 9.68;
+  --disable-dynamic-vram 10.46 median / same wall; --reserve-vram 0.2 9.69 — all within noise, and
+  ALL FOUR ARMS ARE BYTE-IDENTICAL (36/36 frames, PSNR inf). So the loader flags are not a lever,
+  and the engine is fully deterministic (the A/A arm proves it).
+  WHERE A FRAME GOES NOW (from the arm's ComfyUI log, 49 prompts / 36 frames): sampling prompt
+  5.5 s (12 steps DreamShaperXL @ 576x1024 + depth-CN preprocessor + VAE) x36 = 60%; the extra
+  prompts (Florence detect every 4th approach frame, DepthAnything for parallax every 3rd) ~4.7 s
+  each = 18%; the SDXL/CLIP/VAE re-stage after each Florence run +3.5 s x13 = 14%; dive-side CPU
+  (PNG round trips, parallax warp, composite) ~1.1 s/frame = 11%. Florence itself loads ONCE
+  (keep_model_loaded) — it is running it, not loading it, that pushes the checkpoint out.
+  CONCLUSION: after the P-core fix the render sits near the floor for these settings. The
+  remaining ~20% (tracker cadence 4 -> 6, Florence base instead of large-ft, fewer steps) all
+  change output and need Phil's A/B; nothing zero-quality is left on the loader side.
+- EVERY ComfyUI launched through WSL/tmux starts at BelowNormal on all cores (seen on all six lab
+  launches: "before BelowNormal 0xFFFFF") — so every night since the pipeline began has run
+  ~2x slower than the GPU allows. boost_comfy() now fixes each launch; the elevated powercfg
+  exemption is still Phil's to run. est_render_sec set PROVISIONALLY to 12.0 s/frame + 600 s
+  per planet (tonight's plan: 5 journeys, 5.2 h) — REFIT from tonight's actuals.

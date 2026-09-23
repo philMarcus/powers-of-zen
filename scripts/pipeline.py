@@ -388,7 +388,12 @@ def est_render_sec(frames, planet=False):
     two txt2img assets with caption gates), plus ~42 s queue_review + caption. The old
     fit (17.9 s/frame - 606, July/August engine) was 12-34% low on every render and the
     batch overran its budget by ~1.3 h a night."""
-    return max(600, round(18.3 * frames) + (820 if planet else 0) + 42)
+    # 2026-09-23 afternoon: that 18.3 s/frame was measured on nights when Windows had ComfyUI
+    # throttled onto the E-cores (night_batch.boost_comfy fixes it); the same frames render
+    # in ~9.5 s on the P-cores (speed_lab, 4 arms, byte-identical pixels). Provisional
+    # unthrottled figure 12.0 s/frame + 600 s per planet card — REFIT on the first full
+    # unthrottled night's actuals (scripts/night_batch logs: "[dive] done in Ns").
+    return max(600, round(12.0 * frames) + (600 if planet else 0) + 42)
 
 
 def pick_tonight(jd, ests):

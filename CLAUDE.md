@@ -128,7 +128,12 @@ ComfyUI's python at BelowNormal priority ON THE FOUR E-CORES ONLY — GPU waitin
 live (priority Normal + affinity to cores 0-15 → 8-12 s/frame, faster than any night so far) and durably
 (night_batch.boost_comfy after launch + before each render; start_comfyui.sh; SCHEDULER.md has the one-time
 elevated powercfg exemption for Phil). FIRST CHECK when renders are slow: per-core load + ComfyUI priority.
-Ollama is on localhost:11434 (not 192.168.68.1). Open: the per-frame SDXL reload tax (~8 s/frame, VRAM-bound).
+Ollama is on localhost:11434 (not 192.168.68.1). SPEED LAB (afternoon, scripts/speed_lab.py): loader flags
+(--disable-dynamic-vram, --reserve-vram) change NOTHING (byte-identical, same speed); a frame is now ~9.7 s =
+5.5 s sampling + Florence/DepthAnything prompts + a 3.5 s re-stage after each Florence run + ~1 s dive CPU —
+near the floor for 12 steps at 576x1024; the rest needs quality trade-offs (tracker cadence/model, steps).
+est_render_sec is PROVISIONAL at 12.0 s/frame + 600 s/planet (unthrottled guess) — REFIT FROM TONIGHT'S ACTUALS
+(night_batch log "[dive] done in Ns" per journey; the fit script is in PLAN "E-CORES + A STALE ESTIMATE").
 2026-09-19 (EVENING — MIX IS LIVE): Phil on the five entrance clips: "They all look pretty good. I see the
 filaments you mean, but not terrible. I think we can turn on the mix/combo for tonight's batch." → settings
 plate_intro="mix" (plate_mode live unchanged, render NOT paused). Verified with dive --plan-only on tonight's five:
