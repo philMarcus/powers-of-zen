@@ -120,6 +120,18 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-09-25 (DATA SCIENCE KICKOFF — read analysis/PLAN.md): Phil: planet videos are liking well, 11 of the last
+12 posts >10 likes; wants real data science on what moves engagement (music instrumentation/style included),
+a dashboard of charts, a clean A/B that provably lifts likes, and a portfolio piece (DS + AI-eng careers).
+BUILT: scripts/music_features.py (lane / rhythm feel / instrument family / measured audio per chosen track,
+outbox/music_features.json), scripts/dataset.py (outbox/dataset.csv, one row per posted video, 76 columns,
+outcomes at 48 h / 7 d + followers at post), scratchpad/eda.py (first pass). FINDINGS: likes scale with
+followers^0.72; after adjusting, full-scale/long/planet journeys ~x1.4 (one confounded signal), music family
+NOT resolvable at n=69 (bells_glass x1.5 ±0.5) → needs the A/B; ridge CV R² 0.03 (trees would overfit —
+never present a decision tree as the answer here). POWER: like-rate (sd 0.55) detects x1.5 with 31 posts/arm
+(~7 weeks). PLAN in analysis/PLAN.md: report.py → Insights tab → music-family A/B assigned at approve time.
+ALSO: max_review_videos=20 backpressure (34 await review now → tonight's batch SKIPS by design);
+est_render_sec refit on the unthrottled nights (12.0 s/frame + 250 + 600/planet, within 2%).
 2026-09-23 (MORNING — WHY THE BATCH RAN TO 10 AM; read PLAN "E-CORES + A STALE ESTIMATE"): mix has been
 rendering since 09-20 (5 planet cards through it, all in Review). The overrun had two causes: (1) est_render_sec
 was the July fit and 12-34% low on every render — REFIT 18.3 s/frame + 820 s per planet card, planet rule
