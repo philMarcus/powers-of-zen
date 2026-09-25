@@ -266,6 +266,9 @@ JOURNEYS_JSON = ROOT / "outbox" / "journeys.json"
 JSETTINGS_DEFAULTS = {
     "render_budget_min": 240,      # nightly render window (the 01:30 batch fills this)
     "max_ready_videos": 20,        # backpressure: skip the night at this many ready-to-post videos
+    "max_review_videos": 20,       # backpressure 2 (Phil 2026-09-25): skip the night when this many
+                                   # videos await his verdict (review + music stages) — the review
+                                   # queue used to grow without bound; drains -> renders resume
     "journey_queue_target": 20,    # midnight refill tops the journey queue up toward this
     "refill_max_per_night": 5,     # never compose more than this in one midnight run
     "tier_share": {"long": 0.4, "medium": 0.3, "short": 0.3},   # refill Monte Carlo weights
@@ -393,7 +396,10 @@ def est_render_sec(frames, planet=False):
     # in ~9.5 s on the P-cores (speed_lab, 4 arms, byte-identical pixels). Provisional
     # unthrottled figure 12.0 s/frame + 600 s per planet card — REFIT on the first full
     # unthrottled night's actuals (scripts/night_batch logs: "[dive] done in Ns").
-    return max(600, round(12.0 * frames) + (600 if planet else 0) + 42)
+    # REFIT 2026-09-25 on the first two unthrottled nights (10 renders, 09-24/25): 12.0 s/frame
+    # + 250 s fixed (model warm-up, frame 0, assembly) + 600 s per planet card; sum of the ten
+    # estimates within 2% of the sum of actuals, worst single journey 11% under (spouter_dawn).
+    return max(600, round(12.0 * frames) + 250 + (600 if planet else 0) + 42)
 
 
 def pick_tonight(jd, ests):

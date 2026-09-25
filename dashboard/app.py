@@ -845,10 +845,16 @@ with tabs[0]:  # JOURNEYS — the render queue the 01:30 batch draws from (journ
     nights = (sum(ests.values()) / (s["render_budget_min"] * 60)) if q_names else 0
     hc[1].metric("est. runway", f"{nights:.1f} nights")
     ready = counts.get("queued", 0)
-    hc[2].metric("ready to post", f"{ready}/{s['max_ready_videos']}")
+    awaiting = counts.get("review", 0) + counts.get("music", 0)
+    hc[2].metric("ready to post", f"{ready}/{s['max_ready_videos']}",
+                 f"{awaiting}/{s.get('max_review_videos', 20)} awaiting review", delta_color="off")
     hc[3].metric("tonight", f"{len(picks)} renders" if picks else "—")
     if s.get("render_paused"):
         st.warning("⏸ nightly rendering is PAUSED (Settings tab)")
+    elif awaiting >= s.get("max_review_videos", 20):
+        st.warning(f"⛔ backpressure: {awaiting} videos awaiting your review — "
+                   "the 01:30 batch will skip until the review queue drains below "
+                   f"{s.get('max_review_videos', 20)}")
     elif ready >= s["max_ready_videos"]:
         st.warning(f"⛔ backpressure: {ready} videos ready to post — "
                    "the 01:30 batch will skip until the production queue drains")
@@ -1069,6 +1075,8 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
                                int(s["render_budget_min"]), step=30)
     maxready = c[1].number_input("backpressure: max ready-to-post videos", 1, 100,
                                  int(s["max_ready_videos"]))
+    maxreview = c[1].number_input("backpressure: max videos awaiting review", 1, 100,
+                                  int(s.get("max_review_videos", 20)))
     qtarget = c[2].number_input("journey queue target", 1, 100,
                                 int(s["journey_queue_target"]))
     maxnight = c[3].number_input("refill: max composed/night", 0, 10,
@@ -1114,6 +1122,7 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
         jj["settings"].pop("nightly_templates", None)   # retired 2026-08-26 (queue order)
         jj["settings"].update({
             "render_budget_min": int(budget), "max_ready_videos": int(maxready),
+            "max_review_videos": int(maxreview),
             "journey_queue_target": int(qtarget), "refill_max_per_night": int(maxnight),
             "tier_share": shares,
             "render_paused": bool(rpaused), "refill_paused": bool(fpaused),

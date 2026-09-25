@@ -258,7 +258,10 @@ def main():
 
     jd = pl.jload()
     s = jd["settings"]
-    ready = len(pl.queued(pl.load()))
+    _pipe = pl.load()
+    ready = len(pl.queued(_pipe))
+    _vids = _pipe["videos"] if isinstance(_pipe, dict) else _pipe
+    awaiting = sum(1 for v in _vids if v.get("state") in ("review", "music"))
 
     if not args:  # auto-pick mode: backpressure + pause gates apply
         # MISSED-NIGHT GUARD (2026-08-28): the render task now has StartWhenAvailable, so a
@@ -275,6 +278,12 @@ def main():
             print("render_paused is set — skipping tonight")
             if not dry:
                 pl.telem("batch_skip", reason="render_paused")
+            return
+        if awaiting >= s.get("max_review_videos", 20):
+            print(f"backpressure: {awaiting} videos awaiting review/music "
+                  f"(max_review_videos {s.get('max_review_videos', 20)}) — skipping tonight")
+            if not dry:
+                pl.telem("batch_skip", reason=f"review backlog {awaiting}")
             return
         if ready >= s["max_ready_videos"]:
             print(f"backpressure: {ready} videos ready to post "
