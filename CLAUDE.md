@@ -130,7 +130,11 @@ followers^0.72; after adjusting, full-scale/long/planet journeys ~x1.4 (one conf
 NOT resolvable at n=69 (bells_glass x1.5 ±0.5) → needs the A/B; ridge CV R² 0.03 (trees would overfit —
 never present a decision tree as the answer here). POWER: like-rate (sd 0.55) detects x1.5 with 31 posts/arm
 (~7 weeks). PLAN in analysis/PLAN.md: report.py → Insights tab → music-family A/B assigned at approve time.
-ALSO: max_review_videos=20 backpressure (34 await review now → tonight's batch SKIPS by design);
+PHIL'S CALL (afternoon): length + full scale matter → tier_share now 0.8L/0.1M/0.1S; the 8 oldest medium/
+short Review videos PURGED (video + journey rejected, note says re-queue from the Journeys tab if wanted:
+phage_landing pika_larder dugong_meadow lissajous_stage plasma_script scarab_compass oort_hearth pulsar_pasta)
+→ Review = 26 (20L/3M/3S). ANALYSIS PLAN ON HOLD until Phil and I talk through the music arm.
+ALSO: max_review_videos=20 backpressure (26 await review now → tonight's batch SKIPS by design);
 est_render_sec refit on the unthrottled nights (12.0 s/frame + 250 + 600/planet, within 2%).
 2026-09-23 (MORNING — WHY THE BATCH RAN TO 10 AM; read PLAN "E-CORES + A STALE ESTIMATE"): mix has been
 rendering since 09-20 (5 planet cards through it, all in Review). The overrun had two causes: (1) est_render_sec
