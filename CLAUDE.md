@@ -120,6 +120,11 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-09-28 (EVENING): two posts went out an hour apart (16:06 niobium_winter, 17:06 weddell_lightwell) after the
+production queue had sat EMPTY 09-26 21:00 → 09-28 16:00 (the gate held the window, nothing was approved); the
+catch-up advance landed on the first 19 h lattice point in the future = 55 min later. FIXED in post_gate: the
+next point must be ≥ now + cadence/2 (lattice phase kept). post_next = 2026-09-29 12:00 — nothing more today
+(Phil's ask). Review = 21 (cap 20 → tonight's batch skips until one more verdict); 1 queued to post (beaver_arcade).
 2026-09-25 (DATA SCIENCE KICKOFF — read analysis/PLAN.md): Phil: planet videos are liking well, 11 of the last
 12 posts >10 likes; wants real data science on what moves engagement (music instrumentation/style included),
 a dashboard of charts, a clean A/B that provably lifts likes, and a portfolio piece (DS + AI-eng careers).

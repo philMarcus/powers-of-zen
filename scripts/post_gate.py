@@ -9,7 +9,9 @@ dashboard-managed clock says so:
     post_next        : "YYYY-MM-DD HH:MM" of the next allowed fire (dashboard-editable)
 
 After firing (or when the machine slept past several windows) post_next advances by
-whole cadence steps until it is in the future — a backlog never causes burst posting.
+whole cadence steps until it is at least half a cadence in the future — a backlog never
+causes burst posting (2026-09-28: the old "first step in the future" rule fired again
+55 minutes after a catch-up post).
 """
 import fcntl
 import subprocess
@@ -121,7 +123,13 @@ def main():
     # 2026-08-24): a dead-zone remap must not shift the 19h walk. Catch up whole steps
     # if the machine slept past windows; always land ON the hour.
     nxt = nxt + timedelta(hours=every)
-    while nxt <= datetime.now():
+    # MINIMUM GAP (Phil 2026-09-28: two posts went out an hour apart after the queue had
+    # been empty for two days — "catch up whole steps" landed on the first lattice point
+    # in the future, 55 min after the post that had just gone out). Stay on the 19h lattice
+    # (the walk keeps its phase) but never fire again sooner than HALF a cadence after the
+    # post that actually happened: the next point must be >= now + every/2.
+    floor_t = datetime.now() + timedelta(hours=every / 2)
+    while nxt <= floor_t:
         nxt += timedelta(hours=every)
     nxt = (nxt + timedelta(minutes=30)).replace(minute=0, second=0, microsecond=0)
     jd = pl.jload()                      # re-read: poster runs for minutes
