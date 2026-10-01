@@ -44,7 +44,7 @@ Results feed back into the next night's composer briefs, so the catalog learns w
 
 | Path | What it is |
 |---|---|
-| [`dashboard/overview.html`](dashboard/overview.html) | How everything works, with diagrams. Rendered at [powersofzen.com](https://powersofzen.com). |
+| [`index.html`](index.html) | The full walkthrough page (also served at [powersofzen.com](https://powersofzen.com)) — diagrams of the daily loop, the circular world-card chain, the per-frame rhythm, and the frame loop. |
 | [`stories.md`](stories.md) | Engineering decision log — every design call, bug, killed feature, with rationale and verbatim quotes from my own prompts. |
 | [`PLAN.md`](PLAN.md), [`CLAUDE.md`](CLAUDE.md) | Internal plan of record and project orientation. |
 | `engine/` | ComfyUI feedback-zoom renderer and supporting modules (camera, depth, grammar, music, tracker, warp). |
