@@ -1,6 +1,6 @@
 # Powers of Zen
 
-Self-operating pipeline that renders and posts "Powers of Ten"–style continuous-zoom shorts — seamless dives through every scale of the universe — to [@powersofzen](https://www.instagram.com/powersofzen/) on Instagram, YouTube, and TikTok. Rendering, music, and posting all run local on a single RTX 3080; only the overnight content composition uses frontier LLMs to draft each night's journey briefs.
+A pipeline that renders and posts "Powers of Ten"–style continuous-zoom shorts — looping dives through many scales, from macro to subatomic and back — to [@powersofzen](https://www.instagram.com/powersofzen/) on Instagram, YouTube, and TikTok. Rendering, music, and posting all run local on a single RTX 3080; only the overnight content composition uses frontier LLMs to draft each night's journey briefs.
 
 🔗 **[powersofzen.com](https://powersofzen.com) — the full walkthrough, with diagrams.**
 
@@ -19,7 +19,7 @@ Self-operating pipeline that renders and posts "Powers of Ten"–style continuou
 
 ## The pipeline
 
-Journeys are composed at midnight, rendered overnight, and posted on a fixed cadence. I touch it twice — approve the video, choose the music. Everything else runs itself.
+Journeys are composed at midnight, rendered overnight, and posted on a fixed cadence. I touch it twice — approve the video, choose the music. Everything else is scheduled.
 
 ```
 refill (00:00)  →  render queue  →  night batch (01:30)  →  [approve]  →  [choose music]
@@ -29,7 +29,7 @@ refill (00:00)  →  render queue  →  night batch (01:30)  →  [approve]  →
 
 Results feed back into the next night's composer briefs, so the catalog learns what works.
 
-**Guardrails baked in:** start/preflight audits · cameo-realm check · planet-position audit · backpressure at 20 ready videos · frame-0 figure gate · caption gates · per-render timeouts · Chrome self-heal · caption verified on the live page · Instagram size fallback · restart-proof scheduling.
+**Guardrails:** start/preflight audits · cameo-realm check · planet-position audit · backpressure at 20 ready videos · frame-0 figure gate · caption gates · per-render timeouts · Chrome self-heal · caption verified on the live page · Instagram size fallback · restart-proof scheduling.
 
 ## Stack
 
@@ -54,7 +54,7 @@ Results feed back into the next night's composer briefs, so the catalog learns w
 
 ## How it was built
 
-I architected the system and I direct AI coding agents to implement it under my review. The engineering value-add is judgment — rejecting plausible-but-wrong diagnoses, designing the A/Bs that isolate a cause, killing my own features when the evidence shows no effect, and making the systems calls a model wouldn't. [`stories.md`](stories.md) catalogs ~25 of those decisions, organized by competency, with verbatim quotes from my own prompts as evidence.
+I designed the system and direct AI coding agents to implement it under review. The judgment calls are mine — rejecting plausible-but-wrong diagnoses, designing the A/Bs that isolate a cause, killing my own features when the evidence shows no effect, and making the systems calls a model wouldn't. [`stories.md`](stories.md) catalogs about 25 of those decisions, organized by competency, with verbatim quotes from my own prompts as evidence.
 
 ## A note on automation
 
