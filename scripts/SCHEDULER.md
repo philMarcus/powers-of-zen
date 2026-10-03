@@ -94,3 +94,13 @@ needs ONE elevated PowerShell/cmd prompt:
 
 Check any time: per-core load should sit on cores 0-15 while rendering; if cores 16-19 carry
 it all, the boost did not take.
+
+## AT-LOGON OPS STARTER (2026-10-03)
+`PowersOfZen-dashboard` — trigger AtLogOn (user Phil) + 90 s delay, StartWhenAvailable, hidden runner
+→ `scripts/scheduled_dashboard.bat` → start_chrome_zen.sh, start_dashboard.sh, night_batch.comfy_up()
+(log: outbox/logon_ops.log). WHY: the 2026-10-02 Windows restart killed the dashboard and ComfyUI and
+nothing relaunched them (the batch relaunches ComfyUI only when it actually renders, and it had been
+skipping on the review cap) — the dashboard stayed down until Phil noticed on 10-03. Each starter is
+idempotent, so the task is also a safe "fix everything" button: `Start-ScheduledTask -TaskName
+PowersOfZen-dashboard` (verified 10-03 07:59, result 0, all three services answering in ~16 s).
+Registered with Register-ScheduledTask (user-level, no admin); re-register the same way after edits.

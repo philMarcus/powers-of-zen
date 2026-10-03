@@ -120,6 +120,13 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-03 (MORNING): Phil: "can't get the dashboard running". CAUSE: a Windows restart on 10-02 17:58 killed the
+dashboard + ComfyUI and nothing relaunches them at boot (the batch only relaunches ComfyUI when it renders, and it
+has skipped every night since 09-30 on the review cap — "review backlog 20"). Restarted both, then made it
+permanent: Task Scheduler `PowersOfZen-dashboard` (AtLogOn + 90 s → scripts/scheduled_dashboard.bat → Chrome,
+dashboard, ComfyUI via comfy_up, log outbox/logon_ops.log), test-run through the real scheduler = result 0.
+Posts continued through the gap (beaver_arcade 09-29, chevron_quarry 09-30). Review = 20 → the nightly resumes
+the night Phil takes it below 20.
 2026-09-28 (EVENING): two posts went out an hour apart (16:06 niobium_winter, 17:06 weddell_lightwell) after the
 production queue had sat EMPTY 09-26 21:00 → 09-28 16:00 (the gate held the window, nothing was approved); the
 catch-up advance landed on the first 19 h lattice point in the future = 55 min later. FIXED in post_gate: the
