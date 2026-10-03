@@ -120,6 +120,24 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-03 (EVENING — THE ORANGE WASH FOUND + COUNTERED; MICRO "STAGE" PLANNED; read PLAN "THE ORANGE WASH" + "THE
+MICRO STAGE"): Phil's next front = the micro realm (everything < 1 cm renders as "circles in pasty mortar"); surveying it
+found a bigger sameness driver: EVERY render drifts to one orange palette within ~100 frames whatever the deck or authored
+palette (77% of venus_basket's frames >60% orange; cool hues ~0.03). Forensics (offline step attribution + same-seed card
+A/Bs on octopus_garden card 7): the DIFFUSION step pushes orange +0.02..0.08/frame; the detail_boost saturation lift, the
+brand tail and warm negatives change NOTHING (do not re-suspect them); colour-match toward the card's AUTHORED palette
+(engine/palette.py swatch stats, `--palette-anchor 0.5`) recovers cool hues from a fully orange start in ~16 frames.
+FULL-VIDEO A/B FOR PHIL (he judges full videos, never clips): Review now holds **venus_basket_color** (journeys/lab/
+venus_basket_color.json = venus_basket at seed 1234 + anchor 0.5; 19% of frames >60% orange vs 77%, every cool-authored
+card back to its palette, mixed cards stay mixed) next to the original venus_basket. IF HE APPROVES: Settings → "🎨 palette
+anchor strength" = 0.5 (knob wired: pipeline default 0, night_batch passes --palette-anchor, dashboard Settings) and
+reject whichever venus_basket he likes less. New lab flags in dive.py (all default off): --set KEY=VAL, --tag, --tail,
+--neg-extra, --palette-anchor [--palette-anchor-mode rgb|lab], --palette-ipa; journeys/lab/ = A/B spec copies outside the
+catalog. STAGE (Phil's name for the micro-realm plate; "sets" rejected): plan of record in PLAN.md; engine/stage.py v0
+(sphere-impostor renderer with the dive camera, lattice + nucleus kits, CPU demo scratchpad/orange/stage_demo_sheet.png);
+next = scratchpad/stage_lab.py brand pass on the GPU, then the ice_lattice card in motion. Lab run dirs:
+output/octopus_garden_platelive_orange_*/ (56-frame arms), output/venus_basket_color/v1 (the full A/B). Review 13 (<20 →
+the 01:30 batch renders tonight: thousand_moons bloom_rosary clathrate_seep lepidolite_halo). Earlier today's state below.
 2026-10-03 (HANDOFF — context cleared after this; the pipeline runs itself): tree clean + pushed (HEAD "YouTube:
 Studio description editor"); nothing running; ComfyUI/dashboard/Chrome up; all 8 scheduler tasks Ready incl. the
 new at-logon PowersOfZen-dashboard. Pipeline: Review 12 (below the 20 cap → the 01:30 batch renders again
