@@ -136,7 +136,11 @@ eyeball and a pendant. Arm B settings (id 0.35, den-travel 0.5, cn 0.4) = the lo
 17:10 (tmux full_stage, log scratchpad/orange/full_sunspot_archipelago_stage.log): sunspot_archipelago_stage (journeys/lab/,
 seed 187198, nucleus + quark cards staged) → Review ~18:40. TONIGHT'S NIGHTLY renders plain sunspot_archipelago at the same
 seed with the anchor → TOMORROW MORNING Phil compares the two full videos in Video Review (same journey, same seed, with and
-without the stage). Journey field for stages: `stage: {"kit": lattice|nucleus|quark, ...}` on a card (cameos refused there).
+without the stage). Journey field for stages: `stage: {"kit": lattice|nucleus|quark|fog|tubes, ...}` on a card (cameos refused there), or
+`dive --stage-auto` (engine/stage.suggest_stage picks a kit from the card's words; 195 of 270 micro cards covered).
+SECOND A/B queued (tmux full_stage2, waits for the sunspot one): anvil_country_stage (journeys/lab/, seed 1234,
+--stage-auto → atom_shells as a fog atom) → Review ~20:10; the nightly renders plain anvil_country tonight at the same
+seed. GPU timeline: sunspot_stage until ~18:30, anvil_stage until ~20:10, nightly 01:30. Nothing else running.
 2026-10-03 (EVENING — THE ORANGE WASH FOUND + COUNTERED; MICRO "STAGE" PLANNED; read PLAN "THE ORANGE WASH" + "THE
 MICRO STAGE"): Phil's next front = the micro realm (everything < 1 cm renders as "circles in pasty mortar"); surveying it
 found a bigger sameness driver: EVERY render drifts to one orange palette within ~100 frames whatever the deck or authored
