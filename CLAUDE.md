@@ -136,7 +136,7 @@ reject whichever venus_basket he likes less. New lab flags in dive.py (all defau
 catalog. STAGE (Phil's name for the micro-realm plate; "sets" rejected): plan of record in PLAN.md; engine/stage.py v0
 (sphere-impostor renderer with the dive camera, lattice + nucleus kits, CPU demo scratchpad/orange/stage_demo_sheet.png);
 next = scratchpad/stage_lab.py brand pass on the GPU, then the ice_lattice card in motion. Lab run dirs:
-output/octopus_garden_platelive_orange_*/ (56-frame arms), output/venus_basket_color/v1 (the full A/B). Review 13 (<20 →
+output/octopus_garden_platelive_orange_*/ (56-frame arms), output/venus_basket_color/v1 (the full A/B). Review 11 incl. the A/B (Phil re-queued selenite_hothouse + moved jelly_pier to Music this afternoon; <20 →
 the 01:30 batch renders tonight: thousand_moons bloom_rosary clathrate_seep lepidolite_halo). Earlier today's state below.
 2026-10-03 (HANDOFF — context cleared after this; the pipeline runs itself): tree clean + pushed (HEAD "YouTube:
 Studio description editor"); nothing running; ComfyUI/dashboard/Chrome up; all 8 scheduler tasks Ready incl. the
