@@ -2323,3 +2323,16 @@ render dominates at identity 0.55 / den 0.45; the target atom was costumed as a 
 queued: identity 0.35, den-travel 0.50, CN 0.40 + stage lighting v0.2 (brighter ambient/spec,
 node glow). Phil judges full videos: the stage goes into a full render only after the look is
 right on the card.
+
+## STAGE LAB STEP 2 — second bed: the nucleus (2026-10-03 16:57, sunspot_archipelago nucleus_droplet k6, seed 187198)
+--stage nucleus (160 nucleons, r 0.085, garnet + pearl) on the card whose baseline rendered an
+EYEBALL and then a PENDANT ON A BEAD CHAIN (the jewelry prior, again). Strip
+scratchpad/orange/stage_sunspot_strip.png, run dir output/sunspot_archipelago_platelive_stage_nucleus/v1.
+RESULT: A NUCLEUS EXISTS — a close-packed droplet of glossy red and pearl spheres in a dark void,
+grows on schedule from a small cluster (f172) to frame-filling (f192), two halo nucleons drifting
+outside it, edge-correlation to the stage 0.37-0.46 through the card; the seam into quark_trio
+hands off as big glossy spheres instead of the baseline's necklace. Orange 0.1-0.3 vs 0.8-0.9.
+OPEN: the void is pitch black (the kit's bg) where the card says "void maroon" — take bg/fog from
+the palette's dark phrase; nucleon colours should come from the palette too (hand-set here).
+BOTH KITS WORK MECHANICALLY. Next: per-card `stage` field in the journey + palette-derived kit
+colours + several stage cards per render → a FULL same-seed A/B (plain vs staged) for Phil.
