@@ -2305,3 +2305,21 @@ IMPLICATION for the chain (step 2's design): a stage card should open with a HIG
 (~0.60, stage depth as CN) on its first frame or two, then continue at the schedule's ~0.45 with
 the stage composited at a decaying identity weight + the stage depth as CN — not the planet's
 0.30 cap. ~6-9 s per call; the renderer itself 0.4-2.3 s/frame.
+
+## STAGE LAB STEP 2 — first card in motion (2026-10-03 16:48, urchin_barren calcite_rhombs k8, seed 1234)
+dive.py --stage lattice --stage-card 8 (rhombo kit, spacing 0.5, radius 0.06, authored violet/
+rose/pearl), --from-card 8 of the Review render, production flags + palette anchor 0.5, defaults
+den 0.60 across the arrival / 0.45 after, identity 0.55, stage depth as CN 0.5. Run dir
+output/urchin_barren_platelive_stage_rhombo/v1; strip scratchpad/orange/stage_urchin_strip.png
+(rows: baseline v1 / stage render / fed composite / rendered); scratchpad/stage_measure.py.
+RESULT — THE MECHANISM WORKS: from f228 the card renders as a CRYSTAL — diagonal struts, node
+atoms, a rhombic cell grid — in the authored violet (orange 0.01-0.06 vs the baseline's 0.75-0.88),
+the structure persists across the whole card at scale (edge-correlation to the stage 0.22-0.37,
+never collapsing to beads in mortar), and the plunge grows ONE atom in place to the bar line
+(the containment contract, physical). The seam into great_wall_curtain even carries the strut
+lines on as cosmic filaments. Baseline v1 = orange leaf-veins with gem droplets, no lattice.
+OPEN (look, not mechanism): the result is dim and flat next to the house gloss — the dark CG
+render dominates at identity 0.55 / den 0.45; the target atom was costumed as a rose. Arm B
+queued: identity 0.35, den-travel 0.50, CN 0.40 + stage lighting v0.2 (brighter ambient/spec,
+node glow). Phil judges full videos: the stage goes into a full render only after the look is
+right on the card.

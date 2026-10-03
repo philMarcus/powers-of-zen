@@ -115,9 +115,9 @@ class Stage:
             n = np.stack([u, v, -nz], -1)
             ndl = np.clip(-(n @ self.light), 0, 1)        # light vector points INTO the scene
             spec = ndl ** 24
-            shade = 0.30 + 0.70 * ndl
+            shade = 0.42 + 0.58 * ndl
             base = np.asarray(rgb, np.float32)
-            px_col = base[None, None, :] * shade[..., None] + 0.35 * spec[..., None] + extra * base
+            px_col = base[None, None, :] * shade[..., None] + 0.55 * spec[..., None] + extra * base
             # anti-aliased rim
             aa = np.clip((1.0 - np.sqrt(rho2)) * rpx, 0, 1)[..., None]
             region = col[y0:y1, x0:x1]
@@ -165,7 +165,7 @@ LATTICES = {
 
 
 def kit_lattice(stage, variant='cubic', spacing=0.42, radius=0.055, colors=((0.55, 0.75, 1.0), (0.95, 0.45, 0.7)),
-                bond_rgb=(0.75, 0.8, 0.9), bond_r=0.014, jitter=0.012, seed=0, extent=16, glow=0.08,
+                bond_rgb=(0.75, 0.8, 0.9), bond_r=0.014, jitter=0.012, seed=0, extent=16, glow=0.16,
                 z_far=7.0, bond_far=3.2):
     """An infinite crystal seen along a random (seeded) direction, far ranks into fog."""
     rng = np.random.default_rng(seed)
@@ -200,7 +200,7 @@ def kit_lattice(stage, variant='cubic', spacing=0.42, radius=0.055, colors=((0.5
             for t in np.linspace(0.15, 0.85, n):
                 stage.items.append(('sphere', pa + (pb - pa) * t, bond_r, bond_rgb, 0.0))
     stage.jitter = jitter * 0.6
-    stage.fog_dist = 4.5
+    stage.fog_dist = 5.5
     return stage
 
 
