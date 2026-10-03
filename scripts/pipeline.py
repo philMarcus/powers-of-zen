@@ -244,7 +244,11 @@ JOURNEYS_DIR = ROOT / "journeys"
 
 def journey_path(name):
     """Resolve a journey name to its JSON, active catalog first. None if unknown."""
-    for d in (JOURNEYS_DIR, JOURNEYS_DIR / "engine1", JOURNEYS_DIR / "engine0"):
+    # journeys/lab/ = engine-2 specs for A/B renders (same-seed re-renders of a catalog
+    # journey under a suffixed name, 2026-10-03 orange lab): resolvable by name so
+    # queue_review/caption/dashboard can ingest them as their own Review entry, but NEVER part
+    # of journey_names() (the catalog the refill, audits and the batch draw from).
+    for d in (JOURNEYS_DIR, JOURNEYS_DIR / "lab", JOURNEYS_DIR / "engine1", JOURNEYS_DIR / "engine0"):
         p = d / f"{name}.json"
         if p.exists():
             return p
@@ -281,6 +285,12 @@ JSETTINGS_DEFAULTS = {
     # every render. "low" = lab arm B (plate + denoise cap 0.32), the verdict on both beds;
     # "" / None = off (the pre-plate engine).
     "plate_mode": "low",
+    # PALETTE ANCHOR (2026-10-03, PLAN "THE ORANGE WASH"): colour-match every travel frame
+    # toward the card's AUTHORED palette (engine/palette.py) at this strength instead of
+    # toward the phase's own drifted first frame. 0 = off (the pre-anchor engine). The lab
+    # recovered a cerulean card from a fully orange start at 0.5; Phil judges the full video
+    # (venus_basket_color) before this goes live in the nightly.
+    "palette_anchor": 0.0,
 }
 
 

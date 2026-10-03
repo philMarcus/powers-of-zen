@@ -1,0 +1,146 @@
+{
+  "name": "venus_basket_color",
+  "theme": "an abyssal glass reef read as one weave at every scale — from the black seafloor grove of woven glass towers and the shrimp pair caged in one of them, down a tower's flue and through the square weave of its wall into one glass needle, into the nested glass shells laid about a squared protein thread by the knots riding it, on into the random network of atoms that glass really is, then the shivering nuclei and the woven floor of matter itself — which opens as the braided hollow of a cosmic-web filament, and that corridor folds a second time straight back onto the reef's grove of glass towers",
+  "style": "crystalline",
+  "music_lane": "deep_archive",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "reef_commons",
+      "exp": 1.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink-navy water, milk-opal glass, rust-orange accents",
+      "scene": "a black seafloor plain at abyssal depth, woven glass towers rising from the ooze in a loose grove, every tower a hollow tube of fused needles moored by a splayed tuft of glass fibers, rust-orange brittle stars curled over the moorings, squat lobsters crouched among them with claws raised, a long-tailed rattail fish cruising past the tallest tower, a bonded shrimp pair caged in the hollow of a leaning tube, opal glow seeping through every wall, silt haze closing off the furthest towers, no one present",
+      "target": "a tall woven glass tower",
+      "target_phrase": "a glass tower"
+    },
+    {
+      "name": "basket_tower",
+      "exp": 0.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "milk-opal mesh, ice-blue glow, sable ooze",
+      "scene": "a tall hollow glass tube rising out of the seafloor ooze, its wall a mesh of fused needles wound with spiral ridges, a domed sieve plate closing the top end with a round vent mouth opening at its middle, sister tubes leaning further off in the silt haze, a splayed tuft of glass fibers gripping the ooze at its foot, ice-blue glow moving through the mesh, ink-black water reaching away past it",
+      "target": "a round vent mouth",
+      "target_phrase": "a round opening"
+    },
+    {
+      "name": "flue_shaft",
+      "exp": -0.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-opal walls, amber motes, ink hollow",
+      "scene": "the hollow shaft of a woven glass tube, its wall wrapping the space on all quarters, square windows in the weave opening onto ink-black water, a diagonal brace laid corner to corner across each window, amber motes adrift in the slow current threading up the shaft, fused ridges set at intervals up the wall, rose-opal glow leaking through the mesh",
+      "target": "a fused glass crossbeam",
+      "target_phrase": "a glass beam",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "cubic",
+        "density": 0.9
+      }
+    },
+    {
+      "name": "woven_wall",
+      "exp": -2.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ice-blue struts, navy voids, opal seams",
+      "scene": "a wall of fused glass beams crossing in a square grid, each beam a bundle of hair-fine needles cemented into one rod, diagonal braces laid over every square, each square opening onto a finer weave of needles that opens again onto ink water, a glassy living film webbed over the rods with cell beads studding it, milk-opal glow trapped in the rods, sable gaps deepening as the grid recedes",
+      "target": "a hair-fine glass needle",
+      "target_phrase": "a glass needle",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "cubic"
+      }
+    },
+    {
+      "name": "spicule_thicket",
+      "exp": -3.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "opal-rose needles, honey-gold cement, ink gaps",
+      "scene": "a crowded thicket of glass needles cemented at a junction of the weave, shafts crossing at shallow angles, fine ridges set at intervals down every shaft, honey-gold cement pooled where they meet, one shaft snapped clean across to show a nest of rings in its end, milk-opal glow running the length of each needle, ink gaps opening deeper in the thicket",
+      "target": "a snapped needle end",
+      "target_phrase": "a snapped glass end"
+    },
+    {
+      "name": "glass_shells",
+      "exp": -5.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ice-blue shells, opal seams, sable axis",
+      "scene": "a nested build of glass shells at the cut end of a needle, ring wrapped over ring out to the rim, every shell a laid sheet of glass with a hair-fine organic seam glowing at its join, a squared rose-opal thread running down the axis at the middle, more nested ends showing off in the gloom, ice-blue shimmer crossing the rings",
+      "target": "a squared rose-opal thread",
+      "target_phrase": "a rose-opal thread"
+    },
+    {
+      "name": "axial_filament",
+      "exp": -7.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-opal rod, teal knots, ink space",
+      "scene": "a squared rod of stacked ribbon-folded units repeating away into ink space, its four faces tiled with the same knot over and over, teal ribbon coils wound through each knot with a cleft at its crest, opal beads of fresh glass budding out of the clefts and crowding the rod's flanks, hair-fine tethers strung from knot to knot, more rods of the same build receding into the gloom",
+      "target": "a glassy opal bead",
+      "target_phrase": "an opal bead"
+    },
+    {
+      "name": "silica_network",
+      "exp": -9.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ice-opal nodes, violet struts, sable voids",
+      "scene": "an open network of atoms reaching in every direction, ice-blue oxygen atoms bridging rose-opal silicon cores into rings of unequal size, the rings joined corner to corner with no repeat anywhere in the weave, wide sable voids opening through it, a violet shimmer running every strut, the weave dimming into gloom at its furthest reach",
+      "target": "a shivering bright nucleus",
+      "target_phrase": "a glowing nucleus",
+      "loop_target": "an open network of atoms, ice-blue struts bridging rose-opal cores into unequal rings",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "nucleus_shoal",
+      "exp": -13.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-gold droplets, opal shimmer, starless ink",
+      "scene": "a shoal of shivering droplets hanging in starless emptiness, each droplet a crowd of rose-gold and opal spheres shuddering under a skin of radiance, droplets sown at every distance and dimming into the void, faint sparks flickering in the gaps among them, nothing else in any direction",
+      "target": "a shivering opal droplet",
+      "target_phrase": "a bright droplet",
+      "cameo": {
+        "sprite": "output/mascots/canon/clark.png",
+        "pos": [
+          0.62,
+          0.4
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "nuclear_pasta",
+      "exp": -15.6,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "molten opal sheets, violet seams, black corridors",
+      "scene": "a weave of molten matter with no gap anywhere in it, spheres kneaded into wavy glowing sheets and braided rods, plate laid over plate with black corridors threading among them, rope-twisted strands bridging the plates, violet radiance seeping from every seam, the weave repeating away with no end in any direction"
+    },
+    {
+      "name": "filament_corridor",
+      "exp": 24,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "ice-blue haze, rose-gold knots, black voids",
+      "scene": "the hollow of a cosmic-web filament, its walls braided strands of galaxies twisting down the corridor, rose-gold knots glowing where the braids cross, ice-blue haze hanging the whole length of the passage, black voids showing through the gaps in the braided walls, thousands of far galaxies strewn down the corridor"
+    }
+  ],
+  "music_theme": "a submerged archive dive — a low sub-drone under struck glass tones, one deep kick on every downbeat as the weave tightens scale by scale, the pulse narrowing to a single held tone through the atom and nucleus bars, a wide struck bloom where matter's weave opens into the cosmic corridor, and a keener, softer one as the corridor drops back onto the reef floor",
+  "music_key": "D minor",
+  "render_start": "silica_network",
+  "scaffold_name": "venus_basket",
+  "_lab": "2026-10-03 orange-drift A/B: same seed as venus_basket v1, colour fix on; not part of the catalog (journeys/lab/)"
+}

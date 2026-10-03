@@ -1110,6 +1110,15 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
                                "that swells in place anywhere in frame, or a small planet that "
                                "travels in while it grows) — still in the lab; grow = from a "
                                "point; auto = enter or grow; plain = appears at the zoom's rate.")
+    # PALETTE ANCHOR (2026-10-03): the counter to the chain's drift toward one orange
+    # palette — colour-match toward the card's authored palette instead of a drifted frame
+    panchor = t2.number_input("🎨 palette anchor strength (0 = off)", 0.0, 1.0,
+                              float(s.get("palette_anchor") or 0.0), step=0.05,
+                              help="Every travel frame is colour-matched toward the card's "
+                                   "AUTHORED palette at this strength (the lab used 0.5: a "
+                                   "cerulean card recovered from a fully orange start in ~16 "
+                                   "frames). 0 = the old behaviour (match toward the phase's own "
+                                   "first frame, which drifts orange). Applies to the next renders.")
     fpaused = t2.toggle("⏸ pause midnight refill", value=bool(s["refill_paused"]))
     st.markdown("**platform pauses** (scheduler skips paused platforms when posting)")
     pc = st.columns(len(pl.PLATFORMS))
@@ -1127,6 +1136,7 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
             "tier_share": shares,
             "render_paused": bool(rpaused), "refill_paused": bool(fpaused),
             "plate_mode": ("" if pmode == "off" else pmode), "plate_intro": pintro,
+            "palette_anchor": float(panchor),
             "post_every_hours": float(post_every),
             "post_next": post_next.strip()})
         pl.jsave(jj)

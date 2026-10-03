@@ -2127,3 +2127,153 @@ posting pause. Keep IG untouched. "seo" stays available as a setting for a later
   edit page; cicada_chorus also confirmed on the public watch page) — every YouTube description is now
   the classic IG caption again; seo copies kept in yt_desc_seo_backup. Read-out from here: the 23
   edited videos + the new posts from 10-04. The scraper's 10-03 11:55 snapshot is the baseline.
+
+
+# THE ORANGE WASH (2026-10-03 — found while surveying the micro realm; Phil: "the colors are so samey")
+# ═══════════════════════════════════════════════════════════════════════════════
+## The finding (measured, scratchpad/orange/hue_curve.py over 12 recent renders + 6 Review renders)
+Every render drifts to ONE warm palette regardless of deck or authored palette. Orange fraction
+(share of saturated pixels with hue 15-55°): frame 0 is 0.00-0.37 in 10 of 12 renders (the
+txt2img obeys the prompt); by the first quarter of the video the chain sits at 0.5-0.9 and
+stays there; cool hues (150-300°) collapse to ~0.03. Mean saturation climbs alongside
+(0.40 -> 0.70-0.85). Authored palettes are ~50/50 warm/cool words (gold/amber/umber vs
+violet/indigo/blue/teal/cobalt/cerulean); rendered frames are 60-90% orange. Card arrivals
+(denoise 0.58 + the new card's palette words) pull orange down by ~0.1-0.2 for a few frames,
+then it climbs back within ~20 frames: the PROMPT still has power at 0.58, the TRAVEL chain
+at 0.40-0.50 erases it. Same curve in all eight style decks (hue_curves.png).
+
+## Attribution (offline replay of the per-frame steps on saved frames, step_attribution.py)
+Saved frame i = raw diffusion output; fed_{i} = color_match(detail_boost(img_i)); img_{i+1} =
+diffusion(fed_i). Mean per-frame change of the orange fraction:
+  detail_boost (sharpen/contrast/saturation/noise): -0.004..-0.009  (slightly AGAINST orange;
+      the 5% grain blend desaturates more than the 1.03 lift saturates — net saturation -0.002..-0.007)
+  color_match toward the phase's first frame:        -0.011..-0.063  (the only thing fighting it)
+  THE DIFFUSION STEP:                                +0.024..+0.078  (the driver)
+  net:                                               +0.005..+0.012 per frame -> saturates in ~100 frames
+Live A/B confirmed the first line (octopus_garden card 7, same seed, --set saturation=1.0:
+orange 0.77 vs 0.66 baseline — no better). The lift was my prime suspect; it is NOT the cause.
+So: DreamShaper at travel denoise, under the house style, re-grades every frame toward its
+warm attractor; colour-match only ratchets because its reference (the phase's own first
+frame) is already drifted. The palette words ARE in every frame's prompt ("..., {palette}
+colors") and lose to the fed image at cfg 2.
+
+## Candidate counters (all act on the diffusion or give it a FIXED authored target), lab flags in dive.py:
+  --tail TEXT            replace the deck brand tail ("vivid complementary colour contrast,
+                         jewel-bright accents" = teal-and-orange bait?)
+  --neg-extra TEXT       warm negatives (production form: palette.negative_for = only on cards
+                         that authored no warm word, mirrored for cool)
+  --palette-anchor S     colour-match toward engine/palette.py swatch stats of the CURRENT card's
+                         authored palette (fixed target, no ratchet)
+  --palette-ipa W        IP-Adapter toward a soft colour-field image of the card's palette
+  (--set KEY=VAL, --tag TAG: generic lab overrides / run-dir suffix; journeys/lab/ = A/B spec
+   copies resolvable by name but outside the catalog)
+Test: octopus_garden v1 card 7 copper_blood (authored cerulean/pearl/lilac/ink, rendered
+orange rings), --from-card 7 from the ORANGE frame 223 — a recovery test, which is the
+production situation. Measured: orange/cool/sat over the card + the next card's first 24 frames.
+
+## Round 2 results (octopus_garden card 7 recovery test, same seed, 56 frames/arm; orange_lab.py measure 2)
+  arm        orange c7  cool c7  sat c7 | orange c8  cool c8 | end-of-c7 orange
+  base          0.66     0.03    0.86  |   0.69     0.09    |  0.75
+  sat1          0.77     0.03    0.85  |   0.66     0.08    |  0.96   (saturation lift off: no change)
+  notail        0.79     0.03    0.91  |   0.79     0.03    |  0.97   (brand tail minus "vivid complementary
+                                                                       colour contrast, jewel-bright accents": no change)
+  neg           0.78     0.02    0.90  |   0.64     0.03    |  0.93   (warm negatives every frame: no change)
+  ipa           0.77     0.07    0.86  |   0.77     0.17    |  0.92   (IP-Adapter 0.3 toward a palette colour-field: weak)
+  anchor        0.44     0.29    0.72  |   0.53     0.37    |  0.31   (**colour-match toward the AUTHORED palette
+                                                                       swatch, strength 0.5: cool hues back in ~16
+                                                                       frames and HELD through the next card**)
+Reading: at cfg 2 the prompt channel is powerless against the fed image (tail, negatives, and
+the palette words already in every prompt all lose); the pixel-statistics channel is not —
+the same colour_match we have always run, pointed at a FIXED authored target instead of the
+phase's own first frame, recovers the card's palette from a fully orange start. Strip:
+scratchpad/orange/round2_strip.png (anchor row: blue cells by f240, cerulean/lilac/cream held
+to f271 while the base row stays orange rings). Same-seed arms diverge within ~10 frames, so
+differences under ~0.1 between arms are noise; 0.66 -> 0.44 with cool 0.03 -> 0.29 is not.
+
+## The fix as shipped to the lab (2026-10-03 15:02) and what is NOT yet decided
+- engine/palette.py: palette text -> swatch stats (house colour table + xkcd/css; 100% of the
+  1364 authored palettes resolve), swatch image (for --palette-ipa), palette-conditional
+  negatives (negative_for, unused), Reinhard lαβ transfer (--palette-anchor-mode lab, untested).
+- dive.py --palette-anchor S [--palette-anchor-mode rgb|lab] replaces the colour_match target;
+  gating unchanged (not during prompt transitions). Default 0 = byte-identical engine.
+- settings `palette_anchor` (journeys.json; dashboard ⚙ Settings "🎨 palette anchor strength";
+  night_batch passes --palette-anchor S when > 0). DEFAULT 0 UNTIL PHIL'S VERDICT.
+- FULL-VIDEO A/B for Phil (he judges full videos, never clips): journeys/lab/venus_basket_color
+  .json = venus_basket at seed 1234 (scaffold_name pinned to the original so instance fields
+  match), rendered with --palette-anchor 0.5 -> output/venus_basket_color/v1 -> Review entry
+  "venus_basket_color" next to the original venus_basket (v1 orange 0.58 -> 0.91 by q3).
+  journeys/lab/ is resolvable by name (pipeline.journey_path) but never in journey_names().
+- OPEN: strength (0.5 = the old colour_match strength, just a better target; lower may keep more
+  of the model's freedom); cfg 3 and the lab-space anchor were queued as round 3 and cancelled in
+  favour of the full video — run them if Phil wants more; whether the anchor should also act
+  inside prompt transitions; the brand tail is NOT the cause (notail arm) — do not drop it.
+
+
+# THE MICRO STAGE — plan of record (2026-10-03; Phil: "do the same thing for the subatomic realm")
+# ═══════════════════════════════════════════════════════════════════════════════
+Phil's problem: everything below ~1 cm renders as "circles of different sizes in a plasticky
+mortar" whatever the card says; the planet plate fixed the same disease for one object by
+supplying PIXELS, so do that for whole realms. He wants maximum variety; he dislikes the word
+"plate" — the name for this is **STAGE** (a built film set the camera flies through; DreamShaper
+does lighting and costume). ORDER AGREED: the orange wash first (see the block above), then the
+stage.
+
+## Ground truth (scratchpad/micro_survey_1003/ALL.png + per-render sheets; 12 renders, 54 micro cards)
+50% of micro cards are round things in a pasty matrix (33% ringed discs/pores/dials, 17% glossy
+beads), 20% rope/weave, 11% a purple-centred sunburst, the rest strata/literal objects; the
+molecular band is the worst for the motif (proteins, ribbons, rods, gates, needles -> rings or
+beads in 13 of 18), the atomic band the worst for fidelity ("one atom as fog about a point":
+0 of 9 render it; they inherit the previous card). 542 of the catalog's 1364 cards (40%) are
+micro (cellular 272 / molecular 121 / atomic 98 / subnuclear 51). Dataset (n=56): videos whose
+top scale stays <= 10^6 earn like% 2.0 vs 3.1 (planet/star tops) — consistent with Phil's read
+that the full-scale sweep carries the weak micro realm.
+
+## Why depth-CN alone is not the answer (do not re-derive)
+The scaffold (engine/scaffold.py) already IS a realm-specific depth CN — and mode_for_band maps
+cellular/mm/molecular/stellar/galactic/subnuclear ALL to "sea" = gaussian spheres of mixed
+sizes, for ~40% of a card, at <= 0.6. The persistence labs showed what depth alone buys (one
+object persists, the prior eats the zoom); the planet only worked with pixels at the exact
+scheduled geometry + a denoise cap inside the object + the tracker bypassed + a depth map that
+agrees with the pixels. The stage = that mechanism generalised from one sphere to a field.
+
+## The mechanism (per stage card)
+Build once per card (CPU, numpy, deterministic by journey:card:seed): a 3-D world from a
+geometry KIT chosen by the card's archetype, coloured by the card's palette. Per frame: render
+RGB + depth at the cumulative zoom/aim with the scaffold's looming/occlusion math (the world
+zooms exactly with the schedule — the "ride the flow" law for free), composite into the fed
+frame with the plate's identity curve (resolve in over the arrival morph, hold through
+travel), cap denoise in the plate regime (~0.30-0.35; arm C = the set as CN + IPA at normal
+denoise for the softer version), depth-CN = the stage's own depth, tracker bypassed. The
+PLUNGE target = one instance of the stage nearest the thirds anchor, made the zoom's fixed
+point so it grows to fill the frame at the bar line; the next card arrives INSIDE it (a
+lattice atom's core becomes the nucleus stage). Containment becomes physical.
+
+## Kits (six primitives cover REALMS.md: shaded spheres, tubes on polylines, sheets, implicit
+## surfaces e.g. gyroid, 3-D Voronoi foam, glow fog)
+- atomic: real crystal systems by mineral — cubic halite, hexagonal ice/quartz chains, calcite
+  rhombs, diamond tetrahedra, graphite + sheet-silicate stacks, metal dendrites, glass random
+  network; defects, grain boundaries, dopants. Periodic = zoomable forever.
+- subnuclear: close-packed two-colour sphere droplets, halo + alpha-cluster nuclei, quark trio
+  with flux tubes, Coulomb crystal, the pasta ladder, bubble-chamber spirals/forks in fog, the
+  vacuum boil.
+- molecular: PDB backbones as tubes (the 08-13 donor pipeline; any PDB id = a new real
+  structure), bilayer ball-pits, microtubules, DNA, icosahedral cages, collagen ropes,
+  cellulose cable bundles.
+- cellular: Voronoi foam with organelle spheres, oriented files, cristae as gyroid in a capsule,
+  cilia/filament turf, disc cells in a tube, perforated diatom cylinders, neuron webs.
+- mm creatures stay with DreamShaper (it renders them well).
+A keyword pass maps ~3/4 of the 542 existing micro cards to a kit (scratchpad census); the
+composer gets an explicit per-card field going forward; unmapped cards render as today.
+
+## Lab plan (Phil judges FULL videos; the clips are for my measurement)
+1 renderer + one-shot brand pass on 6 kits at denoise 0.30/0.45/0.60 — gate: each reads as
+itself, not beads in mortar · 2 one card in motion: anvil_country ice_lattice -> atom_shells
+(Review, seed 1234), arms A baseline / B stage + cap 0.32 / C stage as CN+IPA at normal
+denoise — gate: lattice spacing grows with the zoom schedule, measured like the disc radius ·
+3 stage-to-stage handoff: sunspot_archipelago nucleus_droplet -> quark_trio; kelp_dynamo
+lamellae -> protein · 4 one full-length Review journey through stages, same seed, next to its
+existing cut -> Phil's verdict -> a settings knob like plate_mode. Start with the atomic
+lattice + nucleus pair (most periodic, most literally "circles" today, trivial kits, least
+DreamShaper prior to help). Costs to say out loud: at a 0.32 cap the micro cards look more
+rendered/less painterly (the globe's calmer look); the renderer must stay ~1 s/frame
+(vectorised, not the scaffold's Python loops); no extra GPU calls per frame.

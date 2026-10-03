@@ -952,6 +952,30 @@ def main():
                          "anchor rotation all re-derive cleanly there. Composes with --seed (new "
                          "draw for the regenerated frames) and with an edited journey whose cards "
                          "before K kept their durs.")
+    ap.add_argument("--set", dest="overrides", action="append", default=[], metavar="KEY=VAL",
+                    help="LAB: override any engine cfg key after presets/journey/CLI (repeatable; "
+                         "typed by the key's current value, e.g. --set saturation=1.0 "
+                         "--set color_match=0). Recorded in run.json 'overrides'.")
+    ap.add_argument("--tail", default=None, metavar="TEXT",
+                    help="LAB (orange drift): replace the style deck's brand tail with TEXT for "
+                         "this run ('' drops it)")
+    ap.add_argument("--neg-extra", default="", metavar="TEXT",
+                    help="LAB: append TEXT to the negative prompt of every feedback frame")
+    ap.add_argument("--palette-anchor", type=float, default=0.0, metavar="S",
+                    help="LAB: colour-match every travel frame toward the CURRENT CARD's authored "
+                         "palette (engine/palette.py swatch stats) at strength S instead of "
+                         "toward the phase's own first frame (which has already drifted)")
+    ap.add_argument("--palette-anchor-mode", choices=("rgb", "lab"), default="rgb",
+                    help="LAB: --palette-anchor as per-channel RGB mean/std (rgb, the colour_match "
+                         "LUT) or a hue-aware Reinhard lαβ transfer (lab)")
+    ap.add_argument("--palette-ipa", type=float, default=0.0, metavar="W",
+                    help="LAB: IP-Adapter every travel frame toward a soft colour-field image of "
+                         "the current card's palette at weight W (off inside the loop tail and "
+                         "plate spans, which own the IPA slot)")
+    ap.add_argument("--tag", default="", metavar="TAG",
+                    help="LAB: suffix the run name (output/<journey>_<TAG>/vN) so lab arms never "
+                         "share a vN sequence with the real render; --from-card prefix frames "
+                         "still come from the unsuffixed journey")
     ap.add_argument("--src-version", metavar="vN",
                     help="with --from-card: take the prefix frames from this version "
                          "(default: newest vN with enough frames)")
@@ -980,6 +1004,11 @@ def main():
     # STYLE (Layer 2): resolve the look from the deck and inject it as the style_suffix the
     # grammar reads. The deck may also RECOMMEND a checkpoint when --model isn't passed.
     sfx, deck_model, style_name = _style.resolve(spec, args.style)
+    if args.tail is not None:
+        _bt = _style.load_deck().get("brand_tail", "")
+        if _bt and _bt in sfx:
+            sfx = sfx.replace(_bt, args.tail).rstrip(", ").strip()
+            print(f"[dive] brand tail -> {args.tail!r}", flush=True)
     spec["style_suffix"] = sfx
     # HOUSE DEFAULT = ds (DreamShaper). Phil 2026-07-31: "dreamshaper really has made better
     # videos" — turbo only on an explicit --model turbo. Legacy journeys carry no `style`, so
@@ -999,6 +1028,26 @@ def main():
         cfg["resolve_persist"] = True
     if args.micro:
         cfg["camera_micro"] = True
+    # --set KEY=VAL (2026-10-03, orange-drift lab): typed by the existing value so a knob
+    # keeps its kind (float stays float, bool parses true/false); unknown keys are refused.
+    cfg_overrides = {}
+    for _kv in args.overrides:
+        _k, _, _v = _kv.partition("=")
+        if _k not in cfg:
+            sys.exit(f"--set: unknown cfg key {_k!r} (known: {', '.join(sorted(cfg))})")
+        _cur = cfg[_k]
+        if isinstance(_cur, bool):
+            _val = _v.strip().lower() in ("1", "true", "yes", "on")
+        elif isinstance(_cur, int) and not isinstance(_cur, bool):
+            _val = int(float(_v))
+        elif isinstance(_cur, float):
+            _val = float(_v)
+        else:
+            _val = _v
+        cfg[_k] = _val
+        cfg_overrides[_k] = _val
+    if cfg_overrides:
+        print(f"[dive] cfg overrides: {cfg_overrides}", flush=True)
     zoom_sched = den_sched = exponent = loop = None
     cameos, arrivals, approach, seam_arrivals = [], set(), [], set()
     cam_sched, cam_plan = [], []
@@ -1049,6 +1098,8 @@ def main():
         # 4-hour renders to output/<journey>_platelow/ where queue_review could not find
         # them ("no complete render ... need 392 frames").
         name = f"{name}_plate{args.plate}"
+    if args.tag:
+        name = f"{name}_{args.tag}"
     if cfg["parallax_gain"] == "random":
         # gain-exploration draw (see DEFAULTS): deterministic from (name, seed) so a
         # same-seed re-render reproduces its gain
@@ -1174,6 +1225,10 @@ def main():
         "plate_cn": args.plate_cn, "plate_void_gate": bool(args.plate_void_gate),
         "plate_intro": args.plate_intro,
         "play_start": spec.get("play_start"),
+        "overrides": cfg_overrides, "tag": args.tag, "tail": args.tail,
+        "neg_extra": args.neg_extra, "palette_anchor": args.palette_anchor,
+        "palette_anchor_mode": args.palette_anchor_mode,
+        "palette_ipa": args.palette_ipa,
         "play_rot": play_rotation(spec, cfg["fps"], lap_cut) if not args.frames else 0,
         # per-CARD (register) frame counts: lets a future --from-card verify its prefix
         # still aligns after a journey edit
@@ -1291,6 +1346,56 @@ def main():
             print("[dive] RESOLVE ON — " + ", ".join(
                 f"{w['card']}({w['mode']})[{w['w0']}..{w['w1'] - 1}]"
                 for w in resolve_windows), flush=True)
+    # PALETTE ANCHOR / PALETTE IPA (lab, 2026-10-03 — the orange-drift forensics): the fed
+    # chain drifts toward one warm attractor regardless of the authored palette (the
+    # diffusion pushes orange ~+0.02..0.08/frame; colour-match toward the phase's OWN first
+    # frame only ratchets it). These give colour-match / IP-Adapter a FIXED authored target.
+    _pal_cards = None
+    if (args.palette_anchor or args.palette_ipa) and "registers" in spec:
+        import palette as _palette
+        _pregs = spec["registers"]
+        _pnames = [r["name"] for r in _pregs]
+        _prs = spec.get("render_start")
+        _prot = _pnames.index(_prs) if _prs in _pnames else 0
+        _porder = _pregs[_prot:] + _pregs[:_prot]
+        _pcf = register_frame_counts(spec, cfg["fps"])
+        _pal_cards = []            # (start_frame, register) in render order
+        _pacc = 0
+        for _preg_, _pn_ in zip(_porder, _pcf):
+            _pal_cards.append((_pacc, _preg_))
+            _pacc += _pn_
+        _pal_cache = {}
+
+        def _pal_card(i):
+            reg = _pal_cards[0][1]
+            for s0, r_ in _pal_cards:
+                if i >= s0:
+                    reg = r_
+            return reg
+
+        def palette_anchor_for(i):
+            reg = _pal_card(i)
+            key = (args.palette_anchor_mode, reg.get("name"))
+            if key not in _pal_cache:
+                _pal_cache[key] = (_palette.swatch_lab_stats(reg.get("palette") or "", seed=cfg["seed"])
+                                   if args.palette_anchor_mode == "lab"
+                                   else _palette.swatch_stats(reg.get("palette") or ""))
+            return _pal_cache[key]
+
+        def palette_ipa_for(i):
+            reg = _pal_card(i)
+            key = ("ipa", reg.get("name"))
+            if key not in _pal_cache:
+                im = _palette.swatch_image(reg.get("palette") or "", cfg["width"], cfg["height"],
+                                           seed=cfg["seed"])
+                _pal_cache[key] = upload_image(im, f"zoomer_palipa_{name}_{reg.get('name')}.png") \
+                    if im is not None else None
+                if im is not None:
+                    (out_dir / "build").mkdir(parents=True, exist_ok=True)
+                    im.save(out_dir / "build" / f"palette_{reg.get('name')}.png")
+            return _pal_cache[key]
+        print(f"[dive] PALETTE anchor {args.palette_anchor} / ipa {args.palette_ipa} over "
+              f"{len(_pal_cards)} cards", flush=True)
     # TRACKER v3 (2026-07-31, PLAN "TRACKER v3"): two-stage point→object tracking with EXACT
     # geometry propagation (engine/track.py). Emergence point committed per run; detect.locate
     # tries at a low cadence; the first confident lock hands off seamlessly (the aim was already
@@ -1563,7 +1668,12 @@ def main():
             if cfg["build"] == "out":
                 fed, box = shrink_transform(img, z, cx, cy)
                 fed = detail_boost(fed, cfg)
-                if cfg["color_match"] and not in_transition and p_idx in phase_refs:
+                _anch = palette_anchor_for(i) if (args.palette_anchor and not in_transition) else None
+                if _anch:
+                    fed = (_palette.transfer_lab(fed, _anch, args.palette_anchor)
+                           if args.palette_anchor_mode == "lab"
+                           else color_match(fed, _anch, args.palette_anchor))
+                elif cfg["color_match"] and not in_transition and p_idx in phase_refs:
                     fed = color_match(fed, phase_refs[p_idx], cfg["color_match"])
                 mask_ref = upload_image(
                     ring_mask(fed.width, fed.height, box),
@@ -1643,7 +1753,12 @@ def main():
                         plog.flush()
                     den = max(den, _dboost)
                 fed = detail_boost(fed, cfg)
-                if cfg["color_match"] and not in_transition and p_idx in phase_refs:
+                _anch = palette_anchor_for(i) if (args.palette_anchor and not in_transition) else None
+                if _anch:
+                    fed = (_palette.transfer_lab(fed, _anch, args.palette_anchor)
+                           if args.palette_anchor_mode == "lab"
+                           else color_match(fed, _anch, args.palette_anchor))
+                elif cfg["color_match"] and not in_transition and p_idx in phase_refs:
                     fed = color_match(fed, phase_refs[p_idx], cfg["color_match"])
                 cam_pasted = False
                 for c in cameos:
@@ -1911,6 +2026,10 @@ def main():
                         # the frame; once it fills the view we are at its surface
                         prompt = prompt + ", " + HERO_CLAUSE
                         hero_neg = HERO_NEG
+            _pal_ipa_img, _pal_ipa_w = None, 0.0
+            if args.palette_ipa and not in_loop_tail(i) and plate_ipa_img is None:
+                _pal_ipa_img = palette_ipa_for(i)
+                _pal_ipa_w = args.palette_ipa if _pal_ipa_img else 0.0
             ref = upload_image(fed, f"zoomer_feed_{name}.png")
             wf = build_workflow(cfg, prompt, seed, init_image=ref, denoise=den,
                                 prev_prompt=prev_prompt if in_transition else None,
@@ -1933,10 +2052,14 @@ def main():
                                 depth_preproc=None if (res_ctl or hero_ctl or plate_ctl)
                                 else _depth,
                                 ipa_image=(loop.get("_home_ref") if tail_ipa_w > 0.01
-                                           else plate_ipa_img),
-                                ipa_weight=(tail_ipa_w if tail_ipa_w > 0.01 else plate_ipa_w),
+                                           else (plate_ipa_img if plate_ipa_img is not None
+                                                 else _pal_ipa_img)),
+                                ipa_weight=(tail_ipa_w if tail_ipa_w > 0.01
+                                            else (plate_ipa_w if plate_ipa_img is not None
+                                                  else _pal_ipa_w)),
                                 ipa_mask=(None if tail_ipa_w > 0.01 else plate_ipa_mask),
-                                neg_extra=hero_neg or plate_neg)
+                                neg_extra=", ".join(x for x in (hero_neg or plate_neg,
+                                                                args.neg_extra) if x) or None)
         png = run_workflow(wf)
         img = Image.open(io.BytesIO(png)).convert("RGB")
         if img.size != (cfg["width"], cfg["height"]):

@@ -212,6 +212,11 @@ def render_one(journey, force=False, new_seed=True, from_card=None):
             # the nightly until Phil has judged the full-video test
             argv += ["--plate", str(_pm), "--plate-cn", "0", "--plate-void-gate",
                      "--plate-intro", str(pl.jload()["settings"].get("plate_intro", "plain"))]
+        _pa = float(pl.jload()["settings"].get("palette_anchor") or 0)
+        if _pa > 0:
+            # PALETTE ANCHOR (2026-10-03, PLAN "THE ORANGE WASH"): the authored palette as
+            # the colour-match target every frame — the counter to the chain's orange drift
+            argv += ["--palette-anchor", f"{_pa:g}"]
         if from_card:
             argv += ["--from-card", str(from_card)]
         if (force or from_card) and new_seed:
