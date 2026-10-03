@@ -2290,3 +2290,18 @@ as ball-and-stick crystals in perspective, the nucleus as a droplet the camera e
 per frame at 576x1024 (hex 55k items = the slow one). NEXT (stage lab step 1): the brand pass —
 each kit frame through img2img at denoise 0.30/0.45/0.60 with a real card's prompt + deck
 (scratchpad/stage_lab.py), then step 2 = the ice_lattice card in motion (PLAN above).
+
+## STAGE LAB STEP 1 — the brand pass (2026-10-03 16:20, output/stage_lab/brand_pass_sheet.png)
+Four kit frames (ice hex lattice / calcite rhombo / nucleus droplet / diamond carbon) through ONE
+img2img with the real card's prompt + deck, denoise 0.30 / 0.45 / 0.60, with and without the
+stage's own depth as CN (0.45). RESULT: at 0.30-0.45 DreamShaper barely touches the CG render
+(flat spheres stay flat spheres) — unlike the planet plate, whose txt2img texture already looked
+photographic, a stage render needs a COSTUME pass; at 0.60 it comes alive and STAYS ITSELF:
+the ice lattice became an open hexagonal cage structure (exactly the "hexagon galleries" the card
+asks for, never beads in mortar), the nucleus a cluster of glossy red + pearl spheres, calcite a
+field of crystal facets with blue beads, diamond glossy teal spheres on a lattice. Depth-CN 0.45
+keeps the result closer to the stage geometry (less reinterpretation) at every denoise.
+IMPLICATION for the chain (step 2's design): a stage card should open with a HIGH-denoise costume
+(~0.60, stage depth as CN) on its first frame or two, then continue at the schedule's ~0.45 with
+the stage composited at a decaying identity weight + the stage depth as CN — not the planet's
+0.30 cap. ~6-9 s per call; the renderer itself 0.4-2.3 s/frame.
