@@ -251,3 +251,46 @@ if __name__ == '__main__':
             rgb, dep = st.frame_images(f)
             rgb.save(out / f'{name}_{f:02d}.png'); dep.save(out / f'{name}_{f:02d}_depth.png')
         print(f'{name}: {len(st.items)} items, build {tb:.1f}s, frame {(time.time() - t0 - tb) / 3:.1f}s')
+
+
+# ---- a stage for ONE dive card (engine integration, dive.py --stage) ---------------------------
+KITS = {'lattice': kit_lattice, 'nucleus': kit_nucleus}
+
+
+def aim_dir(ax, ay, w, h):
+    d = np.array([(ax - 0.5), (ay - 0.5) * h / w, 1.0], np.float32)
+    return d / np.linalg.norm(d)
+
+
+def build_card_stage(kit, params, zooms, anchor, w, h, seed=0, fill=0.55):
+    """Build the stage for one card: the kit's world, then the PLUNGE TARGET placed on the aim
+    ray at the depth that makes it fill the frame at the card's last frame (the containment
+    contract made physical): d_T = total advance + R / fill. For a lattice the nearest atom is
+    moved onto that point by translating the whole crystal (periodicity kept); for a nucleus
+    the droplet's centre is put there."""
+    st = Stage(zooms, [anchor] * max(1, len(zooms)), w, h)
+    st.anchor = anchor
+    p = dict(params or {})
+    A = sum((z - 1.0) / z for z in zooms)
+    d = aim_dir(anchor[0], anchor[1], w, h)
+    if kit == 'nucleus':
+        n, radius = int(p.get('n', 140)), float(p.get('radius', 0.09))
+        Rd = radius * 2.0 * (n / 0.64) ** (1 / 3) / 2.0 * 1.05
+        d_T = A + Rd / fill
+        p['centre'] = tuple(d * d_T)
+        kit_nucleus(st, seed=seed, **p)
+        st.target = tuple(d * d_T)
+    else:
+        kit_lattice(st, seed=seed, **p)
+        R = float(p.get('radius', 0.055))
+        d_T = A + R / fill
+        P_T = d * d_T
+        atoms = [(k, it) for k, it in enumerate(st.items) if it[0] == 'sphere' and abs(it[2] - R) < 1e-6
+                 or (it[0] == 'sphere' and abs(it[2] - R * 0.7) < 1e-6)]
+        if atoms:
+            k0, best = min(atoms, key=lambda kt: float(np.linalg.norm(np.asarray(kt[1][1]) - P_T)))
+            shift = P_T - np.asarray(best[1], np.float32)
+            st.items = [(it[0], np.asarray(it[1], np.float32) + shift, it[2], it[3], it[4]) for it in st.items]
+        st.target = tuple(P_T)
+    st.advance_total, st.d_target = A, d_T
+    return st

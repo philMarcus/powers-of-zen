@@ -2,19 +2,22 @@
   "settings": {
     "render_budget_min": 340,
     "max_ready_videos": 20,
+    "yt_desc_style": "classic",
+    "max_review_videos": 20,
     "journey_queue_target": 20,
     "refill_max_per_night": 5,
     "tier_share": {
-      "long": 0.6,
-      "medium": 0.15,
-      "short": 0.25
+      "long": 0.8,
+      "medium": 0.1,
+      "short": 0.1
     },
     "render_paused": false,
     "refill_paused": false,
     "plate_mode": "live",
+    "palette_anchor": 0.5,
     "post_every_hours": 19.0,
-    "post_next": "2026-09-20 00:00",
-    "plate_intro": "enter"
+    "post_next": "2026-10-04 06:00",
+    "plate_intro": "mix"
   },
   "journeys": {
     "stormglass": {
@@ -172,119 +175,271 @@
       "ts": "2026-08-26 18:01:04",
       "note": "rejected at video review"
     },
-    "mantis_drumline": {
-      "state": "queued",
-      "force": true,
-      "new_seed": true,
-      "ts": "2026-08-31 09:29:27",
-      "note": "re-render: video rejected in review",
-      "order": 7
-    },
-    "kelp_dynamo": {
-      "state": "queued",
-      "force": true,
-      "new_seed": true,
-      "ts": "2026-08-31 13:47:52",
-      "note": "re-render: video rejected in review",
-      "order": 8
-    },
-    "sunspot_archipelago": {
-      "state": "queued",
-      "force": true,
-      "new_seed": true,
-      "ts": "2026-08-31 13:48:35",
-      "note": "re-render: video rejected in review",
-      "order": 9
-    },
     "observatory_dusk": {
       "state": "rejected",
       "ts": "2026-08-31 13:51:01",
       "note": "rejected at video review"
     },
-    "firehawk_ridge": {
+    "thousand_moons": {
+      "state": "queued",
+      "order": 9,
+      "ts": "2026-09-22 00:25:21",
+      "note": "composed by midnight refill"
+    },
+    "bloom_rosary": {
+      "state": "queued",
+      "order": 10,
+      "ts": "2026-09-24 00:50:45",
+      "note": "composed by midnight refill"
+    },
+    "clathrate_seep": {
       "state": "queued",
       "order": 11,
-      "ts": "2026-09-03 00:30:39",
+      "ts": "2026-09-24 00:50:45",
       "note": "composed by midnight refill"
     },
-    "gulal_dusk": {
+    "lepidolite_halo": {
       "state": "queued",
       "order": 12,
-      "ts": "2026-09-03 00:30:39",
+      "ts": "2026-09-24 00:50:46",
       "note": "composed by midnight refill"
     },
-    "niobium_winter": {
+    "meridian_mounds": {
       "state": "queued",
       "order": 13,
-      "ts": "2026-09-03 00:30:39",
+      "ts": "2026-09-24 00:50:46",
       "note": "composed by midnight refill"
     },
-    "weddell_lightwell": {
+    "potter_waist": {
       "state": "queued",
       "order": 14,
-      "ts": "2026-09-03 00:30:40",
+      "ts": "2026-09-24 00:50:46",
       "note": "composed by midnight refill"
     },
-    "oort_hearth": {
+    "dazzle_bands": {
       "state": "queued",
       "order": 15,
-      "ts": "2026-09-04 00:19:51",
+      "ts": "2026-09-25 00:47:45",
       "note": "composed by midnight refill"
     },
-    "scarab_compass": {
+    "lotus_sieve": {
       "state": "queued",
       "order": 16,
-      "ts": "2026-09-04 00:19:51",
+      "ts": "2026-09-25 00:47:46",
       "note": "composed by midnight refill"
     },
-    "stromatolite_dawn": {
+    "maelstrom_eye": {
       "state": "queued",
       "order": 17,
-      "ts": "2026-09-04 00:19:51",
+      "ts": "2026-09-25 00:47:46",
       "note": "composed by midnight refill"
     },
-    "urchin_barren": {
+    "meeting_waters": {
       "state": "queued",
       "order": 18,
-      "ts": "2026-09-04 00:19:52",
+      "ts": "2026-09-25 00:47:46",
       "note": "composed by midnight refill"
     },
-    "jelly_pier": {
+    "plover_scrape": {
       "state": "queued",
       "order": 19,
-      "ts": "2026-09-06 00:55:19",
+      "ts": "2026-09-25 00:47:46",
       "note": "composed by midnight refill"
     },
+    "phage_landing": {
+      "state": "rejected",
+      "ts": "2026-09-25 14:21:13",
+      "note": "purged 2026-09-25 (Phil: tier rebalance to 80% long / 10% medium / 10% short) — re-queue from the Journeys tab if wanted"
+    },
+    "pika_larder": {
+      "state": "rejected",
+      "ts": "2026-09-25 14:21:13",
+      "note": "purged 2026-09-25 (Phil: tier rebalance to 80% long / 10% medium / 10% short) — re-queue from the Journeys tab if wanted"
+    },
+    "dugong_meadow": {
+      "state": "rejected",
+      "ts": "2026-09-25 14:21:13",
+      "note": "purged 2026-09-25 (Phil: tier rebalance to 80% long / 10% medium / 10% short) — re-queue from the Journeys tab if wanted"
+    },
+    "lissajous_stage": {
+      "state": "rejected",
+      "ts": "2026-09-25 14:21:13",
+      "note": "purged 2026-09-25 (Phil: tier rebalance to 80% long / 10% medium / 10% short) — re-queue from the Journeys tab if wanted"
+    },
+    "plasma_script": {
+      "state": "rejected",
+      "ts": "2026-09-25 14:21:13",
+      "note": "purged 2026-09-25 (Phil: tier rebalance to 80% long / 10% medium / 10% short) — re-queue from the Journeys tab if wanted"
+    },
+    "scarab_compass": {
+      "state": "rejected",
+      "ts": "2026-09-25 14:21:13",
+      "note": "purged 2026-09-25 (Phil: tier rebalance to 80% long / 10% medium / 10% short) — re-queue from the Journeys tab if wanted"
+    },
+    "oort_hearth": {
+      "state": "rejected",
+      "ts": "2026-09-25 14:21:13",
+      "note": "purged 2026-09-25 (Phil: tier rebalance to 80% long / 10% medium / 10% short) — re-queue from the Journeys tab if wanted"
+    },
     "pulsar_pasta": {
+      "state": "rejected",
+      "ts": "2026-09-25 14:21:13",
+      "note": "purged 2026-09-25 (Phil: tier rebalance to 80% long / 10% medium / 10% short) — re-queue from the Journeys tab if wanted"
+    },
+    "bluebell_chorus": {
       "state": "queued",
       "order": 20,
-      "ts": "2026-09-06 00:55:19",
+      "ts": "2026-09-26 00:58:58",
       "note": "composed by midnight refill"
+    },
+    "klondike_nugget": {
+      "state": "queued",
+      "order": 21,
+      "ts": "2026-09-26 00:58:58",
+      "note": "composed by midnight refill"
+    },
+    "macaw_lick": {
+      "state": "queued",
+      "order": 22,
+      "ts": "2026-09-26 00:58:58",
+      "note": "composed by midnight refill"
+    },
+    "sequoia_rosette": {
+      "state": "queued",
+      "order": 23,
+      "ts": "2026-09-26 00:58:59",
+      "note": "composed by midnight refill"
+    },
+    "valdes_blow": {
+      "state": "queued",
+      "order": 24,
+      "ts": "2026-09-26 00:58:59",
+      "note": "composed by midnight refill"
+    },
+    "bismuth_hopper": {
+      "state": "queued",
+      "order": 25,
+      "ts": "2026-09-27 00:52:15",
+      "note": "composed by midnight refill"
+    },
+    "cuttle_bridge": {
+      "state": "queued",
+      "order": 26,
+      "ts": "2026-09-27 00:52:15",
+      "note": "composed by midnight refill"
+    },
+    "labrador_schiller": {
+      "state": "queued",
+      "order": 27,
+      "ts": "2026-09-27 00:52:16",
+      "note": "composed by midnight refill"
+    },
+    "paradise_cape": {
+      "state": "queued",
+      "order": 28,
+      "ts": "2026-09-27 00:52:16",
+      "note": "composed by midnight refill"
+    },
+    "foam_nest": {
+      "state": "rejected",
+      "ts": "2026-10-03 10:09:15",
+      "note": "rejected at video review"
+    },
+    "puna_span": {
+      "state": "rejected",
+      "ts": "2026-10-03 10:09:46",
+      "note": "rejected at video review"
+    },
+    "sea_sparkle": {
+      "state": "rejected",
+      "ts": "2026-10-03 10:10:08",
+      "note": "rejected at video review"
     },
     "selenite_hothouse": {
       "state": "queued",
-      "order": 21,
-      "ts": "2026-09-06 00:55:19",
-      "note": "composed by midnight refill"
+      "force": true,
+      "new_seed": true,
+      "ts": "2026-10-03 15:54:40",
+      "note": "re-render: video rejected in review",
+      "order": 29
     },
-    "sloe_hedgerow": {
+    "kelp_dynamo": {
       "state": "queued",
-      "order": 22,
-      "ts": "2026-09-06 00:55:19",
-      "note": "composed by midnight refill"
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-10-03 16:33:45",
+      "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
+      "order": 0
     },
-    "octopus_garden": {
+    "sunspot_archipelago": {
       "state": "queued",
-      "order": 23,
-      "ts": "2026-09-19 00:32:28",
-      "note": "composed by midnight refill"
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-10-03 16:33:45",
+      "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
+      "order": 1
     },
-    "spouter_dawn": {
+    "gecko_rampart": {
       "state": "queued",
-      "order": 24,
-      "ts": "2026-09-19 00:32:28",
-      "note": "composed by midnight refill"
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-10-03 16:33:45",
+      "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
+      "order": 2
+    },
+    "anvil_country": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-10-03 16:33:45",
+      "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
+      "order": 3
+    },
+    "vernal_clutch": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-10-03 16:33:45",
+      "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
+      "order": 4
+    },
+    "cork_dehesa": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-10-03 16:33:45",
+      "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
+      "order": 5
+    },
+    "gulal_dusk": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-10-03 16:33:45",
+      "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
+      "order": 6
+    },
+    "stromatolite_dawn": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-10-03 16:33:45",
+      "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
+      "order": 7
+    },
+    "urchin_barren": {
+      "state": "queued",
+      "force": true,
+      "new_seed": false,
+      "ts": "2026-10-03 16:33:45",
+      "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
+      "order": 8
+    },
+    "venus_basket": {
+      "state": "rejected",
+      "ts": "2026-10-03 16:33:45",
+      "note": "old render rejected 2026-10-03; its palette-anchor re-render is the Music-stage video venus_basket_color (journeys/lab/)"
     }
   },
-  "updated": "2026-09-19 09:09:43"
+  "updated": "2026-10-03 16:33:45"
 }

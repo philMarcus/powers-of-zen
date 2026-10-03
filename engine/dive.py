@@ -972,6 +972,26 @@ def main():
                     help="LAB: IP-Adapter every travel frame toward a soft colour-field image of "
                          "the current card's palette at weight W (off inside the loop tail and "
                          "plate spans, which own the IPA slot)")
+    ap.add_argument("--stage", choices=("lattice", "nucleus"), default=None,
+                    help="LAB (PLAN 'THE MICRO STAGE'): render card --stage-card through a built "
+                         "3-D stage (engine/stage.py) composited every frame at the exact zoom, "
+                         "tracker bypassed, the stage's depth as the CN")
+    ap.add_argument("--stage-card", type=int, default=None, metavar="K",
+                    help="with --stage: render-order card index the stage owns")
+    ap.add_argument("--stage-params", default="", metavar="JSON",
+                    help="with --stage: kit parameters, e.g. '{\"variant\":\"rhombo\",\"spacing\":0.5}'")
+    ap.add_argument("--stage-seed", type=int, default=0, metavar="N",
+                    help="with --stage: kit seed (default: journey:card crc)")
+    ap.add_argument("--stage-den", type=float, default=0.60, metavar="D",
+                    help="with --stage: denoise floor across the card's arrival frames (the "
+                         "costume pass — the brand-pass lab needed ~0.6 to dress a CG render)")
+    ap.add_argument("--stage-den-travel", type=float, default=0.45, metavar="D",
+                    help="with --stage: denoise floor after the arrival")
+    ap.add_argument("--stage-cn", type=float, default=0.5, metavar="S",
+                    help="with --stage: depth-CN strength of the stage's own depth map")
+    ap.add_argument("--stage-id", type=float, default=0.55, metavar="W",
+                    help="with --stage: identity blend toward the stage render through travel "
+                         "(ramps 0.15 -> 1.0 across the arrival, decays to 0.6 W over the plunge)")
     ap.add_argument("--tag", default="", metavar="TAG",
                     help="LAB: suffix the run name (output/<journey>_<TAG>/vN) so lab arms never "
                          "share a vN sequence with the real render; --from-card prefix frames "
@@ -1229,6 +1249,8 @@ def main():
         "neg_extra": args.neg_extra, "palette_anchor": args.palette_anchor,
         "palette_anchor_mode": args.palette_anchor_mode,
         "palette_ipa": args.palette_ipa,
+        "stage": args.stage, "stage_card": args.stage_card, "stage_params": args.stage_params,
+        "stage_den": args.stage_den, "stage_cn": args.stage_cn, "stage_id": args.stage_id,
         "play_rot": play_rotation(spec, cfg["fps"], lap_cut) if not args.frames else 0,
         # per-CARD (register) frame counts: lets a future --from-card verify its prefix
         # still aligns after a journey edit
@@ -1487,6 +1509,49 @@ def main():
                   f"width at the bar line, then until the frame is inside the disc", flush=True)
         if args.plate and not plates:
             print("[dive] PLATE: no planet-class card in range — flag has no effect", flush=True)
+    # MICRO STAGE (lab, 2026-10-03 — PLAN "THE MICRO STAGE"): one card rendered through a
+    # built 3-D world (engine/stage.py). Same ownership rules as the plate: no resolve
+    # window, no cameo, no tracker inside the span; the stage owns aim + composition.
+    stage_at = [None] * total
+    _stage = None
+    if args.stage and "registers" in spec and cfg["build"] != "out":
+        if args.stage_card is None:
+            sys.exit("[dive] --stage needs --stage-card K")
+        import stage as _stagemod
+        _sregs = spec["registers"]
+        _snames = [r["name"] for r in _sregs]
+        _srs = spec.get("render_start")
+        _srot = _snames.index(_srs) if _srs in _snames else 0
+        _sorder = _sregs[_srot:] + _sregs[:_srot]
+        _scf = register_frame_counts(spec, cfg["fps"])
+        _sk = args.stage_card
+        if not (0 <= _sk < len(_scf)):
+            sys.exit(f"[dive] --stage-card must be 0..{len(_scf) - 1}")
+        _sS = sum(_scf[:_sk])
+        _sF = _scf[_sk]
+        _sE = min(total, _sS + _sF)
+        if loop and _sE > total - loop["frames"]:
+            sys.exit("[dive] the stage card lies inside the loop tail — pick a mid-chain card")
+        _sreg = _sorder[_sk]
+        _szw = [zoom_sched[x] for x in range(_sS, _sE)]
+        _sanchors = [(0.62, 0.40), (0.38, 0.40), (0.62, 0.60), (0.38, 0.60)]
+        _sanchor = _sanchors[_zlib.crc32(f"{spec.get('name')}:{_sreg.get('name')}".encode()) % 4]
+        _sparams = json.loads(args.stage_params) if args.stage_params else {}
+        _sseed = args.stage_seed or (_zlib.crc32(f"{spec.get('name')}:{_sreg.get('name')}".encode()) % 100000)
+        _stage = _stagemod.build_card_stage(args.stage, _sparams, _szw, _sanchor,
+                                            cfg["width"], cfg["height"], seed=_sseed)
+        _stage.S, _stage.E, _stage.fa = _sS, _sE, max(2, round(_sF * 0.25))
+        for _x in range(_sS, _sE):
+            stage_at[_x] = _stage
+        resolve_windows = [w for w in resolve_windows if w["w1"] <= _sS or w["w0"] >= _sE]
+        for c in cameos:
+            if _sS <= c["start"] < _sE:
+                c["_done"] = True
+                print(f"[dive] stage: cameo at frame {c['start']} refused", flush=True)
+        print(f"[dive] STAGE {args.stage} {_sparams} card {_sk} {_sreg.get('name')!r}: frames "
+              f"{_sS}..{_sE - 1}, {len(_stage.items)} items, anchor {_sanchor}, target depth "
+              f"{_stage.d_target:.2f} (advance {_stage.advance_total:.2f}), den {args.stage_den}/"
+              f"{args.stage_den_travel}, cn {args.stage_cn}, id {args.stage_id}", flush=True)
     if args.plan_only:
         _pc = [(c["start"], c["end"], Path(c["sprite"]).stem) for c in cameos]
         print(f"[dive] PLAN ONLY: total {total} frames, lap_cut {lap_cut}, loop "
@@ -1536,6 +1601,7 @@ def main():
         cmv = cam_sched[i] if i < len(cam_sched) else None
         rot_i = cfg["rotate_per_frame"] + (cmv.get("roll", 0.0) if cmv else 0.0)
         seed = cfg["seed"] + i
+        _st = stage_at[i] if i < len(stage_at) else None
         _pl = plate_at[i] if i < len(plate_at) else None
         if _pl is not None and (in_loop_tail(i) or _pl.done):
             _pl = None          # handed off: the next card's normal approach owns the frame
@@ -1590,6 +1656,8 @@ def main():
                 approaching = False       # the field is still resolving — drift aim, no lock
             if _pl is not None:
                 approaching, rwin = False, None   # the plate owns aim + composition
+            if _st is not None:
+                approaching, rwin = False, None   # the stage owns aim + composition
             ev = None
             if approaching:
                 if _trk is None or _trk.ap is not ap:
@@ -1635,6 +1703,13 @@ def main():
                     row = {"i": i - 1, "mode": "plate", "z": round(z, 4),
                            "size": round(_pl.size, 4), "tx": round(_pl.tx, 4),
                            "ty": round(_pl.ty, 4)}
+                elif _st is not None:
+                    # the stage's anchor is the zoom's FIXED POINT: crop centre
+                    # c = a - (a - 0.5)/z maps a onto itself (plate.aim's ease-0 formula)
+                    _ax, _ay = _st.anchor
+                    cx, cy = _ax - (_ax - 0.5) / z, _ay - (_ay - 0.5) / z
+                    row = {"i": i - 1, "mode": "stage", "z": round(z, 4),
+                           "tx": round(_ax, 4), "ty": round(_ay, 4)}
                 else:
                     row = {"i": i - 1, "mode": "tail" if in_loop_tail(i) else "drift",
                            "z": round(z, 4)}
@@ -1690,8 +1765,8 @@ def main():
                 if in_loop_tail(i):
                     _tap = max(0.0, 1.0 - (i - (total - loop["frames"]) + 1) / loop["frames"])
                 pk = (cfg["parallax_gain"] if par_depth is not None else 0.0) * _tap
-                if _pl is not None:
-                    pk = 0.0          # the globe's scheduled growth IS the depth motion
+                if _pl is not None or _st is not None:
+                    pk = 0.0          # the globe's/stage's scheduled growth IS the depth motion
                 # Phase D: this frame's depth-move components (they ride the same depth
                 # field + fused remap as the parallax; taper with it across the loop tail)
                 _orb = _dol = _tlt = 0.0
@@ -1907,6 +1982,35 @@ def main():
                     plate_log.write(json.dumps(_pl.row(i, den=round(den, 3),
                                                        mode=args.plate)) + "\n")
                     plate_log.flush()
+            stage_ctl, stage_cn = None, 0.0
+            if _st is not None:
+                # MICRO STAGE: composite the built world at the exact scheduled geometry.
+                # Identity ramps in across the arrival (the old texture resolves INTO the
+                # stage under the costume denoise), holds through travel, relaxes over the
+                # plunge; the stage's own depth is the CN so structure agrees with pixels.
+                _sj = i - _st.S
+                _srgb, _sdep = _st.frame_images(_sj)
+                _sn = _st.E - _st.S
+                if _sj < _st.fa:
+                    _wid = 0.15 + 0.85 * (_sj + 1) / _st.fa
+                    den = max(den, args.stage_den)
+                else:
+                    _tq = max(0.0, (_sj - 0.75 * _sn) / max(1.0, 0.25 * _sn))
+                    _wid = args.stage_id * (1.0 - 0.4 * min(1.0, _tq))
+                    den = max(den, args.stage_den_travel)
+                if _srgb.size != fed.size:
+                    _srgb = _srgb.resize(fed.size, Image.LANCZOS)
+                fed = Image.blend(fed, _srgb, _wid)
+                stage_ctl = upload_image(_sdep, f"zoomer_stage_{name}.png")
+                stage_cn = args.stage_cn
+                _sdir = out_dir / "build" / "stage"
+                _sdir.mkdir(parents=True, exist_ok=True)
+                if _sj % 4 == 0 or _sj < 3:
+                    _srgb.save(_sdir / f"{i:05d}_stage.png")
+                    fed.save(_sdir / f"{i:05d}_fed.png")
+                if tlog:
+                    tlog.write(json.dumps({"i": i, "mode": "stage_frame", "wid": round(_wid, 3),
+                                           "den": round(den, 3)}) + "\n")
             tail_ipa_w, tail_ctl, tail_cn = 0.0, None, 0.0
             if in_loop_tail(i):
                 j = i - (total - loop["frames"])
@@ -2041,15 +2145,16 @@ def main():
                                 # paste). --hero-cn replaces it with the SCHEDULED-size synthetic
                                 # depth (the disc IS a depth map — no preprocessor). In the loop
                                 # tail the SAME channel carries frame 0's depth — never both.
-                                ctrl_image=res_ctl or hero_ctl or plate_ctl
+                                ctrl_image=stage_ctl or res_ctl or hero_ctl or plate_ctl
                                 or (ref if (approaching or plate_feed_cn) else tail_ctl),
-                                cn_strength=res_cn if res_ctl
+                                cn_strength=stage_cn if stage_ctl
+                                else res_cn if res_ctl
                                 else (hero_cn if hero_ctl
                                       else (plate_cn if plate_ctl
                                             else (cfg["approach_cn"]
                                                   if (approaching or plate_feed_cn)
                                                   else tail_cn))),
-                                depth_preproc=None if (res_ctl or hero_ctl or plate_ctl)
+                                depth_preproc=None if (stage_ctl or res_ctl or hero_ctl or plate_ctl)
                                 else _depth,
                                 ipa_image=(loop.get("_home_ref") if tail_ipa_w > 0.01
                                            else (plate_ipa_img if plate_ipa_img is not None

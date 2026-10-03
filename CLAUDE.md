@@ -120,6 +120,16 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-03 (LATE — PHIL'S VERDICTS APPLIED): palette anchor APPROVED ("a strict upgrade") → settings palette_anchor=0.5
+LIVE (the nightly passes --palette-anchor 0.5 from tonight; verify in night_batch.log's argv line); venus_basket_color
+sent to Music by Phil (it posts under that lab name; journeys/lab/ resolves it); VIDEO REVIEW CLEARED — the 9 pre-anchor
+renders rejected and their journeys re-queued at the FRONT, same seed, force (kelp_dynamo sunspot_archipelago
+gecko_rampart anvil_country vernal_clutch cork_dehesa gulal_dusk stromatolite_dawn urchin_barren); venus_basket's old
+video rejected without a re-queue (its fix is venus_basket_color). Tonight 01:30 renders the first four with the anchor.
+Phil: "keep going" on the STAGE — step 2 (one card in motion) is wired: dive.py --stage lattice|nucleus --stage-card K
+[--stage-params JSON --stage-den 0.6 --stage-den-travel 0.45 --stage-cn 0.5 --stage-id 0.55]; first arms running from
+16:39 (urchin_barren calcite_rhombs k8 rhombo lattice; sunspot_archipelago nucleus_droplet k6) → output/
+<j>_platelive_stage_*/v1, measure with scratchpad/stage_measure.py. Lab arm dirs are disposable.
 2026-10-03 (EVENING — THE ORANGE WASH FOUND + COUNTERED; MICRO "STAGE" PLANNED; read PLAN "THE ORANGE WASH" + "THE
 MICRO STAGE"): Phil's next front = the micro realm (everything < 1 cm renders as "circles in pasty mortar"); surveying it
 found a bigger sameness driver: EVERY render drifts to one orange palette within ~100 frames whatever the deck or authored
