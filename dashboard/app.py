@@ -1141,7 +1141,11 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
 with tabs[8]:  # HOW IT WORKS — the visual map of the whole project (static page, 2026-09-19)
     # Built by scripts/build_overview.py into dashboard/overview.html: one self-contained page
     # (inline CSS + SVG + a few real frames). Static on purpose for now; rebuild to refresh.
-    _ov = pl.ROOT / "dashboard" / "overview.html"
+    # 2026-10-03: the page was promoted to the repo root as index.html (the powersofzen.com
+    # landing page, hand-polished there) — read that; the dashboard/ copy is only a preview build
+    _ov = pl.ROOT / "index.html"
+    if not _ov.exists():
+        _ov = pl.ROOT / "dashboard" / "overview.html"
     if _ov.exists():
         import streamlit.components.v1 as _components
         _components.html(_ov.read_text(encoding="utf-8"), height=7000, scrolling=True)

@@ -27,6 +27,9 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 import pipeline as pl  # noqa: E402
 
+# PREVIEW build. The published copy is /index.html at the repo root (powersofzen.com landing,
+# promoted 2026-10-02 and hand-polished there — first-person voice, corrected stats). A rebuild
+# never overwrites it: diff this preview against index.html and promote by hand.
 OUT = ROOT / "dashboard" / "overview.html"
 
 
