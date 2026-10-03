@@ -2336,3 +2336,20 @@ OPEN: the void is pitch black (the kit's bg) where the card says "void maroon" �
 the palette's dark phrase; nucleon colours should come from the palette too (hand-set here).
 BOTH KITS WORK MECHANICALLY. Next: per-card `stage` field in the journey + palette-derived kit
 colours + several stage cards per render → a FULL same-seed A/B (plain vs staged) for Phil.
+
+## STAGE LAB STEP 2 — arm B on the lattice bed + the first FULL staged render (2026-10-03 17:06-17:10)
+Arm B (identity 0.35 / den-travel 0.50 / CN 0.40 + lighting v0.2) vs arm A (0.55 / 0.45 / 0.50):
+B keeps the lattice (struts, node atoms, the rhombic grid) but lets DreamShaper costume it —
+amethyst facets, sparkle, the house gloss — where A read as rigid dark CG. Edge-correlation to
+the stage drops 0.22-0.37 -> 0.09-0.28 (less literal), orange stays 0.02-0.23 (authored violet
+holds). Strips: scratchpad/orange/stage_urchin_strip.png (A) / stage_urchinB_strip.png (B).
+B'S SETTINGS ARE THE FIRST-FULL-VIDEO DEFAULTS. Journey-field stages shipped: a card's
+`stage: {"kit": lattice|nucleus|quark, ...}` builds its stage (several per render; colours and
+the void from the card's palette via engine/palette.py; cameos refused on stage cards — move
+the cameo to a neighbouring realm-matched card, as the lab copy does).
+FULL STAGED RENDER launched 17:10: journeys/lab/sunspot_archipelago_stage.json (nucleus_droplet =
+nucleus kit, quark_trio = quark kit, cameo moved to plasma_fog/belle), seed 187198 = the seed
+tonight's nightly uses for the plain+anchor sunspot_archipelago re-render → TOMORROW MORNING
+Video Review holds the A/B: sunspot_archipelago (plain, anchor) vs sunspot_archipelago_stage.
+NEXT KITS by catalog weight: cellular foam (272 cards), molecular tubes/PDB (121), fog atom
+("one atom as fog about a point", the atomic band's most common card), sheets/lamellae.

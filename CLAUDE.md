@@ -130,6 +130,13 @@ Phil: "keep going" on the STAGE — step 2 (one card in motion) is wired: dive.p
 [--stage-params JSON --stage-den 0.6 --stage-den-travel 0.45 --stage-cn 0.5 --stage-id 0.55]; first arms running from
 16:39 (urchin_barren calcite_rhombs k8 rhombo lattice; sunspot_archipelago nucleus_droplet k6) → output/
 <j>_platelive_stage_*/v1, measure with scratchpad/stage_measure.py. Lab arm dirs are disposable.
+STAGE RESULTS (PLAN "STAGE LAB STEP 2"): BOTH KITS WORK IN MOTION — a real crystal lattice persists across the calcite card
+and the plunge grows one atom; a real nucleus (glossy red + pearl nucleons) grows on schedule where the baseline drew an
+eyeball and a pendant. Arm B settings (id 0.35, den-travel 0.5, cn 0.4) = the look. FULL STAGED RENDER running from
+17:10 (tmux full_stage, log scratchpad/orange/full_sunspot_archipelago_stage.log): sunspot_archipelago_stage (journeys/lab/,
+seed 187198, nucleus + quark cards staged) → Review ~18:40. TONIGHT'S NIGHTLY renders plain sunspot_archipelago at the same
+seed with the anchor → TOMORROW MORNING Phil compares the two full videos in Video Review (same journey, same seed, with and
+without the stage). Journey field for stages: `stage: {"kit": lattice|nucleus|quark, ...}` on a card (cameos refused there).
 2026-10-03 (EVENING — THE ORANGE WASH FOUND + COUNTERED; MICRO "STAGE" PLANNED; read PLAN "THE ORANGE WASH" + "THE
 MICRO STAGE"): Phil's next front = the micro realm (everything < 1 cm renders as "circles in pasty mortar"); surveying it
 found a bigger sameness driver: EVERY render drifts to one orange palette within ~100 frames whatever the deck or authored

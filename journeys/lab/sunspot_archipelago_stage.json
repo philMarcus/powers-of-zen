@@ -78,6 +78,14 @@
       "target_phrase": "a red sphere",
       "resolve": {
         "mode": "sea"
+      },
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.63,
+          0.42
+        ],
+        "size": 0.14
       }
     },
     {
@@ -89,14 +97,6 @@
       "scene": "a nucleus held as a quivering droplet of glowing spheres, garnet and pearl beads pressed shoulder to shoulder into a rough ball, a gold haze standing in every gap among them, the droplet's rim uneven and dimpled where beads press outward, faint sparks flickering at its verge, wide emptiness around it with the plasma's far drifts showing as dim points",
       "target": "a pearl bead",
       "target_phrase": "a pale round bead",
-      "cameo": {
-        "sprite": "output/mascots/canon/clark.png",
-        "pos": [
-          0.63,
-          0.42
-        ],
-        "size": 0.14
-      },
       "stage": {
         "kit": "nucleus",
         "n": 160,
@@ -141,5 +141,5 @@
   "music_key": "D minor",
   "render_start": "granulation_sea",
   "scaffold_name": "sunspot_archipelago",
-  "_lab": "2026-10-03 STAGE A/B: same seed as the nightly plain+anchor render; nucleus + quark cards staged"
+  "_lab": "2026-10-03 STAGE A/B: same seed as the nightly plain+anchor render; nucleus + quark cards staged | cameo moved off the staged nucleus card to plasma_fog (belle, exp -5.8): stage cards refuse cameos"
 }
