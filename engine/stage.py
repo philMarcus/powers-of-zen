@@ -370,6 +370,174 @@ def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0
         kit_quark(st, seed=seed, **p)
         st.target, st.advance_total, st.d_target = tuple(d * d_T), A, d_T
         return st
+    if kit in ('fog', 'tubes'):
+        st = Stage(zooms, [anchor] * max(1, len(zooms)), w, h, bg=dark, fog_rgb=dark)
+        st.anchor = anchor
+        A = sum((z - 1.0) / z for z in zooms)
+        d = aim_dir(anchor[0], anchor[1], w, h)
+        if kit == 'fog':
+            size = float(p.get('size', 1.0))
+            d_T = A + size * 0.5 / fill          # the outer shell fills the frame at the bar line
+            p['centre'] = tuple(d * d_T)
+            kit_fog_atom(st, seed=seed, **p)
+        else:
+            size = float(p.get('size', 0.9))
+            d_T = A + size * 0.5 / fill
+            p['target_depth'] = tuple(d * d_T)
+            kit_tubes(st, seed=seed, **p)
+        st.target, st.advance_total, st.d_target = tuple(d * d_T), A, d_T
+        return st
     st = build_card_stage(kit, st_params, zooms, anchor, w, h, seed=seed, fill=fill)
     st.bg = np.array(dark, np.float32); st.fog_rgb = np.array(dark, np.float32)
     return st
+
+
+# ---- fog atom + molecular tube kits (2026-10-03 evening) ---------------------------------------
+def kit_fog_atom(stage, centre=(0, 0, 3.0), size=1.0, colors=((0.6, 0.8, 1.0), (1.0, 0.95, 0.85)),
+                 shells=3, seed=0, glow=0.5, neighbours=12, lobes=1):
+    """ONE atom as fog about a point: a bright core point, nested probability shells of fog
+    (glow spheres of growing radius and falling intensity, with a few denser lobes), and the
+    neighbouring atoms of the lattice as far fainter fogs — the atomic band's commonest card."""
+    rng = np.random.default_rng(seed)
+    c0 = np.asarray(centre, np.float32)
+    core_rgb, fog_rgb = colors[1 % len(colors)], colors[0]
+    stage.items.append(('sphere', c0, size * 0.03, core_rgb, 1.2))
+    stage.items.append(('glow', c0, size * 0.08, core_rgb, glow * 1.4))
+    for k in range(1, shells + 1):
+        r = size * 0.5 * (k / shells) ** 1.3
+        stage.items.append(('glow', c0, r, fog_rgb, glow * 0.22 / k))
+        # grain in the shell: a ring of soft puffs so the fog has texture, not a flat disc
+        for _ in range(10 * k):
+            v = rng.normal(size=3); v /= np.linalg.norm(v)
+            stage.items.append(('glow', c0 + v * r * (0.85 + 0.3 * rng.random()), r * 0.22, fog_rgb, glow * 0.12 / k))
+    if lobes >= 2:   # a two-lobed (p-orbital) atom: two dense puffs on an axis
+        ax = rng.normal(size=3); ax /= np.linalg.norm(ax)
+        for sgn in (-1, 1):
+            stage.items.append(('glow', c0 + sgn * ax * size * 0.32, size * 0.26, fog_rgb, glow * 0.35))
+    for _ in range(neighbours):
+        v = rng.normal(size=3); v /= np.linalg.norm(v)
+        p = c0 + v * size * (1.6 + 2.5 * rng.random())
+        stage.items.append(('sphere', p, size * 0.02, core_rgb, 0.8))
+        stage.items.append(('glow', p, size * 0.35, fog_rgb, glow * 0.10))
+    stage.jitter = size * 0.004
+    return stage
+
+
+_PDB_CACHE = {}
+
+
+def pdb_trace(pdb_id, chain=None):
+    """CA trace (N x 3, unit-normalised) of a PDB entry, fetched once and cached on disk under
+    output/realm_refs/pdb/. Falls back to a synthetic helix bundle when offline."""
+    from pathlib import Path as _P
+    d = _P('/mnt/c/Users/Phil/zoomer/output/realm_refs/pdb'); d.mkdir(parents=True, exist_ok=True)
+    f = d / f'{pdb_id.upper()}.pdb'
+    if pdb_id in _PDB_CACHE:
+        return _PDB_CACHE[pdb_id]
+    txt = None
+    if f.exists():
+        txt = f.read_text()
+    else:
+        try:
+            import urllib.request
+            txt = urllib.request.urlopen(f'https://files.rcsb.org/download/{pdb_id.upper()}.pdb', timeout=20).read().decode()
+            f.write_text(txt)
+        except Exception:
+            txt = None
+    chains = {}
+    if txt:
+        for l in txt.splitlines():
+            if l.startswith('ATOM') and l[12:16].strip() == 'CA':
+                chains.setdefault(l[21], []).append((float(l[30:38]), float(l[38:46]), float(l[46:54])))
+    if not chains:                                   # offline fallback: three coiled helices
+        t = np.linspace(0, 12 * np.pi, 400)
+        chains = {k: list(zip(np.cos(t + k) * 6 + k * 9, np.sin(t + k) * 6, t * 1.5)) for k in range(3)}
+    keep = [chain] if chain and chain in chains else list(chains.keys())
+    pts = [np.array(chains[c], np.float32) for c in keep]
+    allp = np.concatenate(pts)
+    ctr, scale = allp.mean(0), np.abs(allp - allp.mean(0)).max()
+    out = [(p - ctr) / scale for p in pts]
+    _PDB_CACHE[pdb_id] = out
+    return out
+
+
+def kit_tubes(stage, pdb='4HHB', n_copies=14, size=0.9, radius=0.03, colors=((0.95, 0.5, 0.6), (0.6, 0.85, 1.0)),
+              seed=0, glow=0.12, spread=(2.2, 2.4, 7.0), target_depth=None):
+    """A sea of real molecules: copies of a PDB backbone (CA trace as a sphere-chain tube, one
+    colour per chain) scattered at all depths, one copy on the aim ray at target_depth so the
+    plunge lands on a molecule."""
+    rng = np.random.default_rng(seed)
+    chains = pdb_trace(pdb)
+    for k in range(n_copies):
+        Rm = rot_matrix(rng)
+        if k == 0 and target_depth is not None:
+            c = np.asarray(target_depth, np.float32)
+        else:
+            c = np.array([(rng.random() - 0.5) * spread[0], (rng.random() - 0.5) * spread[1],
+                          0.6 + rng.random() * spread[2]], np.float32)
+        for ci, ch in enumerate(chains):
+            col = colors[ci % len(colors)]
+            p = (ch * size * 0.5) @ Rm.T + c
+            # resample the trace so beads overlap into a tube
+            seg = np.linalg.norm(np.diff(p, axis=0), axis=1)
+            for a, b, L in zip(p[:-1], p[1:], seg):
+                n = max(1, int(L / (radius * 0.9)))
+                for t in np.linspace(0, 1, n, endpoint=False):
+                    stage.items.append(('sphere', a + (b - a) * t, radius, col, glow))
+    stage.jitter = radius * 0.05
+    return stage
+
+
+KITS['fog'] = kit_fog_atom
+KITS['tubes'] = kit_tubes
+
+
+# ---- AUTO-STAGE: suggest a kit for an existing card from its words + band ---------------------
+_RX = {
+    'lattice': re.compile(r"\b(lattice|crystal|rhomb|cubic|hexagon|tetrahedr|unit cell|courses? of atoms|"
+                          r"atoms? (?:set|at rest|in ranks|packed)|graphite|diamond|dendrit|sheet silicate)", re.I),
+    'nucleus': re.compile(r"\b(nucleus|nuclei|droplet of|glowing spheres|nucleon|proton|neutron|alpha|pasta)\b", re.I),
+    'quark':   re.compile(r"\b(quark|gluon|flux tube|three glowing cores|taut (?:amber |light )?strands?|rope of light)", re.I),
+    'fog':     re.compile(r"\b(fog|probability|electron cloud|cloud of|shells? of radiance|orbital|haze about|lobes?|"
+                          r"one atom|single atom|an atom)\b", re.I),
+    'tubes':   re.compile(r"\b(protein|helix|helical|ribbon|chain|rope|collagen|backbone|coil|enzyme|antibody|"
+                          r"motor|turbine|fib(?:er|re|ril)s?)\b", re.I),
+}
+_VARIANT = [('hex', re.compile(r"\b(ice|hexagon|six-sided|quartz|snow)\b", re.I)),
+            ('rhombo', re.compile(r"\b(calcite|rhomb|leaning|slanted box)\b", re.I)),
+            ('diamond', re.compile(r"\b(diamond|carbon|tetrahedr)\b", re.I)),
+            ('sheets', re.compile(r"\b(graphite|sheet|layer|mica|slate|clay|stack)", re.I)),
+            ('fcc', re.compile(r"\b(metal|copper|gold|silver|iron|brass|bronze|close-packed)\b", re.I)),
+            ('cubic', re.compile(r"\b(salt|halite|cube|cubic)\b", re.I))]
+_PDB_BY_WORD = [('1BNA', re.compile(r"\b(dna|double.helix|base.pair|nucleosome)\b", re.I)),
+                ('1TUB', re.compile(r"\b(microtubule|tubulin)\b", re.I)),
+                ('1CGD', re.compile(r"\b(collagen|triple.helix)\b", re.I)),
+                ('4HHB', re.compile(r"\b(hemoglobin|haemoglobin|blood|oxygen)\b", re.I)),
+                ('1IGT', re.compile(r"\b(antibody|immunoglobulin)\b", re.I)),
+                ('2VV5', re.compile(r"\b(atp|synthase|rotor|turbine)\b", re.I))]
+
+
+def suggest_stage(reg):
+    """A `stage` dict for a card, or None (render as today). Atomic/subnuclear bands only for
+    now (the two bands DreamShaper fails hardest at); molecular gets tubes when a protein word
+    is present. Cellular cards are left alone until the foam kit exists."""
+    exp = reg.get('exp')
+    if not isinstance(exp, (int, float)) or exp > -6:
+        return None
+    txt = f"{reg.get('scene') or ''} {reg.get('target') or reg.get('target_phrase') or ''}"
+    if exp <= -12:
+        if _RX['quark'].search(txt):
+            return {'kit': 'quark'}
+        return {'kit': 'nucleus', 'n': 160, 'radius': 0.085}
+    if exp <= -8.5:
+        if _RX['lattice'].search(txt):
+            var = next((v for v, rx in _VARIANT if rx.search(txt)), 'cubic')
+            return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'radius': 0.06}
+        if _RX['fog'].search(txt) or re.search(r"\batom\b", txt, re.I):
+            return {'kit': 'fog', 'size': 1.0, 'lobes': 2 if re.search(r"two|dumbbell|lobe", txt, re.I) else 1}
+        return None
+    # molecular (-8.5 .. -6)
+    if _RX['tubes'].search(txt):
+        pdb = next((pid for pid, rx in _PDB_BY_WORD if rx.search(txt)), '4HHB')
+        return {'kit': 'tubes', 'pdb': pdb, 'n_copies': 12}
+    return None
