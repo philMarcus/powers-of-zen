@@ -370,7 +370,7 @@ def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0
         kit_quark(st, seed=seed, **p)
         st.target, st.advance_total, st.d_target = tuple(d * d_T), A, d_T
         return st
-    if kit in ('fog', 'tubes'):
+    if kit in ('fog', 'tubes', 'tissue'):
         st = Stage(zooms, [anchor] * max(1, len(zooms)), w, h, bg=dark, fog_rgb=dark)
         st.anchor = anchor
         A = sum((z - 1.0) / z for z in zooms)
@@ -380,6 +380,12 @@ def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0
             d_T = A + size * 0.5 / fill          # the outer shell fills the frame at the bar line
             p['centre'] = tuple(d * d_T)
             kit_fog_atom(st, seed=seed, **p)
+        elif kit == 'tissue':
+            size = float(p.get('size', 1.0))
+            cell = float(p.get('cell', 0.22))
+            d_T = A + cell * size * 0.5 / fill        # ONE cell fills the frame at the bar line
+            p['centre'] = tuple(d * d_T)
+            kit_tissue(st, seed=seed, **p)
         else:
             size = float(p.get('size', 0.9))
             d_T = A + size * 0.5 / fill
@@ -541,3 +547,60 @@ def suggest_stage(reg):
         pdb = next((pid for pid, rx in _PDB_BY_WORD if rx.search(txt)), '4HHB')
         return {'kit': 'tubes', 'pdb': pdb, 'n_copies': 12}
     return None
+
+
+# ---- TISSUE kit: cells packed wall to wall (cellular band, 272 cards) -------------------------
+def kit_tissue(stage, centre=(0, 0, 3.0), size=1.0, colors=((0.55, 0.85, 0.6), (0.95, 0.9, 0.7)),
+               wall_rgb=None, cell=0.22, n_layers=3, layer_gap=0.9, organelles=3, seed=0, glow=0.1,
+               tilt=0.35, target_depth=None):
+    """A tissue in section seen obliquely: a few stacked sheets of polygonal cells (2-D Voronoi
+    on each sheet), the walls as raised ridges (sphere chains along the Voronoi edges), a few
+    organelle spheres inside every cell, the sheets receding into fog. The target cell sits on
+    the aim ray so the plunge enters one cell."""
+    from scipy.spatial import Voronoi
+    rng = np.random.default_rng(seed)
+    wall_rgb = wall_rgb or tuple(np.clip(np.array(colors[1]) * 0.9 + 0.1, 0, 1))
+    c0 = np.asarray(centre, np.float32)
+    # sheet basis: a plane facing the camera, tilted so it recedes (depth across the frame)
+    ex = np.array([1.0, 0.0, 0.0], np.float32)
+    ey = np.array([0.0, math.cos(tilt), math.sin(tilt)], np.float32)
+    ez = np.cross(ex, ey)
+    ext = size * 3.2
+    for L in range(n_layers):
+        origin = c0 + ez * (L * layer_gap * size) + rng.normal(scale=0.05 * size, size=3)
+        n = int((2 * ext / cell) ** 2 * 0.9)
+        pts = (rng.random((n, 2)) - 0.5) * 2 * ext
+        # hexagonal-ish regularity: relax toward a jittered grid
+        g = np.array([(i * cell + (j % 2) * cell / 2, j * cell * 0.87) for i in range(-int(ext / cell) - 1, int(ext / cell) + 2)
+                      for j in range(-int(ext / cell) - 1, int(ext / cell) + 2)], np.float32)
+        g += rng.normal(scale=cell * 0.18, size=g.shape)
+        pts = g
+        vor = Voronoi(pts)
+        r_wall = cell * 0.075 * size
+        for (a, b), (p1, p2) in zip(vor.ridge_vertices, vor.ridge_points):
+            if a < 0 or b < 0:
+                continue
+            va, vb = vor.vertices[a], vor.vertices[b]
+            if np.abs(va).max() > ext or np.abs(vb).max() > ext:
+                continue
+            A3 = origin + ex * va[0] * size + ey * va[1] * size
+            B3 = origin + ex * vb[0] * size + ey * vb[1] * size
+            nseg = max(2, int(np.linalg.norm(B3 - A3) / (r_wall * 1.1)))
+            for t in np.linspace(0, 1, nseg):
+                # ridge stands a little proud of the sheet (toward the camera)
+                stage.items.append(('sphere', A3 + (B3 - A3) * t - ez * r_wall * 0.6, r_wall, wall_rgb, glow * 0.5))
+        for q in pts:
+            if np.abs(q).max() > ext * 0.95:
+                continue
+            cc = origin + ex * q[0] * size + ey * q[1] * size
+            # cell floor: a flat disc of soft glow (the cytoplasm) + organelles
+            stage.items.append(('glow', cc + ez * cell * 0.2 * size, cell * 0.42 * size, colors[0], glow * 0.35))
+            for _ in range(organelles):
+                o = cc + ex * rng.normal(scale=cell * 0.22) * size + ey * rng.normal(scale=cell * 0.22) * size
+                stage.items.append(('sphere', o - ez * cell * 0.05 * size, cell * (0.07 + 0.05 * rng.random()) * size,
+                                    colors[1 % len(colors)], glow))
+    stage.jitter = cell * size * 0.004
+    return stage
+
+
+KITS['tissue'] = kit_tissue

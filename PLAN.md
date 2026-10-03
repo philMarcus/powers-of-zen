@@ -2367,3 +2367,14 @@ set `stage: false` to opt out). Second overnight A/B queued: anvil_country_stage
 seed 1234, --stage-auto → atom_shells as a fog atom) renders after the sunspot one; tonight's
 nightly renders plain+anchor anvil_country at the same seed. TOMORROW: two same-seed pairs in
 Video Review (sunspot_archipelago / _stage, anvil_country / _stage).
+
+## STAGE — tissue kit v0 (2026-10-03 17:15; cellular band, 272 cards)
+kit_tissue: stacked sheets of 2-D Voronoi cells seen obliquely — walls as raised sphere-chain
+ridges along the ridges, a soft cytoplasm glow per cell, a few organelle spheres inside each,
+the sheets receding into fog; the target cell sits on the aim ray so the plunge ENTERS one cell.
+Demo scratchpad/orange/stage_demo/tissue_sheet.png (63k items, 1-2 s/frame). Open: the stacked
+sheets read through one another (walls are open ridges) — a cell-floor plane per sheet or fewer
+sheets; colour comes out monochrome (the glow floor dominates the species colours). Not yet in
+suggest_stage (cellular cards stay un-staged until the brand pass says the kit reads as tissue).
+Brand pass 2 (tissue / fog / tubes through img2img at 0.30-0.60) queued to run on the GPU after
+the anvil render: output/stage_lab/brand_pass_sheet2.png.
