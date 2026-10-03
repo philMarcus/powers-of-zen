@@ -2122,3 +2122,8 @@ pattern (a third pushed past 100 within a week) the template was the cause; if t
 itself is suppressed and the next lever is editing the 23 live descriptions (bulk, via Studio) and a
 posting pause. Keep IG untouched. "seo" stays available as a setting for a later, non-boilerplate version
 (per-video words only, no shared lines).
+- 10-03 12:09-12:17 (Phil: "edit the ones with the identical descriptions now"): scripts/yt_edit_desc.py
+  replaced the template on ALL 23 live videos in Studio (trusted input, Save, verified by reloading the
+  edit page; cicada_chorus also confirmed on the public watch page) — every YouTube description is now
+  the classic IG caption again; seo copies kept in yt_desc_seo_backup. Read-out from here: the 23
+  edited videos + the new posts from 10-04. The scraper's 10-03 11:55 snapshot is the baseline.
