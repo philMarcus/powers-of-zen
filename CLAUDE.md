@@ -120,6 +120,17 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-03 (HANDOFF — context cleared after this; the pipeline runs itself): tree clean + pushed (HEAD "YouTube:
+Studio description editor"); nothing running; ComfyUI/dashboard/Chrome up; all 8 scheduler tasks Ready incl. the
+new at-logon PowersOfZen-dashboard. Pipeline: Review 12 (below the 20 cap → the 01:30 batch renders again
+tonight, 80/10/10 tier mix), 4 queued to post (next 10-04 ~09:00, then every 19 h), render NOT paused, plate mix
+on, yt_desc_style classic. OPEN THREADS, in Phil's order: (1) THE NEXT STEP — Phil has a new direction to discuss
+(unspecified; ask him). (2) MUSIC ARM conversation he asked to have before the analysis plan proceeds
+(analysis/PLAN.md on hold: report.py → Insights tab → A/B at approve time). (3) YOUTUBE READ-OUT after ~10 classic
+posts (from 10-04): a third pushed past 100 views within a week = the template was the cause; still 0 = channel
+suppression → discuss a pause / bulk re-edit is already done. Watch outbox/yt_stats.jsonl (true since 10-03 11:55).
+(4) est_render_sec refit stands (12.0 s/f + 250 + 600/planet). (5) Phil still to run the elevated powercfg
+exemption (SCHEDULER.md) — boost_comfy covers it meanwhile.
 2026-10-03 (LATER — YOUTUBE DARK SINCE 09-10; read PLAN "YOUTUBE WENT DARK"): real counts from the live pages:
 0 of 23 posts since 09-10 passed 100 views (median 1, mostly literal 0) vs 11 of 34 before; channel Public,
 no strike, Studio watch time −93%. The 09-10 "SEO" YouTube description put two identical boilerplate lines + the
