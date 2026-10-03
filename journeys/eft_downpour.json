@@ -1,0 +1,146 @@
+{
+  "name": "eft_downpour",
+  "theme": "a rain night read at every scale, its emblem many straight lines all raked one way. From orbit a storm world hangs its silver rain curtains slanted under every cloud deck; the forest ridge from the air wears virga combed out of the cloud base; the floor commons stands at eye level in the downpour with red efts, a wood frog, a spotted salamander, a flat-backed millipede and banana slugs on wet litter; the dive then goes onto the FUNGUS, never through the newt — a rotting log, the bird's-nest fungus splash cups loaded with lens-shaped eggs, the spore bank inside one egg, and that spore's raincoat: the outer skin paved with patches of parallel rods, each patch raked at its own slant, the patches meeting at seams. Down through one sulfur atom of the rods' cross-links to the nucleus, where a slanted drizzle of silver tracks is ruled through matter and emptiness alike, and that drizzle morphs to the comet shower — a star's ice cloud jolted into thousands of parallel streaks aimed at one hard point — and home to the world in the comet rain. NOTE the molecular card `rodlet_skin` is the reference-steering candidate: hydrophobin rodlets render nothing by name, so the picture is written out in full and a reference image would carry the structure. Slant rain is the through-line; the only warm thing in any frame is alive.",
+  "style": "lacquer_pop",
+  "music_lane": "wooden_orbit",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "storm_world",
+      "exp": 6.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cerulean storm arms, cobalt ocean, umber-soot continents, silver rain streaks, one ochre dawn rim",
+      "scene": "a night world seen from orbit, one vast spiral storm set over its ocean hemisphere with its arms coiled cerulean and slate, cloud decks tiered across the rest of the disc, silver rain curtains ruled slanted under every deck as parallel streaks, the ocean a saturated cobalt through the gaps, continents sunk umber and soot beneath the cloud, a long green mountain ridge bared through one clear break in the overcast, a hair-fine rim of ochre dawn at the limb, stars strewn through the void past it",
+      "target": "a long green mountain ridge",
+      "target_phrase": "a green ridge"
+    },
+    {
+      "name": "ridge_rain",
+      "exp": 3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "soot-green canopy, slate cloud deck, silver virga streaks, cobalt river, umber litter",
+      "scene": "a forested ridge seen from the air at a low slant on a rain night, the canopy heaped over the slopes in soot-green domes, a slate cloud deck lying close above it, silver rain curtains ruled slanted out of the cloud base across the entire ridge as parallel streaks, ragged combs of virga hung under the deck and stopped short of the treetops, a cobalt river cut down the valley floor, mist pooled in the hollows, one small clearing torn out of the canopy where soaked trunks and umber leaf litter show, dim tiers of hills beyond",
+      "target": "a small forest clearing",
+      "target_phrase": "a forest clearing"
+    },
+    {
+      "name": "litter_commons",
+      "exp": 0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "vermilion eft bodies, umber-soot litter, silver rain streaks, emerald moss, one cobalt pool",
+      "scene": "a forest floor at eye level in a downpour at night, wet leaf litter heaped into umber and soot drifts, silver rain streaks ruled slanted through the entire frame as straight parallel lines, a crowd of red efts vermilion-orange over the litter with their hides beaded, a wood frog squat on a soaked root, a spotted salamander with its hide sooty and its spots citrine pressed to the mud, a flat-backed millipede crossing a fallen twig, two banana slugs on a cushion of moss, ivory puffballs clustered at the foot of a mossy rotting log, cobalt water pooled in every hollow, soaked trunks tiered off into the gloom",
+      "target": "a mossy rotting log",
+      "target_phrase": "a rotting log"
+    },
+    {
+      "name": "rotting_log",
+      "exp": -0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ochre rotted fibre, cinnamon shelf fungi, emerald moss, silver rain beads, one vermilion point",
+      "scene": "a rotting log laid across the litter floor, its bark sloughed to sodden ochre fibre and its sapwood gone punky umber, shelf fungi bracketed out of it in tiers banded cinnamon with ivory rims, cushions of moss swollen emerald over the crest, silver rain streaks ruled slanted across the frame, beads of water strung on every fibre, a springtail herd salted over the wet fibre in hundreds, one red eft's vermilion tail curled at the log's foot, beetle galleries cut into the bared sapwood as looping grooves, a colony of small grey fungus cups crowded over one damp patch, soaked twigs heaped at the base",
+      "target": "a small grey fungus cup",
+      "target_phrase": "a grey fungus cup"
+    },
+    {
+      "name": "splash_cups",
+      "exp": -2.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "grey-ochre felted cups, pewter glaze, slate eggs, cerulean rain beads, umber wood",
+      "scene": "a colony of bird's-nest fungi crusting sodden wood, dozens of squat cups crowded over it, every cup flared at the mouth and felted grey-ochre outside and glazed pewter within, each one loaded with a clutch of lens-shaped eggs the colour of slate, a hair-fine cord tethering every egg to its cup floor, cerulean rain beads strung round each rim, silver rain streaks ruled slanted across the frame, wood fibre and moss threads heaped among the cups, farther cups dimming into umber gloom",
+      "target": "a slate lens-shaped egg",
+      "target_phrase": "a lens-shaped egg",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "spore_bank",
+      "exp": -4.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber spore walls, umber banding, pewter oil beads, cerulean fluid",
+      "scene": "the interior of one fungal egg, a dense crowd of round spores filling it, every spore thick-walled and banded in tiers of amber and umber, each one holding its own inner compartments as pockets of paler jelly, a pewter oil bead seated in most of them, the walls pebbled and glossy, threads of fibre woven through the crowd as a slack mesh, cerulean fluid held in the gaps, farther spores dimming into a warm gloom",
+      "target": "a round amber spore",
+      "target_phrase": "an amber spore",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "rodlet_skin",
+      "exp": -7.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver-cerulean rods, amber grooves, citrine knots, umber gloom",
+      "scene": "the outer skin of one spore paved with rods, the skin tiled into patches a few hundred rods across, every rod a slender cylinder laid beside its neighbours at even spacing, each patch raked at its own slant so the grain turns at every border, the patches abutting at hard seams, hard citrine knots set in files down each rod where its ribbons are stitched to one another, a few blunt rod ends broken clear at a patch edge, water beaded off the skin as cerulean domes that touch it at a point, the farther tiling dimming into umber",
+      "target": "a hard citrine knot",
+      "target_phrase": "a citrine knot",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "hex"
+      }
+    },
+    {
+      "name": "sulfur_atom",
+      "exp": -10,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "citrine haze, olive mid-tiers, cerulean outer mist, vermilion core spark, pitch void",
+      "scene": "one sulfur atom's electron fog gathered about a point, seen from far out in the dark, a smooth round haze of citrine grading outward through olive into a cool cerulean mist, densest at its heart and softening through tier after tier of faint shells, the point at its centre a hard vermilion spark, the fog seated in a slack chain of paler fogs that reach off in both directions and dim into umber, sparks of loose charge strewn through the haze, the void past them unlit",
+      "target": "a hard vermilion core",
+      "target_phrase": "a vermilion core",
+      "loop_target": "one sulfur atom's electron fog about a point, a round citrine haze softening tier by tier into cerulean mist, a hard vermilion spark at its heart",
+      "resolve": false
+    },
+    {
+      "name": "muon_drizzle",
+      "exp": -14,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "vermilion and gold spheres, silver tracks, ember sparks, pitch void",
+      "scene": "one nucleus held as a droplet of crowded glowing spheres, vermilion and gold spheres jostled shoulder to shoulder into a taut round drop, its rim drawn into shallow scallops, a haze of ember sparks close about it, and ruled straight through the drop and through the emptiness around it alike a slanted drizzle of hair-fine silver tracks, every track parallel to every other and stopped by nothing, the void past them unlit",
+      "cameo": {
+        "sprite": "output/mascots/canon/clark.png",
+        "pos": [
+          0.62,
+          0.36
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "ice_cloud",
+      "exp": 16,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "dim grit grey, cerulean glare on one flank, silver inward streaks, gold centre point, pitch void",
+      "scene": "a star's outer cloud of ice drawn as a vast hollow sphere of dim grit, countless frozen bodies strewn through its shell, the glare of a passing star raking one flank of it cerulean, thousands of straight streaks ruled inward across the sphere, every streak parallel to its neighbours and aimed at the centre, a searing gold point burning there, the void behind the sphere strewn with faint stars",
+      "target": "a searing gold point",
+      "target_phrase": "a gold point"
+    },
+    {
+      "name": "comet_shower",
+      "exp": 13,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver-cerulean comet tails, gold star point, cobalt and umber world, pitch void",
+      "scene": "a crowd of comets strewn across the inner void, thousands of ice bodies with a straight tail combed off each one, every tail raked the same way so the entire field reads as one slanted rain, the tails silver at their roots and cerulean at their ends, a hard gold star burning as the point all of them are aimed at, a banded storm world set in the comet rain with a cobalt ocean under its cloud decks, faint stars strewn through the void beyond",
+      "target": "a banded storm world",
+      "target_phrase": "a storm world"
+    }
+  ],
+  "music_theme": "warm marimba and plucked wood figures orbiting a low drone at a driving pace, a deep soft kick on every downbeat with a quiet tick on the offbeats, rain-hush held under the phrases, the figures tightening and cooling as the dive runs from the forest floor down through the cups and the spore skin, one struck wooden hit on the morph from the nucleus drizzle out to the comet shower, then opening wide and bright for the fall home onto the storm world",
+  "music_key": "B minor",
+  "render_start": "sulfur_atom",
+  "play_start": "comet_shower"
+}

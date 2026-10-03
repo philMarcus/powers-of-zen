@@ -1,0 +1,137 @@
+{
+  "name": "beaver_arcade",
+  "theme": "a beaver pond at night where every stick in the dam and the lodge rests on its neighbours and nothing holds the middle — ONE self-carrying weave restated at every scale, and followed into the one tool that built it. The reciprocal-frame grillage (Leonardo's centre-post-less lattice) runs the whole ladder: the dam's crossed poles, the woven enamel of a beaver's incisor, the decussating apatite rod bands that are why enamel does not split, and out at the far end a coronal loop arcade of lit arches bridging one sunspot pair. Continuation runs honestly through the tooth: the crossed rod bands, the ameloblast files that lay them (tall prism cells shoulder to shoulder, each capped by a chisel-shaped process, the files themselves crossing), the ferritin cages that ship the iron in, and the apatite needle bundles the iron stains. The commons is the pond itself at water level (a beaver with an aspen bough, a moose knee-deep, wood ducks on a drowned snag, bullfrogs on the dam's sticks, a great blue heron on the lodge, caddis larvae on the flooded wood, lily pads over the tannin). The journey's largest card is STELLAR, not cosmic — the span is still ~18 decades — and the seam is crossed members to crossed members: needle bundles at 10^-9 becoming a row of arches at 10^8. NOTE the atomic card was dropped per the brief's ordering option so the seam could stay the woven apatite, which keeps the crossed-arch rhyme honest; the iron's atomic beat is carried by the ferritin core instead.",
+  "style": "lacquer_pop",
+  "music_lane": "night_market",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "pond_aloft",
+      "exp": 2.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cold moon-silver water, chalk-pale peeled wood, tannin-umber shallows, bottle-dark pads",
+      "scene": "a beaver pond on a still autumn night seen from a high slant over the valley floor, a curved dam of crossed chalk-pale poles holding the whole flat, a domed lodge of woven sticks seated out in the open water under a smooth mud cap, drowned spruce snags strewn across the shallows, cut canals threading the marsh on either hand, moon-silver sheets inside the dam and tannin-umber flats outside it, lily pads massed bottle-dark over the still reaches, spruce woods crowding the far shore, no lamp and no fire anywhere",
+      "target": "a domed stick lodge",
+      "target_phrase": "a domed stick lodge"
+    },
+    {
+      "name": "lodge_commons",
+      "exp": 0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moon-silver water, chalk-pale gnawed wood, tannin-umber shallows, bottle-dark pads, one iron-orange glint",
+      "scene": "the beaver pond at the dam crest seen low over the water, a beaver in the shallows with a leafy aspen bough, a moose knee-deep at the flooded margin, two wood ducks perched on a drowned snag, bullfrogs squat on the dam's crossed sticks, a great blue heron settled on the mud cap of the lodge, caddis larvae in grit cases crowded over the flooded wood, lily pads spread bottle-dark over the tannin water, chalk-pale gnaw chips strewn at the bank, cold moon-silver on every wet stick, no lamp and no fire anywhere",
+      "target": "a peeled pale bough",
+      "target_phrase": "a pale peeled branch"
+    },
+    {
+      "name": "stick_weave",
+      "exp": -0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "chalk-pale peeled wood, tannin-umber older staves, silver water threads, one iron-orange glint",
+      "scene": "the dam wall at arm's length, peeled chalk-pale poles crossed at every slant, each pole bearing on the two beneath it and no post under the middle of any of them, mud and wet leaves troweled into the crooks, water combing through the clearances in silver threads, the older staves stained tannin-umber and the fresh ones bone-pale, a russet-furred head low at one bared pole with a pair of iron-orange chisel teeth set into the wood, curls of gnawed wood crowded at the waterline",
+      "target": "an iron-orange chisel tooth",
+      "target_phrase": "an orange front tooth"
+    },
+    {
+      "name": "enamel_face",
+      "exp": -2.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "iron-orange enamel, amber rim, chalk-pale wood dust, umber shadow",
+      "scene": "an incisor's iron-orange front seen across its width, the enamel a hard rust-orange sheet with hairlike growth lines drawn across it, a worn chisel bevel at the working edge where the soft ivory backing gives way first, fine grit grooves cut down the orange sheet, chalk-pale wood dust lodged in the grooves, the rust-orange easing to amber toward the rim, umber shadow at the gum margin",
+      "target": "a hairlike orange rod",
+      "target_phrase": "a fine orange fibre"
+    },
+    {
+      "name": "rod_bands",
+      "exp": -4.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-orange outer courses, clear crystal cores, cold silver glints, unlit seams",
+      "scene": "enamel seen from among its own courses, thousands of hairlike apatite rods run through it, every rod a bundle of parallel needles, the rods gathered into broad bands, and each band's course slanted across its neighbours' so the bands interweave with no post under any of them, tier upon tier of the crossing bands into unlit depth, rust-orange staining laid over the outer courses and clear crystal beneath, dark seams where band meets band, cold silver glints kindled on countless rod ends",
+      "target": "a bright rod end",
+      "target_phrase": "a bright rod tip",
+      "loop_target": "a weave of hairlike apatite rods gathered into bands that slant across one another"
+    },
+    {
+      "name": "ameloblast_files",
+      "exp": -5.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber cytoplasm, rust-orange fresh mineral, umber nuclei, silver cell rims",
+      "scene": "the front where the enamel is laid, tall prism-shaped cells shoulder to shoulder in files, each cell capped at its working end by a short chisel-shaped process pressed to the mineral it lays, the files crossing so one file's course slants over its neighbour's, amber cytoplasm crowded inside every cell with a dark oval nucleus set at the far end, fresh rust-orange mineral massed beneath the chisel caps, rows of the cells into dim depth, silver rims where cell meets cell",
+      "target": "a rust-orange granule",
+      "target_phrase": "a small orange granule"
+    },
+    {
+      "name": "ferritin_cages",
+      "exp": -7.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-orange cores in ivory cages, amber murk, unlit gulfs",
+      "scene": "the crowded interior of one enamel-laying cell at molecular width, hollow protein globes adrift on every hand, each globe an ivory shell of stubby helix bundles fitted into a round cage with a rust-orange core seated within it, hundreds of the cages massed through a faint amber murk, a few cages open at a pore with the rust core bared, slim tubule scaffolds crossing the murk behind them, unlit gulfs amid the crowd",
+      "target": "a rust-orange core",
+      "target_phrase": "a small rust-orange ball",
+      "resolve": {
+        "mode": "sea"
+      },
+      "cameo": {
+        "sprite": "output/mascots/canon/tina.png",
+        "pos": [
+          0.62,
+          0.57
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "apatite_needles",
+      "exp": -9.0,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "cold silver needle flanks, rust-orange iron courses, unlit depth",
+      "scene": "apatite crystal seen from among its own needles, hair-fine needles laid one against the next in dense bundles, every bundle slanted across the bundles it rests upon with no post under any of their spans, rust-orange iron seated down the outer needle courses, cold silver light on the needle flanks, tier upon tier of the crossed bundles into unlit depth, dark seams where bundle crosses bundle"
+    },
+    {
+      "name": "coronal_arcade",
+      "exp": 8.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "incandescent amber arches, umber spot bases, cold white star face",
+      "scene": "a star's active face with an arcade of incandescent arches bridging one sunspot pair, arch after arch set one behind the next in a tall row, each arch springing from a bright footpoint on either hand of the spot pair, the arches leaning on one another with nothing under their spans, the two spots umber and grained at their bases, the star's surface pebbled in fine bright cells beneath them, amber plasma threads combed off the outermost arches, a blue-dark world set out past them in the unlit void",
+      "target": "a blue-dark world",
+      "target_phrase": "a dark blue planet"
+    },
+    {
+      "name": "auroral_world",
+      "exp": 6.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "viridian auroral arches, rose upper spans, soot-dark forest, silver lakes",
+      "scene": "a night world seen from orbit, its dark curved edge cut against the void, an auroral arcade burning over the polar night in a row of tall lit arches one behind the next, viridian at their feet and rose at their upper spans, boreal forest spread soot-dark beneath them, chains of small silver lakes sown across the forest, a coast of sea ice picked out in cold white, star-fields strewn through the void past the world's rim",
+      "target": "a small silver lake",
+      "target_phrase": "a bright silver lake"
+    },
+    {
+      "name": "boreal_valley",
+      "exp": 4.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moon-silver impoundments, chalk-pale dams, soot-dark spruce, tannin-umber flats",
+      "scene": "boreal valley country seen from aloft on a still autumn night, a slow stream stepping down the valley floor through a stair of impounded ponds, each pond held by a curved chalk-pale dam drawn across the water, moon-silver sheets in every impoundment and tannin-umber flats at their margins, spruce woods massed soot-dark over both valley walls, drowned grass meadows silvered at the pond heads, cut canals threading the marsh at the widest impoundment, a cold moon low over the far ridge and no lamp anywhere",
+      "target": "a moon-silver beaver pond",
+      "target_phrase": "a bright still pond"
+    }
+  ],
+  "music_theme": "a lantern-lit night-market pulse over a deep soft kick on every downbeat, a struck wooden block on each morph as the weave restates itself, the market narrowing to one hushed plucked figure through the crossing cell files and the protein cages, a low struck bell on the morph from the crossed needle bundles out to the arcade of arches on the star, then widening for the fall home onto the woven rods",
+  "music_key": "B minor",
+  "render_start": "rod_bands"
+}

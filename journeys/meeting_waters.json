@@ -1,0 +1,141 @@
+{
+  "name": "meeting_waters",
+  "theme": "the Meeting of Waters at Manaus at noon — two great rivers joined into one channel yet running on unmixed for kilometres, ink-black tannin water beside café-brown silt water, pink river dolphins surfacing on the colour line — read as ONE DISPLACED PAIR at every scale: two crowds that have passed through each other and come out with a front amid them. The living dive goes into a boto's flushed flank (its colour is its blood): the capillary net, the red cell's spectrin skeleton, one carbon atom's fog, and a nucleus whose two kinds of sphere are sloshed to opposite flanks — which morphs up into the Bullet Cluster, two swarms of galaxies flown through each other with their hot gas left lagging. Then down through a ragged dwarf galaxy, its yellow sun, the Earth's day face over the Amazon, and the confluence from the air, home to the colour line.",
+  "style": "enchanted_wild",
+  "music_lane": "aurora_strings",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "colour_line_commons",
+      "exp": 0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "flesh-pink boto backs, ink-black tannin water, café-brown silt water, olive-bronze caiman, one kingfisher-turquoise accent",
+      "scene": "the Meeting of Waters at noon seen low over the channel, one broad river running on as two waters abreast and unmixed, ink-black tannin water on the left and café-brown silt water on the right, a hard scalloped colour line down the middle of the channel, three botos surfacing flesh-pink at the colour line with their backs and flanks out of the water and their heads under it, a grey tucuxi arched in the café-brown water, a black caiman basking on the olive-bronze mud bank, an anhinga with its wings spread on a bleached snag, a ringed kingfisher with a turquoise back perched on an overhanging branch, a floating meadow of green water hyacinth with wattled jacanas standing on its leaves, a shoal of silver hatchetfish just under the surface, the green rainforest wall of the far bank under a blazing blue noon sky",
+      "target": "a flesh-pink dolphin flank",
+      "target_phrase": "a pink dolphin back",
+      "loop_target": "botos surfacing flesh-pink on the colour line of ink-black and café-brown water"
+    },
+    {
+      "name": "boto_flank",
+      "exp": -0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "flushed rose hide, deep rose blotches, ink-black water beads, café-brown wash",
+      "scene": "the wet flank of a boto at the colour line of the river, a broad curve of smooth flesh-pink hide lit by the noon sun, blotches of deeper rose where the blood flushes through the skin, faint healed scars and soft creases across the hide, beads of ink-black water standing on it, café-brown river water lapping at its lower edge",
+      "target": "a deep rose skin blotch",
+      "target_phrase": "a rose skin patch"
+    },
+    {
+      "name": "capillary_net",
+      "exp": -3.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "crimson disc cells, flesh-pink tissue, cool olive fibres, clear plasma",
+      "scene": "the capillary net under a boto's skin, a dense mesh of hair-fine vessels woven through soft flesh-pink tissue in every direction, each vessel crammed with flattened disc-shaped crimson cells in single file, thicker vessels branching into the fine ones, cool olive fibres of connective tissue strung among the vessels, clear plasma gaps showing through the mesh, the net so dense the whole tissue reads flesh-pink",
+      "target": "a flattened crimson disc cell",
+      "target_phrase": "a red disc cell",
+      "resolve": {
+        "mode": "web"
+      },
+      "loop_target": "a dense mesh of hair-fine vessels crammed with crimson disc cells in single file"
+    },
+    {
+      "name": "spectrin_mesh",
+      "exp": -6.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "olive-bronze coiled rods, slate-violet membrane, wine-red depth",
+      "scene": "the underside of a red cell's skin, a geodesic net of springy protein rods strung under the curved membrane, each rod a slack coiled strand, the rods meeting six at a time at small knotted junctions, every knot pinned to the membrane by a short anchor post, thousands of the six-way knots tiling the curved underside into the distance, the net olive-bronze on a slate-violet membrane, the cell's interior a deep wine-red space crowded with loose protein beads",
+      "target": "a small six-way knot",
+      "target_phrase": "a small knot",
+      "resolve": {
+        "mode": "lattice"
+      }
+    },
+    {
+      "name": "carbon_atom",
+      "exp": -10.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose and violet electron fog on ink-black, one white-hot point",
+      "scene": "one carbon atom inside a protein rod, a soft fog of electron haze about a single lit point, two nested shells of the fog, the inner one a tight dense rose glow, the outer a broad thin violet haze with four soft plumes reaching toward four neighbouring atoms, the neighbours dim knots of fog at the edges of an ink-black void",
+      "target": "a tiny white-hot point",
+      "target_phrase": "a small lit point",
+      "cameo": {
+        "sprite": "output/mascots/canon/adam.png",
+        "pos": [
+          0.64,
+          0.36
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "dipole_nucleus",
+      "exp": -14.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "flesh-pink spheres and deep blue spheres, a rose haze on ink-black",
+      "scene": "a lopsided droplet of luminous spheres packed tight, twelve of them, six flesh-pink and six deep blue, all the flesh-pink spheres heaped to one flank of the droplet and all the deep blue spheres heaped to the other, a thin seam of mixed pink and blue spheres down the middle, the droplet stretched with the pull, a soft rose haze about it on an ink-black void"
+    },
+    {
+      "name": "bullet_cluster",
+      "exp": 23.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-pink hot gas, gold and white galaxies, faint blue haze, black void",
+      "scene": "two swarms of galaxies parting in deep space after flying straight through each other, each swarm a dense crowd of gold and white galaxies, and trailing each swarm a bow-shaped cloud of violet-pink hot gas lagging in back of it near the middle where the swarms crossed, the smaller gas cloud a sharp arrowhead bow, a faint blue haze of unseen mass riding out ahead with each swarm, scattered small galaxies on the black void",
+      "target": "a ragged dwarf galaxy",
+      "target_phrase": "a small ragged galaxy"
+    },
+    {
+      "name": "dwarf_galaxy",
+      "exp": 20.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blue-white star clumps, rose-pink gas knots, olive-brown dust, black space",
+      "scene": "a ragged irregular dwarf galaxy in deep space, no arms and no disc, a lopsided loose crowd of blue-white stars heaped in clumps, knots of rose-pink star-forming gas scattered through it, a stubby bar of older yellow stars off-centre, threads of olive-brown dust across it, the black of space on every flank",
+      "target": "a lone yellow star",
+      "target_phrase": "a yellow star"
+    },
+    {
+      "name": "home_sun",
+      "exp": 10.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blazing yellow-white photosphere, rose prominences, blue and green planet, black space",
+      "scene": "a yellow-white star in the black of space, its blazing disc-shaped face freckled with granules and a few dark sunspots, a rose-pink fringe of prominences at its rim, and set off from it a small blue-and-green planet lit full on its day face",
+      "target": "a blue-green planet",
+      "target_phrase": "a blue-green planet"
+    },
+    {
+      "name": "amazon_orbit",
+      "exp": 5.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rainforest green plain, ink-black river, café-brown river, blue atmosphere limb",
+      "scene": "the day face of the Earth from orbit over the Amazon at noon, an unbroken green plain of rainforest to the curved horizon, two great rivers joined into one broad channel yet running side by side unmixed for kilometres, one ink-black with tannin and one café-brown with silt, the boundary a sharp scalloped line down the channel, scattered cumulus over the forest, a thin blue limb of atmosphere at the horizon",
+      "target": "a two-colour river junction",
+      "target_phrase": "a river junction"
+    },
+    {
+      "name": "confluence_air",
+      "exp": 3.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink-black water, café-brown water, green hyacinth, olive-bronze mud banks",
+      "scene": "the Meeting of Waters from the air at noon seen on a steep slant, one broad channel with a hard colour line down its middle, ink-black tannin water on one flank and café-brown silt water on the other, the boundary eddying in scallops, a floating meadow of green water hyacinth snagged on the line, olive-bronze mud banks, rainforest crowding both shores, a few flesh-pink specks of surfacing botos on the colour line",
+      "target": "flesh-pink surfacing botos",
+      "target_phrase": "pink river dolphins"
+    }
+  ],
+  "music_theme": "shimmering strings and a slow sustained pad over a deep soft kick on every downbeat, a warm low swell on each morph, the strings thinning to a single held tone through the skin, the net and the atom, one struck low bell on the morph from the two-colour droplet to the two parted swarms, the full string bed returning for the fall home through the sun and the Earth onto the colour line",
+  "music_key": "E minor",
+  "render_start": "dwarf_galaxy"
+}

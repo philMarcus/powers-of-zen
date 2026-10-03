@@ -1,0 +1,127 @@
+{
+  "name": "valdes_blow",
+  "theme": "a shallow ultramarine bay on Península Valdés on a clear afternoon where southern right whales rest with their calves — read as TWIN JETS FROM ONE POINT at every scale: the right whale's V-shaped blow from its paired blowholes, a collision point throwing two cones of sparks back to back, and a giant radio galaxy whose two thin jets feed lobes millions of light-years across. The living dive goes into a whale's callosity (a cream crust crowded with tangerine whale lice), its skin cells, the polysome spiral paying out keratin, and one sulfur atom of keratin's cross-links — then the dijet morphs up into the radio galaxy and the fall home runs through the Sun, Patagonia from orbit, and the bay from the air.",
+  "style": "enchanted_wild",
+  "music_lane": "tide_organ",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "right_whale_bay",
+      "exp": 1.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink-black whale backs, ultramarine bay, tangerine-crusted callosities, white spray, tawny cliff, kelp olive",
+      "scene": "a shallow ultramarine bay on Península Valdés on a clear afternoon seen low over the water, a southern right whale resting at the surface with her calf pressed to her flank, both broad ink-black backs out of the water, raised cream callosities crusted tangerine with whale lice on the mother's head, a V-shaped blow of white spray rising in two plumes from her paired blowholes, a second whale's black back farther out in the bay, South American sea lions hauled out on the grey shingle, a file of Magellanic penguins upright on the shingle, kelp gulls on a kelp-olive rock, a tall black orca fin at the channel mouth, a tawny Patagonian cliff behind the shingle under a clear blue afternoon sky",
+      "target": "a cream callosity",
+      "target_phrase": "a cream skin crust",
+      "loop_target": "a southern right whale and her calf resting in a shallow ultramarine bay"
+    },
+    {
+      "name": "callosity_crust",
+      "exp": -2.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "tangerine whale lice, cream knobbed crust, ink-black hide, ultramarine water beads",
+      "scene": "the crown of a callosity on a right whale's head, a raised crust of rough knobbed cream skin set in the ink-black hide, crowded with dozens of tangerine whale lice, flat little crustaceans gripping the crust with hooked clawed legs, pits and furrows in the crust between them, beads of ultramarine seawater held in the pits, the black hide sloping away at the crust's margin",
+      "target": "a bare patch of cream skin",
+      "target_phrase": "a cream skin patch",
+      "resolve": {
+        "mode": "surface"
+      },
+      "cameo": {
+        "sprite": "output/mascots/canon/lee.png",
+        "pos": [
+          0.64,
+          0.34
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "skin_cells",
+      "exp": -4.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber cells, olive nuclei, tangerine keratin strands, ink-black gaps",
+      "scene": "the outer skin of a whale's callosity, a cobbled pavement of skin cells packed tight in stacked layers, the lower cells plump polygons each with a round olive nucleus, the upper cells flattened into overlapping plates of keratin, tangerine bundles of keratin strands threading through every cell, amber cell bodies on a profound ink-black ground",
+      "target": "a plump amber skin cell",
+      "target_phrase": "a plump amber cell"
+    },
+    {
+      "name": "polysome_spiral",
+      "exp": -7.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "tangerine beads, olive thread, violet cytoplasm, ink-black depth",
+      "scene": "inside a skin cell, one long slender olive thread coiled in a loose spiral through a violet haze, a dozen plump two-lobed tangerine beads strung along the thread at even spacing, each bead a larger lobe capped by a lesser one, a coiled protein chain paying out from every bead, each chain longer than the one before it along the spiral, more such spirals scattered through the violet haze into the ink-black depth",
+      "target": "a coiled protein chain",
+      "target_phrase": "a coiled chain"
+    },
+    {
+      "name": "sulfur_atom",
+      "exp": -10,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "tangerine and ultramarine electron fog on ink-black, one white-hot point",
+      "scene": "one sulfur atom in a coiled protein chain, a soft fog of electron haze about a single white-hot point, three nested shells of the fog, the inner a tight dense tangerine glow, the middle a broader amber haze, the outer a thin broad ultramarine haze with two soft plumes reaching to two neighbouring atoms, one of them a second sulfur atom's fog joined to it by a thick plume, dim knots of neighbouring fog at the margins of an ink-black void",
+      "target": "a white-hot point",
+      "target_phrase": "a lit point"
+    },
+    {
+      "name": "dijet",
+      "exp": -15,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "tangerine and white sparks, violet tracks, ink-black void",
+      "scene": "a single collision point in an ink-black void throwing two narrow cones of sparks straight out in opposite directions, back to back, each cone a tight spray of tangerine and white sparks, the two cones sharing one blazing source spot, faint loose curling tracks of violet about them"
+    },
+    {
+      "name": "radio_galaxy",
+      "exp": 23.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-magenta lobes, one yellow galaxy core, faint blue web strands, black void",
+      "scene": "a giant radio galaxy in the black of space, a compact yellow elliptical galaxy at its centre firing two hair-thin jets out of its core in opposite directions, each jet swelling at its far end into a vast violet-magenta lobe far bigger than the galaxy, the pair laid across faint blue strands of the cosmic web, scattered galaxies as gold specks on the black",
+      "target": "a lone yellow star",
+      "target_phrase": "a yellow star"
+    },
+    {
+      "name": "home_sun",
+      "exp": 9.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blazing yellow-white photosphere, tangerine prominences, blue and white planet, black space",
+      "scene": "a yellow-white star in the black of space, its blazing face freckled with granules and a few sunspots, tangerine prominences arching at its rim, and set off from it a blue-and-white planet lit full on its day face",
+      "target": "a blue-and-white planet",
+      "target_phrase": "a blue planet"
+    },
+    {
+      "name": "patagonia_orbit",
+      "exp": 5.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "tawny steppe, ultramarine ocean, turquoise gulfs, blue atmosphere limb",
+      "scene": "the day face of the Earth from orbit over Patagonia on a clear afternoon, the tawny steppe of the continent's southern tip against the ultramarine South Atlantic, the hammer-shaped Península Valdés jutting from the coast on a slender isthmus, two sheltered gulfs of turquoise shallow water on either flank of the isthmus, a few streaks of cloud, a thin blue limb of atmosphere at the horizon",
+      "target": "a hammer-shaped peninsula",
+      "target_phrase": "a coastal peninsula"
+    },
+    {
+      "name": "bay_from_air",
+      "exp": 3.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ultramarine shallows, tawny cliffs, grey shingle, kelp-olive beds, ink-black whale backs",
+      "scene": "Península Valdés from the air on a clear afternoon seen on a steep slant, a sheltered gulf of shallow ultramarine water under tawny Patagonian cliffs, a grey shingle beach at the cliff foot, kelp-olive beds offshore, a scatter of ink-black whale backs resting at the surface of the bay with calves beside them",
+      "target": "a black right whale and calf",
+      "target_phrase": "black whale backs"
+    }
+  ],
+  "music_theme": "a slow breathing organ and warm tidal pads over a soft deep kick on every downbeat, a low swell on each morph, the texture thinning to one held tone through the skin, the spiral and the atom, a single struck low bell on the morph from the two cones of sparks to the two lobes, the full organ bed returning for the fall home through the Sun and Patagonia into the bay",
+  "music_key": "D minor",
+  "render_start": "home_sun"
+}

@@ -1,0 +1,105 @@
+{
+  "name": "bluebell_chorus",
+  "theme": "a beech wood carpeted violet-blue with bluebells on a spring morning, the dawn chorus in full voice, read as RINGING SPHERES at every scale: a flower shaped like a bell, the domed cone cells of its petal full of violet sap, the six-spoked blue pigment assembly about two metal atoms, one metal atom's fog about a hot point, a nucleus whose rind is raised in bulges and sunk in hollows because it vibrates (the seam), morphing up into the Sun, which rings like a bell with millions of tones, its face a checkerboard of lifting and settling patches of fire, then the wood from the air, a violet haze under new beech. Daylight throughout, a violet-blue carpet with acid beech lime, silver-grey trunks and one robin-orange point, stately tempo.",
+  "style": "infrared_bloom",
+  "music_lane": "glass_chapel",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "bluebell_commons",
+      "exp": 0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-blue bluebell carpet, acid-lime new beech leaves, silver-grey trunks, one robin-orange breast, a lit spring-morning sky through the canopy",
+      "scene": "a beech wood floor on a spring morning, seen low and oblique from amid the flowers, a violet-blue carpet of bluebells running away between silver-grey beech trunks under a canopy of acid-lime new leaves lit by the morning sun, a robin with an orange breast on a mossy root, a blackbird on a low branch, a wren on a fallen log, a roe deer upright in a sunlit glade, bumblebee queens at the bells, a sulphur-yellow brimstone butterfly on a stem, one tall bluebell spike raised above the carpet in the foreground",
+      "loop_target": "a violet-blue bluebell carpet under silver beech trunks",
+      "target": "a tall bluebell spike",
+      "target_phrase": "a bluebell spike"
+    },
+    {
+      "name": "bluebell_spike",
+      "exp": -1.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-blue bells, cream anthers, lime-green stalk, silver-grey and acid-lime ground",
+      "scene": "one bluebell stem seen side-on at eye level in the morning sun, an arched lime-green stalk hung along one side with a row of nodding violet-blue bells, each bell a narrow tube with its petal tips curled back, cream anthers peeping from the mouths, a silver-grey beech trunk and acid-lime leaves soft behind, one bell's curled violet petal tip turned toward the sun",
+      "target": "a curled violet petal",
+      "target_phrase": "a violet petal"
+    },
+    {
+      "name": "petal_cells",
+      "exp": -4.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet and indigo domed cells, silver cell seams, lime glints on the crests, a sunken blue-black between domes",
+      "scene": "the upper skin of a bluebell petal at a cell's width, a cobbled crowd of conical cells each a rounded dome, every cell full of violet sap, thin silver seams between the domes, lime glints on the crest of each dome, sunken blue-black hollows between the cells, dome after dome receding across the petal, one dome glowing a vivid blue at its heart",
+      "target": "a six-spoked blue wheel",
+      "target_phrase": "a blue wheel",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [0.64, 0.38],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "pigment_wheels",
+      "exp": -7.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "vivid cobalt-blue and cream-lime flat rings, silver hub points, violet sap haze",
+      "scene": "the violet sap of a petal cell at a molecule's width, thousands of flat six-spoked wheels adrift in violet haze, each wheel six flat cobalt-blue rings and six cream-lime rings stacked face to face in pairs, the six pairs radiating as spokes from a hub of two silver points, wheel after wheel tilted at every angle and receding into violet depth, one wheel's silver hub point glinting",
+      "target": "a silver atom",
+      "target_phrase": "a silver atom",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "metal_atom",
+      "exp": -10.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "lime and violet fog in soft shells, a white-hot core point, violet-black open space",
+      "scene": "one magnesium atom at its own width, a soft round fog of lime and violet glow thinning outward through layered shells, the shells nested and faintly banded, a single white-hot point at the fog's heart, open violet-black space on every side, the dim fogs of neighbouring atoms at the frame's margins",
+      "target": "a glowing rippled droplet",
+      "target_phrase": "a glowing droplet"
+    },
+    {
+      "name": "rippled_droplet",
+      "exp": -14.3,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "amber and violet packed beads, robin-orange crests, lime-violet fog",
+      "scene": "a glowing droplet of tightly packed amber and violet beads in a lime-violet fog, its whole rind raised in broad bulges and sunk in hollows all round, alternate patches lifted and settled, a robin-orange sheen on every crest, open fog about it on every side",
+      "resolve": false
+    },
+    {
+      "name": "ringing_sun",
+      "exp": 9.1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "orange-gold and amber fire, violet shadow in the sunken patches, a lime-violet rim of flame, jet-black space, one blue-green world",
+      "scene": "our Sun seen whole in the black of space, its face a checkerboard of lifting and settling patches of orange-gold fire, alternate patches raised and sunk across the whole disc, violet shadow in each sunken patch, a thin crown of lime and violet flame curling off its rim, jet-black space on every side, one blue-green world set in the black beside the Sun, its day side lit",
+      "target": "a blue-green planet",
+      "target_phrase": "a blue-green planet"
+    },
+    {
+      "name": "wood_air",
+      "exp": 2.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "acid-lime beech canopy, violet-blue haze beneath, silver-grey trunks, a lit spring sky",
+      "scene": "a beech wood seen from the air low and oblique on a spring morning, a canopy of acid-lime new leaves lit by the sun, a violet-blue haze of bluebells glowing under the trees through every gap, silver-grey trunks rising through the haze, one open glade where the violet-blue carpet lies clear under the sun",
+      "target": "a violet-blue bluebell carpet",
+      "target_phrase": "a bluebell carpet"
+    }
+  ],
+  "music_theme": "a luminous glass-chapel bed of bell tones over one deep kick on every downbeat at a stately tempo, bright bird-like figures through the wood and the flower spike, hushed ringing tones through the petal cells, the pigment wheels and the atom, a wide shimmering bell-bloom on the morph from the ringing droplet up into the ringing Sun, then settling down through the canopy onto the violet carpet",
+  "music_key": "D major",
+  "render_start": "metal_atom"
+}

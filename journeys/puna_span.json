@@ -1,0 +1,141 @@
+{
+  "name": "puna_span",
+  "theme": "a braided-grass footbridge slung across a high-Andes gorge at dusk, rewoven out of bunchgrass rope every year and read as ONE hanging rope at every scale — the span's sagging cables over the chasm, the woven deck, one cable's braid, one rope's combed grass cords, the felt of split fibres, the files of cells inside a fibre, the wall those cells build, the rosette in the membrane spinning six chains into one stiff nanometre cable, one carbon atom of a glucose ring — and at the floor a taut rope of light strung between two burning points, which flips straight back to the grass rope over the gorge. The journey never leaves the mountain and never touches the sky.",
+  "style": "gilded_relic",
+  "music_lane": "deep_archive",
+  "music_theme": "vast and ancient — a low sub drone with a struck stone pulse on every downbeat, a plucked gut-string figure carrying the rope cards, a breathy high-altitude flute over the gorge and the bog, the micro cards paring back to sustained bowed tone with the deep pulse still under them, one struck bloom on the flip from the rope of light back to the span, settling to drone and pulse as the layered wall returns",
+  "music_key": "G minor",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "frames_per_beat": 6,
+    "counter": true
+  },
+  "render_start": "wall_lamellae",
+  "registers": [
+    {
+      "name": "bofedal_commons",
+      "exp": 1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade cushion bog, straw-gold bunchgrass, violet dusk shadow",
+      "scene": "a cushion bog on the high puna at the shoulder of a gorge, jade hummocks of cushion plants packed between peat pools, tufts of straw-gold bunchgrass strewn across the flats, vicuñas standing in the bog among the hummocks, a giant coot on its heaped nest mound of weed at a pool's rim, Andean geese in pairs on the turf, a mountain viscacha on a warm slab of stone, torrent ducks in the froth of the race in the gorge floor, an Andean flicker at a burrow in the earth bank, and at the far rim an anchor of stacked stone with plaited straw cables lashed into it and a braided grass walkway leaving it out over the brink, violet cordillera dusk beyond",
+      "target": "a braided grass walkway",
+      "target_phrase": "a rope bridge"
+    },
+    {
+      "name": "deck_weave",
+      "exp": 0.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bleached straw gold, vermilion wool bindings, violet gorge air",
+      "scene": "the woven floor of a grass span, a plaited mat of straw rope laid in herringbone courses underfoot, four braided cables running away on either side at deck level, hanger ropes rising from them at even spacing to the handrail cables, vermilion wool lashings knotted at every hanger, violet gorge air showing through the gaps of the weave, black cordillera rock walls standing past the handrails",
+      "target": "a braided straw cable",
+      "target_phrase": "a thick straw rope"
+    },
+    {
+      "name": "cable_braid",
+      "exp": -1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet shadow valleys, straw-gold twist, vermilion bands",
+      "scene": "the plaited bulk of one main cable of the span, six straw ropes laid up together in a long helix, deep violet shadow pooled in the valleys between them, loose grass whiskers standing out of the twist, vermilion wool lashings banded across the whole at intervals, gorge air and violet rock past it in every direction",
+      "target": "a twisted straw rope",
+      "target_phrase": "a twisted rope"
+    },
+    {
+      "name": "rope_strand",
+      "exp": -2.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm straw gold, husk umber, glacier-turquoise glare",
+      "scene": "one straw rope of the cable unlaid, its three cords combed out and laid parallel, every cord a bundle of crushed bunchgrass stems raked one way, husks and split sheaths caught among them, umber shadow in the grooves between the stems, glacier-turquoise glare coming up through the gaps from the race in the gorge floor",
+      "target": "a hairlike straw fibre",
+      "target_phrase": "a pale straw fibre"
+    },
+    {
+      "name": "grass_fibre",
+      "exp": -3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "glassy straw-gold threads, jet gaps, cold violet glints",
+      "scene": "the split hairs of a crushed bunchgrass stem, countless hairlike fibres crossing and matted through one another in a felt, each fibre glassy and grooved along its length, silica beads studding them at intervals, jet gaps opening between the crossings, gold light caught the whole length of every fibre",
+      "target": "a file of long glassy cells",
+      "target_phrase": "a file of cells"
+    },
+    {
+      "name": "cell_files",
+      "exp": -4.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "honey-gold walls, jade hollows, umber pit shadows",
+      "scene": "the interior of one grass fibre, files of long cells set end to end in ranks, their walls honey-gold and thickened in many layers, jade shadow pooled in the hollow of each cell, pits sunk through the walls in rows so that every pit looks into the cell next door, cross-walls cut at a slant between them, countless files packed side by side in every direction",
+      "target": "a honey-gold cell wall",
+      "target_phrase": "a thick cell wall",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "wall_lamellae",
+      "exp": -6.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber gum seams, straw-gold thread rafts, violet-grey partings",
+      "scene": "a grass cell's wall in section, layer stacked on layer through its whole depth, every layer a raft of stiff straw-gold threads laid parallel, each raft set at its own slant across the raft beneath it, amber gum packed into the seams, violet-grey shadow held in the partings, ranks of the stacked layers carrying on in every direction",
+      "target": "a six-part protein rosette",
+      "target_phrase": "a turquoise rosette",
+      "loop_target": "a grass cell's wall in section, layer stacked on layer, every layer a raft of stiff straw-gold threads laid parallel and slanted across the raft beneath",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "layered"
+      }
+    },
+    {
+      "name": "synthase_rosette",
+      "exp": -7.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "turquoise-lit protein, violet membrane, straw-gold chains",
+      "scene": "the membrane beneath a grass cell's wall, a rosette of turquoise-lit protein set into it, six clusters of knotted subunits seated at equal angles about one hub, a glucose chain paid out from under every cluster, the six chains drawn together into one stiff cable a couple of nanometres across as they leave the hub, cable laid beside cable in close ranks in the wall overhead, more rosettes seated through the violet membrane in every direction, each one on a straight rail beneath the wall",
+      "target": "a glowing carbon atom",
+      "target_phrase": "a glowing atom"
+    },
+    {
+      "name": "carbon_fog",
+      "exp": -10.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-grey fog shells, hard gold-white core point, jet beyond",
+      "scene": "one carbon atom of a glucose ring, a soft globe of violet-grey fog in nested shells about a hard gold-white point at its middle, the fog densest against that point and paling out at its outer reach, the ring's other atoms standing off as pale fog-globes in the jet beyond, faint strung threads of standing light between them",
+      "target": "a hard bright point",
+      "target_phrase": "a bright point",
+      "cameo": {
+        "sprite": "output/mascots/canon/adam.png",
+        "pos": [
+          0.7,
+          0.34
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "flux_tube",
+      "exp": -15.0,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "gold-white glare rope, vermilion sparks, pitch emptiness",
+      "scene": "a taut rope of light strung between two burning points, the rope a braided strand of gold-white glare drawn straight and tight, its twist legible along its length, vermilion sparks standing off it, the two points hard and bright at either end of it, pitch emptiness in every direction past them, a second pair of points strung on a shorter rope off to one side"
+    },
+    {
+      "name": "gorge_span",
+      "exp": 2.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "straw-gold span, violet-black rock walls, glacier-turquoise torrent",
+      "scene": "a braided grass span slung across a gorge in the cordillera at dusk, the rope hung in one long sag between anchors of stacked stone, one anchor on either side of the chasm, four straw-gold cables carrying a woven walkway, hanger ropes strung from the handrail cables down to the deck in a fence of slim verticals, violet-black rock walls dropping to a glacier-turquoise torrent in the gorge floor, gold bunchgrass tufts along the rims, a condor aloft over the span, cordillera peaks in violet haze beyond",
+      "target": "a jade-green cushion bog",
+      "target_phrase": "a green bog"
+    }
+  ]
+}

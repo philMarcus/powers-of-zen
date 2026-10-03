@@ -1,0 +1,145 @@
+{
+  "name": "clathrate_seep",
+  "theme": "a cold seep on the deep continental slope, where methane frozen into ice — the ice that burns — breaks the seafloor in peach-amber mounds wormed by ice worms, read as ONE CAGE WITH A BEAD RATTLING IN IT at every scale: a mercury-silver brine pool held in its ring of mussels, the hydrate's polyhedral cages of frozen brine each holding one gas bead off-centre, and a Wolf-Rayet star burning off-centre inside the bubble its own wind has blown. A MINERAL dive through the hydrate (mound, ice grains, a hydrate crystal's growth terraces, the clathrate cage lattice) ending on one cage with its methane bead rattling off-centre, which morphs up into the Wolf-Rayet wind bubble; a runaway star's bow shock and that star with its ocean world lead home. Seam = a caged bead off-centre to a star off-centre in its own bubble; no foam, no hexagon rhyme, no nucleus.",
+  "style": "cosmic_gloss",
+  "music_lane": "deep_archive",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "ocean_world",
+      "exp": 7.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "an indigo night ocean on a planet's flank, a peach-lit continental margin, rose aurora, silver city-free coasts",
+      "scene": "an ocean world seen entire from orbit on its night flank, a deep indigo sea over most of the hemisphere, a long continental margin curving across the globe as a pale peach-lit rim where the shelf drops to the abyss, a thin rose aurora looped over the pole, mercury-silver moonlight laid across one stretch of sea, a scatter of distant stars about the world in the indigo deep",
+      "target": "a peach-lit continental margin",
+      "target_phrase": "a glowing coastline rim",
+      "loop_target": "an indigo ocean world on its night flank with a peach-lit continental margin"
+    },
+    {
+      "name": "continental_slope",
+      "exp": 4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "indigo abyss, peach-amber glow points along the slope, mercury-silver brine lakes, rose sediment fans",
+      "scene": "the deep continental slope seen from high above the seafloor, submarine canyons cut down the slope in branching grooves, rose sediment fans spread at their mouths, dozens of peach-amber glow points scattered along one terrace of the slope, a mercury-silver brine lake lying in a hollow among them, the abyss plain falling away into indigo beyond the slope's foot",
+      "target": "a mercury-silver brine lake",
+      "target_phrase": "a silver brine lake"
+    },
+    {
+      "name": "seep_field",
+      "exp": 2.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "a mercury-silver brine pool in a rose-black mussel ring, peach-amber ice mounds, indigo gloom",
+      "scene": "a cold seep on the slope seen low and oblique over the seafloor, a brine pool lying in a hollow with a mirror-silver surface and a crisp shoreline, a ring of blue-black mussels crowding its brink, peach-amber mounds of burning ice heaved up through the sediment around the pool, bushes of rose-tipped tubeworms rooted on grey carbonate slabs, streams of silver bubbles standing over two of the mounds, indigo gloom over the entire field",
+      "target": "a peach-amber ice mound",
+      "target_phrase": "a glowing amber mound",
+      "cameo": {
+        "sprite": "output/mascots/canon/kitty.png",
+        "pos": [
+          0.64,
+          0.36
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "seep_commons",
+      "exp": 1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "peach-amber hydrate glowing from within, rose ice-worm points, blue-black mussels, mercury-silver pool, indigo abyss",
+      "scene": "the cold-seep commons at eye level on the seafloor beside a hydrate mound, the mound's face peach-amber and glowing from within, rose-pink ice worms nestled in pits across the ice, a bed of blue-black mussels ringing a mercury-silver brine pool at the foot of the mound, a bush of tubeworms with rose plumes on the carbonate, squat lobsters clinging to the carbonate slabs, a hagfish curled in the grey sediment, a spiny king crab poised on the rim of the pool, indigo abyss over all",
+      "target": "a peach-amber ice face",
+      "target_phrase": "a glowing ice face"
+    },
+    {
+      "name": "hydrate_ice",
+      "exp": -1.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "peach-amber ice grains, rose sediment seams, silver gas pockets, indigo cracks",
+      "scene": "the inside of the hydrate at a grain's width, a packed mass of glassy peach-amber ice grains glowing from within, rose sediment laced along the seams between grains, silver pockets of trapped gas set among them, indigo cracks ruled across the ice, grain after grain receding into indigo depth, one clear faceted grain lying apart from the others",
+      "target": "a clear faceted ice grain",
+      "target_phrase": "a clear amber crystal",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "hydrate_crystal",
+      "exp": -5.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "stepped peach terraces, rose step-risers, silver growth spirals, indigo pits",
+      "scene": "the face of one methane hydrate crystal at a wavelength's width, broad peach-amber growth terraces stepped across it, each step riser rimmed rose, a silver growth spiral wound about one screw point, minute indigo pits dotted in rows along the terraces, terrace below terrace descending into indigo depth",
+      "target": "a minute indigo pit",
+      "target_phrase": "a tiny blue pit",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "cage_lattice",
+      "exp": -8.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "peach-amber cage struts, rose-silver gas beads, indigo gulfs",
+      "scene": "the clathrate hydrate lattice, frozen molecules of brine linked into hollow polyhedral cages of two shapes, twelve-sided cages and fourteen-sided cages sharing every seam, each cage built of peach-amber struts meeting at glowing nodes, one rose-silver gas bead seated off-centre inside every cage, the cages stacked tier upon tier into indigo depth, open gulfs through the struts",
+      "target": "a rose-silver gas bead",
+      "target_phrase": "a glowing pink bead",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "cubic"
+      }
+    },
+    {
+      "name": "cage_bead",
+      "exp": -9.3,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "a peach-amber polyhedral cage, one rose-silver bead off-centre, indigo void",
+      "scene": "one hollow polyhedral cage of frozen brine, its peach-amber struts forming a round many-faced shell of pentagons, one bright rose-silver bead sitting off-centre inside the shell, soft rose haze about the bead, faint neighbouring cages ghosted at the margins, indigo void through every face of the shell",
+      "resolve": false
+    },
+    {
+      "name": "wind_bubble",
+      "exp": 17.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "a peach-rose shell of lit gas, brightest at its rim, an ice-blue star off-centre, indigo nebula",
+      "scene": "a Wolf-Rayet wind bubble seen entire, a near-perfect sphere of lit gas light-years wide, its rim brightest in peach and rose filaments, the interior a clear indigo hollow, the blazing ice-blue star that blows it burning off-centre inside the sphere, wisps of indigo nebula about the bubble, a bright rose arc of shocked gas curved at one margin of the field, stars strewn across the deep",
+      "target": "a bright rose arc of gas",
+      "target_phrase": "a glowing pink arc"
+    },
+    {
+      "name": "bow_shock",
+      "exp": 15.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "a rose-peach crescent of glowing gas, a hot silver-rose star at its heart, indigo interstellar cloud",
+      "scene": "the bow shock of a runaway star, a broad crescent of rose-peach glowing gas curved ahead of the star, delicate filaments layered through the crescent, a trailing wake of faint silver gas streaming back from its horns, the runaway star a hot silver-rose point seated in the crescent's hollow, indigo interstellar cloud and scattered stars across the deep",
+      "target": "a hot silver-rose star",
+      "target_phrase": "a bright pink star"
+    },
+    {
+      "name": "runaway_sun",
+      "exp": 10.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "a silver-rose star disc, peach prominences, an indigo ocean world on its night flank",
+      "scene": "a runaway star seen near, its silver-rose face mottled with granules, peach prominences looped at its limb, a gauzy wind streaming off one side, an indigo ocean world set against the star's lower flank with a peach-lit coastline curving across its night face, stars strewn across the indigo deep",
+      "target": "an indigo ocean world",
+      "target_phrase": "a blue ocean planet"
+    }
+  ],
+  "music_theme": "dark oceanic pads over a deep sub bass drone driving at a brisk pulse, one low struck tone on each morph as another cage closes round its bead, the pads narrowing to a single held drone through the ice and the lattice, a vast blooming swell on the morph from the caged bead out to the star's bubble, then widening for the fall home onto the night ocean",
+  "music_key": "D minor",
+  "render_start": "bow_shock"
+}

@@ -1,0 +1,143 @@
+{
+  "name": "turbine_wake",
+  "theme": "an offshore wind farm on a fog-bound night, read as ONE WAKE restated at every scale. The Karman vortex street runs the whole ladder: paired cloud eddies peeling off a volcanic island seen from orbit, each turbine's wake drawn in the sea fog as a staggered procession of paired eddies, foam eddies off a mussel-crusted monopile, and at the far end a jellyfish galaxy with its disc bent back and cerulean tendrils of newborn stars trailing a disc-width behind it. Living continuation runs through the MUSSEL on the pile, never the seal: the crust, the byssal threads at their root, the byssal foot gland's files of secretory cells crammed with glue granules, and the byssal iron clamp itself (triple-strand ropes whose paired rings close about one iron bead apiece, thousands of the clamps tiled across the plaque). The commons is the monopile reef at night, a made object colonised as a reef. The seam is wake to wake: one iron atom's fog dragged wholly to one flank of its point, a lopsided teardrop with the bright nucleus at its leading rim, morphing up into the jellyfish galaxy, a bright core with its stuff trailing, at 10^-10 m and at 10^21 m. Palette family: beacon red and sea-fog indigo; night fog, never a pale wash.",
+  "style": "neon_drift",
+  "music_lane": "analog_dawn",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "tail_nursery",
+      "exp": 18.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "hot cerulean newborn suns in indigo-jet gas, umber dust lanes, a dull ember-red haze far behind",
+      "scene": "a knot of newborn stars deep in a galaxy's trailing tail, crowds of hot cerulean suns kindled through masses of indigo-jet gas, cerulean tendrils of the tail drawn past on either flank and fading into the void, dusty teardrop cocoons seated amid the young suns with a tail of shed dust off each one, umber dust lanes cut across the cerulean fire, a dull ember-red cluster haze far beyond it all",
+      "target": "a dusty teardrop cocoon",
+      "target_phrase": "a dusty teardrop",
+      "loop_target": "a knot of newborn cerulean stars amid the indigo gas of a galaxy's trailing tail"
+    },
+    {
+      "name": "dust_cradle",
+      "exp": 12.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "umber dust murk with a cerulean-lit rim, one ember-red newborn point",
+      "scene": "a newborn star cocooned in its own dust, the cocoon drawn out to a teardrop with a tail of shed dust off its blunt flank, an ember-red point seated at the teardrop's head where the star burns, a disc of dust about it cut into swept lanes, dark round worlds seated in several of those lanes, the cocoon's rim lit cerulean where the cluster's fire strikes it, umber murk within, far cerulean suns crowded through the void beyond",
+      "target": "a dark indigo world",
+      "target_phrase": "a dark round world"
+    },
+    {
+      "name": "island_street",
+      "exp": 6.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "foam-ivory cloud eddies on a pitch-indigo ocean, a scatter of beacon-red sparks",
+      "scene": "a night ocean seen from orbit, one volcanic island set in the dark water with a staggered procession of paired cloud eddies peeling off its peak downwind for hundreds of kilometres, every eddy a curled foam-ivory disc set opposite its partner, the sea pitch-indigo and creased with swell lines, a low sheet of sea fog lying over one reach of the shelf, a cluster of beacon-red sparks kindled in files on that reach, the terminator's dim edge far across the water",
+      "target": "a cluster of red sparks",
+      "target_phrase": "a cluster of red lights"
+    },
+    {
+      "name": "farm_wakes",
+      "exp": 3.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "indigo-jet fog masses, beacon-red points on every tower, foam-ivory eddy lines, one sodium-amber shore glow",
+      "scene": "an offshore wind farm at night seen from aloft at a shallow slant, its towers set out in files across the water, sea fog lying over the swell in indigo-jet masses, each tower's wake drawn in the fog as a staggered procession of paired eddies curling off opposite flanks far downwind, a beacon-red point kindled at the top of every tower and a fainter red point at each tower's waist, foam-ivory lines scribed on the swell beneath the fog, a sodium-amber harbour glow low on the far horizon, no moon overhead",
+      "target": "a red-lit steel tower",
+      "target_phrase": "a red-lit tower"
+    },
+    {
+      "name": "monopile_commons",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "indigo-jet swell and indigo-jet shells, one beacon-red point overhead, foam-ivory eddies, sodium-amber crab shells",
+      "scene": "the foot of one wind-farm tower at night, seen at eye level from the swell a few metres off, the steel pile rising out of the water crusted three deep with indigo-jet mussel shells, harbour seals hauled out on the boat landing, cormorants roosting on the platform rail overhead, a beacon-red point burning at the rail, foam-ivory eddies peeling off the pile's flanks in a staggered file, a shoal of pouting massed under the pile in the clear water, sodium-amber edible crabs on the scour stones, a lobster wedged in the rock armour, no moon and no lamp anywhere",
+      "target": "an indigo mussel shell",
+      "target_phrase": "a dark mussel shell",
+      "cameo": {
+        "sprite": "output/mascots/canon/dora.png",
+        "pos": [
+          0.62,
+          0.58
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "mussel_crust",
+      "exp": -1.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "indigo-jet shells with cerulean nacre rims, sodium-amber threads, umber silt murk",
+      "scene": "the mussel crust on the pile's steel, indigo-jet shells crowded on their ends three deep and gaping a hairline apart, cerulean nacre catching at the gape rims, a fan of sodium-amber threads guyed down from every shell to the steel, umber silt held in the water, small foam eddies curled off the crust's brow in a staggered file, unlit gulfs amid the shells",
+      "target": "a taut amber thread",
+      "target_phrase": "a taut amber thread",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "thread_root",
+      "exp": -3.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sodium-amber threads on a glossy amber ridge, cerulean nacre walls, soot-dark pores",
+      "scene": "the root of the byssal threads within one gaping shell, a crowd of sodium-amber threads gathered into one stem seated in a groove cut down a glossy amber ridge, sister threads fanned out from the stem to their flat disc plaques on the steel, the groove's wall pitted with soot-dark pores set in a file, cerulean nacre walls curving behind, umber silt drifted in the clearances",
+      "target": "a soot-dark pore",
+      "target_phrase": "a dark pore"
+    },
+    {
+      "name": "gland_files",
+      "exp": -4.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ivory glue granules on cerulean-lit cytoplasm, umber depths",
+      "scene": "the crowded interior of a byssal gland, files of tall secretory cells set shoulder to shoulder, every cell crammed with round ivory granules of glue protein, a file of the granules seated at each cell's mouth where its duct opens, slim ducts cut down amid the files, cerulean-lit cytoplasm about the granules, umber depths behind the farthest cells",
+      "target": "a round ivory granule",
+      "target_phrase": "a round ivory bead",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "iron_clamps",
+      "exp": -8.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ember-red iron beads on cerulean-gleamed ropes, umber depth, unlit gulfs",
+      "scene": "the crowded interior of one glue granule, hundreds of slim ropes each wound of three strands, every rope's tip studded with paired rings set in twos, every three of those rings closed about one ember-red iron bead and gripping it at even spacing, thousands of the clamps tiled into the umber depth, cerulean gleams kindled down the wound ropes, unlit gulfs amid them",
+      "target": "a bright iron bead",
+      "target_phrase": "a bright red bead",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "dragged_atom",
+      "exp": -10.2,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "dim cerulean haze drawn to one flank, one incandescent nucleus point, unlit void",
+      "scene": "one iron atom held in a strong field, its fog no shell about its point but drawn wholly to one flank of it, a lopsided teardrop of dim cerulean haze with the incandescent nucleus point at its leading rim and the haze streaming off behind into a tail, fainter dragged fogs of neighbouring atoms set out in a file beyond, all of them leaning the same way, unlit gulfs through the void amid them"
+    },
+    {
+      "name": "jellyfish_galaxy",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cerulean tendrils of newborn stars, an ember-red core bulge, umber dust lanes, violet cluster haze",
+      "scene": "a spiral galaxy set in a cluster's hot gas, its disc bent back at the rim and cerulean tendrils of newborn stars trailing behind it for a disc-width or more, the disc's core an ember-red bulge, umber dust lanes curled through the arms, knots of hot cerulean suns kindled down every tendril, the cluster's violet haze crowded with lesser galaxies beyond, the void unlit past them all",
+      "target": "a cerulean star knot",
+      "target_phrase": "a bright cerulean knot"
+    }
+  ],
+  "music_theme": "warm analog pads with a gentle tape warble over a deep soft kick on every downbeat, a round mallet struck on each morph as the wake restates itself, the pads narrowing to one turning figure through the gland and the iron clamps, a low struck mallet on the morph from the dragged atom out to the trailing galaxy, then widening for the fall home onto the star knot",
+  "music_key": "B minor",
+  "render_start": "tail_nursery"
+}

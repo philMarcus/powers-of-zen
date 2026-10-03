@@ -1,0 +1,80 @@
+{
+  "name": "foam_nest",
+  "theme": "a bushveld waterhole on a rain night, a realm-local slice that never leaves the waterhole and never touches space or an atom: the pool from aloft, the commons crowded on one bare bough over the water where foam-nest tree frogs keep a moon-silver raft of froth, the froth itself as an equal-cell dry foam of only two cell shapes, and one bubble wall as the protein skin that holds it — which morphs up into the rain-cloud deck over the same waterhole, a honeycomb of closed cloud cells that is the same froth writ tall. FROTH IS THE SHAPE AT EVERY SCALE: equal cells meeting at the honest soap angle in a nest a hand wide and in a cloud deck kilometres wide. NOTE the seam card `bubble_skin` is the reference-steering candidate — ranaspumin renders nothing by name, so the picture is written out in full.",
+  "style": "enchanted_wild",
+  "music_lane": "music_box",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "waterhole_from_air",
+      "exp": 2.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "umber floodwater, bronze churned mud, olive thorn scrub, moon-silver rain sheen",
+      "scene": "a bushveld waterhole on a rain night seen from aloft on a shallow slant, the pool one sheet of umber water, a churned rim of hoof-pocked bronze mud about its whole edge, game paths cut through olive thorn scrub to the water at every flank, a bare marula bough leaning out over the near end of the pool, dense reeds crowding the far shore, scattered rain pocks across the umber sheet, the basin unlit but for a high moon behind the rain cloud",
+      "target": "a bare pale bough",
+      "target_phrase": "a bare tree branch",
+      "cameo": {
+        "sprite": "output/mascots/canon/dora.png",
+        "pos": [
+          0.62,
+          0.6
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "nest_commons",
+      "exp": 0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bronze wet hide, olive scale, amber eyeshine, moon-silver froth on umber water",
+      "scene": "a bare marula bough out over a bushveld pool on a rain night, seen low over the water, a crowd of grey foam-nest tree frogs massed on the wet bark about one moon-silver raft of froth, an olive boomslang coiled on the same bough, a fiery-necked nightjar on the bronze mud of the near bank, a bush baby crouched in the fork overhead with two amber eyes, a fishing spider spread on the umber water beneath, a hippo's wet bronze back above the pool at the far end, rain beads on every leaf",
+      "target": "a moon-silver froth raft",
+      "target_phrase": "a white foam clump"
+    },
+    {
+      "name": "froth_cells",
+      "exp": -3.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moon-silver cell walls, amber egg beads, umber gulfs",
+      "scene": "the crowded interior of a frog's foam nest, a dry froth of equal-volume cells stacked through the whole space, thousands of them, the cells of only two shapes, some walled by twelve curved faces and some by fourteen, every wall meeting its neighbours three at a time at one honest soap angle, the walls moon-silver and taut, amber egg beads seated deep amid the froth, umber gulfs where the cells darken into the depth",
+      "target": "a taut bubble wall",
+      "target_phrase": "a white bubble wall",
+      "loop_target": "a dry froth of equal-volume cells, moon-silver walls amid umber gulfs",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "bubble_skin",
+      "exp": -8.0,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "amber ribbon bundles on a moon-silver face, umber void",
+      "scene": "one bubble wall of a frog's foam nest in section, a skin one molecule thick built of small ribbon proteins lying flat on the air face, each protein a stubby bundle of three coiled ribbons, the bundles set shoulder to shoulder into one continuous tiled face, thousands of them across the wall into the dim distance, the air before the face an umber void, a scatter of loose bundles adrift in it",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "cloud_honeycomb",
+      "exp": 4.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moon-silver cloud domes, unlit umber land, olive scrub",
+      "scene": "the rain-cloud deck over the bushveld seen from aloft by moonlight, the cloud sorted into a honeycomb of closed cells, every cell a domed raft of moon-silver vapour walled about by a slim clear lane, hundreds of the cells tiled across the sky to the horizon, the unlit umber land showing through the clear lanes amid them, one umber pool set in olive thorn scrub under a clearance in the deck",
+      "target": "a dark umber pool",
+      "target_phrase": "a dark round pool"
+    }
+  ],
+  "music_theme": "a tiny music box and celesta over a low warm drone, a deep soft kick on every downbeat and one struck tine on each morph, the box narrowing to a single slow figure inside the froth and the protein skin, one low struck bell on the morph from the skin to the cloud deck, the drone widening for the fall home onto the pool and the frogs",
+  "music_key": "D minor",
+  "render_start": "froth_cells"
+}

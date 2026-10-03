@@ -1,0 +1,87 @@
+{
+  "name": "lotus_sieve",
+  "theme": "one pored wall at every scale in a lotus pond at noon — the seed head a flat-topped jade cup punched with holes and a seed seated in each, dived into one seed's cotyledon packed with starch, down a slender vein to the sugar tubes whose end walls are plates punched with pores, into a companion cell's nucleus whose envelope is studded with thousands of eightfold ring-gates, which morphs up into the pond seen from the air tiled with circular pads, and comes home low over the pads to the pond at water level",
+  "style": "lacquer_pop",
+  "music_lane": "music_box",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 9,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "lotus_commons",
+      "exp": 0.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "matte blue-green pads, koi vermilion and ivory, tea-brown water, one rose-pink bud",
+      "scene": "a lotus pond at noon seen at water level from the edge of the pads, disc-shaped matte blue-green lotus pads crowding tea-brown water, jade seed heads standing on tall stalks among the pads, one rose-pink bud, vermilion-and-ivory koi under the pads, a moorhen among the stems, a blue dasher dragonfly perched on a seed head, pond skaters dotted across a patch of open water, a bullfrog seated on a pad, a kingfisher on a weathered wooden post, a red-eared turtle on a sunken log, a hard blue noon sky, no people present",
+      "target": "a jade seed head",
+      "target_phrase": "a jade seed head",
+      "loop_target": "a lotus pond at water level, jade seed heads on tall stalks among blue-green pads and koi"
+    },
+    {
+      "name": "seed_cup",
+      "exp": -1.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade cup, deep green seeds, tea-brown veins, koi-vermilion flecks",
+      "scene": "a lotus seed head seen from directly over its flat top at noon, a jade cup punched with a dozen circular holes, a deep green seed seated in every hole, the cup's rim ribbed with fine tea-brown veins, vermilion flecks where the petals fell, blue-green pads and tea-brown water far down the stalk",
+      "target": "a deep green seed",
+      "target_phrase": "a green seed"
+    },
+    {
+      "name": "cotyledon_cells",
+      "exp": -3.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep teal cell walls, ivory starch grains, oil-green ground, one rose vein",
+      "scene": "the fleshy storage tissue of a lotus seed, countless many-sided cells packed wall to wall in every direction, each cell walled in deep teal and crammed solid with disc-shaped ivory starch grains, small oil-green droplets wedged in the gaps, a slender rose-tinted vein of long narrow tube cells threading across the packed tissue",
+      "target": "a slender rose vein",
+      "target_phrase": "a rose vein"
+    },
+    {
+      "name": "sieve_plates",
+      "exp": -4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-pink sap tubes, slate-violet sieve plates, jade companion cells",
+      "scene": "rows of clear rose-pink tube cells joined end to end in long parallel files, every joint a flat slate-violet plate punched clean through with dozens of circular holes, the holes lined with thin collars, narrow jade companion cells hugging each tube's flank, one violet nucleus seated in every companion cell",
+      "target": "a violet cell nucleus",
+      "target_phrase": "a violet nucleus",
+      "cameo": null
+    },
+    {
+      "name": "pore_envelope",
+      "exp": -7.4,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "deep teal envelope, koi-vermilion ring-gates, ivory tendrils, violet depth",
+      "scene": "the curved double wall of one cell nucleus, thousands of ring-gates studding the deep teal envelope in a loose scatter to every horizon of the curve, each gate a vermilion ring of eight blocks set clean through both layers of the wall, eight slender struts hanging under each ring and meeting in a small ring at their tips, a plug of fine ivory tendrils in each ring's throat, violet depth showing through every hole, no ground and no sky"
+    },
+    {
+      "name": "pond_air",
+      "exp": 2.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blue-green pad discs, tea-brown water, jade cups, koi-vermilion flecks",
+      "scene": "a lotus pond from straight overhead at noon, hundreds of disc-shaped matte blue-green pads tiling tea-brown water edge to edge, jade seed cups standing on stalks among the pads, rose-pink buds dotted through the tiling, vermilion koi showing in a few open circles of water, a weathered boardwalk crossing one corner, a willow-green bank at the margin",
+      "target": "a lotus pond margin",
+      "target_phrase": "the pond margin"
+    },
+    {
+      "name": "pond_margin",
+      "exp": 1.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "willow green bank, blue-green pads, tea-brown water, vermilion koi",
+      "scene": "the margin of a lotus pond seen low over the pads at noon, a willow-green bank and a weathered wooden post at the water's edge, disc-shaped blue-green pads crowding the shallows, jade seed heads on tall stalks rising out of them, vermilion koi under the pads, a patch of open tea-brown water among the stems",
+      "target": "a patch of open lotus water",
+      "target_phrase": "the open water"
+    }
+  ],
+  "music_theme": "a still lotus pond at noon — a slow music box figure over soft bowed tones with a deep kick landing on the downbeat of every scale change, the figure narrowing into a patient pinging pattern through the seed and the sieve plates, a wide opening swell where the pore-studded wall morphs up into the pond from the air, and a settling chord low over the pads as the pond comes home",
+  "music_key": "F major",
+  "render_start": "cotyledon_cells"
+}

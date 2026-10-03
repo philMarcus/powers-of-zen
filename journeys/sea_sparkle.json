@@ -1,0 +1,83 @@
+{
+  "name": "sea_sparkle",
+  "theme": "a mangrove-fringed bay on a moonless night where the water itself is the only glow — a realm-local slice that never leaves its own bay. The commons runs at water level among the prop roots (a tarpon's cerulean V-furrow, needlefish spark lines, a southern stingray's glowing wing-wake, a mullet over lit spray, a yellow-crowned night heron on the roots); the descent goes into one lit wake to the sea-sparkle swarm — clear balloon cells a millimetre across with copepod spark trails scribed through them — inside one balloon to the strand web of cytoplasm radiating across a clear vacuole and studded with spark-sacs, and down to the lamp itself: the pleated pockets of dinoflagellate luciferase burning cerulean in a soot-dark membrane, which morphs to the entire bay from the air — sparks in the dark at two scales, the lit water playing the sky. ONE THING OUTRUNNING ITS OWN RIPPLES is the shape at every scale: the fixed V of a wake, at fish scale and at copepod scale alike. NOTE the molecular card `luciferase` is the reference-steering candidate — the enzyme renders nothing by name, so the picture is written out in full and a reference image would carry the structure.",
+  "style": "aurora_silk",
+  "music_lane": "aurora_strings",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "bay_commons",
+      "exp": 0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "electric cerulean glow, tea-brown tannin water, tar-dark prop roots, one amber eye point",
+      "scene": "a mangrove bay on a moonless night seen from among the prop roots at water level, the water a tea-brown near-jet sheet, a tarpon in the shallows with a long cerulean V-furrow scribed behind it, a shoal of needlefish with hair-fine spark lines drawn through the same water, a southern stingray's wing-wake glowing cerulean over the shallow flat, a mullet clear of the surface above a burst of lit spray, a yellow-crowned night heron perched on the tar-brown arching roots with one amber eye, crowded root arches framing the near edge, no lamps and no moon anywhere, every glow in the scene belonging to the water itself",
+      "target": "a glowing cerulean wake",
+      "target_phrase": "a glowing cerulean streak"
+    },
+    {
+      "name": "wake_swarm",
+      "exp": -2.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "electric cerulean sparks on tea-brown murk and jet gulfs",
+      "scene": "the interior of one lit wake in tea-brown water, a crowd of clear balloon-shaped cells a millimetre across suspended in every direction, each cell a round glassy bag with one short stubby tentacle, cerulean sparks kindled among them at scattered points, copepods amid the crowd with a V of spark trails scribed behind each one, hair-fine grains of silt held in the tannin murk, jet-dark gulfs amid the cells",
+      "target": "a clear balloon-shaped cell",
+      "target_phrase": "a clear round bubble",
+      "loop_target": "a crowd of clear balloon-shaped cells lit with cerulean sparks in tea-brown water",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "strand_web",
+      "exp": -4.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cerulean spark beads on clear cytoplasm strands, tannin-gold gulfs",
+      "scene": "the interior of one sea-sparkle cell, a vast clear vacuole crossed by slender strands of cytoplasm that radiate from a dense granular central mass out to the curved inner skin, every strand studded with hundreds of tiny cerulean spark-sacs at even spacing, a few of the sacs burning harder than the rest, the clear gulfs amid the strands faintly tannin-gold, the taut inner skin curving past the outermost strands",
+      "target": "a tiny cerulean spark-sac",
+      "target_phrase": "a small glowing bead",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "luciferase",
+      "exp": -8,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "electric cerulean burn on a soot-dark membrane, ivory ribbon folds",
+      "scene": "a soot-dark membrane crowded with folded ribbon proteins, each ribbon carrying three pleated pockets set in a row, a loose chain of four small rings seated in every pocket, a few of the ring-chains burning electric cerulean, thousands of the pocketed ribbons tiled across the membrane into the dim distance, stray ring-chains adrift in the void before the wall",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "bay_from_air",
+      "exp": 3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cerulean surf seam and cerulean wakes on void-dark water, tar-dark mangrove fringe",
+      "scene": "an entire mangrove bay at night seen low over the water from a shallow slant, the swell breaking at the beach as one long cerulean seam of glow, curved cerulean wakes scribed across the void-dark water in several reaches, the mangrove fringe a pitch-dark band of crowns with one tar-brown point jutting into the bay, a starless sky over the far shore, no lamps and no moon anywhere",
+      "target": "a tar-dark mangrove point",
+      "target_phrase": "dark mangrove trees",
+      "cameo": {
+        "sprite": "output/mascots/canon/lorraine.png",
+        "pos": [
+          0.63,
+          0.62
+        ],
+        "size": 0.14
+      }
+    }
+  ],
+  "music_theme": "shimmering polar strings over a deep soft kick on every downbeat, a cold cerulean bell struck on each morph, the strings narrowing to one hushed figure inside the cell and the membrane, one low struck bell on the morph from the burning pockets to the bay from the air, then widening for the fall home onto the roots and the water",
+  "music_key": "F# minor",
+  "render_start": "wake_swarm"
+}

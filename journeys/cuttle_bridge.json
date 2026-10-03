@@ -1,0 +1,137 @@
+{
+  "name": "cuttle_bridge",
+  "theme": "the giant cuttlefish gathering at Whyalla, South Australia — thousands of cuttlefish on a shallow rocky reef in winter daylight, skins flashing zebra bands, a courting male and a rival facing off over a female — read as A PAIR WITH A BEAD IN THE GAP at every scale: two nucleons with a spark thrown in the gap (Yukawa's picture of force), and two galaxy clusters strung with a filament of galaxies. The living dive goes into one male's zebra skin, its chromatophore rosettes and the nerve fibres that fire them, the hemocyanin copper barrels of its blood, one copper atom, and the exchange bead — then the pair-with-a-spark morphs up into the intercluster bridge and the fall home runs through a ragged galaxy on the filament, the Sun, South Australia's gulfs from orbit, and the reef from the air.",
+  "style": "cosmic_gloss",
+  "music_lane": "tide_organ",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "cuttle_reef",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cream-and-chocolate zebra bands, violet-teal flashes, amber-gold kelp, rust-brown reef rock, sapphire-turquoise shallows",
+      "scene": "the Whyalla cuttlefish reef in Spencer Gulf on a clear winter day, seen low over the reef looking down through clear turquoise shallows, giant cuttlefish in their hundreds hovering over rust-brown rock, their skins in cream-and-chocolate zebra bands with violet-teal iridescent flashes, a courting male and a rival male side by side over a smaller female, a leafy seadragon amid amber-gold kelp fronds, a big cobalt groper at a ledge, a school of striped old-wife fish over the rocks, a bottlenose dolphin at the reef margin in the sapphire depth beyond",
+      "target": "a zebra-banded cuttlefish",
+      "target_phrase": "a banded cuttlefish",
+      "loop_target": "the Whyalla cuttlefish reef, hundreds of zebra-banded cuttlefish over rust-brown rock in turquoise shallows"
+    },
+    {
+      "name": "zebra_skin",
+      "exp": -0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cream and chocolate zebra bands, violet-teal iridescent sheen, amber freckles",
+      "scene": "the flank of a giant cuttlefish, broad skin striped in bold cream and chocolate zebra bands, a violet-teal iridescent sheen across the pale bands, small raised papillae dotting the skin, a frilled fin at the flank's margin, amber freckles scattered across the chocolate bands",
+      "target": "a freckled skin patch",
+      "target_phrase": "a freckled skin patch",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "chromatophore_rosettes",
+      "exp": -4.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sienna and saffron pigment sacs, violet-teal platelet shimmer, rose muscle spokes, gold nerve fibres",
+      "scene": "the skin of a cuttlefish tiled with chromatophore rosettes, each rosette a round elastic pigment sac, sienna or saffron or chocolate, ringed by fifteen to twenty rose muscle cells radiating from its rim as straight spokes, some sacs stretched wide into flat discs and some shrunk to dots, hair-fine gold nerve fibres branching down to the spokes of every rosette, a layer of violet-teal iridescent platelet cells beneath, a crimson capillary net under them all",
+      "target": "a crimson capillary",
+      "target_phrase": "a crimson capillary",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.64,
+          0.36
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "hemocyanin_barrels",
+      "exp": -7.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt copper glow, pale sapphire plasma, jade protein walls, ink depth",
+      "scene": "cuttlefish blood plasma, a pale sapphire haze crowded with hemocyanin barrels, each barrel a hollow hexagonal cylinder of jade protein built from ten stacked lobed units, the walls studded with pairs of copper points, the loaded pairs glowing cobalt, the barrels tumbling at every angle and receding into an ink depth, dozens near and hundreds far",
+      "target": "a glowing copper point",
+      "target_phrase": "a glowing copper point"
+    },
+    {
+      "name": "copper_atom",
+      "exp": -10,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "copper-orange and teal electron fog on ink, one incandescent point",
+      "scene": "one copper atom, a soft fog of electron haze about a single incandescent point, nested shells of the fog, the innermost a tight dense copper-orange glow, the next a broader amber haze, the outermost a faint wide teal haze with one lone fringe of fog reaching past the rest, dim knots of neighbouring fog at the margins of an ink void",
+      "target": "an incandescent point",
+      "target_phrase": "a lit point"
+    },
+    {
+      "name": "exchange_bead",
+      "exp": -15,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "gold and violet spheres, one magenta spark, ink void",
+      "scene": "an ink void strewn with pairs of glowing spheres, each pair two equal round gold-and-violet glows facing each other across a narrow gap, and in the gap of every pair one small magenta spark suspended midway, the spheres soft-edged and radiant, faint violet haze about each pair"
+    },
+    {
+      "name": "intercluster_bridge",
+      "exp": 23.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet filament, gold cluster knots, pink and cobalt galaxies, sable void",
+      "scene": "the intercluster bridge in the sable depth of the cosmos, two dense galaxy clusters, two glowing gold knots, facing each other across a gulf of space, one violet filament strung from knot to knot, galaxies beaded down its entire length as gold and pink specks, the filament seen lengthwise from one knot toward the other, faint violet gas sheathing the strand, the void dark on every side",
+      "target": "a ragged irregular galaxy",
+      "target_phrase": "a ragged galaxy"
+    },
+    {
+      "name": "ragged_galaxy",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt star-knots, hot pink nurseries, gold stars, sable space",
+      "scene": "a ragged irregular galaxy in sable space, a loose torn scatter of cobalt star-knots and hot pink nursery patches with no disk and no core, countless gold stars strewn through it, a violet haze of gas trailing off to one side, distant galaxies as faint specks beyond",
+      "target": "a lone yellow star",
+      "target_phrase": "a yellow star"
+    },
+    {
+      "name": "home_sun",
+      "exp": 9.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blazing gold photosphere, tangerine prominences, azure planet, sable space",
+      "scene": "a yellow star in sable space, its blazing gold face granular with a few dark sunspots, tangerine prominences arching at its rim, and set off from it an azure planet with swirls of cloud lit full on its day face",
+      "target": "an azure planet",
+      "target_phrase": "an azure planet"
+    },
+    {
+      "name": "gulfs_orbit",
+      "exp": 6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ochre-red outback, sapphire Southern Ocean, turquoise gulf shallows, azure atmosphere limb",
+      "scene": "the day face of the Earth from orbit over South Australia on a clear winter day, the ochre-red outback of the continent's south coast against the sapphire Southern Ocean, two long wedge-shaped gulfs cut deep into the land, Spencer Gulf and Gulf St Vincent, their shallows turquoise, the arrowhead of the Eyre Peninsula to the west, a few streaks of cloud, a faint azure limb of atmosphere at the horizon",
+      "target": "a long wedge-shaped gulf",
+      "target_phrase": "a narrow gulf"
+    },
+    {
+      "name": "reef_from_air",
+      "exp": 3.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "turquoise shallows, rust-brown reef rock, amber kelp beds, ochre shore, dappled cream specks",
+      "scene": "the head of Spencer Gulf near Whyalla from the air on a clear winter day, seen on a steep slant low over the gulf, a rocky shore of rust-brown boulders under an ochre headland, a broad reef flat in clear turquoise shallows, amber kelp beds scattered over the rock, the cuttlefish gathering a dappled crowd of cream specks spread across the shallows of the reef",
+      "target": "a cuttlefish reef",
+      "target_phrase": "a rocky reef"
+    }
+  ],
+  "music_theme": "a slow breathing organ and warm tidal pads over a soft deep kick on every downbeat, a swell on each morph, the texture thinning to one held tone through the rosettes, the copper barrels and the atom, a single struck low bell on the morph from the pairs of spheres to the two cluster knots, the full organ bed returning for the fall home through the galaxy, the Sun and the gulfs onto the reef",
+  "music_key": "E minor",
+  "render_start": "ragged_galaxy"
+}

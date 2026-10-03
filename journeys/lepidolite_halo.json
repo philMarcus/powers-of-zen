@@ -1,0 +1,128 @@
+{
+  "name": "lepidolite_halo",
+  "theme": "a granite pegmatite dyke in a ponderosa-pine mountain at night, its giant crystals of lilac lithium mica and pale spodumene bared in an old quarry cut — read as ONE CORE IN A FAR WIDER ENVELOPE at every scale: lithium's lone outer electron far out from its bright core, the lithium-11 nucleus with two loose neutrons adrift in its vast faint fog, and our galaxy wrapped in its enormous faint envelope with two satellite dwarfs far out in it. A MINERAL dive: the dyke, one lilac mica book, its lepidolite sheet-silicate layers with lithium seated between them, one lithium atom, then the halo nucleus. The commons is the quarry benches in the pines at night (porcupine, great horned owl, mountain goats, elk, a woodrat midden). The seam is two loose companions to two loose companions — the halo nucleus at 10^-14.5 m morphs up into the Milky Way in its envelope with the two Magellanic dwarfs at 10^21.3 m.",
+  "style": "gilded_relic",
+  "music_lane": "choir_of_dust",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 9,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "spiral_arm",
+      "exp": 19.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "lilac-mauve star clouds, amber dust lanes, pine-black deep, one quartz-silver star",
+      "scene": "a spiral arm of the galaxy seen from outside in deep space, a broad sweep of lilac-mauve star clouds curving across the view, amber dust lanes threaded along its inner margin, knots of young blue-lilac stars strung through the arm, countless tiny stars sown through the depth, pine-black gulfs between the arm and its neighbour, one steady quartz-silver star shining clear of the crowd",
+      "target": "a steady quartz-silver star",
+      "target_phrase": "a bright silver star"
+    },
+    {
+      "name": "home_star",
+      "exp": 12.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber-gold star, lilac zodiacal glow, pine-black space, a blue planet point",
+      "scene": "the Sun and its family of planets seen from far outside the orbits, the star a round amber-gold sphere with a soft lilac glow spread about it, a delicate band of zodiacal dust laid through the plane, a banded giant planet and a ringed planet set out along the plane, a blue planet shining near the star, pine-black space with a scatter of far stars",
+      "target": "a round blue planet",
+      "target_phrase": "a blue planet"
+    },
+    {
+      "name": "night_earth",
+      "exp": 6.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moonlit silver ocean, pine-green continent, amber town sparks, lilac airglow limb",
+      "scene": "the Earth at night seen from orbit, a continent spread under moonlight with long mountain ranges ridged across it in pine-green and silver, forest carpeting the high ranges, amber town sparks scattered along the valleys, a moonlit silver sea at the coast, a thin lilac airglow along the planet's limb, stars above",
+      "target": "a forested mountain range",
+      "target_phrase": "a green mountain range"
+    },
+    {
+      "name": "pine_ridge",
+      "exp": 3.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pine-shadow green-black forest, silver granite, one lilac-banded quarry cut, amber moon",
+      "scene": "a ponderosa-pine mountain at night seen from high above at a slant, granite ridges silvered by an amber moon, the forest a green-black pile of pointed treetops over every slope, a pale granite dyke striped across the mountainside, an old quarry cut stepped into the dyke in terraced benches with lilac stone bared in its face, a creek glinting silver in the valley below",
+      "target": "a terraced quarry cut",
+      "target_phrase": "a stepped quarry"
+    },
+    {
+      "name": "quarry_commons",
+      "exp": 1.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "lilac mica crystals in bone-pale granite, amber pine bark, pine-black shadow, moon-silver",
+      "scene": "the quarry benches at night at eye level in the pines, giant crystals bared in the cut face — squat lilac mica books in thick stacks, long pale spodumene blades, milky quartz lumps glinting silver — a porcupine perched in the fork of an amber-barked ponderosa, a great horned owl on a bare snag, two mountain goats standing on the upper bench, elk grazing at the treeline, a bushy-tailed woodrat's midden of twigs and cones heaped in a crack of the rock, amber resin beads shining on the pine trunks, pine-black shadow under the boughs, no lamp anywhere",
+      "target": "a lilac mica book",
+      "target_phrase": "a lilac mica crystal"
+    },
+    {
+      "name": "mica_book",
+      "exp": -2.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "lilac-mauve sheets with amber rims, quartz-silver sparkle, pine-black gaps",
+      "scene": "the cleaved rim of a lepidolite mica book seen low along its stack, hundreds of paper-thin lilac-mauve sheets pressed one on another, their margins splayed apart into fanned leaves glowing amber where the moonlight strikes through them, silver quartz grains lodged between the leaves, hairline pine-black gaps opened between the layers, one delicate sheet lifted free of the stack",
+      "target": "a thin lilac mica sheet",
+      "target_phrase": "a thin lilac sheet"
+    },
+    {
+      "name": "lepidolite_layers",
+      "exp": -8.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "lilac silicate sheets, amber lithium beads, quartz-silver oxygen points, pine-black gaps",
+      "scene": "the lepidolite lattice inside one mica sheet, flat layers of linked silicon-oxygen pyramids stacked tier on tier, each layer a lilac hexagonal mesh studded with quartz-silver oxygen points, a gallery between each pair of layers with amber lithium and potassium atoms seated in a row along it, the stacked layers repeating into pine-black depth, one amber lithium atom seated clear in the nearest gallery",
+      "target": "an amber lithium atom",
+      "target_phrase": "an amber glowing bead",
+      "loop_target": "stacked lilac silicate layers with amber lithium atoms seated between them",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "layered"
+      }
+    },
+    {
+      "name": "lithium_atom",
+      "exp": -10.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "a hard amber core point, a tight inner glow, a faint lilac outer fog far out, pine-black deep",
+      "scene": "one lithium atom seated in its gallery of the lattice, a hard amber-gold point at its middle wrapped in a tight bright glow, then a wide empty gap, then one faint lilac fog spread far out from the core with no rim anywhere, the silicate layers ghosted faintly above and below, pine-black deep through the clearances",
+      "target": "a hard amber-gold point",
+      "target_phrase": "a bright amber point",
+      "cameo": {
+        "sprite": "output/mascots/canon/adam.png",
+        "pos": [0.64, 0.38],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "halo_nucleus",
+      "exp": -14.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "a dense amber-gold droplet of spheres, an enormous faint lilac fog, two loose silver spheres",
+      "scene": "one nucleus seen in deep space at its own scale, a dense round droplet of glowing amber-gold spheres packed tight at the middle, an enormous faint lilac fog spread about the droplet many times wider than it, the fog thinning outward with no rim, two loose quartz-silver spheres adrift far out in the fog on opposite sides, pine-black deep beyond",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "galaxy_envelope",
+      "exp": 21.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "an amber-gold galactic core, lilac spiral arms, a vast faint violet glow sphere, two silver dwarf knots",
+      "scene": "the Milky Way seen entire from far outside, a bright amber-gold core with lilac spiral arms wound about it, the disc wrapped in an enormous faint violet glow sphere many times wider than the disc, two loose silver-blue dwarf galaxies adrift far out in the glow on one side, a scatter of remote galaxies in the pine-black deep",
+      "target": "a lilac spiral arm",
+      "target_phrase": "a glowing spiral arm"
+    }
+  ],
+  "music_theme": "a soft choir-like pad and glass harmonica held wide and still over a deep sub heartbeat on every downbeat, granular shimmer drifting through the quarry and the mica, the pad thinning to one held tone through the lattice and the lone atom, a low swell on the morph from the tiny fogged nucleus out to the galaxy in its vast glow, then settling for the fall home into the spiral arm",
+  "music_key": "D minor",
+  "render_start": "spiral_arm"
+}

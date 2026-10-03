@@ -273,6 +273,140 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
   about a lens galaxy (the Einstein Cross), a bilobed pollen grain, a quatrefoil window — FEW
   and EQUAL lobes (distinct from fingers of God's needle-burst of many spines, from growth-ring
   annuli's concentric rings, and from core & envelope's single sheath)
+- Kelvin wakes & bow waves (added 2026-09-20): the V of two arms standing behind anything that
+  crosses a surface — always the same opening whatever the speed — and the curved bow wave piled
+  ahead of it: a duck, a tarpon's lit furrow across a sea-sparkle bay, a ship, a copepod's spark
+  trail through a swarm, a moonlet ploughing a gap in a ring, a planet's spiral wake in its cradle
+  disc, a runaway star's bow shock, a bullet's shock cone — ONE THING OUTRUNNING ITS OWN RIPPLES
+  (distinct from Kármán streets, which are a wake of shed eddies, and from plume & billow's
+  turbulence: this is the standing V and the standing bow)
+- slant rain / parallel streaks (added 2026-09-20): many straight lines all falling one way
+  through everything alike — rain curtains and virga hanging from a cloud base, a hail shaft, a
+  meteor storm (parallel in truth, radiating from one point only by perspective), cosmic-ray muons
+  drizzling through rock, water and air, a comet shower falling sunward with every tail combed the
+  same way, the parallel rodlets paving a fungal spore's skin, rain-scored sandstone — the STREAK
+  family (distinct from laminar streamline foliation, which bends around obstacles: these are
+  straight; and from spine-bursts, which radiate: these are parallel)
+- spine-bursts, inside and out (added 2026-09-20): many straight needles radiating from one
+  centre — and the SAME burst seen from its own centre, every needle pointing at the eye: fingers
+  of God, one galaxy cluster drawn into a needle, a starburst galaxy's fountain of filaments, a
+  young supernova remnant's radial knots and jets, a dandelion clock, an acantharian's twenty glass
+  spines, the aragonite spherulites of a sea-turtle eggshell, a star of alpha tracks from one hot
+  grain, a porcupine's raised quills — the family's trick is the inside/outside flip: a burst
+  watched from outside morphs to the same burst watched from its heart (distinct from lobed
+  rosettes' few soft lobes and from an urchin's spines on a dome: many, straight, and the centre
+  is where the seam lives)
+- replicated images (added 2026-09-21): MANY COPIES OF ONE THING, each made by its own little
+  lens or mirror — a fly's compound eye where every facet holds the same world over again, a
+  scallop's row of mirror eyes, a hillside of flooded paddies each holding one moon, a field of
+  dew beads each carrying its own inverted garden, a lobster's box-mirror eye, a shrimp's
+  reflecting superposition eye pooling every mirror into one image, a sheet of glass beads on
+  wet tar each burning with the same street lamp — the subject is the REPEAT, not the array: one
+  original and a thousand honest duplicates (distinct from lobed rosettes' few lobes about one
+  core, and from arrested ripples' parallel wavefronts: these are separate images of the same
+  thing). NOTE gravitational lensing is this family's cosmic member and is BURNT — the catalog's
+  arcs, rings and the Einstein Cross are spent, so reskin this family on Earth.
+- hourglass & neck (added 2026-09-21, UNUSED — kept for a future journey): exactly two volumes
+  joined by ONE narrow throat, with something pouring through it — a wasp's or an ant's pinched
+  waist, a dividing cell's cleavage furrow drawn tight, a fat nucleus necking into a dumbbell
+  before it splits, a bipolar nebula pinched at its lit waist, two stars sharing one envelope
+  with a stream pouring through the neck into a glowing disc, an isthmus between two seas, a
+  cave squeeze, a soap film pinching off a bead — the DRAMA IS THE THROAT and the flow through
+  it (distinct from core & envelope's two nested parts and from Plateau–Rayleigh beading's many
+  equal beads: two volumes, one neck).
+- compact groups & few-body knots (added 2026-09-25): a FEW equal members, three to six, set at
+  the corners of a small polygon with faint bridges strung between them and NO centre — the
+  Trapezium's four stars in Orion's cavern, a Hickson compact group of galaxies with tidal
+  bridges, an alpha-cluster nucleus (carbon-12 as three tight four-bead clusters at a triangle's
+  corners, oxygen-16 as four at a tetrahedron's — a droplet that is itself a small cluster of
+  clusters), a plover's four eggs points-inward in a pebble scrape, a raft of otters, boules
+  about a jack — few, equal, at corners (distinct from lobed rosettes, which have a core, from
+  spine-bursts, which have a centre, and from seas, which have hundreds)
+- funnels & vortices (added 2026-09-25): a spiral that TIGHTENS into a clear hole — a
+  hurricane's eye from orbit (the eyewall a ring of cloud towers, the outer bands feathering over
+  an ocean), a tidal maelstrom's glassy funnel with foam scored into its spiral, a drain vortex,
+  a dust devil seen from directly overhead, a charged particle's spiral track tightening to a
+  point in a bubble chamber's fog, an accretion funnel — one fluid spiralling into a hole. NOTE
+  the spiral GALAXY is this family's cosmic member and is BURNT; reskin the family on fluids and
+  tracks (distinct from Kármán streets' shed pairs, from quantized vortex lattices' many locked
+  whirls, and from loxodrome shells, which are a solid surface)
+- the displaced pair / two crowds passed through each other (added 2026-09-25): two populations
+  that have interpenetrated and come out displaced, with a FRONT between them — the Bullet
+  Cluster (two galaxy clusters flown straight through each other, each swarm's violet-pink cloud
+  of hot gas lagging behind its galaxies as a bow), a nucleus in giant dipole resonance (its
+  protons heaped to one side of the droplet, its neutrons to the other, a thin seam of mixing
+  between), two rivers running side by side unmixed for kilometres (the Meeting of Waters at
+  Manaus: ink-black tannin water beside café-brown silt water), two fish schools passing through
+  each other, a two-tone moon (Iapetus: one coal hemisphere, one snow), oil beads in vinegar,
+  stiff lipid rafts afloat in a loose membrane sea — TWO POPULATIONS AND A FRONT (distinct from
+  core & envelope's nesting and from hourglass & neck's single throat)
+- sieves & pored walls (added 2026-09-25): a wall or cup punched with many circular openings,
+  each holding or passing something — a lotus seed-head's flat-topped cup with one seed seated
+  in every hole, a lotus root in section with its ring of air canals, a phloem sieve plate
+  between two sap tubes, a cell nucleus's envelope studded with thousands of eightfold pore
+  gates, a sponge's oscula, a showerhead, an acorn woodpecker's granary trunk with an acorn in
+  every drilled hole, a bee-eater colony's cliff, a Swiss cheese, the face-on cosmic sheet with
+  voids as its holes — HOLES THROUGH A WALL (distinct from foam's closed cells, from
+  honeycomb's open cells with no passage through, and from cages of rods: one hollow, many ribs)
+- stripes across three scales (added 2026-09-25, a note on reaction-diffusion): the landscape
+  member of the Turing family is TIGER BUSH — arid scrub self-organised into parallel bands of
+  shrub and bare ground on gentle slopes (Sahel, Somalia, Australian mulga, Chihuahuan Mexico):
+  the same equations as a zebra's coat, drawn at 10³ m and visible from orbit; the molecular
+  member is the striped fibril matrix inside a melanosome (parallel protein sheets the pigment
+  is laid down on). Stripes at three scales and no space needed
+- one-size disorder (added 2026-09-26): RANDOM but with ONE favourite size — no lattice and no
+  order, yet every blob, channel or gap is about the same width: the mottled afterglow of the
+  infant universe (its hot and cold spots all about one size), the blue of a macaw's barb (a
+  sponge of keratin and air whose channels are all one width and turn at random — the colour IS
+  that width), a freshly shaken vinaigrette un-mixing, the cone mosaic of a bird's retina, fairy
+  circles spaced across a desert — distinct from Voronoi's shatter (every size) and from Turing
+  spots (ordered): the eye reads "noise", then notices the noise has a grain
+- twin jets from one point (added 2026-09-26): exactly TWO narrow jets fired back to back out of
+  one small source, each ending in a swollen lobe or plume — a right whale's V-shaped blow from
+  its paired blowholes, a collision spot throwing two cones of sparks opposite ways (a dijet), a
+  radio galaxy's two thin jets feeding two lobes vaster than the galaxy itself, a double samara's
+  two wings off one seed pair — distinct from hourglass & neck (no waist, no two volumes: the
+  source is a POINT), from spine-bursts (two, not many) and from the Herbig–Haro beaded thread
+- two dense spheres meeting (added 2026-09-26): two compact bodies colliding head-on and flinging
+  a lit spray from the contact — two gold nuclei flattened into discs by their speed and
+  splashing a fireball where they cross, two neutron stars merging in a kilonova that throws off
+  a crimson cloud of fresh gold, two raindrops coalescing with a crown of droplets, a cue ball
+  meeting the pack — the CONTACT is the subject (distinct from the displaced pair, which have
+  already passed through, and from compact groups, which do not touch)
+- ringing spheres (added 2026-09-26): a sphere whose whole surface stands in a pattern of rising
+  and sinking patches because it is VIBRATING — the Sun seen whole with its face in a
+  checkerboard of lifting and settling patches (helioseismology: the Sun rings like a bell with
+  millions of tones), a nucleus's rind in bulges and hollows, a water drop trembling on a
+  speaker, a bell's surface in its ring modes, a bubble quivering — standing waves on a closed
+  surface (distinct from Chladni's flat plate and from the supergiant's few boiling cells, which
+  are convection, not tone)
+- many strands spun into one (added 2026-09-26): a knot with a few arms, each arm paying out
+  strands that fuse into ONE line leaving the knot — a cellulose-synthase rosette's six lobes
+  spinning chains into one cable, a spider's spinnerets, a rope-walk's strands laid into rope, a
+  cosmic-web node seen face-on with six filaments converging into its bright knot — convergence
+  into a single knot (distinct from branching nets, which never converge on one point, and from
+  the cluster-infall delta, which is rivers, not spun strands)
+- colour from stacked thin layers (added 2026-09-27): a colour that is not pigment but a STACK
+  of layers each thinner than a wavelength — labradorite's schiller (alternating feldspar
+  lamellae ~100 nm apart that flash peacock and gold from grey stone), bismuth's temper film,
+  a beetle's shell, nacre, an oil film — seams to anything folded into parallel luminous sheets
+  (aurora curtains, a pleated nebula). Distinct from rouleaux (discs in columns) and helicoid
+  armour (rotating fibre plies): here the layers are flat, parallel, and the subject is the FLASH
+- hopper spiral (added 2026-09-27): a square frame whose edges grew faster than its faces, so it
+  hollows into terraced steps that spiral inward to a sunken centre, frames within frames —
+  a bismuth hopper crystal, a salt hopper cube, a stepped ziggurat seen from above, a Droste
+  picture-in-picture. Zoom-native: the camera's own dive IS the pattern's recursion (distinct
+  from tilings, which repeat outward, not inward)
+- the light-swallower (added 2026-09-27): a black so complete that shape is read only from its
+  RIM — a bird-of-paradise's super-black cape (barbules that swallow 99.95% of light), a black
+  hole's shadow ringed by its bright photon ring, a pupil in a lit iris, a cave mouth in a sunlit
+  cliff, a sunspot's umbra — the subject is a hole in the light, bordered by a blaze (distinct
+  from voids, which are empty space, not a body that absorbs)
+- a pair with a bead in the gap (added 2026-09-27): two equal bodies facing each other and ONE
+  small bright thing suspended between them — nucleons exchanging a spark (Yukawa's thrown ball),
+  two galaxy clusters strung with a filament of galaxies, two terns passing a fish, two hands and
+  a ball mid-throw — the GAP is the subject (distinct from the displaced pair, which have passed
+  through, and from two dense spheres meeting, which touch)
 - USE: pick ONE family per journey and reskin it to the theme (jade-carved
   automata, sugar-crystal Penrose, brass Chladni). Never repeat the previous
   video's family.
@@ -346,6 +480,80 @@ anything — continent→nucleus is legal and encouraged when it's beautiful.
   four hard points of cold light set at the corners of a cross about the amber core of a
   foreground barred galaxy whose mass bends the light (a lobed rosette at the largest scale;
   distinct from the lensing ARCS and rings the catalog already uses — points, not arcs)
+- (added 2026-09-20) cosmic-web one-offs: the cluster needle — ONE finger of God up close, a
+  galaxy cluster's members drawn out into a line that points straight at the eye, the nearest
+  galaxies large and the far ones shrinking down the needle's length (the redshift picture entered)
+  · the intracluster haze — a cluster's core as a violet-magenta glow of gas hotter than any star's
+  face, a giant elliptical seated in the glow and lesser galaxies swarming through it (X-ray
+  false colour as a palette, not a nebula) · galactic one-offs: the starburst fountain — an
+  edge-on disc with a two-way fountain of crimson hydrogen filaments blasting out of its core above
+  and below the plane, a galaxy venting (the Cigar Galaxy; a spine-burst at galactic scale) · the
+  jellyfish galaxy — a disc ploughing through a cluster's hot gas and trailing cerulean tendrils of
+  newborn stars behind it (ram-pressure stripping; a wake at galactic scale — UNUSED, kept for a
+  wake journey) · stellar one-offs: the comet shower — a star's outer ice cloud jolted by a passing
+  star, ice bodies streaking sunward in parallel with every tail combed the same way, a slant rain
+  at stellar scale · the young remnant as a radial burst — a shell of crimson knots with straight
+  jets driven out of its centre in every direction (Cassiopeia A; distinct from remnant LACE) ·
+  Mira's tail — a red star trailing a streak of shed gas thirteen light-years long (a star that is
+  a comet; unused)
+- (added 2026-09-21) cosmic-web one-off: the accretion shock wall — the boundary of a galaxy
+  cluster, where gas falling in from the voids piles up against gas already inside and stops dead
+  in a standing wall of violet-hot shock millions of light-years across, and cool tongues of
+  infalling filament punch THROUGH the wall in a fence of curling-capped fingers (real: cluster
+  accretion shocks and cold fronts; the largest turbulence picture in the universe, and the first
+  cosmic-web entry that is a FRONT rather than a net, a sheet, a needle or a froth) · stellar
+  one-off: the ejecta-finger remnant — a few hundred years after the blast, the star's own guts
+  are still plunging outward as a fence of dense fingers with curling caps, each finger tipped
+  with a bright knot where it ploughs into the swept-up shell, the gaps between them blown clear
+  (Rayleigh–Taylor fringes in a supernova: distinct from remnant LACE, which is a veil, and from
+  the radial-burst remnant, whose knots and jets are straight)
+
+- (added 2026-09-22) stellar one-off: the supergiant's few great cells — a red supergiant seen
+  WHOLE from outside, its face not a granulation sea but only three or four enormous lumpy
+  convection cells, each a bulging dull-crimson dome brighter at its crown, seamed by a few
+  broad cooler lanes the colour of cooling iron, the whole star lopsided and boiling (real:
+  Betelgeuse's surface has a handful of cells the size of the star; a Bénard picture at 10¹¹·⁵ m,
+  distinct from the sunspot granulation sea, which is thousands of small tiles) · galactic
+  one-off NOTE: the jellyfish galaxy (09-20, unused until tonight) is the wake family's galactic
+  member — a disc bent back with cerulean tendrils of newborn stars trailing a disc-width behind
+  · planetary one-offs: open-cell cloud honeycomb from orbit — a night ocean under a deck of
+  stratocumulus self-organised into a honeycomb of open cells, each cell a clear moonlit hole
+  walled by a ring of cloud (Bénard convection at 10⁵ m; real, the satellite picture off any
+  cold coast) · the island cloud street from orbit — a lone volcanic island with a staggered
+  procession of paired cloud eddies peeling off its peak downwind for hundreds of kilometres
+  (a Kármán vortex street at 10⁵ m; Guadalupe and Jan Mayen wear one on most windy days)
+- (added 2026-09-25) galactic one-off: the Trapezium — four hard blue-white stars set at the
+  corners of a trapezoid inside a cavern of lit gas, the nebula's walls glowing green and rose
+  about them, a scatter of fainter stars among the four (the most-photographed star group there
+  is, never used; the few-body knot at 10¹⁶ m) · cosmic-web one-offs: the compact group — four or
+  five galaxies within a few galaxy-widths of one another, faint tidal bridges of stars strung
+  between them, a spiral and an elliptical among the members, the whole group seated on one thin
+  strand of the web (Stephan's Quintet / a Hickson group: few, equal, bridged) · the Bullet
+  Cluster — two galaxy clusters that have flown straight through each other: two swarms of
+  galaxies parting, and trailing each swarm a bow-shaped cloud of violet-pink hot gas lagging
+  where the collision slowed it, a faint blue haze of unseen mass riding ahead with the galaxies
+  (the displaced pair at the largest scale; X-ray false colour as the palette) · planetary
+  one-offs: the hurricane eye from orbit (listed in REALMS, never used) — a spiral of cloud bands
+  tightening to a clear eye, the eyewall a ring of towers, the outer bands feathering over a
+  wine-dark ocean (the funnel family's planetary member) · the Meeting of Waters from orbit —
+  two great rivers joined into one channel yet running side by side unmixed for kilometres, one
+  ink-black with tannin and one café-brown with silt, the boundary a sharp scalloped line, the
+  rainforest a green plain on either bank (Manaus; the displaced pair drawn on a planet's skin)
+- (added 2026-09-26, all unused — word-probed: microwave 0, radio galaxy 0, kilonova 0,
+  helioseismology 0) cosmic-web one-offs: the afterglow shell — the oldest light there is, seen
+  from inside: a sphere of mottled ember-orange and deep-rust light on every side, its hot and
+  cold spots all about one size, nothing in front of it (the cosmic microwave background as a
+  picture, false colour; the universe when it was one glowing soup — seams to a quark-gluon
+  droplet, the same soup at the other end of scale) · the giant radio galaxy — a small yellow
+  elliptical firing two hair-thin jets straight out of its core in opposite directions, each jet
+  swelling into a vast violet-magenta lobe, the pair spanning sixteen million light-years across
+  the web's strands (Alcyoneus; the largest single galaxy structure known — twin jets at the
+  largest scale) · the six-armed node — a supercluster knot seen face-on, six filaments of
+  galaxies converging into its bright core like spokes into a hub · stellar one-offs: the
+  kilonova — two neutron stars caught merging, a blinding contact point throwing off a lopsided
+  crimson-and-gold cloud of fresh heavy atoms (where gold is made) · the ringing Sun — our own
+  star seen whole, its face a checkerboard of lifting and settling patches of fire (the Sun rings
+  like a bell)
 
 ## PALETTE FAMILIES — assign each journey ONE home family so the catalog stays varied
 (adjacent cards still contrast in temperature WITHIN the family; the family is the
@@ -477,6 +685,83 @@ video's overall color identity)
   glow/mustard seep-mat yellow points on char basalt/abyss black — a cool pink carrying a
   colder blue; unlike urchin violet & sunstar rose's coral-and-green-glass and hemocyanin &
   tidewrack's brown shells: no brown, no green, no coral)
+- (added 2026-09-20) sea-sparkle cerulean & tannin black (electric cerulean-to-ice-blue
+  bioluminescent glow as the ONLY light source/black-tea tannin water/tar-brown mangrove roots/
+  one amber eye point — light that comes out of the water itself; pure blue-cyan on brown-black,
+  no violet, no green, no lamps: unlike ultraviolet noir's violet and bioluminescent deep's teal
+  on plain black) · red-eft & rain streak (vermilion-orange newt bodies/silver rain streaks/wet
+  leaf-litter umber-black/one cerulean ice accent — the only warm thing in the frame is alive;
+  unlike tokay slate & cinnabar the ground is umber-black, not a grey-blue field, and the cool tone
+  is a STREAK, not a field) · intracluster magenta & hydrogen crimson (hot cluster gas as a
+  violet-magenta haze FIELD/crimson hydrogen filaments/old-star gold cores/one cerulean spine
+  accent on void black — X-ray false colour: the haze is the field and the crimson is drawn on it,
+  unlike garnet furnace's crimson-on-maroon or ultraviolet noir's electric blue)
+- (added 2026-09-21) slate violet & sulphur lichen (wet-slate violet blue-black faces/sulphur-
+  yellow map-lichen crusts/jade-black flooded pool/one amber eye point — an acid yellow-green laid
+  on violet stone, unlike tokay slate & cinnabar's grey-blue field carrying orange, and no metal
+  anywhere) · haboob umber & flash violet (umber-ochre dust masses lit from INSIDE by violet-white
+  lightning/soot-black palm crowns/one cobalt irrigation channel/indigo dusk overhead — the light
+  source is buried in the dust, unlike mirage's open rose-gold dusk or ember & ash's fire on
+  charcoal) · ichu gold & cordillera violet (bleached straw-gold braided grass and puna bunchgrass/
+  violet-black gorge air/glacier-turquoise torrent/one vermilion woven-wool accent — a dry straw
+  gold against cold violet, unlike gilded's metal or midnight sun's honey light) · chalk aspen &
+  iron enamel (chalk-pale gnawed aspen wood/iron-orange enamel and rust-stained seep/tannin-black
+  pond/bottle-green pads/cold moon-silver — a bone-white wood carrying a hot iron orange, unlike
+  bog iron & spawn jelly's clear jelly and lime accent) · moon-mirror silver & rice green (one
+  silver moon disc repeated in every flooded terrace/acid young-rice green blades/indigo-black
+  water and sky/umber mud bunds/one firefly gold-green point — silver and acid green on indigo,
+  no gold metal and no brass, unlike gilded relic or viridian & bone's museum green)
+- (added 2026-09-22) lehua scarlet & crust cobalt (incandescent crack-orange grading to straw
+  yellow where a lava lake's crust plates pull apart/ʻōhiʻa lehua scarlet blossom pompoms on the
+  crater rim/cooled-crust plates a cobalt blue-black/one pale sulphur fumarole crust/violet night
+  overhead — a fire family whose ACCENT IS A FLOWER, unlike ember & ash's plain orange-on-charcoal
+  or garnet furnace's crimson: the hot colour is a crack pattern, the cool colour is the plate) ·
+  beacon red & sea-fog indigo (indigo-black night fog masses/blinking aviation-beacon red points on
+  every tower/foam-ivory eddy lines drawn in the fog and on the swell/one sodium-amber harbour glow
+  low on the horizon — a night fog family with RED POINTS as its only warm colour; no lamps, no
+  gold, unlike noble glow's neon script or bayou eyeshine's paired amber) · moon-foam & hippo bronze
+  (moonlit froth-white as the ONE pale subject held on a bronze-black waterhole/boomslang lime-and-
+  jet scale mottle/nightjar rufous/rain-cloud violet overhead — deliberately the rare bright-
+  subject-on-dark family: the froth is the lamp; unlike porcelain prism's high-key whites, the
+  ground here is nine-tenths of the frame and bronze-black)
+- (added 2026-09-25 — FIVE DAYLIGHT FAMILIES: 92 of 146 journeys say "night"; the 09-10 data says
+  saturation still pays and gloom no longer does, so these keep the saturation under a sun)
+  laterite rust & dazzle jet (rust-red laterite ground/jet-black stripes with the ivory stripe as
+  the minority/acid-green shrub bands/one lilac-breasted-roller turquoise accent — hard noon, the
+  ground carries the red, the animal carries the black) · shingle slate & thrift pink (wet
+  slate-grey shingle/thrift-pink cushion flowers/oystercatcher vermilion bills and legs/cobalt
+  sea/olive-buff eggs blotched jet — a cool grey field carrying pink and vermilion points, no
+  gold, no brown) · maelstrom teal & storm violet (teal-green tide-race water/violet-slate storm
+  cloud/foam-ivory spiral streaks/coalfish copper-bronze flanks/one sea-eagle yellow accent — a
+  cold green under a violet sky, daylight through storm, no black water) · boto rose & blackwater
+  (boto flesh-pink bodies/ink-black tannin water/café-brown silt water/caiman olive-bronze/one
+  ringed-kingfisher turquoise accent — the catalog's first pink-on-brown-and-black family; the
+  two waters ARE the palette's two fields) · lotus blue-green & koi vermilion (matte blue-green
+  lotus pads/jade seed cups/koi vermilion-and-ivory/tea-brown pond/one rose-pink bud point —
+  noon on still water, the vermilion and the blue-green carry the saturation, no gold, no lamps)
+- (added 2026-09-26, daylight) macaw cobalt & lick clay (cobalt-and-gold macaw wings/scarlet
+  bodies/parrot green on a terracotta-orange clay cliff/bottle-green canopy/peach morning haze —
+  three primaries of feather on one earth-orange field) · fireweed magenta & glacial slate
+  (fireweed magenta spires/spruce black-green/silt-grey glacial creek water/one nugget-gold point/
+  grayling violet sail — a magenta flower field on cold grey, gold only as a POINT) · right-whale
+  ink & callosity (whale ink-black backs/cream callosities crusted tangerine with whale lice/
+  ultramarine bay/tawny Patagonian cliff/kelp olive — black and ultramarine carrying one
+  tangerine crust) · bluebell violet & beech lime (a violet-blue flower carpet/acid new-beech
+  lime/silver-grey trunks/one robin-orange point — spring daylight, the carpet IS the field) ·
+  sequoia cinnamon & haze shafts (cinnamon-red fibrous bark/deep fir green/blue haze pierced by
+  sun shafts/one Steller's-jay cobalt point/small dogwood-white bracts — a red-brown giant on
+  blue air, no gold metal)
+- (added 2026-09-27) labradorite peacock & slate (charcoal-grey feldspar carrying sudden flashes of
+  peacock teal, electric gold and violet/aurora viridian ribbons fringed crimson overhead/wet slate
+  shore/one caribou-tan point — a dull stone field that FLASHES, the saturation arrives in patches)
+  · bismuth temper & gunmetal (gunmetal-silver metal/iridescent temper film grading gold → magenta
+  → peacock → cobalt across every terrace/soot-dark bench — no organic colour anywhere, a MADE-metal
+  rainbow) · super-black & paradise turquoise (velvet super-black that shows no folds/iridescent
+  turquoise-cyan breast shield/moss-gold rainforest light/one scarlet-fruit point — the rare family
+  whose darkest area is the SUBJECT, not the ground) · cuttle zebra & kelp amber (cuttlefish skin
+  in cream-and-chocolate zebra bands with violet-teal iridescent flashes/amber-gold kelp over
+  rust-brown reef rock/Spencer Gulf sapphire-turquoise shallows, daylight — a living, pattern-
+  changing field on a warm reef)
 - RULE: check the last few journeys' families and pick a DIFFERENT one.
 
 ## LENGTH VARIETY (Phil 2026-07-31 — the catalog must mix durations)

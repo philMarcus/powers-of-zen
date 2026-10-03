@@ -1,0 +1,114 @@
+{
+  "name": "sequoia_rosette",
+  "theme": "a giant sequoia grove on a clear morning, sun shafts through blue haze onto cinnamon trunks three thousand years old — read as MANY STRANDS SPUN INTO ONE: the bark is a braid of long fibres, and under it the living cambium lays down new wood whose every cable of cellulose is spun by a six-part protein ring from six sheaves of glassy chains twisted into one. That ring morphs up into a node of the cosmic web, six galaxy filaments converging from six directions into one blazing knot. Then down through a disc galaxy seen from its rim, its yellow sun, the Sierra Nevada from orbit, and the grove from the air, home to the giants.",
+  "style": "aurora_silk",
+  "music_lane": "choir_of_dust",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 9,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "sequoia_commons",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cinnamon-red trunks, fir green, blue morning haze pierced by gold sun shafts, one cobalt jay, white dogwood bracts",
+      "scene": "a giant sequoia grove on a clear morning seen at eye height across the forest floor, colossal cinnamon-red trunks rising upright out of view through blue haze, slanting shafts of sunlight striking the furrowed bark, a black bear with her cub on a fallen log, a mule deer browsing in the fir shade, a Douglas squirrel on a stump heaped with green cone scales, a pileated woodpecker with a scarlet crest on a snag, a Steller's jay with a cobalt back on a low branch, dogwood trees in flower with white bracts, ferns and fir saplings on the brown duff",
+      "target": "a cinnamon sequoia trunk",
+      "target_phrase": "a red tree trunk",
+      "loop_target": "colossal cinnamon-red sequoia trunks in blue haze pierced by sun shafts"
+    },
+    {
+      "name": "giant_trunk",
+      "exp": 0.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cinnamon and rust bark, charcoal fire scars, fir-green moss, gold sun shaft",
+      "scene": "the base of one giant sequoia trunk in morning sun, a broad curved face of cinnamon-red bark ploughed into tall parallel furrows and rounded ridges, an old charcoal-black fire scar healed over at its foot, tufts of fir-green moss in the furrows, the long soft bark fibres split open in one furrow to a moist jade-green seam of living wood, a single shaft of sunlight laid across the ridges, blue haze and fir shade beyond the trunk",
+      "target": "a moist jade-green seam",
+      "target_phrase": "a green seam"
+    },
+    {
+      "name": "cambium_files",
+      "exp": -4.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade and sea-green cells, teal shadow, glassy clear sap, one amber glint",
+      "scene": "the cambium under a sequoia's bark, rows upon rows of thin-sided living cells lined up in straight radial files, each cell a translucent jade box with a round nucleus, cells caught dividing in two partway along every file, the new cell casings thickening into glassy layers as the files run outward, teal shadow between the files",
+      "target": "a six-part protein ring",
+      "target_phrase": "a protein ring",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.64,
+          0.34
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "cellulose_rosette",
+      "exp": -8.3,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "honey-amber chains, glassy white cables, indigo membrane",
+      "scene": "a ring of exactly six knotted clusters of protein beads set flat into a smooth indigo membrane, each cluster paying out a sheaf of thin honey-amber chains, the six sheaves twisting together at the hub of the ring into one stiff glassy cable, finished cables laid side by side in rows across the membrane beyond, a soft amber glow at the hub where the six sheaves meet"
+    },
+    {
+      "name": "six_filament_node",
+      "exp": 23.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt and violet filaments, a white-gold knot, black void",
+      "scene": "a knot of the cosmic web seen face-on in the black of space, exactly six long filaments of galaxies converging from six directions into one blazing white-gold knot of crowded galaxies at the centre, each filament a stream of tiny gold and blue galaxies strung through a cobalt and violet haze of gas, empty black voids between the six filaments",
+      "target": "a disc galaxy seen side-on",
+      "target_phrase": "a side-on galaxy"
+    },
+    {
+      "name": "rimview_galaxy",
+      "exp": 21.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "gold central bulge, rust-brown dust lane, blue-white star clumps, black space",
+      "scene": "a flat disc galaxy seen exactly side-on in the black of space, a long thin blade of blue-white stars with a glowing gold bulge at its middle, a crisp rust-brown lane of dust running its whole length, pink knots of star-forming gas along the blade, scattered faint galaxies behind it",
+      "target": "a lone yellow star",
+      "target_phrase": "a yellow star"
+    },
+    {
+      "name": "home_sun",
+      "exp": 9.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blazing yellow-white photosphere, orange prominences, blue and green planet, black space",
+      "scene": "a yellow-white star in the black of space, its blazing face freckled with granules and a few dark sunspots, orange loops of prominences at its rim, and set off from it a blue-and-green planet lit full on its day face",
+      "target": "a blue-green planet",
+      "target_phrase": "a blue-green planet"
+    },
+    {
+      "name": "sierra_orbit",
+      "exp": 5.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver granite, snowfields, fir-green slopes, gold valley, blue atmosphere limb",
+      "scene": "the day face of the Earth from orbit over California on a clear morning, the long granite spine of the Sierra Nevada running north to south with snowfields on its summits, dark fir-green forest mantling its western slopes, the broad gold Central Valley beside it, the blue Pacific beyond, a thin blue limb of atmosphere at the curved horizon",
+      "target": "a fir-green forest slope",
+      "target_phrase": "a green forest slope"
+    },
+    {
+      "name": "grove_air",
+      "exp": 3.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "fir green canopy, cinnamon trunks, blue haze, gold sun shafts",
+      "scene": "a sequoia grove from the air on a clear morning seen on a steep slant, a dense fir-green forest on a mountain slope, the rounded treetops of the giant sequoias towering above the firs, their cinnamon-red trunks showing through gaps in the canopy, blue haze lying in the hollows pierced by slanting gold sun shafts, a meadow with white dogwood in flower at one margin",
+      "target": "colossal cinnamon sequoia trunks",
+      "target_phrase": "red sequoia trunks"
+    }
+  ],
+  "music_theme": "a hushed wordless choir and a slow sustained pad over a soft low kick on every downbeat, a warm low swell on each morph, the choir thinning to a single held tone through the bark and the living cells, one struck low bell on the morph from the six-part ring to the six-filament knot, the full choir returning for the fall home through the sun and the mountains onto the giants",
+  "music_key": "D minor",
+  "render_start": "rimview_galaxy"
+}

@@ -1,0 +1,106 @@
+{
+  "name": "plover_scrape",
+  "theme": "a shingle spit in the afternoon where a ringed plover's four speckled eggs lie points-inward in a pebble scrape, read as ONE FEW-BODY KNOT at every scale: four eggs at the corners of a square, the pigment of one egg's jet speckle as flat four-ringed frames with empty centres, a carbon nucleus that is three tight four-bead knots at a triangle's corners (the seam) morphing up into a compact group of five galaxies bridged by tidal streams, then four hard blue-white stars at a trapezoid's corners in a cavern of lit gas, a young cobalt coast world, and the spit from the air. Few, equal, at corners, nothing at the centre. Daylight throughout, a cool slate field carrying pink and vermilion points, stately tempo.",
+  "style": "cosmic_gloss",
+  "music_lane": "glass_chapel",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "spit_commons",
+      "exp": 0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "wet slate-grey shingle, thrift-pink cushions, oystercatcher vermilion bills and legs, cobalt sea, olive-buff eggs blotched jet, a lit blue afternoon sky",
+      "scene": "a shingle spit at low tide in the afternoon, seen low and oblique from the crest of the pebbles, wet slate-grey shingle running out into a cobalt sea under a lit blue sky, thrift cushions in flower in pink tufts atop the crest, ringed plovers standing on the pebbles, a pair of oystercatchers with vermilion bills and legs at the wrack line, a little-tern colony scattered white across the spit's tip, sanderlings in a line at the wash, a shore crab in the dark wrack, and among the plovers one shallow pebble scrape holding four speckled olive-buff eggs",
+      "loop_target": "a slate-grey shingle spit with pink thrift cushions on a cobalt sea",
+      "target": "four speckled eggs",
+      "target_phrase": "speckled eggs"
+    },
+    {
+      "name": "plover_scrape",
+      "exp": -1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "olive-buff shells blotched and scrawled jet, slate-grey pebbles veined ivory, a few thrift-pink petals",
+      "scene": "a plover's scrape in the shingle seen looking straight down into it, a shallow circular hollow among wet slate-grey pebbles, four olive-buff eggs laid points-inward at the corners of a square, each shell blotched and scrawled with jet speckles, a few chips of shell and a tuft of thrift-pink petals in the hollow, grey pebbles banded with ivory quartz veins ringing the scrape, one large jet blotch standing out on the nearest egg",
+      "target": "a jet blotch",
+      "target_phrase": "a black blotch",
+      "cameo": {
+        "sprite": "output/mascots/canon/newman.png",
+        "pos": [0.66, 0.36],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "porphyrin_plates",
+      "exp": -7.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-red and jet flat frames, a chalk-white shell bed, slate-blue open space, one vivid pink point",
+      "scene": "the pigment of an eggshell's speckle at a molecule's width, countless flat square frames each built of four small rings joined edge to edge into one large ring with an empty hole at its centre, the flat frames stacked face to face into short rust-red and jet columns, heaps of columns lying on a chalk-white bed of shell crystal, open slate-blue space among the heaps, column after column receding into slate-blue depth, one vivid pink point of light at the corner of one frame",
+      "target": "a vivid pink spark",
+      "target_phrase": "a pink spark",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "layered"
+      }
+    },
+    {
+      "name": "alpha_nucleus",
+      "exp": -14.4,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "thrift-pink and ivory beads, faint pink strands, slate-blue fog",
+      "scene": "a slate-blue fog of light with three tight knots set at the corners of a triangle, each knot four small vivid beads packed close, two thrift-pink and two ivory, faint strands of pink light strung among the three knots, nothing at all at the triangle's centre, only open slate-blue fog",
+      "resolve": false
+    },
+    {
+      "name": "compact_group",
+      "exp": 22.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt and ivory spirals, a pink-cored elliptical, thin ivory tidal streams, jet-black void",
+      "scene": "a compact group of five galaxies in deep space, five galaxies gathered within a few of their own widths and set at the corners of a loose pentagon, a cobalt spiral, a pink-cored elliptical and three smaller ivory spirals, faint tidal bridges of stars strung among them in thin ivory streams, nothing at the group's centre, the whole group seated on one thin strand of the cosmic web, jet-black void on every flank, one cobalt spiral galaxy with a pink ring of star-forming knots",
+      "target": "a cobalt spiral galaxy",
+      "target_phrase": "a blue spiral galaxy"
+    },
+    {
+      "name": "trapezium",
+      "exp": 16.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "emerald-green and rose gas walls, four hard blue-white stars, jet dust, one cobalt world",
+      "scene": "the heart of a star-forming nebula, a vast cavern of lit gas with walls lit emerald-green and rose, four hard blue-white stars set at the corners of a trapezoid at the cavern's heart, a scatter of fainter stars among the four, rose ridges of gas curling off the cavern walls, the far wall of the cavern jet with dust, one small cobalt world lit by the four stars near the cavern's mouth",
+      "target": "a small cobalt planet",
+      "target_phrase": "a blue planet"
+    },
+    {
+      "name": "coast_world",
+      "exp": 7.1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt ocean, slate-grey continents, thin ivory cloud streets, a thin blue rim of air, a jet-black sky",
+      "scene": "a young ocean world in full daylight against a jet-black sky, a cobalt sea over most of the globe, slate-grey continents fringed with long hooked grey bars of shingle, thin ivory cloud streets laid over the sea, a thin blue rim of air, one slate-grey coastline curving into the cobalt sea with a hooked bar at its tip",
+      "target": "a grey hooked coastline",
+      "target_phrase": "a grey coastline"
+    },
+    {
+      "name": "spit_air",
+      "exp": 3.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "slate-grey pebbles, cobalt and turquoise water, thrift-pink crest, jet wrack lines, white tern scatter",
+      "scene": "a shingle spit seen from the air low and oblique on a clear afternoon, a hooked bar of slate-grey pebbles reaching out into a cobalt sea, jet wrack lines drawn down its length, thrift cushions pink atop its crest, a little-tern colony scattered white across the tip, the sea shelving from turquoise shallows to cobalt depth off the spit, tidal sand flats laid down its inner flank",
+      "target": "a slate-grey shingle spit",
+      "target_phrase": "a pebble spit"
+    }
+  ],
+  "music_theme": "a luminous glass-chapel chord bed over one deep kick on every downbeat at a stately tempo, four clear bell tones spaced evenly through the shore and the eggs, a hushed held tone through the pigment plates and the nucleus, a wide weightless bloom on the morph from the three knots up into the five galaxies, then the stars and the coast world settling down onto the afternoon shingle",
+  "music_key": "G major",
+  "render_start": "porphyrin_plates"
+}

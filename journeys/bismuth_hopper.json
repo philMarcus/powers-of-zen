@@ -1,0 +1,81 @@
+{
+  "name": "bismuth_hopper",
+  "theme": "a steel tray of freshly grown bismuth crystals on a soot-dark workbench in a sunlit workshop — rainbow terraced squares that spiral inward to sunken centres, frames within frames. A realm-local MADE-METAL slice read as a HOPPER SPIRAL at every scale: the dive falls into one hopper's stepped frames, down through the temper film whose thickness IS its colour, to bismuth's own lattice of puckered double layers stacked in steps — then those stepped layers morph up into the stepped terraces of the crystals heaped on the bench, and the fall home lands on the tray again. Awe-garnish: bismuth is technically radioactive, with a half-life a billion times the age of the universe.",
+  "style": "neon_drift",
+  "music_lane": "music_box",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "crystal_tray",
+      "exp": -0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "gunmetal-silver metal, iridescent gold magenta peacock and cobalt temper, soot-dark steel tray",
+      "scene": "a shallow steel tray on a soot-dark workbench seen from above on a slant in clear daylight, crowded with dozens of freshly grown bismuth crystals, each a rainbow cluster of square terraced frames stepping down into sunken centres, gunmetal-silver metal under an iridescent skin grading gold to magenta to peacock to cobalt across every step, the crystals tiled edge to edge across the entire tray, stray silver beads of cooled metal in the gaps",
+      "target": "a square bismuth crystal",
+      "target_phrase": "a square rainbow crystal",
+      "loop_target": "a steel tray crowded with rainbow terraced bismuth crystals",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "hopper_terraces",
+      "exp": -1.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "molten gold and magenta terraces, peacock rims, gunmetal risers, soot-dark sunken centre",
+      "scene": "one bismuth hopper crystal seen from directly above, a square frame of raised metal edges with its faces hollowed into terraced steps, each step a smaller square frame set inside the last and turned a few degrees, the terraces spiralling inward and downward to a sunken soot-dark centre, every tread glazed gold and magenta, the rims flashing peacock, the risers bare gunmetal-silver",
+      "target": "a flat gold terrace",
+      "target_phrase": "a gold metal step",
+      "cameo": {
+        "sprite": "output/mascots/canon/lee.png",
+        "pos": [
+          0.66,
+          0.34
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "temper_film",
+      "exp": -5.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt and peacock oxide strata, violet fringes, gunmetal-grey metal base, one gold band",
+      "scene": "the tread of one terrace in cross-section, a smooth plain of gunmetal-grey bismuth metal capped by a layered oxide skin, the skin a stack of glassy translucent strata lying flat on the metal, each stratum a slightly different depth so the surface bands run cobalt, peacock, violet and one gold band in broad stripes across the tread, the grey metal glinting beneath the film",
+      "target": "a gunmetal grain of metal",
+      "target_phrase": "a grey metal grain"
+    },
+    {
+      "name": "puckered_lattice",
+      "exp": -9,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "gunmetal and silver atom beads, magenta and gold glints, soot-dark gaps",
+      "scene": "the atomic lattice of bismuth, sheets of silver atom beads stacked in pairs, each double sheet puckered into a ridged zigzag, the double sheets stacked one above another with soot-dark gaps, each sheet ending a step short of the one beneath so the edges descend in stairs, magenta and gold glints on every bead",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "layered"
+      }
+    },
+    {
+      "name": "workshop_bench",
+      "exp": 0.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm daylight on soot-dark oak, liquid silver melt with a rainbow skin, graphite-grey crucible, rainbow crystals heaped",
+      "scene": "a soot-dark oak workbench in a sunlit workshop, empty, no one present, a graphite crucible of molten liquid-silver bismuth on a small hot plate, its surface skinned in rainbow temper, a heap of stepped rainbow crystals broken free beside it, iron tongs, a steel ladle, a shallow steel tray of freshly grown bismuth crystals in the middle of the bench, warm window daylight raking across the metal",
+      "target": "a tray of bismuth crystals",
+      "target_phrase": "a steel crystal tray"
+    }
+  ],
+  "music_theme": "a tender clockwork music box over a soft deep kick on every downbeat, small bell tones stepping down in a spiral figure on each morph as the dive falls through the terraces, the texture thinning to a single glassy chime through the film and the layered lattice, one bright struck chord on the morph from the stepped atom layers up to the heaped crystals on the bench, the full music-box figure returning for the fall home into the tray",
+  "music_key": "E minor",
+  "render_start": "crystal_tray"
+}

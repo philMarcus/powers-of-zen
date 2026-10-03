@@ -1,0 +1,141 @@
+{
+  "name": "klondike_nugget",
+  "theme": "a glacial gold creek in the Yukon under the long summer sun, where one nugget glints in the gravel — read as TWO DENSE SPHERES MEETING at two scales: every gold atom in that nugget was forged when two neutron stars collided, and at the bottom of the dive two gold nuclei collide again. A MINERAL dive into native gold: the creek commons, the gravel bar and its nugget, gold's own octahedral and fern-like crystal habit, the polished metal grains, the face-centred cubic lattice of gold, one gold atom's fog about a bright point, and two gold nuclei flattened into discs splashing sparks where they meet — which morphs up into the kilonova that made the gold. Then down through the home Sun, the Yukon from orbit and the creek valley from the air, home to the gravel bar.",
+  "style": "stormlight",
+  "music_lane": "deep_archive",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "gold_creek_commons",
+      "exp": 0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "fireweed magenta spires, spruce black-green, silt-grey glacial water, wet charcoal gravel, one gold glint",
+      "scene": "a glacial gold creek in the Yukon under a high summer sun, seen low over the gravel bar at the water's margin, braided silt-grey glacial water over wet charcoal gravel, a grizzly bear upright on the gravel bar, a bull moose in the willows on the far bank, Arctic grayling with violet sail fins holding in the riffle, a raven perched on a bleached spruce stump, fireweed spires blazing magenta along the bank, spruce black-green on the slopes under a clear blue sky, and one bright gold glint set in the wet gravel",
+      "target": "a gold nugget",
+      "target_phrase": "a gold nugget",
+      "loop_target": "a gold creek gravel bar with a grizzly, a moose, grayling and a raven under magenta fireweed"
+    },
+    {
+      "name": "gravel_bar_nugget",
+      "exp": -1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "wet slate and charcoal pebbles, silt-grey water film, one lumpy gold point, magenta petal specks",
+      "scene": "a patch of the creek's gravel bar in bright sun, rounded pebbles of slate, charcoal and rust-banded quartz packed tight and glossy with a film of silt-grey water, a few fallen magenta fireweed petals, a sliver of black sand in the gaps, and one lumpy gold nugget wedged amid the pebbles, its rounded knobbly surface glinting",
+      "target": "a lumpy gold nugget",
+      "target_phrase": "a gold nugget"
+    },
+    {
+      "name": "gold_crystal_habit",
+      "exp": -3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "gold crystal points on slate-grey quartz, violet shadow, silt-grey film",
+      "scene": "the surface of a native gold nugget, a crust of tiny gold crystals set on slate-grey quartz, sharp little octahedra with triangular faces, fern-like dendrites branching in feathered sprays, hopper crystals with stepped hollow faces, violet shadows in the crevices, the crust a scatter of gold points on a cool grey ground",
+      "target": "a gold octahedron crystal",
+      "target_phrase": "a gold octahedron",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "metal_grains",
+      "exp": -5.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "polished gold grains, slate-blue grain boundaries, violet etch shading",
+      "scene": "the etched face of native gold metal, a mosaic of polygonal grains each a slightly different tint of gold, crisp slate-blue grain boundaries ruled between them, fine parallel twin bands striped across some grains, tiny etch pits dotted along the boundaries, violet shading in the recesses",
+      "target": "a single gold grain",
+      "target_phrase": "a gold grain"
+    },
+    {
+      "name": "fcc_lattice",
+      "exp": -8.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "gold atom points on slate-black, cool magenta bonding haze",
+      "scene": "the face-centred cubic lattice of gold, rows of glowing gold atoms stacked in cubes with one atom set at every corner and one at the centre of every cube face, the close-packed planes stepping away into the distance in diagonal layers, a cool magenta haze of shared electrons filling the gaps, a slate-black void about the whole array",
+      "target": "a glowing gold atom",
+      "target_phrase": "a gold atom",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "cubic"
+      }
+    },
+    {
+      "name": "gold_atom",
+      "exp": -10.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "gold and magenta electron fog on slate-black, one white-hot point",
+      "scene": "one gold atom as a vast soft fog of electron haze drifting in a slate-black void, many nested shells of the fog, the outer ones broad thin sheets of cool magenta, the inner ones denser and warmer gold, all of it thickening toward one tiny white-hot point at the heart, dim knots of neighbouring fog at the margins of the void",
+      "target": "a tiny white-hot point",
+      "target_phrase": "a lit point"
+    },
+    {
+      "name": "gold_collision",
+      "exp": -14.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "white-gold discs, crimson and gold spark spray, slate-black void",
+      "scene": "two gold nuclei flattened by their speed into two thin glowing white-gold discs, meeting face to face in a slate-black void, a blinding point of contact where they touch, a fireball of loose crimson and gold sparks splashing out from the contact in every direction, faint curling tracks of sparks trailing through the dark"
+    },
+    {
+      "name": "kilonova",
+      "exp": 12.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blinding white contact point, crimson and gold ejecta cloud, violet-black starfield",
+      "scene": "two neutron stars caught merging in open space, two tiny blue-white spheres pressed together at a blinding white contact point, a lopsided cloud of crimson and gold gas flung out from the contact, one lobe swollen and one lean, glittering with freshly forged heavy atoms, a violet-black starfield about it, and off to one flank a lone yellow star",
+      "target": "a lone yellow star",
+      "target_phrase": "a yellow star"
+    },
+    {
+      "name": "home_sun",
+      "exp": 9.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blazing yellow-white photosphere, magenta prominences, one blue and white planet, black space",
+      "scene": "our yellow-white Sun in the black of space, its blazing face freckled with granules and a few sunspots, arcs of magenta prominences lifting off its rim, and set off from it a blue and white planet lit full on its day face",
+      "target": "a blue and white planet",
+      "target_phrase": "a blue planet"
+    },
+    {
+      "name": "yukon_orbit",
+      "exp": 6.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "spruce black-green taiga, silt-grey braided rivers, white icefields, blue atmosphere limb",
+      "scene": "the day face of the Earth from orbit over the Yukon in summer, a spruce black-green taiga rolling to the curved horizon, silt-grey braided rivers threading the valleys, white icefields and glaciers on the coastal ranges to the south, a few cumulus clouds, a thin blue limb of atmosphere at the horizon",
+      "target": "a braided river valley",
+      "target_phrase": "a river valley"
+    },
+    {
+      "name": "creek_valley_air",
+      "exp": 3.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "spruce black-green slopes, fireweed magenta meadows, silt-grey creek, charcoal gravel bars",
+      "scene": "a Yukon creek valley from the air on a steep slant under the summer sun, a silt-grey glacial creek braiding across charcoal gravel bars, spruce black-green slopes on both sides, meadows of fireweed blazing magenta on the benches, willow thickets along the banks, a few dark specks of a grizzly and a moose on the gravel",
+      "target": "a gold creek gravel bar",
+      "target_phrase": "a gravel bar",
+      "cameo": {
+        "sprite": "output/mascots/canon/lorraine.png",
+        "pos": [
+          0.64,
+          0.62
+        ],
+        "size": 0.13
+      }
+    }
+  ],
+  "music_theme": "a vast submerged low drone and a slow low kick on every downbeat, a cold glassy shimmer through the creek and the gravel, the drone narrowing to a single held tone through the crystals, the grains, the lattice and the atom, one struck low bell on the morph from the two colliding discs to the two merging stars, the full drone returning for the fall home through the Sun and the Earth onto the gold creek",
+  "music_key": "D minor",
+  "render_start": "gold_atom"
+}

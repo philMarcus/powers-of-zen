@@ -1,0 +1,74 @@
+{
+  "name": "dazzle_bands",
+  "theme": "one Turing stripe at three scales under a hard noon sun in Horn-of-Africa scrub — a waterhole seated in a bare band of tiger bush where Grevy's zebras drink, dived into one zebra's flank at the frontier of a jet stripe and an ivory one, down into the follicle bulb where the stripe is decided cell by cell, into a pigment granule whose protein sheets are themselves striped, which morphs up into the banded country seen from the air and comes home to the waterhole",
+  "style": "infrared_bloom",
+  "music_lane": "analog_dawn",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "waterhole_commons",
+      "exp": 0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-red laterite, acid-green shrub bands, jet and ivory stripes, one turquoise accent",
+      "scene": "a banded-scrub waterhole at hard noon seen low and oblique from the rim of the bare ground, the muddy pool seated in one wide band of rust-red laterite with bands of acid-green shrub running parallel across the country in back of it, a herd of Grevy's zebras drinking at the water's edge, jet stripes dense on their flanks, red-billed oxpeckers perched on the zebras' backs, two beisa oryx with straight black horns standing at the far rim, a Somali ostrich with a blue-grey neck in the bare band, a dik-dik in the shrub band, a turquoise-and-lilac roller perched on a dead branch, weaver nests hanging in a flat-topped acacia, animal paths converging on the pool across the rust earth, a hard blue sky, no people present",
+      "target": "a striped zebra flank",
+      "target_phrase": "a striped flank",
+      "loop_target": "a muddy waterhole in a band of rust-red laterite, Grevy's zebras drinking among acid-green shrub bands"
+    },
+    {
+      "name": "stripe_frontier",
+      "exp": -2.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jet-black and ivory hair, slate-blue skin, rust dust",
+      "scene": "a zebra's flank at the frontier of a jet-black stripe and an ivory stripe, thousands of stiff hair shafts standing in dense slanted files, the jet files and the ivory files meeting at a sharp wavering edge, slate-blue skin showing at the hair roots, rust-red laterite dust caught in the hair, a single tick-bitten furrow where an oxpecker has fed, dark follicle openings dotted across the skin at the foot of every shaft",
+      "target": "a dark follicle opening",
+      "target_phrase": "a follicle opening",
+      "cameo": {
+        "sprite": "output/mascots/canon/lee.png",
+        "pos": [
+          0.64,
+          0.36
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "follicle_bulb",
+      "exp": -4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "hot magenta cells, jet granules, ivory files, tangerine membranes",
+      "scene": "the bulb at a hair's root, a crowd of tall hot-magenta cells packed in upward files with tangerine membranes, a few branching pigment cells seated among them with long arms reaching into their neighbours and pushing jet granules into them, the files on one flank of a frontier loaded jet-black and the files on the other left ivory, a mesh of crimson capillaries cupping the base of the bulb, countless jet granules strewn through the magenta crowd",
+      "target": "a jet pigment granule",
+      "target_phrase": "a jet granule"
+    },
+    {
+      "name": "melanosome_matrix",
+      "exp": -7.2,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "teal protein sheets, jet pigment beads, violet membrane",
+      "scene": "the interior of one pigment granule, a stack of parallel teal protein sheets set a few nanometres apart and seen edge-on, jet pigment beads laid in close rows on every sheet so the whole granule reads as stripes, teal and jet banding repeating across the interior, a curved violet membrane wall enclosing the stack, no ground and no horizon"
+    },
+    {
+      "name": "tiger_bush_air",
+      "exp": 3.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "acid-green shrub bands, rust-red bare bands, one mud-brown pool",
+      "scene": "tiger bush from low overhead at hard noon, bands of dense acid-green shrub alternating with bands of bare rust-red laterite, each band a few tens of metres wide and running in parallel wavering stripes across the gentle slope, a muddy waterhole seated in one bare band with ochre-dust animal paths converging on it, tiny zebras and oryx dotted on the rust ground at its rim, flat-topped acacias standing in the shrub bands, a hard blue haze at the horizon",
+      "target": "a muddy waterhole",
+      "target_phrase": "a muddy waterhole"
+    }
+  ],
+  "music_theme": "a hard noon over banded scrub — warm tape-worn keys and a dry plucked figure over a deep kick landing on the downbeat of every scale change, the figure tightening into a striped staccato through the hair and the follicle bars, a wide swell where the pigment granule's stripes morph up into the banded country, and an open settling chord as the waterhole comes home",
+  "music_key": "D major",
+  "render_start": "waterhole_commons"
+}

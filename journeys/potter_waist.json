@@ -1,0 +1,127 @@
+{
+  "name": "potter_waist",
+  "theme": "a sun-baked dry-stone terrace in the garrigue at dusk, its stones studded with the clay jar-nests of potter wasps — read as ONE HOURGLASS at every scale: the wasp's pinched stalk, the clay jar's narrow neck, a dividing cell cinched at its furrow, a nucleus necking into a dumbbell, and two stars sharing one pinched envelope with a stream pouring through the throat. The drama at every scale is the throat and the flow through it. A LIVING dive through the wasp larva sealed in its jar: larval tissue, a cell dividing at its cleavage furrow, the contractile ring of twisted filament ropes and double-headed motor bundles cinched about the furrow, one carbon atom's haze about its spark. The commons is the terrace at dusk (potter wasp jars on the stones, a wall lizard on a warm capstone, a scorpion in a crack, caper flowers with a hummingbird hawk-moth, a hoopoe on the terrace top, snails sealed on the thyme). The seam is hourglass to hourglass — a fissioning nucleus pinched into a dumbbell at 10^-14.5 m morphs up into the hourglass binary at 10^11.3 m — and it touches no star cluster and no shells.",
+  "style": "lacquer_pop",
+  "music_lane": "wooden_orbit",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "dusk_world",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "umber and terracotta continents on a deep violet night side, a carmine dusk line, one citron glint of sea",
+      "scene": "a rocky ocean world seen whole from orbit with the dusk line lying across it, an inland sea ringed by umber and terracotta limestone coasts on the lit flank, a long rugged peninsula reaching into the sea with a carmine glow of sunset along its hills, one citron glint of low sun on the brine, the night side a deep violet sweep with thin cloud bands, a scatter of far stars in the violet deep about the world",
+      "target": "a rugged limestone peninsula",
+      "target_phrase": "a rocky peninsula",
+      "loop_target": "a rocky ocean world half in violet dusk with a carmine-lit peninsula"
+    },
+    {
+      "name": "garrigue_hills",
+      "exp": 3.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "kiln-umber ridges, carmine sunset flanks, violet shadowed valleys, sage scrub",
+      "scene": "limestone hills of the garrigue seen from aloft at a low slant at dusk, every slope stepped in tier on tier of dry-stone terraces following the contours, low sage and thyme scrub spotted across the terraces, carmine sunset on the western flanks and violet shade pooled in the valleys, a stone hamlet of terracotta roofs on one crest, the sea a violet band at the foot of the hills",
+      "target": "a stepped stone terrace",
+      "target_phrase": "a stone terrace"
+    },
+    {
+      "name": "terrace_commons",
+      "exp": 0.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sun-baked umber stones, terracotta jars, pink-white caper blossoms, one citron wasp band, violet dusk",
+      "scene": "a sun-baked dry-stone terrace at dusk at eye level, rough umber limestone blocks stacked without mortar, round terracotta clay jar-nests of potter wasps fixed to the stones in clusters, a green wall lizard on a warm capstone, an amber scorpion in a crack between blocks, caper plants rooted in the joints with pink-white blossoms and a hummingbird hawk-moth at one flower, a hoopoe with its barred crest on the terrace top, pale snails sealed on the thyme stems, violet dusk sky above the stones",
+      "target": "a round terracotta jar-nest",
+      "target_phrase": "a small clay jar",
+      "cameo": {
+        "sprite": "output/mascots/canon/newman.png",
+        "pos": [
+          0.64,
+          0.36
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "clay_jar",
+      "exp": -1.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "terracotta and fired-umber clay, a carmine-lit crack, one citron-banded wasp, violet stone shade",
+      "scene": "a potter wasp's clay jar-nest fixed to a weathered stone face, the jar a round terracotta bulb narrowing to a slim neck and a flared rim, its clay laid in tiny pellet rings, a narrow crack across its belly showing a curled cream larva inside lit carmine, a potter wasp with citron bands perched on the stone beside it with its hourglass-thin stalk between chest and abdomen, lichen rosettes on the stone around, violet shade in the pits of the limestone",
+      "target": "a curled cream larva",
+      "target_phrase": "a cream larva"
+    },
+    {
+      "name": "larval_flank",
+      "exp": -2.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "translucent cream skin over carmine-glowing tissue, umber shadows, violet deep",
+      "scene": "the flank of a wasp larva at a grain's width, translucent cream skin in soft segmented rings, beneath it banks of rounded cells glowing carmine through the skin, a branching silvery breathing tube threaded through the tissue, fat bodies clustered as creamy globules, umber shade in the creases between segments, violet deep beyond the curve of the body",
+      "target": "a glowing carmine cell",
+      "target_phrase": "a red round cell"
+    },
+    {
+      "name": "cleaving_cell",
+      "exp": -5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "twin carmine domes, a citron-bright pinch, umber neighbour cells, violet gaps",
+      "scene": "a cell dividing inside the larval tissue, its body pinched tight at a deep cleavage furrow into two plump carmine halves joined by a narrow throat, the two halves each holding a round nucleus, a citron-bright band encircling the pinch, umber neighbour cells packed about it on every hand, violet gaps between the neighbours, tier behind tier of cells set into depth",
+      "target": "a citron-bright pinched furrow",
+      "target_phrase": "a bright pinched ring",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "contractile_ring",
+      "exp": -7.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "carmine twisted filament ropes, citron motor clubs, umber membrane, violet deep",
+      "scene": "the contractile ring encircling the cell's furrow, parallel ropes of twisted beaded filaments looped round the narrow neck in a tight band, short bundles of double-headed clubs bridging neighbouring ropes all along the band, the ropes carmine and the clubs citron, the umber membrane curving away on both sides of the pinch into two broad domes, violet deep in the gaps between ropes",
+      "target": "a single glowing atom",
+      "target_phrase": "a bright atom"
+    },
+    {
+      "name": "carbon_haze",
+      "exp": -10.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "a hard ivory spark in a carmine haze, umber neighbour hazes, violet deep",
+      "scene": "one carbon atom in a filament's beaded strand, a hard ivory spark at the middle with a carmine haze banked about it, the haze dense close in and softer outward with no rim to it anywhere, two dimmer umber hazes of its neighbours crowded at the margins of the field, the beaded strand ghosted faintly beyond them, violet deep all around",
+      "target": "a hard ivory spark",
+      "target_phrase": "a bright ivory point"
+    },
+    {
+      "name": "fission_neck",
+      "exp": -14.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "carmine and citron glowing spheres, an ivory-hot pinch, violet deep",
+      "scene": "a fat droplet of packed glowing spheres in the shape of a dumbbell, two round clusters of carmine and citron spheres joined by a narrow neck, the neck pinched thin and ivory-hot, a few loose spheres flung sideways from the pinch, violet deep all around"
+    },
+    {
+      "name": "hourglass_binary",
+      "exp": 11.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "a carmine giant star and an ivory-hot compact star in one pinched envelope, a citron stream, deep violet void",
+      "scene": "two stars sharing one pinched glowing envelope in the shape of an hourglass, a swollen carmine giant star on one side and a small ivory-hot compact star on the other ringed by a flat spinning disk of citron and carmine, a bright stream pouring from the giant through the narrow throat of the envelope into the disk, a rocky ocean world half in violet dusk set against the lower margin of the envelope with a carmine-lit peninsula on its lit flank, far stars scattered in the deep violet void",
+      "target": "a rocky ocean world in violet dusk",
+      "target_phrase": "a dusk planet"
+    }
+  ],
+  "music_theme": "warm plucked wooden marimba and nylon guitar over a deep soft kick on every downbeat, a breathy clay flute answering on each morph as the same hourglass returns, thinning to a single plucked string through the ring and the atom, a low wooden knock on the morph from the pinched droplet out to the twin stars, then opening warm for the fall home onto the dusk world",
+  "music_key": "D minor",
+  "render_start": "dusk_world"
+}

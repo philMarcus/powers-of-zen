@@ -1,0 +1,77 @@
+{
+  "name": "paradise_cape",
+  "theme": "a superb bird-of-paradise on its display branch in a New Guinea cloud forest by day, its plume fan flared into an oval of velvet super-black about an iridescent turquoise chest crescent, read as THE LIGHT-SWALLOWER: the fan's barbules swallow 99.95% of the light that strikes them, and at the far end of scale a black hole's shadow swallows all of it, both read only by the bright rim at their edge. Continuation runs through dead keratin: the fan's overlapping feathers, then the barbule thicket, curved spiky barbules crowded upward with the light lost in the deep gaps amid them, as the SEAM, morphing up into a black hole's shadow and its photon ring. The descent home falls onto a cloud-wrapped emerald world and its moss-forest ridges. Palette family: super-black & paradise turquoise; daylight, the black is the SUBJECT and the ground is lit.",
+  "style": "lacquer_pop",
+  "music_lane": "ember_pulse",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "display_branch",
+      "exp": 0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moss-gold rainforest daylight, velvet super-black plumes, turquoise-cyan chest crescent, one scarlet fruit point",
+      "scene": "a mossy display branch in a New Guinea cloud forest by day, seen at eye level from a neighbouring bough, a male superb bird-of-paradise perched on the bare-swept bough with its plume fan flared into a velvet super-black oval about a crescent of iridescent turquoise-cyan chest plumes, a russet-brown female perched a little way off, a pair of emerald fruit doves on a lower bough, a jewelled stick insect on the moss, clusters of scarlet fruit hanging from a vine, epiphyte orchids and tree-fern rosettes crowding the lit canopy, wisps of cloud caught in the moss-gold light",
+      "target": "a super-black plume fan",
+      "target_phrase": "a dark plume fan",
+      "cameo": {
+        "sprite": "output/mascots/canon/newman.png",
+        "pos": [
+          0.3,
+          0.66
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "plume_fan",
+      "exp": -1.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "velvet super-black that shows no folds, iridescent turquoise-cyan scallops, moss-gold glints",
+      "scene": "the flared plume fan across a hand's breadth, rank on rank of velvet super-black feathers overlapping in scalloped tiers so deep that no fold or edge shows, the lower rim of the fan meeting a crescent of iridescent turquoise-cyan chest plumes set like enamel scales, moss-gold daylight glancing off the turquoise, a single scarlet fruit glowing past the fan's rim",
+      "target": "a super-black feather",
+      "target_phrase": "a velvet dark feather",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "barbule_thicket",
+      "exp": -4.3,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "sable depths with no floor, turquoise-cyan glints on the barbule tips, a faint moss-gold haze",
+      "scene": "the barbule thicket of one super-black feather seen at a slant, countless curved spiky barbules standing upward in a dense sable forest, every barbule hooked and tilted toward its tip, the light lost in the deep gaps amid them so the floor of the thicket reads as pure sable, only the barbule tips rimmed with a bright turquoise-cyan glint, a faint moss-gold haze hanging over the tips"
+    },
+    {
+      "name": "photon_ring",
+      "exp": 13.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "a sable shadow disc, a blazing gold photon ring, a lopsided amber and scarlet glow, turquoise stars",
+      "scene": "a black hole in deep space, its round sable shadow ringed by a blazing gold photon ring, the lopsided glow of its disc brighter amber-gold on one flank and dimmer scarlet on the other, the disc's glow bent up over the shadow's top and down beneath it, turquoise and gold stars scattered through the void around it, one cloud-wrapped emerald world hanging in the foreground lit gold by the disc",
+      "target": "a cloud-wrapped emerald world",
+      "target_phrase": "an emerald planet"
+    },
+    {
+      "name": "cloud_ridges",
+      "exp": 3.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "emerald and viridian moss forest, moss-gold daylight, ivory cloud wisps, one scarlet flowering tree",
+      "scene": "the cloud-forest ridges of New Guinea by day, seen low and oblique over the canopy from the air, knife-edged ridges one past the next clothed in emerald moss forest, wisps of cloud lying in the valleys and snagged on the crests, domed canopies of emergent trees crowded across every slope, a gorge with a silver torrent cut down its floor, one crimson-flowering tree kindled on the nearest ridge, moss-gold daylight across the entire range",
+      "target": "a mossy display branch",
+      "target_phrase": "a mossy branch",
+      "loop_target": "the cloud-forest ridges of an emerald rainforest island"
+    }
+  ],
+  "music_theme": "a smouldering low pulse with a deep soft kick on every downbeat at a driving tempo, bright struck mallets flickering over it through the forest and the plume fan, dropping to a hollow sub-bass swell as the barbule thicket swallows the light, a low gong on the morph out to the black hole's blazing ring, then the mallets returning for the fall home onto the cloud-forest ridges",
+  "music_key": "D minor",
+  "render_start": "cloud_ridges"
+}

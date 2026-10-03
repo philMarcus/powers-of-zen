@@ -1,0 +1,141 @@
+{
+  "name": "chevron_quarry",
+  "theme": "a flooded slate quarry in fold-belt mountains on a moonless night, read as ONE crease restated at every scale. The Miura-ori family runs the whole ladder: accordion ridge-and-valley country from aloft, chevron folds in a worked face, crenulation cleavage puckering one plate, kinked leaf ranks in a mica book, and the sheet-silicate sandwiches themselves creased into mountain-and-valley ranks where the rock was folded. Mineral continuation is honest and skips the living bands: slate, its muscovite mica and jade-green chlorite, then the real layered lattice with amber potassium beaded in the gaps, then one atom, then the core's ranked leaning cones. The commons is the quarry floor at night (choughs in the drill-holes, a peregrine on a spoil ledge, lesser horseshoe bats at the adit mouth, a raven on the winding-house gable, moths over the pool, a slow-worm in the slate waste) — a made cliff colonised as a bird cliff. NO space card anywhere: the largest card is the mountain skin itself, and the seam is a texture-to-landscape morph (the core's leaning ranks become the fold belt's leaning ridges) that never touches the cosmos and never rhymes cleavage with a galaxy wall.",
+  "style": "aurora_silk",
+  "music_lane": "music_box",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "quarry_flank",
+      "exp": 3.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet blue-black slate benches, sulphur-yellow lichen blotches, jade-black flooded pit, indigo night",
+      "scene": "one accordion ridge of fold country on a moonless night, seen from a high slant over its flank, a worked slate quarry bitten into the hillside in ranks of stepped benches, spoil fans heaped under each bench, an incline of tramway sleepers ruled straight up the slope, a winding-house with a slate gable standing on the lowest terrace, a jade-black flooded pit seated in the quarry floor, sulphur-yellow lichen crusts blotching the violet blue-black benches, the neighbouring ridges ranked behind in the indigo night, no moon overhead",
+      "target": "a jade-black flooded pit",
+      "target_phrase": "a black flooded pit"
+    },
+    {
+      "name": "quarry_commons",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sulphur-yellow lichen crusts on violet blue-black faces, jade-black pool, one amber eye point",
+      "scene": "the floor of the flooded slate quarry at night, seen at standing height from the brink of the pool, the worked face rising in violet blue-black ranks with rows of drill-holes bored into it, two choughs roosting in the drill-holes, a peregrine settled on a spoil ledge, lesser horseshoe bats at the mouth of a timbered adit, a raven perched on the winding-house gable, a crowd of moths over the jade-black pool, a slow-worm coiled in the warm slate waste with one amber eye, sulphur-yellow map-lichen crusts over every bench, plates of split slate strewn across the floor, no moon and no lamp anywhere",
+      "target": "a zigzag-banded rock wall",
+      "target_phrase": "a striped rock wall",
+      "cameo": {
+        "sprite": "output/mascots/canon/kitty.png",
+        "pos": [
+          0.62,
+          0.56
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "chevron_face",
+      "exp": 0.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet blue-black bands, jade-grey quartz hinges, sulphur lichen patches",
+      "scene": "the worked face of the quarry at standing height, the rock's beds running across the wall in chevron ranks, mountain-and-valley creases repeating one after another with a sharp hinge at every turn, jade-grey quartz seams packed into the hinge crooks, rows of half-moon drill grooves cut straight through the zigzag, sulphur-yellow lichen patches crusted over the upper bands, the violet blue-black stone wet through, a jutting split slab propped where the beds break",
+      "target": "a jutting split slab",
+      "target_phrase": "a jutting stone slab"
+    },
+    {
+      "name": "slab_waste",
+      "exp": -0.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet blue-black plates, sulphur-green lichen maps, one rust-orange seam",
+      "scene": "a heap of split slate plates in the quarry waste, plates strewn at every slant and stacked in leaning packs, each bared face violet blue-black and mapped with sulphur-yellow lichen crusts, hairlike puckered ranks running over the faces, jade-grey quartz specks seated in the stone, a rust-orange stain along one pack, gulfs of unlit pitch between the plates",
+      "target": "a puckered violet crease",
+      "target_phrase": "a puckered ridge"
+    },
+    {
+      "name": "crenulation",
+      "exp": -2.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-black mica crests, jade-green chlorite troughs, sulphur glints",
+      "scene": "a slate plate's interior at a hand's width across, the cleavage puckered into ranks of micro-folds standing one after another, every crest a bent pack of mica leaves and every trough packed with jade-green chlorite, lens-shaped quartz bodies seated in the hinges, sulphur-yellow glints kindled along the crest flanks, rank after rank of the creases into unlit depth",
+      "target": "a bent pack of mica leaves",
+      "target_phrase": "a bent violet flake"
+    },
+    {
+      "name": "mica_spangle",
+      "exp": -4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sulphur-gold spangles on violet-black plates, jade chlorite grains",
+      "scene": "a crowd of mica plates crammed together amid one crenulation crest, the plates standing on their rims at every slant with jade-green chlorite grains wedged between them, sulphur-gold spangles kindled over the plate faces, several plates crowding close on either side and ranks of others set into unlit depth, a scatter of jade quartz beads lodged in the gaps",
+      "target": "a creased violet plate",
+      "target_phrase": "a creased violet plate",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "leaf_stack",
+      "exp": -6.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-black leaf ranks, jade-black gulfs, one sulphur gleam",
+      "scene": "the inside of one mica plate, hundreds of stacked leaves lying one over another in ranks, a band of sharply kinked leaves cutting across the stack at a slant while the leaves outside the band lie straight, step lips where leaf after leaf comes to an end, jade-black gulfs parting the packs, a sulphur gleam kindled along one lip",
+      "target": "a creased mineral stack",
+      "target_phrase": "a creased stack"
+    },
+    {
+      "name": "layer_stacks",
+      "exp": -9.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet glow along the sheet faces, amber atom beads, unlit gulfs",
+      "scene": "the sheet-silicate lattice of muscovite mica seen from among its own ranks, every sandwich built of one sheet of linked tetrahedra, a sheet of octahedra, and another sheet of tetrahedra, hundreds of the sandwiches stacked one over another with a spare gap parting each pair, amber potassium atoms beaded along the gaps, the whole stack creased into mountain-and-valley ranks where the rock was folded, ranks of the creased sheets in every direction, violet glow along the sheet faces and unlit gulfs between them",
+      "target": "a glowing amber atom",
+      "target_phrase": "a glowing amber bead",
+      "loop_target": "a creased lattice of stacked mica sheets with amber atoms beaded in its gaps",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "layered"
+      }
+    },
+    {
+      "name": "atom_fog",
+      "exp": -10.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-white core glow in a jade-tinged fog",
+      "scene": "one potassium atom seated in a lattice gap, a violet-white point of core at the middle of a graded fog of glow, the fog densest close in and softening outward with no rim to it, fainter fogs of neighbouring atoms crowding in on either side, jade sheets of the mica lattice ghosted beyond them all, unlit gulfs through the spaces",
+      "target": "a violet-white core",
+      "target_phrase": "a bright core point"
+    },
+    {
+      "name": "spin_ranks",
+      "exp": -14.2,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "violet-white cones with sulphur points, an amber wash behind the ranks",
+      "scene": "a field inside the atom's core, hundreds of glowing cones each standing on its point, all of them leaning at one shared slant and ranked shoulder to shoulder about one common axis drawn through the field, each cone violet-white with a sulphur gleam at its tip, rank behind rank of them into unlit depth, an amber wash of glow behind the farthest ranks"
+    },
+    {
+      "name": "fold_belt",
+      "exp": 5.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet wet crests under starlight, jade-black valley troughs, indigo sky",
+      "scene": "ridge-and-valley country seen from aloft on a moonless night, rank after rank of accordion ridges all leaning the same way from the near ground to the horizon, every long crest paired with its valley trough, jade-black flooded troughs lying in several of the valleys, the crests wet and violet under starlight, one flank bitten open by a stepped slate quarry with pale benches and a jade-black pit at its floor, the far ranks fading into an indigo sky",
+      "target": "a stepped slate quarry",
+      "target_phrase": "a stepped rock quarry"
+    }
+  ],
+  "music_theme": "a miniature clockwork figure over a deep soft kick on every downbeat, one struck glass bell on each morph as the crease restates itself, the box narrowing to a single tender phrase through the mica and the lattice, a low struck bell on the morph from the ranked cones out to the ridge country, then widening for the fall home onto the creased sheets",
+  "music_key": "D minor",
+  "render_start": "layer_stacks"
+}

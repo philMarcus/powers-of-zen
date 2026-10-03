@@ -1,0 +1,144 @@
+{
+  "name": "lava_mosaic",
+  "theme": "a lava lake at night in its summit pit, its crust tiled into a mosaic of cooled plates seamed by incandescent cracks and sunk at the lanes where the plates meet — read as ONE BOIL restated at every scale. The Benard family runs the whole ladder: a red supergiant's three or four enormous convection cells, an open-cell cloud honeycomb over the night ocean, the lake's own plate mosaic, and empty space itself as a field of soft polygonal cells with a pair of sparks at every crown. A MINERAL dive with no cell and no protein anywhere: the crust raft's fresh jet glass, the basalt groundmass crowded with crossed plagioclase laths, the plagioclase framework lattice of linked silicon-oxygen pyramids with calcium and sodium seated in its cavities, then one calcium atom's haze about its spark. The commons is the crater rim at night (ohia lehua in scarlet bloom, an apapane at the blossoms, nene geese on the cinder, a hoary bat over the pit, a pueo owl on a snag, a wolf spider on a warm rock), lit from below by the lake. The seam is a boil to a boil — the vacuum's cells at 10^-15 m morph up into the supergiant's few great cells at 10^11.5 m — and it touches no nucleus droplet, no Coulomb crystal and no star cluster.",
+  "style": "ultraviolet",
+  "music_lane": "tide_organ",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "lava_world",
+      "exp": 6.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "one incandescent scarlet crater on a violet-dark hemisphere, cobalt cloud cells, a straw-yellow day rim",
+      "scene": "a dark ocean world seen whole from orbit on its night flank, one incandescent scarlet crater burning as a single point low on the hemisphere, the underside of its own tall gas plume kindled scarlet above it, hairline fissure lines faintly lit across the flank beside the crater, a deck of cobalt cloud cells tiled over the ocean out to the terminator, the day limb a slim straw-yellow rim at the world's edge, a violet-dark deep and a scatter of far stars about the world",
+      "target": "a ring-walled cloud cell",
+      "target_phrase": "a ring of cloud"
+    },
+    {
+      "name": "cloud_honeycomb",
+      "exp": 5.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt cloud walls over an unlit sea, one scarlet stain on the cloud undersides, violet night",
+      "scene": "a stratocumulus deck over a night ocean seen from high above, the cloud self-organised into a honeycomb of open cells, every cell a clear hole down to the unlit sea walled by a ring of cobalt cloud, hundreds of the cells tiling the water out to the horizon, a scarlet stain kindled on the cloud undersides at the far edge of the deck, a soot-dark volcanic island set amid the lower cells with hairline lit fissures drawn across it and a plume leaning off its summit, violet night above the deck",
+      "target": "a soot-dark volcanic island",
+      "target_phrase": "a dark volcanic island"
+    },
+    {
+      "name": "rift_zone",
+      "exp": 3.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "scarlet vent fires on cobalt flow sheets, straw-yellow cracks, olive forest bands",
+      "scene": "a volcanic island's rift zone seen from aloft at night, a chain of fissure vents drawn across the flank as a dotted scarlet line, low curtains of fire at two of the vents, cooled flow fields spread over the older ground in cobalt sheets gone soot-dark, straw-yellow cracks mapped over the newest sheets, a summit pit set at the head of the chain with a scarlet lake seated in its floor, olive forest banded across the seaward flank, the ocean a pitch band at the foot of the island, violet night overhead",
+      "target": "a scarlet crater lake",
+      "target_phrase": "a red crater lake"
+    },
+    {
+      "name": "crater_pit",
+      "exp": 2.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt crust plates seamed with incandescent orange cracks, straw-yellow widenings, pale sulphur walls",
+      "scene": "the summit pit at night seen from the rim across the crater, the lava lake seated in the pit floor with its crust tiled into a mosaic of cobalt plates, incandescent orange cracks seaming every plate and widening to straw-yellow where two plates pull apart, a sunken darker lane where three plates meet, spatter cones heaped at the lake's far shore, the pit's terraced walls hung with pale sulphur crust, crooked trees in scarlet bloom crowded on the rim above the walls, violet night over the far wall",
+      "target": "a scarlet-blossomed tree",
+      "target_phrase": "a red flowering tree"
+    },
+    {
+      "name": "rim_commons",
+      "exp": 1.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "scarlet lehua pompoms lit from beneath, umber cinder ground, one crimson bird, violet night",
+      "scene": "the crater rim at night at eye level among the ohia lehua trees, their scarlet pompom blossoms crowded on crooked boughs, a crimson apapane honeycreeper perched at one blossom cluster, two nene geese settled on the umber cinder ground, a hoary bat aloft over the pit, a pueo owl on a bare snag, a wolf spider on a warm rock at the brink, tufts of coarse grass rooted in the cinder, the lake far below in its pit lighting every underside scarlet from beneath, a mosaic of cobalt crust plates on the lake seamed with orange, violet night overhead, no lamp anywhere",
+      "target": "a cobalt crust plate",
+      "target_phrase": "a dark stone plate",
+      "cameo": {
+        "sprite": "output/mascots/canon/dora.png",
+        "pos": [
+          0.38,
+          0.6
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "crust_raft",
+      "exp": 0.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "a cobalt raft glazed silver-grey, incandescent orange seams, straw-yellow widenings",
+      "scene": "one raft of the lake's cooled crust seen from low over the surface at a shallow slant, the raft a cobalt slab gone soot-dark with ropy folds pleated across it, incandescent orange seams drawn about its edges and straw-yellow where a seam widens, a silver-grey glaze filmed over its coldest middle, small domed blisters set in the folds, a broken lip at one corner where the slab snapped, fresh jet glass bared in the break, neighbouring rafts crowding it on every hand",
+      "target": "a broken lip of jet glass",
+      "target_phrase": "a broken glassy edge"
+    },
+    {
+      "name": "groundmass",
+      "exp": -3.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "chalk-white feldspar blades crossed in jet glass, olive olivine grains, straw-yellow glass",
+      "scene": "the inside of the basalt at a grain's width, a jet glassy groundmass crowded with slim chalk-white feldspar laths lying crossed at every slant, each lath a straight blade striped down its length with fine twin bands, squat olive olivine grains and stubby pyroxene prisms seated among the laths, straw-yellow glass filling the clearances, tiers of further laths set into unlit depth, one lath lying clear of the crowd",
+      "target": "a striped white lath",
+      "target_phrase": "a white striped blade",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "feldspar_frame",
+      "exp": -8.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "chalk-white openwork frame, scarlet calcium beads, straw-yellow sodium beads, unlit gulfs",
+      "scene": "the plagioclase lattice inside one feldspar lath, four-cornered silicon-oxygen pyramids linked corner to corner into a rigid openwork crate, the crate repeating on every hand with wide cavities ruled through it, a scarlet-white calcium atom seated in one cavity after another and a smaller straw-yellow sodium atom seated in the others, cranked files of the pyramids drawn as ridges through the frame, tier behind tier of the openwork set into unlit depth, deep gulfs amid the members",
+      "target": "a scarlet-white calcium atom",
+      "target_phrase": "a bright scarlet bead",
+      "loop_target": "an openwork feldspar lattice with scarlet calcium atoms seated in its cavities",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "diamond"
+      }
+    },
+    {
+      "name": "calcium_haze",
+      "exp": -10.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "a hard white spark in a banked scarlet haze, straw-yellow neighbours, unlit deep",
+      "scene": "one calcium atom seated in its cavity of the frame, a hard white spark at the middle with a scarlet haze banked about it, the haze dense close in and fainter outward with no edge to it anywhere, three dimmer straw-yellow hazes crowded at the borders of the field, the chalk-white openwork ghosted faintly beyond them all, unlit deep through the clearances",
+      "target": "a hard white spark",
+      "target_phrase": "a bright white point"
+    },
+    {
+      "name": "vacuum_boil",
+      "exp": -15.3,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "faint violet-white cells, paired sparks in every heaped middle, cooler violet seams",
+      "scene": "empty space at its smallest scale read as a boil, a field of soft polygonal cells of faint light tiled across the whole depth, the middle of every cell heaped up and bright with a pair of small sparks seated there, the cell borders dim, a cooler violet lane sunk where each cell meets its neighbours, tier behind tier of the cells set into unlit depth, one broader cell crowding the near field",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "supergiant_cells",
+      "exp": 11.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "dull crimson domes brightest at their high middles, cooling-iron lanes, violet-dark deep",
+      "scene": "a red supergiant star seen whole from outside, its face divided into only three or four enormous lumpy convection cells, each cell a bulging dull-crimson dome brightest at its high middle, broad cooler lanes the colour of cooling iron sunk where the domes meet, the star lopsided with the boil and its limb ragged, a dark ocean world set against the star's lower flank with one incandescent scarlet crater on its night face, a scatter of far stars in the violet-dark deep",
+      "target": "a dark world with one incandescent crater",
+      "target_phrase": "a dark planet"
+    }
+  ],
+  "music_theme": "a breathy reed organ swelling and settling in slow waves over a deep sub kick on every downbeat, one struck iron bell on each morph as the same churn restates itself, the organ narrowing to a single held reed through the lattice and the atom, a low struck bell on the morph from the cells of empty space out to the star's face, then widening for the fall home onto the openwork frame",
+  "music_key": "C minor",
+  "render_start": "feldspar_frame"
+}

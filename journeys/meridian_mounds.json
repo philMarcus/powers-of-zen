@@ -1,0 +1,131 @@
+{
+  "name": "meridian_mounds",
+  "theme": "a tropical savanna at moonrise in northern Australia where magnetic termites raise flat blade-shaped clay mounds all set north to south in one direction — read as ONE ALIGNMENT at every scale: the mounds all facing one way, the clay's stacked kaolinite sheets all lying one way, the magnetite grains in the clay, the spins of the smallest sparks all leaning at one angle, and a filament of the cosmic web whose spiral galaxies all tilt the same way (real: galaxy spins align with their filament). A MADE-object continuation: the mound is built clay, so it goes down through the clay's kaolinite booklets to a magnetite grain to one iron atom's haze. The commons is the mound savanna at night (antilopine wallaroo, frilled lizard on a mound, tawny frogmouth on a snag, echidna at a mound's foot, dingo at the treeline). The seam is tilted spins to tilted galaxies — a field of leaning spin axes at 10^-15 m morphs up into the filament of identically tilted spirals at 10^23.5 m — no nucleus droplet, no Coulomb crystal.",
+  "style": "infrared_bloom",
+  "music_lane": "wooden_orbit",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "tilted_spiral",
+      "exp": 20.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-red spiral arms with spinifex-gold knots, a honey core, midnight-teal deep",
+      "scene": "one spiral galaxy seen entire from far outside its disk, the disk tilted at a steep slant, two rust-red arms wound about a honey-gold core, knots of spinifex-gold star clouds strung along both arms, lanes of soot-brown dust laid between the arms, a scatter of fainter tilted spirals set at the same slant far off in a midnight-teal deep",
+      "loop_target": "a tilted rust-red spiral galaxy",
+      "target": "a golden star cloud",
+      "target_phrase": "a golden star cloud"
+    },
+    {
+      "name": "arm_starfield",
+      "exp": 16.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "countless teal-blue and straw stars, rust dust banks, one honey-yellow star",
+      "scene": "the interior of a spiral arm, countless stars crowded through a midnight-teal deep, cold teal-blue stars and straw-gold stars sown at every depth, banks of rust dust ribboned across the field, one honey-yellow star seated prominent in the near field, tiers of further stars set into the unlit distance",
+      "target": "a honey-yellow star",
+      "target_phrase": "a yellow star"
+    },
+    {
+      "name": "honey_sun",
+      "exp": 9.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "a honey-gold sun with rust granulation, a cold compass-blue planet, midnight-teal void",
+      "scene": "a honey-gold sun seen from its own planetary system, its face granulated rust and amber, a slim looped prominence on its limb, a round compass-blue planet seated in the near field half lit on its day side, its night half a deep teal disc, a sparse scatter of stars in a midnight-teal void",
+      "target": "a blue planet",
+      "target_phrase": "a blue planet"
+    },
+    {
+      "name": "night_earth",
+      "exp": 7.1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-red outback continent under moonlight, deep teal seas, a thin gold day rim",
+      "scene": "the Earth seen from orbit on its night side under a bright moon, the northern coast of Australia laid out in rust-red and ochre, moonlit tidal flats and river mouths traced in silver-blue, a band of straw-gold savanna across the tropical north, deep teal seas about the coast, a thin gold rim of day on the far limb",
+      "target": "a gold savanna",
+      "target_phrase": "a gold savanna"
+    },
+    {
+      "name": "savanna_aloft",
+      "exp": 4.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "straw-gold grassland, rust-red specks in ranks, midnight-teal billabongs, moon-silver",
+      "scene": "a tropical savanna at moonrise seen from high aloft at a slant, straw-gold grassland spread to the horizon, open woodland of pale-barked gums in scattered clumps, a winding creek with teal billabongs strung along it, a broad clearing crowded with hundreds of rust-red clay mounds all set in the same direction in ranks, the rising moon low on the horizon, a midnight-teal sky overhead",
+      "target": "a clearing of rust-red mounds",
+      "target_phrase": "a field of red mounds"
+    },
+    {
+      "name": "mound_commons",
+      "exp": 1.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-red clay blades, straw-gold spinifex hummocks, a cold compass-blue moonlight, midnight-teal sky",
+      "scene": "a magnetic-mound savanna at night at eye level, flat blade-shaped rust-red clay mounds standing in rows among hummocks of straw-gold spinifex, every mound set narrow end to the north with its broad face to the east, an antilopine wallaroo upright in the grass, a frilled lizard perched on the crest of one mound, a tawny frogmouth on a dead limb, an echidna at the foot of a mound, a dingo at the treeline of pale gums, cold compass-blue moonlight on every flank, a midnight-teal sky, no lamp anywhere",
+      "target": "a rust-red clay mound",
+      "target_phrase": "a red clay mound",
+      "cameo": {
+        "sprite": "output/mascots/canon/dora.png",
+        "pos": [
+          0.64,
+          0.62
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "kaolinite_booklets",
+      "exp": -4.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ivory-gold kaolinite stacks, rust iron stain, one blue-black octahedron, teal gulfs",
+      "scene": "the inside of the clay at a grain's width, crowds of kaolinite booklets, each a stack of thin six-sided plates piled face to face, every stack lying at the same slant, ivory-gold plates stained rust at their rims, a blue-black magnetite grain shaped as a sharp octahedron seated among the stacks, deep teal gulfs between them, tiers of further booklets set into unlit depth",
+      "target": "a blue-black octahedron",
+      "target_phrase": "a black octahedral crystal",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "layered"
+      }
+    },
+    {
+      "name": "iron_haze",
+      "exp": -10.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "a hard gold spark in a compass-blue haze, rust neighbours, midnight-teal deep",
+      "scene": "one iron atom seated in the magnetite lattice, a hard gold spark at the middle with a compass-blue haze banked about it, the haze dense close in and fainter outward with no rim anywhere, four dimmer rust hazes of oxygen crowded at the margins of the field, a ghost of the ordered lattice beyond them, midnight-teal deep in the clearances",
+      "target": "a hard gold spark",
+      "target_phrase": "a bright gold point"
+    },
+    {
+      "name": "spin_field",
+      "exp": -15.2,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "gold sparks with compass-blue axes, faint rust cones, midnight-teal deep",
+      "scene": "the smallest scale read as a field of spins, countless glowing gold sparks spread through a midnight-teal deep, each spark pierced by a short compass-blue axis of light, every axis leaning at the same angle, a faint rust cone of light traced about each axis round one shared upright, tier behind tier of the leaning sparks set into unlit depth",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "galaxy_filament",
+      "exp": 23.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "a spinifex-gold filament, rust-red spiral disks all tilted one way, midnight-teal voids",
+      "scene": "a filament of the cosmic web seen close, a long spinifex-gold ribbon of faint glowing gas strung across a midnight-teal void, dozens of rust-red spiral galaxies set along the ribbon, every spiral disk tilted at the same steep slant, one rust-red spiral seated prominent near the filament's middle, far fainter strands of the web crossing the deep",
+      "target": "a tilted rust-red spiral galaxy",
+      "target_phrase": "a red spiral galaxy"
+    }
+  ],
+  "music_theme": "warm hollow wooden marimba and log-drum figures circling over a deep sub kick on every downbeat, a pale bowed drone for the moonlit savanna, one low woody knock on each morph as the same alignment restates itself, thinning to a single circling figure through the clay and the iron atom, a deep resonant hit on the morph from the leaning spins out to the filament of tilted galaxies, then widening for the fall home onto the tilted spiral",
+  "music_key": "D minor",
+  "render_start": "tilted_spiral"
+}

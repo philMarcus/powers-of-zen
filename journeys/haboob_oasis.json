@@ -1,0 +1,141 @@
+{
+  "name": "haboob_oasis",
+  "theme": "a mile-high dust wall standing over a date-palm oasis at dusk, read as ONE billow at every scale — dense stuff falling through lighter stuff, followed as a fence of curling fingers from a galaxy's violet knot down through a supernova's ejecta pillars, a grit-ringed star and its ochre desert world, the haboob's own face, the qanat commons under the palms, a root hair's bacterial crowd, the hourglass gates of a root cell's membrane and one oxygen atom, to a fireball of loose sparks that folds out as a galaxy cluster's shock wall and comes home to the galaxy at a cold tongue's tip",
+  "style": "infrared_bloom",
+  "music_lane": "ember_pulse",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "filament_galaxy",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-hot arms, umber dust lanes, indigo void",
+      "scene": "a violet-hot spiral galaxy set in the void, two great arms combed out of an ochre core, umber dust lanes laid along the inner side of each arm, magenta star-nurseries beaded down them, one violet knot flaring in the outer arm, a haze of old stars feathering out into the black, two ragged companion galaxies off its rim, countless stars strewn through the void beyond",
+      "target": "a bright violet knot",
+      "target_phrase": "a violet knot",
+      "loop_target": "a violet-hot spiral galaxy with umber dust lanes and an ochre core"
+    },
+    {
+      "name": "ejecta_fingers",
+      "exp": 17.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ochre pillars, magenta knots, violet shock light",
+      "scene": "a dead star's wreckage as a fence of dense fingers, every finger a pillar of ochre ejecta with a curled cap, each cap tipped by a magenta knot set into the swept-up shell, clear lanes of jet black between the pillars, violet shock light laced across the shell behind the fence, ember-gold young stars seated in the packed gas, ochre grit banked along every pillar, stars strewn through the void beyond",
+      "target": "an ember-gold star",
+      "target_phrase": "an ember-gold star"
+    },
+    {
+      "name": "grit_ringed_star",
+      "exp": 12,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ember-gold star, ochre grit bands, violet-black space",
+      "scene": "an ember-gold star ringed by a banded disc of ochre grit, the grit drawn into two broad bands with a clear gap parting them, violet flash light caught in the inner band, cinder-grey bodies strewn along the outer band, a rust-ochre world standing out in the gap, the star's glare spread through the grit, jet space and strewn stars beyond the disc",
+      "target": "a rust-ochre world",
+      "target_phrase": "an ochre planet",
+      "cameo": {
+        "sprite": "output/mascots/canon/lamar.png",
+        "pos": [
+          0.62,
+          0.38
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "dust_world",
+      "exp": 7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-ochre hemisphere, umber billow, violet flash points",
+      "scene": "a desert world seen from orbit at dusk, its hemisphere rust and ochre, one umber dust front drawn as a curved billow across a third of the disc, violet flash points buried inside the billow, jade-green oasis belts threaded along a dry channel system under the front, white salt pans set into the ochre plains, the terminator's seam drawn across the disc, stars strewn beyond the rim",
+      "target": "a curled umber dust wall",
+      "target_phrase": "an umber dust wall"
+    },
+    {
+      "name": "haboob_face",
+      "exp": 4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "umber-ochre billows, violet-white flash, soot-black palm band",
+      "scene": "a dust wall a mile high standing over a desert plain at dusk, seen low and wide from the open plain, its face built of umber-ochre billows curled into caps and ranked one behind another, violet-white lightning buried in the mass and lighting it from inside, a soot-black band of date palms over a jade-green oasis strip at the wall's foot, a cobalt channel drawn through the grove, mud-brick roofs scattered beneath the fronds, indigo dusk overhead, ochre plain lying clear in front of the wall",
+      "target": "a cobalt channel",
+      "target_phrase": "a cobalt channel"
+    },
+    {
+      "name": "qanat_commons",
+      "exp": 0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt current, soot-black fronds, umber overhang",
+      "scene": "the qanat's open channel at dusk seen at standing height on the bund, a cobalt current running between mud bunds, sandgrouse crowded along the channel's lip, a fennec at the mud bank, hawk-moths at the date flowers, dragonflies over the channel gate, palm doves perched in the soot-black fronds, a camel spider on the hot bunds, pale palm rootlets threaded out of the cut bank into the current, fallen dates strewn on the mud, the umber dust mass standing over the grove, violet flash light through the fronds, no one present",
+      "target": "a pale palm rootlet",
+      "target_phrase": "a pale rootlet"
+    },
+    {
+      "name": "rhizosphere_swarm",
+      "exp": -5.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "magenta rods, grey boulder grains, ochre sap",
+      "scene": "a palm root hair crowded end to end with rod-shaped bacteria, a corkscrew tail on every rod, soil grains as big as boulders hemming the hair on all sides, ochre sap pooled in the gaps between the grains, clay flakes plated over the boulders, glistening films bridging grain to grain, hundreds more rods strewn through the sap, a glassy membrane sheathing the hair beneath the crowd, gloom beyond the grains",
+      "target": "a glassy membrane",
+      "target_phrase": "a glassy membrane",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "aquaporin_gates",
+      "exp": -8.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pale bead sea, violet gate rings, jet gloom",
+      "scene": "the root cell's own membrane seen from within, two layers of pale beads laid face to face as one wall, hourglass gates studding it in their thousands, each gate a barrel pinched narrow at its middle, a bead-chain of sap crossing every pinch single-file, violet rings laid around each gate's opening, ochre lipid tails combed between the two layers, further ranks of gates tiering away into the jet gloom, no ground and no horizon",
+      "target": "a glowing sap bead",
+      "target_phrase": "a glowing bead",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "oxygen_fog",
+      "exp": -10.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet haze, white core point, jet void",
+      "scene": "one oxygen atom pictured as a fog of violet haze gathered about an incandescent white point, the haze thickest close in and feathering away to nothing, two paler mist shells standing off it at even spacing, a pair of stubby bonds reaching out to dim ochre points hanging in the gloom, jet emptiness carrying no ground and no horizon",
+      "target": "a white core point",
+      "target_phrase": "a white point"
+    },
+    {
+      "name": "melted_fireball",
+      "exp": -15,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "violet-hot broth, white sparks, jet black",
+      "scene": "a violet-hot fireball of loose sparks and light-strands, thousands of white sparks strewn through a violet broth, taut strands of light drawn spark to spark and frayed at their ends, the broth massed into billows with curled caps, no bound trio anywhere in it, jet emptiness beyond the fireball's brink"
+    },
+    {
+      "name": "accretion_wall",
+      "exp": 25,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-hot shock front, ochre tongues, void black",
+      "scene": "a galaxy cluster's outer boundary, a standing wall of violet-hot shock millions of light-years across, cool ochre tongues of infalling filament set through the wall in a fence of fingers with curled caps, each tongue tipped by a knot of massed galaxies, the shock front banked in billows behind the fence, void blackness lying beyond the wall's far face, countless galaxies strewn along the tongues",
+      "resolve": {
+        "mode": "web"
+      }
+    }
+  ],
+  "music_theme": "a dust wall standing on at dusk — smoldering low pads over a deep 808 heartbeat, one heavy kick landing on the downbeat of every scale change, the pads hollowing to a single held tone through the root-hair and membrane bars, a wide violet swell where the fireball folds out as the cluster's shock wall, and a smoky settling figure as the grit-ringed star gives way to the desert world and the palms",
+  "music_key": "D minor",
+  "render_start": "filament_galaxy"
+}

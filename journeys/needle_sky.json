@@ -1,0 +1,74 @@
+{
+  "name": "needle_sky",
+  "theme": "a realm slice that never drops under the stellar band: one galaxy cluster's hot violet-magenta core, out onto a single edge-on galaxy venting a two-way fountain of crimson hydrogen, down into one crimson knot at the fountain's root where a young remnant throws straight jets out of its middle — and that burst, watched from its own centre, becomes the largest burst there is, a sky of cluster needles all aimed at the eye, which resolves into the one needle whose head is the magenta core again",
+  "style": "infrared_bloom",
+  "music_lane": "choir_of_dust",
+  "music_theme": "hushed and suspended — a soft choir pad over a low sub drone with a slow heartbeat pulse on every downbeat, glass-harmonica tones picking out the crimson filaments, the fountain card widening the pad, a struck granular bloom at the flip out to the sky of needles, thinning back to the pad as the magenta core returns",
+  "music_key": "D minor",
+  "format": {
+    "beats_per_bar": 4,
+    "exact_loop": true,
+    "frames_per_beat": 8,
+    "counter": true
+  },
+  "render_start": "cluster_core",
+  "registers": [
+    {
+      "name": "cluster_needle",
+      "exp": 24.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "old-gold galaxy cores and crimson rims on jet vacuum",
+      "scene": "a cluster of galaxies strung into one luminous needle aimed straight at the eye, the nearest members great gold-cored discs and hazy ovals crowded at the needle's head, the members after them smaller and smaller down its length, the last of them mere gold grains, a violet-magenta haze banked about the head, crimson threads laced through the crowd, jet vacuum in every direction past the needle, cold star grains strewn through the dark",
+      "target": "a violet-magenta core glow",
+      "target_phrase": "a magenta glow"
+    },
+    {
+      "name": "cluster_core",
+      "exp": 23,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-magenta haze field, old-gold cores, crimson hydrogen threads",
+      "scene": "the core of a galaxy cluster seen head-on, a violet-magenta glow of gas flooding the entire field, thickest at the middle and grading to plum at its rim, one swollen gold elliptical galaxy seated in the thick of the glow, lesser galaxies swarming through the haze in every direction as gold ovals, dusty discs and small crimson-veined edge-on discs, crimson hydrogen threads laced through the gaps, jet vacuum past the haze's rim",
+      "target": "an edge-on crimson galaxy",
+      "target_phrase": "an edge-on galaxy",
+      "loop_target": "the core of a galaxy cluster seen head-on, a violet-magenta glow of gas flooding the field with gold and dusty galaxies swarming through it"
+    },
+    {
+      "name": "starburst_fountain",
+      "exp": 20.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "crimson hydrogen filaments, soot-dark dust lane, amber disc glare",
+      "scene": "an edge-on galaxy disc cut across the field, a two-way fountain of crimson hydrogen filaments driven out of its core above and beneath the plane, every filament a straight crimson thread frayed at its far end, a soot-dark dust lane cutting the amber glare of the disc, the amber core burning through the gaps of that lane, hard crimson knots clustered at the fountain's root, violet-magenta haze and small gold galaxies far off in the vacuum",
+      "target": "a hard crimson knot",
+      "target_phrase": "a crimson knot",
+      "cameo": {
+        "sprite": "output/mascots/canon/aleksey.png",
+        "pos": [
+          0.7,
+          0.65
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "remnant_burst",
+      "exp": 17,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "crimson knots, cerulean jets, ember cinder, pitch vacuum",
+      "scene": "a young supernova remnant, a ragged shell of crimson knots hung in the vacuum, straight jets of cerulean glare driven out of its middle in every direction and passing clean through the shell, an ember cinder burning at the very centre, sooty filaments curled at the shell's rim, pitch vacuum past it strewn with cold star grains"
+    },
+    {
+      "name": "spine_sky",
+      "exp": 25.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "magenta needles, gold bead cores, one cerulean needle, pitch void",
+      "scene": "a sky crowded with cluster needles, each needle a file of galaxies aimed straight at the eye so that all of them converge on one point at the middle, the nearest galaxies of each file large gold ovals and the ones after them fine magenta beads, violet-magenta haze pooled at every needle's head, one needle carrying a cerulean cast, pitch void in the gaps among them",
+      "target": "a luminous galaxy needle",
+      "target_phrase": "a bright needle"
+    }
+  ]
+}

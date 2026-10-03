@@ -1,0 +1,95 @@
+{
+  "name": "labrador_schiller",
+  "theme": "a boulder shore near Nain, Labrador, on a winter night under the aurora, strewn with labradorite — the Inuit tell that the northern lights were once trapped in these rocks until a hunter's spear struck them free. Read as COLOUR FROM STACKED LAYERS at every scale: the stone's peacock flash is feldspar split into lamellae a light-wave apart, and the sky's light is folded into curtains. A MINERAL dive: the shore commons (caribou on the ridge, common eiders rafted in the lee of the ice, a raven on a boulder, an arctic fox on the shingle) -> one boulder face mid-flash -> the albite twin stripes of the schiller, each band its own colour -> the exsolution lamellae, two feldspars un-mixed into flat alternating sheets stacked in their thousands (the SEAM) -> morph up into the aurora oval crowning the pole from orbit -> the curtains pleated over the Labrador coast -> the bay and its boulder field from low altitude, home to the shore. The seam is flat parallel layers throwing colour becoming sheets of light folded into curtains — no fold belt, no stripes-to-stripes.",
+  "style": "aurora_silk",
+  "music_lane": "aurora_strings",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "shore_commons",
+      "exp": 1.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "caribou-tan and slate shingle, charcoal boulders flashing peacock teal and gold, viridian sky ribbons fringed crimson",
+      "scene": "a Labrador boulder shore on a winter night at eye level on the shingle, grey labradorite boulders strewn across the wet slate foreshore with sudden peacock-teal and gold flashes in their faces, a herd of caribou standing on the snowy ridge above the shore, a raft of common eiders settled in the lee of the shore ice, a raven perched on a rounded boulder, an arctic fox curled on the shingle, pans of sea ice crowded beyond the tideline, viridian aurora ribbons fringed crimson pleated across the sky overhead, a scatter of stars",
+      "target": "a grey labradorite boulder",
+      "target_phrase": "a grey boulder",
+      "loop_target": "a boulder shore with caribou on the ridge under viridian aurora ribbons"
+    },
+    {
+      "name": "boulder_flash",
+      "exp": -0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "charcoal-grey feldspar, sudden patches of peacock teal, electric gold and violet, orange lichen, rime",
+      "scene": "a broad labradorite boulder face at arm's length, charcoal-grey feldspar rimed with frost at its edges, patches of the stone flashing peacock teal, electric gold and violet where its crystal planes catch the aurora glow, one broad crystal plane blazing a vivid band of colour amid the dull grey, orange and sage lichen rosettes crowded on the rounded crown, frost crystals lodged in the hairline cracks",
+      "target": "a flashing crystal plane",
+      "target_phrase": "a bright colour patch",
+      "cameo": {
+        "sprite": "output/mascots/canon/newman.png",
+        "pos": [0.66, 0.36],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "twin_stripes",
+      "exp": -2.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "straight bands of peacock teal, electric gold, violet and copper beside slate-grey bands",
+      "scene": "the schiller surface of labradorite at a hair's width, the feldspar crystal ruled into hundreds of straight parallel bands of albite twinning running lengthwise across the entire field, each stripe flashing its own colour, peacock teal, electric gold, violet, copper, with a slate-grey stripe beside every bright one, hair-fine cleavage cracks cutting across the bands at a slant, slim sable needles of magnetite lying in the grain",
+      "target": "a peacock-teal stripe",
+      "target_phrase": "a teal stripe"
+    },
+    {
+      "name": "lamellae_stack",
+      "exp": -6.8,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "flat glassy sheets edged peacock teal and electric gold, violet glints, ink-dark depth",
+      "scene": "inside one stripe of labradorite, two feldspars un-mixed into alternating flat layers, a calcium-rich slab and a sodium-rich slab laid one on the next, each layer a smooth flat sheet of glassy mineral no deeper than a light-wave, thousands of the sheets stacked in parallel tiers receding into ink-dark depth, every interface throwing a luminous band of peacock teal and electric gold, the stack seen edge-on so the sheets read as ruled planes of light, faint violet glints amid the tiers",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "layered"
+      }
+    },
+    {
+      "name": "aurora_oval",
+      "exp": 6.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "a viridian ring fringed crimson on a violet-dark globe, amber town points, a slim cobalt limb",
+      "scene": "the northern crown of the Earth from orbit on its night side, a great oval ring of viridian aurora circling the pole, the ring's luminous curtains pleated in folds and fringed crimson at their upper edges, the frozen coast of Labrador and an ice-choked sea set under the southern arc of the ring, a few amber town lights on the unlit land, the planet's limb a slim cobalt rim, stars in the deep beyond",
+      "target": "a pleated aurora curtain",
+      "target_phrase": "a glowing light curtain"
+    },
+    {
+      "name": "coast_curtains",
+      "exp": 4.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "viridian curtains with bright hems and crimson tops, snow-dusted granite, cobalt sea ice, violet night",
+      "scene": "the Labrador coast at night seen from high above at a slant, viridian aurora curtains folded in tall pleats across the sky, their lower hems sharp and bright and their tops fringed crimson, a ragged coastline of fjords and granite headlands dusted with snow, cobalt pans of sea ice crowded in the inlets, one bay strewn with pale boulders at its head, violet night and stars beyond the curtains",
+      "target": "a boulder-strewn bay",
+      "target_phrase": "a snowy bay"
+    },
+    {
+      "name": "bay_approach",
+      "exp": 2.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "wet slate shingle glinting violet and crimson, ivory shore ice, caribou-tan ridge grass, viridian sky",
+      "scene": "a Labrador bay at night from low altitude at a slant, a curved foreshore of wet slate shingle strewn with hundreds of grey boulders, shore ice heaped in a jagged ivory fringe at the tideline, sea ice pans crowded in the bay, a snowy ridge above the shore tufted with caribou-tan grass, the shingle glinting violet and crimson under viridian aurora ribbons pleated overhead, a scatter of stars",
+      "target": "a snowy boulder shore",
+      "target_phrase": "a boulder shore"
+    }
+  ],
+  "music_theme": "shimmering polar string pads over a deep sub kick on every downbeat, a bright bowed harmonic flashing on each morph, the strings narrowing to one held high tone through the stripes and the stacked layers, a low swell widening on the morph up to the aurora ring, then settling back down the coast onto the boulder shore",
+  "music_key": "F# minor",
+  "render_start": "coast_curtains"
+}

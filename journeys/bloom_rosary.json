@@ -1,0 +1,127 @@
+{
+  "name": "bloom_rosary",
+  "theme": "a reedbed lake on a hot summer night, its shallows thick with a cyanobacterial bloom whose threads are strings of beads — read as ONE BEADED THREAD at every scale (Plateau-Rayleigh beading: one line pinching into many equal beads). The orb weaver's glue-beaded capture spiral on the reed heads, the bead-chain filaments of the bloom, the stacked-disc antenna rods inside each cell, one magnesium atom strung on a pigment's axis, and far out a cradle star's jet strung with even knots. Space opens on the cradle disk at the jet's foot, descends to a young lake world, the lake, the reedbed commons (orb weavers, bittern, reed warblers, grass snake, dragonfly larvae, pike), the bloom film, one filament of squat cylinder cells with pale heterocyst beads, the thylakoid sheets, the phycobilisome's fan of disc rods, the magnesium atom — and the seam is beads on a rod to a beaded jet: the atom's even line of hazes morphs up into the Herbig-Haro jet's lit thread of knots out of a coal-black cloud. Palette: phycocyanin cerulean and carotene tangerine, reed umber on night indigo, one moon-ivory accent; no gold, no violet.",
+  "style": "aurora_silk",
+  "music_lane": "choir_of_dust",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "cradle_disk",
+      "exp": 13.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cerulean and tangerine dust rings on night indigo, one moon-ivory newborn star, coal-black cloud",
+      "scene": "a newborn star wrapped in a broad tilted dust disk seen at a slant from above, the disk banded in rings of glowing cerulean and carotene tangerine with open gaps swept between the rings, a moon-ivory glare at the star's heart, a young cerulean world seated in one of the gaps, a coal-black cloud heaped around the disk and a scatter of distant stars through the night indigo deep",
+      "target": "a young cerulean world",
+      "target_phrase": "a blue planet",
+      "loop_target": "a newborn star in a tilted disk of cerulean and tangerine dust rings"
+    },
+    {
+      "name": "lake_world",
+      "exp": 7.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cerulean-glowing lakes on umber lowlands, a tangerine ring-arc in the sky, night indigo",
+      "scene": "a young world seen from orbit on its night flank, umber lowlands scattered with hundreds of lakes each glowing phycocyanin cerulean, reed-brown marsh country fringing the lakes, a tangerine arc of the dust disk spanning the sky beyond the limb, a moon-ivory crescent moon hanging off the rim of the world, night indigo deep around it",
+      "target": "a glowing cerulean lake",
+      "target_phrase": "a bright blue lake"
+    },
+    {
+      "name": "bloom_lake",
+      "exp": 3.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cerulean bloom swirls on an indigo lake, umber reed fringes, one moon-ivory moon path",
+      "scene": "a reedbed lake on a hot summer night seen from high above, its shallows thick with a cyanobacterial bloom laid in cerulean swirls and streaks, tangerine flecks scattered through the streaks, broad umber reedbeds ringing the shore in thick fringes, the open middle of the lake a deep night indigo, a moon-ivory moon path laid across the open lake, a winding reed-fringed shore at the near margin",
+      "target": "a reed-fringed shore",
+      "target_phrase": "a reedy shoreline"
+    },
+    {
+      "name": "reed_commons",
+      "exp": 0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "umber reed stems on night indigo, cerulean bloom glow in the shallows, tangerine glints on the webs",
+      "scene": "the reedbed margin on a hot summer night seen low over the shallows, umber reed stems crowded thick, orb weavers' capture spirals slung between the reed heads strung with glue beads catching tangerine and moon-ivory glints, a bittern standing among the stems, reed warblers roosting on bent stalks, a grass snake coiled at the margin, dragonfly larvae clinging to the submerged stalks, a pike hanging in the shallows, the shallows thick with a cerulean bloom glowing in streaks and patches, night indigo sky over the reeds",
+      "target": "a glowing cerulean bloom patch",
+      "target_phrase": "a glowing blue patch"
+    },
+    {
+      "name": "bloom_film",
+      "exp": -2.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cerulean thread tufts on indigo lake, tangerine carotene points, moon-ivory gas glints",
+      "scene": "the lake's surface film at a hair's width, countless cerulean bloom colonies suspended in the film as flakes and tufts of bundled threads, every thread a chain of minute beads, tangerine carotene points dotted along the tufts, moon-ivory glints of tiny gas pockets among them, tier after tier of colonies set into the night indigo lake below, one coiled thread lying loose from its tuft",
+      "target": "a coiled beaded thread",
+      "target_phrase": "a beaded blue thread"
+    },
+    {
+      "name": "bead_filament",
+      "exp": -4.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "glassy cerulean cells, tangerine carotene dots, one pale ivory heterocyst bead, indigo depth",
+      "scene": "one cyanobacterial filament at a cell's width, squat cylinder cells stacked end to end into a beaded chain, each cell a glassy cerulean bead with a tangerine carotene dot, a fatter pale ivory heterocyst bead seated at intervals along the chain, a clear sheath of jelly enclosing the chain, neighbouring filaments crossing at slants through the indigo depth",
+      "target": "a glassy cerulean cell",
+      "target_phrase": "a blue cell",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.62,
+          0.38
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "thylakoid_sheets",
+      "exp": -6.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "concentric cerulean membrane sheets, tangerine droplets, umber granules, indigo interior",
+      "scene": "the interior of one cyanobacterial cell, thylakoid membranes curving in concentric cerulean sheets parallel to the cell's rim, every sheet studded along its face with rows of tiny fan-shaped knobs, tangerine carotene droplets tucked between the sheets, umber glycogen granules dotted through the indigo interior",
+      "target": "a fan-shaped knob of discs",
+      "target_phrase": "a fan of discs"
+    },
+    {
+      "name": "phycobilisome",
+      "exp": -7.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "tangerine-red rod tips grading to cerulean at a three-cylinder core, indigo depth",
+      "scene": "one phycobilisome seated on a membrane sheet, six rods of stacked doughnut discs fanning out from a core of three short cylinders lying side by side, every rod a straight line of even rings, the rod tips tangerine-red grading to deep cerulean toward the core, neighbouring fans standing in rows along the sheet into indigo depth, a bright moon-ivory point at the reaction centre beneath the core",
+      "target": "a bright moon-ivory point",
+      "target_phrase": "a bright point",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "magnesium_bead",
+      "exp": -10.0,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "a hard moon-ivory spark in a cerulean haze, tangerine hazes spaced along one axis, indigo deep",
+      "scene": "one magnesium atom strung on the axis of a pigment ring, a hard moon-ivory spark at its centre with a cerulean haze banked about it, the haze thick close in and thinning outward with no rim anywhere, fainter tangerine hazes of neighbouring atoms spaced at even intervals along the same straight axis into indigo depth"
+    },
+    {
+      "name": "knotted_jet",
+      "exp": 16.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "a cerulean thread strung with even tangerine knots out of a coal-black cloud, indigo deep",
+      "scene": "a Herbig-Haro jet seen from far off, one lit cerulean thread shot straight out of a coal-black dust cloud, the thread strung along its length with even tangerine knots of glow, a bow-shaped tangerine shock capping its far tip, a newborn star wrapped in a tilted disk of cerulean and tangerine dust rings seated at the jet's foot, a scatter of distant stars through the night indigo deep",
+      "target": "a newborn star in a tilted dust disk",
+      "target_phrase": "a tilted dust disk"
+    }
+  ],
+  "music_theme": "a hushed suspended choir over a deep soft kick on every downbeat, one plucked glassy note on each morph like a bead set on a thread, thinning to a single held tone through the membranes and the atom, a low bloom of voices on the morph from the atom's strung beads out to the knotted jet, then settling for the fall home onto the cradle disk",
+  "music_key": "F# minor",
+  "render_start": "cradle_disk"
+}

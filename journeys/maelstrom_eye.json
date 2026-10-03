@@ -1,0 +1,105 @@
+{
+  "name": "maelstrom_eye",
+  "theme": "a tidal maelstrom in a strait under a storm-day sky, read as ONE FUNNEL at every scale: a hurricane's eye from orbit, the ranks of spiral eddies in the tide race from the air, one glassy whirlpool funnel with foam scored into its spiral, and at the bottom of a fluid dive (foam, the water's bent three-bead molecules, one oxygen atom's fog) a charged particle's spiral track closing on a point in a violet fog. Seam = a spiral closing on a point to a spiral closing on an eye: the particle's track morphs up into the hurricane from orbit. Daylight through storm, driving tempo, fluids and tracks only in the funnel family.",
+  "style": "stormlight",
+  "music_lane": "tide_organ",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "tide_race_commons",
+      "exp": 1.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "teal-green tide-race water, violet-slate storm cloud lit through with daylight, foam-ivory spiral streaks, coalfish copper-bronze, one sea-eagle yellow",
+      "scene": "a tide race in a narrow strait under a violet-slate storm sky with daylight breaking through, seen low and oblique from the edge of a wet slate skerry, teal-green water scored into spiral eddies drawn in foam-ivory lines, one glassy whirlpool funnel sunk in the race, a coalfish shoal packed copper-bronze in the eddies, a white-tailed eagle with a yellow bill hanging on the wind over the strait, cormorants standing on the skerry, a grey seal in the slack water by the rocks, olive-bronze kelp combed out from the rocks, kittiwakes over the foam lines, a second island's cliffs across the race",
+      "loop_target": "a teal-green tide race scored with foam spirals under a violet-slate storm sky",
+      "target": "a glassy whirlpool funnel",
+      "target_phrase": "a glassy whirlpool"
+    },
+    {
+      "name": "whirlpool_funnel",
+      "exp": 0.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "glassy teal-green funnel walls, foam-ivory spiral lines, violet storm light on the water, olive-bronze kelp shreds",
+      "scene": "one whirlpool in the tide race seen looking down into it, a glassy teal-green funnel sunk into the sea, its walls polished smooth and scored with foam-ivory lines coiled into one spiral that closes on a clear hole at the funnel's throat, violet storm light laid across the glassy wall, shreds of olive-bronze kelp caught in the spiral lines, a raft of ivory foam lodged on the funnel's wall",
+      "target": "a raft of ivory foam",
+      "target_phrase": "a white foam raft"
+    },
+    {
+      "name": "foam_raft",
+      "exp": -2.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ivory and teal-tinted bubbles, torn olive-bronze kelp, violet shadows in the foam, copper glints",
+      "scene": "a raft of sea foam on the wall of the whirlpool, hundreds of clear bubbles of every size heaped into a foam cushion, their films tinted teal and violet by the storm light, torn ribbons of olive-bronze kelp laced through the foam, tiny copper glints of sand grains caught among the bubbles, one clear bubble sitting apart on the raft's edge, the teal-green funnel wall under the raft",
+      "target": "a clear foam bubble",
+      "target_phrase": "a clear bubble",
+      "cameo": {
+        "sprite": "output/mascots/canon/lee.png",
+        "pos": [0.64, 0.38],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "water_net",
+      "exp": -8.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "teal beads with ivory beads paired on them, faint violet threads, deep violet open space",
+      "scene": "the water in a bubble's skin at a molecule's width, countless small bent shapes each made of one teal bead with two smaller ivory beads set on it at a wide angle, every shape hand-linked to its neighbours by faint violet threads in a loose irregular net, open gaps of violet space among the shapes, shape after shape receding into violet depth, one teal bead lying a little apart in the net",
+      "target": "one teal bead",
+      "target_phrase": "a teal bead",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "oxygen_fog",
+      "exp": -10.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "a copper-rose fog of light, one vivid ivory point, violet depth",
+      "scene": "one oxygen atom, a soft copper-rose fog of light hanging in violet depth, thickest in one dense core and thinning outward in faint layered veils, one vivid ivory point of light at the heart of the fog, a few faint teal glints in the outer veils",
+      "target": "a vivid ivory point",
+      "target_phrase": "a white spark"
+    },
+    {
+      "name": "spiral_track",
+      "exp": -14.0,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "vivid ivory beads on violet-slate fog, faint teal straight tracks",
+      "scene": "a violet-slate fog with one particle's path drawn in it as a spiral of small vivid ivory beads, each turn of the spiral narrower than the one outside it, the turns closing on a single point at the spiral's heart, a few other tracks ruled straight and faint in teal across the fog",
+      "resolve": false
+    },
+    {
+      "name": "hurricane_eye",
+      "exp": 5.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ivory and violet cloud spiral, a clear teal-green eye floor, deep teal ocean, sunlit cloud tops",
+      "scene": "a hurricane seen from orbit in full daylight, a vast spiral of ivory and violet cloud bands, each band narrower than the one outside it, closing on one clear eye, the eyewall a ring of sunlit cloud towers casting shadow down into the hole, the deep teal ocean visible through the eye, the outer bands feathering off over a deep teal sea strewn with a chain of islands, one foam-scored strait cutting the island chain",
+      "target": "a foam-scored strait",
+      "target_phrase": "a narrow sea strait"
+    },
+    {
+      "name": "strait_air",
+      "exp": 3.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "teal-green race water, foam-ivory eddy spirals, slate skerries, olive-bronze kelp, violet storm cloud shadow",
+      "scene": "a tide race in a strait parting two islands, seen from the air low and oblique under a violet-slate storm sky, the race a river laid in the sea, its teal-green surface drawn into ranks of spiral eddies scored in foam-ivory lines, slate skerries on either hand, olive-bronze kelp combed out from the rocks, sunlight breaking through the cloud onto the race",
+      "target": "a foam-lined tide race",
+      "target_phrase": "a foam eddy"
+    }
+  ],
+  "music_theme": "a breathy reed organ over a deep sub pulse at a driving tempo, soft water textures rising through each funnel, one low swell on every morph as the spiral closes, a hushed held tone through the molecules and the atom, a vast bloom on the morph from the particle's spiral up into the hurricane's eye, then the wind easing down onto the tide race",
+  "music_key": "E minor",
+  "render_start": "water_net"
+}
