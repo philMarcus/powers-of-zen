@@ -2277,3 +2277,16 @@ lattice + nucleus pair (most periodic, most literally "circles" today, trivial k
 DreamShaper prior to help). Costs to say out loud: at a 0.32 cap the micro cards look more
 rendered/less painterly (the globe's calmer look); the renderer must stay ~1 s/frame
 (vectorised, not the scaffold's Python loops); no extra GPU calls per frame.
+
+## STAGE v0 BUILT (2026-10-03 afternoon, CPU only, nothing wired into dive.py yet)
+engine/stage.py: Stage(zooms, aims) = a z-buffered sphere-impostor renderer with the dive's
+camera (advance (z-1)/z per frame along the aim ray — aim = fixed point, looming d/(d-adv),
+identical to zoom_transform's geometry), depth fog, additive glow, soft tone map; frame(k) ->
+RGB + depth (near = bright). Kits: kit_lattice(variant cubic/fcc/diamond/hex/rhombo/sheets;
+seeded random orientation, thermal jitter, nearest-neighbour bonds as sphere chains, far ranks
+culled past z 7 / bonds past 3.2) and kit_nucleus (random close packing by relaxation, two
+colours, glow, optional halo). Demo: scratchpad/orange/stage_demo_sheet.png — the lattices read
+as ball-and-stick crystals in perspective, the nucleus as a droplet the camera enters; 0.4-2.3 s
+per frame at 576x1024 (hex 55k items = the slow one). NEXT (stage lab step 1): the brand pass —
+each kit frame through img2img at denoise 0.30/0.45/0.60 with a real card's prompt + deck
+(scratchpad/stage_lab.py), then step 2 = the ice_lattice card in motion (PLAN above).
