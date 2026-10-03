@@ -2388,3 +2388,15 @@ void (baseline: eyeball → pendant on a bead chain); the quark card = three glo
 strands that DreamShaper costumes as fiery nodes with radiating filaments (baseline: a bead
 necklace), handing off into the cosmic cluster's web. Phil compares it with tonight's plain+anchor
 sunspot_archipelago (same seed 187198) in the morning.
+
+## STAGE — the fog atom's first full-render card (anvil_country_stage atom_shells, 2026-10-03 18:57)
+Strip scratchpad/orange/stage_anvil_fog_strip.png. The v1 fog kit (one soft centred glow + a
+few far neighbours) was costumed by DreamShaper into a radial SUNBURST that becomes an EYE at
+the bar line — the survey's "RADIAL / purple-centred flower" species: a smooth centred glow is
+the prior's bait, and the fog's depth map is nearly flat so the CN guides nothing. The plain
+baseline card is an aurora/thunderstorm LANDSCAPE (wrong realm) — so the staged card is still
+the better of the two, but it is not yet an atom. Fog kit v2 (built 19:05, in engine/stage.py,
+used by brand pass 2 and by every later --stage-auto run): shells as DENSE GRAINY RINGS of
+small puffs with gaps (visible orbitals, per-shell hue drift), optional two lobes, and the
+neighbouring atoms as a jittered lattice of the same picture — "a field of luminous atom cores
+each wrapped in nested shells", a field, never a lone centred glow. Needs a card arm tomorrow.

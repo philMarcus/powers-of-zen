@@ -400,31 +400,59 @@ def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0
 
 # ---- fog atom + molecular tube kits (2026-10-03 evening) ---------------------------------------
 def kit_fog_atom(stage, centre=(0, 0, 3.0), size=1.0, colors=((0.6, 0.8, 1.0), (1.0, 0.95, 0.85)),
-                 shells=3, seed=0, glow=0.5, neighbours=12, lobes=1):
-    """ONE atom as fog about a point: a bright core point, nested probability shells of fog
-    (glow spheres of growing radius and falling intensity, with a few denser lobes), and the
-    neighbouring atoms of the lattice as far fainter fogs — the atomic band's commonest card."""
+                 shells=3, seed=0, glow=0.5, neighbours=12, lobes=1, field=True):
+    """ONE atom as fog about a point — v2 (2026-10-03 evening, after the anvil card rendered as a
+    SUNBURST/EYE: a smooth centred glow is exactly the prior's bait). Now: a bright core point,
+    the probability shells as DENSE GRAINY RINGS of small puffs (visible orbitals with gaps and
+    a per-shell hue drift, not one smooth blob), optional two lobes, and — because the cards say
+    "a field of luminous atom cores ... each wrapped in nested shells" — the neighbouring atoms
+    of the lattice as the same picture at distance (field=True), so the frame is a field with
+    structure, never a single centred glow."""
     rng = np.random.default_rng(seed)
     c0 = np.asarray(centre, np.float32)
-    core_rgb, fog_rgb = colors[1 % len(colors)], colors[0]
-    stage.items.append(('sphere', c0, size * 0.03, core_rgb, 1.2))
-    stage.items.append(('glow', c0, size * 0.08, core_rgb, glow * 1.4))
-    for k in range(1, shells + 1):
-        r = size * 0.5 * (k / shells) ** 1.3
-        stage.items.append(('glow', c0, r, fog_rgb, glow * 0.22 / k))
-        # grain in the shell: a ring of soft puffs so the fog has texture, not a flat disc
-        for _ in range(10 * k):
+    core_rgb = np.array(colors[1 % len(colors)], np.float32)
+    fog_rgb = np.array(colors[0], np.float32)
+
+    def one_atom(c, scale, strength, grain=True):
+        stage.items.append(('sphere', c, size * 0.035 * scale, tuple(core_rgb), 1.4 * strength))
+        stage.items.append(('glow', c, size * 0.10 * scale, tuple(core_rgb), glow * 1.2 * strength))
+        for k in range(1, shells + 1):
+            r = size * 0.5 * scale * (k / shells) ** 1.25
+            hue_mix = fog_rgb * (1 - 0.25 * (k - 1)) + core_rgb * 0.25 * (k - 1)
+            col = tuple(np.clip(hue_mix, 0, 1))
+            stage.items.append(('glow', c, r, col, glow * 0.10 * strength / k))
+            if grain:
+                n = int(26 * k * scale ** 0.5) + 8
+                # a shell with GAPS: puffs cluster in 2-4 bands (the orbital lobes)
+                bands = rng.integers(2, 5)
+                for _ in range(n):
+                    v = rng.normal(size=3); v /= np.linalg.norm(v)
+                    if (int((math.atan2(v[1], v[0]) + math.pi) / (2 * math.pi) * bands * 2) % 2) == 1 and rng.random() < 0.7:
+                        continue
+                    p = c + v * r * (0.9 + 0.2 * rng.random())
+                    stage.items.append(('glow', p, r * 0.16, col, glow * 0.22 * strength / k ** 0.7))
+        if lobes >= 2:
+            ax = rng.normal(size=3); ax /= np.linalg.norm(ax)
+            for sgn in (-1, 1):
+                stage.items.append(('glow', c + sgn * ax * size * 0.3 * scale, size * 0.22 * scale, tuple(fog_rgb), glow * 0.4 * strength))
+
+    one_atom(c0, 1.0, 1.0)
+    if field:
+        # neighbours on a jittered lattice around the hero atom (same spacing in every direction)
+        a = size * 1.9
+        for i in range(-2, 3):
+            for j in range(-3, 4):
+                for k in range(-1, 4):
+                    if i == 0 and j == 0 and k == 0:
+                        continue
+                    p = c0 + np.array([i * a, j * a, k * a], np.float32) + rng.normal(scale=0.08 * a, size=3)
+                    if p[2] < 0.4:
+                        continue
+                    one_atom(p, 1.0, 0.55, grain=(abs(i) + abs(j) + abs(k) <= 2))
+    else:
+        for _ in range(neighbours):
             v = rng.normal(size=3); v /= np.linalg.norm(v)
-            stage.items.append(('glow', c0 + v * r * (0.85 + 0.3 * rng.random()), r * 0.22, fog_rgb, glow * 0.12 / k))
-    if lobes >= 2:   # a two-lobed (p-orbital) atom: two dense puffs on an axis
-        ax = rng.normal(size=3); ax /= np.linalg.norm(ax)
-        for sgn in (-1, 1):
-            stage.items.append(('glow', c0 + sgn * ax * size * 0.32, size * 0.26, fog_rgb, glow * 0.35))
-    for _ in range(neighbours):
-        v = rng.normal(size=3); v /= np.linalg.norm(v)
-        p = c0 + v * size * (1.6 + 2.5 * rng.random())
-        stage.items.append(('sphere', p, size * 0.02, core_rgb, 0.8))
-        stage.items.append(('glow', p, size * 0.35, fog_rgb, glow * 0.10))
+            one_atom(c0 + v * size * (1.6 + 2.5 * rng.random()), 1.0, 0.4, grain=False)
     stage.jitter = size * 0.004
     return stage
 
