@@ -294,3 +294,82 @@ def build_card_stage(kit, params, zooms, anchor, w, h, seed=0, fill=0.55):
         st.target = tuple(P_T)
     st.advance_total, st.d_target = A, d_T
     return st
+
+
+# ---- palette-derived kit colours + the quark kit (2026-10-03 evening) ---------------------------
+def palette_colours(palette):
+    """(species colours [2+], dark colour) from a card's authored palette via engine/palette.py:
+    the phrases' colours, darkest one as the void/fog, the rest (brightest first) as species."""
+    try:
+        import palette as _p
+    except ImportError:  # pragma: no cover
+        return [(0.8, 0.85, 1.0), (0.95, 0.5, 0.6)], (0.02, 0.02, 0.04)
+    cols = [_p.phrase_rgb(ph) for ph in re.split(r",|\bon\b|\bover\b|\bunder\b|\bthrough\b", palette or '')]
+    cols = [np.array(c, np.float32) / 255.0 for c in cols if c]
+    if not cols:
+        return [(0.8, 0.85, 1.0), (0.95, 0.5, 0.6)], (0.02, 0.02, 0.04)
+    lum = [float(c @ np.array([0.3, 0.59, 0.11])) for c in cols]
+    order = np.argsort(lum)
+    dark = cols[order[0]] * 0.35 if len(cols) > 1 else np.array([0.02, 0.02, 0.04])
+    species = [tuple(cols[k]) for k in order[::-1] if lum[k] > 0.12] or [tuple(cols[order[-1]])]
+    if len(species) == 1:
+        species.append(tuple(np.clip(np.array(species[0]) * 0.6 + 0.2, 0, 1)))
+    return species[:3], tuple(np.clip(dark, 0, 0.12))
+
+
+import re  # noqa: E402  (used above; stage.py had no re import before)
+
+
+def kit_quark(stage, centre=(0, 0, 3.0), size=0.9, colors=((1.0, 0.75, 0.3), (1.0, 0.75, 0.3)), tube_rgb=(1.0, 0.6, 0.2),
+              seed=0, glow=0.4):
+    """Three glowing cores at the corners of a triangle, taut flux tubes between them (sphere
+    chains that thin toward the middle), a faint spark bath around."""
+    rng = np.random.default_rng(seed)
+    c0 = np.asarray(centre, np.float32)
+    Rm = rot_matrix(rng)
+    pts = np.array([[1, 0, 0], [-0.5, math.sqrt(3) / 2, 0], [-0.5, -math.sqrt(3) / 2, 0]], np.float32) * size * 0.5
+    pts = pts @ Rm.T + c0
+    r_core = size * 0.11
+    for k, p in enumerate(pts):
+        stage.items.append(('sphere', p, r_core, colors[k % len(colors)], glow))
+        stage.items.append(('glow', p, r_core * 2.2, colors[k % len(colors)], glow * 0.5))
+    for a in range(3):
+        pa, pb = pts[a], pts[(a + 1) % 3]
+        n = 26
+        for t in np.linspace(0.08, 0.92, n):
+            w = 0.55 + 0.45 * abs(2 * t - 1)              # tube thins at the middle (a taut string)
+            stage.items.append(('sphere', pa + (pb - pa) * t, r_core * 0.28 * w, tube_rgb, glow * 0.6))
+    for _ in range(60):                                   # loose sparks in the void around
+        v = rng.normal(size=3); v /= np.linalg.norm(v)
+        p = c0 + v * size * (0.9 + 1.6 * rng.random())
+        stage.items.append(('glow', p, r_core * 0.5, tube_rgb, 0.08))
+    stage.jitter = r_core * 0.05
+    return stage
+
+
+KITS['quark'] = kit_quark
+
+
+def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0.55):
+    """Journey-field entry point: `stage` = {"kit": lattice|nucleus|quark, ...kit params}.
+    Colours default from the card palette (species + void); explicit params win."""
+    p = dict(spec_stage or {})
+    kit = p.pop('kit', 'lattice')
+    species, dark = palette_colours(palette)
+    p.setdefault('colors', species[:2])
+    st_params = p
+    if kit == 'quark':
+        st = Stage(zooms, [anchor] * max(1, len(zooms)), w, h, bg=dark, fog_rgb=dark)
+        st.anchor = anchor
+        A = sum((z - 1.0) / z for z in zooms)
+        size = float(p.get('size', 0.9))
+        d_T = A + size * 0.5 / fill
+        d = aim_dir(anchor[0], anchor[1], w, h)
+        p['centre'] = tuple(d * d_T)
+        p.setdefault('tube_rgb', species[-1] if len(species) > 1 else species[0])
+        kit_quark(st, seed=seed, **p)
+        st.target, st.advance_total, st.d_target = tuple(d * d_T), A, d_T
+        return st
+    st = build_card_stage(kit, st_params, zooms, anchor, w, h, seed=seed, fill=fill)
+    st.bg = np.array(dark, np.float32); st.fog_rgb = np.array(dark, np.float32)
+    return st

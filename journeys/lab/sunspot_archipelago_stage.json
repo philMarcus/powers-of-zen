@@ -1,0 +1,145 @@
+{
+  "name": "sunspot_archipelago_stage",
+  "theme": "a dive into a star and nothing else — from the boiling tile-field of its granulation, over a chain of sunspots ringed with combed copper, into one spot's sunless core and the fluted floor beneath it, up through a combed forest of fire-jets and into one jet's braided ropes, then through the plasma's own grain (a drift of glowing spheres with gold streaks curving among them) to one nucleus quivering as a droplet of beads, and to the three cores held in taut strands at the floor of matter — which open out as a loose cluster of suns, one of them the smoldering crimson star whose rim we started on",
+  "style": "stormlight",
+  "music_lane": "ember_pulse",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "granulation_sea",
+      "exp": 8.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "crimson fire tiles, burnt-maroon lanes, thin gold seams",
+      "scene": "solar granulation crowded rim to rim across a smoldering sun, every tile a swollen dome of crimson fire with a cooling maroon lane sagging around it, thin gold seams threaded through those lanes, the tiles gathered into far wider polygons that restate the same boil one order up, a chain of sunspots strewn over the plain as maroon voids ringed with combed copper, a haze of plasma standing over the whole field, the star's far curve set against the void beyond",
+      "target": "a maroon sunspot",
+      "target_phrase": "a dark sunspot",
+      "loop_target": "solar granulation crowded rim to rim across a smoldering sun, cooling maroon lanes and thin gold seams among the tiles"
+    },
+    {
+      "name": "spot_arcade",
+      "exp": 7.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "maroon void, combed copper filaments, garnet fire loops",
+      "scene": "one sunspot spread over the plain, a sunless maroon core at its middle, a ring of combed copper filaments radiating outward from that core, each filament a fine thread of fire laid over cooler ground, a smaller spot beyond it walled by the same combing, loops of garnet fire standing overhead in a stepped row from one spot to the next, granulation tiles crowding right up to the outer ring, heat shimmer over all of it",
+      "target": "a sunless maroon core",
+      "target_phrase": "a dark round core"
+    },
+    {
+      "name": "umbra_floor",
+      "exp": 5.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "burnt-maroon ground, garnet beads, cold violet pooling",
+      "scene": "the sunken floor within a sunspot's core, burnt-maroon ground reaching off in every direction, blazing garnet beads strewn over it in loose knots where fire wells up through, the encircling wall fluted into convective tiles that restate the boil in miniature, a cold violet glow pooling in the hollows, combed ranks of narrow fire-jets standing up from the ground toward that wall, soot-red haze drifting over the plain",
+      "target": "a narrow fire jet",
+      "target_phrase": "a tall flame jet"
+    },
+    {
+      "name": "jet_forest",
+      "exp": 4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "garnet roots, gold tips, maroon gaps",
+      "scene": "combed ranks of narrow fire-jets standing off a smoldering ground in every direction, each drawn to a fine point at the top, garnet where it roots and gold where it thins, whole rows leaning the same way, gaps of maroon emptiness opening deep among the ranks, dim tiles glowing at their feet, sparks strewn thinly through the ranks",
+      "target": "a braided fire rope",
+      "target_phrase": "a twisted flame rope",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "jet_throat",
+      "exp": 2.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "gold-pale core, garnet sheath, soot maroon",
+      "scene": "the interior of one fire-jet, ropes of plasma twisted round one another and drawn up its height, a gold-pale core showing where the ropes part, garnet sheathing them where they cool, shear seams flickering where two ropes cross, countless fine sparks strewn through the churn, maroon emptiness of the gaps showing past the outer ropes",
+      "target": "a fine gold spark",
+      "target_phrase": "a gold spark",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "plasma_fog",
+      "exp": -5.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "garnet spheres, gold streaks, maroon emptiness",
+      "scene": "the plasma shown at its own grain, countless small spheres of garnet fire adrift in maroon emptiness, gathered into loose drifts and thinning into wide gaps, finer gold streaks curving among them in tight arcs, every sphere carrying a faint bloom of heat, deeper ranks of the same spheres receding into soot-red haze",
+      "target": "a garnet sphere",
+      "target_phrase": "a red sphere",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "nucleus_droplet",
+      "exp": -14.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "garnet and pearl beads, gold haze, void maroon",
+      "scene": "a nucleus held as a quivering droplet of glowing spheres, garnet and pearl beads pressed shoulder to shoulder into a rough ball, a gold haze standing in every gap among them, the droplet's rim uneven and dimpled where beads press outward, faint sparks flickering at its verge, wide emptiness around it with the plasma's far drifts showing as dim points",
+      "target": "a pearl bead",
+      "target_phrase": "a pale round bead",
+      "cameo": {
+        "sprite": "output/mascots/canon/clark.png",
+        "pos": [
+          0.63,
+          0.42
+        ],
+        "size": 0.14
+      },
+      "stage": {
+        "kit": "nucleus",
+        "n": 160,
+        "radius": 0.085
+      }
+    },
+    {
+      "name": "quark_trio",
+      "exp": -16.0,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "three gold cores, taut amber strands, maroon void",
+      "scene": "three glowing cores held in taut amber strands at the floor of matter, the strands stretched thin where the cores stand apart and slack where they crowd, a churn of fainter sparks flickering in and out around the trio, a gold shimmer marking where the strands tighten, maroon emptiness in every direction beyond",
+      "stage": {
+        "kit": "quark",
+        "size": 0.9
+      }
+    },
+    {
+      "name": "cluster_drift",
+      "exp": 17.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pearl-blue suns, garnet ember, ink-maroon void",
+      "scene": "an open cluster loosened and spread wide, dozens of suns strewn through the void in tight knots and long gaps, the hottest of them burning small and pearl-blue, thin drifts of leftover gas drawn among them and stained garnet where a sun stands near, one smoldering crimson sun nearer than the rest with a fine boil crawling over its rim, fainter suns scattered deep beyond in every direction",
+      "target": "a smoldering crimson sun",
+      "target_phrase": "a crimson sun"
+    },
+    {
+      "name": "smolder_rim",
+      "exp": 10.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "crimson disc, pale gold streamers, maroon void",
+      "scene": "a smoldering crimson sun seen from near, its rim crawling with a fine boil, arches of garnet gas standing off that rim and rooted at both ends in the tiles beneath, pale gold streamers combed outward into the void, the ground past the rim mottled with polygon tiles and a chain of maroon sunspots strewn over it, the cluster's other suns hard pinpoints in the emptiness behind",
+      "resolve": {
+        "mode": "surface"
+      }
+    }
+  ],
+  "music_theme": "a furnace at a slow walk — one deep kick on every downbeat under a low crimson drone, the pulse heaviest arriving on the sunspot and again when the cluster opens, a dry metallic knock through the fire-jet scales, everything thinning to a single sustained hum across the plasma grain and the nucleus, a struck low bell where the three cores give way to the suns",
+  "music_key": "D minor",
+  "render_start": "granulation_sea",
+  "scaffold_name": "sunspot_archipelago",
+  "_lab": "2026-10-03 STAGE A/B: same seed as the nightly plain+anchor render; nucleus + quark cards staged"
+}

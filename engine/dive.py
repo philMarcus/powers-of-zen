@@ -1513,10 +1513,9 @@ def main():
     # built 3-D world (engine/stage.py). Same ownership rules as the plate: no resolve
     # window, no cameo, no tracker inside the span; the stage owns aim + composition.
     stage_at = [None] * total
-    _stage = None
-    if args.stage and "registers" in spec and cfg["build"] != "out":
-        if args.stage_card is None:
-            sys.exit("[dive] --stage needs --stage-card K")
+    stages = []
+    if (args.stage or any(isinstance(r.get("stage"), dict) for r in spec.get("registers", []))) \
+            and "registers" in spec and cfg["build"] != "out":
         import stage as _stagemod
         _sregs = spec["registers"]
         _snames = [r["name"] for r in _sregs]
@@ -1524,34 +1523,54 @@ def main():
         _srot = _snames.index(_srs) if _srs in _snames else 0
         _sorder = _sregs[_srot:] + _sregs[:_srot]
         _scf = register_frame_counts(spec, cfg["fps"])
-        _sk = args.stage_card
-        if not (0 <= _sk < len(_scf)):
-            sys.exit(f"[dive] --stage-card must be 0..{len(_scf) - 1}")
-        _sS = sum(_scf[:_sk])
-        _sF = _scf[_sk]
-        _sE = min(total, _sS + _sF)
-        if loop and _sE > total - loop["frames"]:
-            sys.exit("[dive] the stage card lies inside the loop tail — pick a mid-chain card")
-        _sreg = _sorder[_sk]
-        _szw = [zoom_sched[x] for x in range(_sS, _sE)]
-        _sanchors = [(0.62, 0.40), (0.38, 0.40), (0.62, 0.60), (0.38, 0.60)]
-        _sanchor = _sanchors[_zlib.crc32(f"{spec.get('name')}:{_sreg.get('name')}".encode()) % 4]
-        _sparams = json.loads(args.stage_params) if args.stage_params else {}
-        _sseed = args.stage_seed or (_zlib.crc32(f"{spec.get('name')}:{_sreg.get('name')}".encode()) % 100000)
-        _stage = _stagemod.build_card_stage(args.stage, _sparams, _szw, _sanchor,
-                                            cfg["width"], cfg["height"], seed=_sseed)
-        _stage.S, _stage.E, _stage.fa = _sS, _sE, max(2, round(_sF * 0.25))
-        for _x in range(_sS, _sE):
-            stage_at[_x] = _stage
-        resolve_windows = [w for w in resolve_windows if w["w1"] <= _sS or w["w0"] >= _sE]
-        for c in cameos:
-            if _sS <= c["start"] < _sE:
-                c["_done"] = True
-                print(f"[dive] stage: cameo at frame {c['start']} refused", flush=True)
-        print(f"[dive] STAGE {args.stage} {_sparams} card {_sk} {_sreg.get('name')!r}: frames "
-              f"{_sS}..{_sE - 1}, {len(_stage.items)} items, anchor {_sanchor}, target depth "
-              f"{_stage.d_target:.2f} (advance {_stage.advance_total:.2f}), den {args.stage_den}/"
-              f"{args.stage_den_travel}, cn {args.stage_cn}, id {args.stage_id}", flush=True)
+        # which cards: the CLI pair (lab) overrides; otherwise every card with a `stage` dict
+        _splan = []
+        if args.stage:
+            if args.stage_card is None:
+                sys.exit("[dive] --stage needs --stage-card K")
+            _splan = [(args.stage_card, {"kit": args.stage,
+                                         **(json.loads(args.stage_params) if args.stage_params else {})})]
+        else:
+            _splan = [(k, r["stage"]) for k, r in enumerate(_sorder) if isinstance(r.get("stage"), dict)]
+        for _sk, _sdef in _splan:
+            if not (0 <= _sk < len(_scf)):
+                sys.exit(f"[dive] stage card index {_sk} out of range 0..{len(_scf) - 1}")
+            _sS = sum(_scf[:_sk])
+            _sF = _scf[_sk]
+            _sE = min(total, _sS + _sF)
+            if _sk == 0 or (loop and _sE > total - loop["frames"]):
+                print(f"[dive] stage: card {_sk} is the render-start/lap card — skipped (the loop "
+                      f"tail owns its delivered copy)", flush=True)
+                continue
+            _sreg = _sorder[_sk]
+            _szw = [zoom_sched[x] for x in range(_sS, _sE)]
+            _sanchors = [(0.62, 0.40), (0.38, 0.40), (0.62, 0.60), (0.38, 0.60)]
+            _skey = f"{spec.get('scaffold_name') or spec.get('name')}:{_sreg.get('name')}"
+            _sanchor = _sanchors[_zlib.crc32(_skey.encode()) % 4]
+            _sseed = args.stage_seed or (_zlib.crc32(_skey.encode()) % 100000)
+            _stage = _stagemod.build_card_stage_v2(_sdef, _sreg.get("palette"), _szw, _sanchor,
+                                                   cfg["width"], cfg["height"], seed=_sseed)
+            _stage.S, _stage.E, _stage.fa = _sS, _sE, max(2, round(_sF * 0.25))
+            _stage.card = _sk
+            for _x in range(_sS, _sE):
+                stage_at[_x] = _stage
+            stages.append(_stage)
+            resolve_windows = [w for w in resolve_windows if w["w1"] <= _sS or w["w0"] >= _sE]
+            for c in cameos:
+                if _sS <= c["start"] < _sE:
+                    c["_done"] = True
+                    print(f"[dive] stage: cameo at frame {c['start']} refused", flush=True)
+            print(f"[dive] STAGE {_sdef.get('kit')} card {_sk} {_sreg.get('name')!r}: frames "
+                  f"{_sS}..{_sE - 1}, {len(_stage.items)} items, anchor {_sanchor}, target depth "
+                  f"{_stage.d_target:.2f} (advance {_stage.advance_total:.2f}), den {args.stage_den}/"
+                  f"{args.stage_den_travel}, cn {args.stage_cn}, id {args.stage_id}", flush=True)
+    if stages:
+        try:   # provenance: run.json is written before the stages are built — append them
+            _rj = json.loads((out_dir / "run.json").read_text())
+            _rj["stage_cards"] = [(st_.card, st_.S, st_.E) for st_ in stages]
+            (out_dir / "run.json").write_text(json.dumps(_rj, indent=2))
+        except Exception:
+            pass
     if args.plan_only:
         _pc = [(c["start"], c["end"], Path(c["sprite"]).stem) for c in cameos]
         print(f"[dive] PLAN ONLY: total {total} frames, lap_cut {lap_cut}, loop "
