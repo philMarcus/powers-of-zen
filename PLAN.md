@@ -2378,3 +2378,13 @@ sheets; colour comes out monochrome (the glow floor dominates the species colour
 suggest_stage (cellular cards stay un-staged until the brand pass says the kit reads as tissue).
 Brand pass 2 (tissue / fog / tubes through img2img at 0.30-0.60) queued to run on the GPU after
 the anvil render: output/stage_lab/brand_pass_sheet2.png.
+
+## FIRST FULL STAGED VIDEO (2026-10-03 18:25 — sunspot_archipelago_stage in Video Review)
+Rendered 17:07-18:20 (a ComfyUI connection timeout killed it once at frame 249; upload_image now
+retries; resumed from the saved frame). Strips: scratchpad/orange/stage_sunspot_full_strip.png
+(nucleus card) + stage_sunspot_quark_strip.png (quark card). Palette-derived colours took gold +
+garnet from the card: the nucleus is a glossy yellow/magenta droplet growing in a dark spark
+void (baseline: eyeball → pendant on a bead chain); the quark card = three glowing cores on taut
+strands that DreamShaper costumes as fiery nodes with radiating filaments (baseline: a bead
+necklace), handing off into the cosmic cluster's web. Phil compares it with tonight's plain+anchor
+sunspot_archipelago (same seed 187198) in the morning.
