@@ -976,6 +976,10 @@ def main():
                     help="LAB (PLAN 'THE MICRO STAGE'): render card --stage-card through a built "
                          "3-D stage (engine/stage.py) composited every frame at the exact zoom, "
                          "tracker bypassed, the stage's depth as the CN")
+    ap.add_argument("--stage-auto", action="store_true",
+                    help="LAB: stage every card for which engine/stage.suggest_stage proposes a kit "
+                         "(atomic/subnuclear/molecular bands, by the card's words); explicit "
+                         "per-card `stage` fields still win")
     ap.add_argument("--stage-card", type=int, default=None, metavar="K",
                     help="with --stage: render-order card index the stage owns")
     ap.add_argument("--stage-params", default="", metavar="JSON",
@@ -1250,6 +1254,7 @@ def main():
         "palette_anchor_mode": args.palette_anchor_mode,
         "palette_ipa": args.palette_ipa,
         "stage": args.stage, "stage_card": args.stage_card, "stage_params": args.stage_params,
+        "stage_auto": bool(args.stage_auto),
         "stage_den": args.stage_den, "stage_cn": args.stage_cn, "stage_id": args.stage_id,
         "play_rot": play_rotation(spec, cfg["fps"], lap_cut) if not args.frames else 0,
         # per-CARD (register) frame counts: lets a future --from-card verify its prefix
@@ -1514,7 +1519,8 @@ def main():
     # window, no cameo, no tracker inside the span; the stage owns aim + composition.
     stage_at = [None] * total
     stages = []
-    if (args.stage or any(isinstance(r.get("stage"), dict) for r in spec.get("registers", []))) \
+    if (args.stage or args.stage_auto
+            or any(isinstance(r.get("stage"), dict) for r in spec.get("registers", []))) \
             and "registers" in spec and cfg["build"] != "out":
         import stage as _stagemod
         _sregs = spec["registers"]
@@ -1531,7 +1537,15 @@ def main():
             _splan = [(args.stage_card, {"kit": args.stage,
                                          **(json.loads(args.stage_params) if args.stage_params else {})})]
         else:
-            _splan = [(k, r["stage"]) for k, r in enumerate(_sorder) if isinstance(r.get("stage"), dict)]
+            _splan = []
+            for k, r in enumerate(_sorder):
+                if isinstance(r.get("stage"), dict):
+                    _splan.append((k, r["stage"]))
+                elif args.stage_auto and r.get("stage") is not False:
+                    _sg = _stagemod.suggest_stage(r)
+                    if _sg:
+                        _splan.append((k, _sg))
+                        print(f"[dive] stage-auto: card {k} {r.get('name')!r} -> {_sg}", flush=True)
         for _sk, _sdef in _splan:
             if not (0 <= _sk < len(_scf)):
                 sys.exit(f"[dive] stage card index {_sk} out of range 0..{len(_scf) - 1}")

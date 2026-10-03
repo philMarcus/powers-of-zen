@@ -2353,3 +2353,17 @@ tonight's nightly uses for the plain+anchor sunspot_archipelago re-render → TO
 Video Review holds the A/B: sunspot_archipelago (plain, anchor) vs sunspot_archipelago_stage.
 NEXT KITS by catalog weight: cellular foam (272 cards), molecular tubes/PDB (121), fog atom
 ("one atom as fog about a point", the atomic band's most common card), sheets/lamellae.
+
+## STAGE — more kits + auto-staging (2026-10-03 17:10-17:20)
+engine/stage.py now has FIVE kits: lattice (6 variants), nucleus, quark (three cores + taut flux
+strings), fog (ONE atom as fog about a point: core, nested grainy shells, optional two lobes,
+far neighbour fogs), tubes (copies of a REAL PDB backbone as sphere-chain tubes, one colour per
+chain, cached under output/realm_refs/pdb/, offline fallback = helix bundle). Demo
+scratchpad/orange/stage_demo/kits2_sheet.png. `stage.suggest_stage(card)` maps an existing
+card to a kit from its words + band: over the catalog's 270 molecular/atomic/subnuclear cards it
+stages 195 (tubes 67, lattice 45, nucleus 43, fog 32, quark 8); cellular waits for a foam kit.
+dive.py --stage-auto applies it to every card without an explicit `stage` field (a card may
+set `stage: false` to opt out). Second overnight A/B queued: anvil_country_stage (lab copy,
+seed 1234, --stage-auto → atom_shells as a fog atom) renders after the sunspot one; tonight's
+nightly renders plain+anchor anvil_country at the same seed. TOMORROW: two same-seed pairs in
+Video Review (sunspot_archipelago / _stage, anvil_country / _stage).
