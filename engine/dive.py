@@ -397,14 +397,26 @@ def run_workflow(wf, timeout=900):
 
 
 def upload_image(img, name):
+    """Upload a PIL image to ComfyUI's input folder. RETRIES connection hiccups (2026-10-03: a
+    single ConnectTimeout on /upload/image killed a 50-minute render at frame 249 while
+    ComfyUI itself was fine seconds later) — same contract run_workflow already has."""
     buf = io.BytesIO()
     img.save(buf, format="PNG")
-    buf.seek(0)
-    r = requests.post(f"{COMFY}/upload/image",
-                      files={"image": (name, buf, "image/png")},
-                      data={"overwrite": "true"}, timeout=60)
-    r.raise_for_status()
-    return r.json()["name"]
+    data = buf.getvalue()
+    last = None
+    for attempt in range(5):
+        try:
+            r = requests.post(f"{COMFY}/upload/image",
+                              files={"image": (name, io.BytesIO(data), "image/png")},
+                              data={"overwrite": "true"}, timeout=60)
+            r.raise_for_status()
+            return r.json()["name"]
+        except (requests.ConnectionError, requests.Timeout) as e:
+            last = e
+            print(f"[dive] upload_image: ComfyUI connection hiccup ({type(e).__name__}), "
+                  f"retry {attempt + 1}/4 in {5 * (attempt + 1)}s", flush=True)
+            time.sleep(5 * (attempt + 1))
+    raise last
 
 
 def zoom_transform(img, zoom, rotate_deg, cx=0.5, cy=0.5):
