@@ -2400,3 +2400,14 @@ used by brand pass 2 and by every later --stage-auto run): shells as DENSE GRAIN
 small puffs with gaps (visible orbitals, per-shell hue drift), optional two lobes, and the
 neighbouring atoms as a jittered lattice of the same picture — "a field of luminous atom cores
 each wrapped in nested shells", a field, never a lone centred glow. Needs a card arm tomorrow.
+
+## STAGE — brand pass 2 (2026-10-03 19:42, output/stage_lab/brand_pass_sheet2.png)
+Seven kit frames through one img2img at 0.30/0.45/0.60 ± the stage depth as CN. At 0.60 + CN:
+TISSUE (kelp spore_cells) → a honeycomb of walled polygonal cells with green/blue contents —
+reads as tissue, not beads in mortar (PASS; without the CN it slides toward beads); TUBES
+(hemoglobin copies) → ornate molecular clusters studded with teal/orange beads (pass-ish, and
+nothing like a generic ring field); FOG v2 → at 0.45 a field of soft atoms with grainy shells
+holds, at 0.60 the hero atom becomes a SUNBURST again → per-kit denoise table KIT_DEN (fog:
+arrival 0.50 / travel 0.45; dive reads st.den_arrival/den_travel) — fog cards need a card arm in
+motion before trusting them; lattice / nucleus / diamond as in brand pass 1 (pass). NEXT: add
+the tissue kit to suggest_stage for cellular cards once one tissue card has run in motion.

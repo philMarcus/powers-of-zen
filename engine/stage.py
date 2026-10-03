@@ -355,6 +355,7 @@ def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0
     Colours default from the card palette (species + void); explicit params win."""
     p = dict(spec_stage or {})
     kit = p.pop('kit', 'lattice')
+    den_arr, den_trav = KIT_DEN.get(kit, (None, None))
     species, dark = palette_colours(palette)
     p.setdefault('colors', species[:2])
     st_params = p
@@ -369,6 +370,7 @@ def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0
         p.setdefault('tube_rgb', species[-1] if len(species) > 1 else species[0])
         kit_quark(st, seed=seed, **p)
         st.target, st.advance_total, st.d_target = tuple(d * d_T), A, d_T
+        st.den_arrival, st.den_travel = den_arr, den_trav
         return st
     if kit in ('fog', 'tubes', 'tissue'):
         st = Stage(zooms, [anchor] * max(1, len(zooms)), w, h, bg=dark, fog_rgb=dark)
@@ -392,9 +394,11 @@ def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0
             p['target_depth'] = tuple(d * d_T)
             kit_tubes(st, seed=seed, **p)
         st.target, st.advance_total, st.d_target = tuple(d * d_T), A, d_T
+        st.den_arrival, st.den_travel = den_arr, den_trav
         return st
     st = build_card_stage(kit, st_params, zooms, anchor, w, h, seed=seed, fill=fill)
     st.bg = np.array(dark, np.float32); st.fog_rgb = np.array(dark, np.float32)
+    st.den_arrival, st.den_travel = den_arr, den_trav
     return st
 
 
@@ -524,6 +528,9 @@ def kit_tubes(stage, pdb='4HHB', n_copies=14, size=0.9, radius=0.03, colors=((0.
 
 KITS['fog'] = kit_fog_atom
 KITS['tubes'] = kit_tubes
+# per-kit denoise (arrival costume, travel floor); None = the dive flag's value. Brand pass 2
+# (2026-10-03): a fog field survives 0.45 but 0.60 turns it into a sunburst — keep fog soft.
+KIT_DEN = {'fog': (0.50, 0.45)}
 
 
 # ---- AUTO-STAGE: suggest a kit for an existing card from its words + band ---------------------

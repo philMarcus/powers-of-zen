@@ -12,7 +12,10 @@ ROOT = Path('/mnt/c/Users/Phil/zoomer')
 sys.path.insert(0, str(ROOT / 'engine')); sys.path.insert(0, str(ROOT / 'scripts'))
 import dive, stage, style as _style, pipeline as pl  # noqa: E402
 
-CASES = [  # (journey, card name, kit builder)
+CASES = [  # (journey, card name, kit builder) — v2 builder cases take the card's palette
+    ('kelp_dynamo', 'spore_cells', lambda s, pal=None: stage.build_card_stage_v2({"kit": "tissue", "cell": 0.22}, pal or 'emerald discs, ivory cell walls, indigo gloom', [1.0857] * 30, (0.6, 0.55), 576, 1024, seed=4)),
+    ('vernal_clutch', 'atom_fog', lambda s, pal=None: stage.build_card_stage_v2({"kit": "fog", "lobes": 2}, pal or 'moon-teal haze, rust-orange core point, ink dark', [1.0857] * 30, (0.6, 0.55), 576, 1024, seed=4)),
+    ('abyssal_chandelier', 'enzyme_turbines', lambda s, pal=None: stage.build_card_stage_v2({"kit": "tubes", "pdb": "4HHB", "n_copies": 12}, pal or 'cobalt-violet ropes, amber cross-links, glassy grain', [1.0857] * 30, (0.6, 0.55), 576, 1024, seed=4)),
     ('anvil_country', 'ice_lattice', lambda s: stage.kit_lattice(s, 'hex', spacing=0.5, radius=0.06, seed=5,
                                                                  colors=((0.75, 0.95, 0.85), (1, 1, 1)))),
     ('cobalt_rookery', 'calcite_lattice', lambda s: stage.kit_lattice(s, 'rhombo', spacing=0.48, seed=9,
@@ -41,7 +44,11 @@ def main(out):
     rows = []
     for journey, cname, build in CASES:
         reg, prompt, sname = card(journey, cname)
-        st = build(stage.Stage([1.045] * 30, [(0.6, 0.55)] * 30))
+        import inspect
+        if 'pal' in inspect.signature(build).parameters:
+            st = build(None, reg.get('palette'))          # v2 kits build their own Stage
+        else:
+            st = build(stage.Stage([1.045] * 30, [(0.6, 0.55)] * 30))
         rgb, dep = st.frame_images(12)
         rgb.save(out / f'{journey}_{cname}_stage.png'); dep.save(out / f'{journey}_{cname}_depth.png')
         ref = dive.upload_image(rgb, f'zoomer_stage_{journey}.png')
@@ -64,7 +71,8 @@ def main(out):
         y = r * (th + 14); dr.text((4, y), title, fill=(255, 255, 0))
         for c, (im, lab) in enumerate(zip(tiles, labels)):
             t = im.copy(); t.thumbnail((tw, th)); sheet.paste(t, (c * tw, y + 14)); dr.text((c * tw + 3, y + 16), lab, fill=(255, 255, 255))
-    sheet.save(out / 'brand_pass_sheet.png'); print('->', out / 'brand_pass_sheet.png')
+    name_ = 'brand_pass_sheet2.png' if len(sys.argv) > 2 else 'brand_pass_sheet.png'
+    sheet.save(out / name_); print('->', out / name_)
 
 
 if __name__ == '__main__':

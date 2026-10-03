@@ -2038,11 +2038,11 @@ def main():
                 _sn = _st.E - _st.S
                 if _sj < _st.fa:
                     _wid = 0.15 + 0.85 * (_sj + 1) / _st.fa
-                    den = max(den, args.stage_den)
+                    den = max(den, getattr(_st, "den_arrival", None) or args.stage_den)
                 else:
                     _tq = max(0.0, (_sj - 0.75 * _sn) / max(1.0, 0.25 * _sn))
                     _wid = args.stage_id * (1.0 - 0.4 * min(1.0, _tq))
-                    den = max(den, args.stage_den_travel)
+                    den = max(den, getattr(_st, "den_travel", None) or args.stage_den_travel)
                 if _srgb.size != fed.size:
                     _srgb = _srgb.resize(fed.size, Image.LANCZOS)
                 fed = Image.blend(fed, _srgb, _wid)
