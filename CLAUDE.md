@@ -120,6 +120,20 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-03 (NIGHT HANDOFF — context may clear; everything committed + pushed; nothing running after ~19:45 except the
+01:30 nightly): VIDEO REVIEW = sunspot_archipelago_stage + anvil_country_stage (lab copies, seed 187198 / 1234, stage
+cards on; captions + music candidates attached). The nightly renders their PLAIN+anchor twins tonight (sunspot_archipelago,
+anvil_country at the same seeds, plus kelp_dynamo, gecko_rampart) → IN THE MORNING Phil compares plain vs staged, full
+videos, in Video Review. Judge the stage on the micro cards (sunspot: nucleus k6 + quark k7; anvil: atom_shells k1 — its
+fog card rendered as a sunburst/eye with fog kit v1; v2 is built, untested in motion — PLAN "STAGE — the fog atom's
+first full-render card"). Lab tools: dive --stage KIT --stage-card K / --stage-auto / per-card `stage` field;
+scratchpad/stage_measure.py (edge-corr + strip); brand pass = scratchpad/stage_lab.py (second sheet
+output/stage_lab/brand_pass_sheet2.png = tissue/fog/tubes). Lab run dirs (disposable): output/*_orange_*,
+output/*_stage_*, output/urchin_barren_platelive_stage_rhombo*, output/sunspot_archipelago_platelive_stage_nucleus.
+A transient ComfyUI /upload/image timeout killed one render at frame 249 → upload_image now retries (committed);
+--resume finished it. OPEN for tomorrow: Phil's verdicts (anchor full videos; stage A/Bs); fog v2 card arm; tissue kit
+brand-pass verdict → add cellular to suggest_stage; then wire the stage into the nightly behind a settings knob
+(like plate_mode) once a full staged video is approved.
 2026-10-03 (LATE — PHIL'S VERDICTS APPLIED): palette anchor APPROVED ("a strict upgrade") → settings palette_anchor=0.5
 LIVE (the nightly passes --palette-anchor 0.5 from tonight; verify in night_batch.log's argv line); venus_basket_color
 sent to Music by Phil (it posts under that lab name; journeys/lab/ resolves it); VIDEO REVIEW CLEARED — the 9 pre-anchor

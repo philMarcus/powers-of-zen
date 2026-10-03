@@ -2342,3 +2342,18 @@
 {"ts": "2026-10-03 16:33:45", "event": "jqueued", "journey": "urchin_barren", "detail": "reject -> re-queue front, same seed (palette anchor)"}
 {"ts": "2026-10-03 16:39:14", "event": "music_choose", "journey": "venus_basket_color", "detail": "tide_organ-wild"}
 {"ts": "2026-10-03 16:39:14", "event": "queued", "journey": "venus_basket_color"}
+{"ts": "2026-10-03 16:45:36", "event": "music_choose", "journey": "jelly_pier", "detail": "music_box-b"}
+{"ts": "2026-10-03 16:45:36", "event": "queued", "journey": "jelly_pier"}
+{"ts": "2026-10-03 17:05:41", "event": "ig_share_method", "detail": "trusted"}
+{"ts": "2026-10-03 17:06:32", "event": "post", "journey": "venus_basket_color", "platform": "youtube", "detail": "https://youtube.com/shorts/lw0BTJrmoCA"}
+{"ts": "2026-10-03 17:06:32", "event": "post", "journey": "venus_basket_color", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DeC_BcpNBHI/"}
+{"ts": "2026-10-03 17:07:29", "event": "ig_stats", "detail": "44 reels, followers 144"}
+{"ts": "2026-10-03 17:07:44", "event": "ig_insights", "detail": "30 posts"}
+{"ts": "2026-10-03 17:10:08", "event": "yt_stats", "detail": "89 videos, 14675 views"}
+{"ts": "2026-10-03 17:10:08", "event": "post_gate", "detail": "fired (rc 0); next 2026-10-04 12:00"}
+{"ts": "2026-10-03 18:20:05", "event": "review", "journey": "sunspot_archipelago_stage", "detail": "ds/divein (src v1)"}
+{"ts": "2026-10-03 18:20:54", "event": "caption", "journey": "sunspot_archipelago_stage", "detail": "5 options, spot=True"}
+{"ts": "2026-10-03 18:22:34", "event": "music_pregen", "journey": "sunspot_archipelago_stage", "detail": "5 candidates"}
+{"ts": "2026-10-03 19:34:38", "event": "review", "journey": "anvil_country_stage", "detail": "ds/divein (src v1)"}
+{"ts": "2026-10-03 19:35:31", "event": "caption", "journey": "anvil_country_stage", "detail": "5 options, spot=True"}
+{"ts": "2026-10-03 19:36:56", "event": "music_pregen", "journey": "anvil_country_stage", "detail": "5 candidates"}
