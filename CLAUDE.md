@@ -120,6 +120,13 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-03 (LATER — YOUTUBE DARK SINCE 09-10; read PLAN "YOUTUBE WENT DARK"): real counts from the live pages:
+0 of 23 posts since 09-10 passed 100 views (median 1, mostly literal 0) vs 11 of 34 before; channel Public,
+no strike, Studio watch time −93%. The 09-10 "SEO" YouTube description put two identical boilerplate lines + the
+same 8 hashtags on every upload = the prime suspect. REVERTED: settings yt_desc_style="classic" (yt_desc = IG
+caption), 16 unposted videos backfilled (seo copies in yt_desc_seo_backup); first classic post 10-04 ~09:00 —
+JUDGE after ~10 posts. yt_stats.py parse bug FIXED (it read a recommended video's count when ours showed "No
+views", and skipped zeros): all 09-10..10-03 yt rows are suspect, the 10-03 11:55 snapshot is the first true one.
 2026-10-03 (MORNING): Phil: "can't get the dashboard running". CAUSE: a Windows restart on 10-02 17:58 killed the
 dashboard + ComfyUI and nothing relaunches them at boot (the batch only relaunches ComfyUI when it renders, and it
 has skipped every night since 09-30 on the review cap — "review backlog 20"). Restarted both, then made it

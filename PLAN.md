@@ -2094,3 +2094,31 @@ why Phil could not pick music during ~20h of renders); nightly rendering is NOT 
   ~2x slower than the GPU allows. boost_comfy() now fixes each launch; the elevated powercfg
   exemption is still Phil's to run. est_render_sec set PROVISIONALLY to 12.0 s/frame + 600 s
   per planet (tonight's plan: 5 journeys, 5.2 h) — REFIT from tonight's actuals.
+
+## 2026-10-03 — YOUTUBE WENT DARK ON 09-10 (Phil: "not a single video hit anything since that caption change")
+GROUND TRUTH, read from every video's live YouTube page (not our stats file): posts 08-15..09-09 (n=34)
+median 26 views, 11 of 34 pushed past 100 (up to 1,244); posts since 09-10 (n=23) median 1, NONE past 100,
+and since 09-23 eight of nine sit at exactly 0. Fisher p≈0.001 — a real cut, not the usual lottery. All
+videos are Public, not unlisted/private, crawlable, no restrictions in Studio's content list, no strike or
+warning on the Studio dashboard; Studio analytics: 967 views in the last 28 days, watch time −93%,
+subscribers +1 (−75%). IG kept performing over the same weeks, so it is YouTube-specific.
+WHAT CHANGED ON 09-10 (commit 3e0dced "hashtag/SEO pass"): the YouTube description went from the IG
+caption (28 words, unique per video, 0 lines shared across videos, only #oddlysatisfying/#powersofzen in
+common) to a 95-word template with TWO LINES IDENTICAL ON ALL 23 VIDEOS ("Powers of Zen: hypnotic
+infinite-zoom loops ... New one every day." + the same 8 hashtags incl. #shorts/#livewallpaper/#fractal/
+#aiart on 100% of them). Identical boilerplate metadata on daily AI uploads is exactly what YouTube's
+spam / repetitive-content signals key on. The 09-06 publish-button change is unrelated (same visibility,
+same audience/AI-use settings). Second, weaker suspect born the same day: yt_stats.py fetching every
+watch page twice a day (no play, no cookies — unlikely to move ranking, but noted).
+THE SCRAPER WAS ALSO LYING (fixed): its first regex ran past a video's own "No views" to the next
+"N views" on the page = a RECOMMENDED video's count (cicada_chorus: 932 views two minutes after posting,
+1 a week later), and zeros were skipped so a video's last wrong number stayed. Now: the videoDetails
+counter of the video itself, zero is a value. Corrected snapshot taken 10-03 11:55. Every 09-10+ yt row
+before that is suspect; the dataset's yt_views now reads the corrected latest.
+THE TEST (started): settings yt_desc_style = "classic" (default) → yt_desc = the IG caption verbatim, as
+every pushed video ever was posted; 16 unposted videos reverted (their seo copies kept in
+yt_desc_seo_backup). First classic post: 10-04 ~09:00. READ-OUT: if the next ~10 posts return to the old
+pattern (a third pushed past 100 within a week) the template was the cause; if they stay at 0, the channel
+itself is suppressed and the next lever is editing the 23 live descriptions (bulk, via Studio) and a
+posting pause. Keep IG untouched. "seo" stays available as a setting for a later, non-boilerplate version
+(per-video words only, no shared lines).

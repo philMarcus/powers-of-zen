@@ -302,7 +302,14 @@ def generate(journey, model="ds", no_theme=False):
         # with whichever title is live rather than guarding it like the caption. Match the
         # body to the current yt_title so a title Phil picked keeps its own description.
         _body = next((b for b in bodies if b[:100] == (v.get("yt_title") or "")), bodies[0])
-        v["yt_desc"] = yt_description(_body, spot if hook else "", worlds)
+        v["yt_desc"] = (yt_description(_body, spot if hook else "", worlds)
+                        if pl.jload()["settings"].get("yt_desc_style", "classic") == "seo"
+                        else v.get("caption") or "")
+        # yt_desc_style (settings, 2026-10-03): "classic" = the IG caption verbatim — the format
+        # every YouTube push we ever got was posted with; "seo" = the 09-10 template (world chain
+        # + brand line + fixed hashtags, identical boilerplate on every video). The 23 videos
+        # posted with "seo" got 0-15 views each (0 pushed of 23) against 11 of 34 pushed before;
+        # Studio shows no strike, so the metadata is the prime suspect. Classic until proven.
         pl.save(d)
         if not no_theme:
             set_music_theme_if_empty(journey, mtheme)

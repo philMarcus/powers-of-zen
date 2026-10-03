@@ -63,17 +63,20 @@ def fetch(vid, timeout=30):
     except (urllib.error.URLError, TimeoutError, OSError) as e:
         return {"error": f"{type(e).__name__}: {str(e)[:60]}"}
     out = {}
-    # views: the rendered "1,095 views" first (it is the public-facing number), then the
-    # raw videoDetails counter. Skip zeros — an unplayed page renders viewCount 0.
-    m = re.search(r'"viewCount":\{"videoViewCountRenderer":.*?"simpleText":"([\d,]+) views?"',
-                  html)
+    # views: the videoDetails counter of THIS video (2026-10-03 fix). The old order looked for
+    # a rendered "N views" first, and when the video itself showed "No views" the lazy regex
+    # ran on to the next "N views" on the page — a RECOMMENDED video's count. That is how
+    # cicada_chorus logged 932 views two minutes after posting and 1 view a week later, and
+    # why every zero-view video since 09-10 was recorded as some other video's number (or
+    # skipped as "no views", leaving its last wrong value in place). Zero is a real value.
+    i = html.find('"videoDetails"')
+    m = re.search(r'"viewCount":"(\d+)"', html[i:i + 8000]) if i >= 0 else None
     if m:
-        out["views"] = _num(m.group(1))
-    if not out.get("views"):
-        for m in re.finditer(r'"viewCount":"(\d+)"', html):
-            if int(m.group(1)) > 0:
-                out["views"] = int(m.group(1))
-                break
+        out["views"] = int(m.group(1))
+    else:
+        m = re.search(r'"videoViewCountRenderer":\{"viewCount":\{"simpleText":"([\d,]+) views?"', html)
+        if m:
+            out["views"] = _num(m.group(1))
     m = re.search(r'"accessibilityText":"([\d,\.KMB]+) likes?"', html)
     if m:
         out["likes"] = _num(m.group(1))
@@ -83,7 +86,7 @@ def fetch(vid, timeout=30):
     m = re.search(r'"lengthSeconds":"(\d+)"', html)
     if m:
         out["dur"] = int(m.group(1))
-    if not out.get("views") and out.get("likes") is None:
+    if out.get("views") is None and out.get("likes") is None:
         return {"error": "unavailable (private/removed?)"}
     return out
 
@@ -117,7 +120,7 @@ def main():
     rows, failed = [], 0
     for journey, vid, posted in vids:
         r = fetch(vid)
-        if r.get("error") or not r.get("views"):
+        if r.get("error") or r.get("views") is None:
             failed += 1
             print(f"  {journey:24} {vid}  SKIP ({r.get('error', 'no views')})")
         else:

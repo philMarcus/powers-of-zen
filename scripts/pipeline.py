@@ -266,6 +266,8 @@ JOURNEYS_JSON = ROOT / "outbox" / "journeys.json"
 JSETTINGS_DEFAULTS = {
     "render_budget_min": 240,      # nightly render window (the 01:30 batch fills this)
     "max_ready_videos": 20,        # backpressure: skip the night at this many ready-to-post videos
+    "yt_desc_style": "classic",    # YouTube description: "classic" = IG caption verbatim (2026-10-03
+                                   # revert — see caption.py); "seo" = the 09-10 template
     "max_review_videos": 20,       # backpressure 2 (Phil 2026-09-25): skip the night when this many
                                    # videos await his verdict (review + music stages) — the review
                                    # queue used to grow without bound; drains -> renders resume
