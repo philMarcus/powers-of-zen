@@ -102,8 +102,10 @@
       "stage": {
         "kit": "tubes",
         "pdb": "2VV5",
-        "n_copies": 10,
-        "size": 0.9
+        "n_copies": 8,
+        "size": 0.9,
+        "membrane": true,
+        "stride": 2
       }
     },
     {
@@ -118,7 +120,9 @@
         "kit": "tubes",
         "pdb": "1BMF",
         "n_copies": 6,
-        "size": 1.1
+        "size": 1.0,
+        "membrane": true,
+        "stride": 2
       }
     },
     {

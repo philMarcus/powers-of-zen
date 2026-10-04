@@ -2443,3 +2443,14 @@ a yellow/blue cartoon spore case with dots. First cellular card that reads as ti
 arrival flips from the previous world to the stage in ~4 frames (0.3 s, on the beat) — watch
 for it in the full video; the identity ramp could start a few frames before the bar line if it
 feels like a cut. Tube cards (thylakoid 2VV5, ATP synthase 1BMF) measuring next.
+
+## DAY 2 — kelp's two tube cards (thylakoid 2VV5, ATP synthase 1BMF) with tubes v1: WEAK
+Strips scratchpad/orange/stage_kelp_tubes_strip.png / stage_kelp_atp_strip.png. v1's tube radius
+(0.03 at a compressed CA spacing of ~0.01) fused every copy into a solid LUMP: the thylakoid card
+rendered as moss clumps on gravel, the ATP card as orange/white cauliflower clusters on black —
+clusters of beads, the very motif we are fighting; the plain twin's fibres were more legible.
+TUBES v2 (11:50): radius = size/70, trace subsampled (stride), many small far copies, optional
+MEMBRANE sheet of lipid heads behind — demo scratchpad/orange/stage_demo/tubes2_sheet.png shows
+thin ribbon machinery on a membrane and keratin rods. kelp_dynamo_stage is re-rendered from
+card 6 with v2 after the gecko chain (scratchpad/orange/kelp_redo.sh → v2, re-ingested, side-by-
+side rebuilt). Kelp's TISSUE card stays the day's clear win.
