@@ -166,7 +166,14 @@ LATTICES = {
 
 def kit_lattice(stage, variant='cubic', spacing=0.42, radius=0.055, colors=((0.55, 0.75, 1.0), (0.95, 0.45, 0.7)),
                 bond_rgb=(0.75, 0.8, 0.9), bond_r=0.014, jitter=0.012, seed=0, extent=16, glow=0.16,
-                z_far=7.0, bond_far=3.2):
+                z_far=7.0, bond_far=3.2, fuzzy=False):
+    """fuzzy=True (2026-10-04, after the hero fog atom rang/burst twice): the ATOMIC-band picture
+    without a hero — large soft glowing spheres (electron clouds) at their lattice sites, a faint
+    bright core in each, no bonds, more thermal shiver; the plunge enters one cloud."""
+    if fuzzy:
+        radius = max(radius, spacing * 0.30)
+        glow = max(glow, 0.45)
+        jitter = max(jitter, spacing * 0.05)
     """An infinite crystal seen along a random (seeded) direction, far ranks into fog."""
     rng = np.random.default_rng(seed)
     basis, sites, bonds = LATTICES[variant]
@@ -185,8 +192,11 @@ def kit_lattice(stage, variant='cubic', spacing=0.42, radius=0.055, colors=((0.5
     pts, spc = pts[ok], spc[ok]
     for p, s in zip(pts, spc):
         stage.items.append(('sphere', p, radius * (1.0 if s == 0 else 0.7), colors[s % len(colors)], glow))
+        if fuzzy:
+            stage.items.append(('glow', p, radius * 1.6, colors[s % len(colors)], 0.35))
+            stage.items.append(('sphere', p, radius * 0.12, (1.0, 1.0, 1.0), 1.0))
     near = pts[:, 2] < bond_far
-    if bonds and near.sum() > 1:
+    if bonds and not fuzzy and near.sum() > 1:
         # bonds = nearest-neighbour pairs under 1.15 x the shortest spacing, as sphere chains
         # (near ranks only — beyond bond_far a bond is sub-pixel)
         from scipy.spatial import cKDTree
@@ -639,7 +649,10 @@ def suggest_stage(reg):
             var = next((v for v, rx in _VARIANT if rx.search(txt)), 'cubic')
             return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'radius': 0.06}
         if _RX['fog'].search(txt) or re.search(r"\batom\b", txt, re.I):
-            return {'kit': 'fog', 'size': 1.0, 'lobes': 2 if re.search(r"two|dumbbell|lobe", txt, re.I) else 1}
+            # a hero fog atom rings/bursts under the repaint (day 1 sunburst, day 2 bullseye);
+            # the atomic band's safe picture is the FUZZY LATTICE — clouds in their courses
+            var = next((v for v, rx in _VARIANT if rx.search(txt)), 'cubic')
+            return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'fuzzy': True}
         return None
     # molecular (-8.5 .. -6)
     if _RX['tubes'].search(txt):

@@ -2465,3 +2465,16 @@ to a target coverage (~25-35% of pixels at mid depth), scale copies by 1/molecul
 hand the model an empty black void (background = the membrane sheet, a lipid field, or a far haze
 of small copies). Next kit iteration (tomorrow, after the kelp redo has started so the running
 chain is not changed under it): tubes v3 with coverage-targeted density.
+
+## DAY 2 — gecko's fog-field and quark-field cards (13:30; strips stage_gecko_fog_strip.png / stage_gecko_quark_strip.png)
+FOG v2 (field of grainy-shelled atoms, structure-first): the field's far atoms survive as small
+glowing points, but the HERO atom becomes CONCENTRIC RINGS — a bullseye — by mid-card (f236-251).
+This is the dome-CN ring lesson from the planet lab in a new coat: any radially symmetric soft
+form under the depth-CN + repaint paints rings; grainy shells were still radially symmetric on
+average. VERDICT: a hero fog atom is bait (sunburst/eye on day 1, rings on day 2) — retire it as
+the picture for "one atom". The honest and prior-safe picture of the atomic band is a FUZZY
+LATTICE: large soft glowing spheres (electron clouds) in their real courses, no hero, the plunge
+entering one of them. `fuzzy` option on kit_lattice; suggest_stage maps fog cards there.
+QUARK field: trios with taut strings render as glowing nodes with radiating filaments, a
+constellation/network of them (edge-corr 0.11-0.34) — abstract but structured, not rings, not
+beads; the plain twin is painterly stripes with drops. Acceptable as the floor-of-matter card.
