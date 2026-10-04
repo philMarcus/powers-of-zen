@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-10-03 19:36:56",
+    "updated": "2026-10-04 14:40:09",
     "paused_platforms": [
       "tiktok"
     ],
@@ -9596,13 +9596,13 @@
       "yt_title": "Dive into the endless ocean of infinity 🌊✨",
       "yt_desc": "Dive into the endless ocean of infinity 🌊✨ Can you spot Adam the Atom hiding in the infinite loop? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "cameo": "adam",
-      "state": "rejected",
+      "state": "review",
       "scheduled": null,
       "engine_params": {
         "parallax_gain": 1.0,
         "resolve_persist": false,
         "camera_micro": false,
-        "seed": 960087,
+        "seed": 1234,
         "plate": "live",
         "plate_cn": 0.0,
         "plate_void_gate": true,
@@ -9628,27 +9628,27 @@
       "created": "2026-08-25",
       "caption_bodies": [
         "Dive into the endless ocean of infinity 🌊✨",
-        "Where kelp forests whisper cosmic secrets 🌿💫",
-        "A journey through the hidden scales of life 🌌🔍",
-        "From the deep sea to the stars, a loop of wonder 🌊🌟",
-        "Lost in the fractal dance of existence 🌀💧"
+        "A journey through the hidden worlds of kelp and cosmos",
+        "From the deep sea to the stars, a loop of wonder",
+        "Where the ocean meets the cosmos in a dreamy spiral",
+        "A never-ending dive through the scales of existence"
       ],
       "yt_title_options": [
         "Dive into the endless ocean of infinity 🌊✨",
-        "Where kelp forests whisper cosmic secrets 🌿💫",
-        "A journey through the hidden scales of life 🌌🔍",
-        "From the deep sea to the stars, a loop of wonder 🌊🌟",
-        "Lost in the fractal dance of existence 🌀💧"
+        "A journey through the hidden worlds of kelp and cosmos",
+        "From the deep sea to the stars, a loop of wonder",
+        "Where the ocean meets the cosmos in a dreamy spiral",
+        "A never-ending dive through the scales of existence"
       ],
-      "spot_line": "Can you spot Adam the Atom in this endless dive? 👀",
-      "caption_tags": "#KelpCosmos #InfiniteDive #BioluminescentJourney #FractalSeas #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+      "spot_line": "Can you spot Adam the Atom hiding in the loop? 👀",
+      "caption_tags": "#KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats",
       "spot_hook": true,
       "caption_options": [
-        "Dive into the endless ocean of infinity 🌊✨ Can you spot Adam the Atom in this endless dive? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #FractalSeas #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
-        "Where kelp forests whisper cosmic secrets 🌿💫 Can you spot Adam the Atom in this endless dive? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #FractalSeas #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
-        "A journey through the hidden scales of life 🌌🔍 Can you spot Adam the Atom in this endless dive? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #FractalSeas #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
-        "From the deep sea to the stars, a loop of wonder 🌊🌟 Can you spot Adam the Atom in this endless dive? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #FractalSeas #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
-        "Lost in the fractal dance of existence 🌀💧 Can you spot Adam the Atom in this endless dive? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #FractalSeas #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats"
+        "Dive into the endless ocean of infinity 🌊✨ Can you spot Adam the Atom hiding in the loop? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats",
+        "A journey through the hidden worlds of kelp and cosmos Can you spot Adam the Atom hiding in the loop? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats",
+        "From the deep sea to the stars, a loop of wonder Can you spot Adam the Atom hiding in the loop? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats",
+        "Where the ocean meets the cosmos in a dreamy spiral Can you spot Adam the Atom hiding in the loop? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats",
+        "A never-ending dive through the scales of existence Can you spot Adam the Atom hiding in the loop? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats"
       ],
       "music_pregen": {
         "bpm": 103,
@@ -9729,16 +9729,16 @@
           }
         ],
         "gen_attempt": 0,
-        "generated_at": "09-20 08:03",
+        "generated_at": "10-04 06:24",
         "for_model": "ds",
         "for_cut": "divein"
       },
       "yt_desc_options": [
-        "Dive into the endless ocean of infinity 🌊✨\n\nCan you spot Adam the Atom in this endless dive? 👀\n\nOne continuous shot, no cuts, looping forever — through the open ocean at night met from just above → one kelp blade met square-on at its own → the crowd of spore cells within one case → one thylakoid sheet met square-on among → a pulsar's twin beam cones thrown opposite.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
-        "Where kelp forests whisper cosmic secrets 🌿💫\n\nCan you spot Adam the Atom in this endless dive? 👀\n\nOne continuous shot, no cuts, looping forever — through the open ocean at night met from just above → one kelp blade met square-on at its own → the crowd of spore cells within one case → one thylakoid sheet met square-on among → a pulsar's twin beam cones thrown opposite.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
-        "A journey through the hidden scales of life 🌌🔍\n\nCan you spot Adam the Atom in this endless dive? 👀\n\nOne continuous shot, no cuts, looping forever — through the open ocean at night met from just above → one kelp blade met square-on at its own → the crowd of spore cells within one case → one thylakoid sheet met square-on among → a pulsar's twin beam cones thrown opposite.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
-        "From the deep sea to the stars, a loop of wonder 🌊🌟\n\nCan you spot Adam the Atom in this endless dive? 👀\n\nOne continuous shot, no cuts, looping forever — through the open ocean at night met from just above → one kelp blade met square-on at its own → the crowd of spore cells within one case → one thylakoid sheet met square-on among → a pulsar's twin beam cones thrown opposite.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
-        "Lost in the fractal dance of existence 🌀💧\n\nCan you spot Adam the Atom in this endless dive? 👀\n\nOne continuous shot, no cuts, looping forever — through the open ocean at night met from just above → one kelp blade met square-on at its own → the crowd of spore cells within one case → one thylakoid sheet met square-on among → a pulsar's twin beam cones thrown opposite.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart"
+        "Dive into the endless ocean of infinity 🌊✨\n\nCan you spot Adam the Atom hiding in the loop? 👀\n\nOne continuous shot, no cuts, looping forever — through the open ocean at night met from just above → one kelp blade met square-on at its own → the crowd of spore cells within one case → one thylakoid sheet met square-on among → a pulsar's twin beam cones thrown opposite.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "A journey through the hidden worlds of kelp and cosmos\n\nCan you spot Adam the Atom hiding in the loop? 👀\n\nOne continuous shot, no cuts, looping forever — through the open ocean at night met from just above → one kelp blade met square-on at its own → the crowd of spore cells within one case → one thylakoid sheet met square-on among → a pulsar's twin beam cones thrown opposite.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "From the deep sea to the stars, a loop of wonder\n\nCan you spot Adam the Atom hiding in the loop? 👀\n\nOne continuous shot, no cuts, looping forever — through the open ocean at night met from just above → one kelp blade met square-on at its own → the crowd of spore cells within one case → one thylakoid sheet met square-on among → a pulsar's twin beam cones thrown opposite.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "Where the ocean meets the cosmos in a dreamy spiral\n\nCan you spot Adam the Atom hiding in the loop? 👀\n\nOne continuous shot, no cuts, looping forever — through the open ocean at night met from just above → one kelp blade met square-on at its own → the crowd of spore cells within one case → one thylakoid sheet met square-on among → a pulsar's twin beam cones thrown opposite.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "A never-ending dive through the scales of existence\n\nCan you spot Adam the Atom hiding in the loop? 👀\n\nOne continuous shot, no cuts, looping forever — through the open ocean at night met from just above → one kelp blade met square-on at its own → the crowd of spore cells within one case → one thylakoid sheet met square-on among → a pulsar's twin beam cones thrown opposite.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart"
       ],
       "yt_desc_seo_backup": "Dive into the endless ocean of infinity 🌊✨\n\nCan you spot Adam the Atom in this endless dive? 👀\n\nOne continuous shot, no cuts, looping forever — through the open ocean at night met from just above → one kelp blade met square-on at its own → the crowd of spore cells within one case → one thylakoid sheet met square-on among → a pulsar's twin beam cones thrown opposite.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart"
     },
@@ -10184,13 +10184,13 @@
       "yt_title": "Dive into the sun’s endless boil 🔥",
       "yt_desc": "Dive into the sun’s endless boil 🔥 Can you spot Clark the Quark in the cosmic dance? 👀 #cosmiczoom #stellargranulation #plasmafire #infinitevoid #powersofzen #oddlysatisfying #zoomer #animation #art #aiart #chillbeats",
       "cameo": "clark",
-      "state": "rejected",
+      "state": "review",
       "scheduled": null,
       "engine_params": {
         "parallax_gain": 1.0,
         "resolve_persist": false,
         "camera_micro": false,
-        "seed": 187198,
+        "seed": 1234,
         "plate": "live",
         "plate_cn": 0.0,
         "plate_void_gate": true,
@@ -10215,28 +10215,28 @@
       },
       "created": "2026-08-26",
       "caption_bodies": [
-        "Dive into the sun’s endless boil 🔥",
-        "Where fire jets dance on maroon plains",
-        "A quark’s whisper in the void’s glow",
-        "Suns drift like embers in the dark",
-        "The heart of the star’s quiet storm"
+        "Diving through the sun’s endless fire, where every spark tells a story 🔥",
+        "A sunspot’s heart beats with maroon and gold, pulsing with cosmic rhythm",
+        "Fire-jets dance in the void, threads of plasma weaving the fabric of stars",
+        "Plasma spheres drift in maroon emptiness, a jewel-box of cosmic fire",
+        "Three quivering cores hold the floor of matter, stretched in amber light"
       ],
       "yt_title_options": [
-        "Dive into the sun’s endless boil 🔥",
-        "Where fire jets dance on maroon plains",
-        "A quark’s whisper in the void’s glow",
-        "Suns drift like embers in the dark",
-        "The heart of the star’s quiet storm"
+        "Diving through the sun’s endless fire, where every spark tells a story 🔥",
+        "A sunspot’s heart beats with maroon and gold, pulsing with cosmic rhythm",
+        "Fire-jets dance in the void, threads of plasma weaving the fabric of stars",
+        "Plasma spheres drift in maroon emptiness, a jewel-box of cosmic fire",
+        "Three quivering cores hold the floor of matter, stretched in amber light"
       ],
-      "spot_line": "Can you spot Clark the Quark in the cosmic dance? 👀",
-      "caption_tags": "#cosmiczoom #stellargranulation #quarkdance #solarvoid #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+      "spot_line": "Can you spot Clark the Quark hiding in the cosmic dance? 👀",
+      "caption_tags": "#solargranulation #cosmicfire #plasmadance #quarkquest #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
       "spot_hook": true,
       "caption_options": [
-        "Dive into the sun’s endless boil 🔥 Can you spot Clark the Quark in the cosmic dance? 👀 #cosmiczoom #stellargranulation #quarkdance #solarvoid #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
-        "Where fire jets dance on maroon plains Can you spot Clark the Quark in the cosmic dance? 👀 #cosmiczoom #stellargranulation #quarkdance #solarvoid #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
-        "A quark’s whisper in the void’s glow Can you spot Clark the Quark in the cosmic dance? 👀 #cosmiczoom #stellargranulation #quarkdance #solarvoid #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
-        "Suns drift like embers in the dark Can you spot Clark the Quark in the cosmic dance? 👀 #cosmiczoom #stellargranulation #quarkdance #solarvoid #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
-        "The heart of the star’s quiet storm Can you spot Clark the Quark in the cosmic dance? 👀 #cosmiczoom #stellargranulation #quarkdance #solarvoid #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats"
+        "Diving through the sun’s endless fire, where every spark tells a story 🔥 Can you spot Clark the Quark hiding in the cosmic dance? 👀 #solargranulation #cosmicfire #plasmadance #quarkquest #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+        "A sunspot’s heart beats with maroon and gold, pulsing with cosmic rhythm Can you spot Clark the Quark hiding in the cosmic dance? 👀 #solargranulation #cosmicfire #plasmadance #quarkquest #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+        "Fire-jets dance in the void, threads of plasma weaving the fabric of stars Can you spot Clark the Quark hiding in the cosmic dance? 👀 #solargranulation #cosmicfire #plasmadance #quarkquest #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+        "Plasma spheres drift in maroon emptiness, a jewel-box of cosmic fire Can you spot Clark the Quark hiding in the cosmic dance? 👀 #solargranulation #cosmicfire #plasmadance #quarkquest #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+        "Three quivering cores hold the floor of matter, stretched in amber light Can you spot Clark the Quark hiding in the cosmic dance? 👀 #solargranulation #cosmicfire #plasmadance #quarkquest #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats"
       ],
       "music_pregen": {
         "bpm": 103,
@@ -10317,16 +10317,16 @@
           }
         ],
         "gen_attempt": 0,
-        "generated_at": "09-20 08:06",
+        "generated_at": "10-04 06:25",
         "for_model": "ds",
         "for_cut": "divein"
       },
       "yt_desc_options": [
-        "Dive into the sun’s endless boil 🔥\n\nCan you spot Clark the Quark in the cosmic dance? 👀\n\nOne continuous shot, no cuts, looping forever — through solar granulation crowded rim to rim → the sunken floor within a sunspot's core → the interior of one fire-jet → a nucleus held as a quivering droplet → an open cluster loosened and spread wide.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
-        "Where fire jets dance on maroon plains\n\nCan you spot Clark the Quark in the cosmic dance? 👀\n\nOne continuous shot, no cuts, looping forever — through solar granulation crowded rim to rim → the sunken floor within a sunspot's core → the interior of one fire-jet → a nucleus held as a quivering droplet → an open cluster loosened and spread wide.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
-        "A quark’s whisper in the void’s glow\n\nCan you spot Clark the Quark in the cosmic dance? 👀\n\nOne continuous shot, no cuts, looping forever — through solar granulation crowded rim to rim → the sunken floor within a sunspot's core → the interior of one fire-jet → a nucleus held as a quivering droplet → an open cluster loosened and spread wide.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
-        "Suns drift like embers in the dark\n\nCan you spot Clark the Quark in the cosmic dance? 👀\n\nOne continuous shot, no cuts, looping forever — through solar granulation crowded rim to rim → the sunken floor within a sunspot's core → the interior of one fire-jet → a nucleus held as a quivering droplet → an open cluster loosened and spread wide.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
-        "The heart of the star’s quiet storm\n\nCan you spot Clark the Quark in the cosmic dance? 👀\n\nOne continuous shot, no cuts, looping forever — through solar granulation crowded rim to rim → the sunken floor within a sunspot's core → the interior of one fire-jet → a nucleus held as a quivering droplet → an open cluster loosened and spread wide.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart"
+        "Diving through the sun’s endless fire, where every spark tells a story 🔥\n\nCan you spot Clark the Quark hiding in the cosmic dance? 👀\n\nOne continuous shot, no cuts, looping forever — through solar granulation crowded rim to rim → the sunken floor within a sunspot's core → the interior of one fire-jet → a nucleus held as a quivering droplet → an open cluster loosened and spread wide.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "A sunspot’s heart beats with maroon and gold, pulsing with cosmic rhythm\n\nCan you spot Clark the Quark hiding in the cosmic dance? 👀\n\nOne continuous shot, no cuts, looping forever — through solar granulation crowded rim to rim → the sunken floor within a sunspot's core → the interior of one fire-jet → a nucleus held as a quivering droplet → an open cluster loosened and spread wide.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "Fire-jets dance in the void, threads of plasma weaving the fabric of stars\n\nCan you spot Clark the Quark hiding in the cosmic dance? 👀\n\nOne continuous shot, no cuts, looping forever — through solar granulation crowded rim to rim → the sunken floor within a sunspot's core → the interior of one fire-jet → a nucleus held as a quivering droplet → an open cluster loosened and spread wide.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "Plasma spheres drift in maroon emptiness, a jewel-box of cosmic fire\n\nCan you spot Clark the Quark hiding in the cosmic dance? 👀\n\nOne continuous shot, no cuts, looping forever — through solar granulation crowded rim to rim → the sunken floor within a sunspot's core → the interior of one fire-jet → a nucleus held as a quivering droplet → an open cluster loosened and spread wide.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "Three quivering cores hold the floor of matter, stretched in amber light\n\nCan you spot Clark the Quark hiding in the cosmic dance? 👀\n\nOne continuous shot, no cuts, looping forever — through solar granulation crowded rim to rim → the sunken floor within a sunspot's core → the interior of one fire-jet → a nucleus held as a quivering droplet → an open cluster loosened and spread wide.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart"
       ],
       "yt_desc_seo_backup": "Dive into the sun’s endless boil 🔥\n\nCan you spot Clark the Quark in the cosmic dance? 👀\n\nOne continuous shot, no cuts, looping forever — through solar granulation crowded rim to rim → the sunken floor within a sunspot's core → the interior of one fire-jet → a nucleus held as a quivering droplet → an open cluster loosened and spread wide.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart"
     },
@@ -11932,7 +11932,7 @@
       "yt_title": "A monsoon night’s dance of lacewings, ants, and geckos—until the world dissolves into atoms. 🌧️",
       "yt_desc": "A monsoon night’s dance of lacewings, ants, and geckos—until the world dissolves into atoms. 🌧️ Can you spot Adam the Atom hiding in the cosmic dance? 👀 #SandstoneCosmos #GeckoGalaxy #MonsoonMicroverse #AtomicStorm #infinitezoom #eyecandy #livewallpaper #oddlysatisfying #powersofzen #zoomer #aiart #chillbeats",
       "cameo": "adam",
-      "state": "rejected",
+      "state": "review",
       "scheduled": null,
       "engine_params": {
         "parallax_gain": 1.0,
@@ -11942,7 +11942,7 @@
         "plate": "live",
         "plate_cn": 0.0,
         "plate_void_gate": true,
-        "plate_intro": "enter"
+        "plate_intro": "mix"
       },
       "platforms": {
         "tiktok": {
@@ -11963,28 +11963,28 @@
       },
       "created": "2026-08-29",
       "caption_bodies": [
-        "A monsoon night’s dance of lacewings, ants, and geckos—until the world dissolves into ridges of slate and cinnabar. 🌧️",
-        "From sandstone to skin, the zoom never ends—where does the pattern break?",
-        "Keratin forests whisper in the dark, their roots lost in haze. 🌿",
-        "Sparks flicker in the void, a dance older than stars. ⚡",
-        "Two suns, one glow—until the storm world pulls you back."
+        "A monsoon night’s dance of lacewings, ants, and geckos… then deeper 🌧️",
+        "Sandstone, speckles, and the secret grip of a gecko’s toe…",
+        "Keratin forests whispering in the slate-blue haze…",
+        "Where pads meet stone, the universe flickers to life…",
+        "A storm world’s glow, born from twin suns’ embrace…"
       ],
       "yt_title_options": [
-        "A monsoon night’s dance of lacewings, ants, and geckos—until the world dissolves into ridges of slat",
-        "From sandstone to skin, the zoom never ends—where does the pattern break?",
-        "Keratin forests whisper in the dark, their roots lost in haze. 🌿",
-        "Sparks flicker in the void, a dance older than stars. ⚡",
-        "Two suns, one glow—until the storm world pulls you back."
+        "A monsoon night’s dance of lacewings, ants, and geckos… then deeper 🌧️",
+        "Sandstone, speckles, and the secret grip of a gecko’s toe…",
+        "Keratin forests whispering in the slate-blue haze…",
+        "Where pads meet stone, the universe flickers to life…",
+        "A storm world’s glow, born from twin suns’ embrace…"
       ],
-      "spot_line": "Can you spot Adam the Atom hiding in the zoom? 👀",
-      "caption_tags": "#InfiniteZoom #CosmicMicrocosm #StormWorldDive #GeckoGalaxy #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+      "spot_line": "Can you spot Adam the Atom in the infinite zoom? 👀",
+      "caption_tags": "#CosmicGecko #MonsoonMicrocosm #TwinSunsOrbit #FractalStormlight #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
       "spot_hook": true,
       "caption_options": [
-        "A monsoon night’s dance of lacewings, ants, and geckos—until the world dissolves into ridges of slate and cinnabar. 🌧️ Can you spot Adam the Atom hiding in the zoom? 👀 #InfiniteZoom #CosmicMicrocosm #StormWorldDive #GeckoGalaxy #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
-        "From sandstone to skin, the zoom never ends—where does the pattern break? Can you spot Adam the Atom hiding in the zoom? 👀 #InfiniteZoom #CosmicMicrocosm #StormWorldDive #GeckoGalaxy #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
-        "Keratin forests whisper in the dark, their roots lost in haze. 🌿 Can you spot Adam the Atom hiding in the zoom? 👀 #InfiniteZoom #CosmicMicrocosm #StormWorldDive #GeckoGalaxy #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
-        "Sparks flicker in the void, a dance older than stars. ⚡ Can you spot Adam the Atom hiding in the zoom? 👀 #InfiniteZoom #CosmicMicrocosm #StormWorldDive #GeckoGalaxy #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
-        "Two suns, one glow—until the storm world pulls you back. Can you spot Adam the Atom hiding in the zoom? 👀 #InfiniteZoom #CosmicMicrocosm #StormWorldDive #GeckoGalaxy #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats"
+        "A monsoon night’s dance of lacewings, ants, and geckos… then deeper 🌧️ Can you spot Adam the Atom in the infinite zoom? 👀 #CosmicGecko #MonsoonMicrocosm #TwinSunsOrbit #FractalStormlight #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+        "Sandstone, speckles, and the secret grip of a gecko’s toe… Can you spot Adam the Atom in the infinite zoom? 👀 #CosmicGecko #MonsoonMicrocosm #TwinSunsOrbit #FractalStormlight #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+        "Keratin forests whispering in the slate-blue haze… Can you spot Adam the Atom in the infinite zoom? 👀 #CosmicGecko #MonsoonMicrocosm #TwinSunsOrbit #FractalStormlight #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+        "Where pads meet stone, the universe flickers to life… Can you spot Adam the Atom in the infinite zoom? 👀 #CosmicGecko #MonsoonMicrocosm #TwinSunsOrbit #FractalStormlight #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+        "A storm world’s glow, born from twin suns’ embrace… Can you spot Adam the Atom in the infinite zoom? 👀 #CosmicGecko #MonsoonMicrocosm #TwinSunsOrbit #FractalStormlight #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats"
       ],
       "music_pregen": {
         "bpm": 103,
@@ -12052,28 +12052,29 @@
           {
             "id": "night_market-b",
             "lane": "night_market",
-            "mood": "nocturnal, lantern-lit, wandering",
-            "tags": "",
+            "mood": "nocturnal, lantern-lit, wandering · downbeat",
             "track": "output/music/gecko_rampart_night_market-b.flac",
             "aligned": "review/music/candidates/gecko_rampart/night_market-b.mp4",
+            "seed": 2879,
             "lock": 12.55,
             "bar_conf": 0.54,
             "kick": 0.33,
             "fit": 1.82,
-            "score": 1.62
+            "score": 1.62,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
           }
         ],
         "gen_attempt": 0,
-        "generated_at": "09-19 07:37 (re-ranked)",
+        "generated_at": "10-04 06:26",
         "for_model": "ds",
         "for_cut": "divein"
       },
       "yt_desc_options": [
-        "A monsoon night’s dance of lacewings, ants, and geckos—until the world dissolves into ridges of slate and cinnabar. 🌧️\n\nCan you spot Adam the Atom hiding in the zoom? 👀\n\nOne continuous shot, no cuts, looping forever — through a sandstone rampart above its moat ring → the underside of a gecko toe → the frayed end of one keratin bristle → an emptiness that is never still → nested shells cast off by an old star.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
-        "From sandstone to skin, the zoom never ends—where does the pattern break?\n\nCan you spot Adam the Atom hiding in the zoom? 👀\n\nOne continuous shot, no cuts, looping forever — through a sandstone rampart above its moat ring → the underside of a gecko toe → the frayed end of one keratin bristle → an emptiness that is never still → nested shells cast off by an old star.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
-        "Keratin forests whisper in the dark, their roots lost in haze. 🌿\n\nCan you spot Adam the Atom hiding in the zoom? 👀\n\nOne continuous shot, no cuts, looping forever — through a sandstone rampart above its moat ring → the underside of a gecko toe → the frayed end of one keratin bristle → an emptiness that is never still → nested shells cast off by an old star.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
-        "Sparks flicker in the void, a dance older than stars. ⚡\n\nCan you spot Adam the Atom hiding in the zoom? 👀\n\nOne continuous shot, no cuts, looping forever — through a sandstone rampart above its moat ring → the underside of a gecko toe → the frayed end of one keratin bristle → an emptiness that is never still → nested shells cast off by an old star.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
-        "Two suns, one glow—until the storm world pulls you back.\n\nCan you spot Adam the Atom hiding in the zoom? 👀\n\nOne continuous shot, no cuts, looping forever — through a sandstone rampart above its moat ring → the underside of a gecko toe → the frayed end of one keratin bristle → an emptiness that is never still → nested shells cast off by an old star.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart"
+        "A monsoon night’s dance of lacewings, ants, and geckos… then deeper 🌧️\n\nCan you spot Adam the Atom in the infinite zoom? 👀\n\nOne continuous shot, no cuts, looping forever — through a sandstone rampart above its moat ring → the underside of a gecko toe → the frayed end of one keratin bristle → an emptiness that is never still → nested shells cast off by an old star.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "Sandstone, speckles, and the secret grip of a gecko’s toe…\n\nCan you spot Adam the Atom in the infinite zoom? 👀\n\nOne continuous shot, no cuts, looping forever — through a sandstone rampart above its moat ring → the underside of a gecko toe → the frayed end of one keratin bristle → an emptiness that is never still → nested shells cast off by an old star.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "Keratin forests whispering in the slate-blue haze…\n\nCan you spot Adam the Atom in the infinite zoom? 👀\n\nOne continuous shot, no cuts, looping forever — through a sandstone rampart above its moat ring → the underside of a gecko toe → the frayed end of one keratin bristle → an emptiness that is never still → nested shells cast off by an old star.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "Where pads meet stone, the universe flickers to life…\n\nCan you spot Adam the Atom in the infinite zoom? 👀\n\nOne continuous shot, no cuts, looping forever — through a sandstone rampart above its moat ring → the underside of a gecko toe → the frayed end of one keratin bristle → an emptiness that is never still → nested shells cast off by an old star.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "A storm world’s glow, born from twin suns’ embrace…\n\nCan you spot Adam the Atom in the infinite zoom? 👀\n\nOne continuous shot, no cuts, looping forever — through a sandstone rampart above its moat ring → the underside of a gecko toe → the frayed end of one keratin bristle → an emptiness that is never still → nested shells cast off by an old star.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart"
       ],
       "yt_desc_seo_backup": "A monsoon night’s dance of lacewings, ants, and geckos—until the world dissolves into ridges of slate and cinnabar. 🌧️\n\nCan you spot Adam the Atom hiding in the zoom? 👀\n\nOne continuous shot, no cuts, looping forever — through a sandstone rampart above its moat ring → the underside of a gecko toe → the frayed end of one keratin bristle → an emptiness that is never still → nested shells cast off by an old star.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart"
     },
@@ -13455,7 +13456,7 @@
       "yt_title": "A storm’s heart beats in the dark, pulsing with absinthe light 🌪️",
       "yt_desc": "A storm’s heart beats in the dark, pulsing with absinthe light 🌪️ Can you spot Lorraine the Terrane hiding in the storm’s glow? 👀 #StormGeometry #InfiniteZoom #CosmicPrairie #HailstoneWorlds #eyecandy #livewallpaper #oddlysatisfying #powersofzen #zoomer #aiart #chillbeats",
       "cameo": "lorraine",
-      "state": "rejected",
+      "state": "review",
       "scheduled": null,
       "engine_params": {
         "parallax_gain": 1.0,
@@ -13465,7 +13466,7 @@
         "plate": "live",
         "plate_cn": 0.0,
         "plate_void_gate": true,
-        "plate_intro": "enter"
+        "plate_intro": "mix"
       },
       "platforms": {
         "tiktok": {
@@ -13486,28 +13487,28 @@
       },
       "created": "2026-08-31",
       "caption_bodies": [
-        "Dive into the storm’s endless heart 🌪️",
-        "Where the sky folds into itself",
-        "A hailstone’s hidden galaxy",
-        "Lost in the lattice of the infinite",
-        "The universe in a single storm"
+        "A storm’s breath unfolds into infinity 🌪️",
+        "Where the sky’s heart beats in absinthe light",
+        "Lost in the lattice of a hailstone’s world",
+        "Atoms hum in the glow of a star’s echo",
+        "A planet’s pulse, seen from the void’s edge"
       ],
       "yt_title_options": [
-        "Dive into the storm’s endless heart 🌪️",
-        "Where the sky folds into itself",
-        "A hailstone’s hidden galaxy",
-        "Lost in the lattice of the infinite",
-        "The universe in a single storm"
+        "A storm’s breath unfolds into infinity 🌪️",
+        "Where the sky’s heart beats in absinthe light",
+        "Lost in the lattice of a hailstone’s world",
+        "Atoms hum in the glow of a star’s echo",
+        "A planet’s pulse, seen from the void’s edge"
       ],
-      "spot_line": "Can you spot Lorraine the Terrane hiding in the storm? 👀",
-      "caption_tags": "#StormCosmos #InfiniteZoom #HailstoneUniverse #LorraineTheTerrane #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+      "spot_line": "Can you spot Lorraine the Terrane hiding in the storm’s glow? 👀",
+      "caption_tags": "#StormCosmos #HailstoneHorizons #AtomicDreamscape #VoidVoyage #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
       "spot_hook": true,
       "caption_options": [
-        "Dive into the storm’s endless heart 🌪️ Can you spot Lorraine the Terrane hiding in the storm? 👀 #StormCosmos #InfiniteZoom #HailstoneUniverse #LorraineTheTerrane #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
-        "Where the sky folds into itself Can you spot Lorraine the Terrane hiding in the storm? 👀 #StormCosmos #InfiniteZoom #HailstoneUniverse #LorraineTheTerrane #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
-        "A hailstone’s hidden galaxy Can you spot Lorraine the Terrane hiding in the storm? 👀 #StormCosmos #InfiniteZoom #HailstoneUniverse #LorraineTheTerrane #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
-        "Lost in the lattice of the infinite Can you spot Lorraine the Terrane hiding in the storm? 👀 #StormCosmos #InfiniteZoom #HailstoneUniverse #LorraineTheTerrane #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
-        "The universe in a single storm Can you spot Lorraine the Terrane hiding in the storm? 👀 #StormCosmos #InfiniteZoom #HailstoneUniverse #LorraineTheTerrane #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats"
+        "A storm’s breath unfolds into infinity 🌪️ Can you spot Lorraine the Terrane hiding in the storm’s glow? 👀 #StormCosmos #HailstoneHorizons #AtomicDreamscape #VoidVoyage #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+        "Where the sky’s heart beats in absinthe light Can you spot Lorraine the Terrane hiding in the storm’s glow? 👀 #StormCosmos #HailstoneHorizons #AtomicDreamscape #VoidVoyage #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+        "Lost in the lattice of a hailstone’s world Can you spot Lorraine the Terrane hiding in the storm’s glow? 👀 #StormCosmos #HailstoneHorizons #AtomicDreamscape #VoidVoyage #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+        "Atoms hum in the glow of a star’s echo Can you spot Lorraine the Terrane hiding in the storm’s glow? 👀 #StormCosmos #HailstoneHorizons #AtomicDreamscape #VoidVoyage #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+        "A planet’s pulse, seen from the void’s edge Can you spot Lorraine the Terrane hiding in the storm’s glow? 👀 #StormCosmos #HailstoneHorizons #AtomicDreamscape #VoidVoyage #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats"
       ],
       "music_pregen": {
         "bpm": 103,
@@ -13523,11 +13524,11 @@
             "track": "output/music/anvil_country_aurora_strings-b.flac",
             "aligned": "review/music/candidates/anvil_country/aurora_strings-b.mp4",
             "seed": 26528,
-            "lock": 11.77,
+            "lock": 11.64,
             "bar_conf": 0.7,
             "kick": 0.65,
             "fit": 1.12,
-            "score": 3.48,
+            "score": 3.46,
             "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a prairie storm at 103bpm — a shimmering polar string pad over one deep kick on every downbeat, the pad massing into a low churn as the vault arrives, thinning to a single held tone through the ice galleries, one struck hit where the atom shells open out into the star's echo rings, then easing back to the pad for the descent from orbit, bowed string pad swells and sparse harp plucks, silvery and cold, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
           },
           {
@@ -13588,16 +13589,16 @@
           }
         ],
         "gen_attempt": 0,
-        "generated_at": "09-19 08:03",
+        "generated_at": "10-04 06:28",
         "for_model": "ds",
         "for_cut": "divein"
       },
       "yt_desc_options": [
-        "Dive into the storm’s endless heart 🌪️\n\nCan you spot Lorraine the Terrane hiding in the storm? 👀\n\nOne continuous shot, no cuts, looping forever — through a night supercell standing over open → a prairie stock pond at eye level → an onion of growth shells inside a hailstone → the hexagon galleries of an ice lattice → a flared star with its echo shells opened.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
-        "Where the sky folds into itself\n\nCan you spot Lorraine the Terrane hiding in the storm? 👀\n\nOne continuous shot, no cuts, looping forever — through a night supercell standing over open → a prairie stock pond at eye level → an onion of growth shells inside a hailstone → the hexagon galleries of an ice lattice → a flared star with its echo shells opened.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
-        "A hailstone’s hidden galaxy\n\nCan you spot Lorraine the Terrane hiding in the storm? 👀\n\nOne continuous shot, no cuts, looping forever — through a night supercell standing over open → a prairie stock pond at eye level → an onion of growth shells inside a hailstone → the hexagon galleries of an ice lattice → a flared star with its echo shells opened.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
-        "Lost in the lattice of the infinite\n\nCan you spot Lorraine the Terrane hiding in the storm? 👀\n\nOne continuous shot, no cuts, looping forever — through a night supercell standing over open → a prairie stock pond at eye level → an onion of growth shells inside a hailstone → the hexagon galleries of an ice lattice → a flared star with its echo shells opened.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
-        "The universe in a single storm\n\nCan you spot Lorraine the Terrane hiding in the storm? 👀\n\nOne continuous shot, no cuts, looping forever — through a night supercell standing over open → a prairie stock pond at eye level → an onion of growth shells inside a hailstone → the hexagon galleries of an ice lattice → a flared star with its echo shells opened.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart"
+        "A storm’s breath unfolds into infinity 🌪️\n\nCan you spot Lorraine the Terrane hiding in the storm’s glow? 👀\n\nOne continuous shot, no cuts, looping forever — through a night supercell standing over open → a prairie stock pond at eye level → an onion of growth shells inside a hailstone → the hexagon galleries of an ice lattice → a flared star with its echo shells opened.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "Where the sky’s heart beats in absinthe light\n\nCan you spot Lorraine the Terrane hiding in the storm’s glow? 👀\n\nOne continuous shot, no cuts, looping forever — through a night supercell standing over open → a prairie stock pond at eye level → an onion of growth shells inside a hailstone → the hexagon galleries of an ice lattice → a flared star with its echo shells opened.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "Lost in the lattice of a hailstone’s world\n\nCan you spot Lorraine the Terrane hiding in the storm’s glow? 👀\n\nOne continuous shot, no cuts, looping forever — through a night supercell standing over open → a prairie stock pond at eye level → an onion of growth shells inside a hailstone → the hexagon galleries of an ice lattice → a flared star with its echo shells opened.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "Atoms hum in the glow of a star’s echo\n\nCan you spot Lorraine the Terrane hiding in the storm’s glow? 👀\n\nOne continuous shot, no cuts, looping forever — through a night supercell standing over open → a prairie stock pond at eye level → an onion of growth shells inside a hailstone → the hexagon galleries of an ice lattice → a flared star with its echo shells opened.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "A planet’s pulse, seen from the void’s edge\n\nCan you spot Lorraine the Terrane hiding in the storm’s glow? 👀\n\nOne continuous shot, no cuts, looping forever — through a night supercell standing over open → a prairie stock pond at eye level → an onion of growth shells inside a hailstone → the hexagon galleries of an ice lattice → a flared star with its echo shells opened.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart"
       ],
       "yt_desc_seo_backup": "Dive into the storm’s endless heart 🌪️\n\nCan you spot Lorraine the Terrane hiding in the storm? 👀\n\nOne continuous shot, no cuts, looping forever — through a night supercell standing over open → a prairie stock pond at eye level → an onion of growth shells inside a hailstone → the hexagon galleries of an ice lattice → a flared star with its echo shells opened.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart"
     },
@@ -19175,7 +19176,7 @@
       "yt_title": "The night’s mesh of silver and shadow",
       "yt_desc": "The night’s mesh of silver and shadow Can you spot Lee the Flea in this endless dive? 🐛 #InfraredDreamscape #MicrocosmicJourney #HedgeAndHollow #FleaUniverse #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
       "cameo": "lee",
-      "state": "queued",
+      "state": "live",
       "scheduled": null,
       "engine_params": {
         "parallax_gain": 1.0,
@@ -19194,14 +19195,14 @@
           "ts": ""
         },
         "youtube": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://youtube.com/shorts/i9esRw0yxrE",
+          "ts": "2026-10-04 12:06:34"
         },
         "instagram": {
-          "status": "pending",
-          "url": "",
-          "ts": ""
+          "status": "live",
+          "url": "https://www.instagram.com/powers.of.zen/reel/DeFBfmaBQp6/",
+          "ts": "2026-10-04 12:06:34"
         }
       },
       "created": "2026-09-23",
@@ -22567,6 +22568,316 @@
         ],
         "gen_attempt": 0,
         "generated_at": "10-03 19:36",
+        "for_model": "ds",
+        "for_cut": "divein"
+      }
+    },
+    {
+      "journey": "kelp_dynamo_stage",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/kelp_dynamo_stage_ds_divein.mp4",
+      "title": "",
+      "caption": "Dive into the endless ocean of infinity 🌊✨ Can you spot Tina the DNA in this cosmic kelp dive? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats",
+      "yt_title": "Dive into the endless ocean of infinity 🌊✨",
+      "yt_desc": "Dive into the endless ocean of infinity 🌊✨ Can you spot Tina the DNA in this cosmic kelp dive? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats",
+      "cameo": "tina",
+      "state": "review",
+      "scheduled": null,
+      "engine_params": {
+        "parallax_gain": 1.0,
+        "resolve_persist": false,
+        "camera_micro": false,
+        "seed": 1234,
+        "plate": "live",
+        "plate_cn": 0.0,
+        "plate_void_gate": true,
+        "plate_intro": "mix"
+      },
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-10-04",
+      "caption_bodies": [
+        "Dive into the endless ocean of infinity 🌊✨",
+        "Where kelp forests whisper secrets to the stars 🌌",
+        "A journey through the hidden veins of the deep 🌿",
+        "Lost in the luminous labyrinth of life 💫",
+        "From the abyss to the cosmos, a never-ending spiral 🌀"
+      ],
+      "yt_title_options": [
+        "Dive into the endless ocean of infinity 🌊✨",
+        "Where kelp forests whisper secrets to the stars 🌌",
+        "A journey through the hidden veins of the deep 🌿",
+        "Lost in the luminous labyrinth of life 💫",
+        "From the abyss to the cosmos, a never-ending spiral 🌀"
+      ],
+      "spot_line": "Can you spot Tina the DNA in this cosmic kelp dive? 👀",
+      "caption_tags": "#KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "Dive into the endless ocean of infinity 🌊✨ Can you spot Tina the DNA in this cosmic kelp dive? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats",
+        "Where kelp forests whisper secrets to the stars 🌌 Can you spot Tina the DNA in this cosmic kelp dive? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats",
+        "A journey through the hidden veins of the deep 🌿 Can you spot Tina the DNA in this cosmic kelp dive? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats",
+        "Lost in the luminous labyrinth of life 💫 Can you spot Tina the DNA in this cosmic kelp dive? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats",
+        "From the abyss to the cosmos, a never-ending spiral 🌀 Can you spot Tina the DNA in this cosmic kelp dive? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats"
+      ],
+      "yt_desc_options": [
+        "Dive into the endless ocean of infinity 🌊✨\n\nCan you spot Tina the DNA in this cosmic kelp dive? 👀\n\nOne continuous shot, no cuts, looping forever — through the open ocean at night met from just above → one kelp blade met square-on at its own → the crowd of spore cells within one case → one thylakoid sheet met square-on among → a pulsar's twin beam cones thrown opposite.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "Where kelp forests whisper secrets to the stars 🌌\n\nCan you spot Tina the DNA in this cosmic kelp dive? 👀\n\nOne continuous shot, no cuts, looping forever — through the open ocean at night met from just above → one kelp blade met square-on at its own → the crowd of spore cells within one case → one thylakoid sheet met square-on among → a pulsar's twin beam cones thrown opposite.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "A journey through the hidden veins of the deep 🌿\n\nCan you spot Tina the DNA in this cosmic kelp dive? 👀\n\nOne continuous shot, no cuts, looping forever — through the open ocean at night met from just above → one kelp blade met square-on at its own → the crowd of spore cells within one case → one thylakoid sheet met square-on among → a pulsar's twin beam cones thrown opposite.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "Lost in the luminous labyrinth of life 💫\n\nCan you spot Tina the DNA in this cosmic kelp dive? 👀\n\nOne continuous shot, no cuts, looping forever — through the open ocean at night met from just above → one kelp blade met square-on at its own → the crowd of spore cells within one case → one thylakoid sheet met square-on among → a pulsar's twin beam cones thrown opposite.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "From the abyss to the cosmos, a never-ending spiral 🌀\n\nCan you spot Tina the DNA in this cosmic kelp dive? 👀\n\nOne continuous shot, no cuts, looping forever — through the open ocean at night met from just above → one kelp blade met square-on at its own → the crowd of spore cells within one case → one thylakoid sheet met square-on among → a pulsar's twin beam cones thrown opposite.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart"
+      ],
+      "music_pregen": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "G# minor",
+        "stage": "pregen",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "choir_of_dust-wild",
+            "lane": "choir_of_dust",
+            "mood": "hushed, suspended, dissolving · heartbeat",
+            "track": "output/music/kelp_dynamo_stage_choir_of_dust-wild.flac",
+            "aligned": "review/music/candidates/kelp_dynamo_stage/choir_of_dust-wild.mp4",
+            "seed": 37774,
+            "lock": 14.76,
+            "bar_conf": 0.73,
+            "kick": 0.63,
+            "fit": 1.13,
+            "score": 3.88,
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a submerged moonlit descent — deep oceanic pads and a slow sub-bass swell under the canopy, the pulse heaviest as the forest arrives, thinning to one low drone through the spore cells and the membrane, a single deep hit where the rotor opens out into the pulsar's beams and the shoal of comets, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "music_box-wild",
+            "lane": "music_box",
+            "mood": "miniature, tender, clockwork · downbeat",
+            "track": "output/music/kelp_dynamo_stage_music_box-wild.flac",
+            "aligned": "review/music/candidates/kelp_dynamo_stage/music_box-wild.mp4",
+            "seed": 37811,
+            "lock": 9.69,
+            "bar_conf": 0.71,
+            "kick": 0.76,
+            "fit": 0.92,
+            "score": 3.61,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a submerged moonlit descent — deep oceanic pads and a slow sub-bass swell under the canopy, the pulse heaviest as the forest arrives, thinning to one low drone through the spore cells and the membrane, a single deep hit where the rotor opens out into the pulsar's beams and the shoal of comets, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "deep_archive-b",
+            "lane": "deep_archive",
+            "mood": "vast, ancient, submerged · halftime",
+            "track": "output/music/kelp_dynamo_stage_deep_archive-b.flac",
+            "aligned": "review/music/candidates/kelp_dynamo_stage/deep_archive-b.mp4",
+            "seed": 37700,
+            "lock": 7.1,
+            "bar_conf": 0.71,
+            "kick": 0.66,
+            "fit": 1.09,
+            "score": 2.79,
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a submerged moonlit descent — deep oceanic pads and a slow sub-bass swell under the canopy, the pulse heaviest as the forest arrives, thinning to one low drone through the spore cells and the membrane, a single deep hit where the rotor opens out into the pulsar's beams and the shoal of comets, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "deep_archive-third_answer",
+            "lane": "deep_archive",
+            "mood": "vast, ancient, submerged · third_answer",
+            "track": "output/music/kelp_dynamo_stage_deep_archive-third_answer.flac",
+            "aligned": "review/music/candidates/kelp_dynamo_stage/deep_archive-third_answer.mp4",
+            "seed": 37922,
+            "lock": 7.7,
+            "bar_conf": 0.68,
+            "kick": 0.59,
+            "fit": 0.95,
+            "score": 2.41,
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a submerged moonlit descent — deep oceanic pads and a slow sub-bass swell under the canopy, the pulse heaviest as the forest arrives, thinning to one low drone through the spore cells and the membrane, a single deep hit where the rotor opens out into the pulsar's beams and the shoal of comets, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "wooden_orbit-wild",
+            "lane": "wooden_orbit",
+            "mood": "playful, organic, orbiting · third_answer",
+            "track": "output/music/kelp_dynamo_stage_wooden_orbit-wild.flac",
+            "aligned": "review/music/candidates/kelp_dynamo_stage/wooden_orbit-wild.mp4",
+            "seed": 37885,
+            "lock": 8.13,
+            "bar_conf": 0.61,
+            "kick": 0.31,
+            "fit": 0.91,
+            "score": 1.26,
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a submerged moonlit descent — deep oceanic pads and a slow sub-bass swell under the canopy, the pulse heaviest as the forest arrives, thinning to one low drone through the spore cells and the membrane, a single deep hit where the rotor opens out into the pulsar's beams and the shoal of comets, warm marimba and kalimba over a round woody bass, gentle plucked figures, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          }
+        ],
+        "gen_attempt": 0,
+        "generated_at": "10-04 14:40",
+        "for_model": "ds",
+        "for_cut": "divein"
+      }
+    },
+    {
+      "journey": "gecko_rampart_stage",
+      "model": "ds",
+      "cut": "divein",
+      "file": "review_divein/gecko_rampart_stage_ds_divein.mp4",
+      "title": "",
+      "caption": "A monsoon night’s mosaic, spiraling into the unseen 🌧️ Can you spot Belle the Cell in this endless dive? 👀 #SandstoneCosmos #GeckoGalaxy #StormWorldDive #InfiniteZoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+      "yt_title": "A monsoon night’s mosaic, spiraling into the unseen 🌧️",
+      "yt_desc": "A monsoon night’s mosaic, spiraling into the unseen 🌧️ Can you spot Belle the Cell in this endless dive? 👀 #SandstoneCosmos #GeckoGalaxy #StormWorldDive #InfiniteZoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+      "cameo": "belle",
+      "state": "review",
+      "scheduled": null,
+      "engine_params": {
+        "parallax_gain": 1.0,
+        "resolve_persist": false,
+        "camera_micro": false,
+        "seed": 1234,
+        "plate": "live",
+        "plate_cn": 0.0,
+        "plate_void_gate": true,
+        "plate_intro": "mix"
+      },
+      "platforms": {
+        "tiktok": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "youtube": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        },
+        "instagram": {
+          "status": "pending",
+          "url": "",
+          "ts": ""
+        }
+      },
+      "created": "2026-10-04",
+      "caption_bodies": [
+        "A monsoon night’s mosaic, spiraling into the unseen 🌧️",
+        "Where stone meets scale, and the world dissolves into ridges",
+        "A forest of keratin, whispering to the void",
+        "Sparks in the slate, dancing where nothing stands still",
+        "Two suns, one glow, and a world caught in the storm"
+      ],
+      "yt_title_options": [
+        "A monsoon night’s mosaic, spiraling into the unseen 🌧️",
+        "Where stone meets scale, and the world dissolves into ridges",
+        "A forest of keratin, whispering to the void",
+        "Sparks in the slate, dancing where nothing stands still",
+        "Two suns, one glow, and a world caught in the storm"
+      ],
+      "spot_line": "Can you spot Belle the Cell in this endless dive? 👀",
+      "caption_tags": "#SandstoneCosmos #GeckoGalaxy #StormWorldDive #InfiniteZoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+      "spot_hook": true,
+      "caption_options": [
+        "A monsoon night’s mosaic, spiraling into the unseen 🌧️ Can you spot Belle the Cell in this endless dive? 👀 #SandstoneCosmos #GeckoGalaxy #StormWorldDive #InfiniteZoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+        "Where stone meets scale, and the world dissolves into ridges Can you spot Belle the Cell in this endless dive? 👀 #SandstoneCosmos #GeckoGalaxy #StormWorldDive #InfiniteZoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+        "A forest of keratin, whispering to the void Can you spot Belle the Cell in this endless dive? 👀 #SandstoneCosmos #GeckoGalaxy #StormWorldDive #InfiniteZoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+        "Sparks in the slate, dancing where nothing stands still Can you spot Belle the Cell in this endless dive? 👀 #SandstoneCosmos #GeckoGalaxy #StormWorldDive #InfiniteZoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+        "Two suns, one glow, and a world caught in the storm Can you spot Belle the Cell in this endless dive? 👀 #SandstoneCosmos #GeckoGalaxy #StormWorldDive #InfiniteZoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats"
+      ],
+      "yt_desc_options": [
+        "A monsoon night’s mosaic, spiraling into the unseen 🌧️\n\nCan you spot Belle the Cell in this endless dive? 👀\n\nOne continuous shot, no cuts, looping forever — through a sandstone rampart above its moat ring → the underside of a gecko toe → the frayed end of one keratin bristle → an emptiness that is never still → nested shells cast off by an old star.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "Where stone meets scale, and the world dissolves into ridges\n\nCan you spot Belle the Cell in this endless dive? 👀\n\nOne continuous shot, no cuts, looping forever — through a sandstone rampart above its moat ring → the underside of a gecko toe → the frayed end of one keratin bristle → an emptiness that is never still → nested shells cast off by an old star.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "A forest of keratin, whispering to the void\n\nCan you spot Belle the Cell in this endless dive? 👀\n\nOne continuous shot, no cuts, looping forever — through a sandstone rampart above its moat ring → the underside of a gecko toe → the frayed end of one keratin bristle → an emptiness that is never still → nested shells cast off by an old star.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "Sparks in the slate, dancing where nothing stands still\n\nCan you spot Belle the Cell in this endless dive? 👀\n\nOne continuous shot, no cuts, looping forever — through a sandstone rampart above its moat ring → the underside of a gecko toe → the frayed end of one keratin bristle → an emptiness that is never still → nested shells cast off by an old star.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
+        "Two suns, one glow, and a world caught in the storm\n\nCan you spot Belle the Cell in this endless dive? 👀\n\nOne continuous shot, no cuts, looping forever — through a sandstone rampart above its moat ring → the underside of a gecko toe → the frayed end of one keratin bristle → an emptiness that is never still → nested shells cast off by an old star.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart"
+      ],
+      "music_pregen": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "D minor",
+        "stage": "pregen",
+        "chosen": null,
+        "candidates": [
+          {
+            "id": "night_market",
+            "lane": "night_market",
+            "mood": "nocturnal, lantern-lit, wandering · downbeat",
+            "track": "output/music/gecko_rampart_stage_night_market.flac",
+            "aligned": "review/music/candidates/gecko_rampart_stage/night_market.mp4",
+            "seed": 17877,
+            "lock": 25.62,
+            "bar_conf": 0.82,
+            "kick": 0.79,
+            "fit": 1.13,
+            "score": 7.06,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "night_market-third_answer",
+            "lane": "night_market",
+            "mood": "nocturnal, lantern-lit, wandering · third_answer",
+            "track": "output/music/gecko_rampart_stage_night_market-third_answer.flac",
+            "aligned": "review/music/candidates/gecko_rampart_stage/night_market-third_answer.mp4",
+            "seed": 17951,
+            "lock": 13.76,
+            "bar_conf": 0.72,
+            "kick": 0.74,
+            "fit": 1.43,
+            "score": 4.43,
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "analog_dawn-wild",
+            "lane": "analog_dawn",
+            "mood": "nostalgic, golden, waking · downbeat",
+            "track": "output/music/gecko_rampart_stage_analog_dawn-wild.flac",
+            "aligned": "review/music/candidates/gecko_rampart_stage/analog_dawn-wild.mp4",
+            "seed": 17988,
+            "lock": 12.6,
+            "bar_conf": 0.72,
+            "kick": 0.66,
+            "fit": 1.2,
+            "score": 3.73,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "night_market-heartbeat",
+            "lane": "night_market",
+            "mood": "nocturnal, lantern-lit, wandering · heartbeat",
+            "track": "output/music/gecko_rampart_stage_night_market-heartbeat.flac",
+            "aligned": "review/music/candidates/gecko_rampart_stage/night_market-heartbeat.mp4",
+            "seed": 18136,
+            "lock": 11.86,
+            "bar_conf": 0.7,
+            "kick": 0.68,
+            "fit": 1.35,
+            "score": 3.72,
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "music_box-wild",
+            "lane": "music_box",
+            "mood": "miniature, tender, clockwork · downbeat",
+            "track": "output/music/gecko_rampart_stage_music_box-wild.flac",
+            "aligned": "review/music/candidates/gecko_rampart_stage/music_box-wild.mp4",
+            "seed": 18099,
+            "lock": 12.07,
+            "bar_conf": 0.64,
+            "kick": 0.52,
+            "fit": 1.46,
+            "score": 2.68,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          }
+        ],
+        "gen_attempt": 0,
+        "generated_at": "10-04 13:45",
         "for_model": "ds",
         "for_cut": "divein"
       }

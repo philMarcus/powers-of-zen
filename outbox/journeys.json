@@ -16,7 +16,7 @@
     "plate_mode": "live",
     "palette_anchor": 0.5,
     "post_every_hours": 19.0,
-    "post_next": "2026-10-04 12:00",
+    "post_next": "2026-10-05 07:00",
     "plate_intro": "mix"
   },
   "journeys": {
@@ -363,38 +363,6 @@
       "note": "re-render: video rejected in review",
       "order": 29
     },
-    "kelp_dynamo": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-10-03 16:33:45",
-      "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
-      "order": 0
-    },
-    "sunspot_archipelago": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-10-03 16:33:45",
-      "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
-      "order": 1
-    },
-    "gecko_rampart": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-10-03 16:33:45",
-      "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
-      "order": 2
-    },
-    "anvil_country": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-10-03 16:33:45",
-      "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
-      "order": 3
-    },
     "vernal_clutch": {
       "state": "queued",
       "force": true,
@@ -441,5 +409,5 @@
       "note": "old render rejected 2026-10-03; its palette-anchor re-render is the Music-stage video venus_basket_color (journeys/lab/)"
     }
   },
-  "updated": "2026-10-03 17:10:08"
+  "updated": "2026-10-04 12:10:11"
 }

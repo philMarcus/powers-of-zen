@@ -120,6 +120,17 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-04 (AFTERNOON HANDOFF — day 2 complete, nothing running, all committed + pushed): VIDEO REVIEW holds FOUR
+same-seed pairs (plain+anchor / staged): kelp_dynamo, gecko_rampart (today, seed 1234, structure-first), sunspot_archipelago
+(NOT same seed: staged used 187198), anvil_country. Side-by-side cuts: review/compare/kelp_dynamo_AB.mp4 (rebuilt 14:40
+after the tube-card redo) + gecko_rampart_AB.mp4 — plain left, staged right, counters aligned. WHERE TO LOOK (dive-in
+cut seconds): kelp 11.1-13.4 tissue (THE WIN: walled cells), 15.8-20.4 tube cards (tubes v2, still blobby); gecko
+13.4-15.8 keratin rods (too sparse), 15.8-18.1 atom field (hero became a BULLSEYE → hero fog retired), 18.1-20.4 quark
+constellation (ok). KIT STATE: lattice ✓ (calcite, day 1), tissue ✓ (first motion today), nucleus/quark fields ✓ (sea
+doctrine), fuzzy lattice = the new atomic picture (untested in motion), tubes v3 = coverage density + no near copies
+(untested in motion; big complexes still read as granules — next representation: coarse smooth tubes / metaballs).
+PHIL'S VERDICTS PENDING on these pairs; the stage stays OUT of the nightly until he approves a full staged video, then
+a settings knob like plate_mode. The 01:30 nightly keeps rendering the re-queued journeys with the anchor.
 2026-10-04 (MIDDAY — STAGE DAY 2 IN PROGRESS; read PLAN "STAGE — DAY 2"): Phil's morning verdicts applied — structure
 first (stage depth-CN 0.7, identity 0.5 = the defaults), every kit a FIELD, brighter palette species, tubes v2 (thin
 tubes + membrane sheet), fog v2 (field of grainy-shelled atoms), SEAM-HEAVY audit warning (28 catalog journeys trip it).

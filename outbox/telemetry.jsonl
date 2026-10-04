@@ -2357,3 +2357,41 @@
 {"ts": "2026-10-03 19:34:38", "event": "review", "journey": "anvil_country_stage", "detail": "ds/divein (src v1)"}
 {"ts": "2026-10-03 19:35:31", "event": "caption", "journey": "anvil_country_stage", "detail": "5 options, spot=True"}
 {"ts": "2026-10-03 19:36:56", "event": "music_pregen", "journey": "anvil_country_stage", "detail": "5 candidates"}
+{"ts": "2026-10-04 00:00:44", "event": "ig_stats", "detail": "36 reels, followers 144"}
+{"ts": "2026-10-04 00:00:59", "event": "ig_insights", "detail": "31 posts"}
+{"ts": "2026-10-04 00:03:14", "event": "yt_stats", "detail": "89 videos, 14897 views"}
+{"ts": "2026-10-04 02:50:58", "event": "review", "journey": "kelp_dynamo", "detail": "ds/divein (src v2)"}
+{"ts": "2026-10-04 02:51:51", "event": "caption", "journey": "kelp_dynamo", "detail": "5 options, spot=True"}
+{"ts": "2026-10-04 02:51:51", "event": "render", "journey": "kelp_dynamo", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-10-04 03:56:50", "event": "review", "journey": "sunspot_archipelago", "detail": "ds/divein (src v2)"}
+{"ts": "2026-10-04 03:57:42", "event": "caption", "journey": "sunspot_archipelago", "detail": "5 options, spot=True"}
+{"ts": "2026-10-04 03:57:42", "event": "render", "journey": "sunspot_archipelago", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-10-04 05:11:43", "event": "review", "journey": "gecko_rampart", "detail": "ds/divein (src v4)"}
+{"ts": "2026-10-04 05:12:36", "event": "caption", "journey": "gecko_rampart", "detail": "5 options, spot=True"}
+{"ts": "2026-10-04 05:12:36", "event": "render", "journey": "gecko_rampart", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-10-04 06:22:14", "event": "review", "journey": "anvil_country", "detail": "ds/divein (src v3)"}
+{"ts": "2026-10-04 06:23:00", "event": "caption", "journey": "anvil_country", "detail": "5 options, spot=True"}
+{"ts": "2026-10-04 06:23:00", "event": "render", "journey": "anvil_country", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-10-04 06:24:21", "event": "music_pregen", "journey": "kelp_dynamo", "detail": "5 candidates"}
+{"ts": "2026-10-04 06:25:44", "event": "music_pregen", "journey": "sunspot_archipelago", "detail": "5 candidates"}
+{"ts": "2026-10-04 06:26:53", "event": "music_pregen", "journey": "gecko_rampart", "detail": "5 candidates"}
+{"ts": "2026-10-04 06:28:08", "event": "music_pregen", "journey": "anvil_country", "detail": "5 candidates"}
+{"ts": "2026-10-04 06:28:08", "event": "batch_done", "detail": "batch done in 5.0h — 4 to Review"}
+{"ts": "2026-10-04 12:00:52", "event": "ig_stats", "detail": "36 reels, followers 146"}
+{"ts": "2026-10-04 12:01:08", "event": "ig_insights", "detail": "29 posts"}
+{"ts": "2026-10-04 12:03:55", "event": "yt_stats", "detail": "89 videos, 14972 views"}
+{"ts": "2026-10-04 12:05:46", "event": "ig_share_method", "detail": "trusted"}
+{"ts": "2026-10-04 12:06:34", "event": "post", "journey": "sloe_hedgerow", "platform": "youtube", "detail": "https://youtube.com/shorts/i9esRw0yxrE"}
+{"ts": "2026-10-04 12:06:34", "event": "post", "journey": "sloe_hedgerow", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DeFBfmaBQp6/"}
+{"ts": "2026-10-04 12:07:28", "event": "ig_stats", "detail": "36 reels, followers 146"}
+{"ts": "2026-10-04 12:07:41", "event": "ig_insights", "detail": "30 posts"}
+{"ts": "2026-10-04 12:10:11", "event": "yt_stats", "detail": "90 videos, 14973 views"}
+{"ts": "2026-10-04 12:10:11", "event": "post_gate", "detail": "fired (rc 0); next 2026-10-05 07:00"}
+{"ts": "2026-10-04 12:20:40", "event": "review", "journey": "kelp_dynamo_stage", "detail": "ds/divein (src v1)"}
+{"ts": "2026-10-04 12:21:35", "event": "caption", "journey": "kelp_dynamo_stage", "detail": "5 options, spot=True"}
+{"ts": "2026-10-04 12:22:59", "event": "music_pregen", "journey": "kelp_dynamo_stage", "detail": "5 candidates"}
+{"ts": "2026-10-04 13:43:36", "event": "review", "journey": "gecko_rampart_stage", "detail": "ds/divein (src v1)"}
+{"ts": "2026-10-04 13:44:26", "event": "caption", "journey": "gecko_rampart_stage", "detail": "5 options, spot=True"}
+{"ts": "2026-10-04 13:45:49", "event": "music_pregen", "journey": "gecko_rampart_stage", "detail": "5 candidates"}
+{"ts": "2026-10-04 14:38:41", "event": "review", "journey": "kelp_dynamo_stage", "detail": "ds/divein (src v2)"}
+{"ts": "2026-10-04 14:40:09", "event": "music_pregen", "journey": "kelp_dynamo_stage", "detail": "5 candidates"}
