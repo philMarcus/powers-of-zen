@@ -662,10 +662,13 @@ def suggest_stage(reg):
             var = next((v for v, rx in _VARIANT if rx.search(txt)), 'cubic')
             return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'radius': 0.06}
         if _RX['fog'].search(txt) or re.search(r"\batom\b", txt, re.I):
-            # Phil 2026-10-04 afternoon: the atom FIELD had too few atoms and the hero rang —
-            # "do the fuzzy lattice swap, let's try it": electron clouds in their courses, no hero
+            # Phil 2026-10-04: the atom FIELD had too few atoms and its hero rang; the FUZZY
+            # lattice (large soft clouds) was tried in motion the same evening and every cloud
+            # became a ringed rose (scratchpad/orange/stage_fuzzy_strip.png) — the circles
+            # motif itself. The BALL-AND-STICK lattice that held on calcite (day 1) is the
+            # atomic picture: small hard-shaded atoms in their courses with bonds and depth.
             var = next((v for v, rx in _VARIANT if rx.search(txt)), 'cubic')
-            return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'fuzzy': True}
+            return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'radius': 0.06, 'glow': 0.2}
         return None
     if exp <= -6:
         # molecular: the tube kit still renders big complexes as granules (2026-10-04) —

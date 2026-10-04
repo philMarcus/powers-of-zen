@@ -2488,3 +2488,23 @@ copper so orange is fine). FIXES: non-target copies now start at z 1.4. STANDING
 molecular kit: big complexes compressed into sphere chains read as granules at near range;
 tomorrow's representation = coarser-stride smooth tubes with per-domain colour (or a metaball
 surface), medium copies only, membrane behind. The TISSUE card remains kelp's showcase.
+
+## DAY 2 EVENING — Phil's second pass + the switch-on (2026-10-04)
+Phil on the pairs: "looking pretty good"; torn on the tissue card's FADE-in; molecules clumpy
+(agreed); gecko's keratin card "molecule things in a stone background"; quarks "what they were
+supposed to be"; nucleus better than the atom field ("not enough atoms"); THE issue: a run of
+stages read "less zoomy than morphy — atoms morphed into nuclei morphed into quark trios". He
+will post both videos and wants the stage ON now to see what comes out.
+DIAGNOSIS of morphy: (1) consecutive stage cards drew DIFFERENT thirds anchors, so the zoom's
+fixed point jumped at every boundary; (2) the arrival was a full-frame dissolve into the new
+stage. FIXES (dive.py): consecutive stage cards inherit the anchor; ZOOM-THROUGH ARRIVAL — the
+new stage opens inside a disc on the fixed point growing geometrically from 0.18 W past the
+corners over the arrival frames while the old world keeps zooming outside it (first arm: an 18%
+feather drew a crisp porthole → feather now 0.75 R; second arm judging it).
+SWITCHED ON: settings stage_mode="auto" (dashboard ⚙ "🔬 micro stage"; night_batch passes
+--stage-auto). Auto maps: lattice words → ball-and-stick lattice; other atomic cards → the
+same lattice (the FUZZY swap Phil asked for was run in motion first: every soft cloud became a
+ringed rose = the circles motif, so it is NOT used); subnuclear → nucleus / quark fields;
+cellular with cell words → tissue; MOLECULAR stays plain (tubes make granules); the CAMEO card
+is never auto-staged. Coverage: 205 of 424 cards <= 10^-3.5. Tonight: vernal_clutch (atom k1,
+tissue k9), cork_dehesa (nucleus k1, tissue k9), gulal_dusk (none), stromatolite_dawn (tissue k6).
