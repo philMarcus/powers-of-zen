@@ -984,7 +984,8 @@ def main():
                     help="LAB: IP-Adapter every travel frame toward a soft colour-field image of "
                          "the current card's palette at weight W (off inside the loop tail and "
                          "plate spans, which own the IPA slot)")
-    ap.add_argument("--stage", choices=("lattice", "nucleus"), default=None,
+    ap.add_argument("--stage", choices=("lattice", "nucleus", "quark", "fog", "tubes", "tissue"),
+                    default=None,
                     help="LAB (PLAN 'THE MICRO STAGE'): render card --stage-card through a built "
                          "3-D stage (engine/stage.py) composited every frame at the exact zoom, "
                          "tracker bypassed, the stage's depth as the CN")
