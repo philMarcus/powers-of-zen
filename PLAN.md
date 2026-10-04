@@ -2531,3 +2531,12 @@ tissue k9), cork_dehesa (nucleus k1, tissue k9), gulal_dusk (none), stromatolite
 PHIL'S STANDING WORRY: as the stages get better, the videos must not get samey — every kit draws
 its molecule/lattice/arrangement/colours from the CARD (words + palette) and a journey:card seed,
 never from one house template; the audit now watches planet motifs the way it watches seams.
+- SPRITE MODE VERIFIED (gecko contact_gap, adam, 19:40; scratchpad/orange/sprite_frames.png): the
+  sprite is crisp on every delivered frame, rides the zoom (drifts off the fixed point and grows
+  x1.13/frame through the plunge) and never morphs; the model paints a dark socket around it in
+  the fed frame (a Waldo in a nook — fine). Default from tonight's batch (cameo_mode sprite).
+- AUTO-STAGE RULES tightened after the same arm: every atomic-band card -> ball-and-stick lattice
+  (contact_gap's "hazy glowing spheres, nests of shells" had no trigger word); tissue only for
+  MANY-cell scenes (toe_pavement's "flat cells packed rim to rim" is right; vernal's "within one
+  embryo cell" is not). Coverage now 273 of 424 micro cards (lattice 98, tubes 67, tissue 57,
+  nucleus 43, quark 8).
