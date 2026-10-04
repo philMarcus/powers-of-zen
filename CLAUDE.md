@@ -120,6 +120,16 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-04 (MIDDAY — STAGE DAY 2 IN PROGRESS; read PLAN "STAGE — DAY 2"): Phil's morning verdicts applied — structure
+first (stage depth-CN 0.7, identity 0.5 = the defaults), every kit a FIELD, brighter palette species, tubes v2 (thin
+tubes + membrane sheet), fog v2 (field of grainy-shelled atoms), SEAM-HEAVY audit warning (28 catalog journeys trip it).
+TODAY'S DELIVERABLES = same-seed (1234) pairs in Video Review with a side-by-side cut each (review/compare/<j>_AB.mp4,
+plain left | staged right, counters aligned): kelp_dynamo / kelp_dynamo_stage DONE 12:23 (tissue card 11.1-13.4 s of the
+dive-in cut = the day's clear win: a honeycomb of walled cells where the plain is cartoon dots; its two tube cards at
+15.8-20.4 s were rendered with tubes v1 = lumps, and are being REDONE from card 6 with v2 — tmux kelp_redo, after gecko);
+gecko_rampart / gecko_rampart_stage rendering since 12:23 (keratin tubes k7, atom-fog FIELD k8, quark field k9 → Review
+~13:55). Chain scripts: scratchpad/orange/full_day2.sh, kelp_redo.sh, sbs.sh; stage_times.py prints where staged cards
+fall in a cut. LESSON: the registry's new_seed=False = journey default seed (1234), not the previous render's seed.
 2026-10-03 (NIGHT HANDOFF — context may clear; everything committed + pushed; nothing running after ~19:45 except the
 01:30 nightly): VIDEO REVIEW = sunspot_archipelago_stage + anvil_country_stage (lab copies, seed 187198 / 1234, stage
 cards on; captions + music candidates attached). The nightly renders their PLAIN+anchor twins tonight (sunspot_archipelago,
