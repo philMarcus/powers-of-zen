@@ -101,11 +101,9 @@
       "target_phrase": "a small amber barrel",
       "stage": {
         "kit": "tubes",
-        "pdb": "2VV5",
-        "n_copies": 8,
-        "size": 0.9,
-        "membrane": true,
-        "stride": 2
+        "pdb": "1F88",
+        "arrangement": "sheet",
+        "size": 0.8
       }
     },
     {
@@ -119,9 +117,8 @@
       "stage": {
         "kit": "tubes",
         "pdb": "1BMF",
-        "n_copies": 6,
+        "arrangement": "sheet",
         "size": 1.0,
-        "membrane": true,
         "stride": 2
       }
     },

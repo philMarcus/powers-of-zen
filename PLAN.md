@@ -2508,3 +2508,26 @@ ringed rose = the circles motif, so it is NOT used); subnuclear → nucleus / qu
 cellular with cell words → tissue; MOLECULAR stays plain (tubes make granules); the CAMEO card
 is never auto-staged. Coverage: 205 of 424 cards <= 10^-3.5. Tonight: vernal_clutch (atom k1,
 tissue k9), cork_dehesa (nucleus k1, tissue k9), gulal_dusk (none), stromatolite_dawn (tissue k6).
+
+## DAY 2 NIGHT — Phil's three asks (2026-10-04 ~19:30): molecules, the mascot as a sprite, planet sameness
+1. MASCOT AS A SPRITE (dive --cameo-mode sprite, the default): the sprite is pasted onto the
+   FINISHED frame at its propagated position/size every frame until it leaves the frame or grows
+   past it (also still pasted into the fed frame so the scene settles around it); no 0.32 denoise
+   cap; cameos allowed on stage AND plate cards (the auto-stager no longer skips the cameo card).
+   The old behaviour = --cameo-mode paint. Test arm: gecko contact_gap (adam) over an auto lattice.
+2. PLANET SAMENESS — measured: the surface PLATES are varied (rivers, coasts, craters, spirals;
+   scratchpad/orange/planet_surfaces.png) but the RENDERED globes converge to one tan mottled
+   "cloud-belt" planet (planet_globes.png, 16 videos) — the repaint eats the texture at identity
+   0.20; AND 49 of 71 planet cards are authored as storm/cloud-spiral worlds. Fixes: plate
+   identity floor 0.20 → 0.40 (test arm sargasso card 1); novelty brief gets a PLANET MOTIF line
+   naming the unused archetypes; composer skill PLANET TEST. The anchor also now colours the globe.
+3. MOLECULAR = VARIETY (Phil: "a pretty varied realm"): tubes v4 — smooth tubes (0.45 r spacing,
+   size/40), per-chain palette colours + accents, ARRANGEMENTS sea / bundle / sheet / chain from the
+   card's words, a 28-molecule PDB library keyed by words (hemoglobin, insulin, DNA, nucleosome,
+   tubulin, actin, collagen, keratin, ATP synthase, antibody, rhodopsin, ferritin, aquaporin ...),
+   coverage-scaled density, no near copies; molecular cards auto-staged again when a molecular
+   word is present. Demo scratchpad/orange/stage_demo/tubes4_sheet.png; arm on kelp's two
+   membrane cards (sheet arrangement) queued behind the sprite + plate arms.
+PHIL'S STANDING WORRY: as the stages get better, the videos must not get samey — every kit draws
+its molecule/lattice/arrangement/colours from the CARD (words + palette) and a journey:card seed,
+never from one house template; the audit now watches planet motifs the way it watches seams.
