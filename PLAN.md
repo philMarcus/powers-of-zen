@@ -2478,3 +2478,13 @@ entering one of them. `fuzzy` option on kit_lattice; suggest_stage maps fog card
 QUARK field: trios with taut strings render as glowing nodes with radiating filaments, a
 constellation/network of them (edge-corr 0.11-0.34) — abstract but structured, not rings, not
 beads; the plain twin is painterly stripes with drops. Acceptable as the floor-of-matter card.
+
+## DAY 2 — kelp's tube cards redone with tubes v2 (14:00; strips stage_kelp_tubes_v2_strip.png / stage_kelp_atp_v2_strip.png)
+Thylakoid (2VV5 + membrane sheet): now a dotted membrane field with orange/green protein
+clumps embedded — reads as "membrane with complexes", better than v1's moss, still blobby. ATP
+(1BMF + membrane): the auto density put copies as near as z 0.6 and they project as frame-
+filling lumps of giant beads; the card is a crowded granular mass (edge-corr 0.2-0.4, authored
+copper so orange is fine). FIXES: non-target copies now start at z 1.4. STANDING VERDICT on the
+molecular kit: big complexes compressed into sphere chains read as granules at near range;
+tomorrow's representation = coarser-stride smooth tubes with per-domain colour (or a metaball
+surface), medium copies only, membrane behind. The TISSUE card remains kelp's showcase.

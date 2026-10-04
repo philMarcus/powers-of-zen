@@ -579,7 +579,9 @@ def kit_tubes(stage, pdb='4HHB', n_copies=14, size=0.9, radius=None, colors=((0.
             c = np.asarray(target_depth, np.float32)
             sz = size
         else:
-            z = 0.6 + spread[2] * rng.random() ** 0.7
+            # non-target copies never nearer than ~1.4 units: a copy at z 0.6 projects as a
+            # frame-filling lump of giant beads (the redone ATP card, 2026-10-04)
+            z = 1.4 + spread[2] * rng.random() ** 0.7
             c = np.array([(rng.random() - 0.5) * spread[0] * max(0.7, z / 2.5),
                           (rng.random() - 0.5) * spread[1] * max(0.7, z / 2.5), z], np.float32)
             sz = size * (0.7 + 0.6 * rng.random())
