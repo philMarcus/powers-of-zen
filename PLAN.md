@@ -2432,3 +2432,14 @@ synthase tubes 1BMF) and gecko_rampart_stage (keratin tubes 1CGD → atom-fog fi
 field); side-by-side cuts (scratchpad/orange/sbs.sh: plain | staged) so he sees exactly which
 cards are staged. ALSO approved: an audit WARNING (not a block) for seam-heavy descents — more
 than one seam-size (>= 8 decades) jump between consecutive cards (sunspot has two in a row).
+
+## DAY 2 — the tissue card in motion (kelp_dynamo_stage spore_cells k4, 2026-10-04 11:28)
+Structure-first defaults (CN 0.7, identity 0.5), tissue kit v0, palette emerald/ivory/indigo.
+Strip scratchpad/orange/stage_kelp_tissue_strip.png (baseline = last night's plain+anchor v2).
+RESULT: from f116 the card is a HONEYCOMB OF WALLED CELLS — polygonal cells wall to wall, walls
+as bright ridges, sparkling contents, the field growing in as the camera enters one cell
+(edge-correlation to the stage 0.17-0.41 across the card; orange 0.00-0.11). The plain twin is
+a yellow/blue cartoon spore case with dots. First cellular card that reads as tissue. The
+arrival flips from the previous world to the stage in ~4 frames (0.3 s, on the beat) — watch
+for it in the full video; the identity ramp could start a few frames before the bar line if it
+feels like a cut. Tube cards (thylakoid 2VV5, ATP synthase 1BMF) measuring next.
