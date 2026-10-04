@@ -128,7 +128,8 @@ class Stage:
         zfin = np.where(np.isinf(zb), self.fog_dist * 3, zb)
         fog = np.clip(1.0 - np.exp(-zfin / self.fog_dist), 0, 1)[..., None]
         col = col * (1 - fog) + self.fog_rgb * fog
-        col = col + glow
+        glow = glow / (1.0 + 0.8 * glow)            # soft-clip accumulated glow (thousands of
+        col = col + glow                            # overlapping halos blew a fuzzy lattice to white)
         col = col / (1.0 + 0.55 * col)                    # soft tone map: glow piles up, never clips to white
         col = np.clip(col * 1.35, 0, 1)
         dmap = np.where(np.isinf(zb), 0.03, depth_value(zb)).astype(np.float32)
@@ -172,8 +173,9 @@ def kit_lattice(stage, variant='cubic', spacing=0.42, radius=0.055, colors=((0.5
     bright core in each, no bonds, more thermal shiver; the plunge enters one cloud."""
     if fuzzy:
         radius = max(radius, spacing * 0.30)
-        glow = max(glow, 0.45)
+        glow = 0.22
         jitter = max(jitter, spacing * 0.05)
+        z_far = min(z_far, 5.0)
     """An infinite crystal seen along a random (seeded) direction, far ranks into fog."""
     rng = np.random.default_rng(seed)
     basis, sites, bonds = LATTICES[variant]
@@ -193,8 +195,8 @@ def kit_lattice(stage, variant='cubic', spacing=0.42, radius=0.055, colors=((0.5
     for p, s in zip(pts, spc):
         stage.items.append(('sphere', p, radius * (1.0 if s == 0 else 0.7), colors[s % len(colors)], glow))
         if fuzzy:
-            stage.items.append(('glow', p, radius * 1.6, colors[s % len(colors)], 0.35))
-            stage.items.append(('sphere', p, radius * 0.12, (1.0, 1.0, 1.0), 1.0))
+            stage.items.append(('glow', p, radius * 1.5, colors[s % len(colors)], 0.06))
+            stage.items.append(('sphere', p, radius * 0.10, (1.0, 1.0, 1.0), 0.8))
     near = pts[:, 2] < bond_far
     if bonds and not fuzzy and near.sum() > 1:
         # bonds = nearest-neighbour pairs under 1.15 x the shortest spacing, as sphere chains
