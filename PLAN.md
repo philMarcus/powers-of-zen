@@ -2411,3 +2411,24 @@ holds, at 0.60 the hero atom becomes a SUNBURST again → per-kit denoise table 
 arrival 0.50 / travel 0.45; dive reads st.den_arrival/den_travel) — fog cards need a card arm in
 motion before trusting them; lattice / nucleus / diamond as in brand pass 1 (pass). NEXT: add
 the tissue kit to suggest_stage for cellular cards once one tissue card has run in motion.
+
+# STAGE — DAY 2 (2026-10-04; Phil's morning verdicts + the plan he approved)
+# ═══════════════════════════════════════════════════════════════════════════════
+Phil on the overnight pair: anvil_country_stage marginally better than plain, "most of the
+difference outside the subatomic realm"; sunspot: "fades to black with one big nucleus and two
+or three behind — there needs to be more of them", the cm→atom jump felt abrupt, and he could
+not tell which realms were staged; the stage renders/depth maps he glimpsed in ComfyUI during
+the labs "looked really good". He wants better examples before the stage goes live.
+MY TWO ERRORS: (1) the sunspot pair was NOT same-seed — the registry's new_seed=False means
+"no --seed flag" = the journey DEFAULT 1234, while my staged copy used the old render's 187198
+(anvil was a true pair). To reproduce a specific render pass its run.json seed explicitly.
+(2) anvil's only staged card used fog kit v1 (the weakest); the rest of anvil's difference was
+the anchor. APPROVED PLAN (Phil: "yes to both, proceed"): structure FIRST over gloss (stage
+depth-CN 0.7, identity 0.5 — the defaults now), every kit a FIELD (sea doctrine: nuclei field,
+quark-trio field, fog field — the plunge picks one), brighter palette species; verify on two
+card arms by measurement; then two full same-seed videos whose plain+anchor twins rendered
+last night at seed 1234: kelp_dynamo_stage (spore_cells tissue → thylakoid tubes 2VV5 → ATP
+synthase tubes 1BMF) and gecko_rampart_stage (keratin tubes 1CGD → atom-fog field → quark
+field); side-by-side cuts (scratchpad/orange/sbs.sh: plain | staged) so he sees exactly which
+cards are staged. ALSO approved: an audit WARNING (not a block) for seam-heavy descents — more
+than one seam-size (>= 8 decades) jump between consecutive cards (sunspot has two in a row).

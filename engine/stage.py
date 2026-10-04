@@ -204,24 +204,32 @@ def kit_lattice(stage, variant='cubic', spacing=0.42, radius=0.055, colors=((0.5
     return stage
 
 
-def kit_nucleus(stage, n=140, radius=0.09, centre=(0, 0, 2.2), colors=((1.0, 0.55, 0.25), (0.8, 0.85, 1.0)),
-                frac_a=0.45, seed=0, glow=0.18, halo=True, spill=0.0):
-    """A droplet of close-packed nucleons in two colours (random close packing by relaxation),
-    glowing; optional halo of loose spheres far outside (the halo nucleus)."""
-    rng = np.random.default_rng(seed)
-    Rd = radius * 2.0 * (n / 0.64) ** (1 / 3) / 2.0 * 1.05     # droplet radius for packing fraction ~0.64
+def _pack(rng, n, radius, iters=60):
+    """Random close packing of n spheres in a droplet: (positions, droplet radius)."""
+    Rd = radius * 2.0 * (n / 0.64) ** (1 / 3) / 2.0 * 1.05
     p = rng.normal(size=(n, 3)); p /= np.linalg.norm(p, axis=1)[:, None]
     p *= Rd * rng.random(n)[:, None] ** (1 / 3)
-    for _ in range(60):                                        # push apart, pull in
+    for _ in range(iters):
         d = p[:, None, :] - p[None, :, :]
         dist = np.linalg.norm(d, axis=-1) + np.eye(n) * 9
         over = np.clip(2 * radius - dist, 0, None)
-        push = (d / dist[..., None] * over[..., None]).sum(1) * 0.5
-        p += push
+        p += (d / dist[..., None] * over[..., None]).sum(1) * 0.5
         r = np.linalg.norm(p, axis=1)
         p -= (p / r[:, None]) * np.clip(r - Rd, 0, None)[:, None] * 0.5
-    kinds = (rng.random(n) < frac_a).astype(int)
+    return p, Rd
+
+
+def kit_nucleus(stage, n=100, radius=0.065, centre=(0, 0, 2.2), colors=((1.0, 0.55, 0.25), (0.8, 0.85, 1.0)),
+                frac_a=0.45, seed=0, glow=0.22, halo=True, spill=0.0, field=True, n_field=44,
+                spread=(3.0, 3.4, 9.0)):
+    """Nuclei as a FIELD (Phil 2026-10-04: "there needs to be more of them" — the house sea
+    doctrine: many instances at all depths, the plunge picks one): the TARGET droplet of
+    close-packed two-colour nucleons at `centre`, and n_field smaller droplets scattered through
+    the frustum (fewer nucleons, same nucleon size), far ones fading into the void's fog."""
+    rng = np.random.default_rng(seed)
     c0 = np.asarray(centre, np.float32)
+    p, Rd = _pack(rng, n, radius)
+    kinds = (rng.random(n) < frac_a).astype(int)
     for q, k in zip(p, kinds):
         stage.items.append(('sphere', c0 + q, radius, colors[k], glow))
         stage.items.append(('glow', c0 + q, radius * 1.4, colors[k], glow * 0.12))
@@ -229,7 +237,22 @@ def kit_nucleus(stage, n=140, radius=0.09, centre=(0, 0, 2.2), colors=((1.0, 0.5
         for _ in range(2):
             v = rng.normal(size=3); v /= np.linalg.norm(v)
             stage.items.append(('sphere', c0 + v * Rd * 3.2, radius * 0.9, colors[1], 0.3))
-        stage.items.append(('glow', c0, Rd * 3.0, (0.3, 0.35, 0.6), 0.06))
+    if field:
+        for i in range(n_field):
+            z = 0.7 + spread[2] * rng.random() ** 0.8
+            c = np.array([(rng.random() - 0.5) * spread[0] * max(0.6, z / 3.0),
+                          (rng.random() - 0.5) * spread[1] * max(0.6, z / 3.0), z], np.float32)
+            if np.linalg.norm(c - c0) < Rd * 2.5:
+                continue
+            m = int(rng.integers(24, 70))
+            if z > 5.5:                 # far: one soft glowing blob stands for the droplet
+                stage.items.append(('glow', c, radius * (m / 0.64) ** (1 / 3) * 0.9, colors[int(rng.random() < 0.5)], glow * 0.5))
+                stage.items.append(('sphere', c, radius * (m / 0.64) ** (1 / 3) * 0.55, colors[1], glow * 0.3))
+                continue
+            pq, _ = _pack(rng, m, radius, iters=25)
+            kq = (rng.random(m) < frac_a).astype(int)
+            for q, k in zip(pq, kq):
+                stage.items.append(('sphere', c + q, radius, colors[k], glow * 0.8))
     stage.jitter = radius * 0.06
     return stage
 
@@ -274,7 +297,7 @@ def build_card_stage(kit, params, zooms, anchor, w, h, seed=0, fill=0.55):
     A = sum((z - 1.0) / z for z in zooms)
     d = aim_dir(anchor[0], anchor[1], w, h)
     if kit == 'nucleus':
-        n, radius = int(p.get('n', 140)), float(p.get('radius', 0.09))
+        n, radius = int(p.get('n', 100)), float(p.get('radius', 0.065))
         Rd = radius * 2.0 * (n / 0.64) ** (1 / 3) / 2.0 * 1.05
         d_T = A + Rd / fill
         p['centre'] = tuple(d * d_T)
@@ -311,7 +334,15 @@ def palette_colours(palette):
     lum = [float(c @ np.array([0.3, 0.59, 0.11])) for c in cols]
     order = np.argsort(lum)
     dark = cols[order[0]] * 0.35 if len(cols) > 1 else np.array([0.02, 0.02, 0.04])
-    species = [tuple(cols[k]) for k in order[::-1] if lum[k] > 0.12] or [tuple(cols[order[-1]])]
+    def _vivid(c):
+        c = np.array(c, np.float32)
+        mx = c.max()
+        if mx < 0.85:                       # lift value so the stage reads bright, keep hue
+            c = c / max(mx, 1e-3) * 0.85
+        m = c.mean()
+        c = m + (c - m) * 1.25              # a little more saturation
+        return tuple(np.clip(c, 0, 1))
+    species = [_vivid(cols[k]) for k in order[::-1] if lum[k] > 0.12] or [_vivid(cols[order[-1]])]
     if len(species) == 1:
         species.append(tuple(np.clip(np.array(species[0]) * 0.6 + 0.2, 0, 1)))
     return species[:3], tuple(np.clip(dark, 0, 0.12))
@@ -321,27 +352,39 @@ import re  # noqa: E402  (used above; stage.py had no re import before)
 
 
 def kit_quark(stage, centre=(0, 0, 3.0), size=0.9, colors=((1.0, 0.75, 0.3), (1.0, 0.75, 0.3)), tube_rgb=(1.0, 0.6, 0.2),
-              seed=0, glow=0.4):
-    """Three glowing cores at the corners of a triangle, taut flux tubes between them (sphere
-    chains that thin toward the middle), a faint spark bath around."""
+              seed=0, glow=0.4, field=True, n_field=14, spread=(3.0, 3.4, 9.0)):
+    """Three glowing cores at the corners of a triangle, taut flux tubes between them, as a
+    FIELD of such trios (the target trio at `centre`), loose sparks in the void around."""
     rng = np.random.default_rng(seed)
+
+    def trio(c0, sz, strength):
+        Rm = rot_matrix(rng)
+        pts = np.array([[1, 0, 0], [-0.5, math.sqrt(3) / 2, 0], [-0.5, -math.sqrt(3) / 2, 0]], np.float32) * sz * 0.5
+        pts = pts @ Rm.T + c0
+        r_core = sz * 0.11
+        for k, p in enumerate(pts):
+            stage.items.append(('sphere', p, r_core, colors[k % len(colors)], glow * strength))
+            stage.items.append(('glow', p, r_core * 2.2, colors[k % len(colors)], glow * 0.5 * strength))
+        for a in range(3):
+            pa, pb = pts[a], pts[(a + 1) % 3]
+            for t in np.linspace(0.08, 0.92, 26):
+                w = 0.55 + 0.45 * abs(2 * t - 1)
+                stage.items.append(('sphere', pa + (pb - pa) * t, r_core * 0.28 * w, tube_rgb, glow * 0.6 * strength))
+        return r_core
+
     c0 = np.asarray(centre, np.float32)
-    Rm = rot_matrix(rng)
-    pts = np.array([[1, 0, 0], [-0.5, math.sqrt(3) / 2, 0], [-0.5, -math.sqrt(3) / 2, 0]], np.float32) * size * 0.5
-    pts = pts @ Rm.T + c0
-    r_core = size * 0.11
-    for k, p in enumerate(pts):
-        stage.items.append(('sphere', p, r_core, colors[k % len(colors)], glow))
-        stage.items.append(('glow', p, r_core * 2.2, colors[k % len(colors)], glow * 0.5))
-    for a in range(3):
-        pa, pb = pts[a], pts[(a + 1) % 3]
-        n = 26
-        for t in np.linspace(0.08, 0.92, n):
-            w = 0.55 + 0.45 * abs(2 * t - 1)              # tube thins at the middle (a taut string)
-            stage.items.append(('sphere', pa + (pb - pa) * t, r_core * 0.28 * w, tube_rgb, glow * 0.6))
-    for _ in range(60):                                   # loose sparks in the void around
+    r_core = trio(c0, size, 1.0)
+    if field:
+        for i in range(n_field):
+            z = 0.8 + spread[2] * rng.random() ** 0.8
+            c = np.array([(rng.random() - 0.5) * spread[0] * max(0.6, z / 3.0),
+                          (rng.random() - 0.5) * spread[1] * max(0.6, z / 3.0), z], np.float32)
+            if np.linalg.norm(c - c0) < size:
+                continue
+            trio(c, size * (0.7 + 0.6 * rng.random()), 0.75)
+    for _ in range(80):
         v = rng.normal(size=3); v /= np.linalg.norm(v)
-        p = c0 + v * size * (0.9 + 1.6 * rng.random())
+        p = c0 + v * size * (0.9 + 3.0 * rng.random())
         stage.items.append(('glow', p, r_core * 0.5, tube_rgb, 0.08))
     stage.jitter = r_core * 0.05
     return stage
@@ -569,7 +612,7 @@ def suggest_stage(reg):
     if exp <= -12:
         if _RX['quark'].search(txt):
             return {'kit': 'quark'}
-        return {'kit': 'nucleus', 'n': 160, 'radius': 0.085}
+        return {'kit': 'nucleus'}
     if exp <= -8.5:
         if _RX['lattice'].search(txt):
             var = next((v for v, rx in _VARIANT if rx.search(txt)), 'cubic')

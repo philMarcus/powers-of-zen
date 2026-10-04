@@ -1,0 +1,162 @@
+{
+  "name": "kelp_dynamo_stage",
+  "theme": "a moonlit giant-kelp forest dived the whole way down its own biology — the fish-trafficked frond storey, one blade's ridged skin, the sooty sorus of spore cases upon it, the spore cells with their emerald chloroplasts, the stacked membrane bands within one of those and the thylakoid sheet crowded with protein turbines, whose rotor ring folds into a pulsar's twin beam cones, and the fall home through a shoal of raked comet tails onto the ocean world's moonlit sea",
+  "style": "liquid_light",
+  "music_lane": "deep_archive",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "moon_swell",
+      "exp": 3.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bronze canopy mats on jet troughs, keen silver moonglow",
+      "scene": "the open ocean at night met from just above the swell, a bronze raft of kelp canopy strewn hundreds of metres over the water, the straps laid one way by the current into long parallel lanes, jet troughs sunk beneath the mats, silver moonglow keen on every crest, spindrift caught in the gaps of the weed, the swell running out to an unlit horizon under a sky of cold stars",
+      "target": "a bronze kelp mat",
+      "target_phrase": "floating brown kelp"
+    },
+    {
+      "name": "forest_colonnade",
+      "exp": 1.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "viridian columns, tangerine fish, cold silver shafts on green gloom",
+      "scene": "a giant kelp forest met at mid-water among its own columns, viridian stipes rising rank behind rank from the reef up to the canopy roof, every frond raked one way by the current so the whole stand reads as long parallel flow-lines, cold shafts of moonglow slanting through gaps in the roof, tangerine garibaldi hovering in the intervals, señorita wrasse threading the fronds in loose schools, kelp crabs clinging to the stipes, purple urchins crowded over the holdfast knots on the reef, brittle stars curled in the tangle, amber floats clustered at the base of every blade, green gloom closing off the ranks farther out",
+      "target": "an olive kelp blade",
+      "target_phrase": "a long olive leaf"
+    },
+    {
+      "name": "blade_face",
+      "exp": -0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "olive-gold blade skin, chalk crusts, umber water",
+      "scene": "one kelp blade met square-on at its own broad skin, ridged into long corrugations that run its whole length, a slick mucilage sheen over everything, chalky crust colonies etched in net patterns spotted across the ridges, grazing scars scraped through the film in curved tracks, a sooty sorus patch spread over the middle of it, the ragged margin frayed into slender teeth, the water past the edge gone umber",
+      "target": "a sooty sorus patch",
+      "target_phrase": "a sooty oval patch",
+      "resolve": false
+    },
+    {
+      "name": "sorus_palisade",
+      "exp": -2.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink-green spore clubs, ivory stalks, gold mucilage",
+      "scene": "the fertile patch met among its own crowd, club-shaped spore cases upright in close files over the whole ground, each case a swollen ink-green sac with a stack of divisions ruled across it, slender ivory sterile stalks wedged among the files and knobbed at their tips, warm gold mucilage flooding the interstices, the files raked one way where the current combs them, rank upon rank of them receding into green murk",
+      "target": "an ink-green spore case",
+      "target_phrase": "a green swollen sac",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "spore_cells",
+      "exp": -4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "emerald discs, ivory cell walls, indigo gloom",
+      "scene": "the crowd of spore cells within one case, dozens of them crammed together in a translucent jelly, every cell an ivory-walled globe with one emerald chloroplast disc set in it and a glassy oil bead beneath, a hazy nucleus sunk at each centre, the nearest cells broad and soft-edged, farther ranks of them fading off into indigo gloom, threads of jelly drawn out in parallel lines through the whole mass",
+      "target": "an emerald chloroplast disc",
+      "target_phrase": "a green disc",
+      "stage": {
+        "kit": "tissue",
+        "cell": 0.22
+      }
+    },
+    {
+      "name": "membrane_stacks",
+      "exp": -6.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "viridian sheets, bone body, amber sheen on tar",
+      "scene": "the interior of one chloroplast, sheets of viridian membrane stacked in bands of three and ruled across the whole space in parallel, a girdle sheet wrapping the outermost rank, a glassy bone-coloured body bulging where the sheets divide about it, pigment beads strung over every sheet in even rows, warm amber sheen soaking the intervals, tar-coloured depth closing the far ranks",
+      "target": "a viridian membrane sheet",
+      "target_phrase": "a green membrane sheet",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "layered"
+      },
+      "cameo": {
+        "sprite": "output/mascots/canon/tina.png",
+        "pos": [
+          0.63,
+          0.41
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "thylakoid_face",
+      "exp": -7.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "indigo sheet, amber turbines, emerald antenna slabs",
+      "scene": "one thylakoid sheet met square-on among its own machinery, a double course of lipid beads paving it edge to edge, squat amber turbines set through the paving in crowds, each a barrel of coiled ribbon topped by a knobbed boss on a slim stalk, emerald antenna slabs studded with pigment rods wedged among them, blockier carrier units strung in files across the sheet, loose ribbon chains looped over the paving, the whole sheet ruled away into indigo depth",
+      "target": "a squat amber turbine",
+      "target_phrase": "a small amber barrel",
+      "stage": {
+        "kit": "tubes",
+        "pdb": "2VV5",
+        "n_copies": 10,
+        "size": 0.9
+      }
+    },
+    {
+      "name": "atp_rotor",
+      "exp": -8.4,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "ghost-blue paddle ring, copper spindle, ivory ribbon on ink",
+      "scene": "the rotor of one membrane turbine, a ring of upright ghost-blue paddles set edge to edge in a closed circle through the lipid sheet, a copper spindle seated at its axis and rising as a slim shaft, ivory ribbon coils wound about the shaft into a knot at the top, a stator strut pinned down one flank, an amber gleam caught on each paddle, the sheet running off into ink on every hand",
+      "resolve": false,
+      "stage": {
+        "kit": "tubes",
+        "pdb": "1BMF",
+        "n_copies": 6,
+        "size": 1.1
+      }
+    },
+    {
+      "name": "pulsar_beams",
+      "exp": 12.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ghost-blue beam cones, viridian nebula wisps on ink",
+      "scene": "a pulsar's twin beam cones thrown opposite ways from the spin axis of a neutron star, two ghost-blue shafts opening out of a keen point, a cage of magnetic field lines drawn taut about the core, viridian wisps of nebula lit in ranks wherever a beam crosses them, shells of older gas cast off in concentric rings, a galaxy's edge-on disk banked far across the field, cold stars strewn thick through the ink",
+      "target": "an icy comet",
+      "target_phrase": "a glowing comet"
+    },
+    {
+      "name": "comet_shoal",
+      "exp": 9.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ivory tails raked one way, teal ice heads on ink",
+      "scene": "a shoal of icy bodies adrift where the pulsar's glare reaches them, dozens of teal-ivory heads scattered at every depth, each drawing an ivory tail out behind it, every tail raked the same way by the pressure of that glare so the shoal ranks into parallel lanes, a haze of shed dust hanging in the lanes among them, a steel-blue ocean world hanging past the farthest of them, cold stars strewn through the ink",
+      "target": "a steel-blue ocean world",
+      "target_phrase": "a blue planet"
+    },
+    {
+      "name": "ocean_world",
+      "exp": 6.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "steel-indigo sea, silver storm spirals, teal aurora on ink",
+      "scene": "a night ocean world seen from orbit, a viridian shelf of shallow sea rimming one drowned continent, silver storm spirals wound tight over the open water, a scatter of volcanic cones strewn across the shelf, teal aurora ovals burning at the pole, thin cloud streamers raked one way over the whole hemisphere, the terminator drawn as a curved seam of ember, thousands of cold stars scattered through the ink of space past the curve of the world",
+      "target": "a green shelf sea",
+      "target_phrase": "a green shallow sea",
+      "loop_target": "a night ocean world seen from orbit, a viridian shelf sea, silver storm spirals and teal aurora ovals under strewn stars"
+    }
+  ],
+  "music_theme": "a submerged moonlit descent — deep oceanic pads and a slow sub-bass swell under the canopy, the pulse heaviest as the forest arrives, thinning to one low drone through the spore cells and the membrane, a single deep hit where the rotor opens out into the pulsar's beams and the shoal of comets",
+  "music_key": "G# minor",
+  "render_start": "moon_swell",
+  "play_start": "ocean_world",
+  "scaffold_name": "kelp_dynamo",
+  "_lab": "2026-10-04 STAGE A/B (structure-first): same seed 1234 as the 10-04 plain+anchor render; stages ['spore_cells', 'thylakoid_face', 'atp_rotor']"
+}

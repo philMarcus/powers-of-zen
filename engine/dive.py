@@ -1003,9 +1003,9 @@ def main():
                          "costume pass — the brand-pass lab needed ~0.6 to dress a CG render)")
     ap.add_argument("--stage-den-travel", type=float, default=0.45, metavar="D",
                     help="with --stage: denoise floor after the arrival")
-    ap.add_argument("--stage-cn", type=float, default=0.5, metavar="S",
+    ap.add_argument("--stage-cn", type=float, default=0.7, metavar="S",
                     help="with --stage: depth-CN strength of the stage's own depth map")
-    ap.add_argument("--stage-id", type=float, default=0.55, metavar="W",
+    ap.add_argument("--stage-id", type=float, default=0.5, metavar="W",
                     help="with --stage: identity blend toward the stage render through travel "
                          "(ramps 0.15 -> 1.0 across the arrival, decays to 0.6 W over the plunge)")
     ap.add_argument("--tag", default="", metavar="TAG",
