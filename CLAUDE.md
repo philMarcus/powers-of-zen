@@ -127,8 +127,9 @@ TODAY'S DELIVERABLES = same-seed (1234) pairs in Video Review with a side-by-sid
 plain left | staged right, counters aligned): kelp_dynamo / kelp_dynamo_stage DONE 12:23 (tissue card 11.1-13.4 s of the
 dive-in cut = the day's clear win: a honeycomb of walled cells where the plain is cartoon dots; its two tube cards at
 15.8-20.4 s were rendered with tubes v1 = lumps, and are being REDONE from card 6 with v2 — tmux kelp_redo, after gecko);
-gecko_rampart / gecko_rampart_stage rendering since 12:23 (keratin tubes k7, atom-fog FIELD k8, quark field k9 → Review
-~13:55). Chain scripts: scratchpad/orange/full_day2.sh, kelp_redo.sh, sbs.sh; stage_times.py prints where staged cards
+gecko_rampart / gecko_rampart_stage DONE 13:46 (keratin tubes k7 13.4-15.8 s = too sparse/dark; atom-fog FIELD k8
+15.8-18.1 s = the hero atom became a BULLSEYE of rings → hero fog RETIRED, atomic cards now map to a FUZZY LATTICE
+(kit_lattice fuzzy=True, untested in motion); quark field k9 18.1-20.4 s = a constellation of glowing trios, acceptable). Chain scripts: scratchpad/orange/full_day2.sh, kelp_redo.sh, sbs.sh; stage_times.py prints where staged cards
 fall in a cut. LESSON: the registry's new_seed=False = journey default seed (1234), not the previous render's seed.
 2026-10-03 (NIGHT HANDOFF — context may clear; everything committed + pushed; nothing running after ~19:45 except the
 01:30 nightly): VIDEO REVIEW = sunspot_archipelago_stage + anvil_country_stage (lab copies, seed 187198 / 1234, stage

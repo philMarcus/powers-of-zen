@@ -565,7 +565,14 @@ def kit_tubes(stage, pdb='4HHB', n_copies=14, size=0.9, radius=None, colors=((0.
     rng = np.random.default_rng(seed)
     chains = pdb_trace(pdb)
     radius = radius if radius is not None else size / 70.0
-    n_total = n_copies + 10
+    # DENSITY (v3, 2026-10-04 — gecko's keratin card: 40 small rods in a 7-deep frustum left the
+    # frame mostly void and the model filled it with cracked rock): scale the copy count with
+    # the molecule's footprint so the sea covers the frame — small molecules get many copies,
+    # large ones few — and cap the item budget.
+    n_ca = sum(len(c) for c in chains)
+    foot = (size * 0.5) ** 2 * min(1.0, n_ca / 600.0)          # projected footprint proxy
+    n_auto = int(np.clip(1.6 / max(foot, 1e-3), n_copies, 400))
+    n_total = max(n_copies, n_auto) + 10
     for k in range(n_total):
         Rm = rot_matrix(rng)
         if k == 0 and target_depth is not None:
