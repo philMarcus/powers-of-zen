@@ -2454,3 +2454,14 @@ MEMBRANE sheet of lipid heads behind — demo scratchpad/orange/stage_demo/tubes
 thin ribbon machinery on a membrane and keratin rods. kelp_dynamo_stage is re-rendered from
 card 6 with v2 after the gecko chain (scratchpad/orange/kelp_redo.sh → v2, re-ingested, side-by-
 side rebuilt). Kelp's TISSUE card stays the day's clear win.
+
+## DAY 2 — gecko's keratin card (tubes v2, 1CGD collagen rods, 13:20): too sparse, too dark
+Strip scratchpad/orange/stage_gecko_tubes_strip.png. v2's thin rods are right in kind but 40
+copies of a 60-residue triple helix in a 7-unit-deep frustum leave the frame mostly VOID, and
+DreamShaper fills a dark void with cracked rock: the card reads as a few white/red veins on dark
+stone (edge-corr 0.12-0.44, orange 0.35-0.88 vs the plain twin's bold red/white macro, which is
+the better picture). LESSON for every molecular kit: a sea needs DENSITY — size the copy count
+to a target coverage (~25-35% of pixels at mid depth), scale copies by 1/molecule size, and never
+hand the model an empty black void (background = the membrane sheet, a lipid field, or a far haze
+of small copies). Next kit iteration (tomorrow, after the kelp redo has started so the running
+chain is not changed under it): tubes v3 with coverage-targeted density.
