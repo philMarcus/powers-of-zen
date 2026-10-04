@@ -662,10 +662,10 @@ def suggest_stage(reg):
             var = next((v for v, rx in _VARIANT if rx.search(txt)), 'cubic')
             return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'radius': 0.06}
         if _RX['fog'].search(txt) or re.search(r"\batom\b", txt, re.I):
-            # the atom FIELD as Phil saw it in gecko ("the quarks and atoms look kind of cool");
-            # the hero still tends to ring under the repaint — the fuzzy lattice
-            # ({'kit':'lattice','fuzzy':True}) is the alternative to test in motion
-            return {'kit': 'fog', 'size': 1.0, 'lobes': 2 if re.search(r"two|dumbbell|lobe", txt, re.I) else 1}
+            # Phil 2026-10-04 afternoon: the atom FIELD had too few atoms and the hero rang —
+            # "do the fuzzy lattice swap, let's try it": electron clouds in their courses, no hero
+            var = next((v for v, rx in _VARIANT if rx.search(txt)), 'cubic')
+            return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'fuzzy': True}
         return None
     if exp <= -6:
         # molecular: the tube kit still renders big complexes as granules (2026-10-04) —
