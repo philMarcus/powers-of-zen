@@ -50,6 +50,8 @@ the count, the **loop-pair ends** (first + last cards) must be natural ADJACENT 
 never put a seam at the ends.
 TEST (audit warns, 2026-10-04): count the consecutive-card jumps of 8 or more decades, wrap included. More than one fails the test — a descent that leaps from centimetres to an atom to a nucleus in two cards reads as a fade to black with one big object, and the engine cannot pace an authored jump. Micro-realm steps are x10 to x100 per card.
 
+PLANET TEST (audit counts it, 2026-10-04): the world card after a planet target must not be a storm or cloud-spiral world unless the journey is ABOUT weather — 69% of the catalog's planets were, and they all render as the same grey hurricane pair. Pick a different planetary archetype (REALMS.md planetary band) and give the world its own colour and surface feature; the plate paints what the card says.
+
 ## DESCRIBE STATIC SCENES — the ENGINE renders the motion (critical)
 The journey supplies the STILL IMAGE at each scale. The ENGINE renders everything that happens
 in TIME — the zoom, the approach, the growth, the morph between scales. So `scene` and `target`

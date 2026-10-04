@@ -120,6 +120,25 @@ def main():
     lines.append("  overused words (in >55% of journeys — avoid leaning on these): "
                  + ", ".join(w for w, _ in overused))
     lines.append(f"  populated ecosystem cards (>=3 named kinds) at human scale: {pop}/{hum}")
+    # PLANET MOTIF (Phil 2026-10-04: "the planet looks very similar in a lot of videos — a grey
+    # cloud hurricane pair"): the card AFTER a planet-class target is the world the plate paints;
+    # count how many of them are storm/cloud worlds and name the unused planetary archetypes
+    _storm = re.compile(r"storm|cyclone|hurricane|spiral|cloud", re.I)
+    _pl_cards, _pl_storm = 0, 0
+    for j, s in specs.items():
+        regs = s["registers"]; m = len(regs)
+        for i, r in enumerate(regs):
+            nxt = regs[(i + 1) % m]
+            if pl.is_planet_card(r, nxt):
+                _pl_cards += 1
+                if _storm.search(nxt.get("scene", "")):
+                    _pl_storm += 1
+    if _pl_cards:
+        lines.append(f"  PLANET MOTIF: {_pl_storm}/{_pl_cards} planet cards are storm/cloud-spiral worlds — "
+                     "a pair of grey hurricanes is now the house planet; draw the planetary band's OTHER "
+                     "archetypes (REALMS.md 10^4.5-10^9: ringed, ice-moon geysers, lava crack-veins, "
+                     "cratered highlands, night-side city lights, aurora oval, polar cap, tiger bush, "
+                     "open-cell cloud honeycomb, lava-lake eye) and name the world's COLOUR")
     print("\n".join(lines))
     if not a.brief:
         print("\nper-band journey lists:")

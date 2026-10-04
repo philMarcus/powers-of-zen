@@ -989,6 +989,12 @@ def main():
                     help="LAB (PLAN 'THE MICRO STAGE'): render card --stage-card through a built "
                          "3-D stage (engine/stage.py) composited every frame at the exact zoom, "
                          "tracker bypassed, the stage's depth as the CN")
+    ap.add_argument("--cameo-mode", choices=("sprite", "paint"), default="sprite",
+                    help="sprite (default, Phil 2026-10-04): the mascot is pasted onto the FINISHED "
+                         "frames as a crisp sprite that rides the zoom until it leaves the frame — "
+                         "it never morphs into scenery, no denoise cap, allowed on stage and plate "
+                         "cards; paint = the old way (pasted into the fed frame only, repainted by the "
+                         "model under a 0.32 cap, released at 0.30 of the width)")
     ap.add_argument("--stage-auto", action="store_true",
                     help="LAB: stage every card for which engine/stage.suggest_stage proposes a kit "
                          "(atomic/subnuclear/molecular bands, by the card's words); explicit "
@@ -1267,7 +1273,7 @@ def main():
         "palette_anchor_mode": args.palette_anchor_mode,
         "palette_ipa": args.palette_ipa,
         "stage": args.stage, "stage_card": args.stage_card, "stage_params": args.stage_params,
-        "stage_auto": bool(args.stage_auto),
+        "stage_auto": bool(args.stage_auto), "cameo_mode": args.cameo_mode,
         "stage_den": args.stage_den, "stage_cn": args.stage_cn, "stage_id": args.stage_id,
         "play_rot": play_rotation(spec, cfg["fps"], lap_cut) if not args.frames else 0,
         # per-CARD (register) frame counts: lets a future --from-card verify its prefix
@@ -1511,6 +1517,8 @@ def main():
             resolve_windows = [w for w in resolve_windows
                                if w["w1"] <= _pS or w["w0"] >= _pE2]
             for c in cameos:
+                if args.cameo_mode == "sprite":
+                    continue          # a sprite rides over the globe like anything else
                 if _pS <= c["start"] < _pS + _pF:
                     c["_done"] = True
                     print(f"[dive] plate: cameo at frame {c['start']} (planet card {_pk} "
@@ -1555,7 +1563,7 @@ def main():
                 if isinstance(r.get("stage"), dict):
                     _splan.append((k, r["stage"]))
                 elif args.stage_auto and r.get("stage") is not False:
-                    if r.get("cameo"):
+                    if r.get("cameo") and args.cameo_mode != "sprite":
                         # the mascot card is never auto-staged (stage cards refuse cameos and
                         # the caption's "can you spot..." must stay honest); an explicit
                         # `stage` field on a cameo card still wins (the lab copies move the cameo)
@@ -1596,7 +1604,7 @@ def main():
             stages.append(_stage)
             resolve_windows = [w for w in resolve_windows if w["w1"] <= _sS or w["w0"] >= _sE]
             for c in cameos:
-                if _sS <= c["start"] < _sE:
+                if args.cameo_mode != "sprite" and _sS <= c["start"] < _sE:
                     c["_done"] = True
                     print(f"[dive] stage: cameo at frame {c['start']} refused", flush=True)
             print(f"[dive] STAGE {_sdef.get('kit')} card {_sk} {_sreg.get('name')!r}: frames "
@@ -1899,13 +1907,19 @@ def main():
                     # this branch, so a card-0 cameo (start=0) silently NEVER pasted — dollhouse's
                     # cameo is missing for this reason. Window semantics paste it from frame 1,
                     # and also survive --resume landing mid-window.
-                    if not c.get("_done") and c["start"] <= i < c["end"] and _pl is None:
+                    if not c.get("_done") and c["start"] <= i < c["end"] and \
+                            (_pl is None or args.cameo_mode == "sprite"):
                         c["_done"] = True
                         cam = {"px": c["pos"][0], "py": c["pos"][1],
                                "size": c["size"], "end": c["end"],
                                "art": load_sprite(root / c["sprite"])}
                 if cam:
-                    if i >= cam["end"] or cam["size"] > 0.30:
+                    # SPRITE MODE: the cameo rides the zoom until it leaves the frame or grows
+                    # past it (a Waldo that stays Waldo); PAINT MODE: released at 0.30 width
+                    _cam_live = ((cam["size"] <= 1.1 and -0.3 < cam["px"] < 1.3 and -0.3 < cam["py"] < 1.3)
+                                 if args.cameo_mode == "sprite"
+                                 else (i < cam["end"] and cam["size"] <= 0.30))
+                    if not _cam_live:
                         cam = None
                     else:
                         # world-attached: moves and grows with the zoom itself (exact
@@ -1918,8 +1932,8 @@ def main():
                             fed = paste_sprite(fed, *cam["art"], cam["px"],
                                                cam["py"], cam["size"])
                             cam_pasted = True
-                if cam_pasted:
-                    den = min(den, 0.32)   # keep the mascot's face recognizable
+                if cam_pasted and args.cameo_mode != "sprite":
+                    den = min(den, 0.32)   # keep the mascot's face recognizable (paint mode)
             plate_mask, plate_region, plate_ctl, plate_cn = None, None, None, 0.0
             plate_dd = plate_feed_cn = False
             plate_ipa_img, plate_ipa_w, plate_ipa_mask = None, 0.0, None
@@ -2306,6 +2320,11 @@ def main():
                     # carries the sprite physically through every later frame
                     img = paste_sprite(img, *load_sprite(root / c["sprite"]),
                                        c["pos"][0], c["pos"][1], c["size"])
+        if args.cameo_mode == "sprite" and cam_pasted and cam is not None and cfg["build"] != "out":
+            # SPRITE MODE: the same sprite, same place and size, on the FINISHED frame — the
+            # model saw it in the fed frame (so the scene settles around it) but the delivered
+            # pixels are the sprite itself, never its repaint
+            img = paste_sprite(img, *cam["art"], cam["px"], cam["py"], cam["size"])
         if loop and frame0 is not None and in_loop_tail(i):
             # warm the palette toward frame 0 across the tail (the missing last→first blend)
             j = i - (total - loop["frames"])

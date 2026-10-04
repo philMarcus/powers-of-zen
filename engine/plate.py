@@ -629,7 +629,10 @@ class Plate:
             # v3: NO per-frame shade multiply — it compounded (0.65^28 at the limb = black,
             # the v2 "dark ball"). The limb/lighting now comes only from the identity blend
             # toward the shaded render, which converges without compounding.
-            w_id = max(0.20, 0.45 - 0.25 * j / max(1, self.n))
+            # identity floor 0.20 -> 0.40 (Phil 2026-10-04: the globes converge to one tan
+            # mottled "cloud belt" planet whatever the surface plate shows — the repaint eats
+            # the authored texture over the card; hold the plate's features harder)
+            w_id = max(0.40, 0.55 - 0.15 * j / max(1, self.n))
             # a SMALL globe is a plate, not carried content: a disc a few pixels wide has
             # nothing in the fed frame worth preserving and the void's full denoise repaints
             # over it (v9 grow lab: the globe never established). Paste it near-opaque while

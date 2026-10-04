@@ -554,55 +554,90 @@ def pdb_trace(pdb_id, chain=None):
     return out
 
 
+_PDB_LIBRARY = {   # molecule -> (pdb id, chains hint); the variety source for the molecular band
+    'hemoglobin': '4HHB', 'myoglobin': '1MBN', 'insulin': '4INS', 'lysozyme': '1LYZ', 'gfp': '1EMA',
+    'dna': '1BNA', 'nucleosome': '1AOI', 'tubulin': '1TUB', 'actin': '1J6Z', 'collagen': '1CGD',
+    'keratin': '3TNU', 'atp': '1BMF', 'antibody': '1IGT', 'rhodopsin': '1F88', 'ferritin': '1FHA',
+    'aquaporin': '1J4N', 'spectrin': '1U5P', 'crystallin': '2KLJ', 'luciferase': '1LCI',
+    'ribosome_small': '1FJG', 'photosystem': '1JB0', 'porin': '2OMF', 'chaperone': '1AON',
+    'kinesin': '3KIN', 'myosin': '1B7T', 'transferrin': '1A8E', 'albumin': '1AO6', 'pepsin': '4PEP',
+}
+
+
 def kit_tubes(stage, pdb='4HHB', n_copies=14, size=0.9, radius=None, colors=((0.95, 0.5, 0.6), (0.6, 0.85, 1.0)),
-              seed=0, glow=0.12, spread=(2.2, 2.4, 7.0), target_depth=None, membrane=False, stride=1):
-    """A sea of real molecules — v2 (2026-10-04, after kelp's thylakoid card rendered as moss
-    clumps: the v1 tube radius was so wide relative to the compressed CA spacing that every
-    copy became a solid blob). Tubes are now THIN relative to the molecule (radius defaults to
-    size/70), the trace is subsampled (stride) so beads do not fuse into a lump, far copies are
-    many and small (log-uniform depth), and membrane=True lays a sheet of lipid heads (small
-    spheres on a tilted plane) behind the molecules for membrane-protein cards."""
+              seed=0, glow=0.12, spread=(2.2, 2.4, 7.0), target_depth=None, membrane=False, stride=1,
+              arrangement='sea', density=1.0):
+    """A sea of real molecules — v4 (2026-10-04 evening, Phil: "molecules are a big part of
+    variety"). TUBES, not beads: the CA trace is resampled at 0.45 r so the spheres fuse into a
+    smooth tube (radius size/40), one palette colour per chain cycling through the species, a
+    bright accent on every 7th residue (side chains / prosthetic groups). ARRANGEMENTS from the
+    card's words: 'sea' (free scatter at all depths), 'bundle' (copies aligned along one axis,
+    for collagen/cellulose/keratin/fibre cards), 'sheet' (copies seated in a tilted plane with a
+    lipid-head membrane behind, for membrane-protein cards), 'chain' (copies strung along a
+    curve, for polysome/necklace cards). Copy count scales with the molecule's footprint and
+    `density`; non-target copies stay beyond z 1.4 (no frame-filling lumps); a haze of far small
+    copies gives depth. The target copy sits on the aim ray (target_depth)."""
     rng = np.random.default_rng(seed)
     chains = pdb_trace(pdb)
-    radius = radius if radius is not None else size / 70.0
-    # DENSITY (v3, 2026-10-04 — gecko's keratin card: 40 small rods in a 7-deep frustum left the
-    # frame mostly void and the model filled it with cracked rock): scale the copy count with
-    # the molecule's footprint so the sea covers the frame — small molecules get many copies,
-    # large ones few — and cap the item budget.
+    radius = radius if radius is not None else size / 40.0
     n_ca = sum(len(c) for c in chains)
-    foot = (size * 0.5) ** 2 * min(1.0, n_ca / 600.0)          # projected footprint proxy
-    n_auto = int(np.clip(1.6 / max(foot, 1e-3), n_copies, 400))
-    n_total = max(n_copies, n_auto) + 10
-    for k in range(n_total):
-        Rm = rot_matrix(rng)
-        if k == 0 and target_depth is not None:
-            c = np.asarray(target_depth, np.float32)
-            sz = size
+    foot = (size * 0.5) ** 2 * min(1.0, n_ca / 600.0)
+    n_auto = int(np.clip(1.6 * density / max(foot, 1e-3), n_copies, 320))
+    n_total = max(n_copies, n_auto)
+    axis = rng.normal(size=3); axis /= np.linalg.norm(axis)
+    if arrangement == 'bundle':
+        axis = np.array([0.35, 0.9, 0.25], np.float32); axis /= np.linalg.norm(axis)
+    Rm_bundle = rot_matrix(rng)
+    accent = tuple(np.clip(np.array(colors[-1]) * 0.5 + 0.5, 0, 1))
+    c_tgt = np.asarray(target_depth, np.float32) if target_depth is not None else np.array([0, 0, 3.0], np.float32)
+    ex = np.array([1.0, 0, 0], np.float32); ey = np.array([0, math.cos(0.45), math.sin(0.45)], np.float32)
+    ez = np.cross(ex, ey)
+    for k in range(n_total + 10):
+        if k == 0:
+            c, sz = c_tgt, size
         else:
-            # non-target copies never nearer than ~1.4 units: a copy at z 0.6 projects as a
-            # frame-filling lump of giant beads (the redone ATP card, 2026-10-04)
-            z = 1.4 + spread[2] * rng.random() ** 0.7
-            c = np.array([(rng.random() - 0.5) * spread[0] * max(0.7, z / 2.5),
-                          (rng.random() - 0.5) * spread[1] * max(0.7, z / 2.5), z], np.float32)
+            if arrangement == 'sheet':
+                u, v = (rng.random() - 0.5) * 6.0, (rng.random() - 0.5) * 7.0
+                c = c_tgt + ex * u * size + ey * v * size + ez * rng.normal(scale=0.08 * size)
+                if c[2] < 1.4:
+                    continue
+            elif arrangement == 'chain':
+                t = (k / max(1, n_total)) * 2 * math.pi * 1.5
+                c = c_tgt + np.array([math.cos(t) * 1.4 * size, (t - 2.5) * 0.55 * size, math.sin(t) * 1.2 * size + 1.0], np.float32)
+                if c[2] < 1.4:
+                    continue
+            else:
+                z = 1.4 + spread[2] * rng.random() ** 0.7
+                c = np.array([(rng.random() - 0.5) * spread[0] * max(0.7, z / 2.5),
+                              (rng.random() - 0.5) * spread[1] * max(0.7, z / 2.5), z], np.float32)
             sz = size * (0.7 + 0.6 * rng.random())
+        Rm = Rm_bundle if arrangement == 'bundle' else rot_matrix(rng)
+        if arrangement == 'bundle':
+            # every copy shares the orientation; the bundle runs along `axis`, copies offset across it
+            perp = np.cross(axis, [0, 0, 1.0]); perp /= np.linalg.norm(perp)
+            perp2 = np.cross(axis, perp)
+            if k > 0:
+                c = c_tgt + perp * (rng.random() - 0.5) * 3.2 * size + perp2 * (rng.random() - 0.5) * 3.2 * size \
+                    + axis * (rng.random() - 0.5) * 6.0 * size
+                if c[2] < 1.2:
+                    continue
         for ci, ch in enumerate(chains):
             col = colors[ci % len(colors)]
-            p = (ch[::stride] * sz * 0.5) @ Rm.T + c
-            seg = np.linalg.norm(np.diff(p, axis=0), axis=1)
-            for a, b, L in zip(p[:-1], p[1:], seg):
-                n = max(1, int(L / (radius * 1.1)))
+            pts = (ch[::stride] * sz * 0.5) @ Rm.T + c
+            seg = np.linalg.norm(np.diff(pts, axis=0), axis=1)
+            idx = 0
+            for a, b, L in zip(pts[:-1], pts[1:], seg):
+                n = max(1, int(L / (radius * 0.45)))
                 for t in np.linspace(0, 1, n, endpoint=False):
                     stage.items.append(('sphere', a + (b - a) * t, radius, col, glow))
-    if membrane:
-        # a tilted sheet of lipid heads behind the molecules (two leaflets reading as one bumpy
-        # plane at this scale), coloured by the second species dimmed
+                idx += 1
+                if idx % 7 == 0:
+                    stage.items.append(('sphere', b, radius * 1.7, accent, glow * 2.0))
+    if membrane or arrangement == 'sheet':
         mcol = tuple(np.clip(np.array(colors[1 % len(colors)]) * 0.55, 0, 1))
-        c0 = np.asarray(target_depth if target_depth is not None else (0, 0, 3.0), np.float32)
-        ex = np.array([1.0, 0, 0], np.float32); ey = np.array([0, math.cos(0.45), math.sin(0.45)], np.float32)
-        ez = np.cross(ex, ey)
-        base = c0 + ez * size * 0.6
-        head = radius * 2.4
-        ext = int(3.2 * size / (head * 2.2))
+        base = c_tgt + ez * size * 0.6
+        head = radius * 2.0
+        ext = int(3.4 * size / (head * 2.2))
         for i in range(-ext, ext + 1):
             for j in range(-ext, ext + 1):
                 q = base + ex * i * head * 2.2 + ey * j * head * 2.2 + rng.normal(scale=head * 0.3, size=3)
@@ -671,9 +706,23 @@ def suggest_stage(reg):
             return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'radius': 0.06, 'glow': 0.2}
         return None
     if exp <= -6:
-        # molecular: the tube kit still renders big complexes as granules (2026-10-04) —
-        # molecular cards stay PLAIN in auto mode; an explicit `stage` field can still ask for it
-        return None
+        # molecular (tubes v4): the molecule from the card's words, the arrangement from its
+        # structure words; cards with no molecular word stay plain
+        if not _RX['tubes'].search(txt):
+            return None
+        low = txt.lower()
+        pdb = next((pid for pid, rx in _PDB_BY_WORD if rx.search(txt)), None)
+        if pdb is None:
+            for key, pid in _PDB_LIBRARY.items():
+                if key in low:
+                    pdb = pid; break
+        if pdb is None:
+            pdb = ['4HHB', '1MBN', '1LYZ', '1EMA', '1AO6', '1A8E'][abs(hash(txt)) % 6]
+        arr = ('bundle' if re.search(r"\b(collagen|cellulose|keratin|fib(?:er|re|ril)s?|rope|cable|bundle|strands?)\b", low)
+               else 'sheet' if re.search(r"\b(membrane|bilayer|thylakoid|disc|sheet|wall|skin)\b", low)
+               else 'chain' if re.search(r"\b(polysome|necklace|string of|bead-string|chain of)\b", low)
+               else 'sea')
+        return {'kit': 'tubes', 'pdb': pdb, 'arrangement': arr, 'size': 0.9}
     # cellular (-6 .. -3.5): tissue for anything that names cells wall to wall
     if _RX['cells'].search(txt):
         return {'kit': 'tissue', 'cell': 0.22}
