@@ -661,8 +661,7 @@ _RX = {
     'quark':   re.compile(r"\b(quark|gluon|flux tube|three glowing cores|taut (?:amber |light )?strands?|rope of light)", re.I),
     'fog':     re.compile(r"\b(fog|probability|electron cloud|cloud of|shells? of radiance|orbital|haze about|lobes?|"
                           r"one atom|single atom|an atom)\b", re.I),
-    'cells':   re.compile(r"\b(cells?|cellular|tissue|epiderm\w*|mesophyll|honeycomb|compartments?|"
-                          r"files? of|wall to wall|shoulder to shoulder|palisade|cortex)\b", re.I),
+    'cells':   re.compile(r"\b(cells|cellular|tissue|epiderm\w*|mesophyll|honeycomb of cells|palisade|cortex)\b", re.I),
     'tubes':   re.compile(r"\b(protein|helix|helical|ribbon|chain|rope|collagen|backbone|coil|enzyme|antibody|"
                           r"motor|turbine|fib(?:er|re|ril)s?)\b", re.I),
 }
@@ -696,15 +695,13 @@ def suggest_stage(reg):
         if _RX['lattice'].search(txt):
             var = next((v for v, rx in _VARIANT if rx.search(txt)), 'cubic')
             return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'radius': 0.06}
-        if _RX['fog'].search(txt) or re.search(r"\batom\b", txt, re.I):
-            # Phil 2026-10-04: the atom FIELD had too few atoms and its hero rang; the FUZZY
-            # lattice (large soft clouds) was tried in motion the same evening and every cloud
-            # became a ringed rose (scratchpad/orange/stage_fuzzy_strip.png) — the circles
-            # motif itself. The BALL-AND-STICK lattice that held on calcite (day 1) is the
-            # atomic picture: small hard-shaded atoms in their courses with bonds and depth.
-            var = next((v for v, rx in _VARIANT if rx.search(txt)), 'cubic')
-            return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'radius': 0.06, 'glow': 0.2}
-        return None
+        # every other atomic-band card -> the ball-and-stick lattice too (the honest picture at
+        # 10^-10 m is atoms in their courses; "hazy glowing spheres each a nest of shells about a
+        # core" is that picture in other words). Phil 2026-10-04: the atom FIELD had too few atoms
+        # and its hero rang; the FUZZY lattice was tried in motion the same evening and every
+        # cloud became a ringed rose (stage_fuzzy_strip.png) — the circles motif itself.
+        var = next((v for v, rx in _VARIANT if rx.search(txt)), 'cubic')
+        return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'radius': 0.06, 'glow': 0.2}
     if exp <= -6:
         # molecular (tubes v4): the molecule from the card's words, the arrangement from its
         # structure words; cards with no molecular word stay plain
@@ -723,7 +720,11 @@ def suggest_stage(reg):
                else 'chain' if re.search(r"\b(polysome|necklace|string of|bead-string|chain of)\b", low)
                else 'sea')
         return {'kit': 'tubes', 'pdb': pdb, 'arrangement': arr, 'size': 0.9}
-    # cellular (-6 .. -3.5): tissue for anything that names cells wall to wall
+    # cellular (-6 .. -3.5): tissue for MANY cells (a tissue, cells packed/paved/ranked), never
+    # for the interior of ONE cell (organelles, a division theatre, a cell's fluid)
+    if re.search(r"\b(within|inside|interior of|in) (one|a single|the) [a-z\- ]*cell\b|\bone cell\b|\bsingle cell\b",
+                 txt, re.I):
+        return None
     if _RX['cells'].search(txt):
         return {'kit': 'tissue', 'cell': 0.22}
     return None
