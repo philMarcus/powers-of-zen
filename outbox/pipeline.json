@@ -2,7 +2,7 @@
   "meta": {
     "cadence": "2/day 08:00,18:00 EDT",
     "note": "source of truth; see scripts/pipeline.py",
-    "updated": "2026-10-04 14:40:09",
+    "updated": "2026-10-04 18:41:07",
     "paused_platforms": [
       "tiktok"
     ],
@@ -19008,7 +19008,8 @@
         ],
         "for_model": "ds",
         "for_cut": "divein"
-      }
+      },
+      "order": 3
     },
     {
       "journey": "selenite_hothouse",
@@ -19882,7 +19883,7 @@
         "for_cut": "divein"
       },
       "yt_desc_seo_backup": "A storm world’s breath, a forest’s heartbeat, a spore’s secret—endless scales, one loop. 🌀\n\nCan you spot Clark the Quark hiding in the cosmic rain? 👀\n\nOne continuous shot, no cuts, looping forever — through a night world → a forest floor at eye level in a downpour → a colony of bird's-nest fungi crusting → the outer skin of one spore paved with rods → one nucleus held as a droplet of crowded.\n\nPowers of Zen: hypnotic infinite-zoom loops through worlds inside worlds, from the cosmic to the microscopic. New one every day.\n\n#infinitezoom #shorts #eyecandy #oddlysatisfying #powersofzen #livewallpaper #fractal #aiart",
-      "order": 2
+      "order": 0
     },
     {
       "journey": "spouter_dawn",
@@ -19894,7 +19895,7 @@
       "yt_title": "Atoms hum in the silence of the cosmos, a loop of infinite wonder ✨",
       "yt_desc": "Atoms hum in the silence of the cosmos, a loop of infinite wonder ✨ Can you spot Adam the Atom hiding in the infinite loop? 👀 #CosmicZoom #InfiniteWorlds #AtomicAwe #GeyserGlow #infinitezoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
       "cameo": "adam",
-      "state": "queued",
+      "state": "review",
       "scheduled": null,
       "engine_params": {
         "parallax_gain": 1.0,
@@ -20360,7 +20361,7 @@
         "for_model": "ds",
         "for_cut": "divein"
       },
-      "order": 4
+      "order": 2
     },
     {
       "journey": "sea_sparkle",
@@ -22576,13 +22577,13 @@
       "journey": "kelp_dynamo_stage",
       "model": "ds",
       "cut": "divein",
-      "file": "review_divein/kelp_dynamo_stage_ds_divein.mp4",
+      "file": "review_divein/kelp_dynamo_stage_ds_divein_shift.mp4",
       "title": "",
-      "caption": "Dive into the endless ocean of infinity 🌊✨ Can you spot Tina the DNA in this cosmic kelp dive? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats",
-      "yt_title": "Dive into the endless ocean of infinity 🌊✨",
+      "caption": "Where kelp forests whisper secrets to the stars 🌌 Can you spot Tina the DNA in this cosmic kelp dive? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats",
+      "yt_title": "Where kelp forests whisper secrets to the stars 🌌",
       "yt_desc": "Dive into the endless ocean of infinity 🌊✨ Can you spot Tina the DNA in this cosmic kelp dive? 👀 #KelpCosmos #InfiniteDive #BioluminescentJourney #PowersOfZen #infinitezoom #eyecandy #oddlysatisfying #zoomer #livewallpaper #aiart #chillbeats",
       "cameo": "tina",
-      "state": "review",
+      "state": "queued",
       "scheduled": null,
       "engine_params": {
         "parallax_gain": 1.0,
@@ -22725,19 +22726,103 @@
         "generated_at": "10-04 14:40",
         "for_model": "ds",
         "for_cut": "divein"
-      }
+      },
+      "start_t": 6.3,
+      "orig_file": "review_divein/kelp_dynamo_stage_ds_divein.mp4",
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "G# minor",
+        "stage": "done",
+        "chosen": "deep_archive-b",
+        "candidates": [
+          {
+            "id": "choir_of_dust-wild",
+            "lane": "choir_of_dust",
+            "mood": "hushed, suspended, dissolving · heartbeat",
+            "track": "output/music/kelp_dynamo_stage_choir_of_dust-wild.flac",
+            "aligned": "review/music/candidates/kelp_dynamo_stage/choir_of_dust-wild.mp4",
+            "seed": 37774,
+            "lock": 15.28,
+            "bar_conf": 0.73,
+            "kick": 0.63,
+            "fit": 1.13,
+            "score": 3.88,
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a submerged moonlit descent — deep oceanic pads and a slow sub-bass swell under the canopy, the pulse heaviest as the forest arrives, thinning to one low drone through the spore cells and the membrane, a single deep hit where the rotor opens out into the pulsar's beams and the shoal of comets, a soft choir-like pad, glass harmonica and fine granular shimmer, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "music_box-wild",
+            "lane": "music_box",
+            "mood": "miniature, tender, clockwork · downbeat",
+            "track": "output/music/kelp_dynamo_stage_music_box-wild.flac",
+            "aligned": "review/music/candidates/kelp_dynamo_stage/music_box-wild.mp4",
+            "seed": 37811,
+            "lock": 9.72,
+            "bar_conf": 0.71,
+            "kick": 0.76,
+            "fit": 0.92,
+            "score": 3.61,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a submerged moonlit descent — deep oceanic pads and a slow sub-bass swell under the canopy, the pulse heaviest as the forest arrives, thinning to one low drone through the spore cells and the membrane, a single deep hit where the rotor opens out into the pulsar's beams and the shoal of comets, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "deep_archive-b",
+            "lane": "deep_archive",
+            "mood": "vast, ancient, submerged · halftime",
+            "track": "output/music/kelp_dynamo_stage_deep_archive-b.flac",
+            "aligned": "review/music/candidates/kelp_dynamo_stage/deep_archive-b.mp4",
+            "seed": 37700,
+            "lock": 7.45,
+            "bar_conf": 0.71,
+            "kick": 0.66,
+            "fit": 1.09,
+            "score": 2.79,
+            "tags": "all percussion is a single deep 808 kick landing exactly on the downbeat, long empty space between hits, spacious and heavy, chill hypnotic ambient evoking a submerged moonlit descent — deep oceanic pads and a slow sub-bass swell under the canopy, the pulse heaviest as the forest arrives, thinning to one low drone through the spore cells and the membrane, a single deep hit where the rotor opens out into the pulsar's beams and the shoal of comets, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "deep_archive-third_answer",
+            "lane": "deep_archive",
+            "mood": "vast, ancient, submerged · third_answer",
+            "track": "output/music/kelp_dynamo_stage_deep_archive-third_answer.flac",
+            "aligned": "review/music/candidates/kelp_dynamo_stage/deep_archive-third_answer.mp4",
+            "seed": 37922,
+            "lock": 8.15,
+            "bar_conf": 0.68,
+            "kick": 0.59,
+            "fit": 0.95,
+            "score": 2.41,
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a submerged moonlit descent — deep oceanic pads and a slow sub-bass swell under the canopy, the pulse heaviest as the forest arrives, thinning to one low drone through the spore cells and the membrane, a single deep hit where the rotor opens out into the pulsar's beams and the shoal of comets, dark oceanic pads and a deep warm sub bass drone, slow blooming swells, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "wooden_orbit-wild",
+            "lane": "wooden_orbit",
+            "mood": "playful, organic, orbiting · third_answer",
+            "track": "output/music/kelp_dynamo_stage_wooden_orbit-wild.flac",
+            "aligned": "review/music/candidates/kelp_dynamo_stage/wooden_orbit-wild.mp4",
+            "seed": 37885,
+            "lock": 7.87,
+            "bar_conf": 0.61,
+            "kick": 0.31,
+            "fit": 0.91,
+            "score": 1.26,
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a submerged moonlit descent — deep oceanic pads and a slow sub-bass swell under the canopy, the pulse heaviest as the forest arrives, thinning to one low drone through the spore cells and the membrane, a single deep hit where the rotor opens out into the pulsar's beams and the shoal of comets, warm marimba and kalimba over a round woody bass, gentle plucked figures, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      },
+      "order": 4
     },
     {
       "journey": "gecko_rampart_stage",
       "model": "ds",
       "cut": "divein",
-      "file": "review_divein/gecko_rampart_stage_ds_divein.mp4",
+      "file": "review_divein/gecko_rampart_stage_ds_divein_shift.mp4",
       "title": "",
-      "caption": "A monsoon night’s mosaic, spiraling into the unseen 🌧️ Can you spot Belle the Cell in this endless dive? 👀 #SandstoneCosmos #GeckoGalaxy #StormWorldDive #InfiniteZoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
-      "yt_title": "A monsoon night’s mosaic, spiraling into the unseen 🌧️",
+      "caption": "Sparks in the slate, dancing where nothing stands still Can you spot Belle the Cell in this endless dive? 👀 #SandstoneCosmos #GeckoGalaxy #StormWorldDive #InfiniteZoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
+      "yt_title": "Sparks in the slate, dancing where nothing stands still",
       "yt_desc": "A monsoon night’s mosaic, spiraling into the unseen 🌧️ Can you spot Belle the Cell in this endless dive? 👀 #SandstoneCosmos #GeckoGalaxy #StormWorldDive #InfiniteZoom #eyecandy #oddlysatisfying #powersofzen #zoomer #livewallpaper #aiart #chillbeats",
       "cameo": "belle",
-      "state": "review",
+      "state": "queued",
       "scheduled": null,
       "engine_params": {
         "parallax_gain": 1.0,
@@ -22880,7 +22965,91 @@
         "generated_at": "10-04 13:45",
         "for_model": "ds",
         "for_cut": "divein"
-      }
+      },
+      "start_t": 4.5,
+      "orig_file": "review_divein/gecko_rampart_stage_ds_divein.mp4",
+      "music": {
+        "bpm": 103,
+        "bar": 2.333,
+        "key": "D minor",
+        "stage": "done",
+        "chosen": "analog_dawn-wild",
+        "candidates": [
+          {
+            "id": "night_market",
+            "lane": "night_market",
+            "mood": "nocturnal, lantern-lit, wandering · downbeat",
+            "track": "output/music/gecko_rampart_stage_night_market.flac",
+            "aligned": "review/music/candidates/gecko_rampart_stage/night_market.mp4",
+            "seed": 17877,
+            "lock": 22.51,
+            "bar_conf": 0.82,
+            "kick": 0.79,
+            "fit": 1.13,
+            "score": 7.06,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "night_market-third_answer",
+            "lane": "night_market",
+            "mood": "nocturnal, lantern-lit, wandering · third_answer",
+            "track": "output/music/gecko_rampart_stage_night_market-third_answer.flac",
+            "aligned": "review/music/candidates/gecko_rampart_stage/night_market-third_answer.mp4",
+            "seed": 17951,
+            "lock": 13.6,
+            "bar_conf": 0.72,
+            "kick": 0.74,
+            "fit": 1.43,
+            "score": 4.43,
+            "tags": "all percussion is a deep soft kick on the downbeat of every bar and a quieter deep thump answering on beat three, everything low and round, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "analog_dawn-wild",
+            "lane": "analog_dawn",
+            "mood": "nostalgic, golden, waking · downbeat",
+            "track": "output/music/gecko_rampart_stage_analog_dawn-wild.flac",
+            "aligned": "review/music/candidates/gecko_rampart_stage/analog_dawn-wild.mp4",
+            "seed": 17988,
+            "lock": 12.93,
+            "bar_conf": 0.72,
+            "kick": 0.66,
+            "fit": 1.2,
+            "score": 3.73,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, warm analog synth pads with gentle tape warble and a soft round mallet, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "night_market-heartbeat",
+            "lane": "night_market",
+            "mood": "nocturnal, lantern-lit, wandering · heartbeat",
+            "track": "output/music/gecko_rampart_stage_night_market-heartbeat.flac",
+            "aligned": "review/music/candidates/gecko_rampart_stage/night_market-heartbeat.mp4",
+            "seed": 18136,
+            "lock": 11.6,
+            "bar_conf": 0.7,
+            "kick": 0.68,
+            "fit": 1.35,
+            "score": 3.72,
+            "tags": "all percussion is a deep sub-bass heartbeat, two soft low beats then space, the first landing exactly on the downbeat of every bar, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, soft hang drum and plucked koto over a velvet pad, intimate and close, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          },
+          {
+            "id": "music_box-wild",
+            "lane": "music_box",
+            "mood": "miniature, tender, clockwork · downbeat",
+            "track": "output/music/gecko_rampart_stage_music_box-wild.flac",
+            "aligned": "review/music/candidates/gecko_rampart_stage/music_box-wild.mp4",
+            "seed": 18099,
+            "lock": 12.81,
+            "bar_conf": 0.64,
+            "kick": 0.52,
+            "fit": 1.46,
+            "score": 2.68,
+            "tags": "all percussion is a single deep soft kick drum landing exactly on the downbeat of every bar, felt in the chest, steady and ever-present, chill hypnotic ambient evoking a lamplit night watch — soft hang drum and plucked koto over a velvet pad, the pulse tightening as the dive narrows from the parapet to a single bristle, the pad thinning to a hush at the contact where two hazes swell into one another, one deep hit landing on the fold from the flicker into the star-fog, then broad slow air through the cast-off shells and the paired suns before the monsoon country returns, a tiny music box and celesta over a low warm drone, delicate struck tines, spacious moody reverb, oddly satisfying, cinematic, instrumental, no vocals"
+          }
+        ],
+        "for_model": "ds",
+        "for_cut": "divein"
+      },
+      "order": 1
     }
   ]
 }

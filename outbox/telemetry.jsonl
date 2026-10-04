@@ -2395,3 +2395,15 @@
 {"ts": "2026-10-04 13:45:49", "event": "music_pregen", "journey": "gecko_rampart_stage", "detail": "5 candidates"}
 {"ts": "2026-10-04 14:38:41", "event": "review", "journey": "kelp_dynamo_stage", "detail": "ds/divein (src v2)"}
 {"ts": "2026-10-04 14:40:09", "event": "music_pregen", "journey": "kelp_dynamo_stage", "detail": "5 candidates"}
+{"ts": "2026-10-04 18:26:58", "event": "phase_shift", "journey": "gecko_rampart_stage", "detail": "start @ 4.50s"}
+{"ts": "2026-10-04 18:26:58", "event": "music", "journey": "gecko_rampart_stage"}
+{"ts": "2026-10-04 18:27:08", "event": "music_realign", "journey": "gecko_rampart_stage", "detail": "5 candidates"}
+{"ts": "2026-10-04 18:29:09", "event": "settings", "detail": "stage_mode -> auto (Phil 2026-10-04: turn it on)"}
+{"ts": "2026-10-04 18:35:48", "event": "music_choose", "journey": "gecko_rampart_stage", "detail": "analog_dawn-wild"}
+{"ts": "2026-10-04 18:35:48", "event": "queued", "journey": "gecko_rampart_stage"}
+{"ts": "2026-10-04 18:37:01", "event": "phase_shift", "journey": "kelp_dynamo_stage", "detail": "start @ 6.30s"}
+{"ts": "2026-10-04 18:37:01", "event": "music", "journey": "kelp_dynamo_stage"}
+{"ts": "2026-10-04 18:37:11", "event": "music_realign", "journey": "kelp_dynamo_stage", "detail": "5 candidates"}
+{"ts": "2026-10-04 18:38:52", "event": "music_choose", "journey": "kelp_dynamo_stage", "detail": "deep_archive-b"}
+{"ts": "2026-10-04 18:38:52", "event": "queued", "journey": "kelp_dynamo_stage"}
+{"ts": "2026-10-04 18:39:44", "event": "review", "journey": "spouter_dawn"}

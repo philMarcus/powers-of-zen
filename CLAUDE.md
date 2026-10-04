@@ -120,6 +120,18 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-04 (EVENING — THE STAGE IS ON; read PLAN "DAY 2 EVENING"): Phil's second pass: "looking pretty good", will post
+kelp_dynamo_stage + gecko_rampart_stage; the run of stages read "morphy not zoomy" → FIXED: consecutive stage cards share
+the zoom's fixed point + ZOOM-THROUGH arrival (the new stage opens through a wide-feathered disc on the fixed point while the
+old world keeps zooming; verified on sunspot nucleus→quark, scratchpad/orange/zt2_handoff_strip.png). settings
+stage_mode="auto" (⚙ "🔬 micro stage"): lattice/atomic → ball-and-stick lattice (Phil asked for the FUZZY-lattice swap; run
+in motion it turned every cloud into a ringed rose — stage_fuzzy_strip.png — so NOT used, tell him), subnuclear → nucleus /
+quark fields, cellular with cell words → tissue, molecular PLAIN (tubes = granules; next representation = coarse smooth
+tubes/metaballs), cameo card never staged. TONIGHT's batch (01:30, first with --stage-auto + anchor): vernal_clutch (atom k1
+lattice, spindle k9 tissue), cork_dehesa (nucleus k1, cork_honeycomb k9 tissue), gulal_dusk (no stage), stromatolite_dawn
+(mat_veneer k6 tissue). CHECK IN THE MORNING: night_batch.log argv shows --stage-auto; the tissue/nucleus/lattice cards in
+Review; whether a tissue auto-pick on a non-tissue card (spindle_theatre, mat_veneer) looks wrong → tighten the cells regex.
+Nothing running. Lab arm dirs are disposable (output/*_zt*, *_fuzzy, *_stage_tissue...).
 2026-10-04 (AFTERNOON HANDOFF — day 2 complete, nothing running, all committed + pushed): VIDEO REVIEW holds FOUR
 same-seed pairs (plain+anchor / staged): kelp_dynamo, gecko_rampart (today, seed 1234, structure-first), sunspot_archipelago
 (NOT same seed: staged used 187198), anvil_country. Side-by-side cuts: review/compare/kelp_dynamo_AB.mp4 (rebuilt 14:40
