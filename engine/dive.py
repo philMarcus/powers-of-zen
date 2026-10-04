@@ -2059,13 +2059,16 @@ def main():
                     # the planet handoff in reverse — instead of a full-frame cross-dissolve.
                     _W, _H = fed.size
                     _ax, _ay = _st.anchor
-                    _r0 = 0.24 * _W
-                    _r1 = 1.25 * math.hypot(_W, _H)
+                    _r0 = 0.18 * _W
+                    _r1 = 1.4 * math.hypot(_W, _H)
                     _u = (_sj + 1) / _st.fa
                     _rad = _r0 * (_r1 / _r0) ** _u
                     _yy, _xx = np.mgrid[0:_H, 0:_W].astype(np.float32)
                     _dist = np.sqrt((_xx - _ax * _W) ** 2 + (_yy - _ay * _H) ** 2)
-                    _feather = max(8.0, 0.18 * _rad)
+                    # a WIDE feather (first zt arm: an 18% feather drew a crisp circle — a
+                    # porthole, not an interior opening up); the new world emerges through
+                    # the old one over most of the disc's radius
+                    _feather = max(12.0, 0.75 * _rad)
                     _m = np.clip((_rad - _dist) / _feather, 0.0, 1.0)
                     _m = (_m * _m * (3 - 2 * _m))[..., None]
                     _fa_ = np.asarray(fed.convert("RGB"), np.float32)
