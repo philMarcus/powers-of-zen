@@ -48,6 +48,7 @@ micro↔macro wrap. But this is a rule of thumb, **not a law**: FANTASTICAL jour
 several times (deliberate multiple seams are welcome when the concept wants them). Whatever
 the count, the **loop-pair ends** (first + last cards) must be natural ADJACENT scales —
 never put a seam at the ends.
+TEST (audit warns, 2026-10-04): count the consecutive-card jumps of 8 or more decades, wrap included. More than one fails the test — a descent that leaps from centimetres to an atom to a nucleus in two cards reads as a fade to black with one big object, and the engine cannot pace an authored jump. Micro-realm steps are x10 to x100 per card.
 
 ## DESCRIBE STATIC SCENES — the ENGINE renders the motion (critical)
 The journey supplies the STILL IMAGE at each scale. The ENGINE renders everything that happens

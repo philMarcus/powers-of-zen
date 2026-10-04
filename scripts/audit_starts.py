@@ -73,6 +73,15 @@ def main():
         # field-of-view WORDS produced false alarms on scenes that are plainly wide but phrased
         # differently, and cosmic/subatomic is a preference the journey may legitimately lack.
         notes = []
+        # SEAM-HEAVY (Phil 2026-10-04, approved as a warning): more than one seam-size jump
+        # (>= 8 decades) between consecutive cards — sunspot_archipelago's cm -> atom -> nucleus
+        # read as "fades to black with one big atom"; the format expects ONE such jump (the wrap)
+        _exps = [regs[names.index(n)].get("exp") for n in rot]
+        _jumps = [abs(_exps[k] - _exps[(k + 1) % len(_exps)]) for k in range(len(_exps))
+                  if isinstance(_exps[k], (int, float)) and isinstance(_exps[(k + 1) % len(_exps)], (int, float))]
+        _big = sum(1 for j in _jumps if j >= 8)
+        if _big > 1:
+            notes.append(f"SEAM-HEAVY: {_big} jumps of >= 8 decades (the format expects one)")
         if not FAR.search(scene) and not FIELD.search(scene):
             notes.append("width unconfirmed — read it")   # space needs no width check
         if not FAR.search(scene):

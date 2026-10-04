@@ -53,6 +53,12 @@ for name in sys.argv[1:]:
     print(f"  render_start={start!r} -> order starts {rotated[0]!r}, ends {rotated[-1]!r}")
     bad_seam = [s for s in seam_names if s in first_last]
     print(f"  seams {seam_names} {'!! SEAM AT AN END: ' + str(bad_seam) if bad_seam else 'ok'}")
+    _exps = [regs[order.index(n)].get("exp") for n in rotated]
+    _jumps = [abs(_exps[k] - _exps[(k + 1) % len(_exps)]) for k in range(len(_exps))
+              if isinstance(_exps[k], (int, float)) and isinstance(_exps[(k + 1) % len(_exps)], (int, float))]
+    _big = sum(1 for j in _jumps if j >= 8)
+    print(f"  scale jumps    : max x10^{max(_jumps):.0f}, {_big} seam-size (>= 8 decades)"
+          f"{'  !! SEAM-HEAVY (the format expects one)' if _big > 1 else ''}")
     bait = sorted(set(w.lower() for w in BAIT.findall(p0)))
     nameonly = sorted(set(w.lower() for w in NAME_ONLY.findall(p0)))
     print(f"  frame-0 bait   : {bait or 'none'}")
