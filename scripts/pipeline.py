@@ -291,6 +291,10 @@ JSETTINGS_DEFAULTS = {
     # recovered a cerulean card from a fully orange start at 0.5; Phil judges the full video
     # (venus_basket_color) before this goes live in the nightly.
     "palette_anchor": 0.0,
+    # MICRO STAGE (2026-10-04, Phil: "for now we can turn it on"): "auto" = dive --stage-auto
+    # (engine/stage.suggest_stage picks a kit per card: lattice / atom field / nucleus field /
+    # quark field / tissue; molecular stays plain; cameo cards stay plain); "" = off.
+    "stage_mode": "auto",
 }
 
 

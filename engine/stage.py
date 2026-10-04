@@ -626,6 +626,8 @@ _RX = {
     'quark':   re.compile(r"\b(quark|gluon|flux tube|three glowing cores|taut (?:amber |light )?strands?|rope of light)", re.I),
     'fog':     re.compile(r"\b(fog|probability|electron cloud|cloud of|shells? of radiance|orbital|haze about|lobes?|"
                           r"one atom|single atom|an atom)\b", re.I),
+    'cells':   re.compile(r"\b(cells?|cellular|tissue|epiderm\w*|mesophyll|honeycomb|compartments?|"
+                          r"files? of|wall to wall|shoulder to shoulder|palisade|cortex)\b", re.I),
     'tubes':   re.compile(r"\b(protein|helix|helical|ribbon|chain|rope|collagen|backbone|coil|enzyme|antibody|"
                           r"motor|turbine|fib(?:er|re|ril)s?)\b", re.I),
 }
@@ -648,7 +650,7 @@ def suggest_stage(reg):
     now (the two bands DreamShaper fails hardest at); molecular gets tubes when a protein word
     is present. Cellular cards are left alone until the foam kit exists."""
     exp = reg.get('exp')
-    if not isinstance(exp, (int, float)) or exp > -6:
+    if not isinstance(exp, (int, float)) or exp > -3.5:
         return None
     txt = f"{reg.get('scene') or ''} {reg.get('target') or reg.get('target_phrase') or ''}"
     if exp <= -12:
@@ -660,15 +662,18 @@ def suggest_stage(reg):
             var = next((v for v, rx in _VARIANT if rx.search(txt)), 'cubic')
             return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'radius': 0.06}
         if _RX['fog'].search(txt) or re.search(r"\batom\b", txt, re.I):
-            # a hero fog atom rings/bursts under the repaint (day 1 sunburst, day 2 bullseye);
-            # the atomic band's safe picture is the FUZZY LATTICE — clouds in their courses
-            var = next((v for v, rx in _VARIANT if rx.search(txt)), 'cubic')
-            return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'fuzzy': True}
+            # the atom FIELD as Phil saw it in gecko ("the quarks and atoms look kind of cool");
+            # the hero still tends to ring under the repaint — the fuzzy lattice
+            # ({'kit':'lattice','fuzzy':True}) is the alternative to test in motion
+            return {'kit': 'fog', 'size': 1.0, 'lobes': 2 if re.search(r"two|dumbbell|lobe", txt, re.I) else 1}
         return None
-    # molecular (-8.5 .. -6)
-    if _RX['tubes'].search(txt):
-        pdb = next((pid for pid, rx in _PDB_BY_WORD if rx.search(txt)), '4HHB')
-        return {'kit': 'tubes', 'pdb': pdb, 'n_copies': 12}
+    if exp <= -6:
+        # molecular: the tube kit still renders big complexes as granules (2026-10-04) —
+        # molecular cards stay PLAIN in auto mode; an explicit `stage` field can still ask for it
+        return None
+    # cellular (-6 .. -3.5): tissue for anything that names cells wall to wall
+    if _RX['cells'].search(txt):
+        return {'kit': 'tissue', 'cell': 0.22}
     return None
 
 

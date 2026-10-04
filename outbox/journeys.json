@@ -15,6 +15,7 @@
     "refill_paused": false,
     "plate_mode": "live",
     "palette_anchor": 0.5,
+    "stage_mode": "auto",
     "post_every_hours": 19.0,
     "post_next": "2026-10-05 07:00",
     "plate_intro": "mix"
@@ -409,5 +410,5 @@
       "note": "old render rejected 2026-10-03; its palette-anchor re-render is the Music-stage video venus_basket_color (journeys/lab/)"
     }
   },
-  "updated": "2026-10-04 12:10:11"
+  "updated": "2026-10-04 18:29:09"
 }

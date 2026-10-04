@@ -1119,6 +1119,13 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
                                    "cerulean card recovered from a fully orange start in ~16 "
                                    "frames). 0 = the old behaviour (match toward the phase's own "
                                    "first frame, which drifts orange). Applies to the next renders.")
+    _smodes = ["auto", "off"]
+    smode = t2.selectbox("🔬 micro stage (built 3-D worlds for the micro cards)", _smodes,
+                         index=0 if (s.get("stage_mode") or "") == "auto" else 1,
+                         help="auto = every micro card whose words name a lattice, an atom, a "
+                              "nucleus, quarks or cells is rendered through a built 3-D stage "
+                              "(engine/stage.py); molecular and mascot cards stay plain. off = the "
+                              "pre-stage engine. Applies to the next renders.")
     fpaused = t2.toggle("⏸ pause midnight refill", value=bool(s["refill_paused"]))
     st.markdown("**platform pauses** (scheduler skips paused platforms when posting)")
     pc = st.columns(len(pl.PLATFORMS))
@@ -1137,6 +1144,7 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
             "render_paused": bool(rpaused), "refill_paused": bool(fpaused),
             "plate_mode": ("" if pmode == "off" else pmode), "plate_intro": pintro,
             "palette_anchor": float(panchor),
+            "stage_mode": ("auto" if smode == "auto" else ""),
             "post_every_hours": float(post_every),
             "post_next": post_next.strip()})
         pl.jsave(jj)

@@ -1555,6 +1555,13 @@ def main():
                 if isinstance(r.get("stage"), dict):
                     _splan.append((k, r["stage"]))
                 elif args.stage_auto and r.get("stage") is not False:
+                    if r.get("cameo"):
+                        # the mascot card is never auto-staged (stage cards refuse cameos and
+                        # the caption's "can you spot..." must stay honest); an explicit
+                        # `stage` field on a cameo card still wins (the lab copies move the cameo)
+                        print(f"[dive] stage-auto: card {k} {r.get('name')!r} carries the cameo — "
+                              f"left plain", flush=True)
+                        continue
                     _sg = _stagemod.suggest_stage(r)
                     if _sg:
                         _splan.append((k, _sg))
@@ -1574,6 +1581,11 @@ def main():
             _sanchors = [(0.62, 0.40), (0.38, 0.40), (0.62, 0.60), (0.38, 0.60)]
             _skey = f"{spec.get('scaffold_name') or spec.get('name')}:{_sreg.get('name')}"
             _sanchor = _sanchors[_zlib.crc32(_skey.encode()) % 4]
+            # CONSECUTIVE stage cards share the zoom's fixed point (Phil 2026-10-04: a run of
+            # stages read as morphs, not zooms — the anchor jumped at every boundary, so the
+            # point card A dove into was not the point card B grew from)
+            if stages and stages[-1].card == _sk - 1:
+                _sanchor = stages[-1].anchor
             _sseed = args.stage_seed or (_zlib.crc32(_skey.encode()) % 100000)
             _stage = _stagemod.build_card_stage_v2(_sdef, _sreg.get("palette"), _szw, _sanchor,
                                                    cfg["width"], cfg["height"], seed=_sseed)
@@ -2037,16 +2049,35 @@ def main():
                 _sj = i - _st.S
                 _srgb, _sdep = _st.frame_images(_sj)
                 _sn = _st.E - _st.S
+                if _srgb.size != fed.size:
+                    _srgb = _srgb.resize(fed.size, Image.LANCZOS)
                 if _sj < _st.fa:
-                    _wid = 0.15 + 0.85 * (_sj + 1) / _st.fa
+                    # ZOOM-THROUGH ARRIVAL (Phil 2026-10-04, "less zoomy than morphy" + the
+                    # tissue fade): the new stage opens INSIDE a disc on the zoom's fixed point
+                    # that grows geometrically from ~a quarter of the frame to past its corners
+                    # across the arrival frames, while the old world keeps zooming around it —
+                    # the planet handoff in reverse — instead of a full-frame cross-dissolve.
+                    _W, _H = fed.size
+                    _ax, _ay = _st.anchor
+                    _r0 = 0.24 * _W
+                    _r1 = 1.25 * math.hypot(_W, _H)
+                    _u = (_sj + 1) / _st.fa
+                    _rad = _r0 * (_r1 / _r0) ** _u
+                    _yy, _xx = np.mgrid[0:_H, 0:_W].astype(np.float32)
+                    _dist = np.sqrt((_xx - _ax * _W) ** 2 + (_yy - _ay * _H) ** 2)
+                    _feather = max(8.0, 0.18 * _rad)
+                    _m = np.clip((_rad - _dist) / _feather, 0.0, 1.0)
+                    _m = (_m * _m * (3 - 2 * _m))[..., None]
+                    _fa_ = np.asarray(fed.convert("RGB"), np.float32)
+                    _sa_ = np.asarray(_srgb.convert("RGB"), np.float32)
+                    fed = Image.fromarray(np.clip(_fa_ * (1 - _m) + _sa_ * _m, 0, 255).astype(np.uint8))
+                    _wid = float(_m.mean())
                     den = max(den, getattr(_st, "den_arrival", None) or args.stage_den)
                 else:
                     _tq = max(0.0, (_sj - 0.75 * _sn) / max(1.0, 0.25 * _sn))
                     _wid = args.stage_id * (1.0 - 0.4 * min(1.0, _tq))
                     den = max(den, getattr(_st, "den_travel", None) or args.stage_den_travel)
-                if _srgb.size != fed.size:
-                    _srgb = _srgb.resize(fed.size, Image.LANCZOS)
-                fed = Image.blend(fed, _srgb, _wid)
+                    fed = Image.blend(fed, _srgb, _wid)
                 stage_ctl = upload_image(_sdep, f"zoomer_stage_{name}.png")
                 stage_cn = args.stage_cn
                 _sdir = out_dir / "build" / "stage"

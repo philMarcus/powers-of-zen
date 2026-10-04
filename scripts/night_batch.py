@@ -217,6 +217,9 @@ def render_one(journey, force=False, new_seed=True, from_card=None):
             # PALETTE ANCHOR (2026-10-03, PLAN "THE ORANGE WASH"): the authored palette as
             # the colour-match target every frame — the counter to the chain's orange drift
             argv += ["--palette-anchor", f"{_pa:g}"]
+        if (pl.jload()["settings"].get("stage_mode") or "") == "auto":
+            # MICRO STAGE (PLAN "THE MICRO STAGE"): built 3-D worlds for the micro cards
+            argv += ["--stage-auto"]
         if from_card:
             argv += ["--from-card", str(from_card)]
         if (force or from_card) and new_seed:
