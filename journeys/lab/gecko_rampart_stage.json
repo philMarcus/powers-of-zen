@@ -77,8 +77,7 @@
         "kit": "tubes",
         "pdb": "1CGD",
         "n_copies": 40,
-        "size": 0.6,
-        "radius": 0.025
+        "size": 0.6
       }
     },
     {

@@ -542,29 +542,50 @@ def pdb_trace(pdb_id, chain=None):
     return out
 
 
-def kit_tubes(stage, pdb='4HHB', n_copies=14, size=0.9, radius=0.03, colors=((0.95, 0.5, 0.6), (0.6, 0.85, 1.0)),
-              seed=0, glow=0.12, spread=(2.2, 2.4, 7.0), target_depth=None):
-    """A sea of real molecules: copies of a PDB backbone (CA trace as a sphere-chain tube, one
-    colour per chain) scattered at all depths, one copy on the aim ray at target_depth so the
-    plunge lands on a molecule."""
+def kit_tubes(stage, pdb='4HHB', n_copies=14, size=0.9, radius=None, colors=((0.95, 0.5, 0.6), (0.6, 0.85, 1.0)),
+              seed=0, glow=0.12, spread=(2.2, 2.4, 7.0), target_depth=None, membrane=False, stride=1):
+    """A sea of real molecules — v2 (2026-10-04, after kelp's thylakoid card rendered as moss
+    clumps: the v1 tube radius was so wide relative to the compressed CA spacing that every
+    copy became a solid blob). Tubes are now THIN relative to the molecule (radius defaults to
+    size/70), the trace is subsampled (stride) so beads do not fuse into a lump, far copies are
+    many and small (log-uniform depth), and membrane=True lays a sheet of lipid heads (small
+    spheres on a tilted plane) behind the molecules for membrane-protein cards."""
     rng = np.random.default_rng(seed)
     chains = pdb_trace(pdb)
-    for k in range(n_copies):
+    radius = radius if radius is not None else size / 70.0
+    n_total = n_copies + 10
+    for k in range(n_total):
         Rm = rot_matrix(rng)
         if k == 0 and target_depth is not None:
             c = np.asarray(target_depth, np.float32)
+            sz = size
         else:
-            c = np.array([(rng.random() - 0.5) * spread[0], (rng.random() - 0.5) * spread[1],
-                          0.6 + rng.random() * spread[2]], np.float32)
+            z = 0.6 + spread[2] * rng.random() ** 0.7
+            c = np.array([(rng.random() - 0.5) * spread[0] * max(0.7, z / 2.5),
+                          (rng.random() - 0.5) * spread[1] * max(0.7, z / 2.5), z], np.float32)
+            sz = size * (0.7 + 0.6 * rng.random())
         for ci, ch in enumerate(chains):
             col = colors[ci % len(colors)]
-            p = (ch * size * 0.5) @ Rm.T + c
-            # resample the trace so beads overlap into a tube
+            p = (ch[::stride] * sz * 0.5) @ Rm.T + c
             seg = np.linalg.norm(np.diff(p, axis=0), axis=1)
             for a, b, L in zip(p[:-1], p[1:], seg):
-                n = max(1, int(L / (radius * 0.9)))
+                n = max(1, int(L / (radius * 1.1)))
                 for t in np.linspace(0, 1, n, endpoint=False):
                     stage.items.append(('sphere', a + (b - a) * t, radius, col, glow))
+    if membrane:
+        # a tilted sheet of lipid heads behind the molecules (two leaflets reading as one bumpy
+        # plane at this scale), coloured by the second species dimmed
+        mcol = tuple(np.clip(np.array(colors[1 % len(colors)]) * 0.55, 0, 1))
+        c0 = np.asarray(target_depth if target_depth is not None else (0, 0, 3.0), np.float32)
+        ex = np.array([1.0, 0, 0], np.float32); ey = np.array([0, math.cos(0.45), math.sin(0.45)], np.float32)
+        ez = np.cross(ex, ey)
+        base = c0 + ez * size * 0.6
+        head = radius * 2.4
+        ext = int(3.2 * size / (head * 2.2))
+        for i in range(-ext, ext + 1):
+            for j in range(-ext, ext + 1):
+                q = base + ex * i * head * 2.2 + ey * j * head * 2.2 + rng.normal(scale=head * 0.3, size=3)
+                stage.items.append(('sphere', q, head, mcol, glow * 0.4))
     stage.jitter = radius * 0.05
     return stage
 
