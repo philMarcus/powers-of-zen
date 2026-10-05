@@ -120,6 +120,16 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-05 (MIDDAY): THE 01:30 BATCH CRASHED ON FRAME 0 (sprite-mode variable unset on the txt2img frame; every lab arm was
+--from-card so none hit it) → fixed, smoke-tested from frame 0 (memory: smoke-test-frame-zero), the four re-queued same
+seed and re-run by hand from 06:22. IN VIDEO REVIEW NOW, the first four videos from the full production path (stage auto +
+sprite cameo + palette anchor + plate hold): vernal_clutch (lattice 20.4-22.8 s), cork_dehesa (tissue 15.3-18.0, molecule
+18.0-20.7, nucleus field 23.3-26.0), gulal_dusk (lattice 4.1-6.4), stromatolite_dawn (~12:30: tissue, two molecule cards,
+lattice — timecodes below). Music candidates arrive when the batch closes (~12:45). MOLECULE CARDS TO JUDGE: cork's suberin
+(albumin on a membrane — wrong molecule for a wax, lipid/wax words now map to rod bundles), stromatolite's cyano_interior
+(complexes on a membrane) and carboxysome (a sea of molecule clusters — the best molecular card so far). kelp_dynamo_stage +
+gecko_rampart_stage are in the POSTING queue (Phil approved). Strips: scratchpad/orange/{vernal_lattice,cork_*,gulal_lattice,
+strom_*}_strip.png. Tonight's 01:30 nightly continues the queue (urchin_barren next) with everything on.
 2026-10-04 (NIGHT — PHIL'S THREE ASKS DONE + C: CLEANUP; read PLAN "DAY 2 NIGHT"): (1) MASCOT = SPRITE (dive --cameo-mode
 sprite, default): pasted crisp onto the delivered frames, rides the zoom until it leaves, no den cap, allowed on stage/plate
 cards, auto-stage no longer skips the cameo card — verified (scratchpad/orange/sprite_frames.png). (2) PLANET SAMENESS:

@@ -2572,3 +2572,10 @@ cyan nucleon droplets, one grows to fill the frame, hands into the cosmic froth;
 Hooke's cork, a teal honeycomb of walled cells (the tissue kit's best yet); suberin_lamellae =
 albumin blobs on a membrane (wrong molecule for a wax — lipid/wax/fatty words now map to a
 bundle of short rods). Strips: scratchpad/orange/vernal_lattice_strip.png, cork_*_strip.png.
+- stromatolite_dawn (the fourth, 12:00): mat_veneer as tissue = a green honeycomb of walled
+  cells resolving out of the striped dome (a strong one); cyano_interior = cyan/pink protein
+  complexes seated in a dotted membrane (molecule on a sheet, reads as machinery); carboxysome =
+  a SEA of red/cyan molecule clusters at all depths with one growing toward the camera (the
+  best molecular card so far — many instances, real structure, the card's palette, clearly a
+  zoom); aragonite lattice rendering. Strips scratchpad/orange/strom_*_strip.png. The day's four
+  videos are the first produced by the full production path end to end.
