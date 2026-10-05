@@ -1656,6 +1656,9 @@ def main():
             arrival_starts.add(_acc)
         _acc += _ph["frames"]
     for i in range(start_i, total):
+        cam_pasted = False      # per frame; frame 0 (txt2img) never enters the paste branch —
+                                # the sprite-mode output paste read it unset there (2026-10-05
+                                # 01:30: all four nightly renders crashed on frame 0)
         prompt, prev_prompt, k, p_idx = phase_info(phases, i)
         in_transition = prev_prompt is not None and k < T
         base_den = den_sched[i] if den_sched else cfg["denoise"]
