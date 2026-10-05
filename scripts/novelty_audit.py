@@ -142,7 +142,7 @@ def main():
     # STAGE VARIETY (2026-10-05): the kits the auto-stager would draw for the catalog's micro
     # cards and the per-journey looks — so the refill can see a monoculture forming
     try:
-        sys.path.insert(0, str(ROOT / "engine"))
+        sys.path.insert(0, str(pl.ROOT / "engine"))
         import stage as _stage
         from collections import Counter as _C
         kits, looks = _C(), _C()
