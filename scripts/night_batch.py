@@ -220,6 +220,9 @@ def render_one(journey, force=False, new_seed=True, from_card=None):
         if (pl.jload()["settings"].get("stage_mode") or "") == "auto":
             # MICRO STAGE (PLAN "THE MICRO STAGE"): built 3-D worlds for the micro cards
             argv += ["--stage-auto"]
+            _spr = int(pl.jload()["settings"].get("stage_preroll") or 0)
+            if _spr > 0:
+                argv += ["--stage-preroll", str(_spr)]
         if from_card:
             argv += ["--from-card", str(from_card)]
         if (force or from_card) and new_seed:

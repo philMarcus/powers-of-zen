@@ -295,6 +295,9 @@ JSETTINGS_DEFAULTS = {
     # (engine/stage.suggest_stage picks a kit per card: lattice / atom field / nucleus field /
     # quark field / tissue; molecular stays plain; cameo cards stay plain); "" = off.
     "stage_mode": "auto",
+    # stage pre-roll frames (dive --stage-preroll N): the coming stage opens inside a disc on
+    # its fixed point during the previous card's last N frames. 0 = the bar-line zoom-through.
+    "stage_preroll": 0,
 }
 
 
