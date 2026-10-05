@@ -120,6 +120,16 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-04 (NIGHT — PHIL'S THREE ASKS DONE + C: CLEANUP; read PLAN "DAY 2 NIGHT"): (1) MASCOT = SPRITE (dive --cameo-mode
+sprite, default): pasted crisp onto the delivered frames, rides the zoom until it leaves, no den cap, allowed on stage/plate
+cards, auto-stage no longer skips the cameo card — verified (scratchpad/orange/sprite_frames.png). (2) PLANET SAMENESS:
+surface plates vary but globes converged to one tan cloud-belt ball → plate identity floor 0.20→0.40 (verified: the globe
+now carries the plate's coast, plateid_strip.png); 49/71 planet cards are authored storm worlds → PLANET MOTIF line in the
+novelty brief + composer PLANET TEST. (3) MOLECULAR = tubes v4 (smooth tubes, sea/bundle/sheet/chain arrangements, 28-PDB
+library by card words, coverage density, no near copies) — in motion reads as membrane machinery (stage_tubes4_strip.png);
+molecular auto-staging ON for cards with a molecular word. Auto rules: every atomic card → ball-and-stick lattice; tissue only
+for many-cell scenes. C: CLEANUP running: archive.py --review --run (27G of dead music candidates + old cuts → E:), then the
+output class (--run) after its dry run; in-flight guard added. Check df -h /mnt/c in the morning (was 99%).
 2026-10-04 (EVENING — THE STAGE IS ON; read PLAN "DAY 2 EVENING"): Phil's second pass: "looking pretty good", will post
 kelp_dynamo_stage + gecko_rampart_stage; the run of stages read "morphy not zoomy" → FIXED: consecutive stage cards share
 the zoom's fixed point + ZOOM-THROUGH arrival (the new stage opens through a wide-feathered disc on the fixed point while the

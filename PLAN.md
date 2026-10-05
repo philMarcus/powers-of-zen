@@ -2545,3 +2545,17 @@ never from one house template; the audit now watches planet motifs the way it wa
   plate's coast and river (blue sea, tan land visible on the sphere) and the descent lands on that
   coastline. Live from tonight's batch (engine/plate.py). The composer-side fix (49/71 planet
   cards are storm worlds) rides the novelty brief into tomorrow's refill.
+- TUBES v4 IN MOTION (kelp thylakoid + ATP cards, sheet arrangement, 20:18; strip
+  scratchpad/orange/stage_tubes4_strip.png): a dotted lipid membrane with orange/green protein
+  complexes seated in it — reads as membrane machinery, a clear step up from v1's moss and
+  v2's granules (edge-corr 0.29-0.36); the complexes are still blobby at near range (sphere
+  chains compress into lumps when the plunge closes in). Molecular auto-staging is ON for cards
+  with a molecular word (67 of the catalog's micro cards); the next refinement is a capsule/tube
+  primitive in the renderer so near chains stay tubes, plus per-domain colour.
+- C: DRIVE (Phil 20:05: "clean up the C drive"): C: was 99% (16G free). archive.py got a
+  REVIEW class — review/music/candidates/<j> + review*/ cuts (incl. _shift/_silent companions)
+  of live/rejected/failed/orphan videos → E:\zoomer_archive\review_music_candidates\,
+  review_cuts\, review_music_probes\ (27.1G, 400 items; active videos' files stay — verified
+  empty intersection) — running; the output class (live/rejected/orphan render trees, prune
+  regenerable first) runs after its dry run, with a new IN-FLIGHT GUARD (any tree with a file
+  written in the last 90 min stays).
