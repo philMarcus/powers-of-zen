@@ -1679,7 +1679,7 @@ def main():
             else:
                 _spans.append((_sS, min(total, _sS + _sF)))
             for _a0, _a1 in _spans:
-                for _x in range(_a0, _a1):
+                for _x in range(_a0, min(_a1, total)):
                     stage_at[_x] = (_stage, _x - (_a0 if _a0 != 1 else 0))
                 resolve_windows = [w for w in resolve_windows if w["w1"] <= _a0 or w["w0"] >= _a1]
                 for c in cameos:
@@ -1690,9 +1690,9 @@ def main():
             _pr = []
             if _pre > 0:
                 for _a0, _a1 in _spans:
-                    if _a0 == 1:
+                    if _a0 == 1 or _a0 >= total:
                         continue                                  # the warm-up copy has no past
-                    for _x in range(_a0 - _pre, _a0):
+                    for _x in range(max(0, _a0 - _pre), min(total, _a0)):
                         preroll_at[_x] = (_stage, _x - _a0)
                     _pr.append((_a0 - _pre, _a0))
             print(f"[dive] STAGE {_sdef.get('kit')} card {_sk} {_sreg.get('name')!r}: frames "
