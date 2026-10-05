@@ -163,20 +163,53 @@ class Stage:
                 vis = (zb[y0:y1, x0:x1] > q[2]).astype(np.float32)
                 glow[y0:y1, x0:x1] += (g * vis)[..., None] * np.asarray(rgb, np.float32)
                 continue
-            if rpx < 0.4:
-                continue
-            x0, x1 = int(max(0, px - rpx - 1)), int(min(w, px + rpx + 2))
-            y0, y1 = int(max(0, py - rpx - 1)), int(min(h, py + rpx + 2))
-            if x1 <= x0 or y1 <= y0:
-                continue
-            yy, xx = np.mgrid[y0:y1, x0:x1].astype(np.float32)
-            u, v = (xx - px) / rpx, (yy - py) / rpx
-            rho2 = u * u + v * v
-            inside = rho2 <= 1.0
-            if not inside.any():
-                continue
-            nz = np.sqrt(np.clip(1.0 - rho2, 0, 1))
-            depth = q[2] - R * nz                          # surface depth toward the camera
+            if kind == 'capsule':
+                # a TUBE segment from c to `extra_b` (stored in the colour slot's neighbour):
+                # items are ('capsule', a, b, R, rgb, extra) — see kit_tubes v5
+                qb = np.asarray(R, np.float32) - cam       # R holds b for capsules
+                Rr = float(rgb)                            # rgb slot holds the radius
+                rgb, extra = extra[0], extra[1]
+                if qb[2] <= 0.05:
+                    continue
+                pbx, pby = 0.5 * w + w * qb[0] / qb[2], 0.5 * h + w * qb[1] / qb[2]
+                rpa, rpb = w * Rr / q[2], w * Rr / qb[2]
+                rmax = max(rpa, rpb)
+                if rmax < 0.4:
+                    continue
+                x0, x1 = int(max(0, min(px, pbx) - rmax - 1)), int(min(w, max(px, pbx) + rmax + 2))
+                y0, y1 = int(max(0, min(py, pby) - rmax - 1)), int(min(h, max(py, pby) + rmax + 2))
+                if x1 <= x0 or y1 <= y0:
+                    continue
+                yy, xx = np.mgrid[y0:y1, x0:x1].astype(np.float32)
+                dx, dy = pbx - px, pby - py
+                L2 = dx * dx + dy * dy
+                t = np.clip(((xx - px) * dx + (yy - py) * dy) / max(L2, 1e-6), 0, 1)
+                cxp, cyp = px + t * dx, py + t * dy        # nearest point on the segment
+                rp = rpa + (rpb - rpa) * t                 # radius in px along the segment
+                u, v = (xx - cxp) / rp, (yy - cyp) / rp
+                rho2 = u * u + v * v
+                inside = rho2 <= 1.0
+                if not inside.any():
+                    continue
+                nz = np.sqrt(np.clip(1.0 - rho2, 0, 1))
+                zc = q[2] + (qb[2] - q[2]) * t
+                depth = zc - Rr * nz
+                rpx = rp
+            else:
+                if rpx < 0.4:
+                    continue
+                x0, x1 = int(max(0, px - rpx - 1)), int(min(w, px + rpx + 2))
+                y0, y1 = int(max(0, py - rpx - 1)), int(min(h, py + rpx + 2))
+                if x1 <= x0 or y1 <= y0:
+                    continue
+                yy, xx = np.mgrid[y0:y1, x0:x1].astype(np.float32)
+                u, v = (xx - px) / rpx, (yy - py) / rpx
+                rho2 = u * u + v * v
+                inside = rho2 <= 1.0
+                if not inside.any():
+                    continue
+                nz = np.sqrt(np.clip(1.0 - rho2, 0, 1))
+                depth = q[2] - R * nz                          # surface depth toward the camera
             zi = zb[y0:y1, x0:x1]
             hit = inside & (depth < zi)
             if not hit.any():
@@ -744,14 +777,11 @@ def kit_tubes(stage, pdb='4HHB', n_copies=14, size=0.9, radius=None, colors=((0.
         for ci, ch in enumerate(chains):
             col = colors[ci % len(colors)]
             pts = (ch[::stride] * sz * 0.5) @ Rm.T + c
-            seg = np.linalg.norm(np.diff(pts, axis=0), axis=1)
-            idx = 0
-            for a, b, L in zip(pts[:-1], pts[1:], seg):
-                n = max(1, int(L / (radius * 0.45)))
-                for t in np.linspace(0, 1, n, endpoint=False):
-                    stage.items.append(('sphere', a + (b - a) * t, radius, col, glow))
-                idx += 1
-                if idx % 7 == 0:
+            # v5 (2026-10-05, step 3): one CAPSULE per trace segment — a true tube with its own
+            # shading and depth, so near molecules stay tubes instead of fusing into bead lumps
+            for idx, (a, b) in enumerate(zip(pts[:-1], pts[1:])):
+                stage.items.append(('capsule', a, b, radius, (col, glow)))
+                if (idx + 1) % 7 == 0:
                     stage.items.append(('sphere', b, radius * 1.7, accent, glow * 2.0))
     if membrane or arrangement == 'sheet':
         mcol = tuple(np.clip(np.array(colors[1 % len(colors)]) * 0.55, 0, 1))

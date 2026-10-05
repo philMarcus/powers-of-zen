@@ -2622,3 +2622,14 @@ line (as the planet plate spans the bar line) — a real object we dive into, no
 - LAP STAGING (the cork gap): a staged render-start card is staged in both copies; circular
   anchor runs; verification render cork_mini (3 cards @fpb5) in flight.
 - queue_review records stage_cards/kits (+look), cameo_mode, palette_anchor per video.
+- (2) PRE-ROLL built behind --stage-preroll N (default 0): the coming stage opens inside a disc on
+  its fixed point during the previous card's last N frames, radius 0.12 W × zoom^k (k 2.2) so it
+  covers the frame at the bar line; the aim eases onto the anchor over the first 6 frames;
+  denoise inside the disc held at ~0.30 via the DifferentialDiffusion mask; after the bar line
+  the identity settles 0.6 → 0.5 under the costume denoise (no second disc). Card arm queued
+  (sunspot plain v2 from card 5: plain → nucleus, nucleus → quark). If it reads as a zoom, the
+  nightly gets --stage-preroll 16.
+- (3) TUBE PRIMITIVE built: Stage renders ('capsule', a, b, r, (rgb, glow)) items as true tubes
+  (nearest point on the projected segment, own depth + shading, works under every look);
+  kit_tubes v5 emits one capsule per trace segment — near molecules stay tubes instead of fusing
+  into bead lumps (scratchpad/orange/stage_demo/tubes5_sheet.png; 0.3-0.8 s/frame).
