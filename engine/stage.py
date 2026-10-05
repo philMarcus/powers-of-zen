@@ -561,6 +561,8 @@ _PDB_LIBRARY = {   # molecule -> (pdb id, chains hint); the variety source for t
     'aquaporin': '1J4N', 'spectrin': '1U5P', 'crystallin': '2KLJ', 'luciferase': '1LCI',
     'ribosome_small': '1FJG', 'photosystem': '1JB0', 'porin': '2OMF', 'chaperone': '1AON',
     'kinesin': '3KIN', 'myosin': '1B7T', 'transferrin': '1A8E', 'albumin': '1AO6', 'pepsin': '4PEP',
+    'rubisco': '1RCX', 'carboxysome': '1RCX', 'phycobilisome': '1KN1', 'chlorophyll': '1JB0',
+    'cellulose': '1CGD', 'spool': '1AOI', 'histone': '1AOI', 'chromosome': '1AOI', 'suberin': '1AO6',
 }
 
 
