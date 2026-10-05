@@ -120,6 +120,17 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-05 (LATE AFTERNOON — the three approved steps in progress; GPU: cork_mini (lap-staging check) → looks pass →
+pre-roll card arm; nightly at 01:30 renders sunspot/anvil/spouter/urchin/paradise with stage auto): BUILT TODAY — (a) a staged
+render-start card is staged in BOTH copies (warm-up + lap, incl. the arrival replay) = the cork gap fix, circular anchor
+runs; (b) SIX LOOKS drawn per journey (gem/fuzzy/plasma/glass/wire/ink; journey `stage_look`, card `stage.look`) + kits
+fluid / tracks / pasta / amorphous + Coulomb lattices + a words-first seeded kit draw — the novelty brief reports kit+look
+spread (14 kits, 6 looks over the catalog); (c) --stage-preroll N (default 0, arm pending): the stage opens in a disc on its
+fixed point during the previous card's last N frames at zoom^k with denoise held inside. MISTAKE: `rm -rf output/<name>`
+after plan-only runs deleted the lab render trees output/gecko_rampart_stage/v1 and output/sunspot_archipelago_stage/v1
+(their review mp4s + pipeline entries are intact; posting unaffected) — memory plan-only-cleans-itself. NEXT: judge
+cork_mini (lap staging in the tail), looks_pass.png, the pre-roll arm → enable --stage-preroll in night_batch if it reads
+as a zoom; then step (3) a tube primitive for molecules.
 2026-10-05 (AFTERNOON — "TURN IT ALL ON"; read PLAN "2026-10-05 MIDDAY"): Phil approved the stage era from the first four
 production-path videos (cork "I like that one a lot", vernal "palettes much better", gulal "staging looks neat";
 stromatolite's first stage arrival "a jarring fade"). stage_mode=auto stays. Review CLEARED of pre-stage renders:
