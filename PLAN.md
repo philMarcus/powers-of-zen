@@ -2638,3 +2638,8 @@ line (as the planet plate spans the bar line) — a real object we dive into, no
   (diff 0.00), both copies render the same diamond lattice (rendered diff 22-30/255 = ordinary
   feedback divergence), the loop wrap steps 35/255 (first→second frame 20/255) — a normal wrap.
   cork_dehesa's next render will stage carbon_atom in its delivered copy (no gap).
+- LOOKS UNDER THE REPAINT (output/stage_lab/looks_pass.png, den 0.5 + stage CN 0.7): plasma,
+  wire and ink remain distinct materials after DreamShaper (emissive pastel spheres / outlined
+  bubbles / dark bodies on a pale ground); glass keeps its rims; GEM and FUZZY converge (the
+  facets are too fine at sphere sizes under ~60 px) — tuning item: fewer, larger facets and a
+  harder specular for gem, or draw gem only with larger-radius kits.
