@@ -2540,3 +2540,8 @@ never from one house template; the audit now watches planet motifs the way it wa
   MANY-cell scenes (toe_pavement's "flat cells packed rim to rim" is right; vernal's "within one
   embryo cell" is not). Coverage now 273 of 424 micro cards (lattice 98, tubes 67, tissue 57,
   nucleus 43, quark 8).
+- PLATE IDENTITY 0.40 VERIFIED (sargasso card 1, 20:01; scratchpad/orange/plateid_strip.png): the
+  old globe was the cratered tan ball again; with the floor at 0.40 the globe carries the surface
+  plate's coast and river (blue sea, tan land visible on the sphere) and the descent lands on that
+  coastline. Live from tonight's batch (engine/plate.py). The composer-side fix (49/71 planet
+  cards are storm worlds) rides the novelty brief into tomorrow's refill.
