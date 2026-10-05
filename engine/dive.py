@@ -91,7 +91,10 @@ DEFAULTS = {
     "negative": ("text, watermark, logo, blurry, frame, border, low quality, "
                  "person, people, human figure, standing figure, full body, woman, man, "
                  "goddess, angel, fantasy character, portrait, face, hands, anatomy, "
-                 "halo, crown, robe, album cover"),
+                 "halo, crown, robe, album cover, "
+                 # 2026-10-05: gulal_dusk opened on a SPOON in its paint swirls (the
+                 # tabletop product-shot prior) — tableware is never wanted at any scale
+                 "spoon, fork, knife, cutlery, utensil, tableware, plate, bowl, cup"),
     # frame-0 lone-figure guard (see engine/figure.py): frame 0 is the only txt2img frame, so
     # the checkpoint's prior rules it and the feedback chain then locks it in for the whole
     # render. Catch it in ~20s instead of discovering it an hour later.

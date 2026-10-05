@@ -120,6 +120,14 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-05 (AFTERNOON — "TURN IT ALL ON"; read PLAN "2026-10-05 MIDDAY"): Phil approved the stage era from the first four
+production-path videos (cork "I like that one a lot", vernal "palettes much better", gulal "staging looks neat";
+stromatolite's first stage arrival "a jarring fade"). stage_mode=auto stays. Review CLEARED of pre-stage renders:
+kelp_dynamo + gecko_rampart rejected (staged twins posting), sunspot_archipelago / anvil_country / spouter_dawn re-queued
+FRONT with fresh seeds, the two day-1 lab copies retired. Tonight 01:30: sunspot, anvil, spouter, urchin_barren,
+paradise_cape — all through stage + sprite + anchor. OPEN WITH PHIL (he asked to discuss the next step): look variety
+per journey (gem/fuzzy/plasma/glass...) + more subatomic-inspired kits, the zoom-into-it arrival across the bar line, a
+tube primitive for molecules. Known bait: a SPOON on gulal's opening frame (cutlery now in the global negative).
 2026-10-05 (MIDDAY): THE 01:30 BATCH CRASHED ON FRAME 0 (sprite-mode variable unset on the txt2img frame; every lab arm was
 --from-card so none hit it) → fixed, smoke-tested from frame 0 (memory: smoke-test-frame-zero), the four re-queued same
 seed and re-run by hand from 06:22. IN VIDEO REVIEW NOW, the first four videos from the full production path (stage auto +

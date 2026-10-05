@@ -2579,3 +2579,28 @@ bundle of short rods). Strips: scratchpad/orange/vernal_lattice_strip.png, cork_
   best molecular card so far — many instances, real structure, the card's palette, clearly a
   zoom); aragonite lattice rendering. Strips scratchpad/orange/strom_*_strip.png. The day's four
   videos are the first produced by the full production path end to end.
+
+## 2026-10-05 MIDDAY — PHIL'S VERDICTS ON THE FIRST PRODUCTION-PATH VIDEOS ("turn it all on")
+stromatolite: "a jarring fade into the first stage ... goes green ... zoomed in from a shoreline
+and just became molecules all of a sudden" (the mat tissue card after a x10^3.6 jump — the
+zoom-through arrival still reads as a CUT on a big jump; see NEXT). gulal_dusk: opening frame
+has a SPOON at 10^-1 (DreamShaper's paint-swirl product-shot prior; cutlery added to the global
+negative) but "the staging looks pretty neat". cork: "looks cool, I like that one a lot". vernal:
+"palettes much better ... cubic looks cool, it was short". NUCLEONS: fuzzy as they should be, but
+"from time to time I wouldn't hate gems in the fuzziness — eye candy pretty". SAMENESS (the
+standing worry): "if all the atoms look samey except for the number of nucleons we'll have samey
+video ... take some more liberties, more stages inspired by subatomic realms, not necessarily
+accurate — I just want to avoid sameness." DECISION: stage stays ON; pre-stage Review videos
+cleared (kelp_dynamo + gecko_rampart rejected outright — their staged twins are posting;
+sunspot_archipelago, anvil_country, spouter_dawn rejected and RE-QUEUED at the front with fresh
+seeds; the two day-1-kit lab copies retired). Review = cork_dehesa, gulal_dusk; vernal +
+stromatolite in Music. queue_review now records stage_cards / cameo_mode / palette_anchor.
+NEXT (for discussion, Phil's order of concern): (1) LOOK VARIETY per journey — a drawn "look"
+(gem / fuzzy / plasma / glass / wire / ink) that changes how nucleons, atoms and bonds are
+shaded, plus more subatomic-INSPIRED kits (Coulomb crystal, quark-gluon fluid, bubble-chamber
+tracks, nuclear-pasta lamellae/gyroid, probability-fog field, amorphous glass network); the
+composer writes `stage: {kit, look}` per card and the novelty audit watches kit+look spread like
+it watches planet motifs. (2) ZOOM-INTO-IT ARRIVAL: the stage's disc is introduced during the
+PREVIOUS card's plunge at the plunge's own fixed point and grows AT THE ZOOM RATE across the bar
+line (as the planet plate spans the bar line) — a real object we dive into, not a 0.4 s wipe.
+(3) a capsule/tube primitive so near molecules stay tubes. (4) cutlery/utensil frame bait.

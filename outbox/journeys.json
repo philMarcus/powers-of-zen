@@ -17,7 +17,7 @@
     "palette_anchor": 0.5,
     "stage_mode": "auto",
     "post_every_hours": 19.0,
-    "post_next": "2026-10-05 07:00",
+    "post_next": "2026-10-06 02:00",
     "plate_intro": "mix"
   },
   "journeys": {
@@ -183,67 +183,67 @@
     },
     "thousand_moons": {
       "state": "queued",
-      "order": 9,
+      "order": 4,
       "ts": "2026-09-22 00:25:21",
       "note": "composed by midnight refill"
     },
     "bloom_rosary": {
       "state": "queued",
-      "order": 10,
+      "order": 5,
       "ts": "2026-09-24 00:50:45",
       "note": "composed by midnight refill"
     },
     "clathrate_seep": {
       "state": "queued",
-      "order": 11,
+      "order": 6,
       "ts": "2026-09-24 00:50:45",
       "note": "composed by midnight refill"
     },
     "lepidolite_halo": {
       "state": "queued",
-      "order": 12,
+      "order": 7,
       "ts": "2026-09-24 00:50:46",
       "note": "composed by midnight refill"
     },
     "meridian_mounds": {
       "state": "queued",
-      "order": 13,
+      "order": 8,
       "ts": "2026-09-24 00:50:46",
       "note": "composed by midnight refill"
     },
     "potter_waist": {
       "state": "queued",
-      "order": 14,
+      "order": 9,
       "ts": "2026-09-24 00:50:46",
       "note": "composed by midnight refill"
     },
     "dazzle_bands": {
       "state": "queued",
-      "order": 15,
+      "order": 10,
       "ts": "2026-09-25 00:47:45",
       "note": "composed by midnight refill"
     },
     "lotus_sieve": {
       "state": "queued",
-      "order": 16,
+      "order": 11,
       "ts": "2026-09-25 00:47:46",
       "note": "composed by midnight refill"
     },
     "maelstrom_eye": {
       "state": "queued",
-      "order": 17,
+      "order": 12,
       "ts": "2026-09-25 00:47:46",
       "note": "composed by midnight refill"
     },
     "meeting_waters": {
       "state": "queued",
-      "order": 18,
+      "order": 13,
       "ts": "2026-09-25 00:47:46",
       "note": "composed by midnight refill"
     },
     "plover_scrape": {
       "state": "queued",
-      "order": 19,
+      "order": 14,
       "ts": "2026-09-25 00:47:46",
       "note": "composed by midnight refill"
     },
@@ -289,55 +289,55 @@
     },
     "bluebell_chorus": {
       "state": "queued",
-      "order": 20,
+      "order": 15,
       "ts": "2026-09-26 00:58:58",
       "note": "composed by midnight refill"
     },
     "klondike_nugget": {
       "state": "queued",
-      "order": 21,
+      "order": 16,
       "ts": "2026-09-26 00:58:58",
       "note": "composed by midnight refill"
     },
     "macaw_lick": {
       "state": "queued",
-      "order": 22,
+      "order": 17,
       "ts": "2026-09-26 00:58:58",
       "note": "composed by midnight refill"
     },
     "sequoia_rosette": {
       "state": "queued",
-      "order": 23,
+      "order": 18,
       "ts": "2026-09-26 00:58:59",
       "note": "composed by midnight refill"
     },
     "valdes_blow": {
       "state": "queued",
-      "order": 24,
+      "order": 19,
       "ts": "2026-09-26 00:58:59",
       "note": "composed by midnight refill"
     },
     "bismuth_hopper": {
       "state": "queued",
-      "order": 25,
+      "order": 20,
       "ts": "2026-09-27 00:52:15",
       "note": "composed by midnight refill"
     },
     "cuttle_bridge": {
       "state": "queued",
-      "order": 26,
+      "order": 21,
       "ts": "2026-09-27 00:52:15",
       "note": "composed by midnight refill"
     },
     "labrador_schiller": {
       "state": "queued",
-      "order": 27,
+      "order": 22,
       "ts": "2026-09-27 00:52:16",
       "note": "composed by midnight refill"
     },
     "paradise_cape": {
       "state": "queued",
-      "order": 28,
+      "order": 23,
       "ts": "2026-09-27 00:52:16",
       "note": "composed by midnight refill"
     },
@@ -362,39 +362,7 @@
       "new_seed": true,
       "ts": "2026-10-03 15:54:40",
       "note": "re-render: video rejected in review",
-      "order": 29
-    },
-    "vernal_clutch": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-10-03 16:33:45",
-      "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
-      "order": 4
-    },
-    "cork_dehesa": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-10-03 16:33:45",
-      "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
-      "order": 5
-    },
-    "gulal_dusk": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-10-03 16:33:45",
-      "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
-      "order": 6
-    },
-    "stromatolite_dawn": {
-      "state": "queued",
-      "force": true,
-      "new_seed": false,
-      "ts": "2026-10-03 16:33:45",
-      "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
-      "order": 7
+      "order": 24
     },
     "urchin_barren": {
       "state": "queued",
@@ -402,13 +370,37 @@
       "new_seed": false,
       "ts": "2026-10-03 16:33:45",
       "note": "re-render: video rejected in review (same seed) — palette anchor 0.5",
-      "order": 8
+      "order": 3
     },
     "venus_basket": {
       "state": "rejected",
       "ts": "2026-10-03 16:33:45",
       "note": "old render rejected 2026-10-03; its palette-anchor re-render is the Music-stage video venus_basket_color (journeys/lab/)"
+    },
+    "sunspot_archipelago": {
+      "state": "queued",
+      "force": true,
+      "new_seed": true,
+      "ts": "2026-10-05 18:39:54",
+      "note": "re-render through the stage (Phil 2026-10-05: turn it all on), fresh seed",
+      "order": 0
+    },
+    "anvil_country": {
+      "state": "queued",
+      "force": true,
+      "new_seed": true,
+      "ts": "2026-10-05 18:39:54",
+      "note": "re-render through the stage (Phil 2026-10-05: turn it all on), fresh seed",
+      "order": 1
+    },
+    "spouter_dawn": {
+      "state": "queued",
+      "force": true,
+      "new_seed": true,
+      "ts": "2026-10-05 18:39:54",
+      "note": "re-render through the stage (Phil 2026-10-05: turn it all on), fresh seed",
+      "order": 2
     }
   },
-  "updated": "2026-10-04 18:29:09"
+  "updated": "2026-10-05 18:39:54"
 }

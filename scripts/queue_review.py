@@ -85,7 +85,9 @@ def main():
     try:
         rj = json.loads((src / "run.json").read_text(encoding="utf-8"))
         for k in ("parallax_gain", "resolve_persist", "camera_micro", "seed", "plate",
-                  "plate_cn", "plate_void_gate", "plate_intro"):
+                  "plate_cn", "plate_void_gate", "plate_intro",
+                  # 2026-10-05: the stage era's variables (analytics group by these)
+                  "stage_auto", "stage_cards", "cameo_mode", "palette_anchor"):
             if k in rj:
                 ep[k] = rj[k]
     except Exception:

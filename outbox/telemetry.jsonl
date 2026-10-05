@@ -2409,3 +2409,62 @@
 {"ts": "2026-10-04 18:39:44", "event": "review", "journey": "spouter_dawn"}
 {"ts": "2026-10-04 20:21:00", "event": "archive_review", "detail": "moved 27.1G of review candidates/cuts to E:"}
 {"ts": "2026-10-04 20:39:57", "event": "archive", "detail": "moved 29.4G to E:"}
+{"ts": "2026-10-05 00:00:52", "event": "ig_stats", "detail": "36 reels, followers 146"}
+{"ts": "2026-10-05 00:01:08", "event": "ig_insights", "detail": "21 posts"}
+{"ts": "2026-10-05 00:03:23", "event": "yt_stats", "detail": "90 videos, 15109 views"}
+{"ts": "2026-10-05 01:30:24", "event": "render_fail", "journey": "vernal_clutch", "detail": "dive failed:     if args.cameo_mode == \"sprite\" and cam_pasted and cam is not None and cfg[\"build\"] != \"out\": |                                        ^^^^^^^^^^ | UnboundLocalError: cannot access local variable 'cam_pasted' where it is not associated with a value"}
+{"ts": "2026-10-05 01:30:45", "event": "render_fail", "journey": "cork_dehesa", "detail": "dive failed:     if args.cameo_mode == \"sprite\" and cam_pasted and cam is not None and cfg[\"build\"] != \"out\": |                                        ^^^^^^^^^^ | UnboundLocalError: cannot access local variable 'cam_pasted' where it is not associated with a value"}
+{"ts": "2026-10-05 01:31:06", "event": "render_fail", "journey": "gulal_dusk", "detail": "dive failed:     if args.cameo_mode == \"sprite\" and cam_pasted and cam is not None and cfg[\"build\"] != \"out\": |                                        ^^^^^^^^^^ | UnboundLocalError: cannot access local variable 'cam_pasted' where it is not associated with a value"}
+{"ts": "2026-10-05 01:31:28", "event": "render_fail", "journey": "stromatolite_dawn", "detail": "dive failed:     if args.cameo_mode == \"sprite\" and cam_pasted and cam is not None and cfg[\"build\"] != \"out\": |                                        ^^^^^^^^^^ | UnboundLocalError: cannot access local variable 'cam_pasted' where it is not associated with a value"}
+{"ts": "2026-10-05 01:31:28", "event": "batch_done", "detail": "batch done in 0.0h — 0 to Review, 4 failed (vernal_clutch, cork_dehesa, gulal_dusk, stromatolite_dawn)"}
+{"ts": "2026-10-05 06:22:05", "event": "jqueued", "journey": "vernal_clutch", "detail": "re-queue front after render_failed (frame-0 crash fixed)"}
+{"ts": "2026-10-05 06:22:05", "event": "jqueued", "journey": "cork_dehesa", "detail": "re-queue front after render_failed (frame-0 crash fixed)"}
+{"ts": "2026-10-05 06:22:05", "event": "jqueued", "journey": "gulal_dusk", "detail": "re-queue front after render_failed (frame-0 crash fixed)"}
+{"ts": "2026-10-05 06:22:05", "event": "jqueued", "journey": "stromatolite_dawn", "detail": "re-queue front after render_failed (frame-0 crash fixed)"}
+{"ts": "2026-10-05 07:05:46", "event": "ig_share_method", "detail": "trusted"}
+{"ts": "2026-10-05 07:06:37", "event": "post", "journey": "eft_downpour", "platform": "youtube", "detail": "https://youtube.com/shorts/rt1pyANLjy0"}
+{"ts": "2026-10-05 07:06:37", "event": "post", "journey": "eft_downpour", "platform": "instagram", "detail": "https://www.instagram.com/powers.of.zen/reel/DeHD9NWuLVK/"}
+{"ts": "2026-10-05 07:07:50", "event": "ig_stats", "detail": "60 reels, followers 146"}
+{"ts": "2026-10-05 07:08:04", "event": "ig_insights", "detail": "30 posts"}
+{"ts": "2026-10-05 07:10:20", "event": "yt_stats", "detail": "91 videos, 15112 views"}
+{"ts": "2026-10-05 07:10:20", "event": "post_gate", "detail": "fired (rc 0); next 2026-10-06 02:00"}
+{"ts": "2026-10-05 07:50:13", "event": "review", "journey": "vernal_clutch", "detail": "ds/divein (src v2)"}
+{"ts": "2026-10-05 07:51:04", "event": "caption", "journey": "vernal_clutch", "detail": "5 options, spot=True"}
+{"ts": "2026-10-05 07:51:04", "event": "render", "journey": "vernal_clutch", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-10-05 09:37:58", "event": "review", "journey": "cork_dehesa", "detail": "ds/divein (src v2)"}
+{"ts": "2026-10-05 09:38:45", "event": "caption", "journey": "cork_dehesa", "detail": "5 options, spot=True"}
+{"ts": "2026-10-05 09:38:45", "event": "render", "journey": "cork_dehesa", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-10-05 10:36:12", "event": "review", "journey": "gulal_dusk", "detail": "ds/divein (src v2)"}
+{"ts": "2026-10-05 10:36:59", "event": "caption", "journey": "gulal_dusk", "detail": "5 options, spot=True"}
+{"ts": "2026-10-05 10:36:59", "event": "render", "journey": "gulal_dusk", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-10-05 12:01:11", "event": "ig_stats", "detail": "60 reels, followers 146"}
+{"ts": "2026-10-05 12:01:27", "event": "ig_insights", "detail": "30 posts"}
+{"ts": "2026-10-05 12:03:51", "event": "yt_stats", "detail": "91 videos, 15139 views"}
+{"ts": "2026-10-05 12:27:14", "event": "review", "journey": "stromatolite_dawn", "detail": "ds/divein (src v2)"}
+{"ts": "2026-10-05 12:28:05", "event": "caption", "journey": "stromatolite_dawn", "detail": "5 options, spot=True"}
+{"ts": "2026-10-05 12:28:05", "event": "render", "journey": "stromatolite_dawn", "detail": "-> REVIEW (captioned)"}
+{"ts": "2026-10-05 12:30:12", "event": "music_pregen", "journey": "vernal_clutch", "detail": "5 candidates"}
+{"ts": "2026-10-05 12:31:56", "event": "music_pregen", "journey": "cork_dehesa", "detail": "5 candidates"}
+{"ts": "2026-10-05 12:33:03", "event": "music_pregen", "journey": "gulal_dusk", "detail": "5 candidates"}
+{"ts": "2026-10-05 12:34:46", "event": "music_pregen", "journey": "stromatolite_dawn", "detail": "5 candidates"}
+{"ts": "2026-10-05 12:34:46", "event": "batch_done", "detail": "batch done in 6.2h — 4 to Review"}
+{"ts": "2026-10-05 18:30:37", "event": "switch", "journey": "stromatolite_dawn", "detail": "ds/zoomout"}
+{"ts": "2026-10-05 18:32:32", "event": "phase_shift", "journey": "stromatolite_dawn", "detail": "start @ 8.10s"}
+{"ts": "2026-10-05 18:32:32", "event": "music", "journey": "stromatolite_dawn"}
+{"ts": "2026-10-05 18:32:42", "event": "music_realign", "journey": "stromatolite_dawn", "detail": "5 candidates"}
+{"ts": "2026-10-05 18:38:47", "event": "phase_shift", "journey": "vernal_clutch", "detail": "start @ 18.00s"}
+{"ts": "2026-10-05 18:38:47", "event": "music", "journey": "vernal_clutch"}
+{"ts": "2026-10-05 18:38:56", "event": "music_realign", "journey": "vernal_clutch", "detail": "5 candidates"}
+{"ts": "2026-10-05 18:39:54", "event": "rejected", "journey": "sunspot_archipelago", "detail": "pre-stage render cleared from Review (Phil 2026-10-05)"}
+{"ts": "2026-10-05 18:39:54", "event": "rejected", "journey": "anvil_country", "detail": "pre-stage render cleared from Review (Phil 2026-10-05)"}
+{"ts": "2026-10-05 18:39:54", "event": "rejected", "journey": "spouter_dawn", "detail": "pre-stage render cleared from Review (Phil 2026-10-05)"}
+{"ts": "2026-10-05 18:39:54", "event": "rejected", "journey": "kelp_dynamo", "detail": "pre-stage render cleared from Review (Phil 2026-10-05)"}
+{"ts": "2026-10-05 18:39:54", "event": "rejected", "journey": "gecko_rampart", "detail": "pre-stage render cleared from Review (Phil 2026-10-05)"}
+{"ts": "2026-10-05 18:39:54", "event": "rejected", "journey": "sunspot_archipelago_stage", "detail": "day-1-kit lab copy retired; the production journey is re-queued with the current kits"}
+{"ts": "2026-10-05 18:39:54", "event": "rejected", "journey": "anvil_country_stage", "detail": "day-1-kit lab copy retired; the production journey is re-queued with the current kits"}
+{"ts": "2026-10-05 18:39:54", "event": "jqueued", "journey": "sunspot_archipelago", "detail": "reject -> re-queue front, new seed (stage on)"}
+{"ts": "2026-10-05 18:39:54", "event": "jqueued", "journey": "anvil_country", "detail": "reject -> re-queue front, new seed (stage on)"}
+{"ts": "2026-10-05 18:39:54", "event": "jqueued", "journey": "spouter_dawn", "detail": "reject -> re-queue front, new seed (stage on)"}
+{"ts": "2026-10-05 18:40:21", "event": "phase_shift", "journey": "gulal_dusk", "detail": "start @ 13.00s"}
+{"ts": "2026-10-05 18:40:21", "event": "music", "journey": "gulal_dusk"}
+{"ts": "2026-10-05 18:40:27", "event": "music_realign", "journey": "gulal_dusk", "detail": "5 candidates"}
