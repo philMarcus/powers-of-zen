@@ -2633,3 +2633,8 @@ line (as the planet plate spans the bar line) — a real object we dive into, no
   (nearest point on the projected segment, own depth + shading, works under every look);
   kit_tubes v5 emits one capsule per trace segment — near molecules stay tubes instead of fusing
   into bead lumps (scratchpad/orange/stage_demo/tubes5_sheet.png; 0.3-0.8 s/frame).
+- LAP STAGING VERIFIED (cork_mini, 85 frames, 19:12; scratchpad/orange/mini_lap_strip.png): the
+  staged render-start card's composites are byte-identical between the warm-up and lap copies
+  (diff 0.00), both copies render the same diamond lattice (rendered diff 22-30/255 = ordinary
+  feedback divergence), the loop wrap steps 35/255 (first→second frame 20/255) — a normal wrap.
+  cork_dehesa's next render will stage carbon_atom in its delivered copy (no gap).
