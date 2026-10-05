@@ -68,7 +68,10 @@ class Stage:
         col = np.tile(self.bg, (h, w, 1)).astype(np.float32)
         zb = np.full((h, w), np.inf, np.float32)
         glow = np.zeros((h, w, 3), np.float32)
-        jit = self.rng.normal(scale=self.jitter, size=(len(self.items), 3)) if self.jitter else None
+        # per-frame deterministic jitter (not a running RNG): the warm-up and lap copies of a
+        # staged card 0 must render the SAME frame j identically whatever was drawn before
+        _jr = np.random.default_rng(((getattr(self, 'seed', 0) + 1) * 1000003 + f) & 0xFFFFFFFF)
+        jit = _jr.normal(scale=self.jitter, size=(len(self.items), 3)) if self.jitter else None
         # near-to-far for the z-buffer is irrelevant (true z test); sort far->near so
         # overdraw stays bounded by occlusion
         order = sorted(range(len(self.items)), key=lambda i: -float(self.items[i][1][2]))
@@ -305,6 +308,7 @@ def build_card_stage(kit, params, zooms, anchor, w, h, seed=0, fill=0.55):
     the droplet's centre is put there."""
     st = Stage(zooms, [anchor] * max(1, len(zooms)), w, h)
     st.anchor = anchor
+    st.seed = seed
     p = dict(params or {})
     A = sum((z - 1.0) / z for z in zooms)
     d = aim_dir(anchor[0], anchor[1], w, h)
@@ -417,6 +421,7 @@ def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0
     if kit == 'quark':
         st = Stage(zooms, [anchor] * max(1, len(zooms)), w, h, bg=dark, fog_rgb=dark)
         st.anchor = anchor
+        st.seed = seed
         A = sum((z - 1.0) / z for z in zooms)
         size = float(p.get('size', 0.9))
         d_T = A + size * 0.5 / fill
@@ -430,6 +435,7 @@ def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0
     if kit in ('fog', 'tubes', 'tissue'):
         st = Stage(zooms, [anchor] * max(1, len(zooms)), w, h, bg=dark, fog_rgb=dark)
         st.anchor = anchor
+        st.seed = seed
         A = sum((z - 1.0) / z for z in zooms)
         d = aim_dir(anchor[0], anchor[1], w, h)
         if kit == 'fog':
@@ -705,6 +711,11 @@ def suggest_stage(reg):
         var = next((v for v, rx in _VARIANT if rx.search(txt)), 'cubic')
         return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'radius': 0.06, 'glow': 0.2}
     if exp <= -6:
+        # a LATTICE named in the molecular band (ice lattice, water cages, clathrate) is a
+        # lattice card whatever its exponent (anvil's ice_lattice at -6.9 was left plain)
+        if _RX['lattice'].search(txt) and not _RX['tubes'].search(txt):
+            var = next((v for v, rx in _VARIANT if rx.search(txt)), 'cubic')
+            return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'radius': 0.06, 'glow': 0.2}
         # molecular (tubes v4): the molecule from the card's words, the arrangement from its
         # structure words; cards with no molecular word stay plain
         if not _RX['tubes'].search(txt):

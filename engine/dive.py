@@ -1541,7 +1541,7 @@ def main():
     # MICRO STAGE (lab, 2026-10-03 — PLAN "THE MICRO STAGE"): one card rendered through a
     # built 3-D world (engine/stage.py). Same ownership rules as the plate: no resolve
     # window, no cameo, no tracker inside the span; the stage owns aim + composition.
-    stage_at = [None] * total
+    stage_at = [None] * total        # per frame: (Stage, frame-within-card) or None
     stages = []
     if (args.stage or args.stage_auto
             or any(isinstance(r.get("stage"), dict) for r in spec.get("registers", []))) \
@@ -1553,6 +1553,15 @@ def main():
         _srot = _snames.index(_srs) if _srs in _snames else 0
         _sorder = _sregs[_srot:] + _sregs[:_srot]
         _scf = register_frame_counts(spec, cfg["fps"])
+        _sn_cards = len(_scf)
+        # LOOP LAP LAYOUT: frames [0, F0) = the txt2img warm-up copy of card 0 (cut), frames
+        # [sum(cards), sum(cards)+F0) = card 0's DELIVERED copy inside the loop tail, then fa
+        # frames re-playing card 1's arrival. A staged card 0 is staged in BOTH copies with the
+        # same world (Phil 2026-10-05: cork_dehesa's unstaged card between staged ones was card
+        # 0, which the first cut skipped). The tail's IPA homes onto the warm-up trajectory,
+        # which is staged identically, so homing and stage agree.
+        _has_lap = bool(loop and lap_cut)
+        _lapS = sum(_scf)
         # which cards: the CLI pair (lab) overrides; otherwise every card with a `stage` dict
         _splan = []
         if args.stage:
@@ -1561,15 +1570,13 @@ def main():
             _splan = [(args.stage_card, {"kit": args.stage,
                                          **(json.loads(args.stage_params) if args.stage_params else {})})]
         else:
-            _splan = []
             for k, r in enumerate(_sorder):
                 if isinstance(r.get("stage"), dict):
                     _splan.append((k, r["stage"]))
                 elif args.stage_auto and r.get("stage") is not False:
                     if r.get("cameo") and args.cameo_mode != "sprite":
-                        # the mascot card is never auto-staged (stage cards refuse cameos and
-                        # the caption's "can you spot..." must stay honest); an explicit
-                        # `stage` field on a cameo card still wins (the lab copies move the cameo)
+                        # the mascot card is never auto-staged in PAINT mode (stage cards refuse
+                        # painted cameos and the caption's "can you spot..." must stay honest)
                         print(f"[dive] stage-auto: card {k} {r.get('name')!r} carries the cameo — "
                               f"left plain", flush=True)
                         continue
@@ -1577,47 +1584,94 @@ def main():
                     if _sg:
                         _splan.append((k, _sg))
                         print(f"[dive] stage-auto: card {k} {r.get('name')!r} -> {_sg}", flush=True)
+        for _sk, _ in _splan:
+            if not (0 <= _sk < _sn_cards):
+                sys.exit(f"[dive] stage card index {_sk} out of range 0..{_sn_cards - 1}")
+        # RUNS of consecutive stage cards share the zoom's fixed point (Phil 2026-10-04: a run of
+        # stages read as morphs — the anchor jumped at every boundary). Runs are CIRCULAR when
+        # the lap exists (the last card is followed by card 0's delivered copy).
+        _sanchors = [(0.62, 0.40), (0.38, 0.40), (0.62, 0.60), (0.38, 0.60)]
+        _staged = sorted({k for k, _ in _splan})
+        _sset = set(_staged)
+
+        def _skey(k):
+            return f"{spec.get('scaffold_name') or spec.get('name')}:{_sorder[k].get('name')}"
+
+        def _prev(k):
+            return (k - 1) % _sn_cards if _has_lap else k - 1
+
+        def _next(k):
+            return (k + 1) % _sn_cards if _has_lap else k + 1
+
+        _anchor_of = {}
+        _run_starts = [k for k in _staged if _prev(k) not in _sset] or _staged[:1]
+        for _k0 in _run_starts:
+            _a = _sanchors[_zlib.crc32(_skey(_k0).encode()) % 4]
+            _k = _k0
+            while _k in _sset and _k not in _anchor_of:
+                _anchor_of[_k] = _a
+                _k = _next(_k)
+        _by_card = {}
         for _sk, _sdef in _splan:
-            if not (0 <= _sk < len(_scf)):
-                sys.exit(f"[dive] stage card index {_sk} out of range 0..{len(_scf) - 1}")
+            _sreg = _sorder[_sk]
             _sS = sum(_scf[:_sk])
             _sF = _scf[_sk]
-            _sE = min(total, _sS + _sF)
-            if _sk == 0 or (loop and _sE > total - loop["frames"]):
-                print(f"[dive] stage: card {_sk} is the render-start/lap card — skipped (the loop "
-                      f"tail owns its delivered copy)", flush=True)
-                continue
-            _sreg = _sorder[_sk]
-            _szw = [zoom_sched[x] for x in range(_sS, _sE)]
-            _sanchors = [(0.62, 0.40), (0.38, 0.40), (0.62, 0.60), (0.38, 0.60)]
-            _skey = f"{spec.get('scaffold_name') or spec.get('name')}:{_sreg.get('name')}"
-            _sanchor = _sanchors[_zlib.crc32(_skey.encode()) % 4]
-            # CONSECUTIVE stage cards share the zoom's fixed point (Phil 2026-10-04: a run of
-            # stages read as morphs, not zooms — the anchor jumped at every boundary, so the
-            # point card A dove into was not the point card B grew from)
-            if stages and stages[-1].card == _sk - 1:
-                _sanchor = stages[-1].anchor
-            _sseed = args.stage_seed or (_zlib.crc32(_skey.encode()) % 100000)
+            if _sk == 0:
+                # card 0: the stage's zoom slice is the LAP copy's (the delivered one) when
+                # there is a lap, else the warm-up's; the two are the same card schedule
+                _src0 = _lapS if (_has_lap and _lapS + _sF <= total) else 0
+                _szw = [zoom_sched[x] for x in range(_src0, min(total, _src0 + _sF))]
+                if _has_lap:
+                    _dz = max((abs(zoom_sched[x] - zoom_sched[_lapS + x]) for x in range(min(_sF, total - _lapS))),
+                              default=0.0)
+                    if _dz > 1e-6:
+                        print(f"[dive] stage: WARNING card-0 warm-up and lap zoom slices differ by "
+                              f"{_dz:.5f}/frame — composites may drift slightly in one copy", flush=True)
+            else:
+                _szw = [zoom_sched[x] for x in range(_sS, min(total, _sS + _sF))]
+            _sanchor = _anchor_of[_sk]
+            _sseed = args.stage_seed or (_zlib.crc32(_skey(_sk).encode()) % 100000)
             _stage = _stagemod.build_card_stage_v2(_sdef, _sreg.get("palette"), _szw, _sanchor,
                                                    cfg["width"], cfg["height"], seed=_sseed)
-            _stage.S, _stage.E, _stage.fa = _sS, _sE, max(2, round(_sF * 0.25))
+            _stage.S, _stage.E, _stage.fa = 0, _sF, max(2, round(_sF * 0.25))
             _stage.card = _sk
-            for _x in range(_sS, _sE):
-                stage_at[_x] = _stage
+            _stage.kit = _sdef.get("kit")
+            _by_card[_sk] = _stage
             stages.append(_stage)
-            resolve_windows = [w for w in resolve_windows if w["w1"] <= _sS or w["w0"] >= _sE]
-            for c in cameos:
-                if args.cameo_mode != "sprite" and _sS <= c["start"] < _sE:
-                    c["_done"] = True
-                    print(f"[dive] stage: cameo at frame {c['start']} refused", flush=True)
+            # frame -> (stage, j) mapping
+            _spans = []
+            if _sk == 0:
+                _spans.append((1, min(total, _sF)))                       # warm-up copy (frame 0 = txt2img)
+                if _has_lap and _lapS + _sF <= total:
+                    _spans.append((_lapS, _lapS + _sF))                   # the delivered copy, in the tail
+            else:
+                _spans.append((_sS, min(total, _sS + _sF)))
+            for _a0, _a1 in _spans:
+                for _x in range(_a0, _a1):
+                    stage_at[_x] = (_stage, _x - (_a0 if _a0 != 1 else 0))
+                resolve_windows = [w for w in resolve_windows if w["w1"] <= _a0 or w["w0"] >= _a1]
+                for c in cameos:
+                    if args.cameo_mode != "sprite" and _a0 <= c["start"] < _a1:
+                        c["_done"] = True
+                        print(f"[dive] stage: cameo at frame {c['start']} refused", flush=True)
+            _stage.delivered_span = _spans[-1]
             print(f"[dive] STAGE {_sdef.get('kit')} card {_sk} {_sreg.get('name')!r}: frames "
-                  f"{_sS}..{_sE - 1}, {len(_stage.items)} items, anchor {_sanchor}, target depth "
+                  + " + ".join(f"{a}..{b - 1}" for a, b in _spans)
+                  + f", {len(_stage.items)} items, anchor {_sanchor}, target depth "
                   f"{_stage.d_target:.2f} (advance {_stage.advance_total:.2f}), den {args.stage_den}/"
                   f"{args.stage_den_travel}, cn {args.stage_cn}, id {args.stage_id}", flush=True)
+        # the lap's REPLAY of card 1's arrival (the last fa frames of the render) is card 1's
+        # stage at j = 0.. so the delivered video's final frames agree with its first ones
+        if _has_lap and 1 in _by_card and _sn_cards > 1:
+            _r0 = _lapS + _scf[0]
+            for _x in range(_r0, total):
+                stage_at[_x] = (_by_card[1], _x - _r0)
+            resolve_windows = [w for w in resolve_windows if w["w1"] <= _r0]
     if stages:
         try:   # provenance: run.json is written before the stages are built — append them
             _rj = json.loads((out_dir / "run.json").read_text())
-            _rj["stage_cards"] = [(st_.card, st_.S, st_.E) for st_ in stages]
+            _rj["stage_cards"] = [(st_.card, st_.delivered_span[0], st_.delivered_span[1]) for st_ in stages]
+            _rj["stage_kits"] = [(st_.card, st_.kit) for st_ in stages]
             (out_dir / "run.json").write_text(json.dumps(_rj, indent=2))
         except Exception:
             pass
@@ -1673,7 +1727,8 @@ def main():
         cmv = cam_sched[i] if i < len(cam_sched) else None
         rot_i = cfg["rotate_per_frame"] + (cmv.get("roll", 0.0) if cmv else 0.0)
         seed = cfg["seed"] + i
-        _st = stage_at[i] if i < len(stage_at) else None
+        _stj = stage_at[i] if i < len(stage_at) else None
+        _st, _sj0 = (_stj if _stj else (None, 0))
         _pl = plate_at[i] if i < len(plate_at) else None
         if _pl is not None and (in_loop_tail(i) or _pl.done):
             _pl = None          # handed off: the next card's normal approach owns the frame
@@ -2066,7 +2121,7 @@ def main():
                 # Identity ramps in across the arrival (the old texture resolves INTO the
                 # stage under the costume denoise), holds through travel, relaxes over the
                 # plunge; the stage's own depth is the CN so structure agrees with pixels.
-                _sj = i - _st.S
+                _sj = _sj0
                 _srgb, _sdep = _st.frame_images(_sj)
                 _sn = _st.E - _st.S
                 if _srgb.size != fed.size:

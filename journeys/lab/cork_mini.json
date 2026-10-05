@@ -1,0 +1,50 @@
+{
+  "name": "cork_mini",
+  "theme": "core and envelope told down a cork oak: a dusk dehesa of scattered crowns over umber pasture, the commons beneath them where pigs, a hoopoe, magpies and a genet share the acorn ground, onto a harvested bole oxblood above its grey cork casing, onto a pried plank's sawn face, into Hooke's hollow honeycomb, into one wall's waxy suberin courses, to a carbon atom's core in its wide fog, to a nucleus wrapped in a fog-shell many times wider — which reads again as the froth of nested shells at cosmic scale, each shell cored by its own small galaxy: home through an armless disk of star-haze and a world at its dusk line to the dehesa from the air",
+  "style": "lacquer_pop",
+  "music_lane": "wooden_orbit",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 5,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "carbon_atom",
+      "exp": -10.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "azure haze shells, garnet core spark, ink hollow",
+      "scene": "one carbon atom seated in the cork wall's grid, a tight garnet core point wrapped in a far wider azure haze that fades outward through fainter and fainter shells, four slender bonds tethering it to neighbouring cores that recede into ink hollow, a violet tremor over the grid, the ratio of the small core to its vast haze repeated at core after core, no ground and no horizon anywhere",
+      "target": "a dense garnet nucleus",
+      "target_phrase": "a small red core"
+    },
+    {
+      "name": "shelled_nucleus",
+      "exp": -14.2,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "garnet core spheres, azure fog-shell, ink void",
+      "scene": "a nucleus of lit spheres pressed into one shivering droplet, garnet and cream spheres crowded at its core, an enormous faint azure fog-shell rounding it many times wider than the droplet, two loose spheres adrift far out in that fog, a fainter froth of sparks pricking the outer fog, the whole two-part shape set in ink with no ground and no horizon"
+    },
+    {
+      "name": "nested_froth",
+      "exp": 24.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "azure shell-films, garnet cluster cores, ink void",
+      "scene": "a froth of nested fog-shells filling the void, each vast shell rounding smaller shells within it and those rounding smaller shells again, every shell cored by its own small galaxy as a garnet smudge, shell-films drawn faint azure where they touch and merge, threads of galaxies beaded across the seams, countless shells receding into ink void, no ground and no horizon anywhere",
+      "target": "a garnet-cored disk galaxy",
+      "target_phrase": "a small galaxy",
+      "resolve": {
+        "mode": "web"
+      }
+    }
+  ],
+  "music_theme": "a stately walk under evening oaks — warm marimba and kalimba figures over a round woody bass, a deep kick on every downbeat with a quieter thump answering on beat three, the plucking thinning to single struck notes through the plank, honeycomb and suberin bars, a wide struck bloom where the shelled nucleus opens out as a froth of nested shells, and a settling return figure through the galaxy and the dusk world back to the pasture",
+  "music_key": "D minor",
+  "render_start": "carbon_atom",
+  "scaffold_name": "cork_dehesa",
+  "_lab": "2026-10-05 lap-staging test: 3 cards @fpb5 (20 f/card), render_start = a stage card"
+}
