@@ -1015,6 +1015,14 @@ def main():
                     help="with --stage: denoise floor after the arrival")
     ap.add_argument("--stage-cn", type=float, default=0.7, metavar="S",
                     help="with --stage: depth-CN strength of the stage's own depth map")
+    ap.add_argument("--stage-preroll", type=int, default=0, metavar="N",
+                    help="LAB (Phil 2026-10-05, 'zoom into it'): open each stage INSIDE a disc on "
+                         "its fixed point during the PREVIOUS card's last N frames, growing at "
+                         "zoom^k so it covers the frame at the bar line — the planet handoff in "
+                         "reverse; the old world keeps zooming around it, denoise is held low inside "
+                         "the disc. 0 = the zoom-through arrival at the bar line (today's default)")
+    ap.add_argument("--stage-preroll-k", type=float, default=2.2, metavar="K",
+                    help="with --stage-preroll: disc growth exponent on the zoom (>=1)")
     ap.add_argument("--stage-id", type=float, default=0.5, metavar="W",
                     help="with --stage: identity blend toward the stage render through travel "
                          "(ramps 0.15 -> 1.0 across the arrival, decays to 0.6 W over the plunge)")
@@ -1277,6 +1285,7 @@ def main():
         "palette_ipa": args.palette_ipa,
         "stage": args.stage, "stage_card": args.stage_card, "stage_params": args.stage_params,
         "stage_auto": bool(args.stage_auto), "cameo_mode": args.cameo_mode,
+        "stage_preroll": args.stage_preroll, "stage_preroll_k": args.stage_preroll_k,
         "stage_den": args.stage_den, "stage_cn": args.stage_cn, "stage_id": args.stage_id,
         "play_rot": play_rotation(spec, cfg["fps"], lap_cut) if not args.frames else 0,
         # per-CARD (register) frame counts: lets a future --from-card verify its prefix
@@ -1542,6 +1551,7 @@ def main():
     # built 3-D world (engine/stage.py). Same ownership rules as the plate: no resolve
     # window, no cameo, no tracker inside the span; the stage owns aim + composition.
     stage_at = [None] * total        # per frame: (Stage, frame-within-card) or None
+    preroll_at = [None] * total      # per frame: (Stage, j < 0) during the PREVIOUS card's tail
     stages = []
     if (args.stage or args.stage_auto
             or any(isinstance(r.get("stage"), dict) for r in spec.get("registers", []))) \
@@ -1612,6 +1622,7 @@ def main():
                 _anchor_of[_k] = _a
                 _k = _next(_k)
         _by_card = {}
+        _P = max(0, int(args.stage_preroll))
         for _sk, _sdef in _splan:
             _sreg = _sorder[_sk]
             _sS = sum(_scf[:_sk])
@@ -1620,7 +1631,6 @@ def main():
                 # card 0: the stage's zoom slice is the LAP copy's (the delivered one) when
                 # there is a lap, else the warm-up's; the two are the same card schedule
                 _src0 = _lapS if (_has_lap and _lapS + _sF <= total) else 0
-                _szw = [zoom_sched[x] for x in range(_src0, min(total, _src0 + _sF))]
                 if _has_lap:
                     _dz = max((abs(zoom_sched[x] - zoom_sched[_lapS + x]) for x in range(min(_sF, total - _lapS))),
                               default=0.0)
@@ -1628,7 +1638,13 @@ def main():
                         print(f"[dive] stage: WARNING card-0 warm-up and lap zoom slices differ by "
                               f"{_dz:.5f}/frame — composites may drift slightly in one copy", flush=True)
             else:
-                _szw = [zoom_sched[x] for x in range(_sS, min(total, _sS + _sF))]
+                _src0 = _sS
+            # PRE-ROLL: the zoom slice is extended BACKWARDS by P frames into the previous card
+            # (the stage's camera starts there; the target still fills the frame at the card
+            # end because the advance over the extension is counted). frame j of the card =
+            # stage frame j + pre.
+            _pre = min(_P, _src0) if _src0 > 1 else 0
+            _szw = [zoom_sched[x] for x in range(_src0 - _pre, min(total, _src0 + _sF))]
             _sanchor = _anchor_of[_sk]
             _sseed = args.stage_seed or (_zlib.crc32(_skey(_sk).encode()) % 100000)
             # the LOOK: the card's own, else the journey's `stage_look`, else drawn per journey
@@ -1640,6 +1656,7 @@ def main():
             _stage.S, _stage.E, _stage.fa = 0, _sF, max(2, round(_sF * 0.25))
             _stage.card = _sk
             _stage.kit = _sdef.get("kit")
+            _stage.pre = _pre
             _by_card[_sk] = _stage
             stages.append(_stage)
             # frame -> (stage, j) mapping
@@ -1659,8 +1676,17 @@ def main():
                         c["_done"] = True
                         print(f"[dive] stage: cameo at frame {c['start']} refused", flush=True)
             _stage.delivered_span = _spans[-1]
+            _pr = []
+            if _pre > 0:
+                for _a0, _a1 in _spans:
+                    if _a0 == 1:
+                        continue                                  # the warm-up copy has no past
+                    for _x in range(_a0 - _pre, _a0):
+                        preroll_at[_x] = (_stage, _x - _a0)
+                    _pr.append((_a0 - _pre, _a0))
             print(f"[dive] STAGE {_sdef.get('kit')} card {_sk} {_sreg.get('name')!r}: frames "
                   + " + ".join(f"{a}..{b - 1}" for a, b in _spans)
+                  + (f" (pre-roll {' + '.join(f'{a}..{b - 1}' for a, b in _pr)})" if _pr else "")
                   + f", {len(_stage.items)} items, anchor {_sanchor}, target depth "
                   f"{_stage.d_target:.2f} (advance {_stage.advance_total:.2f}), den {args.stage_den}/"
                   f"{args.stage_den_travel}, cn {args.stage_cn}, id {args.stage_id}, look {_stage.look}", flush=True)
@@ -1733,6 +1759,7 @@ def main():
         seed = cfg["seed"] + i
         _stj = stage_at[i] if i < len(stage_at) else None
         _st, _sj0 = (_stj if _stj else (None, 0))
+        _prej = preroll_at[i] if i < len(preroll_at) else None
         _pl = plate_at[i] if i < len(plate_at) else None
         if _pl is not None and (in_loop_tail(i) or _pl.done):
             _pl = None          # handed off: the next card's normal approach owns the frame
@@ -1844,6 +1871,17 @@ def main():
                 else:
                     row = {"i": i - 1, "mode": "tail" if in_loop_tail(i) else "drift",
                            "z": round(z, 4)}
+            if _prej is not None and _pl is None and _st is None:
+                # PRE-ROLL AIM: ease the zoom's fixed point onto the coming stage's anchor over
+                # the first 6 pre-roll frames, so the disc the new world opens in is the point
+                # we are already diving into (a staged previous card already shares the anchor)
+                _ps, _pj = _prej
+                _pax, _pay = _ps.anchor
+                _pfx, _pfy = _pax - (_pax - 0.5) / z, _pay - (_pay - 0.5) / z
+                _pt = min(1.0, (_pj + _ps.pre + 1) / 6.0)
+                cx += (_pfx - cx) * _pt
+                cy += (_pfy - cy) * _pt
+                row["mode"] = f"{row.get('mode', '')}+preroll"
             row["aim"] = [round(cx, 4), round(cy, 4)]
             tlog.write(json.dumps(row) + "\n")
             tlog.flush()
@@ -2126,11 +2164,17 @@ def main():
                 # stage under the costume denoise), holds through travel, relaxes over the
                 # plunge; the stage's own depth is the CN so structure agrees with pixels.
                 _sj = _sj0
-                _srgb, _sdep = _st.frame_images(_sj)
+                _srgb, _sdep = _st.frame_images(_sj + getattr(_st, "pre", 0))
                 _sn = _st.E - _st.S
                 if _srgb.size != fed.size:
                     _srgb = _srgb.resize(fed.size, Image.LANCZOS)
-                if _sj < _st.fa:
+                if _sj < _st.fa and getattr(_st, "pre", 0) > 0:
+                    # the disc already covered the frame during the pre-roll: settle the
+                    # identity from 0.6 to the travel hold under the arrival (costume) denoise
+                    _wid = args.stage_id + (0.6 - args.stage_id) * (1.0 - (_sj + 1) / _st.fa)
+                    fed = Image.blend(fed, _srgb, _wid)
+                    den = max(den, getattr(_st, "den_arrival", None) or args.stage_den)
+                elif _sj < _st.fa:
                     # ZOOM-THROUGH ARRIVAL (Phil 2026-10-04, "less zoomy than morphy" + the
                     # tissue fade): the new stage opens INSIDE a disc on the zoom's fixed point
                     # that grows geometrically from ~a quarter of the frame to past its corners
@@ -2170,6 +2214,39 @@ def main():
                 if tlog:
                     tlog.write(json.dumps({"i": i, "mode": "stage_frame", "wid": round(_wid, 3),
                                            "den": round(den, 3)}) + "\n")
+            if _prej is not None and plate_mask is None:
+                # PRE-ROLL DISC: the coming stage shows inside a disc on its fixed point that
+                # grows at zoom^k from 0.12 W (P frames before the bar line) to past the frame's
+                # corners at the bar line; identity rises 0.15 -> 0.6 across it; denoise inside
+                # the disc is HELD low (DifferentialDiffusion mask) so the old card's prompt
+                # cannot repaint the new world away before its own card begins
+                _ps, _pj = _prej
+                _prgb, _ = _ps.frame_images(_pj + _ps.pre)
+                if _prgb.size != fed.size:
+                    _prgb = _prgb.resize(fed.size, Image.LANCZOS)
+                _W, _H = fed.size
+                _ax, _ay = _ps.anchor
+                _Zc = 1.0
+                for _x in range(i - (_pj + _ps.pre), i + 1):
+                    _Zc *= zoom_sched[_x] if zoom_sched else cfg["zoom_per_frame"]
+                _rad = 0.12 * _W * _Zc ** args.stage_preroll_k
+                _yy, _xx = np.mgrid[0:_H, 0:_W].astype(np.float32)
+                _dist = np.sqrt((_xx - _ax * _W) ** 2 + (_yy - _ay * _H) ** 2)
+                _m = np.clip((_rad - _dist) / max(12.0, 0.75 * _rad), 0.0, 1.0)
+                _m = (_m * _m * (3 - 2 * _m))
+                _wid = 0.15 + 0.45 * (_pj + _ps.pre + 1) / max(1, _ps.pre)
+                _fa_ = np.asarray(fed.convert("RGB"), np.float32)
+                _sa_ = np.asarray(_prgb.convert("RGB"), np.float32)
+                _mw = (_m * _wid)[..., None]
+                fed = Image.fromarray(np.clip(_fa_ * (1 - _mw) + _sa_ * _mw, 0, 255).astype(np.uint8))
+                _inside = min(1.0, 0.30 / max(den, 1e-3))
+                _dmask = 1.0 - _m * (1.0 - _inside)
+                plate_mask = upload_image(Image.fromarray((np.clip(_dmask, 0, 1) * 255).astype(np.uint8)).convert("RGB"),
+                                          f"zoomer_premask_{name}.png")
+                plate_dd = True
+                if tlog:
+                    tlog.write(json.dumps({"i": i, "mode": "stage_preroll", "j": _pj, "rad": round(_rad, 1),
+                                           "wid": round(_wid, 3), "inside": round(_inside, 3)}) + "\n")
             tail_ipa_w, tail_ctl, tail_cn = 0.0, None, 0.0
             if in_loop_tail(i):
                 j = i - (total - loop["frames"])

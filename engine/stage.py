@@ -801,7 +801,7 @@ _PDB_BY_WORD = [('1BNA', re.compile(r"\b(dna|double.helix|base.pair|nucleosome)\
 
 _RX_PASTA = re.compile(r"\b(pasta|spaghetti|lasagn\w*|gnocchi|kneaded|woven sheets?|rods? of matter|parking.garage)\b", re.I)
 _RX_TRACKS = re.compile(r"\b(tracks?|bubble chamber|spray|streaks?|cascade|forking|spiral(?:ling)? path)\b", re.I)
-_RX_FLUID = re.compile(r"\b(fluid|soup|melted|seething|broth|boil(?:ing)?|fireball|sparks)\b", re.I)
+_RX_FLUID = re.compile(r"\b(fluid|soup|melted|melting|seething|broth|boil(?:ing)?|fireball)\b", re.I)
 _RX_AMORPH = re.compile(r"\b(glass|glassy|amorphous|random network|molten|melt|tangle|disorder\w*)\b", re.I)
 _RX_COULOMB = re.compile(r"\b(bare nuclei|white dwarf|frozen plasma|crystalli[sz]ed plasma|coulomb)\b", re.I)
 
