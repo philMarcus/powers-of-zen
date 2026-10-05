@@ -562,7 +562,7 @@ _PDB_LIBRARY = {   # molecule -> (pdb id, chains hint); the variety source for t
     'ribosome_small': '1FJG', 'photosystem': '1JB0', 'porin': '2OMF', 'chaperone': '1AON',
     'kinesin': '3KIN', 'myosin': '1B7T', 'transferrin': '1A8E', 'albumin': '1AO6', 'pepsin': '4PEP',
     'rubisco': '1RCX', 'carboxysome': '1RCX', 'phycobilisome': '1KN1', 'chlorophyll': '1JB0',
-    'cellulose': '1CGD', 'spool': '1AOI', 'histone': '1AOI', 'chromosome': '1AOI', 'suberin': '1AO6',
+    'cellulose': '1CGD', 'spool': '1AOI', 'histone': '1AOI', 'chromosome': '1AOI',
 }
 
 
@@ -715,6 +715,9 @@ def suggest_stage(reg):
             for key, pid in _PDB_LIBRARY.items():
                 if key in low:
                     pdb = pid; break
+        # waxes / fatty chains / lipid lamellae are not proteins: short rods laid side by side
+        if re.search(r"\b(wax|waxy|fatty|lipid|suberin|cutin|lamellae|lamella)\b", low):
+            return {'kit': 'tubes', 'pdb': '1CGD', 'arrangement': 'bundle', 'size': 0.55, 'density': 1.6}
         if pdb is None:
             pdb = ['4HHB', '1MBN', '1LYZ', '1EMA', '1AO6', '1A8E'][abs(hash(txt)) % 6]
         arr = ('bundle' if re.search(r"\b(collagen|cellulose|keratin|fib(?:er|re|ril)s?|rope|cable|bundle|strands?)\b", low)

@@ -2559,3 +2559,16 @@ never from one house template; the audit now watches planet motifs the way it wa
   empty intersection) — running; the output class (live/rejected/orphan render trees, prune
   regenerable first) runs after its dry run, with a new IN-FLIGHT GUARD (any tree with a file
   written in the last 90 min stays).
+
+## 2026-10-05 — THE FIRST NIGHTLY WITH THE STAGE (after the frame-0 crash)
+01:30: all four renders crashed on frame 0 (UnboundLocalError: the sprite-mode output paste
+read `cam_pasted`, which only the feedback-frame branch sets) — every lab arm was --from-card and
+never ran frame 0. Fixed (initialised per frame), smoke-tested with `--frames 3` from frame 0
+under production flags, the four re-queued at the front same seed, batch re-run by hand from
+06:22 (memory: smoke-test-frame-zero). RESULTS SO FAR (full production path: stage auto + sprite
+cameo + anchor + plate hold): vernal_clutch atom card = a teal ball-and-stick lattice resolving
+out of the chromosome cord (20.4-22.8 s of the cut); cork_dehesa nucleus card = a FIELD of red/
+cyan nucleon droplets, one grows to fill the frame, hands into the cosmic froth; cork_honeycomb =
+Hooke's cork, a teal honeycomb of walled cells (the tissue kit's best yet); suberin_lamellae =
+albumin blobs on a membrane (wrong molecule for a wax — lipid/wax/fatty words now map to a
+bundle of short rods). Strips: scratchpad/orange/vernal_lattice_strip.png, cork_*_strip.png.
