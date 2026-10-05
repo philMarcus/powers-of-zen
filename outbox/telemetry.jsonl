@@ -2407,3 +2407,5 @@
 {"ts": "2026-10-04 18:38:52", "event": "music_choose", "journey": "kelp_dynamo_stage", "detail": "deep_archive-b"}
 {"ts": "2026-10-04 18:38:52", "event": "queued", "journey": "kelp_dynamo_stage"}
 {"ts": "2026-10-04 18:39:44", "event": "review", "journey": "spouter_dawn"}
+{"ts": "2026-10-04 20:21:00", "event": "archive_review", "detail": "moved 27.1G of review candidates/cuts to E:"}
+{"ts": "2026-10-04 20:39:57", "event": "archive", "detail": "moved 29.4G to E:"}

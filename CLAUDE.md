@@ -128,8 +128,11 @@ now carries the plate's coast, plateid_strip.png); 49/71 planet cards are author
 novelty brief + composer PLANET TEST. (3) MOLECULAR = tubes v4 (smooth tubes, sea/bundle/sheet/chain arrangements, 28-PDB
 library by card words, coverage density, no near copies) — in motion reads as membrane machinery (stage_tubes4_strip.png);
 molecular auto-staging ON for cards with a molecular word. Auto rules: every atomic card → ball-and-stick lattice; tissue only
-for many-cell scenes. C: CLEANUP running: archive.py --review --run (27G of dead music candidates + old cuts → E:), then the
-output class (--run) after its dry run; in-flight guard added. Check df -h /mnt/c in the morning (was 99%).
+for many-cell scenes. C: CLEANUP DONE 20:45: archive.py --review --run moved 27.1G (400 items: dead music candidates + old cuts) and --run
+moved 68 output trees (29.4G after pruning regenerables) → C: 16G free (99%) → 93G free (91%); output/ 76G → 22G,
+review/ 25G → 4.6G; E: 87G free. No active video lost a file (checked). Three trees skipped because E: already had an
+older copy (cherenkov_cistern, lissajous_stage, mantis_drumline — small; merge by hand if ever needed); four of today's
+lab arm dirs stayed under the 90-min in-flight guard (0.9G, disposable). Manifest: outbox/archive_manifest.jsonl.
 2026-10-04 (EVENING — THE STAGE IS ON; read PLAN "DAY 2 EVENING"): Phil's second pass: "looking pretty good", will post
 kelp_dynamo_stage + gecko_rampart_stage; the run of stages read "morphy not zoomy" → FIXED: consecutive stage cards share
 the zoom's fixed point + ZOOM-THROUGH arrival (the new stage opens through a wide-feathered disc on the fixed point while the
