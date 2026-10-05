@@ -1617,6 +1617,17 @@ def main():
         _run_starts = [k for k in _staged if _prev(k) not in _sset] or _staged[:1]
         for _k0 in _run_starts:
             _a = _sanchors[_zlib.crc32(_skey(_k0).encode()) % 4]
+            # keep the fixed point AWAY from a mascot sprite on the previous or this card (the
+            # first pre-roll arm eased the aim onto the thirds anchor the cameo also sits on,
+            # and the sprite became the dive's subject for two seconds)
+            _avoid = []
+            for _kk in (_prev(_k0), _k0):
+                if 0 <= _kk < _sn_cards and isinstance(_sorder[_kk].get("cameo"), dict):
+                    _cp = _sorder[_kk]["cameo"].get("pos")
+                    if _cp:
+                        _avoid.append((float(_cp[0]), float(_cp[1])))
+            if _avoid:
+                _a = max(_sanchors, key=lambda an: min(math.hypot(an[0] - q[0], an[1] - q[1]) for q in _avoid))
             _k = _k0
             while _k in _sset and _k not in _anchor_of:
                 _anchor_of[_k] = _a
@@ -2244,6 +2255,14 @@ def main():
                 plate_mask = upload_image(Image.fromarray((np.clip(_dmask, 0, 1) * 255).astype(np.uint8)).convert("RGB"),
                                           f"zoomer_premask_{name}.png")
                 plate_dd = True
+                # the COMING card's own words inside the disc (ConditioningSetMask region): the
+                # first arm painted the new world with the OLD card's prompt and it arrived pale
+                if plate_region is None:
+                    _bar = i - _pj
+                    _rp = phase_info(phases, min(total - 1, _bar + _ps.fa))[0]
+                    plate_region = {"prompt": _rp,
+                                    "mask": upload_image(Image.fromarray((np.clip(_m, 0, 1) * 255).astype(np.uint8)).convert("RGB"),
+                                                         f"zoomer_preregion_{name}.png")}
                 if tlog:
                     tlog.write(json.dumps({"i": i, "mode": "stage_preroll", "j": _pj, "rad": round(_rad, 1),
                                            "wid": round(_wid, 3), "inside": round(_inside, 3)}) + "\n")

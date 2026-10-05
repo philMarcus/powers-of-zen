@@ -2643,3 +2643,13 @@ line (as the planet plate spans the bar line) — a real object we dive into, no
   bubbles / dark bodies on a pale ground); glass keeps its rims; GEM and FUZZY converge (the
   facets are too fine at sphere sizes under ~60 px) — tuning item: fewer, larger facets and a
   harder specular for gem, or draw gem only with larger-radius kits.
+- PRE-ROLL ARM 1 (sunspot plain v2 from card 5, 19:44; strip scratchpad/orange/preroll_strip.png;
+  metric scratchpad/orange/arrival_smooth.py = mean |Δframe| around the bar line): the arrival
+  spike is GONE — peak/steady 0.91 at plain→nucleus and 1.02 at nucleus→quark, vs 1.21 / 2.43
+  for the bar-line zoom-through and 1.35 / 0.84 for the plain render; the change curve descends
+  smoothly into the bar line and rises with the new card's travel. Two defects: (1) the disc was
+  painted with the OLD card's prompt (denoise held, no words) so the new world arrived pale →
+  the coming card's travel prompt now conditions the disc region (ConditioningSetMask, the
+  plate's region machinery); (2) the eased aim landed on the mascot sprite (thirds anchor ==
+  the composer's usual cameo corner) and Belle filled the frame for two seconds → the run's
+  anchor is now chosen farthest from any cameo on the previous/this card. Arm 2 running.
