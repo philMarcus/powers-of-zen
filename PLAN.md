@@ -2604,3 +2604,21 @@ it watches planet motifs. (2) ZOOM-INTO-IT ARRIVAL: the stage's disc is introduc
 PREVIOUS card's plunge at the plunge's own fixed point and grows AT THE ZOOM RATE across the bar
 line (as the planet plate spans the bar line) — a real object we dive into, not a 0.4 s wipe.
 (3) a capsule/tube primitive so near molecules stay tubes. (4) cutlery/utensil frame bait.
+
+## 2026-10-05 AFTERNOON — THE THREE APPROVED STEPS, (1) LOOK VARIETY + NEW KITS built
+- LOOKS (engine/stage.py LOOKS/shade_sphere/draw_look): gem (facet-snapped normals, hard
+  speculars, lit rim) · fuzzy (the original) · plasma (emissive cores, deeper void) · glass
+  (fresnel rims, translucent) · wire (luminous rings, dark bodies) · ink (dark bodies on a LIGHT
+  fog). One look per journey, drawn by weight (gem 25 fuzzy 25 plasma 20 glass 14 wire 8 ink 8),
+  overridable by journey `stage_look` or per-card `stage.look`. Demo: scratchpad/orange/
+  stage_demo/looks_sheet.png (six materials on the nucleus and the lattice).
+- KITS: fluid (quark-gluon broth), tracks (bubble-chamber spirals/forks on a pale ground, ink by
+  default), pasta (rods / sheets / gnocchi), lattice variant `random` (amorphous network) and
+  the Coulomb crystal (cubic, no bonds, plasma). suggest_stage is now WORDS FIRST, then a
+  journey-seeded draw among the band's kits (subnuclear: nucleus 60 / fluid 18 / pasta 14 /
+  tracks 8; atomic: variant named or drawn among cubic/hex/fcc/diamond/random/rhombo).
+- novelty_audit --brief reports the catalog's kit and look distribution; the composer skill
+  documents `stage: {kit, variant, look}` + a STAGE VARIETY test.
+- LAP STAGING (the cork gap): a staged render-start card is staged in both copies; circular
+  anchor runs; verification render cork_mini (3 cards @fpb5) in flight.
+- queue_review records stage_cards/kits (+look), cameo_mode, palette_anchor per video.

@@ -139,6 +139,24 @@ def main():
                      "archetypes (REALMS.md 10^4.5-10^9: ringed, ice-moon geysers, lava crack-veins, "
                      "cratered highlands, night-side city lights, aurora oval, polar cap, tiger bush, "
                      "open-cell cloud honeycomb, lava-lake eye) and name the world's COLOUR")
+    # STAGE VARIETY (2026-10-05): the kits the auto-stager would draw for the catalog's micro
+    # cards and the per-journey looks — so the refill can see a monoculture forming
+    try:
+        sys.path.insert(0, str(ROOT / "engine"))
+        import stage as _stage
+        from collections import Counter as _C
+        kits, looks = _C(), _C()
+        for j, s in specs.items():
+            looks[s.get("stage_look") or _stage.draw_look(s.get("scaffold_name") or s.get("name") or j)] += 1
+            for r in s["registers"]:
+                sg = _stage.suggest_stage(r, seed_key=s.get("name") or j)
+                if sg:
+                    kits[sg["kit"] + ("/" + sg["variant"] if sg.get("variant") else "")] += 1
+        lines.append("  STAGE kits over the catalog: " + ", ".join(f"{k} {n}" for k, n in kits.most_common()))
+        lines.append("  STAGE looks per journey: " + ", ".join(f"{k} {n}" for k, n in looks.most_common())
+                     + " (a journey may set `stage_look`; a card may set `stage: {kit, look}`)")
+    except Exception as e:  # the audit must never fail on the stage module
+        lines.append(f"  STAGE variety: n/a ({e})")
     print("\n".join(lines))
     if not a.brief:
         print("\nper-band journey lists:")

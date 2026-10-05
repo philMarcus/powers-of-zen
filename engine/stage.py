@@ -38,6 +38,73 @@ def rot_matrix(rng):
                      [2*(b*d-a*c), 2*(c*d+a*b), a*a-b*b-c*c+d*d]])
 
 
+# ---- LOOKS (2026-10-05, Phil: "if all the atoms look samey ... we'll have samey video"; "from
+# time to time gems in the fuzziness"): one drawn look per journey changes how every sphere in
+# every kit is shaded. The structure (kit) and the look are independent axes of variety.
+LOOKS = ('gem', 'fuzzy', 'plasma', 'glass', 'wire', 'ink')
+LOOK_WEIGHTS = {'gem': 25, 'fuzzy': 25, 'plasma': 20, 'glass': 14, 'wire': 8, 'ink': 8}
+LOOK_GLOW = {'gem': 0.6, 'fuzzy': 1.0, 'plasma': 1.8, 'glass': 0.35, 'wire': 0.4, 'ink': 0.25}
+
+
+def _fib_hemisphere(n=22):
+    """Facet directions for the gem look: n near-even unit vectors on the camera-facing
+    hemisphere (view space, z < 0)."""
+    k = np.arange(n) + 0.5
+    phi = np.arccos(1 - k / n)                     # polar angle from -z over one hemisphere
+    th = np.pi * (1 + 5 ** 0.5) * k
+    return np.stack([np.sin(phi) * np.cos(th), np.sin(phi) * np.sin(th), -np.cos(phi)], -1).astype(np.float32)
+
+
+_FACETS = _fib_hemisphere()
+
+
+def draw_look(key):
+    """Deterministic weighted draw of a look from a journey key."""
+    import zlib
+    r = zlib.crc32(str(key).encode()) % sum(LOOK_WEIGHTS.values())
+    acc = 0
+    for name, wgt in LOOK_WEIGHTS.items():
+        acc += wgt
+        if r < acc:
+            return name
+    return 'fuzzy'
+
+
+def shade_sphere(look, n, nz, rho2, base, light, extra, bg):
+    """Per-pixel colour of a sphere cap under a LOOK. n: view-space normals (...,3), nz: the
+    cap height (1 at centre, 0 at the rim), base: rgb (3,), light: unit vector into the scene."""
+    b = base[None, None, :]
+    if look == 'gem':
+        # facets: snap the normal to the nearest facet direction, hard speculars, a lit rim
+        idx = np.argmax(n @ _FACETS.T, axis=-1)
+        nq = _FACETS[idx]
+        ndl = np.clip(-(nq @ light), 0, 1)
+        spec = ndl ** 48
+        rim = (1.0 - nz) ** 3
+        return (b * (0.35 + 0.65 * ndl)[..., None] + 1.1 * spec[..., None]
+                + 0.35 * rim[..., None] * (0.5 * b + 0.5) + extra * b)
+    ndl = np.clip(-(n @ light), 0, 1)
+    if look == 'plasma':
+        core = np.clip(1.0 - rho2, 0, 1) ** 1.5
+        return b * (0.5 + 0.5 * ndl)[..., None] + core[..., None] * (0.55 + 0.45 * b) + extra * b
+    if look == 'glass':
+        fres = (1.0 - nz) ** 2
+        spec = ndl ** 40
+        return (0.30 * b + fres[..., None] * (0.55 * b + 0.55) + 0.9 * spec[..., None]
+                + 0.25 * (1 - fres)[..., None] * np.asarray(bg, np.float32)[None, None, :] + extra * b)
+    if look == 'wire':
+        ring = np.clip((np.sqrt(rho2) - 0.70) / 0.30, 0, 1)
+        return 0.10 * b + ring[..., None] * (0.7 * b + 0.5) + 0.5 * extra * b
+    if look == 'ink':
+        rim = (1.0 - nz) ** 2
+        spec = ndl ** 30
+        return 0.22 * b * (0.6 + 0.4 * ndl)[..., None] + 0.45 * rim[..., None] * (0.4 * b + 0.6) + 0.5 * spec[..., None]
+    # fuzzy (the original soft shading)
+    spec = ndl ** 24
+    shade = 0.42 + 0.58 * ndl
+    return b * shade[..., None] + 0.55 * spec[..., None] + extra * b
+
+
 class Stage:
     """items: list of ('sphere', center(3), radius, rgb(3), emit) | ('glow', center, radius, rgb, k).
     zooms/aims: per-frame schedule slices (same as scaffold.Resolver)."""
@@ -116,11 +183,9 @@ class Stage:
                 continue
             # view-space normal (camera looks down +z; the visible cap faces -z)
             n = np.stack([u, v, -nz], -1)
-            ndl = np.clip(-(n @ self.light), 0, 1)        # light vector points INTO the scene
-            spec = ndl ** 24
-            shade = 0.42 + 0.58 * ndl
             base = np.asarray(rgb, np.float32)
-            px_col = base[None, None, :] * shade[..., None] + 0.55 * spec[..., None] + extra * base
+            px_col = shade_sphere(getattr(self, 'look', 'fuzzy'), n, nz, rho2, base, self.light,
+                                  extra, self.bg)
             # anti-aliased rim
             aa = np.clip((1.0 - np.sqrt(rho2)) * rpx, 0, 1)[..., None]
             region = col[y0:y1, x0:x1]
@@ -132,7 +197,7 @@ class Stage:
         fog = np.clip(1.0 - np.exp(-zfin / self.fog_dist), 0, 1)[..., None]
         col = col * (1 - fog) + self.fog_rgb * fog
         glow = glow / (1.0 + 0.8 * glow)            # soft-clip accumulated glow (thousands of
-        col = col + glow                            # overlapping halos blew a fuzzy lattice to white)
+        col = col + glow * LOOK_GLOW.get(getattr(self, 'look', 'fuzzy'), 1.0)   # halos blew a lattice white
         col = col / (1.0 + 0.55 * col)                    # soft tone map: glow piles up, never clips to white
         col = np.clip(col * 1.35, 0, 1)
         dmap = np.where(np.isinf(zb), 0.03, depth_value(zb)).astype(np.float32)
@@ -170,7 +235,7 @@ LATTICES = {
 
 def kit_lattice(stage, variant='cubic', spacing=0.42, radius=0.055, colors=((0.55, 0.75, 1.0), (0.95, 0.45, 0.7)),
                 bond_rgb=(0.75, 0.8, 0.9), bond_r=0.014, jitter=0.012, seed=0, extent=16, glow=0.16,
-                z_far=7.0, bond_far=3.2, fuzzy=False):
+                z_far=7.0, bond_far=3.2, fuzzy=False, bonds=None):
     """fuzzy=True (2026-10-04, after the hero fog atom rang/burst twice): the ATOMIC-band picture
     without a hero — large soft glowing spheres (electron clouds) at their lattice sites, a faint
     bright core in each, no bonds, more thermal shiver; the plunge enters one cloud."""
@@ -181,7 +246,16 @@ def kit_lattice(stage, variant='cubic', spacing=0.42, radius=0.055, colors=((0.5
         z_far = min(z_far, 5.0)
     """An infinite crystal seen along a random (seeded) direction, far ranks into fog."""
     rng = np.random.default_rng(seed)
-    basis, sites, bonds = LATTICES[variant]
+    if variant == 'random':
+        # AMORPHOUS NETWORK (glass, melt, silica random network): a jittered cubic grid with
+        # a third of its sites removed, bonded to nearest neighbours — no long-range order
+        basis, sites, _b = LATTICES['cubic']
+        jitter = max(jitter, spacing * 0.22)
+        _bonds_default = True
+    else:
+        basis, sites, _b = LATTICES[variant]
+        _bonds_default = _b
+    bonds = _bonds_default if bonds is None else bonds
     Rm = rot_matrix(rng)
     pts, spc = [], []
     rngs = range(-extent, extent + 1)
@@ -193,6 +267,9 @@ def kit_lattice(stage, variant='cubic', spacing=0.42, radius=0.055, colors=((0.5
     spc = np.concatenate(spc)
     pts = pts + np.array([0, 0, D_MAX * 0.45], np.float32)       # push the block in front of the camera
     pts = pts + rng.normal(scale=jitter, size=pts.shape)
+    if variant == 'random':
+        keep = rng.random(len(pts)) > 0.33
+        pts, spc = pts[keep], spc[keep]
     ok = _in_view_mask(pts, zmax=z_far)
     pts, spc = pts[ok], spc[ok]
     for p, s in zip(pts, spc):
@@ -409,15 +486,49 @@ def kit_quark(stage, centre=(0, 0, 3.0), size=0.9, colors=((1.0, 0.75, 0.3), (1.
 KITS['quark'] = kit_quark
 
 
-def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0.55):
-    """Journey-field entry point: `stage` = {"kit": lattice|nucleus|quark, ...kit params}.
-    Colours default from the card palette (species + void); explicit params win."""
+def _apply_look(st, look, species, dark):
+    """Set the stage's look and its look-dependent background: ink = dark bodies on a LIGHT
+    fog (the palette's lightest colour lifted), plasma = a deeper void."""
+    st.look = look
+    if look == 'ink':
+        light = np.clip(np.array(species[0], np.float32) * 0.45 + 0.55, 0, 1)
+        st.bg = light * 0.92
+        st.fog_rgb = light
+    elif look == 'plasma':
+        st.bg = np.array(dark, np.float32) * 0.5
+        st.fog_rgb = np.array(dark, np.float32) * 0.6
+    return st
+
+
+def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0.55, look=None):
+    """Journey-field entry point: `stage` = {"kit": lattice|nucleus|quark|fog|tubes|tissue|fluid|
+    tracks|pasta, "look": gem|fuzzy|plasma|glass|wire|ink, ...kit params}. Colours default from
+    the card palette (species + void); explicit params win; the look defaults to the caller's
+    (the journey's drawn look)."""
     p = dict(spec_stage or {})
     kit = p.pop('kit', 'lattice')
+    look = p.pop('look', None) or look or 'fuzzy'
     den_arr, den_trav = KIT_DEN.get(kit, (None, None))
     species, dark = palette_colours(palette)
+    if look == 'ink':                       # dark bodies: deepen the species
+        species = [tuple(np.clip(np.array(c) * 0.55, 0, 1)) for c in species]
+    elif look in ('plasma', 'gem'):         # emissive / faceted: brighter species
+        species = [tuple(np.clip(np.array(c) * 1.1 + 0.05, 0, 1)) for c in species]
     p.setdefault('colors', species[:2])
     st_params = p
+    if kit in ('fluid', 'tracks', 'pasta'):
+        st = Stage(zooms, [anchor] * max(1, len(zooms)), w, h, bg=dark, fog_rgb=dark)
+        st.anchor = anchor
+        st.seed = seed
+        A = sum((z - 1.0) / z for z in zooms)
+        size = float(p.get('size', 1.0))
+        d = aim_dir(anchor[0], anchor[1], w, h)
+        d_T = A + size * 0.5 / fill
+        p['centre'] = tuple(d * d_T)
+        KITS[kit](st, seed=seed, **p)
+        st.target, st.advance_total, st.d_target = tuple(d * d_T), A, d_T
+        st.den_arrival, st.den_travel = den_arr, den_trav
+        return _apply_look(st, look, species, dark)
     if kit == 'quark':
         st = Stage(zooms, [anchor] * max(1, len(zooms)), w, h, bg=dark, fog_rgb=dark)
         st.anchor = anchor
@@ -431,7 +542,7 @@ def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0
         kit_quark(st, seed=seed, **p)
         st.target, st.advance_total, st.d_target = tuple(d * d_T), A, d_T
         st.den_arrival, st.den_travel = den_arr, den_trav
-        return st
+        return _apply_look(st, look, species, dark)
     if kit in ('fog', 'tubes', 'tissue'):
         st = Stage(zooms, [anchor] * max(1, len(zooms)), w, h, bg=dark, fog_rgb=dark)
         st.anchor = anchor
@@ -456,11 +567,12 @@ def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0
             kit_tubes(st, seed=seed, **p)
         st.target, st.advance_total, st.d_target = tuple(d * d_T), A, d_T
         st.den_arrival, st.den_travel = den_arr, den_trav
-        return st
+        return _apply_look(st, look, species, dark)
     st = build_card_stage(kit, st_params, zooms, anchor, w, h, seed=seed, fill=fill)
+    st.seed = seed
     st.bg = np.array(dark, np.float32); st.fog_rgb = np.array(dark, np.float32)
     st.den_arrival, st.den_travel = den_arr, den_trav
-    return st
+    return _apply_look(st, look, species, dark)
 
 
 # ---- fog atom + molecular tube kits (2026-10-03 evening) ---------------------------------------
@@ -687,28 +799,57 @@ _PDB_BY_WORD = [('1BNA', re.compile(r"\b(dna|double.helix|base.pair|nucleosome)\
                 ('2VV5', re.compile(r"\b(atp|synthase|rotor|turbine)\b", re.I))]
 
 
-def suggest_stage(reg):
-    """A `stage` dict for a card, or None (render as today). Atomic/subnuclear bands only for
-    now (the two bands DreamShaper fails hardest at); molecular gets tubes when a protein word
-    is present. Cellular cards are left alone until the foam kit exists."""
+_RX_PASTA = re.compile(r"\b(pasta|spaghetti|lasagn\w*|gnocchi|kneaded|woven sheets?|rods? of matter|parking.garage)\b", re.I)
+_RX_TRACKS = re.compile(r"\b(tracks?|bubble chamber|spray|streaks?|cascade|forking|spiral(?:ling)? path)\b", re.I)
+_RX_FLUID = re.compile(r"\b(fluid|soup|melted|seething|broth|boil(?:ing)?|fireball|sparks)\b", re.I)
+_RX_AMORPH = re.compile(r"\b(glass|glassy|amorphous|random network|molten|melt|tangle|disorder\w*)\b", re.I)
+_RX_COULOMB = re.compile(r"\b(bare nuclei|white dwarf|frozen plasma|crystalli[sz]ed plasma|coulomb)\b", re.I)
+
+
+def suggest_stage(reg, seed_key=''):
+    """A `stage` dict for a card, or None (render as today). WORDS FIRST (the card names its
+    picture), then a journey-seeded draw among the band's kits so two journeys with the same
+    kind of card do not get the same stage (Phil 2026-10-05: avoid sameness, take liberties)."""
+    import zlib
     exp = reg.get('exp')
     if not isinstance(exp, (int, float)) or exp > -3.5:
         return None
+    draw = zlib.crc32(f"{seed_key}|{reg.get('name')}".encode()) % 100
     txt = f"{reg.get('scene') or ''} {reg.get('target') or reg.get('target_phrase') or ''}"
     if exp <= -12:
         if _RX['quark'].search(txt):
             return {'kit': 'quark'}
-        return {'kit': 'nucleus'}
+        if _RX_PASTA.search(txt):
+            return {'kit': 'pasta'}
+        if _RX_TRACKS.search(txt):
+            return {'kit': 'tracks', 'look': 'ink'}
+        if _RX_FLUID.search(txt) and not _RX['nucleus'].search(txt):
+            return {'kit': 'fluid'}
+        # nucleus words or nothing specific: a seeded spread across the subnuclear kits
+        if draw < 60:
+            return {'kit': 'nucleus'}
+        if draw < 78:
+            return {'kit': 'fluid'}
+        if draw < 92:
+            return {'kit': 'pasta'}
+        return {'kit': 'tracks', 'look': 'ink'}
     if exp <= -8.5:
         if _RX['lattice'].search(txt):
             var = next((v for v, rx in _VARIANT if rx.search(txt)), 'cubic')
             return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'radius': 0.06}
-        # every other atomic-band card -> the ball-and-stick lattice too (the honest picture at
-        # 10^-10 m is atoms in their courses; "hazy glowing spheres each a nest of shells about a
-        # core" is that picture in other words). Phil 2026-10-04: the atom FIELD had too few atoms
-        # and its hero rang; the FUZZY lattice was tried in motion the same evening and every
-        # cloud became a ringed rose (stage_fuzzy_strip.png) — the circles motif itself.
-        var = next((v for v, rx in _VARIANT if rx.search(txt)), 'cubic')
+        # every other atomic-band card -> a lattice (the honest picture at 10^-10 m is atoms in
+        # their courses). Phil 2026-10-04: the hero fog atom rang/burst; the fuzzy lattice became
+        # ringed roses — neither is used. Amorphous words -> the random network; "bare nuclei /
+        # white dwarf" -> the Coulomb crystal (glowing points, no bonds, plasma look); otherwise
+        # the variant is named by the words or DRAWN per journey (cubic/hex/fcc/diamond).
+        if _RX_COULOMB.search(txt):
+            return {'kit': 'lattice', 'variant': 'cubic', 'bonds': False, 'glow': 0.5,
+                    'radius': 0.05, 'look': 'plasma'}
+        if _RX_AMORPH.search(txt):
+            return {'kit': 'lattice', 'variant': 'random', 'spacing': 0.5, 'radius': 0.06, 'glow': 0.2}
+        var = next((v for v, rx in _VARIANT if rx.search(txt)), None)
+        if var is None:
+            var = ['cubic', 'hex', 'fcc', 'diamond', 'random', 'rhombo'][draw % 6]
         return {'kit': 'lattice', 'variant': var, 'spacing': 0.5, 'radius': 0.06, 'glow': 0.2}
     if exp <= -6:
         # a LATTICE named in the molecular band (ice lattice, water cages, clathrate) is a
@@ -801,3 +942,133 @@ def kit_tissue(stage, centre=(0, 0, 3.0), size=1.0, colors=((0.55, 0.85, 0.6), (
 
 
 KITS['tissue'] = kit_tissue
+
+
+# ---- SUBATOMIC-INSPIRED KITS (2026-10-05, Phil: "take some more liberties ... more stages
+# inspired by subatomic realms, not necessarily accurate") -----------------------------------
+def kit_fluid(stage, centre=(0, 0, 3.0), size=1.0, colors=((1.0, 0.75, 0.3), (0.95, 0.4, 0.5)), seed=0,
+              glow=0.3, n=260, spread=(3.0, 3.4, 8.0)):
+    """The quark-gluon fluid: no bound triplets anywhere — a seething broth of loose sparks and
+    short writhing strands at all depths, densest around the target point."""
+    rng = np.random.default_rng(seed)
+    c0 = np.asarray(centre, np.float32)
+    r0 = size * 0.045
+    for k in range(n):
+        if k < n // 3:
+            c = c0 + rng.normal(scale=size * 0.45, size=3)
+        else:
+            z = 0.8 + spread[2] * rng.random() ** 0.8
+            c = np.array([(rng.random() - 0.5) * spread[0] * max(0.6, z / 3.0),
+                          (rng.random() - 0.5) * spread[1] * max(0.6, z / 3.0), z], np.float32)
+        col = colors[int(rng.random() < 0.5) % len(colors)]
+        if rng.random() < 0.55:
+            stage.items.append(('sphere', c, r0 * (0.6 + 0.8 * rng.random()), col, glow))
+            stage.items.append(('glow', c, r0 * 2.5, col, glow * 0.3))
+        else:                                   # a short writhing strand of beads
+            d = rng.normal(size=3); d /= np.linalg.norm(d)
+            m = int(rng.integers(3, 8))
+            for t in range(m):
+                wob = rng.normal(scale=r0 * 0.6, size=3)
+                stage.items.append(('sphere', c + d * t * r0 * 1.6 + wob, r0 * 0.55, col, glow * 0.8))
+    stage.jitter = r0 * 0.15
+    return stage
+
+
+def kit_tracks(stage, centre=(0, 0, 3.0), size=1.0, colors=((0.85, 0.9, 1.0), (1.0, 0.6, 0.3)), seed=0,
+               glow=0.25, n_tracks=16, spread=(3.2, 3.6, 7.0)):
+    """Bubble-chamber tracks: a tightening spiral at the target (a particle losing energy),
+    straight and gently curved tracks around it, a few forks — beads along every path."""
+    rng = np.random.default_rng(seed)
+    c0 = np.asarray(centre, np.float32)
+    rb = size * 0.018
+
+    def beads(pts, col, r):
+        for a, b in zip(pts[:-1], pts[1:]):
+            L = np.linalg.norm(b - a); m = max(1, int(L / (r * 1.6)))
+            for t in np.linspace(0, 1, m, endpoint=False):
+                stage.items.append(('sphere', a + (b - a) * t, r, col, glow))
+
+    # the hero spiral, in a plane facing the camera-ish, winding to the target point
+    Rm = rot_matrix(rng)
+    th = np.linspace(0, 6.5 * np.pi, 160)
+    rad = size * 0.55 * np.exp(-0.17 * th)
+    sp = np.stack([rad * np.cos(th), rad * np.sin(th), 0.04 * size * th / th[-1]], -1) @ Rm.T + c0
+    beads(sp[::-1], colors[0], rb * 1.2)
+    stage.items.append(('glow', c0, size * 0.12, colors[1 % len(colors)], glow * 1.5))
+    for k in range(n_tracks):
+        z = 0.9 + spread[2] * rng.random() ** 0.8
+        p0 = np.array([(rng.random() - 0.5) * spread[0] * max(0.6, z / 3.0),
+                       (rng.random() - 0.5) * spread[1] * max(0.6, z / 3.0), z], np.float32)
+        d = rng.normal(size=3); d /= np.linalg.norm(d)
+        L = size * (0.8 + 1.6 * rng.random())
+        curv = rng.normal(size=3) * 0.25
+        t = np.linspace(0, 1, 40)[:, None]
+        pts = p0 + d * t * L + curv * (t ** 2) * L
+        col = colors[k % len(colors)]
+        beads(pts, col, rb * (0.7 + 0.6 * rng.random()))
+        if rng.random() < 0.35:                 # a fork: two branches from the midpoint
+            mid = pts[20]
+            for sgn in (-1, 1):
+                d2 = d + sgn * np.cross(d, [0, 0, 1.0]) * 0.5 + rng.normal(scale=0.1, size=3)
+                d2 /= np.linalg.norm(d2)
+                beads(mid + d2 * np.linspace(0, 0.6 * L, 18)[:, None], col, rb * 0.7)
+        if rng.random() < 0.3:                  # a small secondary spiral
+            th2 = np.linspace(0, 4 * np.pi, 70)
+            r2 = size * 0.14 * np.exp(-0.25 * th2)
+            Rm2 = rot_matrix(rng)
+            sp2 = np.stack([r2 * np.cos(th2), r2 * np.sin(th2), 0 * th2], -1) @ Rm2.T + pts[-1]
+            beads(sp2, col, rb * 0.6)
+    stage.jitter = 0.0
+    return stage
+
+
+def kit_pasta(stage, centre=(0, 0, 3.0), size=1.0, colors=((1.0, 0.55, 0.25), (0.8, 0.85, 1.0)), seed=0,
+              glow=0.2, phase=None, spread=(3.4, 3.8, 7.5)):
+    """Nuclear pasta: matter kneaded into RODS (spaghetti), SHEETS (lasagna) or dense BLOBS
+    (gnocchi) — ranks of close-packed nucleons, the camera diving between them."""
+    rng = np.random.default_rng(seed)
+    phase = phase or ['rods', 'sheets', 'gnocchi'][int(rng.integers(0, 3))]
+    c0 = np.asarray(centre, np.float32)
+    r = size * 0.06
+    Rm = rot_matrix(rng)
+    if phase == 'rods':
+        for i in range(-5, 6):
+            for j in range(-4, 5):
+                if rng.random() < 0.15:
+                    continue
+                off = np.array([i * r * 5.5, j * r * 5.5, 0], np.float32)
+                col = colors[(i + j) % len(colors)]
+                for t in np.linspace(-size * 2.2, size * 2.2, int(4.4 * size / (r * 1.7))):
+                    p = np.array([off[0], off[1], t], np.float32) + rng.normal(scale=r * 0.12, size=3)
+                    stage.items.append(('sphere', (p @ Rm.T) + c0, r, col, glow))
+    elif phase == 'sheets':
+        for k in range(-3, 4):
+            col = colors[k % len(colors)]
+            zz = k * r * 7.0
+            for i in range(-14, 15):
+                for j in range(-14, 15):
+                    if rng.random() < 0.08:
+                        continue
+                    p = np.array([i * r * 1.9 + (j % 2) * r * 0.95, j * r * 1.65, zz], np.float32)
+                    p += rng.normal(scale=r * 0.1, size=3)
+                    stage.items.append(('sphere', (p @ Rm.T) + c0, r, col, glow))
+    else:  # gnocchi: dense close-packed blobs in a loose lattice
+        for i in range(-3, 4):
+            for j in range(-3, 4):
+                for k in range(-2, 3):
+                    if rng.random() < 0.2:
+                        continue
+                    cc = np.array([i, j, k], np.float32) * r * 7.0 + rng.normal(scale=r * 0.8, size=3)
+                    pq, _ = _pack(rng, int(rng.integers(14, 30)), r, iters=18)
+                    col = colors[(i + j + k) % len(colors)]
+                    for q in pq:
+                        stage.items.append(('sphere', ((cc + q) @ Rm.T) + c0, r, col, glow))
+    stage.phase = phase
+    stage.jitter = r * 0.05
+    return stage
+
+
+KITS['fluid'] = kit_fluid
+KITS['tracks'] = kit_tracks
+KITS['pasta'] = kit_pasta
+KIT_DEN.update({'tracks': (0.50, 0.45), 'fluid': (0.55, 0.45)})

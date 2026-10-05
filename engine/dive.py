@@ -1580,7 +1580,7 @@ def main():
                         print(f"[dive] stage-auto: card {k} {r.get('name')!r} carries the cameo — "
                               f"left plain", flush=True)
                         continue
-                    _sg = _stagemod.suggest_stage(r)
+                    _sg = _stagemod.suggest_stage(r, seed_key=spec.get('scaffold_name') or spec.get('name') or '')
                     if _sg:
                         _splan.append((k, _sg))
                         print(f"[dive] stage-auto: card {k} {r.get('name')!r} -> {_sg}", flush=True)
@@ -1631,8 +1631,12 @@ def main():
                 _szw = [zoom_sched[x] for x in range(_sS, min(total, _sS + _sF))]
             _sanchor = _anchor_of[_sk]
             _sseed = args.stage_seed or (_zlib.crc32(_skey(_sk).encode()) % 100000)
+            # the LOOK: the card's own, else the journey's `stage_look`, else drawn per journey
+            _jlook = spec.get("stage_look") or _stagemod.draw_look(
+                spec.get("scaffold_name") or spec.get("name") or "")
             _stage = _stagemod.build_card_stage_v2(_sdef, _sreg.get("palette"), _szw, _sanchor,
-                                                   cfg["width"], cfg["height"], seed=_sseed)
+                                                   cfg["width"], cfg["height"], seed=_sseed,
+                                                   look=_jlook)
             _stage.S, _stage.E, _stage.fa = 0, _sF, max(2, round(_sF * 0.25))
             _stage.card = _sk
             _stage.kit = _sdef.get("kit")
@@ -1659,7 +1663,7 @@ def main():
                   + " + ".join(f"{a}..{b - 1}" for a, b in _spans)
                   + f", {len(_stage.items)} items, anchor {_sanchor}, target depth "
                   f"{_stage.d_target:.2f} (advance {_stage.advance_total:.2f}), den {args.stage_den}/"
-                  f"{args.stage_den_travel}, cn {args.stage_cn}, id {args.stage_id}", flush=True)
+                  f"{args.stage_den_travel}, cn {args.stage_cn}, id {args.stage_id}, look {_stage.look}", flush=True)
         # the lap's REPLAY of card 1's arrival (the last fa frames of the render) is card 1's
         # stage at j = 0.. so the delivered video's final frames agree with its first ones
         if _has_lap and 1 in _by_card and _sn_cards > 1:
@@ -1671,7 +1675,7 @@ def main():
         try:   # provenance: run.json is written before the stages are built — append them
             _rj = json.loads((out_dir / "run.json").read_text())
             _rj["stage_cards"] = [(st_.card, st_.delivered_span[0], st_.delivered_span[1]) for st_ in stages]
-            _rj["stage_kits"] = [(st_.card, st_.kit) for st_ in stages]
+            _rj["stage_kits"] = [(st_.card, st_.kit, getattr(st_, "look", None)) for st_ in stages]
             (out_dir / "run.json").write_text(json.dumps(_rj, indent=2))
         except Exception:
             pass

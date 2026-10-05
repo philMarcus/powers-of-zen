@@ -52,6 +52,8 @@ TEST (audit warns, 2026-10-04): count the consecutive-card jumps of 8 or more de
 
 PLANET TEST (audit counts it, 2026-10-04): the world card after a planet target must not be a storm or cloud-spiral world unless the journey is ABOUT weather — 69% of the catalog's planets were, and they all render as the same grey hurricane pair. Pick a different planetary archetype (REALMS.md planetary band) and give the world its own colour and surface feature; the plate paints what the card says.
 
+STAGE VARIETY TEST (2026-10-05): the micro realm is rendered through built 3-D stages, so two journeys whose micro cards say the same thing (an atom, a nucleus) get the same STRUCTURE. Write the micro cards as specific pictures (which lattice, which molecule, which nuclear picture: a droplet of nucleons, a quark trio on taut strings, nuclear pasta, a tightening bubble-chamber track, a Coulomb crystal, a quark-gluon broth) — the words choose the kit. Take liberties: the pictures should be INSPIRED by the realm, not textbook. The novelty brief lists the kit and look counts; prefer the rare ones.
+
 ## DESCRIBE STATIC SCENES — the ENGINE renders the motion (critical)
 The journey supplies the STILL IMAGE at each scale. The ENGINE renders everything that happens
 in TIME — the zoom, the approach, the growth, the morph between scales. So `scene` and `target`
@@ -115,6 +117,16 @@ moderately OFF-center) and grows the object there. So every `zoom` card's `scene
   "exp": 11,                        // 10^n metres; float ok. The exp JUMP to the next card
                                     //   decides zoom (small step) vs seam (big jump).
   "kind": "zoom",                   // "zoom" (default) | "seam"
+  "stage": {"kit": "lattice",       // OPTIONAL (2026-10-05): the built 3-D world the engine composites
+            "variant": "hex",       //   for this micro card. Kits: lattice (variant cubic|hex|fcc|diamond|
+            "look": "gem"},         //   rhombo|sheets|random), nucleus, quark, fluid, tracks, pasta
+                                    //   (phase rods|sheets|gnocchi), tubes (pdb, arrangement sea|bundle|
+                                    //   sheet|chain), tissue. look: gem|fuzzy|plasma|glass|wire|ink.
+                                    //   Omit it: the engine picks the kit from the card's WORDS and draws
+                                    //   the look per journey. Set it when the concept wants a specific
+                                    //   picture (a Coulomb crystal, bubble-chamber tracks, nuclear pasta).
+                                    //   `stage: false` opts a card out. A journey-level `stage_look`
+                                    //   fixes the look for all its cards.
   "dur": 4,                         // BEATS (bar=4). UNIFORM for every card in the journey
                                     //   (4 default, or 8 journey-wide), never mixed — see pacing
   "palette": "blazing orange and white",
