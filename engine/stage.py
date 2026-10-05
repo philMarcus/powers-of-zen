@@ -55,7 +55,7 @@ def _fib_hemisphere(n=22):
     return np.stack([np.sin(phi) * np.cos(th), np.sin(phi) * np.sin(th), -np.cos(phi)], -1).astype(np.float32)
 
 
-_FACETS = _fib_hemisphere()
+_FACETS = _fib_hemisphere(10)      # 10 facets: large enough planes to survive the repaint at ~60 px spheres
 
 
 def draw_look(key):
@@ -79,10 +79,12 @@ def shade_sphere(look, n, nz, rho2, base, light, extra, bg):
         idx = np.argmax(n @ _FACETS.T, axis=-1)
         nq = _FACETS[idx]
         ndl = np.clip(-(nq @ light), 0, 1)
-        spec = ndl ** 48
+        spec = ndl ** 20
         rim = (1.0 - nz) ** 3
-        return (b * (0.35 + 0.65 * ndl)[..., None] + 1.1 * spec[..., None]
-                + 0.35 * rim[..., None] * (0.5 * b + 0.5) + extra * b)
+        # per-facet tone step so neighbouring planes differ even under the same light
+        tone = 0.85 + 0.3 * ((idx * 7919) % 10) / 9.0
+        return (b * (0.25 + 0.75 * ndl * tone)[..., None] + 1.3 * spec[..., None]
+                + 0.3 * rim[..., None] * (0.5 * b + 0.5) + extra * b)
     ndl = np.clip(-(n @ light), 0, 1)
     if look == 'plasma':
         core = np.clip(1.0 - rho2, 0, 1) ** 1.5
