@@ -120,6 +120,20 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-05 (NIGHT HANDOFF — everything committed + pushed; nothing running; the 01:30 nightly is the first with the whole
+stage era ON; read PLAN "2026-10-05 AFTERNOON" + the arm notes under it): settings stage_mode=auto, stage_preroll=16,
+palette_anchor=0.5, cameo sprite. WHAT RENDERS TONIGHT (sunspot_archipelago, anvil_country, spouter_dawn, urchin_barren,
+paradise_cape): micro cards through built stages with a per-journey LOOK (gem/fuzzy/plasma/glass/wire/ink), kits drawn
+words-first then seeded (lattice variants incl. amorphous + Coulomb, nucleus, quark, fluid, tracks, pasta, capsule-tube
+molecules, tissue), each stage opening INSIDE a disc on the shared fixed point during the previous card's last 16 frames
+(pre-roll, verified: arrival ratio 0.48, scratchpad/orange/preroll2_strip.png), staged start cards staged in both copies
+(cork_mini verified byte-identical composites). MORNING CHECKS: night_batch.log argv has --stage-auto --stage-preroll 16;
+Review gets five videos; judge (a) the pre-roll arrivals in context, (b) look variety across the five (run.json
+stage_kits lists card/kit/look), (c) molecules as tubes (capsules), (d) that gem reads as gem under the repaint (tuned to 10
+facets, untested in motion). KNOWN: two lab render trees were deleted by my own cleanup (gecko_rampart_stage,
+sunspot_archipelago_stage — mp4s + entries intact; memory plan-only-cleans-itself). Lab arm dirs are disposable
+(output/*_preroll*, *_zt*, cork_mini, *_orange_*). OPEN: Phil's verdict on the night's five; gem tuning; tissue variety
+(one kit for 57 cards — files/rosettes/discs variants next); the composer writing `stage` fields deliberately.
 2026-10-05 (LATE AFTERNOON — the three approved steps in progress; GPU: cork_mini (lap-staging check) → looks pass →
 pre-roll card arm; nightly at 01:30 renders sunspot/anvil/spouter/urchin/paradise with stage auto): BUILT TODAY — (a) a staged
 render-start card is staged in BOTH copies (warm-up + lap, incl. the arrival replay) = the cork gap fix, circular anchor

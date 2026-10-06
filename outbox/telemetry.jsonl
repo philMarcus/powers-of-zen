@@ -2468,3 +2468,15 @@
 {"ts": "2026-10-05 18:40:21", "event": "phase_shift", "journey": "gulal_dusk", "detail": "start @ 13.00s"}
 {"ts": "2026-10-05 18:40:21", "event": "music", "journey": "gulal_dusk"}
 {"ts": "2026-10-05 18:40:27", "event": "music_realign", "journey": "gulal_dusk", "detail": "5 candidates"}
+{"ts": "2026-10-05 18:43:05", "event": "phase_shift", "journey": "cork_dehesa", "detail": "start @ 24.00s"}
+{"ts": "2026-10-05 18:43:05", "event": "music", "journey": "cork_dehesa"}
+{"ts": "2026-10-05 18:43:13", "event": "music_realign", "journey": "cork_dehesa", "detail": "5 candidates"}
+{"ts": "2026-10-05 18:52:49", "event": "music_choose", "journey": "vernal_clutch", "detail": "pulse1-music_box"}
+{"ts": "2026-10-05 18:52:49", "event": "queued", "journey": "vernal_clutch"}
+{"ts": "2026-10-05 18:56:18", "event": "music_choose", "journey": "cork_dehesa", "detail": "wooden_orbit-heartbeat"}
+{"ts": "2026-10-05 18:56:18", "event": "queued", "journey": "cork_dehesa"}
+{"ts": "2026-10-05 18:57:37", "event": "music_choose", "journey": "gulal_dusk", "detail": "night_market-heartbeat"}
+{"ts": "2026-10-05 18:57:37", "event": "queued", "journey": "gulal_dusk"}
+{"ts": "2026-10-05 18:59:54", "event": "music_choose", "journey": "stromatolite_dawn", "detail": "analog_dawn-b"}
+{"ts": "2026-10-05 18:59:54", "event": "queued", "journey": "stromatolite_dawn"}
+{"ts": "2026-10-05 20:01:19", "event": "settings", "detail": "stage_preroll 0 -> 16 (arm 2 passed: arrival ratio 0.48, own words inside the disc)"}

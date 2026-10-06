@@ -2653,3 +2653,13 @@ line (as the planet plate spans the bar line) — a real object we dive into, no
   plate's region machinery); (2) the eased aim landed on the mascot sprite (thirds anchor ==
   the composer's usual cameo corner) and Belle filled the frame for two seconds → the run's
   anchor is now chosen farthest from any cameo on the previous/this card. Arm 2 running.
+- PRE-ROLL ARM 2 (20:10; strip scratchpad/orange/preroll2_strip.png): with the coming card's
+  prompt inside the disc and the anchor kept off the cameo, the nuclei open inside the molten
+  plasma at f156, grow in their OWN colours, own the frame by the bar line; arrival ratio 0.48
+  (smoother than the steady travel); Belle stays small at the frame edge. ENABLED: settings
+  stage_preroll = 16 (night_batch passes --stage-preroll 16 with --stage-auto). Lab-only crash
+  fixed on the way (spans beyond a --frames-truncated total).
+STATE AT CLOSE (20:15): all three approved steps built, verified on card arms, and ON for the
+01:30 nightly (sunspot_archipelago, anvil_country, spouter_dawn, urchin_barren, paradise_cape):
+look variety + new kits (1), the pre-roll arrival (2), capsule tubes for molecules (3), plus lap
+staging for staged start cards. First full videos through all of it land in Review ~07:00.

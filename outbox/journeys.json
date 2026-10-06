@@ -16,6 +16,7 @@
     "plate_mode": "live",
     "palette_anchor": 0.5,
     "stage_mode": "auto",
+    "stage_preroll": 16,
     "post_every_hours": 19.0,
     "post_next": "2026-10-06 02:00",
     "plate_intro": "mix"
@@ -402,5 +403,5 @@
       "order": 2
     }
   },
-  "updated": "2026-10-05 18:39:54"
+  "updated": "2026-10-05 20:01:19"
 }
