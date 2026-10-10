@@ -456,7 +456,7 @@ def _nucleus_points(rng, variant, n, radius):
       alpha — tetrahedral 4-nucleon clusters arranged as a nuclear molecule
     Returns (points (n,3), Rd = the droplet's outer radius)."""
     if variant == 'shells':
-        pts, r_sh, left, k = [], radius * 1.05, n, 0
+        pts, r_sh, left, k = [], radius * 1.0, n, 0
         counts = (1, 8, 20, 36, 60)
         while left > 0 and k < len(counts):
             m = min(left, counts[k])
@@ -467,7 +467,7 @@ def _nucleus_points(rng, variant, n, radius):
                 for i in range(m):
                     y = 1 - 2 * (i + 0.5) / m; rr = math.sqrt(max(0.0, 1 - y * y)); th = 2 * math.pi * i / g
                     pts.append(np.array([rr * math.cos(th), y, rr * math.sin(th)], np.float32) * r_sh)
-            left -= m; k += 1; r_sh += radius * 2.6
+            left -= m; k += 1; r_sh += radius * 2.0        # tighter shells: the picture stays legible from outside
         p = np.array(pts, np.float32)
         return p, float(np.linalg.norm(p, axis=1).max() + radius)
     if variant == 'hollow':

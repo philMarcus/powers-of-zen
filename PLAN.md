@@ -2761,3 +2761,33 @@ molecule shaped like a tiny silver moon disc", "every atom ... a tiny hexagonal 
 (creature donors), seed 1234 = their v1 baselines in Review; side-by-side review/compare/<j>_VAR.mp4
 (today | variety). JUDGE: tone (should match the unstaged frames), the echo reading, scale variety.
 Also fixed: suggest_stage picked the molecule with Python's salted hash() -> crc32 (same card, same pick).
+
+## 2026-10-10 — STAGE VARIETY: what else was built while the A/B pair rendered (all behind flags)
+- C3 MOTION (`dive --stage-motion`, needs --stage-variety; CPU-verified on scratchpad/orange/motion_sheet.png,
+  UNTESTED under diffusion): STAGE CAMERA drift (lateral offset 0.12 x target distance) or orbit (0.15, half a
+  turn) with a LOOK-AT on the plunge target — the target projects at the anchor pixel in every frame (measured),
+  everything else parallaxes; envelope sin^2 is zero at both ends of the zoom slice so the handoffs are the plain
+  advance. ELEMENT MOTION per kit: electrons (1-3 bright satellites orbiting the ~40 atoms nearest the target),
+  pulse (breathing radii), spin (the kit turns about its centre), wave (a travelling sine along the tubes). All
+  deterministic in the frame index (the two copies of card 0 match). Draws: camera none 40 / drift 35 / orbit 25.
+  Arm queued (tmux arms_c3b3): 80 frames of thousand_moons_var from frame 0, strip arm_c3motion_strip.png.
+- B3 ECHO BY PIXELS (`dive --stage-echo-ipa W`): on echo cards one txt2img swatch of the donor thing ("a close view
+  of a single <donor>, whole and centred, <donor palette>, dark plain background, <style>") becomes the staged
+  frames' IP-Adapter reference, weight W rising over the arrival, held, easing over the plunge's last quarter;
+  slot priority tail > stage echo > plate > palette. Arm queued at 0.35: arm_b3ipa_strip.png.
+- TISSUE VARIANTS (kit_tissue variant=): polygon (the original beaded Voronoi) / brick / rosette / nuclei / domes /
+  bubbles / discs / fibres; walls are capsules in the new variants; words first (ommatidia -> domes, blood/diatom ->
+  discs, muscle/fibre -> fibres, foam/roe -> bubbles, stoma/petal -> rosette, epithelium/cork/bark -> brick,
+  nucleus/stain -> nuclei), else a per-card draw. Over the catalog's 60 tissue cards: 43 by words. Sheets:
+  tissue_sheet.png / tissue_sheet2.png.
+- NUCLEUS VARIANTS (kit_nucleus variant=): droplet / shells / prolate / halo / fission / hollow (a bubble nucleus)
+  / alpha (tetrahedral 4-nucleon clusters as a nuclear molecule); the field shares the picture 60% of the time;
+  words first, else a draw (weights 30/14/14/10/10/8/14). Sheet: nucleus_sheet.png.
+  Both variant draws happen ONLY under --stage-variety (dive injects `variant` into the card's stage dict when none
+  is authored); the nightly's suggest_stage path is unchanged.
+- SETTINGS: `stage_variety` (pipeline default False) -> night_batch passes --stage-variety; dashboard ⚙ toggle
+  "🎭 stage variety". Motion and echo-IPA stay lab flags until their arms are judged.
+- Composer skill: `stage.echo/tier/light/bg/scale` documented + ECHO TEST (authored echoes, compact things, >= 6
+  decades away, at most two per journey, never the same donor twice).
+- NOTE tonight: Review+Music = 20 = max_review_videos, so the 01:30 batch SKIPS by design until Phil clears Review
+  below 20 (the two lab videos add to it).
