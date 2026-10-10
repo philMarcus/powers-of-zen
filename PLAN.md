@@ -2961,3 +2961,25 @@ natural pairing is textures (the shape) + IPA (the finish) once the texture arm 
 - Verdict (mine, from strips): both read as zoom-through rather than wipe; Phil judges on a FULL video. macaw stays
   as approved (Phil moved it to Music; the contain run is a lab dir). Next full-video deliverable = cork_dehesa_var
   (unjudged journey): echo textures + containment, same seed as cork_dehesa, into Review next to cork_dehesa.
+
+### 2026-10-10 14:00 — the echo-texture arm's 15-minute stall = a FULLY CACHED ComfyUI prompt; tone anchor default restored
+- cork_dehesa_var's donor pool is small: cards 0, 9 and 10 all drew "a half-lit banded world", so the engine
+  submitted the SAME swatch graph (text + seed 1497338502 + 768²) three times. The third copy, identical to the
+  prompt right before it, was served from ComfyUI's cache: `execution_cached`, 0.07 s, status success and NO
+  outputs in /history (the SaveImage node never ran; our unlink-after-fetch had removed its old file anyway).
+  run_workflow had no case for that and slept until its 900 s timeout; the swatch failure was caught ("a failed
+  swatch never kills a render") and the arm went on. FIXED twice: run_workflow now resubmits once with a nudged
+  SaveImage/SaveAudio filename_prefix (upstream stays cached, only the save re-executes; log line "served ...
+  from cache with no outputs"), and swatches are memoized per (prompt, seed) within a run ("(reused)" in the
+  stage-echo line; plan-only on cork_dehesa_var: 1 generated, 2 reused). Both smoke-tested from frame 0.
+  GENERAL HAZARD this closes: any render whose first prompt equals the previous ComfyUI prompt (a smoke test
+  followed by the same journey/seed from frame 0) would have hung the same way.
+- TONE ANCHOR: the chroma-aware gain cut the yield arm's card-0 sat to 0.30 (v1 variety 0.45) and card-1 to 0.43
+  (0.51). Phil approved v1's colour ("certainly more colorful"), so the FLAT gain he saw is the default again and
+  the chroma-aware version is `--tone-chroma-aware` (lab). His call, with both on file: v1 = confetti beads on the
+  bead_glass card; yield strip = pearl beads. anchorfix2 (thousand_moons_var --from-card 8) now renders the lap
+  with the approved anchor, so its strip isolates the lap pre-roll fix.
+- NEXT FULL VIDEO (tmux lepi_full, after anchorfix2): lepidolite_halo_var — lepidolite_halo (Review, unjudged,
+  seed 1234) with AUTHORED echoes on its three consecutive sphere stages (k6 lattice: a lilac mica book; k7
+  lattice: a half-lit amber moon; k8 nucleus: a round blue planet) + --stage-echo-tex 0.85 + --stage-contain +
+  variety; 405 frames; lands in Review next to lepidolite_halo with review/compare/lepidolite_halo_ECHO.mp4.
