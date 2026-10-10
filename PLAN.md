@@ -2937,3 +2937,11 @@ carbon_atom lattice at hero scale ← "a half-lit banded world" (card 9's planet
 orchard/grove/clearing/dehesa/paddies etc. ("a wooded umber pasture" had passed as a donor). The
 containment arm stays on macaw_lick_var --from-card 7 (the only variety render with lattice-led
 handoffs); it is a lab run and never touches the approved video or its pipeline entry.
+ARMS c3motion / b3ipa (thousand_moons_var frames 0-80, strips scratchpad/orange/arm_*_strip.png, 12:18/12:41):
+MOTION (camera drift on card 0, orbit + pulse on card 1): the lattice stays one world while its rods swing —
+no breakage in stills, card-1 sat 0.39 vs variety 0.50 / today 0.18; motion itself needs a video (the arm's
+80-frame mp4 is in output/thousand_moons_var_platelive_c3motion/v1). ECHO-IPA 0.35 (moon-disc swatch on
+card 0, hex-lens swatch on card 1; the OLD portrait swatch prompt): card 0's confetti is GONE — silver-grey
+beads and a large dark moon-like sphere by f32; card 1 keeps the lattice with more lens-like concentric
+discs, sat 0.42. So the IP-Adapter route works as a palette/texture pull without breaking the stage; the
+natural pairing is textures (the shape) + IPA (the finish) once the texture arm has shown its own effect.
