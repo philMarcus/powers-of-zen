@@ -20,6 +20,7 @@ Usage:
 """
 import argparse
 import io
+import copy
 import json
 import re
 import math
@@ -365,17 +366,18 @@ def run_workflow(wf, timeout=900):
     renders outright (2026-07-31) — and the work wasn't even lost, the job completed at 310s with
     nobody listening. A slow frame must never cost an hour's render; a genuinely hung ComfyUI is
     rare and 15 minutes is an acceptable price for noticing it."""
-    pid = None
-    for attempt in range(5):
-        try:
-            r = requests.post(f"{COMFY}/prompt", json={"prompt": wf}, timeout=30)
-            r.raise_for_status()
-            pid = r.json()["prompt_id"]
-            break
-        except requests.exceptions.RequestException:
-            if attempt == 4:
-                raise
-            time.sleep(3)
+    def _submit(graph):
+        for attempt in range(5):
+            try:
+                r = requests.post(f"{COMFY}/prompt", json={"prompt": graph}, timeout=30)
+                r.raise_for_status()
+                return r.json()["prompt_id"]
+            except requests.exceptions.RequestException:
+                if attempt == 4:
+                    raise
+                time.sleep(3)
+    pid = _submit(wf)
+    nudged = False
     deadline = time.time() + timeout
     while time.time() < deadline:
         try:
@@ -400,6 +402,23 @@ def run_workflow(wf, timeout=900):
                     comfy_fs.unlink_output(img["filename"], img.get("subfolder", ""),
                                            img.get("type", "output"))
                     return v.content
+            # FULLY CACHED PROMPT (2026-10-10): a graph identical to the previous one is served
+            # from ComfyUI's cache — "execution_cached", 0.07 s, status success and NO outputs
+            # in history because the save node never ran (and its old file is gone: we unlink
+            # after fetch). Seen on an echo swatch generated twice for the same donor+seed; the
+            # engine waited the full timeout. Nudge the save node's filename_prefix and resubmit
+            # once: every upstream node stays cached, only the save re-executes.
+            if nudged:
+                raise RuntimeError(f"ComfyUI returned no outputs for {pid} (cached) twice")
+            wf2 = copy.deepcopy(wf)
+            nonce = f"_cb{int(time.time() * 1000) % 1000000}"
+            for n in wf2.values():
+                if n.get("class_type") in ("SaveImage", "SaveAudio") and "filename_prefix" in n.get("inputs", {}):
+                    n["inputs"]["filename_prefix"] = str(n["inputs"]["filename_prefix"]) + nonce
+            print(f"[dive] ComfyUI served {pid[:8]} from cache with no outputs — resubmitting with a nudged save prefix")
+            pid = _submit(wf2)
+            nudged = True
+            continue
         time.sleep(0.25)
     raise TimeoutError(f"workflow {pid} did not finish in {timeout}s")
 
@@ -650,9 +669,14 @@ def register_frame_counts(spec, fps):
     return [grammar._frames(r, fmt, fps) for r in regs]
 
 
-def tone_anchor_image(img, sd_t=0.21, sat_t=0.56, k_max=1.6, s_max=1.5):
+def tone_anchor_image(img, sd_t=0.21, sat_t=0.56, k_max=1.6, s_max=1.5, chroma_aware=False):
     """STAGE VARIETY: stretch a fed composite's luminance contrast / saturation UP TO brand
-    targets (a floor, never a multiplier: gains are 1 once the frame meets the target)."""
+    targets (a floor, never a multiplier: gains are 1 once the frame meets the target).
+    chroma_aware=False (DEFAULT = the look Phil approved on thousand_moons_var, 2026-10-10): a flat
+    chroma gain and an RGB contrast stretch. chroma_aware=True (--tone-chroma-aware, lab): the gain
+    is weighted by each pixel's own chroma and the stretch acts on luminance only, so a near-grey
+    stage layer stays grey instead of becoming hue-noise "confetti" — measured on the yield arm as
+    card-0 sat 0.30 vs 0.45 (hue entropy 3.15 vs 3.31 bits): less colour, which is Phil's call."""
     a = np.asarray(img.convert("RGB"), np.float32) / 255.0
     lum = a @ np.array([0.30, 0.59, 0.11], np.float32)
     mx, mn = a.max(-1), a.min(-1)
@@ -664,6 +688,11 @@ def tone_anchor_image(img, sd_t=0.21, sat_t=0.56, k_max=1.6, s_max=1.5):
     if k <= 1.001 and sg <= 1.001:
         return img
     l3 = lum[..., None]
+    if not chroma_aware:
+        a = l3 + (a - l3) * sg
+        tm = float(np.clip(m * 1.1, 0.33, 0.55)) if k > 1.001 else m
+        a = tm + (a - m) * k
+        return Image.fromarray(np.clip(a * 255.0, 0, 255).astype(np.uint8))
     # CHROMA-AWARE (2026-10-10, thousand_moons_var card 0): a near-grey pixel has no colour to
     # lift, only hue NOISE — a flat x1.5 on the ink-look tubes card (stage layer sat 0.03) turned
     # the fed composite into RGB confetti (sat 0.50, hue entropy 2.9 bits over 12 bins) that the
@@ -678,7 +707,6 @@ def tone_anchor_image(img, sd_t=0.21, sat_t=0.56, k_max=1.6, s_max=1.5):
     lum2 = tm + (lum - m) * k
     a = lum2[..., None] + chroma
     return Image.fromarray(np.clip(a * 255.0, 0, 255).astype(np.uint8))
-
 
 def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0, contain=False):
     """The pre-roll disc for frame i: (mask HxW in [0,1], coming-stage rgb, coming-stage depth,
@@ -1116,6 +1144,10 @@ def main():
                     help="pre-roll disc follows the CURRENT stage's plunge-target element (never "
                          "below 0.9x its projected radius): the next world opens inside the thing "
                          "we are diving into instead of a free iris on the fixed point (lab, 2026-10-10)")
+    ap.add_argument("--tone-chroma-aware", action="store_true",
+                    help="stage-variety tone anchor weights its chroma gain by each pixel's own chroma "
+                         "and stretches luminance only (no hue-noise confetti on a grey stage layer; "
+                         "lab, 2026-10-10). Default = the flat gain Phil approved on thousand_moons_var")
     ap.add_argument("--stage-preroll-k", type=float, default=2.2, metavar="K",
                     help="with --stage-preroll: disc growth exponent on the zoom (>=1)")
     ap.add_argument("--stage-id", type=float, default=0.5, metavar="W",
@@ -2428,7 +2460,7 @@ def main():
                 if getattr(_st, "variety", False):
                     # BRAND TONE on the composite: the model follows the fed frame's tone, and a
                     # 50/50 blend of a grey world and a CG layer is grey (the macaw triplet)
-                    fed = tone_anchor_image(fed)
+                    fed = tone_anchor_image(fed, chroma_aware=args.tone_chroma_aware)
                     if getattr(_st, "echo_clause", ""):
                         prompt = prompt + ", " + _st.echo_clause
                     if getattr(_st, "echo_ref", None) and args.stage_echo_ipa > 0:
