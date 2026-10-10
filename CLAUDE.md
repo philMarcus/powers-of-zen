@@ -130,7 +130,8 @@ stage's identity + depth CN repainted the disc every frame so the coming world n
 1.1 before another stage; one-frame lookahead). macaw_lick_var in Review (caption + music; staged sat 0.68 vs 0.55);
 echoes by WORDS do not read (macaw_var_strip.png) → echo textures next. GPU queue (tmux): arms_c3b3 (motion, echo-IPA)
 → after_arms (thousand_moons_var caption+pregen redo) → anchorfix (--from-card 8: confetti card + lap handoff with the
-new pre-roll) → contain_arms (yield arm on thousand_moons_var 0-80; contain arm macaw --from-card 7). stage_variety
+new pre-roll) → contain_arms (yield arm on thousand_moons_var 0-80; contain arm macaw --from-card 7) → echotex_arm (macaw
+--from-card 7 --stage-echo-tex 0.85: ECHO TEXTURES, the donor swatch as a decal on every sphere; PLAN "ECHO TEXTURES"). stage_variety
 knob still OFF pending the anchorfix strip. Review = 21 → tonight skips (the nightly's first cleanup pass runs anyway).
 2026-10-10 (LATE MORNING — C: WAS FULL; CLEANUP NOW AUTOMATIC; read PLAN "2026-10-10 — C: FULL"): 425 MB free at
 10:30 — ComfyUI's OWN output/input folders held every frame ever rendered + every Florence upload (112,743 files,

@@ -2911,3 +2911,22 @@ though both cards are far more vivid than today's (staged sat 0.68 vs 0.55, lum 
 next step is the echoes → ECHO TEXTURES: the donor swatch wrapped onto every sphere of the stage layer
 (decal mapping by the shaded normal), so the layer itself shows little moons / feathers / macaws and
 the diffusion keeps them under identity + CN. B3 (IP-Adapter swatch) arm result pending.
+
+### ECHO TEXTURES built (same afternoon) — `dive --stage-echo-tex W` (lab, default 0)
+Stage.set_echo_texture(swatch, W): the donor's txt2img swatch is centre-cropped square and worn by
+every SPHERE of the staged layer as a face-on decal (orthographic map onto the visible cap, a fixed
+random rotation/mirror per element, soft shading; spheres under 6 px take the swatch's colour only;
+capsules — tubes, cell walls — keep their colour). CPU sheets (scratchpad/orange/echo_tex_sheet3.png):
+a nucleus made of little moons, a lattice of feathers, a coiled snake in every droplet — the stage
+layer now literally shows Phil's "atomic spheres could look like planets / proteins made of snakes".
+THE SWATCH IS EVERYTHING (echo_swatches2/3.png): "one single X filling the frame, icon-like" gave a
+wall of parrots and a FRAMED feather (the frame then tiled every atom); the wording that gives exactly
+one object alone on black for macaw / feather / moon / coiled snake is "exactly one X, alone, large in
+the centre of a plain black background, whole object fully visible, {palette}, bold simple silhouette,
+soft studio light" + a negative of multiple/many/group/pattern/repeated/tiled/frame/border/text/
+collage/cropped, rendered SQUARE at 768^2 (a portrait swatch lost its object to the centre crop). The
+same swatch feeds B3 (IP-Adapter) when --stage-echo-ipa is also set. Arm queued after the containment
+arms (tmux echotex_arm): macaw_lick_var --from-card 7 --stage-echo-tex 0.85 → cards 7 (feather on a
+lattice swarm) and 9 (macaw in a fluid hero field), strip scratchpad/orange/echotex_strip.png. What
+survives the diffusion (identity 0.22-0.5, CN 0.4-0.7, denoise 0.45-0.6) decides the next move: if
+the decals wash out, raise identity on echo cards or add the swatch through IPA on top (B3 arm).
