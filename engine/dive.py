@@ -1310,7 +1310,10 @@ def main():
         vs = sorted([d for d in src_base.glob("v[0-9]*") if d.name[1:].isdigit()],
                     key=lambda d: int(d.name[1:]))
         if args.src_version:
-            vs = [d for d in vs if d.name == args.src_version]
+            # "v1" or "1" — twice today an arm asked for "1" and was refused with a message
+            # that read like a missing render
+            _sv = args.src_version if args.src_version.startswith("v") else f"v{args.src_version}"
+            vs = [d for d in vs if d.name == _sv]
         src = next((d for d in reversed(vs)
                     if len(list((d / "build" / "frames").glob("*.png"))) >= N), None)
         if not src:
