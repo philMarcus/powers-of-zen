@@ -2680,3 +2680,45 @@ DIALOG — "has been shared" or the dialog closing — up to 240 s, telem ig_sha
 then goes to the profile. kelp_dynamo_stage marked live on IG (caption verified on the live
 page). Lesson (memory ig-share-wait-in-place): never navigate during an in-flight upload; wait
 on the flow's own confirmation element, never on a substring of the whole page.
+
+# 2026-10-10 — STAGE VARIETY: plan of record (Phil: "satisfy my demand for variability in the stages
+# we have now before working on staging new realms")
+WHERE THE SAMENESS COMES FROM (tally of the 24 stage-era renders): 25 of 55 staged cards are a
+lattice; 44 of 53 looks are gem/fuzzy/ink; one camera (advance along the aim ray), one key light,
+one dark fog void on every card; identity 0.5 keeps the SHADER's colour; the prompt is just the
+card's own words. Six shaders against DreamShaper's whole vocabulary IS the sameness. The stage was
+built to own structure but it also owns the material — the wrong side.
+PRINCIPLE: the stage owns what / how many / where / how it moves / where the camera goes.
+DreamShaper owns what it is made of and how it is lit. Looks become a weak colour prior.
+PHIL'S TWO CALLS: (1) ECHOES are authored and MAY SURPRISE, but a surprise still coheres with the
+journey's story (composer writes `stage.echo`; the auto-draw picks a donor from inside the journey).
+(2) The staged FRACTION per video is undecided until the micro stages satisfy him; NO new realms
+(globe-as-kit, terrain, organism close-ups, mineral habits) until then — those are the documented
+step 2 (see the 10-10 conversation summary in CLAUDE.md).
+THE WORK, in order:
+  A. MEASURE (CPU): a sameness index over the staged cards of the stage-era renders — per-card
+     features from mid-card frames (hue hist, sat/lum, edge density, blob-size spectrum, texture),
+     nearest-neighbour distance within staged / within unstaged / across; and a SAMENESS BOARD
+     (one frame per staged card, grouped by kit) = the thing Phil's eye reacts to. Every arm below
+     gets a number and a picture; Phil gets full same-seed videos in Review.
+  B. ECHO (Phil's idea = "supply pixels" pointed at coherence), three strengths tested separately:
+     B1 echo WORDS — donor card from elsewhere in the journey (nameable target, ≥6 decades away,
+        never a neighbour; `stage.echo` authored wins), costume prompt "…, every <kit element> a
+        tiny <donor target>"; echo cards loosen (cn ~0.55, id ~0.3) so a sphere may become the thing.
+     B2 echo PIXELS — spheres/capsules textured with a txt2img swatch of the donor's scene (the
+        plate's globe trick per element; no render-order dependency).
+     B3 echo by IP-ADAPTER — donor frame as the IPA reference at 0.3–0.4 during the staged card
+        (the loop tail proves in-video references keep the chain coherent).
+  C. FORM VARIETY inside the stage, by impact per effort: C1 WILDNESS TIERS per staged card
+     (tight/medium/loose → cn/id/den draws, ~1 in 4 loose so DreamShaper half wins = the eye candy
+     by design); C2 LIGHT + BACKGROUND draws (key direction/colour, rim/back light, emissive
+     fraction, fog density/colour; backgrounds: void / bright-field / gradient / far sea /
+     CARRY = the previous world stays behind the field); C3 MOTION (tumble, shiver, satellites,
+     pulsing, undulating chains) + STAGE CAMERA (orbit / lateral drift about the fixed point —
+     exact and free here, zero at card boundaries so the handoff + loop are untouched); C4 kit
+     draw rebalanced away from lattice + new primitives (polyhedra, discs, rings, helices, nested
+     shells); C5 heterogeneity (size spectra, two species, clusters of clusters).
+  FIRST DELIVERABLE: B1 + C1 + C2 on two same-seed re-renders of Review videos with 3 staged cards
+  — one PLANET donor (thousand_moons: tubes k0, lattice k1, tissue k8) and one CREATURE donor
+  (macaw_lick or spouter_dawn) — next to their existing renders in Review, side-by-side cuts via
+  scratchpad/orange/sbs.sh. Then B2/B3, then C3, then C4/C5.
