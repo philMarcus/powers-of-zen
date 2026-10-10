@@ -52,6 +52,8 @@ TEST (audit warns, 2026-10-04): count the consecutive-card jumps of 8 or more de
 
 PLANET TEST (audit counts it, 2026-10-04): the world card after a planet target must not be a storm or cloud-spiral world unless the journey is ABOUT weather — 69% of the catalog's planets were, and they all render as the same grey hurricane pair. Pick a different planetary archetype (REALMS.md planetary band) and give the world its own colour and surface feature; the plate paints what the card says.
 
+ECHO TEST (2026-10-10, Phil: echoes are authored and may SURPRISE, but a surprise still coheres with the journey's story): a staged micro card may name an `echo` — a thing from ELSEWHERE in this journey whose shape its elements take (the nucleons of this nucleus are tiny copies of the journey's planet; the proteins are coiled copies of its snake). Tests: the echo is a COMPACT nameable thing (a creature, a planet, a flower, a made object), never a place, a surface or a texture; it comes from a card at least six decades away, never the neighbour; the pairing says something about the story (the thing you dove past is what the small world is made of), not a random noun; at most two echo cards per journey, and never the same donor twice. Write it as the donor card's `name` when the donor is a card, free text when it is a motif the story implies but no card targets.
+
 STAGE VARIETY TEST (2026-10-05): the micro realm is rendered through built 3-D stages, so two journeys whose micro cards say the same thing (an atom, a nucleus) get the same STRUCTURE. Write the micro cards as specific pictures (which lattice, which molecule, which nuclear picture: a droplet of nucleons, a quark trio on taut strings, nuclear pasta, a tightening bubble-chamber track, a Coulomb crystal, a quark-gluon broth) — the words choose the kit. Take liberties: the pictures should be INSPIRED by the realm, not textbook. The novelty brief lists the kit and look counts; prefer the rare ones.
 
 ## DESCRIBE STATIC SCENES — the ENGINE renders the motion (critical)
@@ -127,6 +129,17 @@ moderately OFF-center) and grows the object there. So every `zoom` card's `scene
                                     //   picture (a Coulomb crystal, bubble-chamber tracks, nuclear pasta).
                                     //   `stage: false` opts a card out. A journey-level `stage_look`
                                     //   fixes the look for all its cards.
+                                    // STAGE VARIETY fields (2026-10-10, engine `--stage-variety`; ignored
+                                    //   until Phil turns it on, harmless to author now). All optional; the
+                                    //   engine draws any you omit per card:
+                                    //   "echo": "<card name>" or free text — the stage's elements are
+                                    //     each shaped like a tiny copy of that thing (ECHO TEST below);
+                                    //   "tier": "tight" | "medium" | "loose" — how much the image model may
+                                    //     reinterpret the built structure (loose = wildest);
+                                    //   "light": key_left|key_right|top|raking|under|warm_front|cool_side;
+                                    //   "bg": void | deep | gradient | bright | sea;
+                                    //   "scale": number — element size multiplier (2.0 = a few big
+                                    //     elements, 0.7 = a swarm).
   "dur": 4,                         // BEATS (bar=4). UNIFORM for every card in the journey
                                     //   (4 default, or 8 journey-wide), never mixed — see pacing
   "palette": "blazing orange and white",
