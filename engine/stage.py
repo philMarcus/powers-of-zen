@@ -131,10 +131,88 @@ class Stage:
         d /= np.linalg.norm(d)
         return self._advance(f) * d
 
+    # ---- STAGE CAMERA MOVES (variety C3, 2026-10-10) -----------------------------------
+    # A lateral offset of the camera with a LOOK-AT on the plunge target: the target keeps
+    # projecting at the anchor pixel (the zoom's fixed point is untouched), everything else
+    # parallaxes around it — exact, because we own the geometry. Envelope sin^2(pi f/N) is
+    # zero at both ends of the zoom slice, so the handoff geometry at the slice ends is the
+    # plain advance.
+    def _camera_pose(self, f):
+        cam = self._camera(f)
+        mv = getattr(self, 'cam_move', None)
+        if not mv or getattr(self, 'target', None) is None:
+            return cam, None
+        N = max(1, len(self.zooms) - 1)
+        u = min(1.0, max(0.0, f / N))
+        env = math.sin(math.pi * u) ** 2
+        tgt = np.asarray(self.target, np.float32)
+        dist = float(np.linalg.norm(tgt - cam))
+        amp = mv['amp'] * dist * env
+        th = mv['theta'] + (2 * math.pi * mv.get('turns', 0.0) * u if mv['kind'] == 'orbit' else 0.0)
+        ax, ay = self.aims[min(f, len(self.aims) - 1)]
+        d = np.array([(ax - 0.5), (ay - 0.5) * self.h / self.w, 1.0], np.float32); d /= np.linalg.norm(d)
+        # a basis perpendicular to the aim ray
+        e1 = np.cross(d, np.array([0, 1, 0], np.float32)); e1 /= (np.linalg.norm(e1) + 1e-6)
+        e2 = np.cross(d, e1)
+        cam2 = cam + amp * (math.cos(th) * e1 + math.sin(th) * e2)
+        # look-at: rotate so unit(target - cam2) maps onto d
+        a = tgt - cam2; a /= (np.linalg.norm(a) + 1e-6)
+        v = np.cross(a, d); c = float(a @ d)
+        if np.linalg.norm(v) < 1e-6:
+            return cam2, None
+        vx = np.array([[0, -v[2], v[1]], [v[2], 0, -v[0]], [-v[1], v[0], 0]], np.float32)
+        R = np.eye(3, dtype=np.float32) + vx + vx @ vx * (1.0 / (1.0 + c))
+        return cam2, R
+
+    def _motion(self, f):
+        """Per-frame ELEMENT motion (deterministic in f): returns (centres, ends, rscale) arrays —
+        sphere/glow centres, capsule far ends, per-item radius scale. Pulse: breathing radii.
+        Spin: the whole kit turns about its centre. Wave: a travelling sine along the tubes.
+        Satellites: extra small spheres orbiting chosen parents (appended at build time with
+        ('orbit', parent_idx, r_orbit, period, phase, axis_seed) in self.sats)."""
+        n = len(self.items)
+        C = np.array([np.asarray(it[1], np.float32) for it in self.items], np.float32).reshape(n, 3)
+        B = np.array([np.asarray(it[2], np.float32) if it[0] == 'capsule' else np.zeros(3, np.float32)
+                      for it in self.items], np.float32).reshape(n, 3)
+        rs = np.ones(n, np.float32)
+        pulse = getattr(self, 'pulse', None)
+        if pulse:
+            amp, per = pulse
+            ph = (np.arange(n) * 2.399) % (2 * math.pi)
+            rs = 1.0 + amp * np.sin(2 * math.pi * f / per + ph).astype(np.float32)
+        wave = getattr(self, 'wave', None)
+        if wave:
+            amp, lam, per, u_axis, n_axis = wave
+            u_axis = np.asarray(u_axis, np.float32); n_axis = np.asarray(n_axis, np.float32)
+            is_cap = np.array([it[0] == 'capsule' for it in self.items])
+            for P in (C, B):
+                ph = 2 * math.pi * ((P @ u_axis) / lam + f / per)
+                disp = (amp * np.sin(ph))[:, None] * n_axis[None, :]
+                P += np.where(is_cap[:, None], disp, 0.0).astype(np.float32)
+        spin = getattr(self, 'spin', None)
+        if spin:
+            ctr, axis, dpf = spin
+            ctr = np.asarray(ctr, np.float32); k = np.asarray(axis, np.float32); k /= (np.linalg.norm(k) + 1e-6)
+            ang = math.radians(dpf * f)
+            K = np.array([[0, -k[2], k[1]], [k[2], 0, -k[0]], [-k[1], k[0], 0]], np.float32)
+            Rm = np.eye(3, dtype=np.float32) + math.sin(ang) * K + (1 - math.cos(ang)) * (K @ K)
+            C = (C - ctr) @ Rm.T + ctr
+            B = (B - ctr) @ Rm.T + ctr
+        for (ci, pi, r_orb, per, ph0, ax_seed) in getattr(self, 'sats', ()):
+            rng = np.random.default_rng(ax_seed)
+            k = rng.normal(size=3).astype(np.float32); k /= np.linalg.norm(k)
+            e1 = np.cross(k, [0, 0, 1] if abs(k[2]) < 0.9 else [1, 0, 0]).astype(np.float32); e1 /= np.linalg.norm(e1)
+            e2 = np.cross(k, e1)
+            ang = 2 * math.pi * f / per + ph0
+            C[ci] = C[pi] + r_orb * (math.cos(ang) * e1 + math.sin(ang) * e2)
+        return C, B, rs
+
     # ---- render ---------------------------------------------------------------------
     def frame(self, f):
         w, h = self.w, self.h
-        cam = self._camera(f)
+        cam, Rcam = self._camera_pose(f)
+        _mot = self._motion(f) if (getattr(self, 'pulse', None) or getattr(self, 'wave', None)
+                                   or getattr(self, 'spin', None) or getattr(self, 'sats', None)) else None
         if getattr(self, 'bg_grad', None) is not None:
             # VARIETY background 'gradient': top colour -> bottom colour
             _t = np.linspace(0.0, 1.0, h, dtype=np.float32)[:, None, None]
@@ -153,9 +231,17 @@ class Stage:
         order = sorted(range(len(self.items)), key=lambda i: -float(self.items[i][1][2]))
         for i in order:
             kind, c, R, rgb, extra = self.items[i]
+            if _mot is not None:
+                c = _mot[0][i]
+                if kind == 'capsule':
+                    R = _mot[1][i]
+                elif kind == 'sphere':
+                    R = R * float(_mot[2][i])
             q = np.asarray(c, np.float32) - cam
             if jit is not None:
                 q = q + jit[i]
+            if Rcam is not None:
+                q = Rcam @ q
             if q[2] <= 0.05:
                 continue
             px, py = 0.5 * w + w * q[0] / q[2], 0.5 * h + w * q[1] / q[2]
@@ -176,6 +262,8 @@ class Stage:
                 # a TUBE segment from c to `extra_b` (stored in the colour slot's neighbour):
                 # items are ('capsule', a, b, R, rgb, extra) — see kit_tubes v5
                 qb = np.asarray(R, np.float32) - cam       # R holds b for capsules
+                if Rcam is not None:
+                    qb = Rcam @ qb
                 Rr = float(rgb)                            # rgb slot holds the radius
                 rgb, extra = extra[0], extra[1]
                 if qb[2] <= 0.05:
@@ -1178,6 +1266,9 @@ TIER_WEIGHTS = {'tight': 30, 'medium': 45, 'loose': 25}
 SCALES = {'hero': 2.0, 'bold': 1.45, 'field': 1.0, 'swarm': 0.7}
 SCALE_WEIGHTS = {'hero': 15, 'bold': 30, 'field': 40, 'swarm': 15}
 ECHO_SHARE = 60                       # % of auto-staged cards that echo a donor card
+CAMERA_WEIGHTS = {'none': 40, 'drift': 35, 'orbit': 25}
+CAMERA_AMP = {'drift': 0.12, 'orbit': 0.15}       # lateral offset as a fraction of the target distance
+MOTION_SHARE = {'satellites': 55, 'pulse': 45, 'spin': 50, 'wave': 65}   # % per applicable kit
 ELEMENT_NOUN = {'lattice': 'atom', 'fog': 'atom', 'nucleus': 'nucleon', 'quark': 'quark',
                 'tubes': 'molecule', 'tissue': 'cell', 'fluid': 'droplet', 'tracks': 'particle',
                 'pasta': 'strand'}
@@ -1222,7 +1313,7 @@ def echo_clause(kit, echo):
     return f"every {noun} shaped like a tiny {e}, each one a miniature {e}"
 
 
-def plan_variety(key, spec_stage, kit, look, donors=(), authored_echo=None):
+def plan_variety(key, spec_stage, kit, look, donors=(), authored_echo=None, motion=False):
     """The per-card draws: tier / light / background / scale / echo. `key` = journey:card
     (the warm-up and lap copies of card 0 share it). Authored fields in the card's `stage`
     dict win. donors = [(card_name, target_text), ...] already filtered by the caller."""
@@ -1248,8 +1339,27 @@ def plan_variety(key, spec_stage, kit, look, donors=(), authored_echo=None):
     if echo and tier == 'tight':
         tier = 'medium'               # an echo needs room for a sphere to become the thing
     cn, wid, den_t, den_a = TIERS[tier]
+    # C3 camera + element motion only when the caller asks (dive --stage-motion): it is its own
+    # arm under diffusion, separate from the tone/light/echo package
+    camera, cam_theta, motion_l = 'none', 0.0, []
+    if motion:
+        camera = sp.get('camera') if sp.get('camera') in CAMERA_WEIGHTS else _wdraw(f"{key}|camera", CAMERA_WEIGHTS)
+        cam_theta = (zlib.crc32(f"{key}|theta".encode()) % 360) * math.pi / 180.0
+        if sp.get('motion') is not None:
+            motion_l = list(sp['motion']) if sp['motion'] else []
+        else:
+            if kit in ('lattice',) and zlib.crc32(f"{key}|sat".encode()) % 100 < MOTION_SHARE['satellites']:
+                motion_l.append('satellites')
+            if kit in ('nucleus', 'lattice', 'fluid', 'quark') and zlib.crc32(f"{key}|pulse".encode()) % 100 < MOTION_SHARE['pulse']:
+                motion_l.append('pulse')
+            if kit in ('nucleus', 'quark', 'tubes', 'fluid', 'pasta') and zlib.crc32(f"{key}|spin".encode()) % 100 < MOTION_SHARE['spin']:
+                motion_l.append('spin')
+            if kit in ('tubes', 'pasta') and zlib.crc32(f"{key}|wave".encode()) % 100 < MOTION_SHARE['wave']:
+                motion_l.append('wave')
+    motion = motion_l
     return {'tier': tier, 'light': light, 'bg': bg, 'scale': scale, 'scale_name': scale_name,
-            'echo': echo, 'cn': cn, 'wid': wid, 'den_travel': den_t, 'den_arrival': den_a}
+            'echo': echo, 'cn': cn, 'wid': wid, 'den_travel': den_t, 'den_arrival': den_a,
+            'camera': camera, 'cam_theta': cam_theta, 'motion': motion}
 
 
 def apply_variety(st, plan, palette, kit):
@@ -1293,6 +1403,35 @@ def apply_variety(st, plan, palette, kit):
             c = cols[i % 3] * rng.uniform(0.6, 1.0)
             st.items.append(('glow', np.array([x[i], y[i], z[i]], np.float32), float(rng.uniform(0.05, 0.14)),
                              c.astype(np.float32), float(rng.uniform(0.5, 1.2))))
+    # CAMERA + MOTION (C3)
+    cam = plan.get('camera', 'none')
+    st.cam_move = ({'kind': cam, 'amp': CAMERA_AMP[cam], 'theta': plan.get('cam_theta', 0.0),
+                    'turns': 0.5} if cam in CAMERA_AMP else None)
+    motion = plan.get('motion') or []
+    rng = np.random.default_rng(st.seed * 31 + 7)
+    if 'pulse' in motion:
+        st.pulse = (0.08, 22.0)
+    if 'spin' in motion and getattr(st, 'target', None) is not None:
+        axis = rng.normal(size=3); axis[2] *= 0.4
+        st.spin = (np.asarray(st.target, np.float32), axis, float(rng.uniform(0.25, 0.6)) * (1 if rng.random() < 0.5 else -1))
+    if 'wave' in motion:
+        u = rng.normal(size=3); u /= np.linalg.norm(u)
+        nrm = np.cross(u, rng.normal(size=3)); nrm /= np.linalg.norm(nrm)
+        st.wave = (0.05 * max(0.6, plan.get('scale', 1.0)), 0.9, 26.0, u, nrm)
+    if 'satellites' in motion and getattr(st, 'target', None) is not None:
+        # electrons: 1-3 tiny bright spheres orbiting the ~40 atoms nearest the plunge target
+        tgt = np.asarray(st.target, np.float32)
+        sph = [(i, it) for i, it in enumerate(st.items) if it[0] == 'sphere']
+        if sph:
+            dists = np.array([np.linalg.norm(np.asarray(it[1], np.float32) - tgt) for _, it in sph])
+            near = [sph[j] for j in np.argsort(dists)[:40]]
+            st.sats = []
+            bright = np.clip(np.asarray(species[0], np.float32) * 0.5 + 0.5, 0, 1)
+            for (pi, it) in near:
+                for _k in range(int(rng.integers(1, 4))):
+                    r_orb = float(it[2]) * float(rng.uniform(1.7, 2.6))
+                    st.items.append(('sphere', np.asarray(it[1], np.float32).copy(), float(it[2]) * 0.30, bright, 0.8))
+                    st.sats.append((len(st.items) - 1, pi, r_orb, float(rng.uniform(14, 30)), float(rng.uniform(0, 6.28)), int(rng.integers(1, 1 << 30))))
     st.cn_w, st.wid_hold = plan['cn'], plan['wid']
     st.den_travel, st.den_arrival = plan['den_travel'], plan['den_arrival']
     st.echo = plan.get('echo')

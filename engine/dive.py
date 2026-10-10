@@ -1038,6 +1038,9 @@ def main():
                     help="STAGE VARIETY (lab 2026-10-10): per-card wildness tier / key light / background / "
                          "element scale / echo-of-another-card draws, corrected lighting, brand tone on the "
                          "stage layer and the fed composite (engine/stage.py plan_variety). Off = today's stage.")
+    ap.add_argument("--stage-motion", action="store_true",
+                    help="STAGE VARIETY C3 (lab): stage camera drift/orbit about the fixed point + element "
+                         "motion (electrons, pulse, spin, wave) drawn per card. Needs --stage-variety.")
     ap.add_argument("--stage-preroll", type=int, default=0, metavar="N",
                     help="LAB (Phil 2026-10-05, 'zoom into it'): open each stage INSIDE a disc on "
                          "its fixed point during the PREVIOUS card's last N frames, growing at "
@@ -1715,7 +1718,8 @@ def main():
                         else _stagemod.draw_look(f"{_skey(_sk)}|cardlook")
                 _jlook = _vlook
                 _vplan = _stagemod.plan_variety(_skey(_sk), _sdef, _sdef.get("kit", "lattice"), _vlook,
-                                                donors=_donors, authored_echo=_aecho)
+                                                donors=_donors, authored_echo=_aecho,
+                                                motion=bool(args.stage_motion))
                 _sdef = dict(_sdef, scale=_vplan["scale"])
             _stage = _stagemod.build_card_stage_v2(_sdef, _sreg.get("palette"), _szw, _sanchor,
                                                    cfg["width"], cfg["height"], seed=_sseed,
@@ -1724,7 +1728,8 @@ def main():
                 _stagemod.apply_variety(_stage, _vplan, _sreg.get("palette"), _sdef.get("kit", "lattice"))
                 print(f"[dive] stage-variety: card {_sk} {_sreg.get('name')!r} tier {_vplan['tier']} "
                       f"light {_vplan['light']} bg {_vplan['bg']} scale {_vplan['scale_name']} "
-                      f"({_vplan['scale']:.2f}) echo {_vplan['echo']!r}", flush=True)
+                      f"({_vplan['scale']:.2f}) echo {_vplan['echo']!r} camera {_vplan.get('camera')} "
+                      f"motion {_vplan.get('motion')}", flush=True)
             _stage.S, _stage.E, _stage.fa = 0, _sF, max(2, round(_sF * 0.25))
             _stage.card = _sk
             _stage.kit = _sdef.get("kit")
@@ -1774,7 +1779,7 @@ def main():
             _rj = json.loads((out_dir / "run.json").read_text())
             _rj["stage_cards"] = [(st_.card, st_.delivered_span[0], st_.delivered_span[1]) for st_ in stages]
             _rj["stage_variety"] = [dict(card=st_.card, **{k: v for k, v in st_.variety_plan.items()
-                                                           if k in ("tier", "light", "bg", "scale", "scale_name", "echo")})
+                                                           if k in ("tier", "light", "bg", "scale", "scale_name", "echo", "camera", "motion")})
                                     for st_ in stages if getattr(st_, "variety_plan", None)] if args.stage_variety else None
             _rj["stage_kits"] = [(st_.card, st_.kit, getattr(st_, "look", None)) for st_ in stages]
             (out_dir / "run.json").write_text(json.dumps(_rj, indent=2))
