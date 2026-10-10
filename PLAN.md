@@ -3021,3 +3021,38 @@ natural pairing is textures (the shape) + IPA (the finish) once the texture arm 
   through --stage-variety, and the first full videos that can show the tissue/nucleus VARIANTS (09:20 commits).
   Not in the nightly: --stage-contain, --stage-echo-tex, --tone-chroma-aware (lab flags, pending his verdicts on
   lepidolite_halo_var).
+
+### 2026-10-10 16:45 — lepidolite_halo_var (echoes + containment) RESULT: echoes read as COLOUR; a LIME CARD exposed a palette parse bug
+- The render: v1 405 frames in 6340 s (14:34-16:20), seed 1234 = lepidolite_halo v1 (10-08, stage auto on the same
+  k6/k7/k8). Frames are byte-identical through card 0 (f0-f35) and diverge at f36 = the PLANET card: the plate
+  entrance is keyed by the journey NAME (var entered at tx 0.26, the catalog at 0.58), so a `_var` pair is same-seed
+  but not same-content after card 0 (true of thousand_moons_var too). Strips: scratchpad/orange/lepi_echo_strip.png
+  (today | echoes, 8 frames per staged card), lepi_layers.png (stage layer / fed composite / delivered, f240-f318).
+- ECHOES UNDER DIFFUSION: in the LAYER the k7 hero atom is a cratered amber moon (f276-f284) and the k8 nucleons are
+  little Earths; DELIVERED, the hero is a glossy amber ball and the nucleons blue-white marbles with faint swirls.
+  The swatch's COLOUR survives the repaint, its detail mostly does not at these element sizes (den 0.6/0.45, id 0.5).
+  k6's beads are lilac (sub-texture size by design). Levers for the next arm, untested: id 0.5 -> 0.65 and the travel
+  denoise 0.45 on echo-textured stages, hero scale 2 -> 3 so the decal covers more pixels.
+- CONTAINMENT: 7 -> 8 FOLLOWED the plunge target (0.12 W -> 1.13 W): the nucleus world opens INSIDE the amber-moon
+  atom (f284: pink nucleons inside the orange disc) — the first stage->stage handoff that reads as entering the
+  thing. 6 -> 7 fell to a free iris: the gate's `r1 < 1e8` bound rejected a target whose own plane the camera REACHES
+  at the bar line (lattice target depth 3.19 vs advance 3.14 -> q <= 0.05 -> 1e9). Reaching the plane IS entering
+  it: gate is now `0.6 W <= r1`, the disc radius becomes 2 x max(W,H) at the plane, the log prints 'inside it'.
+- THE LIME CARD (k7: sat 0.85, 69 % green pixels; today 0.34): the stage LAYER itself was rgb(16,144,16) over 68 % of
+  its pixels. Chain: palette.phrase_rgb("pine-black deep") = (25, 50, 31); lum 0.158 passed palette_colours' lum >
+  0.12 SPECIES test -> the darkest species -> 'deep' background fog = species[-1] x 0.3 + dark x 0.4 = a green plane
+  at v 0.30 -> brand_tone (k <= 2.4 about a mean lifted to 0.33, sat x 1.35) -> lime. Any "X-black" / "ink-X" /
+  "X void" phrase whose colour clears lum 0.12 does the same. FIX (engine/stage.palette_colours): a phrase that
+  NAMES a dark (black|ink|inky|void|soot|sooty|charcoal|tar|sable|jet|pitch|midnight) or is dim in every channel
+  (max <= 0.30) is never a species (it stays eligible as THE dark). FOOTPRINT over all 1539 catalog card palettes
+  (0 errors): 217 cards' species lists change, 77 of them stageable (exp < -2), but the ELEMENT colours
+  (species[:2]) change on only 23 of those — the rest only the 'deep'/'gradient' fog tint; one Phil-seen journey
+  among the 23 (thousand_moons atom_copies: 'indigo void' leaves the species, so a same-seed re-render differs on
+  card 7). TONIGHT'S FOUR: none of their stageable cards change -> the nightly is pixel-unaffected by the fix.
+  After the fix card 7's deep fog is amber (h43 v0.31) like card 8's; the 'deep' plane + brand_tone lift runs
+  hotter on this journey (k6/k7/k8 sat 0.68/0.85/0.81 vs today 0.26/0.34/0.47) than on thousand_moons (0.50-0.68) —
+  whether that is too hot in general is Phil's call on the videos.
+- RUNNING (tmux lepi_fix, log scratchpad/orange/lepi_fix.log): --from-card 5 --src-version v1 -> v2 (225 frames,
+  the k6 pre-roll regenerated too), queue_review --src v2 RE-POINTS the Review entry (v1 stays on disk as the lime
+  record), caption + pregen, review/compare/lepidolite_halo_ECHO.mp4 rebuilt, strip lepi_fix_strip.png (rows today /
+  v1 lime / fix per card). Timecodes in the dive-in cut: k6 14.2-17.2 s, k7 17.2-20.2 s, k8 20.2-23.2 s of 30.0 s.

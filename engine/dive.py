@@ -746,12 +746,15 @@ def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0,
                     _r1 = cur_stage.target_px_radius(f_start + max(1, ps.pre)) / W
                 except Exception:
                     _r0 = _r1 = float("nan")
+                _fw = lambda r: 'inside it' if r >= 1e4 else f"{r:.2f} W"
                 print(f"[dive] contain: card {_key[0]} -> {_key[1]}: pre-roll disc "
                       f"{'FOLLOWS the plunge target' if _ok else 'free iris (target not containable)'} "
-                      f"(target radius {_r0:.2f} W -> {_r1:.2f} W across the pre-roll)", flush=True)
+                      f"(target radius {_fw(_r0)} -> {_fw(_r1)} across the pre-roll)", flush=True)
             if _ok:
                 rpx = cur_stage.target_px_radius(cur_j + cpre + 1)
-                if 0.0 < rpx < 1e8:
+                if rpx >= 1e8:                               # at the target's own plane: it fills the view
+                    rpx = 2.0 * max(W, H)
+                if rpx > 0.0:
                     rad = max(12.0, rpx)
         except Exception:
             pass

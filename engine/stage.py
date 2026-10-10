@@ -181,7 +181,10 @@ class Stage:
             try:
                 r0 = self.target_px_radius(key)
                 r1 = self.target_px_radius(len(self.zooms))
-                cache[key] = bool(r0 <= 0.7 * self.w and 0.6 * self.w <= r1 < 1e8)
+                # r1 = 1e9 means the camera reaches the target's own plane AT the bar line (a
+                # lattice atom we end up inside): that IS entering it, not a degenerate target —
+                # the old `< 1e8` bound sent lepidolite_halo_var 6->7 to a free iris (2026-10-10).
+                cache[key] = bool(r0 <= 0.7 * self.w and 0.6 * self.w <= r1)
             except Exception:
                 cache[key] = False
         return cache[key]
@@ -744,6 +747,9 @@ def build_card_stage(kit, params, zooms, anchor, w, h, seed=0, fill=0.55):
 
 
 # ---- palette-derived kit colours + the quark kit (2026-10-03 evening) ---------------------------
+_DARK_WORD = re.compile(r"\b(black|ink|inky|void|soot|sooty|charcoal|tar|sable|jet|pitch|midnight)\b", re.I)
+
+
 def palette_colours(palette):
     """(species colours [2+], dark colour) from a card's authored palette via engine/palette.py:
     the phrases' colours, darkest one as the void/fog, the rest (brightest first) as species."""
@@ -751,13 +757,20 @@ def palette_colours(palette):
         import palette as _p
     except ImportError:  # pragma: no cover
         return [(0.8, 0.85, 1.0), (0.95, 0.5, 0.6)], (0.02, 0.02, 0.04)
-    cols = [_p.phrase_rgb(ph) for ph in re.split(r",|\bon\b|\bover\b|\bunder\b|\bthrough\b", palette or '')]
-    cols = [np.array(c, np.float32) / 255.0 for c in cols if c]
+    pairs = [(ph, _p.phrase_rgb(ph)) for ph in re.split(r",|\bon\b|\bover\b|\bunder\b|\bthrough\b", palette or '')]
+    pairs = [(ph, np.array(c, np.float32) / 255.0) for ph, c in pairs if c]
+    cols = [c for _, c in pairs]
     if not cols:
         return [(0.8, 0.85, 1.0), (0.95, 0.5, 0.6)], (0.02, 0.02, 0.04)
     lum = [float(c @ np.array([0.3, 0.59, 0.11])) for c in cols]
     order = np.argsort(lum)
     dark = cols[order[0]] * 0.35 if len(cols) > 1 else np.array([0.02, 0.02, 0.04])
+    # A phrase that NAMES a dark ("pine-black gaps", "ink-black depth", "sable void") or whose
+    # colour is dim in every channel is the void, never a species. 'pine-black' resolves to
+    # (25, 50, 31): lum 0.16 passed the lum > 0.12 species test, became card 7's darkest
+    # species, and the 'deep' background (darkest species x 0.3) + brand_tone lifted it into a
+    # lime-green plane behind the amber atoms (lepidolite_halo_var, 2026-10-10).
+    darkish = [bool(_DARK_WORD.search(ph)) or float(c.max()) <= 0.30 for ph, c in pairs]
     def _vivid(c):
         c = np.array(c, np.float32)
         mx = c.max()
@@ -766,7 +779,7 @@ def palette_colours(palette):
         m = c.mean()
         c = m + (c - m) * 1.25              # a little more saturation
         return tuple(np.clip(c, 0, 1))
-    species = [_vivid(cols[k]) for k in order[::-1] if lum[k] > 0.12] or [_vivid(cols[order[-1]])]
+    species = [_vivid(cols[k]) for k in order[::-1] if lum[k] > 0.12 and not darkish[k]] or [_vivid(cols[order[-1]])]
     if len(species) == 1:
         species.append(tuple(np.clip(np.array(species[0]) * 0.6 + 0.2, 0, 1)))
     return species[:3], tuple(np.clip(dark, 0, 0.12))
