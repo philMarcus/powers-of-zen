@@ -2945,3 +2945,19 @@ card 0, hex-lens swatch on card 1; the OLD portrait swatch prompt): card 0's con
 beads and a large dark moon-like sphere by f32; card 1 keeps the lattice with more lens-like concentric
 discs, sat 0.42. So the IP-Adapter route works as a palette/texture pull without breaking the stage; the
 natural pairing is textures (the shape) + IPA (the finish) once the texture arm has shown its own effect.
+
+### 2026-10-10 13:40 — yield + containment arm results (strips: scratchpad/orange/yield_strip.png, contain_strip.png)
+- **Yield arm** (thousand_moons_var frames 0-80, default pre-roll path with the lap pre-roll + "current stage yields
+  inside the disc" fix): the coming lattice is now VISIBLE inside the pre-roll disc from ~f24 and grows until f35
+  (v1 variety: the disc stayed a faint grey wash until f33, then the lattice appeared whole at f36 = the "weird jump").
+  Jump metric |f35-f36| 62.3 vs consecutive 53.6 (v1: 59.8 vs 48.8) — the metric cannot see the difference
+  (both ~1.2x consecutive); the strip can. SIDE EFFECT to judge: card 0 (bead_glass, the confetti card) renders
+  pearl-grey with sparse coloured beads under the chroma-aware tone anchor where v1 painted it in random hues.
+- **Containment arm** (macaw_lick_var --from-card 7 --stage-contain, lab dir output/macaw_lick_var_contain/v1):
+  7->8 the silver/orange sphere cluster looms from a small disc at the fixed point (v1: a whole-frame pale wash
+  f182-f190); 8->9 a small red disc grows f206-f214 then fills at f216 (v1: another pale wash). Jumps: 7->8 40.8
+  vs consecutive 48.1 (handoff indistinguishable from ordinary motion), 8->9 44.5 vs 41.0 (v1: 41.8/41.0, 37.6/40.6).
+  The last ~2 frames still go from a part-frame disc to the full frame (hyperbolic looming by design).
+- Verdict (mine, from strips): both read as zoom-through rather than wipe; Phil judges on a FULL video. macaw stays
+  as approved (Phil moved it to Music; the contain run is a lab dir). Next full-video deliverable = cork_dehesa_var
+  (unjudged journey): echo textures + containment, same seed as cork_dehesa, into Review next to cork_dehesa.
