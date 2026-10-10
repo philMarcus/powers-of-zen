@@ -708,6 +708,9 @@ def tone_anchor_image(img, sd_t=0.21, sat_t=0.56, k_max=1.6, s_max=1.5, chroma_a
     a = lum2[..., None] + chroma
     return Image.fromarray(np.clip(a * 255.0, 0, 255).astype(np.uint8))
 
+_contain_logged = set()
+
+
 def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0, contain=False):
     """The pre-roll disc for frame i: (mask HxW in [0,1], coming-stage rgb, coming-stage depth,
     identity-inside weight, radius px). Grows at zoom^k from 0.12 W (P frames before the bar
@@ -734,7 +737,19 @@ def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0,
         try:
             cpre = getattr(cur_stage, "pre", 0)
             f_start = cur_j - (pj + ps.pre) + cpre          # current stage frame at pre-roll start
-            if cur_stage.containable(f_start):
+            _ok = cur_stage.containable(f_start)
+            _key = (getattr(cur_stage, "card", None), getattr(ps, "card", None))
+            if _key not in _contain_logged:                 # one line per handoff, for the record
+                _contain_logged.add(_key)
+                try:
+                    _r0 = cur_stage.target_px_radius(f_start + 1) / W
+                    _r1 = cur_stage.target_px_radius(f_start + max(1, ps.pre)) / W
+                except Exception:
+                    _r0 = _r1 = float("nan")
+                print(f"[dive] contain: card {_key[0]} -> {_key[1]}: pre-roll disc "
+                      f"{'FOLLOWS the plunge target' if _ok else 'free iris (target not containable)'} "
+                      f"(target radius {_r0:.2f} W -> {_r1:.2f} W across the pre-roll)", flush=True)
+            if _ok:
                 rpx = cur_stage.target_px_radius(cur_j + cpre + 1)
                 if 0.0 < rpx < 1e8:
                     rad = max(12.0, rpx)
