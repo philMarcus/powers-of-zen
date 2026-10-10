@@ -2663,3 +2663,20 @@ STATE AT CLOSE (20:15): all three approved steps built, verified on card arms, a
 01:30 nightly (sunspot_archipelago, anvil_country, spouter_dawn, urchin_barren, paradise_cape):
 look variety + new kits (1), the pre-roll arrival (2), capsule tubes for molecules (3), plus lap
 staging for staged start cards. First full videos through all of it land in Review ~07:00.
+
+# 2026-10-10 — THE INSTAGRAM "SHARE CLICKED, NO REEL" FAILURE (kelp_dynamo_stage, 10-09 21:05 + the 05:55 retry)
+Both runs: YouTube live, Instagram flagged post_appears; the profile stayed at 99 posts. The dry
+run reached the caption screen cleanly each time, so the loss was AT the share. GROUND TRUTH
+(scratchpad/orange/ig_share_probe.py — stage via --dry-run, click Share the poster's way, then
+WAIT IN PLACE and log the dialog): the dialog reads "Sharing" for ~40 s, then "Shared reel —
+Your reel has been shared.", and the profile shows 100 posts with the new reel DeT0s_lNUAU.
+THE BUG: after Share the poster waited for `body.innerText.includes('Your reel has been
+shared') || includes('shared')` — the loose 'shared' matched a stray word in the home-feed
+body text at +2 s while the dialog still said 'Sharing', so the wait returned at once and the
+very next step (_ig_reel_codes) NAVIGATED to the profile, which aborts the in-flight upload.
+Whether a post survived depended on whether the feed happened to contain 'shared' that hour
+(cork_dehesa at 09:06 did not; the same video 12 h later did). FIX: wait_for now watches the
+DIALOG — "has been shared" or the dialog closing — up to 240 s, telem ig_share_wait, and only
+then goes to the profile. kelp_dynamo_stage marked live on IG (caption verified on the live
+page). Lesson (memory ig-share-wait-in-place): never navigate during an in-flight upload; wait
+on the flow's own confirmation element, never on a substring of the whole page.

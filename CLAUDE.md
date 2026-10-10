@@ -120,6 +120,14 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-10 (MORNING — IG POST LOSS FIXED; read PLAN "2026-10-10 — THE INSTAGRAM SHARE"): kelp_dynamo_stage's 10-09 21:05
+post (and the 05:55 retry) reached YouTube but Instagram dropped the reel: the poster's post-share wait matched a stray
+'shared' in the feed text and NAVIGATED away while the upload dialog still said 'Sharing' (~40 s) — navigation aborts the
+share. Reproduced + understood with scratchpad/orange/ig_share_probe.py (wait in place → "Your reel has been shared.",
+post count 99 → 100). poster.py now waits on the DIALOG (up to 240 s, telem ig_share_wait) before touching the profile.
+kelp_dynamo_stage is LIVE on both (IG reel DeT0s_lNUAU, caption verified). Next scheduled post 10-10 20:00 — the first
+through the fixed wait; check post_gate.log for "share confirmation: dialog confirmed". Stage era: 5 videos rendered
+through the full package on 10-06; Phil's verdicts pending in Review.
 2026-10-05 (NIGHT HANDOFF — everything committed + pushed; nothing running; the 01:30 nightly is the first with the whole
 stage era ON; read PLAN "2026-10-05 AFTERNOON" + the arm notes under it): settings stage_mode=auto, stage_preroll=16,
 palette_anchor=0.5, cameo sprite. WHAT RENDERS TONIGHT (sunspot_archipelago, anvil_country, spouter_dawn, urchin_barren,

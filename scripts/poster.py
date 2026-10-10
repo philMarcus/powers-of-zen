@@ -1066,9 +1066,18 @@ def _post_instagram_once(video_rel, caption, dry_run):
     expect(_method, "instagram", "share", tab, "Share button not found")
     print(f"  share click path: {_method}", flush=True)
     pl.telem("ig_share_method", detail=_method or "none")
-    # wait for the in-flow confirmation (best-effort) — upload takes ~30s+
-    wait_for(tab, "document.body.innerText.includes('Your reel has been shared')"
-                  "||document.body.innerText.includes('shared')?true:null", 60)
+    # WAIT IN PLACE until IG itself says the reel is shared (2026-10-10: two posts were lost
+    # because this wait matched a stray 'shared' in the home-feed body text at +2 s while the
+    # dialog still said 'Sharing', and the very next step NAVIGATED to the profile — which
+    # aborts the in-flight upload. The probe that waited in place saw 'Sharing' for ~40 s,
+    # then 'Your reel has been shared.' Never navigate before the dialog confirms or closes.)
+    _shared = wait_for(tab, r"""(function(){const d=document.querySelector('div[role=dialog]');
+        const t=d?d.innerText:'';
+        if (/has been shared/i.test(t)) return true;
+        if (!d) return true;                      // dialog closed on its own = done
+        return null;})()""", 240, poll=2.0)
+    print(f"  share confirmation: {'dialog confirmed' if _shared else 'TIMEOUT 240s (still Sharing?)'}", flush=True)
+    pl.telem("ig_share_wait", detail="confirmed" if _shared else "timeout")
     # find OUR post: the NEW shortcode on the profile (poll — processing can lag)
     code = None
     for _ in range(10):
