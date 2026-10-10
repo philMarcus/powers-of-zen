@@ -1,0 +1,160 @@
+{
+  "name": "cork_dehesa_var",
+  "theme": "core and envelope told down a cork oak: a dusk dehesa of scattered crowns over umber pasture, the commons beneath them where pigs, a hoopoe, magpies and a genet share the acorn ground, onto a harvested bole oxblood above its grey cork casing, onto a pried plank's sawn face, into Hooke's hollow honeycomb, into one wall's waxy suberin courses, to a carbon atom's core in its wide fog, to a nucleus wrapped in a fog-shell many times wider — which reads again as the froth of nested shells at cosmic scale, each shell cored by its own small galaxy: home through an armless disk of star-haze and a world at its dusk line to the dehesa from the air",
+  "style": "lacquer_pop",
+  "music_lane": "wooden_orbit",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "dehesa_from_air",
+      "exp": 4.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "umber pasture, moss-green canopies, azure dusk",
+      "scene": "a cork-oak dehesa at dusk seen from high above, hundreds of rounded moss-green canopies scattered in loose files across an umber pasture, each tree laying a stretched shadow east over the bronzed grass, cart tracks curving pale among them, a shallow stock pond of still azure water, dry-stone walls quilting the ground into wide fields, scrub hills closing the far side in green-grey haze, herds freckling the pasture under the outer trees, and low over the flats one grove of oaks on grey-barked boles",
+      "target": "a broad oak tree",
+      "target_phrase": "a round oak tree"
+    },
+    {
+      "name": "oak_commons",
+      "exp": 0.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "azure dusk sky, umber earth, moss-green boughs",
+      "scene": "the oak commons at dusk at eye level among the boles, charcoal-hided Iberian pigs nosing through fallen acorns on the umber earth, a hoopoe with a rufous crest out on the bare ground, sky-blue magpies with slender tails perched in the boughs overhead, a genet with a ringed tail crouched on a low limb, husks and leaf litter strewn under every tree, cork boles corrugated grey to the branch forks, dusk-azure sky broken into shards by the canopies, the far boles closing into green-grey gloom, no one present",
+      "target": "a stripped oxblood trunk",
+      "target_phrase": "an orange tree trunk"
+    },
+    {
+      "name": "harvest_bole",
+      "exp": -0.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "oxblood-orange bole, ash-grey cork, umber shade",
+      "scene": "a freshly harvested cork oak at dusk, its stripped bole an oxblood-orange column rubbed smooth to the branch forks, the base still cased in corrugated ash-grey cork, the cut ruled level around the trunk where the bark was pried away, a chalked harvest number on the smooth wood, beads of amber-red sap gathered at the cut, ivy hanks and moss cushions heaped at the root swell, pried cork planks leaned against the neighbouring boles, umber pasture and shadowed trunks receding past it",
+      "target": "a leaned cork plank",
+      "target_phrase": "a grey cork plank"
+    },
+    {
+      "name": "plank_face",
+      "exp": -1.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "russet lenticel bands, ochre grain, umber gloom",
+      "scene": "a cork plank's sawn face, a matte pitting of countless minute pores over the whole cut, russet lenticel channels crossing it in ragged bands, growth arcs curving through the grain in ochre and umber courses, the rind side a crazed oxblood crust, one split running away from the saw cut, crumbs and dust scattered over the cut, dusk light raking it from one side and the pitting sunk to warm umber gloom at the far side",
+      "target": "an empty cork cell",
+      "target_phrase": "a small empty cell"
+    },
+    {
+      "name": "cork_honeycomb",
+      "exp": -4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber-tan cell walls, umber hollows, azure sheen",
+      "scene": "a froth of dead cork cells, hollow six-sided boxes tiled into radial files, wall after waxy amber-tan wall shared by neighbours, every chamber vacant and shadowed, walls creased and buckled where files press together, a rust resin film glossing some chambers to an azure sheen, a few chambers collapsed to a wrinkled pucker, files receding tier on tier into umber depth-fog with no ground and no horizon",
+      "target": "a creased waxy wall",
+      "target_phrase": "a pale cell wall",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "hex"
+      }
+    },
+    {
+      "name": "suberin_lamellae",
+      "exp": -8.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "waxy cream courses, charcoal courses, azure shimmer",
+      "scene": "suberin laid course upon course within a cork wall, waxy cream lamellae alternating with dense charcoal courses, fatty chains ruled side by side within every cream band, cross-bridges pegging chain to chain where the courses meet, a rust shimmer kindled where one course parts from the next, the same alternation repeating again within each charcoal band, the stacking receding into soot depth with no ground and no horizon",
+      "target": "an azure carbon atom",
+      "target_phrase": "a blue mote",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "layered"
+      }
+    },
+    {
+      "name": "carbon_atom",
+      "exp": -10.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "azure haze shells, garnet core spark, ink hollow",
+      "scene": "one carbon atom seated in the cork wall's grid, a tight garnet core point wrapped in a far wider azure haze that fades outward through fainter and fainter shells, four slender bonds tethering it to neighbouring cores that recede into ink hollow, a violet tremor over the grid, the ratio of the small core to its vast haze repeated at core after core, no ground and no horizon anywhere",
+      "target": "a dense garnet nucleus",
+      "target_phrase": "a small red core",
+      "stage": {
+        "kit": "lattice",
+        "variant": "diamond",
+        "spacing": 0.5,
+        "radius": 0.06,
+        "glow": 0.2,
+        "echo": "a half-lit banded world"
+      }
+    },
+    {
+      "name": "shelled_nucleus",
+      "exp": -14.2,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "garnet core spheres, azure fog-shell, ink void",
+      "scene": "a nucleus of lit spheres pressed into one shivering droplet, garnet and cream spheres crowded at its core, an enormous faint azure fog-shell rounding it many times wider than the droplet, two loose spheres adrift far out in that fog, a fainter froth of sparks pricking the outer fog, the whole two-part shape set in ink with no ground and no horizon",
+      "stage": {
+        "kit": "fluid",
+        "echo": "a broad oak tree"
+      }
+    },
+    {
+      "name": "nested_froth",
+      "exp": 24.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "azure shell-films, garnet cluster cores, ink void",
+      "scene": "a froth of nested fog-shells filling the void, each vast shell rounding smaller shells within it and those rounding smaller shells again, every shell cored by its own small galaxy as a garnet smudge, shell-films drawn faint azure where they touch and merge, threads of galaxies beaded across the seams, countless shells receding into ink void, no ground and no horizon anywhere",
+      "target": "a garnet-cored disk galaxy",
+      "target_phrase": "a small galaxy",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "disk_galaxy",
+      "exp": 20.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "garnet-amber bulge, azure star-haze, ink void",
+      "scene": "a disk galaxy adrift in the void, a garnet-amber bulge cored at its middle and a smooth azure oval of star-haze rounding that core out to a soft rim, no arms anywhere in the oval, faint star-clouds mottling it in slow gradients, a wide sparse fog of stars spread far past the rim, other galaxies scattered as small smudges through the void beyond, countless stars sown across the ink",
+      "target": "a half-lit banded world",
+      "target_phrase": "a small banded planet",
+      "loop_target": "a disk galaxy, a garnet-amber bulge cored in a smooth azure oval of star-haze"
+    },
+    {
+      "name": "dusk_world",
+      "exp": 7.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "umber continents, azure sea, garnet dusk band",
+      "scene": "a world seen from orbit at its dusk line, an azure sea sheeted with cloud spirals on one hemisphere and umber continents quilted with pasture and scrub on the other, the terminator ruled as a garnet band across the disc, storm cells burning ochre in the inland basins, chains of settlement lights beaded on the unlit side, a faint azure rind of atmosphere at the disc's rim, a cratered moon set small against the void, stars sown through the ink beyond",
+      "target": "a wooded umber pasture",
+      "target_phrase": "a wooded plain",
+      "cameo": {
+        "sprite": "output/mascots/canon/janet.png",
+        "pos": [
+          0.66,
+          0.34
+        ],
+        "size": 0.14
+      }
+    }
+  ],
+  "music_theme": "a stately walk under evening oaks — warm marimba and kalimba figures over a round woody bass, a deep kick on every downbeat with a quieter thump answering on beat three, the plucking thinning to single struck notes through the plank, honeycomb and suberin bars, a wide struck bloom where the shelled nucleus opens out as a froth of nested shells, and a settling return figure through the galaxy and the dusk world back to the pasture",
+  "music_key": "D minor",
+  "render_start": "carbon_atom",
+  "play_start": "disk_galaxy",
+  "scaffold_name": "cork_dehesa",
+  "_lab": "2026-10-10 echo-texture arm: cork_dehesa with AUTHORED echoes on its two sphere-kit stage cards (carbon_atom lattice: a half-lit banded world = the journey's planet on every atom; shelled_nucleus fluid: a broad oak tree in every droplet). Same seed as the Review render; lab only."
+}

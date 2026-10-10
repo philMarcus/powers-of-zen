@@ -1564,6 +1564,8 @@ LANDSCAPE_RX = re.compile(r"\b(pool|terrace|flight of|cliff|hillside|hill|field|
                           r"coast|shore|sky|horizon|forest|meadow|commons|bend|road|street|wall|floor|"
                           r"ceiling|room|hall|lick|bank|slope|ridge|canyon|dune|beach|lake|sea|ocean|"
                           r"marsh|bog|swamp|garden|yard|plaza|square|city|town|village|cave|tunnel|"
+                          r"pasture|prairie|savanna|steppe|tundra|moor|heath|grassland|woods|woodland|"
+                          r"orchard|grove|thicket|jungle|clearing|glade|dehesa|paddies|paddy|"
                           r"corridor|stair|stairs|bridge|path|trail|lane|avenue|surface|ground|"
                           r"landscape|vista|panorama|expanse|spread|stretch|row of|rows of|line of|"
                           r"lines of|sheet|layer|bed|carpet|lawn|turf|crust|skin)\b", re.I)

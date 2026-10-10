@@ -2930,3 +2930,10 @@ arms (tmux echotex_arm): macaw_lick_var --from-card 7 --stage-echo-tex 0.85 → 
 lattice swarm) and 9 (macaw in a fluid hero field), strip scratchpad/orange/echotex_strip.png. What
 survives the diffusion (identity 0.22-0.5, CN 0.4-0.7, denoise 0.45-0.6) decides the next move: if
 the decals wash out, raise identity on echo cards or add the swatch through IPA on top (B3 arm).
+Phil (12:30): macaw_lick_var approved → Music; he'd rather see the textures on a video he hasn't judged.
+Echo-texture arm RE-POINTED to journeys/lab/cork_dehesa_var.json (cork_dehesa, same seed, AUTHORED echoes:
+carbon_atom lattice at hero scale ← "a half-lit banded world" (card 9's planet), shelled_nucleus fluid ←
+"a broad oak tree"), frames 0-64, strip vs cork_dehesa v1. LANDSCAPE_RX grew pasture/prairie/woods/
+orchard/grove/clearing/dehesa/paddies etc. ("a wooded umber pasture" had passed as a donor). The
+containment arm stays on macaw_lick_var --from-card 7 (the only variety render with lattice-led
+handoffs); it is a lab run and never touches the approved video or its pipeline entry.
