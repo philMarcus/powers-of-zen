@@ -1764,6 +1764,7 @@ def main():
                 _k = _next(_k)
         _by_card = {}
         _P = max(0, int(args.stage_preroll))
+        _swatch_memo = {}   # (prompt, seed) -> swatch: cork drew one donor for three cards (2026-10-10)
         for _sk, _sdef in _splan:
             _sreg = _sorder[_sk]
             _sS = sum(_scf[:_sk])
@@ -1859,7 +1860,12 @@ def main():
                     _eseed = (cfg["seed"] + _zlib.crc32(_vplan["echo"].encode())) % (2 ** 31)
                     try:
                         _ecfg = {**cfg, "width": 768, "height": 768}
-                        _eimg = Image.open(io.BytesIO(run_workflow(build_workflow(_ecfg, _ep, _eseed, neg_extra=_eneg)))).convert("RGB")
+                        _ereused = (_ep, _eseed) in _swatch_memo
+                        if _ereused:
+                            _eimg = _swatch_memo[(_ep, _eseed)]
+                        else:
+                            _eimg = Image.open(io.BytesIO(run_workflow(build_workflow(_ecfg, _ep, _eseed, neg_extra=_eneg)))).convert("RGB")
+                            _swatch_memo[(_ep, _eseed)] = _eimg
                         (out_dir / "build" / "stage").mkdir(parents=True, exist_ok=True)
                         _eimg.save(out_dir / "build" / "stage" / f"echo_{_sk}.png")
                         if args.stage_echo_ipa > 0:
@@ -1868,7 +1874,8 @@ def main():
                             # ECHO TEXTURE: the same swatch worn by every sphere of the stage layer
                             _stage.set_echo_texture(_eimg, args.stage_echo_tex)
                         print(f"[dive] stage-echo: card {_sk} swatch of {_vplan['echo']!r} (seed {_eseed})"
-                              f"{' ipa' if args.stage_echo_ipa > 0 else ''}{' texture' if args.stage_echo_tex > 0 else ''}", flush=True)
+                              f"{' ipa' if args.stage_echo_ipa > 0 else ''}{' texture' if args.stage_echo_tex > 0 else ''}"
+                              f"{' (reused)' if _ereused else ''}", flush=True)
                     except Exception as _ee:  # a failed swatch never kills a render
                         print(f"[dive] stage-echo-ipa: swatch failed for card {_sk}: {_ee}", flush=True)
                 print(f"[dive] stage-variety: card {_sk} {_sreg.get('name')!r} tier {_vplan['tier']} "
