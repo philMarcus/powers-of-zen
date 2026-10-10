@@ -3002,3 +3002,20 @@ natural pairing is textures (the shape) + IPA (the finish) once the texture arm 
   Earth. RULE for echo donors: a concrete icon noun + a colour-only palette, never a scene; check the swatch sheet
   before a full render (3 × 6 s on the GPU).
 - The arm's "today" row is blank: cork_dehesa v1's frames were archived (it is LIVE); the echotex rows stand alone.
+
+### 2026-10-10 14:40 — anchorfix2 result: THE LAP HANDOFF IS FIXED; stage_variety ON for the nightly
+- thousand_moons_var --from-card 8 (approved flat tone anchor + the lap pre-roll), strip scratchpad/orange/
+  anchorfix_strip.png: the lattice disc now grows at the fixed point from f350 to f358 and the handoff into card 1's
+  lattice is SMOOTHER THAN ORDINARY MOTION — |f359-f360| 53.7 vs consecutive 66.6 (v1: 71.1 vs 65.6, a hard swap at
+  f362). The confetti card 0 lap is unchanged from v1 (sat 0.50 vs 0.53, hue entropy 2.96 vs 2.88) = what Phil
+  approved. Full-video side-by-side for him: review/compare/thousand_moons_var_JUMP.mp4 (today | lap fix), 27 s each,
+  counters aligned; the fixed render itself is output/thousand_moons_var_anchorfix/v1 (lab dir).
+- CARD 8 LOOKS DIFFERENT (magenta honeycomb -> teal domes) AT THE SAME SEED: not nondeterminism — the morning's v1
+  started ~09:00, the tissue/nucleus VARIANTS landed 09:17-09:25, so v1's ommatidium is the pre-variant tissue and the
+  fix drew tissue_variant 'domes' (run.json stage_variety records it; v1's record has no variant key). Phil has not
+  seen the tissue variants in a full video yet; lepidolite_halo_var has no tissue card, so the first will be a nightly.
+- SETTINGS stage_variety = True (14:37, telem settings_change): Phil approved the direction ("certainly more
+  colorful... this step seems to be good"), the lap handoff is clean, the yield fix is in the default pre-roll path.
+  Nothing renders tonight (Review 21 >= 20), so the first nightly through variety is the first night he clears Review.
+  Not in the nightly: --stage-contain, --stage-echo-tex, --tone-chroma-aware (lab flags, pending his verdicts on
+  lepidolite_halo_var).
