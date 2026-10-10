@@ -298,6 +298,10 @@ JSETTINGS_DEFAULTS = {
     # stage pre-roll frames (dive --stage-preroll N): the coming stage opens inside a disc on
     # its fixed point during the previous card's last N frames. 0 = the bar-line zoom-through.
     "stage_preroll": 0,
+    # STAGE VARIETY (2026-10-10, PLAN "STAGE VARIETY"): dive --stage-variety — per-card wildness
+    # tier / key light / background / element scale / echo-of-another-card draws, corrected
+    # lighting and brand tone on the stage. False until Phil approves the full A/B pair.
+    "stage_variety": False,
 }
 
 

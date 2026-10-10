@@ -1126,6 +1126,12 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
                               "nucleus, quarks or cells is rendered through a built 3-D stage "
                               "(engine/stage.py); molecular and mascot cards stay plain. off = the "
                               "pre-stage engine. Applies to the next renders.")
+    svariety = t2.toggle("🎭 stage variety (lit + toned stages, per-card light/background/scale/wildness, echoes)",
+                         value=bool(s.get("stage_variety")),
+                         help="2026-10-10: the stage variety package (engine --stage-variety). Each staged card "
+                              "draws a wildness tier, a key light, a background, an element scale and, 60% of "
+                              "the time, an ECHO — its elements shaped like a tiny thing from elsewhere in the "
+                              "journey. Off = the first stage era's look. Applies to the next renders.")
     fpaused = t2.toggle("⏸ pause midnight refill", value=bool(s["refill_paused"]))
     st.markdown("**platform pauses** (scheduler skips paused platforms when posting)")
     pc = st.columns(len(pl.PLATFORMS))
@@ -1145,6 +1151,7 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
             "plate_mode": ("" if pmode == "off" else pmode), "plate_intro": pintro,
             "palette_anchor": float(panchor),
             "stage_mode": ("auto" if smode == "auto" else ""),
+            "stage_variety": bool(svariety),
             "post_every_hours": float(post_every),
             "post_next": post_next.strip()})
         pl.jsave(jj)

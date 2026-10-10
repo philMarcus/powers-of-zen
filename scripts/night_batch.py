@@ -223,6 +223,9 @@ def render_one(journey, force=False, new_seed=True, from_card=None):
             _spr = int(pl.jload()["settings"].get("stage_preroll") or 0)
             if _spr > 0:
                 argv += ["--stage-preroll", str(_spr)]
+            if pl.jload()["settings"].get("stage_variety"):
+                # STAGE VARIETY (PLAN "STAGE VARIETY"): lit, toned, varied stages + echoes
+                argv += ["--stage-variety"]
         if from_card:
             argv += ["--from-card", str(from_card)]
         if (force or from_card) and new_seed:
