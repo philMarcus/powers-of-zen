@@ -120,6 +120,20 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-10 (MIDDAY — STAGE VARIETY v1 RENDERING; read PLAN "STAGE VARIETY: plan of record" + "what the measurement
+found"): Phil's calls: echoes are AUTHORED and may surprise but cohere with the story; NO new realms until the micro
+stages satisfy him. Measured: staged frames were dim/desaturated (sat 0.44 vs 0.61, contrast 0.15 vs 0.24) because the
+stage LAYER's tone becomes the delivered tone and the key light sat BEHIND the spheres. Built behind `dive
+--stage-variety` (nightly untouched): corrected key light + 7 light draws, brand tone on layer + composite, 5
+backgrounds, scale tiers, wildness tiers, ECHO words ("every atom shaped like a tiny <donor>"), look per card.
+Lab flags: `--stage-motion` (C3: camera drift/orbit about the fixed point + electrons/pulse/spin/wave; CPU-verified,
+untested under diffusion), `--stage-echo-ipa W` (B3: donor swatch through IP-Adapter; untested). RUNNING: tmux
+full_var = thousand_moons_var then macaw_lick_var (seed 1234 = their v1 baselines in Review; side-by-side
+review/compare/<j>_VAR.mp4 today|variety); tmux arms_c3b3 waits for it, then 80-frame arms c3motion + b3ipa
+(strips scratchpad/orange/arm_*_strip.png). First staged card measured in the real pipeline: sat 0.49 vs 0.16.
+NEXT: Phil judges the two full videos; if the direction holds -> settings knob (stage_variety) for the nightly, then
+the motion/IPA arms' verdicts, then echo pixels (textured elements). Composer skill already documents
+stage.echo/tier/light/bg/scale (+ ECHO TEST). IG post loss fixed this morning (poster waits on the share dialog).
 2026-10-10 (MORNING — IG POST LOSS FIXED; read PLAN "2026-10-10 — THE INSTAGRAM SHARE"): kelp_dynamo_stage's 10-09 21:05
 post (and the 05:55 retry) reached YouTube but Instagram dropped the reel: the poster's post-share wait matched a stray
 'shared' in the feed text and NAVIGATED away while the upload dialog still said 'Sharing' (~40 s) — navigation aborts the
