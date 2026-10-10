@@ -133,12 +133,15 @@ strip echotex_strip.png) → anchorfix2 (thousand_moons_var --from-card 8, appro
 → lepi_full = lepidolite_halo_var FULL render (journeys/lab/, authored echoes mica book / amber moon / blue planet on k6-k8,
 --stage-echo-tex 0.85 --stage-contain --stage-variety, seed 1234) → Review next to lepidolite_halo + review/compare/
 lepidolite_halo_ECHO.mp4 (today | echoes). stage_variety knob still OFF (Phil approved the direction on one video; flip after
-the anchorfix2 strip shows the lap handoff clean). Review = 21 → tonight's batch skips (first automated cleanup pass runs).
+the anchorfix2 strip shows the lap handoff clean). TONIGHT RENDERS 4 (backpressure counts ready-to-post = 5/20, not Review;
+first nightly through --stage-variety + first automated cleanup pass; morning check: night_batch.log argv has --stage-variety,
+and the tissue/nucleus variants on the four in Review).
 14:40 UPDATE: anchorfix2 strip = LAP HANDOFF FIXED (jump 53.7 vs consecutive 66.6; v1 71.1/65.6), confetti card unchanged →
 settings stage_variety=True (nightly passes --stage-variety from the next render night). Side-by-side for Phil:
 review/compare/thousand_moons_var_JUMP.mp4 (today | lap fix). Card 8 differs at the same seed only because v1 predates the
 09:20 tissue variants (fix drew 'domes'). Echo swatches: authored stage.echo_palette + icon-noun donors (PLAN 14:15);
 lepi_full rendering since 14:34 (~16:30 → Review as lepidolite_halo_var + review/compare/lepidolite_halo_ECHO.mp4).
+NOTE my earlier "tonight skips" lines below were wrong: max_ready_videos counts the posting queue, not Review.
 2026-10-10 (AFTERNOON — PHIL'S VERDICT + THE TWO CATCHES; read PLAN "PHIL'S VERDICT ON thousand_moons_var" + "The two
 catches, diagnosed"): Phil on thousand_moons_var: "certainly more colorful... this step seems to be good" (colour-wise, one
 video); stay subatomic; NEXT STEP = THE ECHOES. Catches, both pre-existing: (1) "weird jump" = the stage->stage HANDOFF

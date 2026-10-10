@@ -3016,6 +3016,8 @@ natural pairing is textures (the shape) + IPA (the finish) once the texture arm 
   seen the tissue variants in a full video yet; lepidolite_halo_var has no tissue card, so the first will be a nightly.
 - SETTINGS stage_variety = True (14:37, telem settings_change): Phil approved the direction ("certainly more
   colorful... this step seems to be good"), the lap handoff is clean, the yield fix is in the default pre-roll path.
-  Nothing renders tonight (Review 21 >= 20), so the first nightly through variety is the first night he clears Review.
+  CORRECTION 14:45 (night_batch --dry-run): the backpressure cap counts READY-TO-POST videos (5/20), not Review, so
+  TONIGHT RENDERS sequoia_rosette + valdes_blow + cuttle_bridge + labrador_schiller (5.3 h) — the first nightly
+  through --stage-variety, and the first full videos that can show the tissue/nucleus VARIANTS (09:20 commits).
   Not in the nightly: --stage-contain, --stage-echo-tex, --tone-chroma-aware (lab flags, pending his verdicts on
   lepidolite_halo_var).
