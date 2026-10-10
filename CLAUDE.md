@@ -147,8 +147,10 @@ blue-white marble nucleons), the 7->8 handoff opens INSIDE the amber-moon atom (
 parse bug — "pine-black" (25,50,31) passed the lum>0.12 species test and the 'deep' fog + brand_tone lifted it to a green plane.
 FIXED in stage.palette_colours (a phrase naming a dark, or dim in every channel, is never a species; 217 catalog cards' species lists
 change, element colours on 23 stageable cards, tonight's four untouched) + the containment gate now accepts reaching the target's
-plane at the bar line (6->7 had fallen to a free iris). REDO running: tmux lepi_fix = --from-card 5 -> v2, re-pointed into Review
-(caption + pregen), side-by-side + strip lepi_fix_strip.png rebuilt; v1 stays on disk as the lime record. Judge in the dive-in cut:
+plane at the bar line (6->7 had fallen to a free iris). REDO DONE 17:41: v2 IS the Review entry (caption + 10 candidates), side-by-side rebuilt,
+strip lepi_fix_strip.png (today / v1 lime / fix); BOTH handoffs now follow the target (6->7 "inside it", 7->8 1.13 W; jump 38.7 vs
+consecutive 52.8); k7 is amber-on-amber (hue entropy 1.11 bits — the 'deep' fog tints from the darkest species, not the authored
+lilac fog; refinement candidate in PLAN 17:45); v1 stays on disk as the lime record. Judge in the dive-in cut:
 k6 14.2-17.2 s, k7 17.2-20.2 s, k8 20.2-23.2 s.
 2026-10-10 (AFTERNOON — PHIL'S VERDICT + THE TWO CATCHES; read PLAN "PHIL'S VERDICT ON thousand_moons_var" + "The two
 catches, diagnosed"): Phil on thousand_moons_var: "certainly more colorful... this step seems to be good" (colour-wise, one

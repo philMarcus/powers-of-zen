@@ -3056,3 +3056,25 @@ natural pairing is textures (the shape) + IPA (the finish) once the texture arm 
   the k6 pre-roll regenerated too), queue_review --src v2 RE-POINTS the Review entry (v1 stays on disk as the lime
   record), caption + pregen, review/compare/lepidolite_halo_ECHO.mp4 rebuilt, strip lepi_fix_strip.png (rows today /
   v1 lime / fix per card). Timecodes in the dive-in cut: k6 14.2-17.2 s, k7 17.2-20.2 s, k8 20.2-23.2 s of 30.0 s.
+
+### 2026-10-10 17:45 — lepidolite_halo_var v2 (the fix) IS THE REVIEW ENTRY; both handoffs contained; card 7 amber-on-amber
+- Chain (tmux lepi_fix): --from-card 5 -> v2 in 3604 s (225 frames), queue_review --src v2 re-pointed the Review entry,
+  caption + 10 music candidates, review/compare/lepidolite_halo_ECHO.mp4 rebuilt 17:40 (today | echoes), strip
+  scratchpad/orange/lepi_fix_strip.png (rows today / v1 lime / fix per staged card), numbers in lepi_fix_measure.txt.
+  v1 stays on disk as the lime record. NOTE: v1 and v2 diverge from f180 (card 5, |diff| 15.7 at f180 -> 80.9 at
+  f199): --from-card restarts the TRACKER cold at the boundary, so a from-card redo never reproduces the source card.
+- CONTAINMENT now holds on BOTH handoffs ("6 -> 7: 0.06 W -> inside it", "7 -> 8: 0.12 W -> 1.13 W"): a round element
+  with the lithium lattice inside it grows at the fixed point over f243-f251, and the nucleus opens inside the
+  amber-moon atom at f285. The jump metric moves the right way for the first time: 6->7 |f251-f252| 38.7 vs
+  consecutive 52.8 (today's free iris: 51.7 vs 34.0), 7->8 44.3 vs 41.7 (today 44.5 vs 28.7).
+- COLOUR after the fix: k6/k7/k8 sat 0.68/0.90/0.81 (today 0.26/0.34/0.47), green 0.00 on k7 (was 0.69) — BUT k7's
+  hue entropy fell to 1.11 bits (today 1.86, v1 2.23): amber atoms on an amber plane, 87 % orange pixels. Cause is
+  design, not a bug: the 'deep' background tints its fog from the darkest SPECIES (species[-1] x 0.3 + dark x 0.4),
+  which on this palette is amber, where the author wrote "a faint lilac outer fog far out, pine-black deep". The
+  'deep' plane + brand_tone lift make three consecutive warm cards. CANDIDATE REFINEMENT (not built, Phil first):
+  tint the 'deep'/'gradient' fog from a fog|haze|glow|mist|space|void|deep phrase when the palette has one (lilac
+  here), else the darkest species; and keep the plane darker when every species is warm.
+- ECHOES: reading unchanged from v1 — the swatch's colour survives (glossy amber ball hero, blue-white marble
+  nucleons), the detail does not at den 0.6/0.45, id 0.5. Levers for an arm: id 0.65, travel den 0.45, hero scale 3.
+- Also fixed on the way: dive keys the plate ENTRANCE, intro kind and per-plate-card specks by scaffold_name (lab
+  copies now reproduce the catalog render up to their first changed card; catalog byte-identical).
