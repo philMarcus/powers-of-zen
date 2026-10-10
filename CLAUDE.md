@@ -120,6 +120,15 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-10 (LATE MORNING — C: WAS FULL; CLEANUP NOW AUTOMATIC; read PLAN "2026-10-10 — C: FULL"): 425 MB free at
+10:30 — ComfyUI's OWN output/input folders held every frame ever rendered + every Florence upload (112,743 files,
+100.8 GB of scratch the archive policy never covered). Deleted through the project tool (`archive.py --comfy --run`,
+age-guarded; 100.84 GB freed, macaw_lick_var kept rendering, frames verified). AUTOMATED: night_batch runs
+`archive.py --nightly` before its gates every night (settings auto_cleanup) + a DISK GUARD (min_free_gb 15; dashboard
+banner + Settings row); engine/comfy_fs.py unlinks ComfyUI's copy of each frame/take/upload right after fetch (masks
+left to the sweep — cache re-serve). Full-disk casualties fixed: truncated .pyc purged; thousand_moons_var's caption +
+music pregen redo and macaw's are queued after the GPU arms (tmux after_arms). Phil-side disk levers not taken:
+hiberfil 48 GB, pagefile 17 GB, WSL vhdx 42.6 GB (9.5 used). Review = 21 → tonight's batch skips on backpressure.
 2026-10-10 (MIDDAY — STAGE VARIETY v1 RENDERING; read PLAN "STAGE VARIETY: plan of record" + "what the measurement
 found"): Phil's calls: echoes are AUTHORED and may surprise but cohere with the story; NO new realms until the micro
 stages satisfy him. Measured: staged frames were dim/desaturated (sat 0.44 vs 0.61, contrast 0.15 vs 0.24) because the

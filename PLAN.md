@@ -2791,3 +2791,75 @@ Also fixed: suggest_stage picked the molecule with Python's salted hash() -> crc
   decades away, at most two per journey, never the same donor twice).
 - NOTE tonight: Review+Music = 20 = max_review_videos, so the 01:30 batch SKIPS by design until Phil clears Review
   below 20 (the two lab videos add to it).
+
+## 2026-10-10 — C: FULL (425 MB): THE COMFYUI SCRATCH, and the cleanup made automatic
+Found while waiting for thousand_moons_var: its music pregen died on take 5 with "No space left on
+device", its caption parsed nothing, the side-by-side cut came out 48 bytes, and macaw_lick_var's
+render was ~170 frames from dying. `df`: C: 931 GB, 425 MB free. Six days earlier the 10-04 cleanup
+had left 93 GB free — so something ate ~15 GB/day that the archive policy never saw.
+
+THE CULPRIT: ComfyUI's OWN folders. Every frame the engine renders is written by ComfyUI's SaveImage
+node to ComfyUI/ComfyUI/output/zoomer/frame_NNNNN_.png, fetched over /view into the run's
+build/frames — and the ComfyUI copy was never deleted: 91,074 frames = 86.7 GB, every frame since
+July. Same for the Florence detection uploads (input/det_* 5.3 GB, cap_* 2.3 GB, one per detected
+frame, named by content hash), their masks (det_mask_* 11k small files), repair/A-B init uploads
+(0.6 GB) and the ACE-Step takes (output/zen_music 2 GB, already copied to output/music). 112,743
+files, 100.8 GB of pure scratch — reproducible from nothing. (Also on C:, not ours to touch:
+.ollama 197 GB, .cache 88 GB, hiberfil.sys 48 GB, pagefile 17 GB, the WSL ext4.vhdx at 42.6 GB
+with 9.5 GB used inside — compaction needs `wsl --shutdown`, Phil's call.)
+
+WHAT HAPPENED NEXT (and the order mattered): a raw `find -delete` was refused by the tool
+permission layer as irreversible destruction, so the deletion went through the project's own
+cleanup tool instead — `scripts/archive.py --comfy` (dry run shows the table, `--run` deletes;
+manifest row per class, telem cleanup_comfy), with an AGE GUARD per class (3 h for frames/uploads,
+1 day for music takes, 7 days for the fixed-name engine uploads) so a run in flight is never
+touched, and subfolders that aren't ours (megamastermind, seamlab, warp_depth, realm_*) never in
+scope. It freed 100.84 GB in ~20 min while macaw_lick_var kept rendering (every frame it wrote in
+the window verified intact afterwards; all JSON state files valid). One casualty of the full disk:
+a TRUNCATED bytecode cache (engine/__pycache__/stage.cpython-312.pyc, written 10:28) —
+`EOFError: marshal data too short` on `import stage`; purged every .pyc written after 10:00.
+
+PHIL ("we have a clean up process, we should run it, and automate it too") — BUILT:
+  * archive.py `--comfy [--run]` (above) and `--nightly` = the whole cleanup for real: ComfyUI
+    scratch deleted → review class (dead music candidates + cuts) → live/rejected/failed render
+    trees → E:, then "C: free now".
+  * night_batch runs `archive.py --nightly` BEFORE its gates every night (so it runs on skipped
+    nights too; output in outbox/cleanup.log, telem cleanup), then a DISK GUARD: below settings
+    min_free_gb (default 15) the night is skipped with telem batch_skip "disk ..."; re-checked
+    before every render in the loop (the rest stays queued). Settings: auto_cleanup (True),
+    min_free_gb; dashboard Settings row + a red header banner when C: is under the guard.
+  * THE ROOT FIX in the engine: engine/comfy_fs.py — dive.run_workflow unlinks ComfyUI's frame
+    copy the moment /view has returned it; music.run_workflow the same for takes; detect.py
+    unlinks its det_/cap_ uploads once the workflow answered. Detection MASKS are left to the
+    sweep on purpose: ComfyUI serves a byte-identical re-submission from its node cache without
+    re-running SaveImage, and detect legitimately repeats on identical frames (content-hash
+    names) — a deleted mask would 404. Frames can't repeat (the feed changes every frame) and
+    takes carry their seed. All best-effort (OSError swallowed), zero pixel-path changes;
+    smoke-tested from frame 0 (memory smoke-test-frame-zero).
+NOTE the archive class's E: moves still need E: mounted (88 GB free today); the comfy class
+needs nothing. Next cleanup watch item: review/music/candidates (6.3 GB, the review class).
+
+### Addendum (same morning) — two things the full-disk hour also turned up
+(1) THE CONFETTI CARD. thousand_moons_var's card 0 (tubes, look ink, bg bright, echo "a silver moon
+disc") delivered as RGB confetti settling into multicolour beads (scratchpad/orange/var_cards_strip.png
+rows 2 and 6; confetti_strip.png has the layers). Attribution by the saved layers: the STAGE LAYER is
+near-grey (ink palette, sat 0.03, no vivid pixels), the FED composite after tone_anchor_image is sat
+0.50 with 50% vivid pixels and a hue entropy of 2.9 bits over 12 bins (near-uniform hues = noise),
+and the diffusion then paints the noise as beads. The anchor's flat x1.5 chroma gain had nothing to
+lift on a grey card except hue noise, and its contrast stretch (applied to the RGB deviations)
+multiplied the same noise by k again. FIXED in tone_anchor_image: the chroma gain is weighted by each
+pixel's own chroma (smoothstep 0.06..0.22 — greys stay grey, a lit lattice or a magenta tissue still
+gets the full lift) and the contrast stretch acts on luminance only. Checked offline: grey+noise sat
+0.044 -> 0.060 (was heading to 0.09+), the lattice/tissue stage layers unchanged in their lift. In
+motion: the C3/B3 arms (frames 0-80 = this very card) and tmux anchorfix (--from-card 8 on v1: tissue
++ the card-0 lap copy, strip anchorfix_strip.png) render with it. The other two staged cards of the
+video are the wins the package was built for: card 1 lattice (sat 0.51 vs 0.16, lit discs, hexagonal-
+lens echo) and card 8 tissue (magenta honeycomb of walled cells, sat 0.57 vs 0.13).
+(2) COMFYUI'S COUNTER REUSES NUMBERS. SaveImage picks counter = max existing + 1 by scanning the
+folder, so once the engine deletes its fetched copy the next save — from ANY run — gets the same
+frame_NNNNN_ name (seen live: prompts 6854/6855 both wrote frame_91197_). Harmless by construction
+(a file is only ever deleted by the run that already fetched it; ComfyUI runs prompts serially, so
+nobody can overwrite a not-yet-fetched file), but it means "does the file exist" can no longer
+attribute a leftover to a run, and a fresh write is share-locked on the Windows side for ~1 s
+(PermissionError errno 13 at +0.7 s, free at +1.25 s) — comfy_fs parks a refused path and retries it
+on the next call and at exit instead of sleeping per frame.

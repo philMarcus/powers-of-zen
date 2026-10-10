@@ -302,6 +302,13 @@ JSETTINGS_DEFAULTS = {
     # tier / key light / background / element scale / echo-of-another-card draws, corrected
     # lighting and brand tone on the stage. False until Phil approves the full A/B pair.
     "stage_variety": False,
+    # NIGHTLY CLEANUP + DISK GUARD (Phil 2026-10-10: "we have a clean up process, we should run
+    # it, and automate it too" — C: hit 100% that morning because ComfyUI kept its own copy of
+    # every frame ever rendered, 86 GB): night_batch runs `archive.py --nightly` before its
+    # gates every night (ComfyUI scratch deleted; review class + live/rejected/failed render
+    # trees -> E:), and refuses to start a render with less than min_free_gb free on C:.
+    "auto_cleanup": True,
+    "min_free_gb": 15,
 }
 
 

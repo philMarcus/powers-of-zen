@@ -23,6 +23,7 @@ night is skipped — no point stockpiling past ~10 days of posts.
 """
 import fcntl
 import json
+import shutil
 import subprocess
 import sys
 import time
@@ -277,6 +278,37 @@ def main():
     _vids = _pipe["videos"] if isinstance(_pipe, dict) else _pipe
     awaiting = sum(1 for v in _vids if v.get("state") in ("review", "music"))
 
+    # NIGHTLY CLEANUP (Phil 2026-10-10, "we have a clean up process, we should run it, and
+    # automate it too"): C: hit 100% that morning — ComfyUI's own output folder held every
+    # frame the engine ever rendered (91,074 files, 86 GB) because nothing deleted the copy
+    # after /view fetched it, and a music pregen died mid-write. archive.py --nightly deletes
+    # that scratch class and moves the review class + live/rejected/failed render trees to E:.
+    # It runs BEFORE the gates so it happens every night, skipped batch or not (its own age
+    # guards keep any run in flight intact). Then the DISK GUARD: a long render writes ~2.5 GB
+    # of frames + intermediates, so never start one the disk cannot finish.
+    if not dry and s.get("auto_cleanup", True):
+        print("cleanup: archive.py --nightly ...", flush=True)
+        clog = ROOT / "outbox" / "cleanup.log"          # its own log: the batch log opens later
+        with open(clog, "a", encoding="utf-8") as cf:
+            cf.write(f"\n=== {time.strftime('%Y-%m-%d %H:%M:%S')} night_batch -> archive.py --nightly\n")
+            cf.flush()
+            try:
+                rc = subprocess.run([sys.executable, str(ROOT / "scripts" / "archive.py"),
+                                     "--nightly"], cwd=str(ROOT), stdout=cf,
+                                    stderr=subprocess.STDOUT, timeout=3600).returncode
+            except subprocess.TimeoutExpired:
+                rc = 124
+        last = [ln for ln in clog.read_text(encoding="utf-8").splitlines() if ln.strip()][-1:]
+        print(f"cleanup rc={rc}: {last[0] if last else '-'}", flush=True)
+        pl.telem("cleanup", detail=f"archive.py --nightly rc={rc} ({last[0] if last else '-'})")
+    free_gb = shutil.disk_usage(str(ROOT)).free / 1e9
+    if free_gb < float(s.get("min_free_gb", 15)):
+        print(f"DISK: only {free_gb:.1f} GB free on C: (min_free_gb {s.get('min_free_gb', 15)}) "
+              "— skipping tonight; free space or lower min_free_gb in Settings")
+        if not dry:
+            pl.telem("batch_skip", reason=f"disk {free_gb:.1f} GB free")
+        return
+
     if not args:  # auto-pick mode: backpressure + pause gates apply
         # MISSED-NIGHT GUARD (2026-08-28): the render task now has StartWhenAvailable, so a
         # 01:30 start missed by a reboot fires as soon as the machine is back — fine at
@@ -349,6 +381,12 @@ def main():
     t0 = time.time()
     done, failed, notes = [], [], []
     for j in picks:
+        free_gb = shutil.disk_usage(str(ROOT)).free / 1e9
+        if free_gb < float(s.get("min_free_gb", 15)):
+            log(f"DISK: {free_gb:.1f} GB free on C: < min_free_gb {s.get('min_free_gb', 15)} — "
+                f"stopping the batch before {j} (it stays queued)")
+            pl.telem("batch_skip", reason=f"disk {free_gb:.1f} GB free before {j}")
+            break
         log(f"--- {j} ---")
         entry = pl.jload()["journeys"].get(j, {})
         try:

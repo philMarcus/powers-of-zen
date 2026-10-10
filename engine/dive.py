@@ -34,6 +34,7 @@ import requests
 from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageStat
 
 import camera as _camera
+import comfy_fs
 import figure
 import grammar
 import plate as _plate
@@ -394,6 +395,10 @@ def run_workflow(wf, timeout=900):
                         "subfolder": img.get("subfolder", ""),
                         "type": img.get("type", "output")}, timeout=60)
                     v.raise_for_status()
+                    # the frame is ours now; ComfyUI's copy was never read again and filled
+                    # C: to 100% over three months (engine/comfy_fs.py, 2026-10-10)
+                    comfy_fs.unlink_output(img["filename"], img.get("subfolder", ""),
+                                           img.get("type", "output"))
                     return v.content
         time.sleep(0.25)
     raise TimeoutError(f"workflow {pid} did not finish in {timeout}s")
@@ -651,16 +656,27 @@ def tone_anchor_image(img, sd_t=0.21, sat_t=0.56, k_max=1.6, s_max=1.5):
     a = np.asarray(img.convert("RGB"), np.float32) / 255.0
     lum = a @ np.array([0.30, 0.59, 0.11], np.float32)
     mx, mn = a.max(-1), a.min(-1)
-    sat = float(np.where(mx > 1e-3, (mx - mn) / np.maximum(mx, 1e-3), 0).mean())
+    sat_px = np.where(mx > 1e-3, (mx - mn) / np.maximum(mx, 1e-3), 0)
+    sat = float(sat_px.mean())
     sd, m = float(lum.std()), float(lum.mean())
     k = float(np.clip(sd_t / max(sd, 0.02), 1.0, k_max))
     sg = float(np.clip(sat_t / max(sat, 0.05), 1.0, s_max))
     if k <= 1.001 and sg <= 1.001:
         return img
     l3 = lum[..., None]
-    a = l3 + (a - l3) * sg
+    # CHROMA-AWARE (2026-10-10, thousand_moons_var card 0): a near-grey pixel has no colour to
+    # lift, only hue NOISE — a flat x1.5 on the ink-look tubes card (stage layer sat 0.03) turned
+    # the fed composite into RGB confetti (sat 0.50, hue entropy 2.9 bits over 12 bins) that the
+    # diffusion then painted as beads. Weight the gain by each pixel's own chroma: greys stay
+    # grey, real colour (a lit lattice, a magenta tissue) still gets the full lift.
+    w = np.clip((sat_px - 0.06) / 0.16, 0.0, 1.0)
+    w = w * w * (3.0 - 2.0 * w)
+    chroma = (a - l3) * (1.0 + (sg - 1.0) * w[..., None])
+    # the contrast stretch acts on LUMINANCE only — stretching the RGB deviations multiplied
+    # chroma noise by k as well (the second half of the confetti)
     tm = float(np.clip(m * 1.1, 0.33, 0.55)) if k > 1.001 else m
-    a = tm + (a - m) * k
+    lum2 = tm + (lum - m) * k
+    a = lum2[..., None] + chroma
     return Image.fromarray(np.clip(a * 255.0, 0, 255).astype(np.uint8))
 
 

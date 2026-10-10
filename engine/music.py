@@ -24,6 +24,10 @@ from pathlib import Path
 import requests
 
 COMFY = "http://localhost:8188"
+try:
+    import comfy_fs                 # engine/ on sys.path (dive-style)
+except ImportError:
+    from engine import comfy_fs     # imported as a package (scripts/music_gen.py)
 ROOT = Path(__file__).resolve().parent.parent
 
 # ComfyUI's TextEncodeAceStepAudio1.5 keyscale is a FIXED 34-entry enum — "Eb major",
@@ -149,6 +153,8 @@ def run_workflow(wf, timeout=600):
                         "filename": a["filename"], "subfolder": a.get("subfolder", ""),
                         "type": a.get("type", "output")}, timeout=120)
                     v.raise_for_status()
+                    comfy_fs.unlink_output(a["filename"], a.get("subfolder", ""),
+                                           a.get("type", "output"))   # comfy_fs.py, 2026-10-10
                     return v.content, a["filename"]
         time.sleep(0.5)
     raise TimeoutError(f"music workflow {pid} did not finish in {timeout}s")

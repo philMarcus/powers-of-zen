@@ -864,6 +864,15 @@ with tabs[0]:  # JOURNEYS — the render queue the 01:30 batch draws from (journ
             + f" = {total / 3600:.1f}h of {s['render_budget_min'] // 60}h")
     else:
         st.info("queue is empty — the midnight refill will compose journeys, or Queue some below")
+    try:   # DISK GUARD (2026-10-10): the batch cleans up first, then refuses below min_free_gb
+        import shutil as _shutil
+        _free_gb = _shutil.disk_usage(str(Path(__file__).resolve().parent.parent)).free / 1e9
+        if _free_gb < float(s.get("min_free_gb", 15)):
+            st.error(f"💽 C: has only {_free_gb:.0f} GB free (min_free_gb {s.get('min_free_gb', 15)}) — "
+                     "the 01:30 batch runs `archive.py --nightly` first and skips renders below this; "
+                     "run `python3 scripts/archive.py --nightly` by hand to free space now")
+    except Exception:
+        pass
 
     st.subheader(f"render queue ({len(q_names)})")
     run_total = 0
@@ -1090,6 +1099,22 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
                                             "draw — the queue (and so the nightly render "
                                             "mix, which runs in queue order) converges "
                                             "to these ratios")
+    cd = st.columns(3)
+    autoclean = cd[0].toggle("🧹 nightly cleanup (archive.py --nightly before the batch)",
+                             value=bool(s.get("auto_cleanup", True)),
+                             help="2026-10-10: every night, before the gates — ComfyUI's scratch "
+                                  "copies (saved frames, Florence uploads, music takes) deleted; "
+                                  "music candidates / cuts of dead videos and the render trees of "
+                                  "live / rejected / failed videos moved to E:\\zoomer_archive")
+    minfree = cd[1].number_input("disk guard: min free GB on C: to start a render", 1, 200,
+                                 int(s.get("min_free_gb", 15)),
+                                 help="a long render writes ~2.5 GB of frames + intermediates; "
+                                      "below this the batch skips (journeys stay queued)")
+    try:
+        import shutil as _shutil2
+        cd[2].metric("C: free now", f"{_shutil2.disk_usage(str(Path(__file__).resolve().parent.parent)).free / 1e9:.0f} GB")
+    except Exception:
+        pass
     t1, t2, t3 = st.columns(3)
     rpaused = t1.toggle("⏸ pause nightly rendering", value=bool(s["render_paused"]))
     # PLANET PLATE (2026-09-17): lab arm B on every planet-class card in the nightly
@@ -1152,6 +1177,7 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
             "palette_anchor": float(panchor),
             "stage_mode": ("auto" if smode == "auto" else ""),
             "stage_variety": bool(svariety),
+            "auto_cleanup": bool(autoclean), "min_free_gb": int(minfree),
             "post_every_hours": float(post_every),
             "post_next": post_next.strip()})
         pl.jsave(jj)

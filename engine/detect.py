@@ -25,6 +25,7 @@ from PIL import Image
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import dive  # noqa: E402
+import comfy_fs  # noqa: E402
 
 COMFY = dive.COMFY
 MODEL = "microsoft/Florence-2-base-ft"     # base-ft: ~2s/frame, accurate enough for localization
@@ -84,6 +85,7 @@ def florence_mask(pil, query, task="caption_to_phrase_grounding"):
     h = _wait(_submit(wf))
     if not h:
         return None
+    comfy_fs.unlink_input(name)   # the upload is scratch once ComfyUI has answered (comfy_fs.py)
     for o in h["outputs"].values():
         if o.get("images"):
             m = np.asarray(_fetch(o["images"][0]).convert("L"), dtype=np.float32) / 255.0
@@ -121,6 +123,7 @@ def caption(pil, task="more_detailed_caption"):
     hist = _wait(_submit(wf))
     if not hist:
         return None
+    comfy_fs.unlink_input(name)   # see florence_mask
     for o in hist.get("outputs", {}).values():
         for key in ("text", "string", "value"):
             if o.get(key):

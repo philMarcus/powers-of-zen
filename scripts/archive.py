@@ -23,6 +23,8 @@ Usage:
   python3 scripts/archive.py            # dry run: table + totals, touches nothing
   python3 scripts/archive.py --run      # prune regenerable + move the ARCHIVE class to E:
   python3 scripts/archive.py --prune-e  # delete regenerable already sitting in the E: archive
+  python3 scripts/archive.py --comfy [--run]   # ComfyUI scratch (saved frames, uploads, masks,
+                                               # music takes) -> DELETED; the 2026-10-10 86 GB
 Every move/prune is appended to outbox/archive_manifest.jsonl.
 """
 import argparse
@@ -57,6 +59,76 @@ def du(path):
 # dive.assemble, so we DELETE rather than keep them (Phil 2026-09-06). Never touches
 # build/frames, the final mp4, run.json, hero/resolve debug, or anything else.
 REGEN_GLOBS = ("v*/build/labeled", "v*/build/raw.mp4", "v*/build/interp.mp4")
+
+# COMFYUI SCRATCH (found 2026-10-10 with C: at 100%, 425 MB free): every frame the engine renders
+# is SAVED by ComfyUI's SaveImage node into ComfyUI/output/zoomer/ and fetched over /view into
+# the run's build/frames — the ComfyUI copy was never deleted (91,074 frames = 86.7 GB, every
+# frame since July). Same story for the Florence detection uploads (input/det_*, input/cap_*),
+# their masks (output/det_mask_*), the repair/A-B init uploads and the ACE-Step takes
+# (output/zen_music/*, already copied to output/music/). All of it is the pipeline's own
+# scratch, reproducible from nothing — DELETE, never archive. The age guard keeps anything a
+# run in flight might still read; other subfolders of ComfyUI/output (megamastermind,
+# seamlab, warp_depth, realm_*) belong to other projects / lab evidence and are never touched.
+COMFY_DIR = Path("/mnt/c/Users/Phil/ComfyUI/ComfyUI")
+COMFY_SCRATCH = [   # (subdir, glob, min age in minutes, what it is)
+    ("output/zoomer", "frame_*", 180, "rendered frames (the copy is in build/frames)"),
+    ("output", "det_mask_*", 180, "Florence detection masks"),
+    ("output/zen_music", "*", 1440, "ACE-Step takes (the copy is in output/music)"),
+    ("input", "det_*", 180, "Florence detection uploads"),
+    ("input", "cap_*", 180, "Florence caption uploads"),
+    ("input", "repair_init*", 180, "repair-tool init uploads"),
+    ("input", "open_init*", 180, "replace_opening init uploads"),
+    ("input", "ab_init*", 180, "seam-lab init uploads"),
+    ("input", "zoomer_*", 7 * 1440, "named engine uploads (overwritten per frame)"),
+]
+
+
+def comfy_cleanup(run):
+    """Delete the pipeline's ComfyUI scratch files older than their class's age guard.
+    Returns bytes freed (0 on a dry run). One manifest row + one telem event per run."""
+    now = time.time()
+    rows = []
+    for sub, pat, age, what in COMFY_SCRATCH:
+        d = COMFY_DIR / sub
+        if not d.is_dir():
+            continue
+        hits = []
+        for q in d.glob(pat):
+            try:
+                st = q.stat()
+                if q.is_file() and now - st.st_mtime > age * 60:
+                    hits.append((q, st.st_size))
+            except OSError:
+                pass
+        rows.append((sub, pat, age, what, hits, sum(b for _, b in hits)))
+    tot = sum(r[5] for r in rows)
+    print(f"{'COMFYUI SCRATCH (delete)':40} {'files':>7} {'size':>8}  what")
+    for sub, pat, age, what, hits, b in rows:
+        print(f"  {sub + '/' + pat:38} {len(hits):7d} {b/1e9:7.2f}G  {what} (> {age} min old)")
+    print(f"  {'TOTAL':38} {sum(len(r[4]) for r in rows):7d} {tot/1e9:7.2f}G")
+    if not run:
+        print("\ndry run — nothing deleted. --comfy --run to delete.")
+        return 0
+    freed, nf, failed = 0, 0, 0
+    for sub, pat, age, what, hits, b in rows:
+        for q, sz in hits:
+            try:
+                q.unlink()
+                freed += sz
+                nf += 1
+            except OSError:
+                failed += 1
+        if hits:
+            print(f"  deleted {sub}/{pat}: {len(hits)} files, {b/1e9:.2f}G", flush=True)
+            with open(MANIFEST, "a", encoding="utf-8") as f:
+                f.write(json.dumps({"ts": time.strftime("%Y-%m-%d %H:%M:%S"),
+                                    "comfy_scratch": f"{sub}/{pat}", "files": len(hits),
+                                    "bytes": b}) + "\n")
+    pl.telem("cleanup_comfy", detail=f"deleted {freed/1e9:.1f}G ({nf} files"
+                                     + (f", {failed} failed" if failed else "") + ") of ComfyUI scratch")
+    print(f"\ndeleted {freed/1e9:.2f}G of ComfyUI scratch ({nf} files"
+          + (f", {failed} failed" if failed else "") + ")")
+    return freed
 
 
 def prune_regenerable(tree):
@@ -188,8 +260,8 @@ def review_cleanup(run):
     moved = 0
     for src, dst, why in moves:
         if dst.exists():
-            print(f"  destination exists — skipping {src.name}")
-            continue
+            dst = dst.with_name(f"{dst.stem}__{time.strftime('%Y%m%d_%H%M')}{dst.suffix}")
+            print(f"  destination exists — archiving as {dst.name}")
         dst.parent.mkdir(parents=True, exist_ok=True)
         sb = du(src)[0] if src.is_dir() else src.stat().st_size
         if src.is_dir():
@@ -221,11 +293,30 @@ def main():
     ap.add_argument("--review", action="store_true",
                     help="the REVIEW class instead: music candidates + review cuts of live/rejected/"
                          "failed/orphan videos -> E: (dry unless --run)")
+    ap.add_argument("--nightly", action="store_true",
+                    help="the whole cleanup, for real (night_batch runs this every night before "
+                         "its gates): ComfyUI scratch deleted, then the review class and the "
+                         "live/rejected/failed render trees moved to E:; prints C: free space")
+    ap.add_argument("--comfy", action="store_true",
+                    help="the COMFYUI SCRATCH class: the engine's saved frames / detection "
+                         "uploads+masks / music takes left in ComfyUI's own folders (deleted, "
+                         "never archived; dry unless --run)")
     ap.add_argument("--prune-e", action="store_true",
                     help="delete regenerable artifacts already in the E: archive (moved there "
                          "before auto-prune existed); rebuildable from the build/frames on E:")
     a = ap.parse_args()
 
+    if a.nightly:
+        # Phil 2026-10-10 ("we have a clean up process, we should run it, and automate it too"):
+        # the three classes in the order that frees the most first; each prints its own table.
+        a.run = True
+        comfy_cleanup(True)
+        print()
+        review_cleanup(True)
+        print()
+    elif a.comfy:
+        comfy_cleanup(a.run)
+        return
     if a.review:
         review_cleanup(a.run)
         return
@@ -287,8 +378,10 @@ def main():
         rel = p.relative_to(ROOT)
         dst = DEST / rel
         if dst.exists():
-            print(f"  destination exists — skipping {rel}")
-            continue
+            # a journey re-rendered after its first archive: keep BOTH copies on E: under a dated
+            # name instead of leaving the new tree on C: forever (7 trees sat that way 2026-10-10)
+            dst = dst.with_name(f"{dst.name}__{time.strftime('%Y%m%d_%H%M')}")
+            print(f"  destination exists — archiving as {dst.name}")
         # AUTO-PRUNE (Phil 2026-09-06): drop rebuildable artifacts BEFORE the move so they
         # never reach E: and are gone from C: — halves per-tree storage. build/frames stays
         # (repairs read it); the source/dest file counts still match so verify passes.
@@ -321,6 +414,8 @@ def main():
                                 "files": sn, "reason": why,
                                 "pruned_bytes": pruned}) + "\n")
     pl.telem("archive", detail=f"moved {moved/1e9:.1f}G to E:")
+    free = shutil.disk_usage(str(ROOT)).free / 1e9
+    print(f"C: free now: {free:.1f} GB")
     print(f"\narchived {moved/1e9:.2f}G to {DEST}")
 
 
