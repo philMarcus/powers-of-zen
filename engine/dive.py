@@ -1637,7 +1637,7 @@ def main():
             # never the --frames-truncated total (the smoke-test trap)
             _pFn = _pcfr[_pk + 1] if _pk + 1 < len(_pcfr) else _pcfr[0]
             _pE2 = min(_pS + _pF + _pFn, len(zoom_sched))
-            _ih = _zlib.crc32(f"{spec.get('name')}:{_preg.get('name')}:intro".encode())
+            _ih = _zlib.crc32(f"{spec.get('scaffold_name') or spec.get('name')}:{_preg.get('name')}:intro".encode())
             _intro = args.plate_intro
             if _intro == "auto":
                 _intro = ("grow", "enter")[_ih % 2]
@@ -1654,7 +1654,10 @@ def main():
                 _kind = {"mix": None, "travel": "travel", "mix-enter": "enter",
                          "mix-grow": "grow"}[_intro]
                 _entrance = _plate.draw_entrance(
-                    f"{spec.get('name')}:{_preg.get('name')}:{args.plate_entrance_seed}",
+                    # keyed like every other draw: a lab copy (scaffold_name) reproduces the catalog
+                    # journey's entrance, so a same-seed pair stays same-content past the planet card
+                    # (lepidolite_halo_var entered at tx 0.26 vs 0.58 and diverged from f36, 2026-10-10)
+                    f"{spec.get('scaffold_name') or spec.get('name')}:{_preg.get('name')}:{args.plate_entrance_seed}",
                     cfg["width"], cfg["height"], args.plate_limb, _zc, kind=_kind)
                 _intro = _entrance["kind"]
             if args.plate_entrance:
@@ -2351,7 +2354,7 @@ def main():
                     _void.save(_pdir / f"card{_pl.card_idx}_void.png")
                     _pl.set_assets(_tex, _void)
                     _pl.specks = hero_specks(cfg["width"], cfg["height"],
-                                             _zlib.crc32(f"{spec.get('name')}:{_pl.card_idx}"
+                                             _zlib.crc32(f"{spec.get('scaffold_name') or spec.get('name')}:{_pl.card_idx}"
                                                          .encode()))
                     print(f"[dive] plate assets for card {_pl.card_idx}: surface "
                           f"{_pl.prompts['surface'][:80]!r} / void "
