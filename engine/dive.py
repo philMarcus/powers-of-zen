@@ -1861,7 +1861,11 @@ def main():
                     # ECHO BY PIXELS (B3): one txt2img of the donor thing, close and alone, in the
                     # journey's style; uploaded once as this card's IP-Adapter reference
                     _dreg = next((r_ for r_ in _sorder if (r_.get("target") or r_.get("target_phrase")) == _vplan["echo"]), None)
-                    _dpal = (_dreg or {}).get("palette") or _sreg.get("palette") or ""
+                    # an authored `stage.echo_palette` wins: a donor register's palette can describe a
+                    # SCENE (home_star's "amber-gold star, lilac zodiacal glow..." drew a tiny planet
+                    # beside a sun; 2026-10-10 lepidolite swatches)
+                    _dpal = ((_sdef.get("echo_palette") if isinstance(_sdef, dict) else None)
+                             or (_dreg or {}).get("palette") or _sreg.get("palette") or "")
                     # one thing, big, simple, SQUARE (768^2): a decal on a sphere needs an icon,
                     # not a scene — the first macaw swatch (two parrots, portrait) read as speckle
                     # (probed 2026-10-10, scratchpad/orange/echo_swatches3.png: this wording gives ONE

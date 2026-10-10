@@ -86,7 +86,8 @@
       },
       "stage": {
         "kit": "lattice",
-        "echo": "a lilac mica book"
+        "echo": "a lilac mica crystal",
+        "echo_palette": "lilac-mauve layered sheets, quartz-silver glints, pine-black gaps"
       }
     },
     {
@@ -123,7 +124,8 @@
       },
       "stage": {
         "kit": "nucleus",
-        "echo": "a round blue planet"
+        "echo": "a round blue planet",
+        "echo_palette": "deep ocean blue with white cloud swirls, a thin bright sunlit limb, pine-black space"
       }
     },
     {
@@ -141,5 +143,5 @@
   "music_key": "D minor",
   "render_start": "spiral_arm",
   "scaffold_name": "lepidolite_halo",
-  "_lab": "2026-10-10 echo-texture + containment full render: lepidolite_halo (in Review, unjudged) with AUTHORED echoes on its three consecutive sphere-kit stage cards — lepidolite_layers lattice: every atom a lilac mica book (the quarry's own crystal); lithium_atom lattice: every atom a half-lit amber moon (pine_ridge's moon); halo_nucleus nucleus: every nucleon a round blue planet (home_star's Earth). Same seed as the Review render; lab only, judged next to lepidolite_halo in Review."
+  "_lab": "2026-10-10 echo-texture + containment full render: lepidolite_halo (in Review, unjudged) with AUTHORED echoes on its three consecutive sphere-kit stage cards — lepidolite_layers lattice: every atom a lilac mica crystal (the quarry's own crystal); lithium_atom lattice: every atom a half-lit amber moon (pine_ridge's moon); halo_nucleus nucleus: every nucleon a round blue planet (home_star's Earth). Same seed as the Review render; lab only, judged next to lepidolite_halo in Review. Swatch donors reworded 14:15 after a swatch check (sheet.png): 'mica book' drew a notebook, the planet drew tiny beside its Sun-card palette."
 }

@@ -842,7 +842,7 @@ def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0
     # = fewer in view (hero) ... smaller = a swarm. The plunge target scales with it, so the
     # bar-line arrival geometry is unchanged.
     _scale = float(p.pop('scale', 1.0) or 1.0)
-    for _k in ('tier', 'light', 'bg', 'echo'):
+    for _k in ('tier', 'light', 'bg', 'echo', 'echo_palette'):
         p.pop(_k, None)                      # variety plan keys are not kit params
     if _scale != 1.0:
         if kit == 'lattice':

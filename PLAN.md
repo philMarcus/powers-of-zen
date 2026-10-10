@@ -2983,3 +2983,22 @@ natural pairing is textures (the shape) + IPA (the finish) once the texture arm 
   seed 1234) with AUTHORED echoes on its three consecutive sphere stages (k6 lattice: a lilac mica book; k7
   lattice: a half-lit amber moon; k8 nucleus: a round blue planet) + --stage-echo-tex 0.85 + --stage-contain +
   variety; 405 frames; lands in Review next to lepidolite_halo with review/compare/lepidolite_halo_ECHO.mp4.
+
+### 2026-10-10 14:15 — ECHO TEXTURES under diffusion (cork_dehesa_var arm, scratchpad/orange/echotex_strip.png) + swatch lessons
+- THE MECHANISM WORKS where the sphere is big: on carbon_atom (hero scale) every large atom visibly wears the swatch
+  through the diffusion (a dark-red glass marble with its highlight, on sphere after sphere, f4-f19). On small
+  spheres (shelled_nucleus droplets) only the swatch's MEAN colour survives (blue-teal beads in the red fluid) — by
+  construction (stage.py paints spheres < 6 px with the mean) and by the diffusion's resolution. So an echo READS
+  only on hero/bold-scale cards and on big nucleons; field-scale lattices get a colour cast, not a picture.
+- THE SWATCHES MISSED THEIR BRIEF, and that is the lever: "a half-lit banded world" (+ cork's garnet palette) drew a
+  glossy red MARBLE (→ eyeball-ish beads, f9/f14); "a broad oak tree" (+ "umber pasture, moss-green canopy") drew a
+  LANDSCAPE PHOTO with sky and field despite "plain black background". The palette line of the donor register is a
+  scene description, and the model paints the scene. Checked on lepidolite_halo_var's three donors BEFORE its full
+  render (scratchpad/orange/lepi_swatches/sheet.png → sheet2.png): "a lilac mica book" drew a literal NOTEBOOK; "a
+  round blue planet" with home_star's palette ("amber-gold star, lilac zodiacal glow...") drew a tiny ring beside a
+  sun. FIXES: authored `stage.echo_palette` overrides the swatch's palette line (dive.py; stage.py strips the key
+  before the kit call); donors reworded to icon nouns ("a lilac mica crystal", planet palette "deep ocean blue with
+  white cloud swirls, a thin bright sunlit limb, pine-black space") → sheet2: crystal cluster / amber moon / a big
+  Earth. RULE for echo donors: a concrete icon noun + a colour-only palette, never a scene; check the swatch sheet
+  before a full render (3 × 6 s on the GPU).
+- The arm's "today" row is blank: cork_dehesa v1's frames were archived (it is LIVE); the echotex rows stand alone.
