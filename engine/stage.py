@@ -17,6 +17,7 @@ chains), additive glow splats (fog / probability clouds). Kits build instance li
 space once (seeded); frame(k) renders RGB + depth (near = bright, controlnet polarity).
 """
 import math
+import zlib
 import numpy as np
 from PIL import Image, ImageFilter
 
@@ -134,7 +135,13 @@ class Stage:
     def frame(self, f):
         w, h = self.w, self.h
         cam = self._camera(f)
-        col = np.tile(self.bg, (h, w, 1)).astype(np.float32)
+        if getattr(self, 'bg_grad', None) is not None:
+            # VARIETY background 'gradient': top colour -> bottom colour
+            _t = np.linspace(0.0, 1.0, h, dtype=np.float32)[:, None, None]
+            col = (self.bg_grad[0][None, None, :] * (1 - _t) + self.bg_grad[1][None, None, :] * _t)
+            col = np.repeat(col, w, axis=1).astype(np.float32)
+        else:
+            col = np.tile(self.bg, (h, w, 1)).astype(np.float32)
         zb = np.full((h, w), np.inf, np.float32)
         glow = np.zeros((h, w, 3), np.float32)
         # per-frame deterministic jitter (not a running RNG): the warm-up and lap copies of a
@@ -219,6 +226,8 @@ class Stage:
             # view-space normal (camera looks down +z; the visible cap faces -z)
             n = np.stack([u, v, -nz], -1)
             base = np.asarray(rgb, np.float32)
+            if getattr(self, 'light_mul', None) is not None:
+                base = base * self.light_mul          # VARIETY: coloured key light
             px_col = shade_sphere(getattr(self, 'look', 'fuzzy'), n, nz, rho2, base, self.light,
                                   extra, self.bg)
             # anti-aliased rim
@@ -234,7 +243,10 @@ class Stage:
         glow = glow / (1.0 + 0.8 * glow)            # soft-clip accumulated glow (thousands of
         col = col + glow * LOOK_GLOW.get(getattr(self, 'look', 'fuzzy'), 1.0)   # halos blew a lattice white
         col = col / (1.0 + 0.55 * col)                    # soft tone map: glow piles up, never clips to white
-        col = np.clip(col * 1.35, 0, 1)
+        if getattr(self, 'variety', False):
+            col = brand_tone(col * 1.35)
+        else:
+            col = np.clip(col * 1.35, 0, 1)
         dmap = np.where(np.isinf(zb), 0.03, depth_value(zb)).astype(np.float32)
         return col, dmap
 
@@ -543,6 +555,20 @@ def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0
     p = dict(spec_stage or {})
     kit = p.pop('kit', 'lattice')
     look = p.pop('look', None) or look or 'fuzzy'
+    # VARIETY scale tier (2026-10-10): one multiplier on the kit's element size — bigger elements
+    # = fewer in view (hero) ... smaller = a swarm. The plunge target scales with it, so the
+    # bar-line arrival geometry is unchanged.
+    _scale = float(p.pop('scale', 1.0) or 1.0)
+    for _k in ('tier', 'light', 'bg', 'echo'):
+        p.pop(_k, None)                      # variety plan keys are not kit params
+    if _scale != 1.0:
+        if kit == 'lattice':
+            p['spacing'] = float(p.get('spacing', 0.42)) * _scale
+            p['radius'] = float(p.get('radius', 0.055)) * _scale
+        elif kit == 'nucleus':
+            p['radius'] = float(p.get('radius', 0.065)) * _scale
+        else:
+            p['size'] = float(p.get('size', 0.9 if kit in ('quark', 'tubes') else 1.0)) * _scale
     den_arr, den_trav = KIT_DEN.get(kit, (None, None))
     species, dark = palette_colours(palette)
     if look == 'ink':                       # dark bodies: deepen the species
@@ -903,7 +929,9 @@ def suggest_stage(reg, seed_key=''):
         if re.search(r"\b(wax|waxy|fatty|lipid|suberin|cutin|lamellae|lamella)\b", low):
             return {'kit': 'tubes', 'pdb': '1CGD', 'arrangement': 'bundle', 'size': 0.55, 'density': 1.6}
         if pdb is None:
-            pdb = ['4HHB', '1MBN', '1LYZ', '1EMA', '1AO6', '1A8E'][abs(hash(txt)) % 6]
+            # crc32, not hash(): Python's str hash is salted per process, so the same card drew
+            # a different molecule on every run (1LYZ in the smoke test, 1MBN in the full render)
+            pdb = ['4HHB', '1MBN', '1LYZ', '1EMA', '1AO6', '1A8E'][zlib.crc32(txt.encode()) % 6]
         arr = ('bundle' if re.search(r"\b(collagen|cellulose|keratin|fib(?:er|re|ril)s?|rope|cable|bundle|strands?)\b", low)
                else 'sheet' if re.search(r"\b(membrane|bilayer|thylakoid|disc|sheet|wall|skin)\b", low)
                else 'chain' if re.search(r"\b(polysome|necklace|string of|bead-string|chain of)\b", low)
@@ -1104,3 +1132,170 @@ KITS['fluid'] = kit_fluid
 KITS['tracks'] = kit_tracks
 KITS['pasta'] = kit_pasta
 KIT_DEN.update({'tracks': (0.50, 0.45), 'fluid': (0.55, 0.45)})
+
+
+# ====================================================================================
+# STAGE VARIETY (2026-10-10, PLAN "STAGE VARIETY: plan of record"). Measured on the 24
+# stage-era renders: staged frames ran sat 0.44 / contrast 0.15 / lum 0.35 against the
+# unstaged 0.61 / 0.24 / 0.45, and the delivered tone was the STAGE LAYER's tone (the model
+# at travel denoise cannot lift it). The key light also sat BEHIND the spheres (centre lum
+# 0.23 on a 0.55 base; 92% of the disc flat). Everything here is opt-in (dive --stage-variety)
+# so the nightly path stays byte-identical until Phil judges full videos.
+# ====================================================================================
+_LW = np.array([0.30, 0.59, 0.11], np.float32)
+TONE_SD, TONE_SAT = 0.21, 1.35      # target luminance std (unstaged median ~0.24) / sat gain
+
+
+def brand_tone(col):
+    """Stateless per-frame tone: saturation up, luminance contrast stretched toward TONE_SD
+    about a lifted mean. Stateless so the warm-up and lap copies of a staged card 0 match."""
+    lum = (col @ _LW)[..., None]
+    col = lum + (col - lum) * TONE_SAT
+    m, sd = float(lum.mean()), float(lum.std())
+    k = float(np.clip(TONE_SD / max(sd, 0.03), 1.0, 2.4))
+    tm = float(np.clip(m * 1.15, 0.33, 0.55))
+    return np.clip(tm + (col - m) * k, 0, 1)
+
+
+# key lights: direction TO THE SOURCE in view space (camera looks +z, y down; a negative z =
+# in front of the objects, lighting the faces the camera sees) + the light's colour.
+LIGHTS = {
+    'key_left':   ((-0.50, -0.60, -0.62), (1.00, 1.00, 1.00)),
+    'key_right':  (( 0.55, -0.50, -0.62), (1.00, 1.00, 1.00)),
+    'top':        (( 0.05, -0.95, -0.35), (1.00, 0.98, 0.92)),
+    'raking':     ((-0.92, -0.15, -0.35), (1.00, 0.85, 0.65)),
+    'under':      (( 0.15,  0.85, -0.50), (0.70, 0.85, 1.00)),
+    'warm_front': (( 0.10, -0.30, -0.95), (1.00, 0.80, 0.60)),
+    'cool_side':  (( 0.85, -0.30, -0.45), (0.65, 0.80, 1.00)),
+}
+LIGHT_WEIGHTS = {'key_left': 20, 'key_right': 16, 'top': 14, 'raking': 14, 'under': 8,
+                 'warm_front': 14, 'cool_side': 14}
+BG_WEIGHTS = {'void': 28, 'deep': 24, 'gradient': 16, 'bright': 12, 'sea': 20}
+# wildness tiers -> (depth-CN strength, identity hold, travel denoise, arrival denoise)
+TIERS = {'tight': (0.70, 0.50, 0.45, 0.60), 'medium': (0.55, 0.35, 0.50, 0.60),
+         'loose': (0.40, 0.22, 0.55, 0.62)}
+TIER_WEIGHTS = {'tight': 30, 'medium': 45, 'loose': 25}
+SCALES = {'hero': 2.0, 'bold': 1.45, 'field': 1.0, 'swarm': 0.7}
+SCALE_WEIGHTS = {'hero': 15, 'bold': 30, 'field': 40, 'swarm': 15}
+ECHO_SHARE = 60                       # % of auto-staged cards that echo a donor card
+ELEMENT_NOUN = {'lattice': 'atom', 'fog': 'atom', 'nucleus': 'nucleon', 'quark': 'quark',
+                'tubes': 'molecule', 'tissue': 'cell', 'fluid': 'droplet', 'tracks': 'particle',
+                'pasta': 'strand'}
+
+
+def _wdraw(key, weights):
+    import zlib
+    r = zlib.crc32(str(key).encode()) % sum(weights.values())
+    acc = 0
+    for name, wgt in weights.items():
+        acc += wgt
+        if r < acc:
+            return name
+    return next(iter(weights))
+
+
+def _strip_article(t):
+    return re.sub(r"^(a|an|one|the|a single|a lone|a tiny|a small|a huge|a giant)\s+", "", (t or '').strip(), flags=re.I)
+
+
+# donors must be COMPACT nameable things (a planet, a creature, a flower, a made object), never
+# a place or a surface — "a stepped flight of paddies" as a nucleon is not a picture
+LANDSCAPE_RX = re.compile(r"\b(pool|terrace|flight of|cliff|hillside|hill|field|plain|valley|river|delta|"
+                          r"coast|shore|sky|horizon|forest|meadow|commons|bend|road|street|wall|floor|"
+                          r"ceiling|room|hall|lick|bank|slope|ridge|canyon|dune|beach|lake|sea|ocean|"
+                          r"marsh|bog|swamp|garden|yard|plaza|square|city|town|village|cave|tunnel|"
+                          r"corridor|stair|stairs|bridge|path|trail|lane|avenue|surface|ground|"
+                          r"landscape|vista|panorama|expanse|spread|stretch|row of|rows of|line of|"
+                          r"lines of|sheet|layer|bed|carpet|lawn|turf|crust|skin)\b", re.I)
+
+
+def donor_ok(target):
+    t = (target or '').strip()
+    return bool(t) and t != 'None' and not LANDSCAPE_RX.search(t)
+
+
+def echo_clause(kit, echo):
+    e = _strip_article(echo)
+    if not e:
+        return ''
+    noun = ELEMENT_NOUN.get(kit, 'element')
+    return f"every {noun} shaped like a tiny {e}, each one a miniature {e}"
+
+
+def plan_variety(key, spec_stage, kit, look, donors=(), authored_echo=None):
+    """The per-card draws: tier / light / background / scale / echo. `key` = journey:card
+    (the warm-up and lap copies of card 0 share it). Authored fields in the card's `stage`
+    dict win. donors = [(card_name, target_text), ...] already filtered by the caller."""
+    sp = spec_stage or {}
+    tier = sp.get('tier') if sp.get('tier') in TIERS else _wdraw(f"{key}|tier", TIER_WEIGHTS)
+    light = sp.get('light') if sp.get('light') in LIGHTS else _wdraw(f"{key}|light", LIGHT_WEIGHTS)
+    if look == 'ink':
+        bg = 'bright'
+    elif look == 'plasma':
+        bg = 'deep'
+    else:
+        bg = sp.get('bg') if sp.get('bg') in BG_WEIGHTS else _wdraw(f"{key}|bg", BG_WEIGHTS)
+    if isinstance(sp.get('scale'), (int, float)):
+        scale_name, scale = 'authored', float(sp['scale'])
+    else:
+        scale_name = _wdraw(f"{key}|scale", SCALE_WEIGHTS)
+        scale = SCALES[scale_name]
+    echo = None
+    if authored_echo:
+        echo = authored_echo
+    elif donors and (zlib.crc32(f"{key}|echo?".encode()) % 100) < ECHO_SHARE:
+        echo = donors[zlib.crc32(f"{key}|echo".encode()) % len(donors)][1]
+    if echo and tier == 'tight':
+        tier = 'medium'               # an echo needs room for a sphere to become the thing
+    cn, wid, den_t, den_a = TIERS[tier]
+    return {'tier': tier, 'light': light, 'bg': bg, 'scale': scale, 'scale_name': scale_name,
+            'echo': echo, 'cn': cn, 'wid': wid, 'den_travel': den_t, 'den_arrival': den_a}
+
+
+def apply_variety(st, plan, palette, kit):
+    """Dress a built Stage per the plan: corrected key light (+ colour), background mode,
+    fog, brand tone, tier strengths, echo clause."""
+    species, dark = palette_colours(palette)
+    st.variety = True
+    # LIGHT: the shader computes ndl = clip(-(n . light)), so pass the NEGATED to-source vector
+    L, rgb = LIGHTS[plan['light']]
+    L = np.array(L, np.float32); L /= np.linalg.norm(L)
+    st.light = -L
+    st.light_mul = 0.55 + 0.45 * np.array(rgb, np.float32)
+    # BACKGROUND
+    dark = np.array(dark, np.float32); sp0 = np.array(species[0], np.float32)
+    sp1 = np.array(species[-1], np.float32)
+    st.bg_grad = None
+    st.fog_dist = 9.0
+    if plan['bg'] == 'void':
+        st.bg, st.fog_rgb = dark, dark
+    elif plan['bg'] == 'deep':
+        st.bg = dark * 0.5
+        st.fog_rgb = np.clip(sp1 * 0.30 + dark * 0.4, 0, 1)
+    elif plan['bg'] == 'gradient':
+        st.bg_grad = (np.clip(dark * 0.6, 0, 1), np.clip(sp1 * 0.45 + dark * 0.3, 0, 1))
+        st.bg = (st.bg_grad[0] + st.bg_grad[1]) / 2
+        st.fog_rgb = st.bg
+    elif plan['bg'] == 'bright':
+        light = np.clip(sp0 * 0.45 + 0.55, 0, 1)
+        st.bg, st.fog_rgb = light * 0.92, light
+        st.fog_dist = 7.0
+    elif plan['bg'] == 'sea':
+        st.bg, st.fog_rgb = dark, np.clip(dark * 0.7 + sp1 * 0.12, 0, 1)
+        # a far sea of tiny glowing points (the sea doctrine): depth 7..18 in the frustum
+        rng = np.random.default_rng(st.seed * 7 + 13)
+        n = 420
+        z = rng.uniform(7.0, 18.0, n)
+        x = rng.uniform(-0.75, 0.75, n) * z
+        y = rng.uniform(-0.75, 0.75, n) * z * (st.h / st.w)
+        cols = [sp0, sp1, np.clip(sp0 * 0.5 + 0.5, 0, 1)]
+        for i in range(n):
+            c = cols[i % 3] * rng.uniform(0.6, 1.0)
+            st.items.append(('glow', np.array([x[i], y[i], z[i]], np.float32), float(rng.uniform(0.05, 0.14)),
+                             c.astype(np.float32), float(rng.uniform(0.5, 1.2))))
+    st.cn_w, st.wid_hold = plan['cn'], plan['wid']
+    st.den_travel, st.den_arrival = plan['den_travel'], plan['den_arrival']
+    st.echo = plan.get('echo')
+    st.echo_clause = echo_clause(kit, plan.get('echo')) if plan.get('echo') else ''
+    st.variety_plan = plan
+    return st

@@ -1,0 +1,139 @@
+{
+  "name": "macaw_lick_var",
+  "theme": "a terracotta river cliff in the Peruvian Amazon at sunrise, crowded with hundreds of macaws come to eat clay — loud, saturated, driving — read as ONE-SIZE DISORDER at both ends of scale: the cobalt of a macaw's flight feather is a sponge of keratin and air whose channels are all one width, and the universe's own afterglow is mottled with spots all one size. The living dive goes into one blue flight feather (dead keratin is still tissue): its barb row, the froth-packed medullary boxes inside one barb, the channel sponge that makes the blue, one carbon atom's fog, and a fireball where matter has melted into one seething soup — which morphs up into the afterglow shell, the same soup at the far end of scale. Then down through a clumpy young galaxy, a yellow sun and its blue-green planet, the Amazon from high above, and home to the clay lick.",
+  "style": "lacquer_pop",
+  "music_lane": "ember_pulse",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "clay_lick_commons",
+      "exp": 0.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "terracotta-orange clay, scarlet and cobalt-and-gold macaws, parrot green, bottle-green canopy, peach morning haze",
+      "scene": "a macaw clay lick on an Amazon river at sunrise seen from across the water at the height of the cliff, a towering terracotta-orange clay cliff face crowded with hundreds of parrots clinging to the clay, scarlet macaws with scarlet bodies and cobalt-and-gold flight feathers, blue-and-gold macaws with cobalt backs and gold breasts, clusters of green mealy parrots, a flock of dusky-headed parakeets along the lip of the cliff, a capybara on the wet sand beach below, a rufescent tiger heron upright on a driftwood log at the waterline, bottle-green rainforest canopy topping the cliff, a peach morning haze above the trees, the café-brown river in front",
+      "target": "a blue-and-gold macaw",
+      "target_phrase": "a blue-and-gold macaw",
+      "loop_target": "hundreds of scarlet and blue-and-gold macaws clinging to a terracotta clay cliff"
+    },
+    {
+      "name": "cobalt_plumage",
+      "exp": -0.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "glossy cobalt feather blades, gold underside, black shafts, flecks of orange clay",
+      "scene": "the outspread cobalt plumage of a blue-and-gold macaw clinging to the terracotta clay cliff, long overlapping flight feathers fanned open side by side, each feather a glossy cobalt blade with a black shaft down its middle, golden underside feathers showing at the margin, flecks of orange clay caught in the plumage, the clay cliff behind",
+      "target": "a single cobalt flight feather",
+      "target_phrase": "a blue feather"
+    },
+    {
+      "name": "barb_row",
+      "exp": -2.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "saturated cobalt ridges, black shaft, sulphur-gold glints, terracotta dust",
+      "scene": "the vane of a macaw's cobalt flight feather, hundreds of parallel barbs set side by side in a long slanted row off the black central shaft, each barb a glossy cobalt ridge fringed on both flanks with rows of tiny hooked barbules zipped to its neighbours, one gap in the row where two barbs have parted, sulphur-gold glints on the ridges, grains of terracotta clay dust caught in the barbules",
+      "target": "one glossy cobalt barb",
+      "target_phrase": "a blue barb"
+    },
+    {
+      "name": "medullary_boxes",
+      "exp": -4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber keratin box sides, cobalt froth, umber pigment layer, glassy sheath",
+      "scene": "inside one barb of a blue feather, a file of hollow keratin boxes set end to end down the barb's core, each box's thin amber sides enclosing a spongy cobalt froth, hundreds of the boxes stacked along the barb, an umber layer of pigment granules under the froth, a glassy sheath of dense keratin wrapped around the whole file",
+      "target": "one froth-packed box",
+      "target_phrase": "a blue froth box",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.64,
+          0.34
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "channel_sponge",
+      "exp": -6.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "saturated cobalt glow, translucent amber struts, umber pores",
+      "scene": "the froth inside a feather cell, a tangled sponge of translucent amber keratin and empty air un-mixed into channels all one width, the channels turning at random in every direction with no lattice and no repeat, every strut and every gap the same slender width, the whole sponge glowing saturated cobalt from within, umber shade in the pores",
+      "target": "a single glowing atom",
+      "target_phrase": "a glowing atom",
+      "resolve": {
+        "mode": "web"
+      }
+    },
+    {
+      "name": "carbon_atom",
+      "exp": -10.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "tangerine inner glow, cobalt outer haze, one white-hot point, black void",
+      "scene": "one carbon atom in a keratin strut, a soft fog of electron haze about a single white-hot point, the inner fog a tight saturated tangerine glow, the outer fog a broad thin cobalt haze with four soft plumes reaching toward four neighbouring atoms, the neighbours dim knots of fog at the margins of a black void",
+      "target": "a tiny white-hot point",
+      "target_phrase": "a lit point"
+    },
+    {
+      "name": "melted_droplet",
+      "exp": -14.7,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "ember-orange and rust mottle, scarlet rim, black void",
+      "scene": "a fireball of melted matter on a black void, no separate particles anywhere, one seething fluid of loose ember-orange sparks and tangled glowing strands, mottled all through with hotter and cooler blotches all about one size, rust-red in the cooler blotches and ember-orange in the hotter, a scarlet glow at its rim"
+    },
+    {
+      "name": "afterglow_shell",
+      "exp": 26,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "mottled ember-orange and rust glow, one cobalt-white galaxy",
+      "scene": "the afterglow of the infant universe seen from inside, a vast sphere of mottled ember-orange and rust glow on every side, hotter and cooler spots scattered at random yet all about one size, a grain of blotches with no pattern and no centre, and set out in front of the mottle a single lumpy cobalt-white galaxy",
+      "target": "a lumpy young galaxy",
+      "target_phrase": "a blue galaxy"
+    },
+    {
+      "name": "young_galaxy",
+      "exp": 21,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blue-white star clumps, scarlet gas knots, golden core haze, black space",
+      "scene": "a young clumpy galaxy in black space seen on a slant, a thick lumpy disc with no spiral arms, studded with a handful of giant blazing clumps of blue-white newborn stars, knots of scarlet star-forming gas between the clumps, a haze of golden older stars at its heart, scattered stars thinning out into the black on every side",
+      "target": "a lone yellow star",
+      "target_phrase": "a yellow star"
+    },
+    {
+      "name": "home_sun",
+      "exp": 10.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blazing yellow-white photosphere, scarlet prominences, cobalt-and-green planet, black space",
+      "scene": "a yellow-white star in black space, its blazing round face freckled with granules and a few sunspots, scarlet prominences arching at its rim, and set off from it a cobalt-and-green planet lit full on its day face",
+      "target": "a blue-green planet",
+      "target_phrase": "a blue-green planet"
+    },
+    {
+      "name": "amazon_bend",
+      "exp": 4.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bottle-green rainforest, café-brown river, peach morning haze, one terracotta-orange cliff",
+      "scene": "the western Amazon from high above at sunrise seen on a steep slant, an unbroken bottle-green rainforest to the horizon, a café-brown river looping through it in tight meanders and horseshoe oxbow lakes, peach morning haze pooled in the low ground, and on the outside of one river bend a bared terracotta-orange clay cliff",
+      "target": "a terracotta clay cliff",
+      "target_phrase": "an orange clay cliff"
+    }
+  ],
+  "music_theme": "a driving pulse at 120 with a heavy sub kick on every downbeat, bright hand percussion and a squawking reed riff for the clay lick, the band thinning to a throbbing bass and one ringing tone through the feather, the froth and the atom, a huge low hit on the morph from the melted fireball up into the afterglow, the full driving groove returning for the fall through the galaxy, the sun and the rainforest home to the cliff",
+  "music_key": "D minor",
+  "render_start": "young_galaxy",
+  "scaffold_name": "macaw_lick",
+  "_lab": "2026-10-10 STAGE VARIETY A/B: same seed 1234 + same flags as output/macaw_lick/v1 (in Review) plus --stage-variety; creature donor (macaw / feather / barb)"
+}

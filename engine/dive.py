@@ -645,6 +645,25 @@ def register_frame_counts(spec, fps):
     return [grammar._frames(r, fmt, fps) for r in regs]
 
 
+def tone_anchor_image(img, sd_t=0.21, sat_t=0.56, k_max=1.6, s_max=1.5):
+    """STAGE VARIETY: stretch a fed composite's luminance contrast / saturation UP TO brand
+    targets (a floor, never a multiplier: gains are 1 once the frame meets the target)."""
+    a = np.asarray(img.convert("RGB"), np.float32) / 255.0
+    lum = a @ np.array([0.30, 0.59, 0.11], np.float32)
+    mx, mn = a.max(-1), a.min(-1)
+    sat = float(np.where(mx > 1e-3, (mx - mn) / np.maximum(mx, 1e-3), 0).mean())
+    sd, m = float(lum.std()), float(lum.mean())
+    k = float(np.clip(sd_t / max(sd, 0.02), 1.0, k_max))
+    sg = float(np.clip(sat_t / max(sat, 0.05), 1.0, s_max))
+    if k <= 1.001 and sg <= 1.001:
+        return img
+    l3 = lum[..., None]
+    a = l3 + (a - l3) * sg
+    tm = float(np.clip(m * 1.1, 0.33, 0.55)) if k > 1.001 else m
+    a = tm + (a - m) * k
+    return Image.fromarray(np.clip(a * 255.0, 0, 255).astype(np.uint8))
+
+
 def phase_info(phases, i):
     """Return (prompt, prev_prompt, frames_into_phase, phase_index) for frame i."""
     n = 0
@@ -1015,6 +1034,10 @@ def main():
                     help="with --stage: denoise floor after the arrival")
     ap.add_argument("--stage-cn", type=float, default=0.7, metavar="S",
                     help="with --stage: depth-CN strength of the stage's own depth map")
+    ap.add_argument("--stage-variety", action="store_true",
+                    help="STAGE VARIETY (lab 2026-10-10): per-card wildness tier / key light / background / "
+                         "element scale / echo-of-another-card draws, corrected lighting, brand tone on the "
+                         "stage layer and the fed composite (engine/stage.py plan_variety). Off = today's stage.")
     ap.add_argument("--stage-preroll", type=int, default=0, metavar="N",
                     help="LAB (Phil 2026-10-05, 'zoom into it'): open each stage INSIDE a disc on "
                          "its fixed point during the PREVIOUS card's last N frames, growing at "
@@ -1661,9 +1684,47 @@ def main():
             # the LOOK: the card's own, else the journey's `stage_look`, else drawn per journey
             _jlook = spec.get("stage_look") or _stagemod.draw_look(
                 spec.get("scaffold_name") or spec.get("name") or "")
+            _vplan = None
+            if args.stage_variety:
+                # ECHO donors: cards elsewhere in the journey with a nameable target, >= 6 decades
+                # away, never a neighbour (circular). An authored `stage.echo` (free text or a
+                # card name) wins; otherwise ~60% of staged cards draw one.
+                _ABSTRACT = re.compile(r"\b(point|glow|light|haze|void|spark|dot|beam|flash|ray|mist|blur)\b", re.I)
+                _sexp = _sreg.get("exp")
+                _donors = []
+                for _dk, _dr in enumerate(_sorder):
+                    _dt = (_dr.get("target") or _dr.get("target_phrase") or "").strip()
+                    if not _dt or _dt == "None" or _ABSTRACT.search(_dt) or not _stagemod.donor_ok(_dt):
+                        continue
+                    if _dk in (_sk, _prev(_sk), _next(_sk)):
+                        continue
+                    if isinstance(_sexp, (int, float)) and isinstance(_dr.get("exp"), (int, float)) \
+                            and abs(_dr["exp"] - _sexp) < 6:
+                        continue
+                    _donors.append((_dr.get("name"), _dt))
+                _aecho = _sdef.get("echo") if isinstance(_sdef, dict) else None
+                if _aecho and _aecho in _snames:
+                    _aecho = (_sorder[_snames.index(_aecho)].get("target")
+                              or _sorder[_snames.index(_aecho)].get("target_phrase") or _aecho)
+                _vlook = (_sdef.get("look") if isinstance(_sdef, dict) else None)
+                if not _vlook:
+                    # per-CARD look under variety: the journey's look most of the time (coherence),
+                    # a fresh draw otherwise (three ink/bright-field stages in a row was the first
+                    # smoke test's whole video)
+                    _vlook = _jlook if (_zlib.crc32(f"{_skey(_sk)}|look".encode()) % 100) < 55 \
+                        else _stagemod.draw_look(f"{_skey(_sk)}|cardlook")
+                _jlook = _vlook
+                _vplan = _stagemod.plan_variety(_skey(_sk), _sdef, _sdef.get("kit", "lattice"), _vlook,
+                                                donors=_donors, authored_echo=_aecho)
+                _sdef = dict(_sdef, scale=_vplan["scale"])
             _stage = _stagemod.build_card_stage_v2(_sdef, _sreg.get("palette"), _szw, _sanchor,
                                                    cfg["width"], cfg["height"], seed=_sseed,
                                                    look=_jlook)
+            if _vplan is not None:
+                _stagemod.apply_variety(_stage, _vplan, _sreg.get("palette"), _sdef.get("kit", "lattice"))
+                print(f"[dive] stage-variety: card {_sk} {_sreg.get('name')!r} tier {_vplan['tier']} "
+                      f"light {_vplan['light']} bg {_vplan['bg']} scale {_vplan['scale_name']} "
+                      f"({_vplan['scale']:.2f}) echo {_vplan['echo']!r}", flush=True)
             _stage.S, _stage.E, _stage.fa = 0, _sF, max(2, round(_sF * 0.25))
             _stage.card = _sk
             _stage.kit = _sdef.get("kit")
@@ -1712,6 +1773,9 @@ def main():
         try:   # provenance: run.json is written before the stages are built — append them
             _rj = json.loads((out_dir / "run.json").read_text())
             _rj["stage_cards"] = [(st_.card, st_.delivered_span[0], st_.delivered_span[1]) for st_ in stages]
+            _rj["stage_variety"] = [dict(card=st_.card, **{k: v for k, v in st_.variety_plan.items()
+                                                           if k in ("tier", "light", "bg", "scale", "scale_name", "echo")})
+                                    for st_ in stages if getattr(st_, "variety_plan", None)] if args.stage_variety else None
             _rj["stage_kits"] = [(st_.card, st_.kit, getattr(st_, "look", None)) for st_ in stages]
             (out_dir / "run.json").write_text(json.dumps(_rj, indent=2))
         except Exception:
@@ -2182,7 +2246,8 @@ def main():
                 if _sj < _st.fa and getattr(_st, "pre", 0) > 0:
                     # the disc already covered the frame during the pre-roll: settle the
                     # identity from 0.6 to the travel hold under the arrival (costume) denoise
-                    _wid = args.stage_id + (0.6 - args.stage_id) * (1.0 - (_sj + 1) / _st.fa)
+                    _idh = getattr(_st, "wid_hold", None) or args.stage_id
+                    _wid = _idh + (0.6 - _idh) * (1.0 - (_sj + 1) / _st.fa)
                     fed = Image.blend(fed, _srgb, _wid)
                     den = max(den, getattr(_st, "den_arrival", None) or args.stage_den)
                 elif _sj < _st.fa:
@@ -2212,11 +2277,17 @@ def main():
                     den = max(den, getattr(_st, "den_arrival", None) or args.stage_den)
                 else:
                     _tq = max(0.0, (_sj - 0.75 * _sn) / max(1.0, 0.25 * _sn))
-                    _wid = args.stage_id * (1.0 - 0.4 * min(1.0, _tq))
+                    _wid = (getattr(_st, "wid_hold", None) or args.stage_id) * (1.0 - 0.4 * min(1.0, _tq))
                     den = max(den, getattr(_st, "den_travel", None) or args.stage_den_travel)
                     fed = Image.blend(fed, _srgb, _wid)
+                if getattr(_st, "variety", False):
+                    # BRAND TONE on the composite: the model follows the fed frame's tone, and a
+                    # 50/50 blend of a grey world and a CG layer is grey (the macaw triplet)
+                    fed = tone_anchor_image(fed)
+                    if getattr(_st, "echo_clause", ""):
+                        prompt = prompt + ", " + _st.echo_clause
                 stage_ctl = upload_image(_sdep, f"zoomer_stage_{name}.png")
-                stage_cn = args.stage_cn
+                stage_cn = getattr(_st, "cn_w", None) or args.stage_cn
                 _sdir = out_dir / "build" / "stage"
                 _sdir.mkdir(parents=True, exist_ok=True)
                 if _sj % 4 == 0 or _sj < 3:
@@ -2260,6 +2331,8 @@ def main():
                 if plate_region is None:
                     _bar = i - _pj
                     _rp = phase_info(phases, min(total - 1, _bar + _ps.fa))[0]
+                    if getattr(_ps, "echo_clause", ""):
+                        _rp = _rp + ", " + _ps.echo_clause
                     plate_region = {"prompt": _rp,
                                     "mask": upload_image(Image.fromarray((np.clip(_m, 0, 1) * 255).astype(np.uint8)).convert("RGB"),
                                                          f"zoomer_preregion_{name}.png")}

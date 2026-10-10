@@ -1,0 +1,126 @@
+{
+  "name": "thousand_moons_var",
+  "theme": "a mountainside of flooded rice terraces on a still night, every paddy holding its own copy of the same silver moon — read as ONE image printed a thousand times and followed into the best repeater alive. The replicated-images family runs the whole ladder: a hillside of terraces each carrying one disc, a paddy's surface parted by rice blades into many small cells each carrying its own small disc, a compound eye as a curved honeycomb of identical lenses with the same silver point kindled in every one, one ommatidium, and the bead-glass the lens is built of. Living continuation is honest: the cellular card is the ommatidium cluster (a hexagonal lens over a tapered cone of four clear cells, under it a rosette of eight receptor cells about one shared core, the unit walled about with pigment cells), the molecular card is crystallin bead-glass (round protein beads spaced so evenly that light crosses as through glass), and the atomic card is one nitrogen atom's fog about a bright point, restated copy after copy. The commons is one terrace at eye height (rice fish and a paddy eel under the surface, frogs on the bunds, fireflies over the water, a water buffalo at the far end, a night heron on the next bund down, giant water bugs in the shallows). NO space card anywhere and nothing lensed or astronomical: the seam is copies to copies, the repeated atom fogs morphing up into the hillside from aloft with one moon disc lying in every paddy — a thousand duplicates of one thing at 10^-10 m and at 10^3.5 m.",
+  "style": "aurora_silk",
+  "music_lane": "glass_chapel",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 9,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "terrace_flight",
+      "exp": 2.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "moon-silver discs on indigo-dark water, lime rice blades, umber mud bunds",
+      "scene": "a flight of flooded rice terraces on a still night, seen from a high slant over the hillside, a dozen curved paddies stepped one beneath the next, umber mud bunds curving round every pool, a silver moon disc lying in each of them, files of slim lime rice blades crowding the shallow ends, a notched bamboo water gate set into one bund, a thatched shelter on the highest terrace, a pitch-dark stand of bamboo at the near edge, the sky overhead indigo and starless",
+      "target": "a flooded terrace pool",
+      "target_phrase": "a dark flooded pool"
+    },
+    {
+      "name": "paddy_commons",
+      "exp": 0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "indigo-dark water and umber bund, lime blade files, one gold firefly point",
+      "scene": "one flooded rice terrace at eye height from its umber bund, the water an indigo-dark sheet with a silver moon disc lying in it, rice fish and a paddy eel just under the surface, two frogs squatting on the bund's umber crest, fireflies over the terrace as scattered gold points, a water buffalo half-sunk at the far end of the same paddy, a night heron perched on the next bund down, giant water bugs in the shallow margin, slim lime rice blades crowded in files across the water, the neighbouring terraces stepped above and beneath, the sky indigo and starless",
+      "target": "a silver moon disc",
+      "target_phrase": "a bright silver disc",
+      "cameo": {
+        "sprite": "output/mascots/canon/dora.png",
+        "pos": [
+          0.62,
+          0.58
+        ],
+        "size": 0.14
+      }
+    },
+    {
+      "name": "moon_cells",
+      "exp": -0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "small silver discs on indigo-dark water, lime blade edges, umber silt",
+      "scene": "the flooded floor of the paddy across a forearm's width, slim lime rice blades rising through an indigo-dark sheet and parting it into many small cells, each cell carrying its own small silver disc of the same size, hairlike ripple creases drawn across the whole sheet, umber silt grains held under the surface, a cobalt dragonfly at rest lengthwise on one blade, a water strider's four dimples denting the sheet nearby, unlit depth beneath the blades",
+      "target": "a cobalt dragonfly",
+      "target_phrase": "a blue dragonfly",
+      "resolve": {
+        "mode": "surface"
+      }
+    },
+    {
+      "name": "dragonfly_stem",
+      "exp": -1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt and umber lacquer on a lime stem, silver sheen beneath",
+      "scene": "a few rice stems rising from the indigo-dark water at a hand's width, one cobalt dragonfly at rest on the nearest stem, its head a blunt wedge carrying two enormous domed eyes that meet at the top, each dome crazed into countless small facets and washed cobalt over umber, its slim body banded in umber and lime, four clear panes folded over it, dew beads strung down the stem, another stem crossing behind with a small umber grasshopper on it, a silver sheen on the water beneath",
+      "target": "a domed compound eye",
+      "target_phrase": "a large domed eye"
+    },
+    {
+      "name": "facet_dome",
+      "exp": -2.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt and umber facet bands, one silver point kindled in every lens",
+      "scene": "the whole curved dome of a compound eye as a world, thousands of identical hexagonal lenses tiled shoulder to shoulder over the curve, every lens the same size and shape as its neighbour, one small silver point kindled in each of them, broad cobalt and umber bands sweeping across the tiling, the rows of lenses bending round the dome into unlit shadow at its rim, fine umber hairs set into the seams, the lime stem far beneath",
+      "target": "one hexagonal lens",
+      "target_phrase": "a hexagonal lens",
+      "resolve": {
+        "mode": "lattice",
+        "variant": "hex"
+      }
+    },
+    {
+      "name": "ommatidium",
+      "exp": -4.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "clear cone glass over umber-violet pigment walls, one viridian core thread",
+      "scene": "one unit of the compound eye in section amid its neighbours, a hexagonal lens capping a tapered clear cone built of four glassy cells, beneath the cone a rosette of eight slender receptor cells crowded about one shared viridian core thread, the unit walled about with umber-violet pigment cells so no light crosses to the next, the same unit repeated on either hand and deeper into the curve of the honeycomb, a fine tracheal net threaded among the walls, unlit depth at the foot of every cone",
+      "target": "a tapered clear cone",
+      "target_phrase": "a clear glassy cone"
+    },
+    {
+      "name": "bead_glass",
+      "exp": -7.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver-white beads in an indigo-celadon medium, violet-dark depth",
+      "scene": "a world of round protein beads within one clear cone cell, countless silver-white globes crowded through the whole volume, every globe the same folded protein molecule as its neighbour and at the same remove from it, no clearances anywhere and no order to the crowd, the nearest globes broad and the farther ones dwindling into a violet-dark depth, a faint silver point kindled on each, an indigo-celadon medium carrying them with no grain and no membrane in it",
+      "target": "a silver-white globe",
+      "target_phrase": "a silver round bead",
+      "loop_target": "a crowd of countless silver-white protein beads adrift in an indigo-celadon medium",
+      "resolve": {
+        "mode": "sea"
+      }
+    },
+    {
+      "name": "atom_copies",
+      "exp": -10.2,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "white-silver core points in graded violet fog, indigo void amid the copies",
+      "scene": "one nitrogen atom within a protein bead, a white-silver point at the middle of a soft graded fog that is densest close in and softens outward with no rim to it, and the same point and fog restated over and over through the volume, every copy the size of the last, indigo void amid them, the farthest copies dwindled to faint silver motes, a violet wash of fog behind them all"
+    },
+    {
+      "name": "moon_hillside",
+      "exp": 3.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "hundreds of silver discs on indigo-dark terraces, umber bunds, pitch-dark ridge forest",
+      "scene": "a whole mountainside of flooded rice terraces seen from aloft on a still night, hundreds of curved paddies tiered from the valley floor to the ridge, every one of them holding one silver moon disc of the same size, umber mud bunds drawn as pale curves round each pool, fringes of lime rice blades at the shallow ends, a cluster of thatched roofs set on one spur, a pitch-dark forest crowning the ridge above the highest terraces, valley mist lying in the bottom, the sky indigo and starless",
+      "target": "a stepped flight of paddies",
+      "target_phrase": "stepped water terraces"
+    }
+  ],
+  "music_theme": "a hushed glass choir over a deep soft kick on every downbeat, one struck silver bell on each morph as the same image is printed again at a new scale, the choir narrowing to a single held tone through the lenses and the bead glass, a low struck bell on the morph from the repeated atom fogs out to the terraced hillside, then widening for the fall home onto the crowd of beads",
+  "music_key": "B minor",
+  "render_start": "bead_glass",
+  "scaffold_name": "thousand_moons",
+  "_lab": "2026-10-10 STAGE VARIETY A/B: same seed 1234 + same flags as output/thousand_moons/v1 (in Review) plus --stage-variety; planet donor (silver moon disc / globe)"
+}

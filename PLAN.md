@@ -2722,3 +2722,42 @@ THE WORK, in order:
   — one PLANET donor (thousand_moons: tubes k0, lattice k1, tissue k8) and one CREATURE donor
   (macaw_lick or spouter_dawn) — next to their existing renders in Review, side-by-side cuts via
   scratchpad/orange/sbs.sh. Then B2/B3, then C3, then C4/C5.
+
+## 2026-10-10 — STAGE VARIETY: what the measurement found, and the first package (built, rendering)
+MEASURED (scratchpad/orange/stage_sameness.py; boards stage_board_baseline.png / unstaged_board_baseline.png;
+triplets stage_triplets.png): the feature-space index does NOT show staged cards closer together than
+unstaged ones (NN distance 1.76 vs 1.64 at equal set size) — what the eye sees is ABSOLUTE TONE and
+ELEMENT SCALE, not geometry:
+                 sat    contrast  lum    vivid-px share
+   unstaged      0.614  0.237     0.447  0.657
+   staged        0.440  0.152     0.345  0.383
+   stage LAYER   0.414  0.135     0.279  0.408      <- the CG layer's tone
+   fed composite 0.417  0.134     0.325  0.366      <- what the model is given
+The delivered staged frame inherits the stage layer's tone (identity 0.5 + CN 0.7 + travel denoise 0.45
+cannot lift it), and a 50/50 blend of a grey world with a bold stage is grey (macaw's yellow-on-teal
+layer delivered grey-yellow). ROOT CAUSES: (1) the key light sat BEHIND the spheres (ndl at the cap
+centre = 0 -> every face at ambient 0.42 with a lit crescent on the lower-right rim; measured centre lum
+0.23 on a 0.55 base, 92% of the disc flat); (2) dark fog on every card; (3) soft tone map + identity blend;
+(4) looks gem/fuzzy/ink = 44/53, lattice = 25/55 staged cards, one camera, one background.
+BUILT, behind `dive --stage-variety` (nightly untouched): engine/stage.py plan_variety/apply_variety —
+per-card DRAWS keyed journey:card (so the warm-up and lap copies of card 0 match): WILDNESS TIER
+tight/medium/loose -> (cn, identity, travel den, arrival den) = (0.70,0.50,0.45,0.60) / (0.55,0.35,0.50,0.60)
+/ (0.40,0.22,0.55,0.62), weights 30/45/25; KEY LIGHT from 7 directions+colours with the sign corrected
+(faces lit, shadow side); BACKGROUND void/deep/gradient/bright/sea (ink -> bright, plasma -> deep); SCALE
+hero 2.0 / bold 1.45 / field 1.0 / swarm 0.7 (one multiplier on the kit's element size; the plunge target
+scales with it); BRAND TONE on the stage layer (brand_tone: sat x1.35, luminance std stretched to 0.21
+about a lifted mean, stateless per frame) and on the fed composite (dive.tone_anchor_image: a FLOOR, gains
+1 once the frame meets sat 0.56 / std 0.21); ECHO (Phil's idea): a donor card elsewhere in the journey
+(compact nameable target — LANDSCAPE_RX excludes places/surfaces — >= 6 decades away, never a neighbour),
+authored `stage.echo` (free text or a card name) wins, else 60% of staged cards draw one; the costume
+prompt gains "every <atom|nucleon|molecule|cell|...> shaped like a tiny <donor>, each one a miniature
+<donor>", also inside the pre-roll disc's regional prompt; an echo card is at least medium tier. LOOK per
+card: the journey's look 55% of the time, else drawn. Authored overrides: stage.tier/light/bg/scale/echo.
+CPU sheet scratchpad/orange/variety_sheet.png (legacy column vs five plans x four kits): lit, shaded,
+saturated elements at the target contrast (sd 0.19-0.26, sat 0.23-0.70). Catalog draw spread over 310
+auto-staged cards: tiers 42/192/76, lights 33-72 each, bgs 38-104, scales 44/93/121/52, echo 59%.
+RENDERING (tmux full_var, log scratchpad/orange/full_var.log): thousand_moons_var (planet donor: "every
+molecule shaped like a tiny silver moon disc", "every atom ... a tiny hexagonal lens") then macaw_lick_var
+(creature donors), seed 1234 = their v1 baselines in Review; side-by-side review/compare/<j>_VAR.mp4
+(today | variety). JUDGE: tone (should match the unstaged frames), the echo reading, scale variety.
+Also fixed: suggest_stage picked the molecule with Python's salted hash() -> crc32 (same card, same pick).
