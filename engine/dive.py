@@ -680,6 +680,48 @@ def tone_anchor_image(img, sd_t=0.21, sat_t=0.56, k_max=1.6, s_max=1.5):
     return Image.fromarray(np.clip(a * 255.0, 0, 255).astype(np.uint8))
 
 
+def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0, contain=False):
+    """The pre-roll disc for frame i: (mask HxW in [0,1], coming-stage rgb, coming-stage depth,
+    identity-inside weight, radius px). Grows at zoom^k from 0.12 W (P frames before the bar
+    line) to past the corners at the bar line. contain=True (--stage-contain): the disc never
+    falls below 0.9x the projected radius of the CURRENT stage's plunge-target element, so the
+    new world opens inside the thing the dive is entering (a zoom into containment, not an
+    iris wipe)."""
+    ps, pj = prej
+    prgb, pdep = ps.frame_images(pj + ps.pre)
+    if prgb.size != size:
+        prgb = prgb.resize(size, Image.LANCZOS)
+        pdep = pdep.resize(size, Image.LANCZOS)
+    W, H = size
+    ax, ay = ps.anchor
+    Zc = 1.0
+    for x in range(i - (pj + ps.pre), i + 1):
+        Zc *= zoom_sched[x] if zoom_sched else cfg["zoom_per_frame"]
+    rad = 0.12 * W * Zc ** k_pow
+    if contain and cur_stage is not None:
+        # the disc IS the element we are diving into: its projected radius is hyperbolic in
+        # time (tiny until the last ~5 frames, then it looms past the frame), so the next
+        # world is revealed only as we actually reach it — a zoom, not a 16-frame iris. One
+        # frame of lookahead: the slice's last frame sits one zoom step short of the bar line.
+        try:
+            cpre = getattr(cur_stage, "pre", 0)
+            f_start = cur_j - (pj + ps.pre) + cpre          # current stage frame at pre-roll start
+            if cur_stage.containable(f_start):
+                rpx = cur_stage.target_px_radius(cur_j + cpre + 1)
+                if 0.0 < rpx < 1e8:
+                    rad = max(12.0, rpx)
+        except Exception:
+            pass
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+    dist = np.sqrt((xx - ax * W) ** 2 + (yy - ay * H) ** 2)
+    m = np.clip((rad - dist) / max(12.0, 0.75 * rad), 0.0, 1.0)
+    m = m * m * (3 - 2 * m)
+    # identity of the coming world inside the disc: 0.2 -> 0.8 across the pre-roll (was
+    # 0.15 -> 0.6 while the current stage was still repainting the disc every frame)
+    wid_in = 0.2 + 0.6 * (pj + ps.pre + 1) / max(1, ps.pre)
+    return m, prgb, pdep, wid_in, rad
+
+
 def phase_info(phases, i):
     """Return (prompt, prev_prompt, frames_into_phase, phase_index) for frame i."""
     n = 0
@@ -1066,6 +1108,10 @@ def main():
                          "zoom^k so it covers the frame at the bar line — the planet handoff in "
                          "reverse; the old world keeps zooming around it, denoise is held low inside "
                          "the disc. 0 = the zoom-through arrival at the bar line (today's default)")
+    ap.add_argument("--stage-contain", action="store_true",
+                    help="pre-roll disc follows the CURRENT stage's plunge-target element (never "
+                         "below 0.9x its projected radius): the next world opens inside the thing "
+                         "we are diving into instead of a free iris on the fixed point (lab, 2026-10-10)")
     ap.add_argument("--stage-preroll-k", type=float, default=2.2, metavar="K",
                     help="with --stage-preroll: disc growth exponent on the zoom (>=1)")
     ap.add_argument("--stage-id", type=float, default=0.5, metavar="W",
@@ -1746,9 +1792,13 @@ def main():
                 if _sdef.get("kit") == "nucleus" and not _sdef.get("variant"):
                     _sdef["variant"] = _stagemod.nucleus_variant_for(_sreg, _skey(_sk))
                     _vplan["nucleus_variant"] = _sdef["variant"]
+            # CONTAINMENT (dive --stage-contain): a stage followed by another stage plunges so
+            # its target element covers the frame's corners at the bar line (fill 1.1 -> radius
+            # 1.1 W, not 0.55 W) — the next world opens inside it (preroll_disc)
+            _fill = 1.1 if (args.stage_contain and _next(_sk) in {k_ for k_, _ in _splan}) else 0.55
             _stage = _stagemod.build_card_stage_v2(_sdef, _sreg.get("palette"), _szw, _sanchor,
                                                    cfg["width"], cfg["height"], seed=_sseed,
-                                                   look=_jlook)
+                                                   look=_jlook, fill=_fill)
             if _vplan is not None:
                 _stagemod.apply_variety(_stage, _vplan, _sreg.get("palette"), _sdef.get("kit", "lattice"))
                 _stage.echo_ref = None
@@ -1816,6 +1866,16 @@ def main():
             for _x in range(_r0, total):
                 stage_at[_x] = (_by_card[1], _x - _r0)
             resolve_windows = [w for w in resolve_windows if w["w1"] <= _r0]
+            # ... and card 1's PRE-ROLL ahead of it, mirroring frames (card0-pre .. card0-1) of
+            # the warm-up: without this the delivered video's last handoff (lap card 0 -> the
+            # replayed card-1 arrival, i.e. the loop point) was a hard flip at the bar line —
+            # Phil's "weird jump to the one that begins the actual video" (2026-10-10,
+            # thousand_moons: tubes -> lattice at frame 360 with no disc at all)
+            _s1 = _by_card[1]
+            if getattr(_s1, "pre", 0) > 0:
+                for _x in range(max(0, _r0 - _s1.pre), _r0):
+                    preroll_at[_x] = (_s1, _x - _r0)
+                print(f"[dive] stage: lap replay pre-roll {max(0, _r0 - _s1.pre)}..{_r0 - 1} (card 1)", flush=True)
     if stages:
         try:   # provenance: run.json is written before the stages are built — append them
             _rj = json.loads((out_dir / "run.json").read_text())
@@ -2281,6 +2341,15 @@ def main():
                     plate_log.flush()
             stage_ctl, stage_cn = None, 0.0
             stage_ipa_img, stage_ipa_w = None, 0.0
+            # PRE-ROLL DISC first (2026-10-10): the current stage's identity blend and depth CN
+            # used to cover the whole frame, so the coming world inside the disc was diluted and
+            # re-structured every frame and never established (thousand_moons 20-35: rows say a
+            # 566 px disc at 0.6 identity, the delivered frames show no lattice at all). Now the
+            # disc is known before the stage composites and the current stage YIELDS inside it.
+            _prd = None
+            if _prej is not None and plate_mask is None:
+                _prd = preroll_disc(i, _prej, fed.size, zoom_sched, cfg, args.stage_preroll_k,
+                                    cur_stage=_st, cur_j=_sj0, contain=bool(args.stage_contain))
             if _st is not None:
                 # MICRO STAGE: composite the built world at the exact scheduled geometry.
                 # Identity ramps in across the arrival (the old texture resolves INTO the
@@ -2327,7 +2396,14 @@ def main():
                     _tq = max(0.0, (_sj - 0.75 * _sn) / max(1.0, 0.25 * _sn))
                     _wid = (getattr(_st, "wid_hold", None) or args.stage_id) * (1.0 - 0.4 * min(1.0, _tq))
                     den = max(den, getattr(_st, "den_travel", None) or args.stage_den_travel)
-                    fed = Image.blend(fed, _srgb, _wid)
+                    if _prd is not None:
+                        # yield inside the coming world's disc
+                        _wpx = (_wid * (1.0 - _prd[0]))[..., None]
+                        _fa_ = np.asarray(fed.convert("RGB"), np.float32)
+                        _sa_ = np.asarray(_srgb.convert("RGB"), np.float32)
+                        fed = Image.fromarray(np.clip(_fa_ * (1 - _wpx) + _sa_ * _wpx, 0, 255).astype(np.uint8))
+                    else:
+                        fed = Image.blend(fed, _srgb, _wid)
                 if getattr(_st, "variety", False):
                     # BRAND TONE on the composite: the model follows the fed frame's tone, and a
                     # 50/50 blend of a grey world and a CG layer is grey (the macaw triplet)
@@ -2341,6 +2417,13 @@ def main():
                         _etq = max(0.0, (_sj - 0.75 * _sn) / max(1.0, 0.25 * _sn))
                         stage_ipa_img = _st.echo_ref
                         stage_ipa_w = args.stage_echo_ipa * _eu * (1.0 - 0.5 * min(1.0, _etq))
+                if _prd is not None:
+                    # the coming stage's DEPTH inside the disc: with the old depth there the CN
+                    # (0.4-0.7) re-drew the current kit's structure over the new world
+                    _da_ = np.asarray(_sdep.convert("RGB"), np.float32)
+                    _db_ = np.asarray(_prd[2].convert("RGB"), np.float32)
+                    _mm_ = _prd[0][..., None]
+                    _sdep = Image.fromarray(np.clip(_da_ * (1 - _mm_) + _db_ * _mm_, 0, 255).astype(np.uint8))
                 stage_ctl = upload_image(_sdep, f"zoomer_stage_{name}.png")
                 stage_cn = getattr(_st, "cn_w", None) or args.stage_cn
                 _sdir = out_dir / "build" / "stage"
@@ -2358,20 +2441,10 @@ def main():
                 # the disc is HELD low (DifferentialDiffusion mask) so the old card's prompt
                 # cannot repaint the new world away before its own card begins
                 _ps, _pj = _prej
-                _prgb, _ = _ps.frame_images(_pj + _ps.pre)
-                if _prgb.size != fed.size:
-                    _prgb = _prgb.resize(fed.size, Image.LANCZOS)
-                _W, _H = fed.size
-                _ax, _ay = _ps.anchor
-                _Zc = 1.0
-                for _x in range(i - (_pj + _ps.pre), i + 1):
-                    _Zc *= zoom_sched[_x] if zoom_sched else cfg["zoom_per_frame"]
-                _rad = 0.12 * _W * _Zc ** args.stage_preroll_k
-                _yy, _xx = np.mgrid[0:_H, 0:_W].astype(np.float32)
-                _dist = np.sqrt((_xx - _ax * _W) ** 2 + (_yy - _ay * _H) ** 2)
-                _m = np.clip((_rad - _dist) / max(12.0, 0.75 * _rad), 0.0, 1.0)
-                _m = (_m * _m * (3 - 2 * _m))
-                _wid = 0.15 + 0.45 * (_pj + _ps.pre + 1) / max(1, _ps.pre)
+                if _prd is None:
+                    _prd = preroll_disc(i, _prej, fed.size, zoom_sched, cfg, args.stage_preroll_k,
+                                        cur_stage=_st, cur_j=_sj0, contain=bool(args.stage_contain))
+                _m, _prgb, _pdep_, _wid, _rad = _prd
                 _fa_ = np.asarray(fed.convert("RGB"), np.float32)
                 _sa_ = np.asarray(_prgb.convert("RGB"), np.float32)
                 _mw = (_m * _wid)[..., None]

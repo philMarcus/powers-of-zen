@@ -120,6 +120,18 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-10 (AFTERNOON — PHIL'S VERDICT + THE TWO CATCHES; read PLAN "PHIL'S VERDICT ON thousand_moons_var" + "The two
+catches, diagnosed"): Phil on thousand_moons_var: "certainly more colorful... this step seems to be good" (colour-wise, one
+video); stay subatomic; NEXT STEP = THE ECHOES. Catches, both pre-existing: (1) "weird jump" = the stage->stage HANDOFF
+(tubes->lattice), not the loop seam — the lap replay had NO pre-roll registered, and where the pre-roll ran the current
+stage's identity + depth CN repainted the disc every frame so the coming world never showed; FIXED in the default path
+(lap pre-roll mirrored; dive.preroll_disc computed first, current stage yields inside it). (2) "a wipe, not a zoom" →
+`dive --stage-contain` (lab): the disc IS the plunge-target element (builders record target_R; hyperbolic looming, fill
+1.1 before another stage; one-frame lookahead). macaw_lick_var in Review (caption + music; staged sat 0.68 vs 0.55);
+echoes by WORDS do not read (macaw_var_strip.png) → echo textures next. GPU queue (tmux): arms_c3b3 (motion, echo-IPA)
+→ after_arms (thousand_moons_var caption+pregen redo) → anchorfix (--from-card 8: confetti card + lap handoff with the
+new pre-roll) → contain_arms (yield arm on thousand_moons_var 0-80; contain arm macaw --from-card 7). stage_variety
+knob still OFF pending the anchorfix strip. Review = 21 → tonight skips (the nightly's first cleanup pass runs anyway).
 2026-10-10 (LATE MORNING — C: WAS FULL; CLEANUP NOW AUTOMATIC; read PLAN "2026-10-10 — C: FULL"): 425 MB free at
 10:30 — ComfyUI's OWN output/input folders held every frame ever rendered + every Florence upload (112,743 files,
 100.8 GB of scratch the archive policy never covered). Deleted through the project tool (`archive.py --comfy --run`,

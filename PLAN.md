@@ -2863,3 +2863,51 @@ nobody can overwrite a not-yet-fetched file), but it means "does the file exist"
 attribute a leftover to a run, and a fresh write is share-locked on the Windows side for ~1 s
 (PermissionError errno 13 at +0.7 s, free at +1.25 s) — comfy_fs parks a refused path and retries it
 on the next call and at exit instead of sleeping per frame.
+
+## 2026-10-10 MIDDAY — PHIL'S VERDICT ON thousand_moons_var ("certainly more colorful")
+"This step seems to be good, at least from the one video I saw... I like what I see so far, at least
+colour-wise... hard to say 'okay, now we have adequate variety'." Two catches, both ALSO in the
+original: (1) "a weird jump from the [lap] to the one that begins the actual video" = the LOOP SEAM
+(frame 368 -> 45 = the lap's replayed card-1 arrival homing onto the staged lattice); (2) "going
+from one subatomic stage to another still feels a bit more like a wipe than a zoom" — the stage->
+stage arrival (pre-roll disc) reads as an iris wipe, not as diving into the thing. His direction:
+stay in the subatomic, next step = THE ECHOES ("doing the echoes on something"), learn the lessons
+here before expanding to new realms. Status of the knob: stage_variety stays OFF until the chroma-
+aware anchor is verified on the anchorfix arm (the confetti card), then ON for the nightly.
+
+### The two catches, diagnosed (same afternoon)
+(1) THE JUMP = the stage->stage handoff, not the loop seam. Measured on thousand_moons (both renders):
+|f368 - f45| at the loop point equals a typical consecutive-frame difference (41.8 vs 40.8; var 50.4 vs
+53.4) — the IPA/CN homing lands. What jumps is tubes -> lattice at frame 360 (the lap's replay of card
+1's arrival), and the same handoff at frame 36 in the warm-up. track.jsonl says why: (a) the LAP had NO
+PRE-ROLL at all — pre-roll rows exist for frames 20-35 (card 1's warm-up pre-roll), 272-287 and 308-323,
+never 344-359: the lap-replay slice (360+) was staged as card 1 but its pre-roll was never registered →
+a hard flip at the bar line, at the END of the delivered video = Phil's "weird jump to the one that
+begins the actual video". (b) Where the pre-roll DID run (20-35: disc radius 85 -> 566 px, identity
+inside 0.18 -> 0.60, denoise inside held at 0.30) the delivered frames show no lattice at all, because
+the CURRENT card's stage composite was applied over the whole frame every frame — its identity blend
+(0.35-0.5) diluted the disc's content and its depth CN (0.4-0.7) re-drew tubes inside the disc — so the
+coming world never established and the bar line was still a flip. FIXED: the lap replay gets card 1's
+pre-roll (mirroring the warm-up frames); the disc is computed BEFORE the stage block (dive.preroll_disc)
+and the current stage YIELDS inside it — identity weight x(1 - disc) per pixel, the coming stage's
+depth inside the disc, identity inside 0.2 -> 0.8. This is a bug fix to the approved pre-roll, so it
+is in the default path; the first full video through it is the next nightly render.
+(2) THE WIPE. Even working, a disc growing at zoom^2.2 on the fixed point is an iris wipe: it reveals the
+next world 16 frames before we reach anything. A zoom into containment would be: the element we are
+diving into (the stage's plunge target — it fills the frame at the bar line by the stage's own
+contract) is the window; the next world is seen inside IT and we cross its surface as it outgrows the
+frame. The CPU check shows why a mere max(schedule, element) changes nothing: the element's projected
+radius is hyperbolic in time (21 px at 16 frames out, 45 at 8, 126 at 4, 236 at the last frame) — it
+looms only in the last 4-5 frames. So `dive --stage-contain` (lab flag, default off): the disc IS the
+element's projected radius (soft 0.75 feather kept), and a stage followed by another stage gets fill
+1.1 so the element covers the corners at the bar line (radius 1.1 W, not 0.41-0.55 W). Kits whose
+target is not a frame-filling element (tissue walls) fall back to the schedule. Arms queued after the
+anchorfix arm (tmux contain_arms): "yield" (fix 1 only) and "contain" (fix 1 + 2) on thousand_moons_var
+frames 0-80 (the tubes -> lattice handoff), strip scratchpad/orange/contain_strip.png + the handoff
+jump |f35 - f36| against the consecutive-frame baseline.
+(3) ECHOES BY WORDS DO NOT READ: macaw_lick_var card 7 ("every atom shaped like a tiny cobalt flight
+feather") and card 9 ("...a tiny blue-and-gold macaw") show nothing of the donor (macaw_var_strip.png),
+though both cards are far more vivid than today's (staged sat 0.68 vs 0.55, lum 0.43 vs 0.30). Phil's
+next step is the echoes → ECHO TEXTURES: the donor swatch wrapped onto every sphere of the stage layer
+(decal mapping by the shaded normal), so the layer itself shows little moons / feathers / macaws and
+the diffusion keeps them under identity + CN. B3 (IP-Adapter swatch) arm result pending.

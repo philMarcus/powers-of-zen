@@ -132,6 +132,60 @@ class Stage:
         d /= np.linalg.norm(d)
         return self._advance(f) * d
 
+    def target_px_radius(self, f):
+        """Projected radius in pixels of the plunge-target ELEMENT at stage frame f — the thing
+        the dive is entering. The pre-roll's containment disc (dive --stage-contain, 2026-10-10,
+        Phil: "stage to stage still feels more like a wipe than a zoom") follows it, so the
+        coming world opens INSIDE the atom / cell / droplet we are diving into instead of in a
+        free-floating iris on the fixed point. 0 when the stage has no target element.
+        f may be len(zooms) (one frame past the slice = the bar line itself)."""
+        if getattr(self, 'target', None) is None or not self.items:
+            return 0.0
+        if getattr(self, '_tgt_R', None) is None and getattr(self, 'target_R', None):
+            self._tgt_R = float(self.target_R)        # recorded by the builder (the contract's R)
+        if getattr(self, '_tgt_R', None) is None:
+            # the element that CONTAINS the target point, largest first (a nucleus droplet holds
+            # nucleons at its centre — the droplet is the thing we enter, not a nucleon); else
+            # the nearest sphere
+            tgt = np.asarray(self.target, np.float32)
+            best, bR, inside = 1e9, 0.0, 0.0
+            for kind, c, R, rgb, extra in self.items:
+                if kind != 'sphere':
+                    continue
+                Rf = float(np.max(R)) if np.ndim(R) else float(R)
+                dd = float(np.linalg.norm(np.asarray(c, np.float32) - tgt))
+                if dd <= 0.6 * Rf and Rf > inside:
+                    inside = Rf
+                if dd < best:
+                    best, bR = dd, Rf
+            self._tgt_R = inside if inside > 0 else bR
+        cam, Rcam = self._camera_pose(min(f, len(self.zooms)))
+        q = np.asarray(self.target, np.float32) - cam
+        if Rcam is not None:
+            q = Rcam @ q
+        if q[2] <= 0.05:
+            return 1e9
+        return float(self.w * self._tgt_R / q[2])
+
+    def containable(self, f_start=0):
+        """True when the plunge-target element is a thing we visibly ENTER across the pre-roll:
+        not yet covering the view when the pre-roll starts (radius <= 0.7 W at stage frame
+        f_start — a cell or a molecule cluster legitimately starts at ~0.4-0.6 W, an atom at
+        0.08 W) and past 0.6 W at the bar line (one frame beyond the slice). A target region
+        already filling the view, or one that never looms: not containable -> the scheduled disc."""
+        key = int(f_start)
+        cache = getattr(self, '_containable', None)
+        if cache is None:
+            cache = self._containable = {}
+        if key not in cache:
+            try:
+                r0 = self.target_px_radius(key)
+                r1 = self.target_px_radius(len(self.zooms))
+                cache[key] = bool(r0 <= 0.7 * self.w and 0.6 * self.w <= r1 < 1e8)
+            except Exception:
+                cache[key] = False
+        return cache[key]
+
     # ---- STAGE CAMERA MOVES (variety C3, 2026-10-10) -----------------------------------
     # A lateral offset of the camera with a LOOK-AT on the plunge target: the target keeps
     # projecting at the anchor pixel (the zoom's fixed point is untouched), everything else
@@ -631,6 +685,7 @@ def build_card_stage(kit, params, zooms, anchor, w, h, seed=0, fill=0.55):
         p['centre'] = tuple(d * d_T)
         kit_nucleus(st, seed=seed, **p)
         st.target = tuple(d * d_T)
+        st.target_R = Rd                      # the whole cluster is what the dive enters
     else:
         kit_lattice(st, seed=seed, **p)
         R = float(p.get('radius', 0.055))
@@ -643,6 +698,7 @@ def build_card_stage(kit, params, zooms, anchor, w, h, seed=0, fill=0.55):
             shift = P_T - np.asarray(best[1], np.float32)
             st.items = [(it[0], np.asarray(it[1], np.float32) + shift, it[2], it[3], it[4]) for it in st.items]
         st.target = tuple(P_T)
+        st.target_R = R
     st.advance_total, st.d_target = A, d_T
     return st
 
@@ -775,6 +831,7 @@ def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0
         p['centre'] = tuple(d * d_T)
         KITS[kit](st, seed=seed, **p)
         st.target, st.advance_total, st.d_target = tuple(d * d_T), A, d_T
+        st.target_R = size * 0.5
         st.den_arrival, st.den_travel = den_arr, den_trav
         return _apply_look(st, look, species, dark)
     if kit == 'quark':
@@ -789,6 +846,7 @@ def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0
         p.setdefault('tube_rgb', species[-1] if len(species) > 1 else species[0])
         kit_quark(st, seed=seed, **p)
         st.target, st.advance_total, st.d_target = tuple(d * d_T), A, d_T
+        st.target_R = size * 0.5
         st.den_arrival, st.den_travel = den_arr, den_trav
         return _apply_look(st, look, species, dark)
     if kit in ('fog', 'tubes', 'tissue'):
@@ -814,6 +872,7 @@ def build_card_stage_v2(spec_stage, palette, zooms, anchor, w, h, seed=0, fill=0
             p['target_depth'] = tuple(d * d_T)
             kit_tubes(st, seed=seed, **p)
         st.target, st.advance_total, st.d_target = tuple(d * d_T), A, d_T
+        st.target_R = float(p.get('size', 0.9)) * 0.5      # one cell / one molecule cluster
         st.den_arrival, st.den_travel = den_arr, den_trav
         return _apply_look(st, look, species, dark)
     st = build_card_stage(kit, st_params, zooms, anchor, w, h, seed=seed, fill=fill)
