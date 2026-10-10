@@ -1038,7 +1038,7 @@ def suggest_stage(reg, seed_key=''):
 # ---- TISSUE kit: cells packed wall to wall (cellular band, 272 cards) -------------------------
 def kit_tissue(stage, centre=(0, 0, 3.0), size=1.0, colors=((0.55, 0.85, 0.6), (0.95, 0.9, 0.7)),
                wall_rgb=None, cell=0.22, n_layers=3, layer_gap=0.9, organelles=3, seed=0, glow=0.1,
-               tilt=0.35, target_depth=None):
+               tilt=0.35, target_depth=None, variant='polygon'):
     """A tissue in section seen obliquely: a few stacked sheets of polygonal cells (2-D Voronoi
     on each sheet), the walls as raised ridges (sphere chains along the Voronoi edges), a few
     organelle spheres inside every cell, the sheets receding into fog. The target cell sits on
@@ -1052,17 +1052,68 @@ def kit_tissue(stage, centre=(0, 0, 3.0), size=1.0, colors=((0.55, 0.85, 0.6), (
     ey = np.array([0.0, math.cos(tilt), math.sin(tilt)], np.float32)
     ez = np.cross(ex, ey)
     ext = size * 3.2
+    # TISSUE VARIANTS (2026-10-10, stage variety): the cell PLAN and what a cell is
+    #   polygon  — jittered hex Voronoi, beaded ridge walls, organelles (the original)
+    #   brick    — elongated cells in offset courses (epithelium, cork, stem, bark)
+    #   rosette  — cells in rings around a few centres (stomata, plant rosettes)
+    #   nuclei   — polygon cells, one big dark-ringed nucleus each (a stained section)
+    #   domes    — a hex packing of bulging domes, no walls (compound eye, blastula)
+    #   bubbles  — random-size domes crowded on the sheet (foam, froth, spawn)
+    #   discs    — coin cells lying on the sheet, a dimple each (blood, diatoms, platelets)
+    #   fibres   — long spindle cells side by side, walls as long ridges (muscle, tendon)
+    variant = variant if variant in ('polygon', 'brick', 'rosette', 'nuclei', 'domes', 'bubbles', 'discs', 'fibres') else 'polygon'
     for L in range(n_layers):
         origin = c0 + ez * (L * layer_gap * size) + rng.normal(scale=0.05 * size, size=3)
-        n = int((2 * ext / cell) ** 2 * 0.9)
-        pts = (rng.random((n, 2)) - 0.5) * 2 * ext
-        # hexagonal-ish regularity: relax toward a jittered grid
-        g = np.array([(i * cell + (j % 2) * cell / 2, j * cell * 0.87) for i in range(-int(ext / cell) - 1, int(ext / cell) + 2)
-                      for j in range(-int(ext / cell) - 1, int(ext / cell) + 2)], np.float32)
-        g += rng.normal(scale=cell * 0.18, size=g.shape)
+        ni = range(-int(ext / cell) - 1, int(ext / cell) + 2)
+        if variant == 'brick':
+            cx, cy = cell * 2.1, cell * 0.95
+            g = np.array([(i * cx + (j % 2) * cx / 2, j * cy) for i in range(-int(ext / cx) - 1, int(ext / cx) + 2)
+                          for j in range(-int(ext / cy) - 1, int(ext / cy) + 2)], np.float32)
+            g += rng.normal(scale=cell * 0.06, size=g.shape)
+        elif variant == 'fibres':
+            cx, cy = cell * 5.0, cell * 0.8
+            g = np.array([(i * cx + rng.uniform(-cx * 0.4, cx * 0.4), j * cy) for i in range(-int(ext / cx) - 2, int(ext / cx) + 3)
+                          for j in range(-int(ext / cy) - 1, int(ext / cy) + 2)], np.float32)
+            g[:, 1] += rng.normal(scale=cell * 0.08, size=len(g))
+        elif variant == 'rosette':
+            g = []
+            ctrs = (rng.random((max(4, int((2 * ext / (cell * 4.5)) ** 2)), 2)) - 0.5) * 2 * ext
+            for cx_, cy_ in ctrs:
+                g.append((cx_, cy_))
+                for ring in (1, 2):
+                    nring = 6 * ring
+                    for k in range(nring):
+                        a = 2 * math.pi * k / nring + ring * 0.3
+                        g.append((cx_ + ring * cell * 1.05 * math.cos(a), cy_ + ring * cell * 1.05 * math.sin(a)))
+            g = np.array(g, np.float32) + rng.normal(scale=cell * 0.06, size=(len(g), 2))
+        elif variant == 'bubbles':
+            n = int((2 * ext / cell) ** 2 * 0.55)
+            g = (rng.random((n, 2)) - 0.5) * 2 * ext
+        else:   # polygon / nuclei / domes / discs: the jittered hex grid (tight for domes)
+            jit = cell * (0.04 if variant == 'domes' else 0.18)
+            g = np.array([(i * cell + (j % 2) * cell / 2, j * cell * 0.87) for i in ni for j in ni], np.float32)
+            g += rng.normal(scale=jit, size=g.shape)
         pts = g
+        if variant in ('domes', 'bubbles', 'discs'):
+            # no walls: every cell is a body on the sheet
+            for q in pts:
+                if np.abs(q).max() > ext * 0.95:
+                    continue
+                cc = origin + ex * q[0] * size + ey * q[1] * size
+                if variant == 'discs':
+                    rr = cell * 0.40 * size
+                    for k in range(12):
+                        a = 2 * math.pi * k / 12
+                        stage.items.append(('sphere', cc + (ex * math.cos(a) + ey * math.sin(a)) * rr * 0.8 - ez * rr * 0.12,
+                                            rr * 0.28, colors[0], glow * 0.6))
+                    stage.items.append(('glow', cc - ez * rr * 0.1, rr * 0.45, colors[1 % len(colors)], glow * 0.5))
+                else:
+                    rr = cell * (0.50 if variant == 'domes' else rng.uniform(0.22, 0.62)) * size
+                    col_ = colors[0] if (variant == 'domes' or rng.random() < 0.7) else colors[1 % len(colors)]
+                    stage.items.append(('sphere', cc + ez * rr * 0.55, rr, col_, glow * 0.8))
+            continue
         vor = Voronoi(pts)
-        r_wall = cell * 0.075 * size
+        r_wall = cell * 0.075 * size * (1.4 if variant == 'fibres' else 1.0)
         for (a, b), (p1, p2) in zip(vor.ridge_vertices, vor.ridge_points):
             if a < 0 or b < 0:
                 continue
@@ -1071,16 +1122,36 @@ def kit_tissue(stage, centre=(0, 0, 3.0), size=1.0, colors=((0.55, 0.85, 0.6), (
                 continue
             A3 = origin + ex * va[0] * size + ey * va[1] * size
             B3 = origin + ex * vb[0] * size + ey * vb[1] * size
-            nseg = max(2, int(np.linalg.norm(B3 - A3) / (r_wall * 1.1)))
-            for t in np.linspace(0, 1, nseg):
-                # ridge stands a little proud of the sheet (toward the camera)
-                stage.items.append(('sphere', A3 + (B3 - A3) * t - ez * r_wall * 0.6, r_wall, wall_rgb, glow * 0.5))
+            if variant == 'polygon':
+                # the original beaded ridge (sphere chain) — kept for the legacy path
+                nseg = max(2, int(np.linalg.norm(B3 - A3) / (r_wall * 1.1)))
+                for t in np.linspace(0, 1, nseg):
+                    # ridge stands a little proud of the sheet (toward the camera)
+                    stage.items.append(('sphere', A3 + (B3 - A3) * t - ez * r_wall * 0.6, r_wall, wall_rgb, glow * 0.5))
+            else:
+                # smooth ridge: one capsule per Voronoi edge (fewer items, no beads)
+                stage.items.append(('capsule', A3 - ez * r_wall * 0.6, B3 - ez * r_wall * 0.6, r_wall, (wall_rgb, glow * 0.5)))
         for q in pts:
             if np.abs(q).max() > ext * 0.95:
                 continue
             cc = origin + ex * q[0] * size + ey * q[1] * size
             # cell floor: a flat disc of soft glow (the cytoplasm) + organelles
             stage.items.append(('glow', cc + ez * cell * 0.2 * size, cell * 0.42 * size, colors[0], glow * 0.35))
+            if variant == 'nuclei':
+                # one big nucleus, a darker ring of chromatin beads around it
+                rn = cell * 0.22 * size
+                stage.items.append(('sphere', cc - ez * rn * 0.4, rn, colors[1 % len(colors)], glow * 1.2))
+                for k in range(8):
+                    a = 2 * math.pi * k / 8 + rng.random()
+                    stage.items.append(('sphere', cc + (ex * math.cos(a) + ey * math.sin(a)) * rn * 1.25 - ez * rn * 0.2,
+                                        rn * 0.22, tuple(np.clip(np.array(colors[0]) * 0.55, 0, 1)), 0.0))
+                continue
+            if variant == 'fibres':
+                # a long striated body along the cell: a capsule down its axis
+                hl = cell * 1.8 * size
+                stage.items.append(('capsule', cc - ex * hl - ez * cell * 0.04 * size, cc + ex * hl - ez * cell * 0.04 * size,
+                                    cell * 0.16 * size, (colors[1 % len(colors)], glow * 0.6)))
+                continue
             for _ in range(organelles):
                 o = cc + ex * rng.normal(scale=cell * 0.22) * size + ey * rng.normal(scale=cell * 0.22) * size
                 stage.items.append(('sphere', o - ez * cell * 0.05 * size, cell * (0.07 + 0.05 * rng.random()) * size,
@@ -1438,3 +1509,25 @@ def apply_variety(st, plan, palette, kit):
     st.echo_clause = echo_clause(kit, plan.get('echo')) if plan.get('echo') else ''
     st.variety_plan = plan
     return st
+
+
+_TISSUE_WORDS = [
+    ('domes',   re.compile(r"\b(ommatid\w*|compound eye|facet\w*|blastula|morula|eyelet\w*|lens(?:es)?)\b", re.I)),
+    ('discs',   re.compile(r"\b(blood|erythro\w*|platelet\w*|diatom\w*|coin\w*|coccolith\w*|disc\w*|disk\w*)\b", re.I)),
+    ('fibres',  re.compile(r"\b(muscle\w*|tendon\w*|fib(?:er|re)\w*|spindle\w*|sinew\w*|myo\w*|striat\w*)\b", re.I)),
+    ('bubbles', re.compile(r"\b(foam\w*|froth\w*|bubble\w*|spawn|roe|caviar|suds|spume)\b", re.I)),
+    ('rosette', re.compile(r"\b(rosette\w*|stoma\w*|petal\w*|floret\w*|whorl\w*)\b", re.I)),
+    ('brick',   re.compile(r"\b(epitheli\w*|brick\w*|cork|bark|stem|cortex|phloem|xylem|palisade|cuticle|course\w*)\b", re.I)),
+    ('nuclei',  re.compile(r"\b(nucle(?:us|i)|stain\w*|section\w*|histolog\w*|chromatin)\b", re.I)),
+]
+TISSUE_VARIANT_WEIGHTS = {'polygon': 22, 'brick': 14, 'rosette': 10, 'nuclei': 14, 'domes': 12,
+                          'bubbles': 12, 'discs': 8, 'fibres': 8}
+
+
+def tissue_variant_for(reg, key):
+    """The tissue variant for a card: its WORDS first, else a per-card draw."""
+    txt = f"{reg.get('scene') or ''} {reg.get('target') or reg.get('target_phrase') or ''} {reg.get('name') or ''}"
+    for name, rx in _TISSUE_WORDS:
+        if rx.search(txt):
+            return name
+    return _wdraw(f"{key}|tissue", TISSUE_VARIANT_WEIGHTS)

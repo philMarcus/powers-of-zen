@@ -1724,6 +1724,9 @@ def main():
                                                 donors=_donors, authored_echo=_aecho,
                                                 motion=bool(args.stage_motion))
                 _sdef = dict(_sdef, scale=_vplan["scale"])
+                if _sdef.get("kit") == "tissue" and not _sdef.get("variant"):
+                    _sdef["variant"] = _stagemod.tissue_variant_for(_sreg, _skey(_sk))
+                    _vplan["tissue_variant"] = _sdef["variant"]
             _stage = _stagemod.build_card_stage_v2(_sdef, _sreg.get("palette"), _szw, _sanchor,
                                                    cfg["width"], cfg["height"], seed=_sseed,
                                                    look=_jlook)
@@ -1799,7 +1802,7 @@ def main():
             _rj = json.loads((out_dir / "run.json").read_text())
             _rj["stage_cards"] = [(st_.card, st_.delivered_span[0], st_.delivered_span[1]) for st_ in stages]
             _rj["stage_variety"] = [dict(card=st_.card, **{k: v for k, v in st_.variety_plan.items()
-                                                           if k in ("tier", "light", "bg", "scale", "scale_name", "echo", "camera", "motion")})
+                                                           if k in ("tier", "light", "bg", "scale", "scale_name", "echo", "camera", "motion", "tissue_variant")})
                                     for st_ in stages if getattr(st_, "variety_plan", None)] if args.stage_variety else None
             _rj["stage_kits"] = [(st_.card, st_.kit, getattr(st_, "look", None)) for st_ in stages]
             (out_dir / "run.json").write_text(json.dumps(_rj, indent=2))
