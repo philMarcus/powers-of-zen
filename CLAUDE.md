@@ -120,6 +120,20 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-10 (LATE AFTERNOON — ARM RESULTS + THE NEXT FULL VIDEO; read PLAN "yield + containment arm results" + "the
+echo-texture arm's 15-minute stall"): YIELD fix (default pre-roll path) = the coming lattice now grows visibly inside the
+pre-roll disc for the whole pre-roll (yield_strip.png); CONTAINMENT (`--stage-contain`, lab) on macaw 7->8 / 8->9 = a small
+element looming at the fixed point instead of a whole-frame wash (contain_strip.png; handoff jump 40.8 vs consecutive 48.1).
+The jump METRIC cannot see either change (~1.2x consecutive before and after) — judge strips/videos. TONE ANCHOR: the
+chroma-aware gain (yield arm) cut staged sat a third (card 0 0.30 vs 0.45) vs the v1 Phil approved → FLAT gain is the default
+again, chroma-aware = `--tone-chroma-aware` (Phil's call: confetti beads vs pearl beads). STALL FOUND: a prompt identical to
+the previous one is served from ComfyUI's cache with NO outputs in /history → run_workflow waited 900 s; now resubmits once
+with a nudged save prefix + swatches memoized per (prompt, seed). GPU (tmux): echotex_arm (cork_dehesa_var 0-64, textures;
+strip echotex_strip.png) → anchorfix2 (thousand_moons_var --from-card 8, approved anchor + lap pre-roll; anchorfix_strip.png)
+→ lepi_full = lepidolite_halo_var FULL render (journeys/lab/, authored echoes mica book / amber moon / blue planet on k6-k8,
+--stage-echo-tex 0.85 --stage-contain --stage-variety, seed 1234) → Review next to lepidolite_halo + review/compare/
+lepidolite_halo_ECHO.mp4 (today | echoes). stage_variety knob still OFF (Phil approved the direction on one video; flip after
+the anchorfix2 strip shows the lap handoff clean). Review = 21 → tonight's batch skips (first automated cleanup pass runs).
 2026-10-10 (AFTERNOON — PHIL'S VERDICT + THE TWO CATCHES; read PLAN "PHIL'S VERDICT ON thousand_moons_var" + "The two
 catches, diagnosed"): Phil on thousand_moons_var: "certainly more colorful... this step seems to be good" (colour-wise, one
 video); stay subatomic; NEXT STEP = THE ECHOES. Catches, both pre-existing: (1) "weird jump" = the stage->stage HANDOFF
