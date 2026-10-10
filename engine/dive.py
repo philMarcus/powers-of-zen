@@ -1041,6 +1041,9 @@ def main():
     ap.add_argument("--stage-motion", action="store_true",
                     help="STAGE VARIETY C3 (lab): stage camera drift/orbit about the fixed point + element "
                          "motion (electrons, pulse, spin, wave) drawn per card. Needs --stage-variety.")
+    ap.add_argument("--stage-echo-ipa", type=float, default=0.0, metavar="W",
+                    help="STAGE VARIETY B3 (lab): on echo cards, a txt2img swatch of the donor thing conditions "
+                         "the staged frames through IP-Adapter at weight W (ramped with the identity). 0 = off.")
     ap.add_argument("--stage-preroll", type=int, default=0, metavar="N",
                     help="LAB (Phil 2026-10-05, 'zoom into it'): open each stage INSIDE a disc on "
                          "its fixed point during the PREVIOUS card's last N frames, growing at "
@@ -1726,6 +1729,23 @@ def main():
                                                    look=_jlook)
             if _vplan is not None:
                 _stagemod.apply_variety(_stage, _vplan, _sreg.get("palette"), _sdef.get("kit", "lattice"))
+                _stage.echo_ref = None
+                if args.stage_echo_ipa > 0 and _vplan.get("echo"):
+                    # ECHO BY PIXELS (B3): one txt2img of the donor thing, close and alone, in the
+                    # journey's style; uploaded once as this card's IP-Adapter reference
+                    _dreg = next((r_ for r_ in _sorder if (r_.get("target") or r_.get("target_phrase")) == _vplan["echo"]), None)
+                    _dpal = (_dreg or {}).get("palette") or _sreg.get("palette") or ""
+                    _ep = (f"a close view of a single {_stagemod._strip_article(_vplan['echo'])}, whole and centred, "
+                           f"{_dpal}, dark plain background, {spec.get('style_suffix', '')}")
+                    _eseed = (cfg["seed"] + _zlib.crc32(_vplan["echo"].encode())) % (2 ** 31)
+                    try:
+                        _eimg = Image.open(io.BytesIO(run_workflow(build_workflow(cfg, _ep, _eseed)))).convert("RGB")
+                        (out_dir / "build" / "stage").mkdir(parents=True, exist_ok=True)
+                        _eimg.save(out_dir / "build" / "stage" / f"echo_{_sk}.png")
+                        _stage.echo_ref = upload_image(_eimg, f"zoomer_echo_{name}_{_sk}.png")
+                        print(f"[dive] stage-echo-ipa: card {_sk} swatch of {_vplan['echo']!r} (seed {_eseed})", flush=True)
+                    except Exception as _ee:  # a failed swatch never kills a render
+                        print(f"[dive] stage-echo-ipa: swatch failed for card {_sk}: {_ee}", flush=True)
                 print(f"[dive] stage-variety: card {_sk} {_sreg.get('name')!r} tier {_vplan['tier']} "
                       f"light {_vplan['light']} bg {_vplan['bg']} scale {_vplan['scale_name']} "
                       f"({_vplan['scale']:.2f}) echo {_vplan['echo']!r} camera {_vplan.get('camera')} "
@@ -2238,6 +2258,7 @@ def main():
                                                        mode=args.plate)) + "\n")
                     plate_log.flush()
             stage_ctl, stage_cn = None, 0.0
+            stage_ipa_img, stage_ipa_w = None, 0.0
             if _st is not None:
                 # MICRO STAGE: composite the built world at the exact scheduled geometry.
                 # Identity ramps in across the arrival (the old texture resolves INTO the
@@ -2291,6 +2312,13 @@ def main():
                     fed = tone_anchor_image(fed)
                     if getattr(_st, "echo_clause", ""):
                         prompt = prompt + ", " + _st.echo_clause
+                    if getattr(_st, "echo_ref", None) and args.stage_echo_ipa > 0:
+                        # B3: the donor swatch through IP-Adapter, rising over the arrival,
+                        # held through travel, easing off over the plunge's last quarter
+                        _eu = min(1.0, (_sj + 1) / max(1, _st.fa))
+                        _etq = max(0.0, (_sj - 0.75 * _sn) / max(1.0, 0.25 * _sn))
+                        stage_ipa_img = _st.echo_ref
+                        stage_ipa_w = args.stage_echo_ipa * _eu * (1.0 - 0.5 * min(1.0, _etq))
                 stage_ctl = upload_image(_sdep, f"zoomer_stage_{name}.png")
                 stage_cn = getattr(_st, "cn_w", None) or args.stage_cn
                 _sdir = out_dir / "build" / "stage"
@@ -2490,12 +2518,14 @@ def main():
                                 depth_preproc=None if (stage_ctl or res_ctl or hero_ctl or plate_ctl)
                                 else _depth,
                                 ipa_image=(loop.get("_home_ref") if tail_ipa_w > 0.01
-                                           else (plate_ipa_img if plate_ipa_img is not None
-                                                 else _pal_ipa_img)),
+                                           else (stage_ipa_img if stage_ipa_w > 0.01
+                                                 else (plate_ipa_img if plate_ipa_img is not None
+                                                       else _pal_ipa_img))),
                                 ipa_weight=(tail_ipa_w if tail_ipa_w > 0.01
-                                            else (plate_ipa_w if plate_ipa_img is not None
-                                                  else _pal_ipa_w)),
-                                ipa_mask=(None if tail_ipa_w > 0.01 else plate_ipa_mask),
+                                            else (stage_ipa_w if stage_ipa_w > 0.01
+                                                  else (plate_ipa_w if plate_ipa_img is not None
+                                                        else _pal_ipa_w))),
+                                ipa_mask=(None if (tail_ipa_w > 0.01 or stage_ipa_w > 0.01) else plate_ipa_mask),
                                 neg_extra=", ".join(x for x in (hero_neg or plate_neg,
                                                                 args.neg_extra) if x) or None)
         png = run_workflow(wf)
