@@ -75,7 +75,7 @@ def draw_look(key):
 def shade_sphere(look, n, nz, rho2, base, light, extra, bg):
     """Per-pixel colour of a sphere cap under a LOOK. n: view-space normals (...,3), nz: the
     cap height (1 at centre, 0 at the rim), base: rgb (3,), light: unit vector into the scene."""
-    b = base[None, None, :]
+    b = base[None, None, :] if np.ndim(base) == 1 else base      # (3,) or per-pixel (h, w, 3)
     if look == 'gem':
         # facets: snap the normal to the nearest facet direction, hard speculars, a lit rim
         idx = np.argmax(n @ _FACETS.T, axis=-1)
@@ -185,6 +185,30 @@ class Stage:
             except Exception:
                 cache[key] = False
         return cache[key]
+
+    # ---- ECHO TEXTURES (2026-10-10; Phil: "the little atomic spheres, nuclei could look like
+    # planets... the little molecular proteins could be made of snakes") ------------------------
+    def set_echo_texture(self, img, strength=0.85, size=160):
+        """img: a picture of the donor thing, alone on a plain background (the B3 swatch).
+        Centre-cropped square and kept as a float texture; every SPHERE of the stage then wears
+        it as a face-on decal (orthographic map onto the visible cap, a fixed random rotation /
+        mirror per element) under soft shading, so the stage LAYER itself shows a field of
+        little moons / feathers / macaws for the diffusion to keep. Capsules (tubes, cell walls)
+        keep their colour. strength = how much of the base colour the texture replaces."""
+        im = img.convert("RGB")
+        w, h = im.size
+        sq = min(w, h)
+        im = im.crop(((w - sq) // 2, (h - sq) // 2, (w - sq) // 2 + sq, (h - sq) // 2 + sq))
+        im = im.resize((size, size), Image.LANCZOS)
+        self.echo_tex = np.asarray(im, np.float32) / 255.0
+        self.echo_tex_w = float(strength)
+        # the swatch's own colour (centre-weighted) for spheres too small to carry a picture
+        _c = self.echo_tex[size // 4: 3 * size // 4, size // 4: 3 * size // 4]
+        self.echo_tex_mean = _c.reshape(-1, 3).mean(0)
+        rng = np.random.default_rng((getattr(self, 'seed', 0) + 77) & 0xFFFFFFFF)
+        n = max(1, len(self.items))
+        self._tex_rot = rng.uniform(0, 2 * math.pi, n).astype(np.float32)
+        self._tex_mir = rng.random(n) < 0.5
 
     # ---- STAGE CAMERA MOVES (variety C3, 2026-10-10) -----------------------------------
     # A lateral offset of the camera with a LOOK-AT on the plunge target: the target keeps
@@ -371,8 +395,24 @@ class Stage:
             base = np.asarray(rgb, np.float32)
             if getattr(self, 'light_mul', None) is not None:
                 base = base * self.light_mul          # VARIETY: coloured key light
-            px_col = shade_sphere(getattr(self, 'look', 'fuzzy'), n, nz, rho2, base, self.light,
-                                  extra, self.bg)
+            _look = getattr(self, 'look', 'fuzzy')
+            _tex = getattr(self, 'echo_tex', None)
+            if _tex is not None and kind == 'sphere' and rpx < 6.0:
+                # too small for a picture: the echo in COLOUR only (the swatch's own tone)
+                base = base * (1.0 - self.echo_tex_w) + self.echo_tex_mean * self.echo_tex_w
+            elif _tex is not None and kind == 'sphere':
+                # ECHO TEXTURE: the donor swatch as a face-on decal on this sphere's cap
+                _k = i % len(self._tex_rot)
+                _ct, _st = math.cos(float(self._tex_rot[_k])), math.sin(float(self._tex_rot[_k]))
+                _uu, _vv = u * _ct - v * _st, u * _st + v * _ct
+                if self._tex_mir[_k]:
+                    _uu = -_uu
+                _T = _tex.shape[0]
+                _ix = np.clip(((0.5 + 0.46 * _uu) * (_T - 1)).astype(np.int32), 0, _T - 1)
+                _iy = np.clip(((0.5 + 0.46 * _vv) * (_T - 1)).astype(np.int32), 0, _T - 1)
+                base = base[None, None, :] * (1.0 - self.echo_tex_w) + _tex[_iy, _ix] * self.echo_tex_w
+                _look = 'fuzzy'               # soft shading keeps the picture readable
+            px_col = shade_sphere(_look, n, nz, rho2, base, self.light, extra, self.bg)
             # anti-aliased rim
             aa = np.clip((1.0 - np.sqrt(rho2)) * rpx, 0, 1)[..., None]
             region = col[y0:y1, x0:x1]

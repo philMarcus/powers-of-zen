@@ -1108,6 +1108,10 @@ def main():
                          "zoom^k so it covers the frame at the bar line — the planet handoff in "
                          "reverse; the old world keeps zooming around it, denoise is held low inside "
                          "the disc. 0 = the zoom-through arrival at the bar line (today's default)")
+    ap.add_argument("--stage-echo-tex", type=float, default=0.0, metavar="W",
+                    help="ECHO TEXTURES (lab, 2026-10-10): the echo donor's txt2img swatch worn as a "
+                         "face-on decal by every sphere of the staged card's layer, W = how much of "
+                         "the base colour it replaces (0.85 typical); 0 = off")
     ap.add_argument("--stage-contain", action="store_true",
                     help="pre-roll disc follows the CURRENT stage's plunge-target element (never "
                          "below 0.9x its projected radius): the next world opens inside the thing "
@@ -1802,20 +1806,34 @@ def main():
             if _vplan is not None:
                 _stagemod.apply_variety(_stage, _vplan, _sreg.get("palette"), _sdef.get("kit", "lattice"))
                 _stage.echo_ref = None
-                if args.stage_echo_ipa > 0 and _vplan.get("echo"):
+                if (args.stage_echo_ipa > 0 or args.stage_echo_tex > 0) and _vplan.get("echo"):
                     # ECHO BY PIXELS (B3): one txt2img of the donor thing, close and alone, in the
                     # journey's style; uploaded once as this card's IP-Adapter reference
                     _dreg = next((r_ for r_ in _sorder if (r_.get("target") or r_.get("target_phrase")) == _vplan["echo"]), None)
                     _dpal = (_dreg or {}).get("palette") or _sreg.get("palette") or ""
-                    _ep = (f"a close view of a single {_stagemod._strip_article(_vplan['echo'])}, whole and centred, "
-                           f"{_dpal}, dark plain background, {spec.get('style_suffix', '')}")
+                    # one thing, big, simple, SQUARE (768^2): a decal on a sphere needs an icon,
+                    # not a scene — the first macaw swatch (two parrots, portrait) read as speckle
+                    # (probed 2026-10-10, scratchpad/orange/echo_swatches3.png: this wording gives ONE
+                    # macaw / feather / moon / coiled snake alone on black; "filling the frame" gave a
+                    # wall of parrots, "icon-like" a framed picture — the frame then tiled every atom)
+                    _ep = (f"exactly one {_stagemod._strip_article(_vplan['echo'])}, alone, large in the centre of a "
+                           f"plain black background, whole object fully visible, {_dpal}, bold simple silhouette, "
+                           f"soft studio light")
+                    _eneg = ("multiple, many, two, group, pattern, repeated, tiled, frame, border, text, "
+                             "watermark, collage, cropped")
                     _eseed = (cfg["seed"] + _zlib.crc32(_vplan["echo"].encode())) % (2 ** 31)
                     try:
-                        _eimg = Image.open(io.BytesIO(run_workflow(build_workflow(cfg, _ep, _eseed)))).convert("RGB")
+                        _ecfg = {**cfg, "width": 768, "height": 768}
+                        _eimg = Image.open(io.BytesIO(run_workflow(build_workflow(_ecfg, _ep, _eseed, neg_extra=_eneg)))).convert("RGB")
                         (out_dir / "build" / "stage").mkdir(parents=True, exist_ok=True)
                         _eimg.save(out_dir / "build" / "stage" / f"echo_{_sk}.png")
-                        _stage.echo_ref = upload_image(_eimg, f"zoomer_echo_{name}_{_sk}.png")
-                        print(f"[dive] stage-echo-ipa: card {_sk} swatch of {_vplan['echo']!r} (seed {_eseed})", flush=True)
+                        if args.stage_echo_ipa > 0:
+                            _stage.echo_ref = upload_image(_eimg, f"zoomer_echo_{name}_{_sk}.png")
+                        if args.stage_echo_tex > 0:
+                            # ECHO TEXTURE: the same swatch worn by every sphere of the stage layer
+                            _stage.set_echo_texture(_eimg, args.stage_echo_tex)
+                        print(f"[dive] stage-echo: card {_sk} swatch of {_vplan['echo']!r} (seed {_eseed})"
+                              f"{' ipa' if args.stage_echo_ipa > 0 else ''}{' texture' if args.stage_echo_tex > 0 else ''}", flush=True)
                     except Exception as _ee:  # a failed swatch never kills a render
                         print(f"[dive] stage-echo-ipa: swatch failed for card {_sk}: {_ee}", flush=True)
                 print(f"[dive] stage-variety: card {_sk} {_sreg.get('name')!r} tier {_vplan['tier']} "
