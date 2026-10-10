@@ -17,6 +17,7 @@ chains), additive glow splats (fog / probability clouds). Kits build instance li
 space once (seeded); frame(k) renders RGB + depth (near = bright, controlnet polarity).
 """
 import math
+import re
 import zlib
 import numpy as np
 from PIL import Image, ImageFilter
@@ -446,21 +447,117 @@ def _pack(rng, n, radius, iters=60):
     return p, Rd
 
 
+def _nucleus_points(rng, variant, n, radius):
+    """Nucleon positions for a droplet of n under a VARIANT (2026-10-10, stage variety; Phil:
+    take liberties, inspired by the realm, not textbook):
+      droplet — close-packed ball (the original)      shells — concentric nucleon shells with gaps
+      prolate — the ball stretched along an axis      halo — a tight core + a few far halo nucleons
+      fission — two lobes joined by a thin neck       hollow — one shell, empty inside (a bubble)
+      alpha — tetrahedral 4-nucleon clusters arranged as a nuclear molecule
+    Returns (points (n,3), Rd = the droplet's outer radius)."""
+    if variant == 'shells':
+        pts, r_sh, left, k = [], radius * 1.05, n, 0
+        counts = (1, 8, 20, 36, 60)
+        while left > 0 and k < len(counts):
+            m = min(left, counts[k])
+            if k == 0:
+                pts.append(np.zeros(3, np.float32))
+            else:
+                g = (1 + 5 ** 0.5) / 2
+                for i in range(m):
+                    y = 1 - 2 * (i + 0.5) / m; rr = math.sqrt(max(0.0, 1 - y * y)); th = 2 * math.pi * i / g
+                    pts.append(np.array([rr * math.cos(th), y, rr * math.sin(th)], np.float32) * r_sh)
+            left -= m; k += 1; r_sh += radius * 2.6
+        p = np.array(pts, np.float32)
+        return p, float(np.linalg.norm(p, axis=1).max() + radius)
+    if variant == 'hollow':
+        R = radius * (n / 2.2) ** 0.5 * 0.55
+        g = (1 + 5 ** 0.5) / 2
+        p = []
+        for i in range(n):
+            y = 1 - 2 * (i + 0.5) / n; rr = math.sqrt(max(0.0, 1 - y * y)); th = 2 * math.pi * i / g
+            p.append([rr * math.cos(th), y, rr * math.sin(th)])
+        p = np.array(p, np.float32) * R
+        return p, float(R + radius)
+    if variant == 'alpha':
+        k = max(2, n // 4)
+        # cluster centres: a ring (k<=5) or a tetrahedron/octahedron-ish shell of clusters
+        g = (1 + 5 ** 0.5) / 2
+        Rc = radius * 2.4 * max(1.2, k ** 0.5 * 0.55)
+        cents = []
+        for i in range(k):
+            y = 1 - 2 * (i + 0.5) / k; rr = math.sqrt(max(0.0, 1 - y * y)); th = 2 * math.pi * i / g
+            cents.append(np.array([rr * math.cos(th), y, rr * math.sin(th)], np.float32) * Rc)
+        tet = np.array([[1, 1, 1], [1, -1, -1], [-1, 1, -1], [-1, -1, 1]], np.float32) / math.sqrt(3) * radius * 1.05
+        p = []
+        for c in cents:
+            Rm = np.linalg.qr(rng.normal(size=(3, 3)))[0].astype(np.float32)
+            for t in tet:
+                p.append(c + Rm @ t)
+        p = np.array(p, np.float32)
+        return p, float(np.linalg.norm(p, axis=1).max() + radius)
+    p, Rd = _pack(rng, n, radius)
+    if variant == 'prolate':
+        ax = rng.normal(size=3).astype(np.float32); ax /= np.linalg.norm(ax)
+        p = p + np.outer(p @ ax, ax) * 0.8        # stretch x1.8 along the axis
+        return p.astype(np.float32), float(np.linalg.norm(p, axis=1).max() + radius)
+    if variant == 'halo':
+        core, _ = _pack(rng, max(8, n - 8), radius)
+        core = core * 0.92
+        far = []
+        for _ in range(8):
+            v = rng.normal(size=3); v /= np.linalg.norm(v)
+            far.append(v * Rd * rng.uniform(2.2, 3.6))
+        p = np.concatenate([core, np.array(far, np.float32)])
+        return p.astype(np.float32), float(Rd * 3.6 + radius)
+    if variant == 'fission':
+        a, Ra = _pack(rng, n // 2, radius); b, Rb = _pack(rng, n - n // 2, radius)
+        ax = rng.normal(size=3).astype(np.float32); ax /= np.linalg.norm(ax)
+        sep = (Ra + Rb) * 0.95
+        neck = [ax * (t - 0.5) * sep + rng.normal(scale=radius * 0.3, size=3) for t in np.linspace(0.3, 0.7, 5)]
+        p = np.concatenate([a - ax * sep * 0.5, b + ax * sep * 0.5, np.array(neck, np.float32)])
+        return p.astype(np.float32), float(np.linalg.norm(p, axis=1).max() + radius)
+    return p, Rd
+
+
+NUCLEUS_VARIANT_WEIGHTS = {'droplet': 30, 'shells': 14, 'prolate': 14, 'halo': 10, 'fission': 10,
+                           'hollow': 8, 'alpha': 14}
+_NUCLEUS_WORDS = [
+    ('fission', re.compile(r"\b(fission\w*|split\w*|uranium|plutonium|neck\w*|dividing|cleav\w*)\b", re.I)),
+    ('alpha',   re.compile(r"\b(alpha|cluster\w*|carbon-12|beryllium|oxygen-16|tetrahedr\w*|molecule of nucleons)\b", re.I)),
+    ('shells',  re.compile(r"\b(shell\w*|magic|closed|layered|onion\w*|concentric)\b", re.I)),
+    ('prolate', re.compile(r"\b(deformed|prolate|football|cigar|rugby|spinning|elongat\w*|egg\w*)\b", re.I)),
+    ('halo',    re.compile(r"\b(halo|lithium|skin|outlier\w*|orbit\w*|straggler\w*)\b", re.I)),
+    ('hollow',  re.compile(r"\b(bubble\w*|hollow|empty|cavity|void inside)\b", re.I)),
+]
+
+
+def nucleus_variant_for(reg, key):
+    txt = f"{reg.get('scene') or ''} {reg.get('target') or reg.get('target_phrase') or ''} {reg.get('name') or ''}"
+    for name, rx in _NUCLEUS_WORDS:
+        if rx.search(txt):
+            return name
+    return _wdraw(f"{key}|nucleus", NUCLEUS_VARIANT_WEIGHTS)
+
+
 def kit_nucleus(stage, n=100, radius=0.065, centre=(0, 0, 2.2), colors=((1.0, 0.55, 0.25), (0.8, 0.85, 1.0)),
                 frac_a=0.45, seed=0, glow=0.22, halo=True, spill=0.0, field=True, n_field=44,
-                spread=(3.0, 3.4, 9.0)):
+                spread=(3.0, 3.4, 9.0), variant='droplet'):
     """Nuclei as a FIELD (Phil 2026-10-04: "there needs to be more of them" — the house sea
     doctrine: many instances at all depths, the plunge picks one): the TARGET droplet of
     close-packed two-colour nucleons at `centre`, and n_field smaller droplets scattered through
     the frustum (fewer nucleons, same nucleon size), far ones fading into the void's fog."""
     rng = np.random.default_rng(seed)
     c0 = np.asarray(centre, np.float32)
-    p, Rd = _pack(rng, n, radius)
-    kinds = (rng.random(n) < frac_a).astype(int)
+    if variant == 'droplet':
+        p, Rd = _pack(rng, n, radius)
+    else:
+        p, Rd = _nucleus_points(rng, variant, n, radius)
+    kinds = (rng.random(len(p)) < frac_a).astype(int)
     for q, k in zip(p, kinds):
         stage.items.append(('sphere', c0 + q, radius, colors[k], glow))
         stage.items.append(('glow', c0 + q, radius * 1.4, colors[k], glow * 0.12))
-    if halo:
+    if halo and variant == 'droplet':
         for _ in range(2):
             v = rng.normal(size=3); v /= np.linalg.norm(v)
             stage.items.append(('sphere', c0 + v * Rd * 3.2, radius * 0.9, colors[1], 0.3))
@@ -476,8 +573,11 @@ def kit_nucleus(stage, n=100, radius=0.065, centre=(0, 0, 2.2), colors=((1.0, 0.
                 stage.items.append(('glow', c, radius * (m / 0.64) ** (1 / 3) * 0.9, colors[int(rng.random() < 0.5)], glow * 0.5))
                 stage.items.append(('sphere', c, radius * (m / 0.64) ** (1 / 3) * 0.55, colors[1], glow * 0.3))
                 continue
-            pq, _ = _pack(rng, m, radius, iters=25)
-            kq = (rng.random(m) < frac_a).astype(int)
+            if variant != 'droplet' and rng.random() < 0.6:
+                pq, _ = _nucleus_points(rng, variant, m, radius)      # the field shares the picture
+            else:
+                pq, _ = _pack(rng, m, radius, iters=25)
+            kq = (rng.random(len(pq)) < frac_a).astype(int)
             for q, k in zip(pq, kq):
                 stage.items.append(('sphere', c + q, radius, colors[k], glow * 0.8))
     stage.jitter = radius * 0.06
@@ -576,7 +676,6 @@ def palette_colours(palette):
     return species[:3], tuple(np.clip(dark, 0, 0.12))
 
 
-import re  # noqa: E402  (used above; stage.py had no re import before)
 
 
 def kit_quark(stage, centre=(0, 0, 3.0), size=0.9, colors=((1.0, 0.75, 0.3), (1.0, 0.75, 0.3)), tube_rgb=(1.0, 0.6, 0.2),
