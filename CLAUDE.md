@@ -134,7 +134,7 @@ the video he judged for colour, caption + 10 candidates kept, v1 on disk); side-
 (today | lap fix). Music pregen backfilled (tmux pregen_fix) for plover_scrape, bluebell_chorus, klondike_nugget (lost to the 10-10
 full disk) + thousand_moons. FOR PHIL TO JUDGE: lepidolite_halo_var (echoes + containment; dive-in cut k6 14.2-17.2 s, k7 17.2-20.2 s,
 k8 20.2-23.2 s; review/compare/lepidolite_halo_ECHO.mp4), thousand_moons_var (lap handoff; JUMP.mp4), macaw_lick_var in Music (his
-pick), plus the 12 unjudged nightly videos of 10-06..10-10. gulal_dusk posted 20:05 clean through the fixed IG share wait; next post
+pick), plus the 17 catalog videos in Review (nightlies of 10-06..10-10; Review 19 + Music 1 = the 20 cap). gulal_dusk posted 20:05 clean through the fixed IG share wait; next post
 10-11 15:00.
 2026-10-10 (LATE AFTERNOON — ARM RESULTS + THE NEXT FULL VIDEO; read PLAN "yield + containment arm results" + "the
 echo-texture arm's 15-minute stall"): YIELD fix (default pre-roll path) = the coming lattice now grows visibly inside the
