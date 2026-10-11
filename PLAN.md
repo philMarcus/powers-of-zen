@@ -3019,7 +3019,9 @@ natural pairing is textures (the shape) + IPA (the finish) once the texture arm 
   seen the tissue variants in a full video yet; lepidolite_halo_var has no tissue card, so the first will be a nightly.
 - SETTINGS stage_variety = True (14:37, telem settings_change): Phil approved the direction ("certainly more
   colorful... this step seems to be good"), the lap handoff is clean, the yield fix is in the default pre-roll path.
-  CORRECTION 14:45 (night_batch --dry-run): the backpressure cap counts READY-TO-POST videos (5/20), not Review, so
+  CORRECTION 14:45 (night_batch --dry-run) — ITSELF WRONG, see "2026-10-11 08:10": there are TWO gates and the review
+  gate (Review+Music >= max_review_videos 20) skipped the night once lepidolite_halo_var joined Review at 17:36. As written:
+  the backpressure cap counts READY-TO-POST videos (5/20), not Review, so
   TONIGHT RENDERS sequoia_rosette + valdes_blow + cuttle_bridge + labrador_schiller (5.3 h) — the first nightly
   through --stage-variety, and the first full videos that can show the tissue/nucleus VARIANTS (09:20 commits).
   Not in the nightly: --stage-contain, --stage-echo-tex, --tone-chroma-aware (lab flags, pending his verdicts on
@@ -3081,3 +3083,27 @@ natural pairing is textures (the shape) + IPA (the finish) once the texture arm 
   nucleons), the detail does not at den 0.6/0.45, id 0.5. Levers for an arm: id 0.65, travel den 0.45, hero scale 3.
 - Also fixed on the way: dive keys the plate ENTRANCE, intro kind and per-plate-card specks by scaffold_name (lab
   copies now reproduce the catalog render up to their first changed card; catalog byte-identical).
+
+### 2026-10-11 08:10 — MORNING AFTER THE RESTART: the night skipped on the REVIEW gate; ComfyUI died after the logon start; the lap-fix render is the thousand_moons_var Review entry
+- RESTART ~21:00 10-10 (WSL up 21:02). The logon task at 22:01 brought Chrome + the dashboard up and started ComfyUI
+  ("ready" 22:02:30); the comfy tmux pane then shows `forrtl: error (200): program aborting due to window-CLOSE event`
+  right after "FETCH ComfyRegistry Data" — a Windows console-close signal reached the interop python (MKL's Fortran
+  runtime aborts on CTRL_CLOSE_EVENT). Cause unverified: the identical chain at 10-10 03:18 ran all day. Relaunched
+  08:05 the comfy_up way (kill-session; new-session -d; send-keys) + boost — it came up BelowNormal on all cores again.
+  Open hardening: the logon task could re-check ComfyUI a few minutes after "ready" and relaunch once.
+- THE NIGHT: refill 00:47 composed + queued 5 (lemna_turbine S, namib_fogbasker L, pele_sulphur_ring S, pumpkin_scanner S,
+  tisza_mayfly_bloom L). archive.py --nightly rc=0: 0.8 G ComfyUI scratch + 0.3 G review cuts + 4.6 G output trees to E:
+  — including every 10-10 lab arm dir (thousand_moons_var_anchorfix / _platelive_yield / _c3motion / _b3ipa / _smokefs,
+  cork_dehesa_var + its echotex arm, macaw_lick_var_contain; all "orphan (no pipeline entry)" by policy). C: 103 G free.
+  Batch: "backpressure: 20 videos awaiting review/music (max_review_videos 20) — skipping tonight" (telem batch_skip
+  "review backlog 20"). night_batch has TWO gates, checked in this order: max_review_videos (Review+Music) then
+  max_ready_videos (posting queue). The 14:45 dry run showed 5/20 ready-to-post with Review+Music at 19; adding
+  lepidolite_halo_var to Review at 17:36 made it 20 → the gate fired. The first nightly through --stage-variety has NOT
+  happened; it happens the night Phil's verdicts take Review+Music below 20. (The dry-run summary now prints both figures.)
+- REVIEW: thousand_moons_var's entry is now the LAP-FIX render — the anchorfix arm (--from-card 8 of v1, seed 1234, cards
+  0-7 byte-identical to the video Phil judged for colour, card 8 'domes' variant, lap pre-roll), restored from E: as
+  output/thousand_moons_var/v2 and re-ingested with queue_review --src (caption + 10 candidates kept; v1 stays on disk).
+  Side-by-side review/compare/thousand_moons_var_JUMP.mp4 = today | lap fix.
+- MUSIC PREGEN backfilled (tmux pregen_fix, log scratchpad/orange/pregen_fix.log): plover_scrape, bluebell_chorus,
+  klondike_nugget (their 10-10 08:00 pregen died on the full disk) + thousand_moons (0 candidates since 10-07).
+- POSTING: gulal_dusk 20:05 clean through the fixed IG share wait (block above). Next post 2026-10-11 15:00.

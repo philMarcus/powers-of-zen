@@ -356,7 +356,8 @@ def main():
             sys.exit(f"no journey file for: {', '.join(bad)}")
         print(f"manual batch: {' + '.join(picks)}")
     if dry:
-        print(f"(dry run — ready-to-post {ready}/{s['max_ready_videos']}, "
+        print(f"(dry run — review+music {awaiting}/{s.get('max_review_videos', 20)}, "
+              f"ready-to-post {ready}/{s['max_ready_videos']}, "
               f"queue depth {len(pl.jqueue(jd))}/{s['journey_queue_target']})")
         return
 

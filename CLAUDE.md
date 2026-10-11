@@ -120,6 +120,22 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-11 (MORNING AFTER PHIL'S RESTART; read PLAN "2026-10-11 08:10"): machine rebooted 10-10 ~21:00; the logon task brought
+Chrome + dashboard up and started ComfyUI at 22:02, which then DIED on a Windows console-close event (comfy pane: "forrtl: error (200):
+program aborting due to window-CLOSE event" right after startup; cause unverified — the same chain at 10-10 03:18 ran all day).
+Relaunched 08:05 the comfy_up way (tmux comfy, detached) + boost (it came up BelowNormal on all cores again). THE NIGHT: refill
+composed 5 (lemna_turbine namib_fogbasker pele_sulphur_ring pumpkin_scanner tisza_mayfly_bloom); cleanup archived 4.6 G to E: incl.
+every 10-10 lab arm dir (anchorfix/yield/c3motion/b3ipa, cork_dehesa_var*, macaw_lick_var_contain — orphans by policy), C: 103 G free;
+the batch SKIPPED on "review backlog 20" — TWO backpressure gates exist (max_review_videos = Review+Music, max_ready_videos = posting
+queue); my lab video lepidolite_halo_var made Review+Music 20/20. So the four stage-variety journeys did NOT render; the first nightly
+through --stage-variety happens the night Phil's verdicts take Review+Music below 20. REVIEW NOW: thousand_moons_var's entry = the
+LAP-FIX render (the anchorfix arm restored from E: as output/thousand_moons_var/v2: --from-card 8 of v1, cards 0-7 byte-identical to
+the video he judged for colour, caption + 10 candidates kept, v1 on disk); side-by-side review/compare/thousand_moons_var_JUMP.mp4
+(today | lap fix). Music pregen backfilled (tmux pregen_fix) for plover_scrape, bluebell_chorus, klondike_nugget (lost to the 10-10
+full disk) + thousand_moons. FOR PHIL TO JUDGE: lepidolite_halo_var (echoes + containment; dive-in cut k6 14.2-17.2 s, k7 17.2-20.2 s,
+k8 20.2-23.2 s; review/compare/lepidolite_halo_ECHO.mp4), thousand_moons_var (lap handoff; JUMP.mp4), macaw_lick_var in Music (his
+pick), plus the 12 unjudged nightly videos of 10-06..10-10. gulal_dusk posted 20:05 clean through the fixed IG share wait; next post
+10-11 15:00.
 2026-10-10 (LATE AFTERNOON — ARM RESULTS + THE NEXT FULL VIDEO; read PLAN "yield + containment arm results" + "the
 echo-texture arm's 15-minute stall"): YIELD fix (default pre-roll path) = the coming lattice now grows visibly inside the
 pre-roll disc for the whole pre-roll (yield_strip.png); CONTAINMENT (`--stage-contain`, lab) on macaw 7->8 / 8->9 = a small
@@ -133,7 +149,7 @@ strip echotex_strip.png) → anchorfix2 (thousand_moons_var --from-card 8, appro
 → lepi_full = lepidolite_halo_var FULL render (journeys/lab/, authored echoes mica book / amber moon / blue planet on k6-k8,
 --stage-echo-tex 0.85 --stage-contain --stage-variety, seed 1234) → Review next to lepidolite_halo + review/compare/
 lepidolite_halo_ECHO.mp4 (today | echoes). stage_variety knob still OFF (Phil approved the direction on one video; flip after
-the anchorfix2 strip shows the lap handoff clean). TONIGHT RENDERS 4 (backpressure counts ready-to-post = 5/20, not Review;
+the anchorfix2 strip shows the lap handoff clean). TONIGHT RENDERS 4 (WRONG — see 10-11: the review gate skipped the night;
 first nightly through --stage-variety + first automated cleanup pass; morning check: night_batch.log argv has --stage-variety,
 and the tissue/nucleus variants on the four in Review).
 14:40 UPDATE: anchorfix2 strip = LAP HANDOFF FIXED (jump 53.7 vs consecutive 66.6; v1 71.1/65.6), confetti card unchanged →
@@ -141,7 +157,9 @@ settings stage_variety=True (nightly passes --stage-variety from the next render
 review/compare/thousand_moons_var_JUMP.mp4 (today | lap fix). Card 8 differs at the same seed only because v1 predates the
 09:20 tissue variants (fix drew 'domes'). Echo swatches: authored stage.echo_palette + icon-noun donors (PLAN 14:15);
 lepi_full rendering since 14:34 (~16:30 → Review as lepidolite_halo_var + review/compare/lepidolite_halo_ECHO.mp4).
-NOTE my earlier "tonight skips" lines below were wrong: max_ready_videos counts the posting queue, not Review.
+NOTE (corrected 10-11): the 14:45 note that stood here ("max_ready_videos counts the posting queue, not Review") was itself
+wrong — night_batch has TWO gates, max_review_videos (Review+Music, checked first) AND max_ready_videos (posting queue);
+adding lepidolite_halo_var to Review at 17:36 made Review+Music 20/20 and the 10-11 batch skipped ("review backlog 20").
 16:45 UPDATE: lepidolite_halo_var v1 is in Review (echoes + containment; PLAN "16:45"): echoes survive as COLOUR (amber ball hero,
 blue-white marble nucleons), the 7->8 handoff opens INSIDE the amber-moon atom (containment works), BUT card 7 came out LIME: a palette
 parse bug — "pine-black" (25,50,31) passed the lum>0.12 species test and the 'deep' fog + brand_tone lifted it to a green plane.
