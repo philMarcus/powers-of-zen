@@ -193,8 +193,9 @@ post (and the 05:55 retry) reached YouTube but Instagram dropped the reel: the p
 'shared' in the feed text and NAVIGATED away while the upload dialog still said 'Sharing' (~40 s) — navigation aborts the
 share. Reproduced + understood with scratchpad/orange/ig_share_probe.py (wait in place → "Your reel has been shared.",
 post count 99 → 100). poster.py now waits on the DIALOG (up to 240 s, telem ig_share_wait) before touching the profile.
-kelp_dynamo_stage is LIVE on both (IG reel DeT0s_lNUAU, caption verified). Next scheduled post 10-10 20:00 — the first
-through the fixed wait; check post_gate.log for "share confirmation: dialog confirmed". Stage era: 5 videos rendered
+kelp_dynamo_stage is LIVE on both (IG reel DeT0s_lNUAU, caption verified). FIRST POST THROUGH THE FIXED WAIT = CLEAN: gulal_dusk 10-10 20:05
+(YT oP-fMT2a6JA, IG reel DeVVMKPO9H4; post_gate.log "share confirmation: dialog confirmed" at +29 s, telem ig_share_wait=confirmed,
+IG post count 99 -> 101 incl. kelp's retry); next post 2026-10-11 15:00. Stage era: 5 videos rendered
 through the full package on 10-06; Phil's verdicts pending in Review.
 2026-10-05 (NIGHT HANDOFF — everything committed + pushed; nothing running; the 01:30 nightly is the first with the whole
 stage era ON; read PLAN "2026-10-05 AFTERNOON" + the arm notes under it): settings stage_mode=auto, stage_preroll=16,

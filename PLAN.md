@@ -2680,6 +2680,9 @@ DIALOG — "has been shared" or the dialog closing — up to 240 s, telem ig_sha
 then goes to the profile. kelp_dynamo_stage marked live on IG (caption verified on the live
 page). Lesson (memory ig-share-wait-in-place): never navigate during an in-flight upload; wait
 on the flow's own confirmation element, never on a substring of the whole page.
+RESULT 20:05 — the first scheduled post through the fixed wait went clean: gulal_dusk, YT oP-fMT2a6JA +
+IG reel DeVVMKPO9H4; "share confirmation: dialog confirmed" at +29 s (telem ig_share_wait=confirmed), the
+reel on the profile (99 -> 101 posts incl. kelp's retry), caption verified live. Next post 2026-10-11 15:00.
 
 # 2026-10-10 — STAGE VARIETY: plan of record (Phil: "satisfy my demand for variability in the stages
 # we have now before working on staging new realms")
