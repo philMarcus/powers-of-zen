@@ -302,6 +302,11 @@ JSETTINGS_DEFAULTS = {
     # tier / key light / background / element scale / echo-of-another-card draws, corrected
     # lighting and brand tone on the stage. False until Phil approves the full A/B pair.
     "stage_variety": False,
+    # CONTAINMENT (2026-10-12, Phil on lepidolite_halo_var: "the nucleus opens inside the atom...
+    # we want to use that tech"): dive --stage-contain — the pre-roll disc follows the CURRENT
+    # stage's plunge-target element, so the next stage opens INSIDE the thing we are diving
+    # into (a zoom into containment, not an iris wipe). Needs stage_preroll > 0.
+    "stage_contain": False,
     # NIGHTLY CLEANUP + DISK GUARD (Phil 2026-10-10: "we have a clean up process, we should run
     # it, and automate it too" — C: hit 100% that morning because ComfyUI kept its own copy of
     # every frame ever rendered, 86 GB): night_batch runs `archive.py --nightly` before its

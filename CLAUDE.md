@@ -120,6 +120,20 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-12 (PHIL'S VERDICTS; read PLAN "2026-10-12 11:00"): CONTAINMENT APPROVED ("the nucleus opens inside the atom — we want
+to use that tech") -> settings stage_contain=True, night_batch passes --stage-contain under the pre-roll, dashboard ⚙ toggle;
+footprint = only the pre-roll disc on stage->stage handoffs. ECHOES NOT APPROVED ("careful with the echoing survives as a
+colour... we need to do better getting textures onto the atomic spheres and tubes... not ready for the echoes yet, think
+through and take another pass") -> --stage-echo-tex/-ipa, echo_palette, the deep-fog tint stay LAB; next pass PROPOSED in
+PLAN (echo = shape/relief carried by depth CN, never colour; per-kit surface relief for spheres/tubes first; arms on
+cuttle_bridge/valdes_blow, then one full video). Lap fix approved ("the weird jump is much better now"); stage variety
+already on. THE NIGHT: macaw_lick_var -> queued took Review+Music to 19, so the FIRST --stage-variety nightly ran:
+sequoia_rosette, valdes_blow, cuttle_bridge, labrador_schiller (5.8 h) in Review — staged-card timecodes in PLAN; none had
+containment. Review 23 + Music 0 -> tonight SKIPS unless Phil's pass takes it below 20. Posts clean: stromatolite_dawn
+10-11 15:06, sunspot_archipelago 10-12 10:06 (IG dialog confirmed both); next 10-13 09:00 (05:00 remapped); posting queue
+3. YOUTUBE READ-OUT: 4 of the first 8 classic-description posts passed 100 views (octopus 1428, sloe 155, jelly 126,
+venus 116; template era 2 of 24) = the template was the cause, BUT the last five (10-09..10-12) sit at 0-2 views again
+with per-video descriptions — no action, watch the next three.
 2026-10-11 (MORNING AFTER PHIL'S RESTART; read PLAN "2026-10-11 08:10"): machine rebooted 10-10 ~21:00; the logon task brought
 Chrome + dashboard up and started ComfyUI at 22:02, which then DIED on a Windows console-close event (comfy pane: "forrtl: error (200):
 program aborting due to window-CLOSE event" right after startup; cause unverified — the same chain at 10-10 03:18 ran all day).

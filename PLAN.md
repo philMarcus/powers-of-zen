@@ -3107,3 +3107,63 @@ natural pairing is textures (the shape) + IPA (the finish) once the texture arm 
 - MUSIC PREGEN backfilled (tmux pregen_fix, log scratchpad/orange/pregen_fix.log): plover_scrape, bluebell_chorus,
   klondike_nugget (their 10-10 08:00 pregen died on the full disk) + thousand_moons (0 candidates since 10-07).
 - POSTING: gulal_dusk 20:05 clean through the fixed IG share wait (block above). Next post 2026-10-11 15:00.
+
+### 2026-10-12 11:00 — PHIL'S VERDICTS: CONTAINMENT IN, ECHOES NOT YET (another pass); first --stage-variety nightly landed; YouTube read-out
+- PHIL (voice, 10-12 morning), on lepidolite_halo_var + thousand_moons_var: "I do notice how the nucleus opens inside the
+  atom — we want to use that tech, that's good." / "be careful with the echoing survives as a colour — we did work to make
+  sure everything wasn't an orangish colour before" / "we need to do a bit better on getting some textures onto the atomic
+  spheres and tubes and whatnot... we're not ready for the echoes yet; let's think through and take another pass" / "the
+  thousand moons one worked, the weird jump is much better now" / colour "broadly ready to go" (transcript "Colic") / he will
+  go through the full Review queue and drop anything samey.
+- APPLIED — CONTAINMENT IS IN THE NIGHTLY: settings `stage_contain` (pipeline DEFAULTS False; journeys.json True since 11:05),
+  night_batch passes `--stage-contain` whenever stage_preroll > 0 and the knob is on, dashboard ⚙ "🎯 containment" toggle.
+  Footprint: ONLY the pre-roll disc on a stage->stage handoff (dive.preroll_disc contain=True keeps the disc >= 0.9x the
+  current stage's plunge-target element; the plunge fills 1.1 before another stage) — plain cards, single staged cards and
+  the lap pre-roll into a non-stage card 0 are untouched. First nightly through it = the next render night.
+  Lap pre-roll fix = already the default path (bug fix, 10-10). stage_variety was already True (14:37 10-10) — last night's
+  four rendered through it, so "colour ready to go" needed no change.
+- NOT APPLIED — ECHOES stay lab: --stage-echo-tex / --stage-echo-ipa / authored echo_palette + the 'deep'-fog tint
+  refinement (17:45 above) wait for the next pass. The variety package's echo WORDS ("every atom shaped like a tiny
+  <donor>", 60 % of auto-staged cards) remain in the nightly as part of what he approved on thousand_moons_var; they do
+  not read as shapes (macaw_var_strip) and carry no colour. --tone-chroma-aware stays lab (no verdict asked).
+- THE NEXT ECHO PASS — proposal, NOT built (Phil wants to think it through first):
+  (1) PRINCIPLE: an echo is SHAPE/RELIEF, never colour. The element's colour stays with the card's authored palette
+  (the orange-wash lesson; k7 amber-on-amber is exactly the failure he is warning about). The swatch's palette is
+  dropped from the echo entirely — no echo_tex_mean colour-only fallback on small spheres (stage.py 402-416).
+  (2) WHY colour was all that survived: the stage layer is repainted at den 0.6/0.45, id 0.5, DEPTH CN 0.7 — depth is
+  the channel the repaint honours (structure-first, Phil's 10-04 call); a flat decal lives in the colour channel, which
+  the repaint owns. So put the echo INTO THE DEPTH: sculpt the donor's silhouette/relief onto the sphere impostors
+  (height from the swatch's luminance or from an icon silhouette: lobes, bands, rings, facets, craters), lit in the
+  stage layer and carried by depth CN through the diffusion. Candidate second lever: lower den_travel on echo cards
+  (0.45 -> 0.35) so a relief has time to establish; hero scale 3 so it has pixels.
+  (3) TEXTURES FIRST (his ask, independent of echoes): a per-kit surface vocabulary rendered as relief — facets (gem),
+  pits/craters, latitude bands, fuzz, ribbing + segment rings on tubes — drawn per card like light/bg/scale, so
+  "sphere" stops reading as a billiard ball and "tube" as a sausage. Same depth mechanism, so one arm proves both.
+  (4) TEST BEDS = unjudged Review journeys with staged cards: cuttle_bridge (card 8 copper_atom hero-scale lattice,
+  card 7 hemocyanin tubes), valdes_blow (card 7 sulfur_atom, card 6 polysome tubes) — 80-frame --from-card arms,
+  strips + jump/colour numbers, then ONE full video next to its Review twin for Phil (he judges full videos).
+  (5) The deep-fog tint-from-the-fog-phrase refinement rides along (it is the other half of the colour worry).
+- THE NIGHT (10-12 01:34, log outbox/night_batch_1012_013424.log): Phil's 10-11 verdict (macaw_lick_var -> Music -> queued
+  at 18:28) took Review+Music to 19, so the batch RAN — the FIRST nightly through --stage-variety (+ --stage-auto
+  --stage-preroll 16 --palette-anchor 0.5 --plate live/mix): sequoia_rosette 6422 s, valdes_blow 5325 s, cuttle_bridge
+  5700 s, labrador_schiller 3006 s; 5.8 h, 4 to Review with captions + 10 music candidates each. Cleanup moved 0.5 G.
+  Staged cards in the dive-in cuts (scratchpad/orange/stage_times.py <run.json>): sequoia 6 tissue/glass 14.2-17.2 s,
+  7 tubes/glass 17.2-20.2 s (no echo draws); valdes 5 tissue/plasma 10.0-12.7, 6 tubes/glass 12.7-15.3 (echo words
+  "a black right whale and calf"), 7 lattice/plasma 15.3-18.0 ("a cream callosity"), 8 tracks/ink 18.0-20.7 ("a coiled
+  protein chain"); cuttle 6 tissue/gem 12.7-15.3 ("a ragged irregular galaxy"), 7 tubes/fuzzy 15.3-18.0 ("an azure
+  planet"), 8 lattice/glass 18.0-20.7 (none), 9 fluid/gem 20.7-23.3 ("an azure planet"); labrador_schiller has no staged
+  card. None of these four ran with containment (the knob landed this morning).
+- REVIEW GATE AGAIN: Review 23 + Music 0 = 23 >= max_review_videos 20 -> tonight SKIPS unless Phil's pass takes it
+  below 20 (4 verdicts). Posting queue 3 (macaw_lick_var, paradise_cape, urchin_barren).
+- POSTING: stromatolite_dawn 10-11 15:06 (YT Mi48v-ZuV-w, IG DeXXpOuBfa0) and sunspot_archipelago 10-12 10:06 (YT
+  JlWpobZUVFs, IG DeZaHsFv4PG) both "share confirmation: dialog confirmed" — three clean posts through the fixed wait.
+  Next post 2026-10-13 05:00 virtual -> 09:00 (dead-zone remap). ComfyUI has stayed up since the 10-11 08:05 relaunch.
+- YOUTUBE READ-OUT (the 10-03 question: judge the classic-description revert after ~10 posts). 13 classic posts since
+  the 10-03 revert, true snapshots (yt_stats.jsonl, latest): octopus_garden 1428, venus_basket_color 116, sloe_hedgerow
+  155, eft_downpour 45, gecko_rampart_stage 40, needle_sky 72, vernal_clutch 15, jelly_pier 126 — 4 of the first 8 past
+  100 (the pre-09-10 rate was 11 of 34), median views at 3 days ~60 where the template era sat at 1-2 (2 of 24 ever past
+  100). So the template WAS the cause, or at least the revert coincided with the recovery. BUT the last five are flat
+  again: cork_dehesa 2 and kelp_dynamo_stage 1 at 3 days, gulal_dusk 0 at 1.6 d, stromatolite_dawn 0, sunspot_archipelago
+  0 (hours old). Checked: their descriptions are per-video like the eight before them (desc = caption body + spot line
+  + 11-12 tags, no shared boilerplate), same cut/model/plate. No cause identified; NO ACTION — watch the next three. If
+  they also sit <= 5 views at 3 days, bring it to Phil (shorts distribution vs something in the stage-era videos).
