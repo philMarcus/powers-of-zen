@@ -3219,7 +3219,33 @@ natural pairing is textures (the shape) + IPA (the finish) once the texture arm 
   as before. lepidolite card 7 "a faint lilac outer fog far out" -> lilac (0.85, 0.74, 0.93) instead of amber; card 8
   "an enormous faint lilac fog" -> lilac; card 6 has no fog phrase -> unchanged. Behind a flag so the A/B/C arms stay
   comparable and the nightly's colour stays what Phil approved; v3 renders with it so he judges it in the same video.
-- DELIVERABLE (scratchpad/orange/relief_full.sh, after the arms): lepidolite_halo_var v3 = --from-card 5 of v2 with the
-  winning relief flags + --stage-nest + --stage-fog-phrase -> Review entry re-pointed (caption + 10 candidates kept),
-  review/compare/lepidolite_halo_ECHO2.mp4 (v2 colour echo | v3 relief echo), strip relief_full_strip.png. Judge in the
-  dive-in cut: k6 14.2-17.2 s, k7 17.2-20.2 s, k8 20.2-23.2 s (+ the 5->6 handoff just before 14.2 s).
+- ARM RESULTS (strips scratchpad/orange/relief_strip.png + relief_measure_*.png; numbers = edge-corr of the rendered
+  frame vs the stage layer / fine detail / saturation, cards 6 | 7; v2 = the colour-decal echo):
+    A relief 0.35x4 .............. k6 corr 0.19 detail 26.4 sat 0.58 | k7 corr 0.33 detail 16.4 sat 0.60
+    B = A + den 0.35 / id 0.65 ... k6 corr 0.34 detail 23.7 sat 0.51 | k7 corr 0.57 detail 13.4 sat 0.56
+    C relief 0.6x6 ............... k6 corr 0.18 detail 26.6 sat 0.57 | k7 corr 0.33 detail 16.1 sat 0.60
+    D = A + IPA 0.25 ............. k6 corr 0.18 detail 27.9 sat 0.57 | k7 corr 0.31 detail 17.6 sat 0.60
+    E = A + ambient 0.10 (round) . k6 corr 0.19 detail 26.6 sat 0.58 | k7 corr 0.25 detail 23.1 sat 0.70 orange 0.84 (A 0.92)
+    (v2: k6 detail 26.1 sat 0.68 | k7 detail 26.9 sat 0.90 — the amber decal; relief arms drop k7's sat by a third.)
+  WHAT THE STRIPS SAY: (1) SHAPE DONOR (k6 mica crystal) — the relief turns the stage layer's beads into irregular
+  crystal clusters along the rods, and the diffusion keeps them as CLUSTERED, FACETED sparkle instead of v2's uniform
+  spheres, with no colour from the donor (sat down, hue the authored lilac/amber). The clusters are not recognisable
+  as "mica crystals" but the element SHAPE varies for the first time. (2) AMPLITUDE IS NOT THE LEVER: C (0.6x6) is
+  indistinguishable from A in numbers and pixels; what carries the relief through the repaint is how much the stage
+  layer is trusted — B (den 0.35 / id 0.65) keeps ~2x the stage structure (corr 0.34/0.57) and shows the clusters as
+  lumpy silver masses + the k7 hero as a cracked moon surface, at the cost of a flatter, pasted look (detail and sat
+  lowest of all arms). Lever for Phil if he wants more shape: id 0.58 / den 0.40 as a middle. (3) IPA 0.25 (D) adds
+  nothing visible — out, no colour risk taken. (4) ROUND DONOR (k7 "a half-lit amber moon") — the relief alone did
+  nothing (A/C/D: a blown-out white hero ball, white beads on an amber plane, detail down to 16 from v2's 27) because a
+  moon's echo is not a shape, it is its LIGHTING: E's hard terminator (ambient 0.10 on round-donor cards) gives shaded
+  beads with dark sides and a hero that reads as an actual moon (dark sphere, lit crescent, crater texture), detail 23,
+  orange share 0.92 -> 0.84, the only arm that moved k7's colour balance. So the echo of a round thing = half-lit
+  shading (+ relief detail on the hero), the echo of a shaped thing = embossed silhouette. Both without colour.
+- FULL RENDER launched 11:16 (tmux relief_full, scratchpad/orange/relief_full.sh): lepidolite_halo_var v3 = --from-card 5
+  of v2 with E's proven flags (--stage-echo-relief 0.35 --stage-echo-relief-gain 4 --stage-echo-ambient 0.10) +
+  --stage-nest (5->6 from the tracker box if it locks, 6->7, 7->8) + --stage-fog-phrase (k7/k8 fog lilac, not amber)
+  -> Review entry re-pointed (caption + 10 candidates kept), review/compare/lepidolite_halo_ECHO2.mp4 (v2 colour echo |
+  v3 relief echo), strip relief_full_strip.png. Judge in the dive-in cut: k6 14.2-17.2 s, k7 17.2-20.2 s, k8 20.2-23.2 s
+  (+ the 5->6 handoff just before 14.2 s).
+- LAB NOTE: the round-2 chain waited on `tmux has-session -t relief_arms` from a session named relief_arms2 — tmux
+  prefix-matches targets, so it waited on itself (memory tmux-target-prefix-match; use `-t =name`). Lost 2 minutes.

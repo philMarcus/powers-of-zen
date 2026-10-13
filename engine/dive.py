@@ -1192,6 +1192,10 @@ def main():
     ap.add_argument("--stage-echo-relief-gain", type=float, default=4.0, metavar="G",
                     help="with --stage-echo-relief: how much the relief is exaggerated in the stage's "
                          "OUTPUT depth map (the depth ControlNet signal); the z-test keeps true geometry")
+    ap.add_argument("--stage-echo-ambient", type=float, default=0.0, metavar="A",
+                    help="lab (2026-10-13): on cards whose echo donor is ROUND (moon/planet/...), shade the "
+                         "stage's spheres with ambient A (default look 0.42) — a hard terminator, the "
+                         "half-lit look that IS a moon's echo; 0 = off")
     ap.add_argument("--stage-echo-den", type=float, default=0.0, metavar="D",
                     help="lab: cap the travel denoise on ECHO cards at D (arrival at D+0.15) so a relief "
                          "has time to establish; 0 = the variety plan's own values")
@@ -1940,14 +1944,18 @@ def main():
                         if args.stage_echo_tex > 0:
                             # ECHO TEXTURE: the same swatch worn by every sphere of the stage layer
                             _stage.set_echo_texture(_eimg, args.stage_echo_tex)
+                        _eround = bool(re.search(r"\b(planet|moon|sun|star|orb|ball|globe|sphere|egg|pearl|bead|"
+                                                 r"bubble|drop|droplet|eye|world|marble|berry|seed)s?\b",
+                                                 _vplan["echo"], re.I))
                         if args.stage_echo_relief > 0:
                             # ECHO RELIEF (2026-10-13): the swatch as a height field on every sphere —
                             # shape through the shading normal + the depth-CN map, colour untouched
                             _stage.set_echo_relief(_eimg, args.stage_echo_relief, args.stage_echo_relief_gain,
-                                                   round_hint=bool(re.search(
-                                                       r"\b(planet|moon|sun|star|orb|ball|globe|sphere|egg|pearl|bead|"
-                                                       r"bubble|drop|droplet|eye|world|marble|berry|seed)s?\b",
-                                                       _vplan["echo"], re.I)))
+                                                   round_hint=_eround)
+                        if args.stage_echo_ambient > 0 and _eround:
+                            # a ROUND donor's echo is its lighting: a hard terminator ("half-lit")
+                            _stage.ambient = args.stage_echo_ambient
+                            _stage.look = 'fuzzy'
                         if args.stage_echo_den > 0:
                             _stage.den_travel = min(float(getattr(_stage, "den_travel", None) or args.stage_den_travel),
                                                     args.stage_echo_den)

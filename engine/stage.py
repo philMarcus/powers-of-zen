@@ -72,7 +72,7 @@ def draw_look(key):
     return 'fuzzy'
 
 
-def shade_sphere(look, n, nz, rho2, base, light, extra, bg):
+def shade_sphere(look, n, nz, rho2, base, light, extra, bg, amb=0.42):
     """Per-pixel colour of a sphere cap under a LOOK. n: view-space normals (...,3), nz: the
     cap height (1 at centre, 0 at the rim), base: rgb (3,), light: unit vector into the scene."""
     b = base[None, None, :] if np.ndim(base) == 1 else base      # (3,) or per-pixel (h, w, 3)
@@ -103,9 +103,10 @@ def shade_sphere(look, n, nz, rho2, base, light, extra, bg):
         rim = (1.0 - nz) ** 2
         spec = ndl ** 30
         return 0.22 * b * (0.6 + 0.4 * ndl)[..., None] + 0.45 * rim[..., None] * (0.4 * b + 0.6) + 0.5 * spec[..., None]
-    # fuzzy (the original soft shading)
+    # fuzzy (the original soft shading); amb < 0.42 = a harder terminator (round echo donors:
+    # "a half-lit moon" IS its dark side)
     spec = ndl ** 24
-    shade = 0.42 + 0.58 * ndl
+    shade = amb + (1.0 - amb) * ndl
     return b * shade[..., None] + 0.55 * spec[..., None] + extra * b
 
 
@@ -497,7 +498,8 @@ class Stage:
                     n = np.stack([u + np.clip(_g * _gx, -1.5, 1.5), v + np.clip(_g * _gy, -1.5, 1.5), -nz], -1)
                     n = n / np.maximum(np.linalg.norm(n, axis=-1, keepdims=True), 1e-6)
                 depth_out = depth - R * self.echo_relief_amp * self.echo_relief_gain * (_h - 0.5)
-            px_col = shade_sphere(_look, n, nz, rho2, base, self.light, extra, self.bg)
+            px_col = shade_sphere(_look, n, nz, rho2, base, self.light, extra, self.bg,
+                                  amb=getattr(self, 'ambient', 0.42))
             # anti-aliased rim
             aa = np.clip((1.0 - np.sqrt(rho2)) * rpx, 0, 1)[..., None]
             region = col[y0:y1, x0:x1]
