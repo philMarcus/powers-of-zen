@@ -768,12 +768,14 @@ def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0,
         # when the rock does not. No lock = today's free iris on the fixed point.
         try:
             _locked = getattr(trk, "phase", "") == "object" and float(getattr(trk, "size", 0) or 0) > 0.02
-            _key = ("track", getattr(trk, "phrase", None), getattr(ps, "card", None))
-            if _key not in _nest_logged:
+            # one line per handoff, plus one more the frame a lock appears mid-pre-roll (the disc
+            # floor is re-evaluated every frame, so a late lock still gets followed)
+            _key = ("track", getattr(trk, "phrase", None), getattr(ps, "card", None), bool(_locked))
+            if _key not in _nest_logged and not (_key[:3] + (True,)) in _nest_logged:
                 _nest_logged.add(_key)
                 print(f"[dive] nest: {getattr(trk, 'phrase', '?')!r} -> stage card {_key[2]}: pre-roll disc "
                       f"{'FOLLOWS the tracked object' if _locked else 'free iris (tracker not locked)'}"
-                      + (f" (box {float(trk.size):.2f} W at ({float(trk.tx):.2f}, {float(trk.ty):.2f}))"
+                      + (f" from frame {i} (box {float(trk.size):.2f} W at ({float(trk.tx):.2f}, {float(trk.ty):.2f}))"
                          if _locked else f" (phase {getattr(trk, 'phase', '?')})"), flush=True)
             if _locked:
                 ax, ay = min(0.95, max(0.05, float(trk.tx))), min(0.95, max(0.05, float(trk.ty)))

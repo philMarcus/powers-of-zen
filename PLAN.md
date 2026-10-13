@@ -3249,3 +3249,26 @@ natural pairing is textures (the shape) + IPA (the finish) once the texture arm 
   (+ the 5->6 handoff just before 14.2 s).
 - LAB NOTE: the round-2 chain waited on `tmux has-session -t relief_arms` from a session named relief_arms2 — tmux
   prefix-matches targets, so it waited on itself (memory tmux-target-prefix-match; use `-t =name`). Lost 2 minutes.
+- v3 RESULT (12:18; dive 61 min for 225 frames; output/lepidolite_halo_var/v3; Review entry re-pointed with caption + 10
+  candidates kept; review/compare/lepidolite_halo_ECHO2.mp4 = v2 colour echo | v3 relief echo; v2's own dive-in cut
+  kept as review/compare/lepidolite_halo_var_v2_divein.mp4; strip scratchpad/orange/relief_full_strip.png):
+    card     v2 (colour decal)                      v3 (relief / half-lit / lilac fog)
+    k6       detail 26.1 sat 0.68 hue-ent 2.82     detail 26.6 sat 0.56 hue-ent 2.98  orange 0.68 (v2 0.74)
+    k7       detail 26.9 sat 0.90 hue-ent 1.73     detail 24.5 sat 0.48 hue-ent 3.77  orange 0.23 (v2 0.92) cool 0.45
+    k8       detail 19.9 sat 0.81 hue-ent 2.52     detail 15.8 sat 0.50 hue-ent 2.99  orange 0.43 (v2 0.81)
+  READ: (1) the amber-on-amber card is gone — k7's hue entropy more than doubles and its orange share falls from 0.92
+  to 0.23 (lilac fog from the authored phrase + half-lit beads + no amber decal); k8 likewise. (2) Saturation on the
+  staged cards drops by about a third (0.48-0.56), i.e. back to the range of the stage-variety cards Phil approved on
+  thousand_moons_var; v2's 0.81-0.90 was the decals. (3) Echo as shape: k6's beads are clustered, faceted sparkle;
+  k7's hero is a dark half-lit sphere with the k8 nucleus opening INSIDE it (nest 7->8 "0.12 W -> 1.13 W"); k8's
+  nucleon clusters are pale shaded spheres (the planet donor reads as lighting + relief, not as a planet). (4) NESTING
+  5->6 ENGAGED: the tracker restarted cold at card 5 and locked the lilac sheet at f203 (size 0.28 at (0.14, 0.46) —
+  the same lock as v2's run), so from f203 the lattice's disc rode the tracked sheet (box 0.28 -> 0.60 W by f215) until
+  the schedule overtook it; the strip's k5->k6 row shows the lattice texture appearing inside the sheet at f205-213
+  where v2 has a free iris. The "[dive] nest:" line said "free iris" because it printed at f200; the log now adds a
+  second line the frame a lock appears. (5) Nothing in the nightly changed: relief / ambient / fog-phrase are lab flags;
+  Phil judges v3 next to v2 in the dashboard (Review, same entry) and the side-by-side.
+  NEXT LEVERS if he wants more shape: id 0.58 / den 0.40 on echo cards (B showed shape survival doubles with
+  identity, at a cost in paint); per-kit procedural relief (facets / craters / bands / tube ribbing) on the same
+  mechanism for the texture ask; the tracker's lock rate for nesting breadth. Lab arm dirs
+  output/lepidolite_halo_var_platelive_relief_{a..e} are disposable (the nightly cleanup archives them as orphans).

@@ -120,6 +120,23 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-13 (ECHO PASS 2 + NESTING; read PLAN "2026-10-13 — ECHO PASS 2"): containment RENAMED nesting (--stage-nest, settings
+stage_nest, ⚙ "🪆 nesting"; old flag aliased). Phil: echo work first, then unstaged->stage nesting, GPU allowed. WHY ONLY COLOUR
+SURVIVED: the stage repaint honours DEPTH (CN 0.7) and owns colour; a decal is colour. BUILT (lab flags, default off):
+--stage-echo-relief A (the donor swatch as a HEIGHT field embossed on every sphere: silhouette plateau for shaped donors, detail
+only for round ones decided by the echo WORD; tilts the shading normal + exaggerated into the depth-CN map; mips for small
+spheres; NO colour), --stage-echo-ambient A (half-lit shading on round-donor cards), --stage-echo-den/-id (trust levers),
+--stage-fog-phrase (deep/gradient/sea fog tinted from the palette's fog/haze/space phrase, else darkest species — the
+amber-on-amber cause). ARMS A-E on lepidolite cards 6-7 (PLAN table): relief amplitude is NOT the lever, identity/denoise is
+(B doubles structure survival, flatter paint); IPA 0.25 adds nothing; the ROUND donor needs LIGHTING (E: hard terminator ->
+the hero reads as a moon). DELIVERED: lepidolite_halo_var v3 = Review entry (from card 5 of v2; relief 0.35x4 + ambient 0.10
++ nest + fog-phrase; caption + 10 candidates kept), side-by-side review/compare/lepidolite_halo_ECHO2.mp4 (v2 colour echo |
+v3 relief echo); k7 hue entropy 1.73 -> 3.77 bits, orange 0.92 -> 0.23, staged sat ~0.5 (the approved range); judge k6
+14.2-17.2 s, k7 17.2-20.2 s, k8 20.2-23.2 s + the 5->6 handoff just before 14.2 s. UNSTAGED->STAGE NESTING built (pre-roll disc
+centred on the TRACKER's locked box, never smaller than it; free iris when unlocked) and ENGAGED in v3 (lock at f203); measured
+breadth: the tracker was locked in only 4 of 25 plain->stage pre-rolls on disk — the lock rate is the limiter. Nightly path
+unchanged except the rename. Review 23 (cap 20) -> the batch skips until Phil's pass; posting queue 2 (macaw_lick_var,
+paradise_cape), next post 2026-10-14 00:00. ComfyUI up since 10-11.
 2026-10-12 (PHIL'S VERDICTS; read PLAN "2026-10-12 11:00"): CONTAINMENT APPROVED ("the nucleus opens inside the atom — we want
 to use that tech") -> settings stage_contain=True, night_batch passes --stage-contain under the pre-roll, dashboard ⚙ toggle;
 footprint = only the pre-roll disc on stage->stage handoffs. ECHOES NOT APPROVED ("careful with the echoing survives as a
