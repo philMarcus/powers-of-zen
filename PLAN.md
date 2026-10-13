@@ -3167,3 +3167,59 @@ natural pairing is textures (the shape) + IPA (the finish) once the texture arm 
   0 (hours old). Checked: their descriptions are per-video like the eight before them (desc = caption body + spot line
   + 11-12 tags, no shared boilerplate), same cut/model/plate. No cause identified; NO ACTION — watch the next three. If
   they also sit <= 5 views at 3 days, bring it to Phil (shorts distribution vs something in the stage-era videos).
+
+### 2026-10-13 — ECHO PASS 2 (relief, not colour) + NESTING (renamed; unstaged -> stage) + fog from the far-field phrase
+- PHIL (10-13 morning): rename containment -> NESTING; "today please work on unstaged to staged nesting. But I want to
+  try again at the echo pass, if we can't get that working our microscopic realms will be very repetitive. Only the
+  desired colour made it through last time, so what can we do? The echo work is higher priority than expanding nesting.
+  You may use the GPU today." Earlier (10-12): "how broadly applicable is this... not just stage to stage, but unstaged
+  to stage, or stage back to unstaged... it would be nice if we can actually zoom into a rock that we're sure of, that we
+  can identify, that becomes the mineral lattice."
+- RENAMED: `--stage-nest` (dive; `--stage-contain` kept as a hidden alias), settings `stage_nest` (journeys.json key
+  migrated by hand, DEFAULTS False, True live), dashboard ⚙ "🪆 nesting", stage.nestable(), preroll_disc(nest=),
+  "[dive] nest:" log lines. Prose that says "containment" in older notes means the same thing.
+- WHY ONLY COLOUR SURVIVED (the diagnosis the pass is built on): the stage layer is repainted at den 0.6/0.45 with
+  identity 0.5 and DEPTH CN 0.7. Depth is the channel the repaint honours (structure-first, Phil's 10-04 call); a flat
+  decal lives in the colour channel, which the repaint owns, so the swatch's picture went and its mean colour stayed
+  (and tinted three consecutive cards warm). A true-scale bump would not help either: the stage depth map is
+  log-encoded (stage.depth_value) and a whole sphere dome spans ~7 grey levels, invisible to the CN.
+- BUILT — ECHO RELIEF (`dive --stage-echo-relief A [--stage-echo-relief-gain G]`, lab, default 0; stage.set_echo_relief):
+  the donor swatch becomes a HEIGHT field on every sphere's cap — its silhouette as a raised plateau (0.65) plus its own
+  high-passed shading as surface relief (facets, craters, cloud bands; the broad dome removed); a ROUND donor (decided by
+  the echo WORD: planet/moon/sun/orb/ball/..., or a silhouette with IoU > 0.85 against its equal-area disc — a half-lit
+  moon masks as a crescent, so pixels alone would call it a shape) gets no plateau, detail only. The relief tilts the
+  shading normal (the rgb layer shows it under the key light) and is written into the OUTPUT depth exaggerated by G
+  (default 4; the z-test keeps true geometry so neighbours still sort). Mips (blur 3/6/12) for spheres under 60/30/15 px
+  so a 12 px sphere gets two broad bumps, not speckle; spheres under 6 px get nothing — and NO colour: the swatch's
+  palette never touches the element (Phil: "be careful with the echo surviving as a colour"). CPU check
+  scratchpad/orange/relief_cpu/sheet.png: hero depth p5-p95 spread 15 -> 40 grey levels with the mica relief.
+  Companion lab levers: `--stage-echo-den D` (travel denoise cap on echo cards, arrival D+0.15) and `--stage-echo-id W`
+  (identity floor), so a relief has time to establish. run.json records stage_echo{tex,ipa,relief,relief_gain,den,id}.
+- ARMS (tmux relief_arms, scratchpad/orange/relief_arms.sh; lepidolite_halo_var --from-card 6 --src-version v2
+  --frames 288 --no-loop = cards 6 (mica-crystal donor) + 7 (moon donor), same prefix/seed as the v2 Phil judged; lab
+  dirs output/lepidolite_halo_var_platelive_relief_{a,b,c}/v1): A relief 0.35 x 4; B = A + den 0.35 / id 0.65 on echo
+  cards; C relief 0.6 x 6. ~18.7 s/frame, ~22 min each. Strip + numbers: scratchpad/orange/relief_strip.py.
+- BUILT — UNSTAGED -> STAGE NESTING (preroll_disc nest branch for cur_stage None): on a diffusion card the engine does not
+  know the thing's size — the TRACKER does once it has locked ('object' phase; its box is propagated exactly through the
+  zoom). The pre-roll disc is then centred on the tracked object and never smaller than its box (0.5 x size x W), so the
+  coming world appears INSIDE the rock and rides it; the schedule stays a floor so the disc still covers the frame by the
+  bar line when the rock does not. No lock = today's free iris on the fixed point, logged "[dive] nest: 'phrase' -> stage
+  card K: free iris (tracker not locked)". Both preroll_disc call sites pass trk=_trk.
+  HOW BROADLY IT APPLIES TODAY — measured on every render on disk (build/track.jsonl, mode "track+preroll"): the tracker
+  was LOCKED during the pre-roll in 4 of 25 plain->stage handoffs (bluebell_chorus c6/c7, lepidolite_halo_var v2 c5 —
+  the mica book, lock at f203 size 0.28 at (0.14, 0.46) —, lotus_sieve c0 (degenerate, box 1.9), plover_scrape c6/c7);
+  the other 21 sat in 'point' phase (emergence point, no object). So the TRACKER'S LOCK RATE, not the nesting, is what
+  decides how often the rock-to-lattice zoom happens; raising it is the next lever (detect cadence / phrase wording /
+  accepting the committed emergence point with a default size as a weaker "object").
+  Test bed = lepidolite_halo_var card 5 -> 6 itself: the full v3 render restarts at card 5 (same seed, same prefix), so
+  its card-5 pre-roll IS the nesting arm (a separate arm was redundant and was dropped).
+- BUILT — FOG FROM THE FAR-FIELD PHRASE (`dive --stage-fog-phrase`, lab, default off; stage.fog_colour): the 'deep' /
+  'gradient' / 'sea' backgrounds tint their fog from the palette phrase that names the far field (fog/haze/mist/glow/
+  space/void/deep/nebula/...; a phrase that only names a dark is not a tint) when there is one, else the darkest species
+  as before. lepidolite card 7 "a faint lilac outer fog far out" -> lilac (0.85, 0.74, 0.93) instead of amber; card 8
+  "an enormous faint lilac fog" -> lilac; card 6 has no fog phrase -> unchanged. Behind a flag so the A/B/C arms stay
+  comparable and the nightly's colour stays what Phil approved; v3 renders with it so he judges it in the same video.
+- DELIVERABLE (scratchpad/orange/relief_full.sh, after the arms): lepidolite_halo_var v3 = --from-card 5 of v2 with the
+  winning relief flags + --stage-nest + --stage-fog-phrase -> Review entry re-pointed (caption + 10 candidates kept),
+  review/compare/lepidolite_halo_ECHO2.mp4 (v2 colour echo | v3 relief echo), strip relief_full_strip.png. Judge in the
+  dive-in cut: k6 14.2-17.2 s, k7 17.2-20.2 s, k8 20.2-23.2 s (+ the 5->6 handoff just before 14.2 s).

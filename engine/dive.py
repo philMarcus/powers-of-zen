@@ -708,13 +708,13 @@ def tone_anchor_image(img, sd_t=0.21, sat_t=0.56, k_max=1.6, s_max=1.5, chroma_a
     a = lum2[..., None] + chroma
     return Image.fromarray(np.clip(a * 255.0, 0, 255).astype(np.uint8))
 
-_contain_logged = set()
+_nest_logged = set()
 
 
-def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0, contain=False):
+def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0, nest=False, trk=None):
     """The pre-roll disc for frame i: (mask HxW in [0,1], coming-stage rgb, coming-stage depth,
     identity-inside weight, radius px). Grows at zoom^k from 0.12 W (P frames before the bar
-    line) to past the corners at the bar line. contain=True (--stage-contain): the disc never
+    line) to past the corners at the bar line. nest=True (--stage-nest): the disc never
     falls below 0.9x the projected radius of the CURRENT stage's plunge-target element, so the
     new world opens inside the thing the dive is entering (a zoom into containment, not an
     iris wipe)."""
@@ -729,7 +729,7 @@ def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0,
     for x in range(i - (pj + ps.pre), i + 1):
         Zc *= zoom_sched[x] if zoom_sched else cfg["zoom_per_frame"]
     rad = 0.12 * W * Zc ** k_pow
-    if contain and cur_stage is not None:
+    if nest and cur_stage is not None:
         # the disc IS the element we are diving into: its projected radius is hyperbolic in
         # time (tiny until the last ~5 frames, then it looms past the frame), so the next
         # world is revealed only as we actually reach it — a zoom, not a 16-frame iris. One
@@ -737,18 +737,18 @@ def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0,
         try:
             cpre = getattr(cur_stage, "pre", 0)
             f_start = cur_j - (pj + ps.pre) + cpre          # current stage frame at pre-roll start
-            _ok = cur_stage.containable(f_start)
+            _ok = cur_stage.nestable(f_start)
             _key = (getattr(cur_stage, "card", None), getattr(ps, "card", None))
-            if _key not in _contain_logged:                 # one line per handoff, for the record
-                _contain_logged.add(_key)
+            if _key not in _nest_logged:                 # one line per handoff, for the record
+                _nest_logged.add(_key)
                 try:
                     _r0 = cur_stage.target_px_radius(f_start + 1) / W
                     _r1 = cur_stage.target_px_radius(f_start + max(1, ps.pre)) / W
                 except Exception:
                     _r0 = _r1 = float("nan")
                 _fw = lambda r: 'inside it' if r >= 1e4 else f"{r:.2f} W"
-                print(f"[dive] contain: card {_key[0]} -> {_key[1]}: pre-roll disc "
-                      f"{'FOLLOWS the plunge target' if _ok else 'free iris (target not containable)'} "
+                print(f"[dive] nest: card {_key[0]} -> {_key[1]}: pre-roll disc "
+                      f"{'FOLLOWS the plunge target' if _ok else 'free iris (target not nestable)'} "
                       f"(target radius {_fw(_r0)} -> {_fw(_r1)} across the pre-roll)", flush=True)
             if _ok:
                 rpx = cur_stage.target_px_radius(cur_j + cpre + 1)
@@ -756,6 +756,28 @@ def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0,
                     rpx = 2.0 * max(W, H)
                 if rpx > 0.0:
                     rad = max(12.0, rpx)
+        except Exception:
+            pass
+    elif nest and cur_stage is None and trk is not None:
+        # UNSTAGED -> STAGE nesting (2026-10-13, Phil: "zoom into a rock we're sure of... that
+        # becomes the mineral lattice"): on a diffusion card the engine does not know the
+        # thing's size — the TRACKER does once it has locked ('object' phase; its box is
+        # propagated exactly through the zoom). The disc is centred on the tracked object and
+        # never smaller than its box, so the coming world appears INSIDE the rock and rides it.
+        # The schedule stays a floor: the disc still covers the frame by the bar line even
+        # when the rock does not. No lock = today's free iris on the fixed point.
+        try:
+            _locked = getattr(trk, "phase", "") == "object" and float(getattr(trk, "size", 0) or 0) > 0.02
+            _key = ("track", getattr(trk, "phrase", None), getattr(ps, "card", None))
+            if _key not in _nest_logged:
+                _nest_logged.add(_key)
+                print(f"[dive] nest: {getattr(trk, 'phrase', '?')!r} -> stage card {_key[2]}: pre-roll disc "
+                      f"{'FOLLOWS the tracked object' if _locked else 'free iris (tracker not locked)'}"
+                      + (f" (box {float(trk.size):.2f} W at ({float(trk.tx):.2f}, {float(trk.ty):.2f}))"
+                         if _locked else f" (phase {getattr(trk, 'phase', '?')})"), flush=True)
+            if _locked:
+                ax, ay = min(0.95, max(0.05, float(trk.tx))), min(0.95, max(0.05, float(trk.ty)))
+                rad = max(rad, 0.5 * float(trk.size) * W)
         except Exception:
             pass
     yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
@@ -1158,7 +1180,24 @@ def main():
                     help="ECHO TEXTURES (lab, 2026-10-10): the echo donor's txt2img swatch worn as a "
                          "face-on decal by every sphere of the staged card's layer, W = how much of "
                          "the base colour it replaces (0.85 typical); 0 = off")
-    ap.add_argument("--stage-contain", action="store_true",
+    ap.add_argument("--stage-fog-phrase", action="store_true",
+                    help="lab (2026-10-13): the stage's deep/gradient/sea fog takes its tint from the palette "
+                         "phrase that names the far field (fog/haze/space/glow...) when there is one, "
+                         "instead of the darkest species (amber-on-amber on warm palettes)")
+    ap.add_argument("--stage-echo-relief", type=float, default=0.0, metavar="A",
+                    help="ECHO RELIEF (lab, 2026-10-13): the echo donor's swatch as a HEIGHT field embossed "
+                         "on every sphere of the staged card's layer — shape, not colour (element colour "
+                         "stays the authored palette). A = normal tilt / height as a fraction of the "
+                         "radius (0.35 typical); 0 = off")
+    ap.add_argument("--stage-echo-relief-gain", type=float, default=4.0, metavar="G",
+                    help="with --stage-echo-relief: how much the relief is exaggerated in the stage's "
+                         "OUTPUT depth map (the depth ControlNet signal); the z-test keeps true geometry")
+    ap.add_argument("--stage-echo-den", type=float, default=0.0, metavar="D",
+                    help="lab: cap the travel denoise on ECHO cards at D (arrival at D+0.15) so a relief "
+                         "has time to establish; 0 = the variety plan's own values")
+    ap.add_argument("--stage-echo-id", type=float, default=0.0, metavar="W",
+                    help="lab: floor the identity hold on ECHO cards at W; 0 = the variety plan's own")
+    ap.add_argument("--stage-nest", "--stage-contain", dest="stage_nest", action="store_true",
                     help="pre-roll disc follows the CURRENT stage's plunge-target element (never "
                          "below 0.9x its projected radius): the next world opens inside the thing "
                          "we are diving into instead of a free iris on the fixed point (lab, 2026-10-10)")
@@ -1426,6 +1465,8 @@ def main():
         "plate_outside": args.plate_outside, "plate_spin": args.plate_spin,
         "plate_cn": args.plate_cn, "plate_void_gate": bool(args.plate_void_gate),
         "plate_intro": args.plate_intro,
+        "stage_echo": {"tex": args.stage_echo_tex, "ipa": args.stage_echo_ipa, "relief": args.stage_echo_relief,
+                       "relief_gain": args.stage_echo_relief_gain, "den": args.stage_echo_den, "id": args.stage_echo_id},
         "play_start": spec.get("play_start"),
         "overrides": cfg_overrides, "tag": args.tag, "tail": args.tail,
         "neg_extra": args.neg_extra, "palette_anchor": args.palette_anchor,
@@ -1708,6 +1749,7 @@ def main():
             or any(isinstance(r.get("stage"), dict) for r in spec.get("registers", []))) \
             and "registers" in spec and cfg["build"] != "out":
         import stage as _stagemod
+        _stagemod.FOG_FROM_PHRASE = bool(args.stage_fog_phrase)     # lab: fog tint from the far-field phrase
         _sregs = spec["registers"]
         _snames = [r["name"] for r in _sregs]
         _srs = spec.get("render_start")
@@ -1853,17 +1895,17 @@ def main():
                 if _sdef.get("kit") == "nucleus" and not _sdef.get("variant"):
                     _sdef["variant"] = _stagemod.nucleus_variant_for(_sreg, _skey(_sk))
                     _vplan["nucleus_variant"] = _sdef["variant"]
-            # CONTAINMENT (dive --stage-contain): a stage followed by another stage plunges so
+            # NESTING (dive --stage-nest): a stage followed by another stage plunges so
             # its target element covers the frame's corners at the bar line (fill 1.1 -> radius
             # 1.1 W, not 0.55 W) — the next world opens inside it (preroll_disc)
-            _fill = 1.1 if (args.stage_contain and _next(_sk) in {k_ for k_, _ in _splan}) else 0.55
+            _fill = 1.1 if (args.stage_nest and _next(_sk) in {k_ for k_, _ in _splan}) else 0.55
             _stage = _stagemod.build_card_stage_v2(_sdef, _sreg.get("palette"), _szw, _sanchor,
                                                    cfg["width"], cfg["height"], seed=_sseed,
                                                    look=_jlook, fill=_fill)
             if _vplan is not None:
                 _stagemod.apply_variety(_stage, _vplan, _sreg.get("palette"), _sdef.get("kit", "lattice"))
                 _stage.echo_ref = None
-                if (args.stage_echo_ipa > 0 or args.stage_echo_tex > 0) and _vplan.get("echo"):
+                if (args.stage_echo_ipa > 0 or args.stage_echo_tex > 0 or args.stage_echo_relief > 0) and _vplan.get("echo"):
                     # ECHO BY PIXELS (B3): one txt2img of the donor thing, close and alone, in the
                     # journey's style; uploaded once as this card's IP-Adapter reference
                     _dreg = next((r_ for r_ in _sorder if (r_.get("target") or r_.get("target_phrase")) == _vplan["echo"]), None)
@@ -1898,9 +1940,30 @@ def main():
                         if args.stage_echo_tex > 0:
                             # ECHO TEXTURE: the same swatch worn by every sphere of the stage layer
                             _stage.set_echo_texture(_eimg, args.stage_echo_tex)
+                        if args.stage_echo_relief > 0:
+                            # ECHO RELIEF (2026-10-13): the swatch as a height field on every sphere —
+                            # shape through the shading normal + the depth-CN map, colour untouched
+                            _stage.set_echo_relief(_eimg, args.stage_echo_relief, args.stage_echo_relief_gain,
+                                                   round_hint=bool(re.search(
+                                                       r"\b(planet|moon|sun|star|orb|ball|globe|sphere|egg|pearl|bead|"
+                                                       r"bubble|drop|droplet|eye|world|marble|berry|seed)s?\b",
+                                                       _vplan["echo"], re.I)))
+                        if args.stage_echo_den > 0:
+                            _stage.den_travel = min(float(getattr(_stage, "den_travel", None) or args.stage_den_travel),
+                                                    args.stage_echo_den)
+                            _stage.den_arrival = min(float(getattr(_stage, "den_arrival", None) or args.stage_den),
+                                                     args.stage_echo_den + 0.15)
+                        if args.stage_echo_id > 0:
+                            _stage.wid_hold = max(float(getattr(_stage, "wid_hold", None) or args.stage_id),
+                                                  args.stage_echo_id)
                         print(f"[dive] stage-echo: card {_sk} swatch of {_vplan['echo']!r} (seed {_eseed})"
                               f"{' ipa' if args.stage_echo_ipa > 0 else ''}{' texture' if args.stage_echo_tex > 0 else ''}"
-                              f"{' (reused)' if _ereused else ''}", flush=True)
+                              + (f" relief {args.stage_echo_relief:g}x{args.stage_echo_relief_gain:g}"
+                                 f" (fill {_stage.echo_relief_fill:.2f} plateau {_stage.echo_relief_plateau:.2f})"
+                                 if args.stage_echo_relief > 0 else "")
+                              + (f" den {_stage.den_travel:.2f}/{_stage.den_arrival:.2f} id {_stage.wid_hold:.2f}"
+                                 if (args.stage_echo_den > 0 or args.stage_echo_id > 0) else "")
+                              + f"{' (reused)' if _ereused else ''}", flush=True)
                     except Exception as _ee:  # a failed swatch never kills a render
                         print(f"[dive] stage-echo-ipa: swatch failed for card {_sk}: {_ee}", flush=True)
                 print(f"[dive] stage-variety: card {_sk} {_sreg.get('name')!r} tier {_vplan['tier']} "
@@ -2434,7 +2497,7 @@ def main():
             _prd = None
             if _prej is not None and plate_mask is None:
                 _prd = preroll_disc(i, _prej, fed.size, zoom_sched, cfg, args.stage_preroll_k,
-                                    cur_stage=_st, cur_j=_sj0, contain=bool(args.stage_contain))
+                                    cur_stage=_st, cur_j=_sj0, nest=bool(args.stage_nest), trk=_trk)
             if _st is not None:
                 # MICRO STAGE: composite the built world at the exact scheduled geometry.
                 # Identity ramps in across the arrival (the old texture resolves INTO the
@@ -2528,7 +2591,7 @@ def main():
                 _ps, _pj = _prej
                 if _prd is None:
                     _prd = preroll_disc(i, _prej, fed.size, zoom_sched, cfg, args.stage_preroll_k,
-                                        cur_stage=_st, cur_j=_sj0, contain=bool(args.stage_contain))
+                                        cur_stage=_st, cur_j=_sj0, nest=bool(args.stage_nest), trk=_trk)
                 _m, _prgb, _pdep_, _wid, _rad = _prd
                 _fa_ = np.asarray(fed.convert("RGB"), np.float32)
                 _sa_ = np.asarray(_prgb.convert("RGB"), np.float32)

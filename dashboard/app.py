@@ -1157,11 +1157,11 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
                               "draws a wildness tier, a key light, a background, an element scale and, 60% of "
                               "the time, an ECHO — its elements shaped like a tiny thing from elsewhere in the "
                               "journey. Off = the first stage era's look. Applies to the next renders.")
-    scontain = t2.toggle("🎯 containment (the next stage opens inside the element we are diving into)",
-                         value=bool(s.get("stage_contain")),
-                         help="2026-10-12 (engine --stage-contain): during the pre-roll the coming stage's "
+    snest = t2.toggle("🪆 nesting (the next stage opens inside the element we are diving into)",
+                         value=bool(s.get("stage_nest")),
+                         help="2026-10-12 (engine --stage-nest): during the pre-roll the coming stage's "
                               "disc follows the current stage's plunge-target element instead of a free iris "
-                              "on the fixed point — a zoom into containment, not a wipe. Needs stage pre-roll "
+                              "on the fixed point — a zoom into the thing we enter, not a wipe. Needs stage pre-roll "
                               "> 0. Off = the free iris. Applies to the next renders.")
     fpaused = t2.toggle("⏸ pause midnight refill", value=bool(s["refill_paused"]))
     st.markdown("**platform pauses** (scheduler skips paused platforms when posting)")
@@ -1183,7 +1183,7 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
             "palette_anchor": float(panchor),
             "stage_mode": ("auto" if smode == "auto" else ""),
             "stage_variety": bool(svariety),
-            "stage_contain": bool(scontain),
+            "stage_nest": bool(snest),
             "auto_cleanup": bool(autoclean), "min_free_gb": int(minfree),
             "post_every_hours": float(post_every),
             "post_next": post_next.strip()})

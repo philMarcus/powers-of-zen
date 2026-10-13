@@ -224,10 +224,10 @@ def render_one(journey, force=False, new_seed=True, from_card=None):
             _spr = int(pl.jload()["settings"].get("stage_preroll") or 0)
             if _spr > 0:
                 argv += ["--stage-preroll", str(_spr)]
-                if pl.jload()["settings"].get("stage_contain"):
-                    # CONTAINMENT (PLAN "2026-10-12"): the pre-roll disc follows the plunge-target
+                if pl.jload()["settings"].get("stage_nest"):
+                    # NESTING (PLAN "2026-10-12"): the pre-roll disc follows the plunge-target
                     # element — the next stage opens inside the thing we are diving into
-                    argv += ["--stage-contain"]
+                    argv += ["--stage-nest"]
             if pl.jload()["settings"].get("stage_variety"):
                 # STAGE VARIETY (PLAN "STAGE VARIETY"): lit, toned, varied stages + echoes
                 argv += ["--stage-variety"]

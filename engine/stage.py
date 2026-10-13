@@ -134,7 +134,7 @@ class Stage:
 
     def target_px_radius(self, f):
         """Projected radius in pixels of the plunge-target ELEMENT at stage frame f — the thing
-        the dive is entering. The pre-roll's containment disc (dive --stage-contain, 2026-10-10,
+        the dive is entering. The pre-roll's containment disc (dive --stage-nest, 2026-10-10,
         Phil: "stage to stage still feels more like a wipe than a zoom") follows it, so the
         coming world opens INSIDE the atom / cell / droplet we are diving into instead of in a
         free-floating iris on the fixed point. 0 when the stage has no target element.
@@ -167,16 +167,16 @@ class Stage:
             return 1e9
         return float(self.w * self._tgt_R / q[2])
 
-    def containable(self, f_start=0):
+    def nestable(self, f_start=0):
         """True when the plunge-target element is a thing we visibly ENTER across the pre-roll:
         not yet covering the view when the pre-roll starts (radius <= 0.7 W at stage frame
         f_start — a cell or a molecule cluster legitimately starts at ~0.4-0.6 W, an atom at
         0.08 W) and past 0.6 W at the bar line (one frame beyond the slice). A target region
-        already filling the view, or one that never looms: not containable -> the scheduled disc."""
+        already filling the view, or one that never looms: not nestable -> the scheduled disc."""
         key = int(f_start)
-        cache = getattr(self, '_containable', None)
+        cache = getattr(self, '_nestable', None)
         if cache is None:
-            cache = self._containable = {}
+            cache = self._nestable = {}
         if key not in cache:
             try:
                 r0 = self.target_px_radius(key)
@@ -208,10 +208,67 @@ class Stage:
         # the swatch's own colour (centre-weighted) for spheres too small to carry a picture
         _c = self.echo_tex[size // 4: 3 * size // 4, size // 4: 3 * size // 4]
         self.echo_tex_mean = _c.reshape(-1, 3).mean(0)
+        self._echo_rot_mir()
+
+    def _echo_rot_mir(self):
+        """One fixed rotation + mirror per element for decals and relief (same draw for both)."""
+        if getattr(self, '_tex_rot', None) is not None and len(self._tex_rot) >= max(1, len(self.items)):
+            return
         rng = np.random.default_rng((getattr(self, 'seed', 0) + 77) & 0xFFFFFFFF)
         n = max(1, len(self.items))
         self._tex_rot = rng.uniform(0, 2 * math.pi, n).astype(np.float32)
         self._tex_mir = rng.random(n) < 0.5
+
+    def set_echo_relief(self, img, amp=0.35, gain=4.0, size=160, round_hint=False):
+        """ECHO AS SHAPE, NOT COLOUR (2026-10-13, Phil: "only the desired colour made it through
+        last time... be careful with the echo surviving as a colour"). The donor swatch becomes a
+        HEIGHT field embossed on every sphere's cap: its silhouette as a raised plateau plus its
+        own shading as surface relief (high-passed, so craters / facets / cloud bands carry and
+        the swatch's broad dome does not). The relief perturbs the shading normal (the rgb layer
+        shows it under the key light) and the OUTPUT depth map (exaggerated by `gain`: the depth
+        encoding is logarithmic and a sphere's whole dome spans ~7 grey levels, so a true-scale
+        bump would be invisible to the depth ControlNet). Element colour is untouched — it stays
+        the card's authored palette. A ROUND donor (moon, planet: the mask fills its bounding
+        disc) gets no plateau, since a disc embossed on a sphere is just a bump; only its detail
+        is the echo. amp = normal tilt / height as a fraction of the radius."""
+        im = img.convert("L")
+        w, h = im.size
+        sq = min(w, h)
+        im = im.crop(((w - sq) // 2, (h - sq) // 2, (w - sq) // 2 + sq, (h - sq) // 2 + sq))
+        im = im.resize((size, size), Image.LANCZOS)
+        lum = np.asarray(im, np.float32) / 255.0
+
+        def _blur(a, r):
+            return np.asarray(Image.fromarray(np.clip(a * 255, 0, 255).astype(np.uint8))
+                              .filter(ImageFilter.GaussianBlur(r)), np.float32) / 255.0
+        mask = _blur(np.clip((lum - 0.08) / 0.17, 0, 1), 2.0)
+        m = mask > 0.5
+        ys, xs = np.nonzero(m)
+        fill = 0.0
+        if len(xs) > 10:
+            # how disc-like the silhouette is: IoU with the equal-area disc about its centroid
+            cx, cy = xs.mean(), ys.mean()
+            rr = math.sqrt(m.sum() / math.pi)
+            yy, xx = np.mgrid[0:size, 0:size]
+            disc = ((xx - cx) ** 2 + (yy - cy) ** 2) <= rr * rr
+            fill = float((m & disc).sum() / max(1, (m | disc).sum()))
+        # a ROUND donor is decided by its WORD first (a half-lit moon or planet masks as a
+        # crescent, so pixels alone would call it a shape): no plateau, detail only
+        is_round = bool(round_hint) or fill > 0.85
+        plateau = 0.0 if is_round else 0.65
+        lum_n = lum / max(float(lum.max()), 1e-6)
+        hp = lum_n - _blur(lum_n, 6.0)                     # local relief, not the broad shading
+        hp = 0.5 + hp / (2.0 * max(float(np.abs(hp).max()), 1e-6))
+        soft = _blur(mask, 6.0)                            # the silhouette step fades out of the detail
+        H = plateau * mask + (1.0 - plateau) * (0.5 + (hp - 0.5) * soft)
+        H = _blur(H, 1.0)
+        H = (H - H.min()) / max(float(H.max() - H.min()), 1e-6)
+        self.echo_relief = H.astype(np.float32)
+        # mips: a 12 px sphere sampling a 160 px field point-wise is speckle, not relief
+        self.echo_relief_mips = [self.echo_relief] + [_blur(H, r).astype(np.float32) for r in (3.0, 6.0, 12.0)]
+        self.echo_relief_amp, self.echo_relief_gain = float(amp), float(gain)
+        self.echo_relief_fill, self.echo_relief_plateau = fill, plateau
+        self._echo_rot_mir()
 
     # ---- STAGE CAMERA MOVES (variety C3, 2026-10-10) -----------------------------------
     # A lateral offset of the camera with a LOOK-AT on the plunge target: the target keeps
@@ -303,6 +360,7 @@ class Stage:
         else:
             col = np.tile(self.bg, (h, w, 1)).astype(np.float32)
         zb = np.full((h, w), np.inf, np.float32)
+        zo = np.full((h, w), np.inf, np.float32)     # OUTPUT depth (echo relief exaggerated); zb = true z-test
         glow = np.zeros((h, w, 3), np.float32)
         # per-frame deterministic jitter (not a running RNG): the warm-up and lap copies of a
         # staged card 0 must render the SAME frame j identically whatever was drawn before
@@ -415,6 +473,30 @@ class Stage:
                 _iy = np.clip(((0.5 + 0.46 * _vv) * (_T - 1)).astype(np.int32), 0, _T - 1)
                 base = base[None, None, :] * (1.0 - self.echo_tex_w) + _tex[_iy, _ix] * self.echo_tex_w
                 _look = 'fuzzy'               # soft shading keeps the picture readable
+            depth_out = depth
+            _rel = getattr(self, 'echo_relief', None)
+            if _rel is not None and kind == 'sphere' and rpx >= 6.0:
+                # ECHO RELIEF (set_echo_relief): the donor's height field embossed on this cap.
+                # Shading normal tilted by the field's screen-space gradient; the OUTPUT depth
+                # carries the height exaggerated by `gain` (the z-test keeps the true geometry,
+                # so neighbours still sort correctly). Colour untouched.
+                _k = i % len(self._tex_rot)
+                _ct, _st = math.cos(float(self._tex_rot[_k])), math.sin(float(self._tex_rot[_k]))
+                _uu, _vv = u * _ct - v * _st, u * _st + v * _ct
+                if self._tex_mir[_k]:
+                    _uu = -_uu
+                _T = _rel.shape[0]
+                _mips = getattr(self, 'echo_relief_mips', None) or [_rel]
+                _rel = _mips[min(len(_mips) - 1, 0 if rpx >= 60 else 1 if rpx >= 30 else 2 if rpx >= 15 else 3)]
+                _ix = np.clip(((0.5 + 0.46 * _uu) * (_T - 1)).astype(np.int32), 0, _T - 1)
+                _iy = np.clip(((0.5 + 0.46 * _vv) * (_T - 1)).astype(np.int32), 0, _T - 1)
+                _h = np.where(inside, _rel[_iy, _ix], 0.5).astype(np.float32)
+                if _h.shape[0] > 1 and _h.shape[1] > 1:
+                    _gy, _gx = np.gradient(_h)                      # per screen pixel
+                    _g = self.echo_relief_amp * 2.0 * rpx           # -> d h / d u (u spans 2 over 2 rpx)
+                    n = np.stack([u + np.clip(_g * _gx, -1.5, 1.5), v + np.clip(_g * _gy, -1.5, 1.5), -nz], -1)
+                    n = n / np.maximum(np.linalg.norm(n, axis=-1, keepdims=True), 1e-6)
+                depth_out = depth - R * self.echo_relief_amp * self.echo_relief_gain * (_h - 0.5)
             px_col = shade_sphere(_look, n, nz, rho2, base, self.light, extra, self.bg)
             # anti-aliased rim
             aa = np.clip((1.0 - np.sqrt(rho2)) * rpx, 0, 1)[..., None]
@@ -422,6 +504,7 @@ class Stage:
             mix = (hit[..., None] * aa)
             col[y0:y1, x0:x1] = region * (1 - mix) + px_col * mix
             zb[y0:y1, x0:x1] = np.where(hit, depth, zi)
+            zo[y0:y1, x0:x1] = np.where(hit, depth_out, zo[y0:y1, x0:x1])
         # depth fog toward the void colour, then glow on top
         zfin = np.where(np.isinf(zb), self.fog_dist * 3, zb)
         fog = np.clip(1.0 - np.exp(-zfin / self.fog_dist), 0, 1)[..., None]
@@ -433,7 +516,7 @@ class Stage:
             col = brand_tone(col * 1.35)
         else:
             col = np.clip(col * 1.35, 0, 1)
-        dmap = np.where(np.isinf(zb), 0.03, depth_value(zb)).astype(np.float32)
+        dmap = np.where(np.isinf(zo), 0.03, depth_value(zo)).astype(np.float32)
         return col, dmap
 
     def frame_images(self, f):
@@ -783,6 +866,33 @@ def palette_colours(palette):
     if len(species) == 1:
         species.append(tuple(np.clip(np.array(species[0]) * 0.6 + 0.2, 0, 1)))
     return species[:3], tuple(np.clip(dark, 0, 0.12))
+
+
+FOG_FROM_PHRASE = False       # set by dive --stage-fog-phrase; off = the darkest-species tint Phil has seen
+_FOG_WORD = re.compile(r"\b(fog|foggy|haze|hazy|mist|misty|glow|space|void|deep|depth|depths|gloom|dusk|sky|air|"
+                       r"nebula|zodiacal)\b", re.I)
+
+
+def fog_colour(palette):
+    """The colour of the palette phrase that NAMES the far field ("a faint lilac outer fog far
+    out", "pine-black deep", "lilac zodiacal glow"), or None. 2026-10-13: the 'deep' / 'gradient'
+    / 'sea' backgrounds tinted their fog from the DARKEST SPECIES, which on a warm palette is
+    amber — lepidolite_halo_var's card 7 came out amber atoms on an amber plane (hue entropy 1.11
+    bits) where the author wrote a lilac fog. The authored far-field phrase wins when there is
+    one; a phrase that only names a dark ("pine-black deep") is not a tint."""
+    try:
+        import palette as _p
+    except ImportError:  # pragma: no cover
+        return None
+    for ph in re.split(r",|\bon\b|\bover\b|\bunder\b|\bthrough\b", palette or ''):
+        if not _FOG_WORD.search(ph) or _DARK_WORD.search(ph):
+            continue
+        c = _p.phrase_rgb(ph)
+        if c:
+            c = np.array(c, np.float32) / 255.0
+            if float(c.max()) > 0.30:
+                return tuple(c)
+    return None
 
 
 
@@ -1659,15 +1769,20 @@ def apply_variety(st, plan, palette, kit):
     # BACKGROUND
     dark = np.array(dark, np.float32); sp0 = np.array(species[0], np.float32)
     sp1 = np.array(species[-1], np.float32)
+    # the far field's tint: the authored fog/haze/space phrase when the palette has one, else
+    # the darkest species (fog_colour, 2026-10-13 — amber-on-amber fix)
+    _fogc = fog_colour(palette) if FOG_FROM_PHRASE else None      # dive --stage-fog-phrase (lab)
+    fsp = np.array(_fogc, np.float32) if _fogc is not None else sp1
+    st.fog_from_phrase = _fogc is not None
     st.bg_grad = None
     st.fog_dist = 9.0
     if plan['bg'] == 'void':
         st.bg, st.fog_rgb = dark, dark
     elif plan['bg'] == 'deep':
         st.bg = dark * 0.5
-        st.fog_rgb = np.clip(sp1 * 0.30 + dark * 0.4, 0, 1)
+        st.fog_rgb = np.clip(fsp * 0.30 + dark * 0.4, 0, 1)
     elif plan['bg'] == 'gradient':
-        st.bg_grad = (np.clip(dark * 0.6, 0, 1), np.clip(sp1 * 0.45 + dark * 0.3, 0, 1))
+        st.bg_grad = (np.clip(dark * 0.6, 0, 1), np.clip(fsp * 0.45 + dark * 0.3, 0, 1))
         st.bg = (st.bg_grad[0] + st.bg_grad[1]) / 2
         st.fog_rgb = st.bg
     elif plan['bg'] == 'bright':
@@ -1675,7 +1790,7 @@ def apply_variety(st, plan, palette, kit):
         st.bg, st.fog_rgb = light * 0.92, light
         st.fog_dist = 7.0
     elif plan['bg'] == 'sea':
-        st.bg, st.fog_rgb = dark, np.clip(dark * 0.7 + sp1 * 0.12, 0, 1)
+        st.bg, st.fog_rgb = dark, np.clip(dark * 0.7 + fsp * 0.12, 0, 1)
         # a far sea of tiny glowing points (the sea doctrine): depth 7..18 in the frustum
         rng = np.random.default_rng(st.seed * 7 + 13)
         n = 420
