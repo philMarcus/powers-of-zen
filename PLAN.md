@@ -3272,3 +3272,43 @@ natural pairing is textures (the shape) + IPA (the finish) once the texture arm 
   identity, at a cost in paint); per-kit procedural relief (facets / craters / bands / tube ribbing) on the same
   mechanism for the texture ask; the tracker's lock rate for nesting breadth. Lab arm dirs
   output/lepidolite_halo_var_platelive_relief_{a..e} are disposable (the nightly cleanup archives them as orphans).
+
+### 2026-10-14 — PHIL'S QUESTIONS ON THE ECHO REPORT (plain-language pass + the footprint of each switch)
+Phil (voice): the 10-13 report was "getting a little bit jargony... I'm not quite sure what I'm agreeing to"
+("amplitude is not the lever, trust is" meant nothing to him). Emboss: "I think that's fine, I suppose we do"
+(tentative). Fog: "what problem are we solving... I thought we had solved the colour problem with our palette
+thing — is this part of the echo pass?" Lighting: "I don't know, I'm stuck." Overall: the echoes "did look kind
+of cool, but gemstone-ish — we're not getting moons and atoms, we're not getting snakes for protein chains,
+and I think we're still a ways from being able to do that."
+THE THREE SWITCHES IN PLAIN WORDS (the version he needed):
+  1 EMBOSS (--stage-echo-relief 0.35 x4): the echo used to be a picture painted on each ball; the repaint keeps
+    shapes and repaints colours, so the picture was wiped and only its tint stayed (the orange-wash risk). Now
+    the donor's shape is pressed into each ball's surface like a coin. Gets TEXTURE onto the spheres without
+    colour. Limit: a bump is a silhouette, not a thing -> "gemstone-ish". Tubes/capsules take no relief yet.
+  2 FOG COLOUR (--stage-fog-phrase): NOT an echo tool — a bug in the stage BACKGROUNDS that --stage-variety
+    turned on 10-10: the fog behind the balls was tinted from the darkest colour in the card's palette, so an
+    amber card got amber fog behind amber balls = a one-colour card. The palette anchor cannot fix it (it pulls
+    the frame toward the card's palette, and the card WAS its palette — all one member of it). Fix: when the
+    palette names the far field ("a faint lilac outer fog") the fog takes that colour; otherwise unchanged.
+  3 HALF-LIT (--stage-echo-ambient 0.10): echo cards with a ROUND donor word only. A ball with a round picture
+    pressed into it is still a ball (arm A: a blown-out white ball on the moon card). What makes a ball read as
+    a moon is one side in shadow -> a hard terminator on those cards. The one thing that made a round echo read.
+  "Amplitude is not the lever, trust is" = deeper bumps changed nothing; letting the AI repaint LESS (more of
+  the drawn stage kept) doubled how much shape survives but made the paint flatter/CG. That is a taste
+  trade-off for Phil, not a tuning knob; v3 keeps the approved repaint strength.
+FOOTPRINT MEASURED (scratchpad/orange/echo_footprint.py — replicates dive's auto-stage + variety crc32 draws
+on the 20 queued journeys + the four 10-12 nightlies; 200 cards): 56 staged cards; 35 of them ALREADY carry an
+echo WORD in their prompt (ECHO_SHARE 60 under --stage-variety, which is in the nightly; words alone do not
+read — macaw_var_strip 10-10) -> emboss on = those 35 cards get the donor pressed into their balls; 11 of the
+35 donors are round (planets/stars/worlds) -> without half-lit those 11 are white balls, so EMBOSS + HALF-LIT
+ARE ONE DECISION. Fog-phrase on = 13 of the 34 staged cards with a deep/gradient/sea background change tint
+(the other 21 have no far-field phrase, unchanged). valdes_blow's k? echo is "a coiled protein chain" = the
+snake ask, as a word only today. The 10-12 nightlies already had word echoes on 6 cards (valdes 3, cuttle 3).
+HONEST STATE: textures-on-spheres = yes (emboss, no colour); recognisable echoes (moon with craters, planet
+with coasts, a snake for a protein chain) = NO, and not from this mechanism: a photo swatch pressed flat
+cannot change the element's SHAPE; the swatch route tops out at gem texture at the approved repaint strength;
+IP-Adapter at a safe weight did nothing. The path to moons/atoms/snakes is per-donor-class GEOMETRY in the kit
+(round donor -> crater field + terminator on the hero; chain donor -> tubes coil/ribbon; shaped donor -> the
+emboss we have), each class its own arm + one full video. Days, not hours.
+RECOMMENDATION put to Phil (pending his word): echo texture = emboss + half-lit as ONE settings knob, on; fog
+colour on as a bug fix; nothing else; echoes not declared solved. Nightly unchanged until he answers.
