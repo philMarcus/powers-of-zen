@@ -732,17 +732,36 @@ class Stage:
                     u, v = u * _cc - v * _cs, u * _cs + v * _cc
                 if self._cut_mir[i % len(self._cut_mir)]:
                     u = -u
-                _cm, _ch, _cl = self.cut_mips[0 if rpx >= 120 else 1 if rpx >= 60 else 2 if rpx >= 30 else 3]
+                _lvl = 0 if rpx >= 120 else 1 if rpx >= 60 else 2 if rpx >= 30 else 3
+                _cm, _ch, _cl = self.cut_mips[_lvl]
                 _T = _cm.shape[0]
-                _ix = np.clip(((0.5 + 0.5 * u) * (_T - 1)).astype(np.int32), 0, _T - 1)
-                _iy = np.clip(((0.5 + 0.5 * v) * (_T - 1)).astype(np.int32), 0, _T - 1)
+                _fx = np.clip((0.5 + 0.5 * u) * (_T - 1), 0, _T - 1.001)
+                _fy = np.clip((0.5 + 0.5 * v) * (_T - 1), 0, _T - 1.001)
                 _inb = (np.abs(u) <= 1.0) & (np.abs(v) <= 1.0)
-                _m = np.where(_inb, _cm[_iy, _ix], 0.0).astype(np.float32)
-                inside = _m > 0.5
-                if not inside.any():
-                    continue
-                _hc = np.where(_inb, _ch[_iy, _ix], 0.0).astype(np.float32)
-                _cut_lum = np.where(_inb, _cl[_iy, _ix], 1.0).astype(np.float32)
+                if _lvl <= 1:
+                    # bilinear when magnified: the hero fills the frame at the plunge and a
+                    # nearest-neighbour silhouette came out as a staircase (arm cutout_b f218)
+                    _x0 = _fx.astype(np.int32); _y0 = _fy.astype(np.int32)
+                    _ax = (_fx - _x0).astype(np.float32); _ay = (_fy - _y0).astype(np.float32)
+                    _x1 = np.minimum(_x0 + 1, _T - 1); _y1 = np.minimum(_y0 + 1, _T - 1)
+
+                    def _bil(t):
+                        return ((t[_y0, _x0] * (1 - _ax) + t[_y0, _x1] * _ax) * (1 - _ay)
+                                + (t[_y1, _x0] * (1 - _ax) + t[_y1, _x1] * _ax) * _ay)
+                    _m = np.where(_inb, _bil(_cm), 0.0).astype(np.float32)
+                    inside = _m > 0.5
+                    if not inside.any():
+                        continue
+                    _hc = np.where(_inb, _bil(_ch), 0.0).astype(np.float32)
+                    _cut_lum = np.where(_inb, _bil(_cl), 1.0).astype(np.float32)
+                else:
+                    _ix = _fx.astype(np.int32); _iy = _fy.astype(np.int32)
+                    _m = np.where(_inb, _cm[_iy, _ix], 0.0).astype(np.float32)
+                    inside = _m > 0.5
+                    if not inside.any():
+                        continue
+                    _hc = np.where(_inb, _ch[_iy, _ix], 0.0).astype(np.float32)
+                    _cut_lum = np.where(_inb, _cl[_iy, _ix], 1.0).astype(np.float32)
                 depth = q[2] - R * self.cut_bulge * _hc                   # front surface bulges toward the camera
                 _cut_dout = q[2] - R * self.cut_bulge * (_hc + (self.cut_gain - 1.0) * (_hc - 0.5))
                 if _hc.shape[0] > 1 and _hc.shape[1] > 1:
