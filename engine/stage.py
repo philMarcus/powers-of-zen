@@ -143,6 +143,18 @@ def _propagate(seed, within):
 
 
 def _object_mask(lum):
+    """(soft mask, hard component, polarity) of THE object in a swatch's luminance, with any
+    floor slab / platform trimmed off its foot (_trim_floor). See _object_mask_raw."""
+    m, comp, pol = _object_mask_raw(lum)
+    comp2 = _trim_floor(comp)
+    if comp2.sum() != comp.sum():
+        soft = np.asarray(Image.fromarray((comp2 * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(1.5)), np.float32) / 255.0
+        m = np.minimum(m, np.clip(soft * 1.5, 0, 1))
+        comp = comp2
+    return m, comp, pol
+
+
+def _object_mask_raw(lum):
     """(soft mask, hard component, polarity) of THE object in a swatch's luminance. First the
     bright-on-dark reading (the swatch prompt asks for an object on a black void); if the ring
     just outside that component is brighter than the component itself, the object is the DARK
@@ -197,6 +209,26 @@ def _object_mask(lum):
             if hole.sum() > 50:
                 m, comp, pol = _soft(hole.astype(np.float32)), hole, 'hole'
     return m, comp, pol
+
+
+def _trim_floor(comp):
+    """Drop a floor slab / platform fused to the object's foot: rows in the bottom 30 % of the
+    component whose width jumps past 1.5x the widest row above them (a whale standing on a
+    lit disc on a floor plane, valdes_blow arm cutout_a v4). A pyramid's gradual base survives."""
+    comp = np.asarray(comp, bool)
+    rows = np.nonzero(comp.any(1))[0]
+    if len(rows) < 20:
+        return comp
+    widths = comp.sum(1)
+    top_end = rows[0] + int(0.7 * (rows[-1] - rows[0]))
+    wtop = float(widths[rows[0]:top_end + 1].max())
+    bottom = [r for r in range(top_end + 1, rows[-1] + 1) if widths[r] > 1.5 * wtop]
+    if not bottom:
+        return comp
+    cut = min(bottom)
+    out = comp.copy()
+    out[cut:] = False
+    return out if out.sum() > 0.3 * comp.sum() else comp
 
 
 def swatch_isolated(img, size=512):
@@ -490,9 +522,12 @@ class Stage:
                 lo, hi = float(np.percentile(d, 15)), float(np.percentile(d, 85))
             if hi - lo > 0.08:
                 # the object stands NEAR on a far plain background: union with the luminance mask
-                # (a dark part of the object — a whale's back — is object by depth even if black)
+                # (a dark part of the object — a whale's back — is object by depth even if black),
+                # but only NEXT TO the object: an unrestricted union pulled in a lit floor plane
+                # (near by depth) under the whale (arm cutout_a v4)
                 md = np.clip((d - 0.5 * (lo + hi)) / (0.15 * (hi - lo)) + 0.5, 0, 1)
-                m = np.maximum(m, md * (_blur(lum, 4.0) > 0.03))
+                _near = _blur(_comp0.astype(np.float32), 10.0) > 0.02
+                m = np.maximum(m, md * _near * (_blur(lum, 4.0) > 0.03))
             else:
                 d = None                                                    # flat depth: useless
         hard = _object_component(m > 0.5)             # the one object, not stray bright bits

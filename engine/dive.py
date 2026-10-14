@@ -1946,12 +1946,13 @@ def main():
                         # the mask; "a cream callosity" came back as a bowl on a table)
                         _ep = (f"a single {_stagemod._strip_article(_vplan['echo'])}, whole, as a pale matte clay "
                                f"sculpture, levitating in the centre of an empty pure black void, nothing else "
-                               f"around it, no floor, no table, no ground, no water, no sky, no shadow, no "
-                               f"background, evenly lit, 3d render")
+                               f"around it, no pedestal, no base, no floor, no table, no ground, no water, no sky, "
+                               f"no shadow, no background, evenly lit, 3d render")
                         _eneg = ("multiple, many, group, pattern, repeated, tiled, frame, border, text, "
                                  "watermark, collage, cropped, background, scenery, landscape, habitat, water, "
                                  "sea, ocean, underwater, sky, horizon, ground, floor, table, surface, plate, "
-                                 "bowl, dish, shadow, reflection, dark object, silhouette")
+                                 "bowl, dish, pedestal, base, platform, stand, plinth, shadow, reflection, "
+                                 "dark object, silhouette")
                     else:
                         _ep = (f"exactly one {_stagemod._strip_article(_vplan['echo'])}, alone, large in the centre of a "
                                f"plain black background, whole object fully visible, {_dpal}, bold simple silhouette, "
