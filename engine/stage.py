@@ -223,9 +223,20 @@ def _trim_floor(comp):
     top_end = rows[0] + int(0.7 * (rows[-1] - rows[0]))
     wtop = float(widths[rows[0]:top_end + 1].max())
     bottom = [r for r in range(top_end + 1, rows[-1] + 1) if widths[r] > 1.5 * wtop]
-    if not bottom:
+    cut = min(bottom) if bottom else None
+    if cut is None:
+        # a thin DISC under the object (a whale sculpture on a plinth, arm cutout_b): a NECK in
+        # the bottom 35 % of the rows — the contact points — followed by a widening of 1.5x
+        r0 = rows[0] + int(0.65 * (rows[-1] - rows[0]))
+        seg = widths[r0:rows[-1] + 1]
+        if len(seg) > 6:
+            k = int(np.argmin(seg))
+            neck = float(seg[k])
+            below = float(seg[k:].max())
+            if neck > 0 and below >= 1.5 * neck and neck < 0.6 * wtop and k < len(seg) - 3:
+                cut = r0 + k
+    if cut is None:
         return comp
-    cut = min(bottom)
     out = comp.copy()
     out[cut:] = False
     return out if out.sum() > 0.3 * comp.sum() else comp
