@@ -3486,3 +3486,37 @@ echo"; strip scratchpad/orange/cutout_full_strip.png = v1 / v2 per card):
   nightly (same mechanism he approved this morning, honouring its intent: the donor's shape, not its backdrop).
   Levers if he wants the species to HOLD across the card: --stage-echo-id 0.58 / --stage-echo-den 0.40 (arm B of
   10-13: shape survival doubles, paint flatter) and/or the cut-out's own luminance detail into the relief.
+
+### 2026-10-14 EVENING — PLATE-STYLE MICRO STAGE A/B (Phil: "the plate is a difference of degree, not kind")
+PHIL'S VERDICT on the cut-out video: "some very cool imagery... the whale shows back up... but IN ADDITION to the
+round atoms rather than composing them... looks more like an error than a continuation of a theme... let's not
+turn that on right now, but let's think of how we can use that idea" (the depth-channel shape tool stays: a
+striking round thing seen EARLIER as a nucleus, a snake seen earlier as the protein — a shape-class + play-order
+rule, rare by design; the coil he liked was the molecule card's own target echoed three decades lower, nothing
+the viewer had seen). His real worry: the micro stage "solved the problem too well" — every video gets little
+spheres, and the surprises come from DreamShaper MISREADING words, which a staged card gives it no room for.
+THE COMPARISON (facts from the code): plate = ONE sphere wearing the AI's own picture of the scene, no depth CN
+from the plate, repaint capped 0.32, 0.40 of the globe kept, words = the card's scene. Micro stage = thousands of
+spheres/tubes wearing OUR colours (+ emboss), our depth map at CN 0.40-0.70 by tier, repaint 0.45-0.62, 0.22-0.50
+of the whole frame kept, words = the card's scene and NOTHING about the elements (only the echo clause). Tried in
+halves before: depth-only scaffolds (Aug resolve: "circles in pasty mortar" — DreamShaper has a picture of
+planets and none of atoms) and the echo decal (the AI's picture per element, killed by the stage's repaint
+strength). Never combined: AI-drawn element surface + the plate's gentle trust.
+BUILT (commit 747a6da, lab `dive --stage-paint`): card fields stage.element (one line: what ONE element looks
+like) + stage.field (the far field), CLI --stage-element K=TEXT / --stage-field K=TEXT; the AI draws the element
+3 times ("a close-up of one <line>, filling the frame" + the deck style) -> Stage.set_element_textures (a decal
+per sphere, variant by element index, rotation/mirror), the field line painted at frame size ->
+Stage.set_background_image; trust: den_cap (0.30 travel / 0.32 arrival — the render loop treats the stage's
+den as a FLOOR, so a cap was added), cn_w 0.25, wid_hold 0.40, tex 0.9; prompt clause "every <noun> is <line>,
+<field>"; the card's echo dropped on painted cards. CPU sheet scratchpad/paint_cpu.png.
+A/B RUNNING (tmux paint, scratchpad/orange/paint_arms.sh, log paint_arms.log): same seed, the nightly's flags =
+"today's stage" vs + --stage-paint: LATTICE = valdes_blow k7 sulfur_atom (element "sulfur atom, a tight
+tangerine glowing core wrapped in a broader amber haze and a thin ultramarine outer veil", field "dim knots of
+neighbouring electron fog at the margins of an ink-black void"), NUCLEUS = lepidolite_halo_var k8 halo_nucleus
+(element "nucleon, a glowing amber-gold glass sphere packed tight against its neighbours", field "an enormous
+faint lilac fog in pine-black deep space, two loose quartz-silver spheres adrift far out"). Deliverables:
+scratchpad/orange/paint_strip.png (today / paint / paint stage layer / the element pictures + field) and looped
+side-by-side clips review/compare/paint_AB_lattice.mp4, paint_AB_nucleus.mp4 (today | paint, x4).
+PARKED, by Phil's order: macro "stage the space, not the thing" (depth-only spaces: canyon / forest of columns /
+cave / reef wall / city canyon, the AI keeping our depth but none of our paint), the plunge-target silhouette on
+unstaged cards (the tracker locks 1 in 6), the shape grammar. Micro realm first.
