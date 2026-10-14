@@ -1163,6 +1163,19 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
                               "disc follows the current stage's plunge-target element instead of a free iris "
                               "on the fixed point — a zoom into the thing we enter, not a wipe. Needs stage pre-roll "
                               "> 0. Off = the free iris. Applies to the next renders.")
+    sechotex = t2.toggle("🪙 echo texture (the echo donor's shape embossed on every sphere; round donors half-lit)",
+                         value=bool(s.get("stage_echo_texture")),
+                         help="2026-10-14 (engine --stage-echo-relief 0.35 x4 + --stage-echo-ambient 0.10): under "
+                              "stage variety, each echo card presses its donor's shape into every sphere's surface "
+                              "like a coin (shape, never colour — a painted echo survived only as a tint), and cards "
+                              "whose donor is a round thing (moon, planet, star) are lit from one side so the ball "
+                              "reads as a moon. Off = echo words only (which do not read). Applies to the next renders.")
+    sfog = t2.toggle("🌫 fog colour from the palette's far-field phrase",
+                         value=bool(s.get("stage_fog_phrase")),
+                         help="2026-10-14 bug fix (engine --stage-fog-phrase): the fog behind a staged card's "
+                              "elements takes the colour of the palette phrase that names the far field (\"a faint "
+                              "lilac outer fog\") instead of the palette's darkest colour, which made amber fog "
+                              "behind amber balls. Palettes naming no far field are unchanged. Applies to the next renders.")
     fpaused = t2.toggle("⏸ pause midnight refill", value=bool(s["refill_paused"]))
     st.markdown("**platform pauses** (scheduler skips paused platforms when posting)")
     pc = st.columns(len(pl.PLATFORMS))
@@ -1184,6 +1197,7 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
             "stage_mode": ("auto" if smode == "auto" else ""),
             "stage_variety": bool(svariety),
             "stage_nest": bool(snest),
+            "stage_echo_texture": bool(sechotex), "stage_fog_phrase": bool(sfog),
             "auto_cleanup": bool(autoclean), "min_free_gb": int(minfree),
             "post_every_hours": float(post_every),
             "post_next": post_next.strip()})

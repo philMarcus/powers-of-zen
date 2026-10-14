@@ -307,6 +307,17 @@ JSETTINGS_DEFAULTS = {
     # stage's plunge-target element, so the next stage opens INSIDE the thing we are diving
     # into (a zoom into containment, not an iris wipe). Needs stage_preroll > 0.
     "stage_nest": False,
+    # ECHO TEXTURE (2026-10-14, Phil: "let's turn on the echo work that we have now"): under
+    # stage_variety, the echo donor's shape is EMBOSSED on every sphere (dive --stage-echo-relief
+    # 0.35 x4: a height field in the shading + depth-CN, never colour — the colour decal survived
+    # only as a tint, PLAN "ECHO PASS 2") and cards whose donor is a round thing get half-lit
+    # shading (--stage-echo-ambient 0.10: a ball reads as a moon only with a shadow side). One
+    # knob because relief without the half-lit look leaves round donors as white balls.
+    "stage_echo_texture": False,
+    # FOG COLOUR (2026-10-14, bug fix): the stage's deep/gradient/sea fog takes the palette phrase
+    # that names the far field ("a faint lilac outer fog") instead of the darkest species colour
+    # (amber fog behind amber balls = a one-colour card). Palettes naming no far field: unchanged.
+    "stage_fog_phrase": False,
     # NIGHTLY CLEANUP + DISK GUARD (Phil 2026-10-10: "we have a clean up process, we should run
     # it, and automate it too" — C: hit 100% that morning because ComfyUI kept its own copy of
     # every frame ever rendered, 86 GB): night_batch runs `archive.py --nightly` before its

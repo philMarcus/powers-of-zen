@@ -3312,3 +3312,26 @@ IP-Adapter at a safe weight did nothing. The path to moons/atoms/snakes is per-d
 emboss we have), each class its own arm + one full video. Days, not hours.
 RECOMMENDATION put to Phil (pending his word): echo texture = emboss + half-lit as ONE settings knob, on; fog
 colour on as a bug fix; nothing else; echoes not declared solved. Nightly unchanged until he answers.
+PHIL'S DECISION (10-14 morning): "that's clearer thanks. let's turn on the echo work that we have now." ->
+settings stage_echo_texture=True (night_batch passes --stage-echo-relief 0.35 --stage-echo-relief-gain 4
+--stage-echo-ambient 0.10 under --stage-variety; ⚙ "🪙 echo texture") + stage_fog_phrase=True as the bug fix
+(--stage-fog-phrase; ⚙ "🌫 fog colour"); defaults False in JSETTINGS_DEFAULTS. Verified: render_one's argv
+(monkeypatched run) = ... --stage-auto --stage-preroll 16 --stage-nest --stage-variety --stage-echo-relief 0.35
+--stage-echo-relief-gain 4 --stage-echo-ambient 0.10 --stage-fog-phrase; _trk is None before frame 0 so the
+tracker branch of preroll_disc is skipped there (no 10-05-class frame-0 variable). NOT yet done: the 3-frame
+frame-0 smoke test — ComfyUI was stopped cleanly at 10-13 17:17 ("Stopped server", not a crash; left down,
+Phil's GPU shows other use) and dive --plan-only blocks without it (the killed run's orphan
+output/tisza_mayfly_bloom/v1 removed by hand: 2 files, no frames). Run the smoke test the moment ComfyUI is
+back; the nightly's comfy_up relaunches it when the Review gate (23 >= 20) lets a batch run.
+HIS SECOND QUESTION: "if for every object we may want echoed we need to write code for it beforehand, that
+won't work — antithetical to infinite variety. Where do you suggest we go next? the microscopic realms are
+great and getting good likes, but they are going to start seeming repetitive soon." Answer given in chat
+(no building): (1) the hero takes the DONOR'S OWN SILHOUETTE + DEPTH — DepthAnything on the swatch we already
+render, hue locked to the palette, as a depth-bearing element in the stage; any noun, no per-object code;
+changes the element's SHAPE, which the emboss cannot; test on valdes_blow (whale, protein chain) + lepidolite
+(moon, planet). (2) an ELEMENT-SHAPE GRAMMAR for the population: the composer describes each echo's
+morphology in a closed vocabulary (elongation, taper, coil, branch, flatten, spikes, segments, cluster) and
+the stage compiles generic forms (superquadrics/metaball chains) from it — the three-layer doctrine applied
+to element shape (slot fillers through a fixed grammar; the per-object knowledge lives in the LLM). (3) the
+built, untested --stage-motion package (orbit/pulse/spin/wave) as a cheap variety axis needing one arm.
+Order: (1) first (cheapest, most literal), (2) is the structural answer to repetition, (3) alongside.

@@ -231,6 +231,20 @@ def render_one(journey, force=False, new_seed=True, from_card=None):
             if pl.jload()["settings"].get("stage_variety"):
                 # STAGE VARIETY (PLAN "STAGE VARIETY"): lit, toned, varied stages + echoes
                 argv += ["--stage-variety"]
+                if pl.jload()["settings"].get("stage_echo_texture"):
+                    # ECHO TEXTURE (Phil 2026-10-14 "turn on the echo work that we have now"; PLAN
+                    # "2026-10-13 — ECHO PASS 2"): the echo donor's shape EMBOSSED on every sphere
+                    # (relief in shading + depth-CN, never colour) + half-lit shading on cards whose
+                    # donor is a round thing (a ball reads as a moon only with a shadow side). One
+                    # decision: relief without the half-lit look leaves round donors as white balls.
+                    argv += ["--stage-echo-relief", "0.35", "--stage-echo-relief-gain", "4",
+                             "--stage-echo-ambient", "0.10"]
+                if pl.jload()["settings"].get("stage_fog_phrase"):
+                    # FOG COLOUR (bug fix, PLAN "2026-10-14"): the stage's deep/gradient/sea fog
+                    # takes the palette phrase that names the far field ("a faint lilac outer fog")
+                    # instead of the darkest species colour (amber fog behind amber balls = a
+                    # one-colour card). Cards whose palette names no far field are unchanged.
+                    argv += ["--stage-fog-phrase"]
         if from_card:
             argv += ["--from-card", str(from_card)]
         if (force or from_card) and new_seed:

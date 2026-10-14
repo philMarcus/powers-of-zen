@@ -120,6 +120,19 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-14 (ECHO TEXTURE ON; read PLAN "2026-10-14 — PHIL'S QUESTIONS"): Phil found the 10-13 report too jargony ("I'm not
+sure what I'm agreeing to"); re-explained per switch = the problem it solves + what it touches (memory plain-language-reports;
+footprint tool scratchpad/orange/echo_footprint.py: 35 of the 56 staged cards in the queue carry an echo word, 11 round; the
+fog phrase changes 13 of 34 fog cards). HIS DECISION: "let's turn on the echo work that we have now" -> settings
+stage_echo_texture=True (night_batch adds --stage-echo-relief 0.35 --stage-echo-relief-gain 4 --stage-echo-ambient 0.10 under
+--stage-variety; one knob because relief without the half-lit look leaves round donors as white balls; ⚙ "🪙 echo texture")
++ stage_fog_phrase=True (bug fix: fog from the palette's far-field phrase; ⚙ "🌫 fog colour"). Verified the argv render_one
+builds; NOT yet smoke-tested from frame 0: ComfyUI was stopped cleanly 10-13 17:17 ("Stopped server", not a crash) and is DOWN —
+left down (GPU in other use); run the 3-frame frame-0 smoke the moment it is back (the nightly's comfy_up relaunches it when
+Review < 20). Echoes NOT declared solved (gemstone texture, not moons/snakes). HIS SECOND QUESTION — per-object echo code is
+"antithetical to infinite variety", where next? — answered in PLAN (hero takes the donor swatch's own silhouette + depth via
+DepthAnything, hue locked to the palette; an element-SHAPE GRAMMAR the composer writes in a closed vocabulary and the stage
+compiles; the untested --stage-motion package). Nothing built for it yet. Review 23 -> tonight skips unless his pass clears 4.
 2026-10-13 (ECHO PASS 2 + NESTING; read PLAN "2026-10-13 — ECHO PASS 2"): containment RENAMED nesting (--stage-nest, settings
 stage_nest, ⚙ "🪆 nesting"; old flag aliased). Phil: echo work first, then unstaged->stage nesting, GPU allowed. WHY ONLY COLOUR
 SURVIVED: the stage repaint honours DEPTH (CN 0.7) and owns colour; a decal is colour. BUILT (lab flags, default off):
