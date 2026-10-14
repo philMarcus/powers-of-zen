@@ -1194,6 +1194,13 @@ def main():
     ap.add_argument("--stage-echo-relief-gain", type=float, default=4.0, metavar="G",
                     help="with --stage-echo-relief: how much the relief is exaggerated in the stage's "
                          "OUTPUT depth map (the depth ControlNet signal); the z-test keeps true geometry")
+    ap.add_argument("--stage-echo-cutout", type=float, default=None, metavar="F",
+                    help="ECHO CUT-OUT (lab, 2026-10-14): the staged card's plunge-target element becomes a "
+                         "camera-facing CUT-OUT of the echo donor's swatch — its silhouette (object mask) "
+                         "and its own depth (DepthAnything on the swatch) in the stage's depth map and "
+                         "shading, species colour kept (hue-locked). F = the fraction of the OTHER spheres "
+                         "also converted (0 = the hero only; the hero is always converted). Skipped on round "
+                         "donors (the half-lit sphere is their shape). Absent = off")
     ap.add_argument("--stage-echo-ambient", type=float, default=0.0, metavar="A",
                     help="lab (2026-10-13): on cards whose echo donor is ROUND (moon/planet/...), shade the "
                          "stage's spheres with ambient A (default look 0.42) — a hard terminator, the "
@@ -1472,7 +1479,8 @@ def main():
         "plate_cn": args.plate_cn, "plate_void_gate": bool(args.plate_void_gate),
         "plate_intro": args.plate_intro,
         "stage_echo": {"tex": args.stage_echo_tex, "ipa": args.stage_echo_ipa, "relief": args.stage_echo_relief,
-                       "relief_gain": args.stage_echo_relief_gain, "den": args.stage_echo_den, "id": args.stage_echo_id},
+                       "relief_gain": args.stage_echo_relief_gain, "den": args.stage_echo_den, "id": args.stage_echo_id,
+                       "cutout": args.stage_echo_cutout},
         "play_start": spec.get("play_start"),
         "overrides": cfg_overrides, "tag": args.tag, "tail": args.tail,
         "neg_extra": args.neg_extra, "palette_anchor": args.palette_anchor,
@@ -1834,6 +1842,7 @@ def main():
         _by_card = {}
         _P = max(0, int(args.stage_preroll))
         _swatch_memo = {}   # (prompt, seed) -> swatch: cork drew one donor for three cards (2026-10-10)
+        _depth_memo = {}    # (prompt, seed) -> the swatch's DepthAnything map (echo cut-out, 2026-10-14)
         for _sk, _sdef in _splan:
             _sreg = _sorder[_sk]
             _sS = sum(_scf[:_sk])
@@ -1911,7 +1920,8 @@ def main():
             if _vplan is not None:
                 _stagemod.apply_variety(_stage, _vplan, _sreg.get("palette"), _sdef.get("kit", "lattice"))
                 _stage.echo_ref = None
-                if (args.stage_echo_ipa > 0 or args.stage_echo_tex > 0 or args.stage_echo_relief > 0) and _vplan.get("echo"):
+                if (args.stage_echo_ipa > 0 or args.stage_echo_tex > 0 or args.stage_echo_relief > 0
+                        or args.stage_echo_cutout is not None) and _vplan.get("echo"):
                     # ECHO BY PIXELS (B3): one txt2img of the donor thing, close and alone, in the
                     # journey's style; uploaded once as this card's IP-Adapter reference
                     _dreg = next((r_ for r_ in _sorder if (r_.get("target") or r_.get("target_phrase")) == _vplan["echo"]), None)
@@ -1954,6 +1964,33 @@ def main():
                             # shape through the shading normal + the depth-CN map, colour untouched
                             _stage.set_echo_relief(_eimg, args.stage_echo_relief, args.stage_echo_relief_gain,
                                                    round_hint=_eround)
+                        if args.stage_echo_cutout is not None and not _eround:
+                            # ECHO CUT-OUT (2026-10-14): the hero element takes the donor's own silhouette +
+                            # depth. DepthAnything once per distinct swatch (memoized: an identical upload
+                            # would be served from ComfyUI's cache with no outputs and time out).
+                            _ed = None
+                            try:
+                                if (_ep, _eseed) in _depth_memo:
+                                    _ed = _depth_memo[(_ep, _eseed)]
+                                else:
+                                    import warp as _warpmod
+                                    _ed = _warpmod.depth_via_comfy(_eimg)
+                                    _depth_memo[(_ep, _eseed)] = _ed
+                            except Exception as _de:
+                                print(f"[dive] stage-echo: cut-out depth failed for card {_sk} ({_de}); dome fallback", flush=True)
+                            _ncut = _stage.set_echo_cutout(_eimg, _ed, frac=max(0.0, args.stage_echo_cutout))
+                            if _ncut:
+                                try:
+                                    _cm = (_stage.cut_mask > 0.5)
+                                    _dbg = np.stack([_stage.cut_mask, _stage.cut_h, np.clip(_stage.cut_lum / 1.6, 0, 1)], -1)
+                                    Image.fromarray((np.clip(_dbg, 0, 1) * 255).astype(np.uint8)).save(
+                                        out_dir / "build" / "stage" / f"cutout_{_sk}.png")
+                                except Exception:
+                                    pass
+                            print(f"[dive] stage-echo: card {_sk} CUT-OUT of {_vplan['echo']!r}: {_ncut} element(s) "
+                                  f"(hero {'found' if getattr(_stage, 'cut_hero', None) is not None else 'MISSING'}, "
+                                  f"depth {'DepthAnything' if _ed is not None and getattr(_stage, 'cut_from_depth', False) else 'dome'}, "
+                                  f"others {max(0.0, args.stage_echo_cutout):.2f})", flush=True)
                         if args.stage_echo_ambient > 0 and _eround:
                             # a ROUND donor's echo is its lighting: a hard terminator ("half-lit")
                             _stage.ambient = args.stage_echo_ambient

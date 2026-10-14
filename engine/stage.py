@@ -348,6 +348,133 @@ class Stage:
         return C, B, rs
 
     # ---- render ---------------------------------------------------------------------
+    # ---- ECHO CUT-OUT (2026-10-14; Phil: coding a shape per object "is antithetical to our aim of
+    # infinite variety" — borrow the donor's SHAPE from the AI's own picture of it) ----------------
+    def set_echo_cutout(self, img, depth=None, frac=0.0, bulge=0.9, gain=3.0, size=512, mirror=True):
+        """The plunge-target element (and a fraction `frac` of the other spheres) becomes a CUT-OUT
+        of the donor swatch: a billboard facing the camera whose silhouette is the swatch's
+        object mask and whose front surface bulges toward the camera by the swatch's own depth
+        (DepthAnything, near=1; a blurred-mask dome when no depth is given). The silhouette and
+        the bulge go into the output depth map (the depth-CN signal the repaint honours) and into
+        the shading normal; colour stays the element's authored species colour, modulated only by
+        the swatch's luminance (hue-locked — the colour decal of 10-10 survived only as a tint).
+        Round donors are better served by the half-lit sphere (dive decides by the echo word).
+        Returns the number of elements converted (0 = no sphere near the target)."""
+        def _blur(a, r):
+            return np.asarray(Image.fromarray(np.clip(a * 255, 0, 255).astype(np.uint8))
+                              .filter(ImageFilter.GaussianBlur(r)), np.float32) / 255.0
+
+        im = img.convert("RGB")
+        im = im.resize((size, size), Image.LANCZOS) if im.size != (size, size) else im
+        rgb = np.asarray(im, np.float32) / 255.0
+        lum = rgb @ np.array([0.299, 0.587, 0.114], np.float32)
+        m = _blur(np.clip((lum - 0.08) / 0.17, 0, 1), 2.0)                 # the relief's object mask
+        d = None
+        if depth is not None:
+            d = np.asarray(depth, np.float32)
+            if d.shape != (size, size):
+                d = np.asarray(Image.fromarray((np.clip(d, 0, 1) * 255).astype(np.uint8))
+                               .resize((size, size), Image.BILINEAR), np.float32) / 255.0
+            _hl = m > 0.5
+            if _hl.sum() > 50 and (~_hl).sum() > 50:
+                lo, hi = float(np.percentile(d[~_hl], 50)), float(np.percentile(d[_hl], 70))
+            else:
+                lo, hi = float(np.percentile(d, 15)), float(np.percentile(d, 85))
+            if hi - lo > 0.08:
+                # the object stands NEAR on a far plain background: union with the luminance mask
+                # (a dark part of the object — a whale's back — is object by depth even if black)
+                md = np.clip((d - 0.5 * (lo + hi)) / (0.15 * (hi - lo)) + 0.5, 0, 1)
+                m = np.maximum(m, md * (_blur(lum, 4.0) > 0.03))
+            else:
+                d = None                                                    # flat depth: useless
+        hard = m > 0.5
+        if hard.sum() < 50:
+            return 0
+        ys, xs = np.nonzero(hard)
+        cy, cx = 0.5 * (ys.min() + ys.max()), 0.5 * (xs.min() + xs.max())
+        side = 1.12 * max(ys.max() - ys.min(), xs.max() - xs.min(), 8)
+        # re-centre + re-scale so the object's bounding square fills the texture (u, v in [-1, 1])
+        _pad = size
+        _x0, _y0 = int(round(cx - side / 2)) + _pad, int(round(cy - side / 2)) + _pad
+        _n = max(int(round(side)), 8)
+
+        def _crop(a):
+            a2 = np.pad(np.asarray(a, np.float32), _pad)[_y0:_y0 + _n, _x0:_x0 + _n]
+            return np.asarray(Image.fromarray(a2, 'F').resize((size, size), Image.BILINEAR), np.float32)
+
+        m, lum = _crop(m), _crop(lum)
+        hard = m > 0.5
+        if d is not None:
+            d = _crop(d)
+            inside = d[hard]
+            h = np.clip((d - np.percentile(inside, 5)) / max(np.percentile(inside, 97) - np.percentile(inside, 5), 1e-3), 0, 1)
+            h = 0.3 * _blur(h, 1.0) + 0.7 * h
+        else:
+            h = np.sqrt(np.clip(_blur(hard.astype(np.float32), size / 14.0), 0, 1))  # a dome from the edges
+            h = h / max(float(h[hard].max()), 1e-3)
+        # the rim always falls away to zero height: the silhouette edge is a depth edge
+        edge = np.clip(_blur(hard.astype(np.float32), size / 60.0), 0, 1)
+        h = np.clip(h, 0, 1) * (0.25 + 0.75 * edge) * hard
+        lumn = lum / max(float(lum[hard].mean()), 1e-3)
+        lumn = np.clip(0.55 + 0.45 * lumn, 0.5, 1.6) * hard + (~hard)
+        self.cut_mask = m.astype(np.float32)
+        self.cut_h = h.astype(np.float32)
+        self.cut_lum = lumn.astype(np.float32)
+        self.cut_mips = [(self.cut_mask, self.cut_h, self.cut_lum)] + [
+            (_blur(self.cut_mask, r).astype(np.float32), _blur(self.cut_h, r).astype(np.float32),
+             _blur(self.cut_lum, r).astype(np.float32)) for r in (2.0, 4.0, 8.0)]
+        self.cut_bulge, self.cut_gain = float(bulge), float(gain)
+        self.cut_from_depth = d is not None
+        # convert: the plunge-target sphere always; others with probability frac
+        rng = np.random.default_rng((getattr(self, 'seed', 0) + 31) & 0xFFFFFFFF)
+        n = len(self.items)
+        self._cut_mir = (rng.random(n) < 0.5) if mirror else np.zeros(n, bool)
+        self._cut_rot = rng.uniform(-0.35, 0.35, n).astype(np.float32)   # a small tilt per element (hero upright)
+        tgt = np.asarray(getattr(self, 'target', None) if getattr(self, 'target', None) is not None else (0, 0, 0), np.float32)
+        tR = float(getattr(self, 'target_R', 0) or 0)
+        hero, best = None, 1e9
+        for i, it in enumerate(self.items):
+            if it[0] != 'sphere':
+                continue
+            Rf = float(np.max(it[2])) if np.ndim(it[2]) else float(it[2])
+            if tR > 0 and abs(Rf - tR) > 0.35 * tR:
+                continue
+            dd = float(np.linalg.norm(np.asarray(it[1], np.float32) - tgt))
+            if dd < best:
+                hero, best = i, dd
+        draws = rng.random(n)
+        count = 0
+        for i, it in enumerate(self.items):
+            if it[0] != 'sphere':
+                continue
+            if i == hero or (frac > 0 and draws[i] < frac):
+                self.items[i] = ('cutout', it[1], it[2], it[3], it[4])
+                count += 1
+        if hero is None and getattr(self, 'target', None) is not None and tR > 0:
+            # no sphere at the target (tubes / tracks / pasta kits): the cut-out IS the plunge
+            # target, placed on the aim ray at the builder's radius, in the kit's own colour
+            col = None
+            for it in self.items:
+                if it[0] == 'sphere':
+                    col = np.asarray(it[3], np.float32); break
+                if it[0] == 'capsule' and col is None:
+                    col = np.asarray(it[4][0], np.float32)
+            if col is None:
+                col = np.array([0.7, 0.75, 0.85], np.float32)
+            # on the cluster's FRONT face (toward the camera), not buried at its centre behind
+            # the near half of the capsules
+            _tv = np.asarray(self.target, np.float32)
+            _pos = _tv - _tv / max(float(np.linalg.norm(_tv)), 1e-6) * 0.9 * tR
+            self.items.append(('cutout', _pos, tR, col, 0.0))
+            hero = len(self.items) - 1
+            self._cut_mir = np.append(self._cut_mir, False)
+            self._cut_rot = np.append(self._cut_rot, 0.0).astype(np.float32)
+            count += 1
+        self._cut_mir[hero if hero is not None else 0] = False
+        self._cut_rot[hero if hero is not None else 0] = 0.0
+        self.cut_count, self.cut_hero = count, hero
+        return count
+
     def frame(self, f):
         w, h = self.w, self.h
         cam, Rcam = self._camera_pose(f)
@@ -387,6 +514,8 @@ class Stage:
                 continue
             px, py = 0.5 * w + w * q[0] / q[2], 0.5 * h + w * q[1] / q[2]
             rpx = w * R / q[2]
+            if kind == 'cutout' and (rpx < 4.0 or getattr(self, 'cut_mask', None) is None):
+                kind = 'sphere'                 # too small for a silhouette: a plain sphere
             if kind == 'glow':
                 rpx *= 1.0
                 x0, x1 = int(max(0, px - 3 * rpx)), int(min(w, px + 3 * rpx + 1))
@@ -433,6 +562,44 @@ class Stage:
                 zc = q[2] + (qb[2] - q[2]) * t
                 depth = zc - Rr * nz
                 rpx = rp
+            elif kind == 'cutout':
+                # ECHO CUT-OUT (set_echo_cutout): a camera-facing billboard of the donor's own
+                # silhouette; u, v in [-1, 1] span the object's bounding square = 2 R.
+                x0, x1 = int(max(0, px - rpx - 1)), int(min(w, px + rpx + 2))
+                y0, y1 = int(max(0, py - rpx - 1)), int(min(h, py + rpx + 2))
+                if x1 <= x0 or y1 <= y0:
+                    continue
+                yy, xx = np.mgrid[y0:y1, x0:x1].astype(np.float32)
+                u, v = (xx - px) / rpx, (yy - py) / rpx
+                _cr = float(self._cut_rot[i % len(self._cut_rot)])
+                if _cr:
+                    _cc, _cs = math.cos(_cr), math.sin(_cr)
+                    u, v = u * _cc - v * _cs, u * _cs + v * _cc
+                if self._cut_mir[i % len(self._cut_mir)]:
+                    u = -u
+                _cm, _ch, _cl = self.cut_mips[0 if rpx >= 120 else 1 if rpx >= 60 else 2 if rpx >= 30 else 3]
+                _T = _cm.shape[0]
+                _ix = np.clip(((0.5 + 0.5 * u) * (_T - 1)).astype(np.int32), 0, _T - 1)
+                _iy = np.clip(((0.5 + 0.5 * v) * (_T - 1)).astype(np.int32), 0, _T - 1)
+                _inb = (np.abs(u) <= 1.0) & (np.abs(v) <= 1.0)
+                _m = np.where(_inb, _cm[_iy, _ix], 0.0).astype(np.float32)
+                inside = _m > 0.5
+                if not inside.any():
+                    continue
+                _hc = np.where(_inb, _ch[_iy, _ix], 0.0).astype(np.float32)
+                _cut_lum = np.where(_inb, _cl[_iy, _ix], 1.0).astype(np.float32)
+                depth = q[2] - R * self.cut_bulge * _hc                   # front surface bulges toward the camera
+                _cut_dout = q[2] - R * self.cut_bulge * (_hc + (self.cut_gain - 1.0) * (_hc - 0.5))
+                if _hc.shape[0] > 1 and _hc.shape[1] > 1:
+                    _gy, _gx = np.gradient(_hc)
+                    _g = self.cut_bulge * 2.0 * rpx
+                    _cut_n = np.stack([np.clip(_g * _gx, -2.5, 2.5), np.clip(_g * _gy, -2.5, 2.5), -np.ones_like(_hc)], -1)
+                    _cut_n = _cut_n / np.maximum(np.linalg.norm(_cut_n, axis=-1, keepdims=True), 1e-6)
+                else:
+                    _cut_n = np.stack([np.zeros_like(_hc), np.zeros_like(_hc), -np.ones_like(_hc)], -1)
+                nz = -_cut_n[..., 2]
+                rho2 = np.clip(1.0 - _hc, 0, 1)                           # centre 0 -> rim 1 (rim lights)
+                _cut_aa = np.clip((_m - 0.5) * 6.0, 0, 1)[..., None]
             else:
                 if rpx < 0.4:
                     continue
@@ -453,11 +620,15 @@ class Stage:
             if not hit.any():
                 continue
             # view-space normal (camera looks down +z; the visible cap faces -z)
-            n = np.stack([u, v, -nz], -1)
+            n = np.stack([u, v, -nz], -1) if kind != 'cutout' else _cut_n
             base = np.asarray(rgb, np.float32)
             if getattr(self, 'light_mul', None) is not None:
                 base = base * self.light_mul          # VARIETY: coloured key light
             _look = getattr(self, 'look', 'fuzzy')
+            if kind == 'cutout':
+                # hue-locked: the species colour, brightened/darkened by the swatch's own luminance
+                base = base[None, None, :] * _cut_lum[..., None]
+                _look = 'fuzzy'
             _tex = getattr(self, 'echo_tex', None)
             if _tex is not None and kind == 'sphere' and rpx < 6.0:
                 # too small for a picture: the echo in COLOUR only (the swatch's own tone)
@@ -474,7 +645,7 @@ class Stage:
                 _iy = np.clip(((0.5 + 0.46 * _vv) * (_T - 1)).astype(np.int32), 0, _T - 1)
                 base = base[None, None, :] * (1.0 - self.echo_tex_w) + _tex[_iy, _ix] * self.echo_tex_w
                 _look = 'fuzzy'               # soft shading keeps the picture readable
-            depth_out = depth
+            depth_out = depth if kind != 'cutout' else _cut_dout
             _rel = getattr(self, 'echo_relief', None)
             if _rel is not None and kind == 'sphere' and rpx >= 6.0:
                 # ECHO RELIEF (set_echo_relief): the donor's height field embossed on this cap.
@@ -501,7 +672,7 @@ class Stage:
             px_col = shade_sphere(_look, n, nz, rho2, base, self.light, extra, self.bg,
                                   amb=getattr(self, 'ambient', 0.42))
             # anti-aliased rim
-            aa = np.clip((1.0 - np.sqrt(rho2)) * rpx, 0, 1)[..., None]
+            aa = np.clip((1.0 - np.sqrt(rho2)) * rpx, 0, 1)[..., None] if kind != 'cutout' else _cut_aa
             region = col[y0:y1, x0:x1]
             mix = (hit[..., None] * aa)
             col[y0:y1, x0:x1] = region * (1 - mix) + px_col * mix
