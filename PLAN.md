@@ -3544,3 +3544,18 @@ scratchpad/orange/paint_strip.png rows 1-3, clip review/compare/paint_AB_lattice
   (not done yet), and painted cards want the hero/bold element scales. The nucleus card (a droplet of large
   nucleons, a void-like field line) is the better test — re-running (the first run cut off at the card's first
   frame: lepidolite is 36 f/card; memory arm-frames-check-card-frames).
+NUCLEUS A/B RESULT (18:27; n0 today / n1 paint, lepidolite k8 halo_nucleus 36 frames; strip rows 4-6, clip
+review/compare/paint_AB_nucleus.mp4 = today | paint, x4):
+  today  sat 0.50  orange 0.40  hue entropy 2.48  detail 15.2   (pearl clusters on amber branches; the droplet entered)
+  paint  sat 0.57  orange 0.50  hue entropy 3.08  detail 13.1   (gold glass marbles + two big chrome spheres on lilac fog)
+  The AI drew "nucleon, a glowing amber-gold glass sphere" as three near-identical gold glass balls on a table
+  (literal line -> literal pictures, little variety); worn by the nucleons and lightly repainted, the card
+  reads as a STILL LIFE OF GLASS MARBLES — coherent, deep, plainly DreamShaper's glass, and almost identical to
+  its own stage layer (the repaint kept it). The element scale here is large, so the pictures read.
+OVERALL READING OF THE PLATE-STYLE A/B: it works mechanically and it moves the look from our plastic to the
+AI's paint — but it trades surprise for fidelity to the words: the card becomes exactly what the element line
+and the field line say (a canyon when the field sounds like a place; a bag of marbles when the element is "a
+glass sphere"), with little per-frame invention left (den 0.30). Today's stage has the opposite problem (always
+beads, but the repaint keeps inventing). The middle — the painted field dimmed/blurred as far, element lines
+written as MATERIAL not object ("fogged amber glass, veined"), a repaint between 0.32 and 0.45 — is untested.
+Both are judgement calls for Phil from the two clips; nothing in the nightly changed.

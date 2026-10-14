@@ -120,6 +120,22 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-14 NIGHT (PLATE-STYLE MICRO STAGE A/B DONE; read PLAN "2026-10-14 EVENING"): Phil on the cut-out video: cool imagery,
+the whale "in addition to the atoms rather than composing them... looks more like an error" -> cut-out stays OFF (keep the
+depth-channel shape tool for a rare shape-class + play-order echo later); his real worry = the micro stage "solved the problem
+too well" (always spheres; the surprises come from DreamShaper misreading words). He asked for the plate's approach on the
+micro realm: author describes what ONE element looks like + the far field, the AI draws it, our geometry wears it, gentle
+repaint. BUILT (lab `dive --stage-paint`, card fields stage.element / stage.field, CLI --stage-element K=TEXT /
+--stage-field K=TEXT; 3 element pictures as decals per sphere, the field painted as the background exempt from fog/tone,
+den capped 0.30/0.32, cn 0.25, id 0.40). A/B RESULT, same seed, clips review/compare/paint_AB_lattice.mp4 (today | paint
+with field) + paint_AB_nucleus.mp4, strip scratchpad/orange/paint_strip.png: it works and the look becomes DreamShaper's
+paint — but the WORDS then rule the card: a place-like field line turned the sulfur lattice into a painted CANYON with the
+atoms as specks; the literal "glass sphere" nucleon line made the nucleus a still life of gold marbles; element pictures
+survive only on large elements; surprise per frame drops (den 0.30). Untested middle: field dimmed/blurred as far, element
+lines as MATERIAL not object, repaint 0.32-0.45. Phil's call from the clips; NOTHING in the nightly changed (echo texture +
+fog fix on; cut-out and paint are lab flags). Parked by his order: macro "stage the space" (depth-only spaces), the
+plunge-target silhouette for unstaged cards, the shape grammar. Lab lesson: check card_frames before --frames (lepidolite
+36 f/card; memory arm-frames-check-card-frames). Review 23 -> tonight skips until his pass. ComfyUI up.
 2026-10-14 AFTERNOON (ECHO CUT-OUT DELIVERED; read PLAN "2026-10-14 — ECHO CUT-OUT" to its end): valdes_blow v2 IS THE
 REVIEW ENTRY (from card 6 of v1 — cards 0-5 byte-identical to the nightly render Phil has not judged yet; caption + 5 music
 candidates kept; v1 on disk), hero-only cut-out on the nightly's flags; side-by-side review/compare/valdes_blow_CUTOUT.mp4
