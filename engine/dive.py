@@ -1194,6 +1194,30 @@ def main():
     ap.add_argument("--stage-echo-relief-gain", type=float, default=4.0, metavar="G",
                     help="with --stage-echo-relief: how much the relief is exaggerated in the stage's "
                          "OUTPUT depth map (the depth ControlNet signal); the z-test keeps true geometry")
+    ap.add_argument("--stage-paint", action="store_true",
+                    help="PLATE-STYLE STAGE (lab, 2026-10-14; Phil: the author describes what the things look "
+                         "like and DreamShaper interprets it, as the planet plate does). On every staged card "
+                         "that has an ELEMENT line (card stage.element / --stage-element K=TEXT): the AI draws "
+                         "the element from that line in the journey's style (3 variants), every sphere wears "
+                         "one as a decal, the far field (stage.field / --stage-field) is painted as the stage "
+                         "background, and the repaint runs at the plate's trust (--stage-paint-den/-cn/-id). "
+                         "The card's echo is dropped (the element picture IS the surface).")
+    ap.add_argument("--stage-paint-den", type=float, default=0.30, metavar="D",
+                    help="with --stage-paint: travel denoise on painted stage cards (the plate's cap is 0.32)")
+    ap.add_argument("--stage-paint-den-arrival", type=float, default=0.32, metavar="A",
+                    help="with --stage-paint: arrival denoise on painted stage cards")
+    ap.add_argument("--stage-paint-cn", type=float, default=0.25, metavar="C",
+                    help="with --stage-paint: depth-ControlNet weight of the stage's depth map (today's "
+                         "tiers 0.40-0.70; the plate uses none)")
+    ap.add_argument("--stage-paint-id", type=float, default=0.40, metavar="W",
+                    help="with --stage-paint: identity hold of the stage layer (the plate's globe floor 0.40)")
+    ap.add_argument("--stage-paint-tex", type=float, default=0.9, metavar="T",
+                    help="with --stage-paint: how much of each sphere's colour the element picture replaces")
+    ap.add_argument("--stage-element", action="append", default=[], metavar="K=TEXT",
+                    help="with --stage-paint: the element line for staged card K (overrides the card's "
+                         "stage.element); repeatable")
+    ap.add_argument("--stage-field", action="append", default=[], metavar="K=TEXT",
+                    help="with --stage-paint: the far-field line for staged card K (overrides stage.field)")
     ap.add_argument("--stage-echo-cutout", type=float, default=None, metavar="F",
                     help="ECHO CUT-OUT (lab, 2026-10-14): the staged card's plunge-target element becomes a "
                          "camera-facing CUT-OUT of the echo donor's swatch — its silhouette (object mask) "
@@ -1481,6 +1505,9 @@ def main():
         "stage_echo": {"tex": args.stage_echo_tex, "ipa": args.stage_echo_ipa, "relief": args.stage_echo_relief,
                        "relief_gain": args.stage_echo_relief_gain, "den": args.stage_echo_den, "id": args.stage_echo_id,
                        "cutout": args.stage_echo_cutout},
+        "stage_paint": ({"den": args.stage_paint_den, "den_arrival": args.stage_paint_den_arrival,
+                         "cn": args.stage_paint_cn, "id": args.stage_paint_id, "tex": args.stage_paint_tex,
+                         "element": args.stage_element, "field": args.stage_field} if args.stage_paint else None),
         "play_start": spec.get("play_start"),
         "overrides": cfg_overrides, "tag": args.tag, "tail": args.tail,
         "neg_extra": args.neg_extra, "palette_anchor": args.palette_anchor,
@@ -1920,6 +1947,58 @@ def main():
             if _vplan is not None:
                 _stagemod.apply_variety(_stage, _vplan, _sreg.get("palette"), _sdef.get("kit", "lattice"))
                 _stage.echo_ref = None
+                if args.stage_paint:
+                    # PLATE-STYLE STAGE: the author's element line -> the AI's pictures of one element
+                    # -> a decal on every sphere; the field line -> the painted background; the
+                    # plate's trust on the repaint. The card's echo is dropped on painted cards.
+                    _pel = {int(x.split("=", 1)[0]): x.split("=", 1)[1] for x in args.stage_element if "=" in x}
+                    _pfl = {int(x.split("=", 1)[0]): x.split("=", 1)[1] for x in args.stage_field if "=" in x}
+                    _eline = _pel.get(_sk) or (_sdef.get("element") if isinstance(_sdef, dict) else None)
+                    _fline = _pfl.get(_sk) or (_sdef.get("field") if isinstance(_sdef, dict) else None)
+                    if _eline:
+                        try:
+                            _psfx = spec.get("style_suffix") or ""
+                            _pnoun = _stagemod.ELEMENT_NOUN.get(_sdef.get("kit", "lattice"), "element")
+                            (out_dir / "build" / "stage").mkdir(parents=True, exist_ok=True)
+                            _pimgs = []
+                            _pseed0 = (cfg["seed"] + _zlib.crc32(_eline.encode())) % (2 ** 31)
+                            for _pi in range(3):
+                                _pp = f"a close-up of one {_eline}, filling the frame, {_psfx}"
+                                _ps = (_pseed0 + _pi) % (2 ** 31)
+                                if (_pp, _ps) in _swatch_memo:
+                                    _pim = _swatch_memo[(_pp, _ps)]
+                                else:
+                                    _pim = Image.open(io.BytesIO(run_workflow(build_workflow(
+                                        {**cfg, "width": 768, "height": 768}, _pp, _ps,
+                                        neg_extra="multiple, many, grid, pattern, tiled, text, watermark, frame, border")))).convert("RGB")
+                                    _swatch_memo[(_pp, _ps)] = _pim
+                                _pim.save(out_dir / "build" / "stage" / f"elem_{_sk}_{_pi}.png")
+                                _pimgs.append(_pim)
+                            _stage.set_element_textures(_pimgs, args.stage_paint_tex)
+                            if _fline:
+                                _fp = f"{_fline}, {_psfx}"
+                                _fs = (_pseed0 + 7) % (2 ** 31)
+                                if (_fp, _fs) in _swatch_memo:
+                                    _fim = _swatch_memo[(_fp, _fs)]
+                                else:
+                                    _fim = Image.open(io.BytesIO(run_workflow(build_workflow(
+                                        cfg, _fp, _fs, neg_extra="text, watermark, frame, border")))).convert("RGB")
+                                    _swatch_memo[(_fp, _fs)] = _fim
+                                _fim.save(out_dir / "build" / "stage" / f"field_{_sk}.png")
+                                _stage.set_background_image(_fim)
+                            _stage.den_travel, _stage.den_arrival = args.stage_paint_den, args.stage_paint_den_arrival
+                            _stage.cn_w, _stage.wid_hold = args.stage_paint_cn, args.stage_paint_id
+                            _stage.den_cap = (args.stage_paint_den, args.stage_paint_den_arrival)
+                            _stage.echo_clause = f"every {_pnoun} is {_eline}" + (f", {_fline}" if _fline else "")
+                            _vplan["echo"] = None
+                            print(f"[dive] stage-paint: card {_sk} element {_eline!r} ({len(_pimgs)} pictures)"
+                                  f"{' field painted' if _fline else ''}; den {args.stage_paint_den:.2f}/"
+                                  f"{args.stage_paint_den_arrival:.2f} cn {args.stage_paint_cn:.2f} id "
+                                  f"{args.stage_paint_id:.2f} tex {args.stage_paint_tex:.2f}", flush=True)
+                        except Exception as _pe:
+                            print(f"[dive] stage-paint: card {_sk} failed ({_pe}); today's stage kept", flush=True)
+                    else:
+                        print(f"[dive] stage-paint: card {_sk} has no element line -> today's stage", flush=True)
                 if (args.stage_echo_ipa > 0 or args.stage_echo_tex > 0 or args.stage_echo_relief > 0
                         or args.stage_echo_cutout is not None) and _vplan.get("echo"):
                     # ECHO BY PIXELS (B3): one txt2img of the donor thing, close and alone, in the
@@ -2618,6 +2697,8 @@ def main():
                     _wid = _idh + (0.6 - _idh) * (1.0 - (_sj + 1) / _st.fa)
                     fed = Image.blend(fed, _srgb, _wid)
                     den = max(den, getattr(_st, "den_arrival", None) or args.stage_den)
+                    if getattr(_st, "den_cap", None):
+                        den = min(den, _st.den_cap[1])    # plate-style: the repaint is CAPPED, as the plate's
                 elif _sj < _st.fa:
                     # ZOOM-THROUGH ARRIVAL (Phil 2026-10-04, "less zoomy than morphy" + the
                     # tissue fade): the new stage opens INSIDE a disc on the zoom's fixed point
@@ -2643,10 +2724,14 @@ def main():
                     fed = Image.fromarray(np.clip(_fa_ * (1 - _m) + _sa_ * _m, 0, 255).astype(np.uint8))
                     _wid = float(_m.mean())
                     den = max(den, getattr(_st, "den_arrival", None) or args.stage_den)
+                    if getattr(_st, "den_cap", None):
+                        den = min(den, _st.den_cap[1])
                 else:
                     _tq = max(0.0, (_sj - 0.75 * _sn) / max(1.0, 0.25 * _sn))
                     _wid = (getattr(_st, "wid_hold", None) or args.stage_id) * (1.0 - 0.4 * min(1.0, _tq))
                     den = max(den, getattr(_st, "den_travel", None) or args.stage_den_travel)
+                    if getattr(_st, "den_cap", None):
+                        den = min(den, _st.den_cap[0])
                     if _prd is not None:
                         # yield inside the coming world's disc
                         _wpx = (_wid * (1.0 - _prd[0]))[..., None]

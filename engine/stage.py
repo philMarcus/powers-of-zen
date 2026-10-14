@@ -356,6 +356,39 @@ class Stage:
         self.echo_tex_mean = _c.reshape(-1, 3).mean(0)
         self._echo_rot_mir()
 
+    # ---- PLATE-STYLE STAGE (2026-10-14; Phil: "I want the description of what the things in the
+    # stage look like, and then DreamShaper's interpretation of that description — that's what we do
+    # with the planet") ------------------------------------------------------------------------
+    def set_element_textures(self, imgs, strength=0.9, size=192):
+        """imgs: the AI's own pictures of ONE element (close-ups filling the frame, drawn from the
+        author's element line in the journey's style), two or three variants. Every sphere wears
+        one of them as a face-on decal (variant by element index, fixed rotation / mirror per
+        element) — the plate's trick per element: our geometry, DreamShaper's surface."""
+        texs, means = [], []
+        for img in imgs:
+            im = img.convert("RGB")
+            w, h = im.size
+            sq = min(w, h)
+            im = im.crop(((w - sq) // 2, (h - sq) // 2, (w - sq) // 2 + sq, (h - sq) // 2 + sq))
+            im = im.resize((size, size), Image.LANCZOS)
+            t = np.asarray(im, np.float32) / 255.0
+            texs.append(t)
+            means.append(t[size // 4: 3 * size // 4, size // 4: 3 * size // 4].reshape(-1, 3).mean(0))
+        if not texs:
+            return 0
+        self.elem_tex, self.elem_tex_mean = texs, means
+        self.echo_tex = texs[0]                 # the decal path reads echo_tex*; elem_tex overrides per element
+        self.echo_tex_mean = means[0]
+        self.echo_tex_w = float(strength)
+        self._echo_rot_mir()
+        return len(texs)
+
+    def set_background_image(self, img):
+        """The far field as the AI painted it (from the author's field line): the stage's
+        background instead of a flat / gradient colour. Elements still fog toward fog_rgb."""
+        im = img.convert("RGB").resize((self.w, self.h), Image.LANCZOS)
+        self.bg_image = np.asarray(im, np.float32) / 255.0
+
     def _echo_rot_mir(self):
         """One fixed rotation + mirror per element for decals and relief (same draw for both)."""
         if getattr(self, '_tex_rot', None) is not None and len(self._tex_rot) >= max(1, len(self.items)):
@@ -644,7 +677,10 @@ class Stage:
         cam, Rcam = self._camera_pose(f)
         _mot = self._motion(f) if (getattr(self, 'pulse', None) or getattr(self, 'wave', None)
                                    or getattr(self, 'spin', None) or getattr(self, 'sats', None)) else None
-        if getattr(self, 'bg_grad', None) is not None:
+        if getattr(self, 'bg_image', None) is not None:
+            # PLATE-STYLE: the far field as the AI painted it from the author's field line
+            col = self.bg_image.copy()
+        elif getattr(self, 'bg_grad', None) is not None:
             # VARIETY background 'gradient': top colour -> bottom colour
             _t = np.linspace(0.0, 1.0, h, dtype=np.float32)[:, None, None]
             col = (self.bg_grad[0][None, None, :] * (1 - _t) + self.bg_grad[1][None, None, :] * _t)
@@ -813,9 +849,14 @@ class Stage:
                 base = base[None, None, :] * _cut_lum[..., None]
                 _look = 'fuzzy'
             _tex = getattr(self, 'echo_tex', None)
+            _tmean = getattr(self, 'echo_tex_mean', None)
+            _etl = getattr(self, 'elem_tex', None)
+            if _etl:
+                # plate-style: one of the AI's element pictures per element
+                _tex, _tmean = _etl[i % len(_etl)], self.elem_tex_mean[i % len(_etl)]
             if _tex is not None and kind == 'sphere' and rpx < 6.0:
                 # too small for a picture: the echo in COLOUR only (the swatch's own tone)
-                base = base * (1.0 - self.echo_tex_w) + self.echo_tex_mean * self.echo_tex_w
+                base = base * (1.0 - self.echo_tex_w) + _tmean * self.echo_tex_w
             elif _tex is not None and kind == 'sphere':
                 # ECHO TEXTURE: the donor swatch as a face-on decal on this sphere's cap
                 _k = i % len(self._tex_rot)
