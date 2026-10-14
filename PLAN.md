@@ -3406,3 +3406,32 @@ halo RING (fixed for later arms: _trim_floor now also cuts a NECK in the bottom 
 1.5x widening — the whale's mask is the whale alone, the coil's floor glow + stand go too, commit cc3560f);
 the field's half-sphere whale cut-outs are ~15 px lozenges in the stage layer and come back as ring beads —
 texture, not whales (a silhouette has no identity under ~30 px; the hero is where the echo lives).
+COST: hero-only 18.8 s/frame vs hero + half the spheres 20.5 s/frame (same card, same machine) — the field
+conversion is ~2 s/frame; the base is the stage + tracker + CN as usual. Not a cost problem either way.
+
+ELEMENT-SHAPE GRAMMAR (Phil's #2, design sketch — NOT built; after the cut-out verdict): the stage knows two
+forms (ball, capsule); a closed shape vocabulary the COMPOSER writes per card and the stage COMPILES gives
+the field its variety the way journeys get theirs (slot fillers through a fixed grammar; the per-object
+knowledge lives in the LLM, never in our code). Proposed card field `stage.shape`: {elong 1-4 (sphere ->
+capsule -> filament), taper 0-1, bend 0-1 / coil turns 0-3, lobes 0-6, segments 0-12, facets 0-12, spikes
+0-24, flatten 0-1 (disc / plate), cluster 1-8 (bead groups)}; the stage builds each element from
+superquadric / metaball primitives by those numbers (one renderer path, like the sphere's), with the depth
+map carrying the form. Composer rule written as a TEST (no examples, per the skills doctrine): "name the
+donor's shape in these knobs; if you cannot, leave it and the kit's default form stands". Auto-fill when
+absent: a tiny LLM call (Ollama) from the echo noun to the knobs, cached per noun. Order after the cut-out:
+(1) capsule-family forms first (elong/taper/bend/coil) because molecules and chains are the weakest
+realm today (tubes = granules), then (2) lobes/facets/spikes on spheres, then (3) the composer field +
+auto-fill. Each step = one 80-frame arm on a Review journey + one full video next to its twin.
+B PLUNGE READ (10:25, scratchpad/orange/cutout_b_k6_plunge.png = frames 206/210/214/218/221/223, rendered over
+the stage layer): f206-210 the hero is an unmistakable animal (a grey whale, then — as it grows — a lizard-ish
+creature: the repaint drifts the species but keeps "animal on a disc"); f214+ the dive is INSIDE it and the body
+fills the frame as a smooth amber dome the repaint covers with beads (the nature of the plunge: we enter the
+thing); f221-223 the k7 lattice opens inside the disc (nesting followed the hero). FIXES from it: bilinear
+sampling when magnified (the stage layer's silhouette edge was a staircase at f218; commit c76161a); the
+plinth trim (B still carried the glowing disc = "animal on a stand", which is likely what pulled the legs).
+The field's half-sphere lozenges came back as ring beads — texture, not whales; the DELIVERABLE is HERO-ONLY:
+scratchpad/orange/cutout_full.sh (tmux cutoutfull, waits for the arm chains) = valdes_blow v2 --from-card 6 of
+v1 with the nightly's flags + --stage-echo-cutout 0 -> Review entry re-pointed (caption + candidates kept, v1
+on disk), side-by-side review/compare/valdes_blow_CUTOUT.mp4 (echo words | cut-out echo), strip
+cutout_full_strip.png. Judge in the dive-in cut: k6 whale (tubes), k7 callosity (lattice), k8 coiled chain
+(tracks) — card k of 10 at 32 f/card: k6 = frames 192-223.
