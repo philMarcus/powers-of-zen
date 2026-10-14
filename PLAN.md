@@ -3520,3 +3520,13 @@ side-by-side clips review/compare/paint_AB_lattice.mp4, paint_AB_nucleus.mp4 (to
 PARKED, by Phil's order: macro "stage the space, not the thing" (depth-only spaces: canyon / forest of columns /
 cave / reef wall / city canyon, the AI keeping our depth but none of our paint), the plunge-target silhouette on
 unstaged cards (the tracker locks 1 in 6), the shape grammar. Micro realm first.
+EARLY READ of the painted LATTICE arm (L1, frames 225-235; scratchpad/orange/paint_l1_early.png = today / paint /
+paint stage layer; build sheet paint_l1_build.png = the 3 element pictures + field + stage layer + fed frame):
+the AI read "a tangerine core in an amber haze with an ultramarine veil" as JEWELLED BLUE-AND-GOLD GLASS ORBS
+(one of them eye-like) and the field line as a CANYON with blue fog between cliffs — the misreading Phil wants.
+At the plate's trust the element pictures SURVIVE the repaint: the frame is a field of glass marbles with gold
+filigree, not beads. BUT this arm lost its painted field (the stage's depth fog covered the background picture
+at 95 % — fixed, commit 270a065: the field is exempt from fog and tone gain; N1 + the queued L1b have it), so
+the background was the stage's tangerine fog and the gentle repaint kept it as a flat RED wash: sat 0.94 vs
+today's 0.71 (orange share 0.49 vs 0.81 — the red sits below 10° hue; hue entropy 1.60 vs 1.41 bits). The
+wash is the fog colour under low denoise, not the decals; L1b answers whether the painted field cures it.
