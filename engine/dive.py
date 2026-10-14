@@ -1968,8 +1968,19 @@ def main():
                         # up to three draws until the swatch is ONE object on a plain background
                         # (stage.swatch_isolated); a scene swatch gets no relief / cut-out at all
                         _eiso, _einfo = True, None
+                        _ep_clay = _ep
+                        if _eshape_only:
+                            # draw 1 = the NATURAL object, isolated (a mica crystal is a crystal cluster;
+                            # the clay wording made it a ring-gem-rock art object, lepidolite arm cutout_c);
+                            # the clay model is the fallback when the natural draw is a scene
+                            _ep_nat = (f"a single {_stagemod._strip_article(_vplan['echo'])}, whole, isolated, floating "
+                                       f"in the centre of an empty pure black void, nothing else around it, no "
+                                       f"pedestal, no base, no floor, no ground, no water, no sky, no background, "
+                                       f"crisp and detailed, soft studio light")
                         for _etry in range(3):
                             _eseed = (_eseed0 + _etry) % (2 ** 31)
+                            if _eshape_only:
+                                _ep = _ep_nat if _etry == 0 else _ep_clay
                             _ereused = (_ep, _eseed) in _swatch_memo
                             if _ereused:
                                 _eimg = _swatch_memo[(_ep, _eseed)]
