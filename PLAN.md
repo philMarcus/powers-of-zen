@@ -3435,3 +3435,18 @@ v1 with the nightly's flags + --stage-echo-cutout 0 -> Review entry re-pointed (
 on disk), side-by-side review/compare/valdes_blow_CUTOUT.mp4 (echo words | cut-out echo), strip
 cutout_full_strip.png. Judge in the dive-in cut: k6 whale (tubes), k7 callosity (lattice), k8 coiled chain
 (tracks) — card k of 10 at 32 f/card: k6 = frames 192-223.
+ARM B RESULT (10:39, 96 frames rc=0; strips scratchpad/orange/cutout_strip_B.png, cutout_b_k6_plunge.png,
+cutout_b_k7.png, cutout_b_k8.png = v1 render / B render / B stage layer):
+  k6 whale on TUBES: the hero reads as an animal for the first third of the card, then the dive enters it.
+  k8 "a coiled protein chain" on TRACKS: the hero comes back as a thick BRAIDED ROPE RING the dive enters,
+     the kit's own bead spiral turning inside it — the snake-for-a-protein-chain ask, delivered as a coiled
+     chain (v1 with the word alone showed only the kit's spiral). THE BEST CARD OF THE PASS.
+  k7 "a cream callosity" on LATTICE: the swatch is a cream sphere with a crater; its cut-outs are discs with
+     a dent and the repaint made the hero a literal EYEBALL (f250) and the field a sea of eyes -> RULE
+     (commit 99773f2): a donor mask whose disc-IoU > 0.72 keeps plain spheres + relief (callosity 0.80;
+     whale 0.46, mica 0.46, coil 0.36). Also the general lesson: a round-ish silhouette with one dent is
+     face bait for the repaint.
+  Numbers (fine detail / sat): k6 v1 23.2/0.68 vs B 21.5/0.66; k8 v1 23.7/0.73 vs B 18.8/0.70 (the rope
+  ring is a large smooth form) — the cut-out changes WHAT is painted, not how much.
+  D (relief-only baseline) and A2 (hero-only) DROPPED (tmux afterc ends the chain after C): both redundant
+  with the full render, which is hero-only on the nightly's flags; v1 is its twin.

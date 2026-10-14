@@ -45,9 +45,12 @@ for j, base, blbl, arms, cards in sets:
         for al, ad in arms:
             if ad:
                 rows.append((f'{al} · {lbl}', ad + '/frames', ks, None))
-        first = next((ad for _, ad in arms if ad), None)
-        if first:
-            rows.append((f'{arms[[ad for _, ad in arms].index(first)][0]} STAGE LAYER · {lbl}', first + '/stage', ks, '_stage'))
+        # the stage-layer row comes from the arm with the most saved stage images (a killed arm
+        # has a handful, and the nearest-file lookup would show its frames for every card)
+        have = [(len(glob.glob(f'{ad}/stage/*_stage.png')), al, ad) for al, ad in arms if ad]
+        if have:
+            _, al, ad = max(have)
+            rows.append((f'{al} STAGE LAYER · {lbl}', ad + '/stage', ks, '_stage'))
 W, H = 150, 266
 im = Image.new('RGB', (8 * W, len(rows) * (H + 16)), (8, 8, 10))
 dr = ImageDraw.Draw(im)
