@@ -405,7 +405,7 @@ class Stage:
             fill = float((m & disc).sum() / max(1, (m | disc).sum()))
         # a ROUND donor is decided by its WORD first (a half-lit moon or planet masks as a
         # crescent, so pixels alone would call it a shape): no plateau, detail only
-        is_round = bool(round_hint) or fill > 0.85
+        is_round = bool(round_hint) or fill > 0.72    # same bar as the cut-out (the callosity sphere, 0.80, made eyes)
         plateau = 0.0 if is_round else 0.65
         lum_n = lum / max(float(lum.max()), 1e-6)
         hp = lum_n - _blur(lum_n, 6.0)                     # local relief, not the broad shading

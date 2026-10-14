@@ -3450,3 +3450,16 @@ cutout_b_k7.png, cutout_b_k8.png = v1 render / B render / B stage layer):
   ring is a large smooth form) — the cut-out changes WHAT is painted, not how much.
   D (relief-only baseline) and A2 (hero-only) DROPPED (tmux afterc ends the chain after C): both redundant
   with the full render, which is hero-only on the nightly's flags; v1 is its twin.
+ARM C RESULT (10:43, lepidolite card 6, 32 frames rc=0; strip scratchpad/orange/cutout_c_k6.png = v3 relief / C /
+stage layer): the clay wording turned "a lilac mica crystal" into an invented ART OBJECT (a ring over a lilac
+gem on a rough rock base — build/stage/echo_6.png) and the repaint faithfully made ornate silver PENDANTS of it
+on the lattice's beads (f218-223) — the silhouette drives the repaint as designed, but the subject was wrong.
+Frames 194-212 are identical to v3 (the hero is still tiny; the cut-out field only shows once the beads are
+large). -> SWATCH ORDER (commit 7a2cec5): draw 1 = the NATURAL object isolated ("a single X, whole, isolated,
+floating in an empty pure black void, no pedestal/base/floor..., crisp and detailed"), draws 2-3 = the clay model
+(the fallback that made a black whale visible); the polarity-aware mask handles dark objects either way.
+FULL RENDER started 10:43:40 (tmux cutoutfull): valdes_blow v2 --from-card 6 of v1, hero-only cut-out, on the
+code of 10:43 (clay-first swatches = exactly the whale and the coil verified on B; the callosity keeps plain
+spheres by the roundness rule). ~168 frames (cards 6-9 + the lap tail) -> Review re-pointed + side-by-side
+review/compare/valdes_blow_CUTOUT.mp4 + strip ~11:40. A stray output/valdes_blow_platelive_cutout_d/v1 (D
+killed after 14 s) is an orphan for the nightly cleanup.
