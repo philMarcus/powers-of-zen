@@ -3463,3 +3463,10 @@ code of 10:43 (clay-first swatches = exactly the whale and the coil verified on 
 spheres by the roundness rule). ~168 frames (cards 6-9 + the lap tail) -> Review re-pointed + side-by-side
 review/compare/valdes_blow_CUTOUT.mp4 + strip ~11:40. A stray output/valdes_blow_platelive_cutout_d/v1 (D
 killed after 14 s) is an orphan for the nightly cleanup.
+FULL RENDER EARLY READ (frames 198/204/210, scratchpad/orange/cutout_full_k6_early.png): the hero is an animal in
+every frame and no plinth — a green scaled fish-whale, then a lizard-like creature, then a large grey whale with
+its mouth open, swimming among the molecule beads. The SPECIES DRIFTS frame to frame (the repaint re-reads the
+same silhouette each frame; the whale at f210 is the best single frame of the pass). In motion this will read
+as "an animal that keeps changing" — the known per-frame identity drift; the levers are the echo-card trust
+settings (--stage-echo-id / -den, arm B of 10-13 doubled survival at a cost in paint) and the word in the
+prompt; Phil's taste call after the full video.
