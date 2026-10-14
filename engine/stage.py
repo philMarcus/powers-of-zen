@@ -546,6 +546,15 @@ class Stage:
         if hard.sum() < 50:
             return 0
         ys, xs = np.nonzero(hard)
+        # a NEAR-ROUND mask (IoU with the equal-area disc about its centroid > 0.8) is already a
+        # sphere's shape: a cut-out of it is a disc with a dent = an eye on every element
+        # ("a cream callosity" on valdes_blow k7, arm cutout_b). Keep the spheres (+ relief).
+        _rr = math.sqrt(hard.sum() / math.pi)
+        _yy, _xx = np.mgrid[0:size, 0:size]
+        _disc = ((_xx - xs.mean()) ** 2 + (_yy - ys.mean()) ** 2) <= _rr * _rr
+        self.cut_fill = float((hard & _disc).sum() / max(1, (hard | _disc).sum()))
+        if self.cut_fill > 0.72:                      # callosity sphere 0.80; whale/mica/coil 0.36-0.49
+            return 0
         cy, cx = 0.5 * (ys.min() + ys.max()), 0.5 * (xs.min() + xs.max())
         side = 1.12 * max(ys.max() - ys.min(), xs.max() - xs.min(), 8)
         # re-centre + re-scale so the object's bounding square fills the texture (u, v in [-1, 1])

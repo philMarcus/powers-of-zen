@@ -2026,7 +2026,9 @@ def main():
                                 except Exception:
                                     pass
                             print(f"[dive] stage-echo: card {_sk} CUT-OUT of {_vplan['echo']!r}: {_ncut} element(s) "
-                                  f"(hero {'found' if getattr(_stage, 'cut_hero', None) is not None else 'MISSING'}, "
+                                  f"(mask roundness {getattr(_stage, 'cut_fill', 0.0):.2f}"
+                                  f"{' = round -> spheres kept' if getattr(_stage, 'cut_fill', 0.0) > 0.72 else ''}, "
+                                  f"hero {'found' if getattr(_stage, 'cut_hero', None) is not None else 'MISSING'}, "
                                   f"depth {'DepthAnything' if _ed is not None and getattr(_stage, 'cut_from_depth', False) else 'dome'}, "
                                   f"others {max(0.0, args.stage_echo_cutout):.2f})", flush=True)
                         if args.stage_echo_ambient > 0 and _eround:
