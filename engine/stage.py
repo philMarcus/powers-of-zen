@@ -163,6 +163,17 @@ def _object_mask(lum):
     m = _soft(np.clip((lum - 0.08) / 0.17, 0, 1))
     comp = _object_component(m > 0.5)
     pol = 'bright'
+    h, w = lum.shape
+    e = 3
+    _nb = int(comp[:e].mean() > 0.15) + int(comp[-e:].mean() > 0.15) + int(comp[:, :e].mean() > 0.15) + int(comp[:, -e:].mean() > 0.15)
+    if comp.sum() > 50 and (comp.mean() > 0.6 or _nb >= 3):
+        # the bright thing IS the background (a black whale sculpture on a grey studio backdrop,
+        # valdes_blow arm cutout_a v3): the object is the dark component nearest the centre
+        bg = float(np.percentile(lum[comp], 50))
+        md = _soft(np.clip((bg - 0.10 - lum) / 0.17, 0, 1))
+        comp_d = _object_component(md > 0.5)
+        if comp_d.sum() > 50:
+            return md, comp_d, 'dark-on-bright'
     if comp.sum() > 50:
         ring = _ring(comp)
         if ring.sum() > 50 and float(lum[ring].mean()) > float(lum[comp].mean()) + 0.05:
