@@ -1,6 +1,11 @@
 """PLATE-STYLE A/B strip + numbers + looped side-by-side clips (2026-10-14). Per card: today's stage (l0/n0) /
 paint (l1/n1) rendered frames, the paint arm's stage layer, and its element pictures + field."""
 import os, glob, subprocess
+
+
+def wpath(p):
+    return subprocess.run(['wslpath', '-w', p], capture_output=True, text=True).stdout.strip()
+
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 Z = '/mnt/c/Users/Phil/zoomer'
@@ -23,8 +28,8 @@ def sat(p):
     return float(np.where(mx > 0, (mx - mn) / np.maximum(mx, 1e-6), 0).mean())
 
 
-cards = [('LATTICE valdes_blow k7 sulfur_atom', 7, 224, 255, latest(f'{Z}/output/valdes_blow_platelive_paint_l0'), latest(f'{Z}/output/valdes_blow_platelive_paint_l1')),
-         ('NUCLEUS lepidolite_halo_var k8 halo_nucleus', 8, 256, 287, latest(f'{Z}/output/lepidolite_halo_var_platelive_paint_n0'), latest(f'{Z}/output/lepidolite_halo_var_platelive_paint_n1'))]
+cards = [('LATTICE valdes_blow k7 sulfur_atom', 7, 224, 255, latest(f'{Z}/output/valdes_blow_platelive_paint_l0'), latest(f'{Z}/output/valdes_blow_platelive_paint_l1b')),
+         ('NUCLEUS lepidolite_halo_var k8 halo_nucleus', 8, 288, 323, latest(f'{Z}/output/lepidolite_halo_var_platelive_paint_n0'), latest(f'{Z}/output/lepidolite_halo_var_platelive_paint_n1'))]
 W, H = 150, 266
 rows = []
 for lbl, k, a, z, d0, d1 in cards:
@@ -65,11 +70,11 @@ for lbl, k, a, z, d0, d1 in cards:
     tag = 'lattice' if 'LATTICE' in lbl else 'nucleus'
     outm = f'{Z}/review/compare/paint_AB_{tag}.mp4'
     cmd = [FFMPEG, '-y', '-loglevel', 'error',
-           '-framerate', '12', '-start_number', str(a), '-i', f'{d0}/frames/%05d.png',
-           '-framerate', '12', '-start_number', str(a), '-i', f'{d1}/frames/%05d.png',
-           '-filter_complex', f"[0:v]trim=end_frame={z - a + 1},setpts=PTS-STARTPTS,drawtext=text='today':x=10:y=10:fontsize=28:fontcolor=white[a];"
-                              f"[1:v]trim=end_frame={z - a + 1},setpts=PTS-STARTPTS,drawtext=text='paint':x=10:y=10:fontsize=28:fontcolor=white[b];"
+           '-framerate', '12', '-start_number', str(a), '-i', wpath(f'{d0}/frames') + '\\%05d.png',
+           '-framerate', '12', '-start_number', str(a), '-i', wpath(f'{d1}/frames') + '\\%05d.png',
+           '-filter_complex', f"[0:v]trim=end_frame={z - a + 1},setpts=PTS-STARTPTS[a];"
+                              f"[1:v]trim=end_frame={z - a + 1},setpts=PTS-STARTPTS[b];"
                               f"[a][b]hstack=inputs=2,loop=loop=3:size={z - a + 1}:start=0[v]",
-           '-map', '[v]', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', outm]
+           '-map', '[v]', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', wpath(outm)]
     r = subprocess.run(cmd, capture_output=True, text=True)
     print('clip ->', outm if r.returncode == 0 else f'FAILED {r.stderr[-300:]}')

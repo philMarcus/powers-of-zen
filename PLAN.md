@@ -3530,3 +3530,17 @@ at 95 % — fixed, commit 270a065: the field is exempt from fog and tone gain; N
 the background was the stage's tangerine fog and the gentle repaint kept it as a flat RED wash: sat 0.94 vs
 today's 0.71 (orange share 0.49 vs 0.81 — the red sits below 10° hue; hue entropy 1.60 vs 1.41 bits). The
 wash is the fog colour under low denoise, not the decals; L1b answers whether the painted field cures it.
+LATTICE A/B RESULT (18:04; l0 today / l1 paint without the field / l1b paint with the field; strip
+scratchpad/orange/paint_strip.png rows 1-3, clip review/compare/paint_AB_lattice.mp4 = today | l1b, x4):
+  today      sat 0.72  orange 0.85  hue entropy 1.38  detail 23.8   (amber lattice, glass beads)
+  paint l1   sat 0.92  orange 0.48  hue entropy 2.02  detail 17.2   (jewel orbs in a flat RED fog — the field lost)
+  paint l1b  sat 0.62  orange 0.39  hue entropy 3.41  detail 14.4   (a painted CANYON with blue fog; the atoms are specks)
+  WHAT IT SAYS: the plate-style stage does hand control to the words — and the words then rule the card. A
+  field line that reads like a place ("knots of fog at the margins of a void") becomes a LANDSCAPE the gentle
+  repaint keeps whole, and the lattice's small elements turn into specks on it; without the field the
+  elements rule and the fog colour becomes a wash. The element pictures survive in both (jewelled orbs where
+  the elements are large enough to carry a picture, ~>30 px). So the balance is authoring + scale: the field
+  line must be a BACKDROP (void / fog / darkness, no nouns of place) and should be dimmed and blurred as far
+  (not done yet), and painted cards want the hero/bold element scales. The nucleus card (a droplet of large
+  nucleons, a void-like field line) is the better test — re-running (the first run cut off at the card's first
+  frame: lepidolite is 36 f/card; memory arm-frames-check-card-frames).
