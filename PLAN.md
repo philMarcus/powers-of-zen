@@ -3470,3 +3470,19 @@ same silhouette each frame; the whale at f210 is the best single frame of the pa
 as "an animal that keeps changing" — the known per-frame identity drift; the levers are the echo-card trust
 settings (--stage-echo-id / -den, arm B of 10-13 doubled survival at a cost in paint) and the word in the
 prompt; Phil's taste call after the full video.
+FULL RENDER RESULT (11:38, dive rc=0, 360 frames; queue_review re-pointed the Review entry at v2 — caption + 5 music
+candidates kept, v1 on disk; side-by-side review/compare/valdes_blow_CUTOUT.mp4 = v1 "echo words" | v2 "cut-out
+echo"; strip scratchpad/orange/cutout_full_strip.png = v1 / v2 per card):
+  k6 whale on TUBES: an animal hero across frames 192-216, growing as the dive approaches it, no plinth; the species
+     drifts frame to frame (fish-whale / lizard / grey whale) — the per-frame identity drift; then the body fills
+     the frame and the k7 lattice opens inside it (nest: 0.42 W -> 1.13 W).
+  k7 callosity on LATTICE: plain spheres + relief (roundness rule) — amber lattice as v1; the k8 coil's hole shows
+     through the nesting disc at f248-252 (nest: 0.08 W -> 1.13 W).
+  k8 coil on TRACKS: the braided rope ring the dive enters, the kit's bead spiral turning inside it.
+  k9 + lap tail differ from v1 (the chain diverged at card 6; both land cleanly).
+  Numbers (fine detail / sat): k6 23.2/0.68 -> 20.6/0.66; k7 21.4/0.72 -> 23.1/0.72; k8 23.7/0.73 -> 18.4/0.68 —
+  the cut-out changes what is painted, not how much; saturation untouched (no colour path).
+  NOT in the nightly: --stage-echo-cutout (lab) until Phil's verdict; the relief/swatch fixes of today ARE in the
+  nightly (same mechanism he approved this morning, honouring its intent: the donor's shape, not its backdrop).
+  Levers if he wants the species to HOLD across the card: --stage-echo-id 0.58 / --stage-echo-den 0.40 (arm B of
+  10-13: shape survival doubles, paint flatter) and/or the cut-out's own luminance detail into the relief.

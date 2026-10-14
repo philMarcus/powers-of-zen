@@ -120,6 +120,19 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-14 AFTERNOON (ECHO CUT-OUT DELIVERED; read PLAN "2026-10-14 — ECHO CUT-OUT" to its end): valdes_blow v2 IS THE
+REVIEW ENTRY (from card 6 of v1 — cards 0-5 byte-identical to the nightly render Phil has not judged yet; caption + 5 music
+candidates kept; v1 on disk), hero-only cut-out on the nightly's flags; side-by-side review/compare/valdes_blow_CUTOUT.mp4
+(echo words | cut-out echo); strip scratchpad/orange/cutout_full_strip.png. RESULT: on the molecule card the plunge target
+is an ANIMAL (a whale, drifting species frame to frame) and on the particle-tracks card "a coiled protein chain" is a braided
+rope ring the dive enters — the first echoes that survive the repaint as the THING; "a cream callosity" (a crater-sphere)
+keeps plain spheres by the roundness rule (its cut-out had become an eyeball on arm B). Judge the dive-in cut: k6 whale,
+k7 callosity (spheres + relief), k8 coiled chain, 32 frames per card (k6 = frames 192-223 of 360). NOT in the nightly:
+--stage-echo-cutout (lab) until his verdict; levers if he wants the species to hold: --stage-echo-id/-den. ALSO IN THE
+NIGHTLY SINCE TODAY (per his word): echo texture (relief + half-lit; settings stage_echo_texture) + fog from the far-field
+phrase (stage_fog_phrase) — and the relief's swatch/mask fixes made during the cut-out work apply there (polarity-aware
+mask, natural-first isolated swatch, plinth trim, round donors get no plateau). Review 23 -> tonight skips until his pass.
+ComfyUI up (relaunched 09:4x). Next: the element-SHAPE GRAMMAR (design sketch in PLAN) after his verdict.
 2026-10-14 MIDDAY (ECHO CUT-OUT ARMS RUNNING; read PLAN "2026-10-14 — ECHO CUT-OUT"): Phil: per-object echo code "won't
 work — antithetical to infinite variety"; motion is OUT for good ("didn't work well, which is why it's on the shelf"); do
 (1) cut-out shapes, then (2) an element-shape grammar. BUILT (lab `dive --stage-echo-cutout F`): the plunge-target element
