@@ -1935,20 +1935,55 @@ def main():
                     # (probed 2026-10-10, scratchpad/orange/echo_swatches3.png: this wording gives ONE
                     # macaw / feather / moon / coiled snake alone on black; "filling the frame" gave a
                     # wall of parrots, "icon-like" a framed picture — the frame then tiled every atom)
-                    _ep = (f"exactly one {_stagemod._strip_article(_vplan['echo'])}, alone, large in the centre of a "
-                           f"plain black background, whole object fully visible, {_dpal}, bold simple silhouette, "
-                           f"soft studio light")
-                    _eneg = ("multiple, many, two, group, pattern, repeated, tiled, frame, border, text, "
-                             "watermark, collage, cropped")
-                    _eseed = (cfg["seed"] + _zlib.crc32(_vplan["echo"].encode())) % (2 ** 31)
+                    _eshape_only = not (args.stage_echo_ipa > 0 or args.stage_echo_tex > 0)
+                    if _eshape_only:
+                        # SHAPE uses only (relief / cut-out, 2026-10-14): the donor palette phrase is
+                        # dropped — "deep teal water, cream light" drew two whales IN A SEA and the
+                        # object mask took the water (valdes_blow card 6, arm cutout_a); the colour
+                        # never reaches the stage on this path anyway (hue-locked)
+                        _ep = (f"a single {_stagemod._strip_article(_vplan['echo'])}, whole, isolated, floating in the "
+                               f"centre of an empty pure black void, nothing else, no background, no scenery, "
+                               f"no ground, no water, no sky, crisp clean silhouette, soft studio light, 3d render")
+                        _eneg = ("multiple, many, two, group, pattern, repeated, tiled, frame, border, text, "
+                                 "watermark, collage, cropped, background, scenery, landscape, habitat, water, "
+                                 "sea, ocean, sky, horizon, ground, floor, table")
+                    else:
+                        _ep = (f"exactly one {_stagemod._strip_article(_vplan['echo'])}, alone, large in the centre of a "
+                               f"plain black background, whole object fully visible, {_dpal}, bold simple silhouette, "
+                               f"soft studio light")
+                        _eneg = ("multiple, many, two, group, pattern, repeated, tiled, frame, border, text, "
+                                 "watermark, collage, cropped")
+                    _eseed0 = (cfg["seed"] + _zlib.crc32(_vplan["echo"].encode())) % (2 ** 31)
+                    _eround = bool(re.search(r"\b(planet|moon|sun|star|orb|ball|globe|sphere|egg|pearl|bead|"
+                                             r"bubble|drop|droplet|eye|world|marble|berry|seed)s?\b",
+                                             _vplan["echo"], re.I))
                     try:
                         _ecfg = {**cfg, "width": 768, "height": 768}
-                        _ereused = (_ep, _eseed) in _swatch_memo
-                        if _ereused:
-                            _eimg = _swatch_memo[(_ep, _eseed)]
-                        else:
-                            _eimg = Image.open(io.BytesIO(run_workflow(build_workflow(_ecfg, _ep, _eseed, neg_extra=_eneg)))).convert("RGB")
-                            _swatch_memo[(_ep, _eseed)] = _eimg
+                        # up to three draws until the swatch is ONE object on a plain background
+                        # (stage.swatch_isolated); a scene swatch gets no relief / cut-out at all
+                        _eiso, _einfo = True, None
+                        for _etry in range(3):
+                            _eseed = (_eseed0 + _etry) % (2 ** 31)
+                            _ereused = (_ep, _eseed) in _swatch_memo
+                            if _ereused:
+                                _eimg = _swatch_memo[(_ep, _eseed)]
+                            else:
+                                _eimg = Image.open(io.BytesIO(run_workflow(build_workflow(_ecfg, _ep, _eseed, neg_extra=_eneg)))).convert("RGB")
+                                _swatch_memo[(_ep, _eseed)] = _eimg
+                            if not _eshape_only:
+                                break
+                            _eiso, _efrac, _ebord = _stagemod.swatch_isolated(_eimg)
+                            _einfo = f"share {_efrac:.2f} borders {_ebord}"
+                            if _eiso:
+                                break
+                            print(f"[dive] stage-echo: card {_sk} swatch {_etry + 1} of {_vplan['echo']!r} is a scene "
+                                  f"({_einfo}) -> re-draw", flush=True)
+                        if not _eiso:
+                            print(f"[dive] stage-echo: card {_sk} no isolated swatch of {_vplan['echo']!r} in 3 draws "
+                                  f"({_einfo}) -> plain spheres (no relief, no cut-out)", flush=True)
+                            (out_dir / "build" / "stage").mkdir(parents=True, exist_ok=True)
+                            _eimg.save(out_dir / "build" / "stage" / f"echo_{_sk}_scene.png")
+                            raise StopIteration
                         (out_dir / "build" / "stage").mkdir(parents=True, exist_ok=True)
                         _eimg.save(out_dir / "build" / "stage" / f"echo_{_sk}.png")
                         if args.stage_echo_ipa > 0:
@@ -1956,9 +1991,6 @@ def main():
                         if args.stage_echo_tex > 0:
                             # ECHO TEXTURE: the same swatch worn by every sphere of the stage layer
                             _stage.set_echo_texture(_eimg, args.stage_echo_tex)
-                        _eround = bool(re.search(r"\b(planet|moon|sun|star|orb|ball|globe|sphere|egg|pearl|bead|"
-                                                 r"bubble|drop|droplet|eye|world|marble|berry|seed)s?\b",
-                                                 _vplan["echo"], re.I))
                         if args.stage_echo_relief > 0:
                             # ECHO RELIEF (2026-10-13): the swatch as a height field on every sphere —
                             # shape through the shading normal + the depth-CN map, colour untouched
@@ -2011,6 +2043,11 @@ def main():
                               + (f" den {_stage.den_travel:.2f}/{_stage.den_arrival:.2f} id {_stage.wid_hold:.2f}"
                                  if (args.stage_echo_den > 0 or args.stage_echo_id > 0) else "")
                               + f"{' (reused)' if _ereused else ''}", flush=True)
+                    except StopIteration:
+                        # scene swatch: no shape echo, but a ROUND donor's lighting needs no swatch
+                        if args.stage_echo_ambient > 0 and _eround:
+                            _stage.ambient = args.stage_echo_ambient
+                            _stage.look = 'fuzzy'
                     except Exception as _ee:  # a failed swatch never kills a render
                         print(f"[dive] stage-echo-ipa: swatch failed for card {_sk}: {_ee}", flush=True)
                 print(f"[dive] stage-variety: card {_sk} {_sreg.get('name')!r} tier {_vplan['tier']} "

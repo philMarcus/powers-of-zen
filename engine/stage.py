@@ -110,6 +110,47 @@ def shade_sphere(look, n, nz, rho2, base, light, extra, bg, amb=0.42):
     return b * shade[..., None] + 0.55 * spec[..., None] + extra * b
 
 
+def _object_component(hard):
+    """The connected component of a boolean mask that holds the mask pixel nearest the image
+    centre (PIL flood fill; no scipy on this path). A scene swatch — two whales in a sea — gives
+    the WATER as the luminance mask; the component test + border test below catch it."""
+    hard = np.asarray(hard, bool)
+    if not hard.any():
+        return hard
+    ys, xs = np.nonzero(hard)
+    h, w = hard.shape
+    k = int(np.argmin((ys - h / 2) ** 2 + (xs - w / 2) ** 2))
+    comp = np.zeros_like(hard)
+    comp[ys[k], xs[k]] = True
+    # binary propagation: grow the seed through the mask (4-neighbourhood) until nothing changes
+    for _ in range(4 * (h + w)):
+        grown = comp.copy()
+        grown[1:] |= comp[:-1]
+        grown[:-1] |= comp[1:]
+        grown[:, 1:] |= comp[:, :-1]
+        grown[:, :-1] |= comp[:, 1:]
+        grown &= hard
+        if grown.sum() == comp.sum():
+            break
+        comp = grown
+    return comp
+
+
+def swatch_isolated(img, size=512):
+    """Is this echo swatch ONE object on a plain background (what the cut-out and the relief
+    need), or a scene? Returns (ok, frac, borders): the centre component's share of the image
+    and how many image borders it touches. ok = share <= 0.60 and <= 1 border."""
+    im = img.convert("L").resize((size, size), Image.BILINEAR)
+    lum = np.asarray(im, np.float32) / 255.0
+    m = np.asarray(Image.fromarray((np.clip((lum - 0.08) / 0.17, 0, 1) * 255).astype(np.uint8))
+                   .filter(ImageFilter.GaussianBlur(2.0)), np.float32) / 255.0
+    comp = _object_component(m > 0.5)
+    frac = float(comp.mean())
+    e = 3
+    borders = int(comp[:e].mean() > 0.15) + int(comp[-e:].mean() > 0.15) + int(comp[:, :e].mean() > 0.15) + int(comp[:, -e:].mean() > 0.15)
+    return (frac <= 0.60 and borders <= 1 and frac >= 0.002), frac, borders
+
+
 class Stage:
     """items: list of ('sphere', center(3), radius, rgb(3), emit) | ('glow', center, radius, rgb, k).
     zooms/aims: per-frame schedule slices (same as scaffold.Resolver)."""
@@ -364,6 +405,7 @@ class Stage:
             return np.asarray(Image.fromarray(np.clip(a * 255, 0, 255).astype(np.uint8))
                               .filter(ImageFilter.GaussianBlur(r)), np.float32) / 255.0
 
+        self.cut_count, self.cut_hero, self.cut_from_depth = 0, None, False
         im = img.convert("RGB")
         im = im.resize((size, size), Image.LANCZOS) if im.size != (size, size) else im
         rgb = np.asarray(im, np.float32) / 255.0
@@ -387,7 +429,8 @@ class Stage:
                 m = np.maximum(m, md * (_blur(lum, 4.0) > 0.03))
             else:
                 d = None                                                    # flat depth: useless
-        hard = m > 0.5
+        hard = _object_component(m > 0.5)             # the one object, not stray bright bits
+        m = m * hard
         if hard.sum() < 50:
             return 0
         ys, xs = np.nonzero(hard)
