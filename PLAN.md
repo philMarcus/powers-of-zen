@@ -3386,3 +3386,15 @@ the cut-out share it. Swatch prompt for shape uses = "a single X, whole, as a pa
 levitating in an empty pure black void, no floor/table/ground/water/sky/shadow, evenly lit, 3d render" (+
 scenery/dish/shadow negatives). "a cream callosity" -> a cream sphere with a crater on a black stand (the
 stand is dark = excluded): an obscure donor gives an abstract-but-isolated shape, which is the graceful case.
+ARM A (v4, killed 10:09 after 10 frames of card 6; the chain went on to B): the stage layer
+(output/valdes_blow_platelive_cutout_a/v4/build/stage/00200_stage.png) showed exactly the two mask bugs before
+their fixes: (1) the whale hero stood on a huge BRIGHT SLAB — the unrestricted depth union pulled the swatch's
+lit floor plane (near by depth) into the object mask — and the repaint turned the slab into a framed TEXT
+PLAQUE with handwriting (frame 00201); (2) every field sphere had a dark PUPIL — the relief still used the
+bright-only mask, i.e. the grey backdrop as plateau with a whale-shaped hole, so the card read as a sea of
+eyes / peacock feathers. Both fixed before B started (commits 1cfdade, 4b99288): relief uses the polarity-
+aware mask; the depth union only within 10 px of the polarity component; floor-slab trim (does not catch
+the thin disc under this whale: width ratio 1.1 < 1.5 — the "no pedestal / base / platform" prompt words
+are the lever there). Card 8's swatch "a coiled protein chain" = a coiled grey rope ring (the chain, coiled,
+literally) on a dim floor. B (hero + half the spheres), C (mica), D (relief-only baseline) run on the
+corrected code; A (hero only) to be re-run after D if B says the hero reads.

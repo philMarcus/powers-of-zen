@@ -120,6 +120,19 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-14 MIDDAY (ECHO CUT-OUT ARMS RUNNING; read PLAN "2026-10-14 — ECHO CUT-OUT"): Phil: per-object echo code "won't
+work — antithetical to infinite variety"; motion is OUT for good ("didn't work well, which is why it's on the shelf"); do
+(1) cut-out shapes, then (2) an element-shape grammar. BUILT (lab `dive --stage-echo-cutout F`): the plunge-target element
+becomes a camera-facing CUT-OUT of the donor swatch (silhouette + DepthAnything depth in the depth-CN map + shading, species
+colour hue-locked; F = fraction of other spheres too; kits with no sphere at the target get it on the cluster's front face).
+THE SWATCH WAS THE WORK: shape uses now draw "a pale matte clay sculpture levitating in a black void" (no palette words —
+they drew the whale's SEA), stage.swatch_isolated + a polarity-aware object mask (bright-on-dark / dark-on-bright / dark
+in a lit ring / enclosed hole), floor-slab trim, depth union only beside the object, up to 3 re-draws else plain spheres;
+the RELIEF (nightly) uses the same mask now (a black whale on grey had embossed the backdrop = pupils on every bead). ARMS
+(tmux cutout -> cutouta2; scratchpad/orange/cutout_arms.sh, strip tool cutout_strip.py): B valdes_blow cards 6-8 hero +
+half the spheres (whale on tubes, callosity on lattice, coiled protein chain on tracks), C lepidolite card 6 (mica), D
+relief-only baseline, A2 hero-only; arm A (pre-fix) killed. ComfyUI relaunched 09:xx for the arms (it had been stopped
+10-13 17:17). Echo texture + fog fix are ON in the nightly (settings stage_echo_texture / stage_fog_phrase) per Phil.
 2026-10-14 (ECHO TEXTURE ON; read PLAN "2026-10-14 — PHIL'S QUESTIONS"): Phil found the 10-13 report too jargony ("I'm not
 sure what I'm agreeing to"); re-explained per switch = the problem it solves + what it touches (memory plain-language-reports;
 footprint tool scratchpad/orange/echo_footprint.py: 35 of the 56 staged cards in the queue carry an echo word, 11 round; the
