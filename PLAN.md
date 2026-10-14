@@ -3398,3 +3398,11 @@ the thin disc under this whale: width ratio 1.1 < 1.5 — the "no pedestal / bas
 are the lever there). Card 8's swatch "a coiled protein chain" = a coiled grey rope ring (the chain, coiled,
 literally) on a dim floor. B (hero + half the spheres), C (mica), D (relief-only baseline) run on the
 corrected code; A (hero only) to be re-run after D if B says the hero reads.
+FIRST READ OF B (10:15, frame 00194 = 2 frames into the whale card, hero still small): THE HERO READS. The
+repaint turned the whale cut-out into a recognisable green scaled whale-fish (eye, fins, tail) sitting among
+the molecule beads — the first echo in this project that survives as the THING rather than a tint or a gem
+texture (scratchpad/orange/cutout_b_f194.png). Two notes: the plinth disc under the whale became a white
+halo RING (fixed for later arms: _trim_floor now also cuts a NECK in the bottom 35 % of rows followed by a
+1.5x widening — the whale's mask is the whale alone, the coil's floor glow + stand go too, commit cc3560f);
+the field's half-sphere whale cut-outs are ~15 px lozenges in the stage layer and come back as ring beads —
+texture, not whales (a silhouette has no identity under ~30 px; the hero is where the echo lives).
