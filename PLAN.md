@@ -3335,3 +3335,54 @@ the stage compiles generic forms (superquadrics/metaball chains) from it — the
 to element shape (slot fillers through a fixed grammar; the per-object knowledge lives in the LLM). (3) the
 built, untested --stage-motion package (orbit/pulse/spin/wave) as a cheap variety axis needing one arm.
 Order: (1) first (cheapest, most literal), (2) is the structural answer to repetition, (3) alongside.
+
+### 2026-10-14 — ECHO CUT-OUT (cut-out shapes first; Phil: per-object code "won't work... antithetical to infinite variety")
+Phil's picks for the next echo pass: (1) the cut-out hero, (2) an element-shape grammar; motion is OUT ("the
+motion we built didn't work well, which is why it's on the shelf" — memory stage-motion-shelved; never re-offer).
+BUILT (commit 39ccac1; lab flag `dive --stage-echo-cutout F`, absent = off): `Stage.set_echo_cutout(img, depth,
+frac)` — the donor swatch (the same 768^2 txt2img the relief uses) becomes a texture triple (object MASK from
+luminance ∪ DepthAnything-near, HEIGHT from the swatch's own depth normalised inside the mask and falling to
+zero at the rim, hue-locked LUMINANCE 0.5-1.6), re-centred and re-scaled so the object's bounding square is
+the texture; the plunge-target sphere (nearest `target` within 35 % of `target_R`) becomes item kind
+'cutout' — a camera-facing billboard whose front bulges toward the camera by R*0.9*height, output depth
+exaggerated x3 (the depth-CN signal), normal from the height gradient, shaded 'fuzzy' in the species colour
+times the swatch luminance, anti-aliased by the mask; a fraction F of the other spheres too (small tilt +
+mirror per element, hero upright), spheres under 4 px stay spheres (mips for 30-120 px). Kits with NO sphere
+at the target (tubes / tracks / tissue / pasta): the cut-out is APPENDED on the cluster's front face
+(target - 0.9 R along the aim ray) in the kit's colour — buried at the centre it hid behind the near capsules.
+dive: DepthAnything once per distinct swatch (`warp.depth_via_comfy`, memoized `_depth_memo` — an identical
+re-upload is served from ComfyUI's cache with no outputs), dome fallback when depth fails/flat; round donors
+skipped (their shape is the half-lit sphere); debug build/stage/cutout_<k>.png (mask | height | lum);
+run.json stage_echo.cutout. CPU sheets: scratchpad/orange/cutout_cpu_lattice.png (lattice hero + half the
+field as whales; the hero whale grows into the plunge, solid silhouette in the depth map),
+cutout_cpu_tubes.png (tubes: the appended whale fills the frame at the bar line).
+ARMS (tmux cutout, scratchpad/orange/cutout_arms.sh, log cutout_arms.log; the nightly's flags + cut-out):
+A valdes_blow cards 6-8 hero only (whale on TUBES, "a cream callosity" on lattice, "a coiled protein chain"
+on TRACKS = the snake ask), B same + half the spheres, C lepidolite_halo_var card 6 (mica crystal) + 0.5,
+D valdes_blow cards 6-8 nightly flags only = baseline. Judge: does the silhouette survive the repaint as the
+THING (whale / chain), or does the repaint gem-ify it; does the field of cut-outs read as sprites.
+FIRST ARM A READ (09:55): the whale swatch was a SCENE — two black right whales in blue water — because the swatch
+prompt carried the donor palette phrase ("deep teal water, cream light...") and the model drew the habitat; the
+luminance mask then took the WATER (share 0.46, 3 borders) and the cut-out / relief embossed the sea with
+whale-shaped holes. The same swatch fed the relief on the nightly path. FIX (commit 6896eb9): for shape-only
+uses (relief / cut-out; colour never reaches the stage on this path) the swatch prompt drops the palette and
+demands one isolated object ("floating in an empty pure black void, no background, no scenery, no water,
+no sky... 3d render" + scenery negatives); stage.swatch_isolated = the component of the luminance mask
+nearest the centre must cover <= 60 % and touch <= 1 border (valdes whale/callosity scene swatches: 0.46/3,
+0.56/2 -> SCENE; lepidolite's mica crystal 0.39/1 -> isolated); up to 3 draws (seed+1, +2), else the card
+keeps plain spheres (no relief, no cut-out; a round donor still gets the half-lit look) and the scene swatch
+is saved as build/stage/echo_<k>_scene.png. The cut-out mask is that centre component. Chain relaunched
+09:57 (cutout_a -> v2).
+SWATCH POLARITY (10:00-10:05, commits 1bebba7 d948cec): the isolated-object prompt alone is not enough — the
+object mask must know which thing is the object. Three real cases from the whale card: (1) "in a black void"
+drew whales UNDER LIT WATER: the bright mask was the water, the whale a hole; (2) "pale matte clay sculpture"
+drew a BLACK whale sculpture (the donor says "black right whale") on a GREY studio backdrop: bright mask =
+the whole backdrop (share 0.90, 4 borders); (3) the mica crystal / the callosity sphere = bright object on
+black (the intended case). stage._object_mask now: bright component nearest the centre; if it is the
+background (> 60 % or 3+ borders) -> the DARK component nearest the centre ('dark-on-bright': the whale
+alone, share 0.07, 0 borders, mask = exactly the whale); else if the ring just outside is brighter -> the
+dark thing ('dark'); else if an enclosed hole is brighter than the outside -> the hole. swatch_isolated and
+the cut-out share it. Swatch prompt for shape uses = "a single X, whole, as a pale matte clay sculpture,
+levitating in an empty pure black void, no floor/table/ground/water/sky/shadow, evenly lit, 3d render" (+
+scenery/dish/shadow negatives). "a cream callosity" -> a cream sphere with a crater on a black stand (the
+stand is dark = excluded): an obscure donor gives an abstract-but-isolated shape, which is the graceful case.

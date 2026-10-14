@@ -344,8 +344,13 @@ class Stage:
         def _blur(a, r):
             return np.asarray(Image.fromarray(np.clip(a * 255, 0, 255).astype(np.uint8))
                               .filter(ImageFilter.GaussianBlur(r)), np.float32) / 255.0
-        mask = _blur(np.clip((lum - 0.08) / 0.17, 0, 1), 2.0)
-        m = mask > 0.5
+        # the object, polarity-aware (2026-10-14: a black whale clay model on a grey backdrop
+        # embossed the BACKDROP with a whale-shaped hole under the bright-only mask)
+        mask, m, _pol = _object_mask(lum)
+        mask = mask * _blur(m.astype(np.float32), 1.0).clip(0, 1) if _pol != 'bright' else mask
+        if _pol != 'bright':
+            lum = 1.0 - lum                                # the object's own shading, raised
+        self.echo_relief_polarity = _pol
         ys, xs = np.nonzero(m)
         fill = 0.0
         if len(xs) > 10:
