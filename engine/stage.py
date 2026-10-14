@@ -905,7 +905,14 @@ class Stage:
         # depth fog toward the void colour, then glow on top
         zfin = np.where(np.isinf(zb), self.fog_dist * 3, zb)
         fog = np.clip(1.0 - np.exp(-zfin / self.fog_dist), 0, 1)[..., None]
-        col = col * (1 - fog) + self.fog_rgb * fog
+        _bgimg = getattr(self, 'bg_image', None)
+        if _bgimg is not None:
+            # PLATE-STYLE: the painted far field is already "far" — fog the elements, not the
+            # picture (the first painted arm lost its canyon under 95 % fog, 2026-10-14)
+            _bgpix = np.isinf(zb)[..., None]
+            col = np.where(_bgpix, col, col * (1 - fog) + self.fog_rgb * fog)
+        else:
+            col = col * (1 - fog) + self.fog_rgb * fog
         glow = glow / (1.0 + 0.8 * glow)            # soft-clip accumulated glow (thousands of
         col = col + glow * LOOK_GLOW.get(getattr(self, 'look', 'fuzzy'), 1.0)   # halos blew a lattice white
         col = col / (1.0 + 0.55 * col)                    # soft tone map: glow piles up, never clips to white
@@ -913,6 +920,10 @@ class Stage:
             col = brand_tone(col * 1.35)
         else:
             col = np.clip(col * 1.35, 0, 1)
+        if _bgimg is not None:
+            # the painted field keeps its own tone (a finished picture under a 1.35 gain blows out);
+            # the elements' glow still spills onto it
+            col = np.where(_bgpix, np.clip(_bgimg + 0.5 * glow * LOOK_GLOW.get(getattr(self, 'look', 'fuzzy'), 1.0), 0, 1), col)
         dmap = np.where(np.isinf(zo), 0.03, depth_value(zo)).astype(np.float32)
         return col, dmap
 
