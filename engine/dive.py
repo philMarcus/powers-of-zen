@@ -1941,12 +1941,17 @@ def main():
                         # dropped — "deep teal water, cream light" drew two whales IN A SEA and the
                         # object mask took the water (valdes_blow card 6, arm cutout_a); the colour
                         # never reaches the stage on this path anyway (hue-locked)
-                        _ep = (f"a single {_stagemod._strip_article(_vplan['echo'])}, whole, isolated, floating in the "
-                               f"centre of an empty pure black void, nothing else, no background, no scenery, "
-                               f"no ground, no water, no sky, crisp clean silhouette, soft studio light, 3d render")
-                        _eneg = ("multiple, many, two, group, pattern, repeated, tiled, frame, border, text, "
+                        # a PALE CLAY MODEL on black: the object is the bright thing by construction (a
+                        # black whale "in a black void" came back under lit water, the whale a hole in
+                        # the mask; "a cream callosity" came back as a bowl on a table)
+                        _ep = (f"a single {_stagemod._strip_article(_vplan['echo'])}, whole, as a pale matte clay "
+                               f"sculpture, levitating in the centre of an empty pure black void, nothing else "
+                               f"around it, no floor, no table, no ground, no water, no sky, no shadow, no "
+                               f"background, evenly lit, 3d render")
+                        _eneg = ("multiple, many, group, pattern, repeated, tiled, frame, border, text, "
                                  "watermark, collage, cropped, background, scenery, landscape, habitat, water, "
-                                 "sea, ocean, sky, horizon, ground, floor, table")
+                                 "sea, ocean, underwater, sky, horizon, ground, floor, table, surface, plate, "
+                                 "bowl, dish, shadow, reflection, dark object, silhouette")
                     else:
                         _ep = (f"exactly one {_stagemod._strip_article(_vplan['echo'])}, alone, large in the centre of a "
                                f"plain black background, whole object fully visible, {_dpal}, bold simple silhouette, "

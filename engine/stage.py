@@ -122,29 +122,79 @@ def _object_component(hard):
     k = int(np.argmin((ys - h / 2) ** 2 + (xs - w / 2) ** 2))
     comp = np.zeros_like(hard)
     comp[ys[k], xs[k]] = True
-    # binary propagation: grow the seed through the mask (4-neighbourhood) until nothing changes
+    return _propagate(comp, hard)
+
+
+def _propagate(seed, within):
+    """Binary propagation: grow `seed` through `within` (4-neighbourhood) until nothing changes."""
+    comp = np.asarray(seed, bool) & within
+    h, w = within.shape
     for _ in range(4 * (h + w)):
         grown = comp.copy()
         grown[1:] |= comp[:-1]
         grown[:-1] |= comp[1:]
         grown[:, 1:] |= comp[:, :-1]
         grown[:, :-1] |= comp[:, 1:]
-        grown &= hard
+        grown &= within
         if grown.sum() == comp.sum():
             break
         comp = grown
     return comp
 
 
+def _object_mask(lum):
+    """(soft mask, hard component, polarity) of THE object in a swatch's luminance. First the
+    bright-on-dark reading (the swatch prompt asks for an object on a black void); if the ring
+    just outside that component is brighter than the component itself, the object is the DARK
+    thing (a black whale under lit water: the water was the bright mask and the whale a hole,
+    valdes_blow arm cutout_a v2) and the dark-on-bright reading is taken instead."""
+    def _soft(a):
+        return np.asarray(Image.fromarray((np.clip(a, 0, 1) * 255).astype(np.uint8))
+                          .filter(ImageFilter.GaussianBlur(2.0)), np.float32) / 255.0
+
+    def _ring(comp, r=6):
+        g = comp.copy()
+        for _ in range(r):
+            g2 = g.copy()
+            g2[1:] |= g[:-1]; g2[:-1] |= g[1:]; g2[:, 1:] |= g[:, :-1]; g2[:, :-1] |= g[:, 1:]
+            g = g2
+        return g & ~comp
+
+    m = _soft(np.clip((lum - 0.08) / 0.17, 0, 1))
+    comp = _object_component(m > 0.5)
+    pol = 'bright'
+    if comp.sum() > 50:
+        ring = _ring(comp)
+        if ring.sum() > 50 and float(lum[ring].mean()) > float(lum[comp].mean()) + 0.05:
+            # inverted: the object is darker than what surrounds it
+            bg = float(np.percentile(lum[ring], 50))
+            md = _soft(np.clip((bg - 0.10 - lum) / 0.17, 0, 1))
+            comp_d = _object_component(md > 0.5)
+            if comp_d.sum() > 50:
+                m, comp, pol = md, comp_d, 'dark'
+    if pol == 'bright' and comp.sum() > 50:
+        # a HOLE in the bright component that is itself brighter than the outside background is
+        # the object (a dark whale inside lit water); a donut's hole is as dark as the outside
+        outside = ~comp
+        border = np.zeros_like(comp)
+        border[0, :] = border[-1, :] = border[:, 0] = border[:, -1] = True
+        reach = _propagate(border & outside, outside)
+        holes = outside & ~reach
+        if holes.sum() > 0.08 * comp.sum() and reach.sum() > 50 \
+                and float(lum[holes].mean()) > float(lum[reach].mean()) + 0.08:
+            hole = _object_component(holes)
+            if hole.sum() > 50:
+                m, comp, pol = _soft(hole.astype(np.float32)), hole, 'hole'
+    return m, comp, pol
+
+
 def swatch_isolated(img, size=512):
     """Is this echo swatch ONE object on a plain background (what the cut-out and the relief
-    need), or a scene? Returns (ok, frac, borders): the centre component's share of the image
+    need), or a scene? Returns (ok, frac, borders): the object component's share of the image
     and how many image borders it touches. ok = share <= 0.60 and <= 1 border."""
     im = img.convert("L").resize((size, size), Image.BILINEAR)
     lum = np.asarray(im, np.float32) / 255.0
-    m = np.asarray(Image.fromarray((np.clip((lum - 0.08) / 0.17, 0, 1) * 255).astype(np.uint8))
-                   .filter(ImageFilter.GaussianBlur(2.0)), np.float32) / 255.0
-    comp = _object_component(m > 0.5)
+    m, comp, pol = _object_mask(lum)
     frac = float(comp.mean())
     e = 3
     borders = int(comp[:e].mean() > 0.15) + int(comp[-e:].mean() > 0.15) + int(comp[:, :e].mean() > 0.15) + int(comp[:, -e:].mean() > 0.15)
@@ -410,7 +460,7 @@ class Stage:
         im = im.resize((size, size), Image.LANCZOS) if im.size != (size, size) else im
         rgb = np.asarray(im, np.float32) / 255.0
         lum = rgb @ np.array([0.299, 0.587, 0.114], np.float32)
-        m = _blur(np.clip((lum - 0.08) / 0.17, 0, 1), 2.0)                 # the relief's object mask
+        m, _comp0, self.cut_polarity = _object_mask(lum)                   # polarity-aware object mask
         d = None
         if depth is not None:
             d = np.asarray(depth, np.float32)
