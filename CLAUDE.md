@@ -120,6 +120,25 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-15 (MUSIC FIX ON, FOG BUG FIXED, LAB TAB, FULL PAINTED VIDEO RENDERING; read PLAN "2026-10-15" blocks): Phil's
+verdicts on the plate-style clips: disappointing as they were ("neither looks like a lattice... a colour smear"), the
+middle ground worth testing, "the gold glass ball with the blue gems... making up the lattice would be cool", wants a
+RANGE of working parameters to vary. MIDDLE-GROUND ARMS (sulfur lattice, 6 + 2 arms): the recipe = stage-style
+STRUCTURE (today's leash and repaint) + plate-style SURFACES (the AI's element pictures on the kit's spheres at 0.9,
+identity 0.5, bold scale) + a DARK ground; M1b (orbs + black fog) = a lattice of gem orbs on black with the amber bond
+network between them. HALF THE WIN WAS A BUG: fog_colour skipped dark far-field phrases, so "electron fog ON INK-BLACK"
+got a tangerine fog plane (the wash); FIXED (positional dark / dark far-field phrase -> near-black fog; 16 of 37 queued
+staged fog cards change) — this is in the NIGHTLY (fog fix on). MUSIC: Phil heard staged handoffs flip before the beat;
+measured 2-11 frames early (the pre-roll disc fills the frame BEFORE the bar line); built --stage-preroll-pickup A
+(the coming world stays a 0.22 W window, opens over the last A frames); pickup 2 lands the flip in the last two frames
+and completes on the beat -> TURNED ON per Phil (settings stage_preroll_pickup=2; night_batch; ⚙ number input). LAB TAB
+(dashboard 🧪 Lab, scripts/lab_drop.py -> review/lab/ + lab.json with Phil's verdict box; he reviews from his laptop):
+holds the music before/after with a click track, the fog-fix 3-panel, the middle-ground 6-panel, strips, the earlier
+A/Bs. RENDERING: valdes_blow v4 = the plate-style FULL video (from card 5 of v1, four authored element lines, M1b
+recipe, pickup 2) -> Review entry re-pointed (v2 stays on disk) + review/compare/valdes_blow_PAINT.mp4 (v1 | v4) dropped
+in the Lab (tmux fullq2, ~10:00). Pipeline: Review 22 + Music 1 (his pass started), posting queue EMPTY (post_next
+10-15 14:00 holds), nightly skipped again. Lab lessons today: check card_frames before --frames (lepidolite 36 f/card);
+quote shell args; the nightly cleanup archives lab dirs overnight. Cut-out + paint remain lab flags.
 2026-10-14 NIGHT (PLATE-STYLE MICRO STAGE A/B DONE; read PLAN "2026-10-14 EVENING"): Phil on the cut-out video: cool imagery,
 the whale "in addition to the atoms rather than composing them... looks more like an error" -> cut-out stays OFF (keep the
 depth-channel shape tool for a rare shape-class + play-order echo later); his real worry = the micro stage "solved the problem

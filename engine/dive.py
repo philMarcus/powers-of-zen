@@ -712,7 +712,7 @@ _nest_logged = set()
 
 
 PREROLL_PICKUP = 0        # dive --stage-preroll-pickup A (lab, 2026-10-15): anacrusis-shaped pre-roll, 0 = today
-PREROLL_WINDOW = 0.28     # dive --stage-preroll-window F: the window radius (x W) before the pickup
+PREROLL_WINDOW = 0.22     # dive --stage-preroll-window F: the window radius (x W) before the pickup (0.22 measured 10-15)
 
 
 def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0, nest=False, trk=None):
@@ -1275,9 +1275,10 @@ def main():
                          "--stage-preroll-window x W for most of the pre-roll and opens to full over the last "
                          "A frames, so the handoff's flip peaks ON the downbeat (measured today: 2-11 frames "
                          "early). 0 = today's schedule (the disc fills the frame before the bar line)")
-    ap.add_argument("--stage-preroll-window", type=float, default=0.28, metavar="F",
+    ap.add_argument("--stage-preroll-window", type=float, default=0.22, metavar="F",
                     help="with --stage-preroll-pickup: the window's radius as a fraction of the width "
-                         "(0.28 ~ 14%% of the frame area)")
+                         "(0.22 ~ 9%% of the frame area; with pickup 2 the flip lands in the last two frames "
+                         "before the beat and completes on it — measured 2026-10-15)")
     ap.add_argument("--stage-preroll-k", type=float, default=2.2, metavar="K",
                     help="with --stage-preroll: disc growth exponent on the zoom (>=1)")
     ap.add_argument("--stage-id", type=float, default=0.5, metavar="W",

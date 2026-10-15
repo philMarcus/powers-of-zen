@@ -3636,3 +3636,13 @@ today | today + black fog | M1b):
   READING: half of the win was the fog bug (16 of 37 queued staged cards carry a dark ground in their palette); the orbs
   are the other half. The painted FIELD is not needed when the fog is right. RECIPE for the full video: FIELDS=0,
   orbs 0.9, identity 0.5, bold scale, today's leash + repaint (+ the pre-roll pickup once measured).
+PICKUP 2 RESULT (08:48; window 0.22 W; scratchpad/orange/beat_frames_pickup2.png): 0.5-threshold flip -4/-2 f (today
+-9/-5, pickup 3 -6/-3); steepest rise -1/-3; plateau-midpoint crossing -1/-2. THE FRAMES: the old world holds through
+-3, the window opens at -2 (~half the frame) and -1 (~85 %), the beat frame completes it — the unstaged morph's own
+two-frame pickup into the downbeat. Bar 192 (stage->stage) reads a frame earlier because the OLD stage's hero fills the
+frame in its own plunge (containment) — that change precedes the disc and is the design. TURNED ON (Phil: "if you think
+the music fix is good, go ahead and turn it on"): settings stage_preroll_pickup = 2; dive's window default 0.28 -> 0.22
+so the knob alone reproduces the arm; night_batch passes --stage-preroll-pickup 2 under the pre-roll. BEFORE/AFTER in
+the Lab: review/lab/beat_before_after.mp4 (today | pickup 2, 1 kHz click on every bar line, x3) + the frames strip.
+FULL VIDEO relaunched 08:50 as valdes_blow v4 (FIELDS=0, PICKUP=2; the 08:48 PICKUP=3 start was killed at card 5 and its
+partial v3 removed — my queue script's fallback picked 3 when 2 missed an arbitrary -1.5 f bar; the frames decided).
