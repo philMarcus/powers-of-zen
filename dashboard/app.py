@@ -658,7 +658,8 @@ tabs = st.tabs([f"🗺 Journeys ({len(pl.jqueue(JD))})",
                 f"Failed ({len(failed_vids)})",
                 "Telemetry",
                 "⚙ Settings",
-                "🧭 How it works"])
+                "🧭 How it works",
+                "🧪 Lab"])
 
 with tabs[1]:  # VIDEO REVIEW — pick cut/model, edit caption, send to Music
     st.write("Look at the video, pick cut/model, edit the caption/theme, then **Approve → Music** "
@@ -1224,3 +1225,42 @@ with tabs[8]:  # HOW IT WORKS — the visual map of the whole project (static pa
         st.caption("Static snapshot. Rebuild with: python3 scripts/build_overview.py")
     else:
         st.info("Overview page not built yet — run: python3 scripts/build_overview.py")
+
+with tabs[9]:  # LAB — side-by-sides, strips and sheets dropped by scripts/lab_drop.py (2026-10-15, Phil: "I can't
+    # open the review folder while I'm at work on my laptop"). Whole videos still go to Video Review; this tab is
+    # for the clips and strips of the current experiment. Phil's verdict box writes into review/lab/lab.json.
+    import json as _json
+    _lab = pl.ROOT / "review" / "lab"
+    _man = _lab / "lab.json"
+    try:
+        _entries = _json.loads(_man.read_text(encoding="utf-8")) if _man.exists() else []
+    except Exception as _e:
+        _entries = []
+        st.warning(f"lab.json unreadable: {_e}")
+    if not _entries:
+        st.info("Nothing in the lab right now. Files arrive via scripts/lab_drop.py.")
+    st.caption("Newest first. Clips loop; the order of panels is in the note. Type a verdict and save — it lands in "
+               "review/lab/lab.json where Claude reads it.")
+    for _i, _e in enumerate(_entries):
+        _p = _lab / _e["file"]
+        st.markdown(f"### {_e.get('title') or _e['file']}")
+        st.caption(f"{_e.get('added','')} · {_e['file']}")
+        if _e.get("note"):
+            st.write(_e["note"])
+        if not _p.exists():
+            st.warning("file missing")
+        elif _e.get("kind") == "video":
+            st.video(str(_p), loop=True)
+        else:
+            st.image(str(_p), use_container_width=True)
+        _vk = f"lab_verdict_{_i}_{_e['file']}"
+        _v = st.text_area("your verdict", value=_e.get("verdict", ""), key=_vk, height=80)
+        _c1, _c2 = st.columns([1, 6])
+        if _c1.button("💾 save", key=f"lab_save_{_i}"):
+            _e["verdict"] = _v.strip()
+            _e["verdict_at"] = __import__("time").strftime("%Y-%m-%d %H:%M")
+            _tmp = _man.with_suffix(".tmp")
+            _tmp.write_text(_json.dumps(_entries, indent=2, ensure_ascii=False), encoding="utf-8")
+            _tmp.replace(_man)
+            st.success("saved")
+        st.divider()
