@@ -228,6 +228,12 @@ def render_one(journey, force=False, new_seed=True, from_card=None):
                     # NESTING (PLAN "2026-10-12"): the pre-roll disc follows the plunge-target
                     # element — the next stage opens inside the thing we are diving into
                     argv += ["--stage-nest"]
+                _spk = int(pl.jload()["settings"].get("stage_preroll_pickup") or 0)
+                if _spk > 0:
+                    # PRE-ROLL PICKUP (PLAN "2026-10-15 — THE STAGED HANDOFF FLIPS BEFORE THE BEAT"):
+                    # the coming stage stays a window and opens over the last N frames, so the
+                    # handoff's flip lands ON the downbeat like the unstaged morph
+                    argv += ["--stage-preroll-pickup", str(_spk)]
             if pl.jload()["settings"].get("stage_variety"):
                 # STAGE VARIETY (PLAN "STAGE VARIETY"): lit, toned, varied stages + echoes
                 argv += ["--stage-variety"]

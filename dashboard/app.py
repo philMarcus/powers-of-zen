@@ -1164,6 +1164,12 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
                               "disc follows the current stage's plunge-target element instead of a free iris "
                               "on the fixed point — a zoom into the thing we enter, not a wipe. Needs stage pre-roll "
                               "> 0. Off = the free iris. Applies to the next renders.")
+    spickup = t2.number_input("🥁 stage pre-roll pickup (frames; 0 = off)", min_value=0, max_value=8,
+                              value=int(s.get("stage_preroll_pickup") or 0),
+                              help="2026-10-15 (engine --stage-preroll-pickup A): on staged handoffs the coming stage "
+                                   "stays a small window for most of the pre-roll and opens over the last A frames, so "
+                                   "the flip lands ON the downbeat (it had been landing a fraction of a second early). "
+                                   "3 = the unstaged morph's pickup. 0 = the old schedule. Applies to the next renders.")
     sechotex = t2.toggle("🪙 echo texture (the echo donor's shape embossed on every sphere; round donors half-lit)",
                          value=bool(s.get("stage_echo_texture")),
                          help="2026-10-14 (engine --stage-echo-relief 0.35 x4 + --stage-echo-ambient 0.10): under "
@@ -1199,6 +1205,7 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
             "stage_variety": bool(svariety),
             "stage_nest": bool(snest),
             "stage_echo_texture": bool(sechotex), "stage_fog_phrase": bool(sfog),
+            "stage_preroll_pickup": int(spickup),
             "auto_cleanup": bool(autoclean), "min_free_gb": int(minfree),
             "post_every_hours": float(post_every),
             "post_next": post_next.strip()})

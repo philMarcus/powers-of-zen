@@ -307,6 +307,11 @@ JSETTINGS_DEFAULTS = {
     # stage's plunge-target element, so the next stage opens INSIDE the thing we are diving
     # into (a zoom into containment, not an iris wipe). Needs stage_preroll > 0.
     "stage_nest": False,
+    # PRE-ROLL PICKUP (2026-10-15, Phil: "the morph was happening a fraction of a second before the
+    # beat on the staged ones"): dive --stage-preroll-pickup A — the coming stage stays a window for
+    # most of the pre-roll and opens over the last A frames, so the handoff flips ON the downbeat
+    # (measured 2-11 frames early before). 0 = the disc fills the frame before the bar line.
+    "stage_preroll_pickup": 0,
     # ECHO TEXTURE (2026-10-14, Phil: "let's turn on the echo work that we have now"): under
     # stage_variety, the echo donor's shape is EMBOSSED on every sphere (dive --stage-echo-relief
     # 0.35 x4: a height field in the shading + depth-CN, never colour — the colour decal survived
