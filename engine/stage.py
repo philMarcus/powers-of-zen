@@ -1961,49 +1961,100 @@ def kit_fluid(stage, centre=(0, 0, 3.0), size=1.0, colors=((1.0, 0.75, 0.3), (0.
 
 
 def kit_tracks(stage, centre=(0, 0, 3.0), size=1.0, colors=((0.85, 0.9, 1.0), (1.0, 0.6, 0.3)), seed=0,
-               glow=0.25, n_tracks=16, spread=(3.2, 3.6, 7.0)):
-    """Bubble-chamber tracks: a tightening spiral at the target (a particle losing energy),
-    straight and gently curved tracks around it, a few forks — beads along every path."""
+               glow=0.25, n_tracks=90, n_vertices=12, spread=(3.4, 3.8, 9.0)):
+    """A SEA of bubble-chamber tracks (Phil 2026-10-15: the old kit — one coil and ~16 stray lines —
+    "reads as broken... a microscopic stage needs to be a sea of these things... lots of them with
+    lots of different radii of curvature"). One magnetic field for the whole chamber (its axis near
+    the view direction, so spirals face the camera): every track curls in the same plane family,
+    the two charge signs curl opposite ways and wear the two species colours, the radius of
+    curvature is drawn log-uniform over ~40x (tight curls to near-straight arcs) and shrinks as the
+    particle loses energy (spirals in); delta-ray curls branch off fast tracks; vertices throw
+    opposite-charge pairs. The hero spiral at the target is the plunge. Beads along every path."""
     rng = np.random.default_rng(seed)
     c0 = np.asarray(centre, np.float32)
     rb = size * 0.018
+    # the chamber's field axis: near the view direction, tilted per stage
+    tilt = rng.normal(scale=0.35, size=2)
+    B = np.array([tilt[0], tilt[1], 1.0]); B /= np.linalg.norm(B)
+    e1 = np.cross(B, [0.0, 1.0, 0.0]); e1 /= np.linalg.norm(e1)
+    e2 = np.cross(B, e1)
 
-    def beads(pts, col, r):
+    def beads(pts, col, r, keep_clear=True):
         for a, b in zip(pts[:-1], pts[1:]):
             L = np.linalg.norm(b - a); m = max(1, int(L / (r * 1.6)))
             for t in np.linspace(0, 1, m, endpoint=False):
-                stage.items.append(('sphere', a + (b - a) * t, r, col, glow))
+                q = a + (b - a) * t
+                if keep_clear and np.linalg.norm(q - c0) < size * 0.62:
+                    continue                    # the hero spiral's room stays clear
+                if q[2] < 0.9:
+                    continue                    # nothing in the lens's face (boulder chains)
+                if keep_clear:
+                    # the camera's corridor (origin -> target) stays clear: a track the lens flies
+                    # past grows into a chain of boulders (2026-10-15 arm, frames 258-264)
+                    _t = float(np.clip(np.dot(q, c0) / max(float(np.dot(c0, c0)), 1e-6), 0.0, 1.0))
+                    if np.linalg.norm(q - c0 * _t) < size * 0.32 * (1.0 - 0.5 * _t) + 0.08:
+                        continue
+                stage.items.append(('sphere', q, r, col, glow))
 
-    # the hero spiral, in a plane facing the camera-ish, winding to the target point
-    Rm = rot_matrix(rng)
-    th = np.linspace(0, 6.5 * np.pi, 160)
+    def spiral(p0, phi0, sign, R0, k, theta_max, pitch):
+        """A track in the field's plane: starts at p0 heading phi0, curls by sign, radius
+        R0*exp(-k*theta) (energy loss), drifting `pitch` along B per radian (helix)."""
+        out = [p0]
+        th, ph, R, pos = 0.0, phi0, R0, np.array(p0, np.float64)
+        while th < theta_max and R > rb * 1.5 and len(out) < 900:
+            dth = min(0.35, (rb * 1.6) / max(R, 1e-6))
+            ds = R * dth
+            ph += sign * dth
+            pos = pos + ds * (np.cos(ph) * e1 + np.sin(ph) * e2) + B * pitch * dth
+            th += dth
+            R = R0 * np.exp(-k * th)
+            out.append(pos.copy())
+        return np.array(out, np.float32)
+
+    def place():
+        z = 1.1 + spread[2] * rng.random() ** 0.85
+        return np.array([(rng.random() - 0.5) * spread[0] * max(0.6, z / 3.0),
+                         (rng.random() - 0.5) * spread[1] * max(0.6, z / 3.0), z], np.float32)
+
+    # the hero spiral at the target (what the dive enters), in the field's plane
+    th = np.linspace(0, 6.5 * np.pi, 200)
     rad = size * 0.55 * np.exp(-0.17 * th)
-    sp = np.stack([rad * np.cos(th), rad * np.sin(th), 0.04 * size * th / th[-1]], -1) @ Rm.T + c0
-    beads(sp[::-1], colors[0], rb * 1.2)
+    sp = (rad * np.cos(th))[:, None] * e1 + (rad * np.sin(th))[:, None] * e2 + \
+        (0.04 * size * th / th[-1])[:, None] * B + c0
+    beads(sp[::-1], colors[0], rb * 1.2, keep_clear=False)
     stage.items.append(('glow', c0, size * 0.12, colors[1 % len(colors)], glow * 1.5))
+    # the sea: tracks with radii of curvature from tight curls to near-straight arcs
     for k in range(n_tracks):
-        z = 0.9 + spread[2] * rng.random() ** 0.8
-        p0 = np.array([(rng.random() - 0.5) * spread[0] * max(0.6, z / 3.0),
-                       (rng.random() - 0.5) * spread[1] * max(0.6, z / 3.0), z], np.float32)
-        d = rng.normal(size=3); d /= np.linalg.norm(d)
-        L = size * (0.8 + 1.6 * rng.random())
-        curv = rng.normal(size=3) * 0.25
-        t = np.linspace(0, 1, 40)[:, None]
-        pts = p0 + d * t * L + curv * (t ** 2) * L
-        col = colors[k % len(colors)]
-        beads(pts, col, rb * (0.7 + 0.6 * rng.random()))
-        if rng.random() < 0.35:                 # a fork: two branches from the midpoint
-            mid = pts[20]
-            for sgn in (-1, 1):
-                d2 = d + sgn * np.cross(d, [0, 0, 1.0]) * 0.5 + rng.normal(scale=0.1, size=3)
-                d2 /= np.linalg.norm(d2)
-                beads(mid + d2 * np.linspace(0, 0.6 * L, 18)[:, None], col, rb * 0.7)
-        if rng.random() < 0.3:                  # a small secondary spiral
-            th2 = np.linspace(0, 4 * np.pi, 70)
-            r2 = size * 0.14 * np.exp(-0.25 * th2)
-            Rm2 = rot_matrix(rng)
-            sp2 = np.stack([r2 * np.cos(th2), r2 * np.sin(th2), 0 * th2], -1) @ Rm2.T + pts[-1]
-            beads(sp2, col, rb * 0.6)
+        p0 = place()
+        sign = 1 if rng.random() < 0.5 else -1
+        R0 = size * float(np.exp(rng.uniform(np.log(0.05), np.log(2.2))))
+        kk = float(rng.choice([0.0, rng.uniform(0.04, 0.12), rng.uniform(0.12, 0.35)], p=[0.3, 0.4, 0.3]))
+        length = size * rng.uniform(0.8, 3.0)
+        theta_max = min(rng.uniform(1.0, 5.0) * 2 * np.pi, length / R0) if kk == 0 else \
+            min(rng.uniform(1.5, 6.0) * 2 * np.pi, 8 * length / R0)
+        pts = spiral(p0, rng.uniform(0, 2 * np.pi), sign, R0, kk, theta_max,
+                     pitch=rng.normal(scale=0.01) * size)
+        col = colors[(0 if sign > 0 else 1) % len(colors)]
+        r = rb * (0.65 + 0.6 * rng.random())
+        beads(pts, col, r)
+        # delta rays: small tight curls knocked off a fast (wide) track
+        if R0 > size * 0.4 and len(pts) > 20:
+            for _ in range(int(rng.integers(0, 3))):
+                q = pts[int(rng.integers(5, len(pts) - 5))]
+                sg = -sign
+                d = spiral(q, rng.uniform(0, 2 * np.pi), sg, size * rng.uniform(0.03, 0.09),
+                           rng.uniform(0.15, 0.4), rng.uniform(2, 5) * 2 * np.pi, 0.0)
+                beads(d, colors[(0 if sg > 0 else 1) % len(colors)], r * 0.7)
+    # vertices: a pair of opposite charges born at one point, curling apart
+    for k in range(n_vertices):
+        v = place()
+        R0 = size * float(np.exp(rng.uniform(np.log(0.08), np.log(0.9))))
+        phi = rng.uniform(0, 2 * np.pi)
+        kk = rng.uniform(0.05, 0.3)
+        for sg in (1, -1):
+            pts = spiral(v, phi, sg, R0 * rng.uniform(0.8, 1.25), kk, rng.uniform(2, 5) * 2 * np.pi, 0.0)
+            beads(pts, colors[(0 if sg > 0 else 1) % len(colors)], rb * 0.8)
+        stage.items.append(('glow', v, rb * 4, colors[1 % len(colors)], glow))
     stage.jitter = 0.0
     return stage
 

@@ -3688,3 +3688,12 @@ droplet_string unstaged; a few cards got words/kits so they actually stage). Que
 11/20 -> tonight renders selenite_hothouse, lodestar_mudflat, azurite_headframe, coffee_cherry_soup.
 OPEN: the TRACKS kit as a sea (many spirals + tracks through the whole volume) before it returns; until then the
 composer avoids it (the seeded draw still picks it for ~8 % of word-less subnuclear cards).
+TRACKS SEA (16:50, Phil: "lots of them with lots of different radii of curvature... a quick fix"): kit_tracks rebuilt —
+one field axis for the chamber (near the view direction, tilted per stage), ~90 tracks + 12 opposite-charge vertex
+pairs + delta-ray curls, radius of curvature log-uniform 0.05-2.2 x size with energy-loss shrink (k 0 / 0.04-0.12 /
+0.12-0.35), the two charges curl opposite ways in the two species colours, the hero spiral at the target kept; the
+lens's face (z < 0.9) and the camera's corridor stay clear (arm 1 had boulder chains at frames 258-264). ~12k beads.
+ARM 2 (valdes_blow --from-card 7 --src-version v4 --frames 288, v4's recipe; output/valdes_blow_platelive_trackssea2):
+a sea of spirals at every depth, the hero spiral at the plunge; strip scratchpad/orange/tracks_sea_strip.png, Lab clip
+review/lab/tracks_SEA.mp4 (v4 | sea). The kit is live for any card that draws it (the seeded ~8% of word-less
+subnuclear cards); the composer keeps AVOIDING tracks words until Phil's verdict on the Lab clip.
