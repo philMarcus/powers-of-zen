@@ -3594,3 +3594,21 @@ phrase ("pine-black deep beyond") gives a near-black fog (hue kept, max 0.05); f
 staged cards with a far-field colour now get a near-black fog (their palettes name a dark ground). M3/M4 start after
 the fix and carry it; M1b (= M1 + black fog) and l0c (today + black fog) are queued after the beat arm (tmux paintm1b)
 for a like-for-like read.
+MIDDLE-GROUND RESULT (07:25; strip scratchpad/orange/paint_mid_strip.png, clip review/compare/paint_MID_lattice.mp4 =
+today | M0 | M1 | M2 | M3 | M4, x4; M1/M2 ran BEFORE the fog fix (tangerine fog), M3/M4 after it (near-black fog)):
+  today            detail 23.8  sat 0.72  hue-ent 1.38   amber fibre lattice, glass beads
+  M0 bold          detail 25.4  sat 0.74  hue-ent 1.53   same, larger beads
+  M1 orb+id0.5     detail 23.0  sat 0.91  hue-ent 1.96   RED WASH (the tangerine fog at identity 0.5), orbs as discs
+  M2 = M1+field    detail 22.4  sat 0.59  hue-ent 2.92   THE ONE: a dark field, the repaint's amber fibre NETWORK back,
+                                                         patterned jewel orbs at its nodes, blue fog streaks — a lattice
+                                                         of gem orbs that still looks painted; saturation in the approved
+                                                         range, twice today's colour variety, detail kept
+  M3 orb0.5 rp.40  detail 14.9  sat 0.59  hue-ent 3.02   cool bead soup: coherent, soft, the orb pattern half-visible
+  M4 orb0.9 rp.30  detail 14.1  sat 0.61  hue-ent 3.49   patterned beads everywhere, the stage's flatness shows, fibres faint
+  READING: the lattice's "fibres" are the REPAINT's invention when it is fed beads on a DARK ground — so today's repaint
+  strength (0.50/0.60) and leash (0.55) are what make the card read as a lattice (M2 vs M4), the orbs at 0.9 with
+  identity 0.5 are what make the nodes the AI's gem, and a dark backdrop is the condition for both (M1's wash). The
+  recipe = stage-style structure + plate-style surfaces + a dark ground: today's cn/den, id 0.5, orb 0.9, bold scale,
+  a near-black fog or a blurred-dim field. M1b (orb + black fog, no field) and l0c (today + black fog) run after the
+  beat arm to separate the fog fix from the field. NEXT (Phil's go): the full-video test = valdes_blow v3 with element
+  lines on all four staged cards at the M2 recipe + the fog fix, into Review next to v2.
