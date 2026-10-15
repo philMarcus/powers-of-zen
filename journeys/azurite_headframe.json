@@ -1,0 +1,146 @@
+{
+  "name": "azurite_headframe",
+  "theme": "an abandoned copper mine's headframe over the desert at night, colonised as a commons, read as CONVERGENCE at every scale: many strands running into one hub. A supercluster knot seen face-on with six galaxy filaments converging on its core; a face-on spiral whose arms wind into its hub; a star with its worlds on their rings; the night side of a desert planet strung with a few amber mine lights; a desert basin from the air with its washes running down to one pit; the headframe yard as a living commons (owl on the gantry, kit fox, kangaroo rats, hawk-moths at the yucca, free-tailed bats streaming from the adit); down the adit to a vein wall of malachite and azurite; one azurite rosette of blue blades radiating from a hub; its real monoclinic lattice of copper atoms in zig-zag chains with flat carbonate triangles; a copper nucleus; and a collision vertex in a bubble chamber, lit tracks radiating from one point, which morphs up into the six-armed node as lines-into-a-point read at both ends of scale. Palette family: azurite & malachite (azure rosettes, banded green, cuprite red points, desert-night umber, one sodium headframe lamp).",
+  "style": "crystalline",
+  "music_lane": "night_market",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "sixarm_node",
+      "exp": 23.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "azure and teal filaments, gold-white core, cuprite-red galaxy points, inky umber void",
+      "scene": "a supercluster knot in deep space seen face-on, six long filaments of azure and teal galaxies converging from six directions into one blazing gold-white core, thousands of tiny galaxies beaded along every filament, cuprite-red points scattered among them, black voids walled off between the six arms",
+      "target": "a spiral galaxy",
+      "target_phrase": "a spiral galaxy"
+    },
+    {
+      "name": "copper_spiral",
+      "exp": 20.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "malachite-green star arms, cuprite-red nebula knots, gold hub, umber dust lanes on black",
+      "scene": "a grand-design spiral galaxy in deep space seen face-on, two sweeping arms of malachite-green starlight winding inward into a glowing gold hub, the arms strung with cuprite-red nebula knots and clusters of blue-white stars, umber dust lanes curving along their inner edges, a scatter of distant galaxies through the void",
+      "loop_target": "a face-on spiral galaxy",
+      "target": "a white-gold star",
+      "target_phrase": "a white-gold star"
+    },
+    {
+      "name": "ringed_system",
+      "exp": 12.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "white-gold star glare, azure comet belt, umber dust rings, scattered violet starfield",
+      "scene": "a white-gold star burning in deep space with its family of worlds set on wide concentric orbits, a broad belt of azure comets and umber dust circling the outer edge, a ringed gas giant on one orbit, a small shadowed rocky planet on another with its night side turned outward, scattered stars beyond",
+      "target": "a shadowed rocky planet",
+      "target_phrase": "a shadowed planet",
+      "cameo": {
+        "sprite": "output/mascots/canon/lamar.png",
+        "pos": [
+          0.68,
+          0.32
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "night_planet",
+      "exp": 7.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "desert-night umber continents, ochre salt pans, teal airglow rim, a few sodium-amber points",
+      "scene": "the night side of a desert planet seen from orbit, umber continents of dune seas and wrinkled mountain ranges under starlight, ochre salt pans and dry riverbeds glinting faintly, a thin teal airglow line along the curved rim, and strung along one mountain range a short chain of sodium-amber points of light, the only lights on the whole hemisphere",
+      "target": "a cluster of amber lights",
+      "target_phrase": "amber points of light"
+    },
+    {
+      "name": "desert_basin",
+      "exp": 4.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "umber and rust desert floor, blue-black ranges, malachite-green tailings, sodium-amber glints",
+      "scene": "a desert basin at night seen from high above at a slant, blue-black mountain ranges ringing a rust and umber valley floor, alluvial fans spreading from every canyon mouth, dry washes branching down the fans and converging on a terraced open pit, malachite-green tailings ponds beside it, a dirt haul road switchbacking up a ridge, a few sodium-amber lamps glinting at the mine works",
+      "target": "a lit headframe",
+      "target_phrase": "a lit headframe"
+    },
+    {
+      "name": "headframe_commons",
+      "exp": 1.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sodium-amber lamp glow, rusted iron red, indigo night sky, umber hillside, cream yucca blooms",
+      "scene": "an abandoned copper mine yard at night seen from a low oblique angle, empty, no one present, a rusted iron headframe tower with its sheave wheel lit by one sodium-amber lamp, a great horned owl perched on the gantry, a kit fox trotting past the ore-cart rails, kangaroo rats hopping across the umber dirt, hawk-moths hovering at a stand of flowering yucca, and a stream of free-tailed bats pouring out of a timbered tunnel mouth in the hillside, indigo sky full of stars overhead",
+      "target": "a timbered tunnel mouth",
+      "target_phrase": "a dark tunnel mouth"
+    },
+    {
+      "name": "vein_wall",
+      "exp": 0.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "banded malachite green, deep azure crystal clusters, cuprite-red points, umber rock, one slanting amber beam",
+      "scene": "the rock wall deep inside an abandoned mine tunnel, empty, no one present, weathered timber props on either side, a broad vein running across the umber rock in bubbly bands of malachite green, studded with clusters of deep azure crystal rosettes and tiny cuprite-red points, a slanting beam of sodium-amber lamplight raking across the vein",
+      "target": "an azurite rosette",
+      "target_phrase": "a blue crystal rosette"
+    },
+    {
+      "name": "azurite_rosette",
+      "exp": -2.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep azure and ultramarine blades, glints of electric blue, velvet malachite tufts, black-umber hollows",
+      "scene": "a cluster of azurite rosettes on a crust of banded malachite, each rosette a burst of dozens of deep azure bladed crystals radiating from one hub, every blade a flat glassy wedge with stepped growth lines along its edge, velvety tufts of malachite green and small cuprite-red points nestled between the rosettes, black-umber hollows behind",
+      "target": "an azure crystal blade",
+      "target_phrase": "an azure crystal blade"
+    },
+    {
+      "name": "carbonate_lattice",
+      "exp": -9.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "copper-orange atoms in soft blue electron haze, ember-red oxygen spheres, jet-black carbon, umber depth",
+      "scene": "the azurite crystal lattice, slanted monoclinic courses of copper atoms, each copper atom a copper-orange sphere wrapped in its own soft blue haze, the coppers linked into zig-zag chains by small ember-red oxygen spheres, flat triangular carbonate groups of one jet-black carbon among three red oxygens stacked between the chains, course behind course of the lattice receding into umber depth",
+      "target": "a glowing copper atom",
+      "target_phrase": "a copper atom",
+      "stage": {
+        "kit": "lattice",
+        "variant": "rhombo",
+        "element": "copper atom, a burnished copper-orange metal sphere inside a soft blue haze shell, ember-red glints at its poles"
+      }
+    },
+    {
+      "name": "copper_nucleus",
+      "exp": -13.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "azure and malachite-green nucleon spheres, teal glints, a glowing white-gold centre, inky void",
+      "scene": "a copper nucleus as a dense shivering droplet of sixty-three glowing spheres packed tight, azure spheres and malachite-green spheres crowded together, its rind rippling in broad soft bulges, a white-gold glow at the centre of the droplet, an inky void all around",
+      "target": "a glowing azure sphere",
+      "target_phrase": "a glowing sphere",
+      "stage": {
+        "kit": "nucleus",
+        "element": "copper nucleon, a faceted deep azure crystal ball banded with velvet malachite-green, a white-gold spark at its heart"
+      }
+    },
+    {
+      "name": "collision_vertex",
+      "exp": -15.0,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "sodium-amber and azure quark glow, white-hot string light, deep umber fog",
+      "scene": "inside a copper proton, three glowing quark cores, one sodium-amber and two azure, held apart on taut strands of white-hot light that meet at one bright point, the trio hanging in deep umber fog",
+      "stage": {
+        "element": "quark, a small dense bead of liquid white-hot light with a sodium-amber rim, its surface crackling"
+      }
+    }
+  ],
+  "music_theme": "a nocturnal wandering groove over a deep soft kick on every downbeat at a stately tempo, low upright bass and brushed hand drum walking through the galaxy and the ringed star, a dry desert-guitar figure and soft marimba as the basin and the headframe yard come into view with its owl and bats, a glassy bowed-metal shimmer down the adit to the azure rosettes, a hushed bell cluster in the copper lattice, and a low swelling chord on the morph from the collision vertex up to the six-armed node",
+  "music_key": "D minor",
+  "render_start": "copper_spiral"
+}

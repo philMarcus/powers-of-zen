@@ -32,7 +32,10 @@
       "target_phrase": "a black blotch",
       "cameo": {
         "sprite": "output/mascots/canon/newman.png",
-        "pos": [0.66, 0.36],
+        "pos": [
+          0.66,
+          0.36
+        ],
         "size": 0.13
       }
     },
@@ -48,6 +51,9 @@
       "resolve": {
         "mode": "lattice",
         "variant": "layered"
+      },
+      "stage": {
+        "element": "a porphyrin frame, a flat square of four rust-red rings round an open hole, jet enamel edges, one vivid pink point at a corner"
       }
     },
     {
@@ -57,7 +63,10 @@
       "dur": 4,
       "palette": "thrift-pink and ivory beads, faint pink strands, slate-blue fog",
       "scene": "a slate-blue fog of light with three tight knots set at the corners of a triangle, each knot four small vivid beads packed close, two thrift-pink and two ivory, faint strands of pink light strung among the three knots, nothing at all at the triangle's centre, only open slate-blue fog",
-      "resolve": false
+      "resolve": false,
+      "stage": {
+        "element": "an alpha particle, one egg-shaped knot of four fused beads in thrift-pink and ivory, a speckled matte shell, slate-blue light glowing through its seams"
+      }
     },
     {
       "name": "compact_group",

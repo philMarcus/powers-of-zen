@@ -54,6 +54,8 @@ PLANET TEST (audit counts it, 2026-10-04): the world card after a planet target 
 
 ECHO TEST (2026-10-10, Phil: echoes are authored and may SURPRISE, but a surprise still coheres with the journey's story): a staged micro card may name an `echo` — a thing from ELSEWHERE in this journey whose shape its elements take (the nucleons of this nucleus are tiny copies of the journey's planet; the proteins are coiled copies of its snake). Tests: the echo is a COMPACT nameable thing (a creature, a planet, a flower, a made object), never a place, a surface or a texture; it comes from a card at least six decades away, never the neighbour; the pairing says something about the story (the thing you dove past is what the small world is made of), not a random noun; at most two echo cards per journey, and never the same donor twice. Write it as the donor card's `name` when the donor is a card, free text when it is a motif the story implies but no card targets.
 
+ELEMENT TEST (2026-10-15, Phil approved the painted lattice: "it looks like what it's supposed to look like, but DreamShaper created novelty"): every card at exp <= -3.5 carries `stage.element`. The engine builds the structure (where the elements sit, how the camera dives); the element line decides what each element LOOKS like — this is where the micro realm's surprise comes from, so make each one a striking, specific picture, not a textbook glyph. Tests: it opens with the element's name as the card implies it (which atom, which cell, which particle), then a comma, then its look — shape, material, surface, inner light; it describes ONE compact object seen alone (no place, surface, field, crowd, row or pattern of many — the engine supplies the many); it uses only the card's own palette colours; no person, face or wearable; no simile; at most ~24 words. Two micro cards in one journey never get the same kind of look (vary material and light between them). An element may carry the journey's story — a shape or material from a card far above it (ECHO TEST) — written as how this element looks, never as a copy of a picture. On a card with an element line the `echo` field is ignored; put the echo into the line instead. The pictures pay off most on big elements over a dark ground: a palette that names a dark far field helps.
+
 STAGE VARIETY TEST (2026-10-05): the micro realm is rendered through built 3-D stages, so two journeys whose micro cards say the same thing (an atom, a nucleus) get the same STRUCTURE. Write the micro cards as specific pictures (which lattice, which molecule, which nuclear picture: a droplet of nucleons, a quark trio on taut strings, nuclear pasta, a tightening bubble-chamber track, a Coulomb crystal, a quark-gluon broth) — the words choose the kit. Take liberties: the pictures should be INSPIRED by the realm, not textbook. The novelty brief lists the kit and look counts; prefer the rare ones.
 
 ## DESCRIBE STATIC SCENES — the ENGINE renders the motion (critical)
@@ -140,6 +142,12 @@ moderately OFF-center) and grows the object there. So every `zoom` card's `scene
                                     //   "bg": void | deep | gradient | bright | sea;
                                     //   "scale": number — element size multiplier (2.0 = a few big
                                     //     elements, 0.7 = a swarm).
+                                    //   "element": REQUIRED on every card with exp <= -3.5 (2026-10-15,
+                                    //     engine `--stage-paint`, ON in the nightly): one line saying what
+                                    //     ONE element of this stage looks like up close. The image model
+                                    //     paints it and every sphere of the stage wears that picture
+                                    //     (ELEMENT TEST below). A `stage` dict with no "kit" is fine: the
+                                    //     engine keeps choosing the kit from the words and adds your fields.
   "dur": 4,                         // BEATS (bar=4). UNIFORM for every card in the journey
                                     //   (4 default, or 8 journey-wide), never mixed — see pacing
   "palette": "blazing orange and white",

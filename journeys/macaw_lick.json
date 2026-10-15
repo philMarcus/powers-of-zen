@@ -47,7 +47,7 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "amber keratin box sides, cobalt froth, umber pigment layer, glassy sheath",
-      "scene": "inside one barb of a blue feather, a file of hollow keratin boxes set end to end down the barb's core, each box's thin amber sides enclosing a spongy cobalt froth, hundreds of the boxes stacked along the barb, an umber layer of pigment granules under the froth, a glassy sheath of dense keratin wrapped around the whole file",
+      "scene": "inside one barb of a blue feather, a file of hollow box-shaped keratin cells set end to end down the barb's core, each box's thin amber sides enclosing a spongy cobalt froth, hundreds of the boxes stacked along the barb, an umber layer of pigment granules under the froth, a glassy sheath of dense keratin wrapped around the whole file",
       "target": "one froth-packed box",
       "target_phrase": "a blue froth box",
       "cameo": {
@@ -57,6 +57,9 @@
           0.34
         ],
         "size": 0.14
+      },
+      "stage": {
+        "element": "a medullary cell, a hollow box of thin translucent amber keratin brimming with luminous cobalt froth, a glassy sheen on its edges"
       }
     },
     {
@@ -65,11 +68,14 @@
       "kind": "zoom",
       "dur": 4,
       "palette": "saturated cobalt glow, translucent amber struts, umber pores",
-      "scene": "the froth inside a feather cell, a tangled sponge of translucent amber keratin and empty air un-mixed into channels all one width, the channels turning at random in every direction with no lattice and no repeat, every strut and every gap the same slender width, the whole sponge glowing saturated cobalt from within, umber shade in the pores",
+      "scene": "the froth inside a feather cell, a tangled sponge of translucent amber keratin protein and empty air un-mixed into channels all one width, the channels turning at random in every direction with no grid and no repeat, every strut and every gap the same slender width, the whole sponge glowing saturated cobalt from within, umber shade in the pores",
       "target": "a single glowing atom",
       "target_phrase": "a glowing atom",
       "resolve": {
         "mode": "web"
+      },
+      "stage": {
+        "element": "a keratin molecule, a slender twisted amber rod with a satin finish, glowing saturated cobalt along its groove, umber shade in its twists"
       }
     },
     {
@@ -80,7 +86,10 @@
       "palette": "tangerine inner glow, cobalt outer haze, one white-hot point, black void",
       "scene": "one carbon atom in a keratin strut, a soft fog of electron haze about a single white-hot point, the inner fog a tight saturated tangerine glow, the outer fog a broad thin cobalt haze with four soft plumes reaching toward four neighbouring atoms, the neighbours dim knots of fog at the margins of a black void",
       "target": "a tiny white-hot point",
-      "target_phrase": "a lit point"
+      "target_phrase": "a lit point",
+      "stage": {
+        "element": "a carbon atom, a tight tangerine ember inside a broad thin cobalt haze, four soft plumes reaching outward, one white-hot point"
+      }
     },
     {
       "name": "melted_droplet",
@@ -88,7 +97,10 @@
       "kind": "seam",
       "dur": 4,
       "palette": "ember-orange and rust mottle, scarlet rim, black void",
-      "scene": "a fireball of melted matter on a black void, no separate particles anywhere, one seething fluid of loose ember-orange sparks and tangled glowing strands, mottled all through with hotter and cooler blotches all about one size, rust-red in the cooler blotches and ember-orange in the hotter, a scarlet glow at its rim"
+      "scene": "a fireball of melted matter on a black void, no separate particles anywhere, one seething fluid of loose ember-orange sparks and tangled glowing strands, mottled all through with hotter and cooler blotches all about one size, rust-red in the cooler blotches and ember-orange in the hotter, a scarlet glow at its rim",
+      "stage": {
+        "element": "a droplet of melted matter, a molten ember-orange bead streaked into tiny scarlet feather vanes, rust-red in its cooler hollows"
+      }
     },
     {
       "name": "afterglow_shell",

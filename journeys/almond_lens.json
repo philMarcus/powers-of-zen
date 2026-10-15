@@ -1,0 +1,146 @@
+{
+  "name": "almond_lens",
+  "theme": "a California almond orchard at hull-split on a hot late-July afternoon, read as THE LENS OF OVERLAP at every scale: two discs laid partly over each other with the almond in their crossing. The climb runs from the outer arm of a spiral galaxy, a yellow sun, the Earth's day face with the Central Valley as a tan trough, the valley floor ruled into orchard blocks, down to the dusty orchard floor and its commons, onto one bough, into one split hull and its pitted shell, the shell's stone cells, the lignin net of their walls, one carbon atom of a lignin ring, and the almond fireball of two nuclei meeting off-centre, which seams up into two galaxies overlapping on one line of sight. Palette family: hull sage & July cobalt (hard afternoon daylight).",
+  "style": "infrared_bloom",
+  "music_lane": "choir_of_dust",
+  "stage_look": "glass",
+  "render_start": "arm_clouds",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "arm_clouds",
+      "exp": 17.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "blue-white star clouds, sooty black dust, magenta nebula knots, one yellow sun on ink-black space",
+      "scene": "the outer arm of a spiral galaxy seen from within in deep space, two broad clouds of blue-white stars laid partly over each other, a sooty dust lane crossing where the two clouds overlap, magenta nebula knots strung along the arm, countless faint stars scattered through the dark, a single yellow sun standing out near the clouds' edge",
+      "loop_target": "two overlapping clouds of blue-white stars in a galaxy's arm",
+      "target": "a yellow sun",
+      "target_phrase": "a yellow star"
+    },
+    {
+      "name": "yellow_sun",
+      "exp": 12,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "hard yellow sunlight, cobalt-black space, a blue-and-tan world, a slate-grey moon",
+      "scene": "a yellow sun burning in cobalt-black space at the heart of its planetary system, a few planets set around it on their orbits, the nearest a blue-and-tan world lit on its day face, a small slate-grey moon whose disc is laid partly over the planet's rim, a scatter of distant stars behind",
+      "target": "a blue-and-tan planet",
+      "target_phrase": "a blue planet"
+    },
+    {
+      "name": "valley_trough",
+      "exp": 7.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "tan valley floor, snow-white mountain crest, dun coast hills, cobalt ocean, deep blue-black space at the limb",
+      "scene": "the Earth's day face seen from orbit over western North America in dry clear air, California's Central Valley a long tan trough running north to south, the snow-white crest of the Sierra Nevada along its eastern side and the dun folds of the Coast Ranges along its western side, the cobalt Pacific beyond the coast, the curved limb of the planet against deep blue-black space",
+      "target": "a tan valley floor",
+      "target_phrase": "the tan valley",
+      "cameo": {
+        "sprite": "output/mascots/canon/janet.png",
+        "pos": [0.66, 0.38],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "orchard_blocks",
+      "exp": 4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sage-green orchard rows, khaki dirt roads, two emerald pivot circles, a silver canal, dark windbreaks",
+      "scene": "the floor of California's Central Valley seen from high above at a slant on a hot July afternoon, ruled into rectangular orchard blocks of sage-green almond trees in tight parallel rows, khaki dirt roads and dusty headlands framing each block, two round emerald pivot fields laid partly over each other at their edges, a straight silver irrigation canal ruling across the blocks, farmsteads sheltered by dark windbreak trees",
+      "target": "an almond orchard block",
+      "target_phrase": "a green orchard block"
+    },
+    {
+      "name": "orchard_floor",
+      "exp": 1.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sage-green canopy, khaki dust floor, hard cobalt sky, scrub-jay blue, mustard yellow, black drip lines",
+      "scene": "the dusty floor of a California almond orchard at hull-split under a hard cobalt afternoon sky, seen low along a row, sage-green trees hung with split hulls on both sides, khaki dust and fallen hulls on the ground, scrub jays with nuts in their beaks on the lower boughs, a ground squirrel upright beside its burrow, a kestrel perched on a steel irrigation standpipe, a gopher snake stretched along the berm, a tarantula hawk wasp at a patch of yellow mustard flowers, a coyote at the far end of the row, black drip lines along the trunks",
+      "target": "a laden almond bough",
+      "target_phrase": "a green almond bough"
+    },
+    {
+      "name": "split_hulls",
+      "exp": -1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "velvety sage-green hulls, cinnamon-tan pitted shells, khaki-dusted leaves, hard cobalt sky",
+      "scene": "a laden almond bough at hull-split in hard afternoon sun, clusters of velvety sage-green hulls each parted into two halves about its nut, the pitted cinnamon-tan shells showing in the almond-shaped openings, narrow leaves dusted khaki, a hard cobalt sky behind the bough",
+      "target": "a pitted almond shell",
+      "target_phrase": "a pitted brown shell"
+    },
+    {
+      "name": "stone_cells",
+      "exp": -4.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "russet and cinnamon cell walls, cobalt-blue canal threads, sage-green glints, deep umber shadow",
+      "scene": "the interior of an almond's shell, a packed mosaic of round stone cells set wall to wall, each cell's wall so thick its hollow is a pinprick, branching canals fanning out from each hollow to the cell's rim, the walls in layered russet and cinnamon bands, cobalt-blue light glinting in the canals, deep umber shadow in the seams of the mosaic",
+      "target": "a thick-walled stone cell",
+      "target_phrase": "a round stone cell",
+      "stage": {
+        "kit": "tissue",
+        "element": "a stone cell, a round bead of banded russet and cinnamon stone, cobalt-blue canals branching from a pinprick hollow, sage glints on its polish"
+      }
+    },
+    {
+      "name": "lignin_net",
+      "exp": -7.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet and sage ring units, cream-white cellulose cables, deep brown-black depth",
+      "scene": "inside the wall of a stone cell, a dense random mesh of small six-sided rings joined one to another by short links, no repeat anywhere in the mesh, the mesh grown through and around a bundle of straight cream-white cellulose cables, the rings glinting violet and sage against deep brown-black depth",
+      "target": "a six-sided carbon ring",
+      "target_phrase": "a hexagonal ring",
+      "stage": {
+        "kit": "lattice",
+        "variant": "random",
+        "element": "a lignin ring, a six-sided violet ring of soft velvet, sage light glowing through its open centre, one short cream link at each corner"
+      }
+    },
+    {
+      "name": "carbon_atom",
+      "exp": -10,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt-blue electron fog, a white-hot point, dim sage glows, black depth",
+      "scene": "one carbon atom of a six-sided ring, a soft cobalt-blue fog of electrons in two nested shells about a tiny white-hot point, the neighbouring atoms of the ring dim sage glows at the edges of the frame, deep black depth all around",
+      "target": "a white-hot nucleus",
+      "target_phrase": "a bright nucleus",
+      "stage": {
+        "element": "a carbon atom, cobalt-blue vapour gathered in two nested translucent shells around one white-hot point, a faint sage edge on the outer shell"
+      }
+    },
+    {
+      "name": "almond_fireball",
+      "exp": -14.5,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "orange-white fireball, cobalt-blue disc crescents, scarlet sparks, black void",
+      "scene": "two heavy nuclei flattened into thin glowing cobalt-blue discs, meeting off-centre in a black void, only the almond-shaped overlap where the two discs cross ignited into an orange-white fireball of loose sparks, the sparks squirting hardest out of the overlap's two narrow points, the unstruck crescents of each disc dark at the sides",
+      "stage": {
+        "kit": "fluid",
+        "element": "a fireball droplet, a scarlet bead of cracked molten lava, orange-white heat bleeding from its fissures, a cobalt-blue crust on one side"
+      }
+    },
+    {
+      "name": "overlap_pair",
+      "exp": 21.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "gold galactic glow, sooty black dust lanes, cobalt-blue spiral arms, scattered ruby galaxies on ink-black",
+      "scene": "two spiral galaxies on one line of sight in deep space, the nearer face-on spiral laid partly over the farther one, its sooty dust lanes silhouetted black across the farther galaxy's gold glow, the almond-shaped overlap at once the brightest and the darkest place in the frame, cobalt-blue star clouds strung along the nearer spiral's arms, small ruby galaxies scattered far behind",
+      "target": "a blue star cloud",
+      "target_phrase": "a blue star cloud"
+    }
+  ]
+}

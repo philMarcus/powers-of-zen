@@ -1,0 +1,146 @@
+{
+  "name": "sardine_run",
+  "theme": "the sardine run off South Africa's Wild Coast at winter noon, a bait ball in open ultramarine water worked as a crowded commons, read as HOLES PUNCHED THROUGH A CROWD at every scale: a gannet's dive drives a clear tunnel through the ball with a ring of flashing flanks round it; onto one sardine's flank, into a lateral-line pore, the hair-cell staircase with its threads, the tip-link cable with its trapdoor, one atom, and the ionization lane cut through a sea of atom fogs; seam = the lane through a crowd of fogs becomes the two cavities blown through the hot gas of the ringing cluster, then a spiral galaxy, the sun among its planets, the blue-and-green Earth with the Agulhas Current down its green coast, and the Wild Coast from the air with the run's dark shoal-shadow along the shore. Driving tempo = the frenzy.",
+  "style": "liquid_light",
+  "music_lane": "deep_archive",
+  "stage_look": "ink",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "bait_ball_commons",
+      "exp": 1.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep ultramarine open water as the field, sardine silver as hard flashes, gannet white heads shading to buff with black wingtips, bronze whaler bronze, foam-white only in streaks",
+      "scene": "a sardine bait ball in open ultramarine water at winter noon, seen from just above the surface looking down through the clear sea into the ball, thousands of sardines packed into one dense sphere of silver flanks with hard sunlight flashing off them, a clear tunnel driven down through the ball where a Cape gannet has entered, a ring of flashing flanks spread round the tunnel's mouth, white streaks of Cape gannets with buff heads and black wingtips entering the water, common dolphins with dark backs and tan-and-grey flanks herding the ball from below, two bronze whaler sharks at its lower rim, a Cape fur seal at its side, the long grey-brown back of a Bryde's whale beyond the ball, sunbeams ruled down into the ultramarine depth",
+      "loop_target": "a silver sardine bait ball in ultramarine water with a gannet's clear tunnel through it",
+      "target": "one silver sardine",
+      "target_phrase": "a silver sardine"
+    },
+    {
+      "name": "sardine_ranks",
+      "exp": -0.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bottle-green sardine backs, silver sides, bronze-gold noon glints, deep ultramarine gaps",
+      "scene": "inside the bait ball, sardines packed flank to flank in close ranks, every fish with a bottle-green back, a silver side and a row of small dark spots, bronze-gold noon glints scattered across the ranks, narrow gaps of deep ultramarine water among the fish, the nearest sardine side-on with a fine dotted seam of pores running the length of its flank",
+      "target": "a dotted lateral line",
+      "target_phrase": "a dotted line"
+    },
+    {
+      "name": "flank_scales",
+      "exp": -1.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver-blue scales edged in violet, dark ultramarine skin, black pore openings, one cyan glint",
+      "scene": "a sardine's flank at a scale's width, rows of thin overlapping silver-blue scales each with a violet edge, shingled over dark ultramarine skin, a single row of small round pores running along the lateral line across the scales, each pore a black opening in its scale, one pore larger and nearer than the rest",
+      "target": "a black round pore",
+      "target_phrase": "a round black pore"
+    },
+    {
+      "name": "hair_staircase",
+      "exp": -4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-pink cells, gold bristles, a clear teal gel, warm coral shadows",
+      "scene": "inside a sardine's lateral-line canal, a crowd of sensing cells packed side by side on the canal floor, each rose-pink cell capped by a bundle of stiff gold bristles graded in height in steps, the shortest in front and the tallest behind, a fine thread strung from the tip of each bristle to the side of the next taller one, every bundle facing the same way down the canal, a clear teal gel lying over the bundles",
+      "target": "a fine bristle thread",
+      "target_phrase": "a fine thread",
+      "stage": {
+        "element": "a hair cell, a rose-pink dome crowned by a stepped staircase of stiff gold bristles, wet and glossy under clear teal gel"
+      }
+    },
+    {
+      "name": "tip_link",
+      "exp": -7.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet and cyan beaded strands, a gold bead stream, deep indigo ground",
+      "scene": "a fine double-stranded protein cable of two rods joined end to end, each strand a coil of violet and cyan beads, strung from the tip of one bristle to the flank of the next across deep indigo, the bristle's skin a smooth membrane of packed beads, at the cable's foot a small trapdoor set in that skin and swung open, a stream of charged gold beads in the open trapdoor, single atoms showing as soft glowing points along the strands",
+      "target": "a soft glowing atom",
+      "target_phrase": "a glowing atom",
+      "cameo": {
+        "sprite": "output/mascots/canon/tina.png",
+        "pos": [
+          0.64,
+          0.36
+        ],
+        "size": 0.13
+      },
+      "stage": {
+        "element": "a tip-link protein, a twisted double cord of matte violet and cyan beads, lit hard from one side, one gold bead at its foot"
+      }
+    },
+    {
+      "name": "ionization_lane",
+      "exp": -9.8,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "blue-white atom fogs on deep ultramarine, hot white and copper torn edges, a dark clear lane",
+      "scene": "a sea of atoms, each a soft blue-white fog about one bright point, fog after fog receding into deep ultramarine, one dead-straight lane cut clean through the sea, the fogs along both edges of the lane torn open and glowing hot white and copper, the lane itself clear and dark",
+      "stage": {
+        "kit": "lattice",
+        "variant": "random",
+        "element": "an atom, a blue-white glass marble about one bright point, its near face torn open into a glowing hot white and copper rim"
+      }
+    },
+    {
+      "name": "ringing_cluster",
+      "exp": 23.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-magenta hot gas glow, two near-black cavities, rose ripple rings, small golden galaxies, one teal-blue spiral",
+      "scene": "a galaxy cluster's core seen face-on in black space, a violet-magenta glow of hot gas with one giant oval galaxy seated at its centre, two dark cavities blown through the glow on either side of it, concentric rose ripples of pressure drawn outward through the gas from the cavities ring after ring, hundreds of small golden galaxies scattered through the glow, one teal-blue spiral galaxy near the cluster's rim",
+      "target": "a teal-blue spiral galaxy",
+      "target_phrase": "a spiral galaxy"
+    },
+    {
+      "name": "spiral_disc",
+      "exp": 20.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "teal-blue arms, pink star-forming knots, yellow-white core, sepia dust lanes on black",
+      "scene": "a spiral galaxy seen at a slant against black space, two teal-blue arms beaded with pink star-forming knots wound round a yellow-white core, sepia dust lanes along the inner edge of each arm, countless stars scattered across the disc, one yellow-white star standing out in the outer arm",
+      "target": "a yellow-white star",
+      "target_phrase": "a yellow star"
+    },
+    {
+      "name": "sun_system",
+      "exp": 12.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "yellow-white sun, a faint gold dust band, ruddy and ochre planet points, one blue-green point, black space",
+      "scene": "a yellow-white sun at the centre of its planets in black space, the planets set round it as small points on thin faint orbits, a ruddy one, an ochre one with a thin ring, and one small blue-green planet nearer in, a faint gold band of dust laid across the system",
+      "target": "a small blue-green planet",
+      "target_phrase": "a blue-green planet"
+    },
+    {
+      "name": "agulhas_earth",
+      "exp": 7.1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ultramarine ocean, a warm indigo current, emerald coast, ochre highveld, a white polar rim",
+      "scene": "the Earth from space at noon under a clear sky, a blue-and-green world, the emerald coast of south-east Africa running down its face, the Agulhas Current drawn as a warm indigo river along that coast inside the ultramarine ocean, ochre highveld inland, white Antarctic ice at the lower rim of the globe",
+      "target": "a green coastline",
+      "target_phrase": "a green coastline"
+    },
+    {
+      "name": "wild_coast_air",
+      "exp": 4.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "emerald rolling hills, ochre river mouths, a white surf line, ultramarine sea, one long near-black shoal shadow",
+      "scene": "the Wild Coast of South Africa seen from high above at winter noon, emerald rolling hills cut by ochre river mouths, dark headlands and cliffs, a white surf line along the beaches, the ultramarine sea, and along the shore the sardine run's long near-black shoal shadow in the water, white flecks of gannets over it, a few small fishing boats near the sand",
+      "target": "a dark shoal shadow",
+      "target_phrase": "a dark shoal"
+    }
+  ],
+  "music_theme": "dark oceanic pads over a deep warm sub-bass drone at a driving tempo, a hard low punch on every morph as each hole is punched through the crowd, a tight pulsing undertow through the bristles and the cable, a vast deep bloom on the morph from the atom lane up into the ringing cluster, then the pads opening out wide over the coast",
+  "music_key": "D minor",
+  "render_start": "spiral_disc"
+}

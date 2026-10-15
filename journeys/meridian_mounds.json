@@ -91,6 +91,9 @@
       "resolve": {
         "mode": "lattice",
         "variant": "layered"
+      },
+      "stage": {
+        "element": "a kaolinite booklet, a squat stack of thin six-sided ivory-gold plates, rust-stained rims, a pearly sheen catching teal light from below"
       }
     },
     {
@@ -101,7 +104,10 @@
       "palette": "a hard gold spark in a compass-blue haze, rust neighbours, midnight-teal deep",
       "scene": "one iron atom seated in the magnetite lattice, a hard gold spark at the middle with a compass-blue haze banked about it, the haze dense close in and fainter outward with no rim anywhere, four dimmer rust hazes of oxygen crowded at the margins of the field, a ghost of the ordered lattice beyond them, midnight-teal deep in the clearances",
       "target": "a hard gold spark",
-      "target_phrase": "a bright gold point"
+      "target_phrase": "a bright gold point",
+      "stage": {
+        "element": "an iron atom, a smooth compass-blue glass ball with a hard gold spark at its heart, faint rust flecks suspended inside"
+      }
     },
     {
       "name": "spin_field",
@@ -112,6 +118,9 @@
       "scene": "the smallest scale read as a field of spins, countless glowing gold sparks spread through a midnight-teal deep, each spark pierced by a short compass-blue axis of light, every axis leaning at the same angle, a faint rust cone of light traced about each axis round one shared upright, tier behind tier of the leaning sparks set into unlit depth",
       "resolve": {
         "mode": "sea"
+      },
+      "stage": {
+        "element": "a spinning nucleon, a polished gold bead pierced by a short compass-blue needle, a faint rust cone of light circling the needle"
       }
     },
     {

@@ -1,0 +1,89 @@
+{
+  "name": "pumpkin_scanner",
+  "theme": "a pumpkin lying in the bore of an MRI scanner at night, dived down to what the scanner actually sees: the pumpkin's flesh cells, the water filling them, the water's hydrogen nuclei all leaning at one angle and wheeling about one shared axis, then one proton's interior. A subnuclear-heavy realm slice anchored in a nameable, slightly funny scene. Math/space personality: precession and alignment, everything tilted the same way and turning about a shared axis; the scanner's concentric bore rings are the large-scale echo. Seam: realm-local, never touches space: the proton's nested ring-on shells rhyme back to the scanner's nested teal bore rings around the pumpkin. Palette family: gradient-coil teal & pumpkin flesh (new 2026-10-11).",
+  "style": "neon_drift",
+  "music_lane": "music_box",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "scanner_bore",
+      "exp": 0.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "gradient-coil teal glow on a midnight-blue room, one ripe pumpkin-orange accent, graphite floor tiles, amber standby lamps",
+      "scene": "an MRI scanner suite at night seen from the doorway, empty, no one present, the room unlit but for the scanner itself, a massive ring-shaped scanner whose bore is a tunnel of nested teal rings glowing from the gradient coils, and lying on the padded sliding tray deep inside the bore a single ripe orange pumpkin with a curled green stem, a black cat crouched on the graphite floor tiles watching a field mouse by the skirting, two moths fluttering at the dim observation window, amber standby lamps blinking on the control console",
+      "loop_target": "a pumpkin lying in a scanner's teal-ringed bore",
+      "target": "a ripe orange pumpkin",
+      "target_phrase": "an orange pumpkin"
+    },
+    {
+      "name": "flesh_cells",
+      "exp": -4.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pumpkin-flesh orange and saffron, carotene-gold grains, deep rust shadows, teal glints in each watery middle",
+      "scene": "the pumpkin's flesh resolved into its cells, a packed honeycomb of big many-sided parenchyma cells stacked deep into rust-orange shadow, each cell walled in a thin glassy orange wall, clusters of carotene-gold grains pressed along the walls, and filling the middle of every cell a clear watery vacuole glinting teal",
+      "target": "a clear water vacuole",
+      "target_phrase": "a clear vacuole",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [0.64, 0.36],
+        "size": 0.13
+      },
+      "stage": {
+        "element": "a parenchyma cell, a many-sided box of thin waxy orange membrane backlit saffron, carotene-gold grains on its inner faces, a teal glint inside"
+      }
+    },
+    {
+      "name": "vacuole_water",
+      "exp": -8.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep teal and indigo depth, glassy cyan beads, a faint pumpkin-orange glint on every small bead",
+      "scene": "the water inside the vacuole, a crowded sea of bent water molecules tumbling every which way through teal-indigo depth, each molecule one plump glassy cyan bead with two small beads set at a bent angle on it, each small bead glinting faint pumpkin orange, thin threads of glow strung between neighbouring molecules, the sea receding into indigo murk",
+      "target": "a bent water molecule",
+      "target_phrase": "a cyan molecule",
+      "stage": {
+        "kit": "lattice",
+        "variant": "random",
+        "element": "a water molecule, a plump bead of polished deep teal enamel, two small cyan beads bent on its shoulder, each with a pumpkin-orange pinpoint"
+      }
+    },
+    {
+      "name": "spin_field",
+      "exp": -11.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "molten amber points on a teal-black void, copper needles, thin teal rings traced in haze",
+      "scene": "a deep teal-black void of soft drifting haze, and through it countless molten amber points of glow at many depths, every point pierced by a short copper needle of glow, every needle tilted at the very same angle, every needle's tip tracing a thin teal ring in the haze, all the rings lying parallel and stacked about one shared upright axis, the whole field leaning together toward one side",
+      "target": "one molten amber point",
+      "target_phrase": "an amber glowing point",
+      "stage": {
+        "kit": "lattice",
+        "variant": "random",
+        "bonds": false,
+        "element": "a hydrogen nucleus, a molten amber droplet pierced by one short copper needle, a thin teal ring circling the needle's tip"
+      }
+    },
+    {
+      "name": "proton_interior",
+      "exp": -15.0,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "three ember-orange knots, taut teal strands, a fizz of copper sparks, nested teal shells on a violet-black ground",
+      "scene": "inside one proton, three ember-orange knots of glow set at the corners of a triangle and tied to one another by taut strands of teal glow, a fizz of brief copper sparks crowding the gaps between them, and encircling the trio nested concentric shells of faint teal glow seen ring-on, ring within ring, on a violet-black ground",
+      "stage": {
+        "kit": "quark",
+        "element": "a quark, a squat ember-orange knot of glow ribbed into deep pumpkin lobes, a stubby copper stalk on its crown"
+      }
+    }
+  ],
+  "music_theme": "a tender clockwork music box over a soft low kick on every downbeat, a steady muffled knocking pulse like a scanner's coils as the unlit suite reveals the pumpkin in its teal bore, warm plucked tones for the orange honeycomb of cells, a liquid glassy arpeggio for the water's tumbling sea, a slowly turning ostinato that leans and circles as the amber points wheel about their shared axis, and one held chime swelling on the morph from the proton's nested shells back to the scanner's rings",
+  "music_key": "D minor",
+  "render_start": "spin_field"
+}

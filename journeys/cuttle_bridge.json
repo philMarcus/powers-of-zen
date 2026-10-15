@@ -45,11 +45,11 @@
       "target_phrase": "a crimson capillary",
       "cameo": {
         "sprite": "output/mascots/canon/belle.png",
-        "pos": [
-          0.64,
-          0.36
-        ],
+        "pos": [0.64, 0.36],
         "size": 0.14
+      },
+      "stage": {
+        "element": "a chromatophore, a saffron pigment sac stretched into an elastic disc, rose muscle spokes radiating from its rim, gold nerve threads, violet-teal shimmer beneath"
       }
     },
     {
@@ -60,7 +60,10 @@
       "palette": "cobalt copper glow, pale sapphire plasma, jade protein walls, ink depth",
       "scene": "cuttlefish blood plasma, a pale sapphire haze crowded with hemocyanin barrels, each barrel a hollow hexagonal cylinder of jade protein built from ten stacked lobed units, the walls studded with pairs of copper points, the loaded pairs glowing cobalt, the barrels tumbling at every angle and receding into an ink depth, dozens near and hundreds far",
       "target": "a glowing copper point",
-      "target_phrase": "a glowing copper point"
+      "target_phrase": "a glowing copper point",
+      "stage": {
+        "element": "a hemocyanin molecule, a hollow hexagonal barrel of carved jade protein, paired copper points studding its walls and glowing cobalt, sapphire light inside"
+      }
     },
     {
       "name": "copper_atom",
@@ -70,7 +73,10 @@
       "palette": "copper-orange and teal electron fog on ink, one incandescent point",
       "scene": "one copper atom, a soft fog of electron haze about a single incandescent point, nested shells of the fog, the innermost a tight dense copper-orange glow, the next a broader amber haze, the outermost a faint wide teal haze with one lone fringe of fog reaching past the rest, dim knots of neighbouring fog at the margins of an ink void",
       "target": "an incandescent point",
-      "target_phrase": "a lit point"
+      "target_phrase": "a lit point",
+      "stage": {
+        "element": "a copper atom, a molten copper-orange plasma bead inside a nested shell of thin teal glass, one incandescent point blazing at its core"
+      }
     },
     {
       "name": "exchange_bead",
@@ -78,7 +84,10 @@
       "kind": "seam",
       "dur": 4,
       "palette": "gold and violet spheres, one magenta spark, ink void",
-      "scene": "an ink void strewn with pairs of glowing spheres, each pair two equal round gold-and-violet glows facing each other across a narrow gap, and in the gap of every pair one small magenta spark suspended midway, the spheres soft-edged and radiant, faint violet haze about each pair"
+      "scene": "an ink void strewn with pairs of glowing spheres, each pair two equal round gold-and-violet glows facing each other across a narrow gap, and in the gap of every pair one small magenta spark suspended midway, the spheres soft-edged and radiant, faint violet haze about each pair",
+      "stage": {
+        "element": "a nucleon, a soft-edged gold sphere swirled with violet light, one magenta spark caught at its edge, a faint violet haze around it"
+      }
     },
     {
       "name": "intercluster_bridge",

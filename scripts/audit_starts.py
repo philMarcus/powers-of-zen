@@ -68,6 +68,13 @@ def main():
             problems.append("single hard-edged subject: " + ", ".join(hits[:2]))
         # the sprite must live in its realm — Amos does not visit beehives
         problems += pl.cameo_realm_check(spec)
+        # ELEMENT LINES (2026-10-15, composer ELEMENT TEST): the nightly paints every staged card's
+        # elements from its authored stage.element; a micro card without one renders unpainted
+        _noel = [r.get("name") for r in regs
+                 if isinstance(r.get("exp"), (int, float)) and r["exp"] <= -3.5 and r.get("stage") is not False
+                 and not (isinstance(r.get("stage"), dict) and str(r["stage"].get("element") or "").strip())]
+        if _noel:
+            problems.append(f"NO stage.element on micro card(s): {', '.join(_noel[:4])}")
 
         # Notes, not failures: these two are judgement calls a regex can only hint at. Requiring
         # field-of-view WORDS produced false alarms on scenes that are plainly wide but phrased

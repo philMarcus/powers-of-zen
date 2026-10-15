@@ -251,6 +251,12 @@ def render_one(journey, force=False, new_seed=True, from_card=None):
                     # instead of the darkest species colour (amber fog behind amber balls = a
                     # one-colour card). Cards whose palette names no far field are unchanged.
                     argv += ["--stage-fog-phrase"]
+                if pl.jload()["settings"].get("stage_paint"):
+                    # PAINTED ELEMENTS (Phil 2026-10-15, the M1b/M2 recipe of valdes_blow v4): the
+                    # AI's pictures of the card's authored stage.element on every sphere; cards with
+                    # no element line are untouched
+                    argv += ["--stage-paint", "--stage-paint-scale", "bold", "--stage-paint-tex", "0.9",
+                             "--stage-paint-id", "0.5"]
         if from_card:
             argv += ["--from-card", str(from_card)]
         if (force or from_card) and new_seed:

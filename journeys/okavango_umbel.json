@@ -1,0 +1,133 @@
+{
+  "name": "okavango_umbel",
+  "theme": "the Okavango Delta at midday as a full-scale dive with unbroken living continuation, read as SPINE-BURSTS inside and out: a face-on spiral galaxy; a white sun with its worlds on their rings; the whole Earth with the red Kalahari carrying one green inland delta fan; the delta from a low aircraft, a jade fan threaded with channels; a papyrus channel as a crowded commons (hippos, red lechwe, an African jacana on the lily pads, a malachite kingfisher, painted reed frogs on the stems, a sitatunga in the reeds, a fish eagle on a snag); one papyrus head's burst of thread-thin rays; a ray's green flesh as Kranz-wreathed cells crowded with chloroplasts; a thylakoid membrane studded with ATP-synthase rotary machines; a tangle of atoms in one protein lobe; a struck carbon nucleus flinging needles of light at the eye, which morphs into the sky of galaxy clusters drawn into needles converging on the eye (fingers of God) as a burst seen from its centre at both ends of scale. Palette family: papyrus jade & Kalahari rust (sunlit papyrus jade-green, rust-red sand, hippo slate-pink, one malachite-kingfisher turquoise point, daylight; no metal sheen, no night).",
+  "style": "enchanted_wild",
+  "music_lane": "tide_organ",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "rust_spiral",
+      "exp": 20.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-red and copper star arms, jade-green nebula knots, white-hot hub, violet-indigo void",
+      "scene": "a vast spiral galaxy turning in the void seen face-on, two broad arms of rust-red and copper starlight wound around a white-hot hub, jade-green nebula knots strung through the arms, faint dust lanes curling inward, a scatter of distant galaxies across the violet-indigo void",
+      "loop_target": "a face-on rust-red spiral galaxy",
+      "target": "a white star",
+      "target_phrase": "a white star"
+    },
+    {
+      "name": "delta_sun",
+      "exp": 13.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "white-hot sun, rust and jade worlds, a ring of jade ice and rust dust, violet-indigo void",
+      "scene": "a white-hot sun blazing in the void with its family of worlds set on wide concentric rings, a russet planet with one green fleck on the third ring, a striped giant on an outer ring, a broad belt of jade ice and rust dust circling the far rim of the system, scattered stars beyond",
+      "target": "a russet planet",
+      "target_phrase": "a russet planet"
+    },
+    {
+      "name": "kalahari_globe",
+      "exp": 7.1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-red desert continent, vivid papyrus-jade delta fan, ultramarine ocean, white cloud wisps, starry void",
+      "scene": "the whole Earth from orbit at midday, a continent of rust-red Kalahari sand filling its southern half, and set in the middle of the red desert one vivid jade-green inland delta fan splayed open into branching fingers of water, ultramarine ocean around the coasts, a few white cloud wisps, the starry void around the globe",
+      "target": "a green delta fan",
+      "target_phrase": "the green delta fan"
+    },
+    {
+      "name": "delta_from_air",
+      "exp": 4.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "papyrus jade swamp, silver-green channels, rust-red Kalahari rim, cream sand islands, turquoise lagoons",
+      "scene": "the Okavango Delta seen obliquely from a low aircraft at midday, a jade-green swamp of papyrus threaded by winding silver-green channels and round turquoise lagoons, islands of palms ringed with cream sand, a herd of elephants wading a flooded plain, rust-red Kalahari sand closing in at the rim of the fan",
+      "target": "a winding papyrus channel",
+      "target_phrase": "a winding channel"
+    },
+    {
+      "name": "papyrus_commons",
+      "exp": 1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sunlit papyrus jade, hippo slate-pink, rust-red lechwe coats, one turquoise kingfisher, olive water over cream sand",
+      "scene": "a papyrus-walled channel in the Okavango at midday, seen low over the water, tall papyrus stems crowned with bursting green heads lining both banks, a pod of slate-pink hippos half-submerged in the channel, red lechwe antelope splashing through the shallows, an African jacana stepping across lily pads, a malachite kingfisher with a turquoise back perched on a reed, painted reed frogs clinging to the papyrus stems, a sitatunga standing among the reeds, a fish eagle on a bare snag above, clear olive water over cream sand",
+      "target": "a papyrus head",
+      "target_phrase": "a papyrus head",
+      "cameo": {
+        "sprite": "output/mascots/canon/dora.png",
+        "pos": [0.3, 0.64],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "papyrus_umbel",
+      "exp": -0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sunlit jade-green rays, rust-brown spikelet tufts, shadowed olive reed wall, hot white sun glints",
+      "scene": "one papyrus head at the tip of its stem at midday, a spherical burst of hundreds of thread-thin jade-green rays radiating out from a single hub, each ray ending in a tuft of rust-brown flower spikelets, the midday sun shining through the rays, the shadowed olive wall of reeds across the channel",
+      "target": "a thin green ray",
+      "target_phrase": "a green ray"
+    },
+    {
+      "name": "kranz_cells",
+      "exp": -4.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "emerald and jade cells, clear cellulose walls, rust-pink cytoplasm threads, shadowed teal depths",
+      "scene": "the green flesh of a papyrus ray as living tissue, ranks of jade-green leaf cells walled in clear cellulose, every cell crowded with lens-shaped emerald chloroplasts, a wreath of larger bundle-sheath cells ringed around a hollow vein, rust-pink threads of cytoplasm strung between the chloroplasts, the ranks curving away into shadowed teal",
+      "target": "an emerald chloroplast",
+      "target_phrase": "a green chloroplast",
+      "stage": {"element": "a bundle-sheath cell, a plump jelly-soft jade-green capsule packed with lens-shaped emerald chloroplasts, sunlight glowing through it from behind"}
+    },
+    {
+      "name": "thylakoid_turbines",
+      "exp": -7.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "emerald membrane, rust-orange protein heads, slate-pink lipid sheen, shadowed violet gaps",
+      "scene": "the surface of a thylakoid membrane in a papyrus chloroplast, a broad curving two-layer sheet of emerald lipid studded with thousands of ATP-synthase rotary machines, each one a ring of a dozen protein subunits seated in the membrane with a stalk rising to a knobbed head of six rust-orange protein lobes, clusters of jade chlorophyll antenna complexes set between them, more membranes stacked in tiers below with shadowed violet gaps",
+      "target": "a lobed protein head",
+      "target_phrase": "a lobed protein head",
+      "stage": {"element": "an ATP synthase, a crown of six knobbed rust-orange protein lobes on a slim stalk, matte fired clay rimlit emerald"}
+    },
+    {
+      "name": "protein_atoms",
+      "exp": -9.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade and rust-red atom hazes, white-hot points, slate-pink bonds, violet-indigo void",
+      "scene": "within one lobe of a protein, a winding tangle of atoms linked into looping chains, carbon, oxygen and nitrogen atoms each a soft haze of jade or rust-red around one white-hot point, slate-pink bonds joining them, one larger magnesium atom seated in a pocket of the tangle, the chains coiling away into violet-indigo",
+      "target": "a white-hot nucleus",
+      "target_phrase": "a white nucleus",
+      "stage": {"element": "a carbon atom, a white-hot point at the hub of a spiny burst of thread-thin jade-green rays, each ray tipped with a rust-red tuft"}
+    },
+    {
+      "name": "spark_spray",
+      "exp": -13.5,
+      "kind": "seam",
+      "dur": 4,
+      "stage": {"element": "a carbon nucleon, a rust-red ember sphere, its crust split by one white-hot glowing crack, jade sparks clinging to its rim"},
+      "palette": "white-hot core, rust-red and jade needles of light, violet-indigo void",
+      "scene": "a carbon nucleus struck apart and seen from its centre, a knot of twelve white-hot and rust-red nucleons flung outward, each nucleon drawn out into a thin straight needle of light, hundreds of lit needles pointing at the viewer from every side against a violet-indigo void"
+    },
+    {
+      "name": "fingers_of_god",
+      "exp": 24,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade and rust-red galaxy needles, white-hot cluster cores, dim violet voids",
+      "scene": "the cosmos at the largest scale, galaxy clusters drawn out into long luminous needles of thousands of galaxies, every needle pointing straight at the viewer, a whole sky of spines converging on the eye, jade and rust-red galaxies strung on each spine, one face-on spiral galaxy among them, dim violet voids between the needles"
+    }
+  ],
+  "music_theme": "a breathing tidal groove at a stately tempo, a soft sub pulse on every downbeat, breathy reed organ swells and water textures as the dive falls from the cluster needles through the spiral galaxy to the sun, an open warm chord over the red desert and the green delta fan, reed-organ figures splashing through the papyrus channel's commons, a shimmering held cluster on the burst of papyrus rays, close murmuring tones among the cells and the rotary machines, and a rising swell on the spray of sparks that opens out into the sky of needles",
+  "music_key": "G major",
+  "render_start": "rust_spiral"
+}

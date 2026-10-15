@@ -1,0 +1,81 @@
+{
+  "name": "scoby_windowsill",
+  "theme": "a kombucha jar on a sunlit kitchen windowsill, a realm slice into a material made by life: the floating pellicle's stacked strata, its surface crowd of budding yeast and rod bacteria in a felt of crossed ribbons, one rod bacterium extruding cellulose strands from a row of pore complexes (a molecular machine card), and the glucan chains laid into the ribbon. Math/space personality: jackstraws, ribbons laid over ribbons at random, never a lattice of ribbons. Never leaves the jar. Realm-local seam: the molecular felt of crossed ribbons becomes the pellicle's layered discs seen through the jar glass. Palette family: steeped-tea garnet & hibiscus magenta, cream ribbons as the minority, one lime-green herb point, morning daylight.",
+  "style": "aurora_silk",
+  "music_lane": "analog_dawn",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "felt_crowd",
+      "exp": -5,
+      "kind": "zoom",
+      "dur": 4,
+      "stage": false,
+      "palette": "steeped garnet tea as the ground, cream ribbons, rust-brown yeast ovals, rose-pink rods, morning sheen",
+      "scene": "the living surface of a kombucha pellicle seen from directly above, a loose felt of flat cream cellulose ribbons crossed over one another at random angles, ribbons laid on ribbons in a shallow tangle, plump rust-brown yeast ovals sprouting round daughter buds scattered among them, dozens of slender rose-pink rod bacteria lying across the ribbons in loose drifts, a few trapped gas bubbles domed in the felt, steeped garnet tea showing in the gaps",
+      "loop_target": "a felt of crossed cream ribbons with yeast and rod bacteria",
+      "target": "a rod bacterium",
+      "target_phrase": "a rod bacterium"
+    },
+    {
+      "name": "synthase_row",
+      "exp": -7,
+      "kind": "zoom",
+      "dur": 4,
+      "stage": {
+        "kit": "tubes",
+        "pdb": "2VV5",
+        "arrangement": "chain",
+        "element": "a cellulose pore complex, a ring of stubby hibiscus-magenta protein knobs around an open throat, its wet ceramic glaze catching a cold silver sheen"
+      },
+      "palette": "hibiscus magenta and cool violet envelope, silver-cream strands, cold morning sheen on plum shadow",
+      "scene": "the curved outer envelope of one rod bacterium, a smooth magenta wall arching into plum shadow, a single straight row of round pore complexes set into it at even spacing, each complex a ring of stubby protein knobs around an open throat, a fine silver-cream strand issuing from every throat, the strands from neighbouring pores twisting together beyond the wall into one flat ribbon",
+      "target": "a cream glucan strand",
+      "target_phrase": "a cream strand"
+    },
+    {
+      "name": "glucan_jackstraws",
+      "exp": -9,
+      "kind": "seam",
+      "dur": 4,
+      "stage": {
+        "kit": "lattice",
+        "variant": "sheets",
+        "element": "a glucose ring, a six-sided rose-garnet sugar crystal, frosted and matte, its edges lit warm copper above dusky plum shadow"
+      },
+      "palette": "rose-garnet and cream chains, coppery highlights, dusky plum depth",
+      "scene": "flat ribbons of glucan chains, each chain a string of linked six-sided sugar rings, the chains lying parallel and abreast in stacked sheets that make up each ribbon, many such ribbons crossed over one another at random angles and laid in layers, upper ribbons rose-garnet and cream, lower ones dimming into dusky plum"
+    },
+    {
+      "name": "windowsill_jar",
+      "exp": -0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "steeped garnet tea, a hibiscus-magenta swirl, cream pellicle strata, one lime-green herb, warm morning daylight on a dim kitchen wall",
+      "scene": "a tall glass kombucha jar on a sunlit kitchen windowsill at morning, seen at a slant from just above its rim, empty kitchen, no one present, the jar full of steeped garnet tea with a swirl of hibiscus magenta curling through it, a thick cream pellicle floating at the top in stacked layered discs, its strata visible through the glass wall, a muslin cover tied over the mouth with two fruit flies resting on it, a pot of lime-green basil on the sill, a red ladybird on the sill beside the basil pot, a spider thread strung across the window corner",
+      "target": "a cream pellicle",
+      "target_phrase": "the cream pellicle"
+    },
+    {
+      "name": "pellicle_folds",
+      "exp": -2.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cream and blush rubbery folds, magenta-stained hollows, garnet tea pooled between ridges",
+      "scene": "the top of a floating kombucha pellicle seen from above at a low slant, a thick cream rubbery mat wrinkled into ridges and folds, blush-pink and magenta stains where the tea soaks in, garnet tea pooled in the hollows, clear gas bubbles caught under the mat's surface, russet strands of yeast trailing from its rim into the tea",
+      "cameo": {
+        "sprite": "output/mascots/canon/lee.png",
+        "pos": [0.64, 0.38],
+        "size": 0.13
+      }
+    }
+  ],
+  "music_theme": "a warm waking analog pad with a soft round mallet and a deep soft kick on every downbeat at a stately tempo, tape-warm chords over the sunlit jar and the wrinkled pellicle, thinning to a glassy pulse down through the crowd of yeast and the row of pores, a swelling low chord as the crossed ribbons fold back into the layered jar",
+  "music_key": "D major",
+  "render_start": "felt_crowd"
+}

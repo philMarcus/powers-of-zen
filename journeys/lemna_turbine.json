@@ -1,0 +1,74 @@
+{
+  "name": "lemna_turbine",
+  "theme": "a sunlit duckweed pond at noon dived straight into the molecular machinery of light, read as a TILING OF DISCS at every scale: duckweed fronds tiled edge to edge over black tea-coloured water; a frond's many-sided cells, each lined with emerald chloroplast discs; a chloroplast's interior of grana, columns of stacked emerald membrane discs; one membrane disc's surface studded with turning rotary protein turbines (ATP synthase), which morphs on the beat into the whole noon pond seen straight down, its water closed over by duckweed tiles, damselfly, pond skaters and a whirligig beetle in the gaps. Realm-local loop, no cosmic space. Palette family: lemna chartreuse & tea black (chartreuse duckweed tiles, black-tea pond water in the gaps, emerald thylakoid green, one damselfly electric-blue point, noon daylight).",
+  "style": "liquid_light",
+  "music_lane": "music_box",
+  "music_theme": "a miniature clockwork turning under green noon light, tiny rotors ticking in a tiled pond",
+  "music_key": "G major",
+  "render_start": "lemna_raft",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "lemna_raft",
+      "exp": -1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "acid chartreuse fronds, black-tea water, noon-white glints on wet green",
+      "scene": "a raft of duckweed seen straight down at noon, hundreds of flat chartreuse oval fronds tiled edge to edge over black tea-coloured pond water, thin slivers of black water showing in the gaps between the tiles, each frond glossy and veinless with one thread root hanging into the water, tiny daughter fronds budding from the edges of the older ones, noon sun glinting off the wet green",
+      "loop_target": "chartreuse duckweed fronds tiled on black water",
+      "target": "a chartreuse frond",
+      "target_phrase": "a green frond"
+    },
+    {
+      "name": "frond_cells",
+      "exp": -3.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "chartreuse cell walls, warm tea-amber sap, emerald chloroplast discs, black air chambers",
+      "scene": "inside a duckweed frond, a mosaic of many-sided living cells packed wall to wall, each cell lined with dozens of flat emerald chloroplast discs pressed against its glassy chartreuse wall, warm tea-amber sap filling each cell's centre, black air chambers threading between clusters of cells, noon sun pouring through the whole green tissue",
+      "target": "an emerald chloroplast",
+      "target_phrase": "a green chloroplast",
+      "stage": {"element": "a duckweed cell, a many-sided chartreuse glass chamber lined with flat emerald discs, warm tea-amber sap glowing at its centre"},
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [0.68, 0.36],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "grana_stacks",
+      "exp": -5.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "emerald membrane discs, violet-black stroma, chartreuse rims glowing at the disc edges",
+      "scene": "the interior of a chloroplast, dozens of upright columns of flat emerald membrane discs stacked a dozen high, the columns standing side by side through a violet-black watery stroma, thin green membrane sheets bridging one column to the next, chartreuse rims glowing at the edge of every disc, tiny dark starch grains drifting between the columns",
+      "target": "an emerald membrane disc",
+      "target_phrase": "a green disc",
+      "stage": {"element": "a granum, a squat waxy column of a dozen stacked emerald discs, every rim glowing chartreuse against violet-black"}
+    },
+    {
+      "name": "synthase_membrane",
+      "exp": -7.8,
+      "kind": "seam",
+      "dur": 4,
+      "stage": {"element": "an ATP synthase, a polished amber-gold rotor of twelve blades on a slim stalk, one electric-blue spark at its hub"},
+      "palette": "amber-gold rotors, emerald membrane, violet-black water, one electric-blue spark",
+      "scene": "a vast emerald membrane sheet made of two packed layers of glossy beads, studded with countless tiny rotary turbines, each turbine a ring of a dozen ribbon-folded amber-gold protein blades set flat in the membrane, a slim stalk rising from the ring to a knobbed head of six amber bulbs, the turbines tiled across the sheet in a rough hexagonal pattern, violet-black water over the membrane, one electric-blue spark at a rotor's hub"
+    },
+    {
+      "name": "noon_pond",
+      "exp": 0.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "acid chartreuse duckweed carpet, black-tea water channels, one electric-blue damselfly, reed olive at the margin",
+      "scene": "a sunlit pond at noon seen straight down from overhead, its whole surface closed over by a carpet of chartreuse duckweed tiles, winding channels of black tea-coloured water between the green, a damselfly with an electric-blue body resting on a reed tip, pond skaters dimpling the black water in the gaps, a whirligig beetle spinning in a small black pool, a green frog's head breaking through the duckweed, olive reed stems at the margin",
+      "target": "a patch of duckweed",
+      "target_phrase": "a duckweed patch"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "name": "mars_spider_thaw",
+  "theme": "spring at the south pole of Mars, a planetary slice that never leaves the red planet and is NOT a storm world: the translucent dry-ice cap from orbit freckled with thousands of charcoal fans; the cap's crust from low altitude with every fan blown the same way downwind; one araneiform starburst, a net of branching channels carved radially by escaping gas under a clear slab of carbon-dioxide ice; and a gas jet punching basalt dust up through a vent in the slab to fall downwind as a fan. Math personality: dendritic branching (diffusion-limited aggregation), a drainage net carved by gas, not water. Seam: the single jet's fan of branching channels morphs into the whole polar cap from orbit, its thousands of fans read as one pattern. Palette family: dry-ice cobalt & Martian rust.",
+  "style": "crystalline",
+  "music_lane": "aurora_strings",
+  "music_theme": "a slow polar dawn on another planet: ice that sighs and cracks as the sun returns, thin shimmering air, patient and vast",
+  "music_key": "D minor",
+  "render_start": "fan_crust",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 9,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "polar_cap",
+      "exp": 6.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt-tinted translucent ice cap, rust-orange planet, charcoal fan freckles, thin salmon-pink rim haze, ink-violet void",
+      "scene": "the south pole of Mars seen from orbit at spring dawn, a vast translucent dry-ice cap with a cobalt sheen spread over the rust-orange planet, the whole cap freckled with thousands of charcoal fans, the low sun raking across it, a thin salmon-pink haze hugging the planet's curved rim, ink-violet void beyond",
+      "loop_target": "the freckled south polar ice cap of Mars",
+      "target": "a freckled ice plain",
+      "target_phrase": "a freckled ice plain"
+    },
+    {
+      "name": "fan_crust",
+      "exp": 4.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "charcoal basalt fans, cobalt-sheened ice crust, rust-orange dust drifts, salmon-pink sky, long violet shadows",
+      "scene": "the dry-ice crust of the Martian polar cap seen obliquely from low altitude, a wide frozen plain of cobalt-sheened ice scattered with hundreds of charcoal fans all pointing the same way downwind, each fan sprouting from a soot-dark starburst of branching channels, rust-orange dust drifts in the hollows, long violet shadows from a low sun, a thin salmon-pink sky over the curved horizon",
+      "target": "a soot-dark branching starburst",
+      "target_phrase": "a dark starburst"
+    },
+    {
+      "name": "starburst_net",
+      "exp": 2.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "charcoal channels, cobalt-tinted clear ice slab, rust-orange dust floor, salmon-pink glints",
+      "scene": "a single starburst net seen from directly above, dozens of charcoal channels branching radially outward from one centre and splitting again and again into finer twigs, all carved into the rust-orange ground under a clear slab of cobalt-tinted carbon-dioxide ice, the slab's cracked surface catching salmon-pink glints from a low sun, a round open vent in the slab at the hub of the branching net",
+      "target": "a round ice vent",
+      "target_phrase": "a round vent",
+      "cameo": {
+        "sprite": "output/mascots/canon/lorraine.png",
+        "pos": [0.68, 0.34],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "dust_jet",
+      "exp": 0.6,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "charcoal basalt plume, cobalt ice slab, rust-orange ground, salmon-pink sky, violet shadow fan",
+      "scene": "a gas jet bursting up through a round vent in a clear slab of cobalt-tinted ice, a column of charcoal basalt dust towering into the salmon-pink sky and sheared downwind, the falling dust laying a long charcoal fan across the ice, branching channels radiating from the vent beneath the clear slab, rust-orange ground showing through the cracks"
+    }
+  ]
+}

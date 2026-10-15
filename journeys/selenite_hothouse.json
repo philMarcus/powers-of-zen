@@ -124,7 +124,10 @@
       "kind": "seam",
       "dur": 4,
       "palette": "amber brine, ink-indigo depth, chalk-white cells",
-      "scene": "a sealed pocket of ancient brine held within the crystal, its ceiling and floor sheer glass faces and its rim a faceted seam, one vapour bead seated at the far end of the lens, dormant bacteria adrift through the trapped water at every depth, thick-shelled stubby rods and small spheres, many of the rods wedged together in crossed pairs, mineral grit sunk among them, a honey glow passing through the stone about the pocket, the fluid going ink-indigo where it deepens"
+      "scene": "a sealed pocket of ancient brine held within the crystal, its ceiling and floor sheer glass faces and its rim a faceted seam, one vapour bead seated at the far end of the lens, dormant bacteria adrift through the trapped water at every depth, thick-shelled stubby rods and small spheres, many of the rods wedged together in crossed pairs, mineral grit sunk among them, a honey glow passing through the stone about the pocket, the fluid going ink-indigo where it deepens",
+      "stage": {
+        "element": "dormant brine bacterium, a stubby thick-shelled rod of chalk-white porcelain, a warm amber glow pooled inside its shell"
+      }
     }
   ],
   "music_theme": "hushed and suspended — sustained choral pads over a deep slow pulse on every downbeat, the pulse thinning to single struck notes across the void and the dwarf galaxy, warming through the star and the dry world, one low breathing swell at the mine yard, dust-fine bells through the crystal chamber and the beam face, the whole texture dissolving to almost nothing at the sealed pocket before the choir opens again on the void",

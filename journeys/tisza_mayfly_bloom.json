@@ -1,0 +1,144 @@
+{
+  "name": "tisza_mayfly_bloom",
+  "theme": "the Tisza 'blooming' — one June late afternoon when millions of Tisza mayflies dance in mating pairs over a green Hungarian river, as a full-scale dive where everything comes in PAIRS meeting: two honey-gold suns circling each other; the Earth with the green Carpathian Basin; the Tisza's meander loops meeting a second river at a confluence; the river in bloom as a crowded commons (mayfly pairs, sand martins, black terns, an asp slashing the surface, a white-tailed eagle on a poplar, a beaver lodge); one mating pair of mayflies; a wing's vein-walled panes; the flight muscle's striped fibres; the paired club heads of the muscle's motor proteins gripping their bead-strings; the atoms of one head; two gold nuclei flattened to discs meeting face to face and splashing sparks, which morphs into two colliding galaxies flinging tidal tails — two discs meeting at two scales. Palette family: Tisza clay & mayfly amber (jade-green river, clay-ochre banks, mayfly amber, dark poplar green, late-afternoon gold; deep indigo in space and the micro realm).",
+  "style": "enchanted_wild",
+  "music_lane": "analog_dawn",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "twin_suns",
+      "exp": 13,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "honey-gold twin suns, clay-red and amber worlds, one blue-green world, deep indigo void",
+      "scene": "two honey-gold suns circling each other in the deep indigo void, a ribbon of glowing gas strung between them, their worlds set on wide shared rings, a clay-red world, a striped amber giant, one small blue-green planet streaked with white cloud wisps, a faint dust belt circling the far rim of the system, distant stars beyond",
+      "loop_target": "two honey-gold suns circling each other",
+      "target": "a blue-green planet",
+      "target_phrase": "a blue-green planet"
+    },
+    {
+      "name": "basin_globe",
+      "exp": 7.1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep green basin, snow-capped mountain arc, clay-ochre plain, ultramarine seas, starry indigo void",
+      "scene": "the whole Earth from orbit in late-afternoon light, central Europe turned toward the sun, the deep green Carpathian Basin ringed by the snow-capped arc of the Carpathian mountains, a clay-ochre plain at its heart threaded by one winding dark-green river, ultramarine seas to the south, white cloud wisps along the coasts, the starry indigo void around the globe",
+      "target": "a winding green river",
+      "target_phrase": "a winding river"
+    },
+    {
+      "name": "tisza_meanders",
+      "exp": 4.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade-green river loops, clay-ochre banks, dark poplar galleries, emerald oxbow lakes, amber sun glints",
+      "scene": "the Tisza river plain seen obliquely from a low aircraft in late-afternoon sun, a jade-green river coiling through tight meander loops between clay-ochre banks, crescent oxbow lakes cut off on both sides, dark galleries of poplar and willow lining every bend, a second clay-brown river joining it at a forked confluence, amber sun glints on the water, sunflower and wheat fields beyond the floodplain",
+      "target": "a green river bend",
+      "target_phrase": "a green river bend"
+    },
+    {
+      "name": "mayfly_bloom",
+      "exp": 1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep jade water, clay-ochre bank, amber mayfly haze, dark poplar green, low gold sun",
+      "scene": "the Tisza in bloom on a June late afternoon, seen low over the water from the clay bank, a deep jade river and over it a dense living haze of millions of amber mayflies dancing in pairs, each trailing three thread-thin tails, sand martins and black terns swooping through the swarm, an asp fish slashing the surface in a burst of spray, a white-tailed eagle perched on a dead poplar branch, a beaver lodge of stacked sticks against the far bank, golden sun slanting through the dark poplars",
+      "target": "an amber mayfly",
+      "target_phrase": "an amber mayfly"
+    },
+    {
+      "name": "mayfly_pair",
+      "exp": -1.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber bodies, smoky-cream veined wings, deep jade water, low gold backlight",
+      "scene": "a mating pair of Tisza mayflies hovering joined in mid-air over the jade river, two slender amber bodies curving toward each other, four smoky-cream wings each netted with amber veins, three thread tails trailing from each body, the low sun backlighting the wings, the dark jade water and a blur of more pairs behind",
+      "target": "a veined mayfly wing",
+      "target_phrase": "a veined wing",
+      "cameo": {
+        "sprite": "output/mascots/canon/lee.png",
+        "pos": [0.68, 0.62],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "wing_cells",
+      "exp": -3.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "smoky amber membrane, dark umber veins, iridescent green-violet sheen, gold backlight",
+      "scene": "the membrane of a mayfly wing as a sunlit landscape, a net of dark umber veins dividing the wing into hundreds of small panes, each pane a cell of smoky amber membrane with an iridescent green and violet sheen in the backlight, rows of tiny bristles along the thicker veins, the main veins converging at the wing hinge where a ridged bulge of striped muscle anchors them",
+      "target": "a striped muscle strand",
+      "target_phrase": "a striped strand"
+    },
+    {
+      "name": "flight_fibre",
+      "exp": -5.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "deep teal sheaths, coral and cream striped fibres, olive-gold mitochondria, indigo gaps",
+      "scene": "the flight muscle of a mayfly as living tissue, giant fibre cells laid side by side in a dense bank, each fibre banded with crisp coral and cream stripes, rows of olive-gold mitochondria packed in pairs between the striped strands, deep teal sheaths of membrane wrapping every fibre, indigo gaps between them",
+      "target": "a striped myofibril",
+      "target_phrase": "a striped myofibril",
+      "stage": {
+        "element": "a flight muscle fibre, a fat cylinder banded coral and cream inside a glossy deep teal sheath, olive-gold beads along its seams"
+      }
+    },
+    {
+      "name": "paired_heads",
+      "exp": -7.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber and clay-orange protein heads, jade bead-strings, deep violet gaps",
+      "scene": "inside one muscle strand, thick ridged rods bristling with paired club-shaped heads, every rod ringed by thin twisted strings of jade beads, each pair of amber heads gripping a bead-string, one rank of heads bent forward and the next rank bent back, rods and strings laid in a dense hexagonal weave receding into deep violet",
+      "target": "an amber protein head",
+      "target_phrase": "an amber head",
+      "stage": {
+        "kit": "tubes",
+        "pdb": "1B7T",
+        "arrangement": "bundle",
+        "element": "a myosin head, an amber club of carved resin with two slender clay-orange tails at its base, a jade bead clasped at its tip"
+      }
+    },
+    {
+      "name": "head_atoms",
+      "exp": -10.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "teal and ice-blue atom hazes, one gold heavy atom, white-hot points, deep indigo void",
+      "scene": "within one protein head, a coiling tangle of atoms linked into chains, carbon, oxygen and nitrogen atoms each a soft teal or ice-blue haze around one white-hot point, slender jade bonds joining them, one heavy gold atom seated in a pocket of the tangle, the chains coiling away into deep indigo",
+      "target": "a gold nucleus",
+      "target_phrase": "a gold nucleus",
+      "stage": {
+        "element": "a carbon atom, a frosted ice-blue glass bead clouded with teal mist, one white-hot spark suspended at its centre"
+      }
+    },
+    {
+      "name": "gold_collision",
+      "exp": -14.0,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "molten gold discs, white-hot fireball, amber and clay-red sparks, deep indigo void",
+      "scene": "two gold nuclei flattened into thin glowing discs meeting face to face, a white-hot fireball where they cross and a splash of thousands of amber and clay-red sparks flung outward in every direction, the two discs edge-lit gold against a deep indigo void",
+      "stage": {
+        "element": "a gold nucleus, a thin disc of molten gold with a white-hot core, its rim beaded with clay-red drops of liquid metal"
+      }
+    },
+    {
+      "name": "tidal_tails",
+      "exp": 20.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "gold and clay-amber galaxy cores, blue star-forming knots, deep indigo void",
+      "scene": "two spiral galaxies colliding in the deep indigo void, their two gold cores meeting face to face, each flinging a curving tidal tail of stars outward across the dark, blue knots of newborn stars strung along both tails, twisted dust lanes between the cores, distant galaxies sprinkled across the void"
+    }
+  ],
+  "music_theme": "a driving golden groove at a quick tempo, a deep kick on every downbeat, warm analog synth pulses and plucked figures in pairs answering each other, a bright wide chord over the twin suns and the green basin, a swirling dancing arpeggio for the mayfly frenzy over the river, tight interlocking pulses through the wing panes and the striped muscle, close rowing figures among the paired protein heads, and a rising swell on the gold collision that bursts into the colliding galaxies",
+  "music_key": "D major",
+  "render_start": "twin_suns"
+}

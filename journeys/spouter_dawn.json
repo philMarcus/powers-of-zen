@@ -71,6 +71,9 @@
       "target_phrase": "a cylinder cell",
       "resolve": {
         "mode": "sea"
+      },
+      "stage": {
+        "element": "a cyanobacterium cell, a squat marmalade-orange cylinder with soft jelly walls and lime-tipped ends, warm amber light glowing inside"
       }
     },
     {
@@ -84,6 +87,9 @@
       "target_phrase": "a violet core",
       "resolve": {
         "mode": "sea"
+      },
+      "stage": {
+        "element": "a phycobilisome, a squat violet core sprouting six short rods of stacked rose discs tipped orange-red, satin-matte pigment raked by side light"
       }
     },
     {
@@ -103,6 +109,9 @@
           0.62
         ],
         "size": 0.14
+      },
+      "stage": {
+        "element": "a magnesium atom, a hard enamel sphere of cerulean deepening to violet at its rim, one pinhole of hot amber light at its pole"
       }
     },
     {
@@ -111,7 +120,10 @@
       "kind": "seam",
       "dur": 4,
       "palette": "molten amber rope, ivory bead pairs, ember sparks, ink void",
-      "scene": "the interior of one proton, a taut rope of light drawn across two burning points, the rope's middle narrowing along its length until it parts into a chain of paired beads of light, each pair standing apart at even spacing along the line the rope held, a haze of ember sparks crowding close about them, the emptiness past them unlit"
+      "scene": "the interior of one proton, a taut rope of light drawn across two burning points, the rope's middle narrowing along its length until it parts into a chain of paired beads of light, each pair standing apart at even spacing along the line the rope held, a haze of ember sparks crowding close about them, the emptiness past them unlit",
+      "stage": {
+        "element": "a quark pair, two ivory beads joined by a short taut rope of molten amber, ember sparks clinging along the glowing rope"
+      }
     },
     {
       "name": "cradle_jets",

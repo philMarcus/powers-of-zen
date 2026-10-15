@@ -42,10 +42,7 @@
       "target_phrase": "a small clay jar",
       "cameo": {
         "sprite": "output/mascots/canon/newman.png",
-        "pos": [
-          0.64,
-          0.36
-        ],
+        "pos": [0.64, 0.36],
         "size": 0.13
       }
     },
@@ -80,6 +77,9 @@
       "target_phrase": "a bright pinched ring",
       "resolve": {
         "mode": "sea"
+      },
+      "stage": {
+        "element": "a dividing cell, two plump carmine domes pinched at a citron-bright waist, a round umber nucleus in each, a soft waxy translucent skin"
       }
     },
     {
@@ -90,7 +90,10 @@
       "palette": "carmine twisted filament ropes, citron motor clubs, umber membrane, violet deep",
       "scene": "the contractile ring encircling the cell's furrow, parallel ropes of twisted beaded filaments looped round the narrow neck in a tight band, short bundles of double-headed clubs bridging neighbouring ropes all along the band, the ropes carmine and the clubs citron, the umber membrane curving away on both sides of the pinch into two broad domes, violet deep in the gaps between ropes",
       "target": "a single glowing atom",
-      "target_phrase": "a bright atom"
+      "target_phrase": "a bright atom",
+      "stage": {
+        "element": "a myosin bundle, a short citron club of twin knobbed heads gripping a twisted carmine filament rope, matte lacquer finish, violet shadow beneath"
+      }
     },
     {
       "name": "carbon_haze",
@@ -100,7 +103,10 @@
       "palette": "a hard ivory spark in a carmine haze, umber neighbour hazes, violet deep",
       "scene": "one carbon atom in a filament's beaded strand, a hard ivory spark at the middle with a carmine haze banked about it, the haze dense close in and softer outward with no rim to it anywhere, two dimmer umber hazes of its neighbours crowded at the margins of the field, the beaded strand ghosted faintly beyond them, violet deep all around",
       "target": "a hard ivory spark",
-      "target_phrase": "a bright ivory point"
+      "target_phrase": "a bright ivory point",
+      "stage": {
+        "element": "a carbon atom, a hard ivory spark inside a dense carmine haze with no rim, a faint umber glow at its fringe"
+      }
     },
     {
       "name": "fission_neck",
@@ -108,7 +114,10 @@
       "kind": "seam",
       "dur": 4,
       "palette": "carmine and citron glowing spheres, an ivory-hot pinch, violet deep",
-      "scene": "a fat droplet of packed glowing spheres in the shape of a dumbbell, two round clusters of carmine and citron spheres joined by a narrow neck, the neck pinched thin and ivory-hot, a few loose spheres flung sideways from the pinch, violet deep all around"
+      "scene": "a fat droplet of packed glowing spheres in the shape of a dumbbell, two round clusters of carmine and citron spheres joined by a narrow neck, the neck pinched thin and ivory-hot, a few loose spheres flung sideways from the pinch, violet deep all around",
+      "stage": {
+        "element": "a nucleon, a polished carmine sphere glazed in crackled citron, an ivory-hot glint at its top, violet shadow at its base"
+      }
     },
     {
       "name": "hourglass_binary",

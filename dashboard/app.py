@@ -1183,6 +1183,12 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
                               "elements takes the colour of the palette phrase that names the far field (\"a faint "
                               "lilac outer fog\") instead of the palette's darkest colour, which made amber fog "
                               "behind amber balls. Palettes naming no far field are unchanged. Applies to the next renders.")
+    spaint = t2.toggle("🎨 painted elements (the AI's picture of one element on every sphere)",
+                       value=bool(s.get("stage_paint")),
+                       help="2026-10-15 (engine --stage-paint, bold scale, pictures 0.9, identity 0.5 = valdes_blow "
+                            "v4's sulfur lattice): on staged cards whose journey card has a stage.element line "
+                            "(written by the composer), the AI draws one element up close and every sphere wears "
+                            "it. Cards without a line render as before. Applies to the next renders.")
     fpaused = t2.toggle("⏸ pause midnight refill", value=bool(s["refill_paused"]))
     st.markdown("**platform pauses** (scheduler skips paused platforms when posting)")
     pc = st.columns(len(pl.PLATFORMS))
@@ -1205,6 +1211,7 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
             "stage_variety": bool(svariety),
             "stage_nest": bool(snest),
             "stage_echo_texture": bool(sechotex), "stage_fog_phrase": bool(sfog),
+            "stage_paint": bool(spaint),
             "stage_preroll_pickup": int(spickup),
             "auto_cleanup": bool(autoclean), "min_free_gb": int(minfree),
             "post_every_hours": float(post_every),

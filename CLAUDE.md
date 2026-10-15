@@ -120,6 +120,7 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-15 AFTERNOON (PAINTED ELEMENTS ON; read PLAN "2026-10-15 AFTERNOON"): Phil: v4's sulfur lattice is the win, he will publish valdes_blow v4 (in Review, his approve); M2/M1b recipe ON in the nightly (settings stage_paint) — needs stage.element on each micro card, now REQUIRED by the composer skill (ELEMENT TEST) and a hard audit failure. 11 Review videos rejected + re-queued; all 29 queued micro journeys rewritten by composer agents (no tracks words). Tracks kit "reads as broken" (one coil + stray lines) -> needs a SEA version. Lab: only the music before/after left to judge.
 2026-10-15 (MUSIC FIX ON, FOG BUG FIXED, LAB TAB, FULL PAINTED VIDEO RENDERING; read PLAN "2026-10-15" blocks): Phil's
 verdicts on the plate-style clips: disappointing as they were ("neither looks like a lattice... a colour smear"), the
 middle ground worth testing, "the gold glass ball with the blue gems... making up the lattice would be cool", wants a

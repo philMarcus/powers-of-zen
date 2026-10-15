@@ -1,0 +1,71 @@
+{
+  "name": "enceladus_ring_feed",
+  "theme": "a planetary slice that never leaves one ringed giant's system, read as DENSITY WAVES IN A DISC: a disc that is a crowd. The ringed giant with its cream ring system → the braided ring plane, thousands of ringlets with spiral ripples wound into them and a gap scalloped by a moonlet's wake, a snow-white moon beyond the outer edge → that moon, Enceladus, laced with four parallel cobalt fracture stripes at its south pole → one fracture trench, a ridge-walled cobalt rift with vents along its floor → the geyser curtain standing over the rift, jets of glittering ice grains rising into black space, which morphs on the beat (a realm-local material seam) into the giant's faint outer ring those same grains feed: a spray of grains combs into a ribbon of ringlets. Palette family: butterscotch & geyser blue (warm cream-amber rings and cobalt stripes on vacuum black, sunlit and saturated).",
+  "style": "cosmic_gloss",
+  "music_lane": "wooden_orbit",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 6,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "ringed_giant",
+      "exp": 8.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm cream and amber-gold banded globe, cream-amber ring system, a faint cobalt-blue outermost ring, vacuum black, a few icy white moons",
+      "scene": "a ringed gas giant in vacuum black seen obliquely from above its ring plane, a sunlit globe banded in warm cream, amber-gold and soft ochre, the broad ring system circling it in hundreds of concentric cream-amber bands with a sharp black gap cut through them, the rings casting a crisp black shadow band across the globe, a wide faint cobalt-blue outermost ring encircling everything, a handful of small icy moons scattered along the ring plane",
+      "target": "a cream-amber ring band",
+      "target_phrase": "the cream ring band"
+    },
+    {
+      "name": "ring_plane",
+      "exp": 7.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cream and amber-gold ringlets, cobalt-black gaps, glints of white ice, vacuum black beyond the edge",
+      "scene": "the braided ring plane of a giant planet seen low and oblique across its sunlit face, thousands of cream and amber-gold ringlets packed side by side,tight spiral ripples wound into the bands, an open cobalt-black gap with a tiny moonlet seated inside it and the gap's edges scalloped into a row of curling wavelets, a twisted braided strand along the outer edge, countless glinting ice boulders crowding the bands, and beyond the outer edge in vacuum black a small round snow-white moon",
+      "loop_target": "the braided cream ring plane, thousands of ringlets with a scalloped gap",
+      "target": "a round snow-white moon",
+      "target_phrase": "a white round moon"
+    },
+    {
+      "name": "ice_moon",
+      "exp": 5.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "sunlit snow-white crescent on vacuum black, four vivid cobalt-blue parallel stripes, silver plumes, the moon's night side in deep indigo",
+      "scene": "the ice moon Enceladus as a sunlit crescent against vacuum black, its night side in deep indigo, the lit surface a smooth snow-white ice shell with soft crater rims across the north, the south pole scored by four long parallel fracture stripes of vivid cobalt blue, faint silver plumes standing above the stripes against the black, the curve of a cream-amber ring arc far behind",
+      "target": "a cobalt fracture stripe",
+      "target_phrase": "a cobalt blue stripe",
+      "cameo": {
+        "sprite": "output/mascots/canon/janet.png",
+        "pos": [0.7, 0.3],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "fracture_rift",
+      "exp": 4.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cobalt-blue rift walls, snow-white ice plains, silver jets, vacuum black sky",
+      "scene": "a long fracture rift across a polar ice plain seen low and oblique, a straight trench with steep walls of vivid cobalt-blue ice flanked by twin raised ridges, snow-white ice plains ribbed with parallel grooves on either side, a row of silver geyser jets standing up from vents along the trench floor into a vacuum-black sky, the low sun raking long cobalt shadows across the ridges",
+      "target": "a silver geyser jet",
+      "target_phrase": "a silver geyser jet"
+    },
+    {
+      "name": "geyser_curtain",
+      "exp": 3.8,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "glittering silver and cobalt ice grains, warm cream sunlit edges, vacuum black",
+      "scene": "a tall curtain of geyser jets standing in a row above a cobalt ice rift, each jet a column of countless glittering ice grains spreading into a wide sunlit fan, the grains lit cream on one side and cobalt on the other, the fans merging overhead into one long drifting sheet of sparkling grains combed into parallel streamers against vacuum black"
+    }
+  ],
+  "music_theme": "a playful orbiting groove at a driving tempo, a deep soft kick on every downbeat, wooden marimba ostinatos circling like ring traffic around the giant, plucked kalimba ripples through the braided ringlets, a clear glassy bell line over the white moon, a low bowed note along the rift, and a bright rising shimmer of chimes as the geyser grains comb back into the ring",
+  "music_key": "D major",
+  "render_start": "ring_plane"
+}

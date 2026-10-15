@@ -3660,3 +3660,31 @@ review/compare/valdes_blow_PAINT.mp4 = v1 nightly | v4 painted, + per-card strip
   READING: the orb recipe pays off where the element is big and the ground is dark (the lattice); on dense tissue
   and on tiny sparks it changes little. FOG RULE EXTENDED (after the render): a dark named as gaps / ground /
   background / between in its own phrase ("ink-black gaps") is the far field too.
+
+### 2026-10-15 AFTERNOON — PAINTED ELEMENTS ON; REVIEW HALVED; QUEUE REWRITTEN THROUGH THE COMPOSER
+PHIL'S VERDICTS: valdes_blow v4's sulfur lattice (15-18 s) is the win ("looks like what it's supposed to look like,
+but DreamShaper created novelty"); he will publish v4 (left in Review for him to mark the start + approve). The middle-
+ground pick = M2; v4 used M1b (= M2 without the painted field, which the fog fix made unnecessary) — same look.
+k8 at 18 s (tracks kit: one coil + ~7 straight bead lines) "reads as broken... any microscopic stage needs to be a
+SEA of these things". Lab panels judged -> removed (lab_drop --remove; rule: remove once judged); left: the music
+before/after. NO A/Bs against already-made videos once the authoring changes (his correction).
+BUILT / ON:
+- settings stage_paint=True (night_batch: --stage-paint --stage-paint-scale bold --stage-paint-tex 0.9
+  --stage-paint-id 0.5; ⚙ "🎨 painted elements"); cards without an element line render as before.
+- dive: a card `stage` dict WITHOUT "kit" = the auto kit + the authored fields (composer writes stage.element on every
+  micro card; the kit stays the engine's). stage.build_card_stage_v2 strips element/field before the kit call (the
+  frame-0 smoke caught the crash: kit_lattice() got 'element'). Smoke: anvil_country --frames 3 from frame 0 with the
+  full nightly argv -> rc 0, both staged cards painted.
+- journey-composer SKILL: ELEMENT TEST (required stage.element on exp <= -3.5; one compact object, palette colours,
+  material + light, <= ~24 words, no place/crowd/pattern/person/simile; vary per journey; the echo goes INTO the line).
+- audit_starts: "NO stage.element on micro card(s)" is a FAILURE (refill auto-queues only passers; the old catalog
+  flags too — it was authored before the rule).
+PIPELINE: 11 of 22 Review videos rejected (lepidolite_halo macaw_lick clathrate_seep cuttle_bridge meeting_waters
+potter_waist bluebell_chorus plover_scrape meridian_mounds spouter_dawn anvil_country), their journeys re-queued at the
+BACK (force, new seed). All 29 queued journeys with micro cards REWRITTEN by six composer agents to the updated skill
+(element lines; tracks-kit words and authored tracks kits removed — azurite collision_vertex -> quark trio, crossbill
+pinwheel_vertex -> nucleus, okavango spark_spray -> nucleus, tisza gold_collision -> fluid, cloud_chamber_hall
+droplet_string unstaged; a few cards got words/kits so they actually stage). Queue 31, 0 audit failures; Review+Music
+11/20 -> tonight renders selenite_hothouse, lodestar_mudflat, azurite_headframe, coffee_cherry_soup.
+OPEN: the TRACKS kit as a sea (many spirals + tracks through the whole volume) before it returns; until then the
+composer avoids it (the seeded draw still picks it for ~8 % of word-less subnuclear cards).

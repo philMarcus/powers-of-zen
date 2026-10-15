@@ -1,0 +1,78 @@
+{
+  "name": "pele_sulphur_ring",
+  "theme": "a planetary slice that never leaves Jupiter's volcanic moon Io, a YELLOW world and not a storm planet: the mustard globe from orbit with Jupiter's banded disc as backdrop only; the rust-red ring of fallen sulphur laid about the Pele vent; the umbrella plume arching over a glowing lava-lake rim and raining back down; sulphur frost crystals on black lava glass; and the eight-atom sulphur crown molecule stacked in crystal ranks. Math personality: rings and umbrellas, fallout laid in rings about a point, a fountain arching over and falling back along ballistic arcs. Seam: the puckered eight-atom crown rhymes back to the red ring deposit about Pele seen from orbit, a ring at two scales. Palette family: Io sulphur & caldera black. Slow, monumental pace.",
+  "style": "cosmic_gloss",
+  "music_lane": "ember_pulse",
+  "music_theme": "a smouldering volcanic moon under a giant planet: slow heavy pulses like distant eruptions, a vast fountain rising and falling back, patient, monumental, faintly sulphurous heat",
+  "music_key": "C minor",
+  "render_start": "pele_ring",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 9,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "io_globe",
+      "exp": 6.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "mustard-sulphur globe, coal-black calderas, rust-red ring deposit, cream-and-tan banded backdrop, ink-black void",
+      "scene": "Jupiter's moon Io seen whole from orbit, a mustard-yellow sulphur globe pocked with coal-black calderas, one rust-red ring of fallen sulphur hundreds of kilometres wide laid about a single dark vent on its face, ochre and tawny plains between, Jupiter's banded cream-and-tan disc looming huge behind it in an ink-black void",
+      "loop_target": "the mustard-yellow globe of Io pocked with black calderas",
+      "target": "a rust-red ring",
+      "target_phrase": "the red ring"
+    },
+    {
+      "name": "pele_ring",
+      "exp": 5.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-red and brick ring of fallout, mustard and ochre plains, coal-black caldera floor, one ember-orange glint",
+      "scene": "the volcanic plains of Io seen from high orbit, the view tilting toward the curved horizon, a vast rust-red ring of fallen sulphur laid in a perfect band about one coal-black caldera, brick-red and orange streaks fanning outward through it, mustard and ochre plains beyond pocked with smaller black calderas, an ember-orange glint at the caldera's heart, the ink-black sky past the horizon",
+      "target": "a black caldera",
+      "target_phrase": "the black caldera"
+    },
+    {
+      "name": "pele_plume",
+      "exp": 4.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ember-orange lava rim, coal-black lake crust, sulphur-cream umbrella plume, mustard frost crust, ink-black sky",
+      "scene": "the Pele caldera seen low and oblique over its rim, a horseshoe of incandescent ember-orange lava glowing along the edge of a coal-black lake crust, a colossal umbrella plume arching over the horizon in sulphur-cream curtains and curving back down in ballistic arcs onto the plain, a mustard-yellow frost crust coating the black ground beyond the rim, ink-black sky with Jupiter's tan crescent low behind",
+      "target": "a yellow frost crust",
+      "target_phrase": "the yellow frost crust",
+      "cameo": {
+        "sprite": "output/mascots/canon/lorraine.png",
+        "pos": [0.7, 0.62],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "sulphur_frost",
+      "exp": -2.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "lemon and amber sulphur needles, frost-white rosettes, glossy coal-black lava glass, faint ember-orange glow",
+      "scene": "a frost garden of sulphur crystals on glossy coal-black lava glass, lemon-yellow and amber needles bristling in tufts, stubby faceted yellow prisms and frost-white rosettes crowded among them, every facet glinting, a faint ember-orange glow reflected low in the black glass",
+      "target": "a yellow sulphur prism",
+      "target_phrase": "a yellow prism"
+    },
+    {
+      "name": "sulphur_octet",
+      "exp": -9.3,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "amber and lemon-yellow spheres, ochre bonds, deep coal-black depth, ember-orange rim light",
+      "scene": "countless puckered rings of eight glossy amber spheres stacked in crystal ranks, each ring zig-zagging up and down sphere by sphere, joined by short ochre bonds, rank after rank of rings receding into coal-black depth, ember-orange light along their rims",
+      "stage": {
+        "kit": "lattice",
+        "variant": "rhombo",
+        "look": "gem",
+        "bg": "deep",
+        "element": "a sulphur atom, a glossy amber globe mottled with lemon-yellow vents and ochre plains, one coal-black pit, ember-orange light along its rim"
+      }
+    }
+  ]
+}

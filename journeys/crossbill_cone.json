@@ -1,0 +1,135 @@
+{
+  "name": "crossbill_cone",
+  "theme": "a Caledonian pinewood at sunrise as a full-scale dive read as ONE PINWHEEL from a spinning hub at every scale: Scotland from orbit as a green-and-slate world under clear sky with one white polar ice field; the pinewood from the air, old Scots pines over purple heather by a slate loch; the pinewood floor as a crowded commons (crossbills prying cones in the pine tops, red squirrels, a pine marten, a capercaillie on the needle floor, a goldcrest, a red deer stag at the shore); one pine cone's two crossing families of seed spirals; one woody cone scale; the pit-valve files of its wood (hollow pipe cells studded with round valve-pits, each a disc set in a ring of strands); the lignin net; one carbon atom; the pinwheel vertex of curling bead-tracks, which morphs up into the Parker pinwheel — a yellow sun at the hub of spiral field arms with its worlds strung on them — curling arms from one hub at both ends of scale. Palette family: heather purple & pine-bark salmon (ling-heather purple, salmon upper bark, bottle-green needles, slate-blue loch, one brick-red crossbill point, morning daylight; no gold).",
+  "style": "enchanted_wild",
+  "music_lane": "wooden_orbit",
+  "stage_look": "wire",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "scotland_orbit",
+      "exp": 6.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "bottle-green and slate highlands, slate-blue lochs, deep navy ocean, one white polar ice field, black void",
+      "scene": "the northern face of the Earth seen from orbit at sunrise under a clear sky, the green-and-slate highlands of Scotland ragged with slate-blue lochs and sea inlets, bottle-green patches of old pinewood on the glens, purple moorland on the hills, a deep navy ocean around the coasts, one white polar ice field at the top rim of the globe, the starry black void beyond",
+      "loop_target": "the green-and-slate Earth over Scotland",
+      "target": "a bottle-green pinewood",
+      "target_phrase": "a green pinewood"
+    },
+    {
+      "name": "pinewood_air",
+      "exp": 3.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "purple heather moor, salmon-lit pine tops, bottle-green needle canopies, slate-blue loch, salmon sunrise haze",
+      "scene": "a Caledonian pinewood seen obliquely from a low height at sunrise, scattered old Scots pines with broad flat-topped canopies of bottle-green needles standing over a moor of purple heather, the upper trunks glowing salmon-orange in the low sun, a slate-blue loch along one edge of the wood, long blue shadows across the heather, a salmon haze over the far hills",
+      "target": "an old Scots pine",
+      "target_phrase": "a Scots pine"
+    },
+    {
+      "name": "pinewood_commons",
+      "exp": 1.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "salmon-orange pine bark, bottle-green needles, purple heather, slate-blue loch, one brick-red crossbill",
+      "scene": "the floor of an old Scots pine wood at sunrise, seen low among the trunks, salmon-orange bark scaling off the pine boles, bottle-green needle tufts overhead hung with brown cones, a brick-red crossbill prying open a cone on a high bough, two red squirrels on the trunks, a pine marten stretched along a bough, a capercaillie with a fanned black tail on the needle floor, a tiny goldcrest in the needles, a red deer stag at the slate-blue loch edge, purple heather and blaeberry around the roots",
+      "target": "a brown pine cone",
+      "target_phrase": "a pine cone",
+      "cameo": {
+        "sprite": "output/mascots/canon/newman.png",
+        "pos": [
+          0.68,
+          0.62
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "cone_spirals",
+      "exp": -1.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "chestnut and salmon cone scales, purple-grey scale tips, bottle-green needle shadow",
+      "scene": "one Scots pine cone seen end-on from its base, its woody scales set in two crossing families of spirals arcing out from a single central hub, eight arms curving one way and thirteen the other, every scale a diamond-shaped chestnut boss with a small raised knob at its centre, salmon wood at the scale edges, a bead of clear resin on one scale, bottle-green needles in shadow around the cone",
+      "target": "a woody cone scale",
+      "target_phrase": "a cone scale"
+    },
+    {
+      "name": "cone_scale",
+      "exp": -2.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "salmon-pink wood, chestnut ridges, heather-violet shadows, one glint of clear resin",
+      "scene": "the face of one woody cone scale, a broad diamond-shaped boss with a ridge across it and a hooked knob at its centre, its broken edge opening onto bundles of salmon-pink wood fibres packed side by side, chestnut furrows of grain running across the face, heather-violet shadow in the furrows, one glint of clear resin in a crack",
+      "target": "a salmon wood fibre",
+      "target_phrase": "a wood fibre"
+    },
+    {
+      "name": "pit_valve_files",
+      "exp": -4.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "slate-blue and teal pipe walls, heather-violet valve discs, salmon strand rings, deep indigo depths",
+      "scene": "the wood of a pine as files of long hollow pipe cells set end to end in ranks, each pipe wall studded with rows of round valve-pits, every pit a heather-violet disc set at the centre of a ring of radiating salmon strands, the pits lined up along the walls in rows, the ranks of slate-blue and teal pipes receding into deep indigo",
+      "target": "a round valve-pit",
+      "target_phrase": "a round pit",
+      "stage": {
+        "element": "a bordered valve-pit, a domed heather-violet disc ringed by fine radiating salmon spokes, its slate-blue rim soft and velvety, faintly lit from within"
+      }
+    },
+    {
+      "name": "lignin_net",
+      "exp": -7.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "brick-red and salmon ring units, heather-purple links, bottle-green cable bundles, deep violet ground",
+      "scene": "the wall of a pine pipe cell as a solid random mesh, a tangle of small six-sided ring units in brick-red and salmon joined to one another at odd angles by short heather-purple links, no repeat anywhere, the mesh grown through the gaps of a bundle of straight bottle-green cellulose fibres lying side by side, the tangle receding into a deep violet ground",
+      "target": "a carbon atom",
+      "target_phrase": "a glowing atom",
+      "stage": {
+        "element": "a lignin ring unit, a six-sided brick-red ring of hard glossy enamel, a lit salmon rim, a heather-purple bead at each corner"
+      }
+    },
+    {
+      "name": "carbon_atom",
+      "exp": -10.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "slate-blue and heather-violet fog, one white-hot point, salmon neighbour glows, indigo void",
+      "scene": "one carbon atom as a soft round fog of slate-blue and heather-violet about a single white-hot point at its centre, five neighbouring atoms of the same ring set around it as smaller salmon glows linked by faint strands, the ring tilted away into an indigo void",
+      "target": "a white-hot nucleus",
+      "target_phrase": "a white nucleus",
+      "stage": {
+        "element": "a carbon atom, a frosted sphere of slate-blue and heather-violet vapour about one white-hot pinpoint, hazy at its edge with no rim"
+      }
+    },
+    {
+      "name": "pinwheel_vertex",
+      "exp": -14.0,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "salmon and heather-purple nucleons, one white-hot centre, a faint bottle-green fog, black-violet depths",
+      "scene": "one carbon nucleus at its own scale in a faint bottle-green fog, a dense round droplet of glowing salmon and heather-purple spheres packed about a white-hot centre, the outer spheres set in curved arms wound round the droplet into a pinwheel, salmon arms curling one way and heather-purple arms the other, black-violet depths beyond",
+      "stage": {
+        "element": "a nucleon, a polished salmon pearl scaled in two crossing spiral families of tiny heather-purple bosses, one white-hot glint"
+      }
+    },
+    {
+      "name": "parker_pinwheel",
+      "exp": 12.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "yellow sun, salmon and heather-purple field arms, a small green-and-slate planet, black void",
+      "scene": "a yellow sun at the hub of a vast pinwheel, faint lit field lines combed out from it into salmon and heather-purple spiral arms sweeping across the black void, the arms wound tighter the farther out they reach, its worlds strung on the arms as beads, a small green-and-slate planet with a white polar spot on the third arm, a ruddy world and a banded giant on outer arms, scattered stars beyond"
+    }
+  ],
+  "music_theme": "a playful organic pulse at the classic flow, a soft round kick on every downbeat, wooden mallets and plucked strings circling in interlocking figures as the dive falls from the Sun's pinwheel of field arms to the green-and-slate Earth, an open morning chord over the heather and the slate loch, bright pecking figures through the pinewood commons, two crossing arpeggios on the cone's seed spirals, close hollow knocking tones through the pipe cells and the lignin mesh, and a rising curled swell on the pinwheel vertex that opens back out into the Sun's spiral arms",
+  "music_key": "D major",
+  "render_start": "scotland_orbit"
+}

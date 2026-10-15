@@ -323,6 +323,12 @@ JSETTINGS_DEFAULTS = {
     # that names the far field ("a faint lilac outer fog") instead of the darkest species colour
     # (amber fog behind amber balls = a one-colour card). Palettes naming no far field: unchanged.
     "stage_fog_phrase": False,
+    # PAINTED ELEMENTS (Phil 2026-10-15 on the middle-ground arms + valdes_blow v4: "that M2 ... is a
+    # good thing to turn on for the nightly"): on staged cards whose card carries an authored
+    # stage.element line (the composer writes it), the AI draws three close-ups of one element and
+    # the kit's spheres wear them (0.9), identity 0.5, bold scale; today's leash + repaint. Cards
+    # with no element line render exactly as before. PLAN "2026-10-15 — PAINTED ELEMENTS ON".
+    "stage_paint": False,
     # NIGHTLY CLEANUP + DISK GUARD (Phil 2026-10-10: "we have a clean up process, we should run
     # it, and automate it too" — C: hit 100% that morning because ComfyUI kept its own copy of
     # every frame ever rendered, 86 GB): night_batch runs `archive.py --nightly` before its

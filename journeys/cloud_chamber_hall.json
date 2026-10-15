@@ -1,0 +1,72 @@
+{
+  "name": "cloud_chamber_hall",
+  "theme": "a science museum after closing, one diffusion cloud chamber still running in the unlit hall: the subnuclear band seen at HUMAN scale, the only place it truly lives there. The dive drops into the tank's fog floor where particle tracks appear and vanish (thick short alpha stubs, hair-straight muon needles, frail curling electron scribbles), into one electron's jittered scribble, down its line of condensed droplets, to the single droplet swelling on one ion. Random-walk scribble against dead-straight needle: track and structure in one picture. The seam: the droplet card's scribble of beads reads, at hall scale, as the whole tank's fog floor seen from above with tracks crossing it. Realm-local loop that never leaves the museum. Palette family: track silver & safelight crimson (velvet-dark tank floor, silver vapour tracks, one crimson safelight rim, a single cobalt LED line on the tank frame).",
+  "style": "ultraviolet",
+  "music_lane": "choir_of_dust",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "museum_hall",
+      "exp": 1.2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "velvet-dark hall, crimson safelight glow, one cobalt LED line, silver vapour wisps, polished brass glints",
+      "scene": "a science museum hall after closing seen from high above, empty, no one present, the exhibit floor unlit and velvety, a Foucault pendulum hanging still over its ring of pegs, a caged Tesla coil, a case of fluorescent minerals faintly lit violet, and at the centre of the floor one open-topped cloud chamber tank still running, its fog floor shining silver under a crimson safelight rim, a single cobalt LED line traced round the tank frame, silver vapour streaks crossing the fog",
+      "target": "a cloud chamber tank",
+      "target_phrase": "a glass tank",
+      "cameo": {
+        "sprite": "output/mascots/canon/newman.png",
+        "pos": [0.68, 0.34],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "fog_floor",
+      "exp": 0.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver vapour tracks on a velvet-dark ground, crimson safelight rim, one cobalt LED line",
+      "scene": "the fog floor of a cloud chamber seen from directly above, a velvet-dark plate under a thin layer of drifting silver mist, dozens of particle tracks scattered across it at once, thick short stubby alpha streaks, hair-straight muon needles crossing the whole plate, frail curling electron scribbles, every track a line of silver vapour, a crimson safelight rim round the plate and a single cobalt LED line on the frame",
+      "loop_target": "a cloud chamber's silver fog floor crossed by tracks",
+      "target": "a curling electron track",
+      "target_phrase": "a curling silver track"
+    },
+    {
+      "name": "electron_scribble",
+      "exp": -1.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "crimson-lit vapour scribble, silver mist, inky violet ground, cobalt glints",
+      "scene": "one electron's track in the chamber's mist seen low over the fog, a frail jittered scribble of crimson-lit vapour wandering in tight kinks and loops, a single dead-straight silver muon needle ruled clean across the field next to it, wisps of silver mist drifting over an inky violet ground, cobalt glints in the haze",
+      "target": "a crimson vapour scribble",
+      "target_phrase": "a crimson scribble"
+    },
+    {
+      "name": "droplet_string",
+      "exp": -3.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "silver droplet beads, cobalt glints, inky violet void, crimson rim on every bead",
+      "scene": "the track resolved into its droplets, a long kinked string of hundreds of round silver mist droplets strung bead after bead through an inky violet void, the beads uneven in size, some crowded together, some spaced apart, each bead rimmed crimson on one face and glinting cobalt on the other, loose stray droplets scattered in the haze around the string",
+      "target": "a round silver droplet",
+      "target_phrase": "a silver droplet"
+    },
+    {
+      "name": "ion_droplet",
+      "exp": -4.6,
+      "kind": "seam",
+      "dur": 4,
+      "stage": {"element": "a condensed alcohol droplet, a clear quicksilver sphere rimmed crimson on one face, a pinpoint cobalt spark burning at its heart"},
+      "palette": "a silver droplet with a crimson rim, a cobalt spark at its core, inky violet haze, a silver scribble of beads",
+      "scene": "a single clear droplet of condensed alcohol seated on one charged spark, the droplet round and silver with a crimson rim, a pinpoint cobalt spark at its heart, and curling away from it through the inky violet haze a frail scribble of lesser silver beads crossed by one straight ruled line of beads"
+    }
+  ],
+  "music_theme": "a hushed suspended choir of breath over a soft low kick on every downbeat, low sustained voices as the unlit museum hall opens, a glassy shimmer as the silver fog floor comes into view, a thin wandering vocal line tracing the electron's scribble, bell-like plucks for each droplet bead, and one held chord swelling on the morph from the lone droplet back to the hall",
+  "music_key": "F# minor",
+  "render_start": "fog_floor"
+}

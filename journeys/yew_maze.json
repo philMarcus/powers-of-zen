@@ -1,0 +1,106 @@
+{
+  "name": "yew_maze",
+  "theme": "a clipped yew labyrinth in an old garden at dusk, read as ONE PATH THAT FILLS A SPACE at every scale: the maze from directly above, one folded gravel lane covering a square of black-green hedge around a dark central clearing; the lanes low over the hedge tops as a dusk commons (barn owl, hedgehog, blackbird at the scarlet berry-cups, bats, a fox in the clearing, a song thrush); one berried yew sprig; the underside of one flat needle; the needle's palisade of tall green cells round its single vein; inside one cell, the nucleus; and the fractal globule, the DNA thread folded knot-free into blobs within blobs until it packs the nucleus edge to edge, which morphs up into the maze from above (one folded path at a micrometre and at a hundred metres). Palette family: yew black-green & aril scarlet, dusk, red the only accent. Math/space personality: one path that fills a space; realm-local roam.",
+  "style": "ultraviolet",
+  "music_lane": "night_market",
+  "stage_look": "ink",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "maze_from_above",
+      "exp": 1.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "near-black yew green hedges, pale gravel lane as the minority, dusk violet light, a few scarlet berry points",
+      "scene": "an old clipped yew labyrinth in a walled garden at dusk, seen from directly above, one narrow pale gravel lane folding back on itself in tight hairpin turns across a square of dense near-black-green hedges, the lane never crossing itself yet reaching every corner of the square, a small dark round clearing at the maze's centre, a scatter of scarlet berry points along the hedge tops, dusk violet light lying on the gravel, empty, no one present",
+      "loop_target": "a square yew maze from above, one folded gravel lane round a dark clearing",
+      "target": "a gravel lane",
+      "target_phrase": "a gravel lane"
+    },
+    {
+      "name": "maze_lanes",
+      "exp": 0.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "black-green hedge walls, dusk violet sky, pale gravel, owl buff, scarlet berry-cups as the only red",
+      "scene": "the lanes of a clipped yew maze at dusk, seen low over the hedge tops, tall near-black-green hedge walls flanking narrow pale gravel lanes that turn back on themselves, a barn owl with buff wings spread low over one lane, a hedgehog on the gravel, a blackbird perched among scarlet berry-cups on a hedge top, a few bats over the hedges against a dusk violet sky, a song thrush on the gravel at a corner, a red fox sitting in the dark clearing at the maze's centre, empty of people",
+      "target": "a berried yew sprig",
+      "target_phrase": "a berried yew sprig"
+    },
+    {
+      "name": "aril_sprig",
+      "exp": -0.9,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "glossy scarlet berry-cups, near-black green needles, rust-red twig, deep violet dusk behind",
+      "scene": "a yew sprig jutting from the hedge face at dusk, flat glossy near-black-green needles set in two neat rows along a rust-red twig, three scarlet berry-cups hanging beneath it, each a soft fleshy cup open at its tip with a dark seed set in it, more sprigs fading into deep violet shadow behind",
+      "target": "a flat yew needle",
+      "target_phrase": "a flat needle"
+    },
+    {
+      "name": "needle_underside",
+      "exp": -2.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "dark bottle green blade, two grey-green pore bands, waxy sheen, black-green depths",
+      "scene": "the underside of one flat yew needle, a long dark bottle-green blade with a raised midrib running down its centre and two broad grey-green bands of tiny breathing pores set in neat rows on either side, a waxy sheen on the skin, a single scarlet speck of pollen resting near the tip, black-green hedge depths beyond",
+      "target": "the raised midrib",
+      "target_phrase": "the raised midrib"
+    },
+    {
+      "name": "needle_palisade",
+      "exp": -4.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "emerald and moss-green cells, glassy wax skin, deep teal-black shadow, one scarlet resin bead",
+      "scene": "the interior of a yew needle, files of tall green cells standing shoulder to shoulder under a glassy waxy skin, each cell packed with lens-shaped green discs, the files bending round the needle's single vein, deep teal-black shadow in the narrow gaps of the files, one scarlet bead of resin lodged in the needle's vein",
+      "target": "a tall green cell",
+      "target_phrase": "a tall green cell",
+      "stage": {
+        "element": "a palisade cell, a tall emerald capsule of glassy wax packed with moss-green lens discs, lit from below, deep teal-black at its core"
+      }
+    },
+    {
+      "name": "cell_nucleus",
+      "exp": -5.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "green discs lining the walls, clear watery sap, dusky violet nucleus, black-green depths, a few scarlet droplets",
+      "scene": "inside one tall green leaf cell, a long chamber whose walls are lined with lens-shaped green discs pressed edge to edge, clear watery sap in the middle, a round dusky violet nucleus resting against one wall, threads of pale cytoplasm strung across the chamber, a few scarlet oil droplets, black-green depths at either end",
+      "target": "a round violet nucleus",
+      "target_phrase": "a violet nucleus",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.64,
+          0.36
+        ],
+        "size": 0.13
+      },
+      "stage": {
+        "element": "a chloroplast, a lens-shaped green disc of stacked velvet coins, matte and softly backlit, one scarlet glint at its rim"
+      }
+    },
+    {
+      "name": "fractal_globule",
+      "exp": -6.3,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "near-black violet ground, wine-dark rope, scarlet bead highlights, deep black-green folds",
+      "scene": "inside a cell nucleus, one unbroken thread of tiny beads coiled into a thicker wine-dark rope, the rope folded back and forth into a compact knot-free blob, blobs folded beside blobs into bigger blobs, every fold made of smaller folds of the same rope, the folded rope packing the nucleus edge to edge with no loose ends and no crossings, scarlet glints on the beads, near-black violet ground in the narrow creases",
+      "stage": {
+        "kit": "tubes",
+        "arrangement": "chain",
+        "element": "a chromatin globule, a wine-dark ball of beaded rope folded in tight hairpin turns that never cross, scarlet glints on the bends"
+      }
+    }
+  ],
+  "music_theme": "a slow nocturnal wander at a stately tempo, a deep soft kick on every downbeat, muted plucked strings and a low wooden flute tracing a winding line that turns back on itself like a garden path, a soft owl-call woodwind over the hedge lanes, warm clustered chimes on the scarlet berry-cups, a hushed close-voiced pad through the needle and its cells, and a rising folded arpeggio on the morph from the coiled thread out to the maze seen from above",
+  "music_key": "D minor",
+  "render_start": "needle_palisade"
+}

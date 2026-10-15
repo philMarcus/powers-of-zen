@@ -44,6 +44,9 @@
         "sprite": "output/mascots/canon/belle.png",
         "pos": [0.64, 0.38],
         "size": 0.13
+      },
+      "stage": {
+        "element": "a bluebell petal cell, a conical violet dome brimming with sap, silver seams around its base, a lime glint on its crest"
       }
     },
     {
@@ -57,6 +60,9 @@
       "target_phrase": "a silver atom",
       "resolve": {
         "mode": "sea"
+      },
+      "stage": {
+        "element": "an anthocyanin wheel, a flat six-spoked rosette of stacked cobalt-blue and cream-lime rings, two silver hub points at its centre, satin sheen"
       }
     },
     {
@@ -67,7 +73,10 @@
       "palette": "lime and violet fog in soft shells, a white-hot core point, violet-black open space",
       "scene": "one magnesium atom at its own width, a soft round fog of lime and violet glow thinning outward through layered shells, the shells nested and faintly banded, a single white-hot point at the fog's heart, open violet-black space on every side, the dim fogs of neighbouring atoms at the frame's margins",
       "target": "a glowing rippled droplet",
-      "target_phrase": "a glowing droplet"
+      "target_phrase": "a glowing droplet",
+      "stage": {
+        "element": "a magnesium atom, a soft ball of lime and violet fog in faintly banded shells, one white-hot point at its heart"
+      }
     },
     {
       "name": "rippled_droplet",
@@ -76,7 +85,10 @@
       "dur": 4,
       "palette": "amber and violet packed beads, robin-orange crests, lime-violet fog",
       "scene": "a glowing droplet of tightly packed amber and violet beads in a lime-violet fog, its whole rind raised in broad bulges and sunk in hollows all round, alternate patches lifted and settled, a robin-orange sheen on every crest, open fog about it on every side",
-      "resolve": false
+      "resolve": false,
+      "stage": {
+        "element": "a nucleon, a hammered amber metal bead with violet hollows, an orange sheen on every raised facet"
+      }
     },
     {
       "name": "ringing_sun",

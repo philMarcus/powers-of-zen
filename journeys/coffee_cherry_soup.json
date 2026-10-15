@@ -1,0 +1,145 @@
+{
+  "name": "coffee_cherry_soup",
+  "theme": "an Ethiopian highland shade-coffee forest at morning, dived the whole way down one crimson coffee cherry and folded out through the hottest fluid in the universe. Family: THE MELTING FRONT, order on one side and fluid on the other, caught mid-stride at both ends of scale: a proton's bound trios melting into one seething spark-fluid seams to the afterglow shell, the infant universe's glowing fluid seen from inside as mottled ember light, every spot one size. The climb home crosses an accretion shock wall at a galaxy cluster's edge, a spiral galaxy, a golden star and a jade highland world on its day/night terminator, down to the populated understory. Palette family: coffee cherry & shade jade (crimson fruit on deep green, morning light).",
+  "style": "enchanted_wild",
+  "music_lane": "analog_dawn",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "shock_wall",
+      "exp": 23,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "violet-hot shock glow, cold teal filament tongues, scattered gold and crimson galaxies on ink-black",
+      "scene": "the accretion shock wall at the edge of a galaxy cluster in deep space, a standing wall of violet-hot gas millions of light-years across, on the inner side a still glowing sea of gas dotted with hundreds of galaxies, on the outer side cold teal filaments of the cosmic web falling inward and punching through the wall in a fence of curling-capped fingers, small gold ellipticals and crimson-knotted spirals scattered across both sides of the front",
+      "loop_target": "a violet shock wall at a galaxy cluster's edge",
+      "target": "a spiral galaxy",
+      "target_phrase": "a spiral galaxy"
+    },
+    {
+      "name": "teal_spiral",
+      "exp": 20.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "teal-blue spiral arms, crimson star-forming knots, a honey-gold core, black dust lanes",
+      "scene": "a grand spiral galaxy seen face-on in deep space, two sweeping teal-blue arms wound about a honey-gold core, strings of crimson star-forming knots beaded along the arms, black dust lanes threading between them, countless stars scattered through the disc and a few lone golden suns standing out along the outer arm",
+      "target": "a golden star",
+      "target_phrase": "a golden star"
+    },
+    {
+      "name": "golden_sun",
+      "exp": 13.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "molten gold sunlight, a rust-brown dust ring, one jade-green world, velvet black space",
+      "scene": "a golden sun burning in black space at the heart of its planetary system, a rust-brown ring of dust and rubble circling it far out, a handful of planets set around it on their orbits, the nearest a jade-green world half lit gold by the sun and half in shadow, a scatter of distant stars behind",
+      "target": "a jade-green world",
+      "target_phrase": "a green planet"
+    },
+    {
+      "name": "jade_world",
+      "exp": 6.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jade and emerald highlands, gold dawn light along the terminator, deep indigo night side, silver river threads",
+      "scene": "a jade-green highland world seen from orbit on its day and night terminator, the line of dawn running down across crumpled emerald highlands and deep-cut gorges, morning gold catching the eastern slopes while the western valleys still lie in indigo night, silver rivers threading the gorge floors, wisps of morning mist pooled in the highest valleys, a rust-red plateau rim along one edge of the highlands",
+      "target": "a shade-coffee forest",
+      "target_phrase": "a green forest"
+    },
+    {
+      "name": "shade_understory",
+      "exp": 1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "shade-leaf jade and deep green, crimson coffee cherries, white coffee blossom, gold morning shafts on roast-umber soil",
+      "scene": "the understory of an Ethiopian highland shade-coffee forest at morning, seen at eye level among the shrubs, tall shade trees arching overhead with gold sunbeams slanting through the leaves, black-and-white colobus monkeys sitting along a high bough, a turaco with crimson flight feathers perched on a lower branch, a russet bushbuck standing among the ferns, honeybees at clusters of white coffee blossom, glossy jade-leaved coffee shrubs hung with clusters of ripe crimson cherries, roast-umber soil and leaf litter underfoot",
+      "target": "a crimson coffee cherry",
+      "target_phrase": "a red coffee cherry",
+      "cameo": {
+        "sprite": "output/mascots/canon/dora.png",
+        "pos": [
+          0.68,
+          0.62
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "split_cherry",
+      "exp": -2,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "glossy crimson skin, sweet amber pulp, jade-green seeds in cream parchment, deep shade behind",
+      "scene": "a ripe coffee cherry split open on its branch in the morning shade, glossy crimson skin peeled back over sweet glistening amber pulp, a pair of jade-green seeds nested flat face to flat face inside their cream parchment husks, beads of nectar on the pulp, glossy jade leaves in deep shade behind",
+      "target": "a jade-green seed",
+      "target_phrase": "a green seed"
+    },
+    {
+      "name": "storage_cells",
+      "exp": -4.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "thick jade-cream cell walls, honey-gold oil droplets, a deep olive gloom in the cell interiors",
+      "scene": "the storage tissue inside a green coffee seed, a honeycomb of thick-walled polygonal cells, each wall a broad jade-cream rampart pitted with small channels, each cell packed with honey-gold oil droplets and sugar granules, a round nucleus set in every cell, the tissue receding in tiers into an olive gloom",
+      "target": "a round cell nucleus",
+      "target_phrase": "a round nucleus",
+      "stage": {
+        "element": "coffee seed cell, a plump polygonal jade-cream chamber with thick ridged walls, honey-gold oil beads glowing through its waxy surface"
+      }
+    },
+    {
+      "name": "pore_gates",
+      "exp": -7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "copper and roast-umber protein rings, gold tendril plugs, deep indigo membrane",
+      "scene": "the curved double-walled envelope of a cell nucleus studded with thousands of pore gates, each gate an eightfold ring of copper protein set through both membranes, a basket of eight struts hanging below it into the nucleus, a plug of loose gold tendrils filling its throat, the rings spaced across the indigo membrane wall in loose rows",
+      "target": "a single glowing atom",
+      "target_phrase": "a glowing atom",
+      "stage": {
+        "element": "nuclear pore gate, an eightfold ring of hammered copper protein beads around a throat of loose glowing gold threads"
+      }
+    },
+    {
+      "name": "carbon_atom",
+      "exp": -10,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "cool violet and cyan haze shells, white-hot pinpoints, black depth",
+      "scene": "one carbon atom of a protein strand, a soft hazy shell of violet light around a minute white-hot point, a second, cooler cyan shell around the first, neighbouring atoms bonded on either side in a zigzag chain of hazy violet spheres, the chain fading into black depth",
+      "target": "a crimson glowing bead",
+      "target_phrase": "a red bead",
+      "stage": {
+        "element": "carbon atom, a cool violet glass bubble with a smaller cyan shell nested inside, one white-hot pinpoint at its centre"
+      }
+    },
+    {
+      "name": "proton_droplet",
+      "exp": -15,
+      "kind": "seam",
+      "dur": 4,
+      "stage": {
+        "kit": "fluid",
+        "element": "quark droplet, a glossy crimson coffee-cherry sphere of seething spark-fluid, white-hot light breaking through gold-veined splits in its skin"
+      },
+      "palette": "crimson and white-hot spark-fluid, gold strand light, coal-black edges",
+      "scene": "the interior of a proton caught melting, on one side glowing beads still bound in trios on short taut strands of gold light, on the other side every trio come apart into one seething crimson and white-hot spark-fluid, a ragged front of sparks between the bound side and the melted side, the whole droplet churning against coal-black edges"
+    },
+    {
+      "name": "afterglow_shell",
+      "exp": 26,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "mottled ember-orange and deep rust, every spot one size, faint gold seams between them",
+      "scene": "the afterglow shell, the oldest light in the universe seen from inside, a sphere of mottled ember-orange and deep-rust light on every side, its warm and cool spots all about one size, faint gold seams wandering between the spots, nothing in front of it, the glow curving away overhead and underfoot"
+    }
+  ],
+  "music_theme": "a warm waking analog pulse with a soft deep kick on every downbeat at a stately tempo, tape-warm keys rising through the shade forest and the split cherry, thinning to a glassy shimmer down through the cells and pore gates, a low swelling chord as the proton melts and folds out into the ember afterglow, then the keys climbing back home past the golden sun onto the jade highlands",
+  "music_key": "E minor",
+  "render_start": "shock_wall"
+}

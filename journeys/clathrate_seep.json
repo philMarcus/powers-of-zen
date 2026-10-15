@@ -42,10 +42,7 @@
       "target_phrase": "a glowing amber mound",
       "cameo": {
         "sprite": "output/mascots/canon/kitty.png",
-        "pos": [
-          0.64,
-          0.36
-        ],
+        "pos": [0.64, 0.36],
         "size": 0.13
       }
     },
@@ -83,6 +80,9 @@
       "target_phrase": "a tiny blue pit",
       "resolve": {
         "mode": "surface"
+      },
+      "stage": {
+        "element": "a methane hydrate crystal, a stepped peach-amber pyramid of glassy terraces, rose-rimmed risers, a silver growth spiral wound to its apex, lit from within"
       }
     },
     {
@@ -97,6 +97,9 @@
       "resolve": {
         "mode": "lattice",
         "variant": "cubic"
+      },
+      "stage": {
+        "element": "a clathrate cage, a twelve-faced shell of thin peach-amber struts meeting at glowing nodes, one rose-silver bead hovering off-centre inside, indigo through every face"
       }
     },
     {
@@ -106,7 +109,10 @@
       "dur": 4,
       "palette": "a peach-amber polyhedral cage, one rose-silver bead off-centre, indigo void",
       "scene": "one hollow polyhedral cage of frozen brine, its peach-amber struts forming a round many-faced shell of pentagons, one bright rose-silver bead sitting off-centre inside the shell, soft rose haze about the bead, faint neighbouring cages ghosted at the margins, indigo void through every face of the shell",
-      "resolve": false
+      "resolve": false,
+      "stage": {
+        "element": "a methane molecule, a molten rose-silver bead with a mirror skin, four soft peach-amber knobs budding from it, cold indigo light along one edge"
+      }
     },
     {
       "name": "wind_bubble",

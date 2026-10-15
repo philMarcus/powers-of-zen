@@ -1,0 +1,136 @@
+{
+  "name": "namib_fogbasker",
+  "theme": "a Namib dune crest at dawn as a crowded commons, a full-scale dive with UNBROKEN living continuation down one fog-basking beetle, read as BEADING / CONDENSATION at every scale: a young sun's dusty disk with new worlds condensing as beads in its gaps; the whole Earth as an apricot-and-oxblood world where the Skeleton Coast's dune sea meets a cold white fog line along an inky Atlantic (a non-storm planet); the dune sea from a low aircraft with sea fog pouring inland between the ridges; the crest commons (fog-basking beetles head-down drinking fog off their own backs, a dune lark, a Namaqua chameleon gone black, a sidewinding adder's ladder track, an oryx on the slip face, a welwitschia sprawled on the gravel plain below); the beetle's bumped wing-case with fog water beading on every bare bump tip; the epidermal cells that build the shell and its wax; kinesin walkers towing wax sacs along hollow striped tubes; a folded chain of atoms each a fog about a hot point; the neutron-halo nucleus (a dense knot in an enormous faint fog-shell, two loose spheres far out) which morphs into a spiral galaxy in its own faint fog-shell — a core wrapped in fog at two scales, echoing the fog the whole journey drinks. Palette family: Namib apricot & fog slate (apricot-to-oxblood dune crests, cold slate-grey sea fog, beetle jet-black, welwitschia leather green; dawn daylight, no gold, no night).",
+  "style": "enchanted_wild",
+  "music_lane": "analog_dawn",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 8,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "young_sun_disk",
+      "exp": 13,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "white-hot young sun, apricot-orange and oxblood dust rings, inky gap-rings, one slate-blue world bead, star-flecked black void",
+      "scene": "a young white-hot sun at the hub of a broad flat disk of dust and gas seen obliquely, the disk ruled into apricot-orange and oxblood rings with inky gap-rings swept clean between them, small new worlds condensing as beads inside the gaps, one slate-blue world bead seated in the third gap, the star-flecked black void around the disk",
+      "loop_target": "a young sun's dusty ringed disk",
+      "target": "a slate-blue planet",
+      "target_phrase": "a blue planet"
+    },
+    {
+      "name": "skeleton_coast_globe",
+      "exp": 7.0,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "apricot and oxblood desert world, cold white fog line, inky slate-blue ocean, rust-brown mountains, black space",
+      "scene": "the whole Earth from orbit in morning sun as an apricot-and-oxblood world, seen over the south-west coast of Africa, a vast dune sea of apricot sand running down the desert coast to the ocean, a cold white line of sea fog laid along the shore where the sand meets an inky slate-blue Atlantic, rust-brown dry mountains inland, a few thin cloud wisps, the black void at the limb",
+      "target": "an apricot dune sea",
+      "target_phrase": "the apricot dune sea"
+    },
+    {
+      "name": "dune_sea_air",
+      "exp": 3.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "apricot windward faces, oxblood shadowed slip faces, cold slate-grey fog bank, ochre gravel pan, olive camelthorn",
+      "scene": "the Namib dune sea seen obliquely from a low aircraft at dawn, ranks of towering star dunes with curving knife-edge crests raked by the low sun, apricot windward faces and oxblood shadowed slip faces, a slate-grey bank of sea fog pouring inland between the ridges, a file of oryx crossing an ochre gravel pan, a dry riverbed of olive camelthorn trees threading the dunes",
+      "target": "a curved dune crest",
+      "target_phrase": "a dune crest"
+    },
+    {
+      "name": "fogbasker_commons",
+      "exp": 0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "apricot rippled sand, jet-black beetles, slate-grey fog ceiling, leather-green welwitschia, oxblood shadow",
+      "scene": "a Namib dune crest at dawn as a crowded commons, seen low along the sharp sand ridge, a row of jet-black fog-basking beetles standing head-down into the wind with fog beads gathered on their backs, a dune lark on the crest, a Namaqua chameleon gone black on the sand, the ladder track of a sidewinding adder across the oxblood slip face, an oryx standing on the slip face, a welwitschia's two torn leather-green leaf ribbons sprawled on the gravel plain below, apricot sand rippled under a low slate-grey fog ceiling",
+      "target": "a black beetle",
+      "target_phrase": "a black beetle"
+    },
+    {
+      "name": "beetle_back",
+      "exp": -2.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "jet-black glossy shell, silver-slate water beads, oxblood sand grains, cold grey fog",
+      "scene": "the jet-black wing-case of a fog-basking beetle at dawn as a terrain of domed bumps in uneven rows, the tip of every bump bare and holding one bead of fog water, waxy black furrows between the bumps, fatter merged drops lodged in the furrows that run toward the head, a few oxblood sand grains caught on the shell, cold grey fog hanging over it all",
+      "target": "a domed black bump",
+      "target_phrase": "a domed bump",
+      "cameo": {
+        "sprite": "output/mascots/canon/lee.png",
+        "pos": [0.66, 0.38],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "cuticle_cells",
+      "exp": -4.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "amber and apricot living cells, umber nuclei, black lacquered laminae, shadowed umber depths",
+      "scene": "beneath a beetle's black shell, a sheet of living epidermal cells standing shoulder to shoulder in amber columns, each cell with an umber nucleus, the layered cuticle they built stacked over them in tilted black fibre laminae, hair-thin pore canals threading up from the cells through the laminae to carry wax, the ranks of cells curving away into shadowed umber",
+      "target": "an amber cell",
+      "target_phrase": "an amber cell",
+      "stage": {
+        "element": "an epidermal cell, a plump amber column of soft translucent jelly, an umber nucleus glowing low inside, its crown capped in black lacquer"
+      }
+    },
+    {
+      "name": "kinesin_walkers",
+      "exp": -7.4,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "slate-teal cytoplasm, ivory-striped protein tubes, apricot-orange wax sacs, inky depths",
+      "scene": "inside one epidermal cell of the beetle, hollow striped tubes of stacked protein beads running in tiers through slate-teal cytoplasm, and on every tube many protein walkers, each walker a pair of knotted ribbon lobes clamped to the tube one ahead of the other, joined by a coiled stalk to an apricot-orange sac of wax towed behind it, many walkers on many tubes, the tiers fading into inky depths",
+      "target": "a knotted ribbon lobe",
+      "target_phrase": "a ribbon lobe",
+      "stage": {
+        "kit": "tubes",
+        "pdb": "1TUB",
+        "arrangement": "bundle",
+        "element": "a kinesin motor head, a knotted lobe of ivory satin ribbon folded tight, slate-teal grooves between the folds, an apricot-orange glint in its knot"
+      }
+    },
+    {
+      "name": "fog_atoms",
+      "exp": -10.1,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "slate-grey atom fogs, apricot-hot points, one ochre sulphur atom, inky violet void",
+      "scene": "within one knotted ribbon lobe, a folded chain of atoms linked bead to bead, carbon, nitrogen and oxygen atoms each a soft slate-grey fog gathered about one apricot-hot point, one larger ochre sulphur atom seated in a pocket of the chain, the chain folding away into inky violet",
+      "target": "a glowing nucleus",
+      "target_phrase": "a glowing nucleus",
+      "stage": {
+        "kit": "lattice",
+        "variant": "random",
+        "element": "a carbon atom, a slate-grey wisp of vapour curled into the domed oval of a basking beetle, one apricot-hot point burning at its heart"
+      }
+    },
+    {
+      "name": "halo_nucleus",
+      "exp": -14.2,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "oxblood and apricot nucleon knot, faint slate-violet fog-shell, inky void",
+      "scene": "one atomic nucleus wrapped in fog, a dense knot of glowing oxblood and apricot spheres packed at the centre, an enormous faint slate-violet fog-shell many times wider than the knot enveloping it, two loose spheres drifting far out in the fog, inky void beyond",
+      "stage": {
+        "element": "a nucleon, a dense oxblood marble of glazed stone, apricot veins cracking its surface, a hard slate-violet rim light along one edge"
+      }
+    },
+    {
+      "name": "fog_shell_galaxy",
+      "exp": 20.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "apricot-orange and oxblood spiral arms, white-hot core, faint slate-violet fog-shell, inky void",
+      "scene": "a spiral galaxy turning in the void, apricot-orange and oxblood arms wound about a white-hot core, the whole disc set inside an enormous faint slate-violet fog-shell many times wider than itself, two dwarf galaxies drifting far out in the fog, distant galaxies dotting the inky void beyond"
+    }
+  ],
+  "music_theme": "a waking dawn groove at a stately tempo, a soft deep pulse on every downbeat, warm tape-worn keys and slow breathing pads as the dive falls from the fog-wrapped galaxy to the young sun's ringed disk, a widening chord over the apricot world and its fog-lined coast, gentle plucked figures among the beetles and the lark on the dune crest, a hushed shimmer as fog beads gather on the black shell, close murmuring tones through the cells and the striding walkers, and a rising swell on the fog-wrapped nucleus that opens into the galaxy's fog",
+  "music_key": "D major",
+  "render_start": "young_sun_disk"
+}

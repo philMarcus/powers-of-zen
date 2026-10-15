@@ -83,6 +83,9 @@
       "resolve": {
         "mode": "lattice",
         "variant": "layered"
+      },
+      "stage": {
+        "element": "a lattice atom, a lilac crystal bead cut in tiny hexagonal facets, cool and glassy, quartz-silver sparks along its edges"
       }
     },
     {
@@ -96,8 +99,14 @@
       "target_phrase": "a bright amber point",
       "cameo": {
         "sprite": "output/mascots/canon/adam.png",
-        "pos": [0.64, 0.38],
+        "pos": [
+          0.64,
+          0.38
+        ],
         "size": 0.13
+      },
+      "stage": {
+        "element": "a lithium atom, a small hard amber-gold moon, matte and cratered, one limb lit lilac, a pine-black shadow on its far side"
       }
     },
     {
@@ -109,6 +118,9 @@
       "scene": "one nucleus seen in deep space at its own scale, a dense round droplet of glowing amber-gold spheres packed tight at the middle, an enormous faint lilac fog spread about the droplet many times wider than it, the fog thinning outward with no rim, two loose quartz-silver spheres adrift far out in the fog on opposite sides, pine-black deep beyond",
       "resolve": {
         "mode": "sea"
+      },
+      "stage": {
+        "element": "a nucleon, a glowing amber-gold sphere with one tiny lilac spiral arm wound about its bright core, soft plasma light"
       }
     },
     {

@@ -79,7 +79,10 @@
       "palette": "wet chartreuse seams, pewter grains, umber murk",
       "scene": "the grain country within a hailstone's cloudy band, rounded ice grains fitted edge to edge into a mosaic that carries off on all sides, each grain taking the moonglare at its own angle so the mosaic reads as a quilt of pewter shades, strings of trapped air beads threaded along every grain boundary, wet chartreuse pooled in the seams among them, more courses of grains sunk under the first and fading into umber murk",
       "target": "a hexagonal water ring",
-      "target_phrase": "a hexagonal ring"
+      "target_phrase": "a hexagonal ring",
+      "stage": {
+        "element": "an ice grain, a rounded pewter pebble of clouded hail ice, trapped air beads strung inside, wet chartreuse on its rim"
+      }
     },
     {
       "name": "ice_lattice",
@@ -93,6 +96,9 @@
       "resolve": {
         "mode": "lattice",
         "variant": "hex"
+      },
+      "stage": {
+        "element": "a water molecule, a faceted pewter oxygen bead cut from clear ice, two short absinthe struts, a cold absinthe glint on every facet"
       }
     },
     {
@@ -101,7 +107,10 @@
       "kind": "seam",
       "dur": 4,
       "palette": "ember cores, chartreuse shells, smoke voids",
-      "scene": "a field of luminous atom cores at rest in their courses, each core wrapped in nested shells of radiance one within the next, the outermost shells thinning into smoke, a slow thermal shimmer trembling through them in staggered files so the ordered courses ripple, ember at every core and chartreuse on the shells around it, unlit voids in the corridors among them"
+      "scene": "a field of luminous atom cores at rest in their courses, each core wrapped in nested shells of radiance one within the next, the outermost shells thinning into smoke, a slow thermal shimmer trembling through them in staggered files so the ordered courses ripple, ember at every core and chartreuse on the shells around it, unlit voids in the corridors among them",
+      "stage": {
+        "element": "an oxygen atom, a small ember core wrapped in nested chartreuse vapour shells, the outermost spread flat into a smoky anvil-topped cloud"
+      }
     },
     {
       "name": "echo_shells",

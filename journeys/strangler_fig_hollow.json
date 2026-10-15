@@ -1,0 +1,101 @@
+{
+  "name": "strangler_fig_hollow",
+  "theme": "a strangler fig in a lowland rainforest at morning, read as ONE sealed chamber with one door at every scale: the fruiting boughs as a crowded commons (hornbills, fruit bats, macaques, green pigeons); one ripe fig's tip closed by a scaled pore; through the pore into the hollow inside the fig, its walls lined with hundreds of florets and the fig wasps working them; a floret ovary's wall as a crowd of cells; one cell's nucleus seen from inside its envelope, a hollow sphere studded with pore gates; one pore gate from below, eight struts hanging from its ring, which morphs into the strangler fig's own hollow lattice trunk seen from inside where the host tree rotted away, a column of fused roots with daylight through the gaps, opening at the top onto the fruiting boughs (the loop home). Palette family: fig plum & canopy jade, daylight, scarlet bill accent. Math/space personality: the sealed chamber with one door; realm-local roam.",
+  "style": "enchanted_wild",
+  "music_lane": "wooden_orbit",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "fig_commons",
+      "exp": 0.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "wet canopy jade, ripe fig plum-violet, scarlet-and-cream hornbill bills, deep green shade, shafts of morning sun",
+      "scene": "the fruiting upper boughs of a giant strangler fig in a lowland rainforest at morning, seen level from among the branches, thick grey boughs studded with hundreds of ripe plum-violet figs, a pair of hornbills with scarlet-and-cream bills plucking fruit, a cluster of fruit bats hanging beneath a leafy bough, long-tailed macaques sitting along a branch eating figs, emerald green pigeons perched among the fruit, glossy jade leaves and deep green shade all around, shafts of morning sun slanting through the canopy",
+      "loop_target": "fig boughs crowded with ripe plum-violet figs, hornbills and macaques",
+      "target": "a ripe purple fig",
+      "target_phrase": "a ripe purple fig"
+    },
+    {
+      "name": "fig_pore",
+      "exp": -1.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "dusky violet-blue fig skin with a waxy bloom, cream specks, scarlet-and-cream scale rosette, deep jade leaf shade",
+      "scene": "the domed tip of one ripe fig hanging from its bough, dusky violet-blue skin dusted with a waxy bloom and freckled with cream specks, at its summit a tight rosette of overlapping scarlet-and-cream scales closing a single narrow pore, three tiny amber-bodied fig wasps queued on the scales at the pore's rim, deep jade leaf shade behind",
+      "target": "a scaled pore",
+      "target_phrase": "a scaled pore"
+    },
+    {
+      "name": "floret_hollow",
+      "exp": -2.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "crimson-magenta florets, cream stalks, amber-bodied wasps, deep plum shadow, one thread of daylight",
+      "scene": "the hollow inside a ripe fig, a closed chamber whose walls are lined on the inside with hundreds of tiny crimson-magenta florets on cream stalks, packed shoulder to shoulder all around the curve of the chamber, swollen round ovaries at the florets' tips, amber-bodied fig wasps working among them with pollen dusted on their backs, one narrow scaled door overhead letting in a thread of daylight, deep plum shadow in the chamber's depths",
+      "target": "a swollen floret ovary",
+      "target_phrase": "a round ovary",
+      "cameo": {
+        "sprite": "output/mascots/canon/lee.png",
+        "pos": [
+          0.68,
+          0.34
+        ],
+        "size": 0.13
+      }
+    },
+    {
+      "name": "ovary_cells",
+      "exp": -4.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "glossy jade-green cells, cream walls, plum-violet nuclei, deep teal depths",
+      "scene": "the wall of a floret's ovary as living tissue, a crowd of plump jade-green cells packed in curving ranks, each cell walled in cream and holding one round plum-violet nucleus, threads of cytoplasm and drifting green plastids inside every cell, the ranks curving away into deep teal depths",
+      "target": "a round plum nucleus",
+      "target_phrase": "a round nucleus",
+      "stage": {
+        "element": "ovary cell, a plump glossy jade-green jelly bead in a cream rind, one plum-violet nucleus glowing through it"
+      }
+    },
+    {
+      "name": "nucleus_hollow",
+      "exp": -5.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "warm plum-magenta space, rose-amber pore rings, scarlet bead-strings, deep wine depths",
+      "scene": "the interior of one cell's nucleus seen from inside, a vast hollow sphere whose curved double wall is studded with hundreds of round pore gates set in even rows, each gate a rose-amber ring, strings of scarlet beads coiled through the warm plum-magenta space, a dense round nucleolus off to one side, deep wine depths",
+      "target": "a ringed pore gate",
+      "target_phrase": "a ringed pore",
+      "stage": {
+        "element": "nucleolus, a dense velvet plum-magenta orb knotted with coiled scarlet bead-strings, warm rose-amber light seeping between the coils"
+      }
+    },
+    {
+      "name": "pore_gate",
+      "exp": -7.4,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "jade-teal protein rings, cream struts, plum membrane, deep indigo throat glowing open above",
+      "scene": "one nuclear pore gate seen from below on the nucleus side, an eightfold ring of jade-teal protein set through the two layers of a plum membrane, eight cream struts hanging down from the ring and meeting at a small lower ring, a loose plug of tendril chains filling the throat, the gate's open mouth glowing above, more ringed gates studding the curved wall around it",
+      "stage": {
+        "element": "nuclear pore gate, an eightfold ring of tiny plump jade-teal figs with a waxy bloom, cream tendrils in its plum-lit throat"
+      }
+    },
+    {
+      "name": "hollow_trunk",
+      "exp": 1.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "umber and plum-brown fused roots, amber morning daylight through the gaps, jade moss and ferns",
+      "scene": "inside the hollow trunk of an old strangler fig where its host tree rotted away, looking straight up a tall column of fused roots woven into an open lattice, hundreds of gaps between the roots letting in amber morning daylight, ferns and jade moss on the root ledges, a wide sunlit opening at the top of the column showing leafy fruiting boughs"
+    }
+  ],
+  "music_theme": "a playful organic groove at a flowing tempo, a deep soft kick on every downbeat, wooden marimba and kalimba figures hopping between the fig boughs, hollow log-drum knocks as the dive passes through the scaled pore into the fig's chamber, warm clustered plucks among the florets and cells, a hushed resonant chord under the nucleus's pore gates, and a rising open swell on the morph out into the hollow trunk looking up at the morning",
+  "music_key": "D major",
+  "render_start": "fig_commons"
+}

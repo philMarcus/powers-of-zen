@@ -1855,8 +1855,18 @@ def main():
                                          **(json.loads(args.stage_params) if args.stage_params else {})})]
         else:
             for k, r in enumerate(_sorder):
-                if isinstance(r.get("stage"), dict):
+                if isinstance(r.get("stage"), dict) and r["stage"].get("kit"):
                     _splan.append((k, r["stage"]))
+                elif isinstance(r.get("stage"), dict) and args.stage_auto:
+                    # an authored stage WITHOUT a kit = "the auto kit, plus these fields" (the
+                    # composer writes stage.element on every micro card; the kit stays the engine's)
+                    if r.get("cameo") and args.cameo_mode != "sprite":
+                        continue
+                    _sg = _stagemod.suggest_stage(r, seed_key=spec.get('scaffold_name') or spec.get('name') or '')
+                    if _sg:
+                        _splan.append((k, {**_sg, **r["stage"]}))
+                        print(f"[dive] stage-auto: card {k} {r.get('name')!r} -> {_sg} + authored "
+                              f"{sorted(r['stage'])}", flush=True)
                 elif args.stage_auto and r.get("stage") is not False:
                     if r.get("cameo") and args.cameo_mode != "sprite":
                         # the mascot card is never auto-staged in PAINT mode (stage cards refuse

@@ -56,6 +56,9 @@
       "target_phrase": "a small knot",
       "resolve": {
         "mode": "lattice"
+      },
+      "stage": {
+        "element": "a spectrin junction, six coiled olive-bronze protein springs meeting at one burnished knot, a short anchor post beneath it, a dull slate-violet sheen"
       }
     },
     {
@@ -69,11 +72,11 @@
       "target_phrase": "a small lit point",
       "cameo": {
         "sprite": "output/mascots/canon/adam.png",
-        "pos": [
-          0.64,
-          0.36
-        ],
+        "pos": [0.64, 0.36],
         "size": 0.14
+      },
+      "stage": {
+        "element": "a carbon atom, a frosted rose glass bead with four soft violet plumes, one white-hot point glowing deep inside"
       }
     },
     {
@@ -82,7 +85,10 @@
       "kind": "seam",
       "dur": 4,
       "palette": "flesh-pink spheres and deep blue spheres, a rose haze on ink-black",
-      "scene": "a lopsided droplet of luminous spheres packed tight, twelve of them, six flesh-pink and six deep blue, all the flesh-pink spheres heaped to one flank of the droplet and all the deep blue spheres heaped to the other, a thin seam of mixed pink and blue spheres down the middle, the droplet stretched with the pull, a soft rose haze about it on an ink-black void"
+      "scene": "a lopsided droplet of luminous spheres packed tight, twelve of them, six flesh-pink and six deep blue, all the flesh-pink spheres heaped to one flank of the droplet and all the deep blue spheres heaped to the other, a thin seam of mixed pink and blue spheres down the middle, the droplet stretched with the pull, a soft rose haze about it on an ink-black void",
+      "stage": {
+        "element": "a nucleon, a glossy enamel sphere split down the middle, one half flesh-pink and one half deep blue, a rose glint along the seam"
+      }
     },
     {
       "name": "bullet_cluster",

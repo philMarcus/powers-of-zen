@@ -1,0 +1,122 @@
+{
+  "name": "lodestar_mudflat",
+  "theme": "a tidal mudflat under the aurora, read as ONE compass needle at every scale: ALIGNMENT, many parallel things all pointing one way. A planet's field lines loop pole to pole and light a rose-and-cyan aurora oval over its night side; beneath it an estuary mudflat ribbed with parallel ripples; in one drop of its mud a crowd of magnetotactic bacteria all swim the same way along the field, because each carries a single-file chain of magnetite crystal cubes; into one cube's cubic spinel lattice of aligned iron atoms, and down to an iron nucleus of spinning tops all leaning one way, which morphs up into the planet's field lines as the same alignment read at both ends of scale (a magnetic seam). Palette family: field-line cyan & aurora rose, ink-violet night, rust-orange iron points.",
+  "style": "neon_drift",
+  "stage_look": "wire",
+  "music_lane": "aurora_strings",
+  "format": {
+    "beats_per_bar": 4,
+    "frames_per_beat": 7,
+    "exact_loop": true,
+    "counter": true
+  },
+  "registers": [
+    {
+      "name": "field_cage",
+      "exp": 8.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "electric cyan field-line arcs, rose-magenta glow at both poles, ink-violet void, scattered violet-white stars",
+      "scene": "a planet's magnetic field in deep space at night, hundreds of electric-cyan field lines looping from pole to pole in nested parallel arcs, the whole cage of lines combed back into a long streaming tail by the solar wind, a small night-side globe at its heart with a rose-magenta glow ringing each pole, ink-violet void and scattered stars all around",
+      "target": "a night-side globe",
+      "target_phrase": "a shadowed planet"
+    },
+    {
+      "name": "aurora_oval",
+      "exp": 6.8,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "ink-violet night ocean, rose-magenta and electric-cyan aurora oval, pewter coastlines, faint violet starfield",
+      "scene": "the night side of a planet seen from orbit high above its pole, oceans and continents lying in ink-violet shadow, a vast ring-shaped aurora oval of rose-magenta and electric-cyan curtains circling the pole, its streamers all standing parallel to one another, a long pewter estuary coast glinting under the oval, a faint violet starfield over the planet's curved rim",
+      "target": "a pewter estuary",
+      "target_phrase": "a glinting estuary"
+    },
+    {
+      "name": "tidal_mudflat",
+      "exp": 1.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "pewter-violet wet mud sheen, rose-magenta and cyan aurora sky, ink-violet tide channels, rust-orange worm casts",
+      "scene": "a tidal estuary mudflat at night under the aurora, seen low and oblique from just above the mud, wet pewter-violet mud ribbed with ripple marks all running the same way, tide channels branching toward the sea, a pair of long-billed curlews probing the mud, coiled rust-orange lugworm casts in rows, mud snails trailing grooves, a shore crab at a channel edge, glistening shallow mud pools scattered across the flat, rose-magenta and cyan aurora streamers across the sky above",
+      "target": "a glistening mud pool",
+      "target_phrase": "a glistening mud pool"
+    },
+    {
+      "name": "microbe_zoo",
+      "exp": -3.5,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "teal-cyan water, glassy ribbed diatoms, emerald filaments, rust-dotted bacteria on ink-violet silt",
+      "scene": "a crowded drop of estuary mud water teeming with microbes, glassy pennate diatoms with ribbed silica shells, a fringed oval ciliate rowing on its hairs, coiled emerald algal filaments, silt grains strewn across the bottom, and a parade of hundreds of curved rod bacteria all swimming the same way in parallel file, each one with a faint line of rust-orange dots down its middle, teal-cyan water over ink-violet silt",
+      "target": "a curved rod bacterium",
+      "target_phrase": "a curved rod bacterium",
+      "cameo": {
+        "sprite": "output/mascots/canon/belle.png",
+        "pos": [
+          0.28,
+          0.7
+        ],
+        "size": 0.13
+      },
+      "stage": {
+        "element": "magnetotactic bacterium, a curved comma of translucent teal-cyan jelly, a line of rust-orange dots glowing down its length, one hair-thin flagellum"
+      }
+    },
+    {
+      "name": "bacterium_interior",
+      "exp": -5.7,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rose-violet cytoplasm gel, cyan membrane walls, rust-orange crystal cubes, deep plum depths",
+      "scene": "the interior of one curved bacterium, a long tunnel of rose-violet cytoplasm walled by a glossy cyan double membrane, ribosome granules drifting through the gel, a coiled nucleoid tangle off to one side, and running straight down the tunnel's axis a single-file chain of rust-orange crystal cubes, deep plum depths at either end",
+      "target": "a chain of crystal cubes",
+      "target_phrase": "a chain of cubes",
+      "stage": {
+        "element": "ribosome granule, a lumpy rose-violet bead of frosted soft wax, a dim plum glow inside it"
+      }
+    },
+    {
+      "name": "magnetosome_chain",
+      "exp": -7.3,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-orange magnetite cubes, glossy rose membrane sacs, twisted cyan protein filament, ink-violet surround",
+      "scene": "a magnetosome chain stretching across the gel, a single-file string of rust-orange magnetite crystal cubes, every cube sealed in its own glossy rose-tinted membrane sac, the sacs strung along a taut protein filament of twisted electric-cyan fibre, all the cubes squared to the same facing, smaller young cubes budding at one end of the string, ink-violet gel all around",
+      "target": "a rust-orange crystal cube",
+      "target_phrase": "a rust crystal cube",
+      "stage": {
+        "element": "magnetosome, a squat rust-orange magnetite cube of rough granular mineral sealed in a glossy translucent rose sac, backlit"
+      }
+    },
+    {
+      "name": "spinel_lattice",
+      "exp": -9.6,
+      "kind": "zoom",
+      "dur": 4,
+      "palette": "rust-orange iron atoms, cyan glints all on one side, violet oxygen spheres, ink-violet depth",
+      "scene": "the magnetite lattice inside one crystal cube, a cubic spinel grid of violet oxygen spheres stacked in square ranks with rust-orange iron atoms seated in the gaps between them, every iron atom carrying a cyan glint on the same side so all the glints face one direction, row behind row of the grid receding into ink-violet depth",
+      "target": "a glowing iron atom",
+      "target_phrase": "a rust iron atom",
+      "stage": {
+        "kit": "lattice",
+        "variant": "cubic",
+        "element": "iron atom, a polished rust-orange metal bead with one hard electric-cyan arc of light along its side, a violet sheen at its rim"
+      }
+    },
+    {
+      "name": "iron_nucleus",
+      "exp": -14,
+      "kind": "seam",
+      "dur": 4,
+      "palette": "rust-orange and rose spheres, electric-cyan parallel threads, ink-violet void",
+      "scene": "an iron nucleus as a shivering droplet of fifty-six glowing spheres packed tight, rust-orange and rose spheres crowded together, each sphere a tiny spinning top with its axis leaning the same way as all the others, threads of electric-cyan glow running parallel through and past the droplet into an ink-violet void",
+      "stage": {
+        "kit": "nucleus",
+        "element": "iron nucleon, a molten rose-orange ember sphere girdled by looping electric-cyan field-line arcs that converge at two glowing magenta poles"
+      }
+    }
+  ],
+  "music_theme": "shimmering polar strings over a deep soft kick on every downbeat at a flowing tempo, a high cyan glissando line drawn out like a field line across the planet and the aurora, plucked harp and low marimba as the mudflat and its crowd of microbes swim past, a single sustained bowed drone pulling straight through the chain of crystal cubes, a hushed bell cluster in the lattice, and a low swelling chord on the morph from the iron nucleus back out to the field lines",
+  "music_key": "F# minor",
+  "render_start": "aurora_oval"
+}
