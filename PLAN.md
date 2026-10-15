@@ -3577,3 +3577,20 @@ the same anacrusis shape as the unstaged morph. ARM queued (tmux beatq, after th
 4-6 with pickup 3 vs v2's own handoffs at 160/192, measured with beat_measure.py. If the flip lands at -2..0, this
 is a FORMAT fix (the music lock is part of the approved format) — Phil flips it (night_batch would pass
 --stage-preroll-pickup 3 under the pre-roll).
+MIDDLE-GROUND ARMS (06:23-, tmux paintm2; sulfur lattice k7, same seed, bold scale): l0b today (drawn scale) / M0 today
+at bold scale / M1 orb 0.9 + id 0.5 + today's leash 0.55 + repaint 0.50/0.60 + our fog / M2 = M1 + the canyon field
+blurred 14 px and dimmed 0.45 / M3 orb 0.5, id 0.40, repaint capped 0.40/0.45 / M4 orb 0.9, id 0.5, repaint capped
+0.30/0.32. (The first launch died in 2 s on an unquoted shell variable; yesterday's lab dirs were archived by the
+nightly cleanup, hence the fresh baseline.) M1 EARLY READ (frames 226-238, scratchpad/orange/paint_mid_early.png +
+paint_mid_layers.png = M0 vs M1 stage layer and fed frame at f232): the orbs survive today's repaint as patterned /
+mandala spheres for the first frames, then the frame turns into the same RED-ORANGE WASH as L1. THE LAYERS SAY WHY:
+this card's stage background is a flat TANGERINE fog, and at identity 0.5 that flat colour dominates the fed frame
+(M0 at identity 0.35 lets the previous frame's painted network through instead); the lattice kit draws no bonds here,
+so the layer has nothing but orbs on orange. And the tangerine fog is itself a BUG in the fog-phrase rule that is ON in
+the nightly: the palette says "tangerine and ultramarine electron fog ON INK-BLACK" — the fog there is the species, the
+far field is black — but fog_colour skipped dark phrases and the darkest-species fallback made a tangerine plane.
+FIXED (commit 0ac0d4d): a positional dark ("on ink-black", "over midnight", "into inky void") or a dark far-field
+phrase ("pine-black deep beyond") gives a near-black fog (hue kept, max 0.05); footprint in the queue: 16 of the 37
+staged cards with a far-field colour now get a near-black fog (their palettes name a dark ground). M3/M4 start after
+the fix and carry it; M1b (= M1 + black fog) and l0c (today + black fog) are queued after the beat arm (tmux paintm1b)
+for a like-for-like read.
