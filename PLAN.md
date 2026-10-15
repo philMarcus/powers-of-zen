@@ -3646,3 +3646,17 @@ so the knob alone reproduces the arm; night_batch passes --stage-preroll-pickup 
 the Lab: review/lab/beat_before_after.mp4 (today | pickup 2, 1 kHz click on every bar line, x3) + the frames strip.
 FULL VIDEO relaunched 08:50 as valdes_blow v4 (FIELDS=0, PICKUP=2; the 08:48 PICKUP=3 start was killed at card 5 and its
 partial v3 removed — my queue script's fallback picked 3 when 2 missed an arbitrary -1.5 f bar; the frames decided).
+FULL VIDEO RESULT (09:56; valdes_blow v4 = the Review entry, caption + 5 music candidates kept, v1/v2 on disk; Lab:
+review/compare/valdes_blow_PAINT.mp4 = v1 nightly | v4 painted, + per-card strip paint_full_strip.png):
+  k5 tissue  "skin cell"     v1 sat 0.88 hue 1.70 | v4 sat 0.93 hue 1.41   cleaner honeycomb, amber cells with nuclei;
+                                                                         still one-colour amber (fog was NOT dark: the
+                                                                         palette says "ink-black gaps" — rule extended
+                                                                         after the render, see below)
+  k6 tubes   "ribosome bead" v1 sat 0.68 hue 3.04 | v4 sat 0.74 hue 2.48   bead clusters, little change
+  k7 lattice "sulfur atom"   v1 sat 0.72 hue 1.23 | v4 sat 0.62 hue 2.72   THE WIN: gem orbs on a dark bond network
+  k8 tracks  "spark"         v1 sat 0.73 hue 1.74 | v4 sat 0.87 hue 1.59   orange; sparks too small to carry a picture
+  Handoff timing in v4 (pickup 2): flips at -9/-3/-3/-1/+2 f over the five staged bar lines (k5's -9 is the
+  unstaged->stage handoff where the tracker was not locked; the plain dive's own churn dominates there).
+  READING: the orb recipe pays off where the element is big and the ground is dark (the lattice); on dense tissue
+  and on tiny sparks it changes little. FOG RULE EXTENDED (after the render): a dark named as gaps / ground /
+  background / between in its own phrase ("ink-black gaps") is the far field too.

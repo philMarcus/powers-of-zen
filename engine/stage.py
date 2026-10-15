@@ -1321,6 +1321,12 @@ def fog_colour(palette):
                   palette or '', re.I)
     if m:
         return _dark_of(m.group(2))
+    # "..., ink-black gaps" / "ink-black between": a dark named as the GAPS / ground / background in its own
+    # phrase is the far field too (valdes_blow's skin-cell card, 2026-10-15)
+    m = re.search(r"(?:^|,)\s*((?:[\w-]*(?:black|ink|inky|midnight|soot)[\w-]*)\s+(?:gaps?|ground|background|backdrop|between|"
+                  r"interstices|shadows?|void|deep|depths|distance|beyond))\s*(?:,|$)", palette or '', re.I)
+    if m:
+        return _dark_of(m.group(1))
     for ph in re.split(r",|\bon\b|\bover\b|\bunder\b|\bthrough\b", palette or ''):
         if not _FOG_WORD.search(ph):
             continue
