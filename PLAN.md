@@ -3559,3 +3559,21 @@ glass sphere"), with little per-frame invention left (den 0.30). Today's stage h
 beads, but the repaint keeps inventing). The middle — the painted field dimmed/blurred as far, element lines
 written as MATERIAL not object ("fogged amber glass, veined"), a repaint between 0.32 and 0.45 — is untested.
 Both are judgement calls for Phil from the two clips; nothing in the nightly changed.
+
+### 2026-10-15 — THE STAGED HANDOFF FLIPS BEFORE THE BEAT (Phil, scoring lepidolite_halo_var: "the morph was happening
+a fraction of a second before the beat on the staged ones, unlike the unstaged ones")
+MEASURED (scratchpad/orange/beat_measure.py: per bar line, the frame at which the picture becomes nearer the NEW world
+than the old; 0 = downbeat, 12 f = 1 s): valdes_blow v2 staged handoffs flip at -9, -5, -8, -2, -11 f (mean -0.58 s)
+vs plain bars -16/+6/+2/-4/-9 (noisy: a continuous zoom has no clean "old world"); lepidolite v3 staged -4, -3, -5, +2
+(mean -0.21 s). The raw frame-change curve agrees: on staged bars the change is in the 16 frames BEFORE the beat and
+the frames after the beat are calmer than baseline (0.7x), the opposite of an unstaged arrival (pickup 2 f, peak ON
+the beat, plateau after). WHY: the pre-roll disc grows geometrically (0.12 W x zoom^2.2, or the nested target's
+radius) and reaches full frame AT the bar line — so it covers half the frame several frames early, which is the
+perceived flip; at the beat the new stage is already there and only the identity settles. Phil's ear is right.
+BUILT (lab, commit below): `--stage-preroll-pickup A` (+ `--stage-preroll-window F`, 0.28 W): the coming world stays a
+WINDOW (<= 0.28 W, ~14 % of the frame) for most of the pre-roll — the containment reading kept — and opens
+geometrically over the last A frames to full on the bar line (A=3: 0.50 W at -3, 0.89 W at -2, 1.6 W at -1), i.e.
+the same anacrusis shape as the unstaged morph. ARM queued (tmux beatq, after the paint chain): valdes_blow cards
+4-6 with pickup 3 vs v2's own handoffs at 160/192, measured with beat_measure.py. If the flip lands at -2..0, this
+is a FORMAT fix (the music lock is part of the approved format) — Phil flips it (night_batch would pass
+--stage-preroll-pickup 3 under the pre-roll).

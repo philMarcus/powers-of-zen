@@ -711,6 +711,10 @@ def tone_anchor_image(img, sd_t=0.21, sat_t=0.56, k_max=1.6, s_max=1.5, chroma_a
 _nest_logged = set()
 
 
+PREROLL_PICKUP = 0        # dive --stage-preroll-pickup A (lab, 2026-10-15): anacrusis-shaped pre-roll, 0 = today
+PREROLL_WINDOW = 0.28     # dive --stage-preroll-window F: the window radius (x W) before the pickup
+
+
 def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0, nest=False, trk=None):
     """The pre-roll disc for frame i: (mask HxW in [0,1], coming-stage rgb, coming-stage depth,
     identity-inside weight, radius px). Grows at zoom^k from 0.12 W (P frames before the bar
@@ -782,6 +786,21 @@ def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0,
                 rad = max(rad, 0.5 * float(trk.size) * W)
         except Exception:
             pass
+    if PREROLL_PICKUP > 0:
+        # ANACRUSIS-SHAPED PRE-ROLL (2026-10-15; Phil: on staged handoffs the big change lands a
+        # fraction of a second BEFORE the beat — measured: the picture becomes the new world 2-11
+        # frames early because the disc covers half the frame several frames before the bar line).
+        # The coming world stays a WINDOW (radius <= PREROLL_WINDOW x W) for most of the pre-roll,
+        # then opens geometrically over the last PREROLL_PICKUP frames so the flip peaks ON the
+        # downbeat, like the unstaged morph's 2-frame pickup.
+        to_beat = -pj                                   # pj = -P..-1 across the previous card's tail
+        cap = PREROLL_WINDOW * W
+        full = 1.4 * math.hypot(W, H)
+        if to_beat > PREROLL_PICKUP:
+            rad = min(rad, cap)
+        else:
+            frac = (PREROLL_PICKUP - to_beat + 1) / (PREROLL_PICKUP + 1)
+            rad = min(full, max(min(rad, full), cap * (full / cap) ** frac))
     yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
     dist = np.sqrt((xx - ax * W) ** 2 + (yy - ay * H) ** 2)
     m = np.clip((rad - dist) / max(12.0, 0.75 * rad), 0.0, 1.0)
@@ -1251,6 +1270,14 @@ def main():
                     help="stage-variety tone anchor weights its chroma gain by each pixel's own chroma "
                          "and stretches luminance only (no hue-noise confetti on a grey stage layer; "
                          "lab, 2026-10-10). Default = the flat gain Phil approved on thousand_moons_var")
+    ap.add_argument("--stage-preroll-pickup", type=int, default=0, metavar="A",
+                    help="lab (2026-10-15): ANACRUSIS-SHAPED pre-roll — the coming stage stays a window of "
+                         "--stage-preroll-window x W for most of the pre-roll and opens to full over the last "
+                         "A frames, so the handoff's flip peaks ON the downbeat (measured today: 2-11 frames "
+                         "early). 0 = today's schedule (the disc fills the frame before the bar line)")
+    ap.add_argument("--stage-preroll-window", type=float, default=0.28, metavar="F",
+                    help="with --stage-preroll-pickup: the window's radius as a fraction of the width "
+                         "(0.28 ~ 14%% of the frame area)")
     ap.add_argument("--stage-preroll-k", type=float, default=2.2, metavar="K",
                     help="with --stage-preroll: disc growth exponent on the zoom (>=1)")
     ap.add_argument("--stage-id", type=float, default=0.5, metavar="W",
@@ -1525,6 +1552,7 @@ def main():
         "stage": args.stage, "stage_card": args.stage_card, "stage_params": args.stage_params,
         "stage_auto": bool(args.stage_auto), "cameo_mode": args.cameo_mode,
         "stage_preroll": args.stage_preroll, "stage_preroll_k": args.stage_preroll_k,
+        "stage_preroll_pickup": args.stage_preroll_pickup, "stage_preroll_window": args.stage_preroll_window,
         "stage_den": args.stage_den, "stage_cn": args.stage_cn, "stage_id": args.stage_id,
         "play_rot": play_rotation(spec, cfg["fps"], lap_cut) if not args.frames else 0,
         # per-CARD (register) frame counts: lets a future --from-card verify its prefix
@@ -1800,6 +1828,8 @@ def main():
             and "registers" in spec and cfg["build"] != "out":
         import stage as _stagemod
         _stagemod.FOG_FROM_PHRASE = bool(args.stage_fog_phrase)     # lab: fog tint from the far-field phrase
+        globals()["PREROLL_PICKUP"] = int(args.stage_preroll_pickup)   # lab: anacrusis-shaped pre-roll
+        globals()["PREROLL_WINDOW"] = float(args.stage_preroll_window)
         _sregs = spec["registers"]
         _snames = [r["name"] for r in _sregs]
         _srs = spec.get("render_start")
