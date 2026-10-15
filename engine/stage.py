@@ -376,6 +376,13 @@ class Stage:
             means.append(t[size // 4: 3 * size // 4, size // 4: 3 * size // 4].reshape(-1, 3).mean(0))
         if not texs:
             return 0
+        # the KIT's elements only: spheres up to 1.6x the median sphere radius wear the picture;
+        # big scene extras (the nucleus card's two loose silver spheres became "a weird ball")
+        # and tiny far specks keep their colour
+        _rads = np.array([float(np.max(it[2])) if np.ndim(it[2]) else float(it[2]) for it in self.items if it[0] == 'sphere'], np.float32)
+        _med = float(np.median(_rads)) if len(_rads) else 0.0
+        self._elem_ok = np.array([(it[0] == 'sphere' and (float(np.max(it[2])) if np.ndim(it[2]) else float(it[2])) <= 1.6 * _med)
+                                  for it in self.items], bool)
         self.elem_tex, self.elem_tex_mean = texs, means
         self.echo_tex = texs[0]                 # the decal path reads echo_tex*; elem_tex overrides per element
         self.echo_tex_mean = means[0]
@@ -383,11 +390,15 @@ class Stage:
         self._echo_rot_mir()
         return len(texs)
 
-    def set_background_image(self, img):
+    def set_background_image(self, img, blur=0.0, dim=1.0):
         """The far field as the AI painted it (from the author's field line): the stage's
-        background instead of a flat / gradient colour. Elements still fog toward fog_rgb."""
+        background instead of a flat / gradient colour. Elements still fog toward fog_rgb.
+        blur (px) + dim (brightness factor) turn a painted SCENE into a far backdrop — the first
+        A/B's sharp canyon became the card and the atoms its specks."""
         im = img.convert("RGB").resize((self.w, self.h), Image.LANCZOS)
-        self.bg_image = np.asarray(im, np.float32) / 255.0
+        if blur and blur > 0:
+            im = im.filter(ImageFilter.GaussianBlur(float(blur)))
+        self.bg_image = np.clip(np.asarray(im, np.float32) / 255.0 * float(dim), 0, 1)
 
     def _echo_rot_mir(self):
         """One fixed rotation + mirror per element for decals and relief (same draw for both)."""
@@ -852,8 +863,12 @@ class Stage:
             _tmean = getattr(self, 'echo_tex_mean', None)
             _etl = getattr(self, 'elem_tex', None)
             if _etl:
-                # plate-style: one of the AI's element pictures per element
-                _tex, _tmean = _etl[i % len(_etl)], self.elem_tex_mean[i % len(_etl)]
+                # plate-style: one of the AI's element pictures per KIT element (scene extras keep colour)
+                _eok = getattr(self, '_elem_ok', None)
+                if _eok is None or (i < len(_eok) and _eok[i]):
+                    _tex, _tmean = _etl[i % len(_etl)], self.elem_tex_mean[i % len(_etl)]
+                else:
+                    _tex, _tmean = None, None
             if _tex is not None and kind == 'sphere' and rpx < 6.0:
                 # too small for a picture: the echo in COLOUR only (the swatch's own tone)
                 base = base * (1.0 - self.echo_tex_w) + _tmean * self.echo_tex_w

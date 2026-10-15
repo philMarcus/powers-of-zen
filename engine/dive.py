@@ -1202,15 +1202,24 @@ def main():
                          "one as a decal, the far field (stage.field / --stage-field) is painted as the stage "
                          "background, and the repaint runs at the plate's trust (--stage-paint-den/-cn/-id). "
                          "The card's echo is dropped (the element picture IS the surface).")
-    ap.add_argument("--stage-paint-den", type=float, default=0.30, metavar="D",
-                    help="with --stage-paint: travel denoise on painted stage cards (the plate's cap is 0.32)")
-    ap.add_argument("--stage-paint-den-arrival", type=float, default=0.32, metavar="A",
-                    help="with --stage-paint: arrival denoise on painted stage cards")
-    ap.add_argument("--stage-paint-cn", type=float, default=0.25, metavar="C",
-                    help="with --stage-paint: depth-ControlNet weight of the stage's depth map (today's "
-                         "tiers 0.40-0.70; the plate uses none)")
-    ap.add_argument("--stage-paint-id", type=float, default=0.40, metavar="W",
-                    help="with --stage-paint: identity hold of the stage layer (the plate's globe floor 0.40)")
+    ap.add_argument("--stage-paint-den", type=float, default=None, metavar="D",
+                    help="with --stage-paint: CAP the travel denoise on painted stage cards (the plate's cap is "
+                         "0.32; the first A/B used 0.30). Absent = today's tier value")
+    ap.add_argument("--stage-paint-den-arrival", type=float, default=None, metavar="A",
+                    help="with --stage-paint: cap the arrival denoise on painted stage cards. Absent = today's")
+    ap.add_argument("--stage-paint-cn", type=float, default=None, metavar="C",
+                    help="with --stage-paint: depth-ControlNet weight of the stage's depth map (today's tiers "
+                         "0.40-0.70; the first A/B used 0.25 and lost the lattice). Absent = today's tier value")
+    ap.add_argument("--stage-paint-id", type=float, default=None, metavar="W",
+                    help="with --stage-paint: identity hold of the stage layer (tiers 0.22-0.50; the plate's "
+                         "globe floor 0.40). Absent = today's tier value")
+    ap.add_argument("--stage-paint-scale", default=None, metavar="S",
+                    help="with --stage-paint: force the element scale on painted cards — hero / bold / field / "
+                         "swarm or a number (a picture on a small sphere is a speck). Absent = the card's draw")
+    ap.add_argument("--stage-paint-field-blur", type=float, default=0.0, metavar="PX",
+                    help="with --stage-paint: blur the painted field by PX (a backdrop, not a scene); 0 = sharp")
+    ap.add_argument("--stage-paint-field-dim", type=float, default=1.0, metavar="F",
+                    help="with --stage-paint: multiply the painted field's brightness by F (0.45 = far)")
     ap.add_argument("--stage-paint-tex", type=float, default=0.9, metavar="T",
                     help="with --stage-paint: how much of each sphere's colour the element picture replaces")
     ap.add_argument("--stage-element", action="append", default=[], metavar="K=TEXT",
@@ -1927,6 +1936,12 @@ def main():
                     _vlook = _jlook if (_zlib.crc32(f"{_skey(_sk)}|look".encode()) % 100) < 55 \
                         else _stagemod.draw_look(f"{_skey(_sk)}|cardlook")
                 _jlook = _vlook
+                if args.stage_paint and args.stage_paint_scale:
+                    # painted cards want larger elements (a picture on a small sphere is a speck)
+                    _ppel = {int(x.split("=", 1)[0]) for x in args.stage_element if "=" in x}
+                    if _sk in _ppel or (isinstance(_sdef, dict) and _sdef.get("element")):
+                        _psc = _stagemod.SCALES.get(args.stage_paint_scale)
+                        _sdef = dict(_sdef, scale=float(_psc if _psc is not None else args.stage_paint_scale))
                 _vplan = _stagemod.plan_variety(_skey(_sk), _sdef, _sdef.get("kit", "lattice"), _vlook,
                                                 donors=_donors, authored_echo=_aecho,
                                                 motion=bool(args.stage_motion))
@@ -1985,16 +2000,28 @@ def main():
                                         cfg, _fp, _fs, neg_extra="text, watermark, frame, border")))).convert("RGB")
                                     _swatch_memo[(_fp, _fs)] = _fim
                                 _fim.save(out_dir / "build" / "stage" / f"field_{_sk}.png")
-                                _stage.set_background_image(_fim)
-                            _stage.den_travel, _stage.den_arrival = args.stage_paint_den, args.stage_paint_den_arrival
-                            _stage.cn_w, _stage.wid_hold = args.stage_paint_cn, args.stage_paint_id
-                            _stage.den_cap = (args.stage_paint_den, args.stage_paint_den_arrival)
+                                _stage.set_background_image(_fim, blur=args.stage_paint_field_blur,
+                                                            dim=args.stage_paint_field_dim)
+                            # trust: only what was asked for; the rest stays today's tier value (the first
+                            # A/B forced cn 0.25 and the lattice stopped being a lattice)
+                            if args.stage_paint_den is not None or args.stage_paint_den_arrival is not None:
+                                _dt = args.stage_paint_den if args.stage_paint_den is not None else float(_stage.den_travel)
+                                _da = args.stage_paint_den_arrival if args.stage_paint_den_arrival is not None else float(_stage.den_arrival)
+                                _stage.den_travel, _stage.den_arrival = min(float(_stage.den_travel), _dt), min(float(_stage.den_arrival), _da)
+                                _stage.den_cap = (_dt, _da)
+                            if args.stage_paint_cn is not None:
+                                _stage.cn_w = args.stage_paint_cn
+                            if args.stage_paint_id is not None:
+                                _stage.wid_hold = args.stage_paint_id
                             _stage.echo_clause = f"every {_pnoun} is {_eline}" + (f", {_fline}" if _fline else "")
                             _vplan["echo"] = None
-                            print(f"[dive] stage-paint: card {_sk} element {_eline!r} ({len(_pimgs)} pictures)"
-                                  f"{' field painted' if _fline else ''}; den {args.stage_paint_den:.2f}/"
-                                  f"{args.stage_paint_den_arrival:.2f} cn {args.stage_paint_cn:.2f} id "
-                                  f"{args.stage_paint_id:.2f} tex {args.stage_paint_tex:.2f}", flush=True)
+                            print(f"[dive] stage-paint: card {_sk} element {_eline!r} ({len(_pimgs)} pictures, on "
+                                  f"{int(getattr(_stage, '_elem_ok', np.zeros(0)).sum())} elements)"
+                                  f"{(' field painted blur %.0f dim %.2f' % (args.stage_paint_field_blur, args.stage_paint_field_dim)) if _fline else ''}; "
+                                  f"den {_stage.den_travel:.2f}/{_stage.den_arrival:.2f}"
+                                  f"{' (capped)' if getattr(_stage, 'den_cap', None) else ''} cn {getattr(_stage, 'cn_w', args.stage_cn):.2f} "
+                                  f"id {getattr(_stage, 'wid_hold', args.stage_id):.2f} tex {args.stage_paint_tex:.2f} "
+                                  f"scale {_vplan['scale_name']} ({_vplan['scale']:.2f})", flush=True)
                         except Exception as _pe:
                             print(f"[dive] stage-paint: card {_sk} failed ({_pe}); today's stage kept", flush=True)
                     else:
