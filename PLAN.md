@@ -3612,3 +3612,13 @@ today | M0 | M1 | M2 | M3 | M4, x4; M1/M2 ran BEFORE the fog fix (tangerine fog)
   a near-black fog or a blurred-dim field. M1b (orb + black fog, no field) and l0c (today + black fog) run after the
   beat arm to separate the fog fix from the field. NEXT (Phil's go): the full-video test = valdes_blow v3 with element
   lines on all four staged cards at the M2 recipe + the fog fix, into Review next to v2.
+BEAT ARM RESULT (07:59; valdes_blow cards 4-6, pickup 3 / window 0.28 W vs v2's own pre-roll; scratchpad/orange/
+beat_frames_pickup3.png = frames -6..+3 at both handoffs, both arms): the 0.5-threshold flip moved from -9/-5 f
+(mean -0.58 s) to -6/-3 f (mean -0.38 s); the steepest-rise frame from 0/-6 to -2/-3. The FRAMES show it plainly:
+with today's pre-roll the tissue honeycomb already covers most of the frame at -6; with the pickup the old world holds
+until -3, the window opens over -3..-1 and the beat frame completes it — the flip sits at -3..-2, two frames early.
+NEXT ARM (tmux beatq2, after M1b): pickup 2 + window 0.22 W (-2: 0.6 W, -1: 1.3 W -> the flip at -1..0, the unstaged
+morph's own two-frame pickup). The audible before/after (pickup 3) is in the Lab tab: review/lab/beat_before_after.mp4
+(today | pickup, a 1 kHz click on every bar line, looped x3). The knob (settings stage_preroll_pickup, night_batch,
+⚙ number input) is wired, OFF until the tuned value is measured; Phil: "if you think the music fix is good, go ahead
+and turn it on".
