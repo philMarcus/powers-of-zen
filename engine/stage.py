@@ -1307,9 +1307,26 @@ def fog_colour(palette):
         import palette as _p
     except ImportError:  # pragma: no cover
         return None
+    def _dark_of(ph):
+        c = _p.phrase_rgb(ph)
+        c = np.array(c, np.float32) / 255.0 if c else np.array([0.02, 0.02, 0.03], np.float32)
+        return tuple(np.clip(c * (0.05 / max(float(c.max()), 1e-3)), 0, 0.05)) if float(c.max()) > 0.05 else tuple(c)
+
+    # 2026-10-15: "... on ink-black", "... against midnight" — a POSITIONAL dark is the authored
+    # ground and wins over any fog-word phrase (valdes_blow's sulfur card: "tangerine and
+    # ultramarine electron fog on ink-black" — the fog there is the SPECIES; the far field is
+    # black, and the darkest-species fallback gave a tangerine plane = the wash)
+    m = re.search(r"\b(on|over|against|into)\s+(?:an?\s+|the\s+)?((?:[\w-]*(?:black|ink|inky|midnight|soot|void)[\w-]*)"
+                  r"(?:\s+(?:void|deep|dark|darkness|depths|sky|space|night|field|ground|plane|beyond))?)\s*(?:,|$)",
+                  palette or '', re.I)
+    if m:
+        return _dark_of(m.group(2))
     for ph in re.split(r",|\bon\b|\bover\b|\bunder\b|\bthrough\b", palette or ''):
-        if not _FOG_WORD.search(ph) or _DARK_WORD.search(ph):
+        if not _FOG_WORD.search(ph):
             continue
+        if _DARK_WORD.search(ph):
+            # a far-field phrase that names a dark ("pine-black deep beyond") IS the far field
+            return _dark_of(ph)
         c = _p.phrase_rgb(ph)
         if c:
             c = np.array(c, np.float32) / 255.0
