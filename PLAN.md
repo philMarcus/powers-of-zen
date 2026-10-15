@@ -3622,3 +3622,17 @@ morph's own two-frame pickup). The audible before/after (pickup 3) is in the Lab
 (today | pickup, a 1 kHz click on every bar line, looped x3). The knob (settings stage_preroll_pickup, night_batch,
 ⚙ number input) is wired, OFF until the tuned value is measured; Phil: "if you think the music fix is good, go ahead
 and turn it on".
+FOG FIX + M1b RESULT (08:20; strip scratchpad/orange/paint_fog_strip.png, Lab clip review/lab/fog_fix_and_orbs.mp4 =
+today | today + black fog | M1b):
+  today (tangerine fog)     detail 23.8  sat 0.72  hue-ent 1.38
+  today + black fog (l0c)   detail 23.8  sat 0.55  hue-ent 2.73   the NIGHTLY's stage with the fog rule fixed, nothing
+                                                                  else: an amber-red bond network with blue nodes on a
+                                                                  dark ground — the authored "tangerine and ultramarine on
+                                                                  ink-black" at last; saturation into the approved range
+  M2 orbs + blurred field   detail 22.4  sat 0.59  hue-ent 2.92
+  M1b orbs + black fog      detail 25.7  sat 0.63  hue-ent 2.79   the gem orbs AS the lattice's nodes on black, the network
+                                                                  between them — Phil's "gold ball with blue gems making up
+                                                                  the lattice"; cleaner than M2 (no canyon residue)
+  READING: half of the win was the fog bug (16 of 37 queued staged cards carry a dark ground in their palette); the orbs
+  are the other half. The painted FIELD is not needed when the fog is right. RECIPE for the full video: FIELDS=0,
+  orbs 0.9, identity 0.5, bold scale, today's leash + repaint (+ the pre-roll pickup once measured).
