@@ -234,6 +234,15 @@ def render_one(journey, force=False, new_seed=True, from_card=None):
                     # the coming stage stays a window and opens over the last N frames, so the
                     # handoff's flip lands ON the downbeat like the unstaged morph
                     argv += ["--stage-preroll-pickup", str(_spk)]
+                if pl.jload()["settings"].get("stage_entry"):
+                    # STAGE ENTRY (Phil 2026-10-17 on azurite_headframe v4 + the coffee lab: "let's turn
+                    # it on... forever"; PLAN "2026-10-16 NIGHT"): the plain card before a stage dives
+                    # INTO one object — the tracker's lock or an orb made where the stage dives — and
+                    # the coming world appears only inside it, its rim passing the frame corners on the
+                    # last pre-roll frame; nested stage->stage windows keep the element's radius and get
+                    # their pixels only over the last 3 frames. Replaces the pickup's two-frame blow-open
+                    # on object-following windows (the pickup still governs free-iris windows).
+                    argv += ["--stage-entry"]
             if pl.jload()["settings"].get("stage_variety"):
                 # STAGE VARIETY (PLAN "STAGE VARIETY"): lit, toned, varied stages + echoes
                 argv += ["--stage-variety"]

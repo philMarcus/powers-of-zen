@@ -1170,6 +1170,14 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
                                    "stays a small window for most of the pre-roll and opens over the last A frames, so "
                                    "the flip lands ON the downbeat (it had been landing a fraction of a second early). "
                                    "3 = the unstaged morph's pickup. 0 = the old schedule. Applies to the next renders.")
+    sentry = t2.toggle("🎯 stage entry (dive INTO one object; the new world appears only inside it)",
+                       value=bool(s.get("stage_entry")),
+                       help="2026-10-17 (engine --stage-entry): on the plain card before a staged card the dive "
+                            "goes into one object — the thing the tracker found, or an orb made where the coming "
+                            "stage dives — and the new world shows only inside it until its rim has left the frame "
+                            "on the last frame before the beat. Between two stages the window is the element itself "
+                            "and the new world's pixels arrive over the last three frames. Off = the pickup's "
+                            "two-frame opening (a wipe from a disc). Applies to the next renders.")
     sechotex = t2.toggle("🪙 echo texture (the echo donor's shape embossed on every sphere; round donors half-lit)",
                          value=bool(s.get("stage_echo_texture")),
                          help="2026-10-14 (engine --stage-echo-relief 0.35 x4 + --stage-echo-ambient 0.10): under "
@@ -1213,6 +1221,7 @@ with tabs[7]:  # SETTINGS — the pipeline knobs (outbox/journeys.json + platfor
             "stage_echo_texture": bool(sechotex), "stage_fog_phrase": bool(sfog),
             "stage_paint": bool(spaint),
             "stage_preroll_pickup": int(spickup),
+            "stage_entry": bool(sentry),
             "auto_cleanup": bool(autoclean), "min_free_gb": int(minfree),
             "post_every_hours": float(post_every),
             "post_next": post_next.strip()})

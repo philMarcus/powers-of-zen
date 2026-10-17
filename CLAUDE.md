@@ -120,6 +120,15 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
+2026-10-17 08:50 (STAGE ENTRY ON IN THE NIGHTLY; read PLAN "2026-10-17 MORNING"): Phil: "very good work... let's turn it
+on forever" (azurite v4 + the coffee clip: "I know now what we were trying to go into") -> settings stage_entry=True,
+night_batch passes --stage-entry under the pre-roll, ⚙ "🎯 stage entry"; plan-only clean on tonight's six (scoby +
+lemna have CARD 0 as the entry card = frames 1..31, a new path; 40-frame frame-0 smoke with the nightly argv PASSED, rc=0, hero on at frame 14, window follows it, stage card at 32). His nitpick:
+the azurite orb "mixes scales" — the rim grows 1.2-1.8x/frame over the last five pre-roll frames while the plunge has
+slowed to 1.03-1.05 (the hero schedule is hyperbolic = constant speed, the zoom is constant ratio); no one-line fix —
+growing at the zoom rate needs the entry to run the WHOLE card (orb ~0.3 W at the card's arrival, stage rendered x10
+further out, pixels fading in) = a half-day lab, numbers + design in PLAN; NOT built, his call. Lab: entry panels
+removed; tracks_SEA + music before/after remain unjudged. Nightly of 10-17 rendered 6 to Review (Review+Music 19/20).
 2026-10-17 02:30 (STAGE-ENTRY LAB DONE, PHIL TO JUDGE; read PLAN "2026-10-16 NIGHT" to its end): Phil: the painted nightlies
 are "very promising for the variety"; the biggest jarring thing is the unstaged->staged handoff, "a very quick wipe from a
 disk rather than a zoom" — track the object, zoom onto it, never wipe the stage outside it, stay on the beat. CAUSE: the

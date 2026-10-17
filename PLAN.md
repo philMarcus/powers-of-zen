@@ -3821,3 +3821,42 @@ OPEN (for after Phil's verdict): a LOCKED object away from the stage anchor stil
 own anchor (build the coming stage on the object's third); the hero is round (silhouette from the detector's mask
 next); the composer rule for a compact plunge target before a micro stage; the tracker's low lock rate in general
 (the resolve window owns 60% of every plain card — not only entry cards).
+
+### 2026-10-17 MORNING — PHIL'S VERDICT: STAGE ENTRY ON ("let's turn it on... forever"); the pace nitpick measured
+Phil on azurite_headframe v4 + the coffee Lab clip: "very good work... let's turn it on forever"; the coffee one
+"looks like we're diving into the leaf — I know now, and I didn't before, what we were trying to go into"; azurite
+"looked really good too" with one nitpick: "we were mixing scales a little bit, because the circle we started with was
+so large... I don't think we're zooming in at the same rate as we are in the rest of the stuff — we can see the atomic
+scale at the same time as [the rosette]. I wonder if we started it smaller and even reduced what DreamShaper made, and
+zoomed in that way." He does not want something completely different built for it; asked whether it is a small fix.
+DONE: settings stage_entry=True (pipeline default False; night_batch passes --stage-entry under the pre-roll; ⚙ "🎯
+stage entry"); argv verified by building render_one's command; plan-only on tonight's six (scoby_windowsill,
+lemna_turbine, namib_fogbasker, pele_sulphur_ring, pumpkin_scanner, tisza_mayfly_bloom) marks 1-2 entry cards each —
+scoby + lemna have CARD 0 as the entry card (frames 1..31 + the lap copy 160..191), a path no full render had run, so a
+40-frame frame-0 smoke on scoby with the exact nightly argv was run (see CLAUDE current state for the result). The four
+entry panels were removed from the Lab (judged); the Lab keeps tracks_SEA + strip and the music before/after + strip.
+THE PACE NITPICK, MEASURED (azurite v2/v4 card 6 -> 7, build/track.jsonl hero rows, diameter in W):
+  frame      205   206   208(pre-roll start) 212   215   217   218   219   220   221   222(last)
+  orb d      0.25  0.28  0.32                0.43  0.59  0.78  0.92  1.14  1.50  2.17  3.95
+  orb ratio        1.12  1.07                1.09  1.12  1.16  1.19  1.24  1.31  1.45  1.82
+  scene z          1.117 1.115               1.094 1.071 1.055 1.049 1.043 1.039 1.036 1.034
+The orb is a world-attached object only if it grows at the scene's zoom rate z (geometric). The hero schedule is
+HYPERBOLIC over the pre-roll (1/r linear in the frame = constant-SPEED approach, not constant-RATIO), so the rim grows
+SLOWER than the zoom for the first frames and then 1.2-1.8x per frame over the last five while the plunge has slowed
+to 1.03-1.05 into the bar line: the rim moves 5-25x faster than the world — a soft wipe, and the lattice inside (which
+zooms at z) is revealed region by region, which is exactly "we see the atomic scale at the same time as the rosette".
+WHY THERE IS NO ONE-LINE FIX: the zoom over the whole 16-frame pre-roll is only x3.5 (frames 206-222, the plunge
+decelerating), but the rim must travel from a small orb to past the far corner (anchor on the thirds: 1.23 W away, so
+diameter ~2.5 W, 3.95 W with the 1.6x margin) = x8-12. Growing at the zoom rate from the pre-roll start would need a
+1.1 W orb at frame 206 (bigger than the frame); a constant-ratio curve (x1.18/frame) removes the end blow-open but
+covers half the frame ~7 frames before the beat = the flip moves EARLY, against the music priority. The runway has
+to be longer: at the zoom rate the orb passes the corners on the beat only if it is already ~0.25-0.4 W at the card's
+ARRIVAL (x10 per card) — i.e. the entry runs the WHOLE card, the coming stage rendered at zoom^-k for k up to the card
+length (x10 further out = its elements a fine grain, Phil's "reduce what DreamShaper made"), the window's pixels fading
+in over the card (blend toward the ORIGINAL frame each time, never a compounding ramp — memory feedback-blend-
+accumulates), full by the pre-roll. Unknowns: whether a stage renders ~x10 further out than its frame 0 (field depth),
+how a quarter-frame disc of other material reads on the plain card for 32 frames, the beat measurement afterward.
+SIZE: a half-day lab (schedule change + preroll_at over the entry card + stage build depth) with two arms and a full
+video, not an hour. Not built; Phil's call (he leaned "something I can live with... maybe other things better worked on").
+ALSO OPEN (unchanged): a LOCKED object away from the stage anchor hands off to a stage diving at its own anchor; the
+round hero (mask silhouette); the composer compact-target rule; the general tracker lock rate.

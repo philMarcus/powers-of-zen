@@ -312,6 +312,14 @@ JSETTINGS_DEFAULTS = {
     # most of the pre-roll and opens over the last A frames, so the handoff flips ON the downbeat
     # (measured 2-11 frames early before). 0 = the disc fills the frame before the bar line.
     "stage_preroll_pickup": 0,
+    # STAGE ENTRY (2026-10-17, Phil on azurite_headframe v4 / the coffee lab: "let's turn it on...
+    # forever"): dive --stage-entry — the plain card before a stage dives INTO its target (the
+    # tracker's lock, else an orb made where the stage dives) and the coming world appears only
+    # inside that object, whose rim passes the frame corners on the last pre-roll frame; nested
+    # stage->stage windows keep the element's radius and take their pixels over the last 3 frames.
+    # The cause it fixes: the pickup capped every window at 0.22 W and blew it open in two frames
+    # = "a very quick wipe from a disk rather than a zoom" (PLAN "2026-10-16 NIGHT").
+    "stage_entry": False,
     # ECHO TEXTURE (2026-10-14, Phil: "let's turn on the echo work that we have now"): under
     # stage_variety, the echo donor's shape is EMBOSSED on every sphere (dive --stage-echo-relief
     # 0.35 x4: a height field in the shading + depth-CN, never colour — the colour decal survived
