@@ -128,7 +128,10 @@ the azurite orb "mixes scales" — the rim grows 1.2-1.8x/frame over the last fi
 slowed to 1.03-1.05 (the hero schedule is hyperbolic = constant speed, the zoom is constant ratio); no one-line fix —
 growing at the zoom rate needs the entry to run the WHOLE card (orb ~0.3 W at the card's arrival, stage rendered x10
 further out, pixels fading in) = a half-day lab, numbers + design in PLAN; NOT built, his call. Lab: entry panels
-removed; tracks_SEA + music before/after remain unjudged. Nightly of 10-17 rendered 6 to Review (Review+Music 19/20).
+EMPTY (all judged). 09:10: tracks sea "looks great, turn it on" = already the engine's kit; the composer's
+tracks-word avoidance is lifted (five rewritten cards stay). Music fix: he judges organically while picking tracks — 7 of
+the 19 Review+Music videos have staged handoffs rendered with pickup 2 (list in PLAN), 8 predate the fix, 4 have no
+stage. Nightly of 10-17 rendered 6 to Review (Review+Music 19/20).
 2026-10-17 02:30 (STAGE-ENTRY LAB DONE, PHIL TO JUDGE; read PLAN "2026-10-16 NIGHT" to its end): Phil: the painted nightlies
 are "very promising for the variety"; the biggest jarring thing is the unstaged->staged handoff, "a very quick wipe from a
 disk rather than a zoom" — track the object, zoom onto it, never wipe the stage outside it, stay on the beat. CAUSE: the

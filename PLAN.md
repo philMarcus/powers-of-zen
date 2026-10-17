@@ -3860,3 +3860,17 @@ SIZE: a half-day lab (schedule change + preroll_at over the entry card + stage b
 video, not an hour. Not built; Phil's call (he leaned "something I can live with... maybe other things better worked on").
 ALSO OPEN (unchanged): a LOCKED object away from the stage anchor hands off to a stage diving at its own anchor; the
 round hero (mask silhouette); the composer compact-target rule; the general tracker lock rate.
+09:10 — PHIL'S SECOND PASS: "particle track sea looks great, turn it on" -> nothing to flip: kit_tracks IS the sea
+kit in the engine since 5ec05b2 (any subnuclear card whose words match _RX_TRACKS, plus the seeded ~8 % of word-less
+ones); the only thing holding it back was the 10-15 rewrite steering five cards away from tracks words (azurite
+collision_vertex, crossbill pinwheel_vertex, okavango spark_spray, tisza gold_collision, cloud_chamber_hall
+droplet_string) and the standing note that the composer avoids them. That note is LIFTED: composers may write
+bubble-chamber cards again from the next refill; the five rewritten cards stay as they are (three already rendered,
+tisza renders tonight) — restoring them is composer work, on request. MUSIC FIX: Phil found the Lab clip hard to
+judge from one click ("the only thing that pops perfectly on the beat is when the manatee pops into view on the
+original") and will judge it organically while picking tracks. Of the 19 in Review+Music, 11 were rendered with
+pickup 2 — but the fix only touches STAGED handoffs, and 4 of those 11 have no staged card (selenite_hothouse,
+enceladus_ring_feed, cloud_chamber_hall, mars_spider_thaw), so the videos where it can be heard are 7: valdes_blow,
+lodestar_mudflat, azurite_headframe (also stage entry), coffee_cherry_soup, strangler_fig_hollow, coober_harlequin,
+okavango_umbel; the other 8 (thousand_moons, bloom_rosary, dazzle_bands, lotus_sieve, maelstrom_eye,
+thousand_moons_var, sequoia_rosette, labrador_schiller) predate it. Lab is EMPTY (all eight panels judged + removed).
