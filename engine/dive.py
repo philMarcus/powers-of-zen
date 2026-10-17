@@ -530,6 +530,26 @@ def hero_depth(w, h, fx, fy, frac, specks=None, Z=1.0, pan=0.0):
     return Image.fromarray((depth * 255).astype("uint8")).convert("RGB")
 
 
+def entry_depth(w, h, fx, fy, frac, base=None):
+    """dive --stage-entry (2026-10-16): the plunge target of the plain card before a stage as a
+    depth dome of diameter `frac` x W at the tracked position, max-composited over the frame's
+    OWN depth map `base` (HxW float, near = 1; None = a flat mid field). The dome is the nearest
+    thing in the picture (0.7..1.0) so the model paints ONE compact object there at its scheduled
+    size, while everything around it keeps its own depth."""
+    yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
+    depth = (np.asarray(base, np.float32).copy() if base is not None
+             else np.full((h, w), 0.25, np.float32))
+    if depth.shape != (h, w):
+        depth = np.asarray(Image.fromarray((np.clip(depth, 0, 1) * 255).astype(np.uint8)).resize((w, h)),
+                           np.float32) / 255.0
+    cx, cy = fx * w, fy * h
+    r = max(4.0, frac * w / 2.0)
+    d2 = ((xx - cx) ** 2 + (yy - cy) ** 2) / (r * r)
+    dome = np.clip(1.0 - 0.3 * d2, 0.0, 1.0)
+    depth = np.where(d2 <= 1.0, np.maximum(depth, np.maximum(dome, 0.7)), depth)
+    return Image.fromarray((np.clip(depth, 0, 1) * 255).astype("uint8")).convert("RGB")
+
+
 def detail_boost(img, cfg):
     """Fight feedback collapse: sharpen, lift contrast/saturation, add faint noise."""
     if cfg["sharpen"]:
@@ -713,9 +733,10 @@ _nest_logged = set()
 
 PREROLL_PICKUP = 0        # dive --stage-preroll-pickup A (lab, 2026-10-15): anacrusis-shaped pre-roll, 0 = today
 PREROLL_WINDOW = 0.22     # dive --stage-preroll-window F: the window radius (x W) before the pickup (0.22 measured 10-15)
+ENTRY_WID_LOW = 0.30      # object-following windows: identity of the coming world inside, before the pickup frames
 
 
-def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0, nest=False, trk=None):
+def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0, nest=False, trk=None, hero=None):
     """The pre-roll disc for frame i: (mask HxW in [0,1], coming-stage rgb, coming-stage depth,
     identity-inside weight, radius px). Grows at zoom^k from 0.12 W (P frames before the bar
     line) to past the corners at the bar line. nest=True (--stage-nest): the disc never
@@ -733,7 +754,20 @@ def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0,
     for x in range(i - (pj + ps.pre), i + 1):
         Zc *= zoom_sched[x] if zoom_sched else cfg["zoom_per_frame"]
     rad = 0.12 * W * Zc ** k_pow
-    if nest and cur_stage is not None:
+    _free = True            # a free iris (the schedule's own disc) vs an object-following window
+    if hero is not None and hero.get("d", 0) > 0:
+        # --stage-entry: the window IS the entry hero (the plunge target of the plain card before
+        # this stage): its centre and its scheduled radius, nothing else
+        ax, ay = hero["x"], hero["y"]
+        rad = max(12.0, hero["d"] * W / 2.0)
+        _free = False
+        _key = ("entry", getattr(ps, "card", None))
+        if _key not in _nest_logged:
+            _nest_logged.add(_key)
+            print(f"[dive] nest: entry hero -> stage card {_key[1]}: the window FOLLOWS the hero "
+                  f"(radius {rad / W:.2f} W at pre-roll start, {'locked' if hero.get('locked') else 'made at the heading'})",
+                  flush=True)
+    elif nest and cur_stage is not None:
         # the disc IS the element we are diving into: its projected radius is hyperbolic in
         # time (tiny until the last ~5 frames, then it looms past the frame), so the next
         # world is revealed only as we actually reach it — a zoom, not a 16-frame iris. One
@@ -760,6 +794,7 @@ def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0,
                     rpx = 2.0 * max(W, H)
                 if rpx > 0.0:
                     rad = max(12.0, rpx)
+                    _free = False
         except Exception:
             pass
     elif nest and cur_stage is None and trk is not None:
@@ -784,9 +819,10 @@ def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0,
             if _locked:
                 ax, ay = min(0.95, max(0.05, float(trk.tx))), min(0.95, max(0.05, float(trk.ty)))
                 rad = max(rad, 0.5 * float(trk.size) * W)
+                _free = False
         except Exception:
             pass
-    if PREROLL_PICKUP > 0:
+    if PREROLL_PICKUP > 0 and _free:
         # ANACRUSIS-SHAPED PRE-ROLL (2026-10-15; Phil: on staged handoffs the big change lands a
         # fraction of a second BEFORE the beat — measured: the picture becomes the new world 2-11
         # frames early because the disc covers half the frame several frames before the bar line).
@@ -803,11 +839,28 @@ def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0,
             rad = min(full, max(min(rad, full), cap * (full / cap) ** frac))
     yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
     dist = np.sqrt((xx - ax * W) ** 2 + (yy - ay * H) ** 2)
-    m = np.clip((rad - dist) / max(12.0, 0.75 * rad), 0.0, 1.0)
+    # the free iris / nested element keep the WIDE feather (the new world emerges through the old
+    # over most of the radius); the entry hero is a THING with a rim — a sphere we enter — so its
+    # window has a narrow feather (the first arm's 0.75 feather made the last two frames a
+    # full-frame cross-dissolve instead of the rim passing the corners)
+    _fe = 0.30 if (hero is not None and hero.get("d", 0) > 0) else 0.75
+    m = np.clip((rad - dist) / max(12.0, _fe * rad), 0.0, 1.0)
     m = m * m * (3 - 2 * m)
     # identity of the coming world inside the disc: 0.2 -> 0.8 across the pre-roll (was
     # 0.15 -> 0.6 while the current stage was still repainting the disc every frame)
     wid_in = 0.2 + 0.6 * (pj + ps.pre + 1) / max(1, ps.pre)
+    if PREROLL_PICKUP > 0 and not _free:
+        # IDENTITY PICKUP (2026-10-16): on an object-following window the geometry is the thing we
+        # enter (physical, never capped) and the BEAT rides the identity inside it — a faint hint
+        # of the coming world until the pickup frames, full over the last PREROLL_PICKUP frames so
+        # the flip completes on the downbeat (the geometric cap had made every handoff a two-frame
+        # wipe from a 0.22 W disc, Phil 2026-10-16)
+        to_beat = -pj
+        if to_beat > PREROLL_PICKUP:
+            wid_in = min(wid_in, ENTRY_WID_LOW)
+        else:
+            frac = (PREROLL_PICKUP - to_beat + 1) / PREROLL_PICKUP
+            wid_in = ENTRY_WID_LOW + (0.85 - ENTRY_WID_LOW) * frac
     return m, prgb, pdep, wid_in, rad
 
 
@@ -1266,6 +1319,16 @@ def main():
                     help="pre-roll disc follows the CURRENT stage's plunge-target element (never "
                          "below 0.9x its projected radius): the next world opens inside the thing "
                          "we are diving into instead of a free iris on the fixed point (lab, 2026-10-10)")
+    ap.add_argument("--stage-entry", action="store_true",
+                    help="lab (2026-10-16; Phil: the plain->stage handoff 'looks like a wipe from a disc, "
+                         "not a zoom'): the PLAIN card before a stage card dives INTO its plunge target - a "
+                         "depth dome (hero) at the tracked object grows on schedule to fill the frame on the "
+                         "bar line, the coming stage opens only inside it, and the beat rides the identity "
+                         "inside the window (faint until the pickup frames) instead of the disc's size; "
+                         "object-following stage->stage windows lose the geometric pickup cap as well")
+    ap.add_argument("--stage-entry-size", type=float, default=0.28, metavar="F",
+                    help="--stage-entry: the hero's diameter (x frame width) when the pre-roll starts; "
+                         "exponential at the zoom rate before that, hyperbolic looming across the pre-roll")
     ap.add_argument("--tone-chroma-aware", action="store_true",
                     help="stage-variety tone anchor weights its chroma gain by each pixel's own chroma "
                          "and stretches luminance only (no hue-noise confetti on a grey stage layer; "
@@ -1554,6 +1617,7 @@ def main():
         "stage_auto": bool(args.stage_auto), "cameo_mode": args.cameo_mode,
         "stage_preroll": args.stage_preroll, "stage_preroll_k": args.stage_preroll_k,
         "stage_preroll_pickup": args.stage_preroll_pickup, "stage_preroll_window": args.stage_preroll_window,
+        "stage_entry": bool(args.stage_entry), "stage_entry_size": args.stage_entry_size,
         "stage_den": args.stage_den, "stage_cn": args.stage_cn, "stage_id": args.stage_id,
         "play_rot": play_rotation(spec, cfg["fps"], lap_cut) if not args.frames else 0,
         # per-CARD (register) frame counts: lets a future --from-card verify its prefix
@@ -1823,6 +1887,7 @@ def main():
     # window, no cameo, no tracker inside the span; the stage owns aim + composition.
     stage_at = [None] * total        # per frame: (Stage, frame-within-card) or None
     preroll_at = [None] * total      # per frame: (Stage, j < 0) during the PREVIOUS card's tail
+    entry_at = [None] * total        # dive --stage-entry: frames of a PLAIN card diving into its target for the stage after it
     stages = []
     if (args.stage or args.stage_auto
             or any(isinstance(r.get("stage"), dict) for r in spec.get("registers", []))) \
@@ -2274,6 +2339,54 @@ def main():
                 for _x in range(max(0, _r0 - _s1.pre), _r0):
                     preroll_at[_x] = (_s1, _x - _r0)
                 print(f"[dive] stage: lap replay pre-roll {max(0, _r0 - _s1.pre)}..{_r0 - 1} (card 1)", flush=True)
+    if args.stage_entry and any(p_ is not None for p_ in preroll_at):
+        # --stage-entry (2026-10-16): a stage card whose predecessor is a PLAIN card — that card's
+        # frames (from its start to the bar line) dive INTO their plunge target for it. Lap copies
+        # included (card 0's lap copy before the card-1 replay).
+        _ebars = {}
+        for _x in range(total):
+            _pe = preroll_at[_x]
+            if _pe is not None:
+                _ebars[_x - _pe[1]] = _pe[0]
+        _ecum, _acc = [], 0
+        for _f in _scf:
+            _ecum.append((_acc, _acc + _f))
+            _acc += _f
+        for _bar, _pst in sorted(_ebars.items()):
+            if _bar < 2 or _bar > total or stage_at[_bar - 1] is not None:
+                continue
+            _c0 = _ck = None
+            for _kk, (_a, _b) in enumerate(_ecum):
+                if _a <= _bar - 1 < _b:
+                    _c0, _ck = _a, _kk
+                    break
+            if _c0 is None and _has_lap and _lapS <= _bar - 1 < _lapS + _scf[0]:
+                _c0, _ck = _lapS, 0
+            if _c0 is None:
+                continue
+            for _x in range(max(1, _c0), _bar):
+                entry_at[_x] = {"stage": _pst, "bar": _bar, "c0": _c0, "card": _ck}
+            print(f"[dive] stage-entry: card {_ck} (frames {max(1, _c0)}..{_bar - 1}) dives INTO its target "
+                  f"for stage card {_pst.card} (pre-roll {getattr(_pst, 'pre', 0)} f)", flush=True)
+            # the RESOLVE window on an entry card ends by 40% of the card: it suppresses the tracker
+            # ("the field is still resolving — drift aim, no lock"), and on a 32-frame card the sea
+            # window [c0-6, c0+17] left the run 14 frames — the lock, when it came, came INSIDE the
+            # pre-roll (coffee_cherry_soup v1 f181). The depth window (wD) is left as it was.
+            # (0.4 on the first two arms left the tracker ONE detection before the deadline — now the
+            # approach start, 25% of the card, so the whole run belongs to the tracker)
+            _cut = _c0 + int(round(0.25 * (_bar - _c0)))
+            _rw2 = []
+            for _w in resolve_windows:
+                if _w["w0"] < _bar and _w["w1"] > _cut and _w["w1"] > _c0:
+                    _nw1 = max(_w["w0"], min(_w["w1"], _cut))
+                    print(f"[dive] stage-entry: resolve window {_w.get('card')} [{_w['w0']}..{_w['w1'] - 1}] "
+                          f"{'dropped' if _nw1 <= _w['w0'] else f'ends at {_nw1 - 1}'} so the tracker owns the entry card",
+                          flush=True)
+                    if _nw1 <= _w["w0"]:
+                        continue
+                    _w = {**_w, "w1": _nw1}
+                _rw2.append(_w)
+            resolve_windows = _rw2
     if stages:
         try:   # provenance: run.json is written before the stages are built — append them
             _rj = json.loads((out_dir / "run.json").read_text())
@@ -2300,6 +2413,7 @@ def main():
     _depth = None
     _trk = None
     _hero = None      # --hero-cn lab state: {"size": fraction-of-width}, per approach run
+    _ehero = None     # --stage-entry hero state: {"on", "x", "y", "d" (diameter/W), "bar"}, per entry run
     # rotates each approach run's preferred rule-of-thirds corner; a --from-card prefix
     # already consumed start_run_idx runs, so the continuation keeps the rotation phase
     _run_idx = start_run_idx - 1
@@ -2400,11 +2514,21 @@ def main():
             if approaching:
                 if _trk is None or _trk.ap is not ap:
                     _run_idx += 1
+                    _ent0 = entry_at[i] if (args.stage_entry and i < len(entry_at)) else None
                     _trk = track.Tracker(ap, cfg["width"], cfg["height"],
                                          rot=cfg["rotate_per_frame"],
-                                         cadence=cfg["track_cadence"],
+                                         cadence=(2 if _ent0 else cfg["track_cadence"]),
                                          ease=cfg["approach_lock_ease"],
                                          model=cfg["track_model"])
+                    _ehero = None
+                    if _ent0 is not None:
+                        # --stage-entry: this run must FIND the thing we dive into — look every 2
+                        # frames, believe a single clear hit near the heading (0.30, was 0.15), and
+                        # allow a redirect up to the engagement deadline (was run frame 10)
+                        _trk.confirm = 0.30
+                        _trk.redirect_until = max(10, (_ent0["bar"] - max(1, getattr(_ent0["stage"], "pre", 0)) - i) // 2)
+                        print(f"[dive] stage-entry: run for {ap.get('phrase')!r} from frame {i}: detect every 2, "
+                              f"confirm 0.30, redirects until run frame {_trk.redirect_until}", flush=True)
                     # --hero-cn: seed the disc so it ends the run at ~full frame width —
                     # s0 = 1.05 / (product of the remaining scheduled zooms). The card's
                     # containment contract (target fills the view by the boundary),
@@ -2433,9 +2557,59 @@ def main():
                 if ev:
                     row["event"] = ev
                 cx, cy = _trk.step(z, rot_i)
+                # --stage-entry (2026-10-16): the card before a stage card dives INTO its plunge
+                # target. The hero engages at the first lock (else at the deadline: half the run,
+                # and in any case two frames before the pre-roll) at the tracked object; from then
+                # on its size is on the SCHEDULE — exponential at the zoom rate up to the pre-roll,
+                # then hyperbolic looming (the stage camera's own law for a target element) past
+                # the frame's corners on the bar line. The coming stage opens only inside it.
+                _ent = entry_at[i] if (args.stage_entry and i < len(entry_at)) else None
+                if _ent is not None:
+                    _eps, _ebar = _ent["stage"], _ent["bar"]
+                    _epre = _ebar - max(1, int(getattr(_eps, "pre", 0) or 1))
+                    if _ehero is None:
+                        _run0 = i - (_trk.frame - 1)
+                        # deadline = two frames before the pre-roll (the latest the object can exist);
+                        # until then every detection beat is a chance to find the real thing
+                        _dead = _epre - 2
+                        _lk = _trk.phase == "object" and _trk.size > 0.02
+                        if (_lk and _trk.frame >= 3) or i >= _dead:
+                            _ehero = {"on": i, "x": 0.5, "y": 0.5, "d": 0.0, "bar": _ebar,
+                                      "locked": bool(_lk), "box": round(float(_trk.size), 3)}
+                            _trk.anchor = tuple(_eps.anchor)     # the object eases onto the stage's fixed point
+                            if not _lk:
+                                # no object found: MAKE it where the coming stage will dive (its anchor is
+                                # the axis its world was built on — the first arm made the hero at the
+                                # emergence pick, 0.3 W from the stage's fixed point); later hits only correct
+                                _trk.tx, _trk.ty = float(_eps.anchor[0]), float(_eps.anchor[1])
+                                _trk.phase, _trk.size = "object", float(args.stage_entry_size)
+                            print(f"[dive] stage-entry: hero for {_trk.phrase!r} ON at frame {i} "
+                                  f"({'tracker lock' if _lk else 'deadline, no lock'}; box {_ehero['box']:.2f} W, "
+                                  f"pre-roll from {_epre}, bar {_ebar})", flush=True)
+                    if _ehero is not None:
+                        _ehero["x"] = min(0.95, max(0.05, float(_trk.tx)))
+                        _ehero["y"] = min(0.95, max(0.05, float(_trk.ty)))
+                        _W_, _H_ = cfg["width"], cfg["height"]
+                        if i < _epre:
+                            _Zr = 1.0
+                            for _x in range(i + 1, _epre):
+                                _Zr *= zoom_sched[_x] if zoom_sched else cfg["zoom_per_frame"]
+                            _ehero["d"] = float(args.stage_entry_size) / _Zr
+                        else:
+                            _Pp = max(1, _ebar - _epre)
+                            _u = min(1.0, (i - _epre + 1) / _Pp)
+                            _rc = max(math.hypot((_ehero["x"] - qx) * _W_, (_ehero["y"] - qy) * _H_)
+                                      for qx in (0.0, 1.0) for qy in (0.0, 1.0)) / _W_
+                            # r1: the rim (the mask's half level, ~0.85 r with the entry feather) passes
+                            # the farthest corner on the last pre-roll frame -> the last old-world pixels
+                            # leave at j = -1 and the stage's arrival lands on the beat
+                            _r0, _r1 = float(args.stage_entry_size) / 2.0, 1.6 * _rc
+                            _ehero["d"] = 2.0 / ((1.0 - _u) / _r0 + _u / _r1)
+                        row["hero"] = [round(_ehero["x"], 3), round(_ehero["y"], 3), round(_ehero["d"], 3)]
             else:
                 _trk = None
                 _hero = None
+                _ehero = None
                 if _pl is not None:
                     cx, cy = _pl.aim(z, rot_i, track)
                     row = {"i": i - 1, "mode": "plate", "z": round(z, 4),
@@ -2451,7 +2625,7 @@ def main():
                 else:
                     row = {"i": i - 1, "mode": "tail" if in_loop_tail(i) else "drift",
                            "z": round(z, 4)}
-            if _prej is not None and _pl is None and _st is None:
+            if _prej is not None and _pl is None and _st is None and _ehero is None:
                 # PRE-ROLL AIM: ease the zoom's fixed point onto the coming stage's anchor over
                 # the first 6 pre-roll frames, so the disc the new world opens in is the point
                 # we are already diving into (a staged previous card already shares the anchor)
@@ -2747,7 +2921,7 @@ def main():
             _prd = None
             if _prej is not None and plate_mask is None:
                 _prd = preroll_disc(i, _prej, fed.size, zoom_sched, cfg, args.stage_preroll_k,
-                                    cur_stage=_st, cur_j=_sj0, nest=bool(args.stage_nest), trk=_trk)
+                                    cur_stage=_st, cur_j=_sj0, nest=bool(args.stage_nest), trk=_trk, hero=_ehero)
             if _st is not None:
                 # MICRO STAGE: composite the built world at the exact scheduled geometry.
                 # Identity ramps in across the arrival (the old texture resolves INTO the
@@ -2847,7 +3021,7 @@ def main():
                 _ps, _pj = _prej
                 if _prd is None:
                     _prd = preroll_disc(i, _prej, fed.size, zoom_sched, cfg, args.stage_preroll_k,
-                                        cur_stage=_st, cur_j=_sj0, nest=bool(args.stage_nest), trk=_trk)
+                                        cur_stage=_st, cur_j=_sj0, nest=bool(args.stage_nest), trk=_trk, hero=_ehero)
                 _m, _prgb, _pdep_, _wid, _rad = _prd
                 _fa_ = np.asarray(fed.convert("RGB"), np.float32)
                 _sa_ = np.asarray(_prgb.convert("RGB"), np.float32)
@@ -2955,7 +3129,32 @@ def main():
                     if _j >= _n - 2:
                         res_cn *= 0.6     # handoff taper into normal travel
             hero_ctl, hero_cn, hero_neg = None, 0.0, None
-            if _hero is not None and approaching:
+            if _ehero is not None and approaching and _trk is not None and _ehero.get("d", 0) > 0:
+                # --stage-entry CN: the hero dome at its scheduled size over the frame's OWN depth
+                # (the surroundings keep their depth — a berry cluster among leaves stays among
+                # leaves; the planet hero's void of specks is wrong here), and inside the pre-roll
+                # window the coming stage's own depth, as the stage path does
+                try:
+                    _fdep = _warp.depth_via_comfy(fed)
+                except Exception as _e:
+                    _fdep = None
+                    print(f"[dive] stage-entry: frame depth failed ({_e}) — dome over a flat field", flush=True)
+                _himg = entry_depth(cfg["width"], cfg["height"], _ehero["x"], _ehero["y"], _ehero["d"], base=_fdep)
+                if _prd is not None:
+                    _da_ = np.asarray(_himg.convert("RGB"), np.float32)
+                    _db_ = np.asarray(_prd[2].convert("RGB"), np.float32)
+                    _mm_ = _prd[0][..., None]
+                    _himg = Image.fromarray(np.clip(_da_ * (1 - _mm_) + _db_ * _mm_, 0, 255).astype(np.uint8))
+                _hdir = out_dir / "build" / "hero"
+                _hdir.mkdir(exist_ok=True)
+                _himg.save(_hdir / f"{i:05d}.png")
+                hero_ctl = upload_image(_himg, f"zoomer_hero_{name}.png")
+                hero_cn = 0.35 + 0.30 * min(1.0, (i - _ehero["on"] + 1) / 8)
+                if tlog:
+                    tlog.write(json.dumps({"i": i, "mode": "entry_hero", "x": round(_ehero["x"], 3),
+                                           "y": round(_ehero["y"], 3), "d": round(_ehero["d"], 3),
+                                           "cn": round(hero_cn, 3), "depth": "da" if _fdep is not None else "flat"}) + "\n")
+            elif _hero is not None and approaching:
                 # scheduled size: grows by exactly this frame's zoom so the disc reaches
                 # ~full frame at the card boundary (s0 = 1.05/product-of-remaining-zooms).
                 # (Do NOT adopt _trk.size: the tracker box is unclamped and propagates past

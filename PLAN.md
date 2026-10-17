@@ -3697,3 +3697,66 @@ ARM 2 (valdes_blow --from-card 7 --src-version v4 --frames 288, v4's recipe; out
 a sea of spirals at every depth, the hero spiral at the plunge; strip scratchpad/orange/tracks_sea_strip.png, Lab clip
 review/lab/tracks_SEA.mp4 (v4 | sea). The kit is live for any card that draws it (the seeded ~8% of word-less
 subnuclear cards); the composer keeps AVOIDING tracks words until Phil's verdict on the Lab clip.
+
+## 2026-10-16 NIGHT — THE PLAIN->STAGE HANDOFF: "a wipe from a disc, not a zoom" -> dive INTO the object (--stage-entry, lab)
+PHIL (23:00, after the first painted nightlies: "very promising for the variety"): the biggest jarring thing now is the
+unstaged->staged transition — "a very quick wipe from a disk rather than a zoom"; track the object better, zoom onto the
+thing we want, never wipe the new stage into the area outside that object; stay on the beat. He allowed the nightly to be
+PAUSED for the lab (settings render_paused=True, 23:01 — UNPAUSE when the lab is done).
+WHAT LAST NIGHT'S THREE HANDOFFS SHOW (lodestar c3->4, azurite c6->7, coffee c5->6; strips in the session scratchpad):
+- the music fix (pre-roll pickup 2) holds the coming world to a 0.22 W window until the last two frames, then opens it
+  over the whole frame in two frames: THAT is the wipe, on every staged handoff — plain->stage AND stage->stage, where the
+  cap also overrides the approved containment law for the last frames (preroll_disc applied the cap after both branches).
+- the window follows the object only when the tracker has locked: in time once (coffee's berry cluster, f181, 10 frames
+  before the beat), 3 frames before once (lodestar f108/109), never on azurite. Over the four whole videos the detector
+  returned "miss" on nearly every beat (object-phase frames 3/390, 0/535, 10/583, 0) — the plunge targets are not drawn
+  as findable objects ("an azure crystal blade", "a chain of cubes").
+- even when found the object is too small on the beat (the berries ~0.5-0.6 W at the bar line): nothing enforces that
+  the target fills the frame at the boundary — the planets' disease before the plate.
+THE FIX (dive --stage-entry, lab flag, default off; nightly argv untouched):
+1. BEAT SEPARATED FROM GEOMETRY. An object-following window (entry hero, nested stage element, tracker-locked box) is
+   never capped: its size is the thing we enter. The beat rides the IDENTITY inside it — ENTRY_WID_LOW 0.30 until the
+   pickup frames, 0.85 across the last PREROLL_PICKUP frames (preroll_disc). The free iris keeps the geometric pickup.
+2. THE ENTRY HERO. The PLAIN card before a stage card (entry_at table: stage cards whose predecessor is plain, lap copies
+   included) dives INTO its plunge target: a depth dome at the tracker's object (entry_depth: dome 0.7-1.0 max-composited
+   over the frame's own DepthAnything map — the surroundings keep their depth; inside the pre-roll window the coming
+   stage's depth), CN 0.35->0.65 over 8 frames. Engages at the first lock (run frame >= 3) else at the DEADLINE (half the
+   run, at latest 2 frames before the pre-roll) at the heading — there is always an object. SIZE ON SCHEDULE: diameter
+   exponential at the zoom rate so it is --stage-entry-size (0.28 W) when the pre-roll starts, then HYPERBOLIC looming
+   across the pre-roll, r(u) = 1/((1-u)/r0 + u/r1) with r1 = 1.25 x the distance to the farthest corner at u = 1 (the
+   last pre-roll frame) — the stage camera's own law for a target element, so plain->stage and stage->stage read alike.
+   The pre-roll window IS the hero (centre + radius). The tracker's anchor becomes the stage's fixed point at engagement
+   (the object eases onto where the stage will dive); the pre-roll's 6-frame aim override is skipped while the hero owns
+   the aim; without a lock the tracker is put in 'object' phase at the hero's size so later hits only correct gently.
+3. TRACK BETTER ON THAT CARD: detect every 2 frames (was 4), confirm radius 0.30 (was 0.15), redirects allowed up to the
+   engagement deadline (was run frame 10). Depth-blob fallback NOT built (the deadline hero covers the no-lock case).
+FOOTPRINT (queue of 27): 30 plain->stage handoffs in 24 journeys (the entry hero) + 41 stage->stage (the identity pickup,
+no geometric cap). Zoom schedule and counter untouched (the hero's size is computed from the scheduled zooms).
+ARMS (tmux entry, scratchpad/orange/entry_arms.sh; same seed + last night's exact argv + --stage-entry): coffee_cherry_soup
+--from-card 5 --frames 224 (seed -> tissue, bar 192) and azurite_headframe --from-card 6 --frames 256 (rosette ->
+lattice, bar 224) -> output/<j>_platelive_entry/v1. Judge: strip + beat_measure (scratchpad/orange/entry_strip.py: the
+flip must sit in the last 2 frames and complete on the beat), then ONE FULL VIDEO for Phil (azurite_headframe from card
+6, same seed, cards 0-5 byte-identical) next to last night's copy in Review.
+KNOWN LIMITS: the hero is ROUND (a seed/grain/bead is right; a blade/cube chain becomes a roundish lump in the card's
+words) — next step if it reads wrong: the detector's mask as the silhouette, propagated through the zoom, as window and
+depth shape; a composer rule (compact plunge target before a micro stage) would raise the odds but only reaches journeys
+composed after it (Phil's one-source rule).
+ARM 1 RESULT (coffee_cherry_soup c5->6, output/coffee_cherry_soup_platelive_entry/v2; strip scratchpad/orange/
+entry_coffee_strip.png): a green glass SEED full of cells grows on the cherries from frame -8 (0.3 W) to -3 (0.6 W),
+then the last two frames cross-dissolve to cells everywhere; v1 had the 0.22 W window and the two-frame wipe.
+beat_measure: entry -5 f / v1 -11 f (the metric is noisy on a plain card — its own x10 zoom moves it away from the
+"old" reference; compare the progress series, which jump between -3 and 0 in both). THREE FINDINGS, all fixed before
+arm 2: (1) the RESOLVE WINDOW owned the first 60% of the entry card (split_cherry sea [154..177] -> the tracker only
+ran from 178, two frames INTO the pre-roll; this is also why last night's locks came so late) -> on an entry card the
+resolve window ends by 40% of the card (depth window kept); (2) the IDENTITY pickup cannot hold the inside faint:
+a 0.30 per-frame blend ACCUMULATES through the feedback chain (76% stage after four frames) — the inside is the
+stage within a few frames whatever the ramp; the beat must come from the GEOMETRY'S END (rim past the corners at
+-1 + the stage's arrival boost), so the entry window gets a NARROW feather (0.30 r; the 0.75 feather made the last
+two frames a full-frame dissolve) and r1 = 1.6 x the corner distance (the rim, ~0.85 r, passes the farthest corner
+at j = -1; by area the picture is >50% new at about -2 = the pickup-2 criterion); (3) with NO lock the hero was made
+at the emergence pick (0.7, 0.54), 0.3 W from the stage's fixed point (0.38, 0.40) — the stage world is built on
+its anchor's axis, so a no-lock hero is now made AT the stage anchor (a locked object still eases toward it).
+OPEN: a LOCKED object away from the stage anchor still hands off to a stage diving elsewhere (fix = build the coming
+stage on the object's third: needs the lock before the stage is built, or a rebuild — later). The hero reads as a glass
+ball ON the fruit rather than the seed IN the cherry (DepthAnything already puts the fruit near; the dome barely
+stands proud) — acceptable for the arm; a stronger near value or a dark rim are the levers.
