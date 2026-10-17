@@ -3760,3 +3760,18 @@ OPEN: a LOCKED object away from the stage anchor still hands off to a stage divi
 stage on the object's third: needs the lock before the stage is built, or a rebuild — later). The hero reads as a glass
 ball ON the fruit rather than the seed IN the cherry (DepthAnything already puts the fruit near; the dome barely
 stands proud) — acceptable for the arm; a stronger near value or a dark rim are the levers.
+ARM 2 (azurite_headframe c6->7, output/azurite_headframe_platelive_entry/v1; no lock -> hero MADE at the stage anchor
+2 frames before the pre-roll): an orb filled with the lattice grows from a third of the frame (-10) to the frame's
+width (-4), its rim passes the corners at -2/-1, lattice at 0 — a zoom into the orb; beat_measure -2 f for BOTH
+v1 and entry (the pickup-2 criterion met without the cap). Lab: review/lab/entry_azurite.mp4 (before | entry, click
+on the bar lines, frames 192-255 x3) + entry_azurite_strip.png.
+COFFEE v3 (final settings: resolve window ends at the approach start, deadline = pre-roll - 2): the tracker LOCKED the
+seed cluster at frame 170 (box 0.34 W) — the hero rode a real object; a cell-filled orb grows on the leaf from 0.3 W
+(-12) to 0.75 W (-4), rim past the corners at -1; beat_measure -4 f (v1 -11; the metric is noisy on plain cards —
+the progress series jump between -3 and 0 in both). Lab: entry_coffee.mp4 + entry_coffee_strip.png.
+FULL VIDEO: azurite_headframe v2 (--from-card 6 --src-version v1, cards 0-5 byte-identical, --stage-entry on the
+nightly recipe; tmux entry_chain, log scratchpad/orange/entry_full_azurite.log) -> queue_review re-points the Review
+entry (caption + candidates kept, v1 on disk). Its 7->8 and 8->9 stage->stage handoffs run the nested element law
+WITHOUT the geometric cap for the first time since the pickup — measure them (bars 256, 288) before telling Phil.
+NIGHTLY: unpaused at 00:5x (render_paused=False) — the 01:30 batch waits for the GPU behind the full render and then
+renders the queue head on the UNCHANGED recipe (--stage-entry stays lab until Phil's verdict).
