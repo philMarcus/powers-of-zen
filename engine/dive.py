@@ -849,19 +849,31 @@ def preroll_disc(i, prej, size, zoom_sched, cfg, k_pow, cur_stage=None, cur_j=0,
     # identity of the coming world inside the disc: 0.2 -> 0.8 across the pre-roll (was
     # 0.15 -> 0.6 while the current stage was still repainting the disc every frame)
     wid_in = 0.2 + 0.6 * (pj + ps.pre + 1) / max(1, ps.pre)
-    if PREROLL_PICKUP > 0 and not _free:
-        # IDENTITY PICKUP (2026-10-16): on an object-following window the geometry is the thing we
-        # enter (physical, never capped) and the BEAT rides the identity inside it — a faint hint
-        # of the coming world until the pickup frames, full over the last PREROLL_PICKUP frames so
-        # the flip completes on the downbeat (the geometric cap had made every handoff a two-frame
-        # wipe from a 0.22 W disc, Phil 2026-10-16)
+    active = True            # the coming world's PIXELS are composited inside the window this frame
+    if PREROLL_PICKUP > 0 and not _free and not (hero is not None and hero.get("d", 0) > 0):
+        # PIXEL PICKUP (2026-10-17) — NESTED stage->stage windows only. On an object-following
+        # window the geometry is the thing we enter (physical, never capped). A per-frame pixel
+        # blend ACCUMULATES through the feedback chain (0.3/frame = 76% after four frames), so a
+        # big element (azurite 8->9, nucleon 0.37 W at the pre-roll start) flipped the picture 6
+        # frames early. The current STAGE draws the element itself, so its coming-world pixels can
+        # wait: until the last PREROLL_PICKUP+1 frames the window carries the next world only as
+        # depth structure + words (non-cumulative), the pixels arrive over those frames. NOT for
+        # the entry hero: on a plain card the object EXISTS only through those pixels — gating them
+        # (azurite v3) left no orb at all and the last three frames became a full-frame dissolve.
+        # A per-frame pixel blend ACCUMULATES through the feedback
+        # chain (0.3/frame = 76% after four frames — the first arms' "faint" ramp was the new world
+        # within a few frames, and a big element flipped the picture 6 frames early), so until the
+        # last PREROLL_PICKUP+1 frames the window carries the coming world ONLY as depth structure
+        # and words (per-frame conditioning, non-cumulative) and the pixels arrive over the last
+        # PREROLL_PICKUP+1 frames: the flip completes on the downbeat inside the thing we entered.
         to_beat = -pj
-        if to_beat > PREROLL_PICKUP:
-            wid_in = min(wid_in, ENTRY_WID_LOW)
+        G = PREROLL_PICKUP + 1
+        if to_beat > G:
+            active, wid_in = False, 0.0
         else:
-            frac = (PREROLL_PICKUP - to_beat + 1) / PREROLL_PICKUP
+            frac = (G - to_beat + 1) / G
             wid_in = ENTRY_WID_LOW + (0.85 - ENTRY_WID_LOW) * frac
-    return m, prgb, pdep, wid_in, rad
+    return m, prgb, pdep, wid_in, rad, active
 
 
 def phase_info(phases, i):
@@ -2974,7 +2986,7 @@ def main():
                     den = max(den, getattr(_st, "den_travel", None) or args.stage_den_travel)
                     if getattr(_st, "den_cap", None):
                         den = min(den, _st.den_cap[0])
-                    if _prd is not None:
+                    if _prd is not None and _prd[5]:
                         # yield inside the coming world's disc
                         _wpx = (_wid * (1.0 - _prd[0]))[..., None]
                         _fa_ = np.asarray(fed.convert("RGB"), np.float32)
@@ -3022,16 +3034,20 @@ def main():
                 if _prd is None:
                     _prd = preroll_disc(i, _prej, fed.size, zoom_sched, cfg, args.stage_preroll_k,
                                         cur_stage=_st, cur_j=_sj0, nest=bool(args.stage_nest), trk=_trk, hero=_ehero)
-                _m, _prgb, _pdep_, _wid, _rad = _prd
-                _fa_ = np.asarray(fed.convert("RGB"), np.float32)
-                _sa_ = np.asarray(_prgb.convert("RGB"), np.float32)
-                _mw = (_m * _wid)[..., None]
-                fed = Image.fromarray(np.clip(_fa_ * (1 - _mw) + _sa_ * _mw, 0, 255).astype(np.uint8))
-                _inside = min(1.0, 0.30 / max(den, 1e-3))
-                _dmask = 1.0 - _m * (1.0 - _inside)
-                plate_mask = upload_image(Image.fromarray((np.clip(_dmask, 0, 1) * 255).astype(np.uint8)).convert("RGB"),
-                                          f"zoomer_premask_{name}.png")
-                plate_dd = True
+                _m, _prgb, _pdep_, _wid, _rad, _act = _prd
+                _inside = 1.0
+                if _act:
+                    _fa_ = np.asarray(fed.convert("RGB"), np.float32)
+                    _sa_ = np.asarray(_prgb.convert("RGB"), np.float32)
+                    _mw = (_m * _wid)[..., None]
+                    fed = Image.fromarray(np.clip(_fa_ * (1 - _mw) + _sa_ * _mw, 0, 255).astype(np.uint8))
+                    _inside = min(1.0, 0.30 / max(den, 1e-3))
+                    _dmask = 1.0 - _m * (1.0 - _inside)
+                    plate_mask = upload_image(Image.fromarray((np.clip(_dmask, 0, 1) * 255).astype(np.uint8)).convert("RGB"),
+                                              f"zoomer_premask_{name}.png")
+                    plate_dd = True
+                # (gated frames: no pixels, no denoise cap — the coming world is only the depth
+                # structure inside the window + the coming card's words in the region below)
                 # the COMING card's own words inside the disc (ConditioningSetMask region): the
                 # first arm painted the new world with the OLD card's prompt and it arrived pale
                 if plate_region is None:

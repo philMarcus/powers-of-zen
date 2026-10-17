@@ -120,21 +120,22 @@ Manage everything from the dashboard's 🗺 Journeys tab (queue/reorder/reject, 
 picks preview) and ⚙ Settings tab (all knobs incl. platform pauses). Times: SCHEDULER.md.
 
 ## Current state (update this line as it changes)
-2026-10-17 00:5x (STAGE-ENTRY LAB — the plain->stage handoff; read PLAN "2026-10-16 NIGHT"): Phil: the first painted
-nightlies are "very promising for the variety"; the biggest jarring thing is the unstaged->staged handoff, "a very quick wipe
-from a disk rather than a zoom" — track the object, zoom onto it, never wipe the stage outside it, stay on the beat. CAUSE: the
-pickup-2 music fix caps the pre-roll window at 0.22 W and blows it open in two frames (on every staged handoff; it also
-overrode the approved stage->stage containment law), the window follows the object only when the tracker has locked (last
-night 1 of 3 in time), and the RESOLVE window owned the first 60% of every card so the tracker barely ran. BUILT `dive
---stage-entry` (lab, default off): the plain card before a stage dives INTO its target — a hero depth dome at the tracked
-object (or made at the stage's anchor by a deadline 2 frames before the pre-roll), size on schedule (zoom-rate then hyperbolic
-looming past the corners on the last pre-roll frame), the pre-roll window IS the hero (narrow rim), object-following windows
-lose the geometric cap, resolve windows end at the approach start on entry cards, tracker every 2 frames there. ARMS PASS
-(coffee seed->cells with a real lock; azurite rosette->lattice made at the anchor): a filled orb grows and we enter it,
-flip at -2 f like the pickup. LAB: entry_azurite.mp4 / entry_coffee.mp4 (+ strips), click on the bar lines. FULL VIDEO
-azurite_headframe v2 (from card 6, same seed) rendering -> Review re-pointed; its stage->stage handoffs (bars 256/288) must
-be measured. Nightly paused 23:01 for the lab, UNPAUSED 00:5x (recipe unchanged). Lesson: a per-frame pixel blend ACCUMULATES
-in the feedback chain (memory feedback-blend-accumulates) — the identity pickup cannot hold the inside faint.
+2026-10-17 02:30 (STAGE-ENTRY LAB DONE, PHIL TO JUDGE; read PLAN "2026-10-16 NIGHT" to its end): Phil: the painted nightlies
+are "very promising for the variety"; the biggest jarring thing is the unstaged->staged handoff, "a very quick wipe from a
+disk rather than a zoom" — track the object, zoom onto it, never wipe the stage outside it, stay on the beat. CAUSE: the
+pickup-2 music fix caps the pre-roll window at 0.22 W and blows it open in two frames on EVERY staged handoff (it also
+overrode the approved containment law); the window follows the object only on a tracker lock (1 of 3 in time); and the
+RESOLVE window owned the first 60% of every card so the tracker barely ran. BUILT `dive --stage-entry` (lab, default off):
+the plain card before a stage dives INTO its target — hero depth dome at the tracked object (or made at the stage's anchor 2
+frames before the pre-roll), size on schedule (zoom rate, then hyperbolic past the corners on the last pre-roll frame), the
+pre-roll window IS the hero with its pixels from engagement; nested stage->stage windows keep the element's physical radius
+and get their pixels only over the last 3 frames (a per-frame blend ACCUMULATES — memory feedback-blend-accumulates; and a
+plain-card object exists only through supplied pixels — gating them removed the orb, v3). RESULTS: azurite_headframe v4 IS
+THE REVIEW ENTRY (same seed, cards 0-5 = last night's; v1/v2/v3 on disk): orb-filled-with-lattice entry, flips at -2/-2/-1 f
+vs v1's -2/-1/-1; LAB: entry_azurite.mp4 (v1 | v4, all four handoffs, click track) + entry_coffee.mp4 (real lock on the seed
+cluster) + strips. Nightly paused 23:01-00:5x for the lab, recipe UNCHANGED; the 01:30 batch slipped past the GPU-busy
+sampler at 01:59 while v4 still rendered (both fine). NEXT: Phil's verdict -> night_batch passes --stage-entry (settings
+knob) or not; open items in PLAN (stage built on the object's third, silhouette from the mask, composer compact-target rule).
 2026-10-15 AFTERNOON (PAINTED ELEMENTS ON; read PLAN "2026-10-15 AFTERNOON"): Phil: v4's sulfur lattice is the win, he will publish valdes_blow v4 (in Review, his approve); M2/M1b recipe ON in the nightly (settings stage_paint) — needs stage.element on each micro card, now REQUIRED by the composer skill (ELEMENT TEST) and a hard audit failure. 11 Review videos rejected + re-queued; all 29 queued micro journeys rewritten by composer agents (no tracks words). Tracks kit "reads as broken" (one coil + stray lines) -> needs a SEA version. Lab: only the music before/after left to judge.
 2026-10-15 (MUSIC FIX ON, FOG BUG FIXED, LAB TAB, FULL PAINTED VIDEO RENDERING; read PLAN "2026-10-15" blocks): Phil's
 verdicts on the plate-style clips: disappointing as they were ("neither looks like a lattice... a colour smear"), the

@@ -3775,3 +3775,49 @@ entry (caption + candidates kept, v1 on disk). Its 7->8 and 8->9 stage->stage ha
 WITHOUT the geometric cap for the first time since the pickup — measure them (bars 256, 288) before telling Phil.
 NIGHTLY: unpaused at 00:5x (render_paused=False) — the 01:30 batch waits for the GPU behind the full render and then
 renders the queue head on the UNCHANGED recipe (--stage-entry stays lab until Phil's verdict).
+FULL VIDEO v2 RESULT (01:15; azurite_headframe v2 = Review entry for a while): entry 6->7 fine; 7->8 (atom 0.08 W ->
+1.13 W) flips at -2 (v1 with the cap: -1) and looks like the approved containment; BUT 8->9 (nucleon 0.37 W at the
+pre-roll start -> 1.13 W) flips at -6 (v1: -1): the big element's inside IS the new world from -9 on, so the picture
+becomes the quark field well before the beat — exactly the early flip Phil heard before the pickup, now on the
+uncapped physical window. THE FIX (same lesson as finding 2, applied properly): the window carries the coming world
+only as DEPTH STRUCTURE + the coming card's WORDS (per-frame conditioning, non-cumulative) until the last
+PREROLL_PICKUP+1 = 3 frames; the PIXELS (composite, the 0.30 denoise cap, the current stage's yield) arrive over those
+3 frames (0.30 -> 0.85, effectively full by -1 given accumulation). preroll_disc now returns `active`; the yield and
+the pre-roll composite honour it. azurite v3 (from card 6 again, same seed) rendering 01:21 -> re-points Review on
+success (v2 stays on disk as the ungated record). The Lab clips (arms) were cut from UNGATED runs — rebuild them from
+v3 (azurite) and a coffee re-arm after v3 so Phil judges the final behaviour.
+v3 RESULT (01:45, killed at frame ~240): gating the pixels on the ENTRY hero removed the object — the dome via CN alone
+(0.35-0.65) drew no orb on the azurite crust, and the last three frames became a full-frame dissolve (worse than v2).
+On a plain card the object EXISTS only through the supplied pixels (the plate lesson again). -> the pixel gate applies
+to NESTED stage->stage windows only (the current stage draws the element itself); the entry hero keeps its pixels
+from engagement (v2's look, which the arms passed). v4 = --from-card 8 --src-version v2 (v2's entry + 7->8 kept
+byte-identical; 8->9 and 9->10 with the gated window) -> Review re-point + Lab clip rebuilt from v4 (frames 192-319 =
+all four handoffs). Coffee's Lab clip (arm v3) already IS the final entry behaviour — no re-arm.
+v4 RESULT (02:2x; azurite_headframe v4 = THE REVIEW ENTRY, caption + candidates kept; v1 = last night's, v2 = ungated
+record, v3 = killed partial tree — all on disk): the gated 8->9 handoff now flips at -1 (v1 with the cap: -1; v2
+ungated: -6) and LOOKS right — the cyan nucleon droplets loom physically across the pre-roll and the orange quark
+field arrives inside them over the last three frames (strip azurite_v4_bar288 in the session scratchpad). All
+handoffs, flip frame (beat_measure, 0 = downbeat): 6->7 entry v1 -2 / v4 -8 (the metric is unreliable on a plain
+card — its own x10 zoom walks it away from the "old" reference; the strip shows the orb's rim passing the corners
+at -2/-1); 7->8 v1 -1 / v4 -2; 8->9 v1 -1 / v4 -1. LAB (final): review/lab/entry_azurite.mp4 = v1 | v4 frames
+192-319 (all four handoffs, click on the bar lines) + entry_azurite_strip.png (6->7); entry_coffee.mp4 = v1 | arm v3
+(the final entry behaviour: a real lock on the seed cluster) + entry_coffee_strip.png.
+WHAT --stage-entry IS NOW (lab flag; the nightly recipe is unchanged until Phil's verdict):
+- entry card (plain card before a stage): resolve window ends at the approach start; tracker every 2 frames, confirm
+  0.30, redirects until the deadline; the hero engages at the first lock (run frame >= 3) else 2 frames before the
+  pre-roll AT THE STAGE'S ANCHOR; size exponential at the zoom rate to 0.28 W diameter at the pre-roll start, then
+  hyperbolic to 1.6 x the corner distance on the last pre-roll frame; entry_depth dome (0.7-1.0) over the frame's own
+  DepthAnything map, CN 0.35 -> 0.65 over 8 frames; the pre-roll window IS the hero, feather 0.30 r, pixels from
+  engagement (a plain-card object exists only through supplied pixels — v3's lesson).
+- nested stage->stage window: the element's physical radius, never capped; the coming world's PIXELS (composite, the
+  0.30 denoise cap, the yield) only over the last PREROLL_PICKUP+1 = 3 frames (0.30 -> 0.85); before that depth
+  structure + the coming card's words only. The free iris keeps the geometric pickup-2 as before.
+- footprint if adopted: 30 plain->stage + 41 stage->stage handoffs in the queue of 27; zoom schedule + counter
+  untouched; cost ~ +1 s/frame on entry cards (DepthAnything per frame) + Florence every 2 frames there.
+NOTE: the 01:30 batch waited "GPU busy" and then STARTED enceladus_ring_feed at 01:59 while v4 was still rendering
+(wait_gpu_free samples comfy_busy/util and caught a gap between frames) — both finished fine (v4 rc=0 at 14 s/frame),
+but the gate is a sampler, not a lock; a lab render overlapping the nightly's start can slip through.
+OPEN (for after Phil's verdict): a LOCKED object away from the stage anchor still hands off to a stage diving at its
+own anchor (build the coming stage on the object's third); the hero is round (silhouette from the detector's mask
+next); the composer rule for a compact plunge target before a micro stage; the tracker's low lock rate in general
+(the resolve window owns 60% of every plain card — not only entry cards).
